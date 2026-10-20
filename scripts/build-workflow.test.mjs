@@ -12,6 +12,7 @@ const criticalWorkflow = parse(
 	readFileSync(new URL('../.github/workflows/critical-boundaries.yml', import.meta.url), 'utf8')
 );
 const featureChecks = [
+	'probabilistic-piano:assets:check',
 	'barnum-lab:surface-bank',
 	'barnum-lab:editorial-review',
 	'barnum-lab:surface-audit:check',
@@ -153,6 +154,8 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'scripts/prior-authorization-assets-manifest.json',
 		'scripts/strange-attractor-orchestra-assets.manifest.json',
 		'scripts/render-scale-elevator-assets.mjs',
+		'scripts/render-probabilistic-piano-assets.mjs',
+		'src/lib/visualizations/probabilistic-piano/model.ts',
 		'src/lib/visualizations/scale-elevator/core.ts',
 		'src/lib/visualizations/barnum-lab/core/surface-text.ts',
 		'src/lib/data/bias-archipelago/sources.json',
@@ -164,6 +167,7 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'src/lib/posts/belousov-zhabotinsky-laboratory.md',
 		'src/lib/posts/the-prior-authorization-machine.md',
 		'src/lib/posts/the-strange-attractor-orchestra.md',
+		'src/lib/posts/the-piano-that-forgives.md',
 		'src/lib/posts/the-scale-elevator-from-ion-to-city.md',
 		'src/lib/posts/perceptron-from-scratch-in-mojo.md',
 		'src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md',

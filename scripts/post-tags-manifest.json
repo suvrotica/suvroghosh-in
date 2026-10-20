@@ -14886,6 +14886,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
+		},
+		"src/lib/posts/the-piano-that-forgives.md": {
+			"bodyHash": "019d6c9f1ff77d55a416ef5faeaa78a9e908297bd404a05be185806542d48b0a",
+			"hashVersion": 2,
+			"revisionHash": "1d7a2226c55c08829ad917154089c98c5d732c79df29c0383532fe4f1374e42f",
+			"generatedTags": [
+				"Probability",
+				"Statistics",
+				"Mathematics",
+				"Jazz",
+				"Generative Art",
+				"Interactive Art",
+				"Music Theory",
+				"Creative Coding",
+				"Web Audio",
+				"Jazz Harmony"
+			],
+			"pinnedTags": [
+				"Probability",
+				"Statistics",
+				"Mathematics",
+				"Jazz",
+				"Generative Art",
+				"Interactive Art",
+				"Music Theory",
+				"Creative Coding",
+				"Web Audio",
+				"Jazz Harmony"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		}
 	},
 	"maxTags": 10

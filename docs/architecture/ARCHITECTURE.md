@@ -193,7 +193,7 @@ This lane uses committed notebook HTML. It neither invokes notebook preparation 
 
 `npm run build:full` is the feature-maintenance lane:
 
-1. `features:check` runs the deterministic Barnum, Bias, BZ, Prior Authorization, Strange Attractor, Mrinmoyee and Scale Elevator artifact checks. The Scale Elevator check verifies committed captures and their source-provenance manifest without a running site or native video encoder; generation is a separate explicit command.
+1. `features:check` runs the deterministic Barnum, Bias, BZ, Prior Authorization, Strange Attractor, Mrinmoyee, Scale Elevator and probabilistic piano artifact checks. The Scale Elevator and piano checks verify committed captures and their source-provenance manifests without a running site or native video encoder; generation is a separate explicit command.
 2. `notebooks:prepare` validates notebook shape/source hashes/renderer versions, leaves current HTML untouched and renders only stale/missing output when rendering dependencies exist. If required output is stale and dependencies are absent, it fails instead of silently accepting it. Explicit `notebooks:render` remains a full refresh.
 3. The routine `npm run build` runs its normal prebuild/build once.
 4. Barnum's emitted route assets are audited after the site build.
@@ -301,6 +301,35 @@ flowchart LR
     Overlay --> Capture
     Capture --> Fallback["Matching stills and publication media"]
     Fallback --> Stage
+```
+
+### The Piano That Forgives
+
+The feature extension below was implemented and locally verified on **21 October 2026**; the earlier system-wide audit baseline remains as dated above.
+
+The probabilistic piano uses an ordinary Visualizations Markdown article and the generic blog route. Its explicit Svelte shell under `components/visualizations/probabilistic-piano` owns current harmony/settings, focused pointer/keyboard inputs, recent history, frozen inspection, transport and presentation state per mount. The pure feature model under `visualizations/probabilistic-piano` owns integer-MIDI harmony palettes, bounded settings, score/softmax selection, deterministic musical randomness and the versioned original replay fixture. The gallery consumes lightweight summary/subject metadata; it does not import the piano's browser audio or painting runtime. This is an extension of the existing feature-owned model pattern, with no endpoint, inference service, account, credential, persistence store or new route exception.
+
+Each note-on freezes its harmony/settings snapshot and calculates one decision containing the request, complete eligibility set, admitted candidates, normalized probabilities, selected pitch and explanation. That same decision feeds audio, key marks, probability bars and the readable ledger. Nearest admits only literal closest pitches; Wander expands its distance bound by at most one semitone; both preserve eligible requests. Raw preserves every valid request. Authored musical-role, previous-note, repetition and held-voice preferences weight only the admitted set. The musical seed/event stream is independent of visual draws, and painting never makes a musical choice. The article's worked example is the tested clean C♯4 request between C4 and D4 in C6/9.
+
+An input ledger stores the exact selected output and unique audio voice ID. Note-off releases that ID without recalculating harmony, so simultaneous inputs sharing a pitch release independently and held notes retain their pitch across chord changes. The browser audio module is instantiated through explicit activation and owns one lazily created Web Audio context. Its original five-partial piano approximation bounds playable voices, retiring tails and oscillator nodes; audio-clock parameter scheduling is independent of rendering. Pending startup has cancellation/disposal guards. Stop, blur, hidden/offscreen state, preset switches and teardown clear owned playing state and pending transport work; teardown closes the context and removes observers/listeners. These limits do not constitute a universal loudness guarantee or a model of a listener's taste.
+
+The impressionist pond is deterministic local canvas artwork rendered on demand at capped pixel density. Stable native key buttons retain recognizable grouping and hit targets; labelled request/result marks, exact probability values and an optional recent-note history keep the musical explanation available without colour or sound. Painting failure uses a quiet-wash semantic keyboard, while the server-rendered poster and prose remain available without JavaScript. The shell uses the existing motion resolver for operating-system and site Still changes, with stable musical marks in Still mode. Publication captures show the implemented instrument's seeded state. See [the feature record](../visualizations/probabilistic-piano.md) for scores, palettes, audio bounds, asset provenance and the assembled verification receipt. This change does not alter a foundational decision, so no additional ADR is required.
+
+```mermaid
+flowchart LR
+    Article["Ordinary Markdown article / generic route"] --> Shell["Per-mount piano controls and input state"]
+    Presets["Authored palettes / bounded musical settings"] --> Snapshot["Frozen note-on harmony snapshot"]
+    Shell --> Snapshot
+    Snapshot --> Model["Pure distance / score / seeded sampler"]
+    Model --> Decision["One decision with actual probabilities"]
+    Decision --> Ledger["Input ID / selected pitch / unique voice ID"]
+    Ledger --> Audio["Explicitly enabled owned Web Audio"]
+    Decision --> Readouts["Key marks / possibility bars / text ledger"]
+    Shell --> Paint["Independent deterministic pond atmosphere"]
+    Paint --> Capture["Actual instrument captures / poster"]
+    Readouts --> Capture
+    Lifecycle["Blur / visibility / offscreen / teardown"] --> Audio
+    Lifecycle --> Shell
 ```
 
 Local UI adapters use Bits UI/tailwind variants, `cn`, and barrel exports. Five bounded runtime import cycles occur inside these adapters (badge/button/sheet/tabs/tooltip); the static graph found no domain-wide runtime cycle. These cycles have no demonstrated initialization failure and are documented coupling, rather than a counted defect. The graph excluded type-only imports, glob expansion and nonliteral imports; it is not a formal proof of acyclicity.

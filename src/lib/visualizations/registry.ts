@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'the-piano-that-forgives': {
+		id: 'the-piano-that-forgives',
+		title: 'The Piano That Forgives: Painting Jazz with Probability',
+		description:
+			'Play an impressionist piano that guides each press towards a nearby jazz possibility, and see the exact probabilities behind every note.',
+		subjects: ['Generative Art', 'Mathematics', 'Statistics'],
+		poster: '/images/visualizations/probabilistic-piano/piano-social.jpg',
+		posterAlt:
+			'Painted ivory and violet piano keys floating over a moonlit pond, with nearby notes and their probabilities',
+		href: '/blog/visualizations/the-piano-that-forgives',
+		status: 'published'
+	},
 	'the-scale-elevator-from-ion-to-city': {
 		id: 'the-scale-elevator-from-ion-to-city',
 		title: 'The Scale Elevator — From Ion to City',

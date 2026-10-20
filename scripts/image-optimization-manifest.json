@@ -11082,6 +11082,38 @@
       "sourceHash": "a5c25134ceee16c96ec3cdb3f9bbe6dc87c82a24fa9f1908371a3b39a9fa1716",
       "width": 1600
     },
+    "static/images/visualizations/probabilistic-piano/piano-poster.jpg": {
+      "format": "JPEG",
+      "height": 760,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 760,
+      "originalWidth": 1440,
+      "outputBytes": 127846,
+      "outputHash": "f38693c105975e1a92dc1777dafd9a668842db90b37b792ddb4f14432face548",
+      "psnrDb": 39.75,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 159704,
+      "sourceHash": "ac91d3438bcf4988a509bb33f93590eddd8a3b110addbaa99d660d8dc4d3eb07",
+      "width": 1440
+    },
+    "static/images/visualizations/probabilistic-piano/piano-social.jpg": {
+      "format": "JPEG",
+      "height": 630,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 107167,
+      "outputHash": "6f4e76d2fba1297d599e6cca2174b1bc9ee6c2ca413eef59383d1a573cce486f",
+      "psnrDb": 38.59,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 134215,
+      "sourceHash": "2c2ff183747e819281daca1148972213897bd5a5d7dab6d7310a6caa39f2ea5a",
+      "width": 1200
+    },
     "static/images/visualizations/random-matrix-shape/the-matrix-is-random.png": {
       "format": "PNG",
       "height": 630,

@@ -2,6 +2,14 @@
 
 The backlog favours one strong scientific idea and one legible interaction per exhibit. Rendering choices are starting points, not mandates; the simplest technique that keeps the concept clear should win.
 
+## Music and creative coding
+
+| Exhibit                                                                                           | Concept                                                                              | Proposed interaction                                                                                                               | Rendering approach                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [The Piano That Forgives — implementation prompts](visualizations/probabilistic-piano-prompts.md) | Nearest-note correction, explicit jazz harmony, seeded probability and voice leading | Play a painted piano; inspect the requested note, sounded note and actual candidate probabilities; compare Nearest, Wander and Raw | Impressionist Canvas/SVG keyboard, semantic controls and local Web Audio |
+
+The instrument and article are implemented; see the [feature record and verification](visualizations/probabilistic-piano.md). The staged prompt pack records the original brief. Its musical guarantee is membership in a curated harmonic palette under the documented distance rules; “always musical” describes its artistic aim.
+
 ## Physics
 
 | Exhibit                                        | Scientific concept                                                         | Proposed interaction                                                                               | Rendering approach                                  |

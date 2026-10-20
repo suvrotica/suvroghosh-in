@@ -11,6 +11,7 @@
 
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
+		'the-piano-that-forgives': visualizationSummaries['the-piano-that-forgives'].subjects,
 		'the-scale-elevator-from-ion-to-city':
 			visualizationSummaries['the-scale-elevator-from-ion-to-city'].subjects,
 		'hello-fragment-your-first-shader-from-scratch':
