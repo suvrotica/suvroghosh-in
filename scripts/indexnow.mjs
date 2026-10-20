@@ -6,6 +6,7 @@ export const SITE_URL = 'https://www.suvroghosh.in';
 export const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
 export const MAX_URLS_PER_REQUEST = 10_000;
 export const INDEXNOW_KEY_PATTERN = /^[A-Za-z0-9-]{8,128}$/;
+export const INDEXNOW_REQUEST_TIMEOUT_MS = 15_000;
 
 export function getIndexNowKey(environment = process.env) {
 	const key = String(environment.INDEXNOW_KEY ?? '').trim();
@@ -193,6 +194,55 @@ async function readSitemap(options, fetchImpl) {
 	return response.text();
 }
 
+/** Compare the small UTF-8/ASCII proof without buffering an unexpected response body. */
+async function proofMatchesKey(response, key) {
+	const reader = response.body?.getReader();
+	if (!reader) return false;
+	let offset = 0;
+	try {
+		while (true) {
+			const { done, value } = await reader.read();
+			if (done) return offset === key.length;
+			if (offset + value.length > key.length) return false;
+			for (const byte of value) {
+				if (byte !== key.charCodeAt(offset++)) return false;
+			}
+		}
+	} finally {
+		await reader.cancel().catch(() => {});
+		reader.releaseLock();
+	}
+}
+
+export async function verifyIndexNowOwnership(payload, fetchImpl = fetch) {
+	let response;
+	try {
+		response = await fetchImpl(payload.keyLocation, {
+			headers: { accept: 'text/plain' },
+			redirect: 'error',
+			signal: AbortSignal.timeout(INDEXNOW_REQUEST_TIMEOUT_MS)
+		});
+	} catch {
+		// A native network error can include the secret-bearing URL. Do not log it.
+		throw new Error('IndexNow ownership verification request failed or timed out.');
+	}
+	if (response.status !== 200) {
+		throw new Error(`IndexNow ownership verification failed: HTTP ${response.status}.`);
+	}
+	if (!/^text\/plain(?:\s*;|$)/i.test(response.headers.get('content-type') ?? '')) {
+		throw new Error('IndexNow ownership proof must be served as text/plain.');
+	}
+	let matches;
+	try {
+		matches = await proofMatchesKey(response, payload.key);
+	} catch {
+		throw new Error('IndexNow ownership proof could not be read before the request deadline.');
+	}
+	if (!matches) {
+		throw new Error('IndexNow ownership proof does not exactly match the configured key.');
+	}
+}
+
 export async function runIndexNow(argv, { fetchImpl = fetch, environment = process.env } = {}) {
 	const options = parseArguments(argv);
 	const sitemapXml = await readSitemap(options, fetchImpl);
@@ -216,19 +266,24 @@ export async function runIndexNow(argv, { fetchImpl = fetch, environment = proce
 		return { dryRun: true, skipped: false, payload, status: null };
 	}
 
-	const response = await fetchImpl(INDEXNOW_ENDPOINT, {
-		method: 'POST',
-		headers: {
-			accept: 'application/json, text/plain;q=0.9',
-			'content-type': 'application/json; charset=utf-8'
-		},
-		body: JSON.stringify(payload)
-	});
-	if (!response.ok) {
-		const details = (await response.text()).trim();
-		throw new Error(
-			`IndexNow rejected ${urls.length} URL(s): HTTP ${response.status}${details ? ` (${details})` : ''}.`
-		);
+	await verifyIndexNowOwnership(payload, fetchImpl);
+	let response;
+	try {
+		response = await fetchImpl(INDEXNOW_ENDPOINT, {
+			method: 'POST',
+			headers: {
+				accept: 'application/json, text/plain;q=0.9',
+				'content-type': 'application/json; charset=utf-8'
+			},
+			body: JSON.stringify(payload),
+			signal: AbortSignal.timeout(INDEXNOW_REQUEST_TIMEOUT_MS)
+		});
+	} catch {
+		throw new Error('IndexNow submission request failed or timed out.');
+	}
+	if (response.status !== 200 && response.status !== 202) {
+		// Do not echo an upstream body: it can reflect the credential-bearing payload.
+		throw new Error(`IndexNow rejected ${urls.length} URL(s): HTTP ${response.status}.`);
 	}
 
 	await saveSitemap(options.saveSitemapFile, sitemapXml);

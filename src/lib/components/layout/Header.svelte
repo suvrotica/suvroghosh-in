@@ -74,15 +74,15 @@
 <svelte:window onkeydown={handleWindowKeydown} />
 
 <header
-	class="relative sticky top-0 z-40 border-b border-neutral-300/90 bg-neutral-100/95 pt-[env(safe-area-inset-top)] shadow-[0_1px_0_rgb(255_255_255/0.6)] backdrop-blur-md transition-colors dark:border-neutral-700/90 dark:bg-neutral-950/95 dark:shadow-none print:hidden"
+	class="site-header relative sticky top-0 z-40 border-b border-neutral-300/90 bg-neutral-100/95 pt-[env(safe-area-inset-top)] shadow-[0_1px_0_rgb(255_255_255/0.6)] backdrop-blur-md transition-colors dark:border-neutral-700/90 dark:bg-neutral-950/95 dark:shadow-none print:hidden"
 >
 	<div
-		class="container mx-auto flex min-h-18 items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+		class="container mx-auto flex min-h-18 flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
 	>
 		<a
 			href={resolve('/')}
 			onclick={closeMobile}
-			class="group shrink-0 rounded-sm text-neutral-950 outline-offset-4 dark:text-neutral-50"
+			class="site-brand group max-w-full min-w-0 rounded-sm text-neutral-950 outline-offset-4 dark:text-neutral-50"
 			aria-label="SuvroGhosh.IN — home"
 		>
 			<span class="block font-sans text-lg leading-none font-bold tracking-tight sm:text-xl">
@@ -99,7 +99,7 @@
 			</span>
 		</a>
 
-		<nav class="hidden items-center gap-4 xl:flex xl:gap-5" aria-label="Primary navigation">
+		<nav class="desktop-navigation items-center gap-5" aria-label="Primary navigation">
 			{#each navLinks as link (link.href)}
 				<a
 					href={resolve(link.href)}
@@ -111,7 +111,7 @@
 			{/each}
 		</nav>
 
-		<div class="flex items-center gap-2 sm:gap-3">
+		<div class="flex max-w-full min-w-0 flex-wrap items-center gap-2 sm:gap-3">
 			<CommandPalette />
 
 			<a
@@ -135,15 +135,15 @@
 				<span class="sr-only">, opens in a new tab</span>
 			</a>
 
-			<div class="hidden xl:block">
+			<div class="desktop-preference">
 				<ThemeSelect id="desktop-theme" />
 			</div>
 
-			<div class="hidden xl:block">
+			<div class="desktop-preference">
 				<MotionSelect id="desktop-motion" />
 			</div>
 
-			<details bind:this={mobileMenu} class="group xl:hidden">
+			<details bind:this={mobileMenu} class="mobile-navigation group">
 				<summary
 					bind:this={menuSummary}
 					class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-md text-neutral-800 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-200 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950 [&::-webkit-details-marker]:hidden"
@@ -180,10 +180,12 @@
 				</summary>
 
 				<nav
-					class="absolute inset-x-0 top-full hidden max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-b border-neutral-300 bg-neutral-100 px-4 py-4 shadow-xl group-open:block sm:px-6 dark:border-neutral-700 dark:bg-neutral-950"
+					class="absolute inset-x-0 top-full hidden max-h-[calc(100dvh-100%)] overflow-y-auto border-t border-b border-neutral-300 bg-neutral-100 px-4 py-4 shadow-xl group-open:block sm:px-6 dark:border-neutral-700 dark:bg-neutral-950"
 					aria-label="Mobile and tablet navigation"
 				>
-					<ul class="container mx-auto grid gap-1 sm:grid-cols-2 sm:gap-2 lg:max-w-3xl">
+					<ul
+						class="container mx-auto grid min-w-0 grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-2 lg:max-w-3xl"
+					>
 						{#each navLinks as link (link.href)}
 							<li>
 								<a
@@ -224,3 +226,32 @@
 		</div>
 	</div>
 </header>
+
+<style>
+	.site-header {
+		container: site-header / inline-size;
+	}
+	.site-brand {
+		overflow-wrap: anywhere;
+	}
+	.desktop-navigation,
+	.desktop-preference {
+		display: none;
+	}
+	.mobile-navigation {
+		display: block;
+	}
+	/* Container rem units follow the reader's text size; viewport media-query
+	   rem units use the initial font size and can expose a row that no longer fits. */
+	@container site-header (min-width: 80rem) {
+		.desktop-navigation {
+			display: flex;
+		}
+		.desktop-preference {
+			display: block;
+		}
+		.mobile-navigation {
+			display: none;
+		}
+	}
+</style>

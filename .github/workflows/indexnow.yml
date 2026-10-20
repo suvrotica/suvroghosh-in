@@ -26,12 +26,15 @@ jobs:
       - name: Check out the deployed revision
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.deployment.ref || github.ref }}
+          ref: ${{ github.event.deployment.sha || github.sha }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
+
+      - name: Test IndexNow submission contracts
+        run: node --test scripts/indexnow.test.mjs
 
       - name: Restore the previous production sitemap
         uses: actions/cache@v4

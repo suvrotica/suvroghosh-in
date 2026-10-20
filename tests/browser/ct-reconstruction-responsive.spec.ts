@@ -6,6 +6,91 @@ const breakpointWidths = [
 	1256, 1257, 1300, 1440
 ];
 
+for (const path of ['/', '/blog']) {
+	test(`shared navigation fits and preserves keyboard access with enlarged text on ${path}`, async ({
+		page
+	}) => {
+		await page.setViewportSize({ width: 2000, height: 1000 });
+		await page.goto(path, { waitUntil: 'domcontentloaded' });
+		await page.evaluate(() => document.fonts.ready);
+		const header = page.locator('.site-header');
+		const primary = header.getByRole('navigation', { name: 'Primary navigation', exact: true });
+		const mobile = header.getByRole('navigation', {
+			name: 'Mobile and tablet navigation',
+			exact: true
+		});
+		const summary = header.locator('summary');
+		const brand = header.getByRole('link', { name: 'SuvroGhosh.IN — home', exact: true });
+
+		for (const textSize of [100, 200]) {
+			await page.evaluate((percent) => {
+				document.documentElement.style.fontSize = `${percent}%`;
+			}, textSize);
+			for (const width of [390, 1280, 2000, 2560]) {
+				await page.setViewportSize({ width, height: 1000 });
+				const desktop = width >= (1280 * textSize) / 100;
+				await expect(primary).toBeVisible({ visible: desktop });
+				await expect(summary).toBeVisible({ visible: !desktop });
+				const geometry = await header.evaluate((element) => ({
+					overflow: element.scrollWidth - element.clientWidth,
+					children: Array.from(element.firstElementChild!.children)
+						.filter((child) => child.getBoundingClientRect().width > 0)
+						.map((child) => {
+							const rect = child.getBoundingClientRect();
+							return { left: rect.left, right: rect.right };
+						})
+				}));
+				expect(
+					geometry.overflow,
+					`${path}, ${width}px, ${textSize}% header overflow`
+				).toBeLessThanOrEqual(1);
+				for (const child of geometry.children) {
+					expect(child.left).toBeGreaterThanOrEqual(-1);
+					expect(child.right).toBeLessThanOrEqual(width + 1);
+				}
+				await brand.focus();
+				await page.keyboard.press('Tab');
+				if (desktop) {
+					await expect(
+						primary.getByRole('link', { name: 'Start Here', exact: true })
+					).toBeFocused();
+					await expect(header.getByRole('link', { name: 'Start Here', exact: true })).toHaveCount(
+						1
+					);
+				} else {
+					await expect(
+						header.getByRole('link', { name: 'Open search and shortcuts', exact: true })
+					).toBeFocused();
+					await expect(header.getByRole('link', { name: 'Start Here', exact: true })).toHaveCount(
+						0
+					);
+					await summary.focus();
+					await page.keyboard.press('Enter');
+					await expect(mobile).toBeVisible();
+					await expect(header.getByRole('link', { name: 'Start Here', exact: true })).toHaveCount(
+						1
+					);
+					const menuOverflow = await mobile.evaluate(
+						(element) => element.scrollWidth - element.clientWidth
+					);
+					expect(
+						menuOverflow,
+						`${path}, ${width}px, ${textSize}% menu overflow`
+					).toBeLessThanOrEqual(1);
+					const menuBox = await mobile.boundingBox();
+					expect(menuBox!.y + menuBox!.height).toBeLessThanOrEqual(1001);
+					for (const label of ['Appearance', 'Motion']) {
+						await expect(mobile.getByLabel(label, { exact: true })).toBeVisible();
+					}
+					await page.keyboard.press('Escape');
+					await expect(mobile).toBeHidden();
+					await expect(summary).toBeFocused();
+				}
+			}
+		}
+	});
+}
+
 async function openLaboratory(page: Page, width = 1440, height = 1000) {
 	await page.setViewportSize({ width, height });
 	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });

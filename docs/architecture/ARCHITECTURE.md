@@ -239,14 +239,36 @@ Supabase rows are manually described/asserted in `repository.ts`; clients do not
 | Resend contact email                  | `/contact` server action; server environment API key, sender and recipient. Normal HTML form with optional `use:enhance`.                                                                                                      |
 | Chatterbox speech                     | `/api/tts/chatterbox` server proxy; private endpoint/key/model/voice settings; optional browser visibility flag. Supports native/OpenAI-compatible request mapping and WAV/MP3/Opus choices; accepts upstream `audio/*` bytes. |
 | Supabase                              | Server-only URL/publishable/service credentials and owner UUID. Browser drafts are local Dexie data; browser code does not receive a service-role client.                                                                      |
-| IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots and submits changed URLs using a repository secret.                                                                                      |
+| IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots, verifies live ownership against the repository secret, and submits changed URLs only after that proof matches.                          |
 | Vercel analytics / speed insights     | Root layout browser initialization; CSP allows the named Vercel endpoints.                                                                                                                                                     |
 | YouTube and static notebooks          | CSP permits self/YouTube frame destinations; notebook HTML uses a sandboxed iframe. Compatibility with Vercel's blanket frame-denial response header needs deployed-header/browser verification.                               |
 | Jupyter/Mojo and Python asset tooling | Author/build tools, not request-time notebook execution.                                                                                                                                                                       |
 
+For each nonempty live IndexNow submission, `scripts/indexnow.mjs` first fetches the canonical
+secret-backed verification URL with redirects rejected and a 15-second deadline. It requires
+HTTP 200, `text/plain` and an exact streamed byte match to the configured ASCII key, rejecting
+an oversized body immediately without buffering it in full. Only then does it POST the canonical URLs, with its own
+15-second deadline. HTTP 200 or 202 permits saving the successful sitemap snapshot; ownership,
+network and provider failures preserve the prior snapshot. An unchanged sitemap needs no POST.
+Dry runs validate the payload without the ownership request. Diagnostic errors omit the key,
+verification URL and response bodies. Vercel's production environment and the GitHub repository
+secret must contain the same value, and a Vercel variable change requires a new deployment.
+The workflow checks out the deployment SHA and runs the dependency-free submission contract tests.
+
+```mermaid
+flowchart LR
+    Sitemaps["Live sitemap / previous successful snapshot"] --> Delta["Changed canonical URLs"]
+    Delta --> Proof["Live ownership proof matches Actions key"]
+    Production["Vercel production key"] --> Route["Server-only verification route"]
+    Route --> Proof
+    Actions["GitHub repository key"] --> Proof
+    Proof -->|exact match| Submit["IndexNow POST"]
+    Submit -->|HTTP 200 or 202| Snapshot["Save successful sitemap snapshot"]
+```
+
 `.env.example` is the public configuration inventory. Its entries have no real secrets. `PUBLIC_ENABLE_CHATTERBOX_TTS` is a browser-readable feature setting currently consumed through `$env/dynamic/public`; it is not authorization to use the speech endpoint. This is an existing exception to the preference for static public imports for build-time flags. Private environment imports belong only in server routes, hooks, scripts or `$lib/server`. For new build flags prefer `$env/static/public` and document visitor visibility.
 
-No audit inspected real secret values, live provider configuration, Vercel overrides, production Supabase settings or account quotas. `supabase/config.toml` is a development template, not production-state evidence.
+The forensic architecture audit did not inspect real secret values, live provider configuration, Vercel overrides, production Supabase settings or account quotas. `supabase/config.toml` is a development template, not production-state evidence.
 
 ## 9. Security, errors and validation
 

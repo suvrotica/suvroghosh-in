@@ -69,6 +69,18 @@ places:
 Rotate any key that has previously been committed or otherwise disclosed. The verification URL is
 `https://www.suvroghosh.in/<INDEXNOW_KEY>.txt`; do not publish that URL separately.
 
+After setting or rotating the Vercel variable, create a new production deployment; environment
+changes do not update an existing deployment. Before each live submission, the script checks that
+the deployed verification route returns HTTP 200, `text/plain`, and exactly the configured key.
+Verification and submission requests each have a 15-second deadline. A failed ownership check
+prevents the POST and leaves the previous successful sitemap snapshot intact. Errors omit the
+key, its verification URL, and upstream response bodies.
+
+Run `npm run indexnow:test` for the isolated protocol and ownership checks. A `--dry-run` validates
+the URL payload without checking live ownership or submitting it. After deployment, the production
+workflow checks ownership and submits the main and Notes sitemap families separately. HTTP 200
+confirms receipt; HTTP 202 means receipt with key validation pending. Neither confirms indexing.
+
 ## Building
 
 To create a production version of your app:
