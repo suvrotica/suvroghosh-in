@@ -14734,6 +14734,37 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/mrinmoyee-the-durga-atelier.md": {
+			"bodyHash": "815e05390e09986b93ba37e692ee4f88d15b241227856b08a35fd20c98203a29",
+			"hashVersion": 2,
+			"revisionHash": "5da55e9ce07f99fa2dd9104974b3788981718e6d579f0c9c843e05cce22c5745",
+			"generatedTags": [
+				"Durga Puja",
+				"Bengali Art",
+				"Generative Art",
+				"Interactive Art",
+				"Sculpture",
+				"Procedural Modelling",
+				"Three.js",
+				"Kumartuli",
+				"Digital Craft",
+				"Creative Coding"
+			],
+			"pinnedTags": [
+				"Durga Puja",
+				"Bengali Art",
+				"Generative Art",
+				"Interactive Art",
+				"Sculpture",
+				"Procedural Modelling",
+				"Three.js",
+				"Kumartuli",
+				"Digital Craft",
+				"Creative Coding"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-20"
 		}
 	},
 	"maxTags": 10

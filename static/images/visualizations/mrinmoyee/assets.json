@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "sourceHash": "476337f2ac1cba6a33c9561286be47cbf555f86244786e8b708b18518f246268",
+  "provenance": "Actual Three.js renderer captures. Social typography is composited over the rendered sculpture.",
+  "files": {
+    "mrinmoyee-poster.jpg": {
+      "width": 1200,
+      "height": 1050,
+      "bytes": 134983
+    },
+    "preset-kumartuli.jpg": {
+      "width": 400,
+      "height": 350,
+      "bytes": 18734
+    },
+    "preset-shola-vermilion.jpg": {
+      "width": 400,
+      "height": 350,
+      "bytes": 26004
+    },
+    "preset-golden-evening.jpg": {
+      "width": 400,
+      "height": 350,
+      "bytes": 26220
+    },
+    "preset-terracotta.jpg": {
+      "width": 400,
+      "height": 350,
+      "bytes": 20785
+    },
+    "preset-moonlit-silver.jpg": {
+      "width": 400,
+      "height": 350,
+      "bytes": 24747
+    },
+    "preset-contemporary.jpg": {
+      "width": 400,
+      "height": 350,
+      "bytes": 24969
+    },
+    "mrinmoyee-social.jpg": {
+      "width": 1200,
+      "height": 630,
+      "bytes": 77218
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T10:08:42.586050+00:00",
+  "generatedAt": "2026-10-20T11:34:41.735669+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6645,6 +6645,29 @@
         "Horizontal",
         "Humidity",
         "Refuses"
+      ],
+      "wordCount": 130
+    },
+    "mrinmoyee-the-durga-atelier": {
+      "generatedAt": "2026-10-20T11:34:40.485989+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/mrinmoyee-the-durga-atelier.svg",
+      "source": "src/lib/posts/mrinmoyee-the-durga-atelier.md",
+      "sourceHash": "66a82bd15bf61a3538b7442a5c1306ef8e34946f3d9ee3f8f3ca53bd39d1c87f",
+      "sourceModified": "2026-10-20T11:16:08.392494+00:00",
+      "topWords": [
+        "Composition",
+        "Sculpture",
+        "Light",
+        "Ornament",
+        "Keep",
+        "Face",
+        "Durga",
+        "Crown",
+        "Material",
+        "Arms",
+        "Atelier",
+        "Lamps"
       ],
       "wordCount": 130
     },

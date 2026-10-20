@@ -4808,6 +4808,62 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/mrinmoyee/mrinmoyee-poster.jpg",
+			"src": "/images/visualizations/mrinmoyee/mrinmoyee-poster.jpg",
+			"bytes": 108601,
+			"width": 1200,
+			"height": 1050
+		},
+		{
+			"name": "visualizations/mrinmoyee/mrinmoyee-social.jpg",
+			"src": "/images/visualizations/mrinmoyee/mrinmoyee-social.jpg",
+			"bytes": 61976,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/mrinmoyee/preset-contemporary.jpg",
+			"src": "/images/visualizations/mrinmoyee/preset-contemporary.jpg",
+			"bytes": 21081,
+			"width": 400,
+			"height": 350
+		},
+		{
+			"name": "visualizations/mrinmoyee/preset-golden-evening.jpg",
+			"src": "/images/visualizations/mrinmoyee/preset-golden-evening.jpg",
+			"bytes": 22133,
+			"width": 400,
+			"height": 350
+		},
+		{
+			"name": "visualizations/mrinmoyee/preset-kumartuli.jpg",
+			"src": "/images/visualizations/mrinmoyee/preset-kumartuli.jpg",
+			"bytes": 16336,
+			"width": 400,
+			"height": 350
+		},
+		{
+			"name": "visualizations/mrinmoyee/preset-moonlit-silver.jpg",
+			"src": "/images/visualizations/mrinmoyee/preset-moonlit-silver.jpg",
+			"bytes": 20457,
+			"width": 400,
+			"height": 350
+		},
+		{
+			"name": "visualizations/mrinmoyee/preset-shola-vermilion.jpg",
+			"src": "/images/visualizations/mrinmoyee/preset-shola-vermilion.jpg",
+			"bytes": 21427,
+			"width": 400,
+			"height": 350
+		},
+		{
+			"name": "visualizations/mrinmoyee/preset-terracotta.jpg",
+			"src": "/images/visualizations/mrinmoyee/preset-terracotta.jpg",
+			"bytes": 16270,
+			"width": 400,
+			"height": 350
+		},
+		{
 			"name": "visualizations/prior-authorization-machine.png",
 			"src": "/images/visualizations/prior-authorization-machine.png",
 			"bytes": 78492,

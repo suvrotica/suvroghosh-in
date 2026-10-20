@@ -22,7 +22,8 @@ const featureChecks = [
 	'bz:checkpoint-posters:check',
 	'bz:manifest:check',
 	'prior-authorization:assets:check',
-	'strange-attractor-orchestra:assets:check'
+	'strange-attractor-orchestra:assets:check',
+	'mrinmoyee:assets:check'
 ];
 
 // Resolve reachable npm scripts, including npm's automatic pre/post lifecycle hooks.
