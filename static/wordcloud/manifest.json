@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T07:45:46.752989+00:00",
+  "generatedAt": "2026-10-20T10:08:42.586050+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12349,6 +12349,29 @@
         "Already",
         "Intelligence",
         "Systems"
+      ],
+      "wordCount": 130
+    },
+    "the-machines-insides": {
+      "generatedAt": "2026-10-20T10:08:42.444800+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-machines-insides.svg",
+      "source": "src/lib/posts/the-machines-insides.md",
+      "sourceHash": "807656c82df52ec75ba61b8595c3b091f93139c7f7d5282993d388ee066f9c0f",
+      "sourceModified": "2026-10-20T10:08:18.366812+00:00",
+      "topWords": [
+        "Explanation",
+        "Model",
+        "Useful",
+        "Investigate",
+        "Behavior",
+        "Understanding",
+        "Cammarata",
+        "Research",
+        "Machinery",
+        "Understand",
+        "Internal",
+        "Answer"
       ],
       "wordCount": 130
     },

@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/art-the-machines-insides.jpg": {
+      "format": "JPEG",
+      "height": 940,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 940,
+      "originalWidth": 1672,
+      "outputBytes": 274012,
+      "outputHash": "edb44da9294800da3eebcfe4752374c3be8a6d68ac46b941f0d52280089df444",
+      "psnrDb": 35.4,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 356465,
+      "sourceHash": "8206546f897785df8fab16c891f2edfb417f2edad630cd05c427ad86f7954999",
+      "width": 1672
+    },
     "static/images/ashruto-the-unheard.jpg": {
       "format": "JPEG",
       "height": 576,

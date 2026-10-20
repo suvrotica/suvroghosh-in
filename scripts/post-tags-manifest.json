@@ -14704,6 +14704,36 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-machines-insides.md": {
+			"bodyHash": "c618b41e8b331dba0012b1829d2e3c07c95d8d7857a6500a76483046e5686502",
+			"hashVersion": 2,
+			"revisionHash": "b730971f88622cd7253524a8bf3b8daaa9055e3484c32d72527efce48a0865bb",
+			"generatedTags": [
+				"AI",
+				"Science",
+				"Neurons",
+				"Interpretability",
+				"Alignment",
+				"Research",
+				"Technology",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"AI",
+				"Science",
+				"Neurons",
+				"Interpretability",
+				"Alignment",
+				"Research",
+				"Technology",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
