@@ -18,7 +18,9 @@ export default defineConfig({
 	use: {
 		baseURL,
 		browserName: 'chromium',
-		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? undefined : 'chrome'),
+		// Use full Chromium's headless mode in CI; the standalone shell crashes
+		// while creating later test contexts after these navigation/canvas checks.
+		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? 'chromium' : 'chrome'),
 		headless: true,
 		hasTouch: true,
 		trace: 'retain-on-failure',
