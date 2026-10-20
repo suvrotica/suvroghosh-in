@@ -2,6 +2,20 @@
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
+## Architecture & Engineering Standards
+
+The [canonical architecture reference](docs/architecture/ARCHITECTURE.md) describes the current
+system design, module boundaries, state and data flow, rendering, security, engineering patterns,
+and major technical decisions. The [forensic audit](docs/architecture/FORENSIC_AUDIT.md) contains
+evidence-backed findings and a prioritized remediation roadmap; its
+[coverage inventory](docs/architecture/AUDIT_COVERAGE.md) states inspection limits.
+
+Follow the mandatory [architecture change gate](CONTRIBUTING.md#architecture-change-gate) for
+structural or foundational changes. Review and update affected architecture sections in the same
+change, and include an architecture-impact declaration and rationale in the PR description.
+Agent instructions are in [AGENTS.md](AGENTS.md); significant decisions are recorded as
+[ADRs](docs/architecture/decisions/README.md).
+
 ## Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!

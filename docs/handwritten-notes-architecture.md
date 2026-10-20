@@ -2,6 +2,11 @@ This document describes the implementation in this repository as of 23 July 2026
 the code exists in the repository; production-dependent behaviour still requires the Supabase
 migration, secrets, owner account, cron job, and Vercel deployment described below.
 
+For the current cross-cutting architecture, installed framework versions, and known defects, see
+the [canonical architecture reference](architecture/ARCHITECTURE.md) and
+[forensic audit](architecture/FORENSIC_AUDIT.md). The initial stack table below records the
+feature's original technology choices; it is not the current lockfile version inventory.
+
 # 1. Assumptions and questions that materially affect the architecture
 
 The implementation makes these deliberate assumptions:
@@ -58,8 +63,9 @@ Current, explicitly accepted limitations:
 
 # 2. Recommended technology stack, reasons, and current alternatives
 
-The repository uses stable, production-oriented packages with permissive licences. Versions below
-are the versions currently declared in `package.json`, not a promise to upgrade automatically.
+The original feature chose production-oriented packages with permissive licences. The table below
+preserves those initial stack choices; current installed and locked versions are recorded in the
+[canonical architecture reference](architecture/ARCHITECTURE.md#3-toolchain-ground-truth).
 
 | Concern                | Implemented choice                                    | Why it fits                                                                                                                        | Practical alternative                                                                         |
 | ---------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
@@ -339,8 +345,9 @@ HMAC-SHA-256 recovery grant, domain-separated from the durable throttle hashes a
 `NOTES_RATE_LIMIT_SALT`. A normal owner session without that grant cannot use the reset form.
 After a matching 12–128-character password pair is accepted by Supabase, the grant is deleted,
 all refresh sessions are revoked, and the owner must sign in again. All owner-auth pages are
-`private, no-store`, `noindex`, and `Referrer-Policy: no-referrer`; the service worker never handles
-them.
+`private, no-store` and `noindex`; the service worker never handles them. Referrer policy is
+`no-referrer` while a recovery token or callback secret remains in the URL, then `same-origin`
+on clean auth pages so native same-origin form submissions keep their Origin semantics.
 
 Public users have no session requirement. Anonymous RLS exposes only snapshots where
 `activated_at IS NOT NULL AND revoked_at IS NULL`. Draft/private/scheduled rows and the mutable

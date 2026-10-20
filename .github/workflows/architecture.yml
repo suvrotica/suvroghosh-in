@@ -1,0 +1,63 @@
+name: Architecture documentation
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  architecture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # This event uses the trusted workflow. Never check out or execute PR-head code.
+      - name: Check out the trusted base revision
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.base.sha }}
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Fetch the pull request as Git objects only
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { execFileSync } from 'node:child_process';
+          import { appendFileSync, readFileSync } from 'node:fs';
+
+          const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
+          const base = event.pull_request?.base?.sha;
+          const head = event.pull_request?.head?.sha;
+          const number = event.number;
+          if (![base, head].every((sha) => typeof sha === 'string' && /^[a-f0-9]{40,64}$/.test(sha))) {
+            throw new Error('Pull request base/head revisions are unavailable.');
+          }
+          if (!Number.isSafeInteger(number) || number <= 0) {
+            throw new Error('A valid numeric pull request identifier is required.');
+          }
+          const git = (...args) => execFileSync('git', args, { encoding: 'utf8' });
+          if (git('rev-parse', 'HEAD').trim() !== base) {
+            throw new Error('The working tree must remain at the trusted base revision.');
+          }
+          // Fetching stores untrusted content as objects; it never installs a PR worktree.
+          git('fetch', '--no-tags', '--no-recurse-submodules', 'origin',
+            `refs/pull/${number}/head:refs/architecture/pr-head`);
+          const fetched = git('rev-parse', '--verify', 'refs/architecture/pr-head^{commit}').trim();
+          if (fetched !== head) {
+            throw new Error('Fetched PR head differs from the event. Rerun for the current revision.');
+          }
+          appendFileSync(process.env.GITHUB_ENV,
+            `ARCHITECTURE_BASE_SHA=${base}\nARCHITECTURE_HEAD_SHA=${head}\n`);
+          NODE
+
+      - name: Run trusted base gate regression fixtures
+        run: node --test scripts/check-architecture.test.mjs
+
+      - name: Check architecture documentation using the trusted base gate
+        run: node scripts/check-architecture.mjs --base "$ARCHITECTURE_BASE_SHA" --head "$ARCHITECTURE_HEAD_SHA"
