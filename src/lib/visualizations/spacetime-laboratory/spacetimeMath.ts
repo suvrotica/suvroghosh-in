@@ -40,10 +40,32 @@ export function schwarzschildTimeDilation(radius: number, schwarzschildRadius = 
 	return Math.sqrt(1 - ratio);
 }
 
-/** Kerr outer horizon r_+ = M + sqrt(M^2 - a^2), geometrized units. */
+/** Kerr outer horizon r_+ = M(1 + sqrt(1 - spin²)); spin = a/M. */
 export function kerrHorizonRadius(spin: number, geometrizedMass = 1): number {
 	const clamped = clampSpin(spin);
-	return geometrizedMass + Math.sqrt(Math.max(0, geometrizedMass ** 2 - clamped ** 2));
+	return geometrizedMass * (1 + Math.sqrt(1 - clamped ** 2));
+}
+
+/** Prograde equatorial Kerr ISCO, with dimensionless spin a/M. */
+export function kerrIscoRadius(spin: number, geometrizedMass = 1): number {
+	const a = clampSpin(spin);
+	const z1 = 1 + Math.cbrt(1 - a * a) * (Math.cbrt(1 + a) + Math.cbrt(1 - a));
+	const z2 = Math.sqrt(3 * a * a + z1 * z1);
+	return geometrizedMass * (3 + z2 - Math.sqrt((3 - z1) * (3 + z1 + 2 * z2)));
+}
+
+/** Clock at fixed Boyer–Lindquist spatial coordinates; no static worldline in the ergoregion. */
+export function kerrStaticTimeDilation(
+	radius: number,
+	spin: number,
+	polarAngleRadians: number,
+	geometrizedMass = 1
+): number | null {
+	if (radius <= 0) return null;
+	const a = clampSpin(spin) * geometrizedMass;
+	const sigma = radius * radius + a * a * Math.cos(polarAngleRadians) ** 2;
+	const lapseSquared = 1 - (2 * geometrizedMass * radius) / sigma;
+	return lapseSquared > 0 ? Math.sqrt(lapseSquared) : null;
 }
 
 /** Kerr equatorial ergosphere radius r_e = M + sqrt(M^2 - a^2 cos^2θ) at θ = π/2 = 2M. */
@@ -51,7 +73,7 @@ export function kerrErgosphereEquator(geometrizedMass = 1): number {
 	return 2 * geometrizedMass;
 }
 
-/** Maximum physical dimensionless spin (near-extremal Kerr). */
+/** Display cap for near-extremal Kerr; the exact Kerr bound is |a/M| <= 1. */
 export const EXTREMAL_SPIN = 0.998;
 
 export function clampSpin(spin: number): number {
@@ -73,6 +95,39 @@ export function rnHorizonRadii(
 	if (discriminant < 0) return null;
 	const root = Math.sqrt(discriminant);
 	return { outer: geometrizedMass + root, inner: geometrizedMass - root };
+}
+
+/** Static RN clock relative to infinity; null where a static worldline is impossible. */
+export function reissnerNordstromTimeDilation(
+	radius: number,
+	normalizedCharge = 0,
+	geometrizedMass = 1
+): number | null {
+	if (radius <= 0) return null;
+	const q = normalizedCharge * geometrizedMass;
+	const f = 1 - (2 * geometrizedMass) / radius + (q * q) / (radius * radius);
+	return f > 0 ? Math.sqrt(f) : null;
+}
+
+/** Outer unstable RN photon sphere, if the discriminant is non-negative. */
+export function rnPhotonSphereRadius(normalizedCharge: number, geometrizedMass = 1): number | null {
+	const discriminant = 9 - 8 * normalizedCharge * normalizedCharge;
+	return discriminant < 0 ? null : (geometrizedMass * (3 + Math.sqrt(discriminant))) / 2;
+}
+
+/** Outermost marginally stable timelike orbit of a subextremal RN black hole. */
+export function rnIscoRadius(normalizedCharge: number, geometrizedMass = 1): number | null {
+	if (Math.abs(normalizedCharge) > 1) return null;
+	const q2 = normalizedCharge * normalizedCharge;
+	let low = 4;
+	let high = 6;
+	for (let i = 0; i < 64; i++) {
+		const r = (low + high) / 2;
+		const polynomial = r ** 3 - 6 * r ** 2 + 9 * q2 * r - 4 * q2 * q2;
+		if (polynomial > 0) high = r;
+		else low = r;
+	}
+	return (geometrizedMass * (low + high)) / 2;
 }
 
 /**
@@ -110,10 +165,10 @@ export function scaleFactorSingleFluid(
 	t: number,
 	dominant: 'matter' | 'radiation' | 'lambda'
 ): number {
+	if (dominant === 'lambda') return Math.exp(t - 1);
 	if (t <= 0) return 0;
 	if (dominant === 'matter') return Math.pow(t, 2 / 3);
-	if (dominant === 'radiation') return Math.pow(t, 1 / 2);
-	return Math.exp(t - 1);
+	return Math.sqrt(t);
 }
 
 /** Cosmological redshift 1 + z = a_observed / a_emitted. */
@@ -131,8 +186,8 @@ export function deSitterHorizon(hubbleNormalized: number): number {
 /**
  * Gravitational-wave ring deformation. For a plus-polarized wave travelling
  * along z, a ring of test particles in the xy-plane stretches along x and
- * squeezes along y with strain h(t) = h0 cos(ωt + φ). Cross polarization is
- * the same pattern rotated by 45°.
+ * squeezes along y by h(t)/2, where h(t) = h0 cos(ωt + φ). Cross polarization
+ * is the same pattern rotated by 45°.
  */
 export function gwRingDisplacement(
 	angle: number,
@@ -141,18 +196,19 @@ export function gwRingDisplacement(
 	polarization: 'plus' | 'cross'
 ): { x: number; y: number } {
 	const h = strain * Math.cos(phase);
-	// Plus polarization: r -> 1 + (h/2) cos(2θ). Cross is the same rotated 45°.
-	const rotated = polarization === 'cross' ? angle - Math.PI / 4 : angle;
-	const radial = 1 + 0.5 * h * Math.cos(2 * rotated);
-	return { x: Math.cos(angle) * radial, y: Math.sin(angle) * radial };
+	const x = Math.cos(angle);
+	const y = Math.sin(angle);
+	return polarization === 'plus'
+		? { x: x * (1 + h / 2), y: y * (1 - h / 2) }
+		: { x: x + (h * y) / 2, y: y + (h * x) / 2 };
 }
 
 /** Physical strain of a typical LIGO-band binary inspiral (order of magnitude). */
 export const PHYSICAL_GW_STRAIN = 1e-21;
 
-/** Schwarzschild-mode camera radius limits in units of rs, for control clamping. */
-export const OBSERVER_MIN_RADIUS_RS = 1.05;
-export const OBSERVER_MAX_RADIUS_RS = 40;
+/** Camera areal radius limits in M units; keep static Schwarzschild observers outside 2M. */
+export const OBSERVER_MIN_RADIUS_M = 2.1;
+export const OBSERVER_MAX_RADIUS_M = 40;
 
 export function clamp(value: number, min: number, max: number): number {
 	return Math.min(max, Math.max(min, value));

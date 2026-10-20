@@ -9,7 +9,6 @@
 	import SpacetimeComparison from './SpacetimeComparison.svelte';
 	import WebGLFallback from '$lib/components/visualizations/WebGLFallback.svelte';
 	import { createSpacetimeStore } from '$lib/visualizations/spacetime-laboratory/spacetimeStore.svelte';
-	import { supportsWebGL } from '$lib/visualizations/webgl';
 
 	type Props = {
 		title?: string;
@@ -28,13 +27,34 @@
 	const store = createSpacetimeStore();
 
 	let webglError = $state<string | null>(null);
-	let webglAvailable = $state(true);
+	let mounted = $state(false);
+	let webglDisabled = $state(false);
+	let rendererAttempt = $state(0);
 	let shareCopied = $state(false);
 	let saveMessage = $state('');
 	let captureRef = $state<(() => string | null) | null>(null);
 	let shell: HTMLElement;
+	let viewport: HTMLDivElement;
 	let showControls = $state(true);
 	let uid = $props.id();
+	const distanceModels = ['minkowski', 'weak-field', 'schwarzschild', 'kerr', 'reissner-nordstrom'];
+	let hasDistance = $derived(
+		distanceModels.includes(store.state.model) ||
+			(store.state.compare && distanceModels.includes(store.state.compareModel))
+	);
+	let fallbackTitle = $derived(
+		webglDisabled
+			? 'WebGL disabled by this link'
+			: /WebGL2.*unavailable|could not create.*context/i.test(webglError ?? '')
+				? 'WebGL2 unavailable'
+				: 'Spacetime renderer stopped'
+	);
+
+	function retryRenderer() {
+		captureRef = null;
+		webglError = null;
+		rendererAttempt += 1;
+	}
 
 	function handleSave() {
 		const data = captureRef?.();
@@ -72,8 +92,7 @@
 	}
 
 	function handleKeydown(event: KeyboardEvent) {
-		if (event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement)
-			return;
+		if (event.target !== viewport || event.altKey || event.ctrlKey || event.metaKey) return;
 		const obs = store.state.observer;
 		const step = event.shiftKey ? 10 : 2;
 		switch (event.key) {
@@ -91,10 +110,12 @@
 				break;
 			case '+':
 			case '=':
-				store.setObserver('distance', obs.distance - 0.5);
+				if (hasDistance) store.setObserver('distance', obs.distance - 0.5);
+				else store.setObserver('fieldOfViewDeg', obs.fieldOfViewDeg - 2);
 				break;
 			case '-':
-				store.setObserver('distance', obs.distance + 0.5);
+				if (hasDistance) store.setObserver('distance', obs.distance + 0.5);
+				else store.setObserver('fieldOfViewDeg', obs.fieldOfViewDeg + 2);
 				break;
 			case ' ':
 				store.update({ playing: !store.state.playing });
@@ -106,15 +127,13 @@
 	}
 
 	onMount(() => {
-		webglAvailable = supportsWebGL();
-		if (!webglAvailable) webglError = 'WebGL is unavailable in this browser.';
+		webglDisabled = new URLSearchParams(window.location.search).get('webgl') === 'off';
+		mounted = true;
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 			store.update({ playing: false });
 		}
 	});
 </script>
-
-<svelte:window onkeydown={handleKeydown} />
 
 <section
 	bind:this={shell}
@@ -137,33 +156,55 @@
 		</div>
 	</header>
 
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions (The application viewport deliberately accepts focus for its documented camera and playback keyboard commands.) -->
 	<div
+		bind:this={viewport}
 		class="lab-canvas-frame"
 		role="application"
+		tabindex="0"
+		onkeydown={handleKeydown}
 		aria-label="Spacetime laboratory viewport. Arrow keys orbit the observer, plus and minus zoom, space pauses."
 	>
-		{#if webglAvailable && !webglError}
-			<SpacetimeCanvas
-				{store}
-				onwebglerror={(m) => (webglError = m)}
-				oncapture={(fn) => (captureRef = fn)}
-			/>
+		{#if !mounted}
+			<img src={poster} alt={posterAlt} class="noscript-poster" />
+		{:else if !webglDisabled && !webglError}
+			{#key rendererAttempt}
+				<SpacetimeCanvas
+					{store}
+					onwebglerror={(message) => {
+						captureRef = null;
+						webglError = message;
+					}}
+					oncapture={(fn) => (captureRef = fn)}
+				/>
+			{/key}
 			<div class="lab-hud" aria-hidden="true">
 				<span>{store.state.model.replace(/-/g, ' ')}</span>
-				<span
-					>r = {store.state.observer.distance.toFixed(1)} r_s · θ = {store.state.observer.elevationDeg.toFixed(
-						0
-					)}°</span
-				>
+				{#if hasDistance}
+					<span
+						>r = {store.state.observer.distance.toFixed(1)} M · θ = {store.state.observer.elevationDeg.toFixed(
+							0
+						)}°</span
+					>
+				{:else}
+					<span>Field of view {store.state.observer.fieldOfViewDeg.toFixed(0)}°</span>
+				{/if}
 			</div>
 		{:else}
 			<WebGLFallback
 				{poster}
 				{posterAlt}
-				title="WebGL unavailable"
-				message={webglError ??
-					'This browser could not create a WebGL2 context. The equations and article below remain fully readable, and the table of effects summarizes each parameter.'}
+				title={fallbackTitle}
+				message={webglDisabled
+					? 'The webgl=off URL option deliberately disables the interactive renderer. Remove that option to enable it.'
+					: (webglError ??
+						'This browser could not create a WebGL2 context. The equations and article below remain fully readable, and the table of effects summarizes each parameter.')}
 			/>
+			{#if !webglDisabled}
+				<button class="retry-renderer" type="button" onclick={retryRenderer}
+					>Retry visualization</button
+				>
+			{/if}
 		{/if}
 		<noscript>
 			<img src={poster} alt={posterAlt} class="noscript-poster" />
@@ -190,6 +231,7 @@
 	{#if showControls}
 		<SpacetimeControls
 			{store}
+			canSave={captureRef !== null && !webglError && !webglDisabled}
 			onsave={handleSave}
 			onshare={handleShare}
 			onfullscreen={handleFullscreen}
@@ -255,6 +297,21 @@
 		min-height: 18rem;
 		background: #05070d;
 		outline: none;
+	}
+	.lab-canvas-frame:focus-visible {
+		outline: 2px solid #67e8f9;
+		outline-offset: -3px;
+	}
+	.retry-renderer {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		border: 1px solid #67e8f9;
+		border-radius: 0.5rem;
+		padding: 0.6rem 0.9rem;
+		background: #10131f;
+		color: #e5e9f5;
+		cursor: pointer;
 	}
 	@media (max-width: 640px) {
 		.lab-canvas-frame {

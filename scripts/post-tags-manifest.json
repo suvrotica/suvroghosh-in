@@ -10411,24 +10411,35 @@
 			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/spacetime-laboratory-einstein-equations.md": {
-			"bodyHash": "3742b20e5e1b225d625107740d49682481b7e72bf656dab834b89360fb231231",
-			"generatedTags": [
-				"Boyer Lindquist",
-				"Black Holes",
-				"Anti-De Sitter",
-				"Visualization Deliberately Simplifies",
-				"Cosmological Constant",
-				"Horizon",
-				"Schwarzschild",
-				"Metric",
-				"Frac",
-				"Geometry"
-			],
-			"pinnedTags": [],
-			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "31c3548d26f5e45fcf03358335002599ef01577526f6e148ecc6f69658f409b1",
+			"bodyHash": "05cc0c3f3943b0ea95d9694394e88553c804c534e0d85fc000aa99deee1d5fea",
 			"hashVersion": 2,
-			"dateModified": "2026-07-24"
+			"revisionHash": "f01bccc57b12438482896bb41b283d6e9373f765fce63ef97d84986ed318b496",
+			"generatedTags": [
+				"General Relativity",
+				"Black Holes",
+				"Gravitational Lensing",
+				"Cosmology",
+				"Gravitational Waves",
+				"Interactive Physics",
+				"Schwarzschild Geometry",
+				"Kerr Geometry",
+				"Charged Black Holes",
+				"FLRW Cosmology"
+			],
+			"pinnedTags": [
+				"General Relativity",
+				"Black Holes",
+				"Gravitational Lensing",
+				"Cosmology",
+				"Gravitational Waves",
+				"Interactive Physics",
+				"Schwarzschild Geometry",
+				"Kerr Geometry",
+				"Charged Black Holes",
+				"FLRW Cosmology"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-20"
 		},
 		"src/lib/posts/domain-coloring-complex-functions-explorer.md": {
 			"bodyHash": "d416b4e3e000cc2a59e2296a5270715a095f5ce1ce0251861b90a2787c493bc9",

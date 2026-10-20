@@ -50,8 +50,25 @@ test('shader uses WebGL2 GLSL ES 3.00 and has safety limits', () => {
 	const vert = read('src/lib/visualizations/spacetime-laboratory/shaders/fullscreen.vert');
 	assert.match(vert, /#version 300 es/);
 	const main = read('src/lib/visualizations/spacetime-laboratory/shaders/main.frag');
-	assert.match(main, /for \(int i = 0; i < 512; i\+\+\)/, 'hard iteration cap');
+	assert.match(
+		main,
+		/for \(int i = 0; i < budget && i < 512; i\+\+\)/,
+		'dynamic loop with hard iteration cap'
+	);
 	assert.match(main, /invalid state fallback/i);
+});
+
+test('native shader keeps expensive procedural sky and ray dispatch at one call site', () => {
+	const main = read('src/lib/visualizations/spacetime-laboratory/shaders/main.frag');
+	// Intel ANGLE D3D11 linking exceeded 30 seconds with duplicated procedural
+	// sky branches; shared evaluation linked in about two seconds on that GPU.
+	assert.equal([...main.matchAll(/\bskyColor\s*\(/g)].length, 1);
+	assert.equal(
+		[...main.matchAll(/\btraceBlackHole\s*\(/g)].length,
+		2,
+		'one definition and one call'
+	);
+	assert.equal([...main.matchAll(/\btraceModel\s*\(/g)].length, 2, 'one definition and one call');
 });
 
 test('post front matter is valid and category is Visualizations', () => {

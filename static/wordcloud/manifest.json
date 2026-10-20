@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T00:13:34.725949+00:00",
+  "generatedAt": "2026-10-20T05:58:18.377268+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9202,25 +9202,25 @@
       "wordCount": 130
     },
     "spacetime-laboratory-einstein-equations": {
-      "generatedAt": "2026-07-22T06:13:24.902349+00:00",
+      "generatedAt": "2026-10-20T05:58:17.961676+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/spacetime-laboratory-einstein-equations.svg",
       "source": "src/lib/posts/spacetime-laboratory-einstein-equations.md",
-      "sourceHash": "f70f2b22b13645b1dbe8cd3c80c3c6fa8db073b40bb541c01de948c2f6234b80",
-      "sourceModified": "2026-07-22T06:13:19.768277+00:00",
+      "sourceHash": "e7267f14b1d76a7488e2d7e7672bd408c986f5a17fe6926e56bdf5d11c9b0248",
+      "sourceModified": "2026-10-20T05:57:42.524318+00:00",
       "topWords": [
-        "Geometry",
-        "Horizon",
         "Equation",
+        "Frac",
+        "Kerr",
+        "Horizon",
+        "Geometry",
+        "Schwarzschild",
         "Metric",
         "Light",
-        "Frac",
-        "Mode",
+        "Equations",
         "Universe",
-        "Mass",
-        "Schwarzschild",
-        "Spacetime",
-        "Field"
+        "Energy",
+        "Charge"
       ],
       "wordCount": 130
     },

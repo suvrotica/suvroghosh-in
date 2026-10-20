@@ -3,12 +3,17 @@
 	import {
 		kerrHorizonRadius,
 		schwarzschildTimeDilation,
-		weakDeflectionAngle
+		reissnerNordstromTimeDilation,
+		rnHorizonRadii,
+		PHYSICAL_GW_STRAIN
 	} from '$lib/visualizations/spacetime-laboratory/spacetimeMath';
+	import {
+		flrwScaleFactorAt,
+		flrwHubbleTime
+	} from '$lib/visualizations/spacetime-laboratory/spacetimeCosmology';
 
 	type Props = { store: SpacetimeStore };
 	let { store }: Props = $props();
-
 	type Curve = { x: number; y: number }[];
 	type GraphSpec = {
 		title: string;
@@ -17,143 +22,156 @@
 		curve: Curve;
 		marks: { x: number; label: string }[];
 	};
-
 	const W = 300;
 	const H = 150;
-	const PAD = { l: 34, r: 8, t: 10, b: 22 };
+	const PAD = { l: 38, r: 10, t: 14, b: 24 };
 
-	function makeCurve(fn: (x: number) => number, x0: number, x1: number, n = 90, yMax = 10): Curve {
+	function makeCurve(fn: (x: number) => number, x0: number, x1: number, n = 90): Curve {
 		const pts: Curve = [];
 		for (let i = 0; i <= n; i++) {
 			const x = x0 + ((x1 - x0) * i) / n;
 			const y = fn(x);
-			if (Number.isFinite(y)) pts.push({ x, y: Math.min(y, yMax) });
+			if (Number.isFinite(y)) pts.push({ x, y });
 		}
 		return pts;
 	}
-
 	function scale(curve: Curve) {
-		const xs = curve.map((p) => p.x);
-		const ys = curve.map((p) => p.y);
-		const x0 = Math.min(...xs);
-		const x1 = Math.max(...xs);
-		const y0 = 0;
-		const y1 = Math.max(...ys) * 1.08 || 1;
+		const x0 = Math.min(...curve.map((p) => p.x));
+		const x1 = Math.max(...curve.map((p) => p.x));
+		const y0 = Math.min(0, ...curve.map((p) => p.y)) * 1.08;
+		const y1 = Math.max(0, ...curve.map((p) => p.y)) * 1.08 || 1;
 		return {
 			px: (x: number) => PAD.l + ((x - x0) / (x1 - x0 || 1)) * (W - PAD.l - PAD.r),
 			py: (y: number) => H - PAD.b - ((y - y0) / (y1 - y0 || 1)) * (H - PAD.t - PAD.b),
 			x0,
 			x1,
+			y0,
 			y1
 		};
 	}
-
 	function path(curve: Curve): string {
 		const { px, py } = scale(curve);
 		return curve
 			.map((p, i) => `${i === 0 ? 'M' : 'L'}${px(p.x).toFixed(1)},${py(p.y).toFixed(1)}`)
 			.join(' ');
 	}
-
+	function smoothstep(a: number, b: number, x: number) {
+		const y = Math.min(1, Math.max(0, (x - a) / (b - a)));
+		return y * y * (3 - 2 * y);
+	}
 	let model = $derived(store.state.model);
 	let params = $derived(store.state.params);
-
 	let graph = $derived.by((): GraphSpec => {
 		if (model === 'schwarzschild' || model === 'reissner-nordstrom') {
+			const rn = model === 'reissner-nordstrom';
+			const horizon = rn ? rnHorizonRadii(params.rnCharge)?.outer : 2;
 			return {
-				title: 'Gravitational time dilation dτ/dt vs radius',
-				xLabel: 'r / r_s',
+				title: `${rn ? 'RN' : 'Schwarzschild'} static clock relative to infinity`,
+				xLabel: 'r / M',
 				yLabel: 'dτ/dt',
-				curve: makeCurve((r) => schwarzschildTimeDilation(r), 1.01, 12),
-				marks: [
-					{ x: 1, label: 'r_s' },
-					{ x: 1.5, label: '3M' },
-					{ x: 3, label: '6M' }
-				]
+				curve: makeCurve(
+					(r) =>
+						rn
+							? (reissnerNordstromTimeDilation(r, params.rnCharge) ?? 0)
+							: schwarzschildTimeDilation(r),
+					(horizon ?? 0.5) + 0.01,
+					20
+				),
+				marks: horizon === undefined ? [] : [{ x: horizon, label: 'horizon' }]
 			};
 		}
-		if (model === 'kerr') {
+		if (model === 'kerr')
 			return {
-				title: 'Kerr outer horizon r₊ vs spin a/M',
+				title: 'Analytic Kerr outer horizon vs spin',
 				xLabel: 'a / M',
 				yLabel: 'r₊ / M',
 				curve: makeCurve((a) => kerrHorizonRadius(a), 0, 0.998),
-				marks: [{ x: params.kerrSpin, label: 'you' }]
+				marks: [{ x: params.kerrSpin, label: 'selected' }]
+			};
+		if (model === 'weak-field') {
+			const strength =
+				params.weakCompactness * (params.weakMode === 'physical' ? 1 : params.weakExaggeration);
+			return {
+				title: 'Weak-bending reference α ≈ 4μ/b (magnification included)',
+				xLabel: 'b (scene units)',
+				yLabel: 'α (rad)',
+				curve: makeCurve((b) => (4 * strength) / b, 10, 100),
+				marks: []
 			};
 		}
-		if (model === 'weak-field') {
+		if (model === 'flrw')
 			return {
-				title: 'Light deflection α = 2r_s/b vs impact parameter',
-				xLabel: 'b / r_s',
-				yLabel: 'α (rad ×10³)',
+				title: 'Mixed-density Friedmann solution; a(0) = 1',
+				xLabel: 'H₀ Δt (from reference epoch)',
+				yLabel: 'a(t)',
+				curve: makeCurve((t) => flrwScaleFactorAt(t, params).scaleFactor, 0, 4),
+				marks: []
+			};
+		if (model === 'de-sitter')
+			return {
+				title: 'Analytic de Sitter flat slicing: a = exp(Ht)',
+				xLabel: 't (normalized)',
+				yLabel: 'a(t)',
+				curve: makeCurve((t) => Math.exp(params.lambdaH0 * t), 0, 2),
+				marks: []
+			};
+		if (model === 'anti-de-sitter')
+			return {
+				title: 'Analytic static AdS clock factor √(1 + r²/L²)',
+				xLabel: 'r (normalized)',
+				yLabel: 'dτ/dt',
+				curve: makeCurve((r) => Math.sqrt(1 + (r * r) / params.adSLength ** 2), 0, 2),
+				marks: []
+			};
+		if (model === 'gravitational-wave') {
+			const amplitude = Math.min(
+				0.5,
+				params.gwAmplitude *
+					PHYSICAL_GW_STRAIN *
+					(params.gwScale === 'physical' ? 1 : params.gwExaggeration)
+			);
+			return {
+				title: 'Displayed strain h(t); schematic chirp',
+				xLabel: 't (s, animation)',
+				yLabel: 'h(t)',
 				curve: makeCurve(
-					(b) => weakDeflectionAngle(b) * 1000 * params.weakCompactness * params.weakExaggeration,
-					1,
-					20,
-					90,
-					60
+					(t) => {
+						const local = t % 6;
+						const fraction = local / 6;
+						const envelope = params.gwChirp
+							? smoothstep(0, 0.75, fraction) * (1 - smoothstep(0.9, 1, fraction))
+							: 1;
+						const phaseTime = params.gwChirp ? local * (1 + 2 * fraction * fraction) : t;
+						return (
+							amplitude *
+							envelope *
+							Math.cos(2 * Math.PI * params.gwFrequency * phaseTime + params.gwPhase)
+						);
+					},
+					0,
+					6,
+					240
 				),
 				marks: []
 			};
 		}
-		if (model === 'flrw') {
-			const dominant =
-				params.omegaLambda > params.omegaMatter
-					? 'lambda'
-					: params.omegaRadiation > params.omegaMatter
-						? 'radiation'
-						: 'matter';
-			const fn = (t: number) =>
-				dominant === 'matter'
-					? Math.pow(Math.max(t, 1e-4), 2 / 3)
-					: dominant === 'radiation'
-						? Math.pow(Math.max(t, 1e-4), 1 / 2)
-						: Math.exp(t - 1);
-			return {
-				title: `Scale factor a(t), ${dominant === 'lambda' ? 'dark-energy' : dominant}-dominated`,
-				xLabel: 't (normalized)',
-				yLabel: 'a(t)',
-				curve: makeCurve(fn, 0.05, 2),
-				marks: []
-			};
-		}
-		if (model === 'de-sitter' || model === 'anti-de-sitter') {
-			return {
-				title: 'Scale factor a(t) = exp(Ht) for Λ-driven vacuum',
-				xLabel: 'Ht',
-				yLabel: 'a(t)',
-				curve: makeCurve((t) => Math.exp(params.lambdaH0 * t) / Math.E, 0, 2),
-				marks: []
-			};
-		}
-		if (model === 'gravitational-wave') {
-			const fn = (t: number) => {
-				if (params.gwChirp) {
-					const tc = (((t % 6) + 6) % 6) / 6;
-					const env = Math.min(1, tc / 0.75) * (1 - Math.max(0, (tc - 0.9) / 0.1) * 0.9);
-					return 0.5 + 0.45 * env * Math.cos(2 * Math.PI * params.gwFrequency * (t + tc * tc * t));
-				}
-				return 0.5 + 0.45 * Math.cos(2 * Math.PI * params.gwFrequency * t + params.gwPhase);
-			};
-			return {
-				title: 'Strain h(t) — one polarization',
-				xLabel: 't (s, visual)',
-				yLabel: 'h',
-				curve: makeCurve(fn, 0, 6),
-				marks: []
-			};
-		}
-		// minkowski
 		return {
-			title: 'Gravitational redshift 1 + z vs radius (flat: none)',
-			xLabel: 'r / r_s',
-			yLabel: '1 + z',
-			curve: makeCurve(() => 1, 1, 12),
+			title: 'Flat spacetime: no gravitational clock shift',
+			xLabel: 'r (scene units)',
+			yLabel: 'dτ/dt',
+			curve: makeCurve(() => 1, 0, 20),
 			marks: []
 		};
 	});
-
 	let graphScale = $derived(scale(graph.curve));
+	let marks = $derived(
+		model === 'flrw' ? [{ x: flrwHubbleTime(params, store.time), label: 'now' }] : graph.marks
+	);
+	function numberLabel(value: number) {
+		return Math.abs(value) > 0 && Math.abs(value) < 0.001
+			? value.toExponential(0)
+			: value.toFixed(2);
+	}
 </script>
 
 <figure class="graph" aria-label={graph.title}>
@@ -164,17 +182,27 @@
 		aria-label={graph.title}
 		preserveAspectRatio="xMidYMid meet"
 	>
-		<line x1={PAD.l} y1={H - PAD.b} x2={W - PAD.r} y2={H - PAD.b} class="axis" />
+		<line x1={PAD.l} y1={graphScale.py(0)} x2={W - PAD.r} y2={graphScale.py(0)} class="axis" />
 		<line x1={PAD.l} y1={PAD.t} x2={PAD.l} y2={H - PAD.b} class="axis" />
 		<path d={path(graph.curve)} class="curve" fill="none" />
-		{#each graph.marks as mark (mark.label)}
+		{#each marks.filter((mark) => mark.x >= graphScale.x0 && mark.x <= graphScale.x1) as mark (mark.label)}
 			{@const x = graphScale.px(mark.x)}
 			<line x1={x} y1={PAD.t} x2={x} y2={H - PAD.b} class="mark" />
 			<text {x} y={PAD.t + 8} class="mark-label">{mark.label}</text>
 		{/each}
-		<text x={(PAD.l + W - PAD.r) / 2} y={H - 4} class="axis-label">{graph.xLabel}</text>
+		<text x={PAD.l - 3} y={PAD.t + 1} class="tick" text-anchor="end"
+			>{numberLabel(graphScale.y1)}</text
+		>
+		<text x={PAD.l - 3} y={H - PAD.b} class="tick" text-anchor="end"
+			>{numberLabel(graphScale.y0)}</text
+		>
+		<text x={PAD.l} y={H - PAD.b + 9} class="tick">{graphScale.x0.toFixed(1)}</text>
+		<text x={W - PAD.r} y={H - PAD.b + 9} class="tick" text-anchor="end"
+			>{graphScale.x1.toFixed(1)}</text
+		>
+		<text x={(PAD.l + W - PAD.r) / 2} y={H - 3} class="axis-label">{graph.xLabel}</text>
 		<text
-			x={4}
+			x={8}
 			y={(PAD.t + H - PAD.b) / 2}
 			class="axis-label"
 			transform="rotate(-90 8 {(PAD.t + H - PAD.b) / 2})">{graph.yLabel}</text
@@ -218,6 +246,10 @@
 		fill: #f59e0b;
 		font-size: 8px;
 		text-anchor: middle;
+	}
+	.tick {
+		fill: #a1abc7;
+		font-size: 7px;
 	}
 	.axis-label {
 		fill: #7a82a3;

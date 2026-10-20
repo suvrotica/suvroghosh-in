@@ -1,4 +1,5 @@
 <script lang="ts">
+	import katex from 'katex';
 	import type { SpacetimeModel } from '$lib/visualizations/spacetime-laboratory/spacetimeTypes';
 
 	type Props = {
@@ -13,7 +14,7 @@
 		minkowski: {
 			title: 'Minkowski metric — flat spacetime',
 			tex: 'ds^2 = -c^2\\,dt^2 + dx^2 + dy^2 + dz^2',
-			note: 'The control universe. No curvature: light travels straight, and every clock agrees.'
+			note: 'No curvature: light travels straight. Inertial clocks at rest in these coordinates have the same gravitational clock rate.'
 		},
 		'weak-field': {
 			title: 'Newtonian weak-field limit',
@@ -28,45 +29,57 @@
 		kerr: {
 			title: 'Kerr metric — rotating black hole',
 			tex: '\\Sigma = r^2 + a^2\\cos^2\\theta, \\qquad \\Delta = r^2 - \\frac{2GMr}{c^2} + a^2',
-			note: 'Spin a (angular momentum per unit mass) drags spacetime itself. Horizons solve Δ = 0: r± = M ± √(M² − a²).'
+			note: 'Here a = J/(Mc), a length; the control selects a/M in geometrized units. Horizons solve Δ = 0: r± = M ± √(M² − a²). The scene uses a spin illustration, not a full Kerr geodesic solver.'
 		},
 		'reissner-nordstrom': {
 			title: 'Reissner–Nordström metric — charged black hole',
 			tex: 'ds^2 = -f(r)\\,c^2dt^2 + \\frac{dr^2}{f(r)} + r^2d\\Omega^2, \\quad f(r) = 1 - \\frac{2GM}{rc^2} + \\frac{GQ^2}{4\\pi\\varepsilon_0 r^2 c^4}',
-			note: 'Electric charge adds a repulsive 1/r² term, creating inner and outer horizons that merge at the extremal limit.'
+			note: 'Below the extremal charge there are inner and outer horizons; they merge at extremality. Super-extremal charge has no horizon, and that regime is not simulated by the renderer.'
 		},
 		flrw: {
 			title: 'FLRW metric — homogeneous expanding universe',
 			tex: 'ds^2 = -c^2dt^2 + a(t)^2\\left[\\frac{dr^2}{1 - kr^2} + r^2d\\Omega^2\\right]',
-			note: 'The scale factor a(t) carries all the dynamics. Galaxies sit in comoving coordinates while the metric grows.'
+			note: 'The CPU integrates the mixed-density Friedmann equations, with Ωk = 1 − Ωm − Ωr − ΩΛ and a=1 at the reference epoch. The sky/grid is an expansion diagram; it is not a cosmological light-cone calculation.'
 		},
 		'de-sitter': {
 			title: 'de Sitter space — positive cosmological constant',
 			tex: 'G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = 0, \\qquad \\Lambda > 0',
-			note: 'Empty space that expands exponentially. Every observer is wrapped in a cosmological event horizon at c/H.'
+			note: 'The flat slicing has a(t) = exp(Ht). A comoving observer has an event-horizon radius c/H. The screen image and horizon circle are schematic.'
 		},
 		'anti-de-sitter': {
 			title: 'anti-de Sitter space — negative cosmological constant',
 			tex: 'G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = 0, \\qquad \\Lambda < 0',
-			note: 'A confining geometry: light sent outward is refocused back. Central to holographic dualities (AdS/CFT).'
+			note: 'Static coordinates have g_tt = −(1 + r²/L²) and a timelike conformal boundary. This is not exponential expansion with a negative H. The screen pattern is illustrative.'
 		},
 		'gravitational-wave': {
 			title: 'Linearized gravity — gravitational waves',
 			tex: 'g_{\\mu\\nu} = \\eta_{\\mu\\nu} + h_{\\mu\\nu}, \\qquad |h_{\\mu\\nu}| \\ll 1',
-			note: 'Ripples of the metric itself, travelling at c with two polarizations. Real astrophysical strain is ~10⁻²¹.'
+			note: 'At linear order a transverse ring has displacement h/2, with plus and cross axes rotated 45°. The visible magnification is a teaching diagram and can exceed the small-strain regime.'
 		}
 	};
 
 	let panel = $derived(panels[model]);
+	let renderedEquation = $derived(
+		katex.renderToString(panel.tex, {
+			displayMode: true,
+			throwOnError: false,
+			output: 'htmlAndMathml',
+			trust: false,
+			strict: 'ignore'
+		})
+	);
 </script>
 
 <aside class="equation-panel" aria-label="Equation for the selected spacetime">
 	<p class="panel-kicker">Now showing</p>
 	<h3>{panel.title}</h3>
-	<p class="tex" aria-label={panel.tex}><code>{panel.tex}</code></p>
+	<!-- Only feature-owned constant equations reach KaTeX, with trusted commands disabled. -->
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	<div class="tex">{@html renderedEquation}</div>
 	<p class="note">{panel.note}</p>
 	<p class="convention">
-		Convention: metric signature (−, +, +, +); geometrized units G = c = 1 in the shader.
+		Convention: metric signature (−, +, +, +). Black-hole scene lengths use GM/c²; G = c = M = 1, so
+		the Schwarzschild horizon is at 2 scene units.
 	</p>
 </aside>
 
@@ -98,11 +111,12 @@
 		background: #0a0d17;
 		padding: 0.6rem 0.7rem;
 	}
-	.tex code {
-		font-family: ui-monospace, 'Cascadia Mono', monospace;
+	.tex :global(.katex) {
 		font-size: 0.8rem;
 		color: #a5f3fc;
-		white-space: nowrap;
+	}
+	.tex :global(.katex-display) {
+		margin: 0;
 	}
 	.note {
 		margin: 0 0 0.5rem;

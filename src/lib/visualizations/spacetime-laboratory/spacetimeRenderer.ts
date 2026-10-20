@@ -1,6 +1,6 @@
 /**
- * Minimal WebGL2 renderer for the spacetime laboratory. Two full-screen
- * programs share one quad; mode selection and comparison splits happen in the
+ * Minimal WebGL2 renderer for the spacetime laboratory. One full-screen
+ * program draws a triangle; mode selection and comparison splits happen in the
  * fragment shader. Everything is released on destroy(), and the context is
  * lost politely so navigation frees GPU memory.
  */
@@ -14,6 +14,30 @@ export interface SpacetimeRendererOptions {
 }
 
 const ATTRIBUTES = new Float32Array([-1, -1, 3, -1, -1, 3]);
+const COMPILATION_TIMEOUT_MS = 15_000;
+
+function aborted(): DOMException {
+	return new DOMException('Renderer initialization was cancelled.', 'AbortError');
+}
+
+function waitForCompilation(milliseconds: number, signal?: AbortSignal): Promise<void> {
+	return new Promise((resolve, reject) => {
+		if (signal?.aborted) {
+			reject(aborted());
+			return;
+		}
+		const timer = setTimeout(() => {
+			signal?.removeEventListener('abort', cancel);
+			resolve();
+		}, milliseconds);
+		function cancel() {
+			clearTimeout(timer);
+			signal?.removeEventListener('abort', cancel);
+			reject(aborted());
+		}
+		signal?.addEventListener('abort', cancel, { once: true });
+	});
+}
 
 export class SpacetimeRenderer {
 	private gl: WebGL2RenderingContext | null = null;
@@ -30,53 +54,128 @@ export class SpacetimeRenderer {
 		this.options = options;
 	}
 
-	init(vertexSource: string, fragmentSource: string): boolean {
-		const context = this.canvas.getContext('webgl2', {
-			alpha: false,
-			antialias: false,
-			depth: false,
-			stencil: false,
-			powerPreference: 'high-performance',
-			preserveDrawingBuffer: true
-		});
+	async init(vertexSource: string, fragmentSource: string, signal?: AbortSignal): Promise<boolean> {
+		if (signal?.aborted) return false;
+		let creationMessage = '';
+		const onCreationError = (event: Event) => {
+			creationMessage = (event as WebGLContextEvent).statusMessage;
+		};
+		this.canvas.addEventListener('webglcontextcreationerror', onCreationError);
+		let context: WebGL2RenderingContext | null;
+		try {
+			context = this.canvas.getContext('webgl2', {
+				alpha: false,
+				antialias: false,
+				depth: false,
+				stencil: false,
+				powerPreference: 'high-performance',
+				preserveDrawingBuffer: true
+			});
+		} catch (error) {
+			if (!signal?.aborted) {
+				this.options.onError?.(
+					`WebGL2 context creation failed: ${error instanceof Error ? error.message : String(error)}`
+				);
+			}
+			return false;
+		} finally {
+			this.canvas.removeEventListener('webglcontextcreationerror', onCreationError);
+		}
 		if (!context) {
-			this.options.onError?.('WebGL2 is unavailable in this browser.');
+			if (!signal?.aborted) {
+				this.options.onError?.(
+					`This browser could not create a WebGL2 context. Check browser graphics acceleration and the graphics driver.${creationMessage ? ` Browser detail: ${creationMessage}` : ''}`
+				);
+			}
 			return false;
 		}
 		this.gl = context;
 
+		let vertexShader: WebGLShader | null = null;
+		let fragmentShader: WebGLShader | null = null;
+		let program: WebGLProgram | null = null;
+		let initialized = false;
+		const ensureActive = () => {
+			if (signal?.aborted || this.gl !== context) throw aborted();
+			if (context.isContextLost()) {
+				throw new Error(
+					'The WebGL graphics context was lost while the shader was starting. Retry to create a fresh renderer.'
+				);
+			}
+		};
 		try {
-			const vertexShader = this.compile(context.VERTEX_SHADER, vertexSource);
-			const fragmentShader = this.compile(context.FRAGMENT_SHADER, fragmentSource);
-			const program = context.createProgram();
+			ensureActive();
+			const parallelCompile = context.getExtension('KHR_parallel_shader_compile');
+			this.options.onStatus?.('Compiling the spacetime graphics shader.');
+			// Submit both compiles and the link before querying status. Early
+			// COMPILE_STATUS reads serialize driver work and can freeze the page.
+			vertexShader = this.compile(context.VERTEX_SHADER, vertexSource);
+			fragmentShader = this.compile(context.FRAGMENT_SHADER, fragmentSource);
+			program = context.createProgram();
 			if (!program) throw new Error('The browser could not create a shader program.');
 			context.attachShader(program, vertexShader);
 			context.attachShader(program, fragmentShader);
 			context.linkProgram(program);
-			if (!context.getProgramParameter(program, context.LINK_STATUS)) {
-				throw new Error(context.getProgramInfoLog(program) ?? 'The shader program failed to link.');
+			if (parallelCompile) {
+				const deadline = performance.now() + COMPILATION_TIMEOUT_MS;
+				while (!context.getProgramParameter(program, parallelCompile.COMPLETION_STATUS_KHR)) {
+					ensureActive();
+					if (performance.now() >= deadline) {
+						throw new Error(
+							'The graphics driver did not finish compiling the spacetime shader within 15 seconds. Retry after checking browser graphics acceleration and the driver.'
+						);
+					}
+					await waitForCompilation(16, signal);
+				}
+			} else {
+				// Without the extension, WebGL offers no nonblocking completion
+				// query. Yield once so pending UI work can run, then perform the
+				// required synchronous link check; its driver wait cannot be timed out.
+				await waitForCompilation(0, signal);
 			}
-			context.deleteShader(vertexShader);
-			context.deleteShader(fragmentShader);
+			ensureActive();
+			if (!context.getProgramParameter(program, context.LINK_STATUS)) {
+				const diagnostics = [
+					context.getProgramInfoLog(program),
+					context.getShaderInfoLog(vertexShader),
+					context.getShaderInfoLog(fragmentShader)
+				]
+					.filter((log) => log?.trim())
+					.join('\n');
+				throw new Error(diagnostics || 'The shader program failed to compile or link.');
+			}
 			this.program = program;
+			this.vao = context.createVertexArray();
+			this.buffer = context.createBuffer();
+			if (!this.vao || !this.buffer)
+				throw new Error('The browser could not allocate the renderer buffers.');
+			context.bindVertexArray(this.vao);
+			context.bindBuffer(context.ARRAY_BUFFER, this.buffer);
+			context.bufferData(context.ARRAY_BUFFER, ATTRIBUTES, context.STATIC_DRAW);
+			const position = context.getAttribLocation(program, 'a_position');
+			context.enableVertexAttribArray(position);
+			context.vertexAttribPointer(position, 2, context.FLOAT, false, 0, 0);
+			context.bindVertexArray(null);
+			this.cacheUniformTypes();
+			ensureActive();
+			initialized = true;
+			this.options.onStatus?.('The spacetime renderer is ready.');
+			return true;
 		} catch (error) {
-			this.options.onError?.(
-				error instanceof Error ? error.message : 'The shader could not be compiled.'
-			);
+			if (!signal?.aborted && !(error instanceof DOMException && error.name === 'AbortError')) {
+				this.options.onError?.(
+					`The spacetime renderer could not start: ${error instanceof Error ? error.message : 'Unknown shader or GPU allocation error.'}`
+				);
+			}
 			return false;
+		} finally {
+			if (vertexShader) context.deleteShader(vertexShader);
+			if (fragmentShader) context.deleteShader(fragmentShader);
+			if (!initialized) {
+				if (program && this.program !== program) context.deleteProgram(program);
+				this.destroy();
+			}
 		}
-
-		this.vao = context.createVertexArray();
-		context.bindVertexArray(this.vao);
-		this.buffer = context.createBuffer();
-		context.bindBuffer(context.ARRAY_BUFFER, this.buffer);
-		context.bufferData(context.ARRAY_BUFFER, ATTRIBUTES, context.STATIC_DRAW);
-		const position = context.getAttribLocation(this.program, 'a_position');
-		context.enableVertexAttribArray(position);
-		context.vertexAttribPointer(position, 2, context.FLOAT, false, 0, 0);
-		context.bindVertexArray(null);
-		this.cacheUniformTypes();
-		return true;
 	}
 
 	private cacheUniformTypes(): void {
@@ -96,11 +195,6 @@ export class SpacetimeRenderer {
 		if (!shader) throw new Error('The browser could not create a shader.');
 		gl.shaderSource(shader, source);
 		gl.compileShader(shader);
-		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-			const log = gl.getShaderInfoLog(shader) ?? 'Unknown shader compiler error.';
-			gl.deleteShader(shader);
-			throw new Error(log);
-		}
 		return shader;
 	}
 
@@ -121,7 +215,7 @@ export class SpacetimeRenderer {
 	}
 
 	render(width: number, height: number, uniforms: SpacetimeUniforms): void {
-		if (!this.gl || !this.program) return;
+		if (!this.gl || !this.program || this.gl.isContextLost()) return;
 		const gl = this.gl;
 		if (this.canvas.width !== width || this.canvas.height !== height) {
 			this.canvas.width = width;
@@ -176,5 +270,6 @@ export class SpacetimeRenderer {
 		this.program = null;
 		this.gl = null;
 		this.uniformLocations.clear();
+		this.uniformTypes.clear();
 	}
 }

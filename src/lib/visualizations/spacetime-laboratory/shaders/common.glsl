@@ -27,6 +27,7 @@ uniform float u_lambda;        // cosmological-constant mode strength (normalize
 uniform float u_adsl;          // anti-de-Sitter curvature scale (normalized)
 uniform float u_flrwK;         // FLRW curvature -1, 0, +1
 uniform float u_flrwA;         // FLRW scale factor a(t)
+uniform float u_flrwEmitA;     // fixed comparison epoch, not a source light cone
 uniform float u_flrwH;         // FLRW H(t), normalized
 uniform float u_flrwView;      // 0 comoving, 1 proper
 uniform float u_gwAmp;
@@ -136,6 +137,7 @@ vec3 tonemap(vec3 color) {
 // ---- camera ---------------------------------------------------------------
 
 vec3 rayDirection(vec2 fragCoord, float aspect) {
-	vec2 ndc = (2.0 * fragCoord - u_resolution) / min(u_resolution.x, u_resolution.y);
+	// The control specifies VERTICAL field of view, including portrait screens.
+	vec2 ndc = (2.0 * fragCoord - u_resolution) / u_resolution.y;
 	return normalize(u_camForward + u_fovTan * (ndc.x * u_camRight + ndc.y * u_camUp));
 }

@@ -11,17 +11,26 @@
 	} from '$lib/visualizations/spacetime-laboratory/spacetimeTypes';
 	import type { SpacetimeStore } from '$lib/visualizations/spacetime-laboratory/spacetimeStore.svelte';
 	import { PHYSICAL_GW_STRAIN } from '$lib/visualizations/spacetime-laboratory/spacetimeMath';
+	import { flrwSnapshot } from '$lib/visualizations/spacetime-laboratory/spacetimeCosmology';
 
 	type Props = {
 		store: SpacetimeStore;
 		onwebglerror?: (message: string) => void;
-		oncapture?: (capture: () => string | null) => void;
+		oncapture?: (capture: (() => string | null) | null) => void;
 	};
 
 	let { store, onwebglerror, oncapture }: Props = $props();
 
 	let canvas: HTMLCanvasElement;
 	let host: HTMLDivElement;
+	let starting = $state(true);
+	let invalidate = () => {};
+
+	$effect(() => {
+		// Read the complete scene here so paused frames redraw when a control changes.
+		JSON.stringify({ state: store.state, time: store.time });
+		invalidate();
+	});
 
 	function overlayBits(): number {
 		const o = store.state.overlays;
@@ -37,13 +46,15 @@
 	}
 
 	onMount(() => {
+		let startupFailed = false;
 		const renderer = new SpacetimeRenderer(canvas, {
-			onError: (message) => onwebglerror?.(message)
+			onError: (message) => {
+				startupFailed = true;
+				starting = false;
+				onwebglerror?.(message);
+			}
 		});
-		if (!renderer.init(SPACETIME_VERTEX_SOURCE, SPACETIME_FRAGMENT_SOURCE)) {
-			onwebglerror?.('The spacetime shader could not be compiled on this GPU.');
-			return;
-		}
+		const startup = new AbortController();
 
 		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 		let animationFrame = 0;
@@ -52,6 +63,30 @@
 		let fpsSince = previous;
 		let interacting = false;
 		let interactTimer = 0;
+		let inView = false;
+		let dirty = true;
+		let disposed = false;
+		let contextLost = false;
+		let rendered = false;
+
+		function canDraw(forCapture = false) {
+			return (
+				renderer.ready &&
+				!disposed &&
+				!contextLost &&
+				(inView || forCapture) &&
+				document.visibilityState === 'visible'
+			);
+		}
+
+		function schedule() {
+			if (!animationFrame && canDraw()) animationFrame = requestAnimationFrame(draw);
+		}
+
+		invalidate = () => {
+			dirty = true;
+			schedule();
+		};
 
 		function cross3(a: readonly number[], b: readonly number[]): [number, number, number] {
 			return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
@@ -78,24 +113,27 @@
 			return { pos, forward, right, up };
 		}
 
-		function draw(now: number) {
+		function draw(now: number, forCapture = false) {
+			if (forCapture) cancelAnimationFrame(animationFrame);
+			animationFrame = 0;
+			if (!canDraw(forCapture)) return;
 			const state = store.state;
 			const quality = QUALITY_PRESETS[state.quality];
 			const delta = Math.min(now - previous, 100);
 			previous = now;
 
+			const playing =
+				state.playing && !reducedMotion.matches && document.visibilityState === 'visible';
+			if (!dirty && !playing && !forCapture) return;
+			dirty = false;
 			fpsCount += 1;
 			if (now - fpsSince >= 1000) {
-				store.fps = Math.round((fpsCount * 1000) / (now - fpsSince));
+				store.fps = playing ? Math.round((fpsCount * 1000) / (now - fpsSince)) : 0;
 				fpsCount = 0;
 				fpsSince = now;
 			}
-
-			const playing =
-				state.playing && !reducedMotion.matches && document.visibilityState === 'visible';
-			if (playing) {
+			if (playing && !forCapture) {
 				store.time += (delta / 1000) * state.simulationSpeed;
-				store.state.observer.properTime += delta / 1000;
 			}
 
 			const scale = interacting ? Math.min(quality.resolutionScale, 0.5) : quality.resolutionScale;
@@ -105,14 +143,17 @@
 
 			const cam = cameraBasis();
 			const p = state.params;
-			const gwAmp =
-				p.gwScale === 'physical' ? PHYSICAL_GW_STRAIN * p.gwExaggeration : p.gwAmplitude * 0.12;
-
-			const flrwA = Math.min(
-				4,
-				Math.max(0.05, 1 + (store.time % 60) * 0.04 * p.flrwSpeed * (p.hubble / 70))
+			const gwAmp = Math.min(
+				0.5,
+				Math.max(
+					0,
+					p.gwAmplitude * PHYSICAL_GW_STRAIN * (p.gwScale === 'physical' ? 1 : p.gwExaggeration)
+				)
 			);
-			const flrwH = p.hubble / 70;
+			const cosmology =
+				state.model === 'flrw' || (state.compare && state.compareModel === 'flrw')
+					? flrwSnapshot(p, store.time)
+					: { scaleFactor: 1, emittedScaleFactor: 1, expansionRate: 1 };
 
 			renderer.render(width, height, {
 				u_resolution: [width, height],
@@ -134,8 +175,9 @@
 				u_lambda: p.lambdaH0,
 				u_adsl: p.adSLength,
 				u_flrwK: p.flrwCurvature,
-				u_flrwA: flrwA,
-				u_flrwH: flrwH,
+				u_flrwA: cosmology.scaleFactor,
+				u_flrwEmitA: cosmology.emittedScaleFactor,
+				u_flrwH: cosmology.expansionRate,
 				u_flrwView: p.flrwView === 'proper' ? 1 : 0,
 				u_gwAmp: gwAmp,
 				u_gwFreq: p.gwFrequency,
@@ -157,40 +199,104 @@
 				u_speed: state.simulationSpeed,
 				u_reduced: reducedMotion.matches ? 1 : 0
 			});
+			if (!rendered) {
+				rendered = true;
+				oncapture?.(() => {
+					if (!renderer.ready || contextLost) return null;
+					// Controls may be below the suspended viewport. Export their
+					// current scene, rather than the last frame from before scrolling.
+					draw(performance.now(), true);
+					try {
+						return canvas.toDataURL('image/png');
+					} catch {
+						return null;
+					}
+				});
+			}
 
-			animationFrame = requestAnimationFrame(draw);
+			if (playing) schedule();
 		}
 
 		function markInteracting() {
 			interacting = true;
 			window.clearTimeout(interactTimer);
-			interactTimer = window.setTimeout(() => (interacting = false), 350);
+			interactTimer = window.setTimeout(() => {
+				interacting = false;
+				invalidate();
+			}, 350);
+			invalidate();
 		}
+
+		function visibilityChanged() {
+			previous = performance.now();
+			if (!canDraw()) {
+				cancelAnimationFrame(animationFrame);
+				animationFrame = 0;
+				store.fps = 0;
+			} else invalidate();
+		}
+
+		function lost(event: Event) {
+			event.preventDefault();
+			if (disposed || startupFailed) return;
+			contextLost = true;
+			cancelAnimationFrame(animationFrame);
+			animationFrame = 0;
+			oncapture?.(null);
+			onwebglerror?.(
+				'The browser lost the WebGL graphics context. This can happen after a graphics-driver reset or GPU memory pressure. Retry to create a fresh renderer.'
+			);
+		}
+		const motionChanged = () => invalidate();
+
+		const resize = new ResizeObserver(() => invalidate());
+		resize.observe(host);
+		const intersection = new IntersectionObserver(([entry]) => {
+			inView = entry.isIntersecting;
+			visibilityChanged();
+		});
+		intersection.observe(host);
+		canvas.addEventListener('webglcontextlost', lost);
+		document.addEventListener('visibilitychange', visibilityChanged);
+		reducedMotion.addEventListener('change', motionChanged);
+		void renderer
+			.init(SPACETIME_VERTEX_SOURCE, SPACETIME_FRAGMENT_SOURCE, startup.signal)
+			.then((ready) => {
+				if (disposed || !ready || contextLost) return;
+				starting = false;
+				invalidate();
+			});
 
 		host.addEventListener('pointermove', markInteracting, { passive: true });
 		host.addEventListener('pointerdown', markInteracting, { passive: true });
-		animationFrame = requestAnimationFrame(draw);
 
 		return () => {
+			disposed = true;
+			startup.abort();
+			invalidate = () => {};
+			oncapture?.(null);
 			cancelAnimationFrame(animationFrame);
 			window.clearTimeout(interactTimer);
 			host.removeEventListener('pointermove', markInteracting);
 			host.removeEventListener('pointerdown', markInteracting);
+			canvas.removeEventListener('webglcontextlost', lost);
+			document.removeEventListener('visibilitychange', visibilityChanged);
+			reducedMotion.removeEventListener('change', motionChanged);
+			resize.disconnect();
+			intersection.disconnect();
 			renderer.destroy();
 		};
-	});
-
-	$effect(() => {
-		oncapture?.(() => {
-			try {
-				return canvas.toDataURL('image/png');
-			} catch {
-				return null;
-			}
-		});
 	});
 </script>
 
 <div bind:this={host} class="absolute inset-0">
 	<canvas bind:this={canvas} class="block h-full w-full" aria-hidden="true"></canvas>
+	{#if starting}
+		<p
+			class="pointer-events-none absolute inset-0 grid place-content-center text-sm text-slate-300"
+			role="status"
+		>
+			Preparing graphics…
+		</p>
+	{/if}
 </div>

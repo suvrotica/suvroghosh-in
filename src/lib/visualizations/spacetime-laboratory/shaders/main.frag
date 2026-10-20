@@ -1,16 +1,29 @@
 // Spacetime laboratory: per-model null-ray propagation.
 //
-// This shader evaluates KNOWN metrics and integrates simplified null
-// geodesics. It does not solve the Einstein field equation. Where a full
-// geodesic is too expensive (Kerr), a labelled bending approximation is used.
+// Schwarzschild/RN use the static metric's null-geodesic equations. Kerr and
+// weak-field views use labelled bending approximations; cosmology and wave
+// scenes are teaching diagrams. This does not solve the Einstein field equation.
+
+float equatorialGrid(vec3 ro, vec3 rd);
+
+float coordinateGridAt(vec3 p) {
+	float r = length(p.xz);
+	if (r > 40.0) return 0.0;
+	vec2 g = abs(fract(p.xz * 0.5) - 0.5);
+	float line = 1.0 - smoothstep(0.0, 0.035, min(g.x, g.y));
+	float ring = 1.0 - smoothstep(0.0, 0.06, abs(fract(r * 0.5) - 0.5) / 0.5 * r * 0.5);
+	return max(line, ring * 0.3) * exp(-r * 0.06) * 0.5;
+}
 
 struct RayHit {
 	vec3 color;
-	float escape;   // 1 = ray escaped to sky, 0 = captured / terminated
-	float shift;    // accumulated red(+)/blue(-) shift estimate
+	float escape;   // 1 = ray escapes, 0 = captured or numerically unresolved
+	float shift;    // log-frequency shift: positive blue, negative red
 	float minR;     // closest approach, in scene units
 	float diskHit;  // 0/1
 	vec3 diskColor;
+	vec3 skyDirection;
+	float skyShift;
 };
 
 // ---------------------------------------------------------------------------
@@ -41,106 +54,157 @@ vec3 diskEmission(vec3 p, vec3 rayDir, float gravShift, float spin) {
 	float beam = u_beaming > 0.5 ? clamp(pow(max(0.2, 1.0 + doppler * 1.4), 2.0), 0.25, 3.0) : 1.0;
 
 	// Frame dragging in Kerr adds an extra asymmetric boost.
-	if (spin > 0.001) beam *= 1.0 + spin * doppler * 1.2;
+	if (u_beaming > 0.5 && spin > 0.001) beam *= 1.0 + spin * doppler * 1.2;
 
-	float edge = smoothstep(inner, inner + 0.35, r) * smoothstep(outer, outer - 2.0, r);
+	float edge = smoothstep(inner, inner + 0.35, r) * (1.0 - smoothstep(outer - 2.0, outer, r));
 	vec3 color = base * streak * edge * (0.22 + 0.36 * temp);
 	color = applyShift(color, gravShift + (u_beaming > 0.5 ? doppler * 0.8 : 0.0));
 	return color * beam;
 }
 
-// March along a ray with a radially symmetric gravitational deflection model.
-// strength(r) = u_rs / r^2 is the far-field Schwarzschild bending rate; the
-// weak-field mode replaces u_rs with a scaled potential. This "curved-ray"
-// integrator reproduces the shadow at ~2.6 rs, photon capture near r = 1.5 rs
-// (the photon sphere at 3M), and the qualitatively correct disk image while
-// remaining stable at 60 fps on modest GPUs.
+// Static Schwarzschild/RN null geodesics in areal-radius Cartesian coordinates.
+// In each ray's orbital plane, rdot² = E² - f(r)L²/r² and phidot = L/r²,
+// hence p'' = (-3 M L²/r⁵ + 2 Q² L²/r⁶) p. M=1 here.
+// The initial direction is measured in a STATIC observer's orthonormal frame.
+// Kerr and the magnified weak field remain explicitly illustrative models.
+float staticMetric(float r, float q) {
+	return 1.0 - 2.0 / r + q * q / (r * r);
+}
+
+vec3 staticRayAcceleration(vec3 p, float angularMomentumSquared, float chargeSquared) {
+	float r2 = max(dot(p, p), 1e-6);
+	float r = sqrt(r2);
+	return angularMomentumSquared * (-3.0 + 2.0 * chargeSquared / r) * p / (r2 * r2 * r);
+}
+
+void staticRayStep(inout vec3 p, inout vec3 v, float dt, float l2, float q2) {
+	// Fourth-order Runge–Kutta. Velocity is affine, not artificially normalized.
+	vec3 a1 = staticRayAcceleration(p, l2, q2);
+	vec3 v2 = v + 0.5 * dt * a1;
+	vec3 a2 = staticRayAcceleration(p + 0.5 * dt * v, l2, q2);
+	vec3 v3 = v + 0.5 * dt * a2;
+	vec3 a3 = staticRayAcceleration(p + 0.5 * dt * v2, l2, q2);
+	vec3 v4 = v + dt * a3;
+	vec3 a4 = staticRayAcceleration(p + dt * v3, l2, q2);
+	p += dt * (v + 2.0 * v2 + 2.0 * v3 + v4) / 6.0;
+	v += dt * (a1 + 2.0 * a2 + 2.0 * a3 + a4) / 6.0;
+}
+
 RayHit traceBlackHole(vec3 ro, vec3 rd, float spin, float charge, bool weakMode) {
 	RayHit hit;
 	hit.color = vec3(0.0);
-	hit.escape = 1.0;
+	hit.escape = 0.0;
 	hit.shift = 0.0;
-	hit.minR = 1e9;
+	hit.minR = length(ro);
 	hit.diskHit = 0.0;
 	hit.diskColor = vec3(0.0);
+	hit.skyDirection = rd;
+	hit.skyShift = 0.0;
 
-	// Effective strength: charge softens the attraction (replaces M by
-	// M - Q^2/(2r) to leading order); spin enters below as frame dragging.
 	float strength = weakMode ? u_weakMu * u_weakEx : 1.0;
+	if (weakMode && strength < 1e-7) {
+		hit.escape = 1.0;
+		if (overlayEnabled(1.0) > 0.5) hit.color += vec3(0.10, 0.22, 0.30) * equatorialGrid(ro, rd);
+		return hit;
+	}
+	bool exactStatic = !weakMode && spin < 0.001;
+	// Super-extremal RN is not rendered as a fictitious extremal black hole.
+	if (charge > 1.0) return hit;
+	float rPlus = 1.0 + sqrt(max(0.0, 1.0 - charge * charge - spin * spin));
+	float observerR = length(ro);
+	float observerF = staticMetric(observerR, charge);
+	if (!weakMode && observerR <= rPlus * 1.0001) return hit;
+	vec3 radial = ro / observerR;
+	vec3 v = rd;
+	if (exactStatic) {
+		float component = dot(rd, radial);
+		v = rd + (sqrt(max(observerF, 1e-7)) - 1.0) * component * radial;
+	}
+	float l2 = dot(cross(ro, v), cross(ro, v));
+	float q2 = charge * charge;
+
+	// Classify static capture from the exact effective-potential maximum, even
+	// if a near-critical ray uses the whole numerical budget. Budget exhaustion
+	// must never turn an inward radial ray into a false view of the sky.
+	bool staticCaptured = false;
+	if (exactStatic) {
+		float rPhoton = 0.5 * (3.0 + sqrt(9.0 - 8.0 * q2));
+		float bCriticalSquared = rPhoton * rPhoton / staticMetric(rPhoton, charge);
+		float bSquared = l2 / max(observerF, 1e-7);
+		bool inward = dot(v, ro) < 0.0;
+		staticCaptured = observerR >= rPhoton
+			? (inward && bSquared < bCriticalSquared)
+			: (inward || bSquared > bCriticalSquared);
+	}
 
 	vec3 p = ro;
-	vec3 v = rd;
-	float prevY = p.y;
-	float prevR = length(p);
 	bool captured = false;
-	float shiftAcc = 0.0;
-	float diskGlow = 0.0;
+	bool escaped = false;
 	vec3 diskAccum = vec3(0.0);
-
-	float farR = 60.0;
-	int steps = u_steps;
-
-	for (int i = 0; i < 512; i++) {
-		if (i >= steps) break;
+	float diskShiftAccum = 0.0;
+	float diskWeight = 0.0;
+	float gridAccum = 0.0;
+	float farR = max(100.0, observerR * 3.0);
+	float accuracy = 0.14 * sqrt(56.0 / float(max(u_steps, 56)));
+	// Radial steps grow far from the lens, so the farthest observer still reaches
+	// the lens at Low quality. A small reserve resolves additional lensed images.
+	int budget = min(512, max(u_steps, 56) + 80);
+	for (int i = 0; i < budget && i < 512; i++) {
 		float r = length(p);
 		hit.minR = min(hit.minR, r);
+		if (!weakMode && r <= rPlus * 1.0001) { captured = true; break; }
+		if (r > farR && dot(p, v) > 0.0) { escaped = true; break; }
 
-		// Adaptive step: smaller near the hole, larger far away.
-		float dt = weakMode ? 0.35 : clamp(r * 0.16, 0.02, 0.55);
-
-		// Horizon crossing: rays that enter r < rs never return. Charge moves
-		// the horizon inward: r_+ = M + sqrt(M^2 - Q^2) in units rs = 2.
-		float rPlus = 0.5 * u_rs * (1.0 + sqrt(max(0.0, 1.0 - charge * charge)));
-		if (!weakMode && r < rPlus * 1.001) { captured = true; break; }
-		if (weakMode && r < 0.55) { captured = true; break; } // central body surface
-
-		// Gravitational deflection: d(v) ~ -strength * rs * p / r^3 * dt
-		vec3 accel = -strength * (u_rs / (r * r * r)) * p;
-		// Frame dragging: swirl around the spin axis (y), decaying as 1/r^2.
-		if (spin > 0.001) {
-			vec3 drag = cross(vec3(0.0, 1.0, 0.0), p) / (r * r * r);
-			accel += drag * spin * u_rs * 0.9;
+		float dt = accuracy * max(r, 0.5) / max(length(v), 0.15);
+		vec3 pn = p;
+		vec3 vn = v;
+		if (exactStatic) {
+			staticRayStep(pn, vn, dt, l2, q2);
+		} else {
+			// Weak-field bending has the GR 4M/b far-field limit; its softened
+			// central core and the Kerr swirl are visual approximations.
+			float softR = weakMode ? max(r, 0.55) : max(r, rPlus);
+			vec3 accel = -strength * u_rs * p / (softR * softR * softR);
+			if (spin > 0.001) accel += cross(vec3(0.0, 1.0, 0.0), p) * spin * u_rs * 0.9 / (softR * softR * softR);
+			vn = normalize(v + accel * dt);
+			pn = p + vn * dt;
 		}
-		v = normalize(v + accel * dt);
+		if (any(isnan(pn)) || any(isinf(pn)) || any(isnan(vn)) || any(isinf(vn))) break;
 
-		// Accumulate a shift estimate: falling toward the hole blueshifts the
-		// ray direction history; escaping redshifts. We track d(1/r).
-		shiftAcc += strength * u_rs * (1.0 / max(r, 1.0) - 1.0 / max(prevR, 1.0)) * 0.35;
-
-		vec3 pn = p + v * dt;
-
-		// Disk: optically thin equatorial annulus. Accumulate emission when the
-		// ray passes near the plane within the disk radii (robust to large steps
-		// and to rays that skim rather than cross the plane).
-		{
-			float cr = length(p.xz);
-			if (cr > u_disk.x && cr < u_disk.y) {
-				float prox = exp(-abs(p.y) * abs(p.y) * 60.0); // thin disk profile
-				if (prox > 0.02) {
-					float grav = strength * u_rs / max(cr, 1.0);
-					diskAccum += diskEmission(p, v, -0.5 * grav, spin) * prox * dt * 0.7;
-					hit.diskHit = 1.0;
-					if (length(diskAccum) > 0.7) break;
-				}
+		// Locate disk-plane crossings along the step instead of hoping a sample
+		// lands in its thin Gaussian profile. The disk remains an emission model.
+		float dy = pn.y - p.y;
+		bool crosses = abs(dy) > 1e-6 && p.y * pn.y <= 0.0;
+		vec3 sampleP = crosses ? mix(p, pn, clamp(-p.y / dy, 0.0, 1.0)) : p;
+		if (crosses && overlayEnabled(1.0) > 0.5 && (weakMode || length(sampleP) > rPlus)) {
+			gridAccum = max(gridAccum, coordinateGridAt(sampleP));
+		}
+		if (!weakMode) {
+			float diskR = length(sampleP.xz);
+			float proximity = crosses ? 1.0 : exp(-p.y * p.y * 60.0) * min(dt * length(v), 0.4);
+			if (diskR > max(u_disk.x, rPlus) && diskR < u_disk.y && proximity > 0.02) {
+				float emitF = staticMetric(diskR, charge);
+				float gravShift = exactStatic ? 0.5 * log(max(emitF, 1e-6) / max(observerF, 1e-6)) : -1.0 / diskR;
+				diskAccum += diskEmission(sampleP, normalize(v), gravShift, spin) * proximity * 0.7;
+				diskShiftAccum += gravShift * proximity;
+				diskWeight += proximity;
+				hit.diskHit = 1.0;
 			}
 		}
-
-		prevY = pn.y;
-		prevR = r;
 		p = pn;
-
-		if (r > farR) break;
+		v = vn;
 	}
 
-	hit.escape = captured ? 0.0 : 1.0;
-	hit.shift = shiftAcc + (captured ? 0.0 : 0.0);
+	if (exactStatic) captured = staticCaptured;
+	hit.escape = !captured && (escaped || exactStatic) ? 1.0 : 0.0;
+	// A photon received from a static sky at infinity is blueshifted for the
+	// static observer: nu_obs/nu_infinity = 1/sqrt(f_observer).
+	hit.shift = exactStatic ? -0.5 * log(max(observerF, 1e-6)) : 0.0;
 	hit.diskColor = diskAccum;
-
-	if (!captured) {
-		hit.color = skyColor(v, hit.shift, u_time);
-	} else {
-		hit.color = vec3(0.0);
-	}
+	hit.skyDirection = normalize(v);
+	hit.skyShift = hit.shift;
+	if (diskWeight > 0.0) hit.shift = diskShiftAccum / diskWeight;
+	hit.color += vec3(0.10, 0.22, 0.30) * gridAccum;
 	hit.color += diskAccum;
 	return hit;
 }
@@ -156,92 +220,75 @@ float equatorialGrid(vec3 ro, vec3 rd) {
 	float t = -ro.y / rd.y;
 	if (t < 0.0) return 0.0;
 	vec3 p = ro + rd * t;
-	float r = length(p.xz);
-	if (r > 40.0) return 0.0;
-	vec2 g = abs(fract(p.xz * 0.5) - 0.5);
-	float line = 1.0 - smoothstep(0.0, 0.035, min(g.x, g.y));
-	float ring = 1.0 - smoothstep(0.0, 0.06, abs(fract(r * 0.5) - 0.5) / 0.5 * r * 0.5);
-	return max(line, ring * 0.3) * exp(-r * 0.06) * 0.5;
+	return coordinateGridAt(p);
 }
 
 // ---------------------------------------------------------------------------
 // Per-model ray evaluation.
 // ---------------------------------------------------------------------------
 
-vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut) {
+vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut, out vec3 skyDirection, out float skyShift, out float skyVisible) {
 	shiftOut = 0.0;
+	skyDirection = rd;
+	skyShift = 0.0;
+	skyVisible = 1.0;
 
 	// 0: Minkowski — straight lines, honest sky.
 	if (mode == 0) {
-		vec3 c = skyColor(rd, 0.0, u_time);
+		vec3 c = vec3(0.0);
 		if (overlayEnabled(1.0) > 0.5) c += vec3(0.10, 0.22, 0.30) * equatorialGrid(ro, rd);
 		return c;
 	}
 
-	// 1: Newtonian weak field — same curved-ray integrator, gentle strength.
-	if (mode == 1) {
-		RayHit h = traceBlackHole(ro, rd, 0.0, 0.0, true);
-		if (overlayEnabled(1.0) > 0.5) h.color += vec3(0.10, 0.22, 0.30) * equatorialGrid(ro, rd);
+	// One shared call site prevents ANGLE/D3D from duplicating the complete
+	// geodesic march for every compact-object mode during native compilation.
+	if (mode >= 1 && mode <= 4) {
+		float spin = mode == 3 ? u_spin : 0.0;
+		float charge = mode == 4 ? u_charge : 0.0;
+		RayHit h = traceBlackHole(ro, rd, spin, charge, mode == 1);
 		shiftOut = h.shift;
-		return h.color;
-	}
-
-	// 2: Schwarzschild.
-	if (mode == 2) {
-		RayHit h = traceBlackHole(ro, rd, 0.0, 0.0, false);
-		shiftOut = h.shift;
-		// Overlays drawn in ray-space rings around the shadow.
-		float bShadow = 2.6 * u_rs * 0.5; // angular shadow edge proxy
+		skyDirection = h.skyDirection;
+		skyShift = h.skyShift;
+		skyVisible = h.escape;
 		float rScreen = length(cross(rd, normalize(-ro))) * length(ro);
-		if (overlayEnabled(4.0) > 0.5 && abs(rScreen - 2.0) < 0.06 && h.escape < 0.5)
-			h.color += vec3(0.25, 0.5, 0.9);
-		if (overlayEnabled(8.0) > 0.5 && abs(rScreen - 3.0) < 0.08)
-			h.color += vec3(0.2, 0.8, 0.6) * 0.7;
-		if (overlayEnabled(16.0) > 0.5 && abs(rScreen - 6.0) < 0.1)
-			h.color += vec3(0.9, 0.6, 0.2) * 0.55;
-		if (overlayEnabled(64.0) > 0.5)
-			h.color = mix(h.color, vec3(0.9, 0.2, 0.15), clamp(-h.shift * 2.2, 0.0, 0.45) * (h.escape));
-		return h.color;
-	}
-
-	// 3: Kerr — curved-ray integrator plus frame-drag swirl term.
-	if (mode == 3) {
-		RayHit h = traceBlackHole(ro, rd, u_spin, 0.0, false);
-		shiftOut = h.shift;
-		float rScreen = length(cross(rd, normalize(-ro))) * length(ro);
-		float rPlus = 1.0 + sqrt(max(0.0, 1.0 - u_spin * u_spin));
-		if (overlayEnabled(4.0) > 0.5 && abs(rScreen - rPlus) < 0.06)
-			h.color += vec3(0.25, 0.5, 0.9);
-		if (overlayEnabled(32.0) > 0.5 && abs(rScreen - 2.0) < 0.08)
-			h.color += vec3(0.7, 0.4, 0.9) * 0.65;
-		return h.color;
-	}
-
-	// 4: Reissner–Nordstrom — charge reduces effective attraction.
-	if (mode == 4) {
-		RayHit h = traceBlackHole(ro, rd, 0.0, u_charge, false);
-		shiftOut = h.shift;
-		float q = min(u_charge, 1.0);
-		float rPlus = 1.0 + sqrt(max(0.0, 1.0 - q * q));
-		float rMinus = 1.0 - sqrt(max(0.0, 1.0 - q * q));
-		float rScreen = length(cross(rd, normalize(-ro))) * length(ro);
-		if (overlayEnabled(4.0) > 0.5 && abs(rScreen - rPlus) < 0.06)
-			h.color += vec3(0.25, 0.5, 0.9);
-		if (overlayEnabled(8.0) > 0.5 && abs(rScreen - max(rMinus, 0.2)) < 0.05)
-			h.color += vec3(0.9, 0.5, 0.2) * 0.5;
+		if (mode == 2) {
+			if (overlayEnabled(4.0) > 0.5 && abs(rScreen - 2.0) < 0.06 && h.escape < 0.5)
+				h.color += vec3(0.25, 0.5, 0.9);
+			if (overlayEnabled(8.0) > 0.5 && abs(rScreen - 3.0) < 0.08)
+				h.color += vec3(0.2, 0.8, 0.6) * 0.7;
+			if (overlayEnabled(16.0) > 0.5 && abs(rScreen - 6.0) < 0.1)
+				h.color += vec3(0.9, 0.6, 0.2) * 0.55;
+		} else if (mode == 3) {
+			float rPlus = 1.0 + sqrt(max(0.0, 1.0 - spin * spin));
+			if (overlayEnabled(4.0) > 0.5 && abs(rScreen - rPlus) < 0.06)
+				h.color += vec3(0.25, 0.5, 0.9);
+			if (overlayEnabled(32.0) > 0.5 && abs(rScreen - 2.0) < 0.08)
+				h.color += vec3(0.7, 0.4, 0.9) * 0.65;
+		} else if (mode == 4 && charge <= 1.0) {
+			float rPlus = 1.0 + sqrt(max(0.0, 1.0 - charge * charge));
+			float rPhoton = 0.5 * (3.0 + sqrt(9.0 - 8.0 * charge * charge));
+			if (overlayEnabled(4.0) > 0.5 && abs(rScreen - rPlus) < 0.06)
+				h.color += vec3(0.25, 0.5, 0.9);
+			if (overlayEnabled(8.0) > 0.5 && abs(rScreen - rPhoton) < 0.08)
+				h.color += vec3(0.2, 0.8, 0.6) * 0.7;
+		}
 		return h.color;
 	}
 
 	// 5: FLRW — expanding grid of galaxies. Light from a galaxy at comoving
 	// distance is redshifted by 1 + z = a_now / a_emit.
 	if (mode == 5) {
-		float a = max(u_flrwA, 0.05);
-		float z = max(1.0 / a - 1.0, 0.0);
-		vec3 c = skyColor(rd, -z * 0.8, u_time);
+		float a = max(u_flrwA, 0.0001);
+		float ratio = a / max(u_flrwEmitA, 0.0001);
+		// A labelled comparison with one reference epoch. RGB tint is illustrative;
+		// no distance-dependent emission times or galaxy light cone are traced.
+		float shift = -log(max(ratio, 1e-6));
+		skyShift = shift;
+		vec3 c = vec3(0.0);
 		// Comoving coordinate mesh recedes with the Hubble flow.
 		if (overlayEnabled(1.0) > 0.5) {
 			vec3 drift = rd;
-			float scale = u_flrwView > 0.5 ? a : 1.0;
+			float scale = u_flrwView > 0.5 ? 1.0 / a : 1.0;
 			float lat = asin(clamp(drift.y, -1.0, 1.0));
 			float lon = atan(drift.z, drift.x);
 			vec2 grid = vec2(lon * 4.0 / PI, lat * 4.0 / PI) * scale;
@@ -249,17 +296,23 @@ vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut) {
 			float line = 1.0 - smoothstep(0.0, 0.05, min(cell.x, cell.y));
 			c += vec3(0.12, 0.25, 0.3) * line * 0.5;
 		}
-		shiftOut = -z;
+		shiftOut = shift;
 		return c;
 	}
 
 	// 6: de Sitter — accelerated expansion, cosmological horizon shell.
 	if (mode == 6) {
-		float h0 = max(u_lambda, 0.02);
+		float h0 = max(u_lambda, 0.0);
+		if (h0 < 1e-6) {
+			vec3 flatColor = vec3(0.0);
+			if (overlayEnabled(1.0) > 0.5) flatColor += vec3(0.10, 0.22, 0.30) * equatorialGrid(ro, rd);
+			return flatColor;
+		}
 		float horizon = 1.0 / h0; // c/H, normalized
 		// Outward recession velocity grows with distance; shift increases.
 		float zApprox = 0.6 * h0 * 2.0;
-		vec3 c = skyColor(rd, -zApprox, u_time);
+		skyShift = -zApprox;
+		vec3 c = vec3(0.0);
 		if (overlayEnabled(1.0) > 0.5) {
 			float lat = asin(clamp(rd.y, -1.0, 1.0));
 			float lon = atan(rd.z, rd.x);
@@ -268,9 +321,14 @@ vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut) {
 			float line = 1.0 - smoothstep(0.0, 0.05, min(cell.x, cell.y));
 			c += vec3(0.15, 0.2, 0.35) * line * 0.5;
 		}
-		// Horizon glow marker: a dim shell where recession reaches c.
-		float rim = pow(1.0 - abs(rd.y * 0.0), 1.0);
-		c += vec3(0.05, 0.08, 0.16) * rim * u_lambda;
+		// Schematic distance guide, not an optical image of the observer-centred
+		// cosmological horizon. Map c/H to a finite display radius monotonically.
+		if (overlayEnabled(4.0) > 0.5) {
+			vec2 ndc = (2.0 * gl_FragCoord.xy - u_resolution) / min(u_resolution.x, u_resolution.y);
+			float displayRadius = horizon / (horizon + 4.0);
+			float rim = 1.0 - smoothstep(0.0, 0.012, abs(length(ndc) - displayRadius));
+			c += vec3(0.15, 0.35, 0.65) * rim;
+		}
 		shiftOut = -zApprox;
 		return c;
 	}
@@ -279,9 +337,12 @@ vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut) {
 	// metaphor): rays oscillate rather than escape cleanly. Visualized as an
 	// inward "refocusing" of the sky plus a repeating grid echo.
 	if (mode == 7) {
-		float focus = u_adsl;
-		vec3 bent = normalize(rd - 0.35 * focus * cross(rd, vec3(0.0, 1.0, 0.0)) * 0.0 + focus * 0.25 * vec3(rd.x, -abs(rd.y) * 0.2, rd.z));
-		vec3 c = skyColor(normalize(mix(rd, bent, 0.8)), 0.15, u_time);
+		// Curvature magnitude scales as 1/L². This remains a static refocusing
+		// sketch rather than a propagation/reflection calculation at the AdS boundary.
+		float focus = 0.12 / max(u_adsl * u_adsl, 0.01);
+		vec3 bent = normalize(rd + focus * 0.25 * vec3(rd.x, -rd.y * 0.2, rd.z));
+		skyDirection = normalize(mix(rd, bent, 0.8));
+		vec3 c = vec3(0.0);
 		if (overlayEnabled(1.0) > 0.5) {
 			float lat = asin(clamp(rd.y, -1.0, 1.0));
 			float lon = atan(rd.z, rd.x);
@@ -293,7 +354,7 @@ vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut) {
 				c += vec3(0.12, 0.3, 0.28) * line * (0.5 / (float(echo) + 1.0));
 			}
 		}
-		shiftOut = 0.15;
+		shiftOut = 0.0;
 		return c;
 	}
 
@@ -302,30 +363,34 @@ vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut) {
 	// the ray direction.
 	if (mode == 8) {
 		float phase = 2.0 * PI * u_gwFreq * u_time + u_gwPhase;
-		float amp = u_gwAmp;
+		float amp = clamp(u_gwAmp, 0.0, 0.5);
 		if (u_gwChirp > 0.5) {
 			// Inspiral chirp: frequency and amplitude sweep upward over ~6 s.
-			float tc = mod(u_time, 6.0) / 6.0;
-			phase = 2.0 * PI * (u_gwFreq * (u_time + 2.0 * tc * tc * u_time));
+			float cycleTime = mod(u_time, 6.0);
+			float tc = cycleTime / 6.0;
+			phase = 2.0 * PI * u_gwFreq * (cycleTime + 2.0 * tc * tc * cycleTime) + u_gwPhase;
 			amp *= smoothstep(0.0, 0.75, tc) * (1.0 - smoothstep(0.9, 1.0, tc));
 		}
-		float h = amp * cos(phase);
+		// Metric strain changes test-mass separations by h/2 at first order.
+		float h = 0.5 * amp * cos(phase);
+		const mat2 rotate45 = mat2(0.70710678, -0.70710678, 0.70710678, 0.70710678);
+		const mat2 rotateBack = mat2(0.70710678, 0.70710678, -0.70710678, 0.70710678);
 		vec3 bent = rd;
 		if (u_gwPol < 0.5) {
 			bent = normalize(vec3(rd.x * (1.0 + h), rd.y * (1.0 - h), rd.z));
 		} else {
-			float s = sin(phase), cph = cos(phase);
-			vec2 rp = mat2(cph, -s, s, cph) * rd.xy;
+			vec2 rp = rotate45 * rd.xy;
 			rp = vec2(rp.x * (1.0 + h), rp.y * (1.0 - h));
-			bent = normalize(vec3(mat2(cph, s, -s, cph) * rp, rd.z));
+			bent = normalize(vec3(rotateBack * rp, rd.z));
 		}
-		vec3 c = skyColor(bent, 0.0, u_time);
+		skyDirection = bent;
+		vec3 c = vec3(0.0);
 
 		// Test-particle ring: a circle in the plane of the screen stretched by h.
 		if (u_gwRing > 0.5) {
 			vec2 ndc = (2.0 * gl_FragCoord.xy - u_resolution) / min(u_resolution.x, u_resolution.y);
 			vec2 ringNdc = u_gwPol < 0.5 ? vec2(ndc.x / (1.0 + h), ndc.y / (1.0 - h))
-			                            : mat2(0.7071, -0.7071, 0.7071, 0.7071) * ndc;
+			                            : rotate45 * ndc;
 			if (u_gwPol >= 0.5) ringNdc = vec2(ringNdc.x / (1.0 + h), ringNdc.y / (1.0 - h));
 			float ringR = length(ringNdc);
 			float ringLine = 1.0 - smoothstep(0.0, 0.012, abs(ringR - 0.55));
@@ -334,14 +399,18 @@ vec3 traceModel(int mode, vec3 ro, vec3 rd, out float shiftOut) {
 		// Interferometer arms: cross hairs whose lengths oscillate oppositely.
 		if (u_gwArms > 0.5) {
 			vec2 ndc = (2.0 * gl_FragCoord.xy - u_resolution) / min(u_resolution.x, u_resolution.y);
-			float armX = (1.0 - smoothstep(0.0, 0.012, abs(ndc.y))) * step(abs(ndc.x), 0.75 * (1.0 + h));
-			float armY = (1.0 - smoothstep(0.0, 0.012, abs(ndc.x))) * step(abs(ndc.y), 0.75 * (1.0 - h));
+			// Fixed screen-aligned detector arms have no first-order length
+			// response to a pure cross wave at normal incidence.
+			float armStrain = u_gwPol < 0.5 ? h : 0.0;
+			float armX = (1.0 - smoothstep(0.0, 0.012, abs(ndc.y))) * step(abs(ndc.x), 0.75 * (1.0 + armStrain));
+			float armY = (1.0 - smoothstep(0.0, 0.012, abs(ndc.x))) * step(abs(ndc.y), 0.75 * (1.0 - armStrain));
 			c += vec3(0.9, 0.55, 0.2) * max(armX, armY) * 0.55;
 		}
 		shiftOut = 0.0;
 		return c;
 	}
 
+	skyVisible = 0.0;
 	return vec3(1.0, 0.0, 1.0); // invalid state fallback
 }
 
@@ -350,20 +419,22 @@ void main() {
 	float aspect = u_resolution.x / u_resolution.y;
 	vec3 rd = rayDirection(frag, aspect);
 	float shift = 0.0;
-	vec3 color;
+	float splitX = u_split.y * u_resolution.x;
+	int activeMode = u_split.x > 0.5 && frag.x >= splitX ? u_modeB : u_modeA;
+	// Likewise keep the complete model dispatcher at one call site.
+	vec3 skyDirection;
+	float skyShift;
+	float skyVisible;
+	vec3 color = traceModel(activeMode, u_camPos, rd, shift, skyDirection, skyShift, skyVisible);
+	// Evaluate the expensive procedural sky once. Duplicating its FBM/noise
+	// at each model branch makes native D3D11 shader linking pathological.
+	if (skyVisible > 0.5) color += skyColor(skyDirection, skyShift, u_time);
+	if (u_split.x > 0.5 && abs(frag.x - splitX) < 1.5) color = vec3(0.9);
 
-	if (u_split.x > 0.5) {
-		float splitX = u_split.y * u_resolution.x;
-		if (frag.x < splitX) {
-			color = traceModel(u_modeA, u_camPos, rd, shift);
-		} else {
-			color = traceModel(u_modeB, u_camPos, rd, shift);
-		}
-		// Divider
-		if (abs(frag.x - splitX) < 1.5) color = vec3(0.9);
-	} else {
-		color = traceModel(u_modeA, u_camPos, rd, shift);
+	if (overlayEnabled(64.0) > 0.5) {
+		vec3 shiftTint = shift >= 0.0 ? vec3(0.15, 0.4, 1.0) : vec3(1.0, 0.25, 0.1);
+		color = mix(color, shiftTint, clamp(abs(shift) * 1.4, 0.0, 0.55));
 	}
-
+	if (any(isnan(color)) || any(isinf(color))) color = vec3(0.35, 0.0, 0.35);
 	outColor = vec4(tonemap(color), 1.0);
 }

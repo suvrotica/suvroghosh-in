@@ -14,9 +14,10 @@
 		onsave?: () => void;
 		onshare?: () => void;
 		onfullscreen?: () => void;
+		canSave?: boolean;
 	};
 
-	let { store, onsave, onshare, onfullscreen }: Props = $props();
+	let { store, onsave, onshare, onfullscreen, canSave = false }: Props = $props();
 	let uid = $props.id();
 
 	const modelLabels: Record<SpacetimeModel, string> = {
@@ -31,30 +32,57 @@
 		'gravitational-wave': 'Gravitational-wave spacetime'
 	};
 
-	const overlayLabels: { key: OverlayKey; label: string; hint: string }[] = [
-		{ key: 'grid', label: 'Coordinate grid', hint: 'A coordinate mesh on the equatorial plane.' },
+	const overlayLabels: {
+		key: OverlayKey;
+		label: string;
+		hint: string;
+		models: SpacetimeModel[];
+	}[] = [
 		{
-			key: 'photonPaths',
-			label: 'Photon paths',
-			hint: 'Show how light rays curve through the geometry.'
+			key: 'grid',
+			label: 'Coordinate grid',
+			hint: 'A drawing aid: an equatorial mesh in compact-object scenes or a cosmological coordinate grid.',
+			models: [
+				'minkowski',
+				'weak-field',
+				'schwarzschild',
+				'kerr',
+				'reissner-nordstrom',
+				'flrw',
+				'de-sitter',
+				'anti-de-sitter'
+			]
 		},
 		{
 			key: 'horizon',
-			label: 'Event horizon',
-			hint: 'Mark the boundary from which light cannot return.'
+			label: 'Horizon guide (schematic)',
+			hint: 'A coordinate-radius reference circle, not an image of the horizon surface.',
+			models: ['schwarzschild', 'kerr', 'reissner-nordstrom', 'de-sitter']
 		},
 		{
 			key: 'photonSphere',
-			label: 'Photon sphere',
-			hint: 'Unstable circular light orbit at r = 3M.'
+			label: 'Photon-sphere guide (schematic)',
+			hint: 'A reference circle at the unstable circular light orbit: 3M in Schwarzschild and charge-dependent in RN.',
+			models: ['schwarzschild', 'reissner-nordstrom']
 		},
-		{ key: 'isco', label: 'ISCO', hint: 'Innermost stable circular orbit at r = 6M.' },
+		{
+			key: 'isco',
+			label: 'ISCO guide (schematic)',
+			hint: 'A reference circle at the Schwarzschild innermost stable circular orbit, 6M.',
+			models: ['schwarzschild']
+		},
 		{
 			key: 'ergosphere',
-			label: 'Ergosphere',
-			hint: 'Kerr region where nothing can remain static.'
+			label: 'Equatorial ergosphere guide (schematic)',
+			hint: 'A reference circle at the Kerr equatorial static limit, 2M.',
+			models: ['kerr']
 		},
-		{ key: 'redshiftMap', label: 'Redshift map', hint: 'Tint the scene by gravitational redshift.' }
+		{
+			key: 'redshiftMap',
+			label: 'Frequency-shift map',
+			hint: 'A colour guide to the modelled frequency shift: warm for redshift and cool for blueshift.',
+			models: ['schwarzschild', 'kerr', 'reissner-nordstrom', 'flrw', 'de-sitter']
+		}
 	];
 
 	let model = $derived(store.state.model);
@@ -63,24 +91,31 @@
 	let observer = $derived(store.state.observer);
 	let overlays = $derived(store.state.overlays);
 	let quality = $derived(store.state.quality);
+	let activeModels = $derived(compare ? [model, store.state.compareModel] : [model]);
+	let visibleOverlays = $derived(
+		overlayLabels.filter((overlay) =>
+			activeModels.some((active) => overlay.models.includes(active))
+		)
+	);
 
 	const blackHoleModels: SpacetimeModel[] = ['schwarzschild', 'kerr', 'reissner-nordstrom'];
-	let isBlackHole = $derived(blackHoleModels.includes(model));
-	let isWeak = $derived(model === 'weak-field');
-	let isKerr = $derived(model === 'kerr');
-	let isRN = $derived(model === 'reissner-nordstrom');
-	let isFLRW = $derived(model === 'flrw');
-	let isDS = $derived(model === 'de-sitter');
-	let isAdS = $derived(model === 'anti-de-sitter');
-	let isGW = $derived(model === 'gravitational-wave');
+	let isBlackHole = $derived(activeModels.some((active) => blackHoleModels.includes(active)));
+	let isWeak = $derived(activeModels.includes('weak-field'));
+	let isKerr = $derived(activeModels.includes('kerr'));
+	let isRN = $derived(activeModels.includes('reissner-nordstrom'));
+	let isFLRW = $derived(activeModels.includes('flrw'));
+	let isDS = $derived(activeModels.includes('de-sitter'));
+	let isAdS = $derived(activeModels.includes('anti-de-sitter'));
+	let isGW = $derived(activeModels.includes('gravitational-wave'));
 	let isMinkowski = $derived(model === 'minkowski');
+	let hasDistance = $derived(isBlackHole || isWeak || activeModels.includes('minkowski'));
 </script>
 
 <div class="grid gap-5 p-4 sm:p-5 lg:grid-cols-2 xl:grid-cols-3">
 	<!-- Spacetime -->
 	<fieldset class="spacetime-group">
 		<legend>Spacetime</legend>
-		<label for="{uid}-model">Metric solution</label>
+		<label for="{uid}-model">Geometry / teaching model</label>
 		<select
 			id="{uid}-model"
 			value={model}
@@ -91,7 +126,10 @@
 				<option value={m}>{modelLabels[m]}</option>
 			{/each}
 		</select>
-		<p class="hint">Choose which exact solution or limit of the field equation shapes the light.</p>
+		<p class="hint">
+			Choose a geometry. The panels distinguish numerical geodesics, bending approximations and
+			teaching diagrams.
+		</p>
 
 		<label for="{uid}-preset">Scene preset</label>
 		<select
@@ -151,9 +189,11 @@
 			<option value="low">Low — smooth on phones</option>
 			<option value="medium">Medium</option>
 			<option value="high">High</option>
-			<option value="research">Research — maximum steps</option>
+			<option value="research">Ultra — maximum steps</option>
 		</select>
-		<p class="hint">Higher quality integrates light more accurately at a GPU cost.</p>
+		<p class="hint">
+			Higher settings use more numerical ray steps in compact-object modes, with a higher GPU cost.
+		</p>
 	</fieldset>
 
 	<!-- Central object -->
@@ -165,7 +205,7 @@
 				<input
 					id="{uid}-mass"
 					type="range"
-					min="1"
+					min="0"
 					max="8"
 					step="0.05"
 					value={Math.log10(params.massSolar)}
@@ -175,7 +215,10 @@
 							Math.pow(10, Number((e.currentTarget as HTMLInputElement).value))
 						)}
 				/>
-				<p class="hint">Log scale from one to one hundred million solar masses.</p>
+				<p class="hint">
+					Log scale from one to one hundred million solar masses. Scene lengths use M; mass rescales
+					their physical size.
+				</p>
 			{/if}
 			{#if isWeak}
 				<label for="{uid}-weakmu"
@@ -283,6 +326,10 @@
 					<option value={0}>Flat (k = 0)</option>
 					<option value={1}>Closed (k = +1)</option>
 				</select>
+				<p class="hint">
+					Curvature obeys Ωₖ = 1 − Ωₘ − Ωᵣ − ΩΛ. Selecting open, flat, or closed rescales this
+					density mix to a total of 0.75, 1, or 1.25.
+				</p>
 				<label for="{uid}-om"
 					>Matter density Ωₘ <output>{params.omegaMatter.toFixed(2)}</output></label
 				>
@@ -404,7 +451,9 @@
 				<option value="plus">Plus (+)</option>
 				<option value="cross">Cross (×)</option>
 			</select>
-			<label for="{uid}-gamp">Amplitude <output>{params.gwAmplitude.toFixed(2)}</output></label>
+			<label for="{uid}-gamp"
+				>Input strain h₀ (×10⁻²¹) <output>{params.gwAmplitude.toFixed(2)}</output></label
+			>
 			<input
 				id="{uid}-gamp"
 				type="range"
@@ -462,9 +511,9 @@
 							(e.currentTarget as HTMLInputElement).checked ? 'physical' : 'exaggerated'
 						)}
 				/>
-				Physical strain scale
+				Physical strain scale (unmagnified)
 			</label>
-			{#if params.gwScale === 'physical'}
+			{#if params.gwScale !== 'physical'}
 				<label for="{uid}-gex"
 					>Exaggeration factor <output>×{params.gwExaggeration.toExponential(0)}</output></label
 				>
@@ -482,7 +531,12 @@
 						)}
 				/>
 				<p class="hint">
-					Real strain is ~10⁻²¹. This factor magnifies it to visibility — always labelled.
+					The input strain is multiplied by this display factor. The displayed peak is capped at 0.5
+					and reported in the panel.
+				</p>
+			{:else}
+				<p class="hint">
+					The physical input strain is shown at 1×. Its effect is far smaller than one screen pixel.
 				</p>
 			{/if}
 		</fieldset>
@@ -491,17 +545,19 @@
 	<!-- Observer -->
 	<fieldset class="spacetime-group">
 		<legend>Observer</legend>
-		<label for="{uid}-dist">Distance <output>{observer.distance.toFixed(1)} r_s</output></label>
-		<input
-			id="{uid}-dist"
-			type="range"
-			min="1.05"
-			max="40"
-			step="0.05"
-			value={observer.distance}
-			oninput={(e) =>
-				store.setObserver('distance', Number((e.currentTarget as HTMLInputElement).value))}
-		/>
+		{#if hasDistance}
+			<label for="{uid}-dist">Distance <output>{observer.distance.toFixed(1)} M</output></label>
+			<input
+				id="{uid}-dist"
+				type="range"
+				min="2.1"
+				max="40"
+				step="0.05"
+				value={observer.distance}
+				oninput={(e) =>
+					store.setObserver('distance', Number((e.currentTarget as HTMLInputElement).value))}
+			/>
+		{/if}
 		<label for="{uid}-az">Azimuth <output>{observer.azimuthDeg.toFixed(0)}°</output></label>
 		<input
 			id="{uid}-az"
@@ -555,9 +611,9 @@
 	<!-- Light and matter -->
 	<fieldset class="spacetime-group">
 		<legend>Light & matter</legend>
-		{#if isBlackHole || isWeak}
+		{#if isBlackHole}
 			<label for="{uid}-dinner"
-				>Disk inner radius <output>{store.state.disk.innerRadius.toFixed(1)} r_s</output></label
+				>Disk inner radius <output>{store.state.disk.innerRadius.toFixed(1)} M</output></label
 			>
 			<input
 				id="{uid}-dinner"
@@ -570,7 +626,7 @@
 					store.setDisk('innerRadius', Number((e.currentTarget as HTMLInputElement).value))}
 			/>
 			<label for="{uid}-douter"
-				>Disk outer radius <output>{store.state.disk.outerRadius.toFixed(1)} r_s</output></label
+				>Disk outer radius <output>{store.state.disk.outerRadius.toFixed(1)} M</output></label
 			>
 			<input
 				id="{uid}-douter"
@@ -644,19 +700,21 @@
 	</fieldset>
 
 	<!-- Overlays -->
-	<fieldset class="spacetime-group">
-		<legend>Overlays</legend>
-		{#each overlayLabels as o (o.key)}
-			<label class="check" title={o.hint}>
-				<input
-					type="checkbox"
-					checked={overlays[o.key]}
-					onchange={(e) => store.setOverlay(o.key, (e.currentTarget as HTMLInputElement).checked)}
-				/>
-				{o.label}
-			</label>
-		{/each}
-	</fieldset>
+	{#if visibleOverlays.length > 0}
+		<fieldset class="spacetime-group">
+			<legend>Overlays</legend>
+			{#each visibleOverlays as o (o.key)}
+				<label class="check" title={o.hint}>
+					<input
+						type="checkbox"
+						checked={overlays[o.key]}
+						onchange={(e) => store.setOverlay(o.key, (e.currentTarget as HTMLInputElement).checked)}
+					/>
+					{o.label}
+				</label>
+			{/each}
+		</fieldset>
+	{/if}
 
 	<!-- Session -->
 	<fieldset class="spacetime-group">
@@ -669,7 +727,7 @@
 			<button type="button" onclick={() => store.randomize()}>New sky seed</button>
 		</div>
 		<div class="button-row">
-			<button type="button" onclick={onsave}>Save image</button>
+			<button type="button" onclick={onsave} disabled={!canSave}>Save image</button>
 			<button type="button" onclick={onshare}>Copy share link</button>
 			<button type="button" onclick={onfullscreen}>Fullscreen</button>
 		</div>
@@ -773,6 +831,10 @@
 	.button-row button:hover {
 		border-color: #67e8f9;
 		background: #22283f;
+	}
+	.button-row button:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
 	}
 	.fps {
 		font-family: ui-monospace, monospace;

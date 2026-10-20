@@ -38,33 +38,40 @@ vec3 skyColor(vec3 dir, float shift, float timeT) {
 		vec3 jitter = hash33(cell + u_seed * 0.013 + float(shell) * 7.7);
 		float occupancy = hash11(dot(cell, vec3(3.1, 5.7, 9.3)) + u_seed * 0.7 + float(shell));
 		// Sparse: keep only the brightest-occupied cells.
-		if (occupancy < 0.78 - 0.2 * clamp(u_starDensity, 0.0, 2.0) * 0.5) continue;
+		if (occupancy < 1.0 - 0.32 * clamp(u_starDensity, 0.0, 2.0)) continue;
 		vec3 starPos = normalize((cell + 0.2 + 0.6 * jitter) / scale);
 		float dist = length(d - starPos);
 		float mag = pow(hash11(dot(cell, vec3(1.0, 57.0, 113.0)) + u_seed), 3.0);
 		float radius = (0.0011 + 0.0009 * mag) * (1.0 + 0.3 * float(shell));
-		float core = smoothstep(radius, 0.0, dist);
-		float glow = smoothstep(radius * 2.2, 0.0, dist) * 0.18;
+		float core = 1.0 - smoothstep(0.0, radius, dist);
+		float glow = (1.0 - smoothstep(0.0, radius * 2.2, dist)) * 0.18;
 		float temp = hash11(dot(cell, vec3(4.0, 8.0, 2.0)) + 0.31 * u_seed);
 		float twinkle = u_reduced > 0.5 ? 1.0 : 0.88 + 0.12 * sin(timeT * (0.8 + temp * 2.0) + temp * 40.0);
 		color += blackbody(temp) * (core + glow) * (0.5 + 1.6 * mag) * twinkle;
 	}
 
-	// --- sparse galaxies: soft elliptical smudges ---------------------------
+	// Galaxies are evaluated from neighboring source cells so their extended
+	// profiles continue across cell boundaries. Only a thin radial source shell
+	// is populated; projection can then move a centre by less than one cell.
 	if (u_galaxies > 0.5) {
 		float gscale = 7.0;
-		vec3 cell = floor(d * gscale);
-		vec3 jitter = hash33(cell + u_seed * 0.007 + 3.1);
-		if (jitter.x > 0.62) {
-			vec3 gpos = normalize((cell + 0.2 + 0.6 * jitter) / gscale);
-			float dist = length(d - gpos);
+		vec3 baseCell = floor(d * gscale);
+		for (int candidate = 0; candidate < 27; candidate++) {
+			vec3 offset = vec3(float(candidate % 3 - 1), float((candidate / 3) % 3 - 1), float(candidate / 9 - 1));
+			vec3 cell = baseCell + offset;
+			vec3 jitter = hash33(cell + u_seed * 0.007 + 3.1);
+			if (jitter.x <= 0.62) continue;
+			vec3 source = cell + 0.2 + 0.6 * jitter;
+			if (abs(length(source) - gscale) > 0.5) continue;
+			vec3 gpos = normalize(source);
+			if (dot(d, gpos) < 0.99) continue;
 			float size = 0.006 + 0.014 * jitter.y;
 			float angle = jitter.z * PI;
 			vec3 tangent = normalize(cross(gpos, vec3(0.0, 1.0, 0.0)));
 			vec3 bitangent = cross(gpos, tangent);
 			vec2 local = vec2(dot(d - gpos, tangent), dot(d - gpos, bitangent));
 			local = mat2(cos(angle), -sin(angle), sin(angle), cos(angle)) * local;
-			local.y *= 2.6; // flattened disc
+			local.y *= 2.6;
 			float body = exp(-dot(local, local) / (size * size));
 			float coreG = exp(-dot(local, local) / (size * size * 0.12));
 			vec3 gcolor = mix(vec3(0.75, 0.72, 0.68), vec3(0.6, 0.68, 0.9), jitter.z);

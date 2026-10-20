@@ -37,7 +37,7 @@ export const MODEL_IDS: Record<SpacetimeModel, number> = {
 export type Vec3 = [number, number, number];
 
 export interface ObserverState {
-	/** Distance from the centre of the scene, in scene units (Schwarzschild radii where relevant). */
+	/** Distance from the centre in scene units M = 1 (Schwarzschild radius r_s = 2). */
 	distance: number;
 	/** Camera orbit azimuth, degrees. */
 	azimuthDeg: number;
@@ -161,7 +161,7 @@ export const DEFAULT_PARAMETERS: SpacetimeParameters = {
 	kerrSpin: 0.7,
 	rnCharge: 0.6,
 	flrwCurvature: 0,
-	omegaMatter: 0.31,
+	omegaMatter: 0.30991,
 	omegaRadiation: 9e-5,
 	omegaLambda: 0.69,
 	hubble: 70,
@@ -209,7 +209,7 @@ export const DEFAULT_SKY: SkyState = {
 };
 
 export const DEFAULT_DISK: DiskState = {
-	innerRadius: 3.2,
+	innerRadius: 6,
 	outerRadius: 14,
 	temperature: 1,
 	beaming: true

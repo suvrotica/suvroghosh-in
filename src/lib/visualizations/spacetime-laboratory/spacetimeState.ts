@@ -1,6 +1,7 @@
 import {
 	DEFAULT_PARAMETERS,
 	DEFAULT_STATE,
+	QUALITY_PRESETS,
 	SPACETIME_MODELS,
 	type SpacetimeModel,
 	type SpacetimeParameters,
@@ -9,16 +10,17 @@ import {
 } from './spacetimeTypes';
 import {
 	EXTREMAL_SPIN,
-	OBSERVER_MAX_RADIUS_RS,
-	OBSERVER_MIN_RADIUS_RS,
+	OBSERVER_MAX_RADIUS_M,
+	OBSERVER_MIN_RADIUS_M,
 	clamp
 } from './spacetimeMath';
+import { flrwCurvatureSign } from './spacetimeCosmology';
 
 export const SPACETIME_PRESETS: readonly SpacetimePreset[] = [
 	{
 		id: 'einstein-ring',
 		label: 'Einstein ring',
-		description: 'Observer, black hole, and a bright galaxy aligned to form a full ring.',
+		description: 'A near-axis Schwarzschild view for exploring lensing of the seeded sky.',
 		state: {
 			model: 'schwarzschild',
 			observer: { distance: 9, azimuthDeg: 90, elevationDeg: 4, fieldOfViewDeg: 42, properTime: 0 },
@@ -87,7 +89,7 @@ export const SPACETIME_PRESETS: readonly SpacetimePreset[] = [
 			params: {
 				...DEFAULT_PARAMETERS,
 				flrwCurvature: 0,
-				omegaMatter: 0.31,
+				omegaMatter: 0.30991,
 				omegaLambda: 0.69,
 				flrwSpeed: 0.4
 			},
@@ -155,48 +157,115 @@ function clampParameters(params: SpacetimeParameters): SpacetimeParameters {
 	const next = { ...params };
 	for (const [key, [min, max]] of Object.entries(NUMERIC_PARAM_LIMITS)) {
 		const record = next as unknown as Record<string, number>;
-		if (typeof record[key] === 'number' && Number.isFinite(record[key])) {
-			record[key] = clamp(record[key], min, max);
-		}
+		const defaults = DEFAULT_PARAMETERS as unknown as Record<string, number>;
+		record[key] = finiteClamp(record[key], min, max, defaults[key]);
 	}
-	if (![-1, 0, 1].includes(next.flrwCurvature)) next.flrwCurvature = 0;
+	next.flrwCurvature = flrwCurvatureSign(next);
 	if (next.flrwView !== 'comoving' && next.flrwView !== 'proper') next.flrwView = 'comoving';
 	if (next.gwPolarization !== 'plus' && next.gwPolarization !== 'cross')
 		next.gwPolarization = 'plus';
 	if (next.weakMode !== 'physical' && next.weakMode !== 'exaggerated')
 		next.weakMode = 'exaggerated';
 	if (next.gwScale !== 'physical' && next.gwScale !== 'exaggerated') next.gwScale = 'exaggerated';
+	for (const key of ['gwChirp', 'gwRing', 'gwArms'] as const) {
+		next[key] = booleanValue(next[key], DEFAULT_PARAMETERS[key]);
+	}
 	return next;
 }
 
+/** Keep curvature selection consistent with the Friedmann density closure. */
+export function setFlrwCurvature(
+	params: SpacetimeParameters,
+	curvature: -1 | 0 | 1
+): SpacetimeParameters {
+	const targetTotal = curvature === -1 ? 0.75 : curvature === 1 ? 1.25 : 1;
+	const total = params.omegaMatter + params.omegaRadiation + params.omegaLambda;
+	const factor = total > 0 ? targetTotal / total : 0;
+	const omegaRadiation = Math.min(0.01, params.omegaRadiation * factor);
+	const nonRadiation = targetTotal - omegaRadiation;
+	const matterAndLambda = params.omegaMatter + params.omegaLambda;
+	const omegaMatter = Math.min(
+		1.2,
+		matterAndLambda > 0 ? (nonRadiation * params.omegaMatter) / matterAndLambda : nonRadiation
+	);
+	return {
+		...params,
+		omegaMatter,
+		omegaRadiation,
+		omegaLambda: nonRadiation - omegaMatter,
+		flrwCurvature: curvature
+	};
+}
+
+function finiteClamp(value: number, min: number, max: number, fallback: number): number {
+	return clamp(Number.isFinite(value) ? value : fallback, min, max);
+}
+
+function booleanValue(value: boolean, fallback: boolean): boolean {
+	return typeof value === 'boolean' ? value : fallback;
+}
+
 export function sanitizeState(state: SpacetimeState): SpacetimeState {
+	const defaults = DEFAULT_STATE;
+	const innerRadius = finiteClamp(state.disk.innerRadius, 1.6, 12, defaults.disk.innerRadius);
+	const outerRadius = Math.max(
+		innerRadius + 0.1,
+		finiteClamp(state.disk.outerRadius, 4, 30, defaults.disk.outerRadius)
+	);
+	const azimuth = Number.isFinite(state.observer.azimuthDeg)
+		? state.observer.azimuthDeg
+		: defaults.observer.azimuthDeg;
+	const overlays = { ...defaults.overlays };
+	for (const key of Object.keys(overlays) as (keyof typeof overlays)[]) {
+		overlays[key] = booleanValue(state.overlays[key], defaults.overlays[key]);
+	}
 	return {
 		...state,
 		model: isSpacetimeModel(state.model) ? state.model : 'minkowski',
 		compareModel: isSpacetimeModel(state.compareModel) ? state.compareModel : 'schwarzschild',
-		compareSplit: clamp(state.compareSplit, 0.15, 0.85),
+		compare: booleanValue(state.compare, defaults.compare),
+		compareSplit: finiteClamp(state.compareSplit, 0.15, 0.85, defaults.compareSplit),
 		params: clampParameters(state.params),
 		observer: {
-			distance: clamp(state.observer.distance, OBSERVER_MIN_RADIUS_RS, OBSERVER_MAX_RADIUS_RS),
-			azimuthDeg: ((state.observer.azimuthDeg % 360) + 360) % 360,
-			elevationDeg: clamp(state.observer.elevationDeg, -85, 85),
-			fieldOfViewDeg: clamp(state.observer.fieldOfViewDeg, 20, 110),
-			properTime: Math.max(0, state.observer.properTime)
+			distance: finiteClamp(
+				state.observer.distance,
+				OBSERVER_MIN_RADIUS_M,
+				OBSERVER_MAX_RADIUS_M,
+				defaults.observer.distance
+			),
+			azimuthDeg: ((azimuth % 360) + 360) % 360,
+			elevationDeg: finiteClamp(
+				state.observer.elevationDeg,
+				-85,
+				85,
+				defaults.observer.elevationDeg
+			),
+			fieldOfViewDeg: finiteClamp(
+				state.observer.fieldOfViewDeg,
+				20,
+				110,
+				defaults.observer.fieldOfViewDeg
+			),
+			properTime: finiteClamp(state.observer.properTime, 0, Number.MAX_VALUE, 0)
 		},
+		overlays,
 		sky: {
-			starDensity: clamp(state.sky.starDensity, 0, 2),
-			galaxies: Boolean(state.sky.galaxies),
-			milkyWay: Boolean(state.sky.milkyWay),
-			cmb: Boolean(state.sky.cmb),
-			seed: Math.floor(clamp(state.sky.seed, 1, 999_999))
+			starDensity: finiteClamp(state.sky.starDensity, 0, 2, defaults.sky.starDensity),
+			galaxies: booleanValue(state.sky.galaxies, defaults.sky.galaxies),
+			milkyWay: booleanValue(state.sky.milkyWay, defaults.sky.milkyWay),
+			cmb: booleanValue(state.sky.cmb, defaults.sky.cmb),
+			seed: Math.floor(finiteClamp(state.sky.seed, 1, 999_999, defaults.sky.seed))
 		},
 		disk: {
-			innerRadius: clamp(state.disk.innerRadius, 1.6, 12),
-			outerRadius: clamp(state.disk.outerRadius, 4, 30),
-			temperature: clamp(state.disk.temperature, 0.4, 2),
-			beaming: Boolean(state.disk.beaming)
+			innerRadius,
+			outerRadius,
+			temperature: finiteClamp(state.disk.temperature, 0.4, 2, defaults.disk.temperature),
+			beaming: booleanValue(state.disk.beaming, defaults.disk.beaming)
 		},
-		simulationSpeed: clamp(state.simulationSpeed, 0.05, 4)
+		quality: Object.hasOwn(QUALITY_PRESETS, state.quality) ? state.quality : defaults.quality,
+		playing: booleanValue(state.playing, defaults.playing),
+		simulationSpeed: finiteClamp(state.simulationSpeed, 0.05, 4, defaults.simulationSpeed),
+		showLabels: booleanValue(state.showLabels, defaults.showLabels)
 	};
 }
 
@@ -206,39 +275,48 @@ export function sanitizeState(state: SpacetimeState): SpacetimeState {
  * hand-edited link still opens a sane universe.
  */
 export function encodeStateToQuery(state: SpacetimeState): string {
+	state = sanitizeState(state);
 	const params = new URLSearchParams();
 	params.set('st', state.model);
-	if (state.compare) {
-		params.set('cmp', state.compareModel);
-		params.set('split', state.compareSplit.toFixed(2));
-	}
+	params.set('cmp', state.compareModel);
+	params.set('compare', state.compare ? '1' : '0');
 	params.set('q', state.quality);
-	params.set('d', state.observer.distance.toFixed(2));
-	params.set('az', String(Math.round(state.observer.azimuthDeg)));
-	params.set('el', String(Math.round(state.observer.elevationDeg)));
-	params.set('fov', String(Math.round(state.observer.fieldOfViewDeg)));
-	params.set('spd', state.simulationSpeed.toFixed(2));
+	params.set('split', String(state.compareSplit));
+	params.set('d', String(state.observer.distance));
+	params.set('az', String(state.observer.azimuthDeg));
+	params.set('el', String(state.observer.elevationDeg));
+	params.set('fov', String(state.observer.fieldOfViewDeg));
+	params.set('tau', String(state.observer.properTime));
+	params.set('spd', String(state.simulationSpeed));
+	params.set('play', state.playing ? '1' : '0');
+	params.set('labels', state.showLabels ? '1' : '0');
 
 	const p = state.params;
 	params.set('m', String(p.massSolar));
-	params.set('wk', p.weakCompactness.toFixed(3));
+	params.set('wk', String(p.weakCompactness));
 	params.set('wx', String(p.weakExaggeration));
-	params.set('spin', p.kerrSpin.toFixed(3));
-	params.set('chg', p.rnCharge.toFixed(3));
+	params.set('wm', p.weakMode === 'physical' ? '1' : '0');
+	params.set('spin', String(p.kerrSpin));
+	params.set('chg', String(p.rnCharge));
 	params.set('k', String(p.flrwCurvature));
-	params.set('om', p.omegaMatter.toFixed(3));
-	params.set('orad', p.omegaRadiation.toExponential(1));
-	params.set('ol', p.omegaLambda.toFixed(3));
+	params.set('om', String(p.omegaMatter));
+	params.set('orad', String(p.omegaRadiation));
+	params.set('ol', String(p.omegaLambda));
 	params.set('h0', String(p.hubble));
-	params.set('ft', p.flrwTime.toFixed(2));
+	params.set('ft', String(p.flrwTime));
+	params.set('fs', String(p.flrwSpeed));
 	params.set('fv', p.flrwView === 'proper' ? '1' : '0');
-	params.set('lh', p.lambdaH0.toFixed(2));
-	params.set('al', p.adSLength.toFixed(2));
+	params.set('lh', String(p.lambdaH0));
+	params.set('al', String(p.adSLength));
 	params.set('gwp', p.gwPolarization === 'cross' ? '1' : '0');
-	params.set('gwa', p.gwAmplitude.toFixed(2));
-	params.set('gwf', p.gwFrequency.toFixed(2));
+	params.set('gwa', String(p.gwAmplitude));
+	params.set('gwf', String(p.gwFrequency));
+	params.set('gwph', String(p.gwPhase));
 	params.set('gwc', p.gwChirp ? '1' : '0');
 	params.set('gwr', p.gwRing ? '1' : '0');
+	params.set('gwar', p.gwArms ? '1' : '0');
+	params.set('gws', p.gwScale === 'physical' ? '1' : '0');
+	params.set('gwx', String(p.gwExaggeration));
 
 	const overlayBits = [
 		state.overlays.grid,
@@ -250,10 +328,16 @@ export function encodeStateToQuery(state: SpacetimeState): string {
 		state.overlays.redshiftMap
 	];
 	params.set('ov', overlayBits.map((bit) => (bit ? '1' : '0')).join(''));
+	params.set('ovl', state.overlays.labels ? '1' : '0');
 	params.set('seed', String(state.sky.seed));
-	params.set('di', state.disk.innerRadius.toFixed(1));
-	params.set('do', state.disk.outerRadius.toFixed(1));
-	params.set('dt', state.disk.temperature.toFixed(2));
+	params.set('stars', String(state.sky.starDensity));
+	params.set('gal', state.sky.galaxies ? '1' : '0');
+	params.set('mw', state.sky.milkyWay ? '1' : '0');
+	params.set('cmb', state.sky.cmb ? '1' : '0');
+	params.set('di', String(state.disk.innerRadius));
+	params.set('do', String(state.disk.outerRadius));
+	params.set('dt', String(state.disk.temperature));
+	params.set('beam', state.disk.beaming ? '1' : '0');
 	return params.toString();
 }
 
@@ -268,6 +352,7 @@ export function decodeStateFromQuery(search: string): SpacetimeState {
 		state.compare = true;
 		state.compareModel = compareModel;
 	}
+	if (params.get('compare') === '0') state.compare = false;
 	const quality = params.get('q');
 	if (quality === 'low' || quality === 'medium' || quality === 'high' || quality === 'research') {
 		state.quality = quality;
@@ -275,9 +360,13 @@ export function decodeStateFromQuery(search: string): SpacetimeState {
 
 	const numeric = (key: string, fallback: number) => {
 		const raw = params.get(key);
-		if (raw === null) return fallback;
+		if (raw === null || raw.trim() === '') return fallback;
 		const value = Number(raw);
 		return Number.isFinite(value) ? value : fallback;
+	};
+	const boolean = (key: string, fallback: boolean) => {
+		const raw = params.get(key);
+		return raw === '1' ? true : raw === '0' ? false : fallback;
 	};
 
 	state.compareSplit = numeric('split', state.compareSplit);
@@ -285,27 +374,39 @@ export function decodeStateFromQuery(search: string): SpacetimeState {
 	state.observer.azimuthDeg = numeric('az', state.observer.azimuthDeg);
 	state.observer.elevationDeg = numeric('el', state.observer.elevationDeg);
 	state.observer.fieldOfViewDeg = numeric('fov', state.observer.fieldOfViewDeg);
+	state.observer.properTime = numeric('tau', state.observer.properTime);
 	state.simulationSpeed = numeric('spd', state.simulationSpeed);
+	state.playing = boolean('play', state.playing);
+	state.showLabels = boolean('labels', state.showLabels);
 
 	state.params.massSolar = numeric('m', state.params.massSolar);
 	state.params.weakCompactness = numeric('wk', state.params.weakCompactness);
 	state.params.weakExaggeration = numeric('wx', state.params.weakExaggeration);
+	state.params.weakMode = boolean('wm', false) ? 'physical' : 'exaggerated';
 	state.params.kerrSpin = numeric('spin', state.params.kerrSpin);
 	state.params.rnCharge = numeric('chg', state.params.rnCharge);
 	state.params.flrwCurvature = Math.round(numeric('k', 0)) as -1 | 0 | 1;
 	state.params.omegaMatter = numeric('om', state.params.omegaMatter);
 	state.params.omegaRadiation = numeric('orad', state.params.omegaRadiation);
 	state.params.omegaLambda = numeric('ol', state.params.omegaLambda);
+	if (params.has('k') && !['om', 'orad', 'ol'].some((key) => params.has(key))) {
+		state.params = setFlrwCurvature(state.params, state.params.flrwCurvature);
+	}
 	state.params.hubble = numeric('h0', state.params.hubble);
 	state.params.flrwTime = numeric('ft', state.params.flrwTime);
+	state.params.flrwSpeed = numeric('fs', state.params.flrwSpeed);
 	state.params.flrwView = params.get('fv') === '1' ? 'proper' : 'comoving';
 	state.params.lambdaH0 = numeric('lh', state.params.lambdaH0);
 	state.params.adSLength = numeric('al', state.params.adSLength);
 	state.params.gwPolarization = params.get('gwp') === '1' ? 'cross' : 'plus';
 	state.params.gwAmplitude = numeric('gwa', state.params.gwAmplitude);
 	state.params.gwFrequency = numeric('gwf', state.params.gwFrequency);
-	state.params.gwChirp = params.get('gwc') === '1';
-	state.params.gwRing = params.get('gwr') !== '0';
+	state.params.gwPhase = numeric('gwph', state.params.gwPhase);
+	state.params.gwChirp = boolean('gwc', state.params.gwChirp);
+	state.params.gwRing = boolean('gwr', state.params.gwRing);
+	state.params.gwArms = boolean('gwar', state.params.gwArms);
+	state.params.gwScale = boolean('gws', false) ? 'physical' : 'exaggerated';
+	state.params.gwExaggeration = numeric('gwx', state.params.gwExaggeration);
 
 	const overlayBits = params.get('ov');
 	if (overlayBits && /^[01]{7}$/.test(overlayBits)) {
@@ -317,11 +418,17 @@ export function decodeStateFromQuery(search: string): SpacetimeState {
 		state.overlays.ergosphere = overlayBits[5] === '1';
 		state.overlays.redshiftMap = overlayBits[6] === '1';
 	}
+	state.overlays.labels = boolean('ovl', state.overlays.labels);
 
 	state.sky.seed = numeric('seed', state.sky.seed);
+	state.sky.starDensity = numeric('stars', state.sky.starDensity);
+	state.sky.galaxies = boolean('gal', state.sky.galaxies);
+	state.sky.milkyWay = boolean('mw', state.sky.milkyWay);
+	state.sky.cmb = boolean('cmb', state.sky.cmb);
 	state.disk.innerRadius = numeric('di', state.disk.innerRadius);
 	state.disk.outerRadius = numeric('do', state.disk.outerRadius);
 	state.disk.temperature = numeric('dt', state.disk.temperature);
+	state.disk.beaming = boolean('beam', state.disk.beaming);
 
 	return sanitizeState(state);
 }
