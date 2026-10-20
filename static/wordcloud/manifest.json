@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T22:11:25.782920+00:00",
+  "generatedAt": "2026-10-20T00:13:34.725949+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9819,6 +9819,29 @@
         "Help",
         "Becomes",
         "Man"
+      ],
+      "wordCount": 130
+    },
+    "the-ai-virus-is-technically-real": {
+      "generatedAt": "2026-10-20T00:13:34.425600+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-ai-virus-is-technically-real.svg",
+      "source": "src/lib/posts/the-ai-virus-is-technically-real.md",
+      "sourceHash": "c4b6701fe3c92b8cc1c96d0391a06d583d6bd7f556fad8c4cd1eeccc242a667d",
+      "sourceModified": "2026-10-20T00:13:30.181600+00:00",
+      "topWords": [
+        "Burglar",
+        "AI",
+        "Worm",
+        "October",
+        "Autonomous",
+        "Laboratory",
+        "Simulated",
+        "Surprised",
+        "Fine",
+        "Print",
+        "Learned",
+        "Machines"
       ],
       "wordCount": 130
     },

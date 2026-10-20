@@ -17427,6 +17427,22 @@
       "sourceHash": "693824a1cb776f01cdd3211818cc923dd339a918d95a58b6a0901ba6ceac047a",
       "width": 1200
     },
+    "static/thumbnail/art-the-ai-virus-is-technically-real.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 304469,
+      "outputHash": "6d7f009437f5fe497193df80b013dd469d0e088fe4b6769942220032af613277",
+      "psnrDb": 36.28,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 402826,
+      "sourceHash": "943553d4905c400c192d6c1a6fcd1c8353fb5553f931d1257599001dabfd71e7",
+      "width": 1536
+    },
     "static/thumbnail/art-the-aromatics-of-stagnation.jpg": {
       "format": "JPEG",
       "height": 800,
