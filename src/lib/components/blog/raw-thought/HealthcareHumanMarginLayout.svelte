@@ -335,17 +335,15 @@
 				<div class="thought-leaf hm-colophon" data-side="left">
 					<div class="thought-leaf__content">
 						<section class="hm-consulting" aria-labelledby="hm-consulting-heading">
-							<p class="hm-label">Healthcare IT consulting</p>
-							<h3 id="hm-consulting-heading">
-								Working through a difficult clinical data or interoperability problem?
-							</h3>
+							<p class="hm-label">Healthcare systems background</p>
+							<h3 id="hm-consulting-heading">Explore the work behind the writing</h3>
 							<p>
-								I advise on HIE and EHR architecture, HL7/FHIR interoperability, clinical data
-								migration, terminology, analytics, and AI data readiness.
+								My earlier work in healthcare research, data warehouses and clinical systems informs
+								the questions I explore here. The career history and project notes provide context.
 							</p>
-							<nav aria-label="Healthcare IT consulting links">
-								<a href={resolve('/consulting')}>See healthcare IT consulting</a>
-								<a href={resolve('/healthcare-it-gulf')}>Gulf &amp; Kuwait healthcare IT</a>
+							<nav aria-label="Background and work links">
+								<a href={resolve('/resume')}>Career history</a>
+								<a href={resolve('/projects')}>Work &amp; experiments</a>
 							</nav>
 						</section>
 

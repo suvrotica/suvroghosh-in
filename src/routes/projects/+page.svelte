@@ -13,10 +13,17 @@
 	import Yt from '$lib/components/blog/YouTube.svelte';
 
 	let { data }: { data: PageData } = $props();
+	let orderedProjects = $derived([
+		...data.projects.filter((project) => project.status !== 'Past project'),
+		...data.projects.filter((project) => project.status === 'Past project')
+	]);
+	let firstPastProject = $derived(
+		orderedProjects.findIndex((project) => project.status === 'Past project')
+	);
 
-	const title = 'Projects & Systems Work | Suvro Ghosh';
+	const title = 'Work & Experiments | Suvro Ghosh';
 	const description =
-		'Selected healthcare data, research systems, interoperability, interactive visualization, computational notebook, workflow, and independent publishing projects by Suvro Ghosh.';
+		'Independent browser experiments, creative tools, educational demonstrations and publishing work by Suvro Ghosh, followed by selected projects from his healthcare IT career.';
 	const canonicalUrl = `${siteUrl}/projects`;
 </script>
 
@@ -25,6 +32,10 @@
 	{description}
 	{canonicalUrl}
 	keywords={[
+		'Independent work',
+		'Creative experiments',
+		'Living Pigment Studio',
+		'Independent publishing',
 		'Healthcare IT projects',
 		'Clinical data systems',
 		'Health information exchange',
@@ -39,20 +50,21 @@
 	]}
 	schema={withSiteGraph([
 		collectionPageSchema({
-			name: 'Projects & Systems Work',
+			name: 'Work & Experiments',
 			description,
 			url: canonicalUrl,
-			about: 'Healthcare, research, and publishing systems built by Suvro Ghosh'
+			about:
+				'Independent experiments, creative tools, publishing and past systems work by Suvro Ghosh'
 		}),
 		breadcrumbSchema([
 			{ name: 'Home', url: siteUrl },
-			{ name: 'Projects', url: canonicalUrl }
+			{ name: 'Work', url: canonicalUrl }
 		]),
 		{
 			'@context': 'https://schema.org',
 			'@type': 'ItemList',
-			name: 'Selected systems work',
-			itemListElement: data.projects.map((project, index) => ({
+			name: 'Independent experiments and past systems work',
+			itemListElement: orderedProjects.map((project, index) => ({
 				'@type': 'ListItem',
 				position: index + 1,
 				item: {
@@ -89,41 +101,35 @@
 				>
 			</li>
 			<li aria-hidden="true">/</li>
-			<li aria-current="page" class="font-medium text-neutral-800 dark:text-neutral-200">
-				Projects
-			</li>
+			<li aria-current="page" class="font-medium text-neutral-800 dark:text-neutral-200">Work</li>
 		</ol>
 	</nav>
 
-	<header
-		class="border-b border-neutral-300 pb-9 dark:border-neutral-700"
-		data-route-scene="healthcare"
-	>
+	<header class="border-b border-neutral-300 pb-9 dark:border-neutral-700">
 		<p
 			class="mb-3 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
 		>
-			Professional portfolio
+			Made and explored
 		</p>
 		<h1 class="mb-4 text-4xl font-bold text-neutral-950 md:text-6xl dark:text-neutral-50">
-			Selected systems work
+			Work &amp; experiments
 		</h1>
 		<p
 			class="mb-0 max-w-3xl text-left text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
 		>
-			Healthcare data warehouses, research registries, interoperability and clinical-trial
-			platforms, interactive visualizations, computational notebooks, workflow systems, and the
-			independent publishing infrastructure behind this site.
+			Browser experiments, creative tools, educational demonstrations, and the publishing system
+			behind this site. These are things you can explore now; the later section records selected
+			work from my healthcare IT career.
 		</p>
 	</header>
 
 	<aside
 		class="my-7 border-l-2 border-neutral-500 py-1 pl-5 text-sm leading-relaxed text-neutral-600 dark:border-neutral-500 dark:text-neutral-400"
-		aria-label="Portfolio disclosure"
+		aria-label="Experiment limitations"
 	>
-		Some work involved protected health information, institutional research data, or proprietary
-		systems. The summaries below therefore describe responsibilities and system concerns without
-		exposing confidential data, client artefacts, or invented performance figures. Linked essays are
-		public analysis, not client case studies.
+		The creative and educational experiments use simplified models with limits explained on each
+		page. They are demonstrations for learning and exploration, not validated scientific or medical
+		instruments or production services.
 	</aside>
 
 	<nav aria-label="Project index" class="border-y border-neutral-300 py-6 dark:border-neutral-700">
@@ -133,7 +139,7 @@
 			Project index
 		</p>
 		<ol class="grid gap-x-6 gap-y-1 sm:grid-cols-2">
-			{#each data.projects as project, index (project.id)}
+			{#each orderedProjects as project, index (project.id)}
 				<li>
 					<a
 						href={`#${project.id}`}
@@ -150,7 +156,26 @@
 	</nav>
 
 	<div class="divide-y divide-neutral-300 dark:divide-neutral-700">
-		{#each data.projects as project, index (project.id)}
+		{#each orderedProjects as project, index (project.id)}
+			{#if index === 0 || index === firstPastProject}
+				<header class="pt-10 pb-4">
+					<h2 class="mb-3 text-2xl font-bold text-neutral-950 dark:text-neutral-50">
+						{index === firstPastProject
+							? 'Selected career history'
+							: 'Independent work and experiments'}
+					</h2>
+					{#if index === firstPastProject}
+						<p
+							class="mb-0 max-w-3xl text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"
+						>
+							Past work included protected health information, institutional research data and
+							proprietary systems. These summaries describe responsibilities without exposing
+							confidential data or client artefacts. Linked essays are public analysis, not client
+							case studies. ClinZen closed in 2016.
+						</p>
+					{/if}
+				</header>
+			{/if}
 			<section
 				id={project.id}
 				class="scroll-mt-28 py-10 md:py-14 {project.featured
@@ -164,10 +189,17 @@
 							? 'text-accent'
 							: 'text-neutral-400 dark:text-neutral-500'}"
 					>
-						{String(index + 1).padStart(2, '0')} / {String(data.projects.length).padStart(2, '0')}
+						{String(index + 1).padStart(2, '0')} / {String(orderedProjects.length).padStart(2, '0')}
 					</p>
 
 					<div class="min-w-0">
+						{#if project.status}
+							<p
+								class="mb-3 inline-block rounded-full border border-neutral-400 px-3 py-1 text-xs font-semibold text-neutral-700 dark:border-neutral-600 dark:text-neutral-300"
+							>
+								{project.status}
+							</p>
+						{/if}
 						{#if project.image}
 							<div
 								class="mb-7 overflow-hidden rounded-xl border-2 border-rule bg-paper-raised shadow-none"
@@ -191,14 +223,14 @@
 						>
 							{project.context}
 						</p>
-						<h2
+						<h3
 							id={`${project.id}-heading`}
 							class="mb-4 text-2xl leading-tight font-bold md:text-3xl {project.featured
 								? 'text-ink'
 								: 'text-neutral-950 dark:text-neutral-50'}"
 						>
 							{project.name}
-						</h2>
+						</h3>
 						<p
 							class="mb-6 max-w-3xl text-left leading-relaxed {project.featured
 								? 'text-ink'
@@ -207,13 +239,13 @@
 							{project.detail}
 						</p>
 
-						<h3
+						<h4
 							class="mb-3 text-xs font-bold tracking-[0.14em] uppercase {project.featured
 								? 'text-accent'
 								: 'text-neutral-500 dark:text-neutral-400'}"
 						>
 							Contribution
-						</h3>
+						</h4>
 						<ul
 							class="mb-6 space-y-3 text-sm leading-relaxed {project.featured
 								? 'text-ink'
@@ -284,11 +316,11 @@
 
 						{#if project.relatedPosts.length > 0}
 							<div class="mt-7">
-								<h3
+								<h4
 									class="mb-3 text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
 								>
 									Related public analysis
-								</h3>
+								</h4>
 								<ul class="grid border-y border-neutral-300 sm:grid-cols-2 dark:border-neutral-700">
 									{#each project.relatedPosts as post (post.slug)}
 										<li
@@ -326,7 +358,7 @@
 								<Yt
 									src={project.demo.url}
 									title={project.demo.title}
-									caption="Public platform overview"
+									caption="Historical platform overview · ClinZen closed in 2016"
 								/>
 							</div>
 						{/if}
@@ -338,30 +370,30 @@
 
 	<aside
 		class="flex flex-col gap-5 border-t border-neutral-300 pt-8 sm:flex-row sm:items-center sm:justify-between dark:border-neutral-700"
-		aria-labelledby="project-contact-heading"
+		aria-labelledby="project-background-heading"
 	>
 		<div>
 			<p
 				class="mb-2 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
 			>
-				Work together
+				Background and writing
 			</p>
 			<h2
-				id="project-contact-heading"
+				id="project-background-heading"
 				class="mb-2 text-2xl font-bold text-neutral-950 dark:text-neutral-50"
 			>
-				Have a difficult systems problem?
+				Follow the ideas, or explore the history
 			</h2>
 			<p class="mb-0 max-w-xl text-left text-sm text-neutral-600 dark:text-neutral-400">
-				I am open to healthcare IT architecture, interoperability, clinical-data, advisory, and
-				project-based work.
+				The writing ranges more widely than the work shown here. My résumé keeps the details of past
+				roles and experience in one place.
 			</p>
 		</div>
 		<div class="flex shrink-0 flex-wrap gap-3">
 			<a
-				href={resolve('/contact')}
+				href={resolve('/writing')}
 				class="inline-flex min-h-11 items-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-semibold text-white no-underline transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:bg-neutral-100 dark:text-neutral-950 dark:hover:bg-white dark:focus-visible:outline-neutral-300"
-				>Contact</a
+				>Read the writing</a
 			>
 			<a
 				href={resolve('/resume')}

@@ -8,19 +8,18 @@ import type {
 	CreativeWork
 } from 'schema-dts';
 import { slugifyCategory } from '$lib/content/categories';
-import { substackLinks, xProfile } from '$lib/config/links';
+import { substackLinks, xProfile, youtubeProfile } from '$lib/config/links';
 
 export const siteTitle = 'Suvro Ghosh';
-export const siteTitleLong =
-	'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Consultant';
+export const siteTitleLong = 'Suvro Ghosh | Independent Entrepreneur, Maker & Writer';
 export const siteDescription =
-	'Healthcare IT architect and clinical data systems consultant based in Calcutta. Work spans HL7/FHIR interoperability, HIE, EHR data, SQL/ETL, clinical trial systems, and AI-ready healthcare data architecture. Also writes essays and satire on technology, illness, corruption, society, and Calcutta life.';
+	'Independent entrepreneur, maker and writer in Calcutta, exploring useful ideas through software and hands-on experiments, with essays, fiction and satire on science and life.';
 
 export const siteUrl = dev ? 'http://localhost:5173' : 'https://www.suvroghosh.in';
 
 export const socialUrls = [
 	substackLinks.profile,
-	'https://www.youtube.com/@SuvroGhoshIN',
+	youtubeProfile.url,
 	'https://www.linkedin.com/in/suvro-ghosh-78a5aa278',
 	xProfile.url
 ];
@@ -51,25 +50,18 @@ export const siteSEO = {
 	description: siteDescription,
 	canonicalUrl: siteUrl,
 	ogImageUrl: defaultOgImage,
-	ogImageAlt: 'Abstract illustration for Suvro Ghosh’s healthcare IT and writing portfolio',
+	ogImageAlt: 'Miniature hospitals connected by paths and coloured threads to a central pavilion',
 	keywords: [
 		'Suvro Ghosh',
-		'Healthcare IT Architect',
-		'Clinical Data Systems',
-		'Healthcare Interoperability',
-		'HL7',
-		'FHIR',
-		'HIE',
-		'EHR',
-		'EMR',
-		'SQL',
-		'ETL',
-		'CDISC',
-		'Clinical Data Architecture',
-		'Health Informatics',
-		'AI-Ready Healthcare Data',
+		'Independent Entrepreneur',
+		'Maker',
+		'Writer',
+		'Software',
+		'Experiments',
+		'Interactive Visualizations',
 		'Calcutta',
 		'Essays',
+		'Fiction',
 		'Satire'
 	]
 };
@@ -81,10 +73,14 @@ export const personSchema: WithContext<Person> = {
 	name: 'Suvro Ghosh',
 	url: siteUrl,
 	description:
-		'Healthcare IT architect and clinical data systems consultant in Calcutta, and an independent writer on technology, science, society, and ordinary life.',
+		'Independent entrepreneur, maker and writer in Calcutta, exploring useful ideas through software and hands-on experiments, and writing about science, technology, society and ordinary life.',
 	sameAs: socialUrls,
-	jobTitle: ['Healthcare IT Architect', 'Clinical Data Systems Consultant'],
+	jobTitle: ['Independent Entrepreneur', 'Maker', 'Writer'],
 	knowsAbout: [
+		'Software development',
+		'Interactive visualizations',
+		'Creative writing',
+		'Science communication',
 		'Healthcare interoperability',
 		'HL7',
 		'FHIR',

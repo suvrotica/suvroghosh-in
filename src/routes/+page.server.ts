@@ -6,6 +6,7 @@ import {
 	getPublishedSeries
 } from '$lib/server/content/posts';
 import { getImageDimensions } from '$lib/server/image-metadata';
+import { professionalProjects } from '$lib/content/professional-projects';
 
 export const prerender = true;
 
@@ -69,6 +70,22 @@ export const load: PageServerLoad = () => {
 		});
 
 	return {
+		featuredProjects: [
+			'visualizations',
+			'living-pigment-studio',
+			'editorial-publishing-system'
+		].map((id) => {
+			const project = professionalProjects.find((entry) => entry.id === id);
+			if (!project?.link) throw new Error(`Featured work has no destination: ${id}`);
+			return {
+				id: project.id,
+				name: project.name,
+				context: project.context,
+				detail: project.detail,
+				status: project.status,
+				link: project.link
+			};
+		}),
 		featuredSeries: {
 			id: definition.id,
 			title: definition.title,

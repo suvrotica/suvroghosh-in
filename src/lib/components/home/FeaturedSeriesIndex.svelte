@@ -60,7 +60,7 @@
 >
 	<div class="featured-series__intro">
 		<div class="featured-series__intro-copy">
-			<p class="featured-series__index">Index 02 / A human signal</p>
+			<p class="featured-series__index">Index 03 / A human signal</p>
 			<p class="featured-series__eyebrow">{series.eyebrow}</p>
 			<h2 id="featured-series-heading">{series.title}</h2>
 			<p class="featured-series__description">{series.description}</p>

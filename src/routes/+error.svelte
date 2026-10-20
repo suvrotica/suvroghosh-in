@@ -11,14 +11,14 @@
 			description: 'Essays, fiction, satire, and reflections.'
 		},
 		{
-			href: '/consulting',
-			label: 'Healthcare IT',
-			description: 'Interoperability, clinical data, and consulting work.'
+			href: '/projects',
+			label: 'Explore the work',
+			description: 'Software, creative tools, and independent experiments.'
 		},
 		{
-			href: '/resume',
-			label: 'View resume',
-			description: 'Professional background, projects, and experience.'
+			href: '/about',
+			label: 'About Suvro',
+			description: 'Current interests and earlier experience.'
 		}
 	] as const;
 

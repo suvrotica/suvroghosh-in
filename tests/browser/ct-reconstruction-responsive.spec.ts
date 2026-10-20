@@ -51,9 +51,7 @@ for (const path of ['/', '/blog']) {
 				await brand.focus();
 				await page.keyboard.press('Tab');
 				if (desktop) {
-					await expect(
-						primary.getByRole('link', { name: 'Start Here', exact: true })
-					).toBeFocused();
+					await expect(primary.getByRole('link', { name: 'Work', exact: true })).toBeFocused();
 					await expect(header.getByRole('link', { name: 'Start Here', exact: true })).toHaveCount(
 						1
 					);

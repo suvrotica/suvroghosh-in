@@ -1,20 +1,20 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const homeTitle = 'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Consultant';
+const homeTitle = 'Suvro Ghosh | Independent Entrepreneur, Maker & Writer';
 const homeCanonical = 'https://www.suvroghosh.in';
 const featuredSeriesPath = '/blog/visualizations/the-prior-authorization-machine';
 const featuredSeriesPoster = '/images/visualizations/prior-authorization-machine.png';
 
 const heroLinks = [
-	['View Projects', '/projects'],
-	['Healthcare IT Consulting', '/consulting'],
-	['Resume', '/resume'],
-	['Writing', '/writing'],
+	['Explore the work', '/projects'],
+	['Read the writing', '/writing'],
+	['About', '/about'],
+	['Start here', '/start-here'],
 	['Contact', '/contact']
 ] as const;
 
 const fourWays = [
-	['systems', 'Systems', '/projects'],
+	['systems', 'Work', '/projects'],
 	['laboratory', 'Laboratory', '/blog/visualizations'],
 	['writing', 'Writing', '/writing'],
 	['calcutta', 'Calcutta', '/topics/calcutta']
@@ -26,34 +26,32 @@ const narrativeStates = [
 	'laboratory',
 	'writing',
 	'calcutta',
+	'work',
 	'patient',
 	'guided',
-	'work',
 	'latest',
 	'closing'
 ] as const;
 
 const readingPathIds = ['orientation', 'healthcare', 'science', 'calcutta', 'fiction'] as const;
 
-const portalLinks = {
-	professional: [
-		['Projects', '/projects'],
-		['Resume', '/resume'],
-		['Consulting', '/consulting'],
-		['Gulf / Kuwait', '/healthcare-it-gulf'],
-		['Contact', '/contact']
-	],
-	creative: [
-		['Essays', '/writing'],
-		['Satire', '/blog/satire'],
-		['Fiction', '/blog/short-fiction'],
-		['Visualizations', '/blog/visualizations'],
-		['Games', '/blog/games'],
-		['Images', '/images'],
-		['Music', '/topics/songs'],
-		['Newsletter', 'https://suvroghosh.substack.com/']
-	]
-} as const;
+const workSamples = [
+	{
+		title: 'Interactive Visualization Library',
+		status: 'Educational experiments',
+		href: '/blog/visualizations'
+	},
+	{
+		title: 'Living Pigment Studio',
+		status: 'Creative experiment',
+		href: '/blog/visualizations/create-art-living-pigment-studio'
+	},
+	{
+		title: 'SuvroGhosh.IN Editorial Publishing System',
+		status: 'Working website',
+		href: '/writing'
+	}
+] as const;
 
 function collectUnexpectedRuntimeErrors(page: Page): string[] {
 	const errors: string[] = [];
@@ -166,17 +164,15 @@ test('the Living Index preserves semantic order, destination priority, and one l
 	await expect(home).toHaveCount(1);
 	await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
 	await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeVisible();
-	await expect(hero).toContainText('Healthcare IT · Interoperability · Applied AI · Calcutta');
-	await expect(hero).toContainText('Healthcare IT Architect & Clinical Data Systems Consultant');
+	await expect(hero).toContainText('Ideas · Making · Writing · Calcutta');
+	await expect(hero).toContainText('Independent entrepreneur, maker and writer');
 
 	await expect(hero.getByRole('link')).toHaveCount(heroLinks.length);
 	for (const [name, href] of heroLinks) {
 		await expect(hero.getByRole('link', { name, exact: true })).toHaveAttribute('href', href);
 	}
-	await expect(hero.locator('.living-hero__actions a').first()).toHaveText('View Projects');
-	await expect(hero.locator('.living-hero__actions a').nth(1)).toHaveText(
-		'Healthcare IT Consulting'
-	);
+	await expect(hero.locator('.living-hero__actions a').first()).toHaveText('Explore the work');
+	await expect(hero.locator('.living-hero__actions a').nth(1)).toHaveText('Read the writing');
 
 	const field = page.locator('[data-field-ways]');
 	await expect(
@@ -209,19 +205,18 @@ test('the Living Index preserves semantic order, destination priority, and one l
 	).toHaveAttribute('href', '/start-here');
 
 	await expect(
-		page.getByRole('heading', { level: 2, name: 'Professional and creative work', exact: true })
+		page.getByRole('heading', { level: 2, name: 'Work you can explore', exact: true })
 	).toBeVisible();
-	for (const kind of ['professional', 'creative'] as const) {
-		const portal = page.locator(`[data-world-portal="${kind}"]`);
-		await expect(portal).toHaveCount(1);
-		await expect(portal.getByRole('link')).toHaveCount(portalLinks[kind].length);
-		for (const [name, href] of portalLinks[kind]) {
-			const link =
-				name === 'Newsletter'
-					? portal.getByRole('link', { name: /^Newsletter/ })
-					: portal.getByRole('link', { name, exact: true });
-			await expect(link).toHaveAttribute('href', href);
-		}
+	const workCards = page.locator('[data-work-worlds] .work-sample');
+	await expect(workCards).toHaveCount(workSamples.length);
+	for (const [index, sample] of workSamples.entries()) {
+		const card = workCards.nth(index);
+		await expect(
+			card.getByRole('heading', { level: 3, name: sample.title, exact: true })
+		).toBeVisible();
+		await expect(card.locator('.work-sample__status')).toHaveText(sample.status);
+		await expect(card.getByRole('link')).toHaveCount(1);
+		await expect(card.getByRole('link')).toHaveAttribute('href', sample.href);
 	}
 
 	const recent = page.locator('[data-recent-signal-grid]');
@@ -235,15 +230,16 @@ test('the Living Index preserves semantic order, destination priority, and one l
 	const closing = page.locator('[data-home-invitation]');
 	await expect(closing).toHaveAttribute('data-scene-state', 'closing');
 	await expect(closing.getByRole('heading', { level: 2 })).toContainText(
-		'Have a difficult healthcare system'
+		'Follow a useful idea. See where it goes.'
 	);
-	await expect(closing.getByRole('link', { name: 'Contact', exact: true })).toHaveAttribute(
+	await expect(closing.getByRole('link', { name: 'Get in touch', exact: true })).toHaveAttribute(
 		'href',
 		'/contact'
 	);
-	await expect(
-		closing.getByRole('link', { name: 'Healthcare IT Consulting', exact: true })
-	).toHaveAttribute('href', '/consulting');
+	await expect(closing.getByRole('link', { name: 'About Suvro', exact: true })).toHaveAttribute(
+		'href',
+		'/about'
+	);
 
 	await expectSettledPageScene(page);
 	await expect(home.locator('video')).toHaveCount(0);
@@ -561,7 +557,7 @@ test('the Living Index remains complete, semantic, and attractive without JavaSc
 		await expect(page.locator('[data-field-way]')).toHaveCount(4);
 		await expectFeaturedSeries(page);
 		await expect(page.locator('[data-reading-path-card]')).toHaveCount(5);
-		await expect(page.locator('[data-world-portal]')).toHaveCount(2);
+		await expect(page.locator('[data-work-worlds] .work-sample')).toHaveCount(workSamples.length);
 		await expect(page.locator('[data-recent-signal-card]')).toHaveCount(4);
 		await expect(page.locator('[data-home-invitation]')).toBeVisible();
 

@@ -3,7 +3,11 @@ import aRecordCrossesTownImage from '$lib/assets/projects/a-record-crosses-town.
 export type ProjectLink =
 	| {
 			kind: 'internal';
-			href: '/blog/visualizations' | '/blog/visualizations/human-ai-icu-prediction-laboratory';
+			href:
+				| '/blog/visualizations'
+				| '/blog/visualizations/human-ai-icu-prediction-laboratory'
+				| '/blog/visualizations/create-art-living-pigment-studio'
+				| '/writing';
 			label: string;
 	  }
 	| {
@@ -35,10 +39,12 @@ export type ProfessionalProject = {
 		| 'meta-analysis-platform'
 		| 'mojollm-notebooks'
 		| 'visualizations'
+		| 'living-pigment-studio'
 		| 'editorial-publishing-system';
 	name: string;
 	context: string;
 	detail: string;
+	status?: string;
 	contributions: readonly string[];
 	disciplines: readonly string[];
 	relatedPostSlugs: readonly string[];
@@ -57,6 +63,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'va-research-data-warehouse',
 		name: 'VA Hospital Research Data Warehouse',
+		status: 'Past project',
 		context: 'Healthcare research systems · UTHSCSA / VA Research Center',
 		detail:
 			'Built and supported healthcare research data warehouses integrating VA hospital data, national datasets, and multi-domain clinical sources.',
@@ -71,6 +78,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'find-study-registry',
 		name: 'NIH-Funded FIND Study Registry',
+		status: 'Past project',
 		context: 'Nephrology and chronic-disease research',
 		detail:
 			'Designed registry structures for nephrology and chronic-disease research, balancing protocol-driven data collection with real-world clinical variability.',
@@ -88,7 +96,8 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'hie-clinical-trial-platforms',
 		name: 'HIE and Clinical Trial Data Platforms',
-		context: 'Healthcare interoperability and clinical research · ClinZen',
+		status: 'Past project',
+		context: 'Healthcare interoperability and clinical research · ClinZen, closed in 2016',
 		detail:
 			'Architected proprietary HIE and CTMS platforms that translated clinical workflows, patient data, trial protocols, and operational requirements into structured systems.',
 		contributions: [
@@ -109,6 +118,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'a-record-crosses-town',
 		name: 'A Record Crosses Town',
+		status: 'Educational demo',
 		context: 'Independent interactive systems explainer · OpenHIE-inspired · wholly synthetic',
 		detail:
 			'A standalone, fully prerendered exhibit that follows one wholly synthetic encounter through identity, trust, routing, terminology, shared clinical storage, supply, finance, aggregate reporting, deterministic failure, and bounded recovery.',
@@ -150,6 +160,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'human-ai-icu-prediction-laboratory',
 		name: 'Human + AI ICU Prediction Laboratory',
+		status: 'Educational demo',
 		context:
 			'Independent clinical-prediction explainer · wholly synthetic · educational, not clinical',
 		detail:
@@ -187,6 +198,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'functional-job-analysis',
 		name: 'Functional Job Analysis System',
+		status: 'Past project',
 		context: 'Hospital operations research',
 		detail:
 			'Developed a system for hospital operations research by modelling human work, task overlap, and workflow structure as analysable data.',
@@ -200,6 +212,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'meta-analysis-platform',
 		name: 'Meta-Analysis Platform',
+		status: 'Past project',
 		context: 'Research synthesis systems',
 		detail:
 			'Created a platform for synthesising heterogeneous research outputs where data alignment, definition consistency, and comparability were core challenges.',
@@ -213,6 +226,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'mojollm-notebooks',
 		name: 'mojoLLM Computational Notebooks',
+		status: 'Educational notebooks',
 		context: 'Mojo · Machine learning education · Literate programming',
 		detail:
 			'A growing collection of Python-style, browser-readable notebooks that use Mojo to build machine-learning ideas from first principles.',
@@ -226,10 +240,11 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	},
 	{
 		id: 'visualizations',
-		name: 'Visualizations Interactive Laboratory',
+		name: 'Interactive Visualization Library',
+		status: 'Educational experiments',
 		context: 'Ongoing laboratory · Science and computing education',
 		detail:
-			'An interactive laboratory for exploring physics, chemistry, biology, mathematics, statistics, algorithms, computer science, machine learning, and scientific computing through reactive notebooks, simulations, generative graphics, and GPU shaders.',
+			'Browser experiments in science, mathematics and computing, using interactive simulations, reactive notebooks, generative graphics and GPU shaders. Each model has its own assumptions and educational limits.',
 		contributions: [
 			'Built a lazy, server-safe p5.js and WebGL framework for interactive experiments inside ordinary Markdown posts.',
 			'Added native Observable runtime and D3 notebook cells with responsive SVG, reactive controls, accessible descriptions, reduced-motion defaults, and deterministic cleanup.',
@@ -272,8 +287,30 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 		featured: true
 	},
 	{
+		id: 'living-pigment-studio',
+		name: 'Living Pigment Studio',
+		status: 'Creative experiment',
+		context: 'Digital painting · Browser-based material exploration',
+		detail:
+			'Paint with digital pigments that spread, mix, dry and granulate. An artistic approximation of paint, with local artwork and project exports, rather than a physically exact simulation.',
+		contributions: [
+			'Built a WebGL2 painting surface where pigment, moisture and motion keep evolving after each stroke.',
+			'Added watercolor-like and oil-like materials, mouse, touch and pen input, bounded undo history, and local image and project export.',
+			'Provided restrained motion, manual stepping and a static explanation when the required WebGL features are unavailable.'
+		],
+		disciplines: ['Creative coding', 'Digital painting', 'WebGL2', 'GPU simulation'],
+		relatedPostSlugs: ['create-art-living-pigment-studio'],
+		link: {
+			kind: 'internal',
+			href: '/blog/visualizations/create-art-living-pigment-studio',
+			label: 'Try the pigment studio'
+		},
+		showOnResume: false
+	},
+	{
 		id: 'editorial-publishing-system',
 		name: 'SuvroGhosh.IN Editorial Publishing System',
+		status: 'Working website',
 		context: 'Independent publishing · Editorial infrastructure',
 		detail:
 			'Designed and maintain the static-first SvelteKit publishing system behind this site and its large long-form archive.',
@@ -283,6 +320,11 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'Automated incremental post tagging, word-cloud generation, search indexing, image optimisation, and content validation during builds.'
 		],
 		disciplines: ['SvelteKit', 'Information architecture', 'Accessibility', 'Build automation'],
-		relatedPostSlugs: []
+		relatedPostSlugs: [],
+		link: {
+			kind: 'internal',
+			href: '/writing',
+			label: 'Explore the writing archive'
+		}
 	}
 ];

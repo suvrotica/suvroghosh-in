@@ -4,41 +4,31 @@
 	import CommandPalette from '$lib/components/layout/CommandPalette.svelte';
 	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
 	import MotionSelect from '$lib/components/motion/MotionSelect.svelte';
-	import { substackLinks } from '$lib/config/links';
+	import { substackLinks, youtubeProfile } from '$lib/config/links';
 
 	type NavigationItem = {
-		href:
-			| '/start-here'
-			| '/topics'
-			| '/blog'
-			| '/notes'
-			| '/resources'
-			| '/blog/visualizations'
-			| '/blog/games'
-			| '/projects'
-			| '/resume';
+		href: '/projects' | '/writing' | '/start-here' | '/about';
 		label: string;
 		sections: readonly string[];
 	};
 
 	const navLinks: readonly NavigationItem[] = [
-		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
-		{ href: '/topics', label: 'Topics', sections: ['/topics'] },
-		{ href: '/blog', label: 'Essays', sections: ['/writing', '/blog'] },
-		{ href: '/notes', label: 'Notes', sections: ['/notes'] },
-		{ href: '/resources', label: 'Field Kit', sections: ['/resources'] },
-		{
-			href: '/blog/visualizations',
-			label: 'Lab',
-			sections: ['/blog/visualizations']
-		},
-		{ href: '/blog/games', label: 'Games', sections: ['/blog/games'] },
 		{
 			href: '/projects',
 			label: 'Work',
-			sections: ['/projects', '/consulting', '/healthcare-it-gulf']
+			sections: ['/projects', '/blog/visualizations', '/blog/games', '/images']
 		},
-		{ href: '/resume', label: 'Resume', sections: ['/resume'] }
+		{
+			href: '/writing',
+			label: 'Writing',
+			sections: ['/writing', '/blog', '/topics', '/notes', '/resources']
+		},
+		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
+		{
+			href: '/about',
+			label: 'About',
+			sections: ['/about', '/resume', '/consulting', '/healthcare-it-gulf']
+		}
 	];
 
 	let currentPath = $derived(page.url.pathname);
@@ -47,10 +37,10 @@
 
 	function isCurrent(item: NavigationItem) {
 		if (currentPath.startsWith('/blog/games')) {
-			return item.href === '/blog/games';
+			return item.href === '/projects';
 		}
 		if (currentPath.startsWith('/blog/visualizations')) {
-			return item.href === '/blog/visualizations';
+			return item.href === '/projects';
 		}
 		return item.sections.some((section) =>
 			section === '/'
@@ -109,6 +99,14 @@
 					{link.label}
 				</a>
 			{/each}
+			<a
+				href={youtubeProfile.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="nav-link rounded-sm py-2 text-sm font-semibold text-neutral-700 outline-offset-4 transition-colors hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white"
+			>
+				Videos <span aria-hidden="true">↗</span><span class="sr-only">, opens in a new tab</span>
+			</a>
 		</nav>
 
 		<div class="flex max-w-full min-w-0 flex-wrap items-center gap-2 sm:gap-3">
@@ -202,6 +200,19 @@
 								</a>
 							</li>
 						{/each}
+						<li>
+							<a
+								href={youtubeProfile.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								onclick={closeMobile}
+								class="flex min-h-11 items-center rounded-md border-l-2 border-transparent px-4 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-950 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white"
+							>
+								Videos <span class="ml-1" aria-hidden="true">↗</span><span class="sr-only"
+									>, opens in a new tab</span
+								>
+							</a>
+						</li>
 						<li class="sm:col-span-2">
 							<a
 								href={substackLinks.subscribe}

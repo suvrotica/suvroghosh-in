@@ -1,46 +1,13 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { substackLinks } from '$lib/config/links';
-	import WorldPortal, { type PortalLink } from './WorldPortal.svelte';
+	import type { ProfessionalProject } from '$lib/content/professional-projects';
 
-	const professionalCapabilities = [
-		'Healthcare IT',
-		'HL7/FHIR',
-		'HIE',
-		'Clinical data systems',
-		'SQL/ETL',
-		'Health informatics',
-		'AI-ready healthcare data architecture'
-	] as const;
+	type WorkSample = Pick<
+		ProfessionalProject,
+		'id' | 'name' | 'context' | 'detail' | 'status' | 'link'
+	>;
 
-	const creativeCapabilities = [
-		'Essays',
-		'Satire',
-		'Fiction',
-		'Scientific visualizations',
-		'Games',
-		'Images',
-		'Music'
-	] as const;
-
-	const professionalLinks: readonly PortalLink[] = [
-		{ label: 'Projects', href: resolve('/projects') },
-		{ label: 'Resume', href: resolve('/resume') },
-		{ label: 'Consulting', href: resolve('/consulting') },
-		{ label: 'Gulf / Kuwait', href: resolve('/healthcare-it-gulf') },
-		{ label: 'Contact', href: resolve('/contact') }
-	];
-
-	const creativeLinks: readonly PortalLink[] = [
-		{ label: 'Essays', href: resolve('/writing') },
-		{ label: 'Satire', href: resolve('/blog/[category]', { category: 'satire' }) },
-		{ label: 'Fiction', href: resolve('/blog/[category]', { category: 'short-fiction' }) },
-		{ label: 'Visualizations', href: resolve('/blog/visualizations') },
-		{ label: 'Games', href: resolve('/blog/games') },
-		{ label: 'Images', href: resolve('/images') },
-		{ label: 'Music', href: resolve('/topics/[slug]', { slug: 'songs' }) },
-		{ label: 'Newsletter', href: substackLinks.subscribe, external: true }
-	];
+	let { projects }: { projects: readonly WorkSample[] } = $props();
 </script>
 
 <section
@@ -51,28 +18,124 @@
 	data-scene-state="work"
 >
 	<header class="work-worlds__intro">
-		<p class="work-worlds__index">Index 04 / Work in two registers</p>
-		<h2 id="work-worlds-heading">Professional and creative work</h2>
+		<p class="work-worlds__index">Index 02 / Made and explored</p>
+		<h2 id="work-worlds-heading">Work you can explore</h2>
 		<p class="work-worlds__description">
-			Clinical information systems and independent creative work sit side by side here. Both are
-			concerned with how difficult structures become legible.
+			A few things I have built: experiments to play with and the publishing system you are reading.
+			The creative and educational models explain their assumptions and limits on their own pages.
 		</p>
 	</header>
 
-	<div class="world-portals work-worlds__grid">
-		<WorldPortal
-			kind="professional"
-			title="Professional systems work"
-			description="Healthcare data architecture, interoperability, and the dependable movement of clinical information. Available for Gulf, remote, hybrid, consulting, and advisory work."
-			capabilities={professionalCapabilities}
-			links={professionalLinks}
-		/>
-		<WorldPortal
-			kind="creative"
-			title="Creative and experimental work"
-			description="Essays, satire, fiction, images, music, and browser experiments about technology, illness, corruption, Calcutta, and the strange machinery of ordinary life."
-			capabilities={creativeCapabilities}
-			links={creativeLinks}
-		/>
-	</div>
+	<ul class="work-samples" aria-label="Selected independent work">
+		{#each projects as project (project.id)}
+			<li>
+				<article class="work-sample" aria-labelledby={`work-sample-${project.id}`}>
+					<p class="work-sample__status">{project.status ?? project.context}</p>
+					<h3 id={`work-sample-${project.id}`}>{project.name}</h3>
+					<p class="work-sample__description">{project.detail}</p>
+					{#if project.link?.kind === 'internal'}
+						<a href={resolve(project.link.href)}>
+							{project.link.label} <span aria-hidden="true">→</span>
+						</a>
+					{:else if project.link?.kind === 'external'}
+						<!-- eslint-disable svelte/no-navigation-without-resolve -->
+						<a href={project.link.href} target="_blank" rel="noopener noreferrer">
+							{project.link.label} <span aria-hidden="true">↗</span>
+							<span class="sr-only">, opens in a new tab</span>
+						</a>
+						<!-- eslint-enable svelte/no-navigation-without-resolve -->
+					{/if}
+				</article>
+			</li>
+		{/each}
+	</ul>
+	<a class="work-samples__all" href={resolve('/projects')}>
+		More work and experiments <span aria-hidden="true">→</span>
+	</a>
 </section>
+
+<style>
+	.work-samples {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1rem;
+		margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.work-samples > li {
+		min-width: 0;
+	}
+
+	.work-sample {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		align-items: start;
+		border: 1px solid var(--rule);
+		border-radius: 0.25rem;
+		padding: clamp(1.25rem, 2.2vw, 2rem);
+		background: var(--home-panel-solid);
+		color: var(--ink);
+	}
+
+	.work-sample__status {
+		margin: 0 0 1rem;
+		color: var(--ink-muted);
+		font-family: var(--font-sans);
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.work-sample h3 {
+		margin: 0;
+		font-size: clamp(1.5rem, 2.3vw, 2.2rem);
+		letter-spacing: -0.035em;
+		line-height: 1.1;
+		overflow-wrap: anywhere;
+	}
+
+	.work-sample__description {
+		margin: 1rem 0 1.25rem;
+		color: var(--ink-muted);
+		font-size: 0.96rem;
+		line-height: 1.65;
+		text-align: left;
+	}
+
+	.work-sample a,
+	.work-samples__all {
+		display: inline-flex;
+		min-height: 2.75rem;
+		align-items: center;
+		gap: 0.4rem;
+		color: var(--ink);
+		font-family: var(--font-sans);
+		font-size: 0.86rem;
+		font-weight: 700;
+		text-underline-offset: 0.3rem;
+	}
+
+	.work-sample a {
+		margin-top: auto;
+	}
+
+	.work-samples__all {
+		margin-top: 1rem;
+	}
+
+	.work-sample a:focus-visible,
+	.work-samples__all:focus-visible {
+		outline: 3px solid var(--focus);
+		outline-offset: 0.25rem;
+	}
+
+	@media (min-width: 56rem) {
+		.work-samples {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+</style>

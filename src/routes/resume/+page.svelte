@@ -28,7 +28,7 @@
 		videos?: string[];
 	};
 
-	const title = 'Resume | Suvro Ghosh | Senior Healthcare IT Architect';
+	const title = 'Resume & Career History | Suvro Ghosh';
 	const canonicalUrl = `${siteUrl}/resume`;
 	const keywords = [
 		'Healthcare IT Architect',
@@ -49,44 +49,15 @@
 		'Health Informatics'
 	];
 	const description =
-		'Healthcare IT Architect and Clinical Data Systems Consultant with 15+ years in EHR, HIE, HL7, FHIR interoperability, SQL data warehousing, MUMPS/VistA, clinical trials, and health informatics. Based in Kolkata, India — open to remote, hybrid, and Gulf consulting.';
+		'Suvro Ghosh’s career history in software, healthcare IT, clinical research systems, data warehousing and teaching, with experience, skills, education and publications.';
 
-	const headline =
-		'Senior Healthcare IT Architect | HL7 / FHIR / HIE | Clinical Data Systems | SQL / ETL | AI-Ready Healthcare Data';
+	const headline = 'Career history in software, research and healthcare IT';
 
-	const locationLine =
-		'Kolkata, India | Open to Remote, Hybrid, Contract, Consulting, and Gulf Healthcare IT Opportunities';
+	const locationLine = 'Calcutta, India';
 
 	const executiveSummary = [
-		'Senior Healthcare IT and clinical data systems architect with 15+ years of experience across U.S. healthcare research environments, VA hospital data, EHR-derived datasets, HL7-style integration problems, clinical trial systems, SQL Server data warehouses, ETL pipelines, and healthcare analytics.',
-		'I specialize in the difficult middle layer of healthcare technology: turning messy clinical, operational, research, and legacy data into structured, interoperable, auditable, and usable systems.',
-		'Best fit for senior roles in healthcare interoperability, HL7/FHIR architecture, HIE implementation, clinical data engineering, EHR/EMR data migration, health informatics, healthcare analytics, AI data-readiness, and digital health consulting.'
-	];
-
-	const positioning = [
-		'Healthcare AI, analytics, and digital health projects usually fail before the model, dashboard, or application begins. They fail in the data substrate: identity, terminology, workflows, missing context, legacy systems, broken mappings, inconsistent definitions, and silent semantic loss.',
-		'My work sits at that layer. I help healthcare teams understand what their data actually represents, how it moves across systems, what breaks during transformation, and what must be fixed before analytics or AI can be trusted.',
-		'I bring a rare combination of computer science, U.S. healthcare data experience, clinical research systems, database architecture, ETL, interoperability thinking, and the practical patience required to work with real healthcare systems rather than imaginary clean-room diagrams.'
-	];
-
-	const targetRoles = [
-		'Healthcare IT / Digital Health Consultant',
-		'Interoperability / HL7 / FHIR Specialist',
-		'HIE / EHR / EMR Implementation Consultant',
-		'Clinical Systems Analyst',
-		'Healthcare Data Architect / Analyst',
-		'Health Informatics Specialist',
-		'Healthcare AI Workflow & Data-Readiness Consultant',
-		'Healthcare IT Project / Program Consultant',
-		'Clinical Trial Data Systems Consultant',
-		'Healthcare IT Trainer / Advisor'
-	];
-
-	const targetMarkets = [
-		'UAE, Saudi Arabia, Qatar, Kuwait, and wider Gulf healthcare modernization programs',
-		'Remote work with U.S., U.K., EU, Singapore, and India-based digital health vendors',
-		'India ABDM, FHIR, HIE, hospital digitization, and healthtech implementation projects',
-		'Healthcare vendors needing domain-aware SQL, data modeling, workflow, and interoperability support'
+		'My earlier work spans systems software, healthcare research, database architecture, clinical trial systems and teaching. It includes U.S. healthcare research environments, VA hospital data, SQL Server data warehouses, ETL pipelines and healthcare analytics.',
+		'Much of that work involved turning messy clinical, operational, research and legacy data into structured, auditable systems. This background informs how I build and explain things today.'
 	];
 
 	const coreSkills: SkillGroup[] = [
@@ -145,7 +116,7 @@
 		{
 			title: 'Founder & Principal Healthcare IT Architect',
 			company: 'ClinZen LLC / ClinZen Software Pvt Ltd',
-			period: '2015 – Present',
+			period: '2015 – 2016',
 			videos: ['https://youtu.be/FkHa3W4pQME?si=S9mLi5y04An7A--I'],
 			details: [
 				'Founded and led a healthcare technology venture focused on Health Information Exchange, clinical trial systems, digital workflows, and structured healthcare data platforms.',
@@ -235,44 +206,6 @@
 			]
 		}
 	];
-
-	const consultingServices = [
-		'EHR / EMR / HIE implementation advisory',
-		'HL7 / FHIR data mapping and interoperability review',
-		'ABDM / FHIR readiness support for Indian healthtech vendors',
-		'Healthcare SQL data warehouse and reporting architecture',
-		'Clinical trial data system design and validation logic',
-		'Healthcare data quality audits and dashboard prototypes',
-		'AI-readiness assessment for healthcare data and workflows',
-		'Healthcare IT training for clinical, administrative, and vendor teams'
-	];
-
-	const professionalDevelopment = [
-		'Practical FHIR R4/R5 implementation examples and healthcare interoperability portfolio',
-		'ABDM, HIE, EHR/EMR integration, consent, identity, provenance, audit, and terminology workflows',
-		'Healthcare SQL data modeling, ETL, data-quality review, and reporting/dashboard prototypes',
-		'Healthcare AI data-readiness: workflow mapping, data-substrate review, and risk-aware implementation planning',
-		'Privacy, security, and governance awareness for healthcare data environments, including HIPAA, GDPR, and ISO 27001 concepts'
-	];
-
-	const marketFit = [
-		{
-			region: 'Gulf',
-			fit: 'Strong fit for UAE, Saudi Arabia, Qatar, Kuwait, and regional healthcare modernization programs needing senior EHR, HIE, data, interoperability, and implementation experience.'
-		},
-		{
-			region: 'India',
-			fit: 'Strong fit for ABDM, FHIR, healthtech, hospital digitization, clinical data, and implementation consulting without visa friction.'
-		},
-		{
-			region: 'Remote International',
-			fit: 'Strong fit for contract work with healthtech vendors needing SQL, FHIR, healthcare data modeling, clinical workflow, and interoperability support.'
-		},
-		{
-			region: 'U.S. / U.K. / EU',
-			fit: 'Best pursued through remote, vendor, consulting, or specialist interoperability roles rather than generic relocation-first job searches.'
-		}
-	];
 </script>
 
 <SEO
@@ -329,13 +262,20 @@
 		<div
 			class="flex flex-wrap items-center justify-center gap-4 text-sm font-bold text-neutral-600 md:justify-start dark:text-neutral-400"
 		>
-			<span>Healthcare IT · Interoperability · Clinical Data · AI-Ready Data Systems</span>
+			<span>Software · Research systems · Data architecture · Teaching</span>
 		</div>
+		<p class="mt-5 max-w-3xl text-left leading-relaxed text-neutral-700 dark:text-neutral-300">
+			This résumé records my professional background. I am now exploring useful ideas as an
+			independent entrepreneur, maker and writer. <a
+				href={resolve('/projects')}
+				class="font-semibold underline underline-offset-4">Explore the work and experiments</a
+			>.
+		</p>
 	</header>
 
 	<div class="card mb-8 bg-neutral-100 dark:bg-neutral-800">
 		<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-			Executive Summary
+			Career Summary
 		</h3>
 
 		<div class="space-y-4 text-lg leading-relaxed text-neutral-800 dark:text-neutral-200">
@@ -343,48 +283,6 @@
 				<p class={i === 0 ? 'font-bold' : ''}>{paragraph}</p>
 			{/each}
 		</div>
-	</div>
-
-	<div
-		class="card mb-8 border-l-4 border-l-neutral-800 bg-neutral-200/50 dark:border-l-neutral-200 dark:bg-neutral-800/80"
-	>
-		<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-			Professional Positioning
-		</h3>
-
-		<div class="space-y-4 text-neutral-800 dark:text-neutral-200">
-			{#each positioning as paragraph (paragraph)}
-				<p class="leading-relaxed">{paragraph}</p>
-			{/each}
-		</div>
-	</div>
-
-	<div class="card mb-8">
-		<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-			Best-Fit Roles
-		</h3>
-
-		<div class="grid grid-cols-1 gap-3 text-sm md:grid-cols-2">
-			{#each targetRoles as role (role)}
-				<div
-					class="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-semibold text-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
-				>
-					{role}
-				</div>
-			{/each}
-		</div>
-	</div>
-
-	<div class="card mb-8">
-		<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-			Target Markets
-		</h3>
-
-		<ul class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
-			{#each targetMarkets as market (market)}
-				<li class="leading-relaxed">• {market}</li>
-			{/each}
-		</ul>
 	</div>
 
 	<div class="card mb-8">
@@ -473,54 +371,6 @@
 						{project.name}
 					</h4>
 					<p class="m-0 leading-relaxed">{project.detail}</p>
-				</div>
-			{/each}
-		</div>
-	</div>
-
-	<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-		<div class="card">
-			<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-				Consulting Services
-			</h3>
-
-			<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-				{#each consultingServices as service (service)}
-					<li class="leading-relaxed">• {service}</li>
-				{/each}
-			</ul>
-		</div>
-
-		<div class="card">
-			<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-				Professional Development Focus
-			</h3>
-
-			<p class="mb-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-				Current focus areas for strengthening international healthcare IT, interoperability,
-				analytics, and digital health consulting work:
-			</p>
-
-			<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-				{#each professionalDevelopment as item (item)}
-					<li class="leading-relaxed">• {item}</li>
-				{/each}
-			</ul>
-		</div>
-	</div>
-
-	<div class="card my-8">
-		<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-			Market Fit
-		</h3>
-
-		<div class="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">
-			{#each marketFit as market (market.region)}
-				<div>
-					<h4 class="m-0 mb-1 text-base font-bold text-neutral-900 dark:text-neutral-100">
-						{market.region}
-					</h4>
-					<p class="m-0 leading-relaxed">{market.fit}</p>
 				</div>
 			{/each}
 		</div>

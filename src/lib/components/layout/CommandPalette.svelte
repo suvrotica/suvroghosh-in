@@ -33,8 +33,12 @@
 			label: 'Games',
 			description: 'Play simulations, learning games, and strange little systems'
 		},
-		{ href: '/consulting', label: 'Healthcare IT', description: 'Consulting and systems work' },
-		{ href: '/projects', label: 'Projects', description: 'Review selected systems work' },
+		{ href: '/about', label: 'About', description: 'Current interests and earlier experience' },
+		{
+			href: '/projects',
+			label: 'Work',
+			description: 'Explore experiments and earlier systems work'
+		},
 		{ href: '/resume', label: 'Resume', description: 'Experience and capabilities' },
 		{ href: '/contact', label: 'Contact', description: 'Start a conversation' }
 	] as const;

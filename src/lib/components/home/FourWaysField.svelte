@@ -12,10 +12,10 @@
 	const ways: readonly FieldWay[] = [
 		{
 			id: 'systems',
-			title: 'Systems',
-			description: 'HIE, interoperability, clinical data, and AI-ready infrastructure.',
+			title: 'Work',
+			description: 'Software, creative tools, independent experiments, and earlier systems work.',
 			href: resolve('/projects'),
-			motionLabel: 'Branching records and returning acknowledgements'
+			motionLabel: 'Ideas taking shape in working systems'
 		},
 		{
 			id: 'laboratory',
@@ -51,8 +51,8 @@
 		<p class="field-ways__index">Index 01 / Four behaviours</p>
 		<h2 id="field-ways-heading">Four ways through the field</h2>
 		<p class="field-ways__description">
-			Follow information through a clinical system, a scientific model, a piece of writing, or a
-			city. Each route begins differently; each asks what survives the journey.
+			Try something I’ve made, follow a scientific idea, read a story, or walk through a city. These
+			are different ways into the same curiosity.
 		</p>
 	</header>
 

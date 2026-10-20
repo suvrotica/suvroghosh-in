@@ -22,11 +22,11 @@
 
 	<FourWaysField />
 
+	<WorkWorlds projects={data.featuredProjects} />
+
 	<FeaturedSeriesIndex series={data.featuredSeries} />
 
 	<ReadingPathRail paths={data.readingPaths} />
-
-	<WorkWorlds />
 
 	<RecentSignalGrid posts={data.recentPosts} />
 

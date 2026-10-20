@@ -22,25 +22,23 @@
 >
 	<p class="living-hero__index">Index 00 / The Living Index</p>
 	<div class="living-hero__content">
-		<p class="living-hero__eyebrow">
-			Healthcare IT &middot; Interoperability &middot; Applied AI &middot; Calcutta
-		</p>
+		<p class="living-hero__eyebrow">Ideas &middot; Making &middot; Writing &middot; Calcutta</p>
 		<h1 id="living-hero-heading">Suvro Ghosh</h1>
-		<p class="living-hero__role">Healthcare IT Architect &amp; Clinical Data Systems Consultant</p>
+		<p class="living-hero__role">Independent entrepreneur, maker and writer</p>
 		<p class="living-hero__description">
-			I design the architecture beneath health-information exchange: how clinical records move,
-			survive translation, and become reliable enough for care and applied AI. This site also
-			follows other signals—scientific experiments, essays, games, and ordinary life in Calcutta.
+			I’m exploring useful ideas through software and hands-on experiments, with a growing curiosity
+			about electronics and physical things. Here you’ll find what I’ve made so far, alongside
+			essays, fiction, satire and ordinary life in Calcutta.
 		</p>
 
 		<div class="living-hero__actions" aria-label="Introduction links">
-			<a class="living-hero__primary" href={resolve('/projects')}>View Projects</a>
-			<a class="living-hero__secondary" href={resolve('/consulting')}>Healthcare IT Consulting</a>
+			<a class="living-hero__primary" href={resolve('/projects')}>Explore the work</a>
+			<a class="living-hero__secondary" href={resolve('/writing')}>Read the writing</a>
 		</div>
 
 		<nav class="living-hero__tertiary" aria-label="More about Suvro Ghosh">
-			<a href={resolve('/resume')}>Resume</a>
-			<a href={resolve('/writing')}>Writing</a>
+			<a href={resolve('/about')}>About</a>
+			<a href={resolve('/start-here')}>Start here</a>
 			<a href={resolve('/contact')}>Contact</a>
 		</nav>
 	</div>

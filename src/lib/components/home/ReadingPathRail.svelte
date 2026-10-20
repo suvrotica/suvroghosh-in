@@ -18,7 +18,7 @@
 >
 	<div class="reading-paths__intro">
 		<div>
-			<p class="reading-paths__index">Index 03 / Guided routes</p>
+			<p class="reading-paths__index">Index 04 / Guided routes</p>
 			<p class="reading-paths__eyebrow">Guided reading</p>
 			<h2 id="start-here-heading">Five ways into the work</h2>
 			<p class="reading-paths__description">

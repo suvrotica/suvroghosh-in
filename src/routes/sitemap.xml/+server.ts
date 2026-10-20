@@ -105,10 +105,11 @@ export async function GET() {
 	const pages = [
 		{ url: siteUrl + '/', lastMod: blogLastMod },
 		{ url: siteUrl + '/start-here', lastMod: startHereLastMod },
-		{ url: siteUrl + '/resume', lastMod: '2026-06-26' },
-		{ url: siteUrl + '/projects', lastMod: '2026-08-12' },
-		{ url: siteUrl + '/consulting', lastMod: '2026-06-26' },
-		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/about', lastMod: '2026-10-20' },
+		{ url: siteUrl + '/resume', lastMod: '2026-10-20' },
+		{ url: siteUrl + '/projects', lastMod: '2026-10-20' },
+		{ url: siteUrl + '/consulting', lastMod: '2026-10-20' },
+		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/writing', lastMod: blogLastMod },
 		{ url: siteUrl + '/resources', lastMod: newestPublishedResourceDate() },
 		{ url: siteUrl + '/images', lastMod: '2026-07-20' },
@@ -119,7 +120,7 @@ export async function GET() {
 		{ url: siteUrl + '/blog', lastMod: blogLastMod },
 		{ url: siteUrl + '/blog/topics', lastMod: topicIndexLastMod },
 		{ url: siteUrl + '/topics', lastMod: headquartersIndexLastMod },
-		{ url: siteUrl + '/contact', lastMod: '2026-06-26' }
+		{ url: siteUrl + '/contact', lastMod: '2026-10-20' }
 	];
 	const urls = [
 		...pages,

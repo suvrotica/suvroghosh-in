@@ -265,32 +265,32 @@
 					<p
 						class="mb-2 text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
 					>
-						Healthcare IT consulting
+						Healthcare systems background
 					</p>
 					<h2
 						id="healthcare-it-consulting-heading"
 						class="mb-3 text-xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50"
 					>
-						Working through a difficult clinical data or interoperability problem?
+						Explore the work behind the writing
 					</h2>
 					<p
 						class="m-0 max-w-2xl text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
 					>
-						I advise on HIE and EHR architecture, HL7/FHIR interoperability, clinical data
-						migration, terminology, analytics, and AI data readiness.
+						My earlier work in healthcare research, data warehouses and clinical systems informs the
+						questions I explore here. The career history and project notes provide context.
 					</p>
 					<div class="mt-5 flex flex-wrap gap-x-5 gap-y-2">
 						<a
-							href={resolve('/consulting')}
+							href={resolve('/resume')}
 							class="inline-flex min-h-11 items-center text-sm font-bold text-neutral-950 underline decoration-neutral-500 underline-offset-4 transition-colors hover:text-neutral-600 hover:decoration-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-100 dark:decoration-neutral-500 dark:hover:text-neutral-300 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 						>
-							See healthcare IT consulting <span class="ml-1" aria-hidden="true">→</span>
+							Career history <span class="ml-1" aria-hidden="true">→</span>
 						</a>
 						<a
-							href={resolve('/healthcare-it-gulf')}
+							href={resolve('/projects')}
 							class="inline-flex min-h-11 items-center text-sm font-semibold text-neutral-700 underline decoration-neutral-400 underline-offset-4 transition-colors hover:text-neutral-950 hover:decoration-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-300 dark:decoration-neutral-600 dark:hover:text-white dark:hover:decoration-neutral-300 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 						>
-							Gulf &amp; Kuwait healthcare IT <span class="ml-1" aria-hidden="true">→</span>
+							Work &amp; experiments <span class="ml-1" aria-hidden="true">→</span>
 						</a>
 					</div>
 				</section>

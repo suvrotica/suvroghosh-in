@@ -12,7 +12,7 @@
 
 	const title = 'Contact | Suvro Ghosh';
 	const description =
-		'Contact Suvro Ghosh for healthcare IT consulting, interoperability, clinical data systems, and advisory opportunities. Based in Calcutta, open to Gulf, remote, and hybrid work.';
+		'Contact Suvro Ghosh about the writing, work and experiments on this site, or send a factual correction. Based in Calcutta, India.';
 	const canonicalUrl = siteUrl + '/contact';
 
 	const email = 'contact@suvroghosh.in';
@@ -66,7 +66,7 @@
 			class="text-center text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
 			style="text-align: center;"
 		>
-			For healthcare IT consulting, interoperability, clinical data systems, advisory.
+			For questions about the writing, work and experiments here, or a factual correction.
 		</p>
 	</header>
 
@@ -221,7 +221,7 @@
 				class="mt-6 w-full text-center text-sm text-neutral-600 dark:text-neutral-400"
 				style="text-align: center;"
 			>
-				Based in India. Open to remote, hybrid, contract, consulting healthcare IT opportunities.
+				Based in Calcutta, India.
 			</p>
 		</div>
 	</div>
