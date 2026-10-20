@@ -8032,6 +8032,22 @@
       "sourceHash": "9f5ab290d77edd5f0a14a65afd0dc714170856480d6978a33148e416c8027568",
       "width": 1074
     },
+    "static/images/art-the-colony-where-nobody-is-allowed-to-sleep.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 298036,
+      "outputHash": "39ef53775ad10b29365263e222d77042196b3c1e64986c4963621ba827b4e594",
+      "psnrDb": 36.56,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 362540,
+      "sourceHash": "0965fd2ca5ff9430f49055e7d6a4377c095ec6b1844db4c4b8108e396deb682d",
+      "width": 1672
+    },
     "static/images/art-the-machines-insides.jpg": {
       "format": "JPEG",
       "height": 940,

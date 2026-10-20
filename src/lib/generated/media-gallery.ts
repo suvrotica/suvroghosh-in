@@ -27,6 +27,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1536
 		},
 		{
+			"name": "art-the-colony-where-nobody-is-allowed-to-sleep.jpg",
+			"src": "/images/art-the-colony-where-nobody-is-allowed-to-sleep.jpg",
+			"bytes": 298036,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-the-machines-insides.jpg",
 			"src": "/images/art-the-machines-insides.jpg",
 			"bytes": 274012,

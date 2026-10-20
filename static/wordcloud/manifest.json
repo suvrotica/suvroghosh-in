@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T18:47:43.842342+00:00",
+  "generatedAt": "2026-10-20T21:48:08.448065+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10670,6 +10670,29 @@
         "Lake",
         "Next",
         "Bose"
+      ],
+      "wordCount": 130
+    },
+    "the-colony-where-nobody-is-allowed-to-sleep": {
+      "generatedAt": "2026-10-20T21:48:08.241119+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-colony-where-nobody-is-allowed-to-sleep.svg",
+      "source": "src/lib/posts/the-colony-where-nobody-is-allowed-to-sleep.md",
+      "sourceHash": "cb04240e321296e41ad75c8e53b0e6ee1e60d1769e1a46157d6092cf6d6a3bbe",
+      "sourceModified": "2026-10-20T21:47:41.628599+00:00",
+      "topWords": [
+        "Marcy",
+        "Mother",
+        "Beneath",
+        "Couldn",
+        "Hand",
+        "Didn",
+        "Pale",
+        "Little",
+        "Tried",
+        "Enough",
+        "Eyes",
+        "Began"
       ],
       "wordCount": 130
     },

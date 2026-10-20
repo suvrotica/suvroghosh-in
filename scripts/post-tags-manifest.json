@@ -14825,6 +14825,36 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-colony-where-nobody-is-allowed-to-sleep.md": {
+			"bodyHash": "d6c1987a2a5d42794130dc06ab3c39b23145d627c31f43cf0e27ef9b4171d686",
+			"hashVersion": 2,
+			"revisionHash": "f278788859f322992fbd0b0ac07095825d0d96965fcd8aa550c0ed62567f5d4c",
+			"generatedTags": [
+				"Short Fiction",
+				"Space Horror",
+				"Body Horror",
+				"Nightmares",
+				"Sleep",
+				"Science Fiction",
+				"Psychological Horror",
+				"Isolation",
+				"Survival",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Space Horror",
+				"Body Horror",
+				"Nightmares",
+				"Sleep",
+				"Science Fiction",
+				"Psychological Horror",
+				"Isolation",
+				"Survival",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
