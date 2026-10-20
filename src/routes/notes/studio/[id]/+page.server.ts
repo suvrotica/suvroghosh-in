@@ -33,15 +33,9 @@ export const actions: Actions = {
 		await requireNotesOwner(event);
 		const form = await event.request.formData();
 		const status = String(form.get('status') ?? 'draft');
-		const existing = await getOwnerNote(getNotesClient(event), event.params.id);
-		if (
-			status === 'published' ||
-			status === 'scheduled' ||
-			existing?.status === 'published' ||
-			existing?.status === 'scheduled'
-		) {
-			await requireFreshNotesOwner(event);
-		}
+		const client = getNotesClient(event);
+		const existing = await getOwnerNote(client, event.params.id);
+		if (!existing) throw error(404, { message: 'Note not found.' });
 		const scheduledValue = String(form.get('scheduledFor') ?? '').trim();
 		const scheduledDate = scheduledValue ? new Date(scheduledValue) : null;
 		if (status === 'scheduled' && (!scheduledDate || Number.isNaN(scheduledDate.getTime()))) {
@@ -69,7 +63,16 @@ export const actions: Actions = {
 				message: parsed.error.issues[0]?.message ?? 'Check the note details and try again.'
 			});
 		}
-		await updateOwnerNoteMetadata(getNotesClient(event), event.params.id, parsed.data);
+		if (
+			parsed.data.status !== existing.status ||
+			parsed.data.status === 'published' ||
+			parsed.data.status === 'scheduled'
+		) {
+			// Every actual state transition uses a freshness-protected RPC. Reject an
+			// already-stale session before writing metadata; the RPC also rechecks freshness.
+			await requireFreshNotesOwner(event);
+		}
+		await updateOwnerNoteMetadata(client, event.params.id, parsed.data, existing.status);
 		return {
 			message:
 				parsed.data.status === 'published'

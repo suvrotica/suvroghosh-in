@@ -1,0 +1,117 @@
+name: Feature artifacts and notebooks
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/feature-artifacts.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - '*.config.*'
+      - 'tsconfig*.json'
+      - '.npmrc'
+      - '.prettier*'
+      - 'requirements-*.txt'
+      - 'pixi.toml'
+      - 'pixi.lock'
+      - 'vercel.json'
+      - 'scripts/**'
+      # Routine post generation updates these shared catalogs.
+      - '!scripts/image-optimization-manifest.json'
+      - '!scripts/post-tags-manifest.json'
+      - 'src/**'
+      - '!src/lib/posts/**'
+      - '!src/lib/generated/music-posts.ts'
+      - '!src/lib/generated/media-gallery.ts'
+      - '!src/lib/server/generated/image-dimensions.js'
+      # These Markdown entries own the audited interactive or notebook experiences.
+      - 'src/lib/posts/the-profile-that-knows-almost-nothing-about-you.md'
+      - 'src/lib/posts/the-bias-archipelago.md'
+      - 'src/lib/posts/belousov-zhabotinsky-laboratory.md'
+      - 'src/lib/posts/the-prior-authorization-machine.md'
+      - 'src/lib/posts/the-strange-attractor-orchestra.md'
+      - 'src/lib/posts/perceptron-from-scratch-in-mojo.md'
+      - 'src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md'
+      - 'static/notebooks/**'
+      - 'static/data/**'
+      - 'static/images/visualizations/**'
+      - 'static/images/bias-archipelago*.png'
+      - 'static/images/belousov-zhabotinsky-laboratory.png'
+      - 'static/fonts/**'
+      - 'artifacts/bz-v2-search/**'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/feature-artifacts.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - '*.config.*'
+      - 'tsconfig*.json'
+      - '.npmrc'
+      - '.prettier*'
+      - 'requirements-*.txt'
+      - 'pixi.toml'
+      - 'pixi.lock'
+      - 'vercel.json'
+      - 'scripts/**'
+      - '!scripts/image-optimization-manifest.json'
+      - '!scripts/post-tags-manifest.json'
+      - 'src/**'
+      - '!src/lib/posts/**'
+      - '!src/lib/generated/music-posts.ts'
+      - '!src/lib/generated/media-gallery.ts'
+      - '!src/lib/server/generated/image-dimensions.js'
+      - 'src/lib/posts/the-profile-that-knows-almost-nothing-about-you.md'
+      - 'src/lib/posts/the-bias-archipelago.md'
+      - 'src/lib/posts/belousov-zhabotinsky-laboratory.md'
+      - 'src/lib/posts/the-prior-authorization-machine.md'
+      - 'src/lib/posts/the-strange-attractor-orchestra.md'
+      - 'src/lib/posts/perceptron-from-scratch-in-mojo.md'
+      - 'src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md'
+      - 'static/notebooks/**'
+      - 'static/data/**'
+      - 'static/images/visualizations/**'
+      - 'static/images/bias-archipelago*.png'
+      - 'static/images/belousov-zhabotinsky-laboratory.png'
+      - 'static/fonts/**'
+      - 'artifacts/bz-v2-search/**'
+
+permissions:
+  contents: read
+
+jobs:
+  feature-artifacts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      # CI verifies committed media rather than transforming supplied artwork.
+      IMAGE_OPTIMIZE_VERIFY_ONLY: '1'
+      WORDCLOUD_VERIFY_ONLY: '1'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify publishing workflow boundaries
+        run: npm run build-workflow:test
+
+      - name: Verify incremental notebook preparation
+        run: npm run notebooks:test
+
+      - name: Check feature artifacts, notebooks and the complete site
+        run: npm run build:full

@@ -3,16 +3,24 @@ import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { Resend } from 'resend';
 import type { Actions } from './$types';
+import { BodyReadError, readBoundedBody, withDeadline } from '$lib/server/http/body';
+import { createLocalAdmission } from '$lib/server/http/local-admission';
 
 const MAX_REQUEST_BYTES = 64 * 1024;
+const BODY_TIMEOUT_MS = 10000;
+const MAIL_TIMEOUT_MS = 15000;
 const NAME_MAX_LENGTH = 120;
 const EMAIL_MAX_LENGTH = 254;
 const MESSAGE_MIN_LENGTH = 10;
 const MESSAGE_MAX_LENGTH = 5000;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const RATE_LIMIT_ATTEMPTS = 3;
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const RATE_LIMIT_CLEANUP_INTERVAL = 100;
+const consumeRateLimit = createLocalAdmission({
+	attempts: 3,
+	globalAttempts: 30,
+	windowMs: 15 * 60 * 1000,
+	concurrency: 3,
+	maxKeys: 2048
+});
 
 type ContactValues = {
 	name: string;
@@ -21,13 +29,6 @@ type ContactValues = {
 };
 
 type ContactErrors = Partial<Record<keyof ContactValues | 'form', string>>;
-
-type RateLimitBucket = {
-	attempts: number[];
-};
-
-const rateLimitBuckets = new Map<string, RateLimitBucket>();
-let rateLimitChecks = 0;
 
 const emptyValues = (): ContactValues => ({ name: '', email: '', message: '' });
 
@@ -66,38 +67,9 @@ const clientKey = (getClientAddress: () => string) => {
 	try {
 		return crypto.createHash('sha256').update(getClientAddress()).digest('base64url');
 	} catch {
-		// Some local or future adapters may not expose a client address. In that case,
-		// avoid applying one shared limit to every visitor.
-		return undefined;
+		// Fail conservatively with one shared bucket when the adapter has no address.
+		return 'unknown';
 	}
-};
-
-const consumeRateLimit = (key: string | undefined, now = Date.now()) => {
-	if (!key) return { allowed: true, retryAfterSeconds: 0 };
-
-	rateLimitChecks += 1;
-	if (rateLimitChecks % RATE_LIMIT_CLEANUP_INTERVAL === 0) {
-		for (const [bucketKey, bucket] of rateLimitBuckets) {
-			if (bucket.attempts.every((attempt) => now - attempt >= RATE_LIMIT_WINDOW_MS)) {
-				rateLimitBuckets.delete(bucketKey);
-			}
-		}
-	}
-
-	const bucket = rateLimitBuckets.get(key) ?? { attempts: [] };
-	bucket.attempts = bucket.attempts.filter((attempt) => now - attempt < RATE_LIMIT_WINDOW_MS);
-
-	if (bucket.attempts.length >= RATE_LIMIT_ATTEMPTS) {
-		const retryAfterMs = RATE_LIMIT_WINDOW_MS - (now - bucket.attempts[0]);
-		return {
-			allowed: false,
-			retryAfterSeconds: Math.max(1, Math.ceil(retryAfterMs / 1000))
-		};
-	}
-
-	bucket.attempts.push(now);
-	rateLimitBuckets.set(key, bucket);
-	return { allowed: true, retryAfterSeconds: 0 };
 };
 
 const formFailure = (status: number, values: ContactValues, message: string) =>
@@ -108,15 +80,29 @@ const formFailure = (status: number, values: ContactValues, message: string) =>
 
 export const actions: Actions = {
 	default: async ({ request, url, getClientAddress, setHeaders }) => {
-		const contentLength = Number(request.headers.get('content-length'));
-		if (Number.isFinite(contentLength) && contentLength > MAX_REQUEST_BYTES) {
-			return formFailure(413, emptyValues(), 'Your message is too large to submit.');
+		if (request.headers.get('origin') !== url.origin) {
+			return formFailure(403, emptyValues(), 'Please submit this form from the contact page.');
 		}
 
 		let formData: FormData;
 		try {
-			formData = await request.formData();
-		} catch {
+			const bytes = await readBoundedBody(
+				request,
+				MAX_REQUEST_BYTES,
+				BODY_TIMEOUT_MS,
+				request.signal
+			);
+			formData = await new Response(bytes, { headers: request.headers }).formData();
+		} catch (error) {
+			if (error instanceof BodyReadError) {
+				return formFailure(
+					error.kind === 'too-large' ? 413 : 408,
+					emptyValues(),
+					error.kind === 'too-large'
+						? 'Your message is too large to submit.'
+						: 'Your form took too long to submit. Please try again.'
+				);
+			}
 			return formFailure(
 				400,
 				emptyValues(),
@@ -151,50 +137,61 @@ export const actions: Actions = {
 			);
 		}
 
-		const resendApiKey = env.RESEND_API_KEY;
-		const toEmail = env.CONTACT_TO_EMAIL || 'contact@suvroghosh.in';
-		const fromEmail = env.CONTACT_FROM_EMAIL || 'noreply@suvroghosh.in';
-
-		if (!resendApiKey) {
-			return formFailure(500, values, 'Contact form email is not configured yet.');
-		}
-
-		const timestamp = new Date().toISOString();
 		try {
-			const resend = new Resend(resendApiKey);
-			const result = await resend.emails.send({
-				from: `Website Contact <${fromEmail}>`,
-				to: toEmail,
-				replyTo: values.email,
-				subject: 'New message from suvroghosh.in contact form',
-				text: [
-					'New contact form submission',
-					'',
-					`Name: ${values.name}`,
-					`Email: ${values.email}`,
-					`Timestamp: ${timestamp}`,
-					`Source: suvroghosh.in contact page (${url.href})`,
-					'',
-					'Message:',
-					values.message
-				].join('\n')
-			});
+			const resendApiKey = env.RESEND_API_KEY;
+			const toEmail = env.CONTACT_TO_EMAIL || 'contact@suvroghosh.in';
+			const fromEmail = env.CONTACT_FROM_EMAIL || 'noreply@suvroghosh.in';
 
-			if (result.error) {
-				console.error('Contact email delivery was rejected:', result.error.message);
+			if (!resendApiKey) {
+				return formFailure(500, values, 'Contact form email is not configured yet.');
+			}
+
+			const timestamp = new Date().toISOString();
+			try {
+				const resend = new Resend(resendApiKey);
+				const result = await withDeadline((signal) => {
+					// The installed SDK forwards request options to fetch, including AbortSignal.
+					const options = { headers: {}, signal };
+					return resend.emails.send(
+						{
+							from: `Website Contact <${fromEmail}>`,
+							to: toEmail,
+							replyTo: values.email,
+							subject: 'New message from suvroghosh.in contact form',
+							text: [
+								'New contact form submission',
+								'',
+								`Name: ${values.name}`,
+								`Email: ${values.email}`,
+								`Timestamp: ${timestamp}`,
+								`Source: suvroghosh.in contact page (${url.href})`,
+								'',
+								'Message:',
+								values.message
+							].join('\n')
+						},
+						options
+					);
+				}, MAIL_TIMEOUT_MS);
+
+				if (result.error) {
+					console.error('Contact email delivery was rejected:', result.error.message);
+					return formFailure(500, values, 'Your message could not be sent. Please try again.');
+				}
+			} catch (error) {
+				console.error(
+					'Contact email delivery failed:',
+					error instanceof Error ? error.message : 'Unknown delivery error'
+				);
 				return formFailure(500, values, 'Your message could not be sent. Please try again.');
 			}
-		} catch (error) {
-			console.error(
-				'Contact email delivery failed:',
-				error instanceof Error ? error.message : 'Unknown delivery error'
-			);
-			return formFailure(500, values, 'Your message could not be sent. Please try again.');
-		}
 
-		return {
-			success: true,
-			values: emptyValues()
-		};
+			return {
+				success: true,
+				values: emptyValues()
+			};
+		} finally {
+			rateLimit.release();
+		}
 	}
 };

@@ -1,6 +1,7 @@
 <script lang="ts">
   import BlogPostPage from '../../[category]/[slug]/+page.svelte';
   import MeaningConnectionMap from '$lib/visualizations/meaning-connection-map/MeaningConnectionMap.svelte';
+  import { lockMeaningMapScroll } from '$lib/visualizations/meaning-connection-map/lifecycle';
   import { onMount } from 'svelte';
   import type { PageData } from './$types';
 
@@ -11,8 +12,7 @@
     // Show the map after a tick so the SSR-rendered blog shell
     // (with all its SEO metadata) is captured first.
     showMap = true;
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    return lockMeaningMapScroll(document);
   });
 </script>
 

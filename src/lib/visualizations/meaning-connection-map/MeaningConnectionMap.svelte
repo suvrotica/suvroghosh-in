@@ -4,6 +4,7 @@
   import type { ConceptNode, ConceptEdge, NodeCategory, RelationshipType } from './types';
   import { NODES, EDGES } from './graph-data';
   import { createSimulationEdges, type SimulationEdge } from './simulation';
+  import { ownMeaningMapResources } from './lifecycle';
   import { CATEGORY_COLORS, CATEGORY_LABELS, RELATIONSHIP_LABELS } from './types';
 
   let container: HTMLDivElement;
@@ -142,6 +143,8 @@
       selectedNode = null;
       tooltip = null;
     });
+
+    return ownMeaningMapResources(simulation, svg, () => zoom.on('zoom', null));
   }
 
   function selectNode(d: ConceptNode) {
@@ -228,11 +231,7 @@
         visibleIds.has(e.source.id) && visibleIds.has(e.target.id) ? 0.6 : 0);
   }
 
-  onMount(() => {
-    initGraph();
-    // Let simulation settle
-    setTimeout(() => simulation?.stop(), 8000);
-  });
+  onMount(initGraph);
 </script>
 
 <div class="fixed inset-0 bg-[#0f1117] flex flex-col font-mono overflow-hidden" data-meaning-map>

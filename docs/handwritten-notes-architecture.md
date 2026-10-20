@@ -1,4 +1,5 @@
-This document describes the implementation in this repository as of 23 July 2026. “Shipped” means
+This document describes the Notes implementation, initially documented on 23 July 2026 and updated
+for metadata-save safeguards on 20 October 2026. “Shipped” means
 the code exists in the repository; production-dependent behaviour still requires the Supabase
 migration, secrets, owner account, cron job, and Vercel deployment described below.
 
@@ -321,8 +322,9 @@ Authorization is defence in depth:
 2. The UUID must exactly match the server-only `NOTES_OWNER_USER_ID`.
 3. RLS also requires membership in `note_owners` and row ownership.
 4. Unknown authenticated users are signed out locally and receive a non-enumerating 404.
-5. Publish, schedule, unpublish, archive, and other sensitive metadata transitions require the
-   current JWT session ID to match a Supabase `auth.sessions` row created within the last 12 hours.
+5. Publish, schedule, unpublish, archive, restore, delete, and every actual metadata status change
+   require the current JWT session ID to match a Supabase `auth.sessions` row created within the
+   last 12 hours. The metadata action checks this before writing; sensitive RPCs check it again.
 6. All mutating forms and APIs require exact origin or a browser-confirmed same-origin fetch.
 7. Postgres RPCs repeat ownership, revision, document-ID, and asset relationship checks inside the
    transaction.
@@ -500,7 +502,7 @@ default palm-rejection policy.
 | `duplicate` action | `/notes/studio` or editor                            | Owner; clones document, metadata, and every referenced private image                |
 | `archive` action   | dashboard/editor                                     | Fresh owner session; revokes live/pending snapshots and sets archived               |
 | `delete` action    | dashboard/editor                                     | Fresh owner session; permanent DB cascade and best-effort blob cleanup              |
-| `metadata` action  | `/notes/studio/[id]`                                 | Owner; Zod-validates metadata; fresh session for public-state transitions           |
+| `metadata` action  | `/notes/studio/[id]`                                 | Owner; validated metadata; fresh for status changes or published/scheduled saves    |
 | `restore` action   | `/notes/studio/[id]`                                 | Owner; expected-revision RPC creates a new restore revision                         |
 | `GET`              | `/api/notes/[id]/document`                           | Owner only; returns current revision/document, `no-store`                           |
 | `PATCH`            | `/api/notes/[id]/document`                           | Same-origin owner; Zod document, ≤4 MiB, UUID idempotency header, expected revision |
@@ -514,10 +516,23 @@ and `X-Idempotency-Key`. `save_note_document` locks the idempotency tuple, retur
 revision for a valid replay, increments only when the expected revision matches, and emits 409 on a
 concurrent edit. Reusing a key for a different body is rejected.
 
+An unchanged `draft`, `private`, or `archived` metadata save uses ordinary owner authentication and
+does not call `unpublish_note`. Every actual status change, and every save requesting `published`
+or `scheduled`, checks freshness before metadata persistence. The update matches the note ID and
+server-observed status and requires `deleted_at IS NULL`; no matching row produces HTTP 409.
+This guards against an intervening status change or soft deletion at write time, without providing
+metadata revision locking or protection against a status changing away and back.
+
 Publishing and scheduling also carry the current revision into transactional RPCs. Before calling
 them, the repository verifies every image belongs to the note, requires non-empty alt text, and
-rewrites private editor URLs into publication-scoped URLs. Metadata may save even if publication
-fails; the UI reports this distinction and preserves the private document.
+rewrites private editor URLs into publication-scoped URLs. Actual private-state transitions still
+use `unpublish_note` to revoke live and pending snapshots.
+
+Metadata persistence and visibility changes remain separate requests. A later transition error,
+network failure, or freshness expiry can leave metadata saved while the requested visibility
+change fails or its outcome is uncertain. The preflight and conditional update do not make these
+operations atomic; frozen publication content remains protected by the existing snapshot RPCs
+and immutability trigger.
 
 # 11. Autosave, offline, synchronization, and recovery strategy
 
@@ -770,6 +785,12 @@ manifest plus spatial chunks and use operation batches/deltas for author saves.
 - bounded undo/redo history;
 - strict document/metadata parsing, source allow-list, limits, dates, and unique IDs;
 - editable, SVG, PNG, and PDF export behaviour.
+
+`src/lib/server/notes/metadata-action.test.ts` exercises the real metadata action, authorization
+helpers, and repository with mocked Supabase transport: stale unchanged private saves, freshness
+before real transitions, publication/revocation RPCs, status/deletion conflicts, and the remaining
+partial-save boundary. These regressions do not replace database role and concurrency integration
+tests.
 
 `npm run check` runs SvelteKit sync and strict Svelte/TypeScript diagnostics. `npm run lint` checks
 formatting and ESLint, and `npm run build` exercises SSR/client compilation plus the existing site’s

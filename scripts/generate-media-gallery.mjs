@@ -53,7 +53,10 @@ async function loadOptimizationManifest() {
 
 async function writeIfChanged(path, contents, label) {
 	try {
-		if ((await readFile(path, 'utf8')) === contents) return false;
+		const existing = await readFile(path, 'utf8');
+		// Git may check out generated files with CRLF on Windows. Preserve those
+		// bytes when only line endings differ, including in verification mode.
+		if (existing.replaceAll('\r\n', '\n') === contents.replaceAll('\r\n', '\n')) return false;
 	} catch (error) {
 		if (error?.code !== 'ENOENT') throw error;
 	}

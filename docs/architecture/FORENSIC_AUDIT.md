@@ -1,9 +1,10 @@
 # Architectural forensic audit
 
 Date: **20 October 2026**. Application baseline: `2a31d9a33bf305354c9e159f45257074f6f8c8f0`,
-fetched from GitHub and checked out cleanly before investigation. Production source was not
-refactored. This change adds documentation/enforcement and corrects two configuration-documentation
-omissions. Findings refer to baseline application line numbers unless explicitly marked otherwise.
+fetched from GitHub and checked out cleanly before investigation. The initial audit added
+documentation/enforcement and corrected two configuration-documentation omissions without
+refactoring production source. Authorized production fixes followed and are recorded separately
+below. Findings refer to baseline application line numbers unless explicitly marked otherwise.
 The root `AGENTS.md` was initially a locally excluded file, so its original instructions are
 workstation evidence rather than historical content at that commit.
 
@@ -24,15 +25,15 @@ integration evidence. No verified P0 issue, anonymous draft disclosure or browse
 was established. This is not a security certification; hosted configuration and most browser/live
 integration behavior were not exercised.
 
-| Severity      |  Total |   Open | Resolved in this change |
-| ------------- | -----: | -----: | ----------------------: |
-| P0 — Critical |      0 |      0 |                       0 |
-| P1 — High     |      1 |      1 |                       0 |
-| P2 — Medium   |     11 |     10 |                       1 |
-| P3 — Low      |      1 |      1 |                       0 |
-| **Total**     | **13** | **12** |                   **1** |
+| Severity      |  Total |  Open | In progress | Resolved |
+| ------------- | -----: | ----: | ----------: | -------: |
+| P0 — Critical |      0 |     0 |           0 |        0 |
+| P1 — High     |      1 |     0 |           0 |        1 |
+| P2 — Medium   |     11 |     8 |           1 |        2 |
+| P3 — Low      |      1 |     1 |           0 |        0 |
+| **Total**     | **13** | **9** |       **1** |    **3** |
 
-Severity reflects demonstrated scope and practical impact, not the number of source lines.
+Severity records the original demonstrated scope and practical impact, not the number of source lines. Status columns include the subsequent urgent fixes below; no P0/P1 finding remains open.
 Provider-enabled/public-compute risks are explicitly conditional. Proposed causes are labeled
 inferred. A source or isolated-handler reproduction is distinguished from a complete browser or
 deployed-stack test.
@@ -58,6 +59,36 @@ The [coverage inventory](AUDIT_COVERAGE.md) lists counts, every feature family, 
 commits and unverified execution areas. It is part of this report. Claims of coverage are limited
 to the stated inventory/scans/reads/checks; scientific correctness, complete accessibility and
 production security were not exhaustively established.
+
+## Follow-up: focused publication builds
+
+After the baseline audit, routine text-and-image publication was separated from feature maintenance
+on 20 October 2026. `npm run build` retains publication generation/validation, Vite and rendered
+SEO checks, but no longer runs visualization artifact audits or notebook preparation. Those
+checks remain in `build:full` and a path-selected feature workflow. Notebook preparation also
+skips current outputs and renders only stale/missing files. See
+[ADR 0002](decisions/0002-separate-post-and-feature-builds.md) and the current
+[build architecture](ARCHITECTURE.md#5-content-build-and-search-data-flow).
+
+This partially addresses the build-scope portion of `AF-010`. That finding stays open for repeated
+unit aggregation, lint debt and broader security/integration coverage. Baseline command descriptions,
+source locations, counts and verification outcomes below remain historical evidence; they are not
+claims that the old all-feature default pipeline still exists. Subsequent application-finding status
+is recorded in the next follow-up and each finding.
+
+## Follow-up: urgent correctness and request containment
+
+The subsequent authorized urgent-fix change resolves `AF-006` at the owned-resource boundary and
+`AF-002` for stale-session/no-op metadata saves. `AF-001` is **in progress**: public TTS/contact
+streaming limits, input validation, origin checks, process-local admission and deadlines are
+implemented; distributed controls, Notes mutation readers, shared Supabase deadlines and the
+missing named security commands remain open. Process-local limits do not coordinate instances.
+Provider work is bounded but does not yet stop immediately on every client disconnect.
+
+A focused `test:critical` command and path-selected critical-boundaries workflow exercise the
+server/request/persistence/map regressions without triggering on ordinary post-generated metadata.
+The baseline validation record at the end remains the audit's original evidence; the follow-up
+verification record distinguishes tests/builds performed for the corrections.
 
 ## Intended versus existing architecture
 
@@ -91,7 +122,16 @@ production security were not exhaustively established.
 | Scope          | TTS/contact handlers, notes mutation readers, integration clients and security tests.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Risk           | Medium: preserve supported forms/multipart/JSON, legitimate public traffic, private headers and sanitized-image behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Validation     | Missing/false Content-Length, streamed overflow/cancellation, null/malformed JSON, allowed/disallowed origins, multi-instance throttles, upstream deadline/size cases, and ordinary article/RSS/sitemap/static access. Use mocked providers/staging.                                                                                                                                                                                                                                                                                                                             |
-| Status         | **Open**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Status         | **In progress**: immediate public-path containment implemented; the remaining distributed/Notes/security-check work stays open.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+**Implemented follow-up:** `src/lib/server/http/body.ts` now counts arriving bytes and cancels
+oversized/stalled streams. TTS/contact input is limited to 64 KiB with a ten-second read deadline;
+both require exact same-origin submissions. TTS rejects non-object JSON, bounds audio to 32 MiB,
+limits error reads and retains its 120-second provider deadline. Contact uses an abortable
+15-second mail deadline. Both use bounded process-local admission, including conservative
+missing-address fallback. Twenty-eight focused tests cover normal forms/audio and rejection,
+timeout, cancellation, limiter-capacity and installed-SDK signal behavior. Notes readers and
+distributed controls are deliberately not claimed fixed.
 
 An isolated transpiled-handler probe with a mocked upstream accepted an **8,388,619-byte** JSON
 request and returned 200 while forwarding only 3,000 characters; JSON `null` threw a TypeError.
@@ -115,7 +155,15 @@ form-content CSRF protection; contact must not be described as lacking all origi
 | Scope          | Editor metadata action, repository, focused tests and possibly a new migration.                                                                                                                                                                                                                                                                               |
 | Risk           | Medium: do not weaken publish/unpublish/archive/delete protection or retain a stale active/pending snapshot.                                                                                                                                                                                                                                                  |
 | Validation     | Fresh/stale sessions for unchanged draft/private metadata, draft-to-private, archive, published-to-draft and scheduled-to-draft. Assert response and final document/publication state together.                                                                                                                                                               |
-| Status         | **Open**.                                                                                                                                                                                                                                                                                                                                                     |
+| Status         | **Resolved** for the reported stale-session/no-op workflow; broader atomicity remains a documented limitation.                                                                                                                                                                                                                                                |
+
+**Implemented follow-up:** the action uses server-observed status and validates freshness before
+writing every actual transition or published/scheduled operation. Unchanged draft/private/archived
+metadata bypasses the unnecessary transition RPC. A conditional status/nondeleted-row update
+returns 409 for an intervening status/deletion change. Twenty-seven new regression cases (48
+server-notes tests total) exercise the real action/auth/repository with mocked Supabase transport.
+This is not a transactional metadata/publication rewrite: a later RPC/network failure can still
+follow a metadata write, and same-status concurrent edits/ABA transitions are not prevented.
 
 The reproduction mocked repository/database responses locally. Actual hosted RPC execution was
 not performed. The present code explicitly reports that details saved but transition failed;
@@ -194,7 +242,14 @@ full browser import test and does not establish every malformed-value consequenc
 | Scope          | Dedicated Meaning Map route, map component and navigation/lifecycle test.                                                                                                                                                                                                |
 | Risk           | Low to medium: restore pre-existing state and do not stop a newer mounted instance.                                                                                                                                                                                      |
 | Validation     | Enter map, exit through history and client navigation to a long article, assert scrolling/styles restored; repeat navigation; unmount before eight seconds and assert no remaining simulation/timer work.                                                                |
-| Status         | **Open**, source-verified; complete browser navigation test pending.                                                                                                                                                                                                     |
+| Status         | **Resolved** at the owned-resource boundary; full browser navigation/active-gesture testing remains unverified.                                                                                                                                                          |
+
+**Implemented follow-up:** mount-returned cleanup restores prior body/root overflow values,
+axes and priorities. `meaning-connection-map/lifecycle.ts` owns the settle timer, simulation tick
+callback/stop, zoom dispatch, SVG/descendant transition interruption and element removal. Cleanup
+is instance-owned and idempotent. Four lifecycle fixtures plus three existing graph-integrity tests
+pass. The fix avoids removing global D3 window namespaces; transient gesture completion remains
+D3-owned. The separate search/filter/accessibility finding `AF-013` stays open.
 
 The introduction (`b6175ba3`) and wrapper change (`61fb0087`) explain the specialization. The
 baseline relationship fix/revert/reapply (`e358bfb3`, `b3a6a10f`, `2a31d9a3`) addresses D3 edge
@@ -353,6 +408,10 @@ already supports the correction; no framework migration is necessary.
 
 ## Prioritized remediation roadmap
 
+This is the baseline order. The urgent follow-up completed the owned-resource correction in
+step 1 and the stale-session/no-op correction in step 2, with focused mocked tests. Step 3 now
+has public TTS/contact containment. Live database evidence and the remaining work are still open.
+
 | Order                              | Work                                                                                                               | Dependencies and validation before changes                                                                                                                            |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 — Quick containment              | `AF-006`: restore scroll state and clean map resources.                                                            | Add a focused repeat-navigation/unmount regression first; small scope and immediate cross-page benefit.                                                               |
@@ -386,9 +445,13 @@ were not requested and are not justified by the demonstrated failures.
   point to current architecture/versions and correctly distinguish clean/secret auth referrer policy.
 
 The gate cannot evaluate prose quality or infer every semantic change. It does not configure hosted
-branch protections or Actions event policy, and this documentation/enforcement change does not resolve production findings.
+branch protections or Actions event policy. Documentation/enforcement alone does not resolve
+production findings; the implemented follow-ups are identified separately.
 
 ## Validation record
+
+This table records the original audit before the production follow-ups. Later verification is
+listed separately below.
 
 | Check                                                                                                                         | Result and practical limit                                                                                                                                                                                                                                                                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -411,3 +474,39 @@ Temporary command logs were retained under the audit host's temp directory using
 `codex-architecture-*-20261020.log` names. Repository documentation contains the outcomes so it does
 not depend on those workstation files. No secret values, real note contents or provider responses
 were collected.
+
+## Follow-up verification record
+
+- `npm run check`: **passed, zero errors and warnings** after correcting two new test-only
+  TypeScript annotations identified on the first integrated run.
+- `npm run test:critical`: **83 tests passed in eight files**, covering shared request/deadline
+  controls, TTS, contact, Notes metadata and Meaning Map simulation/lifecycle behavior. Providers
+  and persistence transports were mocked; this is not live database/provider assurance.
+- `npm run build-workflow:test`: **14 tests passed**. Six check npm lifecycle reachability and
+  workflow selection/security; eight exercise the real gallery CLI in isolated temporary fixtures.
+- `npm run notebooks:test`: **12 tests passed**. `npm run notebooks:prepare` verified both existing
+  source/output contracts without rendering or modifying notebook HTML.
+- `npm run features:check`: **passed** all retained Barnum, Bias Archipelago, BZ, Prior Authorization
+  and Strange Attractor checks.
+- Architecture gate fixtures: **13 tests passed**; **47 local Markdown links/anchors** resolve.
+  Targeted formatting and ESLint checks passed for the changed boundary code, tests and entry-point
+  documentation. Existing feature components received only the lifecycle edits, without mass formatting.
+- The first routine build found a gallery verification false positive caused by CRLF versus LF
+  line endings. The comparison now treats only those line endings as equivalent, preserves
+  existing bytes/mtime, and still rejects semantic or whitespace changes. The regression fixtures
+  cover both verification flags and missing/stale outputs.
+- Corrected `npm run build`: **passed**, using `IMAGE_OPTIMIZE_VERIFY_ONLY=1` and
+  `WORDCLOUD_VERIFY_ONLY=1`. Publication validators, search generation, SSR/client compilation,
+  Vercel adaptation and rendered discoverability checks completed; the final check covered 701
+  published posts and representative rendered routes. Chunk-size and dependency-tracing warnings
+  were emitted; a passing build does not establish live provider/native-module behavior.
+- `npm run barnum-lab:route-assets`: **passed** against the completed production output. Together
+  with feature checks and notebook preparation above, this exercises every maintenance-lane
+  component without repeating the production build.
+- A before/after SHA-256 comparison covered **3,167 tracked content/media/generated inputs**.
+  Posts, notebook sources/HTML and artwork stayed byte-identical. The sole byte difference was
+  CRLF-to-LF in the tag manifest, with identical normalized text/JSON and no staged Git diff.
+
+Repository-wide formatting debt and the baseline default-unit timeouts above remain open.
+Full browser navigation/gesture behavior, live Supabase concurrency/RLS, paid providers and
+production deployment were not exercised by this correction.

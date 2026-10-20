@@ -1,5 +1,8 @@
 import { env } from '$env/dynamic/private';
 import { json, type RequestHandler } from '@sveltejs/kit';
+import { createHash } from 'node:crypto';
+import { BodyReadError, readBoundedBody, withDeadline } from '$lib/server/http/body';
+import { createLocalAdmission } from '$lib/server/http/local-admission';
 
 type LogicalModel = 'turbo' | 'original' | 'multilingual';
 type AudioFormat = 'wav' | 'mp3' | 'opus';
@@ -27,6 +30,16 @@ type NormalizedRequest = {
 
 const MAX_TEXT_LENGTH = 3000;
 const REQUEST_TIMEOUT_MS = 120000;
+const MAX_REQUEST_BYTES = 64 * 1024;
+const BODY_TIMEOUT_MS = 10000;
+const MAX_AUDIO_BYTES = 32 * 1024 * 1024;
+const admitRequest = createLocalAdmission({
+	attempts: 3,
+	globalAttempts: 12,
+	windowMs: 60000,
+	concurrency: 2,
+	maxKeys: 2048
+});
 
 const BACKEND_MODEL_BY_LOGICAL: Record<LogicalModel, string> = {
 	turbo: 'chatterbox-turbo',
@@ -42,7 +55,13 @@ const AUDIO_CONTENT_TYPE_BY_FORMAT: Record<AudioFormat, string> = {
 
 const EXPRESSIVE_TAGS = new Set(['laugh', 'sigh', 'pause', 'cough', 'breath']);
 
-export const POST: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request, url, getClientAddress }) => {
+	if (request.headers.get('origin') !== url.origin) {
+		return json({ error: 'A same-origin request is required.' }, { status: 403 });
+	}
+	if (request.headers.get('content-type')?.split(';')[0].trim() !== 'application/json') {
+		return json({ error: 'Request body must use application/json.' }, { status: 415 });
+	}
 	const endpoint = env.CHATTERBOX_TTS_ENDPOINT?.trim();
 
 	if (!endpoint) {
@@ -54,10 +73,33 @@ export const POST: RequestHandler = async ({ request }) => {
 			{ status: 501 }
 		);
 	}
+	let address = 'unknown';
+	try {
+		address = getClientAddress();
+	} catch {
+		// Share a conservative fallback bucket when an adapter has no client address.
+	}
+	const admission = admitRequest(createHash('sha256').update(address).digest('hex'));
+	if (!admission.allowed) {
+		return json(
+			{ error: 'Too many audio requests. Please try again later.' },
+			{
+				status: 429,
+				headers: { 'Retry-After': String(admission.retryAfterSeconds) }
+			}
+		);
+	}
+	try {
+		return await generateAudio(request, endpoint);
+	} finally {
+		admission.release();
+	}
+};
 
+async function generateAudio(request: Request, endpoint: string) {
 	const payload = await parseJson(request);
 	if (!payload.ok) {
-		return json({ error: payload.error }, { status: 400 });
+		return json({ error: payload.error }, { status: payload.status });
 	}
 
 	const normalized = normalizePayload(payload.value);
@@ -66,59 +108,67 @@ export const POST: RequestHandler = async ({ request }) => {
 	}
 
 	const backendRequest = buildBackendRequest(endpoint, normalized.value);
-	const controller = new AbortController();
-	const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
 	try {
-		const backendResponse = await fetch(endpoint, {
-			method: 'POST',
-			headers: backendHeaders(),
-			body: JSON.stringify(backendRequest),
-			signal: controller.signal
-		});
+		return await withDeadline(async (signal) => {
+			const backendResponse = await fetch(endpoint, {
+				method: 'POST',
+				headers: backendHeaders(),
+				body: JSON.stringify(backendRequest),
+				signal
+			});
 
-		if (!backendResponse.ok) {
-			return json(
-				{
-					error:
-						'Chatterbox backend could not generate audio. It may not support the requested model or voice.',
-					backendStatus: backendResponse.status,
-					detail: await readBackendError(backendResponse)
-				},
-				{ status: 502 }
-			);
-		}
-
-		const backendContentType = backendResponse.headers.get('content-type') ?? '';
-		if (!isAudioContentType(backendContentType)) {
-			return json(
-				{
-					error: 'Chatterbox backend did not return audio.',
-					backendStatus: backendResponse.status,
-					detail: await readBackendError(backendResponse)
-				},
-				{ status: 502 }
-			);
-		}
-
-		const audio = await backendResponse.arrayBuffer();
-		return new Response(audio, {
-			headers: {
-				'Content-Type': contentTypeFor(normalized.value.format, backendContentType),
-				'Cache-Control': 'no-store'
+			if (!backendResponse.ok) {
+				return json(
+					{
+						error:
+							'Chatterbox backend could not generate audio. It may not support the requested model or voice.',
+						backendStatus: backendResponse.status,
+						detail: await readBackendError(backendResponse, signal)
+					},
+					{ status: 502 }
+				);
 			}
-		});
+
+			const backendContentType = backendResponse.headers.get('content-type') ?? '';
+			if (!isAudioContentType(backendContentType)) {
+				return json(
+					{
+						error: 'Chatterbox backend did not return audio.',
+						backendStatus: backendResponse.status,
+						detail: await readBackendError(backendResponse, signal)
+					},
+					{ status: 502 }
+				);
+			}
+
+			const audio = await readBoundedBody(
+				backendResponse,
+				MAX_AUDIO_BYTES,
+				REQUEST_TIMEOUT_MS,
+				signal
+			);
+			if (audio.byteLength === 0) {
+				return json({ error: 'Chatterbox backend returned empty audio.' }, { status: 502 });
+			}
+			return new Response(audio, {
+				headers: {
+					'Content-Type': contentTypeFor(normalized.value.format, backendContentType),
+					'Cache-Control': 'no-store'
+				}
+			});
+		}, REQUEST_TIMEOUT_MS);
 	} catch (err) {
 		const message =
-			err instanceof DOMException && err.name === 'AbortError'
+			(err instanceof BodyReadError && err.kind !== 'too-large') ||
+			(err instanceof DOMException && err.name === 'AbortError')
 				? 'Chatterbox backend timed out before audio was generated.'
-				: 'Chatterbox backend is unreachable or failed before returning audio.';
+				: err instanceof BodyReadError && err.kind === 'too-large'
+					? 'Chatterbox backend returned too much audio.'
+					: 'Chatterbox backend is unreachable or failed before returning audio.';
 
 		return json({ error: message }, { status: 502 });
-	} finally {
-		clearTimeout(timeout);
 	}
-};
+}
 
 async function parseJson(request: Request): Promise<
 	| {
@@ -128,12 +178,31 @@ async function parseJson(request: Request): Promise<
 	| {
 			ok: false;
 			error: string;
+			status: number;
 	  }
 > {
 	try {
-		return { ok: true, value: (await request.json()) as ChatterboxRequest };
-	} catch {
-		return { ok: false, error: 'Request body must be valid JSON.' };
+		const bytes = await readBoundedBody(
+			request,
+			MAX_REQUEST_BYTES,
+			BODY_TIMEOUT_MS,
+			request.signal
+		);
+		const value: unknown = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+		if (!value || typeof value !== 'object' || Array.isArray(value)) {
+			return { ok: false, error: 'Request body must be a JSON object.', status: 400 };
+		}
+		return { ok: true, value: value as ChatterboxRequest };
+	} catch (error) {
+		if (error instanceof BodyReadError) {
+			return {
+				ok: false,
+				error:
+					error.kind === 'too-large' ? 'Request body is too large.' : 'Request body timed out.',
+				status: error.kind === 'too-large' ? 413 : 408
+			};
+		}
+		return { ok: false, error: 'Request body must be valid JSON.', status: 400 };
 	}
 }
 
@@ -146,6 +215,12 @@ function normalizePayload(payload: ChatterboxRequest):
 			ok: false;
 			error: string;
 	  } {
+	if (
+		payload.allowExpressiveTags !== undefined &&
+		typeof payload.allowExpressiveTags !== 'boolean'
+	) {
+		return { ok: false, error: 'Expressive tags must be enabled with a boolean.' };
+	}
 	const rawText = typeof payload.text === 'string' ? payload.text : '';
 	const allowExpressiveTags = payload.allowExpressiveTags === true;
 	const text = cleanText(rawText, allowExpressiveTags);
@@ -218,6 +293,7 @@ function backendModelFor(model: LogicalModel) {
 }
 
 function parseVoice(value: unknown) {
+	if (value !== undefined && value !== null && typeof value !== 'string') return null;
 	const voice =
 		typeof value === 'string' && value.trim()
 			? value.trim()
@@ -250,6 +326,7 @@ function parseNumber(value: unknown, fallback: number, min: number, max: number)
 	if (value === undefined || value === null || value === '') {
 		return fallback;
 	}
+	if (typeof value !== 'number' && typeof value !== 'string') return null;
 
 	const number = typeof value === 'number' ? value : Number(value);
 	if (!Number.isFinite(number) || number < min || number > max) {
@@ -358,11 +435,11 @@ function contentTypeFor(format: AudioFormat, backendContentType: string) {
 		: AUDIO_CONTENT_TYPE_BY_FORMAT[format];
 }
 
-async function readBackendError(response: Response) {
-	const contentType = response.headers.get('content-type') ?? '';
-	const text = contentType.includes('application/json')
-		? JSON.stringify(await response.json().catch(() => ({})))
-		: await response.text().catch(() => '');
-
-	return text.slice(0, 500);
+async function readBackendError(response: Response, signal: AbortSignal) {
+	try {
+		const bytes = await readBoundedBody(response, 8192, BODY_TIMEOUT_MS, signal);
+		return new TextDecoder().decode(bytes).slice(0, 500);
+	} catch {
+		return 'Backend error details exceeded the response limit or could not be read.';
+	}
 }

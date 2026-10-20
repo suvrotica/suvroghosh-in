@@ -77,7 +77,27 @@ To create a production version of your app:
 npm run build
 ```
 
+This is also the normal build for publishing a text-and-image article. It retains content,
+media, SEO, link, search and rendered-page validation, while using committed notebook HTML and
+leaving visualization-specific artifact maintenance to a separate command:
+
+```sh
+# When changing visualizations, notebooks, their generated artifacts, or shared build inputs
+npm run build:full
+```
+
+The full build additionally checks the visualization artifacts, prepares only missing/stale
+notebook HTML, and audits Barnum's emitted route assets. The feature-maintenance workflow runs
+for relevant source/configuration/artifact changes, rather than ordinary article publication.
+Both commands compile the shared SvelteKit site, so existing route names can still appear in
+compiler output. Those names alone do not require investigating or repairing old features.
+
 You can preview the production build with `npm run preview`.
+
+For changes to request handling, Notes persistence or Meaning Map lifecycle, run
+`npm run check` and `npm run test:critical`. A path-selected workflow runs those checks for the
+affected application boundaries. Publishing workflow/gallery fixtures use
+`npm run build-workflow:test`; incremental notebook fixtures use `npm run notebooks:test`.
 
 ## Handwritten notes
 
@@ -151,8 +171,11 @@ pixi install
 pixi run notebooks
 ```
 
-The normal site prebuild renders notebooks when `nbconvert` is available. Otherwise it verifies
-that the committed HTML matches the source notebook, keeping deployment deterministic.
+The routine site build uses committed notebook HTML and does not invoke the notebook toolchain.
+`npm run notebooks:prepare` (also part of `build:full`) first checks source hashes and renderer
+versions; current files are left untouched. It renders only missing/stale HTML when rendering
+dependencies are available, otherwise fails verification with instructions for the notebook
+author. `npm run notebooks:render` remains an explicit full refresh.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 

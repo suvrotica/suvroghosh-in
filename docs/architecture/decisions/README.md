@@ -18,6 +18,7 @@ The [contribution policy](../../../CONTRIBUTING.md#architecture-change-gate) gov
 documentation must change. Review an ADR in the same change as its implementation; preserve the
 reasoning in old records when superseding them.
 
-| ADR                                    | Status   | Decision                                                                               |
-| -------------------------------------- | -------- | -------------------------------------------------------------------------------------- |
-| [0001](0001-canonical-architecture.md) | Accepted | Maintain a canonical current-state architecture reference and a proportionate PR gate. |
+| ADR                                              | Status   | Decision                                                                                                                 |
+| ------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| [0001](0001-canonical-architecture.md)           | Accepted | Maintain a canonical current-state architecture reference and a proportionate PR gate.                                   |
+| [0002](0002-separate-post-and-feature-builds.md) | Accepted | Separate routine publication from visualization/notebook maintenance, retaining shared build and publication validation. |

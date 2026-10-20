@@ -1,0 +1,59 @@
+name: Critical application boundaries
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/critical-boundaries.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'svelte.config.js'
+      - 'vite.config.ts'
+      - 'vitest.config.ts'
+      - 'tsconfig.json'
+      - 'src/hooks.server.ts'
+      - 'src/lib/server/**'
+      - '!src/lib/server/generated/**'
+      - 'src/lib/notes/**'
+      - 'src/routes/contact/**'
+      - 'src/routes/api/**'
+      - 'src/routes/notes/**'
+      - 'src/lib/visualizations/meaning-connection-map/**'
+      - 'src/routes/blog/visualizations/the-meaning-connection-map/**'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/critical-boundaries.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'svelte.config.js'
+      - 'vite.config.ts'
+      - 'vitest.config.ts'
+      - 'tsconfig.json'
+      - 'src/hooks.server.ts'
+      - 'src/lib/server/**'
+      - '!src/lib/server/generated/**'
+      - 'src/lib/notes/**'
+      - 'src/routes/contact/**'
+      - 'src/routes/api/**'
+      - 'src/routes/notes/**'
+      - 'src/lib/visualizations/meaning-connection-map/**'
+      - 'src/routes/blog/visualizations/the-meaning-connection-map/**'
+
+permissions:
+  contents: read
+
+jobs:
+  critical-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run test:critical

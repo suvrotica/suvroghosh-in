@@ -85,10 +85,18 @@ Svelte/TypeScript analysis. `npm run lint` checks formatting before ESLint; a fo
 prevents ESLint from running. Feature unit/browser commands are listed in `package.json`.
 `npm run notes:test` currently runs the broad default unit collection plus SQL source checks.
 The audit records the existing CI/test gaps rather than claiming every boundary is enforced.
+`npm run test:critical` selects request-limit/provider, Notes and Meaning Map lifecycle regressions;
+the critical-boundaries workflow runs it with `check` for relevant application changes. Publishing
+workflow/gallery and incremental notebook fixtures use `build-workflow:test` and `notebooks:test`.
 
 For standard Markdown publication, follow `AGENTS.md`: preserve requested prose, inspect the
 adjacent convention, use the requested image, curate tags/pinned tags, run `npm run build` once,
-review generated artifacts and follow the prescribed Git publication sequence. Build presteps
+review generated artifacts and follow the prescribed Git publication sequence. The routine build
+does not prepare notebooks or run visualization-specific artifact audits. Use `npm run build:full`
+for feature, notebook, generated-feature-asset or shared-build work; the feature-artifact workflow
+covers those paths. Do not broaden a plain post into old-feature maintenance because a feature
+name or non-blocking warning appears in compiler output. Both lanes still compile the whole site.
+Build presteps
 mutate generated files and can transform raster source assets; the optimizer's current conflict
 with the as-is preservation rule is recorded as `AF-007`. Resolve that conflict in a tested
 change instead of silently treating lossy processing as lossless.

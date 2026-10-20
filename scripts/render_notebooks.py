@@ -85,10 +85,16 @@ def parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser(
 		description="Render Mojo-flavoured Jupyter notebooks to isolated, embeddable HTML."
 	)
-	parser.add_argument(
+	mode = parser.add_mutually_exclusive_group()
+	mode.add_argument(
 		"--check",
 		action="store_true",
 		help="Verify that every notebook has up-to-date generated HTML without importing nbconvert.",
+	)
+	mode.add_argument(
+		"--changed-only",
+		action="store_true",
+		help="Render only notebooks whose generated HTML is missing or stale.",
 	)
 	return parser.parse_args()
 
@@ -104,20 +110,29 @@ def notebook_files() -> list[Path]:
 
 
 def validate_notebook_shape(path: Path, notebook: dict[str, Any]) -> None:
+	if not isinstance(notebook, dict):
+		raise ValueError(f"{path.name}: notebook must be a JSON object.")
 	cells = notebook.get("cells")
 	if not isinstance(cells, list) or not cells:
 		raise ValueError(f"{path.name}: notebook must contain at least one cell.")
 
-	mojo_cells = [
-		cell
-		for cell in cells
-		if cell.get("cell_type") == "code"
-		and "".join(cell.get("source", [])).lstrip().startswith("%%mojo")
-	]
+	mojo_cells = []
+	for cell in cells:
+		if not isinstance(cell, dict):
+			raise ValueError(f"{path.name}: every notebook cell must be a JSON object.")
+		source = cell.get("source", [])
+		if not isinstance(source, str):
+			if not isinstance(source, list) or not all(isinstance(line, str) for line in source):
+				raise ValueError(f"{path.name}: cell source must be text or a list of text lines.")
+			source = "".join(source)
+		if cell.get("cell_type") == "code" and source.lstrip().startswith("%%mojo"):
+			mojo_cells.append(cell)
 	if not mojo_cells:
 		raise ValueError(f"{path.name}: expected at least one code cell beginning with %%mojo.")
 
-	kernel_name = notebook.get("metadata", {}).get("kernelspec", {}).get("name")
+	metadata = notebook.get("metadata", {})
+	kernelspec = metadata.get("kernelspec", {}) if isinstance(metadata, dict) else {}
+	kernel_name = kernelspec.get("name") if isinstance(kernelspec, dict) else None
 	if kernel_name != "python3":
 		raise ValueError(
 			f"{path.name}: Mojo notebooks must use the Python kernel so mojo.notebook can register %%mojo."
@@ -131,49 +146,74 @@ def generated_marker(path: Path) -> str:
 	)
 
 
+def source_problem(path: Path) -> str | None:
+	try:
+		notebook = json.loads(path.read_text(encoding="utf-8"))
+		validate_notebook_shape(path, notebook)
+	except (json.JSONDecodeError, ValueError) as exc:
+		return f"{path.name}: {exc}" if isinstance(exc, json.JSONDecodeError) else str(exc)
+	return None
+
+
+def output_problems(path: Path) -> list[str]:
+	problems: list[str] = []
+	output_path = OUTPUT_DIR / f"{path.stem}.html"
+	if not output_path.exists():
+		return [f"{path.name}: missing generated HTML at {output_path.relative_to(ROOT)}."]
+
+	with output_path.open(encoding="utf-8") as output_file:
+		header = output_file.read(512)
+	match = HASH_PATTERN.search(header)
+	renderer_match = RENDERER_PATTERN.search(header)
+	if not match:
+		problems.append(f"{output_path.name}: missing source hash marker.")
+	elif match.group(1) != source_hash(path):
+		problems.append(f"{output_path.name}: generated HTML is stale; run npm run notebooks:prepare.")
+	if not renderer_match:
+		problems.append(f"{output_path.name}: missing renderer version marker.")
+	elif renderer_match.group(1) != RENDERER_VERSION:
+		problems.append(
+			f"{output_path.name}: rendered with {renderer_match.group(1)}, expected {RENDERER_VERSION}; "
+			"run npm run notebooks:prepare."
+		)
+	return problems
+
+
+def report_problems(problems: list[str]) -> int:
+	print(f"Notebook verification failed with {len(problems)} issue(s):", file=sys.stderr)
+	for problem in problems:
+		print(f"- {problem}", file=sys.stderr)
+	return 1
+
+
 def verify_outputs() -> int:
 	problems: list[str] = []
 	files = notebook_files()
 
 	for path in files:
-		try:
-			notebook = json.loads(path.read_text(encoding="utf-8"))
-			validate_notebook_shape(path, notebook)
-		except (json.JSONDecodeError, ValueError) as exc:
-			problems.append(str(exc))
+		problem = source_problem(path)
+		if problem:
+			problems.append(problem)
 			continue
-
-		output_path = OUTPUT_DIR / f"{path.stem}.html"
-		if not output_path.exists():
-			problems.append(f"{path.name}: missing generated HTML at {output_path.relative_to(ROOT)}.")
-			continue
-
-		header = output_path.read_text(encoding="utf-8")[:512]
-		match = HASH_PATTERN.search(header)
-		renderer_match = RENDERER_PATTERN.search(header)
-		if not match:
-			problems.append(f"{output_path.name}: missing source hash marker.")
-		elif match.group(1) != source_hash(path):
-			problems.append(f"{output_path.name}: generated HTML is stale; run npm run notebooks:render.")
-		if not renderer_match:
-			problems.append(f"{output_path.name}: missing renderer version marker.")
-		elif renderer_match.group(1) != RENDERER_VERSION:
-			problems.append(
-				f"{output_path.name}: rendered with {renderer_match.group(1)}, expected {RENDERER_VERSION}; "
-				"run npm run notebooks:render."
-			)
+		problems.extend(output_problems(path))
 
 	if problems:
-		print(f"Notebook verification failed with {len(problems)} issue(s):", file=sys.stderr)
-		for problem in problems:
-			print(f"- {problem}", file=sys.stderr)
-		return 1
+		return report_problems(problems)
 
 	print(f"Notebook verification passed: {len(files)} source notebook(s) are rendered.")
 	return 0
 
 
-def render_outputs() -> int:
+def render_outputs(changed_only: bool = False) -> int:
+	files = notebook_files()
+	problems = [problem for path in files if (problem := source_problem(path))]
+	if problems:
+		return report_problems(problems)
+	if changed_only:
+		files = [path for path in files if output_problems(path)]
+		if not files:
+			return verify_outputs()
+
 	try:
 		import nbformat
 		from nbconvert import HTMLExporter
@@ -183,7 +223,6 @@ def render_outputs() -> int:
 		) from exc
 
 	OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-	files = notebook_files()
 
 	for path in files:
 		notebook = nbformat.read(path, as_version=4)
@@ -209,7 +248,7 @@ def render_outputs() -> int:
 
 def main() -> int:
 	args = parse_args()
-	return verify_outputs() if args.check else render_outputs()
+	return verify_outputs() if args.check else render_outputs(changed_only=args.changed_only)
 
 
 if __name__ == "__main__":

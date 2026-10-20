@@ -398,9 +398,10 @@ function throwPublicationError(
 export async function updateOwnerNoteMetadata(
 	client: SupabaseClient,
 	id: string,
-	input: NoteMetadataInput
+	input: NoteMetadataInput,
+	expectedStatus: NoteSummary['status']
 ) {
-	const { error: updateError } = await client
+	const { data: updated, error: updateError } = await client
 		.from('notes')
 		.update({
 			title: input.title,
@@ -414,12 +415,21 @@ export async function updateOwnerNoteMetadata(
 			seo_description: input.seoDescription,
 			downloads_enabled: input.downloadsEnabled
 		})
-		.eq('id', id);
+		.eq('id', id)
+		.eq('status', expectedStatus)
+		.is('deleted_at', null)
+		.select('id')
+		.maybeSingle();
 	if (updateError) {
 		if (updateError.code === '23505') {
 			throw error(409, { message: 'That note address is already in use.' });
 		}
 		throw error(500, { message: 'The note details could not be saved.' });
+	}
+	if (!updated) {
+		throw error(409, {
+			message: 'The note state changed before its details could be saved. Reload and try again.'
+		});
 	}
 
 	if (input.status === 'published' || input.status === 'scheduled') {
@@ -449,6 +459,10 @@ export async function updateOwnerNoteMetadata(
 		}
 		return;
 	}
+
+	// Unchanged private metadata does not revoke or replace a publication. Calling the
+	// sensitive transition RPC here would reject valid owner sessions older than 12 hours.
+	if (input.status === expectedStatus) return;
 
 	const { error: unpublishError } = await client.rpc('unpublish_note', {
 		p_note_id: id,
