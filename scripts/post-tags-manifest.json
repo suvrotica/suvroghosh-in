@@ -14855,6 +14855,37 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-scale-elevator-from-ion-to-city.md": {
+			"bodyHash": "345b67b0d451d84a28982508451e4727021e9ef51c5013e231c275cc5f60afd8",
+			"hashVersion": 2,
+			"revisionHash": "1ff5487c77bd8541bdccd4a06f68159c8a822fedcea13c59c99836322306af5e",
+			"generatedTags": [
+				"Biology",
+				"Chemistry",
+				"Healthcare",
+				"Oxygen",
+				"Semantic Zoom",
+				"Information Design",
+				"Scientific Computing",
+				"Three.js",
+				"Systems Thinking",
+				"Physiology"
+			],
+			"pinnedTags": [
+				"Biology",
+				"Chemistry",
+				"Healthcare",
+				"Oxygen",
+				"Semantic Zoom",
+				"Information Design",
+				"Scientific Computing",
+				"Three.js",
+				"Systems Thinking",
+				"Physiology"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		}
 	},
 	"maxTags": 10

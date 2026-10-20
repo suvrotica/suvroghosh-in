@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/scale-elevator/**/*.test.ts',
 			'src/lib/visualizations/spacetime-laboratory/**/*.test.ts',
 			'src/lib/visualizations/meaning-connection-map/**/*.test.ts',
 			'src/lib/visualizations/barnum-lab/**/*.test.ts',

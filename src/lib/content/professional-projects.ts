@@ -277,7 +277,8 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'monte-carlo-laboratory',
 			'create-art-living-pigment-studio',
 			'domain-coloring-complex-functions-explorer',
-			'the-living-aperture'
+			'the-living-aperture',
+			'the-scale-elevator-from-ion-to-city'
 		],
 		link: {
 			kind: 'internal',

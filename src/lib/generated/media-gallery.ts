@@ -4927,6 +4927,174 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "visualizations/scale-elevator/01-ion.jpg",
+			"src": "/images/visualizations/scale-elevator/01-ion.jpg",
+			"bytes": 85673,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/02-molecule.jpg",
+			"src": "/images/visualizations/scale-elevator/02-molecule.jpg",
+			"bytes": 104679,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/03-membrane.jpg",
+			"src": "/images/visualizations/scale-elevator/03-membrane.jpg",
+			"bytes": 92463,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/04-cell.jpg",
+			"src": "/images/visualizations/scale-elevator/04-cell.jpg",
+			"bytes": 92327,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/05-tissue.jpg",
+			"src": "/images/visualizations/scale-elevator/05-tissue.jpg",
+			"bytes": 119834,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/06-organ.jpg",
+			"src": "/images/visualizations/scale-elevator/06-organ.jpg",
+			"bytes": 95183,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/07-person.jpg",
+			"src": "/images/visualizations/scale-elevator/07-person.jpg",
+			"bytes": 91407,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/08-bed.jpg",
+			"src": "/images/visualizations/scale-elevator/08-bed.jpg",
+			"bytes": 92505,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/09-ward.jpg",
+			"src": "/images/visualizations/scale-elevator/09-ward.jpg",
+			"bytes": 105783,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/10-hospital.jpg",
+			"src": "/images/visualizations/scale-elevator/10-hospital.jpg",
+			"bytes": 104457,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/11-city.jpg",
+			"src": "/images/visualizations/scale-elevator/11-city.jpg",
+			"bytes": 108886,
+			"width": 1407,
+			"height": 1093
+		},
+		{
+			"name": "visualizations/scale-elevator/scale-elevator-overview.jpg",
+			"src": "/images/visualizations/scale-elevator/scale-elevator-overview.jpg",
+			"bytes": 129600,
+			"width": 1800,
+			"height": 1140
+		},
+		{
+			"name": "visualizations/scale-elevator/scale-elevator-social.jpg",
+			"src": "/images/visualizations/scale-elevator/scale-elevator-social.jpg",
+			"bytes": 51868,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-01-ion.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-01-ion.jpg",
+			"bytes": 22466,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-02-molecule.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-02-molecule.jpg",
+			"bytes": 29740,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-03-membrane.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-03-membrane.jpg",
+			"bytes": 23525,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-04-cell.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-04-cell.jpg",
+			"bytes": 24835,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-05-tissue.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-05-tissue.jpg",
+			"bytes": 47634,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-06-organ.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-06-organ.jpg",
+			"bytes": 18651,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-07-person.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-07-person.jpg",
+			"bytes": 19291,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-08-bed.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-08-bed.jpg",
+			"bytes": 16304,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-09-ward.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-09-ward.jpg",
+			"bytes": 28624,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-10-hospital.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-10-hospital.jpg",
+			"bytes": 27863,
+			"width": 1047,
+			"height": 541
+		},
+		{
+			"name": "visualizations/scale-elevator/scene-11-city.jpg",
+			"src": "/images/visualizations/scale-elevator/scene-11-city.jpg",
+			"bytes": 29179,
+			"width": 1047,
+			"height": 541
+		},
+		{
 			"name": "visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
 			"src": "/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
 			"bytes": 3414,

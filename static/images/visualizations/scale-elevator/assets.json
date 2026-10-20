@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "captureVersion": "scale-elevator-browser-capture-v1",
+  "modelVersion": "scale-elevator-v1",
+  "sourceHash": "5db227ad4cc02dca0d6a6ed186f8981196af16f25fd85cdbc221be085d05f9f4",
+  "sourceFiles": [
+    "src/lib/visualizations/scale-elevator/types.ts",
+    "src/lib/visualizations/scale-elevator/core.ts",
+    "src/lib/visualizations/scale-elevator/renderer.ts",
+    "src/lib/components/visualizations/scale-elevator/ScaleElevator.svelte",
+    "src/lib/components/visualizations/scale-elevator/ScaleStage.svelte",
+    "src/lib/components/visualizations/scale-elevator/ScaleChart.svelte",
+    "src/lib/components/visualizations/scale-elevator/scale-elevator.css",
+    "scripts/render-scale-elevator-assets.mjs"
+  ],
+  "capture": {
+    "viewport": {
+      "width": 1440,
+      "height": 1200
+    },
+    "deviceScaleFactor": 1,
+    "browser": "Chrome / Playwright / SwiftShader",
+    "browserVersion": "155.0.8059.85",
+    "reducedMotion": "reduce; explicit capture clock",
+    "state": {
+      "progress": 0,
+      "scenario": "baseline",
+      "control": 0.5,
+      "selected": 0,
+      "seed": 20261021
+    },
+    "stillTime": 1.25,
+    "layout": {
+      "cardWidth": 1406,
+      "cardHeight": 1093,
+      "workbenchHeight": 779,
+      "passportHeight": 85
+    },
+    "continuousTour": {
+      "fps": 24,
+      "duration": 52,
+      "frames": 1248,
+      "clock": "core.tourProgress(frame / fps)",
+      "frameCapture": "DOM card including HTML/SVG overlays and WebGL canvas"
+    }
+  },
+  "provenance": {
+    "geometry": "Procedural authored schematics; fictional city; no external raster imagery",
+    "data": "Deterministic educational calculations and synthetic records; see article and docs/visualizations/scale-elevator.md",
+    "references": [
+      {
+        "title": "RCSB PDB-101: Haemoglobin",
+        "url": "https://pdb101.rcsb.org/motm/41"
+      },
+      {
+        "title": "RCSB PDB-101: Cytochrome c oxidase",
+        "url": "https://pdb101.rcsb.org/motm/5"
+      },
+      {
+        "title": "FDA: Pulse oximeters",
+        "url": "https://www.fda.gov/medical-devices/products-and-medical-procedures/pulse-oximeters"
+      },
+      {
+        "title": "WHO: Technical specifications for health facility based medical oxygen systems",
+        "url": "https://www.who.int/publications/i/item/9789240101616"
+      }
+    ]
+  },
+  "images": [
+    {
+      "path": "static/images/visualizations/scale-elevator/01-ion.jpg",
+      "kind": "annotated-floor",
+      "floor": "ion",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-01-ion.jpg",
+      "kind": "clean-scene",
+      "floor": "ion",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/02-molecule.jpg",
+      "kind": "annotated-floor",
+      "floor": "molecule",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-02-molecule.jpg",
+      "kind": "clean-scene",
+      "floor": "molecule",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/03-membrane.jpg",
+      "kind": "annotated-floor",
+      "floor": "membrane",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-03-membrane.jpg",
+      "kind": "clean-scene",
+      "floor": "membrane",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/04-cell.jpg",
+      "kind": "annotated-floor",
+      "floor": "cell",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-04-cell.jpg",
+      "kind": "clean-scene",
+      "floor": "cell",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/05-tissue.jpg",
+      "kind": "annotated-floor",
+      "floor": "tissue",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-05-tissue.jpg",
+      "kind": "clean-scene",
+      "floor": "tissue",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/06-organ.jpg",
+      "kind": "annotated-floor",
+      "floor": "organ",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-06-organ.jpg",
+      "kind": "clean-scene",
+      "floor": "organ",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/07-person.jpg",
+      "kind": "annotated-floor",
+      "floor": "person",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-07-person.jpg",
+      "kind": "clean-scene",
+      "floor": "person",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/08-bed.jpg",
+      "kind": "annotated-floor",
+      "floor": "bed",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-08-bed.jpg",
+      "kind": "clean-scene",
+      "floor": "bed",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/09-ward.jpg",
+      "kind": "annotated-floor",
+      "floor": "ward",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-09-ward.jpg",
+      "kind": "clean-scene",
+      "floor": "ward",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/10-hospital.jpg",
+      "kind": "annotated-floor",
+      "floor": "hospital",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-10-hospital.jpg",
+      "kind": "clean-scene",
+      "floor": "hospital",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/11-city.jpg",
+      "kind": "annotated-floor",
+      "floor": "city",
+      "width": 1407,
+      "height": 1093,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scene-11-city.jpg",
+      "kind": "clean-scene",
+      "floor": "city",
+      "width": 1047,
+      "height": 541,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scale-elevator-overview.jpg",
+      "kind": "overview",
+      "width": 1800,
+      "height": 1140,
+      "byteBudget": 750000
+    },
+    {
+      "path": "static/images/visualizations/scale-elevator/scale-elevator-social.jpg",
+      "kind": "social",
+      "width": 1200,
+      "height": 630,
+      "byteBudget": 750000
+    }
+  ],
+  "video": {
+    "path": "static/videos/visualizations/scale-elevator/scale-elevator-tour.mp4",
+    "width": 1280,
+    "height": 994,
+    "displayWidth": 1280,
+    "duration": 52,
+    "codec": "H.264 / AVC",
+    "container": "MP4",
+    "bytes": 3732833,
+    "fps": 24,
+    "frames": 1248,
+    "byteBudget": 15728640,
+    "sha256": "d7fed26fecda5448f6534d1813fbe379a1f636411d013382f65c3d111b30b52d"
+  }
+}

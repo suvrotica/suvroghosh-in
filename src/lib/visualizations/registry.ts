@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'the-scale-elevator-from-ion-to-city': {
+		id: 'the-scale-elevator-from-ion-to-city',
+		title: 'The Scale Elevator — From Ion to City',
+		description:
+			'Follow oxygen through eleven scales, from a haem iron binding site to a fictional city supply network, and discover why a quantity needs a context.',
+		subjects: ['Biology', 'Chemistry', 'Healthcare', 'Scientific Computing'],
+		poster: '/images/visualizations/scale-elevator/scale-elevator-social.jpg',
+		posterAlt:
+			'Eleven illustrated views connect an iron binding site, haemoglobin, a membrane, a cell, tissue, a heart, a person, a bed, a ward, a hospital and a fictional city',
+		href: '/blog/visualizations/the-scale-elevator-from-ion-to-city',
+		status: 'published'
+	},
 	'hello-fragment': {
 		...helloFragmentMetadata,
 		href: '/blog/visualizations/hello-fragment-your-first-shader-from-scratch',
@@ -149,8 +161,7 @@ export const visualizationSummaries = {
 			'An interactive random-matrix instrument showing a blue-and-amber matrix heatmap, a circular cloud of complex eigenvalues and a descending singular-value profile',
 		href: '/blog/visualizations/the-matrix-is-random-why-does-it-have-a-shape',
 		status: 'published'
-	}
-,
+	},
 	'the-meaning-connection-map': {
 		id: 'the-meaning-connection-map',
 		title: 'The Meaning & Connection Map: A Visual Encyclopedia of Ideas',

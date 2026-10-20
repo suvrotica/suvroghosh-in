@@ -193,7 +193,7 @@ This lane uses committed notebook HTML. It neither invokes notebook preparation 
 
 `npm run build:full` is the feature-maintenance lane:
 
-1. `features:check` runs the preserved deterministic Barnum, Bias, BZ, Prior Authorization and Strange Attractor artifact checks.
+1. `features:check` runs the deterministic Barnum, Bias, BZ, Prior Authorization, Strange Attractor, Mrinmoyee and Scale Elevator artifact checks. The Scale Elevator check verifies committed captures and their source-provenance manifest without a running site or native video encoder; generation is a separate explicit command.
 2. `notebooks:prepare` validates notebook shape/source hashes/renderer versions, leaves current HTML untouched and renders only stale/missing output when rendering dependencies exist. If required output is stale and dependencies are absent, it fails instead of silently accepting it. Explicit `notebooks:render` remains a full refresh.
 3. The routine `npm run build` runs its normal prebuild/build once.
 4. Barnum's emitted route assets are audited after the site build.
@@ -274,6 +274,33 @@ flowchart LR
     Renderer --> Capture["Current-scene PNG / renderer publication assets"]
     Renderer --> Fallback["Poster / fresh-canvas retry"]
     Intent["Explicit sound enable"] --> Audio["Per-mount synthesized audio"]
+```
+
+### Scale Elevator semantic-zoom exhibit
+
+The Scale Elevator uses the ordinary Visualizations Markdown article and generic blog route. Its feature UI under `components/visualizations/scale-elevator` owns per-mount progress, scenario, local inspection, selection and guided-tour state. Its pure domain under `visualizations/scale-elevator` owns typed measurement contracts, the canonical eleven-floor/scenario registry, bounded URL state, the tour schedule and educational oxygen/aggregation calculations. This follows the existing dedicated-feature pattern without adding an endpoint, route exception, external data service, persistence store or shared simulation engine. The gallery consumes lightweight summary/subject metadata; it does not import Three.js through that registry.
+
+Semantic progress is distinct from a floor's illustrative physical viewing extent and from presentation time. Local scene coordinates keep atomic and city geometry in numerically manageable ranges. Label selection uses hysteresis around floor midpoints. Physiological content/delivery, normalised small-scale illustrations and compatible source-gas allocation are explicit model families; the camera cannot create a scientific quantity or convert SpO₂ into gas demand. All clinical traces, infrastructure records and geography are synthetic. The floor registry supplies measurement passport fields, controls, the accessible ordered ledger and capture enumeration.
+
+The stage dynamically imports the browser renderer after mount and viewport activation. The renderer owns its Three.js resources and bounded scene transforms; HTML/SVG owns sharp explanatory labels and charts. Visibility and reduced-motion policy control scheduling, while teardown owns pending-load cancellation and resource disposal. The matching scene stills and server-rendered ledger provide a readable path when WebGL or JavaScript cannot run. The public URL carries bounded synthetic state only.
+
+Publication assets use deterministic page captures so the HTML/SVG measurement context accompanies the actual scene. The capture script opens an existing local development/preview origin with an explicit capture flag and sends bounded `scale-capture` events to the feature root; the card target includes HTML/SVG, while clean fallbacks capture the stage canvas. The script produces eleven annotated stops, matching clean scene fallbacks, a contact sheet, a social image and a continuous tour recording. `static/images/visualizations/scale-elevator/assets.json` records rendering-source provenance, capture state and output metadata. Generation needs the local site, Chrome and a native FFmpeg executable; verification needs only the committed media and source. Their check belongs to `features:check` and the full feature-artifact lane, whose workflow explicitly tracks the article path and `static/videos/visualizations/scale-elevator/**` for pull requests and main pushes, including recording-only edits. See [the feature record](../visualizations/scale-elevator.md) for equations, synthetic assumptions, units, lifecycle boundaries and verification commands. This is a local extension of the established renderer pattern; no foundational decision changes, so a separate ADR is unnecessary.
+
+```mermaid
+flowchart LR
+    Article["Ordinary Markdown article / generic blog route"] --> Shell["Per-mount Scale Elevator state and controls"]
+    Query["Bounded public URL query"] <--> Shell
+    Registry["Eleven-floor registry / scenarios / measurement contracts"] --> Shell
+    Shell --> Model["Pure oxygen illustrations / blood transport / source-gas allocation"]
+    Registry --> Ledger["SSR ordered ledger / measurement explanations"]
+    Model --> Overlay["HTML passport and SVG charts"]
+    Shell --> Stage["Mount and viewport-owned stage"]
+    Stage --> Renderer["Lazy Three.js / local scene transforms"]
+    Model --> Renderer
+    Renderer --> Capture["Deterministic page stills / tour recording / manifest"]
+    Overlay --> Capture
+    Capture --> Fallback["Matching stills and publication media"]
+    Fallback --> Stage
 ```
 
 Local UI adapters use Bits UI/tailwind variants, `cn`, and barrel exports. Five bounded runtime import cycles occur inside these adapters (badge/button/sheet/tabs/tooltip); the static graph found no domain-wide runtime cycle. These cycles have no demonstrated initialization failure and are documented coupling, rather than a counted defect. The graph excluded type-only imports, glob expansion and nonliteral imports; it is not a formal proof of acyclicity.

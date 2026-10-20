@@ -23,7 +23,8 @@ const featureChecks = [
 	'bz:manifest:check',
 	'prior-authorization:assets:check',
 	'strange-attractor-orchestra:assets:check',
-	'mrinmoyee:assets:check'
+	'mrinmoyee:assets:check',
+	'scale-elevator:assets:check'
 ];
 
 // Resolve reachable npm scripts, including npm's automatic pre/post lifecycle hooks.
@@ -151,6 +152,8 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'scripts/lib/bz-v2-performance-evidence.mjs',
 		'scripts/prior-authorization-assets-manifest.json',
 		'scripts/strange-attractor-orchestra-assets.manifest.json',
+		'scripts/render-scale-elevator-assets.mjs',
+		'src/lib/visualizations/scale-elevator/core.ts',
 		'src/lib/visualizations/barnum-lab/core/surface-text.ts',
 		'src/lib/data/bias-archipelago/sources.json',
 		'src/lib/components/visualizations/prior-authorization/index.ts',
@@ -161,12 +164,14 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'src/lib/posts/belousov-zhabotinsky-laboratory.md',
 		'src/lib/posts/the-prior-authorization-machine.md',
 		'src/lib/posts/the-strange-attractor-orchestra.md',
+		'src/lib/posts/the-scale-elevator-from-ion-to-city.md',
 		'src/lib/posts/perceptron-from-scratch-in-mojo.md',
 		'src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md',
 		'src/lib/notebooks/example.ipynb',
 		'static/notebooks/example.html',
 		'static/data/bz-v2/checkpoints/spiral-garden-256-v2.bzcp',
 		'static/images/visualizations/strange-attractor-orchestra/langford-poster.png',
+		'static/videos/visualizations/scale-elevator/scale-elevator-tour.mp4',
 		'static/images/bias-archipelago-2026-08.png',
 		'static/fonts/example.woff2',
 		'artifacts/bz-v2-search/calibration.json'
