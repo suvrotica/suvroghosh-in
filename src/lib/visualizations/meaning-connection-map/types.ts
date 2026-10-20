@@ -70,7 +70,6 @@ export type RelationshipType =
   | 'augments'
   | 'implements'
   | 'motivates'
-  | 'detects'
   | 'shares-principle-with';
 
 export const RELATIONSHIP_LABELS: Record<RelationshipType, string> = {
@@ -98,7 +97,6 @@ export const RELATIONSHIP_LABELS: Record<RelationshipType, string> = {
   'augments': 'augments',
   'implements': 'implements',
   'motivates': 'motivates',
-  'detects': 'detects',
   'shares-principle-with': 'shares a common principle with'
 };
 

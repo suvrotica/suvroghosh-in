@@ -3,13 +3,12 @@
   import * as d3 from 'd3';
   import type { ConceptNode, ConceptEdge, NodeCategory, RelationshipType } from './types';
   import { NODES, EDGES } from './graph-data';
-  import { createSimulationEdges, type SimulationEdge } from './simulation';
   import { CATEGORY_COLORS, CATEGORY_LABELS, RELATIONSHIP_LABELS } from './types';
 
   let container: HTMLDivElement;
   let svg: d3.Selection<SVGSVGElement, unknown, null, undefined>;
   let g: d3.Selection<SVGGElement, unknown, null, undefined>;
-  let simulation: d3.Simulation<ConceptNode, SimulationEdge>;
+  let simulation: d3.Simulation<ConceptNode, ConceptEdge>;
   let nodes: ConceptNode[] = $state([]);
   let edges: ConceptEdge[] = $state([]);
 
@@ -26,7 +25,6 @@
 
     nodes = NODES.map(n => ({ ...n }));
     edges = [...EDGES];
-    const simulationEdges = createSimulationEdges(edges);
 
     // Initialize all categories as active
     for (const n of nodes) activeCategories.add(n.category);
@@ -78,7 +76,7 @@
 
     // Initialize simulation
     simulation = d3.forceSimulation<ConceptNode>(nodes)
-      .force('link', d3.forceLink<ConceptNode, SimulationEdge>(simulationEdges)
+      .force('link', d3.forceLink<ConceptNode, ConceptEdge>(edges)
         .id(d => d.id)
         .distance(180)
         .strength(0.4))
@@ -90,7 +88,7 @@
     const link = g.append('g')
       .attr('class', 'links')
       .selectAll('line')
-      .data(simulationEdges)
+      .data(edges)
       .join('line')
       .attr('stroke', '#2a2d3e')
       .attr('stroke-width', 1.2)
@@ -155,8 +153,8 @@
 
     for (const edge of edges) {
       if (edge.source === d.id || edge.target === d.id) {
-        connectedIds.add(edge.source);
-        connectedIds.add(edge.target);
+        connectedIds.add(typeof edge.source === 'string' ? edge.source : edge.source.id);
+        connectedIds.add(typeof edge.target === 'string' ? edge.target : edge.target.id);
       }
     }
 

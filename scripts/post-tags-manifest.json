@@ -14672,25 +14672,6 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
-		},
-		"src/lib/posts/the-ai-virus-is-technically-real.md": {
-			"bodyHash": "cb733f3bab3af621f72ba7811967a48959794188846fc35d7c2e617182417a79",
-			"hashVersion": 2,
-			"revisionHash": "bea222b4726ef1d10ff2abaa9cb821e231a58344ca7c4a2e013c8c324ff16cff",
-			"generatedTags": [
-				"AI Agents",
-				"Fine Print",
-				"Burglar",
-				"Worm",
-				"Self-Replicating",
-				"Simulated",
-				"AI",
-				"Malicious",
-				"Autonomous",
-				"October"
-			],
-			"pinnedTags": [],
-			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

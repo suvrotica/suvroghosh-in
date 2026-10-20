@@ -7059,13 +7059,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "art-the-ai-virus-is-technically-real.jpg",
-			"src": "/thumbnail/art-the-ai-virus-is-technically-real.jpg",
-			"bytes": 304469,
-			"width": 1536,
-			"height": 1024
-		},
-		{
 			"name": "art-the-aromatics-of-stagnation.jpg",
 			"src": "/thumbnail/art-the-aromatics-of-stagnation.jpg",
 			"bytes": 110874,
