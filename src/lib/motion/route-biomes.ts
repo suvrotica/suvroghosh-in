@@ -15,8 +15,8 @@ export interface RouteMotionMetadata {
 
 export const ROUTE_MOTION_CONFIGS = {
 	off: { biome: 'off', intensity: 'off', ambient: 'off' },
-	// The homepage owns the Living Index WebGL enhancement. Keep the shell's
-	// theme-aware wash and line work, but never mount a second renderer there.
+	// The image-led fieldbook homepage is static-first: keep the shell's
+	// theme-aware wash and line work without mounting an ambient renderer.
 	homeStandard: { biome: 'home', intensity: 'standard', ambient: 'static' },
 	homeQuiet: { biome: 'home', intensity: 'quiet', ambient: 'animated' },
 	writingStandard: { biome: 'writing', intensity: 'standard', ambient: 'animated' },

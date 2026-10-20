@@ -1,10 +1,8 @@
 <script lang="ts">
+	import '$lib/components/home/fieldbook.css';
 	import ClosingInvitation from '$lib/components/home/ClosingInvitation.svelte';
-	import FeaturedSeriesIndex from '$lib/components/home/FeaturedSeriesIndex.svelte';
-	import FourWaysField from '$lib/components/home/FourWaysField.svelte';
+	import FieldbookIndex from '$lib/components/home/FieldbookIndex.svelte';
 	import LivingHero from '$lib/components/home/LivingHero.svelte';
-	import LivingIndexScene from '$lib/components/home/LivingIndexScene.svelte';
-	import ReadingPathRail from '$lib/components/home/ReadingPathRail.svelte';
 	import RecentSignalGrid from '$lib/components/home/RecentSignalGrid.svelte';
 	import WorkWorlds from '$lib/components/home/WorkWorlds.svelte';
 	import SEO from '$lib/components/seo/SEO.svelte';
@@ -16,19 +14,14 @@
 
 <SEO {...siteSEO} schema={withSiteGraph()} />
 
-<div class="living-home" data-living-home data-living-index-narrative>
-	<LivingIndexScene />
+<div class="fieldbook-home" data-fieldbook-home data-living-home>
+	<div class="fb-edition" aria-label="A personal fieldbook">
+		<span>THE CALCUTTA FIELDBOOK</span><span>Ideas, experiments &amp; things worth noticing.</span
+		><span lang="bn">সুভ্র ঘোষ</span>
+	</div>
 	<LivingHero />
-
-	<FourWaysField />
-
 	<WorkWorlds projects={data.featuredProjects} />
-
-	<FeaturedSeriesIndex series={data.featuredSeries} />
-
-	<ReadingPathRail paths={data.readingPaths} />
-
 	<RecentSignalGrid posts={data.recentPosts} />
-
+	<FieldbookIndex paths={data.readingPaths} series={data.featuredSeries} />
 	<ClosingInvitation />
 </div>

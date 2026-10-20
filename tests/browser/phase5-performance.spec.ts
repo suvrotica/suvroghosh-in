@@ -126,14 +126,23 @@ async function createAliveContext(
 	return { context, page };
 }
 
-test('semantic home LCP precedes the lazy Living Index scene and stays outside its cost', async ({
+test('the static fieldbook paints its semantic hero promptly without loading a scene renderer', async ({
 	page
 }, testInfo) => {
 	await installAudit(page);
 	const readSceneModuleUrls = collectLivingIndexSceneModules(page);
 	await page.goto('/', { waitUntil: 'domcontentloaded' });
 	await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeVisible();
-	await expect(page.locator('[data-living-index-fallback]')).toBeAttached();
+	await expect(page.locator('[data-fieldbook-home]')).toHaveCount(1);
+	await expect(page.locator('[data-living-index-scene], canvas')).toHaveCount(0);
+	const artwork = page.locator('img[data-hero-artwork]');
+	await expect(artwork).toBeVisible();
+	await expect(artwork).not.toHaveAttribute('loading', 'lazy');
+	await expect
+		.poll(() =>
+			artwork.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)
+		)
+		.toBe(true);
 	await expect(page.locator('[data-route-atmosphere]')).toHaveAttribute('data-ambient', 'static');
 	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 	await page.waitForTimeout(4_200);
@@ -150,21 +159,8 @@ test('semantic home LCP precedes the lazy Living Index scene and stays outside i
 		)
 	).toBe(true);
 
-	const sceneModuleUrls = await readSceneModuleUrls();
-	const sceneResources = await page.evaluate(
-		(moduleUrls) =>
-			performance
-				.getEntriesByType('resource')
-				.filter((entry) => moduleUrls.includes(entry.name))
-				.map((entry) => ({
-					initiatorType: (entry as PerformanceResourceTiming).initiatorType,
-					startTime: entry.startTime
-				})),
-		sceneModuleUrls
-	);
-	const scene = page.locator('[data-living-index-scene]');
-	const tier = await scene.getAttribute('data-scene-tier');
-	expect(['A', 'B', 'C']).toContain(tier);
+	expect(await readSceneModuleUrls()).toEqual([]);
+	await expect(page.locator('[data-local-animation-owner]')).toHaveCount(0);
 	testInfo.annotations.push(
 		{
 			type: 'maximum-semantic-lcp',
@@ -174,27 +170,8 @@ test('semantic home LCP precedes the lazy Living Index scene and stays outside i
 		{
 			type: 'semantic-hero-ready',
 			description: `${result.heroReadyAt!.toFixed(1)} ms`
-		},
-		{ type: 'living-index-tier', description: tier ?? 'unknown' },
-		{
-			type: 'scene-resource-start',
-			description: sceneResources[0] ? `${sceneResources[0].startTime.toFixed(1)} ms` : 'none'
 		}
 	);
-	if (tier === 'A' || tier === 'B') {
-		expect(sceneResources).toHaveLength(1);
-		expect(sceneResources[0].initiatorType).toBe('script');
-		expect(sceneResources[0].startTime).toBeGreaterThanOrEqual(result.heroReadyAt!);
-		await expect(page.locator('[data-living-index-canvas]')).toHaveCount(1);
-		await expect(page.locator('[data-local-animation-owner="living-index"]')).toHaveCount(1);
-	} else {
-		expect(sceneResources.length).toBeLessThanOrEqual(1);
-		if (sceneResources[0]) {
-			expect(sceneResources[0].initiatorType).toBe('script');
-			expect(sceneResources[0].startTime).toBeGreaterThanOrEqual(result.heroReadyAt!);
-		}
-		await expect(page.locator('[data-living-index-canvas]')).toHaveCount(0);
-	}
 
 	const motionSelect = page.getByLabel('Motion preference', { exact: true });
 	const interactionLatency = page.evaluate(

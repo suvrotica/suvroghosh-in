@@ -83,7 +83,8 @@ export const load: PageServerLoad = () => {
 				context: project.context,
 				detail: project.detail,
 				status: project.status,
-				link: project.link
+				link: project.link,
+				image: project.image
 			};
 		}),
 		featuredSeries: {

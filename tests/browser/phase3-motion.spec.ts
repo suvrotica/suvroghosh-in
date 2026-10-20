@@ -64,7 +64,7 @@ test('Phase 3 routes expose their static scene and single-owner atmosphere contr
 			intensity: 'quiet',
 			ambient: 'animated',
 			scope: 'viewport',
-			scene: 'healthcare'
+			scene: null
 		},
 		{
 			path: '/consulting',
@@ -120,7 +120,11 @@ test('Phase 3 routes expose their static scene and single-owner atmosphere contr
 			await expect(atmosphere).toHaveAttribute('data-intensity', route.intensity);
 			await expect(atmosphere).toHaveAttribute('data-ambient', route.ambient);
 			await expect(atmosphere).toHaveAttribute('data-scope', route.scope);
-			await expect(page.locator(`[data-route-scene="${route.scene}"]`).first()).toBeAttached();
+			if (route.scene === null) {
+				await expect(page.locator('[data-route-scene]')).toHaveCount(0);
+			} else {
+				await expect(page.locator(`[data-route-scene="${route.scene}"]`).first()).toBeAttached();
+			}
 			await expectNoHorizontalOverflow(page);
 
 			if (route.ambient === 'static') {
@@ -237,15 +241,15 @@ test('the semantic active-route line settles once and preserves every accessibil
 	await page.goto('/');
 
 	const primary = page.getByRole('navigation', { name: 'Primary navigation' });
-	const essays = primary.getByRole('link', { name: 'Essays', exact: true });
-	await essays.hover();
-	await expect.poll(() => pseudoScaleX(essays)).toBeCloseTo(0, 3);
+	const writing = primary.getByRole('link', { name: 'Writing', exact: true });
+	await writing.hover();
+	await expect.poll(() => pseudoScaleX(writing)).toBeCloseTo(0, 3);
 
-	await essays.click();
-	await expect(page).toHaveURL(/\/blog$/);
+	await writing.click();
+	await expect(page).toHaveURL(/\/writing$/);
 	await expect(primary.locator('[aria-current="page"]')).toHaveCount(1);
-	await expect(essays).toHaveAttribute('aria-current', 'page');
-	await expect.poll(() => pseudoScaleX(essays)).toBeCloseTo(1, 3);
+	await expect(writing).toHaveAttribute('aria-current', 'page');
+	await expect.poll(() => pseudoScaleX(writing)).toBeCloseTo(1, 3);
 
 	const work = primary.getByRole('link', { name: 'Work', exact: true });
 	await work.focus();
@@ -255,15 +259,9 @@ test('the semantic active-route line settles once and preserves every accessibil
 	await expect(work).toHaveAttribute('aria-current', 'page');
 
 	await page.goto('/blog/games');
-	await expect(primary.getByRole('link', { name: 'Games', exact: true })).toHaveAttribute(
-		'aria-current',
-		'page'
-	);
+	await expect(work).toHaveAttribute('aria-current', 'page');
 	await page.goto('/blog/visualizations');
-	await expect(primary.getByRole('link', { name: 'Lab', exact: true })).toHaveAttribute(
-		'aria-current',
-		'page'
-	);
+	await expect(work).toHaveAttribute('aria-current', 'page');
 
 	await page.locator('#desktop-motion').selectOption('still');
 	const current = primary.locator('[aria-current="page"]');
@@ -375,7 +373,7 @@ test('route decoration remains static across themes, motion choices, touch, and 
 
 		const mobileNav = touchPage.getByRole('navigation', { name: 'Mobile and tablet navigation' });
 		await expect(mobileNav.locator('[aria-current="page"]')).toHaveCount(1);
-		await expect(mobileNav.getByRole('link', { name: 'Essays', exact: true })).toHaveAttribute(
+		await expect(mobileNav.getByRole('link', { name: 'Writing', exact: true })).toHaveAttribute(
 			'aria-current',
 			'page'
 		);
@@ -405,7 +403,7 @@ test('route decoration remains static across themes, motion choices, touch, and 
 		await expect(
 			noJsPage
 				.getByRole('navigation', { name: 'Primary navigation' })
-				.getByRole('link', { name: 'Essays', exact: true })
+				.getByRole('link', { name: 'Writing', exact: true })
 		).toHaveAttribute('aria-current', 'page');
 
 		await noJsPage.goto(`${baseURL}${longArticlePath}`, { waitUntil: 'domcontentloaded' });

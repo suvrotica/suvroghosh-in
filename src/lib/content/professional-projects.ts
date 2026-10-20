@@ -284,6 +284,12 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			href: '/blog/visualizations',
 			label: 'Enter the interactive laboratory'
 		},
+		image: {
+			src: '/images/visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png',
+			alt: 'The Strange Attractor Orchestra poster, with overlapping teal, amber and violet orbital paths on a dark field.',
+			width: 1200,
+			height: 630
+		},
 		featured: true
 	},
 	{
@@ -304,6 +310,12 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			kind: 'internal',
 			href: '/blog/visualizations/create-art-living-pigment-studio',
 			label: 'Try the pigment studio'
+		},
+		image: {
+			src: '/images/create-art-living-pigment-studio.webp',
+			alt: 'Textured blue, teal and ochre pigment washes spreading across warm paper.',
+			width: 1536,
+			height: 1024
 		},
 		showOnResume: false
 	},

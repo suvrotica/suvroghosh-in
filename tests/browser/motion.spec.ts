@@ -44,34 +44,11 @@ async function blockHydration(page: Page) {
 	await page.route('**/_app/immutable/**/*.js', (route) => route.abort());
 }
 
-async function expectHomeSceneContract(page: Page): Promise<'A' | 'B' | 'C'> {
-	const scene = page.locator('[data-living-index-scene]');
-	const canvas = page.locator('[data-living-index-canvas]');
+async function expectStaticFieldbookHome(page: Page) {
+	await expect(page.locator('[data-fieldbook-home]')).toHaveCount(1);
+	await expect(page.locator('[data-living-index-scene], canvas')).toHaveCount(0);
+	await expect(page.locator('img[data-hero-artwork]')).toHaveCount(1);
 	await expect(page.locator('[data-route-atmosphere]')).toHaveAttribute('data-ambient', 'static');
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
-	await expect
-		.poll(async () => scene.getAttribute('data-scene-status'), { timeout: 5_000 })
-		.toMatch(/^(running|paused|fallback|failed)$/);
-
-	const tier = await scene.getAttribute('data-scene-tier');
-	expect(['A', 'B', 'C']).toContain(tier);
-	if (tier === 'A' || tier === 'B') {
-		await expect(canvas).toHaveCount(1);
-		await expect(canvas).toHaveAttribute('data-local-animation-owner', 'living-index');
-		await expect(canvas).toHaveAttribute('aria-hidden', 'true');
-		await expect(canvas).toHaveCSS('pointer-events', 'none');
-		expect(await canvas.evaluate((element) => element.tabIndex)).toBe(-1);
-	} else {
-		await expect(canvas).toHaveCount(0);
-	}
-	return tier as 'A' | 'B' | 'C';
-}
-
-async function expectTierCHomeFallback(page: Page) {
-	const scene = page.locator('[data-living-index-scene]');
-	await expect(scene).toHaveAttribute('data-scene-tier', 'C');
-	await expect(scene).toHaveAttribute('data-scene-status', /^(fallback|failed)$/);
-	await expect(scene.locator('[data-living-index-canvas]')).toHaveCount(0);
 	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 }
 
@@ -131,8 +108,8 @@ test('the accessible desktop and mobile selectors synchronise and persist', asyn
 	const mobileNavigation = page.getByRole('navigation', {
 		name: 'Mobile and tablet navigation'
 	});
-	await mobileNavigation.getByRole('link', { name: 'Topics', exact: true }).click();
-	await expect(page).toHaveURL(/\/topics$/);
+	await mobileNavigation.getByRole('link', { name: 'Writing', exact: true }).click();
+	await expect(page).toHaveURL(/\/writing$/);
 	await expect(page.locator('html')).toHaveAttribute('data-motion-preference', 'gentle');
 
 	await page.reload();
@@ -154,7 +131,7 @@ test('reduced motion remains authoritative without erasing an explicit preferenc
 	await expect(desktopSelect).toHaveValue('alive');
 	await expect(page.locator('html')).toHaveAttribute('data-motion-preference', 'alive');
 	await expect(page.locator('html')).toHaveAttribute('data-motion', 'still');
-	await expectTierCHomeFallback(page);
+	await expectStaticFieldbookHome(page);
 	expect(await page.evaluate(() => window.localStorage.getItem('site-motion'))).toBe('alive');
 
 	await page.emulateMedia({ reducedMotion: 'no-preference' });
@@ -162,7 +139,7 @@ test('reduced motion remains authoritative without erasing an explicit preferenc
 	await expect(page.locator('html')).toHaveAttribute('data-motion', 'alive');
 	await expect(desktopSelect).toHaveValue('alive');
 	expect(await page.evaluate(() => window.localStorage.getItem('site-motion'))).toBe('alive');
-	await expectHomeSceneContract(page);
+	await expectStaticFieldbookHome(page);
 });
 
 test('paper, night, and high contrast honour explicit still, gentle, and alive choices', async ({
@@ -190,11 +167,7 @@ test('paper, night, and high contrast honour explicit still, gentle, and alive c
 				expect(await page.evaluate(() => window.localStorage.getItem('site-motion'))).toBe(motion);
 
 				await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
-				if (motion === 'still' || theme === 'high-contrast') {
-					await expectTierCHomeFallback(page);
-				} else {
-					await expectHomeSceneContract(page);
-				}
+				await expectStaticFieldbookHome(page);
 			}
 
 			if (theme === 'high-contrast') {
@@ -214,18 +187,18 @@ test('forced colours and print suppress the global and page-owned environments',
 	const atmosphere = page.locator('[data-route-atmosphere]');
 	await expect(atmosphere).toHaveCount(1);
 	await expect(atmosphere).toHaveAttribute('data-ambient', 'static');
-	await expectHomeSceneContract(page);
+	await expectStaticFieldbookHome(page);
 
 	await page.emulateMedia({ forcedColors: 'active' });
 	await expect(atmosphere).toHaveCSS('display', 'none');
-	await expectTierCHomeFallback(page);
+	await expectStaticFieldbookHome(page);
 
 	await page.emulateMedia({ forcedColors: 'none' });
-	await expectHomeSceneContract(page);
+	await expectStaticFieldbookHome(page);
 
 	await page.emulateMedia({ media: 'print' });
 	await expect(atmosphere).toHaveCSS('display', 'none');
-	await expectTierCHomeFallback(page);
+	await expectStaticFieldbookHome(page);
 });
 
 test('normal routes expose deterministic biomes and one fixed, inert atmosphere', async ({
@@ -340,7 +313,7 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 			if (route.ambient === 'static') {
 				await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 			}
-			if (route.path === '/') await expectHomeSceneContract(page);
+			if (route.path === '/') await expectStaticFieldbookHome(page);
 
 			if (
 				route.path === articlePath ||
@@ -412,17 +385,13 @@ test('SSR content and the static atmosphere remain meaningful without JavaScript
 			})
 		).toBeVisible();
 
-		await expect(noJsPage.locator('[data-field-way]')).toHaveCount(4);
+		await expect(noJsPage.locator('[data-reading-path-card]')).toHaveCount(5);
+		await expect(noJsPage.locator('[data-work-project]')).toHaveCount(3);
 		await expect(noJsPage.locator('[data-featured-series]')).toBeVisible();
 		await expect(noJsPage.locator('[data-route-atmosphere]')).toHaveCount(1);
 		await expect(noJsPage.locator('[data-route-atmosphere] > div')).toHaveCount(2);
 		await expect(noJsPage.locator('[data-ambient-field]')).toHaveCount(0);
-		await expect(noJsPage.locator('[data-living-index-scene]')).toHaveAttribute(
-			'data-scene-tier',
-			'C'
-		);
-		await expect(noJsPage.locator('[data-living-index-fallback]')).toBeVisible();
-		await expect(noJsPage.locator('[data-living-index-canvas]')).toHaveCount(0);
+		await expectStaticFieldbookHome(noJsPage);
 
 		await noJsPage.goto(`${baseURL}${articlePath}`, { waitUntil: 'domcontentloaded' });
 		const articleImage = noJsPage.locator('img[data-original-src]').first();
@@ -474,10 +443,10 @@ test('navigation falls back normally when the View Transition API is unavailable
 	expect(await page.evaluate(() => typeof document.startViewTransition)).toBe('undefined');
 	await page
 		.getByRole('navigation', { name: 'Primary navigation' })
-		.getByRole('link', { name: 'Essays', exact: true })
+		.getByRole('link', { name: 'Writing', exact: true })
 		.click();
 
-	await expect(page).toHaveURL(/\/blog$/);
+	await expect(page).toHaveURL(/\/writing$/);
 	await expect(page.locator('main#main-content')).toBeVisible();
 	await expect(page.locator('html')).toHaveAttribute('data-biome', 'writing');
 	expect(runtimeErrors).toEqual([]);
@@ -510,8 +479,8 @@ test('the static homepage skips the View Transition handshake while eligible rou
 
 	await page.goto('/');
 	const primaryNavigation = page.getByRole('navigation', { name: 'Primary navigation' });
-	await primaryNavigation.getByRole('link', { name: 'Essays', exact: true }).click();
-	await expect(page).toHaveURL(/\/blog$/);
+	await primaryNavigation.getByRole('link', { name: 'Writing', exact: true }).click();
+	await expect(page).toHaveURL(/\/writing$/);
 	expect(
 		await page.evaluate(
 			() =>
@@ -519,7 +488,8 @@ test('the static homepage skips the View Transition handshake while eligible rou
 		)
 	).toBe(0);
 
-	await primaryNavigation.getByRole('link', { name: 'Topics', exact: true }).click();
+	const explorationNavigation = page.getByRole('navigation', { name: 'Explore', exact: true });
+	await explorationNavigation.getByRole('link', { name: 'Topics', exact: true }).click();
 	await expect(page).toHaveURL(/\/topics$/);
 	expect(
 		await page.evaluate(
@@ -528,7 +498,7 @@ test('the static homepage skips the View Transition handshake while eligible rou
 		)
 	).toBe(1);
 
-	await primaryNavigation.getByRole('link', { name: 'Games', exact: true }).click();
+	await explorationNavigation.getByRole('link', { name: 'Games', exact: true }).click();
 	await expect(page).toHaveURL(/\/blog\/games$/);
 	expect(
 		await page.evaluate(

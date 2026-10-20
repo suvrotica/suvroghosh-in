@@ -1,0 +1,140 @@
+/* Homepage-only visual system. Existing reader and article styles keep their tokens. */
+@font-face {
+	font-family: 'Fieldbook Newsreader';
+	font-style: normal;
+	font-weight: 200 800;
+	font-display: swap;
+	src: url('@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2')
+		format('woff2');
+}
+@font-face {
+	font-family: 'Fieldbook Newsreader';
+	font-style: italic;
+	font-weight: 200 800;
+	font-display: swap;
+	src: url('@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2')
+		format('woff2');
+}
+@font-face {
+	font-family: 'Fieldbook Archivo';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Fieldbook Plex Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+}
+
+.fieldbook-home {
+	--fb-paper: var(--paper);
+	--fb-surface: var(--paper-raised);
+	--fb-ink: var(--ink);
+	--fb-muted: var(--ink-muted);
+	--fb-rule: var(--rule);
+	--fb-accent: #a33e29;
+	--fb-teal: #315d57;
+	--fb-serif:
+		'Fieldbook Newsreader', 'Source Serif 4 Variable', 'Noto Serif Bengali Variable', Georgia, serif;
+	--fb-sans: 'Fieldbook Archivo', 'Noto Serif Bengali Variable', sans-serif;
+	--fb-mono: 'Fieldbook Plex Mono', monospace;
+	position: relative;
+	width: min(80rem, calc(100vw - 5rem));
+	left: 50%;
+	margin-left: max(-40rem, calc(-50vw + 2.5rem));
+	color: var(--fb-ink);
+	font-family: var(--fb-sans);
+	padding-bottom: 1rem;
+}
+[data-theme='night'] .fieldbook-home {
+	--fb-accent: #ed997b;
+	--fb-teal: #a1c8b8;
+}
+[data-theme='high-contrast'] .fieldbook-home {
+	--fb-accent: #000;
+	--fb-teal: #000;
+}
+.fieldbook-home :where(h1, h2, h3, p, figure, ol, ul) {
+	text-align: left;
+}
+.fieldbook-home :where(h2, h3) {
+	color: var(--fb-ink);
+	font-family: var(--fb-serif);
+}
+.fieldbook-home :where(a) {
+	text-underline-offset: 0.25em;
+}
+.fieldbook-home :where(a:focus-visible, summary:focus-visible) {
+	outline: 2px solid var(--focus);
+	outline-offset: 5px;
+}
+.fieldbook-home :where(section) {
+	scroll-margin-top: 6rem;
+}
+.fb-edition {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
+	border-block: 1px solid var(--fb-rule);
+	padding: 0.7rem 0;
+	color: var(--fb-muted);
+	font: 400 0.57rem/1.5 var(--fb-mono);
+	letter-spacing: 0.06em;
+}
+.fb-edition > span:first-child {
+	color: var(--fb-accent);
+}
+.fb-edition > span[lang] {
+	font-family: 'Noto Serif Bengali Variable', serif;
+	font-size: 0.8rem;
+}
+
+/* Only this route uses the wider editorial masthead. */
+body:has([data-fieldbook-home]) .site-header > div {
+	max-width: 85rem;
+}
+body:has([data-fieldbook-home]) main > .container {
+	padding-top: 1.5rem;
+}
+body:has([data-fieldbook-home]) .site-header {
+	box-shadow: none;
+}
+
+@media (max-width: 48rem) {
+	.fieldbook-home {
+		width: calc(100vw - 2.5rem);
+		margin-left: calc(-50vw + 1.25rem);
+	}
+	.fb-edition {
+		padding-block: 0.65rem;
+		font-size: 0.5rem;
+		letter-spacing: 0.04em;
+	}
+	.fb-edition > span:nth-child(2) {
+		display: none;
+	}
+	body:has([data-fieldbook-home]) main > .container {
+		padding-top: 1rem;
+	}
+}
+@media (max-width: 23rem) {
+	.fieldbook-home {
+		width: calc(100vw - 2rem);
+		margin-left: calc(-50vw + 1rem);
+	}
+}
+@media print {
+	.fieldbook-home {
+		width: 100%;
+		left: auto;
+		margin-left: 0;
+		--fb-ink: #000;
+		--fb-muted: #222;
+		--fb-paper: #fff;
+	}
+}
