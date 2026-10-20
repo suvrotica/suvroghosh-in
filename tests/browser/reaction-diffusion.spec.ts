@@ -82,6 +82,12 @@ test('the article, guided sequence and float-or-worker observatory hydrate clean
 	const guided = page.locator('section.guided');
 	await expect(guided.getByRole('button', { name: /Replay observation/iu })).toBeVisible();
 	await expect(guided.locator('.stage-index button')).toHaveCount(6);
+	const guideBounds = await guided.evaluate((element) => {
+		const bounds = element.getBoundingClientRect();
+		return { left: bounds.left, right: bounds.right, viewport: innerWidth };
+	});
+	expect(guideBounds.left).toBeGreaterThanOrEqual(0);
+	expect(guideBounds.right).toBeLessThanOrEqual(guideBounds.viewport);
 	const lab = await waitForObservatory(page);
 	await expect(lab.locator('.field-stack')).toBeVisible();
 	await expect(lab.getByLabel('Calibrated preset')).toHaveValue('');
@@ -392,6 +398,15 @@ test('mobile and no-JavaScript readers keep the plate, prose and controls bounde
 	expect(geometry.labOverflow).toBeLessThanOrEqual(1);
 	expect(geometry.labWidth).toBeLessThanOrEqual(390);
 	expect(geometry.fieldWidth).toBeGreaterThan(340);
+	const guideLabels = await page.locator('.guided .measurement-strip dt').evaluateAll((labels) =>
+		labels.map((label) => ({
+			text: label.textContent,
+			clipped:
+				label.scrollWidth > label.clientWidth + 1 || label.scrollHeight > label.clientHeight + 1
+		}))
+	);
+	expect(guideLabels).toHaveLength(3);
+	expect(guideLabels.filter((label) => label.clipped)).toEqual([]);
 
 	const touchContext = await browser.newContext({
 		baseURL,

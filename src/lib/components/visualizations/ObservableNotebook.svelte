@@ -380,6 +380,15 @@
 		}
 	}
 
+	@media (max-width: 480px) {
+		/* A 720-unit teaching SVG shrinks to roughly 260–380 CSS pixels here.
+		   Preserve readable axes while keeping its mathematical geometry unchanged. */
+		.observable-output :global(.wave-axis text),
+		.observable-output :global(.wave-caption) {
+			font-size: 28px;
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.observable-shell,
 		.observable-shell * {

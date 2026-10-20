@@ -184,6 +184,19 @@ describe('Izhikevich neuron', () => {
 });
 
 describe('FitzHugh–Nagumo neuron', () => {
+	it('finds a genuine equilibrium across admitted nondefault cubic parameters', () => {
+		for (const a of [-2, -1, -0.7, 0, 0.7, 1, 2]) {
+			for (const b of [0.1, 0.8, 1, 1.2, 1.6, 2]) {
+				const parameters = { ...DEFAULT_FITZHUGH_NAGUMO_PARAMETERS, a, b };
+				const state = createFitzHughNagumoState(parameters);
+				const [dv, dw] = fitzhughNagumoDerivatives(state.fast, state.recovery, 0, parameters);
+				expect(Math.abs(state.fast)).toBeLessThan(4);
+				expect(Math.abs(dv), `a=${a}, b=${b}`).toBeLessThan(1e-12);
+				expect(Math.abs(dw)).toBeLessThan(1e-12);
+			}
+		}
+	});
+
 	it('starts at the verified default equilibrium and satisfies both nullclines', () => {
 		const state = createFitzHughNagumoState();
 		expect(state.fast).toBeCloseTo(DEFAULT_FHN_EQUILIBRIUM.fast, 13);

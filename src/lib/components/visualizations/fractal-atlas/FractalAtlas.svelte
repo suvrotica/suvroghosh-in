@@ -65,6 +65,12 @@
 		RenderQuality
 	} from '$lib/visualizations/fractal-atlas/types';
 	import { zoomViewport } from '$lib/visualizations/fractal-atlas/viewport';
+	import {
+		normalizeSpecimenDecimal,
+		normalizeSpecimenLab,
+		normalizeSpecimenPoint,
+		type SpecimenLabState
+	} from '$lib/visualizations/fractal-atlas/specimen-state';
 
 	type Panel = 'explore' | 'inspect' | 'colour' | 'formula' | 'precision' | 'presets' | 'export';
 	type AtlasPath = `/blog/visualizations/the-fractal-atlas${string}`;
@@ -85,28 +91,7 @@
 		state: string;
 		selected: ComplexValue;
 		selectedDecimal?: DecimalComplexValue;
-		lab?: {
-			comparisonState: string;
-			linkedJulia: boolean;
-			showGrid: boolean;
-			compareMode: boolean;
-			linkComparisonViewport: boolean;
-			linkComparisonColour: boolean;
-			linkComparisonIterations: boolean;
-			compareSplit: number;
-			compareSplitLocked: boolean;
-			parameterA: ComplexValue;
-			parameterB: ComplexValue;
-			parameterADecimal?: DecimalComplexValue;
-			parameterBDecimal?: DecimalComplexValue;
-			parameterPathOpen?: boolean;
-			parameterPathSampleCount?: number;
-			parameterPathIndex?: number;
-			showMandelbrotLandmarks?: boolean;
-			showMultibrotSymmetry?: boolean;
-			sierpinskiMode?: 'recursive' | 'chaos' | 'overlay';
-			activePanel: Panel;
-		};
+		lab?: SpecimenLabState;
 	};
 	type AtlasCommand = {
 		preset?: string;
@@ -881,10 +866,8 @@
 	}
 
 	function assignSelectedPoint(point: ComplexValue, decimal?: DecimalComplexValue | null) {
-		selectedPoint = { ...point };
-		selectedPointDecimal = decimal
-			? { ...decimal }
-			: { re: point.re.toString(), im: point.im.toString() };
+		selectedPoint = normalizeSpecimenPoint(point, selectedPoint);
+		selectedPointDecimal = normalizeSpecimenDecimal(decimal, selectedPoint);
 	}
 
 	function handleCanvasChange(next: FractalViewState) {
@@ -2278,7 +2261,16 @@
 						typeof (item as SavedSpecimen).name === 'string' &&
 						typeof (item as SavedSpecimen).state === 'string'
 				)
-				.slice(0, MAX_SPECIMENS);
+				.slice(0, MAX_SPECIMENS)
+				.map((item) => {
+					const selected = normalizeSpecimenPoint(item.selected, selectedPoint);
+					return {
+						...item,
+						selected,
+						selectedDecimal: normalizeSpecimenDecimal(item.selectedDecimal, selected),
+						lab: item.lab ? normalizeSpecimenLab(item.lab, captureSpecimenLab()) : undefined
+					};
+				});
 		} catch {
 			specimens = [];
 		}
@@ -2318,8 +2310,9 @@
 		};
 	}
 
-	function restoreSpecimenLab(lab: SavedSpecimen['lab']) {
-		if (!lab) return;
+	function restoreSpecimenLab(value: unknown) {
+		if (!value) return;
+		const lab = normalizeSpecimenLab(value, captureSpecimenLab());
 		comparisonState = parseLocalState(lab.comparisonState).state;
 		linkedJulia = Boolean(lab.linkedJulia);
 		showGrid = Boolean(lab.showGrid);
@@ -2762,12 +2755,7 @@
 				(payload as { laboratory?: unknown }).laboratory &&
 				typeof (payload as { laboratory: unknown }).laboratory === 'object'
 			) {
-				const laboratoryState = (
-					payload as { laboratory: Partial<NonNullable<SavedSpecimen['lab']>> }
-				).laboratory;
-				if (typeof laboratoryState.comparisonState === 'string') {
-					restoreSpecimenLab(laboratoryState as SavedSpecimen['lab']);
-				}
+				restoreSpecimenLab((payload as { laboratory: unknown }).laboratory);
 			}
 			stateWarnings = result.issues.map((issue) => issue.message);
 			commitMain(result.state, `Imported bounded settings from ${file.name}.`);

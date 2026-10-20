@@ -324,6 +324,11 @@ function terrestrialRepairs(genome: CreatureGenome, issues: GenomeIssue[]): Crea
 	}
 
 	if (repaired.bodyPlan === 'terrestrial-insect') {
+		if (repaired.bodySegments < 5)
+			issues.push({
+				field: 'bodySegments',
+				message: 'Insect discipline requires a head, three thoracic segments, and an abdomen.'
+			});
 		if (repaired.walkingLegPairs !== 3)
 			issues.push({
 				field: 'walkingLegPairs',
@@ -331,6 +336,7 @@ function terrestrialRepairs(genome: CreatureGenome, issues: GenomeIssue[]): Crea
 			});
 		repaired = {
 			...repaired,
+			bodySegments: Math.max(5, repaired.bodySegments),
 			walkingLegPairs: 3,
 			antennaCount: Math.min(2, Math.max(2, repaired.antennaCount))
 		};

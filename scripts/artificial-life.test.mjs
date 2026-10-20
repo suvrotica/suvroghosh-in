@@ -66,6 +66,36 @@ function snapshot(engine) {
 	};
 }
 
+test('environment controls scale founder traits once rather than changing their reference genomes', () => {
+	const defaults = { ...DEFAULT_SIMULATION_PARAMETERS, startingPopulation: 1 };
+	const scaled = {
+		...defaults,
+		sensoryRange: defaults.sensoryRange / 2,
+		maximumLifespan: defaults.maximumLifespan / 2,
+		reproductionThreshold: defaults.reproductionThreshold / 2
+	};
+	const reference = new ArtificialLifeEngine(defaults, 'single-control-scaling');
+	const changed = new ArtificialLifeEngine(scaled, 'single-control-scaling');
+	assert.deepEqual(changed.organisms[0].genome, reference.organisms[0].genome);
+	assert.equal(
+		effectiveOrganismLifespan(changed.organisms[0], scaled),
+		effectiveOrganismLifespan(reference.organisms[0], defaults) / 2
+	);
+	// An energy halfway between the quarter- and half-scaled threshold must not reproduce.
+	const organism = changed.organisms[0];
+	organism.energy = organism.genome.reproductionThreshold * 0.375;
+	changed.food.length = 0;
+	changed.step(FIXED_TIME_STEP);
+	assert.equal(changed.totalBirths, 0);
+});
+
+test('nonpositive and nonfinite time cannot mutate the ecosystem', () => {
+	const engine = new ArtificialLifeEngine(DEFAULT_SIMULATION_PARAMETERS, 'invalid-clock');
+	const before = snapshot(engine);
+	for (const dt of [0, -1, Number.NaN, Number.POSITIVE_INFINITY]) engine.step(dt);
+	assert.deepEqual(snapshot(engine), before);
+});
+
 test('the same seed and parameters produce the same fixed-step history', () => {
 	const parameters = {
 		...DEFAULT_SIMULATION_PARAMETERS,

@@ -91,7 +91,7 @@ export class ArtificialLifeEngine {
 			Math.round(this.parameters.populationLimit)
 		);
 		for (let index = 0; index < founderCount; index += 1) {
-			const organism = createFounder(this.nextOrganismId, this.random, this.parameters);
+			const organism = createFounder(this.nextOrganismId, this.random);
 			this.nextOrganismId += 1;
 			this.organisms.push(organism);
 		}
@@ -440,7 +440,8 @@ export class ArtificialLifeEngine {
 	}
 
 	step(deltaTime: number) {
-		const step = clamp(deltaTime, 0.001, 0.1);
+		if (!Number.isFinite(deltaTime) || deltaTime <= 0) return;
+		const step = Math.min(deltaTime, 0.1);
 		this.simulationTime += step;
 		this.foodAccumulator += this.parameters.foodSpawnRate * step;
 		while (this.foodAccumulator >= 1) {

@@ -486,7 +486,7 @@
 				{/if}
 				{#if confidenceEnabled && method === 'pseudorandom'}
 					<div class="metric interval">
-						<span>Approx. IID 95% confidence interval</span><strong>{formatInterval()}</strong>
+						<span>IID Wilson 95% confidence interval</span><strong>{formatInterval()}</strong>
 					</div>
 				{/if}
 			</section>
@@ -498,8 +498,8 @@
 				</p>
 			{:else if confidenceEnabled && statistics.totalSamples > 0 && !statistics.confidenceInterval}
 				<p class="confidence-note">
-					The normal-approximation interval appears after 30 samples; before that it can be
-					misleading.
+					The Wilson interval appears after 30 samples. It reflects uncertainty under the IID
+					sampling model; no single interval is guaranteed to contain π.
 				</p>
 			{/if}
 		</div>

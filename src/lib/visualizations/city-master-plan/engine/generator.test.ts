@@ -103,6 +103,26 @@ describe('city generation', () => {
 });
 
 describe('URL serialization', () => {
+	it('rejects inherited object properties as URL options instead of treating them as catalogue entries', () => {
+		for (const value of ['constructor', '__proto__', 'toString', 'hasOwnProperty']) {
+			const parameters = new URLSearchParams();
+			for (const key of [
+				'size',
+				'anchor',
+				'patience',
+				'density',
+				'landmarks',
+				'appetite',
+				'tram'
+			]) {
+				parameters.set(key, value);
+			}
+			const parsed = parseCityConfig(parameters);
+			expect(parsed.config).toEqual(DEFAULT_CITY_CONFIG);
+			expect(parsed.issues).toHaveLength(7);
+		}
+	});
+
 	it('round-trips every topology-changing field and reproduces the fingerprint', () => {
 		const original = config({
 			seed: 'url-round-trip',

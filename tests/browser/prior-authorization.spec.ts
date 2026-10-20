@@ -256,6 +256,34 @@ test.afterEach(async ({ page }) => {
 	);
 });
 
+test('phone and zoom-proxy hero text and clocks stay inside their panel', async ({ page }) => {
+	for (const width of [320, 390, 720]) {
+		await page.setViewportSize({ width, height: 1_000 });
+		await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+		await page.evaluate(() => document.fonts.ready);
+		const hero = experience(page).locator('.hero');
+		await expect(hero).toBeVisible();
+		const overflow = await hero.evaluate((element) => {
+			const panel = element.getBoundingClientRect();
+			return Array.from(
+				element.querySelectorAll<HTMLElement>(
+					'.hero-grid, .patient-card, h1, .clock-panel, dl, .clock'
+				)
+			)
+				.filter((child) => {
+					const bounds = child.getBoundingClientRect();
+					return (
+						bounds.left < panel.left - 1 ||
+						bounds.right > panel.right + 1 ||
+						child.scrollWidth > child.clientWidth + 1
+					);
+				})
+				.map((child) => `${child.tagName}.${child.className}`);
+		});
+		expect(overflow, `Hero overflow at ${width} CSS pixels`).toEqual([]);
+	}
+});
+
 test('SSR has one exact H1, the static poster and text journey, but no interactive stage', async ({
 	page,
 	request

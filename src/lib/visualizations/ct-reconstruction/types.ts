@@ -128,7 +128,8 @@ export interface ReconstructionMetrics {
 	normalizedRmse: number;
 	scaleInvariantRmse: number;
 	mae: number;
-	correlation: number;
+	/** Pearson correlation is undefined when either image has zero variance. */
+	correlation: number | null;
 	peakSignalToNoiseRatio: number;
 }
 

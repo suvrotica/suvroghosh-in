@@ -29,11 +29,21 @@ describe('Chitin Engine body-plan grammar', () => {
 		expect(graph.sockets.filter((socket) => socket.kind === 'antenna')).toHaveLength(2);
 		expect(graph.sockets.filter((socket) => socket.kind === 'wing')).toHaveLength(4);
 		expect(
+			graph.sockets.filter((socket) => socket.kind === 'wing').map((socket) => socket.segmentIndex)
+		).toEqual([thoraxStart + 1, thoraxStart + 1, thoraxStart + 2, thoraxStart + 2]);
+		expect(
 			locomotor.every(
 				(socket) => socket.segmentIndex >= thoraxStart && socket.segmentIndex < thoraxEnd
 			)
 		).toBe(true);
 		expect(validateBodyGraph(graph, genome).valid).toBe(true);
+	});
+
+	it('retains three thoracic segments even at the minimum insect body length', () => {
+		const genome = { ...genomeForPreset('reactor-mantis'), bodySegments: 4 };
+		const graph = buildBodyGraph(genome);
+		expect(graph.regionBoundaries).toEqual([0, 1, 4, 5]);
+		expect(validateBodyGraph(graph, genome)).toEqual({ valid: true, issues: [] });
 	});
 
 	it('keeps arachnid, myriapod, and crawler attachments discipline-correct', () => {

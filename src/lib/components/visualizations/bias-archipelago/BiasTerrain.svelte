@@ -74,13 +74,18 @@
 
 	onMount(() => {
 		hydrated = true;
-		const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 		const updateTheme = () => {
-			darkMode = darkQuery.matches || document.documentElement.classList.contains('dark');
+			// The document already resolves the reader's preference, including an explicit
+			// light theme on a device whose system appearance is dark.
+			darkMode = document.documentElement.classList.contains('dark');
 			scheduleDraw();
 		};
 		updateTheme();
-		darkQuery.addEventListener('change', updateTheme);
+		const themeObserver = new MutationObserver(updateTheme);
+		themeObserver.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class', 'data-theme']
+		});
 		resizeObserver = new ResizeObserver(scheduleDraw);
 		resizeObserver.observe(viewport);
 		zoomBehaviour = createZoom<HTMLDivElement, unknown>()
@@ -112,7 +117,7 @@
 		zoomSelection.call(zoomBehaviour).on('dblclick.zoom', null);
 		scheduleDraw();
 		return () => {
-			darkQuery.removeEventListener('change', updateTheme);
+			themeObserver.disconnect();
 			resizeObserver?.disconnect();
 			zoomSelection?.on('.zoom', null);
 			if (drawFrame) cancelAnimationFrame(drawFrame);

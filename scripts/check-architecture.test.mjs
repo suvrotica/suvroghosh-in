@@ -198,6 +198,8 @@ test('missing base revisions and disconnected histories fail closed', (t) => {
 	const f = fixture(t);
 	assert.equal(f.run({ baseRef: 'does-not-exist' }).status, 1);
 	f.git('checkout', '--orphan', 'unrelated');
+	// An identical root tree/message committed in the same second can recreate f.base.
+	f.write('unrelated.txt', 'A genuinely disconnected history.\n');
 	f.commit();
 	assert.equal(f.run().status, 1);
 });

@@ -67,7 +67,7 @@
 		</p>
 	</div>
 	<dl>
-		{#each readouts as readout}
+		{#each readouts as readout (readout.id)}
 			<div class={`clock clock-${readout.id}`}>
 				<dt>{readout.label}</dt>
 				<dd>
@@ -95,6 +95,8 @@
 <style>
 	.clock-panel {
 		display: grid;
+		min-width: 0;
+		max-width: 100%;
 		gap: 0.6rem;
 		min-width: 0;
 	}
@@ -128,6 +130,8 @@
 
 	dl {
 		display: grid;
+		min-width: 0;
+		max-width: 100%;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		border: 1px solid var(--rule);
 		border-radius: 0.75rem;

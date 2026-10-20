@@ -711,32 +711,36 @@
 						<span>Validated field pending</span>
 					</div>
 				{/if}
-				<div class="dish-status" aria-hidden="true">
-					<span>{runOrigin === 'genesis' ? 'Genesis replay' : 'Mature checkpoint'}</span>
-					<span>{activePreset?.setup.gridSize ?? '—'}²</span>
-				</div>
-				{#if probeVisible && probeTrace.at(-1)}
-					<div class="probe-trace" data-testid="bz-v2-gallery-probe">
-						<div>
-							<span
-								>Local trace · {Math.round(selectedProbe[0] * 100)}%, {Math.round(
-									selectedProbe[1] * 100
-								)}%</span
-							>
-							<button type="button" aria-label="Hide local trace" onclick={() => clearProbeTrace()}
-								>×</button
-							>
-						</div>
-						<svg viewBox="0 0 112 30" role="img" aria-label="Recent local u and v samples">
-							<polyline class="u-line" points={probePolyline('u')}></polyline>
-							<polyline class="v-line" points={probePolyline('v')}></polyline>
-						</svg>
-						<small>
-							u {probeTrace.at(-1)?.u.toFixed(4)} · v {probeTrace.at(-1)?.v.toFixed(4)} · t
-							{probeTrace.at(-1)?.time.toFixed(3)}
-						</small>
+				<div class="dish-overlays">
+					<div class="dish-status" aria-hidden="true">
+						<span>{runOrigin === 'genesis' ? 'Genesis replay' : 'Mature checkpoint'}</span>
+						<span>{activePreset?.setup.gridSize ?? '—'}²</span>
 					</div>
-				{/if}
+					{#if probeVisible && probeTrace.at(-1)}
+						<div class="probe-trace" data-testid="bz-v2-gallery-probe">
+							<div>
+								<span
+									>Local trace · {Math.round(selectedProbe[0] * 100)}%, {Math.round(
+										selectedProbe[1] * 100
+									)}%</span
+								>
+								<button
+									type="button"
+									aria-label="Hide local trace"
+									onclick={() => clearProbeTrace()}>×</button
+								>
+							</div>
+							<svg viewBox="0 0 112 30" role="img" aria-label="Recent local u and v samples">
+								<polyline class="u-line" points={probePolyline('u')}></polyline>
+								<polyline class="v-line" points={probePolyline('v')}></polyline>
+							</svg>
+							<small>
+								u {probeTrace.at(-1)?.u.toFixed(4)} · v {probeTrace.at(-1)?.v.toFixed(4)} · t
+								{probeTrace.at(-1)?.time.toFixed(3)}
+							</small>
+						</div>
+					{/if}
+				</div>
 			</div>
 
 			<div class="compact-status">
@@ -976,6 +980,14 @@
 			inset 0 0 0 1px rgb(255 255 255 / 0.22),
 			inset 0 0 2.5rem rgb(0 0 0 / 0.42);
 	}
+	/* The live stage also contains its engine paragraph. Keep overlays on the square field. */
+	.dish-overlays {
+		position: absolute;
+		z-index: 8;
+		inset: 0 0 auto;
+		aspect-ratio: 1;
+		pointer-events: none;
+	}
 	.dish-status {
 		position: absolute;
 		z-index: 8;
@@ -1012,6 +1024,7 @@
 		font:
 			0.54rem/1.25 ui-monospace,
 			monospace;
+		pointer-events: auto;
 	}
 	.probe-trace > div {
 		display: flex;

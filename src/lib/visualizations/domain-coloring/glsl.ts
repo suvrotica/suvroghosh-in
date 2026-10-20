@@ -80,6 +80,13 @@ vec2 c_sinc(vec2 value) {
 }
 
 vec2 c_pow(vec2 base, vec2 exponent) {
+	// Non-literal/computed powers must agree with c_powi and the CPU probe at zero.
+	if (base.x == 0.0 && base.y == 0.0) {
+		if (exponent.y != 0.0) return vec2(INVALID_SENTINEL, -INVALID_SENTINEL);
+		if (exponent.x == 0.0) return vec2(1.0, 0.0);
+		if (exponent.x > 0.0) return vec2(0.0);
+		return vec2(1.0e18);
+	}
 	return c_exp(c_mul(exponent, c_log(base)));
 }
 

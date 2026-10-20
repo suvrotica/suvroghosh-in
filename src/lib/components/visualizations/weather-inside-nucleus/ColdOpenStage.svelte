@@ -162,7 +162,9 @@
 		</g>
 
 		<g class="micro-labels">
-			<text x="76" y="704">OUTSIDE THE CELL</text>
+			<!-- Keep the full annotation within the centre-crop safe region.
+			     SVG text needs its x attribute; CSS geometry does not reposition it. -->
+			<text class="outside-space-label" x="290" y="704" text-anchor="middle">OUTSIDE THE CELL</text>
 			<text x="504" y="704">CELL INTERIOR</text>
 			<text x={ligandX - 40} y={ligandY - 70} opacity={establish}>outside signal · EGF</text>
 			<text x="500" y="270" opacity={dock}>surface receptor · EGFR</text>

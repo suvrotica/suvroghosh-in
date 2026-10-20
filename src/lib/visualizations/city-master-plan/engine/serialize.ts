@@ -83,14 +83,17 @@ export function parseCityConfig(params: URLSearchParams): CityConfigParseResult 
 
 	const sizeRaw = params.get('size');
 	if (sizeRaw !== null) {
-		const size = SIZE_FROM_SERIALIZED[sizeRaw.toLowerCase()];
+		const sizeKey = sizeRaw.toLowerCase();
+		const size = Object.hasOwn(SIZE_FROM_SERIALIZED, sizeKey)
+			? SIZE_FROM_SERIALIZED[sizeKey]
+			: undefined;
 		if (size) config.size = size;
 		else issues.push(issue('size', sizeRaw, 'Unsupported map size; using Standard.'));
 	}
 
 	const anchorRaw = params.get('anchor');
 	if (anchorRaw !== null) {
-		if (anchorRaw in ANCHOR_BY_ID) {
+		if (Object.hasOwn(ANCHOR_BY_ID, anchorRaw)) {
 			config.anchor.id = anchorRaw as CityConfig['anchor']['id'];
 		} else {
 			issues.push(issue('anchor', anchorRaw, 'Unknown anchor; using the sweet shop.'));
@@ -236,7 +239,8 @@ function readEnum<Value extends string>(
 ): void {
 	const raw = params.get(key);
 	if (raw === null) return;
-	const parsed = values[raw.toLowerCase()];
+	const normalized = raw.toLowerCase();
+	const parsed = Object.hasOwn(values, normalized) ? values[normalized] : undefined;
 	if (parsed === undefined) {
 		issues.push(issue(key, raw, `Unsupported ${key} setting; using the safe default.`));
 		return;

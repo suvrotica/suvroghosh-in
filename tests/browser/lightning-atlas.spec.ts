@@ -379,6 +379,45 @@ test('reduced motion, WebGL failure and no-JavaScript paths keep the science rea
 	}
 });
 
+test('field-map headings keep readable contrast against their local panels in Night theme', async ({
+	page
+}) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.addInitScript(() => window.localStorage.setItem('site-theme', 'night'));
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const lab = await waitForLaboratory(page);
+	await expect(lab).toHaveClass(/field-map/u);
+	const contrasts = await lab
+		.locator('#strike-inspector-heading, #featured-storm-heading')
+		.evaluateAll((headings) => {
+			const components = (color: string) => (color.match(/[\d.]+/gu) ?? []).map(Number);
+			const luminance = (color: number[]) => {
+				const rgb = color.slice(0, 3).map((value) => {
+					const channel = value / 255;
+					return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+				});
+				return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+			};
+			return headings.map((heading) => {
+				let surface: Element | null = heading;
+				let background = [0, 0, 0, 0];
+				while (surface && (background[3] ?? 1) < 1) {
+					background = components(getComputedStyle(surface).backgroundColor);
+					surface = surface.parentElement;
+				}
+				const first = luminance(components(getComputedStyle(heading).color));
+				const second = luminance(background);
+				return {
+					text: heading.textContent,
+					ratio: (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05)
+				};
+			});
+		});
+	expect(contrasts).toHaveLength(2);
+	for (const contrast of contrasts)
+		expect(contrast.ratio, contrast.text ?? '').toBeGreaterThanOrEqual(4.5);
+});
+
 test('a 1024-pixel tablet layout supports the light theme without horizontal overflow', async ({
 	page
 }) => {

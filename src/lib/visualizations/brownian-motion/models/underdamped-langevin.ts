@@ -107,22 +107,43 @@ export interface UnderdampedTheory {
 	readonly velocityAutocorrelationPerAxis: number;
 }
 
-/** Free-particle equilibrium theory in two spatial dimensions. */
+/** Unbounded constant-force theory, with the selected initial velocity ensemble. */
 export function underdampedLangevinTheory(
 	parameters: UnderdampedLangevinParameters,
 	time: number
 ): UnderdampedTheory {
 	nonNegative(time, 'Theory time');
 	const model = new UnderdampedLangevinModel(parameters);
-	const { mass, drag, thermalEnergy } = model.parameters;
+	const { mass, drag, thermalEnergy, forceX, forceY, initialVelocity } = model.parameters;
 	const relaxationTime = mass / drag;
 	const longTimeDiffusion = thermalEnergy / drag;
-	const velocityVariancePerAxis = thermalEnergy / mass;
+	const u = time / relaxationTime;
+	const oneMinusDecay = -Math.expm1(-u);
+	// Series avoid cancellation of the t² equilibrium and t³ cold-start limits.
+	const equilibriumIntegral =
+		u < 1e-3 ? u * u * (0.5 + u * (-1 / 6 + u * (1 / 24 - u / 120))) : u - oneMinusDecay;
+	const coldIntegral =
+		u < 1e-3
+			? u ** 3 * (1 / 3 + u * (-1 / 4 + u * (7 / 60 - u / 24)))
+			: u - 2 * oneMinusDecay - 0.5 * Math.expm1(-2 * u);
+	const displacementIntegral = relaxationTime * equilibriumIntegral;
+	const driftMsd = ((forceX / drag) ** 2 + (forceY / drag) ** 2) * displacementIntegral ** 2;
+	const equilibriumVariance = thermalEnergy / mass;
+	const velocityVariancePerAxis =
+		initialVelocity === 'equilibrium'
+			? equilibriumVariance
+			: equilibriumVariance * -Math.expm1(-2 * u);
 	return {
 		relaxationTime,
 		longTimeDiffusion,
-		msd: 4 * longTimeDiffusion * (time - relaxationTime * (1 - Math.exp(-time / relaxationTime))),
+		msd:
+			4 *
+				longTimeDiffusion *
+				relaxationTime *
+				(initialVelocity === 'equilibrium' ? equilibriumIntegral : coldIntegral) +
+			driftMsd,
 		velocityVariancePerAxis,
-		velocityAutocorrelationPerAxis: velocityVariancePerAxis * Math.exp(-time / relaxationTime)
+		velocityAutocorrelationPerAxis:
+			initialVelocity === 'equilibrium' ? equilibriumVariance * Math.exp(-u) : 0
 	};
 }

@@ -475,7 +475,7 @@
 
 <section
 	bind:this={root}
-	class="guided"
+	class="guided article-breakout"
 	aria-labelledby="guided-title"
 	aria-describedby="guided-intro"
 >
@@ -658,10 +658,11 @@
 		--guide-paper: var(--paper-raised, #f7f1e4);
 		--guide-teal: #276f67;
 		--guide-gold: #a7792b;
+		position: relative;
 		width: min(74rem, calc(100vw - 1.5rem));
 		max-width: none;
 		margin-block: clamp(2.5rem, 7vw, 5.5rem);
-		margin-inline: 50%;
+		margin-inline: 0;
 		translate: -50% 0;
 		border: 1px solid color-mix(in oklab, var(--guide-ink) 24%, transparent);
 		border-radius: 1.25rem;
@@ -1066,7 +1067,11 @@
 			gap: 0.4rem;
 		}
 		.measurement-strip dt {
-			font-size: 0.875rem;
+			overflow: visible;
+			font-size: 0.75rem;
+			line-height: 1.35;
+			text-overflow: clip;
+			white-space: normal;
 		}
 		.guided-footer {
 			align-items: stretch;
@@ -1091,6 +1096,7 @@
 	}
 	@media print {
 		.guided {
+			left: 0;
 			width: 100%;
 			margin-inline: 0;
 			translate: none;

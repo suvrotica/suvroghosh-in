@@ -120,7 +120,7 @@ function scaledWave(d3: D3) {
 		'A scaled and labelled sine wave',
 		'D3 scales map mathematical x and y values into SVG pixels; an axis and line make the mapping visible.'
 	);
-	const margin = { top: 24, right: 24, bottom: 50, left: 58 };
+	const margin = { top: 24, right: 24, bottom: 50, left: 78 };
 	const data = sampleWave(80, 1, 1);
 	const x = d3.scaleLinear([0, Math.PI * 2], [margin.left, width - margin.right]);
 	const y = d3.scaleLinear([-1.2, 1.2], [320 - margin.bottom, margin.top]);
@@ -131,6 +131,7 @@ function scaledWave(d3: D3) {
 
 	svg
 		.append('g')
+		.attr('class', 'wave-axis')
 		.attr('transform', `translate(0,${y(0)})`)
 		.call(
 			d3
@@ -143,6 +144,7 @@ function scaledWave(d3: D3) {
 		.call((axis) => axis.selectAll('text').attr('fill', 'var(--observable-axis)'));
 	svg
 		.append('g')
+		.attr('class', 'wave-axis')
 		.attr('transform', `translate(${margin.left},0)`)
 		.call(d3.axisLeft(y).ticks(5))
 		.call((axis) => axis.select('.domain').attr('stroke', 'var(--observable-axis)'))
@@ -158,6 +160,7 @@ function scaledWave(d3: D3) {
 		.attr('d', line);
 	svg
 		.append('text')
+		.attr('class', 'wave-caption')
 		.attr('x', width - margin.right)
 		.attr('y', 306)
 		.attr('text-anchor', 'end')
@@ -208,7 +211,7 @@ function controlsForm(reducedMotion: boolean, invalidation: Promise<void>) {
 	form.addEventListener('submit', preventSubmit);
 	void invalidation.then(() => form.removeEventListener('submit', preventSubmit));
 	form.append(
-		sliderControl('amplitude', 'Amplitude', 10, 90, 1, 58, ' px'),
+		sliderControl('amplitude', 'Amplitude', 10, 90, 1, 58, ' units'),
 		sliderControl('frequency', 'Frequency', 1, 6, 0.25, 2, '×'),
 		sliderControl('speed', 'Speed', 0.1, 2, 0.1, 0.7, '×'),
 		sliderControl('samples', 'Sample points', 16, 96, 4, 48),
@@ -290,9 +293,9 @@ function finalWave(d3: D3, controls: WaveControls, data: WaveDatum[], invalidati
 		d3,
 		height,
 		'Living D3 wave generator',
-		`A sine wave with amplitude ${controls.amplitude} pixels, frequency ${controls.frequency}, and ${controls.samples} visible sample points. Sliders change the chart reactively.`
+		`A sine wave with amplitude ${controls.amplitude} data units, frequency ${controls.frequency}, and ${controls.samples} visible sample points. Sliders change the chart reactively.`
 	);
-	const margin = { top: 34, right: 28, bottom: 54, left: 58 };
+	const margin = { top: 34, right: 28, bottom: 54, left: 78 };
 	const x = d3.scaleLinear([0, Math.PI * 2], [margin.left, width - margin.right]);
 	const y = d3.scaleLinear([-100, 100], [height - margin.bottom, margin.top]);
 	const line = d3
@@ -315,6 +318,7 @@ function finalWave(d3: D3, controls: WaveControls, data: WaveDatum[], invalidati
 
 	svg
 		.append('g')
+		.attr('class', 'wave-axis')
 		.attr('transform', `translate(0,${y(0)})`)
 		.call(
 			d3
@@ -327,6 +331,7 @@ function finalWave(d3: D3, controls: WaveControls, data: WaveDatum[], invalidati
 		.call((axis) => axis.selectAll('text').attr('fill', 'var(--observable-axis)'));
 	svg
 		.append('g')
+		.attr('class', 'wave-axis')
 		.attr('transform', `translate(${margin.left},0)`)
 		.call(d3.axisLeft(y).ticks(5))
 		.call((axis) => axis.select('.domain').attr('stroke', 'var(--observable-axis)'))
@@ -343,6 +348,7 @@ function finalWave(d3: D3, controls: WaveControls, data: WaveDatum[], invalidati
 	const points = svg.append('g').attr('aria-hidden', 'true');
 	const phaseLabel = svg
 		.append('text')
+		.attr('class', 'wave-caption')
 		.attr('x', width - margin.right)
 		.attr('y', margin.top)
 		.attr('text-anchor', 'end')

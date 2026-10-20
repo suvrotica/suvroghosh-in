@@ -1,7 +1,65 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Download, type Locator, type Page } from '@playwright/test';
+import { DOMAIN_GLSL_LIBRARY } from '../../src/lib/visualizations/domain-coloring/glsl';
 
 const articlePath = '/blog/visualizations/domain-coloring-complex-functions-explorer';
+
+test('GPU powers retain finite zero values for computed and fractional positive exponents', async ({
+	page
+}) => {
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const pixel = await page.evaluate((library) => {
+		const canvas = document.createElement('canvas');
+		canvas.width = canvas.height = 1;
+		const gl = canvas.getContext('webgl');
+		if (!gl) throw new Error('The numerical shader regression needs WebGL.');
+		const compile = (kind: number, source: string) => {
+			const shader = gl.createShader(kind)!;
+			gl.shaderSource(shader, source);
+			gl.compileShader(shader);
+			if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS))
+				throw new Error(gl.getShaderInfoLog(shader) ?? 'Shader compile failed');
+			return shader;
+		};
+		const vertex = compile(
+			gl.VERTEX_SHADER,
+			'attribute vec2 p; void main() { gl_Position = vec4(p, 0.0, 1.0); }'
+		);
+		const fragment = compile(
+			gl.FRAGMENT_SHADER,
+			`precision highp float;\n${library}\nvoid main() {
+			vec2 integerValue = c_pow(vec2(0.0), vec2(17.0, 0.0));
+			vec2 fractionalValue = c_pow(vec2(0.0), vec2(0.5, 0.0));
+			vec2 zeroPower = c_pow(vec2(0.0), vec2(0.0));
+			gl_FragColor = vec4(integerValue == vec2(0.0) ? 1.0 : 0.0,
+				fractionalValue == vec2(0.0) ? 1.0 : 0.0, zeroPower.x, 1.0);
+		}`
+		);
+		const program = gl.createProgram()!;
+		gl.attachShader(program, vertex);
+		gl.attachShader(program, fragment);
+		gl.linkProgram(program);
+		if (!gl.getProgramParameter(program, gl.LINK_STATUS))
+			throw new Error(gl.getProgramInfoLog(program) ?? 'Shader link failed');
+		gl.useProgram(program);
+		const buffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+		const position = gl.getAttribLocation(program, 'p');
+		gl.enableVertexAttribArray(position);
+		gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+		gl.drawArrays(gl.TRIANGLES, 0, 3);
+		const pixels = new Uint8Array(4);
+		gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+		gl.deleteBuffer(buffer);
+		gl.deleteProgram(program);
+		gl.deleteShader(vertex);
+		gl.deleteShader(fragment);
+		gl.getExtension('WEBGL_lose_context')?.loseContext();
+		return [...pixels];
+	}, DOMAIN_GLSL_LIBRARY);
+	expect(pixel).toEqual([255, 255, 255, 255]);
+});
 
 function laboratory(page: Page) {
 	return page.getByTestId('domain-coloring-lab');

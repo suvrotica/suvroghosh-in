@@ -94,10 +94,9 @@ test('IID uncertainty is calculated only for pseudorandom sampling', () => {
 	assert.equal(statistics.absoluteError, Math.abs(expectedEstimate - Math.PI));
 	assert.equal(statistics.iidReferenceStandardError, expectedStandardError);
 	assert.equal(statistics.standardError, expectedStandardError);
-	assert.deepEqual(statistics.confidenceInterval, {
-		lower: expectedEstimate - 1.96 * expectedStandardError,
-		upper: expectedEstimate + 1.96 * expectedStandardError
-	});
+	// Independent Wilson-score reference for 80 successes in 100 trials, scaled by four.
+	assert.ok(Math.abs(statistics.confidenceInterval.lower - 2.844683337626) < 1e-10);
+	assert.ok(Math.abs(statistics.confidenceInterval.upper - 3.466532266676) < 1e-10);
 	assert.equal(calculateStatistics('pseudorandom', 29, 20).confidenceInterval, null);
 
 	for (const method of ['stratified', 'halton']) {
@@ -105,6 +104,14 @@ test('IID uncertainty is calculated only for pseudorandom sampling', () => {
 		assert.equal(designStatistics.iidReferenceStandardError, expectedStandardError);
 		assert.equal(designStatistics.standardError, null);
 		assert.equal(designStatistics.confidenceInterval, null);
+	}
+});
+
+test('Wilson intervals remain bounded and retain uncertainty at all-inside or all-outside counts', () => {
+	for (const successes of [0, 30]) {
+		const interval = calculateStatistics('pseudorandom', 30, successes).confidenceInterval;
+		assert.ok(interval.lower >= 0 && interval.upper <= 4);
+		assert.ok(interval.upper - interval.lower > 0.4);
 	}
 });
 

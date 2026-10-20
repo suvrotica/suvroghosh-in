@@ -35,11 +35,21 @@ export function calculateStatistics(
 	const percentageError = (absoluteError / Math.PI) * 100;
 	const iidReferenceStandardError = 4 * Math.sqrt((proportion * (1 - proportion)) / totalSamples);
 	const standardError = method === 'pseudorandom' ? iidReferenceStandardError : null;
+	// A Wilson score interval avoids a zero-width interval when a finite run has
+	// classified every point the same way, and keeps the estimate's bounds in [0, 4].
+	const z = 1.959_963_984_540_054;
+	const denominator = 1 + (z * z) / totalSamples;
+	const centre = (proportion + (z * z) / (2 * totalSamples)) / denominator;
+	const halfWidth =
+		(z / denominator) *
+		Math.sqrt(
+			(proportion * (1 - proportion)) / totalSamples + (z * z) / (4 * totalSamples * totalSamples)
+		);
 	const confidenceInterval =
 		method === 'pseudorandom' && totalSamples >= MINIMUM_CONFIDENCE_SAMPLES
 			? {
-					lower: estimate - 1.96 * iidReferenceStandardError,
-					upper: estimate + 1.96 * iidReferenceStandardError
+					lower: 4 * Math.max(0, centre - halfWidth),
+					upper: 4 * Math.min(1, centre + halfWidth)
 				}
 			: null;
 

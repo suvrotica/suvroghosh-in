@@ -10342,26 +10342,29 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/monte-carlo-laboratory.md": {
-			"bodyHash": "c370b3e645cf1972b1e439c775ab9b2472275a24fa5702e15068c72f9d70accb",
+			"bodyHash": "bb7457cc23173eb6b0d0ecd9e8ffa9fd123329aeccc2163b1782e7e4c3c5cfb7",
+			"hashVersion": 2,
+			"revisionHash": "e405f81957a623cd2eb35b4c46467e6851c37ce402c41155c4419b99cdc71edd",
 			"generatedTags": [
 				"Monte Carlo",
 				"Randomized Quasi-Monte Carlo",
 				"Expensive Square-Root Law",
 				"Deliberate Ignorance",
 				"Demonstration Hides",
-				"Sampling",
-				"Pseudorandom",
 				"Monte",
+				"Sampling",
 				"Samples",
+				"Pseudorandom",
 				"Estimate"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "d3b85757b285532981f5209fe9ecf76a46f6549d6fddc9b39a9ea8f13a700c4a",
-			"hashVersion": 2
+			"dateModified": "2026-10-20"
 		},
 		"src/lib/posts/create-art-living-pigment-studio.md": {
-			"bodyHash": "05589fb95eaa02c304ebd1554fb6b253644bba7659674071f35f3c82cf6f2890",
+			"bodyHash": "3dbfd088b88f6ee535a954609c3ae3014ef03e80d1268f63d491406e0bae20fc",
+			"hashVersion": 2,
+			"revisionHash": "62a3107161bccfb71cd182950bfa4d0ccb3db9562b9df3e584565bead1a6a936",
 			"generatedTags": [
 				"Shaders",
 				"WebGL",
@@ -10387,8 +10390,7 @@
 				"Procedural Art"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "b288a7ee2ad8f570301d50b71029b9b0a1ef1edadc87a72796ae2b980346b01c",
-			"hashVersion": 2
+			"dateModified": "2026-10-20"
 		},
 		"src/lib/posts/ai-leaderboard-ichor.md": {
 			"bodyHash": "13af95639310ee25e7c88650926031bf93c8de0ce1af2331f4b76357d527d5d2",
@@ -12293,9 +12295,9 @@
 			"dateModified": "2026-08-29"
 		},
 		"src/lib/posts/the-meaning-connection-map.md": {
-			"bodyHash": "94ddd2e59a09bda4ab36a51d47c9d6cd7cae6d2cd21be416f7632d25051fcf77",
+			"bodyHash": "b3d73368db84f4119bd334e356950785ffd2d56015d055bec6169927ae74720f",
 			"hashVersion": 2,
-			"revisionHash": "07b6a2b7f0fcf54f5ac19416e3df72341a7da62eb1117f724b8bb98971bdf453",
+			"revisionHash": "48e70784bf4c81960227e559aa4c70b82cec656d756e8b687fadc8ef77279fd5",
 			"generatedTags": [
 				"conceptual cartography",
 				"knowledge graphs",
@@ -12304,9 +12306,9 @@
 				"machine learning",
 				"Feedback Loops",
 				"Technical Approach",
+				"Scientific References",
 				"Concepts",
-				"Node",
-				"Explanation"
+				"Connection"
 			],
 			"pinnedTags": [
 				"conceptual cartography",
@@ -12316,7 +12318,7 @@
 				"machine learning"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-29"
+			"dateModified": "2026-10-20"
 		},
 		"src/lib/posts/rakhi-and-the-currency-of-oblivion.md": {
 			"bodyHash": "11636a3ccb1fae14bbb944b88febc70976e23e95ad5c04cb29d09f5ed6fd677f",

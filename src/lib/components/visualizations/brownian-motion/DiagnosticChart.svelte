@@ -1,5 +1,10 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type { ChartPoint, DiagnosticId, HistogramBin } from './ui-types';
+	import {
+		diagnosticExtent,
+		isPlottablePoint
+	} from '$lib/visualizations/brownian-motion/diagnostic-scales';
 
 	type Props = {
 		available: readonly DiagnosticId[];
@@ -38,27 +43,45 @@
 		'first-passage': 'First passage'
 	};
 
-	const plot = { left: 58, right: 738, top: 22, bottom: 244 } as const;
+	let chart: SVGSVGElement;
+	let chartWidth = $state(760);
+	const plot = $derived({ left: 58, right: chartWidth - 22, top: 22, bottom: 244 });
+
+	onMount(() => {
+		const resize = () => {
+			chartWidth = Math.max(280, Math.min(760, Math.round(chart.getBoundingClientRect().width)));
+		};
+		const observer = new ResizeObserver(resize);
+		observer.observe(chart);
+		resize();
+		return () => observer.disconnect();
+	});
 
 	function transformed(value: number): number {
-		return logarithmic ? Math.log10(Math.max(value, 1e-12)) : value;
+		return logarithmic ? Math.log10(value) : value;
 	}
 
-	let allPoints = $derived([...measured, ...theoretical, ...scatter]);
+	let allPoints = $derived(
+		[...measured, ...theoretical, ...scatter].filter((point) =>
+			isPlottablePoint(point, logarithmic)
+		)
+	);
 	let xValues = $derived(
 		histogram.length > 0
 			? histogram.flatMap((bin) => [bin.minimum, bin.maximum])
-			: allPoints.map((point) => transformed(point.x))
+			: allPoints.map((point) => point.x)
 	);
 	let yValues = $derived(
 		histogram.length > 0
 			? histogram.flatMap((bin) => [bin.count, bin.theoreticalDensity ?? 0])
-			: allPoints.map((point) => transformed(point.y))
+			: allPoints.map((point) => point.y)
 	);
-	let xMin = $derived(Math.min(...xValues, 0));
-	let xMax = $derived(Math.max(...xValues, 1));
-	let yMin = $derived(Math.min(...yValues, 0));
-	let yMax = $derived(Math.max(...yValues, 1));
+	let xExtent = $derived(diagnosticExtent(xValues, logarithmic));
+	let yExtent = $derived(diagnosticExtent(yValues, logarithmic));
+	let xMin = $derived(xExtent[0]);
+	let xMax = $derived(xExtent[1]);
+	let yMin = $derived(yExtent[0]);
+	let yMax = $derived(yExtent[1]);
 
 	function sx(value: number): number {
 		const v = logarithmic ? transformed(value) : value;
@@ -76,7 +99,7 @@
 
 	function path(points: readonly ChartPoint[]): string {
 		return points
-			.filter((point) => Number.isFinite(point.x) && Number.isFinite(point.y))
+			.filter((point) => isPlottablePoint(point, logarithmic))
 			.map(
 				(point, index) =>
 					`${index === 0 ? 'M' : 'L'}${sx(point.x).toFixed(2)},${sy(point.y).toFixed(2)}`
@@ -89,6 +112,10 @@
 		if (Math.abs(value) >= 10_000 || (value !== 0 && Math.abs(value) < 0.001))
 			return value.toExponential(2);
 		return value.toFixed(Math.abs(value) < 10 ? 2 : 1);
+	}
+
+	function formatTick(value: number): string {
+		return format(logarithmic ? 10 ** value : value);
 	}
 
 	function tabKey(event: KeyboardEvent, id: DiagnosticId): void {
@@ -144,7 +171,12 @@
 			</div>
 		</div>
 
-		<svg viewBox="0 0 760 280" role="img" aria-labelledby="diagnostic-title diagnostic-desc">
+		<svg
+			bind:this={chart}
+			viewBox={`0 0 ${chartWidth} 280`}
+			role="img"
+			aria-labelledby="diagnostic-title diagnostic-desc"
+		>
 			<title id="diagnostic-title">{labels[active]} chart</title>
 			<desc id="diagnostic-desc">{summary}</desc>
 			<g class="grid" aria-hidden="true">
@@ -159,10 +191,10 @@
 			</g>
 			<line class="axis" x1={plot.left} x2={plot.right} y1={plot.bottom} y2={plot.bottom} />
 			<line class="axis" x1={plot.left} x2={plot.left} y1={plot.top} y2={plot.bottom} />
-			<text class="tick" x={plot.left} y="260">{format(xMin)}</text>
-			<text class="tick" x={plot.right} y="260" text-anchor="end">{format(xMax)}</text>
-			<text class="tick" x="50" y={plot.bottom + 4} text-anchor="end">{format(yMin)}</text>
-			<text class="tick" x="50" y={plot.top + 4} text-anchor="end">{format(yMax)}</text>
+			<text class="tick" x={plot.left} y="260">{formatTick(xMin)}</text>
+			<text class="tick" x={plot.right} y="260" text-anchor="end">{formatTick(xMax)}</text>
+			<text class="tick" x="50" y={plot.bottom + 4} text-anchor="end">{formatTick(yMin)}</text>
+			<text class="tick" x="50" y={plot.top + 4} text-anchor="end">{formatTick(yMax)}</text>
 			<text class="axis-label" x={(plot.left + plot.right) / 2} y="278" text-anchor="middle"
 				>{xLabel}</text
 			>
@@ -194,7 +226,9 @@
 			{:else}
 				{#if measured.length > 1}<path class="measured-line" d={path(measured)} />{/if}
 				{#if theoretical.length > 1}<path class="theory-line" d={path(theoretical)} />{/if}
-				{#each scatter.slice(0, 600) as point, index (`${index}-${point.x}-${point.y}`)}
+				{#each scatter
+					.filter((point) => isPlottablePoint(point, logarithmic))
+					.slice(0, 600) as point, index (`${index}-${point.x}-${point.y}`)}
 					<circle class="scatter" cx={sx(point.x)} cy={sy(point.y)} r="2.2" />
 				{/each}
 			{/if}

@@ -1572,6 +1572,10 @@
 		min-height: 2.75rem;
 	}
 
+	.lightning-atlas :global(h3) {
+		color: var(--atlas-text-strong);
+	}
+
 	.atlas-header {
 		display: flex;
 		align-items: flex-start;

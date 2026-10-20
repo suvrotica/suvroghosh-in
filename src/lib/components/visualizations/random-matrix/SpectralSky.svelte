@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { SvelteMap } from 'svelte/reactivity';
+	import { spectralDensityHistogram } from '$lib/visualizations/random-matrix/spectral-density';
 	import {
 		formatNumber,
 		type ComplexSpectrumView,
@@ -125,7 +126,9 @@
 		const ticks: number[] = [];
 		for (let value = minimum; value <= panReal + radius + step * 0.5; value += step)
 			ticks.push(value);
-		return ticks.slice(0, 12);
+		return ticks
+			.filter((value) => sx(value) >= chart.left && sx(value) <= chart.right)
+			.slice(0, 12);
 	}
 
 	function yTickValues(): readonly number[] {
@@ -136,7 +139,9 @@
 		const ticks: number[] = [];
 		for (let value = minimum; value <= panImaginary + radius + step * 0.5; value += step)
 			ticks.push(value);
-		return ticks.slice(0, 12);
+		return ticks
+			.filter((value) => sy(value) >= chart.top && sy(value) <= chart.bottom)
+			.slice(0, 12);
 	}
 
 	function calculateDensityBins(
@@ -171,17 +176,11 @@
 	}
 
 	function calculateRealHistogram(binCount: number): readonly number[] {
-		const counts = Array.from({ length: binCount }, () => 0);
 		const support = realDomain();
 		const values: number[] = [];
 		if (ensemblePoints.length > 0) values.push(...ensemblePoints.map((point) => point.real));
 		else if (eigen) values.push(...Array.from(eigen.real));
-		for (const value of values) {
-			const fraction = (value - support[0]) / Math.max(Number.EPSILON, support[1] - support[0]);
-			const index = Math.max(0, Math.min(binCount - 1, Math.floor(fraction * binCount)));
-			counts[index] += 1;
-		}
-		return counts;
+		return spectralDensityHistogram(values, support, binCount);
 	}
 
 	function realDomain(): readonly [number, number] {
@@ -208,16 +207,29 @@
 	}
 
 	function histogramPath(): string {
-		const maximum = Math.max(1, ...realHistogram);
 		const left = chart.left;
 		const width = chart.right - chart.left;
-		return realHistogram
+		const steps = realHistogram
 			.map((count, index) => {
-				const x = left + ((index + 0.5) / realHistogram.length) * width;
-				const y = chart.bottom - (count / maximum) * (chart.bottom - chart.top) * 0.82;
-				return `${index === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`;
+				const x1 = left + (index / realHistogram.length) * width;
+				const x2 = left + ((index + 1) / realHistogram.length) * width;
+				const y = densityY(count);
+				return `L${x1.toFixed(2)},${y.toFixed(2)} L${x2.toFixed(2)},${y.toFixed(2)}`;
 			})
 			.join(' ');
+		return `M${left},${chart.bottom} ${steps} L${chart.right},${chart.bottom} Z`;
+	}
+
+	function densityMaximumValue(): number {
+		let maximum = Math.max(1e-12, ...realHistogram);
+		if (theoryVisible && theory?.density) {
+			for (const density of theory.density) maximum = Math.max(maximum, density);
+		}
+		return maximum * 1.1;
+	}
+
+	function densityY(value: number): number {
+		return chart.bottom - (value / densityMaximumValue()) * (chart.bottom - chart.top);
 	}
 
 	function theoryDensityPath(): string {
@@ -229,15 +241,10 @@
 			return '';
 		if (theory.x && theory.density && theory.x.length > 1 && theory.density.length > 1) {
 			const count = Math.min(theory.x.length, theory.density.length);
-			let maximumDensity = 0;
-			for (let index = 0; index < count; index += 1) {
-				maximumDensity = Math.max(maximumDensity, theory.density[index] ?? 0);
-			}
-			maximumDensity = Math.max(maximumDensity, Number.EPSILON);
 			return Array.from({ length: count }, (_, index) => {
 				const x = realPointX(theory.x?.[index] ?? 0);
 				const density = Math.max(0, theory.density?.[index] ?? 0);
-				const y = chart.bottom - (density / maximumDensity) * (chart.bottom - chart.top) * 0.72;
+				const y = densityY(density);
 				return `${index === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`;
 			}).join(' ');
 		}
@@ -253,7 +260,7 @@
 				Math.sqrt(Math.max(0, radius * radius - (value - centre) ** 2));
 			const x =
 				chart.left + ((value - domain[0]) / (domain[1] - domain[0])) * (chart.right - chart.left);
-			const y = chart.bottom - density * radius * (chart.bottom - chart.top) * 0.72;
+			const y = densityY(density);
 			points.push(`${index === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`);
 		}
 		return points.join(' ');
@@ -481,6 +488,18 @@
 			/>
 			{#if oneDimensional}
 				<line class="axis" x1={chart.left} x2={chart.right} y1={chart.bottom} y2={chart.bottom} />
+				{#each [0, 0.5, 1] as fraction (fraction)}
+					{@const density = densityMaximumValue() * fraction}
+					<text class="tick-label" x={chart.left - 6} y={densityY(density) + 3} text-anchor="end"
+						>{formatNumber(density, 2)}</text
+					>
+				{/each}
+				{#each [0, 0.5, 1] as fraction (fraction)}
+					{@const value = realDomain()[0] + fraction * (realDomain()[1] - realDomain()[0])}
+					<text class="tick-label" x={realPointX(value)} y={chart.bottom + 18} text-anchor="middle"
+						>{formatNumber(value, 2)}</text
+					>
+				{/each}
 				<path class="density-line" d={histogramPath()} />
 				{#if theoryDensityPath()}<path class="theory-density" d={theoryDensityPath()} />{/if}
 				{#if theoryVisible && (theory?.atomAtZero ?? 0) > 0}
@@ -619,6 +638,10 @@
 			{/if}
 		</svg>
 		<figcaption>
+			{#if oneDimensional}
+				The histogram has unit total area; the measured and theoretical curves share one
+				probability-density scale.
+			{/if}
 			{#if theoryVisible && theory?.kind && theory.kind !== 'none'}
 				{#if theory.kind === 'circular-law'}
 					The dashed circular-law disk has radius r = {formatNumber(circularTheoryRadius, 6)}. It is

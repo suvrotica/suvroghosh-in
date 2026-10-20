@@ -68,10 +68,8 @@ export function computeMetrics(
 	const correlationDenominator = Math.sqrt(referenceVariance * estimateVariance);
 	const correlation =
 		correlationDenominator > 0
-			? covariance / correlationDenominator
-			: referenceVariance === 0
-				? 1
-				: 0;
+			? Math.max(-1, Math.min(1, covariance / correlationDenominator))
+			: null;
 	const peakSignalToNoiseRatio =
 		rmse === 0
 			? Number.POSITIVE_INFINITY
@@ -84,7 +82,7 @@ export function computeMetrics(
 		normalizedRmse,
 		scaleInvariantRmse,
 		mae: absoluteError / reference.length,
-		correlation: Math.max(-1, Math.min(1, correlation)),
+		correlation,
 		peakSignalToNoiseRatio
 	};
 }

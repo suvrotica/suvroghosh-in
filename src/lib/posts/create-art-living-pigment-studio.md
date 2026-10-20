@@ -2,6 +2,7 @@
 title: "Create Art: A Living Pigment Studio"
 description: "Paint with digital pigments that spread, mix, dry, granulate, and continue evolving after every stroke."
 date: "2026-07-22"
+dateModified: "2026-10-20"
 thumbnail: "/images/create-art-living-pigment-studio.webp"
 thumbnailAlt: "Abstract living pigments with translucent blue watercolor blooms, rust-red granulation, and thick ochre oil-like ridges"
 category: "Visualizations"
@@ -122,7 +123,7 @@ The same moisture-gradient idea helps produce backruns, sometimes called caulifl
 
 A single global wetness slider cannot describe a painting. A fresh wash beside a dry line should not behave like a fresh wash inside a puddle. The moisture map makes that distinction local.
 
-On a dry region, pigment is captured quickly. A stroke keeps a sharper edge and records more of the brush footprint. On a damp region, pigment moves but remains partly controlled. In a saturated region, water carries pigment broadly, nearby colors meet, and blooms become more likely. Adding water to partly deposited paint can loosen some of it and create a backrun, but staining pigments resist lifting more strongly.
+On a dry region, pigment is captured more quickly. A stroke keeps a sharper edge and records more of the brush footprint. On a damp region, pigment moves but remains partly controlled. In a saturated region, water carries mobile pigment more broadly and nearby colors meet. The water brush changes moisture and the movement of pigment that is still mobile; it does not remobilize pigment already deposited on the surface. Use the lifter to remove deposited color; staining pigments resist that removal more strongly.
 
 The **surface moisture** control sets the general starting condition and influences new marks. It does not overwrite the internal wetness map. Dry islands can remain inside a globally damp surface, and a water brush can reopen one small area of an otherwise dry painting.
 
@@ -130,7 +131,7 @@ The **surface moisture** control sets the general starting condition and influen
 
 Oil mode changes more than the diffusion slider. High viscosity damps motion and keeps neighboring color cohesive. Mixing remains partial, so a blue stroke dragged through ochre can retain streaks of both instead of becoming an immediate uniform green-brown. The brush direction matters: a flat brush or palette knife pushes, scrapes, and smears along its path.
 
-An additional height-like value gives the renderer a restrained suggestion of impasto. Directional changes create ridges that catch virtual light, while relaxation slowly softens them. This is a surface cue rather than a true three-dimensional volume of paint. The simulation does not model a bristle bending, a knife flexing, or a millimeter-thick layer folding over itself.
+An additional height-like value accumulates with deposited pigment and gives the renderer a restrained suggestion of impasto. Spatial changes in that value create ridges that catch virtual light. Deposited paint stays fixed until lifted or cleared; it does not undergo a separate surface-relaxation simulation. This is a surface cue rather than a true three-dimensional volume of paint. The simulation does not model a bristle bending, a knife flexing, or a millimeter-thick layer folding over itself.
 
 Hybrid mode borrows controlled spreading from watercolor and persistent dragging from oil. It is deliberately an invented digital medium, useful when physical allegiance matters less than the resulting image.
 

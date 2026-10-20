@@ -29,6 +29,13 @@ describe('domain-colouring expression language', () => {
 		expect(Number.isFinite(result.re) && Number.isFinite(result.im)).toBe(false);
 	});
 
+	it('retains the continuous zero value for positive real powers at the origin', () => {
+		for (const expression of ['z^0.5', 'z^17', 'z^(8+9)', 'z^sqrt(2)']) {
+			expect(evaluateExpression(parseExpression(expression), complex(0))).toEqual(complex(0));
+		}
+		expect(evaluateExpression(parseExpression('z^0'), complex(0))).toEqual(complex(1));
+	});
+
 	it('finds the known zeros of the roots-of-unity preset', () => {
 		const expression = parseExpression('z^3 - 1');
 		for (const root of [

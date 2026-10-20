@@ -1,19 +1,15 @@
 import { createRandomGenome } from './genome';
 import { randomPointInDish } from './environment';
-import type { Genome, Organism, SimulationParameters } from './types';
+import type { Genome, Organism } from './types';
 import type { SeededRandom } from './seededRandom';
 
-export function createFounder(
-	id: number,
-	random: SeededRandom,
-	parameters: SimulationParameters
-): Organism {
+export function createFounder(id: number, random: SeededRandom): Organism {
 	const position = randomPointInDish(random, 24);
 	return {
 		id,
 		lineageId: id,
 		generation: 0,
-		genome: createRandomGenome(random, parameters),
+		genome: createRandomGenome(random),
 		...position,
 		previousX: position.x,
 		previousY: position.y,

@@ -117,8 +117,8 @@
 
 	let difference = $derived(scaleInvariantDifference(groundTruth, filteredBackprojection));
 
-	function metric(value: number | undefined, digits = 3) {
-		return value === undefined || !Number.isFinite(value) ? '—' : value.toFixed(digits);
+	function metric(value: number | null | undefined, digits = 3) {
+		return value == null || !Number.isFinite(value) ? '—' : value.toFixed(digits);
 	}
 
 	function selectView(view: ViewMode, userInitiated = true) {

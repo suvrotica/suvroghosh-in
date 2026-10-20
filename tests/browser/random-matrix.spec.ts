@@ -113,6 +113,20 @@ test('theory captions keep accessibility labels out of visible prose', async ({
 		`${articlePath}?rmv=1&seed=theory-caption&preset=circular-cloud&n=12&lens=spectral-sky`
 	);
 	const spectrum = lab.locator('[data-lens="spectrum"]');
+	const imaginaryTicks = await spectrum
+		.locator('text.tick-label[text-anchor="end"]')
+		.evaluateAll((ticks) => {
+			const background = ticks[0]?.closest('svg')?.querySelector('.plot-background');
+			const top = Number(background?.getAttribute('y'));
+			const bottom = top + Number(background?.getAttribute('height'));
+			return ticks.map((tick) => ({
+				value: tick.textContent,
+				inside:
+					Number(tick.getAttribute('y')) >= top && Number(tick.getAttribute('y')) <= bottom + 4
+			}));
+		});
+	expect(imaginaryTicks.length).toBeGreaterThan(1);
+	expect(imaginaryTicks.filter((tick) => !tick.inside)).toEqual([]);
 	const caption = spectrum.locator('figcaption');
 	await expect(caption).toContainText('The dashed circular-law disk has radius r =');
 	await expect(caption).not.toContainText('Circular law (radius');

@@ -57,20 +57,26 @@ export function validateFitzHughNagumoParameters(parameters: FitzHughNagumoParam
 export function fitzhughNagumoEquilibrium(
 	parameters: FitzHughNagumoParameters = DEFAULT_FITZHUGH_NAGUMO_PARAMETERS
 ): { fast: number; recovery: number } {
-	let fast: number = DEFAULT_FHN_EQUILIBRIUM.fast;
-	for (let iteration = 0; iteration < 50; iteration += 1) {
-		const recovery = (fast + parameters.a) / parameters.b;
-		const residual = fast - (fast * fast * fast) / 3 - recovery;
-		const derivative = 1 - fast * fast - 1 / parameters.b;
-		const next = fast - residual / derivative;
-		if (!Number.isFinite(next))
-			throw new RangeError('FitzHugh–Nagumo equilibrium did not converge.');
-		if (Math.abs(next - fast) < 1e-14) {
-			fast = next;
-			break;
-		}
-		fast = next;
+	const errors = validateFitzHughNagumoParameters(parameters);
+	if (errors.length) throw new RangeError(errors.join(' '));
+	const residual = (value: number) =>
+		value - (value * value * value) / 3 - (value + parameters.a) / parameters.b;
+	// Unconstrained Newton iteration can cycle or escape to huge values for
+	// admitted a/b pairs. Bracket an outer root of the cubic instead. Where
+	// multiple roots exist, retain the negative resting branch when available.
+	const turningPoint = Math.sqrt(Math.max(0, 1 - 1 / parameters.b));
+	let lower = -4;
+	let upper = parameters.b > 1 ? -turningPoint : 4;
+	if (residual(upper) > 0) {
+		lower = turningPoint;
+		upper = 4;
 	}
+	for (let iteration = 0; iteration < 96; iteration += 1) {
+		const middle = (lower + upper) / 2;
+		if (residual(middle) > 0) lower = middle;
+		else upper = middle;
+	}
+	const fast = (lower + upper) / 2;
 	return { fast, recovery: (fast + parameters.a) / parameters.b };
 }
 

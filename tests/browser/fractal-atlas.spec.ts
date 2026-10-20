@@ -46,6 +46,49 @@ test.afterEach(({ page }) => {
 	expect(runtimeDiagnostics.get(page) ?? []).toEqual([]);
 });
 
+test('partial imported laboratory settings retain a finite divider and valid parameter coordinates', async ({
+	page
+}) => {
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	await waitForAtlas(page);
+	const lab = laboratory(page);
+	await lab.getByRole('button', { name: 'Save and export' }).click();
+	const [download] = await Promise.all([
+		page.waitForEvent('download'),
+		lab.getByRole('button', { name: /Settings JSON/u }).click()
+	]);
+	const saved = JSON.parse((await downloadBytes(download)).toString('utf8'));
+	saved.selectedPointDecimal = { re: '123', im: '' };
+	saved.laboratory = {
+		comparisonState: saved.laboratory.comparisonState,
+		compareMode: true,
+		parameterA: { re: -0.123, im: 0.745 },
+		parameterADecimal: { re: {}, im: 'Infinity' }
+	};
+	await lab.locator('input[type="file"]').setInputFiles({
+		name: 'partial-specimen.json',
+		mimeType: 'application/json',
+		buffer: Buffer.from(JSON.stringify(saved))
+	});
+	await expect(lab.locator('[aria-live="polite"]').first()).toContainText(
+		'Imported bounded settings'
+	);
+	await expect(lab.locator('.companion-plane')).toBeVisible();
+	const style = await lab.locator('[style*="--compare-split"]').getAttribute('style');
+	expect(style).toContain('--compare-split: 50%');
+	expect(await lab.textContent()).not.toContain('NaN');
+	const [restored] = await Promise.all([
+		page.waitForEvent('download'),
+		lab.getByRole('button', { name: /Settings JSON/u }).click()
+	]);
+	const normalized = JSON.parse((await downloadBytes(restored)).toString('utf8'));
+	expect(normalized.laboratory.parameterADecimal).toEqual({ re: '-0.123', im: '0.745' });
+	expect(normalized.selectedPointDecimal).toEqual({
+		re: saved.selectedPoint.re.toString(),
+		im: saved.selectedPoint.im.toString()
+	});
+});
+
 test('the canonical article hydrates from a meaningful field plate into a computed linked atlas', async ({
 	page,
 	request

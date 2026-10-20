@@ -82,6 +82,31 @@ test.afterEach(({ page }) => {
 	expect(runtimeDiagnostics.get(page) ?? []).toEqual([]);
 });
 
+test('terrain follows an explicit light preference on a dark device and redraws when appearance changes', async ({
+	page
+}) => {
+	await page.emulateMedia({ colorScheme: 'dark' });
+	await page.addInitScript(() => window.localStorage.setItem('site-theme', 'light'));
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const canvas = page.getByTestId('bias-map').first().locator('canvas');
+	await expect
+		.poll(() => canvas.evaluate((element: HTMLCanvasElement) => element.width))
+		.toBeGreaterThan(300);
+	const raster = () => canvas.evaluate((element: HTMLCanvasElement) => element.toDataURL());
+	const lightRaster = await raster();
+	// Apply the same resolved document state used by the Appearance control.
+	await page.evaluate(() => {
+		document.documentElement.dataset.theme = 'night';
+		document.documentElement.classList.add('dark');
+	});
+	await expect.poll(raster).not.toBe(lightRaster);
+	await page.evaluate(() => {
+		document.documentElement.dataset.theme = 'light';
+		document.documentElement.classList.remove('dark');
+	});
+	await expect.poll(raster).toBe(lightRaster);
+});
+
 test('scenario and step are present in raw SSR and survive hydration, history, and exact-target restoration', async ({
 	page,
 	request

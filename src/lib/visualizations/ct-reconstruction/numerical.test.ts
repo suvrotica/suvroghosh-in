@@ -274,7 +274,7 @@ describe('back-projection and reconstruction quality', () => {
 		const ordinary = computeMetrics(reference, result.backprojection);
 		const filtered = computeMetrics(reference, result.filteredBackprojection);
 		expect(filtered.scaleInvariantRmse).toBeLessThan(ordinary.scaleInvariantRmse * 0.72);
-		expect(filtered.correlation).toBeGreaterThan(ordinary.correlation + 0.07);
+		expect(filtered.correlation).toBeGreaterThan(ordinary.correlation! + 0.07);
 	});
 
 	it('makes a missing angular sector measurably worse and directionally different', () => {

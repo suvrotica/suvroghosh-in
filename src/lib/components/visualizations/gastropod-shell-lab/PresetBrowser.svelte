@@ -136,6 +136,7 @@
 	.preset-browser {
 		display: flex;
 		flex-direction: column;
+		height: 100%;
 		min-width: 0;
 		min-height: 0;
 		border-right: 1px solid var(--line);
@@ -395,6 +396,7 @@
 
 	@media (max-width: 900px) {
 		.preset-browser {
+			height: auto;
 			border-right: 0;
 			border-bottom: 1px solid var(--line);
 		}

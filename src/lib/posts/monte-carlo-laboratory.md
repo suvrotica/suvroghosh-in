@@ -2,10 +2,11 @@
 title: "The Casino That Calculates: An Interactive Monte Carlo Laboratory"
 description: "A shader-powered laboratory for watching sampled points estimate π, reveal statistical error, and demonstrate how Monte Carlo methods converge."
 date: "2026-07-21"
+dateModified: "2026-10-20"
 thumbnail: "/images/monte-carlo-laboratory.svg"
 thumbnailAlt: "A mathematical square and inscribed circle filled with classified Monte Carlo samples beside a restrained convergence curve"
 category: "Visualizations"
-tags: ["Monte Carlo","Randomized Quasi-Monte Carlo","Expensive Square-Root Law","Deliberate Ignorance","Demonstration Hides","Sampling","Pseudorandom","Monte","Samples","Estimate"]
+tags: ["Monte Carlo","Randomized Quasi-Monte Carlo","Expensive Square-Root Law","Deliberate Ignorance","Demonstration Hides","Monte","Sampling","Samples","Pseudorandom","Estimate"]
 published: true
 color: "#355C7D"
 author: "Suvro Ghosh"
@@ -107,7 +108,7 @@ $$
 \operatorname{SE}(\hat\pi)=4\sqrt{\frac{\hat p(1-\hat p)}{N}}.
 $$
 
-In pseudorandom mode, the instrument uses **π̂ ± 1.96 × SE(π̂)** as an approximate 95 per cent confidence interval. It appears only after 30 samples because the normal approximation is especially crude at tiny counts. Even later, it is an approximation built on the independent, identically distributed sampling model; it is not a force field guaranteed to contain π in every run.
+In pseudorandom mode, the instrument displays a **95 per cent Wilson score interval for the inside proportion, with both bounds multiplied by four**. It appears after 30 samples. Unlike the simple **π̂ ± 1.96 × SE(π̂)** interval, Wilson’s construction stays within the possible range zero to four and does not collapse to zero width when a finite run happens to classify every point the same way. It still relies on the independent, identically distributed sampling model and does not guarantee that every interval contains π ([NIST’s binomial-proportion interval guidance](https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm)).
 
 The denominator contains **√N**, which creates Monte Carlo's expensive bargain. Halving the typical error requires roughly four times as many independent samples. Gaining about one extra decimal digit may require around one hundred times as many. These are statistical rates, not promises for each seed, but the log-scaled error chart makes the general slope difficult to miss.
 

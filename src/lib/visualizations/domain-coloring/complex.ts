@@ -103,6 +103,9 @@ export function complexPower(base: Complex, exponent: Complex): Complex {
 	if (exponent.im === 0 && Number.isInteger(exponent.re)) {
 		return integerPower(base, exponent.re);
 	}
+	// The continuous value at zero is zero for a positive real exponent;
+	// evaluating exp(a * log(0)) instead introduces 0 * Infinity => NaN.
+	if (exactZero(base) && exponent.im === 0 && exponent.re > 0) return complex(0);
 	return complexExp(multiply(exponent, complexLog(base)));
 }
 

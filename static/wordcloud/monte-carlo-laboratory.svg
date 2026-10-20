@@ -5,130 +5,130 @@
 <text transform="translate(636,146)" font-size="114" style="fill:#c7d7b5">Sampling</text>
 <text transform="translate(94,229)" font-size="110" style="fill:#d9c89e">Carlo</text>
 <text transform="translate(788,327)" font-size="105" style="fill:#d6a79f">Error</text>
-<text transform="translate(177,651)" font-size="95" style="fill:#b6c3dd">Uncertainty</text>
-<text transform="translate(575,447)" font-size="95" style="fill:#c7d7b5">Monte</text>
-<text transform="translate(491,520)" font-size="95" style="fill:#d88988">Every</text>
-<text transform="translate(870,495)" font-size="95" style="fill:#9fc9c5">Run</text>
-<text transform="translate(196,359)" font-size="90" style="fill:#d5d2c2">Estimate</text>
-<text transform="translate(1059,553)" font-size="90" style="fill:#9fc9c5">Seed</text>
-<text transform="translate(457,244)" font-size="90" style="fill:#d88988">Pseudorandom</text>
-<text transform="translate(160,458)" font-size="84" style="fill:#e0b879">Sample</text>
-<text transform="translate(203,550)" font-size="78" style="fill:#9fc9c5">Circle</text>
-<text transform="translate(972,392)" font-size="78" style="fill:#d6a79f">Points</text>
-<text transform="translate(95,706)" font-size="72" style="fill:#8fb7d0">Uses</text>
-<text transform="translate(910,676)" font-size="72" style="fill:#d5d2c2">Sequence</text>
-<text transform="translate(970,620)" font-size="65" style="fill:#d88988">Answer</text>
-<text transform="translate(737,52)" font-size="65" style="fill:#a9b7a3">Means</text>
-<text transform="translate(776,550)" font-size="65" style="fill:#c49a6c">Square</text>
-<text transform="translate(1030,72)" font-size="65" style="fill:#b6c3dd">Field</text>
-<text transform="translate(403,160)" font-size="65" style="fill:#9fc9c5">Area</text>
-<text transform="translate(1110,312)" font-size="65" style="fill:#9fc9c5">Hat</text>
-<text transform="translate(1039,450)" font-size="65" style="fill:#b6c3dd">Budget</text>
-<text transform="translate(70,572) rotate(-90)" font-size="58" style="fill:#c49a6c">Probability</text>
-<text transform="translate(643,318)" font-size="58" style="fill:#8fb7d0">Many</text>
-<text transform="translate(421,711)" font-size="58" style="fill:#d6a79f">Problem</text>
-<text transform="translate(130,603) rotate(-90)" font-size="58" style="fill:#9fc9c5">Count</text>
-<text transform="translate(197,284)" font-size="58" style="fill:#a9b7a3">Result</text>
-<text transform="translate(809,617)" font-size="58" style="fill:#d5d2c2">Frac</text>
-<text transform="translate(667,714)" font-size="45" style="fill:#9fc9c5">Deterministic</text>
-<text transform="translate(491,560)" font-size="45" style="fill:#d5d2c2">Uniform</text>
-<text transform="translate(787,363)" font-size="45" style="fill:#9fc9c5">Target</text>
-<text transform="translate(406,281)" font-size="45" style="fill:#c7d7b5">Coverage</text>
-<text transform="translate(639,127) rotate(-90)" font-size="45" style="fill:#9fc9c5">IID</text>
-<text transform="translate(1219,235) rotate(-90)" font-size="45" style="fill:#d6a79f">Small</text>
-<text transform="translate(1261,320) rotate(-90)" font-size="45" style="fill:#b6c3dd">Independent</text>
-<text transform="translate(1110,713)" font-size="39" style="fill:#d9c89e">Methods</text>
-<text transform="translate(255,585)" font-size="39" style="fill:#a9b7a3">Carefully</text>
-<text transform="translate(482,36)" font-size="39" style="fill:#d6a79f">Simulation</text>
-<text transform="translate(85,392)" font-size="38" style="fill:#e0b879">Distribution</text>
-<text transform="translate(43,136)" font-size="34" style="fill:#d5d2c2">Approximate</text>
-<text transform="translate(33,644)" font-size="34" style="fill:#c7d7b5">Part</text>
-<text transform="translate(73,333)" font-size="34" style="fill:#c49a6c">Rather</text>
-<text transform="translate(141,29)" font-size="33" style="fill:#8fb7d0">Laboratory</text>
-<text transform="translate(159,638) rotate(-90)" font-size="33" style="fill:#9fc9c5">Coordinates</text>
-<text transform="translate(395,391)" font-size="33" style="fill:#d9c89e">Numerical</text>
-<text transform="translate(30,233) rotate(-90)" font-size="33" style="fill:#d6a79f">Calculated</text>
-<text transform="translate(592,175) rotate(-90)" font-size="33" style="fill:#b6c3dd">Change</text>
-<text transform="translate(876,405)" font-size="33" style="fill:#c49a6c">Rule</text>
-<text transform="translate(29,713) rotate(-90)" font-size="33" style="fill:#d5d2c2">Number</text>
-<text transform="translate(629,365)" font-size="30" style="fill:#a9b7a3">Estimates</text>
-<text transform="translate(705,79)" font-size="30" style="fill:#d5d2c2">Calculation</text>
-<text transform="translate(631,271)" font-size="30" style="fill:#d88988">Animation</text>
-<text transform="translate(1110,492)" font-size="30" style="fill:#8fb7d0">Boundary</text>
-<text transform="translate(921,170)" font-size="30" style="fill:#8fb7d0">Generator</text>
-<text transform="translate(985,133) rotate(-90)" font-size="30" style="fill:#9fc9c5">Method</text>
-<text transform="translate(295,679)" font-size="30" style="fill:#b6c3dd">Slow</text>
-<text transform="translate(481,418)" font-size="30" style="fill:#c7d7b5">Dots</text>
-<text transform="translate(324,711)" font-size="30" style="fill:#d6a79f">Three</text>
-<text transform="translate(730,187)" font-size="30" style="fill:#d5d2c2">Per</text>
-<text transform="translate(193,578) rotate(-90)" font-size="30" style="fill:#d6a79f">Halton</text>
-<text transform="translate(1037,579)" font-size="29" style="fill:#8fb7d0">Randomized</text>
-<text transform="translate(342,481)" font-size="25" style="fill:#d9c89e">Quasimonte</text>
-<text transform="translate(98,274)" font-size="25" style="fill:#a9b7a3">Point</text>
-<text transform="translate(619,583)" font-size="25" style="fill:#c49a6c">Model</text>
-<text transform="translate(895,265)" font-size="22" style="fill:#b6c3dd">Stratification</text>
-<text transform="translate(818,652)" font-size="22" style="fill:#b6c3dd">Becomes</text>
-<text transform="translate(1193,18)" font-size="18" style="fill:#d9c89e">Extract</text>
-<text transform="translate(522,185)" font-size="18" style="fill:#9fc9c5">Use</text>
-<text transform="translate(535,443)" font-size="18" style="fill:#9fc9c5">Ask</text>
-<text transform="translate(585,670)" font-size="17" style="fill:#c49a6c">Representative</text>
-<text transform="translate(424,296)" font-size="17" style="fill:#c49a6c">Important</text>
-<text transform="translate(1118,239)" font-size="17" style="fill:#b6c3dd">Adding</text>
-<text transform="translate(723,589)" font-size="17" style="fill:#8fb7d0">Drawing</text>
-<text transform="translate(467,577)" font-size="17" style="fill:#8fb7d0">Measuring</text>
-<text transform="translate(1108,204)" font-size="17" style="fill:#d9c89e">Average</text>
-<text transform="translate(617,184)" font-size="17" style="fill:#d9c89e">Hide</text>
-<text transform="translate(1267,677) rotate(-90)" font-size="17" style="fill:#d6a79f">Deliberately</text>
-<text transform="translate(257,476)" font-size="17" style="fill:#e0b879">Needs</text>
-<text transform="translate(789,479)" font-size="17" style="fill:#9fc9c5">Value</text>
-<text transform="translate(86,246)" font-size="17" style="fill:#a9b7a3">Convergence</text>
-<text transform="translate(1160,260)" font-size="17" style="fill:#9fc9c5">Mark</text>
-<text transform="translate(92,297)" font-size="17" style="fill:#d6a79f">Outside</text>
-<text transform="translate(934,19)" font-size="17" style="fill:#d5d2c2">Classification</text>
-<text transform="translate(50,597)" font-size="17" style="fill:#d9c89e">CPU</text>
-<text transform="translate(334,123)" font-size="17" style="fill:#d5d2c2">Shader</text>
-<text transform="translate(966,407)" font-size="17" style="fill:#8fb7d0">Draws</text>
-<text transform="translate(1193,338)" font-size="17" style="fill:#c7d7b5">Family</text>
-<text transform="translate(17,466) rotate(-90)" font-size="17" style="fill:#e0b879">Single</text>
-<text transform="translate(711,572) rotate(-90)" font-size="17" style="fill:#e0b879">Algorithm</text>
-<text transform="translate(870,485) rotate(-90)" font-size="17" style="fill:#a9b7a3">Different</text>
-<text transform="translate(51,93) rotate(-90)" font-size="17" style="fill:#b6c3dd">Particle</text>
-<text transform="translate(234,230) rotate(-90)" font-size="17" style="fill:#b6c3dd">Financial</text>
-<text transform="translate(742,569)" font-size="17" style="fill:#e0b879">Molecular</text>
-<text transform="translate(876,575)" font-size="17" style="fill:#9fc9c5">Transport</text>
-<text transform="translate(924,427)" font-size="17" style="fill:#b6c3dd">Dimensions</text>
-<text transform="translate(20,338) rotate(-90)" font-size="17" style="fill:#8fb7d0">Domain</text>
-<text transform="translate(393,32)" font-size="17" style="fill:#d6a79f">Possible</text>
-<text transform="translate(837,670)" font-size="17" style="fill:#d6a79f">Much</text>
-<text transform="translate(651,164)" font-size="17" style="fill:#d88988">Remains</text>
-<text transform="translate(138,356)" font-size="17" style="fill:#d5d2c2">Stable</text>
-<text transform="translate(635,381)" font-size="17" style="fill:#d6a79f">Estimating</text>
-<text transform="translate(787,182)" font-size="17" style="fill:#d88988">Four</text>
-<text transform="translate(1215,468)" font-size="17" style="fill:#c7d7b5">Chosen</text>
-<text transform="translate(1132,188)" font-size="17" style="fill:#c7d7b5">Text</text>
-<text transform="translate(477,446) rotate(-90)" font-size="17" style="fill:#c7d7b5">Drawn</text>
-<text transform="translate(34,664)" font-size="17" style="fill:#8fb7d0">Fall</text>
-<text transform="translate(901,189)" font-size="17" style="fill:#d5d2c2">Matters</text>
-<text transform="translate(999,184)" font-size="14" style="fill:#a9b7a3">Finiteprecision</text>
-<text transform="translate(651,337)" font-size="14" style="fill:#d5d2c2">Produce</text>
-<text transform="translate(43,162)" font-size="14" style="fill:#8fb7d0">Exactly</text>
-<text transform="translate(572,463)" font-size="14" style="fill:#9fc9c5">Statistical</text>
-<text transform="translate(1112,327)" font-size="14" style="fill:#d88988">Counting</text>
-<text transform="translate(1023,706)" font-size="14" style="fill:#d9c89e">Near</text>
-<text transform="translate(1196,625)" font-size="14" style="fill:#9fc9c5">Sampler</text>
-<text transform="translate(1055,480)" font-size="14" style="fill:#e0b879">Direct</text>
-<text transform="translate(435,627)" font-size="14" style="fill:#d5d2c2">Fixed</text>
-<text transform="translate(788,493)" font-size="14" style="fill:#d9c89e">Settings</text>
-<text transform="translate(801,383)" font-size="14" style="fill:#d6a79f">Starting</text>
-<text transform="translate(339,500)" font-size="14" style="fill:#b6c3dd">State</text>
-<text transform="translate(45,615)" font-size="14" style="fill:#d88988">Random</text>
-<text transform="translate(1080,258)" font-size="14" style="fill:#e0b879">Browser</text>
-<text transform="translate(1085,15)" font-size="14" style="fill:#a9b7a3">Generated</text>
-<text transform="translate(596,140)" font-size="14" style="fill:#d5d2c2">Rate</text>
-<text transform="translate(1271,410) rotate(-90)" font-size="14" style="fill:#b6c3dd">Spends</text>
-<text transform="translate(641,52)" font-size="14" style="fill:#d9c89e">Instrument</text>
-<text transform="translate(1209,583)" font-size="14" style="fill:#a9b7a3">GPU</text>
-<text transform="translate(251,243)" font-size="14" style="fill:#d5d2c2">Information</text>
-<text transform="translate(846,635)" font-size="14" style="fill:#d9c89e">Labelled</text>
-<text transform="translate(77,409)" font-size="14" style="fill:#d88988">Mulberry32</text>
+<text transform="translate(489,503)" font-size="100" style="fill:#9fc9c5">Every</text>
+<text transform="translate(11,366)" font-size="95" style="fill:#a9b7a3">Uncertainty</text>
+<text transform="translate(885,665)" font-size="95" style="fill:#d88988">Monte</text>
+<text transform="translate(396,636)" font-size="95" style="fill:#9fc9c5">Run</text>
+<text transform="translate(297,713)" font-size="90" style="fill:#e0b879">Estimate</text>
+<text transform="translate(869,710) rotate(-90)" font-size="90" style="fill:#b6c3dd">Seed</text>
+<text transform="translate(617,440)" font-size="90" style="fill:#9fc9c5">Pseudorandom</text>
+<text transform="translate(453,237)" font-size="84" style="fill:#d88988">Sample</text>
+<text transform="translate(35,439)" font-size="78" style="fill:#e0b879">Circle</text>
+<text transform="translate(973,509)" font-size="78" style="fill:#9fc9c5">Points</text>
+<text transform="translate(782,229)" font-size="72" style="fill:#d6a79f">Sequence</text>
+<text transform="translate(198,614)" font-size="65" style="fill:#d5d2c2">Uses</text>
+<text transform="translate(1027,567)" font-size="65" style="fill:#9fc9c5">Answer</text>
+<text transform="translate(102,675)" font-size="65" style="fill:#9fc9c5">Means</text>
+<text transform="translate(101,542)" font-size="65" style="fill:#d88988">Square</text>
+<text transform="translate(608,606)" font-size="65" style="fill:#c7d7b5">Area</text>
+<text transform="translate(367,473)" font-size="65" style="fill:#d9c89e">Hat</text>
+<text transform="translate(1038,57)" font-size="65" style="fill:#9fc9c5">Budget</text>
+<text transform="translate(9,285)" font-size="65" style="fill:#b6c3dd">Interval</text>
+<text transform="translate(554,46)" font-size="55" style="fill:#9fc9c5">Probability</text>
+<text transform="translate(439,156)" font-size="55" style="fill:#9fc9c5">Many</text>
+<text transform="translate(373,556)" font-size="55" style="fill:#8fb7d0">Problem</text>
+<text transform="translate(59,489)" font-size="55" style="fill:#d6a79f">Count</text>
+<text transform="translate(1212,384) rotate(-90)" font-size="55" style="fill:#9fc9c5">Field</text>
+<text transform="translate(975,711)" font-size="55" style="fill:#e0b879">Result</text>
+<text transform="translate(431,412)" font-size="55" style="fill:#8fb7d0">Four</text>
+<text transform="translate(348,288)" font-size="55" style="fill:#b6c3dd">Frac</text>
+<text transform="translate(672,367)" font-size="48" style="fill:#c7d7b5">Deterministic</text>
+<text transform="translate(562,307)" font-size="48" style="fill:#c49a6c">Uniform</text>
+<text transform="translate(6,595)" font-size="48" style="fill:#c7d7b5">Target</text>
+<text transform="translate(1262,303) rotate(-90)" font-size="48" style="fill:#c7d7b5">Coverage</text>
+<text transform="translate(890,547)" font-size="48" style="fill:#d6a79f">IID</text>
+<text transform="translate(788,493)" font-size="48" style="fill:#b6c3dd">Point</text>
+<text transform="translate(147,715)" font-size="48" style="fill:#d9c89e">Small</text>
+<text transform="translate(569,638)" font-size="37" style="fill:#a9b7a3">Independent</text>
+<text transform="translate(981,262)" font-size="32" style="fill:#d6a79f">Methods</text>
+<text transform="translate(30,225) rotate(-90)" font-size="32" style="fill:#8fb7d0">Carefully</text>
+<text transform="translate(900,175)" font-size="32" style="fill:#c49a6c">Simulation</text>
+<text transform="translate(979,595)" font-size="32" style="fill:#d88988">Distribution</text>
+<text transform="translate(1186,670)" font-size="32" style="fill:#c7d7b5">Part</text>
+<text transform="translate(356,505)" font-size="32" style="fill:#d6a79f">Rather</text>
+<text transform="translate(71,134)" font-size="32" style="fill:#e0b879">Laboratory</text>
+<text transform="translate(139,35)" font-size="32" style="fill:#d5d2c2">Coordinates</text>
+<text transform="translate(623,554)" font-size="32" style="fill:#d5d2c2">Numerical</text>
+<text transform="translate(1150,367) rotate(-90)" font-size="32" style="fill:#d6a79f">Calculated</text>
+<text transform="translate(40,715) rotate(-90)" font-size="32" style="fill:#b6c3dd">Change</text>
+<text transform="translate(389,37)" font-size="32" style="fill:#c49a6c">Possible</text>
+<text transform="translate(355,467) rotate(-90)" font-size="32" style="fill:#d5d2c2">Rule</text>
+<text transform="translate(918,45)" font-size="32" style="fill:#d9c89e">Number</text>
+<text transform="translate(621,266)" font-size="32" style="fill:#a9b7a3">Estimates</text>
+<text transform="translate(698,78)" font-size="27" style="fill:#e0b879">Calculation</text>
+<text transform="translate(699,172)" font-size="27" style="fill:#d88988">Animation</text>
+<text transform="translate(26,544) rotate(-90)" font-size="27" style="fill:#d6a79f">Boundary</text>
+<text transform="translate(119,309)" font-size="27" style="fill:#d88988">Generator</text>
+<text transform="translate(341,160)" font-size="27" style="fill:#c49a6c">Method</text>
+<text transform="translate(77,229) rotate(-90)" font-size="27" style="fill:#d9c89e">Slow</text>
+<text transform="translate(557,116)" font-size="27" style="fill:#d9c89e">Dots</text>
+<text transform="translate(889,714)" font-size="27" style="fill:#d6a79f">Three</text>
+<text transform="translate(567,173)" font-size="27" style="fill:#d5d2c2">Per</text>
+<text transform="translate(387,659) rotate(-90)" font-size="27" style="fill:#d6a79f">Halton</text>
+<text transform="translate(452,579)" font-size="25" style="fill:#8fb7d0">Randomized</text>
+<text transform="translate(1221,215) rotate(-90)" font-size="25" style="fill:#d9c89e">Quasimonte</text>
+<text transform="translate(266,387)" font-size="22" style="fill:#a9b7a3">Construction</text>
+<text transform="translate(223,490)" font-size="22" style="fill:#c49a6c">Proportion</text>
+<text transform="translate(351,569) rotate(-90)" font-size="22" style="fill:#b6c3dd">Model</text>
+<text transform="translate(58,196) rotate(-90)" font-size="22" style="fill:#b6c3dd">Stratification</text>
+<text transform="translate(299,126)" font-size="22" style="fill:#d9c89e">Becomes</text>
+<text transform="translate(687,328)" font-size="18" style="fill:#9fc9c5">Extract</text>
+<text transform="translate(1112,526)" font-size="18" style="fill:#9fc9c5">Use</text>
+<text transform="translate(1186,633) rotate(-90)" font-size="18" style="fill:#c49a6c">Ask</text>
+<text transform="translate(183,559)" font-size="17" style="fill:#c49a6c">Representative</text>
+<text transform="translate(1044,382)" font-size="17" style="fill:#b6c3dd">Important</text>
+<text transform="translate(726,669)" font-size="17" style="fill:#8fb7d0">Adding</text>
+<text transform="translate(876,572)" font-size="17" style="fill:#8fb7d0">Drawing</text>
+<text transform="translate(497,256)" font-size="17" style="fill:#d9c89e">Measuring</text>
+<text transform="translate(624,163)" font-size="17" style="fill:#d9c89e">Average</text>
+<text transform="translate(86,709) rotate(-90)" font-size="17" style="fill:#d6a79f">Approximate</text>
+<text transform="translate(768,600)" font-size="17" style="fill:#a9b7a3">Hide</text>
+<text transform="translate(180,158)" font-size="17" style="fill:#d5d2c2">Deliberately</text>
+<text transform="translate(49,535)" font-size="17" style="fill:#b6c3dd">Needs</text>
+<text transform="translate(1070,358)" font-size="17" style="fill:#b6c3dd">Value</text>
+<text transform="translate(756,382)" font-size="17" style="fill:#d6a79f">Convergence</text>
+<text transform="translate(1248,363) rotate(-90)" font-size="17" style="fill:#d88988">Mark</text>
+<text transform="translate(971,120) rotate(-90)" font-size="17" style="fill:#c7d7b5">Outside</text>
+<text transform="translate(199,634)" font-size="17" style="fill:#d9c89e">Classification</text>
+<text transform="translate(27,405) rotate(-90)" font-size="17" style="fill:#8fb7d0">CPU</text>
+<text transform="translate(558,408)" font-size="17" style="fill:#c7d7b5">Shader</text>
+<text transform="translate(779,325) rotate(-90)" font-size="17" style="fill:#e0b879">Draws</text>
+<text transform="translate(1267,614) rotate(-90)" font-size="17" style="fill:#c7d7b5">Family</text>
+<text transform="translate(237,465)" font-size="17" style="fill:#c7d7b5">Single</text>
+<text transform="translate(549,77)" font-size="17" style="fill:#d9c89e">Algorithm</text>
+<text transform="translate(890,383)" font-size="17" style="fill:#d88988">Different</text>
+<text transform="translate(1189,700)" font-size="17" style="fill:#9fc9c5">Particle</text>
+<text transform="translate(37,563)" font-size="17" style="fill:#b6c3dd">Financial</text>
+<text transform="translate(1190,206) rotate(-90)" font-size="17" style="fill:#8fb7d0">Molecular</text>
+<text transform="translate(1047,74)" font-size="17" style="fill:#d6a79f">Transport</text>
+<text transform="translate(615,524)" font-size="17" style="fill:#d6a79f">Dimensions</text>
+<text transform="translate(484,272)" font-size="17" style="fill:#d88988">Domain</text>
+<text transform="translate(168,383)" font-size="17" style="fill:#d5d2c2">Much</text>
+<text transform="translate(455,306)" font-size="17" style="fill:#d6a79f">Remains</text>
+<text transform="translate(668,384)" font-size="17" style="fill:#d88988">Stable</text>
+<text transform="translate(503,655)" font-size="17" style="fill:#c7d7b5">Estimating</text>
+<text transform="translate(911,263)" font-size="17" style="fill:#c7d7b5">Chosen</text>
+<text transform="translate(46,486) rotate(-90)" font-size="17" style="fill:#c7d7b5">Text</text>
+<text transform="translate(1199,619)" font-size="17" style="fill:#a9b7a3">Drawn</text>
+<text transform="translate(732,708)" font-size="17" style="fill:#d6a79f">Fall</text>
+<text transform="translate(892,591)" font-size="17" style="fill:#a9b7a3">Matters</text>
+<text transform="translate(1154,523)" font-size="13" style="fill:#d5d2c2">Finiteprecision</text>
+<text transform="translate(479,427)" font-size="13" style="fill:#9fc9c5">Produce</text>
+<text transform="translate(382,244)" font-size="13" style="fill:#8fb7d0">Exactly</text>
+<text transform="translate(671,651)" font-size="13" style="fill:#9fc9c5">Statistical</text>
+<text transform="translate(361,409)" font-size="13" style="fill:#d88988">Counting</text>
+<text transform="translate(949,15)" font-size="13" style="fill:#d5d2c2">Near</text>
+<text transform="translate(373,305)" font-size="13" style="fill:#a9b7a3">Sampler</text>
+<text transform="translate(736,686)" font-size="13" style="fill:#d5d2c2">Direct</text>
+<text transform="translate(1037,459)" font-size="13" style="fill:#d5d2c2">Fixed</text>
+<text transform="translate(548,421)" font-size="13" style="fill:#b6c3dd">Settings</text>
+<text transform="translate(1272,511) rotate(-90)" font-size="13" style="fill:#8fb7d0">Starting</text>
+<text transform="translate(973,607)" font-size="13" style="fill:#d88988">State</text>
+<text transform="translate(921,507)" font-size="13" style="fill:#e0b879">Random</text>
+<text transform="translate(411,14)" font-size="13" style="fill:#a9b7a3">Browser</text>
+<text transform="translate(444,171)" font-size="13" style="fill:#d5d2c2">Generated</text>
+<text transform="translate(651,368) rotate(-90)" font-size="13" style="fill:#b6c3dd">Rate</text>
+<text transform="translate(572,145)" font-size="13" style="fill:#d9c89e">Spends</text>
+<text transform="translate(104,453)" font-size="13" style="fill:#a9b7a3">Instrument</text>
+<text transform="translate(871,261)" font-size="13" style="fill:#d5d2c2">GPU</text>
 </svg>

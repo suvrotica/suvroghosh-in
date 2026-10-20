@@ -120,7 +120,7 @@
 			WORLD_WIDTH / 2,
 			WORLD_HEIGHT / 2,
 			WORLD_WIDTH * 0.47,
-			WORLD_HEIGHT * 0.43,
+			WORLD_HEIGHT * 0.44,
 			0,
 			0,
 			Math.PI * 2
@@ -149,7 +149,7 @@
 				WORLD_WIDTH / 2,
 				WORLD_HEIGHT / 2,
 				(WORLD_WIDTH * 0.47 * ring) / 5,
-				(WORLD_HEIGHT * 0.43 * ring) / 5,
+				(WORLD_HEIGHT * 0.44 * ring) / 5,
 				0,
 				0,
 				Math.PI * 2
@@ -221,7 +221,7 @@
 			WORLD_WIDTH / 2,
 			WORLD_HEIGHT / 2,
 			WORLD_WIDTH * 0.47,
-			WORLD_HEIGHT * 0.43,
+			WORLD_HEIGHT * 0.44,
 			0,
 			0,
 			Math.PI * 2
@@ -409,12 +409,12 @@
 
 <div
 	bind:this={host}
-	class="relative aspect-[16/10] min-h-72 overflow-hidden bg-neutral-950 sm:min-h-96"
+	class="relative aspect-[16/10] min-h-72 w-full max-w-full min-w-0 overflow-hidden bg-neutral-950 sm:min-h-96"
 >
 	{#if canvasEnabled}
 		<canvas
 			bind:this={canvas}
-			class="block h-full w-full"
+			class="absolute inset-0 block h-full w-full"
 			data-render-frame-cap="30"
 			data-simulation-state={paused ? 'paused' : 'running'}
 			aria-label="A living digital ecosystem. Inherited traits visibly change each microbe's body shape, cilia, flagella, armour, internal organelles, and colour. Young microbes are small and translucent; adults are vivid; elders become pale and scarred. Gold gulps mark feeding, cyan ripples mark collisions, bright rings mark births, and coral hunters visibly swallow prey."

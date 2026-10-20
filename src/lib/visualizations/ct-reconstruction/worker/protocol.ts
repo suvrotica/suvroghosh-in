@@ -261,7 +261,7 @@ function isMetrics(value: unknown): value is ReconstructionMetrics {
 		isFiniteNumber(candidate.normalizedRmse) &&
 		isFiniteNumber(candidate.scaleInvariantRmse) &&
 		isFiniteNumber(candidate.mae) &&
-		isFiniteNumber(candidate.correlation) &&
+		(candidate.correlation === null || isFiniteNumber(candidate.correlation)) &&
 		typeof candidate.peakSignalToNoiseRatio === 'number' &&
 		!Number.isNaN(candidate.peakSignalToNoiseRatio)
 	);

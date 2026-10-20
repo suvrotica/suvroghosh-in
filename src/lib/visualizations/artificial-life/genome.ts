@@ -1,5 +1,6 @@
 import type { Genome, SimulationParameters } from './types';
 import type { SeededRandom } from './seededRandom';
+import { DEFAULT_SIMULATION_PARAMETERS } from './simulationPresets';
 
 type GenomeBounds = Record<keyof Genome, readonly [number, number]>;
 
@@ -31,7 +32,10 @@ function around(
 	return clamp(centre * random.range(1 - spread, 1 + spread), minimum, maximum);
 }
 
-export function createRandomGenome(random: SeededRandom, parameters: SimulationParameters): Genome {
+export function createRandomGenome(random: SeededRandom): Genome {
+	// Store inherited traits at the reference environment. The engine applies the
+	// current control multiplier once, including for founders and after a restart.
+	const parameters = DEFAULT_SIMULATION_PARAMETERS;
 	return {
 		movementSpeed: random.range(34, 70),
 		bodySize: random.range(4.8, 9.2),

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 	import type p5 from 'p5';
 	import type {
 		UniformValue,
@@ -21,7 +21,7 @@
 
 	let { definition, parameters, paused, restartToken, onstatus, ontoggle }: Props = $props();
 	let host: HTMLDivElement;
-	let instance: p5 | null = null;
+	let instance = $state.raw<p5 | null>(null);
 	let elapsed = 0;
 	let pointerX = 0.5;
 	let pointerY = 0.5;
@@ -182,8 +182,10 @@
 
 	$effect(() => {
 		if (restartToken >= 0) {
-			elapsed = 0;
-			if (instance && paused) instance.redraw();
+			untrack(() => {
+				elapsed = 0;
+				if (instance && paused) instance.redraw();
+			});
 		}
 	});
 </script>

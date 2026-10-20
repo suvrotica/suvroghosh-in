@@ -19,7 +19,15 @@
 	type ReplayMode = 'actual' | 'normalized';
 	type Tick = { x: number; label: string };
 
-	const chart = { width: 640, height: 238, left: 58, right: 620, top: 20, bottom: 196 };
+	let chartWidth = $state(640);
+	let chart = $derived({
+		width: chartWidth,
+		height: 238,
+		left: 58,
+		right: chartWidth - 20,
+		top: 20,
+		bottom: 196
+	});
 	const chartSamples = 220;
 	const normalizedReplaySeconds = 12;
 	const actualReplaySeconds = 18;
@@ -32,6 +40,7 @@
 	});
 
 	let root: HTMLElement;
+	let traceSvg: SVGSVGElement;
 	let selectedId = $state('human');
 	let comparisonId = $state('');
 	let replayMode = $state<ReplayMode>('actual');
@@ -88,8 +97,9 @@
 	}
 
 	function makeTicks(candidate: CalciumProfile, mode: ReplayMode): Tick[] {
-		return Array.from({ length: 5 }, (_, index) => {
-			const fraction = index / 4;
+		const divisions = chart.width < 480 ? 2 : 4;
+		return Array.from({ length: divisions + 1 }, (_, index) => {
+			const fraction = index / divisions;
 			return {
 				x: chart.left + fraction * (chart.right - chart.left),
 				label:
@@ -198,6 +208,15 @@
 
 	onMount(() => {
 		hydrated = true;
+		// Fit coordinates to the actual plot width so SVG text remains readable
+		// on a phone instead of shrinking a 640-unit drawing to half its size.
+		const syncChartWidth = () => {
+			const width = traceSvg.getBoundingClientRect().width;
+			if (width > 0) chartWidth = Math.max(280, Math.min(640, Math.round(width)));
+		};
+		const chartObserver = new ResizeObserver(syncChartWidth);
+		chartObserver.observe(traceSvg);
+		syncChartWidth();
 		const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 		const syncMotion = () => {
 			reducedMotion =
@@ -248,6 +267,7 @@
 
 		return () => {
 			cancelAnimationFrame(frame);
+			chartObserver.disconnect();
 			motionQuery.removeEventListener('change', syncMotion);
 			motionObserver.disconnect();
 			intersectionObserver.disconnect();
@@ -523,6 +543,7 @@
 			</div>
 
 			<svg
+				bind:this={traceSvg}
 				class="trace-svg"
 				viewBox={`0 0 ${chart.width} ${chart.height}`}
 				role="img"
@@ -1230,7 +1251,7 @@
 	.axis-tick,
 	.axis-title {
 		fill: var(--ink-muted);
-		font: 10px var(--font-mono, ui-monospace, monospace);
+		font: 11px var(--font-mono, ui-monospace, monospace);
 	}
 
 	.axis-title {

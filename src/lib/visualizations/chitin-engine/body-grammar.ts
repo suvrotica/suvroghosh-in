@@ -130,7 +130,9 @@ function wingRoots(genome: CreatureGenome, boundaries: readonly number[]): reado
 		return [];
 	}
 	if (genome.bodyPlan === 'terrestrial-insect') {
-		return spreadRoots(2, boundaries[1], Math.max(boundaries[1], boundaries[2] - 1));
+		// The prothorax has legs but no ordinary wings. Wing pairs arise on
+		// the mesothorax and metathorax, the second and third thoracic segments.
+		return [boundaries[1] + 1, boundaries[1] + 2];
 	}
 	const root = clampInteger(genome.bodySegments * 0.42, 1, Math.max(1, genome.bodySegments - 2));
 	return [root];
@@ -435,6 +437,12 @@ export function validateBodyGraph(
 		if (antennae.length !== 2) issues.push('Terrestrial insects require one antenna pair.');
 		const thoraxStart = boundaries[1];
 		const thoraxEnd = boundaries[2];
+		if (thoraxEnd - thoraxStart !== 3) {
+			issues.push('Insect thorax must contain three segments.');
+		}
+		if (wings.some((socket) => ![thoraxStart + 1, thoraxStart + 2].includes(socket.segmentIndex))) {
+			issues.push('Insect wings must root on the mesothorax or metathorax.');
+		}
 		if (
 			[...walking, ...wings].some(
 				(socket) => socket.segmentIndex < thoraxStart || socket.segmentIndex >= thoraxEnd

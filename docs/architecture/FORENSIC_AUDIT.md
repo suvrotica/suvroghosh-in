@@ -207,6 +207,15 @@ this is not a claim of silent draft loss.
 
 ### AF-005 — Fractal Atlas trusts a partial laboratory envelope after validating core state
 
+Follow-up, 20 October 2026: the feature-local `specimen-state.ts` normalizer now validates
+both imported laboratory settings and stored specimen envelopes before restore. It preserves
+valid partial/older settings using finite defaults, bounds divider/path controls, checks actual
+booleans and enums, validates the comparison recipe through the existing parser, and checks
+decimal-string coordinates against the same numeric point. The selected-point assignment
+also uses that decimal boundary. Focused malformed-envelope, deep-coordinate preservation
+and round-trip regressions were added; the combined visualization review records production
+and browser validation. The original evidence below is retained as the baseline finding.
+
 | Field          | Evidence and assessment                                                                                                                                                                                                                                                                                                                                    |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ID             | AF-005                                                                                                                                                                                                                                                                                                                                                     |
@@ -221,7 +230,7 @@ this is not a claim of silent draft loss.
 | Scope          | Fractal Atlas component, focused laboratory-state module and tests.                                                                                                                                                                                                                                                                                        |
 | Risk           | Medium: preserve valid old specimens and high-precision decimal state.                                                                                                                                                                                                                                                                                     |
 | Validation     | Valid import/export round trips, absent divider, malformed numbers, partial/old local specimens and invalid decimal fields; assert finite bounds and unchanged valid rendering.                                                                                                                                                                            |
-| Status         | **Open**.                                                                                                                                                                                                                                                                                                                                                  |
+| Status         | **Corrected in source on 20 October 2026**; bounded-envelope regressions pass. See the visualization review for production/browser verification.                                                                                                                                                                                                           |
 
 The probe used a supplied valid core-parser result to isolate the envelope failure. It was not a
 full browser import test and does not establish every malformed-value consequence.
@@ -249,7 +258,8 @@ axes and priorities. `meaning-connection-map/lifecycle.ts` owns the settle timer
 callback/stop, zoom dispatch, SVG/descendant transition interruption and element removal. Cleanup
 is instance-owned and idempotent. Four lifecycle fixtures plus three existing graph-integrity tests
 pass. The fix avoids removing global D3 window namespaces; transient gesture completion remains
-D3-owned. The separate search/filter/accessibility finding `AF-013` stays open.
+D3-owned. The separate search/filter/accessibility finding `AF-013` is now remediated in source
+with focused browser verification; comprehensive accessibility review remains open as described below.
 
 The introduction (`b6175ba3`) and wrapper change (`61fb0087`) explain the specialization. The
 baseline relationship fix/revert/reapply (`e358bfb3`, `b3a6a10f`, `2a31d9a3`) addresses D3 edge
@@ -380,7 +390,21 @@ already supports the correction; no framework migration is necessary.
 | Scope          | Map interaction/controller logic and focused browser/view-model tests.                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Risk           | Medium: selection and transitions must stay coherent when filters hide the selected node.                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Validation     | Search results; category hide → select/close/background clear; initial keyboard-only concept selection; screen-reader names/descriptions; retain current edge integrity/mutation-isolation tests.                                                                                                                                                                                                                                                                                          |
-| Status         | **Open**, source-verified; browser/accessibility integration pending.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Status         | **Remediated in source, focused unit tests and production-browser checks**; comprehensive accessibility integration remains open.                                                                                                                                                                                                                                                                                                                                                          |
+
+**20 October 2026 visualization-review follow-up:** a single reactive D3 projection now composes
+search, category visibility, selection highlighting, pointer access and keyboard tab order.
+Closing the panel or clicking the background clears highlighting without restoring filtered nodes.
+Filtering the selected concept clears selection; following an explicit detail link enables the
+destination category and clears a conflicting search. SVG concepts have button roles, names,
+pressed state, Enter/Space activation and a visible focus ring. Incoming relations name both
+authored endpoints instead of presenting the relation backwards. A container resize observer
+replaces the fixed 2400-by-1800 viewport crop and is disconnected at teardown. Nine focused
+graph/projection/lifecycle fixtures pass, including search/category intersection and authored-edge
+mutation isolation. Production-browser checks also pass for keyboard selection, search clearing a
+hidden selection, mobile detail-panel width and navigation/header geometry. See the
+[visualization review](../visualization-review-2026-10-20.md) for the complete exercised scope.
+These checks are not a comprehensive screen-reader or accessibility integration audit.
 
 ## Non-findings and deliberate exceptions
 

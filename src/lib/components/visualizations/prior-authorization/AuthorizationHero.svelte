@@ -74,6 +74,8 @@
 		display: grid;
 		gap: clamp(1rem, 2.5vw, 1.6rem);
 		min-height: 33rem;
+		min-width: 0;
+		grid-template-columns: minmax(0, 1fr);
 		align-content: center;
 		border: 1px solid var(--rule);
 		border-radius: 1rem;
@@ -122,6 +124,12 @@
 		grid-template-columns: auto minmax(0, 1fr);
 		align-items: start;
 		gap: 1rem;
+	}
+
+	.hero-grid > *,
+	.patient-card > *,
+	.entry-controls > * {
+		min-width: 0;
 	}
 
 	.patient-mark {
@@ -272,7 +280,7 @@
 
 		.hero-grid,
 		.entry-controls {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
 		}
 
 		.begin-block {
@@ -286,11 +294,13 @@
 
 	@media (max-width: 34rem) {
 		.patient-card {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
 		}
 
 		h1 {
-			font-size: clamp(2.4rem, 16vw, 4.6rem);
+			max-width: 100%;
+			font-size: clamp(2rem, 12vw, 4rem);
+			overflow-wrap: anywhere;
 		}
 	}
 

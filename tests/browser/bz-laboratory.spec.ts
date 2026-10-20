@@ -613,6 +613,19 @@ test('mobile Gallery stays in bounds and its tabs remain keyboard-accessible', a
 	expect(geometry.left).toBeGreaterThanOrEqual(0);
 	expect(geometry.right).toBeLessThanOrEqual(geometry.viewport + 1);
 	expect(geometry.documentOverflow).toBeLessThanOrEqual(1);
+	const fieldBox = await exhibit.getByTestId('bz-stage').boundingBox();
+	const engineBox = await exhibit.locator('.stage-shell .engine-line').boundingBox();
+	expect(fieldBox).not.toBeNull();
+	expect(engineBox).not.toBeNull();
+	for (const badge of await exhibit.locator('.dish-status span').all()) {
+		const badgeBox = await badge.boundingBox();
+		expect(badgeBox).not.toBeNull();
+		// Wrapping engine diagnostics must not become the positioning area for field badges.
+		expect(badgeBox!.y).toBeGreaterThanOrEqual(fieldBox!.y);
+		expect(badgeBox!.y + badgeBox!.height).toBeLessThanOrEqual(
+			Math.min(fieldBox!.y + fieldBox!.height, engineBox!.y) + 1
+		);
+	}
 
 	const cards = exhibit.locator('.hero-card');
 	const firstCard = await cards.nth(0).boundingBox();

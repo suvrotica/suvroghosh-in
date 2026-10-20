@@ -540,12 +540,9 @@ export const MODEL_REGISTRY: ModelRegistry = {
 			return {
 				meanSquareDisplacement: prediction.msd,
 				finiteMeanSquareDisplacement: true,
-				notes:
-					parameters.forceX === 0 && parameters.forceY === 0
-						? ['The displayed MSD theory is the free, force-free equilibrium curve.']
-						: [
-								'The ballistic-to-diffusive MSD curve excludes deterministic displacement from the selected constant force.'
-							],
+				notes: [
+					'The unbounded MSD theory includes the selected initial velocities and constant force. Position stepping uses a finite-timestep trapezoid approximation.'
+				],
 				scalars: {
 					relaxationTime: prediction.relaxationTime,
 					longTimeDiffusion: prediction.longTimeDiffusion,
