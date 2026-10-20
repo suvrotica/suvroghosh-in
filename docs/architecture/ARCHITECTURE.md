@@ -124,6 +124,19 @@ The three concrete visualization wrappers are intentional bundle/rendering adapt
 
 `src/lib/server/content/posts.ts` eagerly imports only Markdown metadata, omits unpublished/redirected posts, validates required fields, maps categories into sections, and derives topic membership, archives, navigation, related posts, curated paths and facets. Publication currently means `published !== false`; missing publication flags are not implicitly private. `src/lib/content/posts.ts` defines the metadata interface and runtime checks, but does not offer the same strict runtime schema as notes or topic headquarters.
 
+Categories may have parents, defined by `categoryParents` in `src/lib/content/categories.ts`; `categoryTrail` supplies the root-to-leaf ancestry with cycle detection. Poetry is the parent of Limerick. Both map into the existing Essays section in `sections.json`, leaving the six permanent sections intact. Posts retain one leaf `category` and the existing `/blog/[category]/[slug]` canonical URL. Parent archives and category search include descendant posts; archive facets/counts, the writing index and sitemap include their populated ancestors. Category archives link their published children and parents. Article breadcrumbs use the same ancestry in visible navigation and JSON-LD. Categories without parents preserve their existing behavior.
+
+```mermaid
+flowchart TB
+    Hierarchy["categories.ts: Poetry → Limerick"] --> Trail["categoryTrail: root to leaf"]
+    Post["Markdown: category Limerick"] --> Registry["Published-post registry"]
+    Trail --> Registry
+    Registry --> Archives["Ancestor archives, counts and search"]
+    Trail --> Breadcrumbs["Visible and JSON-LD breadcrumbs"]
+    Registry --> Discovery["Writing index and sitemap"]
+    Post --> Canonical["Existing leaf-category article URL"]
+```
+
 `src/lib/content/professional-projects.ts` remains the single work registry used by the work page and résumé. Optional factual status labels distinguish experiments, demos, the in-use publishing system and past work without constraining future media or industries. The homepage server load selects three IDs from that same registry and sends serializable card and optional image metadata (source, alternative text and dimensions) to `WorkWorlds`; recent writing continues to come from the published-post registry. Work-page ordering puts existing independent work before career projects while preserving each project anchor. The shared YouTube destination lives in `config/links.ts`; no video feed, new third-party integration or separate product catalog was added.
 
 ### Homepage fieldbook rendering

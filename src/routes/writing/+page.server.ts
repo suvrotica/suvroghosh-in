@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { categoryLabel } from '$lib/content/categories';
+import { categoryLabel, categoryTrail } from '$lib/content/categories';
 import { getPublishedPosts } from '$lib/server/content/posts';
 
 export const prerender = true;
@@ -20,9 +20,10 @@ export const load: PageServerLoad = () => {
 	const groups = new Map<string, typeof posts>();
 
 	for (const post of posts) {
-		const categorySlug = post.categorySlug ?? 'uncategorized';
-		if (!groups.has(categorySlug)) groups.set(categorySlug, []);
-		groups.get(categorySlug)!.push(post);
+		for (const categorySlug of categoryTrail(post.categorySlug)) {
+			if (!groups.has(categorySlug)) groups.set(categorySlug, []);
+			groups.get(categorySlug)!.push(post);
+		}
 	}
 
 	const categories = Array.from(groups.entries())

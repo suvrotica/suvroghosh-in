@@ -1,4 +1,4 @@
-import { categoryLabel, slugifyCategory } from '$lib/content/categories';
+import { categoryLabel, categoryTrail, slugifyCategory } from '$lib/content/categories';
 import {
 	SECTIONS,
 	requireSectionSlug,
@@ -274,7 +274,7 @@ export function getCuratedReadingPathSummaries(): ReadingPathSummary[] {
 
 export function getPublishedPostsByCategory(category: string) {
 	const categorySlug = slugifyCategory(category);
-	return publishedPosts.filter((post) => post.categorySlug === categorySlug);
+	return publishedPosts.filter((post) => categoryTrail(post.categorySlug).includes(categorySlug));
 }
 
 export function getPublishedPostsBySection(section: string) {
@@ -342,11 +342,13 @@ export function getPostSearchFacets() {
 	const yearCounts = new Map<string, number>();
 
 	for (const post of publishedPosts) {
-		const category = categoryCounts.get(post.categorySlug);
-		categoryCounts.set(post.categorySlug, {
-			label: post.categoryLabel,
-			count: (category?.count ?? 0) + 1
-		});
+		for (const slug of categoryTrail(post.categorySlug)) {
+			const category = categoryCounts.get(slug);
+			categoryCounts.set(slug, {
+				label: categoryLabel(slug),
+				count: (category?.count ?? 0) + 1
+			});
+		}
 		sectionCounts.set(post.sectionSlug, (sectionCounts.get(post.sectionSlug) ?? 0) + 1);
 
 		const year = /^\d{4}/.exec(post.date)?.[0];

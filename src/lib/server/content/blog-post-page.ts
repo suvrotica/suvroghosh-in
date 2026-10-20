@@ -10,7 +10,7 @@ import {
 	siteUrl,
 	withSiteGraph
 } from '$lib/components/seo/SEO';
-import { categoryLabel, slugifyCategory } from '$lib/content/categories';
+import { categoryLabel, categoryTrail, slugifyCategory } from '$lib/content/categories';
 import { postPath, redirectedPostPath, sanitizeEssayInk } from '$lib/content/posts';
 import { getImageDimensions } from '$lib/server/image-metadata';
 import {
@@ -33,6 +33,10 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 
 	const canonicalUrl = blogPostUrl(metadata.category, slug);
 	const catLabel = categoryLabel(normalizedCategory);
+	const categoryBreadcrumbs = categoryTrail(normalizedCategory).map((slug) => ({
+		slug,
+		label: categoryLabel(slug)
+	}));
 	const topicLabels = [...metadata.tags, ...(metadata.series ?? []), ...metadata.derivedTopics];
 	const visibleTopicLabels = metadata.pinnedTags?.length
 		? metadata.pinnedTags.slice(0, 5)
@@ -44,12 +48,16 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 	const breadcrumbs = breadcrumbSchema([
 		{ name: 'Home', url: siteUrl },
 		{ name: 'Blog', url: `${siteUrl}/blog` },
-		{ name: catLabel, url: `${siteUrl}/blog/${normalizedCategory}` },
+		...categoryBreadcrumbs.map(({ slug, label }) => ({
+			name: label,
+			url: `${siteUrl}/blog/${slug}`
+		})),
 		{ name: metadata.title, url: canonicalUrl }
 	]);
 
 	return {
 		slug,
+		categoryBreadcrumbs,
 		essayInk: sanitizeEssayInk(metadata.color),
 		postNavigation: getPostNavigation(slug),
 		postTopics: getPostTopicLinks(visibleTopicLabels),

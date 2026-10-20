@@ -1,5 +1,6 @@
 import { siteUrl } from '$lib/components/seo/SEO';
 import { postPath } from '$lib/content/posts';
+import { categoryTrail } from '$lib/content/categories';
 import { sketchMuseumResource } from '$lib/content/site-resources';
 import { promotedTopicPath, topicHeadquartersPath, topicPath } from '$lib/content/topics';
 import {
@@ -35,9 +36,11 @@ export async function GET() {
 		const category = post.categorySlug ?? 'uncategorized';
 		const year = /^\d{4}/.exec(post.date)?.[0];
 		const lastMod = post.dateModified ?? post.date;
-		const previous = categoryLastMod.get(category);
-		if (!previous || new Date(lastMod).getTime() > new Date(previous).getTime()) {
-			categoryLastMod.set(category, lastMod);
+		for (const categorySlug of categoryTrail(category)) {
+			const previous = categoryLastMod.get(categorySlug);
+			if (!previous || new Date(lastMod).getTime() > new Date(previous).getTime()) {
+				categoryLastMod.set(categorySlug, lastMod);
+			}
 		}
 		if (year) {
 			const previousYear = yearLastMod.get(year);

@@ -1,8 +1,13 @@
 import { error, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { slugifyCategory, categoryLabel } from '$lib/content/categories';
+import {
+	slugifyCategory,
+	categoryLabel,
+	categoryParents,
+	categoryTrail
+} from '$lib/content/categories';
 import { paginate, parsePageNumber } from '$lib/content/pagination';
-import { getPublishedPostsByCategory } from '$lib/server/content/posts';
+import { getPostSearchFacets, getPublishedPostsByCategory } from '$lib/server/content/posts';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	try {
@@ -22,6 +27,13 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		return {
 			categorySlug: normalizedRouteCategory,
 			categoryDisplay: categoryLabel(normalizedRouteCategory),
+			categoryBreadcrumbs: categoryTrail(normalizedRouteCategory).map((slug) => ({
+				slug,
+				label: categoryLabel(slug)
+			})),
+			subcategories: getPostSearchFacets().categories.filter(
+				(category) => categoryParents[category.slug] === normalizedRouteCategory
+			),
 			posts: paginated.items,
 			page: paginated.page,
 			totalResults: paginated.totalItems,

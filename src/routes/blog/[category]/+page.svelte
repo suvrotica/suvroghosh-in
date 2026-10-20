@@ -12,6 +12,7 @@
 	let { data }: { data: PageData } = $props();
 
 	let categoryPath = $derived(`/blog/${data.categorySlug}`);
+	let isPoetry = $derived(data.categoryBreadcrumbs.some((category) => category.slug === 'poetry'));
 	let canonicalUrl = $derived(
 		data.page > 1 ? `${siteUrl}${categoryPath}?page=${data.page}` : `${siteUrl}${categoryPath}`
 	);
@@ -23,7 +24,9 @@
 	let pageDescription = $derived(
 		data.categorySlug === 'games'
 			? 'Original browser games by Suvro Ghosh: simulations, learning tools, procedural trouble, and strange little systems built for keyboard and touch.'
-			: `Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`
+			: isPoetry
+				? `${data.categoryDisplay} by Suvro Ghosh: personal verse about hope, worry, and everyday life.`
+				: `Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`
 	);
 	let rangeStart = $derived((data.page - 1) * BLOG_PAGE_SIZE + 1);
 	let rangeEnd = $derived(rangeStart + data.posts.length - 1);
@@ -35,13 +38,15 @@
 	{canonicalUrl}
 	keywords={data.categorySlug === 'games'
 		? ['Games', 'Browser Games', 'Learning Games', 'Interactive Games', 'Suvro Ghosh']
-		: [data.categoryDisplay, 'Suvro Ghosh', 'Essays', 'Blog']}
+		: [data.categoryDisplay, 'Suvro Ghosh', isPoetry ? 'Poetry' : 'Essays', 'Blog']}
 	schema={withSiteGraph([
 		collectionPageSchema({
 			name:
 				data.categorySlug === 'games'
 					? 'Games — Original Browser Games and Learning Tools'
-					: `${data.categoryDisplay} Category Essays`,
+					: isPoetry
+						? `${data.categoryDisplay} archive`
+						: `${data.categoryDisplay} Category Essays`,
 			description: pageDescription,
 			url: canonicalUrl,
 			about:
@@ -63,6 +68,17 @@
 			>
 				<span aria-hidden="true">←</span>&nbsp;All posts
 			</a>
+			{#if data.categoryBreadcrumbs.length > 1}
+				<nav aria-label="Parent categories" class="mb-4 flex flex-wrap gap-3 text-sm">
+					{#each data.categoryBreadcrumbs.slice(0, -1) as category (category.slug)}
+						<a
+							href={resolve('/blog/[category]', { category: category.slug })}
+							class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4"
+							>← {category.label}</a
+						>
+					{/each}
+				</nav>
+			{/if}
 			<p
 				class="mb-2 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
 			>
@@ -73,6 +89,17 @@
 				Browse {data.totalResults}
 				{data.totalResults === 1 ? 'post' : 'posts'} in this category, newest first.
 			</p>
+			{#if data.subcategories.length}
+				<nav aria-label="Subcategories" class="mt-4 flex flex-wrap gap-3">
+					{#each data.subcategories as category (category.slug)}
+						<a
+							href={resolve('/blog/[category]', { category: category.slug })}
+							class="inline-flex min-h-11 items-center gap-2 rounded-md border border-neutral-300 px-3 text-sm font-semibold hover:underline dark:border-neutral-700"
+							>{category.label} <span>({category.count})</span></a
+						>
+					{/each}
+				</nav>
+			{/if}
 		</header>
 
 		<ScrollReveal>

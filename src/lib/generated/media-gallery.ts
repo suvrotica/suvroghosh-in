@@ -20,6 +20,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-stupidly-hopeful.jpg",
+			"src": "/images/art-stupidly-hopeful.jpg",
+			"bytes": 140906,
+			"width": 1074,
+			"height": 1536
+		},
+		{
 			"name": "art-the-machines-insides.jpg",
 			"src": "/images/art-the-machines-insides.jpg",
 			"bytes": 274012,

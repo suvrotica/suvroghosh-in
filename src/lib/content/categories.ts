@@ -70,6 +70,8 @@ export const categoryLabels: Record<string, string> = {
 	polemic: 'Polemic',
 	monologue: 'Monologue',
 	raw: 'Raw',
+	poetry: 'Poetry',
+	limerick: 'Limerick',
 	'short-fiction': 'Short Fiction',
 	satire: 'Satire',
 	mathematics: 'Mathematics',
@@ -82,6 +84,22 @@ export const categoryLabels: Record<string, string> = {
 	thinking: 'Thinking',
 	'art-history': 'Art History'
 };
+
+export const categoryParents: Readonly<Record<string, string>> = {
+	limerick: 'poetry'
+};
+
+/** Root-to-leaf archive slugs, including the category itself. */
+export function categoryTrail(category = 'uncategorized') {
+	const trail = [slugifyCategory(category)];
+	let parent = categoryParents[trail[0]];
+	while (parent) {
+		if (trail.includes(parent)) throw new Error(`Category hierarchy contains a cycle: ${parent}`);
+		trail.unshift(parent);
+		parent = categoryParents[parent];
+	}
+	return trail;
+}
 
 export function slugifyCategory(category = 'uncategorized') {
 	return category

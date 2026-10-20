@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T14:57:59.074737+00:00",
+  "generatedAt": "2026-10-20T18:47:43.842342+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9407,6 +9407,29 @@
         "Small"
       ],
       "wordCount": 130
+    },
+    "stupidly-hopeful": {
+      "generatedAt": "2026-10-20T18:47:43.584758+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/stupidly-hopeful.svg",
+      "source": "src/lib/posts/stupidly-hopeful.md",
+      "sourceHash": "56f94789fcd8d598c498fd5e07d409ba438c861e5e4eeaf90d452efb71fecb19",
+      "sourceModified": "2026-10-20T18:46:58.429688+00:00",
+      "topWords": [
+        "Die",
+        "Think",
+        "Hopes",
+        "Expectations",
+        "Low",
+        "Lower",
+        "Systolic",
+        "Tough",
+        "Bro",
+        "Say",
+        "Smirk",
+        "Bad"
+      ],
+      "wordCount": 47
     },
     "subscription-to-oblivion": {
       "generatedAt": "2026-07-12T19:47:39.803787+00:00",

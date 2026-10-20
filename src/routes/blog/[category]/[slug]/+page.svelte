@@ -97,14 +97,16 @@
 							class="transition-colors hover:text-neutral-950 dark:hover:text-neutral-100">Blog</a
 						>
 					</li>
-					<li><span aria-hidden="true">/</span></li>
-					<li>
-						<a
-							href={resolve('/blog/[category]', { category: data.metadata.categorySlug })}
-							class="transition-colors hover:text-neutral-950 dark:hover:text-neutral-100"
-							>{data.metadata.categoryLabel}</a
-						>
-					</li>
+					{#each data.categoryBreadcrumbs as category (category.slug)}
+						<li><span aria-hidden="true">/</span></li>
+						<li>
+							<a
+								href={resolve('/blog/[category]', { category: category.slug })}
+								class="transition-colors hover:text-neutral-950 dark:hover:text-neutral-100"
+								>{category.label}</a
+							>
+						</li>
+					{/each}
 					<li class="hidden sm:block"><span aria-hidden="true">/</span></li>
 					<li
 						class="hidden min-w-0 flex-1 truncate font-medium text-neutral-900 sm:block dark:text-neutral-200"

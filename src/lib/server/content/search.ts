@@ -1,4 +1,5 @@
 import { getPublishedPosts } from './posts';
+import { categoryTrail } from '$lib/content/categories';
 
 export type PostSearchSort = 'relevance' | 'newest' | 'oldest';
 
@@ -22,7 +23,7 @@ export function searchPublishedPosts({
 	const normalizedTag = tag.trim().toLocaleLowerCase('en');
 	let posts = getPublishedPosts().filter((post) => {
 		if (section && post.sectionSlug !== section) return false;
-		if (category && post.categorySlug !== category) return false;
+		if (category && !categoryTrail(post.categorySlug).includes(category)) return false;
 		if (
 			normalizedTag &&
 			!post.tags.some((postTag) => postTag.trim().toLocaleLowerCase('en') === normalizedTag)

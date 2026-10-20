@@ -14795,6 +14795,36 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/stupidly-hopeful.md": {
+			"bodyHash": "11b57507b6d118b1dd7226b9d7fd443a1cbe6ec2f3fd832118fcd6fe7e2ef26a",
+			"hashVersion": 2,
+			"revisionHash": "fa4d0b90f8d97dbe2b4cbe5fa9c6275f53c1c4f899ece4b02d493ae240f46879",
+			"generatedTags": [
+				"Poetry",
+				"Limerick",
+				"Hope",
+				"Insomnia",
+				"Depression",
+				"Anxiety",
+				"Aging",
+				"Expectations",
+				"Humor",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Poetry",
+				"Limerick",
+				"Hope",
+				"Insomnia",
+				"Depression",
+				"Anxiety",
+				"Aging",
+				"Expectations",
+				"Humor",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

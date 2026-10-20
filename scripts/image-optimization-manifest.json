@@ -8016,6 +8016,22 @@
       "sourceHash": "10bb1fb644ce9b7e9a2cca65ca359b17afc4d80a0776fd65bc587e21f2db09f7",
       "width": 1672
     },
+    "static/images/art-stupidly-hopeful.jpg": {
+      "format": "JPEG",
+      "height": 1536,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1536,
+      "originalWidth": 1074,
+      "outputBytes": 140906,
+      "outputHash": "4e582b4b1d16e48991874741f1e1cecf57f15f16119151c2ca7e45a98668a710",
+      "psnrDb": 41.12,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 265978,
+      "sourceHash": "9f5ab290d77edd5f0a14a65afd0dc714170856480d6978a33148e416c8027568",
+      "width": 1074
+    },
     "static/images/art-the-machines-insides.jpg": {
       "format": "JPEG",
       "height": 940,
