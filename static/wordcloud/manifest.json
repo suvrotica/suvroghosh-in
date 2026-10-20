@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T11:34:41.735669+00:00",
+  "generatedAt": "2026-10-20T14:57:59.074737+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8899,6 +8899,29 @@
         "Slime",
         "Enough",
         "India"
+      ],
+      "wordCount": 130
+    },
+    "shubho-glucose": {
+      "generatedAt": "2026-10-20T14:57:58.615577+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/shubho-glucose.svg",
+      "source": "src/lib/posts/shubho-glucose.md",
+      "sourceHash": "586b33fd0af594800dd57c62a6b1e81d645688c6aa9e3210cdc720c83e444365",
+      "sourceModified": "2026-10-20T14:57:51.083552+00:00",
+      "topWords": [
+        "Dark",
+        "Matter",
+        "Sweets",
+        "Much",
+        "Percent",
+        "Less",
+        "Light",
+        "Cosmic",
+        "Enough",
+        "Person",
+        "Sweet",
+        "Universe"
       ],
       "wordCount": 130
     },

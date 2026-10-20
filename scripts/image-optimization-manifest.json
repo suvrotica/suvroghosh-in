@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/art-shubho-glucose.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 369083,
+      "outputHash": "304a28c37c77d6ed9616535a1013c9d5048d3385bdb871ab3a44f2a9024107b3",
+      "psnrDb": 36.34,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 541710,
+      "sourceHash": "10bb1fb644ce9b7e9a2cca65ca359b17afc4d80a0776fd65bc587e21f2db09f7",
+      "width": 1672
+    },
     "static/images/art-the-machines-insides.jpg": {
       "format": "JPEG",
       "height": 940,

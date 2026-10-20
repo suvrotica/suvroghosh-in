@@ -14765,6 +14765,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-20"
+		},
+		"src/lib/posts/shubho-glucose.md": {
+			"bodyHash": "8c534f63aaa5e68d4787400f2f3dc164e973274979698fbc3c9daa1fa9c42498",
+			"hashVersion": 2,
+			"revisionHash": "d05cd09de6a6242c32ffd3e14f1583cf7f7c5f4192a280edf16461ee9e90edec",
+			"generatedTags": [
+				"Bijoya",
+				"Dashami",
+				"Dussehra",
+				"Inequality",
+				"Cosmology",
+				"Atheism",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Bijoya",
+				"Dashami",
+				"Dussehra",
+				"Inequality",
+				"Cosmology",
+				"Atheism",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
