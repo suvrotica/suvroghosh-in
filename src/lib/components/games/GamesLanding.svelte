@@ -4,53 +4,96 @@
 	import { gamesCatalog } from '$lib/games/catalog';
 </script>
 
-<section class="page-enter">
+<section class="games-shelf page-enter" aria-labelledby="games-heading">
 	<header
-		class="relative mb-9 overflow-hidden rounded-2xl border border-amber-900/20 bg-[#efe2c5] p-6 text-[#30231d] shadow-sm sm:p-9 dark:border-amber-300/15 dark:bg-[#201a16] dark:text-[#f9edda]"
+		class="relative mb-8 overflow-hidden rounded-2xl border border-amber-900/20 bg-[#efe2c5] p-5 text-[#30231d] sm:p-8 dark:border-amber-300/15 dark:bg-[#201a16] dark:text-[#f9edda]"
 	>
-		<div
-			class="pointer-events-none absolute inset-0 opacity-25"
-			style="background-image: repeating-linear-gradient(97deg, transparent 0, transparent 19px, currentColor 20px);"
-			aria-hidden="true"
-		></div>
-		<div class="relative">
-			<a
-				href={resolve('/blog')}
-				class="mb-6 inline-flex min-h-11 items-center text-sm font-bold underline decoration-amber-800/40 underline-offset-4 hover:decoration-amber-900 dark:decoration-amber-300/40 dark:hover:decoration-amber-200"
+		<a
+			href={resolve('/blog')}
+			class="shelf-link mb-5 inline-flex min-h-11 items-center gap-2 text-sm font-bold underline decoration-amber-800/40 underline-offset-4 hover:decoration-current dark:decoration-amber-300/40"
+		>
+			<span aria-hidden="true">←</span> Writing and archive
+		</a>
+		<div class="flex flex-wrap items-baseline justify-between gap-3">
+			<h1
+				id="games-heading"
+				class="m-0 text-5xl leading-none font-black tracking-tight sm:text-6xl"
 			>
-				<span aria-hidden="true">←</span>&nbsp;Writing and archive
-			</a>
-			<p
-				class="mb-2 text-xs font-black tracking-[0.2em] text-amber-800 uppercase dark:text-amber-300"
-			>
-				Playable systems, patient teachers
-			</p>
-			<h1 class="m-0 max-w-3xl text-4xl leading-none font-black tracking-tight sm:text-6xl">
 				Games
 			</h1>
-			<p class="mt-5 mb-0 max-w-2xl text-left text-lg leading-relaxed opacity-80">
-				Original little systems of trouble and curiosity: procedural streets, impossible flights,
-				playable satire, and learning instruments that expect memory to need a little help. Built
-				for a keyboard or a thumb; a cow remains available but is no longer compulsory.
+			<p class="m-0 text-xs font-bold tracking-[0.14em] uppercase">
+				{gamesCatalog.length} games · No account needed
 			</p>
 		</div>
+		<p class="mt-4 mb-6 max-w-xl text-left text-base leading-relaxed sm:text-lg">
+			A folding board, a crossword, a paper plane, a Calcutta street. Find a little world to spend
+			some time in.
+		</p>
+
+		<nav aria-label="Choose a game">
+			<p class="mb-3 text-xs font-black tracking-[0.14em] uppercase">Pick your pace</p>
+			<ul class="m-0 grid list-none grid-cols-2 gap-2 p-0">
+				{#each gamesCatalog as game (game.slug)}
+					<li>
+						<a
+							href={resolve('/blog/games/[slug]', { slug: game.slug })}
+							class="shelf-link flex h-full min-h-11 items-center justify-between gap-3 rounded-lg border border-amber-950/20 bg-white/40 px-3 py-3 no-underline transition-colors hover:bg-white/75 motion-reduce:transition-none dark:border-amber-200/20 dark:bg-white/5 dark:hover:bg-white/10"
+						>
+							<span class="min-w-0">
+								<span class="block text-sm leading-snug font-bold">{game.shortTitle}</span>
+								<span class="mt-1 block text-xs leading-relaxed">{game.duration}</span>
+							</span>
+							<span aria-hidden="true">↗</span>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</nav>
 	</header>
 
-	<div class="grid gap-7">
-		{#each gamesCatalog as game (game.slug)}
-			<GameCard {game} />
+	<div class="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+		<h2 class="m-0 text-xl font-black">On the shelf</h2>
+		<p class="m-0 text-sm text-neutral-600 dark:text-neutral-400">Choose a cover to play</p>
+	</div>
+	<div class="games-grid">
+		{#each gamesCatalog as game, index (game.slug)}
+			<GameCard {game} eager={index < 2} />
 		{/each}
 	</div>
 
 	<aside
-		class="mt-8 rounded-xl border border-dashed border-neutral-300 p-5 text-neutral-600 dark:border-neutral-700 dark:text-neutral-400"
+		class="mt-7 rounded-xl border border-dashed border-neutral-300 p-5 text-neutral-600 dark:border-neutral-700 dark:text-neutral-400"
+		aria-labelledby="games-save-heading"
 	>
-		<h2 class="m-0 text-base font-bold text-neutral-900 dark:text-neutral-100">
-			A shelf designed to grow
+		<h2
+			id="games-save-heading"
+			class="m-0 text-base font-bold text-neutral-900 dark:text-neutral-100"
+		>
+			Make yourself at home
 		</h2>
-		<p class="mt-2 mb-0 max-w-3xl text-left text-sm leading-relaxed">
-			Every title gets its own controls, play-time estimate, device support, status, and saved local
-			progress. Nothing here requires an account or sends a score to a remote leaderboard.
+		<p class="mt-2 mb-0 text-left text-sm leading-relaxed">
+			Saved rounds, scores and settings stay in this browser. Ludo and the crossword let you resume
+			unfinished play. Each game has its own instructions. No account or online leaderboard
+			required.
 		</p>
 	</aside>
 </section>
+
+<style>
+	.games-grid {
+		display: grid;
+		gap: 1.25rem;
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.shelf-link:focus-visible {
+		outline: 3px solid currentColor;
+		outline-offset: 3px;
+	}
+
+	@media (min-width: 48rem) {
+		.games-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+</style>
