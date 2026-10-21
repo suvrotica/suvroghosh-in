@@ -91,6 +91,19 @@ test('routine builds retain publishing checks without reaching feature audits or
 	);
 });
 
+test('Google narration remains an explicit authoring command outside automatic build/dev lifecycles', () => {
+	assert.match(scripts['narration:generate'], /node .*scripts\/article-narration\.mjs/u);
+	for (const entry of ['dev', 'build', 'build:full', 'preview']) {
+		const events = npmExecution(entry);
+		assert.ok(
+			!events.some((event) =>
+				/article-narration\.mjs|narration:generate/u.test(event.script ?? event.command)
+			),
+			`${entry} must never generate speech or spend Google's free-tier quota`
+		);
+	}
+});
+
 test('full builds run every existing feature check and notebook preparation around one routine build', () => {
 	const events = npmExecution('build:full');
 	const reached = events.flatMap((event) => (event.script ? [event.script] : []));

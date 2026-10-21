@@ -12,6 +12,8 @@ thumbnailAlt: "Mental-health activist Cecilia McGough holds a sign saying she ha
 mediaReviewed: true
 ---
 
+<TTS />
+
 <Pi
 	src="/images/mysteries-of-mental-illness-pbs-series.jpg"
 	alt="Mental-health activist Cecilia McGough holds a sign saying she has schizophrenia and is not a monster"

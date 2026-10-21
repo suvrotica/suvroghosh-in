@@ -14,6 +14,15 @@ on:
       - 'src/lib/server/**'
       - '!src/lib/server/generated/**'
       - 'src/lib/notes/**'
+      - 'src/lib/components/blog/TTS.svelte'
+      - 'src/lib/components/blog/BrowserTTS.svelte'
+      - 'src/lib/components/blog/tts/**'
+      - 'scripts/article-narration*'
+      - 'scripts/compress-narration*'
+      - 'scripts/lib/google-tts.mjs'
+      - 'scripts/lib/narration-quota.mjs'
+      - 'scripts/lib/narration-segments.mjs'
+      - 'scripts/narration-quota.test.mjs'
       - 'src/routes/contact/**'
       - 'src/routes/api/**'
       - 'src/routes/notes/**'
@@ -33,6 +42,15 @@ on:
       - 'src/lib/server/**'
       - '!src/lib/server/generated/**'
       - 'src/lib/notes/**'
+      - 'src/lib/components/blog/TTS.svelte'
+      - 'src/lib/components/blog/BrowserTTS.svelte'
+      - 'src/lib/components/blog/tts/**'
+      - 'scripts/article-narration*'
+      - 'scripts/compress-narration*'
+      - 'scripts/lib/google-tts.mjs'
+      - 'scripts/lib/narration-quota.mjs'
+      - 'scripts/lib/narration-segments.mjs'
+      - 'scripts/narration-quota.test.mjs'
       - 'src/routes/contact/**'
       - 'src/routes/api/**'
       - 'src/routes/notes/**'
@@ -57,3 +75,4 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run test:critical
+      - run: npm run narration:test

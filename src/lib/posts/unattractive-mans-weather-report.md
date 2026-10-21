@@ -11,6 +11,8 @@ thumbnail: "/thumbnail/art-unattractive-mans-weather-report.jpg"
 thumbnailAlt: "Middle-aged Bengali man standing inside a personal weather system of rain, wind, and clearing light"
 ---
 
+<TTS />
+
 
 
 <Pi src="/thumbnail/art-unattractive-mans-weather-report.jpg" />

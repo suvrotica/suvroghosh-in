@@ -83,6 +83,11 @@ confirms receipt; HTTP 202 means receipt with key validation pending. Neither co
 
 ## Building
 
+Article listening supports saved Google US English narration with browser/device voices as the
+fallback. Synthesis is a separate, bounded authoring operation using a confirmed Gemini Free-tier
+project; ordinary builds and visitor playback never call Google. See
+[article narration setup, commands and verification](docs/article-narration.md).
+
 To create a production version of your app:
 
 ```sh

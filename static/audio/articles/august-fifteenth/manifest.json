@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "segmentation": "bounded-6000-v2",
+  "textHash": "279e6070b0ffa9841bb68bdb09b4ccbb0a77729c3c47cc4b9b1fccba6e86b907",
+  "fingerprint": "54b8467318172b529818e2854dfd99885483e80f562dd354b8830ecf4835f9db",
+  "language": "en-US",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "achird",
+  "style": "Warm, clear editorial narration in natural US English. Relaxed pacing, natural sentence emphasis, and sensible pauses. Preserve Bengali pronunciation in Bengali passages. Read the transcript verbatim.",
+  "format": "audio/wav",
+  "title": "August Fifteenth",
+  "articlePath": "/blog/personal-essay/august-fifteenth",
+  "generatedAt": "2026-10-21T09:35:40.022Z",
+  "totalDuration": 256.32,
+  "segments": [
+    {
+      "src": "/audio/articles/august-fifteenth/25e04089ddb974d7e9fa04ee501b096d0e70756a6253470a2785403018edecc7.mp3",
+      "duration": 256.32,
+      "textStart": 0,
+      "textEnd": 4148
+    }
+  ],
+  "delivery": {
+    "version": 1,
+    "format": "audio/mpeg",
+    "codec": "mp3",
+    "bitrate": 64000,
+    "sampleRate": 24000,
+    "channels": 1,
+    "encoderVersion": "ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers",
+    "encodedAt": "2026-10-21T09:57:36.749Z",
+    "segments": [
+      {
+        "sourceFingerprint": "54b8467318172b529818e2854dfd99885483e80f562dd354b8830ecf4835f9db",
+        "sourceAudioHash": "46014fc7cd0c74d80dca411634a5a0d9bf32c23427884da7a9590a351df51e86",
+        "sourceBytes": 12309478,
+        "audioHash": "25e04089ddb974d7e9fa04ee501b096d0e70756a6253470a2785403018edecc7",
+        "bytes": 2051181,
+        "decodedPCMHash": "2a24766169f3bfb03b81b994314b476cd2e633ad3ca0635c9c90dd00e4f86850",
+        "decodedDuration": 256.32
+      }
+    ]
+  }
+}

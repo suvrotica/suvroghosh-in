@@ -16,6 +16,8 @@ color: ink
 author: Suvro Ghosh
 ---
 
+<TTS />
+
 ## What is this?
 
 The **Meaning & Connection Map** is a full-screen, interactive concept graph built for desktop. It maps more than 50 ideas — from fundamental concepts like probability, feedback loops, and emergence to applied domains like large language models, data pipelines, and hypothesis testing — connected by over 100 explicitly explained relationships.

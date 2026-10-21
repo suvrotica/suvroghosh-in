@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "textHash": "61690662c9902ff50d934b7049b9a87c990af4989ed956b9c128970cadfef451",
+  "fingerprint": "9f64c496453e8471a0e5e03e5cb3d933ec648589260129c415ba212cd479a210",
+  "language": "en-US",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "achird",
+  "style": "Warm, clear editorial narration in natural US English. Relaxed pacing, natural sentence emphasis, and sensible pauses. Preserve Bengali pronunciation in Bengali passages. Read the transcript verbatim.",
+  "format": "audio/wav",
+  "title": "A Trapezoid in Low Light",
+  "articlePath": "/blog/personal-essay/a-trapezoid-in-low-light",
+  "generatedAt": "2026-10-21T09:23:58.296Z",
+  "totalDuration": 116.04,
+  "segments": [
+    {
+      "src": "/audio/articles/a-trapezoid-in-low-light/0b5d6db8551aacce2fb51b5270a14f1e4027d745b6b9ab14672f7419ae01c142.mp3",
+      "duration": 116.04,
+      "textStart": 0,
+      "textEnd": 1639
+    }
+  ],
+  "delivery": {
+    "version": 1,
+    "format": "audio/mpeg",
+    "codec": "mp3",
+    "bitrate": 64000,
+    "sampleRate": 24000,
+    "channels": 1,
+    "encoderVersion": "ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers",
+    "encodedAt": "2026-10-21T09:57:32.284Z",
+    "segments": [
+      {
+        "sourceFingerprint": "9f64c496453e8471a0e5e03e5cb3d933ec648589260129c415ba212cd479a210",
+        "sourceAudioHash": "056d5def1c5af2c2d297890775347db143f7b9800e0e9a77082c6409298cbd88",
+        "sourceBytes": 5576038,
+        "audioHash": "0b5d6db8551aacce2fb51b5270a14f1e4027d745b6b9ab14672f7419ae01c142",
+        "bytes": 928941,
+        "decodedPCMHash": "470f1e89e9ae7630c278dfe358428dbb7971f1fa57165efb9a05f8faed35c784",
+        "decodedDuration": 116.04
+      }
+    ]
+  }
+}

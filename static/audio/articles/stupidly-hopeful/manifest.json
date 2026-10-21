@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "textHash": "b8e0efea0c6f70a54f45a4638d8face4404a5d8c16a2a82a6fa9bf3446f313ef",
+  "fingerprint": "9d1fbd580a3cc373a3b9f8a08738bce6bf314879579b6f45d37ae39245c49ff2",
+  "language": "en-US",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "achird",
+  "style": "Warm, clear editorial narration in natural US English. Relaxed pacing, natural sentence emphasis, and sensible pauses. Preserve Bengali pronunciation in Bengali passages. Read the transcript verbatim.",
+  "format": "audio/wav",
+  "title": "Stupidly Hopeful",
+  "articlePath": "/blog/limerick/stupidly-hopeful",
+  "generatedAt": "2026-10-21T09:26:09.612Z",
+  "totalDuration": 63.08,
+  "segments": [
+    {
+      "src": "/audio/articles/stupidly-hopeful/a6341c7f16ecd9af59f90411138fafe2174c054eb3f96a33c0ae285ceaf2dc2d.mp3",
+      "duration": 63.08,
+      "textStart": 0,
+      "textEnd": 600
+    }
+  ],
+  "delivery": {
+    "version": 1,
+    "format": "audio/mpeg",
+    "codec": "mp3",
+    "bitrate": 64000,
+    "sampleRate": 24000,
+    "channels": 1,
+    "encoderVersion": "ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers",
+    "encodedAt": "2026-10-21T09:57:38.105Z",
+    "segments": [
+      {
+        "sourceFingerprint": "9d1fbd580a3cc373a3b9f8a08738bce6bf314879579b6f45d37ae39245c49ff2",
+        "sourceAudioHash": "f5b7e23978704b7173bf1c08cbcdaf801e070c4eee434a1d846661a8d1513b5a",
+        "sourceBytes": 3033958,
+        "audioHash": "a6341c7f16ecd9af59f90411138fafe2174c054eb3f96a33c0ae285ceaf2dc2d",
+        "bytes": 505389,
+        "decodedPCMHash": "953fbf175cd469f4c3aa547ac721575ffdc5c7f6116f5cde77b8c303f889b57c",
+        "decodedDuration": 63.08
+      }
+    ]
+  }
+}

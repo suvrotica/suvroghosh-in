@@ -11,6 +11,8 @@ inPlainEnglish: "A perceptron multiplies inputs by weights, adds a bias, makes a
 keyTerms: ["Perceptron", "Weights", "Bias", "Activation", "Learning rate"]
 ---
 
+<TTS />
+
 # What This Notebook Builds
 
 This is the first `mojoLLM` computational notebook. It begins with the customary hello world, then replaces the greeting with a more useful small machine: a single perceptron trained to reproduce the logical AND gate.

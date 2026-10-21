@@ -11,6 +11,8 @@ published: true
 color: "#3D5A6C"
 ---
 
+<TTS />
+
 # THIS IS A WORK OF FICTION
 
 <Pi src="/thumbnail/Compress_20260726_113834_4485.jpg" />

@@ -8,6 +8,8 @@ category: "AI Music Song"
 published: true
 ---
 
+<TTS />
+
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
 

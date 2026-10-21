@@ -11,6 +11,8 @@ inPlainEnglish: "XOR cannot be separated by one straight line. This notebook com
 keyTerms: ["XOR", "Multiple perceptrons", "Hidden layer", "OR", "NAND", "Linear separability"]
 ---
 
+<TTS />
+
 # Where the Single Perceptron Stops
 
 The previous `mojoLLM` notebook trained one perceptron to reproduce the AND gate. That worked because a straight boundary can put the lone positive point on one side and the three negative points on the other.

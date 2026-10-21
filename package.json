@@ -11,6 +11,11 @@
 	"scripts": {
 		"predev": "npm run sketches:generate",
 		"dev": "vite dev",
+		"narration:generate": "node --env-file-if-exists=.env.local scripts/article-narration.mjs",
+		"narration:batch": "npm run narration:generate -- --missing --limit 20 --max-requests 10",
+		"narration:compress": "node scripts/compress-narration.mjs",
+		"narration:test": "node --test scripts/article-narration.test.mjs scripts/narration-quota.test.mjs scripts/compress-narration.test.mjs && vitest run src/lib/components/blog/tts --maxWorkers=2",
+		"narration:browser:test": "playwright test --config=playwright.tts.config.ts",
 		"probabilistic-piano:test": "vitest run src/lib/visualizations/probabilistic-piano",
 		"probabilistic-piano:browser:test": "playwright test --config=playwright.probabilistic-piano.config.ts",
 		"probabilistic-piano:assets": "node scripts/render-probabilistic-piano-assets.mjs",

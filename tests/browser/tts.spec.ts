@@ -1,0 +1,395 @@
+import { expect, test, type Page } from '@playwright/test';
+import { createHash } from 'node:crypto';
+import { extractNarration } from '../../src/lib/components/blog/tts/narration.mjs';
+
+const shortArticle = '/blog/personal-essay/a-trapezoid-in-low-light';
+const longArticle = '/blog/short-fiction/ashtami-approach';
+const folioArticle = '/blog/healthcare-it/why-read-a-healthcare-it-blog-in-the-age-of-ai';
+const mixedLanguageArticle = '/blog/short-fiction/ashruto-the-unheard';
+const playerSelector = '[data-testid="article-tts"]';
+
+interface TestMedia {
+	element: HTMLAudioElement;
+	playCalls: number;
+	pauseCalls: number;
+	loadCalls: number;
+}
+
+declare global {
+	interface Window {
+		__ttsTest: {
+			media: TestMedia[];
+			speech: Array<{ text: string; lang: string; voice: string }>;
+			cancelCalls: number;
+			nextPlayFails: boolean;
+			voicesReady: boolean;
+		};
+	}
+}
+
+/** Deterministic browser APIs; provider synthesis and audible playback are deliberately absent. */
+async function installPlaybackFakes(page: Page) {
+	await page.addInitScript(() => {
+		const state = {
+			media: [] as TestMedia[],
+			speech: [] as Array<{ text: string; lang: string; voice: string }>,
+			cancelCalls: 0,
+			nextPlayFails: false,
+			voicesReady: !new URL(location.href).searchParams.has('tts-delayed-voices')
+		};
+		window.__ttsTest = state;
+		Object.defineProperty(window, 'SpeechSynthesisUtterance', {
+			configurable: true,
+			value: class TestUtterance {
+				text: string;
+				lang = '';
+				voice: SpeechSynthesisVoice | null = null;
+				rate = 1;
+				onstart: ((event: SpeechSynthesisEvent) => void) | null = null;
+				constructor(text: string) {
+					this.text = text;
+				}
+			}
+		});
+		const voices = [
+			{ name: 'Test Indian English', voiceURI: 'test-in', lang: 'en-IN' },
+			{ name: 'Google US English', voiceURI: 'test-us', lang: 'en-US' },
+			{ name: 'Test British English', voiceURI: 'test-gb', lang: 'en-GB' }
+		].map((voice) => ({ ...voice, localService: true, default: false }));
+		const synthesis = Object.assign(new EventTarget(), {
+			speaking: false,
+			paused: false,
+			pending: false,
+			getVoices: () => (state.voicesReady ? voices : []),
+			speak(utterance: SpeechSynthesisUtterance) {
+				this.speaking = true;
+				this.paused = false;
+				state.speech.push({
+					text: utterance.text,
+					lang: utterance.lang,
+					voice: utterance.voice?.voiceURI ?? ''
+				});
+				queueMicrotask(() => utterance.onstart?.(new Event('start') as SpeechSynthesisEvent));
+			},
+			cancel() {
+				state.cancelCalls++;
+				this.speaking = false;
+				this.paused = false;
+			},
+			pause() {
+				this.paused = true;
+			},
+			resume() {
+				this.paused = false;
+			}
+		});
+		Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: synthesis });
+		// Use real detached audio elements for native event dispatch, with deterministic media methods.
+		Object.defineProperty(window, 'Audio', {
+			configurable: true,
+			value: function Audio(source?: string) {
+				const element = document.createElement('audio');
+				const record = { element, playCalls: 0, pauseCalls: 0, loadCalls: 0 };
+				state.media.push(record);
+				let currentTime = 0;
+				let paused = true;
+				let mediaSource = '';
+				Object.defineProperties(element, {
+					src: {
+						get: () => mediaSource,
+						set: (value: string) => {
+							mediaSource = value;
+						}
+					},
+					duration: { get: () => 120 },
+					readyState: { get: () => 4 },
+					paused: { get: () => paused },
+					currentTime: {
+						get: () => currentTime,
+						set: (value: number) => {
+							currentTime = value;
+							queueMicrotask(() => element.dispatchEvent(new Event('timeupdate')));
+						}
+					}
+				});
+				element.load = () => {
+					record.loadCalls++;
+					element.playbackRate = element.defaultPlaybackRate;
+					queueMicrotask(() => element.dispatchEvent(new Event('loadedmetadata')));
+				};
+				element.play = async () => {
+					record.playCalls++;
+					if (state.nextPlayFails) {
+						state.nextPlayFails = false;
+						throw new DOMException('Playback unavailable for test', 'NotSupportedError');
+					}
+					paused = false;
+					element.dispatchEvent(new Event('loadedmetadata'));
+					element.dispatchEvent(new Event('playing'));
+				};
+				element.pause = () => {
+					record.pauseCalls++;
+					paused = true;
+					element.dispatchEvent(new Event('pause'));
+				};
+				if (source) element.src = source;
+				return element;
+			}
+		});
+	});
+}
+
+async function mockNarration(
+	page: Page,
+	mode: 'ready' | 'missing' | 'stale' = 'ready',
+	segmentCount: 1 | 2 = 1
+) {
+	const requests = { manifest: 0, audio: 0, provider: 0 };
+	page.on('request', (request) => {
+		if (/generativelanguage\.googleapis\.com|texttospeech\.googleapis\.com/u.test(request.url()))
+			requests.provider++;
+	});
+	await page.route('**/audio/articles/**', async (route) => {
+		if (!route.request().url().endsWith('/manifest.json')) {
+			requests.audio++;
+			await route.abort();
+			return;
+		}
+		requests.manifest++;
+		if (mode === 'missing') {
+			await route.fulfill({ status: 404, body: '' });
+			return;
+		}
+		const text = await page.locator('[data-article-reading-region]').evaluate(extractNarration);
+		const textHash = createHash('sha256').update(text).digest('hex');
+		const slug = new URL(route.request().url()).pathname.split('/').at(-2);
+		const midpoint = text.lastIndexOf('\n\n', Math.floor(text.length / 2));
+		const ranges =
+			segmentCount === 2
+				? [
+						[0, midpoint],
+						[midpoint + 2, text.length]
+					]
+				: [[0, text.length]];
+		const segments = ranges.map(([textStart, textEnd]) => ({
+			src: `/audio/articles/${slug}/${createHash('sha256').update(text.slice(textStart, textEnd)).digest('hex')}.wav`,
+			duration: 120 / segmentCount,
+			textStart,
+			textEnd
+		}));
+		await route.fulfill({
+			json: {
+				version: 1,
+				textHash: mode === 'stale' ? '0'.repeat(64) : textHash,
+				language: 'en-US',
+				model: 'gemini-2.5-flash-preview-tts',
+				voice: 'Kore',
+				style: 'Natural US English editorial narration',
+				segments
+			}
+		});
+	});
+	return requests;
+}
+
+test.beforeEach(async ({ page }) => {
+	await installPlaybackFakes(page);
+});
+
+test('extraction respects leaf order and exclusions without losing Bengali or the final sentence', async ({
+	page
+}) => {
+	await page.setContent(`<main><div class="prose">Wrong region</div>
+		<article data-article-reading-region><h1>Essay title</h1>
+		<div data-side="left"><p>First <em>paragraph</em>.</p><blockquote><p>“A quotation?”</p></blockquote></div>
+		<div data-side="right"><h2>Second leaf</h2><p>বাংলা লেখা। Natural English.</p>
+		<ul><li>First item</li><li>Final item</li></ul></div><button>Play</button><aside>Related</aside>
+		<pre>Code block</pre><p data-tts-exclude>Duplicate summary</p><p hidden>Hidden</p>
+		<p aria-hidden="true">Responsive duplicate</p><script type="application/json">"secret"</script>
+		<p>The final sentence.</p></article></main>`);
+	const text = await page.locator('[data-article-reading-region]').evaluate(extractNarration);
+	expect(text).toBe(
+		'Essay title\n\nFirst paragraph.\n\n“A quotation?”\n\nSecond leaf\n\nবাংলা লেখা। Natural English.\n\nFirst item\n\nFinal item\n\nThe final sentence.'
+	);
+});
+
+test('saved Google audio is lazy and supports pause, resume, speed, seeking, completion and replay', async ({
+	page
+}) => {
+	const requests = await mockNarration(page);
+	await page.goto(shortArticle);
+	const player = page.locator(playerSelector);
+	await expect(player).toContainText('Google narration');
+	expect(requests.manifest).toBe(1);
+	expect(requests.audio).toBe(0);
+	expect(requests.provider).toBe(0);
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(0);
+
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect(player.getByRole('button', { name: 'Pause article audio' })).toBeVisible();
+	await player.getByRole('button', { name: 'Pause article audio' }).click();
+	await expect(player.getByRole('button', { name: 'Resume article audio' })).toBeVisible();
+	await player.getByRole('button', { name: 'Resume article audio' }).click();
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(1);
+	expect(await page.evaluate(() => window.__ttsTest.media[0].playCalls)).toBe(2);
+
+	await player.getByLabel('Playback speed').selectOption('1.25');
+	expect(await page.evaluate(() => window.__ttsTest.media[0].element.playbackRate)).toBe(1.25);
+	await player.getByLabel('Playback position').focus();
+	await player.getByLabel('Playback position').press('Home');
+	await player.getByLabel('Playback position').press('ArrowRight');
+	await expect
+		.poll(() => page.evaluate(() => window.__ttsTest.media.at(-1)?.element.currentTime))
+		.toBeCloseTo(0.1);
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(1);
+	await page.evaluate(() =>
+		window.__ttsTest.media.at(-1)?.element.dispatchEvent(new Event('ended'))
+	);
+	await expect(player.getByRole('button', { name: 'Listen to article again' })).toBeVisible();
+	await player.getByRole('button', { name: 'Listen to article again' }).click();
+	await player.getByRole('button', { name: 'Stop article audio' }).click();
+	await expect(
+		player.getByRole('button', { name: 'Listen to article', exact: true })
+	).toBeVisible();
+	expect(requests.provider).toBe(0);
+});
+
+test('Google segments reuse the permitted audio element and switching after completion starts device speech at the opening', async ({
+	page
+}) => {
+	await mockNarration(page, 'ready', 2);
+	await page.goto(shortArticle);
+	const player = page.locator(playerSelector);
+	await expect(player).toContainText('Google narration');
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect(player.getByRole('button', { name: 'Pause article audio' })).toBeVisible();
+	await player.getByLabel('Playback speed').selectOption('1.25');
+	const firstSource = await page.evaluate(() => window.__ttsTest.media[0].element.src);
+	await page.evaluate(() => window.__ttsTest.media[0].element.dispatchEvent(new Event('ended')));
+	await expect
+		.poll(() => page.evaluate(() => window.__ttsTest.media[0].element.src))
+		.not.toBe(firstSource);
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(1);
+	expect(await page.evaluate(() => window.__ttsTest.media[0].element.playbackRate)).toBe(1.25);
+	await expect(player.getByText('Playing article', { exact: true })).toBeVisible();
+	await page.evaluate(() => window.__ttsTest.media[0].element.dispatchEvent(new Event('ended')));
+	await expect(player.getByRole('button', { name: 'Listen to article again' })).toBeVisible();
+	await player.getByRole('combobox', { name: 'Narration source' }).selectOption('device');
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBeGreaterThan(0);
+	expect(await page.evaluate(() => window.__ttsTest.speech[0].text)).toMatch(
+		/^The tea had grown a thin brown skin on top\./u
+	);
+});
+
+test('a rejected media play recovers with the US English device voice', async ({ page }) => {
+	await mockNarration(page);
+	await page.goto(shortArticle);
+	const player = page.locator(playerSelector);
+	await expect(player).toContainText('Google narration');
+	await page.evaluate(() => (window.__ttsTest.nextPlayFails = true));
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect(player.getByRole('button', { name: /Use device voice/iu })).toBeVisible();
+	await player.getByRole('button', { name: /Use device voice/iu }).click();
+	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBeGreaterThan(0);
+	expect(await page.evaluate(() => window.__ttsTest.speech[0].voice)).toBe('test-us');
+	expect(await page.evaluate(() => window.__ttsTest.speech[0].lang)).toBe('en-US');
+});
+
+for (const mode of ['missing', 'stale'] as const) {
+	test(`${mode} narration uses device speech and remembers a selected voice`, async ({ page }) => {
+		await mockNarration(page, mode);
+		await page.goto(shortArticle);
+		const player = page.locator(playerSelector);
+		await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toBeVisible();
+		await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toHaveValue(
+			''
+		);
+		await player
+			.getByRole('combobox', { name: 'Device voice', exact: true })
+			.selectOption('test-gb');
+		await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+		await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBeGreaterThan(0);
+		expect(await page.evaluate(() => window.__ttsTest.speech[0].voice)).toBe('test-gb');
+		await player.getByRole('button', { name: 'Stop article audio' }).click();
+		await page.reload();
+		await expect(
+			page.locator(playerSelector).getByRole('combobox', { name: 'Device voice', exact: true })
+		).toHaveValue('test-gb');
+	});
+}
+
+test('an asynchronously loaded device voice list selects US English', async ({ page }) => {
+	await mockNarration(page, 'missing');
+	await page.goto(`${shortArticle}?tts-delayed-voices=1`);
+	const player = page.locator(playerSelector);
+	await expect(player).toBeVisible();
+	await page.evaluate(() => {
+		window.__ttsTest.voicesReady = true;
+		window.speechSynthesis.dispatchEvent(new Event('voiceschanged'));
+	});
+	await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toHaveValue('');
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBeGreaterThan(0);
+	expect(await page.evaluate(() => window.__ttsTest.speech[0].voice)).toBe('test-us');
+});
+
+test('long article narration stops on client navigation before a folio player starts', async ({
+	page
+}) => {
+	await mockNarration(page);
+	await page.goto(longArticle);
+	const player = page.locator(playerSelector);
+	await expect(player).toContainText('Google narration');
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect(player.getByRole('button', { name: 'Pause article audio' })).toBeVisible();
+	await page.evaluate((path) => {
+		const link = document.createElement('a');
+		link.href = path;
+		link.textContent = 'TTS test navigation';
+		document.body.append(link);
+	}, folioArticle);
+	await page.getByRole('link', { name: 'TTS test navigation' }).click();
+	await expect(page).toHaveURL(folioArticle);
+	await expect(page.locator('[data-thought-folio="healthcare-human-margin"]')).toBeVisible();
+	await expect(page.locator(playerSelector)).toContainText('Google narration');
+	expect(await page.evaluate(() => window.__ttsTest.media[0].element.paused)).toBe(true);
+	await page
+		.locator(playerSelector)
+		.getByRole('button', { name: 'Listen to article', exact: true })
+		.click();
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(2);
+	expect(
+		await page.evaluate(
+			() => window.__ttsTest.media.filter(({ element }) => !element.paused).length
+		)
+	).toBe(1);
+});
+
+test('published SSR and hydrated reading order match for standard, mixed-language and folio articles', async ({
+	page,
+	browser
+}) => {
+	test.setTimeout(120_000);
+	await mockNarration(page, 'missing');
+	const noJsPage = await browser.newPage({ javaScriptEnabled: false });
+	try {
+		for (const article of [shortArticle, mixedLanguageArticle, folioArticle]) {
+			await page.goto(article);
+			await expect(page.locator(playerSelector)).toBeVisible();
+			await noJsPage.goto(new URL(article, page.url()).href);
+			const hydrated = await page
+				.locator('[data-article-reading-region]')
+				.evaluate(extractNarration);
+			const serverRendered = await noJsPage
+				.locator('[data-article-reading-region]')
+				.evaluate(extractNarration);
+			expect(hydrated.length).toBeGreaterThan(100);
+			expect(hydrated, article).toBe(serverRendered);
+			expect(hydrated).not.toContain('Playback speed');
+			if (article === mixedLanguageArticle) expect(hydrated).toContain('অশ্রুত');
+		}
+	} finally {
+		await noJsPage.close();
+	}
+});

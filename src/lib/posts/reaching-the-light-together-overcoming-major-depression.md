@@ -12,6 +12,8 @@ thumbnailAlt: "Flowering branches beside the title Reaching the Light Together"
 mediaReviewed: true
 ---
 
+<TTS />
+
 <Pi
 	src="/images/reaching-the-light-together-overcoming-major-depression.jpg"
 	alt="Flowering branches beside the title Reaching the Light Together"

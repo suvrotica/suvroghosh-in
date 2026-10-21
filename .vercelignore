@@ -1,0 +1,13 @@
+# Local credentials, generation caches and native authoring tools are never uploaded.
+.env
+.env.local
+.env.*.local
+.codex/
+.codex-artifacts/
+.audit-private/
+
+# Publish only complete, compressed narration assets.
+static/audio/articles/**/*.wav
+static/audio/articles/*/*.json
+!static/audio/articles/*/manifest.json
+static/audio/articles/_audition/

@@ -13,6 +13,8 @@ thumbnailAlt: "A smiling teenage girl in a scene from the Romanian-language uplo
 mediaReviewed: true
 ---
 
+<TTS />
+
 <Pi
 	src="/images/screenagers-growing-up-in-the-digital-age.jpg"
 	alt="A smiling teenage girl in a scene from the Romanian-language upload of Screenagers"

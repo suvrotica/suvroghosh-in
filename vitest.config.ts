@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/components/blog/tts/**/*.test.ts',
 			'src/lib/visualizations/probabilistic-piano/**/*.test.ts',
 			'src/lib/visualizations/scale-elevator/**/*.test.ts',
 			'src/lib/visualizations/spacetime-laboratory/**/*.test.ts',
