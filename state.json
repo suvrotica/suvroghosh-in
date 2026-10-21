@@ -23,7 +23,13 @@
       "used": 1
     }
   },
-  "checkpoint": null,
+  "checkpoint": {
+    "releaseId": 419440880,
+    "assetId": 662182849,
+    "name": "narration-checkpoint-v1-26440d59e8176c5ac54580bb6f06fceac432d4aa7301872c35056ba4adf23fd2.bin",
+    "sha256": "26440d59e8176c5ac54580bb6f06fceac432d4aa7301872c35056ba4adf23fd2",
+    "bytes": 30350155
+  },
   "publication": null,
-  "updatedAt": "2026-10-21T10:47:40.557Z"
+  "updatedAt": "2026-10-21T10:48:16.509Z"
 }
