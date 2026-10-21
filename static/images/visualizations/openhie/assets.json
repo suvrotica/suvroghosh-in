@@ -1,0 +1,35 @@
+{
+  "sourceHash": "0093535f5121d163735bc0547f357b8dcdf3d71576f3d8660d535a08b274b8d3",
+  "sources": {
+    "scripts/generate-openhie-instrument.mjs": "93940b42ebd315036b9b51a72b25cc35396335e4af26569ca64f0ad56ff3f3e4",
+    "scripts/lib/openhie-anatomy/audit.mjs": "74e605b5d549c1f31c8a1104db7560057105cf86809bf6ced00e4ac79194c8e2",
+    "scripts/lib/openhie-anatomy/iso-kit.mjs": "6d3ecc725d30c3b0346da309cf61dfa5a65017c23620bbd4093009d4fb104018",
+    "scripts/lib/openhie-anatomy/lathe.mjs": "a4e7e974b1a37e603ad2b76363b6f9815cc101dfff0ad277a5d4e8f1dc56fccb",
+    "scripts/lib/openhie-anatomy/tube.mjs": "bcb3cc360f6d83e6a5753f4c464b4587ab7965028b05a5d58e285abce58667c9",
+    "scripts/render-openhie-assets.mjs": "815082aaefa521392e4268274fc08b98348c91f8c66e569f152b09dc51f744ec",
+    "src/lib/components/visualizations/openhie/ExchangeRuntime.svelte": "c0354194af3d586ca30d100d2af120da67577a40cec3b7fe2a1883ca0334e362",
+    "src/lib/components/visualizations/openhie/Instrument.svelte": "060698747df1043f2de6fe6cda342f749b04732ea2434738e8d67174b984afed",
+    "src/lib/components/visualizations/openhie/OpenHIE.svelte": "7c4b4e5c6e628e3e44590ddc36f5bcf42f7ea7c354e9f74c640f175366b8bd3c",
+    "src/lib/components/visualizations/openhie/openhie.css": "447003f2cbce32bd45549803aa95135767206dd636c91055f4c9b08d1a2847f4",
+    "src/lib/visualizations/openhie/catalog.ts": "e20a319a5d11851a4caef1b29e63e8757bb5466a6840b350e7686c640e859ded",
+    "src/lib/visualizations/openhie/engine.ts": "a76f8c795f3b2324e74522891bced0022c4b51d8c1062ba2289bc4ad19143adf",
+    "src/lib/visualizations/openhie/index.ts": "8af03874d89ba4752b3ba857ce05b2ee944c5c2b557e257ef596769ce5f69ae6",
+    "src/lib/visualizations/openhie/instrument.json": "62a31e48fa865500c8829d5165ac5c42a639998f0b1493af4f25d2d75b6f6591",
+    "src/lib/visualizations/openhie/replay.ts": "2146a8420bf67a5926079e16bed68e406ef3967b0502ffa1a9c77f07f920b7fd",
+    "src/lib/visualizations/openhie/types.ts": "bd8ba7090d73e42df8ec142c9a19ccb36636722a39f8d28b7a57b7c50d114974",
+    "src/lib/visualizations/openhie/vitest.config.ts": "d7029923a7013e69f8ca31d9c24e1948fa252991ae474bd7bcc27a3ac92a1f55"
+  },
+  "captureMode": "local-article-browser",
+  "articlePath": "/blog/visualizations/the-patient-between-the-systems",
+  "capturePath": "/blog/visualizations/the-patient-between-the-systems",
+  "scenario": "success",
+  "step": 11,
+  "status": "success",
+  "files": {
+    "openhie-social.png": {
+      "width": 1200,
+      "height": 630,
+      "pixelSha256": "cdf41e39447efe7fcbc7e6324e27ee03c2cac8d7a90e0e8f8f5ee2e4b033503a"
+    }
+  }
+}

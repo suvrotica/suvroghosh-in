@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'the-patient-between-the-systems': {
+		id: 'the-patient-between-the-systems',
+		title: 'The Patient Between the Systems',
+		description:
+			'Follow one fictional patient through OpenHIE identity, terminology, permissions and a shared clinical record, including the points where an honest exchange must stop.',
+		subjects: ['Healthcare', 'Computer Science'],
+		poster: '/images/visualizations/openhie/openhie-social.png',
+		posterAlt:
+			'A dimensional exchange instrument with an identity indexing drum, terminology reference wheel, routing turntable and shared-record archive',
+		href: '/blog/visualizations/the-patient-between-the-systems',
+		status: 'published'
+	},
 	'the-shape-of-waiting': {
 		id: 'the-shape-of-waiting',
 		title: 'The Shape of Waiting: An Interactive Queue-Distribution Laboratory',

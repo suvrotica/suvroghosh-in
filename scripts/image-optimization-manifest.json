@@ -11145,6 +11145,21 @@
       "sourceHash": "53dc414310e08ff8e2a36d1895fa32f663dcee2487f2f80d0469c2eb49324300",
       "width": 400
     },
+    "static/images/visualizations/openhie/openhie-social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 294459,
+      "outputHash": "08df4abc36364b28d5ffdb5c0960d8354680d33b493e42e8b8d3c4002a4f9ec7",
+      "resized": false,
+      "sourceBytes": 294459,
+      "sourceHash": "08df4abc36364b28d5ffdb5c0960d8354680d33b493e42e8b8d3c4002a4f9ec7",
+      "width": 1200
+    },
     "static/images/visualizations/prior-authorization-machine.png": {
       "format": "PNG",
       "height": 900,

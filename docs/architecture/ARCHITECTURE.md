@@ -474,6 +474,32 @@ flowchart LR
     Lifecycle["Motion preference / observer teardown"] --> Ribbons
 ```
 
+### The Patient Between the Systems: OpenHIE exchange instrument
+
+The OpenHIE teaching instrument uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/the-patient-between-the-systems`. The server-rendered shell under `components/visualizations/openhie` carries `data-tts-exclude` and lazily imports its interactive runtime as the figure approaches the viewport. Surrounding authored prose, sources and a captured publication image remain readable without JavaScript. The gallery imports lightweight summary and subject metadata only. The feature adds no route exception, backend, network integration, account, credential, uploaded patient data, persistence store or global state manager.
+
+The pure TypeScript domain under `visualizations/openhie` owns synthetic source records, declared identity links, code mappings, four normalized boolean gates and immutable exchange-event/snapshot construction. Six scenarios expose successful exchange, ambiguous identity, missing terminology mapping, denied clinical access, a selected pre-commit service outage and duplicate delivery. Explicit statuses separate message receipt, shared persistence and delivery to Hospital B. Local originals, the normalized shared subset and the returned subset remain separate collections; provenance retains original codes, source identifiers and distinct occurrence, source-recording and exchange timestamps. Authorized retrieval selects persisted events for the resolved identity. Denied clinical access returns no clinical payload and never sends that query to the shared-record service. These are local teaching decisions, not operational authentication, consent, audit or OpenHIE conformance services.
+
+Presentation state belongs to the component mount: scenario overrides, selected step, guided/explore mode, Patient/Clinician/Architect lens, inspected part or transaction, and playback. All views inspect the same model snapshot. Playback pace cannot change domain events or clinical timestamps. Reduced motion and the site's Still setting stop automatic progression; visibility, intersection and preference observers, listeners and timers are released on teardown. The versioned replay parser accepts exact allowlisted scenarios, explicit booleans and bounded integer steps, rejects malformed owned fields and oversized queries, and recompiles the model instead of trusting serialized results. A JSON exchange receipt exports the selected immutable snapshot with settings, assumptions and primary references; it does not execute a new clinical query.
+
+The dimensional figure consumes committed `visualizations/openhie/instrument.json` geometry. `scripts/generate-openhie-instrument.mjs` generates its controlled SVG fragments with the MIT-licensed Anatomy geometry kit vendored under `scripts/lib/openhie-anatomy`; that kit runs during authoring and verification, not in the browser. The interactive SVG places a carriage and state highlights over those generated parts. Reader input and replay query text do not supply SVG markup. `scripts/render-openhie-assets.mjs` captures the actual local article instrument as the social/fallback poster, with source and pixel provenance. `openhie:assets:check` verifies generated instrument and publication artifacts in the full feature-artifact lane; the workflow explicitly tracks the article for pull requests and main pushes. See [the feature record](../visualizations/openhie.md) for the physical-metaphor contract, synthetic case, limits and focused verification commands. This extends the existing feature-owned pure-model/lazy-UI pattern, so no new foundational decision or separate ADR is required.
+
+```mermaid
+flowchart LR
+    Article["Ordinary Markdown / generic blog route"] --> Shell["data-tts-exclude shell / lazy per-mount UI"]
+    Article --> Prose["SSR prose / sources / publication image"]
+    Replay["Versioned bounded replay settings"] <--> Shell
+    Case["Synthetic sources / six scenarios / four boolean gates"] --> Model["Pure deterministic exchange transitions"]
+    Shell --> Model
+    Model --> Snapshot["Immutable events / selected snapshot"]
+    Snapshot --> View["SVG instrument / three lenses / record inspection"]
+    Snapshot --> Receipt["Local JSON receipt / assumptions / sources"]
+    Kit["Vendored Anatomy kit / authoring only"] --> Generator["Instrument generator / committed SVG geometry JSON"]
+    Generator --> View
+    View --> Capture["Local browser capture / provenance manifest"]
+    Lifecycle["Still / visibility / observers / timer cleanup"] --> Shell
+```
+
 ## 7. Notes client/server/persistence lifecycle
 
 ```mermaid

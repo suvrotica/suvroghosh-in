@@ -4920,6 +4920,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 350
 		},
 		{
+			"name": "visualizations/openhie/openhie-social.png",
+			"src": "/images/visualizations/openhie/openhie-social.png",
+			"bytes": 294459,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/prior-authorization-machine.png",
 			"src": "/images/visualizations/prior-authorization-machine.png",
 			"bytes": 78492,

@@ -15158,6 +15158,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
+		},
+		"src/lib/posts/the-patient-between-the-systems.md": {
+			"bodyHash": "c35ac93a99a1b1b557e49b63fef47cdd904d8da9d36dbcddd5df14e7810ddfae",
+			"hashVersion": 2,
+			"revisionHash": "283d68a7a5efce432d00558dee70c49e929d373f85b27f0c76eb733179d55bc1",
+			"generatedTags": [
+				"Healthcare",
+				"OpenHIE",
+				"Health Information Exchange",
+				"Interoperability",
+				"Healthcare IT",
+				"FHIR",
+				"Systems Architecture",
+				"Data Quality",
+				"Patient Identity",
+				"Data Provenance"
+			],
+			"pinnedTags": [
+				"Healthcare",
+				"OpenHIE",
+				"Health Information Exchange",
+				"Interoperability",
+				"Healthcare IT",
+				"FHIR",
+				"Systems Architecture",
+				"Data Quality",
+				"Patient Identity",
+				"Data Provenance"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -26,6 +26,7 @@ export default defineConfig({
 			'src/lib/visualizations/strange-attractor-orchestra/**/*.test.ts',
 			'src/lib/visualizations/chitin-engine/**/*.test.ts',
 			'src/lib/visualizations/prior-authorization/**/*.test.ts',
+			'src/lib/visualizations/openhie/**/*.test.ts',
 			'src/lib/visualizations/weather-inside-nucleus/**/*.test.ts',
 			'src/lib/visualizations/bz/**/*.test.ts',
 			'src/lib/visualizations/perlin-bloom/**/*.test.ts',
