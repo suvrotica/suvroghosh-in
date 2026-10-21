@@ -1,0 +1,167 @@
+{
+	"testEngine": {
+		"name": "axe-core",
+		"version": "4.12.1"
+	},
+	"testRunner": {
+		"name": "axe"
+	},
+	"testEnvironment": {
+		"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+		"windowWidth": 1440,
+		"windowHeight": 1000,
+		"orientationAngle": 0,
+		"orientationType": "landscape-primary"
+	},
+	"toolOptions": {
+		"runOnly": {
+			"type": "tag",
+			"values": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]
+		},
+		"reporter": "v1"
+	},
+	"timestamp": "2026-10-21T14:30:13.340Z",
+	"url": "http://127.0.0.1:4281/blog/visualizations/the-shape-of-waiting",
+	"counts": {
+		"violations": 0,
+		"passes": 20,
+		"incomplete": 2,
+		"inapplicable": 41
+	},
+	"violations": [],
+	"passes": [
+		{
+			"id": "aria-allowed-attr",
+			"nodeCount": 97
+		},
+		{
+			"id": "aria-command-name",
+			"nodeCount": 51
+		},
+		{
+			"id": "aria-conditional-attr",
+			"nodeCount": 97
+		},
+		{
+			"id": "aria-deprecated-role",
+			"nodeCount": 55
+		},
+		{
+			"id": "aria-prohibited-attr",
+			"nodeCount": 96
+		},
+		{
+			"id": "aria-required-attr",
+			"nodeCount": 55
+		},
+		{
+			"id": "aria-roles",
+			"nodeCount": 55
+		},
+		{
+			"id": "aria-valid-attr-value",
+			"nodeCount": 97
+		},
+		{
+			"id": "aria-valid-attr",
+			"nodeCount": 97
+		},
+		{
+			"id": "button-name",
+			"nodeCount": 26
+		},
+		{
+			"id": "color-contrast",
+			"nodeCount": 241
+		},
+		{
+			"id": "definition-list",
+			"nodeCount": 2
+		},
+		{
+			"id": "dlitem",
+			"nodeCount": 16
+		},
+		{
+			"id": "form-field-multiple-labels",
+			"nodeCount": 12
+		},
+		{
+			"id": "label",
+			"nodeCount": 10
+		},
+		{
+			"id": "nested-interactive",
+			"nodeCount": 97
+		},
+		{
+			"id": "select-name",
+			"nodeCount": 2
+		},
+		{
+			"id": "summary-name",
+			"nodeCount": 4
+		},
+		{
+			"id": "td-headers-attr",
+			"nodeCount": 2
+		},
+		{
+			"id": "th-has-data-cells",
+			"nodeCount": 2
+		}
+	],
+	"incomplete": [
+		{
+			"id": "aria-prohibited-attr",
+			"nodeCount": 1
+		},
+		{
+			"id": "color-contrast",
+			"nodeCount": 52
+		}
+	],
+	"inapplicable": [
+		"area-alt",
+		"aria-braille-equivalent",
+		"aria-hidden-body",
+		"aria-hidden-focus",
+		"aria-input-field-name",
+		"aria-meter-name",
+		"aria-progressbar-name",
+		"aria-required-children",
+		"aria-required-parent",
+		"aria-tab-name",
+		"aria-toggle-field-name",
+		"aria-tooltip-name",
+		"autocomplete-valid",
+		"avoid-inline-spacing",
+		"blink",
+		"document-title",
+		"duplicate-id-aria",
+		"frame-focusable-content",
+		"frame-title-unique",
+		"frame-title",
+		"html-has-lang",
+		"html-lang-valid",
+		"html-xml-lang-mismatch",
+		"image-alt",
+		"input-button-name",
+		"input-image-alt",
+		"link-in-text-block",
+		"link-name",
+		"list",
+		"listitem",
+		"marquee",
+		"meta-refresh",
+		"meta-viewport",
+		"object-alt",
+		"role-img-alt",
+		"scrollable-region-focusable",
+		"server-side-image-map",
+		"svg-img-alt",
+		"valid-lang",
+		"video-caption",
+		"no-autoplay-audio"
+	]
+}

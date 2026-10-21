@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T11:40:56.085280+00:00",
+  "generatedAt": "2026-10-21T14:00:25.763428+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -13890,6 +13890,29 @@
         "Hand",
         "Jaw",
         "Every"
+      ],
+      "wordCount": 130
+    },
+    "the-shape-of-waiting": {
+      "generatedAt": "2026-10-21T14:00:25.571945+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-shape-of-waiting.svg",
+      "source": "src/lib/posts/the-shape-of-waiting.md",
+      "sourceHash": "ab14400fd8c6debbd41bd2f6d388f4d98279bae1b7e7c0623bea0927b28883de",
+      "sourceModified": "2026-10-21T14:00:07.754392+00:00",
+      "topWords": [
+        "Service",
+        "Waiting",
+        "Time",
+        "Ticket",
+        "Queue",
+        "Waits",
+        "Class",
+        "Arrivals",
+        "Sample",
+        "Average",
+        "Person",
+        "Synthetic"
       ],
       "wordCount": 130
     },

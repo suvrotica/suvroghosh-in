@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Shape of Waiting: An Interactive Queue-Distribution Laboratory" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Shape of Waiting: An Interactive Queue-Distribution Laboratory</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(181,615)" font-size="118" style="fill:#d5d2c2">Service</text>
+<text transform="translate(281,117)" font-size="113" style="fill:#a9b7a3">Waiting</text>
+<text transform="translate(79,379)" font-size="113" style="fill:#d9c89e">Time</text>
+<text transform="translate(550,714)" font-size="107" style="fill:#9fc9c5">Ticket</text>
+<text transform="translate(980,168)" font-size="89" style="fill:#d6a79f">Queue</text>
+<text transform="translate(1214,469) rotate(-90)" font-size="82" style="fill:#d6a79f">Waits</text>
+<text transform="translate(1045,500) rotate(-90)" font-size="82" style="fill:#d5d2c2">Class</text>
+<text transform="translate(869,585)" font-size="82" style="fill:#a9b7a3">Arrivals</text>
+<text transform="translate(828,591) rotate(-90)" font-size="82" style="fill:#b6c3dd">Sample</text>
+<text transform="translate(346,209)" font-size="74" style="fill:#e0b879">Average</text>
+<text transform="translate(71,682)" font-size="74" style="fill:#c7d7b5">Person</text>
+<text transform="translate(958,444) rotate(-90)" font-size="74" style="fill:#9fc9c5">Synthetic</text>
+<text transform="translate(106,495)" font-size="74" style="fill:#e0b879">Model</text>
+<text transform="translate(96,201)" font-size="74" style="fill:#d88988">Rule</text>
+<text transform="translate(352,488)" font-size="66" style="fill:#d6a79f">Laboratory</text>
+<text transform="translate(995,97)" font-size="66" style="fill:#e0b879">Leaves</text>
+<text transform="translate(1024,672)" font-size="66" style="fill:#d9c89e">First</text>
+<text transform="translate(431,297)" font-size="66" style="fill:#d6a79f">System</text>
+<text transform="translate(866,288) rotate(-90)" font-size="66" style="fill:#a9b7a3">Counter</text>
+<text transform="translate(429,408)" font-size="66" style="fill:#9fc9c5">Tickets</text>
+<text transform="translate(78,263)" font-size="66" style="fill:#d9c89e">Priority</text>
+<text transform="translate(16,433)" font-size="66" style="fill:#b6c3dd">Different</text>
+<text transform="translate(1105,517) rotate(-90)" font-size="66" style="fill:#c49a6c">Arrival</text>
+<text transform="translate(25,107)" font-size="66" style="fill:#9fc9c5">Result</text>
+<text transform="translate(347,674)" font-size="57" style="fill:#d5d2c2">Sign</text>
+<text transform="translate(695,223)" font-size="57" style="fill:#e0b879">Age</text>
+<text transform="translate(1030,48)" font-size="57" style="fill:#c7d7b5">Order</text>
+<text transform="translate(51,363) rotate(-90)" font-size="57" style="fill:#b6c3dd">Across</text>
+<text transform="translate(406,353)" font-size="49" style="fill:#9fc9c5">Distribution</text>
+<text transform="translate(1256,510) rotate(-90)" font-size="49" style="fill:#d9c89e">Operational</text>
+<text transform="translate(40,51)" font-size="49" style="fill:#d88988">Picture</text>
+<text transform="translate(609,46)" font-size="49" style="fill:#d5d2c2">Mean</text>
+<text transform="translate(933,714)" font-size="49" style="fill:#d6a79f">Median</text>
+<text transform="translate(768,624)" font-size="49" style="fill:#d88988">Separate</text>
+<text transform="translate(529,545)" font-size="49" style="fill:#c49a6c">Current</text>
+<text transform="translate(1054,224)" font-size="49" style="fill:#9fc9c5">Whose</text>
+<text transform="translate(291,536)" font-size="49" style="fill:#b6c3dd">Final</text>
+<text transform="translate(840,514)" font-size="49" style="fill:#a9b7a3">Wait</text>
+<text transform="translate(408,153)" font-size="42" style="fill:#b6c3dd">Experiments</text>
+<text transform="translate(22,586)" font-size="42" style="fill:#d5d2c2">View</text>
+<text transform="translate(1130,706)" font-size="42" style="fill:#8fb7d0">Next</text>
+<text transform="translate(7,522)" font-size="30" style="fill:#c7d7b5">Configured</text>
+<text transform="translate(1042,615)" font-size="30" style="fill:#8fb7d0">Duration</text>
+<text transform="translate(212,293)" font-size="30" style="fill:#d6a79f">Changes</text>
+<text transform="translate(6,135)" font-size="30" style="fill:#c7d7b5">Population</text>
+<text transform="translate(465,707)" font-size="30" style="fill:#e0b879">Count</text>
+<text transform="translate(26,713)" font-size="30" style="fill:#d88988">Observed</text>
+<text transform="translate(27,612)" font-size="30" style="fill:#a9b7a3">Receipt</text>
+<text transform="translate(204,707)" font-size="24" style="fill:#b6c3dd">Twenty</text>
+<text transform="translate(886,36)" font-size="24" style="fill:#8fb7d0">Minutes</text>
+<text transform="translate(413,242)" font-size="24" style="fill:#8fb7d0">Correct</text>
+<text transform="translate(231,141)" font-size="24" style="fill:#d5d2c2">Simulation</text>
+<text transform="translate(688,436)" font-size="24" style="fill:#d5d2c2">Replay</text>
+<text transform="translate(345,25)" font-size="24" style="fill:#c49a6c">Controls</text>
+<text transform="translate(678,287)" font-size="24" style="fill:#8fb7d0">Colour</text>
+<text transform="translate(98,554)" font-size="24" style="fill:#d5d2c2">Shows</text>
+<text transform="translate(615,440)" font-size="24" style="fill:#b6c3dd">Fixed</text>
+<text transform="translate(734,269)" font-size="24" style="fill:#b6c3dd">Scale</text>
+<text transform="translate(915,535)" font-size="24" style="fill:#d88988">Finished</text>
+<text transform="translate(475,29)" font-size="24" style="fill:#8fb7d0">October</text>
+<text transform="translate(1202,32)" font-size="24" style="fill:#e0b879">Begin</text>
+<text transform="translate(611,255)" font-size="24" style="fill:#9fc9c5">Caller</text>
+<text transform="translate(989,302) rotate(-90)" font-size="24" style="fill:#d88988">Joins</text>
+<text transform="translate(837,462)" font-size="24" style="fill:#d6a79f">Scheduling</text>
+<text transform="translate(242,25)" font-size="24" style="fill:#a9b7a3">Records</text>
+<text transform="translate(596,514)" font-size="24" style="fill:#d5d2c2">Choose</text>
+<text transform="translate(934,646)" font-size="24" style="fill:#c49a6c">Oldest</text>
+<text transform="translate(450,432)" font-size="24" style="fill:#d9c89e">Inspector</text>
+<text transform="translate(1153,193)" font-size="24" style="fill:#d88988">Gives</text>
+<text transform="translate(836,329)" font-size="24" style="fill:#c49a6c">Later</text>
+<text transform="translate(8,485)" font-size="24" style="fill:#d6a79f">Stage</text>
+<text transform="translate(685,169)" font-size="24" style="fill:#c7d7b5">Accounting</text>
+<text transform="translate(719,643) rotate(-90)" font-size="24" style="fill:#c49a6c">Ages</text>
+<text transform="translate(55,285)" font-size="24" style="fill:#d5d2c2">Capacity</text>
+<text transform="translate(442,520)" font-size="24" style="fill:#c7d7b5">Paired</text>
+<text transform="translate(359,367)" font-size="24" style="fill:#e0b879">Try</text>
+<text transform="translate(328,709)" font-size="24" style="fill:#e0b879">Expected</text>
+<text transform="translate(492,657)" font-size="24" style="fill:#d88988">Jobs</text>
+<text transform="translate(172,636)" font-size="24" style="fill:#a9b7a3">Counters</text>
+<text transform="translate(192,520)" font-size="24" style="fill:#d9c89e">Behind</text>
+<text transform="translate(739,50)" font-size="24" style="fill:#c49a6c">Finite</text>
+<text transform="translate(709,310)" font-size="24" style="fill:#a9b7a3">Even</text>
+<text transform="translate(305,204) rotate(-90)" font-size="24" style="fill:#b6c3dd">Tail</text>
+<text transform="translate(1110,506)" font-size="24" style="fill:#d5d2c2">Measure</text>
+<text transform="translate(1141,386) rotate(-90)" font-size="24" style="fill:#e0b879">Comparison</text>
+<text transform="translate(49,462)" font-size="24" style="fill:#d5d2c2">Rows</text>
+<text transform="translate(342,303)" font-size="24" style="fill:#d9c89e">Policy</text>
+<text transform="translate(839,364)" font-size="24" style="fill:#c49a6c">Many</text>
+<text transform="translate(1202,616)" font-size="24" style="fill:#a9b7a3">Delay</text>
+<text transform="translate(888,248) rotate(-90)" font-size="24" style="fill:#8fb7d0">Question</text>
+<text transform="translate(695,575)" font-size="24" style="fill:#e0b879">Open</text>
+<text transform="translate(14,543)" font-size="24" style="fill:#b6c3dd">Seed</text>
+<text transform="translate(977,220)" font-size="24" style="fill:#d9c89e">Asks</text>
+<text transform="translate(1274,180) rotate(-90)" font-size="24" style="fill:#d5d2c2">Universal</text>
+<text transform="translate(725,26)" font-size="24" style="fill:#c49a6c">Effect</text>
+<text transform="translate(771,543) rotate(-90)" font-size="24" style="fill:#c49a6c">Railway</text>
+<text transform="translate(23,692) rotate(-90)" font-size="24" style="fill:#e0b879">Receives</text>
+<text transform="translate(1001,247)" font-size="24" style="fill:#9fc9c5">Office</text>
+<text transform="translate(765,139)" font-size="24" style="fill:#d88988">Work</text>
+<text transform="translate(408,634)" font-size="21" style="fill:#d88988">Formation</text>
+<text transform="translate(928,666)" font-size="21" style="fill:#8fb7d0">Clinic</text>
+<text transform="translate(1050,531)" font-size="15" style="fill:#8fb7d0">Separately</text>
+<text transform="translate(668,692) rotate(-90)" font-size="15" style="fill:#a9b7a3">Patience</text>
+<text transform="translate(373,401)" font-size="15" style="fill:#c7d7b5">Classes</text>
+<text transform="translate(844,388)" font-size="15" style="fill:#d6a79f">Already</text>
+<text transform="translate(1184,54)" font-size="15" style="fill:#d9c89e">Finishes</text>
+<text transform="translate(716,396)" font-size="15" style="fill:#b6c3dd">Take</text>
+<text transform="translate(1111,467)" font-size="15" style="fill:#e0b879">Real</text>
+<text transform="translate(352,690)" font-size="15" style="fill:#d5d2c2">Share</text>
+<text transform="translate(1270,336) rotate(-90)" font-size="15" style="fill:#e0b879">Consequences</text>
+<text transform="translate(1201,532)" font-size="15" style="fill:#d5d2c2">Served</text>
+<text transform="translate(12,158)" font-size="15" style="fill:#d6a79f">Selection</text>
+<text transform="translate(356,43)" font-size="15" style="fill:#d5d2c2">Displayed</text>
+<text transform="translate(494,675)" font-size="15" style="fill:#d6a79f">Claim</text>
+<text transform="translate(854,584) rotate(-90)" font-size="15" style="fill:#b6c3dd">Visible</text>
+<text transform="translate(1103,449)" font-size="15" style="fill:#e0b879">Maximum</text>
+<text transform="translate(130,568)" font-size="15" style="fill:#d5d2c2">Cost</text>
+<text transform="translate(1078,114)" font-size="15" style="fill:#9fc9c5">Efficient</text>
+<text transform="translate(190,218)" font-size="15" style="fill:#c49a6c">Waitingtime</text>
+<text transform="translate(1242,691) rotate(-90)" font-size="15" style="fill:#c49a6c">Started</text>
+<text transform="translate(198,308)" font-size="15" style="fill:#e0b879">Summaries</text>
+<text transform="translate(978,170) rotate(-90)" font-size="15" style="fill:#c7d7b5">Observation</text>
+<text transform="translate(316,467)" font-size="15" style="fill:#d6a79f">Now</text>
+<text transform="translate(863,294)" font-size="15" style="fill:#c7d7b5">Zero</text>
+<text transform="translate(536,245)" font-size="15" style="fill:#d88988">Outcome</text>
+<text transform="translate(529,629)" font-size="15" style="fill:#c7d7b5">P90</text>
+<text transform="translate(154,18)" font-size="15" style="fill:#e0b879">Labelled</text>
+<text transform="translate(753,626) rotate(-90)" font-size="15" style="fill:#c7d7b5">Empty</text>
+<text transform="translate(981,511)" font-size="15" style="fill:#c7d7b5">Rather</text>
+<text transform="translate(22,91) rotate(-90)" font-size="15" style="fill:#9fc9c5">Inspect</text>
+</svg>

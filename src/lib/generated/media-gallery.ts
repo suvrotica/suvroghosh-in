@@ -5137,6 +5137,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 541
 		},
 		{
+			"name": "visualizations/shape-of-waiting/shape-of-waiting-poster.png",
+			"src": "/images/visualizations/shape-of-waiting/shape-of-waiting-poster.png",
+			"bytes": 97867,
+			"width": 1600,
+			"height": 1000
+		},
+		{
+			"name": "visualizations/shape-of-waiting/shape-of-waiting-social.png",
+			"src": "/images/visualizations/shape-of-waiting/shape-of-waiting-social.png",
+			"bytes": 79137,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
 			"src": "/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
 			"bytes": 3414,

@@ -1,0 +1,46 @@
+{
+  "sourceHash": "d3a9c64e73fe975b793d6ab08325ef7e5c2ecdbee2e37420bdaa0f74d1ddc818",
+  "sources": [
+    "src/lib/visualizations/shape-of-waiting/types.ts",
+    "src/lib/visualizations/shape-of-waiting/presets.ts",
+    "src/lib/visualizations/shape-of-waiting/presentation.ts",
+    "src/lib/visualizations/shape-of-waiting/engine.ts",
+    "src/lib/visualizations/shape-of-waiting/drawing.ts",
+    "src/lib/visualizations/shape-of-waiting/serialization.ts",
+    "src/lib/visualizations/shape-of-waiting/export.ts",
+    "scripts/render-shape-of-waiting-assets.mjs"
+  ],
+  "captureMode": "bundled-browser-source",
+  "modelVersion": "waiting-1",
+  "settings": {
+    "scenario": "bank",
+    "policy": "fifo",
+    "seed": 1847,
+    "servers": 2,
+    "arrivalRate": 60,
+    "meanService": 5,
+    "variability": 0.8,
+    "window": 180,
+    "burst": false,
+    "batchSize": 1,
+    "batchDelay": 5,
+    "setupTime": 0,
+    "noShow": 0,
+    "patience": 0,
+    "priorityStrength": 1,
+    "agingMinutes": 20
+  },
+  "snapshotTime": 140.4,
+  "files": {
+    "shape-of-waiting-social.png": {
+      "width": 1200,
+      "height": 630,
+      "pixelSha256": "2e27ae9d1848960f27f755fa94e660831ce57927ec4838c77214bbe7ac2aa2e3"
+    },
+    "shape-of-waiting-poster.png": {
+      "width": 1600,
+      "height": 1000,
+      "pixelSha256": "9f7bd8bfe30129baec4e4c66be9db11cc071b5fe943cd7e17c9160777fd93a9d"
+    }
+  }
+}

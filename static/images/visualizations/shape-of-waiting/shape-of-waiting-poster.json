@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "waiting-1",
+  "title": "The Shape of Waiting",
+  "canonicalUrl": "https://www.suvroghosh.in/blog/visualizations/the-shape-of-waiting",
+  "replayUrl": "https://www.suvroghosh.in/blog/visualizations/the-shape-of-waiting#waiting=%7B%22version%22%3A%22waiting-1%22%2C%22settings%22%3A%7B%22scenario%22%3A%22bank%22%2C%22policy%22%3A%22fifo%22%2C%22seed%22%3A1847%2C%22servers%22%3A2%2C%22arrivalRate%22%3A60%2C%22meanService%22%3A5%2C%22variability%22%3A0.8%2C%22window%22%3A180%2C%22burst%22%3Afalse%2C%22batchSize%22%3A1%2C%22batchDelay%22%3A5%2C%22setupTime%22%3A0%2C%22noShow%22%3A0%2C%22patience%22%3A0%2C%22priorityStrength%22%3A1%2C%22agingMinutes%22%3A20%7D%2C%22baseline%22%3Anull%2C%22time%22%3A140.4%7D",
+  "replay": {
+    "version": "waiting-1",
+    "settings": {
+      "scenario": "bank",
+      "policy": "fifo",
+      "seed": 1847,
+      "servers": 2,
+      "arrivalRate": 60,
+      "meanService": 5,
+      "variability": 0.8,
+      "window": 180,
+      "burst": false,
+      "batchSize": 1,
+      "batchDelay": 5,
+      "setupTime": 0,
+      "noShow": 0,
+      "patience": 0,
+      "priorityStrength": 1,
+      "agingMinutes": 20
+    },
+    "baseline": null,
+    "time": 140.4
+  },
+  "scenario": "Bank",
+  "settings": {
+    "scenario": "bank",
+    "policy": "fifo",
+    "seed": 1847,
+    "servers": 2,
+    "arrivalRate": 60,
+    "meanService": 5,
+    "variability": 0.8,
+    "window": 180,
+    "burst": false,
+    "batchSize": 1,
+    "batchDelay": 5,
+    "setupTime": 0,
+    "noShow": 0,
+    "patience": 0,
+    "priorityStrength": 1,
+    "agingMinutes": 20
+  },
+  "seed": 1847,
+  "arrivalWindow": 180,
+  "requestedTime": 140.4,
+  "snapshotTime": 140.4,
+  "finalSimulatedTime": 448.83032915764454,
+  "status": "complete",
+  "limitReason": null,
+  "completion": "provisional; unresolved waits or future arrivals remain",
+  "metrics": {
+    "mean": 55.43176511399428,
+    "median": 56.42671771035163,
+    "p90": 90.83358861756217,
+    "max": 95.8972278912317,
+    "started": 56,
+    "completed": 54,
+    "waiting": 92,
+    "active": 2,
+    "abandoned": 0,
+    "arrived": 148,
+    "noShows": 0,
+    "abandonmentRate": 0,
+    "meanAbandonWait": null,
+    "oldestAge": 93.1064413201536,
+    "overtakenRate": 0,
+    "classes": [
+      {
+        "classId": 0,
+        "label": "Priority 1",
+        "n": 5,
+        "median": 46.22873642735965,
+        "p90": 81.6197666878825
+      },
+      {
+        "classId": 1,
+        "label": "Priority 2",
+        "n": 15,
+        "median": 64.07233629798804,
+        "p90": 91.49950962060716
+      },
+      {
+        "classId": 2,
+        "label": "Priority 3",
+        "n": 36,
+        "median": 54.82483914401018,
+        "p90": 90.71052524027148
+      }
+    ],
+    "classGap": 9.879742932724653
+  },
+  "baseline": null,
+  "definitions": {
+    "wait": "Simulated minutes from queue entry to service start, among people whose service has started. Includes people currently in service.",
+    "pending": "People still waiting have only a current age; their eventual wait is unresolved.",
+    "quantile": "Hyndman–Fan type 7; linear interpolation at (n−1)p.",
+    "abandonment": "Separate competing outcome; rate denominator is all attended arrivals by the snapshot time.",
+    "overtaken": "Fraction of service starters passed by at least one later arrival before their own service start.",
+    "classGap": "Highest minus lowest class P90 among classes with service starters.",
+    "batch": "Members start and finish together; one server is occupied for setup plus summed member work.",
+    "noShow": "Clinic scheduled absences do not join or consume service capacity.",
+    "scope": "Synthetic, initially empty finite session. Not a steady-state estimate or measured institutional performance."
+  }
+}

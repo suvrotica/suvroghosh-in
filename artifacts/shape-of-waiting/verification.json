@@ -1,0 +1,61 @@
+{
+	"schemaVersion": 1,
+	"scope": "Production-preview browser verification",
+	"verifiedAtUtc": "2026-10-21T14:31:51Z",
+	"clientDate": "2026-10-21",
+	"baseURL": "http://127.0.0.1:4281",
+	"articlePath": "/blog/visualizations/the-shape-of-waiting",
+	"environment": {
+		"PLAYWRIGHT_REUSE_SERVER": "1"
+	},
+	"command": "npm run shape-of-waiting:browser:test",
+	"configuration": "playwright.shape-of-waiting.config.ts",
+	"result": {
+		"total": 10,
+		"passed": 10,
+		"failed": 0,
+		"durationSeconds": 44,
+		"browser": "Chromium using the installed Chrome channel",
+		"serviceWorkers": "block"
+	},
+	"coverage": [
+		"Readable SSR article, single h1, real model-derived PNG poster and JavaScript-disabled fallback",
+		"Seven operational presets, real Canvas drawing and native slider values matching configured outputs",
+		"Oldest-ticket inspection, native keyboard activation, stepping, restart and resolved results",
+		"Paired headline experiment with lower mean, higher p90 and maximum, and zero unresolved waits",
+		"Staffing and service-variability experiments with explicit changed-demand disclosure",
+		"Actual PNG and JSON downloads, shared selection, population conservation and exact replay after remount",
+		"Mobile touch, reduced motion, disabled Play in Still mode, comparison and 125 per cent text size",
+		"Malformed replay fallback and usable state after navigation away and back",
+		"Real worker-script request gating, in-flight comparison close, clock clamp, request failure, stale-receipt removal and recovery",
+		"Automated WCAG A and AA checks with advanced controls open and paired results visible"
+	],
+	"viewports": [
+		{ "width": 1440, "height": 1000, "mode": "desktop" },
+		{ "width": 834, "height": 1112, "mode": "tablet resize" },
+		{ "width": 390, "height": 844, "mode": "mobile touch and reduced motion" }
+	],
+	"accessibility": {
+		"report": "axe-results.json",
+		"tags": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"],
+		"violations": 0,
+		"passes": 20
+	},
+	"screenshots": [
+		{ "file": "desktop-opening.png", "width": 1440, "height": 1000 },
+		{ "file": "desktop-comparison.png", "width": 1401, "height": 1463 },
+		{ "file": "tablet-opening.png", "width": 834, "height": 1112 },
+		{ "file": "mobile-opening.png", "width": 390, "height": 844 },
+		{ "file": "mobile-comparison.png", "width": 374, "height": 2345 }
+	],
+	"captureVerification": {
+		"targetedCommand": "npm run shape-of-waiting:browser:test -- --grep 'headline guided|mobile Still'",
+		"passed": 2,
+		"durationSeconds": 9,
+		"note": "Element captures temporarily hide the sticky site header to prevent it covering the comparison title. Opening captures retain the site shell. All five final images were visually inspected."
+	},
+	"limitations": [
+		"Automated accessibility rules and visual inspection do not establish complete accessibility conformance.",
+		"These browser fixtures verify the implemented synthetic laboratory; they do not calibrate it against institutional data."
+	]
+}

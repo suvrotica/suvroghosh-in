@@ -11637,6 +11637,36 @@
       "sourceHash": "f7c49f60c299110f6422b50b7cbedd43f43189bc3754ab06246d0993ad6de794",
       "width": 1047
     },
+    "static/images/visualizations/shape-of-waiting/shape-of-waiting-poster.png": {
+      "format": "PNG",
+      "height": 1000,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1000,
+      "originalWidth": 1600,
+      "outputBytes": 97867,
+      "outputHash": "4df309ecb50e284b06546ddf4ca0b1947790083077615f338f3617b832085744",
+      "resized": false,
+      "sourceBytes": 139672,
+      "sourceHash": "c7f9c8519df2fca3a7a9bea90639ae7b380fe67231e0ae61574720369e5a4a61",
+      "width": 1600
+    },
+    "static/images/visualizations/shape-of-waiting/shape-of-waiting-social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 79137,
+      "outputHash": "d4441ec867cca8bdf72ae9e0f25d040b17f475046684351899326ff4c409ec24",
+      "resized": false,
+      "sourceBytes": 102538,
+      "sourceHash": "5de86ee536e5cca6a242a9094fc059202231dc981cf036b40ba26c99704c22a6",
+      "width": 1200
+    },
     "static/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg": {
       "format": "SVG",
       "height": 630,

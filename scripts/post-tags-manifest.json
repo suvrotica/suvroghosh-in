@@ -15018,6 +15018,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
+		},
+		"src/lib/posts/the-shape-of-waiting.md": {
+			"bodyHash": "f6bb1ed06779abac88405b93d02da1c651c2534cb4d7f38f590c7afdb60d72d7",
+			"hashVersion": 2,
+			"revisionHash": "55d8908c7ad989d4cdf110a0d82c126f17137770aab8b44576f9e23b152562c7",
+			"generatedTags": [
+				"Queueing Theory",
+				"Probability",
+				"Statistics",
+				"Operations Research",
+				"Discrete-Event Simulation",
+				"Data Visualisation",
+				"Fairness",
+				"Scientific Computing",
+				"Service Variability",
+				"Queue Discipline"
+			],
+			"pinnedTags": [
+				"Queueing Theory",
+				"Probability",
+				"Statistics",
+				"Operations Research",
+				"Discrete-Event Simulation",
+				"Data Visualisation",
+				"Fairness",
+				"Scientific Computing",
+				"Service Variability",
+				"Queue Discipline"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		}
 	},
 	"maxTags": 10

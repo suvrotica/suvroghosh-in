@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'the-shape-of-waiting': {
+		id: 'the-shape-of-waiting',
+		title: 'The Shape of Waiting: An Interactive Queue-Distribution Laboratory',
+		description:
+			'Change staffing and queue rules, follow the oldest ticket, and compare the same synthetic day through a replayable waiting receipt.',
+		subjects: ['Statistics', 'Mathematics', 'Scientific Computing'],
+		poster: '/images/visualizations/shape-of-waiting/shape-of-waiting-social.png',
+		posterAlt:
+			'A warm-paper queue laboratory with a curling line of teal, amber and red waiting tickets beside mean, median and tail-wait readouts',
+		href: '/blog/visualizations/the-shape-of-waiting',
+		status: 'published'
+	},
 	'the-music-of-missing-data': {
 		id: 'the-music-of-missing-data',
 		title: 'The Music of Missing Data: A Missingness-Pattern Explorer',
