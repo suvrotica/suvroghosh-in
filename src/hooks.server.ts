@@ -37,7 +37,26 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const isNotesAuth = isSignIn || isForgotPassword || isResetPassword || isNotesAuthCallback;
 	const isProtectedNotesApi = matchesPath('/api/notes');
 	const needsNotesSession = isStudio || isSignIn || isResetPassword || isProtectedNotesApi;
-	if (needsNotesSession) await resolveNotesUser(event);
+	if (needsNotesSession) {
+		try {
+			await resolveNotesUser(event);
+		} catch {
+			// Authentication must fail closed with private headers, including when its
+			// provider does not respond. Never fall through to the owner report query.
+			return new Response('The private workspace is temporarily unavailable. Please try again.', {
+				status: 503,
+				headers: {
+					'cache-control': 'private, no-cache, no-store, must-revalidate, max-age=0',
+					'x-robots-tag': 'noindex, nofollow, noarchive',
+					'x-content-type-options': 'nosniff',
+					'x-frame-options': 'DENY',
+					'permissions-policy': 'camera=(), microphone=(), geolocation=()',
+					'referrer-policy': 'no-referrer',
+					'x-request-id': event.locals.requestId
+				}
+			});
+		}
+	}
 
 	const response = await resolve(event);
 	response.headers.set('x-request-id', event.locals.requestId);

@@ -8,10 +8,12 @@ type MeasurementContext = {
 	webdriver: boolean;
 	localPreference: unknown;
 	sessionPreference: unknown;
+	analyticsConsent?: boolean;
 };
 
 export function measurementAllowed(context: MeasurementContext): boolean {
 	return (
+		context.analyticsConsent === true &&
 		!context.development &&
 		context.currentOrigin === context.productionOrigin &&
 		!context.webdriver &&

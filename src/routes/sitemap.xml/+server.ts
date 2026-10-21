@@ -109,6 +109,7 @@ export async function GET() {
 		{ url: siteUrl + '/', lastMod: blogLastMod },
 		{ url: siteUrl + '/start-here', lastMod: startHereLastMod },
 		{ url: siteUrl + '/about', lastMod: '2026-10-20' },
+		{ url: siteUrl + '/privacy', lastMod: '2026-10-22' },
 		{ url: siteUrl + '/resume', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/projects', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/consulting', lastMod: '2026-10-20' },

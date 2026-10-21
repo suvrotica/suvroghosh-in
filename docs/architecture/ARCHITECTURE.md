@@ -6,6 +6,11 @@ The mandatory architecture-change policy has one authoritative definition: [CONT
 
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
+The 22 October privacy/analytics implementation changes optional browser measurement to explicit
+consent, adds bounded geographic page-view rollups in Supabase, and reuses the configured-owner
+workspace for reports. Hosted migration/configuration and retention-job activation must be verified
+separately from application tests. See [ADR 0006](decisions/0006-consented-aggregate-analytics.md).
+
 ## 1. System and principles
 
 SuvroGhosh.IN is one SvelteKit application deployed through the Vercel adapter. It combines a repository-backed publishing site, interactive scientific/educational experiences, browser games, downloadable resources, a media library, and a single-owner handwritten-notes application. There is no separate application server, generic CMS, global state store, or shared simulation engine governing every experience.
@@ -33,6 +38,14 @@ flowchart LR
     SSR --> Supabase["Supabase Auth, Postgres/RLS, private Storage"]
     Supabase --> Cron["Scheduled-publication RPC via pg_cron"]
     Browser --> Local["IndexedDB drafts; public-note service-worker caches"]
+    Browser --> Consent["Browser-local, versioned privacy choices"]
+    Consent -->|optional, eligible production views| Intake["Bounded same-origin analytics collector"]
+    Consent -->|analytics permission and measurement eligibility| Measurement["Vercel Analytics / Speed Insights"]
+    Consent -->|remembered media permission| Media["YouTube embeds"]
+    Browser -->|explained one-time media load| Media
+    Intake --> Rollups["Supabase daily dimension counters; no visitor history"]
+    Owner["Configured owner session"] --> Reports["Private Notes workspace analytics / CSV"]
+    Reports --> Rollups
     Author["Local operator"] --> Ledger["Pacific-day reservations; 10 calls/day, 65-second spacing"]
     HostedAuthor["Daily main-only GitHub Actions authoring"] --> Priority["Validate optional priority slugs / skip current delivery"]
     Priority --> Ledger
@@ -66,12 +79,15 @@ Paths are relative to the repository root. This is a responsibility map rather t
 | `src/lib/games/`                                                                                 | Game catalog, domain models/engines/content, rendering helpers and local tests.                                                                                                                        |
 | `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                            |
 | `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                |
+| `src/lib/privacy/`                                                                               | Browser-local consent validation, persistence, expiry, cross-tab subscriptions and privacy-settings events; no visitor identifier.                                                                     |
+| `src/lib/analytics/`                                                                             | Browser-safe report types, per-document page-view ledger and consent-gated provider/first-party measurement lifecycle.                                                                                 |
+| `src/lib/server/analytics/`                                                                      | Server-only public-path registry, trusted-geography/dimension policy and bounded aggregate write/report RPCs.                                                                                          |
 | `src/lib/motion/`, `src/lib/attachments/`, `src/lib/utils/`                                      | Motion policy and procedural helpers, DOM attachments, small shared utilities.                                                                                                                         |
 | `src/lib/generated/`, `src/lib/server/generated/`                                                | Generated media/music/sketch indexes and server image dimensions; edit their generators/inputs.                                                                                                        |
 | `src/lib/data/`, `src/lib/notebooks/`, `src/lib/config/`, `src/lib/sketches/`, `src/lib/assets/` | Curated folio/model data, notebook sources, public link definitions, sketch types, source assets.                                                                                                      |
 | `scripts/`                                                                                       | Build generators, source/render validators, asset tools, Node tests and architecture gate.                                                                                                             |
 | `tests/`, `playwright.*.config.ts`, `vitest*.config.ts`                                          | Browser/visual checks and unit-runner configuration; most unit tests live with source.                                                                                                                 |
-| `supabase/`                                                                                      | Initial notes migration, development configuration, scheduled activation SQL. No generated database types are committed.                                                                               |
+| `supabase/`                                                                                      | Notes and analytics migrations, development configuration, publication scheduling and bounded analytics-retention SQL. No generated database types are committed.                                      |
 | `static/`                                                                                        | Public media, notebook HTML, generated word clouds/search inputs, bootstrap script and crawler assets. Never private storage.                                                                          |
 | `docs/`                                                                                          | Feature design/authoring documents and dated audit evidence. This directory's `architecture/` owns the cross-cutting current reference.                                                                |
 | `src/lib/SavedPosts/`, `suvroghosh-post-backups/`                                                | Retained editorial material/backups, not the active post registry. Excluded from normal formatting; SavedPosts has a separate inventory tool.                                                          |
@@ -123,6 +139,9 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/resources`, `/resources/[kind=resourceKind]/[slug]`                                                  | Prerendered resource index/details; param matcher limits kind to prompts/lists; universal component import follows server metadata validation.                                                                                                                                                                     |
 | `/images`, `/images/sketches`                                                                          | Server gallery/sketch loads; generated asset catalogs; the museum has browser enhancement.                                                                                                                                                                                                                         |
 | `/notes/**`                                                                                            | Inherits `prerender = false`; public list/read, owner auth/recovery, protected studio/editor/preview.                                                                                                                                                                                                              |
+| `/notes/studio/analytics`, `/notes/studio/analytics/export`                                            | Configured-owner aggregate dashboard and CSV download; each independently authorizes before bounded report queries and returns private/no-store/noindex responses.                                                                                                                                                 |
+| `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
+| `/api/analytics/pageview`                                                                              | Same-origin consented page-view intake with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                                      |
 | `/api/notes/**`                                                                                        | Owner-only document/assets APIs.                                                                                                                                                                                                                                                                                   |
 | `/api/public/notes/**`                                                                                 | Visible snapshot document and publication-gated private-storage asset reads.                                                                                                                                                                                                                                       |
 | `/contact`, `/api/tts/chatterbox`                                                                      | Contact form action and optional speech proxy.                                                                                                                                                                                                                                                                     |
@@ -623,9 +642,47 @@ per daily request without increasing the request quota or introducing paid infer
 
 ## 9. Security, errors and validation
 
-Root-layout measurement is guarded by the browser-safe `src/lib/measurement.ts` policy. Analytics and Speed Insights initialize only on the canonical production origin, outside development and `navigator.webdriver` contexts, and when neither local nor session storage contains `suvroghosh:measurement=off`. Denied storage fails closed for measurement without blocking the site. Both SDK `beforeSend` callbacks recheck eligibility, strip query/fragment URL state and suppress API and Notes studio/auth paths, including encoded path forms. This adds no identifiers, server endpoint, event pipeline or public environment flag; it does not establish that all retained observations are human or that a particular reporting tier is available.
+Root-layout measurement is owned by `src/lib/analytics/client.ts` and the browser-safe
+`src/lib/measurement.ts` policy. `src/lib/privacy/consent.ts` validates a version-one, browser-local
+`suvroghosh:consent` choice with a 180-day lifetime, in-memory fallback, expiry and cross-tab updates.
+Analytics and Speed Insights initialize only after affirmative analytics consent on the canonical
+production origin, outside development and `navigator.webdriver` contexts, and when neither local
+nor session storage contains `suvroghosh:measurement=off`. Denied storage still fails closed for
+measurement. SDK `beforeSend` callbacks recheck eligibility, strip query/fragment state and suppress
+API and Notes studio/auth paths, including encoded forms. Custom visualization events use the same
+gate. A per-document navigation ledger sends one view per eligible pathname visit; it stores no
+visitor/session identifier. Withdrawal aborts pending first-party requests and blocks subsequent
+provider callbacks. Already accepted aggregates cannot be traced back to a withdrawing browser.
 
-The shared YouTube component retains its default direct-embed behavior and adds an opt-in `clickToPlay` mode used by the three résumé videos. The deferred server render contains a labelled native button, title/caption and direct watch link, with no player or remote thumbnail request. Activation creates the existing player and moves focus to it; playback remains user-controlled. This changes loading ownership, not CSP destinations or article content.
+The first-party `POST /api/analytics/pageview` accepts a small, schema-validated consent indication
+and known public pathname. It enforces a streamed body limit, exact same-origin requests, production
+eligibility, bounded deadlines and admission controls. Geography comes from Vercel production
+headers, never the submitted body; unknown/malformed geography stays Unknown. Separate daily
+rollups retain total/page/country/city/referrer/device/browser counts for 180 Asia/Kolkata reporting
+days. They do not retain raw event rows, raw IP/UA, coordinates, durable IP hashes or visitor IDs.
+Transient admission data is separate from reports. RLS denies direct browser access; server-only
+service-role RPCs own writes and report queries. Migration/cron setup and operational limits are
+documented in [the setup guide](../privacy-analytics.md); app deployment alone does not run SQL.
+
+`/notes/studio/analytics` and its CSV export independently require the existing configured owner
+before querying. They inherit the studio session resolution and no-store/noindex headers. No public
+report endpoint or client authentication bypass is added. Reports describe consented recorded page
+views rather than unique people, and provider analytics are not added to first-party totals. Provider
+infrastructure logging remains outside the application's aggregate-only storage claim.
+
+The shared Notes owner identity lookup now has a five-second deadline and passes its abort signal
+through the Supabase SSR client's fetch without discarding a downstream request's own signal. The
+deadline ends when identity verification finishes; later report/Notes operations retain their own
+lifecycle. If identity lookup fails before route resolution, hooks return a private no-store,
+noindex 503 response instead of continuing to a report or exposing an unbounded wait. Other Notes
+mutation body limits and non-auth provider deadlines remain separate audit findings.
+
+The shared YouTube component now server-renders a local placeholder for every embed: title/caption,
+a labelled one-time-load button, privacy settings and a direct watch link, with no remote thumbnail
+or player. Remembered external-media permission loads ordinary embeds after mount; `clickToPlay`
+embeds still need activation. One-time activation does not persist media permission. Rejection,
+withdrawal or expiry removes active players. The existing YouTube host/CSP and article content are
+preserved. Same-origin notebook frames are outside this optional external-media category.
 
 The checked-in CSP is defined in `svelte.config.js` with automatic nonce/hash handling, self-by-default scripts, named Vercel endpoints, bounded frame/worker policy, no objects and no framing. `vercel.json` adds transport response headers and apex-to-www redirects. `hooks.server.ts` adds request IDs and headers to resolved application responses; it normalizes blog categories and resolves notes sessions only for protected/auth-dependent routes.
 
@@ -635,7 +692,7 @@ Owner authorization checks both the configured immutable user UUID and database 
 
 Errors currently follow several mechanisms: Kit `error`/`redirect`, form `fail` data, Zod parsing, repository error translation, provider HTTP responses, and a site `+error.svelte`. Universal Markdown import failures are logged and mapped to 404; they do not expose a detailed import error to readers. Notes use bounded runtime Zod validation (ordinary object schemas strip unknown keys); topic/resource authored metadata contracts are stricter. Article metadata uses a lighter validator and build checks. This diversity is real; a single universal error/schema layer does not exist.
 
-New expensive/state-changing endpoints must follow the existing security invariants in [AGENTS.md](../../AGENTS.md): validate input, enforce streamed body limits, same-origin rules where browser-invoked, timeouts and cost-appropriate throttling. TTS and contact now use the shared server-only `http/body.ts` streamed reader/deadline helper and bounded `local-admission.ts` guard. Their 64 KiB input limits apply before parsing, with ten-second read deadlines and exact origin checks. TTS limits audio to 32 MiB within a 120-second provider deadline; contact delivery has a 15-second deadline. Admission is process-local, including a bounded fallback bucket when the adapter cannot resolve an address, and is not a distributed guarantee. Notes mutation readers and shared Supabase deadlines remain gaps (`AF-001`, in progress). SvelteKit's built-in form CSRF check is present; it does not replace explicit policy for every JSON endpoint. The named `security:audit` and `security:smoke` commands are currently absent, so they cannot be presented as passing safeguards.
+New expensive/state-changing endpoints must follow the existing security invariants in [AGENTS.md](../../AGENTS.md): validate input, enforce streamed body limits, same-origin rules where browser-invoked, timeouts and cost-appropriate throttling. TTS and contact now use the shared server-only `http/body.ts` streamed reader/deadline helper and bounded `local-admission.ts` guard. Their 64 KiB input limits apply before parsing, with ten-second read deadlines and exact origin checks. TTS limits audio to 32 MiB within a 120-second provider deadline; contact delivery has a 15-second deadline. Admission is process-local, including a bounded fallback bucket when the adapter cannot resolve an address, and is not a distributed guarantee. Notes mutation readers and non-auth Supabase deadlines outside the bounded analytics repository remain gaps (`AF-001`, in progress); the shared identity lookup is bounded as described above. SvelteKit's built-in form CSRF check is present; it does not replace explicit policy for every JSON endpoint. The named `security:audit` and `security:smoke` commands are currently absent, so they cannot be presented as passing safeguards.
 
 ## 10. Caching and offline behavior
 
@@ -668,6 +725,14 @@ flowchart LR
 Delivered publications cannot be recalled from an offline device. This is a documented product constraint, not an authorization guarantee. Do not extend the worker to cache authenticated pages or mutable draft APIs.
 
 ## 11. Tests and architectural verification
+
+`privacy:test` covers consent parsing/lifecycle, eligible-browser SDK/collector gating, navigation
+deduplication, bounded intake, geographic normalization, report ranges, private owner access and CSV
+escaping. `privacy:browser:test` runs against a built loopback preview with service workers blocked;
+the separately isolated test-only dashboard harness contains labelled synthetic aggregate fixtures,
+not a production auth bypass. Database migration execution/grant/retention tests use an isolated
+local engine when available; these do not establish hosted migration or cron activation. The
+critical-boundaries workflow includes the new privacy suite and affected application/migration paths.
 
 The critical-boundaries workflow also watches the measurement policy/root layout, deferred YouTube component/résumé, notebook header configuration, internal-link validator and their Node regression files. `test:critical` includes `seo:test` for production-origin/opt-out/private-URL measurement rules, real Svelte server rendering of deferred/default players, notebook-to-published-parent canonical consistency and internal-link CLI fixtures. The link validator recognises canonical topic paths only when strict topic frontmatter matches its lowercase kebab-case filename, is published and has the actual topic route handler; missing, unpublished and nested topic paths remain errors. `seo:browser:test` uses an already-built loopback preview, blocks service workers and external requests, and checks keyboard player activation/focus, narrow-screen Writing links and rendered metadata. It does not rebuild the app or serve as a field-performance measurement.
 

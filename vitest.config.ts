@@ -5,6 +5,11 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/privacy/**/*.test.ts',
+			'src/lib/analytics/**/*.test.ts',
+			'src/lib/server/analytics/**/*.test.ts',
+			'src/routes/api/analytics/**/*.test.ts',
+			'src/routes/notes/studio/analytics/**/*.test.ts',
 			'src/lib/visualizations/two-calendars/**/*.test.ts',
 			'src/lib/visualizations/shape-of-waiting/**/*.test.ts',
 			'src/lib/visualizations/missing-data/**/*.test.ts',

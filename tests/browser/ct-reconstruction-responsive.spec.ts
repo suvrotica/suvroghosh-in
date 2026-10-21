@@ -387,6 +387,10 @@ test('inspect and shape gestures scroll, while a brush drag paints without scrol
 	page
 }) => {
 	await openLaboratory(page, 390, 760);
+	// Complete the separate first-visit choice before sending viewport-coordinate gestures.
+	const privacyNote = page.locator('[data-privacy-note]');
+	await privacyNote.getByRole('button', { name: 'Reject optional', exact: true }).click();
+	await expect(privacyNote).toHaveCount(0);
 	const canvas = page.locator('.phantom-editor canvas');
 	await expect(canvas).toHaveAttribute('data-tool', 'inspect');
 	let points = await phantomDragPoints(page);

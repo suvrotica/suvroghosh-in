@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { replaceState as replaceNavigationState } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import { track } from '@vercel/analytics';
+	import { trackConsented as track } from '$lib/analytics/client';
 	import { onMount, tick } from 'svelte';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
 	import AccessibleCityReport from './AccessibleCityReport.svelte';
