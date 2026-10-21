@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "repository": "suvrotica/suvroghosh-in",
+  "projectId": "gen-lang-client-0296473115",
+  "keyHash": "ac885bac0ae8adbb3515614346301c4535099202179151cd675ac341b163580e",
+  "verifiedAt": "2026-10-21T10:47:40.557Z",
+  "hosting": {
+    "projectId": "prj_IxNpapfOcZwq4zRwlK56DPCRwQnc",
+    "teamId": "team_PxbH7s87MnRH1xfa9cA6QIfp",
+    "plan": "hobby",
+    "verifiedAt": "2026-10-21T10:47:40.557Z"
+  },
+  "quota": {
+    "version": 1,
+    "day": "2026-10-21",
+    "used": 10,
+    "createdAt": 1792574524292,
+    "updatedAt": 1792575296796,
+    "lastRequestAt": 1792575296796,
+    "blockedUntil": 0,
+    "initialUsage": {
+      "day": "2026-10-21",
+      "used": 1
+    }
+  },
+  "checkpoint": null,
+  "publication": null,
+  "updatedAt": "2026-10-21T10:47:40.557Z"
+}
