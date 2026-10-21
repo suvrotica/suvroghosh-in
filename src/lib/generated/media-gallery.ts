@@ -4353,6 +4353,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "show-it-how-to-swallow.webp",
+			"src": "/images/show-it-how-to-swallow.webp",
+			"bytes": 127932,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "sixty-feet-of-marigolds.jpg",
 			"src": "/images/sixty-feet-of-marigolds.jpg",
 			"bytes": 193674,

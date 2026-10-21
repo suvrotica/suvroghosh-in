@@ -9880,6 +9880,22 @@
       "sourceHash": "d4e70b54ec8e0b7bf18f2e4088dd9a465326af5d65ec15d4164a7e5e967fe4c1",
       "width": 1024
     },
+    "static/images/show-it-how-to-swallow.webp": {
+      "format": "WEBP",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 127932,
+      "outputHash": "cab4e5fadace5e4a1a8f0aed58e992d44383c7fab220f11bb984007a37a92ef0",
+      "psnrDb": 37.17,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 1585532,
+      "sourceHash": "871cebe658716e61b6e399a05b4b1c0996fd4c60a8a58db1bf3eba571b6c5b57",
+      "width": 1672
+    },
     "static/images/sixty-feet-of-marigolds.jpg": {
       "format": "JPEG",
       "height": 576,

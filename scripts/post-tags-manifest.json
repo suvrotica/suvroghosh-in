@@ -14948,6 +14948,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
+		},
+		"src/lib/posts/show-it-how-to-swallow.md": {
+			"bodyHash": "9b566daccc0f94223eed7c6bd990d8934e64809e07e02e73695b58131a71b324",
+			"hashVersion": 2,
+			"revisionHash": "8d9c10330c779157bdcfca33eb753bb2975d6b862cbe179f43c0bc5112254fb6",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Science Fiction Horror",
+				"Body Horror",
+				"Robotics",
+				"Bengali Folklore",
+				"Bodily Autonomy",
+				"Horror",
+				"Possession",
+				"Psychological Horror"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Science Fiction Horror",
+				"Body Horror",
+				"Robotics",
+				"Bengali Folklore",
+				"Bodily Autonomy",
+				"Horror",
+				"Possession",
+				"Psychological Horror"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		}
 	},
 	"maxTags": 10
