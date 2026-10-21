@@ -119,7 +119,8 @@ async function openCapture(browser, options = {}) {
 		deviceScaleFactor: 1,
 		colorScheme: 'light',
 		reducedMotion: 'no-preference',
-		...options
+		...options,
+		serviceWorkers: 'block'
 	});
 	const page = await context.newPage();
 	const errors = [];

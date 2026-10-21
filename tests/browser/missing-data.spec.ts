@@ -69,7 +69,11 @@ test('the article and deterministic poster remain readable without JavaScript', 
 	expect(html).toContain(posterPath);
 	expect(html).toContain('Begin with the lights on');
 	expect(html.match(/<h1(?=\s|>)/gu)).toHaveLength(1);
-	const context = await browser.newContext({ baseURL, javaScriptEnabled: false });
+	const context = await browser.newContext({
+		baseURL,
+		javaScriptEnabled: false,
+		serviceWorkers: 'block'
+	});
 	try {
 		const page = await context.newPage();
 		await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
@@ -284,6 +288,7 @@ test('the mobile reduced-motion explorer fits its viewport and supports touch in
 }) => {
 	const context = await browser.newContext({
 		baseURL,
+		serviceWorkers: 'block',
 		viewport: { width: 390, height: 844 },
 		hasTouch: true,
 		isMobile: true,

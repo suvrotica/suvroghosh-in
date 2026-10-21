@@ -4922,14 +4922,14 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "visualizations/probabilistic-piano/piano-poster.jpg",
 			"src": "/images/visualizations/probabilistic-piano/piano-poster.jpg",
-			"bytes": 127846,
+			"bytes": 127832,
 			"width": 1440,
 			"height": 760
 		},
 		{
 			"name": "visualizations/probabilistic-piano/piano-social.jpg",
 			"src": "/images/visualizations/probabilistic-piano/piano-social.jpg",
-			"bytes": 107167,
+			"bytes": 107114,
 			"width": 1200,
 			"height": 630
 		},

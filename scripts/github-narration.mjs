@@ -457,12 +457,18 @@ export function browserLaunchOptions(env = process.env) {
 	};
 }
 
+export function browserContextOptions(overrides = {}) {
+	// Production verification must not install the site's offline cache or let
+	// a worker issue requests outside the smoke test's explicit navigation.
+	return { ...overrides, serviceWorkers: 'block' };
+}
+
 async function browserSmoke(manifests, { origin = PUBLIC_ORIGIN, env = process.env } = {}) {
 	const { chromium } = await import('@playwright/test');
 	const browser = await chromium.launch(browserLaunchOptions(env));
 	let providerRequests = 0;
 	try {
-		const context = await browser.newContext();
+		const context = await browser.newContext(browserContextOptions());
 		await context.route(
 			/https:\/\/(?:generativelanguage|texttospeech)\.googleapis\.com\//u,
 			(route) => {
@@ -528,7 +534,7 @@ async function browserSmoke(manifests, { origin = PUBLIC_ORIGIN, env = process.e
 			);
 			await player.getByRole('button', { name: 'Stop article audio', exact: true }).click();
 		}
-		const fallback = await browser.newContext();
+		const fallback = await browser.newContext(browserContextOptions());
 		await fallback.route(
 			/https:\/\/(?:generativelanguage|texttospeech)\.googleapis\.com\//u,
 			(route) => {
@@ -667,7 +673,9 @@ async function defaultDependencies(root, env) {
 			const { chromium } = await import('@playwright/test');
 			const browser = await chromium.launch(browserLaunchOptions(env));
 			try {
-				const context = await browser.newContext({ javaScriptEnabled: false });
+				const context = await browser.newContext(
+					browserContextOptions({ javaScriptEnabled: false })
+				);
 				await context.route('**/*', (route) =>
 					route.request().isNavigationRequest() &&
 					new URL(route.request().url()).origin === LOCAL_ORIGIN
@@ -888,7 +896,9 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 		}
 		const all = await deps.deliveries();
 		const verifySlugs = new Set([
-			...(verifyOnly ? INITIAL_ARTICLES : INITIAL_ARTICLES.filter((slug) => all.has(slug))),
+			// Initial deliveries are a deliberate manual smoke fixture. Rechecking
+			// them daily would launch a production browser even on a no-work run.
+			...(verifyOnly ? INITIAL_ARTICLES : []),
 			...ready,
 			...(restored.publication?.status !== 'verified'
 				? (restored.publication?.slugs ?? [])

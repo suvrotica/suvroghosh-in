@@ -12,6 +12,7 @@ export default defineConfig({
 	reporter: [['list']],
 	use: {
 		baseURL,
+		serviceWorkers: 'block',
 		viewport: { width: 1280, height: 900 },
 		reducedMotion: 'no-preference',
 		trace: 'retain-on-failure',

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "captureVersion": "probabilistic-piano-browser-capture-v1",
-  "sourceHash": "6956eb83745663f8cd612369cd1f1f05d1d35a7e4d62c4aacc75c141a627f4b1",
+  "sourceHash": "2465de0821c2373e33138fde3daa2e664a234683127f9cd94acc3cfa65bde0a2",
   "provenance": "Actual local Svelte instrument, native keys and Canvas2D pond. The social image adds an editorial title band above the same unaltered stage capture. Poster letterboxing preserves the entire stage geometry.",
   "state": {
     "modelVersion": "1",
@@ -28,14 +28,14 @@
     "piano-poster.jpg": {
       "width": 1440,
       "height": 760,
-      "bytes": 159704,
-      "sha256": "ac91d3438bcf4988a509bb33f93590eddd8a3b110addbaa99d660d8dc4d3eb07"
+      "bytes": 159560,
+      "sha256": "660c5c713f27b119b72ad182a078a0deb83d334464ae3094d337297ae5effe1e"
     },
     "piano-social.jpg": {
       "width": 1200,
       "height": 630,
-      "bytes": 134215,
-      "sha256": "2c2ff183747e819281daca1148972213897bd5a5d7dab6d7310a6caa39f2ea5a"
+      "bytes": 134105,
+      "sha256": "42ec7f8e390143498a7d2e4592458588d3045a3134f0b9a1c08de367d64c66f2"
     }
   }
 }

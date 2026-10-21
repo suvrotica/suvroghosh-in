@@ -505,7 +505,11 @@ ephemeral runner disk are not the authoritative quota/checkpoint store.
 Complete MP3s/manifests are committed to `main` and published through the existing Vercel Git
 integration. The job reads the matching commit's production deployment status and verifies live
 custom-domain manifests/audio before retiring completed WAV copies from hosted state; local
-originals remain. Publication is bounded at 6 GiB of delivery audio and 8 GiB of site payload.
+originals remain. Routine runs verify only newly ready deliveries and unverified pending
+publications; a no-work run does not launch production verification. Explicit `verify_only`
+and deployment probes retain the three initial smoke fixtures. All narration browser contexts
+block service workers, preventing verification from warming unrelated offline assets.
+Publication is bounded at 6 GiB of delivery audio and 8 GiB of site payload.
 These caps cannot measure account-wide retained deployment storage or transfer, and no account
 read credential is granted to do so. The limits sit below the documented 10 GiB Hobby
 deployment-storage allowance; old deployments and
@@ -545,8 +549,26 @@ New expensive/state-changing endpoints must follow the existing security invaria
 - `PostImage.svelte` emits responsive Vercel optimizer URLs with a local-original fallback. Its sizes must agree with adapter image sizes. Those URLs do not currently include a content revision.
 - Article narration uses revalidated `/audio/articles/<slug>/manifest.json` metadata and SHA-256-named MP3 URLs with one-year immutable caching. Browser playback validates the current extracted transcript hash before selecting saved audio. No audio bytes enter hydration payloads or JS bundles, no application runtime disk is a persistent cache, and this feature adds no service-worker audio caching. Local WAV sources stay in the ignored authoring cache; hosted pending sources use bounded encrypted release snapshots and a durable state-branch pointer. Completed runner WAV copies are retired only after their `main` MP3/manifests and production delivery are verified. Git and Vercel upload exclusions reject public WAV/checkpoint/audition files. The first three complete narrations encode from 20,919,474 WAV bytes to 3,485,511 MP3 bytes (83.34% smaller). Delivery uses this existing project's free Vercel Hobby static storage/CDN, confirmed active on 21 October 2026; it adds no storage account, paid tier or cross-origin media dependency. The original corpus estimate of 31.56 GiB of WAV corresponds to roughly 5.3 GiB of 64 kbps MP3, within the hosted 6 GiB audio guard. The separate 8 GiB site-payload guard, evolving corpus size and account-wide storage/transfer still require review. Low-level generation/compression remain upload-free; the dedicated hosted authoring workflow owns checkpoint uploads and bounded Git publication.
 - Public notes use short HTTP caches; private responses use no-store. The notes sitemap has its own short shared cache.
-- `src/service-worker.ts` caches build assets and explicitly opened public note pages/documents/assets. It excludes private notes/auth/API paths, rejects private/no-store or cookie-bearing public responses, uses network-first public reads, evicts online 404/410, and permits retained public responses for up to 30 days with a 240-entry public-cache cap.
+- `src/service-worker.ts` creates an empty build cache at installation and caches allowed build assets only on actual requests, with concurrent fetch deduplication. It no longer downloads the complete `$service-worker` build list on every installation. This matters to the Hobby request allowance even for CDN cache hits. The decision and migration trade-off are recorded in [ADR 0005](decisions/0005-demand-driven-offline-caching.md).
+- Public notes retain network-first page/document/asset reads. The worker excludes private notes/auth/API paths, rejects private/no-store or cookie-bearing public responses, evicts online 404/410, and permits retained public responses for up to 30 days with a 240-entry public-cache cap. `PublicNoteCanvas.svelte` calls the browser-only `notes/public-offline.ts` helper after rendering a publication. Its bounded readiness message rescues resources already requested before worker control: at most 128 URLs, with a five-second resource observer. The worker validates the actual same-origin public-note window, checks immutable URLs against the build allowlist, and permits public image URLs only when referenced by that note's frozen document. Rescue fetches omit credentials, and a 32-client map avoids repeated metadata preparation. Private note viewers do not invoke this helper.
 - During service-worker activation, older build caches are removed when their recorded age exceeds 30 days; ordinary build-asset requests do not enforce a hard 30-day TTL. Retention supports old offline note HTML/runtime compatibility. The cache contains build assets, not a blanket copy of every public static video/image.
+
+The first-note rescue prioritizes requested document runtime/style references and bootstrap
+entry points, then the newest resource entries, so old SPA history cannot take priority over
+the current note. The rescue remains bounded and best effort: resources beyond its cap or
+finishing outside its observation window are not promised offline availability.
+
+```mermaid
+flowchart LR
+    Install["Worker installation"] --> Empty["Versioned cache and timestamp only"]
+    Reader["Reader requests a build resource"] --> Lookup["Current / retained cache lookup"]
+    Lookup -->|miss| Network["Fetch requested resource; deduplicate in flight"]
+    Network --> Cache["Cache successful public response"]
+    Note["Opened public-note viewer"] --> Rescue["Bounded already-requested resource message"]
+    Rescue --> Validate["Validate note client, build URLs and publication images"]
+    Validate --> Lookup
+    Validate --> Public["Public note HTML / document / referenced assets"]
+```
 
 Delivered publications cannot be recalled from an offline device. This is a documented product constraint, not an authorization guarantee. Do not extend the worker to cache authenticated pages or mutable draft APIs.
 
@@ -555,6 +577,15 @@ Delivered publications cannot be recalled from an offline device. This is a docu
 Unit tests primarily live alongside engines and models. The main Vitest config includes 283 baseline source test files; separate ray-marching and Human+AI ICU configurations account for ten additional source test files. Its coverage-report include list is narrowly notes-focused; it is not a repository-wide coverage promise. `notes:test` invokes the entire default Vitest collection and then SQL-pattern tests, despite its name. `npm test` invokes several focused suites before that global run, repeating work (`AF-010`).
 
 Browser tests use 30 root Playwright configurations and feature-specific npm commands, including reduced-motion, layout/accessibility, simulation interaction and visual regression checks where authored. Twenty-seven configurations use `build:site` and preview; Fractal Atlas uses the full mutating build; Calcutta Footpath and Kagojer Dana use Vite dev. Several default ports overlap, so do not assume concurrent feature suites are isolated. Existing CT/double-pendulum workflows are scoped feature checks; IndexNow is deployment automation. There is no general required lint/type/unit/security CI workflow in the baseline. The subsequent feature-artifacts workflow runs the full maintenance build on relevant source/configuration/artifact paths; it excludes plain posts and their routine generated indexes. It does not run the entire unit/lint/security collection. The architecture workflow is a documentation gate, not a substitute. The critical-boundaries workflow additionally runs `check` and `test:critical` for request/Notes/map/configuration changes, excluding generated server image metadata so ordinary posts do not invoke it. These are checked-in jobs; hosted required-status settings remain unverified.
+
+Production-capable missing-data and spacetime browser suites, performance probes, piano and
+Kagojer Dana captures explicitly block service workers; the traffic audit and Scale Elevator
+capture already did so. Offline regressions enable workers against local fixtures. Feature and
+repeated performance checks belong on loopback production previews; release checks remain
+small and bounded, as specified in [CONTRIBUTING.md](../../CONTRIBUTING.md#verification-and-scope).
+The critical-boundaries workflow watches the worker, its regression harness and public-note
+viewer as well as existing Notes paths. `test:critical` runs the worker's Node harness and
+browser-helper unit tests alongside the existing security, Notes and map checks.
 
 Use `npm run check`, focused unit/Node/browser suites, and relevant validators for the changed boundary. `npm run lint` runs formatting first and only reaches ESLint if formatting succeeds. For routine publication use `npm run build` once; do not separately run its generators first or broaden the task into unrelated feature audits. Use `npm run build:full` when changing feature/notebook/shared-build inputs. For documentation-only work, check links, evidence, Markdown, gate fixtures and diff integrity without regenerating production content.
 
@@ -606,6 +637,9 @@ This diagram describes permitted directions at a coarse level, not an ESLint-enf
 Before this change there was no formal ADR directory. Feature documents and Git history are decision evidence, not retroactively approved ADRs. Important reconstructed decisions include repository-backed articles with a server metadata/universal component split; dedicated feature engines rather than one universal visualization interface; static canonical pages with dynamic redirects/exceptions; single-owner Supabase notes with frozen editions; and offline retention limited to public notes/build assets.
 
 Start with [decisions/README.md](decisions/README.md) and [ADR 0001](decisions/0001-canonical-architecture.md) for the documentation policy. [ADR 0002](decisions/0002-separate-post-and-feature-builds.md) records the subsequent publishing/feature-build split. Significant future decisions should state context, options, consequences and status, and link the affected sections here. Never overwrite historical ADR reasoning to imply the past already matched current code.
+
+[ADR 0005](decisions/0005-demand-driven-offline-caching.md) records demand-driven offline caching
+and bounded live verification after the 21 October 2026 Edge Request incident.
 
 The [forensic findings](FORENSIC_AUDIT.md#findings) are the remediation inventory. Open debt includes remaining distributed/Notes request controls; notes transaction and integration-test gaps; browser save deadlines; comprehensive accessibility verification of Meaning Map's corrected interaction state; image provenance/cache policy; duplicated path rules; and repeated test orchestration. Fractal's laboratory-envelope validation and Meaning Map's composed interaction state are corrected, with focused unit and browser regressions. The earlier map resource leak and stale-session metadata no-op path are also corrected. Proposed remediation does not change this document's as-built descriptions until implemented and verified.
 

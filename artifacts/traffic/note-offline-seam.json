@@ -1,0 +1,54 @@
+{
+	"localOrigin": "http://127.0.0.1:4291",
+	"fixture": "Synthetic public note HTML/document/image; real built service worker plus exact helper source transpiled at a whitelisted fixture module URL. No Supabase or production endpoints.",
+	"baseCommit": "f691bca95d666fd21d7f6aa198af8ce30384e64b",
+	"workingTreeModified": true,
+	"browserVersion": "155.0.8059.85",
+	"serviceWorkerSha256": "5ae719253d6be5c04dbf3bf9690766489b671c44039b6d57b7ddd28286c44bdd",
+	"manifestAssetCount": 1066,
+	"httpCacheClearedBeforeOffline": true,
+	"onlineState": {
+		"runtime": "executed",
+		"fonts": "loaded",
+		"imageWidth": 1,
+		"cachedUrls": [
+			"/__suvroghosh-build-cache-created__",
+			"/_app/immutable/entry/app.BGBjPuFr.js",
+			"/_app/immutable/assets/0.VZFocLv5.css",
+			"/_app/immutable/assets/roboto-latin-wght-normal.ccAYIvAh.woff2",
+			"/notes/local-offline-fixture",
+			"/api/public/notes/local-offline-fixture/document",
+			"/api/public/notes/assets/local-note/local-image"
+		]
+	},
+	"offlineState": {
+		"runtime": "executed",
+		"title": "First-open offline note fixture",
+		"fonts": "loaded",
+		"imageWidth": 1,
+		"documentResponse": {
+			"document": {
+				"objects": [
+					{
+						"type": "image",
+						"src": "/api/public/notes/assets/local-note/local-image"
+					}
+				]
+			}
+		}
+	},
+	"originRequestsBeforeOffline": 9,
+	"originRequestsDuringOfflineReload": 0,
+	"originRequestPaths": [
+		"/notes/local-offline-fixture",
+		"/_app/immutable/entry/app.BGBjPuFr.js",
+		"/_app/immutable/assets/0.VZFocLv5.css",
+		"/api/public/notes/assets/local-note/local-image",
+		"/_app/immutable/assets/roboto-latin-wght-normal.ccAYIvAh.woff2",
+		"/service-worker.js",
+		"/favicon.ico",
+		"/notes/local-offline-fixture",
+		"/api/public/notes/local-offline-fixture/document"
+	],
+	"pageErrors": []
+}

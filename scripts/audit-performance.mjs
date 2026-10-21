@@ -725,6 +725,7 @@ async function runBrowserProbes(options) {
 	try {
 		for (const pageDefinition of selectedPages(options)) {
 			const context = await browser.newContext({
+				serviceWorkers: 'block',
 				viewport: { width: 390, height: 844 },
 				deviceScaleFactor: 2,
 				reducedMotion: 'reduce'

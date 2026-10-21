@@ -179,7 +179,7 @@
 		"build": "npm run build:site && npm run validate:discoverability",
 		"build:full": "npm run features:check && npm run notebooks:prepare && npm run build && npm run barnum-lab:route-assets",
 		"build-workflow:test": "node --test scripts/build-workflow.test.mjs scripts/generate-media-gallery.test.mjs",
-		"test:critical": "vitest run src/lib/server/http src/lib/server/notes src/routes/api/tts/chatterbox/server.test.ts src/routes/contact/page.server.test.ts src/lib/visualizations/meaning-connection-map --maxWorkers=2",
+		"test:critical": "node --test scripts/service-worker.test.mjs && vitest run src/lib/server/http src/lib/server/notes src/lib/notes/public-offline.test.ts src/routes/api/tts/chatterbox/server.test.ts src/routes/contact/page.server.test.ts src/lib/visualizations/meaning-connection-map --maxWorkers=2",
 		"search:index": "node scripts/build-search-index.mjs",
 		"indexnow:submit": "node scripts/indexnow.mjs",
 		"preview": "vite preview",

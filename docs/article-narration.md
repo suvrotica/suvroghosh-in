@@ -265,6 +265,14 @@ storage and transfer within the current [Hobby limits](https://vercel.com/docs/p
 The initial three-file release used an explicit deployment. Hosted daily publication is the
 separate authoring lane described above and in [ADR 0004](architecture/decisions/0004-github-actions-article-narration.md).
 
+Routine hosted runs verify only newly ready deliveries or publications still awaiting successful
+verification. Already verified initial articles do not trigger another production browser run
+on a no-work day. Explicit `verify_only` and `deployment_probe` runs retain the three initial
+smoke fixtures. Production smoke contexts block service workers; local extraction, feature tests
+and repeated performance measurements use loopback previews. This prevents verification from
+installing an offline cache for unrelated pages. A new or recovered delivery still receives its
+manifest, audio and browser verification before completed source WAVs are retired.
+
 ## Storage, extraction and freshness
 
 At 24 kHz, mono, 16-bit PCM, local WAV sources occupy roughly **2.88 MB per minute**.

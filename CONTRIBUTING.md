@@ -85,9 +85,16 @@ Svelte/TypeScript analysis. `npm run lint` checks formatting before ESLint; a fo
 prevents ESLint from running. Feature unit/browser commands are listed in `package.json`.
 `npm run notes:test` currently runs the broad default unit collection plus SQL source checks.
 The audit records the existing CI/test gaps rather than claiming every boundary is enforced.
-`npm run test:critical` selects request-limit/provider, Notes and Meaning Map lifecycle regressions;
+`npm run test:critical` selects request-limit/provider, Notes, offline-worker and Meaning Map lifecycle regressions;
 the critical-boundaries workflow runs it with `check` for relevant application changes. Publishing
 workflow/gallery and incremental notebook fixtures use `build-workflow:test` and `notebooks:test`.
+
+Run feature suites, visual captures and repeated performance measurements against a loopback
+production preview. Keep live release checks small and bounded. Production-capable browser
+checks must set `serviceWorkers: 'block'` unless they explicitly test offline behavior, so a
+verification run cannot install an offline cache or warm unrelated site resources. Test offline
+behavior locally with workers enabled and measure both page and worker requests. Do not crawl
+the production corpus or rerun unchanged live narration checks as a routine release step.
 
 For standard Markdown publication, follow `AGENTS.md`: preserve requested prose, inspect the
 adjacent convention, use the requested image, curate tags/pinned tags, run `npm run build` once,

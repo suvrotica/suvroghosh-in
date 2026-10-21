@@ -13,6 +13,7 @@ import {
 	GIT_STATUS_ARGS,
 	publicChildEnvironment,
 	browserLaunchOptions,
+	browserContextOptions,
 	assertHostedConfiguration,
 	allowedPublicationPath,
 	expectedGitRemote,
@@ -260,6 +261,14 @@ test('child builds/tests/previews receive no provider, GitHub or encryption cred
 	});
 });
 
+test('narration browser contexts block offline-worker requests in live and script-free checks', () => {
+	assert.deepEqual(browserContextOptions(), { serviceWorkers: 'block' });
+	assert.deepEqual(browserContextOptions({ javaScriptEnabled: false, serviceWorkers: 'allow' }), {
+		javaScriptEnabled: false,
+		serviceWorkers: 'block'
+	});
+});
+
 test('automatic publication paths reject prose, credentials, source WAV and unrelated assets', () => {
 	assert.equal(expectedGitRemote(`https://github.com/${REPOSITORY}`), true);
 	assert.equal(expectedGitRemote(`https://github.com/${REPOSITORY}.git\n`), true);
@@ -364,7 +373,10 @@ test('verify-only restores and verifies existing three without synthesis, compre
 	f.env.NARRATION_HOSTED_ENABLED = 'false';
 	const result = await runGithubNarration(f);
 	assert.equal(result.verifyOnly, true);
-	assert.ok(f.events.some((event) => event.startsWith(`verify:${BASE}`)));
+	assert.deepEqual(
+		f.events.filter((event) => event.startsWith('verify:')),
+		[`verify:${BASE}:${initial.join(',')}`]
+	);
 	for (const event of [
 		'generate',
 		'compress:',
@@ -383,6 +395,43 @@ test('verify-only restores and verifies existing three without synthesis, compre
 	assert.equal(f.events.filter((event) => event === 'close').length, 1);
 });
 
+test('no-work routine run makes no production verification requests or smoke-browser launch', async (t) => {
+	const f = await fixture(t);
+	f.env.GITHUB_EVENT_NAME = 'schedule';
+	f.data.publication = { commit: BASE, slugs: [...initial], status: 'verified' };
+	let productionRequests = 0;
+	let productionBrowsers = 0;
+	f.dependencies.verify = async () => {
+		productionRequests += 1;
+		productionBrowsers += 1;
+	};
+	const result = await runGithubNarration(f);
+	assert.equal(result.generated, 0);
+	assert.deepEqual(result.published, []);
+	assert.equal(result.commit, BASE);
+	assert.equal(productionRequests, 0);
+	assert.equal(productionBrowsers, 0);
+	assert.equal(f.events.includes('prune'), false);
+	assert.equal(
+		f.events.some((event) => event.startsWith('publication:')),
+		false
+	);
+	assert.equal(f.events.includes('push'), false);
+});
+
+test('routine run retries an unverified published delivery without unrelated initial articles', async (t) => {
+	const f = await fixture(t);
+	await f.delivery('recovered-story');
+	f.data.publication = { commit: BASE, slugs: ['recovered-story'], status: 'pushed' };
+	await runGithubNarration(f);
+	assert.deepEqual(
+		f.events.filter((event) => event.startsWith('verify:')),
+		[`verify:${BASE}:recovered-story`]
+	);
+	assert.ok(f.events.findIndex((event) => event.startsWith('verify:')) < f.events.indexOf('prune'));
+	assert.equal(f.events.includes('publication:verified'), true);
+});
+
 test('manual deployment probe pushes exactly one empty connection commit with no Google generation', async (t) => {
 	const f = await fixture(t);
 	f.env.NARRATION_VERIFY_ONLY = 'true';
@@ -397,6 +446,10 @@ test('manual deployment probe pushes exactly one empty connection commit with no
 			f.events.findIndex((event) => event.startsWith('verify:'))
 	);
 	assert.equal(f.events.includes('publication:verified'), true);
+	assert.deepEqual(
+		f.events.filter((event) => event.startsWith('verify:')),
+		[`verify:${NEXT}:${initial.join(',')}`]
+	);
 	assert.equal(f.events.includes('generate'), false);
 	assert.equal(f.events.includes('prune'), false);
 });
@@ -442,6 +495,10 @@ test('quota-paused run recovers and publishes complete saved sources without new
 		f.events.findIndex((event) => event.startsWith(`verify:${NEXT}`)) < f.events.indexOf('prune')
 	);
 	assert.equal(f.events.includes('saveQuota'), false);
+	assert.deepEqual(
+		f.events.filter((event) => event.startsWith('verify:')),
+		[`verify:${NEXT}:recovered-story`]
+	);
 });
 
 test('durable quota reservation precedes Google transport; segment/article persistence precedes publication', async (t) => {
@@ -527,7 +584,7 @@ test('routine stale initial article uses fallback without blocking new narration
 	await f.source('recovered-story');
 	const result = await runGithubNarration(f);
 	assert.deepEqual(result.published, ['recovered-story']);
-	assert.ok(result.staleDeliveries.includes(initial[0]));
+	assert.equal(result.staleDeliveries.includes(initial[0]), false);
 	const verified = f.events.find((event) => event.startsWith('verify:'));
 	assert.equal(verified.includes(initial[0]), false);
 	assert.equal(verified.includes('recovered-story'), true);

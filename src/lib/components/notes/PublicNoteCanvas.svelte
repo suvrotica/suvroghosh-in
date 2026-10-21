@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { onMount, untrack } from 'svelte';
+	import { onMount, tick, untrack } from 'svelte';
 	import { noteDocumentSchema } from '$lib/notes/schema';
+	import { preserveOpenedPublicNote } from '$lib/notes/public-offline';
 	import type { NoteDocument } from '$lib/notes/model';
 	import NoteViewer from './NoteViewer.svelte';
 
@@ -15,6 +16,15 @@
 	let document = $state<NoteDocument | null>(untrack(() => initialDocument));
 	let loading = $state(untrack(() => !initialDocument));
 	let error = $state('');
+	let mounted = false;
+	let stopOfflinePreparation: (() => void) | undefined;
+
+	async function prepareOffline() {
+		await tick();
+		if (!mounted) return;
+		stopOfflinePreparation?.();
+		stopOfflinePreparation = preserveOpenedPublicNote();
+	}
 
 	async function loadDocument() {
 		loading = true;
@@ -24,6 +34,7 @@
 			if (!response.ok) throw new Error('The canvas could not be loaded.');
 			const payload = (await response.json()) as { document: unknown };
 			document = noteDocumentSchema.parse(payload.document);
+			void prepareOffline();
 		} catch (loadError) {
 			error = loadError instanceof Error ? loadError.message : 'The canvas could not be loaded.';
 		} finally {
@@ -32,7 +43,13 @@
 	}
 
 	onMount(() => {
+		mounted = true;
 		if (!document) void loadDocument();
+		else void prepareOffline();
+		return () => {
+			mounted = false;
+			stopOfflinePreparation?.();
+		};
 	});
 </script>
 

@@ -13,6 +13,7 @@ export default defineConfig({
 	reporter: [['list']],
 	use: {
 		baseURL,
+		serviceWorkers: 'block',
 		browserName: 'chromium',
 		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? undefined : 'chrome'),
 		headless: true,

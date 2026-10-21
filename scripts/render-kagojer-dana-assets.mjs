@@ -157,6 +157,7 @@ async function render() {
 	try {
 		const landscape = { width: 1_440, height: 900 };
 		const context = await browser.newContext({
+			serviceWorkers: 'block',
 			viewport: landscape,
 			deviceScaleFactor: 1,
 			reducedMotion: 'reduce',

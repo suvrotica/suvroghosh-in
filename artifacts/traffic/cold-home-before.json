@@ -1,0 +1,31 @@
+{
+	"phase": "before",
+	"timestampUtc": "2026-10-21T12:32:32.230Z",
+	"localOrigin": "http://127.0.0.1:4280",
+	"path": "/",
+	"browserVersion": "155.0.8059.85",
+	"gitCommit": "f691bca95d666fd21d7f6aa198af8ce30384e64b",
+	"baseCommit": "f691bca95d666fd21d7f6aa198af8ce30384e64b",
+	"workingTreeModified": false,
+	"buildSourceStatus": "Committed f691bca9 production-preview build; measured before rebuilding the working tree.",
+	"serviceWorkerSha256": "c36f7ca40441439b11c8e5752943bb86774ec1039c061c11686f6b0e51d1ddae",
+	"manifestImmutableAssetCount": 1066,
+	"registration": {
+		"scope": "http://127.0.0.1:4280/",
+		"state": "activated"
+	},
+	"sameOriginRequestEvents": 1120,
+	"sameOriginUniqueRequestUrls": 1080,
+	"workerOriginatedRequestEvents": 1067,
+	"sameOriginSuccessfulResponseEvents": 1118,
+	"sameOriginUniqueDeliveredUrls": 1078,
+	"sameOriginPageResourceEntries": 53,
+	"cacheStorage": [
+		{
+			"name": "suvroghosh-build-1792583649619",
+			"entries": 1067
+		}
+	],
+	"pageErrors": [],
+	"interpretation": "Local cold-browser instrumentation; request events can represent both page and service-worker initiators. These are not Vercel billable-request counts. Unique URLs and successful response counts are reported separately."
+}
