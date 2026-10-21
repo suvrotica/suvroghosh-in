@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T16:43:39.833754+00:00",
+  "generatedAt": "2026-10-21T17:48:50.879757+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1957,25 +1957,25 @@
       "wordCount": 130
     },
     "calcutta-fish-field-guide": {
-      "generatedAt": "2026-07-20T04:11:09.204914+00:00",
+      "generatedAt": "2026-10-21T17:48:31.365496+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/calcutta-fish-field-guide.svg",
       "source": "src/lib/posts/calcutta-fish-field-guide.md",
-      "sourceHash": "5016759c5fd7a5713c4b5e3b3cd715d224d5a1dae1cb001575335c72d48613d0",
-      "sourceModified": "2026-07-20T04:09:21.641574+00:00",
+      "sourceHash": "b0548d07806d6965cf6c4cfab781785973e38e02f7bd5089d2bad6ea4b36a7d1",
+      "sourceModified": "2026-10-21T17:44:03.846545+00:00",
       "topWords": [
         "Fish",
         "Small",
         "Eating",
         "Often",
-        "Bones",
+        "Species",
         "Bengali",
+        "Bones",
         "Market",
         "Large",
         "Predatory",
         "Pabda",
-        "Species",
-        "Whole"
+        "Best"
       ],
       "wordCount": 130
     },
@@ -4671,25 +4671,25 @@
       "wordCount": 22
     },
     "hl7-vs-fhir-explained-simply": {
-      "generatedAt": "2026-08-07T02:41:36.508409+00:00",
+      "generatedAt": "2026-10-21T17:48:36.282307+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hl7-vs-fhir-explained-simply.svg",
       "source": "src/lib/posts/hl7-vs-fhir-explained-simply.md",
-      "sourceHash": "fe92c86e51e0b7ac6f8d8940f88ee748316c3a8b335e18d742f2e612811feee1",
-      "sourceModified": "2026-08-07T02:20:18.461960+00:00",
+      "sourceHash": "8a87e17c9d7d105a0b3f1c81601ba462b150b6e3f32f12a8c62b4a264b5def20",
+      "sourceModified": "2026-10-21T17:36:27.133187+00:00",
       "topWords": [
         "FHIR",
         "Data",
         "HL7",
         "Healthcare",
         "Version",
+        "Exchange",
         "Clinical",
         "Systems",
         "System",
         "Patient",
-        "Exchange",
-        "Standard",
-        "Result"
+        "Resources",
+        "Standard"
       ],
       "wordCount": 130
     },
@@ -4855,21 +4855,21 @@
       "wordCount": 130
     },
     "how-a-scanner-sees-reconstructing-a-body-from-shadows": {
-      "generatedAt": "2026-07-28T23:29:22.637270+00:00",
+      "generatedAt": "2026-10-21T17:48:38.275740+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/how-a-scanner-sees-reconstructing-a-body-from-shadows.svg",
       "source": "src/lib/posts/how-a-scanner-sees-reconstructing-a-body-from-shadows.md",
-      "sourceHash": "89093b2c8b65c32f9ae98460a9b8e568170403c7d4ece540b285dd05d06e158e",
-      "sourceModified": "2026-07-28T07:59:13.194759+00:00",
+      "sourceHash": "9d48b3bfcd82f966b7f17a1ba15718864a8ad09560d76eb75a7a4aa9aa1d7b2e",
+      "sourceModified": "2026-10-21T17:36:27.137357+00:00",
       "topWords": [
         "Detector",
         "Projection",
         "Attenuation",
+        "Reconstruction",
         "Theta",
         "Line",
         "Backprojection",
         "Angles",
-        "Reconstruction",
         "Ray",
         "Sinogram",
         "Angle",
@@ -8719,25 +8719,25 @@
       "wordCount": 130
     },
     "shadow-architecture-clinical-ai": {
-      "generatedAt": "2026-08-07T01:47:34.308362+00:00",
+      "generatedAt": "2026-10-21T17:48:43.497173+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/shadow-architecture-clinical-ai.svg",
       "source": "src/lib/posts/shadow-architecture-clinical-ai.md",
-      "sourceHash": "d83190e7fe16fa81dd23fda8d82041462461e2bcb137c4bfefbd6708130605dd",
-      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
+      "sourceHash": "e972d546a9d98cd2ea62eca70ce4ec13c70a8d02d6250f7390c61b9b84350da1",
+      "sourceModified": "2026-10-21T17:36:27.133187+00:00",
       "topWords": [
         "AI",
-        "Model",
         "Clinical",
+        "Model",
         "Data",
         "Patient",
         "Systems",
-        "Whether",
-        "Shadow",
         "Validation",
+        "Shadow",
+        "Whether",
+        "Architecture",
         "Care",
-        "Change",
-        "System"
+        "Software"
       ],
       "wordCount": 130
     },

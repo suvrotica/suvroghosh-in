@@ -4,6 +4,7 @@ import { parsePostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
+const topicsDir = path.join(root, 'src', 'lib', 'topics');
 const routesDir = path.join(root, 'src', 'routes');
 const componentsDir = path.join(root, 'src', 'lib', 'components');
 const staticDir = path.join(root, 'static');
@@ -87,6 +88,37 @@ function routePaths() {
 		routes.add(segments.length > 0 ? `/${segments.join('/')}` : '/');
 	}
 	return routes;
+}
+
+function canonicalTopicRoutes() {
+	const topics = new Set();
+	const handler = path.join(routesDir, 'topics', '[slug]', '+page.svelte');
+	if (!fs.existsSync(handler) || !fs.statSync(handler).isFile() || !fs.existsSync(topicsDir)) {
+		return topics;
+	}
+
+	for (const entry of fs.readdirSync(topicsDir, { withFileTypes: true })) {
+		if (!entry.isFile() || !entry.name.endsWith('.md') || entry.name === 'README.md') continue;
+		const file = path.join(topicsDir, entry.name);
+		let metadata;
+		try {
+			metadata = parsePostFrontmatter(read(file), relativeFile(file));
+		} catch (error) {
+			errors.push(
+				error instanceof Error ? error.message : `${relativeFile(file)} has invalid frontmatter.`
+			);
+			continue;
+		}
+		const slug = path.basename(entry.name, '.md');
+		if (metadata.slug !== slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+			errors.push(
+				`${relativeFile(file)}: topic slug must match its lowercase kebab-case filename.`
+			);
+			continue;
+		}
+		if (metadata.published !== false) topics.add(`/topics/${slug}`);
+	}
+	return topics;
 }
 
 function addReference(file, text, index, target, basePath = null) {
@@ -207,6 +239,7 @@ const categoryPaths = new Set(
 	posts.map((post) => `/blog/${slugifyCategory(post.metadata.category)}`)
 );
 const knownRoutes = routePaths();
+const knownTopicRoutes = canonicalTopicRoutes();
 
 for (const [source, destination] of aliases) {
 	if (!canonicalPosts.has(destination)) {
@@ -240,7 +273,12 @@ for (const reference of uniqueReferences.values()) {
 		continue;
 	}
 
-	if (knownRoutes.has(pathname) || staticFileExists(pathname) || canonicalPosts.has(pathname)) {
+	if (
+		knownRoutes.has(pathname) ||
+		knownTopicRoutes.has(pathname) ||
+		staticFileExists(pathname) ||
+		canonicalPosts.has(pathname)
+	) {
 		continue;
 	}
 
@@ -275,5 +313,5 @@ if (errors.length > 0) {
 
 console.log(
 	`Internal-link validation passed: ${uniqueReferences.size} references across ${posts.length} published posts; ` +
-		`${canonicalPosts.size} canonical posts, ${aliases.size} aliases, and ${knownRoutes.size} static routes recognised.`
+		`${canonicalPosts.size} canonical posts, ${aliases.size} aliases, ${knownTopicRoutes.size} published topic routes, and ${knownRoutes.size} static routes recognised.`
 );

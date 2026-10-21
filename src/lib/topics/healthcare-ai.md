@@ -6,7 +6,7 @@ group: 'Healthcare and technology'
 description: >-
   A route through clinical data, objectives, evaluation, workflow, safety, trials, interoperability, monitoring, and the distance between an impressive model and dependable care.
 date: '2026-07-26'
-dateModified: '2026-08-13'
+dateModified: '2026-10-21'
 primaryTag: 'healthcare-ai'
 sourceTags:
   - 'healthcare-ai'
@@ -26,6 +26,9 @@ includePaths:
   - '/blog/games/healthcare-it-crossword-systems-rounds'
   - '/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety'
   - '/blog/healthcare-ai/ai-health-insurance-surreptitious-risk-scoring'
+  - '/blog/visualizations/human-ai-icu-prediction-laboratory'
+  - '/blog/visualizations/the-music-of-missing-data'
+  - '/blog/visualizations/the-shape-of-waiting'
 excludePaths: []
 bestStartingArticle: '/blog/healthcare-it/shadow-architecture-clinical-ai'
 startHereReason: >-
@@ -40,20 +43,26 @@ readingPaths:
       - '/blog/healthcare-ai/ai-deployment-evidence-over-opinion'
   intermediate:
     description: >-
-      Look underneath model performance at representation, clinical embeddings, data meaning, governance, and the healthcare platform wrapped around a model.
+      Look underneath model performance at representation and data meaning, then use synthetic experiments to test what missingness, calibration and shared errors can change.
     items:
       - '/blog/healthcare-it/the-linear-algebra-blind-spot-healthcare-ai-safety'
       - '/blog/healthcare-it/latent-space-in-healthcare-data'
       - '/blog/healthcare-it/chatgpt-enters-healthcare-compliance-is-the-easy-part'
+      - '/blog/visualizations/the-music-of-missing-data'
+      - '/blog/visualizations/human-ai-icu-prediction-laboratory'
   deep:
     description: >-
-      Examine causal distortion, premature intimate deployment, and the quiet way prediction can become exclusion inside insurance workflows.
+      Examine causal distortion, premature intimate deployment and insurance exclusion, then test how an improved average can still leave a person waiting longer.
     items:
       - '/blog/healthcare-it/confounding-factors-healthcare-it-analytics'
       - '/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety'
       - '/blog/healthcare-ai/ai-health-insurance-surreptitious-risk-scoring'
+      - '/blog/visualizations/the-shape-of-waiting'
 relatedResources:
-  visualizations: []
+  visualizations:
+    - '/blog/visualizations/human-ai-icu-prediction-laboratory'
+    - '/blog/visualizations/the-music-of-missing-data'
+    - '/blog/visualizations/the-shape-of-waiting'
   games:
     - '/blog/games/healthcare-it-crossword-systems-rounds'
   other: []
@@ -129,3 +138,5 @@ Healthcare AI becomes consequential only when its output enters a real decision.
 That is why evaluation must begin before the final accuracy table. Teams need to ask what objective was chosen, which patients disappeared from the data, whether time was aligned honestly, how predictions are calibrated, and whether performance survives another site or period. They also need a shadow architecture around the model: evidence retrieval, access control, workflow design, human review, monitoring, incident response, auditability, and a safe way to stop. Prospective trials and staged deployment matter because an offline result cannot reveal every harm created by a live queue or interface.
 
 The reading paths move from MYCIN's explainable rules to modern embeddings, platform governance, causal inference, intimate chatbots, and insurance risk scoring. The aim is not to claim that healthcare is too difficult for artificial intelligence. It is to insist that difficulty lives in more places than the model. A system safe enough for healthcare must preserve meaning across data exchange, show its limits, fit the work, and leave a recoverable trail when reality disagrees with prediction.
+
+Three browser laboratories let you test parts of that argument. The [Human + AI ICU Prediction Laboratory](/blog/visualizations/human-ai-icu-prediction-laboratory) uses wholly synthetic forecasts to separate ranking, calibration, shared errors and population shift. [The Music of Missing Data](/blog/visualizations/the-music-of-missing-data) changes which measurements disappear while keeping the synthetic population fixed. [The Shape of Waiting](/blog/visualizations/the-shape-of-waiting) follows both a queue's distribution and the person its average can conceal. These are experiments in stated models, not patient-risk tools or evidence of clinical effectiveness.

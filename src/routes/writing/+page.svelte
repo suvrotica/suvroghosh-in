@@ -13,6 +13,12 @@
 	const description =
 		'Long-form writing by Suvro Ghosh across essays, fiction, healthcare systems, science, technology, society, and ordinary life in Calcutta.';
 	const canonicalUrl = siteUrl + '/writing';
+	const guidedTopics = [
+		{ slug: 'hl7-fhir', label: 'Understand healthcare interoperability' },
+		{ slug: 'healthcare-ai', label: 'Look beyond the clinical AI demo' },
+		{ slug: 'interactive-mathematics', label: 'Learn through interactive models' },
+		{ slug: 'calcutta', label: 'Read Calcutta through everyday life' }
+	];
 
 	function formatDate(value: string) {
 		return new Intl.DateTimeFormat('en-GB', {
@@ -65,6 +71,45 @@
 			<span class="sr-only">, opens in a new tab</span>
 		</a>
 	</aside>
+
+	<section class="mb-12" aria-labelledby="guided-reading-heading">
+		<div class="mb-4 border-b border-neutral-300 pb-3 dark:border-neutral-700">
+			<h2
+				id="guided-reading-heading"
+				class="m-0 text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+			>
+				Follow a question
+			</h2>
+			<p class="mt-2 mb-0 text-left text-sm text-neutral-600 dark:text-neutral-400">
+				Choose a guided route with a starting point, ordered reading and related experiments.
+			</p>
+		</div>
+		<ul class="grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
+			{#each guidedTopics as topic (topic.slug)}
+				<li>
+					<a
+						href={resolve('/topics/[slug]', { slug: topic.slug })}
+						class="inline-flex min-h-11 w-full items-center rounded-md border border-neutral-300 px-4 py-3 text-sm font-semibold text-neutral-800 no-underline transition-colors hover:border-neutral-500 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-4 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-500 dark:hover:text-white"
+					>
+						{topic.label}<span class="ml-auto pl-3" aria-hidden="true">→</span>
+					</a>
+				</li>
+			{/each}
+		</ul>
+		<p class="mt-4 mb-0 text-left text-sm text-neutral-600 dark:text-neutral-400">
+			<a
+				href={resolve('/topics')}
+				class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4"
+				>Browse all guided topics</a
+			>
+			<span class="mx-2" aria-hidden="true">·</span>
+			<a
+				href={resolve('/start-here')}
+				class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4"
+				>Start with the author's voice</a
+			>
+		</p>
+	</section>
 
 	<section class="mb-12" aria-labelledby="recent-writing-heading">
 		<div

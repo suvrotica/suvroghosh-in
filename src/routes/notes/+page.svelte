@@ -6,10 +6,6 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const title = 'Handwritten Notes | Suvro Ghosh';
-	const description =
-		'Handwritten field notes, diagrams, marginalia, and visual thinking by Suvro Ghosh.';
-	const canonicalUrl = `${siteUrl}/notes`;
 	const socialImageUrl = `${siteUrl}/images/handwritten-notes-social-card.png`;
 
 	function formatDate(value: string | null) {
@@ -23,18 +19,16 @@
 </script>
 
 <SEO
-	{title}
-	{description}
-	{canonicalUrl}
+	{...data.seo}
 	ogImageUrl={socialImageUrl}
 	ogImageAlt="Handwritten Notes by SuvroGhosh.IN, arranged as charcoal marks and movable paper tiles"
 	ogImageWidth={1200}
 	ogImageHeight={630}
 	schema={withSiteGraph([
 		collectionPageSchema({
-			name: 'Handwritten Notes',
-			description,
-			url: canonicalUrl,
+			name: `Handwritten Notes${!data.query && data.page > 1 ? ` — Page ${data.page}` : ''}`,
+			description: data.seo.description,
+			url: data.seo.canonicalUrl,
 			about: 'Handwritten notes and visual thinking'
 		})
 	])}

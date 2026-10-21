@@ -2,9 +2,10 @@
 title: "HL7 vs FHIR, Explained Simply"
 description: "HL7 v2 and FHIR solve different interoperability problems. Learn when event messages, web APIs, profiles, and terminology governance each belong."
 date: "2026-04-25"
-dateModified: "2026-08-07"
+dateModified: "2026-10-21"
 category: "Healthcare IT"
-tags: ["HL7 Version","Layer Reflects","Healthcare Interoperability","Source System","FHIR","HL7","Healthcare","Data","Clinical","Version"]
+tags: ["HL7 v2", "FHIR", "Healthcare Interoperability", "Clinical Data", "FHIR Resources", "FHIR Profiles", "Implementation Guides", "Clinical Terminology", "Data Provenance", "Health Information Exchange"]
+pinnedTags: ["HL7 v2", "FHIR", "Healthcare Interoperability", "Clinical Data", "FHIR Resources", "FHIR Profiles", "Implementation Guides", "Clinical Terminology", "Data Provenance", "Health Information Exchange"]
 published: true
 color: "blue"
 thumbnail: "/thumbnail/art-hl7-vs-fhir-explained-simply.jpg"
@@ -80,3 +81,19 @@ Good architecture begins by admitting that loss. Then it designs around it.
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [FHIR](/blog/healthcare-it/fhir-the-universal-language-of-health-data)
 - [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)
+
+## Specification notes and a quick comparison
+
+The corridor metaphor above describes common deployments. The standards support more than that shorthand: FHIR can carry event-driven messages as well as expose resources through RESTful interfaces.
+
+| Question | HL7 v2 | FHIR |
+| --- | --- | --- |
+| What is being exchanged? | Messages built from segments and fields. | Resources assembled for an exchange. |
+| How can exchange happen? | Event notifications, queries and other messaging workflows. | REST, messaging, documents and other supported exchange patterns. |
+| What must an implementation still agree on? | Events, local fields, codes and receiver expectations. | Profiles, terminology, supported interactions and workflow expectations. |
+
+- [HL7's official comparison with version 2](https://fhir.hl7.org/fhir/comparison-v2.html) explains the messaging, granularity and extension differences.
+- [FHIR's specification overview](https://fhir.hl7.org/fhir/overview.html) introduces resources, exchange approaches and implementation choices. The linked pages describe the R5 publication; a real interface must name the release and profiles it implements.
+- [FHIR's safety guidance](https://www.hl7.org/fhir/safety.html) is relevant to the distinction between a structurally valid exchange and safe use of its information.
+
+For a guided route through the surrounding explanations, use the [HL7 and FHIR topic headquarters](/topics/hl7-fhir).

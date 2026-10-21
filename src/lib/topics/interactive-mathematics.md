@@ -4,9 +4,9 @@ shortTitle: 'Interactive Mathematics'
 slug: 'interactive-mathematics'
 group: 'Mathematics and science'
 description: >-
-  Learn by manipulating systems: sample probability, colour complex functions, build perceptrons, compare neuron models, and bend rays through simulated spacetime.
+  Learn by manipulating systems: sample probability, follow random motion, compare optimisers, reconstruct synthetic CT images, and test models of queues, missing data, neurons and spacetime.
 date: '2026-07-26'
-dateModified: '2026-07-26'
+dateModified: '2026-10-21'
 primaryTag: 'mathematics'
 sourceTags:
   - 'mathematics'
@@ -35,6 +35,12 @@ includePaths:
   - '/blog/visualizations/the-neuron-zoo'
   - '/blog/visualizations/spacetime-laboratory-einstein-equations'
   - '/blog/visualizations/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser'
+  - '/blog/visualizations/brownian-motion-laboratory'
+  - '/blog/visualizations/gradient-descent-landscapes'
+  - '/blog/visualizations/how-a-scanner-sees-reconstructing-a-body-from-shadows'
+  - '/blog/visualizations/the-shape-of-waiting'
+  - '/blog/visualizations/the-music-of-missing-data'
+  - '/blog/visualizations/the-fractal-atlas'
 excludePaths: []
 bestStartingArticle: '/blog/visualizations/monte-carlo-laboratory'
 startHereReason: >-
@@ -42,26 +48,30 @@ startHereReason: >-
 readingPaths:
   beginner:
     description: >-
-      Build intuition from familiar symmetry and sample variance, then make a sine wave respond to live controls.
+      Build intuition from familiar symmetry and sample variance, make a sine wave respond to live controls, then compare a random path with its population's predictable spread.
     items:
       - '/blog/mathematics/symmetry-in-a-calcutta-room'
       - '/blog/statistics/bessel-correction-for-variance'
       - '/blog/visualizations/hello-observable-your-first-living-d3-visualization'
+      - '/blog/visualizations/brownian-motion-laboratory'
   intermediate:
     description: >-
-      Move from visual intuition into complex functions, linear transformations, and probability applied to rare events.
+      Move from complex functions and linear transformations to optimisation, synthetic CT reconstruction and queue distributions. Ask what each calculation preserves and what its average hides.
     items:
       - '/blog/visualizations/domain-coloring-complex-functions-explorer'
       - '/blog/mathematics/four-fundamental-subspaces'
-      - '/blog/healthcare-it/poisson-distribution-healthcare-it'
+      - '/blog/visualizations/gradient-descent-landscapes'
+      - '/blog/visualizations/how-a-scanner-sees-reconstructing-a-body-from-shadows'
+      - '/blog/visualizations/the-shape-of-waiting'
   deep:
     description: >-
-      Build small neural models from scratch, compare what five neuron equations preserve, and explore the geometry of relativistic spacetime.
+      Build small neural models from scratch, compare what five neuron equations preserve, explore relativistic geometry, then inspect the assumptions behind missingness and imputation.
     items:
       - '/blog/mojollm/perceptron-from-scratch-in-mojo'
       - '/blog/mojollm/xor-with-multiple-perceptrons-in-mojo'
       - '/blog/visualizations/the-neuron-zoo'
       - '/blog/visualizations/spacetime-laboratory-einstein-equations'
+      - '/blog/visualizations/the-music-of-missing-data'
 relatedResources:
   visualizations:
     - '/blog/visualizations/monte-carlo-laboratory'
@@ -70,6 +80,12 @@ relatedResources:
     - '/blog/visualizations/the-neuron-zoo'
     - '/blog/visualizations/spacetime-laboratory-einstein-equations'
     - '/blog/visualizations/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser'
+    - '/blog/visualizations/brownian-motion-laboratory'
+    - '/blog/visualizations/gradient-descent-landscapes'
+    - '/blog/visualizations/how-a-scanner-sees-reconstructing-a-body-from-shadows'
+    - '/blog/visualizations/the-shape-of-waiting'
+    - '/blog/visualizations/the-music-of-missing-data'
+    - '/blog/visualizations/the-fractal-atlas'
   games: []
   other:
     - '/blog/mojollm/perceptron-from-scratch-in-mojo'
@@ -145,3 +161,5 @@ Mathematics is often presented after the interesting part has been removed. The 
 Manipulation does not eliminate the need for definitions or proof. It gives intuition something to push against. Monte Carlo methods make statistical error visible. Domain colouring assigns hue and contour to information an ordinary graph cannot hold. The perceptron notebooks show why a straight boundary solves some patterns and fails at XOR. The Spacetime Laboratory turns one field equation into several geometries while stating clearly where a shader is demonstrating rather than calculating full general relativity.
 
 The routes progress from familiar shapes and plain-language statistics toward linear algebra, complex functions, neural dynamics, and spacetime. They also cross into artificial life and generative systems, where simple local rules produce histories no author scripted frame by frame. Treat each laboratory as an argument with controls. Ask what is fixed, what can vary, what numerical method is hiding underneath, and which conclusion the picture does not justify. Understanding begins not when the animation moves, but when you can predict how it ought to move and become productively surprised.
+
+For a practical experiment, compare seeds in the [Brownian Motion Laboratory](/blog/visualizations/brownian-motion-laboratory), change the learning rate in [Gradient Descent Landscapes](/blog/visualizations/gradient-descent-landscapes), or collect fewer projection angles in the [CT reconstruction laboratory](/blog/visualizations/how-a-scanner-sees-reconstructing-a-body-from-shadows). Then change what you measure: [The Shape of Waiting](/blog/visualizations/the-shape-of-waiting) compares an average with a distribution's tail, while [The Music of Missing Data](/blog/visualizations/the-music-of-missing-data) makes the consequences of absent observations visible. Each uses declared synthetic data or mathematical models so that assumptions can be examined rather than mistaken for observations of the world.

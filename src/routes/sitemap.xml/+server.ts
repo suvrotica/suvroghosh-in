@@ -105,7 +105,7 @@ export async function GET() {
 		lastMod: resource.dateModified ?? resource.date
 	}));
 
-	const pages = [
+	const pages: { url: string; lastMod?: string }[] = [
 		{ url: siteUrl + '/', lastMod: blogLastMod },
 		{ url: siteUrl + '/start-here', lastMod: startHereLastMod },
 		{ url: siteUrl + '/about', lastMod: '2026-10-20' },
@@ -114,6 +114,7 @@ export async function GET() {
 		{ url: siteUrl + '/consulting', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/writing', lastMod: blogLastMod },
+		{ url: siteUrl + '/notes' },
 		{ url: siteUrl + '/resources', lastMod: newestPublishedResourceDate() },
 		{ url: siteUrl + '/images', lastMod: '2026-07-20' },
 		{

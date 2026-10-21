@@ -6,7 +6,7 @@ group: 'Healthcare and technology'
 description: >-
   A practical route from hospital messages and FHIR resources to identity, terminology, provenance, implementation guides, data warehouses, and real health-system constraints.
 date: '2026-07-26'
-dateModified: '2026-08-13'
+dateModified: '2026-10-21'
 primaryTag: 'fhir'
 sourceTags:
   - 'fhir'
@@ -132,3 +132,5 @@ Healthcare interoperability begins with an ordinary irritation: the information 
 HL7 v2 and FHIR address different boundaries inside that problem. HL7 v2 remains the workhorse for event messages such as admissions, orders, and results. FHIR organizes information into modular resources and uses familiar web patterns for queries, apps, patient access, and ecosystem exchange. Profiles and implementation guides narrow the broad standard for actual use. Terminology bindings try to keep two systems from using the same field to mean nearby but incompatible things.
 
 Neither standard is a health information exchange by itself. Real exchange also needs patient matching, registries, consent and access rules, provenance, monitoring, version governance, and people empowered to resolve ambiguity. The deeper readings follow data into VA operational systems and warehouses, compare different longitudinal architectures, and examine countries where the institutional prerequisites are uneven. The goal is not to memorize acronyms. It is to understand why a message can be delivered perfectly while the clinical meaning arrives late, incomplete, or wearing the wrong patient's shoes.
+
+To follow those boundaries in an original interactive exhibit, open [A Record Crosses Town](https://record.suvroghosh.in/) or its [15-minute guided tour](https://record.suvroghosh.in/guide/). This separate educational site follows a wholly synthetic encounter through identity, routing, terminology, provenance and bounded recovery. Its OpenHIE-inspired map illustrates responsibilities and failure handling; it is not a production exchange or a conformance certification.

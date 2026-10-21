@@ -1,13 +1,14 @@
 ---
 title: "The Particle That Could Not Make Up Its Mind"
+seoTitle: "Brownian Motion Simulator — Diffusion, Drift & First Passage"
 description: "A hands-on laboratory for Brownian motion, drift, confinement, memory, first passage, and the precise laws hidden inside random motion."
 date: "2026-08-04"
-dateModified: "2026-08-04"
+dateModified: "2026-10-21"
 thumbnail: "/images/brownian-motion-laboratory.png"
 thumbnailAlt: "A tangled Brownian path centred in a cloud of possible trajectories above a Gaussian curve and the equation mean-square displacement equals four D t"
 category: "Visualizations"
-tags: ["Brownian Motion","Physics","Diffusion","Probability","Langevin Dynamics","Simulation","Mathematics","Lévy Flight","Plain Language","Mean-Square Displacement"]
-pinnedTags: ["Brownian Motion", "Physics", "Diffusion", "Probability", "Langevin Dynamics", "Simulation", "Mathematics"]
+tags: ["Brownian Motion", "Physics", "Diffusion", "Probability", "Langevin Dynamics", "Simulation", "Mathematics", "Lévy Flight", "First Passage", "Mean-Square Displacement"]
+pinnedTags: ["Brownian Motion", "Physics", "Diffusion", "Probability", "Langevin Dynamics", "Simulation", "Mathematics", "Lévy Flight", "First Passage", "Mean-Square Displacement"]
 published: true
 interactiveFirst: true
 color: "#6F7FA8"

@@ -2,10 +2,11 @@
 title: "AI Music"
 thumbnail : "/images/Resize_20260428_134350_0013.jpg"
 thumbnailAlt: "Charcoal drawing of a wide-eyed figure with bared teeth gripping a car's steering wheel."
-description: "A reflection on artificial intelligence, music, authorship, and the strange new machinery of creative production."
+description: "A collection of thirteen AI-generated music videos by Suvro Ghosh, moving through rain, late-night streets, quiet departures and open landscapes."
 date: "2026-04-27"
 dateModified: "2026-10-21"
-tags: ["AI Songs","Songs","AI"]
+tags: ["AI Music","AI Songs","Songs","Music Videos","Generative AI","AI"]
+pinnedTags: ["AI Music", "AI Songs", "Songs", "Music Videos", "Generative AI"]
 category: "AI Music Song"
 published: true
 ---

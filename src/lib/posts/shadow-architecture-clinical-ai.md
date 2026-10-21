@@ -2,9 +2,10 @@
 title: "Clinical AI Needs A Shadow Architecture First"
 description: "What clinical AI needs beyond a model: validation, monitoring, workflow design, governance, accountability, and human review before deployment."
 date: "2026-06-23"
-dateModified: "2026-08-07"
+dateModified: "2026-10-21"
 category: "Healthcare-IT"
-tags: ["Shadow Architecture","Deep Learning","Patient Cares Whether","Shadow Holds","Clinical AI","Clinical","AI","Model","Validation","Monitoring"]
+tags: ["Clinical AI", "Healthcare AI", "Clinical Validation", "Model Monitoring", "Data Governance", "Human Factors", "Clinical Workflow", "MLOps", "Patient Safety", "Accountability"]
+pinnedTags: ["Clinical AI", "Healthcare AI", "Clinical Validation", "Model Monitoring", "Data Governance", "Human Factors", "Clinical Workflow", "MLOps", "Patient Safety", "Accountability"]
 published: true
 color: "#2C3E50"
 thumbnail: "/thumbnail/art-shadow-architecture-clinical-ai.jpg"
@@ -183,3 +184,14 @@ In Calcutta, a bridge can look solid from the road while the underside tells ano
 The alert remains on the screen. A clinician glances at it, then at the patient, then back at the record. Somewhere behind that small moment should be a chain of validation, monitoring, governance, and responsibility strong enough to bear the weight of trust.
 
 If that chain is missing, the machine should wait.
+
+## Sources and the scope of the argument
+
+“Shadow architecture” is the framing used in this essay for the surrounding technical and institutional work. It is not the name of a recognised regulatory category or a claim that one architecture satisfies every clinical use case.
+
+- **Software failures:** [Leveson and Turner's investigation of the Therac-25 accidents](https://web.mit.edu/6.033/2004/wwwdocs/papers/Therac_2.html) provides the historical case behind the software-safety discussion.
+- **External validation:** [Wong and colleagues' 2021 validation of a proprietary sepsis model](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2781307) concerns a particular model and cohort. It supports the need to evaluate deployed systems; it does not establish that every sepsis model, later revision or institution has the same performance.
+- **Reporting evidence:** [TRIPOD+AI](https://pubmed.ncbi.nlm.nih.gov/38626948/) sets out reporting guidance for clinical prediction-model studies, including evaluation and transparency. A reporting checklist does not establish clinical benefit by itself.
+- **Regulatory scope:** [FDA's January 2026 clinical decision-support guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software) explains the US non-device CDS criteria. Applicability depends on the actual function and jurisdiction.
+
+The [healthcare-AI reading path](/topics/healthcare-ai) connects this argument to other explanations. The [Human + AI ICU laboratory](/blog/visualizations/human-ai-icu-prediction-laboratory) and [missingness explorer](/blog/visualizations/the-music-of-missing-data) offer synthetic teaching experiments; neither is a clinical validation or treatment tool.

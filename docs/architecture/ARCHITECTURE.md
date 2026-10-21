@@ -4,6 +4,8 @@ Canonical architecture reference. Last verified: **20 October 2026**, against ap
 
 The mandatory architecture-change policy has one authoritative definition: [CONTRIBUTING.md — Architecture change gate](../../CONTRIBUTING.md#architecture-change-gate). This document describes the implementation; recommendations in the audit are not implemented features.
 
+The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
+
 ## 1. System and principles
 
 SuvroGhosh.IN is one SvelteKit application deployed through the Vercel adapter. It combines a repository-backed publishing site, interactive scientific/educational experiences, browser games, downloadable resources, a media library, and a single-owner handwritten-notes application. There is no separate application server, generic CMS, global state store, or shared simulation engine governing every experience.
@@ -102,6 +104,8 @@ Important libraries include Supabase SSR/client, Zod, Dexie, Sharp, perfect-free
 
 Notebook authoring is separate: `pixi.toml` pins Mojo `1.0.0b2` on Linux x64/macOS ARM64, with constrained Jupyter dependencies. Native Windows authoring uses the documented WSL path. The full feature lane can verify committed notebook HTML when a local renderer is unavailable; routine article builds do not invoke the notebook toolchain.
 
+The two committed standalone perceptron notebook HTML exports are alternate reading formats of their existing `/blog/mojollm/...` articles. Exact-path Vercel `Link: <article URL>; rel="canonical"` headers identify those article canonicals without modifying notebook cell output, regenerating exports or adding conflicting `noindex` directives. The export and article URLs remain accessible at their existing paths.
+
 ## 4. Routes, layouts and rendering
 
 The root server layout supplies shared SEO defaults. The root Svelte layout uses `$app/state`, snippets, and derived route data to choose the site shell, private studio shell, immersive/site game shell, or one of two registered editorial folios. It owns route atmosphere, analytics, reduced-motion handling and guarded view transitions. `src/routes/blog/+layout.svelte` adds blog typography.
@@ -128,6 +132,18 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 The personal-site introduction leads with independent entrepreneurship, making and writing. Primary navigation connects existing work (`/projects`), writing (`/writing`), the verified external YouTube channel, `/about`, and the existing Start Here reading guide. Secondary discovery remains in the footer and command palette. `/about` is a small prerendered profile using the shared `Person` identity, with career history linked at the unchanged `/resume` URL. `/consulting` and `/healthcare-it-gulf` retain their URLs as career-context pages without current service or availability promises. No article routes or publication metadata were renamed.
 
 SSR and client hydration remain enabled by default; there is no global SPA-only setting. Universal content loads intentionally return component constructors because that code executes in both environments. Server loads return serializable metadata. The generic article page supplies article SEO, breadcrumbs, author/tools, navigation, related posts and notebook/folio variants.
+
+Public Notes lists use the shared strict page-number parser. Unfiltered later pages have page-specific titles and canonicals; filtered searches keep the `/notes` canonical and emit `noindex,follow`. The repository treats out-of-range later pages as 404, including a PostgREST `PGRST103`/416 response or an empty successful range, while genuine backend faults remain 503. The demo fallback follows the same page-existence rule. The main repository-backed sitemap includes the public `/notes` shelf without a database lookup or an invented modification date; the separate dynamic Notes sitemap supplies visible publication URLs.
+
+```mermaid
+flowchart LR
+    Request["Public Notes request: q + validated page"] --> Publications["Visible immutable publications: bounded range"]
+    Publications -->|out of range| Missing["404: page does not exist"]
+    Publications -->|backend fault| Unavailable["503: service unavailable"]
+    Publications -->|available| Shelf["SSR list + route-owned SEO"]
+    Shelf --> Search["Filtered: noindex + base canonical"]
+    Shelf --> Pages["Unfiltered: page-specific metadata"]
+```
 
 The three concrete visualization wrappers are intentional bundle/rendering adaptations. Their differing entry exclusions and duplicated load scaffolding are visible maintenance costs. The Meaning Map's earlier unbalanced global scroll mutation (`AF-006`) is corrected by mount-owned cleanup; it is not an approved route convention. Its separate interaction-state/accessibility debt remains `AF-013`.
 
@@ -596,6 +612,10 @@ per daily request without increasing the request quota or introducing paid infer
 
 ## 9. Security, errors and validation
 
+Root-layout measurement is guarded by the browser-safe `src/lib/measurement.ts` policy. Analytics and Speed Insights initialize only on the canonical production origin, outside development and `navigator.webdriver` contexts, and when neither local nor session storage contains `suvroghosh:measurement=off`. Denied storage fails closed for measurement without blocking the site. Both SDK `beforeSend` callbacks recheck eligibility, strip query/fragment URL state and suppress API and Notes studio/auth paths, including encoded path forms. This adds no identifiers, server endpoint, event pipeline or public environment flag; it does not establish that all retained observations are human or that a particular reporting tier is available.
+
+The shared YouTube component retains its default direct-embed behavior and adds an opt-in `clickToPlay` mode used by the three résumé videos. The deferred server render contains a labelled native button, title/caption and direct watch link, with no player or remote thumbnail request. Activation creates the existing player and moves focus to it; playback remains user-controlled. This changes loading ownership, not CSP destinations or article content.
+
 The checked-in CSP is defined in `svelte.config.js` with automatic nonce/hash handling, self-by-default scripts, named Vercel endpoints, bounded frame/worker policy, no objects and no framing. `vercel.json` adds transport response headers and apex-to-www redirects. `hooks.server.ts` adds request IDs and headers to resolved application responses; it normalizes blog categories and resolves notes sessions only for protected/auth-dependent routes.
 
 Private studio/auth/API responses receive private no-cache/no-store headers and noindex/noarchive directives. Auth pages intentionally use `same-origin` referrers on clean URLs and `no-referrer` while a recovery/callback secret remains in the URL; recovery tokens are consumed only after an explicit same-origin confirmation POST. Local auth config must not be treated as proof of hosted signup/session settings.
@@ -637,6 +657,8 @@ flowchart LR
 Delivered publications cannot be recalled from an offline device. This is a documented product constraint, not an authorization guarantee. Do not extend the worker to cache authenticated pages or mutable draft APIs.
 
 ## 11. Tests and architectural verification
+
+The critical-boundaries workflow also watches the measurement policy/root layout, deferred YouTube component/résumé, notebook header configuration, internal-link validator and their Node regression files. `test:critical` includes `seo:test` for production-origin/opt-out/private-URL measurement rules, real Svelte server rendering of deferred/default players, notebook-to-published-parent canonical consistency and internal-link CLI fixtures. The link validator recognises canonical topic paths only when strict topic frontmatter matches its lowercase kebab-case filename, is published and has the actual topic route handler; missing, unpublished and nested topic paths remain errors. `seo:browser:test` uses an already-built loopback preview, blocks service workers and external requests, and checks keyboard player activation/focus, narrow-screen Writing links and rendered metadata. It does not rebuild the app or serve as a field-performance measurement.
 
 Unit tests primarily live alongside engines and models. The main Vitest config includes 283 baseline source test files; separate ray-marching and Human+AI ICU configurations account for ten additional source test files. Its coverage-report include list is narrowly notes-focused; it is not a repository-wide coverage promise. `notes:test` invokes the entire default Vitest collection and then SQL-pattern tests, despite its name. `npm test` invokes several focused suites before that global run, repeating work (`AF-010`).
 

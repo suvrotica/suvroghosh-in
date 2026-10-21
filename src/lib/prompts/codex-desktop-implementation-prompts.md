@@ -2,7 +2,7 @@
 title: 'Codex Desktop Implementation Prompts'
 description: 'Reusable engineering briefs for asking Codex Desktop to inspect a repository, implement a bounded change, repair failures and report evidence.'
 date: '2026-07-30'
-dateModified: '2026-07-30'
+dateModified: '2026-10-21'
 kind: 'prompt'
 tags:
   - 'Codex Desktop'
@@ -15,7 +15,7 @@ featured: false
 order: 10
 thumbnail: '/images/resources/codex-desktop-implementation-prompts.webp'
 thumbnailAlt: 'A software workbench with a repository tree, test results, terminal notes and a reviewed code diff'
-estimatedLength: '2 prompt templates'
+estimatedLength: '2 prompt templates and 1 worked case'
 related:
   - 'prompts/research-and-verification-prompts'
   - 'prompts/editing-prompts'
@@ -177,3 +177,43 @@ State the root cause, the correction, the changed files, the regression coverage
 ## Usage notes
 
 Replace the bracketed fields, delete irrelevant bullets and retain constraints that protect the repository. A longer brief is not automatically better: the useful parts are the user outcome, invariants, scope, acceptance criteria and observable checks. Review the resulting patch yourself when the change is consequential; generated summaries are not a substitute for the diff.
+
+## Worked case: a service worker that fetched the whole site
+
+On 21 October 2026, this site's service-worker installation was found to download its complete build manifest: 1,066 assets, including unopened articles and unrelated laboratories. The repair changed installation to create an empty cache and allowed requested resources to enter it on demand. Public handwritten notes still needed their bounded offline support.
+
+The [committed repair](https://github.com/suvrotica/suvroghosh-in/commit/01c50236809f54b9c472bc11171b0f41889f3a7a) contains the code, focused tests, architecture decision and [incident evidence](https://github.com/suvrotica/suvroghosh-in/blob/01c50236809f54b9c472bc11171b0f41889f3a7a/docs/audits/edge-requests-2026-10-21.md). A controlled local comparison recorded 1,120 versus 56 same-origin request events. Those events are browser instrumentation, not exact billable-request counts or an estimate of human readership.
+
+### A brief grounded in that case
+
+```text
+Repair service-worker installation so opening one page does not download
+the entire build graph.
+
+Start with src/service-worker.ts, the public-note offline helper, the
+worker regression harness and the canonical architecture. Inspect the
+existing working tree before editing.
+
+Preserve article URLs, public-note snapshot boundaries, old runtime-cache
+compatibility and opened-note offline reading. Keep private/authenticated
+responses out of caches. Do not add broad bot or user-agent blocks.
+
+Demonstrate the installation fan-out locally. Make installation fetch no
+build assets. Cache eligible assets only when requested, deduplicate
+concurrent requests and keep any opened-note preparation bounded.
+
+Add regressions for zero install fetches, demand caching, duplicate
+requests, private-response exclusion and offline note recovery. Verify
+the real built worker against a local preview. Block telemetry and keep
+repeated checks off production.
+
+Update the affected architecture and explain the trade-off. Report the
+exact test outcomes, request-event counts and remaining limits. Treat
+deployment and any account/billing change as separate authorised actions.
+```
+
+### What made the result reviewable
+
+The change had an observable trigger, a resource owner, explicit invariants and a local reproduction. Its acceptance criteria covered both the unwanted downloads and the offline capability that had to survive. The result could therefore be checked against the brief without trusting a fluent completion summary.
+
+For general prompting guidance, [OpenAI's Codex best practices](https://learn.chatgpt.com/guides/best-practices) describes the same useful inputs: a goal, relevant context, constraints and a definition of completion. The case above is evidence from this repository, not a claim that a prompt alone prevents faulty implementations.

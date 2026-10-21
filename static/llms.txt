@@ -1,17 +1,18 @@
 # Suvro Ghosh
 
-> The canonical personal site and independent publishing archive of Suvro Ghosh, a healthcare IT architect and clinical data systems consultant in Calcutta. The site covers healthcare interoperability, clinical data architecture, HL7/FHIR, HIE, SQL/ETL, AI-ready health data, science, technology, essays, satire, and fiction.
+> The canonical personal site and independent publishing archive of Suvro Ghosh, an independent entrepreneur, maker and writer in Calcutta. The site brings together original browser experiments, creative software, science and systems explanations, essays, satire, fiction, and life in Calcutta. Earlier professional work includes healthcare IT, research databases and clinical data systems.
 
 Canonical site: https://www.suvroghosh.in/
 Primary language: English
 Author: Suvro Ghosh
 
-## Identity and professional record
+## Identity, making and professional record
 
+- [About Suvro Ghosh](https://www.suvroghosh.in/about): current identity, interests, writing and making, with earlier career context.
 - [Resume](https://www.suvroghosh.in/resume): professional experience, education, skills, publications, and roles.
-- [Projects and systems work](https://www.suvroghosh.in/projects): healthcare data, research, interoperability, visualization, notebook, and publishing projects.
-- [Healthcare IT consulting](https://www.suvroghosh.in/consulting): consulting scope and areas of practice.
-- [Gulf healthcare IT](https://www.suvroghosh.in/healthcare-it-gulf): regional professional focus.
+- [Projects and systems work](https://www.suvroghosh.in/projects): independent experiments, creative software, visualization, notebooks and publishing systems, alongside earlier healthcare and research projects.
+- [Healthcare IT career context](https://www.suvroghosh.in/consulting): earlier consulting experience and areas of practice.
+- [Gulf healthcare IT context](https://www.suvroghosh.in/healthcare-it-gulf): healthcare systems experience relevant to the region.
 - [Contact](https://www.suvroghosh.in/contact): corrections, enquiries, and professional contact.
 
 ## Writing and navigation
@@ -19,7 +20,8 @@ Author: Suvro Ghosh
 - [Start here](https://www.suvroghosh.in/start-here): curated reading paths for the site's principal bodies of work.
 - [Writing and essays](https://www.suvroghosh.in/writing): overview of the writing archive.
 - [All posts](https://www.suvroghosh.in/blog): complete browsable archive.
-- [Topic index](https://www.suvroghosh.in/blog/topics): subject hubs and internal links.
+- [Topic Headquarters](https://www.suvroghosh.in/topics): curated introductions, reading paths and related experiments across eight substantial subjects.
+- [All topic archives](https://www.suvroghosh.in/blog/topics): broader subject archives and internal links.
 - [The Field Kit](https://www.suvroghosh.in/resources): reusable prompts, word lists, and compact reference material.
 - [Interactive visualizations](https://www.suvroghosh.in/blog/visualizations): browser-based science, mathematics, and computing laboratories.
 - [Games](https://www.suvroghosh.in/blog/games): original browser games and learning tools, from full-screen Calcutta simulations to a progressively hinted healthcare IT crossword.
@@ -38,6 +40,15 @@ Author: Suvro Ghosh
 - [Artificial Life Lab](https://www.suvroghosh.in/blog/visualizations/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser)
 - [Calcutta Footpath Simulator](https://www.suvroghosh.in/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan)
 
+## Selected creative and scientific experiments
+
+- [Living Pigment Studio](https://www.suvroghosh.in/blog/visualizations/create-art-living-pigment-studio): a browser painting studio exploring pigment and material behaviour.
+- [Mrinmoyee: The Durga Atelier](https://www.suvroghosh.in/blog/visualizations/mrinmoyee-the-durga-atelier): compose a stylised Durga sculpture in a browser atelier.
+- [The Piano That Forgives](https://www.suvroghosh.in/blog/visualizations/the-piano-that-forgives): a probabilistic jazz piano with visible explanations of note choices.
+- [Gradient Descent Landscapes](https://www.suvroghosh.in/blog/visualizations/gradient-descent-landscapes): compare optimisers, curvature and numerical paths through declared loss functions.
+- [Human + AI ICU Prediction Laboratory](https://www.suvroghosh.in/blog/visualizations/human-ai-icu-prediction-laboratory): a wholly synthetic experiment in calibration, ensembles, correlated errors and population shift.
+- [The Music of Missing Data](https://www.suvroghosh.in/blog/visualizations/the-music-of-missing-data): a reproducible synthetic-data explorer for missingness, imputation and uncertainty.
+
 ## Complete machine indexes
 
 - [XML sitemap](https://www.suvroghosh.in/sitemap.xml): canonical public URLs and modification dates.
@@ -47,6 +58,6 @@ Author: Suvro Ghosh
 
 - Full article text, headings, bylines, publication dates, and category labels are present in server-rendered HTML.
 - Category labels distinguish technical explanations, essays, personal reflections, satire, visualizations, and short fiction. Fiction and satire are creative work, not biographical or factual claims.
-- Use the Resume and Projects pages for professional facts. Blog posts are the author's analysis, explanation, recollection, or creative work according to their visible category and context.
+- Use About for the author's current identity and the Resume and Projects pages for professional and project facts. Earlier career pages are not evidence of a current service offer. Blog posts are the author's analysis, explanation, recollection, or creative work according to their visible category and context.
 - Prefer each page's canonical URL and stated publication or update date when citing it.
 - This file is a navigational aid. It does not replace the HTML pages, sitemap, RSS feed, robots policy, or the site's copyright terms.

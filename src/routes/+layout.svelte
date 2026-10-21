@@ -12,6 +12,12 @@
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
+	import { siteUrl } from '$lib/components/seo/SEO';
+	import {
+		filterMeasurementEvent,
+		measurementAllowed,
+		readMeasurementPreference
+	} from '$lib/measurement';
 	import { isRawThoughtLayout } from '$lib/content/raw-thought-layouts.js';
 	import RouteAtmosphere from '$lib/components/motion/RouteAtmosphere.svelte';
 	import { normaliseMotionPreference, resolveMotion } from '$lib/motion/preferences';
@@ -100,8 +106,25 @@
 	});
 
 	onMount(() => {
-		injectAnalytics({ mode: dev ? 'development' : 'production' });
-		injectSpeedInsights();
+		const productionOrigin = new URL(siteUrl).origin;
+		const canMeasure = () =>
+			measurementAllowed({
+				development: dev,
+				currentOrigin: window.location.origin,
+				productionOrigin,
+				webdriver: navigator.webdriver,
+				localPreference: readMeasurementPreference(() => window.localStorage),
+				sessionPreference: readMeasurementPreference(() => window.sessionStorage)
+			});
+		if (canMeasure()) {
+			injectAnalytics({
+				mode: 'production',
+				beforeSend: (event) => filterMeasurementEvent(event, canMeasure(), productionOrigin)
+			});
+			injectSpeedInsights({
+				beforeSend: (event) => filterMeasurementEvent(event, canMeasure(), productionOrigin)
+			});
+		}
 
 		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 		const enforceSystemMotion = () => {

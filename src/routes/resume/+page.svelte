@@ -342,6 +342,7 @@
 							{#each job.videos as videoUrl, vIndex (videoUrl)}
 								<Yt
 									src={videoUrl}
+									clickToPlay
 									title={`Overview of ${job.company} - Part ${vIndex + 1}`}
 									caption={`Demo / Presentation: ${job.company}`}
 								/>

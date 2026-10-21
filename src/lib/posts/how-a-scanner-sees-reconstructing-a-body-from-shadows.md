@@ -1,8 +1,9 @@
 ---
 title: "How a Scanner Sees: Reconstructing a Body from Shadows"
+seoTitle: "CT Reconstruction Simulator — Sinograms & Filtered Back-Projection"
 description: "Paint a synthetic CT phantom, collect X-ray projections, and rebuild it with back-projection and filtered back-projection."
 date: "2026-07-26"
-dateModified: "2026-07-28"
+dateModified: "2026-10-21"
 thumbnail: "/images/visualizations/how-a-scanner-sees-ct-reconstruction.webp"
 thumbnailAlt: "Synthetic CT laboratory showing an editable cross-sectional phantom, a sinogram, and grayscale back-projection and filtered back-projection images"
 category: "Visualizations"
@@ -292,3 +293,12 @@ A contiguous sector of projection angles that was not acquired. Its absence caus
 A condition in which very few photons reach a detector bin, making the recovered line integral extremely noisy or unreliable. Dense metal is a common route to it in this teaching model.
 
 The apparent impossibility has now been reduced to a chain of modest operations: add attenuation along lines, count what survives, take a logarithm, arrange the results by angle, filter the profiles, and return them along the paths from which they came. The final image is not a remembered body. It is the negotiated agreement of many shadows.
+
+## Sources for the reconstruction model
+
+- [Kak and Slaney, *Principles of Computerized Tomographic Imaging*](https://www.slaney.org/pct/pct-toc.html): the authors' online edition provides the mathematical background for projections, Fourier methods, filtered back-projection and the effects of limited or noisy measurements. See the chapters on reconstruction algorithms and practical measurement problems.
+- [TU Delft's illustrated tomography chapter](https://interactivetextbooks.tudelft.nl/basic-principles-of-biological-electron-microscopy/content/12_tomography.html): a complementary teaching account of projection geometry, sinograms, reconstruction and missing-angle information. Its electron-microscopy setting differs from medical CT.
+
+These references explain the principles. The laboratory's scientific-boundary section states which effects its teaching model represents; the exhibit is not a scanner calibration, dose recommendation or clinical reconstruction system.
+
+Continue through the [interactive mathematics reading paths](/topics/interactive-mathematics) for related models and experiments.

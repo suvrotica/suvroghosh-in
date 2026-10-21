@@ -1,12 +1,16 @@
 ---
 title: "The Fish Bengalis Eat"
-description: "A practical field guide to the fish commonly eaten in Kolkata, with Bengali names, English and scientific names, and a hardheaded look at which fish are best for regular eating, which are occasional luxuries, and which are poor bets."
+seoTitle: "Bengali Fish Guide — Bengali, English & Scientific Names"
+description: "Identify fish commonly eaten in Kolkata by Bengali, English and scientific name, with practical notes on species, sourcing and culinary use."
 date: "2026-04-22"
+dateModified: "2026-10-21"
 category: "food"
-tags: ["Frequent Eating","Large Predators","Fish Eaten Whole","Good Reasons","Fish","Labeo","Pabda","Predatory","Bata","Catla"]
+tags: ["Bengali Fish", "Calcutta", "Kolkata Food", "Fish Identification", "Bengali Cuisine", "Freshwater Fish", "Fish Taxonomy", "Hilsa", "Rohu", "Small Indigenous Fish"]
+pinnedTags: ["Bengali Fish", "Calcutta", "Kolkata Food", "Fish Identification", "Bengali Cuisine", "Freshwater Fish", "Fish Taxonomy", "Hilsa", "Rohu", "Small Indigenous Fish"]
 published: true
 color: "blue"
 thumbnail: "/thumbnail/art-calcutta-fish-field-guide.jpg"
+thumbnailAlt: "A fish seller arranges large and small silver fish on banana leaves and ice beside a brass balance."
 ---
 
 <TTS />
@@ -71,3 +75,13 @@ Postscript on caution: contamination risk is not identical across all fish, wate
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
 - [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+
+## Sources, names and the limits of the ranking
+
+- **Scientific names:** [Eschmeyer's Catalog of Fishes](https://www.calacademy.org/scientists/projects/eschmeyers-catalog-of-fishes) is a taxonomic reference for checking names and synonyms. A Bengali market name alone cannot establish which species a seller has supplied.
+- **Small-fish nutrition:** [FAO's case studies on biodiversity and food](https://www.fao.org/4/i3004e/i3004e03.pdf), especially the Bangladesh small-fish discussion, provide context for micronutrients and whole-fish consumption. Their observations are not measurements of every fish sold in Calcutta.
+- **Mercury and sensitive groups:** [FDA/EPA advice about eating fish](https://www.fda.gov/food/consumers/advice-about-eating-fish) provides US guidance for pregnancy, breastfeeding and children. Its species categories and advice must not be treated as a tested Bengali-market lookup table.
+
+The “best” and “worst” language in the essay expresses a practical culinary and ecological judgement. No species-by-species Kolkata contaminant dataset is supplied here, so it is not a measured safety ranking, a guarantee about a particular catch, or individual dietary advice. Local advisories, species identification, water source and handling remain material uncertainties.
+
+For another way into the site's writing about place, follow the [Calcutta reading paths](/topics/calcutta).

@@ -15,6 +15,24 @@
 	],
 	"headers": [
 		{
+			"source": "/notebooks/perceptron-from-scratch-in-mojo.html",
+			"headers": [
+				{
+					"key": "Link",
+					"value": "<https://www.suvroghosh.in/blog/mojollm/perceptron-from-scratch-in-mojo>; rel=\"canonical\""
+				}
+			]
+		},
+		{
+			"source": "/notebooks/xor-with-multiple-perceptrons-in-mojo.html",
+			"headers": [
+				{
+					"key": "Link",
+					"value": "<https://www.suvroghosh.in/blog/mojollm/xor-with-multiple-perceptrons-in-mojo>; rel=\"canonical\""
+				}
+			]
+		},
+		{
 			"source": "/(.*)",
 			"headers": [
 				{ "key": "X-Frame-Options", "value": "DENY" },

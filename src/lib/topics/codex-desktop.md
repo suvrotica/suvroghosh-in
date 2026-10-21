@@ -6,7 +6,7 @@ group: 'AI and engineering'
 description: >-
   How to give a coding agent enough repository context, constraints, implementation order, validation rules, and definition of done to make a safe, reviewable change.
 date: '2026-07-26'
-dateModified: '2026-07-26'
+dateModified: '2026-10-21'
 primaryTag: 'coding-agents'
 sourceTags:
   - 'coding-agents'
@@ -115,3 +115,9 @@ Codex Desktop can inspect files, follow references, edit code, run commands, and
 Begin with repository context rather than a pasted universe. Identify the relevant framework, build and test commands, instruction files, nearby implementation patterns, public contracts, and current uncommitted work. State invariants explicitly when they are easy to violate. If the task has dependent stages, give an implementation order: data model before UI, resolver before redirects, core behaviour before visual polish. Specify actions requiring special caution, such as destructive commands, migrations, credentials, or dependency changes.
 
 Finish the brief with validation and a definition of done. Name focused tests as well as broader gates, and require inspection of the actual diff and representative user experience. A coding agent is most useful when allowed to investigate and repair within clear boundaries, not when forced to obey a stale guess about every file. The aim is neither maximal prompt length nor ceremonial planning. It is to replace hidden assumptions with constraints and observable outcomes, then let repository evidence determine the safest implementation.
+
+## Put the brief to work
+
+The [Codex Desktop implementation prompts](/resources/prompts/codex-desktop-implementation-prompts) provide two reusable briefs and a worked repository case: repairing a service worker that fetched the whole site. The case links the actual change, invariants, regression evidence and measurement limits, so the workflow can be inspected rather than taken on trust.
+
+Use the conceptual essays for judgement and context; use the brief and worked case when a concrete repository change needs a reviewable outcome.

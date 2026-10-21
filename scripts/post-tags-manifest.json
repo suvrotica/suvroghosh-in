@@ -450,9 +450,9 @@
 		"src/lib/posts/ai_music.md": {
 			"bodyHash": "4c40536da9a60d9860ef2d10862ebe459af8fbccdbf23e6c1958b99dbb903efd",
 			"hashVersion": 2,
-			"revisionHash": "392937c5329f3fa0d3e5fcd54ea5390939b5fab83427fe80762a92133fc187c6",
-			"generatedTags": ["AI Songs", "Songs", "AI"],
-			"pinnedTags": [],
+			"revisionHash": "4f5fc17d9ebeaebd3fe624f81cd461fa3b2f5d659c37eeb3b9c196072631ca55",
+			"generatedTags": ["AI Music", "AI Songs", "Songs", "Music Videos", "Generative AI", "AI"],
+			"pinnedTags": ["AI Music", "AI Songs", "Songs", "Music Videos", "Generative AI"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
 		},
@@ -1307,23 +1307,35 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/calcutta-fish-field-guide.md": {
-			"bodyHash": "49c3f96e23db30c23874105ecca09e6406bb038cfb68315272742358112b5715",
+			"bodyHash": "942cb25836acc6e4220594be09a702b5a461755809a655e23e3f46556330879c",
+			"hashVersion": 2,
+			"revisionHash": "35de775a13c26f1c4e84b897c7f085069091056e4dcf6e75ea98259b140f12f9",
 			"generatedTags": [
-				"Frequent Eating",
-				"Large Predators",
-				"Fish Eaten Whole",
-				"Good Reasons",
-				"Fish",
-				"Labeo",
-				"Pabda",
-				"Predatory",
-				"Bata",
-				"Catla"
+				"Bengali Fish",
+				"Calcutta",
+				"Kolkata Food",
+				"Fish Identification",
+				"Bengali Cuisine",
+				"Freshwater Fish",
+				"Fish Taxonomy",
+				"Hilsa",
+				"Rohu",
+				"Small Indigenous Fish"
 			],
-			"pinnedTags": [],
+			"pinnedTags": [
+				"Bengali Fish",
+				"Calcutta",
+				"Kolkata Food",
+				"Fish Identification",
+				"Bengali Cuisine",
+				"Freshwater Fish",
+				"Fish Taxonomy",
+				"Hilsa",
+				"Rohu",
+				"Small Indigenous Fish"
+			],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "b27df88083f1937f72df3a1f4f36a663b84e4340c35eb54ed84f64676accbaaa",
-			"hashVersion": 2
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/calcutta-landfill-and-the-man-who-felt-like-it.md": {
 			"bodyHash": "6a163ca51d20251c21e8a937a5c98c1a243b62649a5f318bcbe450fa6acbc2b0",
@@ -3010,24 +3022,35 @@
 			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/hl7-vs-fhir-explained-simply.md": {
-			"bodyHash": "6969237a183cf04e0c43a50dff54f2e0be2bd18152fb53618cb8a6389594ab69",
+			"bodyHash": "77dfee3b26e4b1840ff857cb5be2031ba9199ba972c1fa4e46e6924fed530112",
 			"hashVersion": 2,
-			"revisionHash": "40cc1a44b24275fe6f45860f1ff504c4818fcc88df931b1e0a32a9c82c1a1ea7",
+			"revisionHash": "6e8d5eeeb0e3fd509352b269b048e5b149f7b5c869af456630b27499da269361",
 			"generatedTags": [
-				"HL7 Version",
-				"Layer Reflects",
-				"Healthcare Interoperability",
-				"Source System",
+				"HL7 v2",
 				"FHIR",
-				"HL7",
-				"Healthcare",
-				"Data",
-				"Clinical",
-				"Version"
+				"Healthcare Interoperability",
+				"Clinical Data",
+				"FHIR Resources",
+				"FHIR Profiles",
+				"Implementation Guides",
+				"Clinical Terminology",
+				"Data Provenance",
+				"Health Information Exchange"
 			],
-			"pinnedTags": [],
+			"pinnedTags": [
+				"HL7 v2",
+				"FHIR",
+				"Healthcare Interoperability",
+				"Clinical Data",
+				"FHIR Resources",
+				"FHIR Profiles",
+				"Implementation Guides",
+				"Clinical Terminology",
+				"Data Provenance",
+				"Health Information Exchange"
+			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-07"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/homeopathy-pseudoscience-persistence.md": {
 			"bodyHash": "bb0a1b3c143e2803f92bf41e80b18b92f6f65876d2dd96d7677235e43f7aa02a",
@@ -5421,24 +5444,35 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/shadow-architecture-clinical-ai.md": {
-			"bodyHash": "e0ab298f77138a02961acd7a129be9b8efee2fca2c031414c044514683dae622",
+			"bodyHash": "338a55d48404acf381b8a03638619fb43a8f626e96df593b66d78f2b9f7633a0",
 			"hashVersion": 2,
-			"revisionHash": "d8f515b2f05c6bc887a8253682a9557d2a105d16e1a0458a9f8c6ffba9785d2d",
+			"revisionHash": "ed564d9a09ec4774cc093e49cd71276f38f9eeccf03bf35f8e1bc53f6f08c2ab",
 			"generatedTags": [
-				"Shadow Architecture",
-				"Deep Learning",
-				"Patient Cares Whether",
-				"Shadow Holds",
 				"Clinical AI",
-				"Clinical",
-				"AI",
-				"Model",
-				"Validation",
-				"Monitoring"
+				"Healthcare AI",
+				"Clinical Validation",
+				"Model Monitoring",
+				"Data Governance",
+				"Human Factors",
+				"Clinical Workflow",
+				"MLOps",
+				"Patient Safety",
+				"Accountability"
 			],
-			"pinnedTags": [],
+			"pinnedTags": [
+				"Clinical AI",
+				"Healthcare AI",
+				"Clinical Validation",
+				"Model Monitoring",
+				"Data Governance",
+				"Human Factors",
+				"Clinical Workflow",
+				"MLOps",
+				"Patient Safety",
+				"Accountability"
+			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-07"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/shadow-citizen-of-my-own-room.md": {
 			"bodyHash": "e15e97f1263f55d7deb8caf4f3df173c19e852dd54ecc16e5b5be3eb14d0b8f6",
@@ -10354,16 +10388,27 @@
 			"generatedTags": [
 				"Monte Carlo",
 				"Randomized Quasi-Monte Carlo",
-				"Expensive Square-Root Law",
-				"Deliberate Ignorance",
-				"Demonstration Hides",
-				"Monte",
+				"Probability",
+				"Statistics",
 				"Sampling",
-				"Samples",
-				"Pseudorandom",
-				"Estimate"
+				"Pseudorandom Numbers",
+				"Stratified Sampling",
+				"Halton Sequence",
+				"Confidence Intervals",
+				"Numerical Integration"
 			],
-			"pinnedTags": [],
+			"pinnedTags": [
+				"Monte Carlo",
+				"Randomized Quasi-Monte Carlo",
+				"Probability",
+				"Statistics",
+				"Sampling",
+				"Pseudorandom Numbers",
+				"Stratified Sampling",
+				"Halton Sequence",
+				"Confidence Intervals",
+				"Numerical Integration"
+			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-20"
 		},
@@ -10636,9 +10681,9 @@
 			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/how-a-scanner-sees-reconstructing-a-body-from-shadows.md": {
-			"bodyHash": "89728cd962ba7b0e0ef18571b091adc26e9425b3037794944842cd8e79b8f3fc",
+			"bodyHash": "f7f05faadebd58ff396928b4fda6023c74a3a708f67cbb5ee6ab6865f026a956",
 			"hashVersion": 2,
-			"revisionHash": "ea143f154224521bc82cd4abc4883aa709a24a74b122f47833c62766745afee3",
+			"revisionHash": "955212c914164d5350dd6fb15492ffeaece847a5cac63171b11cee90929f3c3a",
 			"generatedTags": [
 				"CT",
 				"Medical Imaging",
@@ -10664,7 +10709,7 @@
 				"Signal Processing"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-07-28"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/holding.md": {
 			"bodyHash": "3eed7060fe4e202cd799c68df995be6f03c296310948bf6dc2178d6c3647ceaa",
@@ -10983,7 +11028,7 @@
 		"src/lib/posts/brownian-motion-laboratory.md": {
 			"bodyHash": "f9071d94aeff69cc51345504dedf47bfc68999d9c437f23d80325ef859bd999a",
 			"hashVersion": 2,
-			"revisionHash": "5cde1492653e6168d8d44689965500e48b630fe523a1630b4c19bc243b4b64c6",
+			"revisionHash": "124e6bbfbbc6775d74450fe9f6d7648358bd75f8705e308c7ae9c4fb1fb40249",
 			"generatedTags": [
 				"Brownian Motion",
 				"Physics",
@@ -10993,7 +11038,7 @@
 				"Simulation",
 				"Mathematics",
 				"Lévy Flight",
-				"Plain Language",
+				"First Passage",
 				"Mean-Square Displacement"
 			],
 			"pinnedTags": [
@@ -11003,10 +11048,13 @@
 				"Probability",
 				"Langevin Dynamics",
 				"Simulation",
-				"Mathematics"
+				"Mathematics",
+				"Lévy Flight",
+				"First Passage",
+				"Mean-Square Displacement"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-04"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/the-bias-archipelago.md": {
 			"bodyHash": "cadad00d56f5fd972d68e5dd3153195621a11098963d4bd856182cf82f91c7dd",

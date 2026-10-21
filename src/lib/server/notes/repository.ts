@@ -120,6 +120,13 @@ function sanitiseSearchQuery(query: string) {
 }
 
 export async function listPublishedNotes(query = '', page = 1, pageSize = 12) {
+	const safePage = Number.isSafeInteger(page) && page > 0 ? page : 1;
+	const safePageSize = Number.isSafeInteger(pageSize) ? Math.min(1_000, Math.max(1, pageSize)) : 12;
+	const start = (safePage - 1) * safePageSize;
+	const end = start + safePageSize - 1;
+	if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end)) {
+		throw error(404, { message: 'That notes page does not exist.' });
+	}
 	const client = createNotesPublicClient();
 	if (!client) {
 		const matches =
@@ -127,10 +134,12 @@ export async function listPublishedNotes(query = '', page = 1, pageSize = 12) {
 			`${demoPublishedNote.title} ${demoPublishedNote.excerpt} ${demoPublishedNote.tags.join(' ')}`
 				.toLowerCase()
 				.includes(query.toLowerCase());
-		return { notes: matches ? [demoPublishedNote] : [], total: matches ? 1 : 0 };
+		const notes = matches ? [demoPublishedNote] : [];
+		if (safePage > 1 && start >= notes.length) {
+			throw error(404, { message: 'That notes page does not exist.' });
+		}
+		return { notes: notes.slice(start, start + safePageSize), total: notes.length };
 	}
-	const safePageSize = Math.min(1_000, Math.max(1, pageSize));
-	const start = Math.max(0, (Math.max(1, page) - 1) * safePageSize);
 	let request = client
 		.from('note_publications')
 		.select(
@@ -140,7 +149,7 @@ export async function listPublishedNotes(query = '', page = 1, pageSize = 12) {
 		.not('activated_at', 'is', null)
 		.is('revoked_at', null)
 		.order('published_at', { ascending: false })
-		.range(start, start + safePageSize - 1);
+		.range(start, end);
 	const safeQuery = sanitiseSearchQuery(query);
 	if (safeQuery) {
 		request = request.textSearch('search_vector', safeQuery, {
@@ -148,8 +157,14 @@ export async function listPublishedNotes(query = '', page = 1, pageSize = 12) {
 			type: 'websearch'
 		});
 	}
-	const { data, error: queryError, count } = await request;
+	const { data, error: queryError, count, status } = await request;
+	if (safePage > 1 && status === 416 && queryError?.code === 'PGRST103') {
+		throw error(404, { message: 'That notes page does not exist.' });
+	}
 	if (queryError) throw error(503, { message: 'Published notes are temporarily unavailable.' });
+	if (safePage > 1 && !data?.length) {
+		throw error(404, { message: 'That notes page does not exist.' });
+	}
 	return {
 		notes: ((data ?? []) as PublicationRow[]).map(publicationToSummary),
 		total: count ?? 0
