@@ -17,7 +17,9 @@ export const BARNUM_ROUTE_ASSET_BUDGET = Object.freeze({
 	cssGzipBytes: 24 * 1024,
 	jsRawBytes: 320 * 1024,
 	jsGzipBytes: 110 * 1024,
-	assetCount: 31
+	// Shared media consent adds its controller, stylesheet and framework split edges.
+	// Preserve every byte ceiling and the forbidden-asset/activation-boundary checks.
+	assetCount: 34
 });
 
 export const FORBIDDEN_ROUTE_ASSET_MARKERS = Object.freeze([

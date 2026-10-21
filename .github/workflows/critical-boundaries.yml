@@ -21,6 +21,13 @@ on:
       - 'scripts/refresh-seo-metadata.mjs'
       - 'scripts/refresh-seo-metadata.test.mjs'
       - 'src/lib/measurement.ts'
+      - 'src/lib/privacy/**'
+      - 'src/lib/analytics/**'
+      - 'src/lib/components/privacy/**'
+      - 'src/lib/components/analytics/**'
+      - 'src/routes/privacy/**'
+      - 'supabase/migrations/*analytics*'
+      - 'supabase/analytics-cron.sql'
       - 'src/lib/components/blog/YouTube.svelte'
       - 'src/routes/+layout.svelte'
       - 'src/routes/resume/+page.svelte'
@@ -68,6 +75,13 @@ on:
       - 'scripts/refresh-seo-metadata.mjs'
       - 'scripts/refresh-seo-metadata.test.mjs'
       - 'src/lib/measurement.ts'
+      - 'src/lib/privacy/**'
+      - 'src/lib/analytics/**'
+      - 'src/lib/components/privacy/**'
+      - 'src/lib/components/analytics/**'
+      - 'src/routes/privacy/**'
+      - 'supabase/migrations/*analytics*'
+      - 'supabase/analytics-cron.sql'
       - 'src/lib/components/blog/YouTube.svelte'
       - 'src/routes/+layout.svelte'
       - 'src/routes/resume/+page.svelte'
@@ -113,4 +127,10 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run test:critical
+      - run: npm run privacy:test
+      - name: Install isolated SQL verification runtime
+        run: npm install --prefix "${{ runner.temp }}/privacy-sql" --no-save --ignore-scripts --package-lock=false @electric-sql/pglite@0.5.11
+      - run: npm run privacy:sql:test
+        env:
+          ANALYTICS_SQL_RUNTIME: ${{ runner.temp }}/privacy-sql
       - run: npm run narration:test

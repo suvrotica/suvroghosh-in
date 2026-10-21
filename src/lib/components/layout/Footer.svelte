@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { substackLinks, xProfile, youtubeProfile } from '$lib/config/links';
+	import { openPrivacySettings } from '$lib/privacy/consent';
 
 	const year = new Date().getFullYear();
 	const email = 'contact@suvroghosh.in';
@@ -146,6 +147,13 @@
 				&copy; {year} Suvro Ghosh. All writing and opinions are my own.
 			</p>
 			<div class="flex flex-wrap items-center gap-x-5">
+				<button
+					type="button"
+					data-privacy-settings
+					class={footerLinkClass}
+					onclick={openPrivacySettings}>Privacy &amp; cookies</button
+				>
+				<a href={resolve('/privacy')} class={footerLinkClass}>Privacy note</a>
 				<a href={'mailto:' + email} class={footerLinkClass}>{email}</a>
 				<a href={resolve('/sitemap.xml')} class={footerLinkClass}>Sitemap</a>
 			</div>

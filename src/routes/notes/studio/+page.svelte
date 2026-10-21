@@ -56,6 +56,7 @@
 			<h1>Notes studio</h1>
 		</div>
 		<div class="owner-actions">
+			<a href={resolve('/notes/studio/analytics')}>Analytics ↗</a>
 			<span>{data.ownerEmail}</span>
 			<form method="POST" action="?/signout">
 				<button type="submit">Sign out</button>
@@ -254,10 +255,17 @@
 
 	.owner-actions {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.75rem;
 		color: var(--ink-muted);
 		font-size: 0.75rem;
+	}
+
+	.owner-actions > a {
+		display: inline-flex;
+		min-height: 2.75rem;
+		align-items: center;
 	}
 
 	button,

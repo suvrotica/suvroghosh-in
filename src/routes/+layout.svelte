@@ -4,20 +4,13 @@
 	import '@fontsource-variable/noto-serif-bengali/wght.css';
 	import robotoLatinUrl from '@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2?url';
 	import '../app.css';
-	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
-	import { dev } from '$app/environment';
-	import { onNavigate } from '$app/navigation';
+	import { afterNavigate, onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
-	import { siteUrl } from '$lib/components/seo/SEO';
-	import {
-		filterMeasurementEvent,
-		measurementAllowed,
-		readMeasurementPreference
-	} from '$lib/measurement';
+	import { startMeasurement } from '$lib/analytics/client';
+	import PrivacyConsent from '$lib/components/privacy/PrivacyConsent.svelte';
 	import { isRawThoughtLayout } from '$lib/content/raw-thought-layouts.js';
 	import RouteAtmosphere from '$lib/components/motion/RouteAtmosphere.svelte';
 	import { normaliseMotionPreference, resolveMotion } from '$lib/motion/preferences';
@@ -41,6 +34,8 @@
 	}
 
 	let { children } = $props();
+	let measurement: ReturnType<typeof startMeasurement> | undefined;
+	afterNavigate(() => measurement?.navigate(page.url.pathname));
 	let routeMotion = $derived(resolveRouteMotion(page.url.pathname));
 	let routeEssayInk = $derived(
 		typeof (page.data as Record<string, unknown>).essayInk === 'string'
@@ -106,25 +101,7 @@
 	});
 
 	onMount(() => {
-		const productionOrigin = new URL(siteUrl).origin;
-		const canMeasure = () =>
-			measurementAllowed({
-				development: dev,
-				currentOrigin: window.location.origin,
-				productionOrigin,
-				webdriver: navigator.webdriver,
-				localPreference: readMeasurementPreference(() => window.localStorage),
-				sessionPreference: readMeasurementPreference(() => window.sessionStorage)
-			});
-		if (canMeasure()) {
-			injectAnalytics({
-				mode: 'production',
-				beforeSend: (event) => filterMeasurementEvent(event, canMeasure(), productionOrigin)
-			});
-			injectSpeedInsights({
-				beforeSend: (event) => filterMeasurementEvent(event, canMeasure(), productionOrigin)
-			});
-		}
+		measurement = startMeasurement();
 
 		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 		const enforceSystemMotion = () => {
@@ -139,6 +116,8 @@
 		reducedMotion.addEventListener('change', enforceSystemMotion);
 
 		return () => {
+			measurement?.stop();
+			measurement = undefined;
 			reducedMotion.removeEventListener('change', enforceSystemMotion);
 		};
 	});
@@ -149,6 +128,8 @@
 		<link rel="preload" href={robotoLatinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
 	{/if}
 </svelte:head>
+
+<PrivacyConsent compactTrigger={Boolean(rawThoughtLayout || immersiveGameShell)} />
 
 {#if studioShell}
 	<div class="min-h-dvh">

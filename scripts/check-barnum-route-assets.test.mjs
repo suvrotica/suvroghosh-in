@@ -103,3 +103,20 @@ test('the intro shell keeps the generated Barnum corpus behind the activation bo
 	assert.ok(rejected.failures.some((failure) => failure.endsWith(': ..')));
 	assert.ok(rejected.failures.some((failure) => failure.includes('surface-sentences')));
 });
+
+test('many small static requests still fail the count ceiling independently of byte size', (t) => {
+	const { clientRoot, manifest } = fixture();
+	t.after(() => fs.rmSync(clientRoot, { recursive: true, force: true }));
+	// The fixture starts with four static files. Thirty-one tiny edges exceed the
+	// consent-adjusted ceiling while remaining comfortably below all byte limits.
+	for (let index = 0; index < 31; index++) {
+		const key = `_tiny-${index}.js`;
+		const file = `_app/chunks/tiny-${index}.js`;
+		fs.writeFileSync(path.join(clientRoot, file), 'export {};');
+		manifest[key] = { file };
+		manifest['_barnum-post.js'].imports.push(key);
+	}
+	const report = auditBarnumRouteAssets({ manifest, clientRoot });
+	assert.deepEqual(report.budgetFailures, [{ metric: 'assetCount', actual: 35, limit: 34 }]);
+	assert.deepEqual(report.forbiddenAssets, []);
+});

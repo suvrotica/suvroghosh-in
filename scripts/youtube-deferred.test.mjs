@@ -14,7 +14,13 @@ const compiled = compile(fs.readFileSync(componentPath, 'utf8'), {
 	filename: componentPath,
 	generate: 'server'
 });
-fs.writeFileSync(modulePath, compiled.js.code, 'utf8');
+// This server-render test never initializes the browser-only consent lifecycle.
+const consentModule = pathToFileURL(path.resolve('src/lib/privacy/consent.ts')).href;
+fs.writeFileSync(
+	modulePath,
+	compiled.js.code.replace('../../privacy/consent', consentModule),
+	'utf8'
+);
 let YouTube;
 try {
 	YouTube = (await import(pathToFileURL(modulePath).href)).default;
@@ -36,11 +42,10 @@ test('deferred video preserves accessible content without an iframe or remote re
 	assert.doesNotMatch(body, /<iframe|<img|<script|<link/);
 });
 
-test('existing article embeds keep their original direct-player behavior', () => {
+test('default article embeds also require an explicit media choice', () => {
 	const { body } = render(YouTube, { props });
-	assert.match(body, /<iframe/);
-	assert.match(body, /youtube\.com\/embed\/FkHa3W4pQME/);
-	assert.match(body, /title="A presentation"/);
+	assert.doesNotMatch(body, /<iframe|<img|<script|<link/);
+	assert.match(body, /Load YouTube video: A presentation/);
 	assert.match(body, /Original caption/);
 });
 
@@ -50,6 +55,6 @@ test('playlist links remain available in deferred and existing embeds', () => {
 			props: { ...props, src: `${props.src}?list=PLexample`, clickToPlay }
 		});
 		assert.match(body, /Open Playlist on YouTube/);
-		assert.equal(body.includes('<iframe'), !clickToPlay);
+		assert.equal(body.includes('<iframe'), false);
 	}
 });

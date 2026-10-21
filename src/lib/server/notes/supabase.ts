@@ -2,16 +2,21 @@ import { createClient, type SupabaseClient, type User } from '@supabase/supabase
 import { createServerClient } from '@supabase/ssr';
 import { env } from '$env/dynamic/private';
 import type { RequestEvent } from '@sveltejs/kit';
+import { withDeadline } from '$lib/server/http/body';
 
 export function notesBackendConfigured() {
 	return Boolean(env.SUPABASE_URL && env.SUPABASE_PUBLISHABLE_KEY);
 }
 
-export function createNotesServerClient(event: RequestEvent): SupabaseClient | null {
+export function createNotesServerClient(
+	event: RequestEvent,
+	fetcher?: typeof fetch
+): SupabaseClient | null {
 	const url = env.SUPABASE_URL;
 	const key = env.SUPABASE_PUBLISHABLE_KEY;
 	if (!url || !key) return null;
 	return createServerClient(url, key, {
+		...(fetcher ? { global: { fetch: fetcher } } : {}),
 		cookies: {
 			getAll: () => event.cookies.getAll(),
 			setAll: (cookies, headers) => {
@@ -59,14 +64,25 @@ export function createNotesAdminClient(): SupabaseClient | null {
 }
 
 export async function resolveNotesUser(event: RequestEvent): Promise<User | null> {
-	const client = createNotesServerClient(event);
-	event.locals.supabase = client;
-	if (!client) return null;
-	const {
-		data: { user },
-		error
-	} = await client.auth.getUser();
-	if (error || !user) return null;
-	event.locals.user = user;
-	return user;
+	return withDeadline(async (signal) => {
+		const client = createNotesServerClient(event, (input, init) =>
+			fetch(input, {
+				...init,
+				signal: AbortSignal.any([
+					signal,
+					...(init?.signal ? [init.signal] : []),
+					...(input instanceof Request ? [input.signal] : [])
+				])
+			})
+		);
+		event.locals.supabase = client;
+		if (!client) return null;
+		const {
+			data: { user },
+			error
+		} = await client.auth.getUser();
+		if (error || !user) return null;
+		event.locals.user = user;
+		return user;
+	}, 5000);
 }

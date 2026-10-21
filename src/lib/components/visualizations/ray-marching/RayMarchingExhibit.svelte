@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { track } from '@vercel/analytics';
+	import { trackConsented as track } from '$lib/analytics/client';
 	import RayMarchingCanvas from './RayMarchingCanvas.svelte';
 	import RayMarchingSourceExplorer from './RayMarchingSourceExplorer.svelte';
 	import { rayMarchingMetadata } from '$lib/visualizations/experiments/ray-marching/metadata';

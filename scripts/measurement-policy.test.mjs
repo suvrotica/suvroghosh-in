@@ -14,12 +14,15 @@ const reader = {
 	productionOrigin,
 	webdriver: false,
 	localPreference: null,
-	sessionPreference: null
+	sessionPreference: null,
+	analyticsConsent: true
 };
 
 test('measures canonical production readers while excluding development, previews and webdriver', () => {
 	assert.equal(measurementAllowed(reader), true);
 	for (const override of [
+		{ analyticsConsent: false },
+		{ analyticsConsent: undefined },
 		{ development: true },
 		{ currentOrigin: 'http://localhost:4173' },
 		{ currentOrigin: 'https://preview.vercel.app' },
