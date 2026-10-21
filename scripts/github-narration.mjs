@@ -206,15 +206,51 @@ export function parseStatus(output) {
 		});
 }
 
-/** Quota is shared across every route; the daily window eventually checks all saved delivery. */
+/** Optional repository configuration is bounded before state restore or provider access. */
+export function parsePrioritySlugs(input) {
+	if (input === undefined) return [];
+	if (typeof input !== 'string' || input.length > 4096)
+		throw new Error(
+			'NARRATION_PRIORITY_SLUGS must be a comma-separated value of at most 4096 characters.'
+		);
+	if (!input.trim()) return [];
+	const slugs = input.split(',').map((slug) => slug.trim());
+	if (slugs.length > 20 || slugs.some((slug) => !SLUG.test(slug)))
+		throw new Error(
+			'NARRATION_PRIORITY_SLUGS must contain at most 20 nonempty valid article slugs.'
+		);
+	return [...new Set(slugs)];
+}
+
+function assertPublishedPriorities(slugs, articles) {
+	const inventory = new Set(articles.map((article) => article.slug));
+	for (const slug of slugs)
+		if (!inventory.has(slug))
+			throw new Error(`Narration priority is not a published narratable article: ${slug}.`);
+}
+
+/** Quota is shared across every route; priorities do not create another request budget. */
 export function generationRoutes({
 	staleSources = [],
+	prioritySlugs = [],
+	readyPrioritySlugs = [],
 	articles,
 	deliveredSlugs,
 	completeSlugs,
 	now = Date.now()
 }) {
-	const routes = [...new Set(staleSources)].slice(0, 20).map((slug) => ({ slug }));
+	assertPublishedPriorities(prioritySlugs, articles);
+	const readyPriorities = new Set(readyPrioritySlugs);
+	const prioritySet = new Set(prioritySlugs);
+	const routes = prioritySlugs
+		.filter((slug) => !readyPriorities.has(slug))
+		.map((slug) => ({ slug }));
+	routes.push(
+		...[...new Set(staleSources)]
+			.filter((slug) => !prioritySet.has(slug))
+			.slice(0, 20)
+			.map((slug) => ({ slug }))
+	);
 	const present = new Set([...deliveredSlugs, ...completeSlugs]);
 	if (articles.some((article) => !present.has(article.slug))) routes.push({ mode: 'missing' });
 	else if (articles.length) {
@@ -802,6 +838,7 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 		throw new Error('Hosted narration requires trusted main.');
 	if (!verifyOnly && env.NARRATION_HOSTED_ENABLED !== 'true')
 		throw new Error('Hosted narration is not activated.');
+	const prioritySlugs = parsePrioritySlugs(env.NARRATION_PRIORITY_SLUGS);
 	const state = await deps.createState();
 	const restored = await state.restore();
 	const config = assertHostedConfiguration(restored, env);
@@ -816,6 +853,8 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 		staleSources: [],
 		generationRoutes: [],
 		staleDeliveries: [],
+		prioritySlugs,
+		skippedPriorities: [],
 		paused: null,
 		commit: base
 	};
@@ -827,6 +866,7 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 				.filter((article) => !article.interactiveGame)
 				.map((article) => [article.slug, article])
 		);
+		assertPublishedPriorities(prioritySlugs, [...inventory.values()]);
 		const currentArticle = async (slug) => {
 			const article = inventory.get(slug);
 			if (!article)
@@ -876,8 +916,14 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 					await state.saveCheckpoint();
 				}
 			};
+			const delivered = await deps.deliveries();
+			for (const slug of prioritySlugs)
+				if (await deps.deliveryReady(delivered.get(slug), await currentArticle(slug), config))
+					report.skippedPriorities.push(slug);
 			const routes = generationRoutes({
 				staleSources: report.staleSources,
+				prioritySlugs,
+				readyPrioritySlugs: report.skippedPriorities,
 				articles: [...inventory.values()],
 				deliveredSlugs: [...(await deps.deliveries()).keys()],
 				completeSlugs: await deps.complete()

@@ -2,6 +2,8 @@ import { expect, test, type Download, type Locator, type Page, type Route } from
 import AxeBuilder from '@axe-core/playwright';
 import sharp from 'sharp';
 import { mkdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { extractNarration } from '../../src/lib/components/blog/tts/narration.mjs';
 
 type Receipt = ReturnType<
 	typeof import('../../src/lib/visualizations/shape-of-waiting/export').receiptReport
@@ -97,6 +99,59 @@ test('the article and model-derived poster remain readable without JavaScript', 
 		});
 	} finally {
 		await context.close();
+	}
+});
+
+test('article narration retains the same prose and transcript hash before hydration and after queue experiments', async ({
+	browser,
+	page,
+	baseURL
+}) => {
+	const source = await browser.newContext({
+		baseURL,
+		javaScriptEnabled: false,
+		serviceWorkers: 'block'
+	});
+	try {
+		const ssr = await source.newPage();
+		await ssr.goto(articlePath, { waitUntil: 'domcontentloaded' });
+		expect(await laboratory(ssr).getAttribute('data-tts-exclude')).not.toBeNull();
+		const transcript = await ssr.evaluate(extractNarration, undefined);
+		expect(transcript).toContain('The sign says average waiting time: twenty minutes.');
+		expect(transcript).toContain('Begin with the person at the edge');
+		expect(transcript).toContain(
+			'Return to the sign. Twenty minutes may still be a correct average.'
+		);
+		for (const chrome of [
+			'THE EVERYDAY SYSTEMS LABORATORY',
+			'The average has excellent manners.',
+			'Opening the counters.',
+			'CHANGE THE RULE / SAME SEED'
+		])
+			expect(transcript).not.toContain(chrome);
+		const hash = (text: string) => createHash('sha256').update(text).digest('hex');
+		const expectedHash = hash(transcript);
+		await ready(page);
+		const hydrated = await page.evaluate(extractNarration, undefined);
+		expect(hydrated).toBe(transcript);
+		expect(hash(hydrated)).toBe(expectedHash);
+		await setRange(page, 'Staff', 3);
+		await expect(runtime(page).getByRole('slider', { name: 'Staff', exact: true })).toHaveValue(
+			'3'
+		);
+		expect(await page.evaluate(extractNarration, undefined)).toBe(transcript);
+		await runtime(page)
+			.getByRole('button', { name: /Better average, worse tail/u })
+			.click();
+		await settled(page);
+		await expect(
+			runtime(page).getByRole('region', { name: 'Paired queue comparison' })
+		).toContainText('The average improved. The longest wait did not.');
+		const changed = await page.evaluate(extractNarration, undefined);
+		expect(changed).toBe(transcript);
+		expect(hash(changed)).toBe(expectedHash);
+	} finally {
+		await source.close();
 	}
 });
 

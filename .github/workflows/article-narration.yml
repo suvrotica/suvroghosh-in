@@ -86,6 +86,7 @@ jobs:
           NARRATION_GOOGLE_KEY_SHA256: ${{ vars.NARRATION_GOOGLE_KEY_SHA256 }}
           NARRATION_FREE_TIERS_CONFIRMED: ${{ vars.NARRATION_FREE_TIERS_CONFIRMED }}
           NARRATION_HOSTED_ENABLED: ${{ vars.NARRATION_HOSTED_ENABLED }}
+          NARRATION_PRIORITY_SLUGS: ${{ vars.NARRATION_PRIORITY_SLUGS }}
           NARRATION_VERIFY_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_only == true && 'true' || 'false' }}
           NARRATION_DEPLOYMENT_PROBE: ${{ github.event_name == 'workflow_dispatch' && inputs.deployment_probe == true && 'true' || 'false' }}
           GEMINI_TTS_FREE_TIER_CONFIRMED: 'true'

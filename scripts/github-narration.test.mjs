@@ -18,6 +18,7 @@ import {
 	allowedPublicationPath,
 	expectedGitRemote,
 	parseStatus,
+	parsePrioritySlugs,
 	generationRoutes,
 	assertStorageBudget,
 	listDeliveries,
@@ -365,6 +366,120 @@ test('generation routes repair stale private completions first, continue missing
 		generationRoutes({ articles, deliveredSlugs, completeSlugs: [], now: 3 * 86_400_000 }),
 		[{ mode: 'stale', offset: 0 }]
 	);
+});
+
+test('priority configuration is bounded, trims entries and preserves first-listed order', () => {
+	assert.deepEqual(parsePrioritySlugs(), []);
+	assert.deepEqual(parsePrioritySlugs('  '), []);
+	assert.deepEqual(parsePrioritySlugs(' new-story, recovered-story, new-story '), [
+		'new-story',
+		'recovered-story'
+	]);
+	for (const value of [
+		null,
+		[],
+		'new-story,,recovered-story',
+		',new-story',
+		'new-story,',
+		'not/a/slug',
+		'x'.repeat(201),
+		' '.repeat(4097),
+		Array.from({ length: 21 }, (_, index) => `article-${index}`).join(',')
+	])
+		assert.throws(() => parsePrioritySlugs(value), /NARRATION_PRIORITY_SLUGS/u);
+});
+
+test('priority routes precede source repair and background work without duplicate targets', () => {
+	assert.deepEqual(
+		generationRoutes({
+			articles: ['first', 'second', 'repair', 'background'].map((slug) => ({ slug })),
+			prioritySlugs: ['first', 'second'],
+			readyPrioritySlugs: ['second'],
+			staleSources: ['first', 'repair', 'repair'],
+			deliveredSlugs: ['second'],
+			completeSlugs: ['repair'],
+			now: 0
+		}),
+		[{ slug: 'first' }, { slug: 'repair' }, { mode: 'missing' }]
+	);
+});
+
+test('malformed priorities stop before restoring quota or touching provider state', async (t) => {
+	const f = await fixture(t);
+	f.env.NARRATION_PRIORITY_SLUGS = 'new-story,,recovered-story';
+	await assert.rejects(runGithubNarration(f), /NARRATION_PRIORITY_SLUGS/u);
+	assert.deepEqual(f.events, []);
+});
+
+test('unknown, unpublished and interactive-game priorities fail before provider requests, including verify-only', async (t) => {
+	for (const slug of ['unknown-story', 'draft-story', 'queue-game']) {
+		const f = await fixture(t);
+		f.env.NARRATION_PRIORITY_SLUGS = slug;
+		f.articles.set('queue-game', { slug: 'queue-game', interactiveGame: true });
+		if (slug === 'draft-story') {
+			f.env.NARRATION_VERIFY_ONLY = 'true';
+			f.env.NARRATION_HOSTED_ENABLED = 'false';
+		}
+		await assert.rejects(runGithubNarration(f), /not a published narratable article/u);
+		assert.equal(f.events.includes('generate'), false);
+		assert.equal(f.events.includes('saveQuota'), false);
+		assert.equal(f.events.includes('push'), false);
+	}
+});
+
+test('a validated current priority delivery is skipped while background work continues', async (t) => {
+	const f = await fixture(t);
+	f.env.NARRATION_PRIORITY_SLUGS = initial[0];
+	const inspected = [];
+	f.dependencies.article = async (article) => {
+		inspected.push(article.slug);
+		return article;
+	};
+	const result = await runGithubNarration(f);
+	assert.deepEqual(result.prioritySlugs, [initial[0]]);
+	assert.deepEqual(result.skippedPriorities, [initial[0]]);
+	assert.deepEqual(result.generationRoutes, [{ mode: 'missing' }]);
+	assert.deepEqual(inspected, [initial[0]]);
+	assert.equal(f.events.includes('saveQuota'), false);
+	assert.equal(
+		f.events.some((event) => event.startsWith('verify:')),
+		false
+	);
+});
+
+test('a stale priority delivery is not skipped by presence and still reserves shared quota before transport', async (t) => {
+	const f = await fixture(t);
+	f.env.NARRATION_PRIORITY_SLUGS = initial[0];
+	f.articles.get(initial[0]).text += ' The article has changed.';
+	const calls = [];
+	f.dependencies.generate = async (hooks, route) => {
+		calls.push(route);
+		await hooks.beforeRequest();
+		f.events.push('provider');
+		return { failed: 0, paused: 'DAILY_LIMIT' };
+	};
+	const result = await runGithubNarration(f);
+	assert.deepEqual(result.skippedPriorities, []);
+	assert.deepEqual(calls, [{ slug: initial[0] }]);
+	assert.deepEqual(result.generationRoutes, calls);
+	assert.equal(result.paused, 'DAILY_LIMIT');
+	assert.ok(f.events.indexOf('saveQuota') < f.events.indexOf('provider'));
+});
+
+test('a priority quota pause preserves remaining priorities and background work for another run', async (t) => {
+	const f = await fixture(t);
+	f.env.NARRATION_PRIORITY_SLUGS = 'new-story,recovered-story';
+	const calls = [];
+	f.dependencies.generate = async (_hooks, route) => {
+		calls.push(route);
+		return { failed: 0, paused: 'DAILY_LIMIT' };
+	};
+	const result = await runGithubNarration(f);
+	assert.deepEqual(calls, [{ slug: 'new-story' }]);
+	assert.deepEqual(result.prioritySlugs, ['new-story', 'recovered-story']);
+	assert.equal(result.paused, 'DAILY_LIMIT');
+	assert.equal(f.events.includes('saveQuota'), false);
+	assert.equal(f.events.includes('push'), false);
 });
 
 test('verify-only restores and verifies existing three without synthesis, compression, mutation or pruning', async (t) => {

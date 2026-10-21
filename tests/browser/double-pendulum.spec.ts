@@ -2,6 +2,7 @@ import { expect, test, type Download, type Locator, type Page } from '@playwrigh
 
 const articlePath = '/blog/visualizations/double-pendulum-chaos';
 const articleTitle = 'The Machine That Misplaces Tomorrow: A Double-Pendulum Atlas of Chaos';
+const optionalNarrationPath = '/audio/articles/double-pendulum-chaos/manifest.json';
 const pngSignature = [137, 80, 78, 71, 13, 10, 26, 10] as const;
 const runtimeDiagnostics = new WeakMap<Page, string[]>();
 
@@ -35,7 +36,16 @@ function collectUnexpectedRuntimeDiagnostics(page: Page): string[] {
 		if (message.type() !== 'error') return;
 		const source = `${message.location().url} ${message.text()}`;
 		if (source.includes('/_vercel/') || /favicon/iu.test(source)) return;
-		diagnostics.push(`console error: ${message.text()}`);
+		// Narration is generated separately. Its documented 404 fallback is expected;
+		// a different resource, status or actual runtime error must still fail the suite.
+		if (
+			message.location().url.endsWith(optionalNarrationPath) &&
+			/^Failed to load resource: .*status of 404\b/u.test(message.text())
+		)
+			return;
+		diagnostics.push(
+			`console error: ${message.text()} [${message.location().url || 'unknown source'}]`
+		);
 	});
 	return diagnostics;
 }
@@ -237,6 +247,60 @@ test.afterEach(({ page }) => {
 	expect(runtimeDiagnostics.get(page) ?? []).toEqual([]);
 });
 
+test('missing optional narration falls back while other runtime errors remain diagnostic', async ({
+	context
+}) => {
+	const probe = await context.newPage();
+	const diagnostics = collectUnexpectedRuntimeDiagnostics(probe);
+	try {
+		await probe.route(`**${optionalNarrationPath}`, (route) =>
+			route.fulfill({ status: 404, body: '' })
+		);
+		await probe.goto(articlePath, { waitUntil: 'domcontentloaded' });
+		await expect(probe.getByTestId('article-tts')).toContainText(
+			'Google narration is not available for this article. Device voice uses US English when available.'
+		);
+		expect(diagnostics).toEqual([]);
+
+		await probe.unroute(`**${optionalNarrationPath}`);
+		await probe.route(`**${optionalNarrationPath}`, (route) =>
+			route.fulfill({ status: 500, body: '' })
+		);
+		await probe.evaluate((path) => fetch(path, { cache: 'no-store' }), optionalNarrationPath);
+		await expect
+			.poll(() =>
+				diagnostics.some(
+					(entry) => entry.includes('status of 500') && entry.includes(optionalNarrationPath)
+				)
+			)
+			.toBe(true);
+
+		await probe.route('**/__pendulum_unexpected_fixture__.json', (route) =>
+			route.fulfill({ status: 404, body: '' })
+		);
+		await probe.evaluate(() => fetch('/__pendulum_unexpected_fixture__.json'));
+		await expect
+			.poll(() =>
+				diagnostics.some(
+					(entry) =>
+						entry.includes('status of 404') &&
+						entry.includes('/__pendulum_unexpected_fixture__.json')
+				)
+			)
+			.toBe(true);
+		await probe.evaluate(() => {
+			setTimeout(() => {
+				throw new Error('pendulum runtime diagnostic sentinel');
+			}, 0);
+		});
+		await expect
+			.poll(() => diagnostics.includes('pageerror: pendulum runtime diagnostic sentinel'))
+			.toBe(true);
+	} finally {
+		await probe.close();
+	}
+});
+
 test('the canonical article hydrates into one live, bounded laboratory', async ({
 	page,
 	request
@@ -274,6 +338,7 @@ test('the full article and laboratory poster remain usable with JavaScript disab
 }) => {
 	const context = await browser.newContext({
 		javaScriptEnabled: false,
+		serviceWorkers: 'block',
 		viewport: { width: 1280, height: 900 }
 	});
 	const page = await context.newPage();

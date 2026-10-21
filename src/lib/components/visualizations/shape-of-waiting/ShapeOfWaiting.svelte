@@ -28,7 +28,12 @@
 	});
 </script>
 
-<section class="sow-lab" aria-label="The Shape of Waiting laboratory" bind:this={host}>
+<section
+	class="sow-lab"
+	aria-label="The Shape of Waiting laboratory"
+	data-tts-exclude
+	bind:this={host}
+>
 	<header class="sow-masthead">
 		<div class="sow-edition">
 			<span>THE EVERYDAY SYSTEMS LABORATORY</span><span>NO. 008 / OPERATIONS & PROBABILITY</span>

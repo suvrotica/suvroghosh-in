@@ -61,6 +61,7 @@ argument or public variable.
 | `NARRATION_GOOGLE_KEY_SHA256`    | Actions repository variable | SHA-256 of that verified API key; detects an unexpected key replacement without exposing the key.                                                  |
 | `NARRATION_FREE_TIERS_CONFIRMED` | Actions repository variable | `true` after verifying the pinned Google project has billing unlinked and Vercel remains on Hobby; records operator attestation.                   |
 | `NARRATION_HOSTED_ENABLED`       | Actions repository variable | Initially `false`; set to `true` only after hosted validation succeeds and the former local schedule is paused.                                    |
+| `NARRATION_PRIORITY_SLUGS`       | Actions repository variable | Optional ordered, comma-separated list of at most 20 published article slugs; refreshes missing/stale narration before the background queue.       |
 
 The workflow uses its repository-scoped `GITHUB_TOKEN` with `contents: write` and
 `deployments: read`. It needs no personal access token, Vercel token, Google service account,
@@ -124,6 +125,43 @@ An authorized maintainer can start or inspect runs with:
 gh workflow run article-narration.yml --ref main
 gh run list --workflow article-narration.yml --limit 5
 ```
+
+### Prioritize published articles
+
+Set the optional Actions repository variable `NARRATION_PRIORITY_SLUGS` to an ordered,
+comma-separated list of at most **20 article slugs**, for example:
+
+```sh
+gh variable set NARRATION_PRIORITY_SLUGS --body 'the-shape-of-waiting,august-fifteenth'
+```
+
+Use slugs from the current published narration inventory, not full URLs, categories or file
+paths. Entries are trimmed and must match the inventory's slug spelling and case exactly.
+Repeated slugs are deduplicated in their first-listed order. The limit applies to the number
+of comma-separated entries before deduplication, and the whole value is limited to 4,096
+characters. A blank or whitespace-only value selects no priorities; empty entries within a
+list, invalid slug syntax and unknown or unpublished articles stop the run rather than being
+silently removed. Drafts, future posts and interactive game routes remain excluded. Validation
+also runs in `verify_only` mode, before source recovery, generation or any provider request.
+
+After restoring pending state, the hosted command checks each priority article's current
+rendered transcript and narration configuration. Missing or stale priorities enter generation
+in the listed order before background missing/stale work. A complete, current, checksum-verified
+delivery is skipped even if its original WAV sources have been retired. Keeping a ready article
+in the variable does not by itself add generation or live-verification work. Recovered sources
+and unverified pending publications still receive their existing delivery checks. Validated
+checkpoints remain reusable through the existing generation pipeline.
+
+This variable changes selection order within the existing daily or manually dispatched job.
+It adds no schedule, job, provider allowance or paid fallback. Priority articles share the same
+ten-call Pacific-day ledger, 65-second spacing and resumable quota pauses as background work.
+An article may require several calls, so priority does not guarantee completion in one run.
+Clear the variable or delete it with `gh variable delete NARRATION_PRIORITY_SLUGS` to restore
+ordinary background selection. Inspect the Actions run summary for the selected routes and
+quota state rather than starting a separate local generator. The report records the validated
+`prioritySlugs` and already-ready `skippedPriorities` alongside `generationRoutes`.
+
+### Run status and limits
 
 Use GitHub Actions to inspect the run summary and deployment verification. Expected quota pauses
 are resumable; authentication, state corruption, deployment failures and size limits need review.
@@ -304,6 +342,10 @@ The generator and player share DOM-based narration extraction. It retains struct
 breaks, reading order, and the site's explicit article-reading/exclusion conventions. It excludes
 controls, hidden chrome, embedded applications and code. Generation uses a script-disabled DOM
 of the rendered local page, so client simulations cannot contribute unstable narration text.
+The Shape of Waiting marks its complete laboratory shell with `data-tts-exclude`. Its loading
+placeholder, hydrated metrics, controls, selected ticket and replay state stay outside both
+saved-audio extraction and browser speech. The surrounding authored article is the stable
+transcript before and after hydration; model and playback changes cannot invalidate its hash.
 Text is split at natural boundaries rather than silently clipped. New segments permit up to
 6,000 UTF-16 code units, 7,000 UTF-8 bytes and 900 words, with a 600-second WAV ceiling,
 48 MiB streamed-response limit and 240-second provider deadline. These are local safeguards;

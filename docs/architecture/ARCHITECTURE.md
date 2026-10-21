@@ -31,7 +31,9 @@ flowchart LR
     SSR --> Supabase["Supabase Auth, Postgres/RLS, private Storage"]
     Supabase --> Cron["Scheduled-publication RPC via pg_cron"]
     Browser --> Local["IndexedDB drafts; public-note service-worker caches"]
-    Author["Local operator or daily main-only GitHub Actions authoring"] --> Ledger["Pacific-day reservations; 10 calls/day, 65-second spacing"]
+    Author["Local operator"] --> Ledger["Pacific-day reservations; 10 calls/day, 65-second spacing"]
+    HostedAuthor["Daily main-only GitHub Actions authoring"] --> Priority["Validate optional priority slugs / skip current delivery"]
+    Priority --> Ledger
     Ledger --> State["Hosted metadata: CAS fast-forward state branch; site deployment disabled"]
     State --> Checkpoints["Two bounded AES-256-GCM checkpoint release assets"]
     Ledger --> Google["Gemini Developer API; Achird US English narrator"]
@@ -380,13 +382,14 @@ The Queue-Distribution Laboratory uses an ordinary Visualizations Markdown artic
 
 Model time is independent of animation time. A scheduled-event priority queue orders events by simulated time, explicit precedence and a stable tie-breaker. Policy-only comparisons reuse the same arrivals, underlying service requirements, class, patience and attendance draws. A finite arrivals window is followed by draining queued and active work; computation bounds produce an explicit incomplete status and unresolved population. Main summaries describe people whose service has started, while current waiting ages, no-shows and abandonment remain distinct. Class medians/p90s and overtaking expose the consequences of a scheduling rule without importing the Calcutta Queue game's social-position mechanics.
 
-Bounded browser-worker execution keeps model work off the rendering thread. Each requested configuration has an identity; cancellation/replacement prevents stale responses from overriding newer settings. The same computed run supplies a selected-time snapshot for Canvas crowd marks, SVG/HTML distributions, textual metrics, accessible inspection and frozen PNG/JSON receipts. Rendering does not generate model randomness. Position expresses scheduling order for deterministic rules; random rank is illustrative because each service selection redraws the ordering. Colour expresses age on a fixed scale, and class receives a secondary mark. The server-rendered article and model-derived poster remain readable without JavaScript. Per-mount lifecycle handles Still/reduced motion, hidden/offscreen state, workers, animation frames, observers/listeners and download URLs.
+Bounded browser-worker execution keeps model work off the rendering thread. Each requested configuration has an identity; cancellation/replacement prevents stale responses from overriding newer settings. The same computed run supplies a selected-time snapshot for Canvas crowd marks, SVG/HTML distributions, textual metrics, accessible inspection and frozen PNG/JSON receipts. Rendering does not generate model randomness. Position expresses scheduling order for deterministic rules; random rank is illustrative because each service selection redraws the ordering. Colour expresses age on a fixed scale, and class receives a secondary mark. The server-rendered article and model-derived poster remain readable without JavaScript. The complete laboratory shell carries `data-tts-exclude`, so the shared narration extractor reads only the surrounding authored article in both script-disabled and hydrated DOMs; loading text, live metrics and replay state cannot change that transcript hash. Per-mount lifecycle handles Still/reduced motion, hidden/offscreen state, workers, animation frames, observers/listeners and download URLs.
 
 Replay encodes bounded versioned settings, optional baseline and observation time, rerunning the engine rather than trusting serialized results. A frozen snapshot supplies receipt numbers and graphics; publication captures derive from the implemented engine/render state and carry provenance. See [the feature record](../visualizations/shape-of-waiting.md) for definitions, paired experiments, limits and verification. This extends the existing feature-owned model/UI/worker pattern without changing a foundational decision, so no additional ADR is required.
 
 ```mermaid
 flowchart LR
-    Article["Ordinary Markdown / generic route"] --> Shell["Lazy per-mount controls / baseline / transport"]
+    Article["Ordinary Markdown / generic route"] --> Shell["data-tts-exclude shell / lazy controls / baseline / transport"]
+    Article --> Narration["Shared extractor / stable surrounding prose"]
     URL["Bounded versioned replay settings"] <--> Shell
     Shell --> Worker["Owned worker / run identity / bounded execution"]
     Worker --> Demand["Identity-keyed synthetic demand"]
@@ -489,8 +492,8 @@ content-hashed MP3 files under `static/audio/articles/<slug>/`. It has no provid
 uploads. Source fingerprints remain unchanged; delivery metadata separately identifies encoder
 settings, source hashes and encoded hashes. Generation reads private source manifests and
 recognizes current, checksum-verified MP3 delivery without requiring retained WAV sources;
-resumption cannot overwrite delivered MP3 manifests. Validated partial work takes priority over
-new articles. Auditions and partial articles are
+resumption cannot overwrite delivered MP3 manifests. Within a selected generation route,
+validated partial work takes priority over new articles. Auditions and partial articles are
 excluded from delivery. Missing/stale audio falls back to browser
 speech, preferring US English and permitting user voice selection. Playback and speed changes
 reuse saved audio; builds, hydration and visitor actions never synthesize through Google.
@@ -518,6 +521,18 @@ personal access token is added. The pinned API-key hash and project identity rec
 This is static configuration attestation, not an automatic account-tier/billing audit; future
 external billing changes are not observable by this job. The synthesis key cannot enable billing,
 and the job cannot upgrade Vercel. Account settings must remain within the verified free tiers.
+
+The optional Actions repository variable `NARRATION_PRIORITY_SLUGS` supplies an ordered list of
+at most 20 comma-separated entries, bounded to 4,096 characters. The hosted parent trims entries,
+deduplicates them in first-listed order and requires exact membership in the published,
+narratable inventory. Empty entries, invalid syntax, excessive input and unknown, draft or game
+slugs fail before recovery or provider access, including in `verify_only` mode. Blank whole
+values leave ordinary selection unchanged. Current transcript/configuration and delivery
+checksum validation skip ready priorities, including deliveries whose WAV sources were retired.
+Missing/stale priorities precede private stale sources and background selection through the
+existing generation pipeline; the report records priorities, skips and actual routes. This is
+bounded selection configuration within the existing hosted authoring lane, with no new schedule,
+quota, credential or foundational decision requiring another ADR.
 
 The hosted state branch contains only small quota/checkpoint metadata and a `vercel.json` that
 disables Git deployment. Pending WAV snapshots are AES-256-GCM encrypted with the 32-byte
