@@ -2,6 +2,7 @@
 title: "Watch: Reaching the Light Together"
 description: "One Mind’s short documentary follows Krystal and Mizkat as they describe major depressive disorder, diagnosis, support and the work of recovery."
 date: "2026-08-02"
+dateModified: "2026-10-21"
 category: "Video"
 tags: ["Video","Major Depressive Disorder","Depression","Mental Health"]
 pinnedTags: ["Video","Major Depressive Disorder","Depression","Mental Health"]

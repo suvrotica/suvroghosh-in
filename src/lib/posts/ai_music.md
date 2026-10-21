@@ -1,9 +1,11 @@
 ---
 title: "AI Music"
 thumbnail : "/images/Resize_20260428_134350_0013.jpg"
+thumbnailAlt: "Charcoal drawing of a wide-eyed figure with bared teeth gripping a car's steering wheel."
 description: "A reflection on artificial intelligence, music, authorship, and the strange new machinery of creative production."
 date: "2026-04-27"
-tags: ["AI Songs","AI","Songs"]
+dateModified: "2026-10-21"
+tags: ["AI Songs","Songs","AI"]
 category: "AI Music Song"
 published: true
 ---

@@ -1,7 +1,9 @@
 ---
 title: "Hindi AI Songs"
 thumbnail : "/images/IMG-20260427-WA0016.jpg"
+thumbnailAlt: "Charcoal drawing of a distorted face with pointed ears and an enormous mouth enclosing a second face."
 date: "2026-04-27"
+dateModified: "2026-10-21"
 description: "A collection of AI-generated Hindi songs by Suvro Ghosh, with the original music videos."
 tags: ["AI"]
 category: "AI Music Song"

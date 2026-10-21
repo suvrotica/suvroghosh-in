@@ -2,6 +2,7 @@
 title: "Watch: Mysteries of Mental Illness"
 description: "PBS’s four-part documentary traces how societies have defined, diagnosed and treated mental illness, from ancient beliefs to experimental therapies."
 date: "2026-07-26"
+dateModified: "2026-10-21"
 category: "Video"
 tags: ["Video","Mental Illness","Psychiatry","Mental Health History","Episode","History"]
 pinnedTags: ["Video","Mental Illness","Psychiatry","Mental Health History"]

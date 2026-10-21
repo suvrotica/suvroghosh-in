@@ -2,6 +2,7 @@
 title: "A Perceptron from Scratch in Mojo"
 description: "A Python-style Mojo notebook that builds, trains, and tests a single perceptron step by step without a machine-learning library."
 date: "2026-07-18"
+dateModified: "2026-10-21"
 category: "mojoLLM"
 tags: ["Notebook Builds","Source Notebook","Mojo's","Perceptron","Cells","Cell","Training","Source"]
 published: true

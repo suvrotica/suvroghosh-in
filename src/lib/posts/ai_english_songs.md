@@ -1,7 +1,9 @@
 ---
 title: "English AI Songs"
 thumbnail : "/images/IMG-20260427-WA0010.jpg"
+thumbnailAlt: "Charcoal drawing of a skeletal robot carrying an umbrella and fish through a rainy street beside Howrah Bridge."
 date: "2026-04-27"
+dateModified: "2026-10-21"
 description: "A collection of AI-generated English songs by Suvro Ghosh, with the original music videos."
 tags: ["AI"]
 category: "AI Music Song"

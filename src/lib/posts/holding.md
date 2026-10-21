@@ -2,7 +2,7 @@
 title: "While You Were Holding"
 description: "A pension-short agent handles 'irrational' callers in an empty center, until a voice claims to be reality itself preparing for reboot."
 date: "2026-07-26"
-dateModified: "2026-07-26"
+dateModified: "2026-10-21"
 thumbnail: "/thumbnail/Compress_20260726_113834_4485.jpg"
 thumbnailAlt: "A lone call-centre agent seated at a desk in an otherwise empty room"
 category: "Short Fiction"

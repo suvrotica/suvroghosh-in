@@ -1,7 +1,7 @@
 ---
 title: 'The Meaning & Connection Map: A Visual Encyclopedia of Ideas'
 date: '2026-08-29'
-dateModified: '2026-10-20'
+dateModified: '2026-10-21'
 category: visualizations
 description: 'Explore 50+ interconnected ideas — probability, feedback loops, LLMs, Bayesian inference — with plain-English explanations and concrete examples.'
 tags: ["conceptual cartography","knowledge graphs","systems thinking","artificial intelligence","machine learning","Feedback Loops","Technical Approach","Scientific References","Concepts","Connection"]

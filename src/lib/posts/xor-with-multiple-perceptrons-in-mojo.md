@@ -2,6 +2,7 @@
 title: "XOR from Scratch in Mojo with Multiple Perceptrons"
 description: "A step-by-step Mojo notebook showing why one perceptron cannot learn XOR and how three trained perceptrons solve it as a tiny two-layer network."
 date: "2026-07-18"
+dateModified: "2026-10-21"
 category: "mojoLLM"
 tags: ["Single Perceptron","Smallest Useful Network","Straight Boundary","Output Perceptron","Final Table","Inputs","Perceptrons","NAND","Output","XOR"]
 published: true

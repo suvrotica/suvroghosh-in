@@ -430,28 +430,31 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/ai_bengali_songs.md": {
-			"bodyHash": "0d3fa5035c6302507170b88e5b9f90296d0ffe3248456761dfb2f6ef0ee1f3fe",
+			"bodyHash": "adf7def3d037665971609ee4e4e574c2b0480daa6be0d93a103feb86b6e8b52c",
+			"hashVersion": 2,
+			"revisionHash": "f1d0a53abba0c3ae48bd594f09736563373c479174856f3ba845b92f646b17f2",
 			"generatedTags": ["Tracks Whenever", "AI"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "8f4f36c5e5b80caa3577ff7ee0d2da4fe32c59d8f8151a454cfcdd91cf00083a",
-			"hashVersion": 2
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/ai_english_songs.md": {
-			"bodyHash": "8070971af4721bef7bc91c2d9443f08d038b61b962b2cca90be070d6fe1d03a2",
+			"bodyHash": "bd4fcdbadde97314df51ef78bb0504aaf702c1b4e6d072b1063c8f185767c4b8",
+			"hashVersion": 2,
+			"revisionHash": "87a6be7a356be57892f88ff7c561088ddc9fcaa1b0234d9aae6c8cbc6c46d966",
 			"generatedTags": ["AI"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "92aa70899787820a67d9134a90794965f4144f78fd623e274674241474cd248f",
-			"hashVersion": 2
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/ai_music.md": {
-			"bodyHash": "18d4e2b24eaacd1d588618e48e35ad6410b3327be3cd53ef940d8f9830f0fef3",
-			"generatedTags": ["AI Songs", "AI", "Songs"],
+			"bodyHash": "4c40536da9a60d9860ef2d10862ebe459af8fbccdbf23e6c1958b99dbb903efd",
+			"hashVersion": 2,
+			"revisionHash": "392937c5329f3fa0d3e5fcd54ea5390939b5fab83427fe80762a92133fc187c6",
+			"generatedTags": ["AI Songs", "Songs", "AI"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "7f9cff358a581be7cadf84a08e69486166768ef8250d41ec3cbb8a25d9a09a78",
-			"hashVersion": 2
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/aimless-with-mangoes.md": {
 			"bodyHash": "639a414a61431523a380cef71e3eb538a3a159267f8535c40665f42198d912a7",
@@ -2998,12 +3001,13 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/hindi_ai_songs.md": {
-			"bodyHash": "a0617fc816d8a2b52363fc4702146fd804c60dfd11ea10057e10d1cca2285d20",
+			"bodyHash": "14c4caf929490dbfc4e46cc982ce57f02c1fb710671e5e5b6901fd7bdeb3782a",
+			"hashVersion": 2,
+			"revisionHash": "eeb8be1208422e95d76a65f1f4c758a0b110fb240d50ffbc8cfda846f6ee5039",
 			"generatedTags": ["AI"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "352d51614e8842041f2f071a4c875420284442bf76906588280ad78ea39016be",
-			"hashVersion": 2
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/hl7-vs-fhir-explained-simply.md": {
 			"bodyHash": "6969237a183cf04e0c43a50dff54f2e0be2bd18152fb53618cb8a6389594ab69",
@@ -9272,24 +9276,24 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/unattractive-mans-weather-report.md": {
-			"bodyHash": "3c820a1b8b5e2ef349ba14ec3d45829dd4930a9466c61d08b42a60ef48b6a848",
+			"bodyHash": "011fb2b97beebe9eb33d3b71959cfc8c358ba02ad8e62aefb868160824ea4eb6",
 			"hashVersion": 2,
-			"revisionHash": "08515c65ec68ff7bc5810997e304b442cdcf908e3dcf5c7efe3f7d33ca392d91",
+			"revisionHash": "d8bf71a5f6adab4962933c7c71ca0fa20893cb35508f99c515e9d2eaeb0eca0d",
 			"generatedTags": [
 				"Dental",
 				"Heartbreak",
 				"Money",
 				"Shirt",
 				"Teeth",
-				"Possibility",
+				"Middle-Aged",
 				"Personality",
 				"Posture",
-				"Middle-Aged",
+				"Possibility",
 				"Beauty"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-07"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/va-healthcare-data-systems-mumps-to-sql.md": {
 			"bodyHash": "0e660d643d7eb677d63aaae6c01c98983a05e18805374464f816768dfe200acf",
@@ -10014,7 +10018,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/perceptron-from-scratch-in-mojo.md": {
-			"bodyHash": "a353528d761c819236b79225458e581e0987c146036f159e3172be052b1190c9",
+			"bodyHash": "20716502f4fe89c151c883585117bd09cbf2d61a67451970720ff213aaaff9bc",
+			"hashVersion": 2,
+			"revisionHash": "3f243987c7093d6ed0172bf7b5778449e2dbc1b23d707e39159b2bdd0c4ff096",
 			"generatedTags": [
 				"Notebook Builds",
 				"Source Notebook",
@@ -10027,11 +10033,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "3f158be0fd6f6db9a5fcfe8748ed1ca22b4ac67ac88c30bf1fc3e492bdc43a8f",
-			"hashVersion": 2
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md": {
-			"bodyHash": "fc2ecfc95aff81c251e1b889e3147141c7b7020425290121bbcb5013b130503f",
+			"bodyHash": "8e89149a20044ba757e23c374cc1b13900befcd42bcddaeb56821d22d930dcf7",
+			"hashVersion": 2,
+			"revisionHash": "0c6b0e08721352b475e5d6d598805076b047ae88309195034ab97143b3181018",
 			"generatedTags": [
 				"Single Perceptron",
 				"Smallest Useful Network",
@@ -10046,8 +10053,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6dc22094234cc4eecd5b2406d6c1a228aade948ab6454e76057b2fc3d684847f",
-			"hashVersion": 2
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/saturday-mathematics-and-the-end-of-usefulness.md": {
 			"bodyHash": "268eb83bff50d12f6d855363a600565ded120d6fc09cf6a05f5fe1410b7bb0a0",
@@ -10605,18 +10611,18 @@
 			"dateModified": "2026-07-26"
 		},
 		"src/lib/posts/screenagers-growing-up-in-the-digital-age.md": {
-			"bodyHash": "084cd7456d43f6867b5da26b0045dae2eded50a21fc0e50d567a9dba3aaf6c4e",
+			"bodyHash": "952849d6c149c270e52d697b60b7bb9fadb4cf067c50b3ccba53cc3909178fcc",
 			"hashVersion": 2,
-			"revisionHash": "2fbb848b1cda1259ecc53245db393eea77f59a54ff04b0e42f6e5b6acc68cd87",
+			"revisionHash": "fc6cb37ff815e5bc91ea51a6496867668b6d4fadf1391fb5620a1cc21d35c13a",
 			"generatedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
 			"pinnedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-07-26"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/mysteries-of-mental-illness-pbs-documentary-series.md": {
-			"bodyHash": "1318ca38c62f3ea10ef2b7c549e76864ef072e9cfe393bfd95994203c1c7310f",
+			"bodyHash": "a51936f2106d89f8df55235cb08fff05c84cb478f152b9124ddfc8d56bd97896",
 			"hashVersion": 2,
-			"revisionHash": "724c57cd22267f33a2ede0476535204e889236581c2cd04de88ca24aa03b10c3",
+			"revisionHash": "b239ae9e2b8c725014d7978d78cda0894452a60cbf2e168d68b05f2d9caa9a4d",
 			"generatedTags": [
 				"Video",
 				"Mental Illness",
@@ -10626,7 +10632,8 @@
 				"History"
 			],
 			"pinnedTags": ["Video", "Mental Illness", "Psychiatry", "Mental Health History"],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/how-a-scanner-sees-reconstructing-a-body-from-shadows.md": {
 			"bodyHash": "89728cd962ba7b0e0ef18571b091adc26e9425b3037794944842cd8e79b8f3fc",
@@ -10660,9 +10667,9 @@
 			"dateModified": "2026-07-28"
 		},
 		"src/lib/posts/holding.md": {
-			"bodyHash": "0c560fa414483da6f53882605c9d4c957e2c6c845c922469f7763adca0605a53",
+			"bodyHash": "3eed7060fe4e202cd799c68df995be6f03c296310948bf6dc2178d6c3647ceaa",
 			"hashVersion": 2,
-			"revisionHash": "2f6602d9e8f0960dcb0ff09eb26544a513e063743435b60ad7a3e15ec14e9605",
+			"revisionHash": "fe3102758c56c0bf68d0d24d35acecea84b96c5e02e59cc7b9f25f04aaa65755",
 			"generatedTags": [
 				"Recursive Self-Modeling",
 				"Wellness Routing",
@@ -10677,7 +10684,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-07-26"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/the-urine-of-discontent.md": {
 			"bodyHash": "617cf36b92215825109e3f25a215e03cba150bff01a8a5bbfde9cbcbfc3e6a30",
@@ -10899,12 +10906,13 @@
 			"dateModified": "2026-08-02"
 		},
 		"src/lib/posts/reaching-the-light-together-overcoming-major-depression.md": {
-			"bodyHash": "c806a84ad572470e0423e822880ff3836b9cb36985af5e8fbc823d71a6835f53",
+			"bodyHash": "54506487d654ee5f8d278d4bef591548e8d745d547f989f3de39e743355a2931",
 			"hashVersion": 2,
-			"revisionHash": "d89608885e72a07ccdb0ed5ce8902357be7822d2e61f6cf7186e2460cd73c627",
+			"revisionHash": "c3765619d46153956dd70081e8b56230688d21e958a610d18285a0480d4bf3ea",
 			"generatedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
 			"pinnedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/containment-breach-protocol.md": {
 			"bodyHash": "be1d9ae80ea3e570f9d081392cd37cfd075f025040aa89e4e4dea8413e27d389",
@@ -12295,9 +12303,9 @@
 			"dateModified": "2026-08-29"
 		},
 		"src/lib/posts/the-meaning-connection-map.md": {
-			"bodyHash": "b3d73368db84f4119bd334e356950785ffd2d56015d055bec6169927ae74720f",
+			"bodyHash": "6eb1644241f42e39bcccaa508a40e75bea2c8b06a58c701fbcd52e67fdfdd40f",
 			"hashVersion": 2,
-			"revisionHash": "48e70784bf4c81960227e559aa4c70b82cec656d756e8b687fadc8ef77279fd5",
+			"revisionHash": "b70d81022c75d8268fcf4118b965540db0c3390418d651c30e49db05f6c60e5f",
 			"generatedTags": [
 				"conceptual cartography",
 				"knowledge graphs",
@@ -12318,7 +12326,7 @@
 				"machine learning"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-10-20"
+			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/rakhi-and-the-currency-of-oblivion.md": {
 			"bodyHash": "11636a3ccb1fae14bbb944b88febc70976e23e95ad5c04cb29d09f5ed6fd677f",

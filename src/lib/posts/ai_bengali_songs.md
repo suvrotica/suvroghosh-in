@@ -1,7 +1,9 @@
 ---
 title: "Bengali AI Songs"
 thumbnail : "/images/IMG-20260427-WA0002.jpg"
+thumbnailAlt: "Charcoal drawing of a wide-eyed figure lying on a pillow with an open, tooth-filled mouth."
 date: "2026-04-27"
+dateModified: "2026-10-21"
 description: "A collection of AI-generated Bengali songs by Suvro Ghosh, with the original music videos."
 tags: ["Tracks Whenever","AI"]
 category: "AI Music Song"

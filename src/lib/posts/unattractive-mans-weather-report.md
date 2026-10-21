@@ -2,9 +2,9 @@
 title: "The Unattractive Man’s Weather Report"
 description: "Money, clothes, posture, fatigue, and vanished confidence become a storm system surrounding an ordinary middle-aged man."
 date: "2026-06-09"
-dateModified: "2026-08-07"
+dateModified: "2026-10-21"
 category: "Personal Essay"
-tags: ["Dental","Heartbreak","Money","Shirt","Teeth","Possibility","Personality","Posture","Middle-Aged","Beauty"]
+tags: ["Dental","Heartbreak","Money","Shirt","Teeth","Middle-Aged","Personality","Posture","Possibility","Beauty"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-unattractive-mans-weather-report.jpg"

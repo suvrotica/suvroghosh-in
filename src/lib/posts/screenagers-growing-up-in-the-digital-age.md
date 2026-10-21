@@ -2,7 +2,7 @@
 title: "Watch: Screenagers on Growing Up with Screens"
 description: "Delaney Ruston’s documentary follows families confronting social media, gaming and screen-time limits, pairing personal stories with expert guidance."
 date: "2026-07-26"
-dateModified: "2026-07-26"
+dateModified: "2026-10-21"
 category: "Video"
 tags: ["Video","Screen Time","Teenagers","Digital Wellbeing"]
 pinnedTags: ["Video","Screen Time","Teenagers","Digital Wellbeing"]
