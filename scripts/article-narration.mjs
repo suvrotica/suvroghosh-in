@@ -59,6 +59,28 @@ export function getNarrationSourceRoot(root = ROOT) {
 	return path.join(root, '.codex-artifacts', 'narration-sources');
 }
 
+/** Browser extraction needs runtime settings, never provider, repository or deployment credentials. */
+export function narrationBrowserEnvironment(env = process.env) {
+	const privateKeys = new Set([
+		'GH_TOKEN',
+		'GITHUB_TOKEN',
+		'NARRATION_STATE_KEY',
+		'VERCEL_TOKEN',
+		'VERCEL_AUTOMATION_BYPASS_SECRET'
+	]);
+	return Object.fromEntries(
+		Object.entries(env).filter(([key, value]) => {
+			const name = key.toUpperCase();
+			return (
+				value !== undefined &&
+				!name.startsWith('GEMINI_') &&
+				!name.startsWith('GIT_CONFIG_') &&
+				!privateKeys.has(name)
+			);
+		})
+	);
+}
+
 export async function readNarrationSourceManifests(articles, root = ROOT) {
 	const sourceRoot = getNarrationSourceRoot(root);
 	return new Map(
@@ -69,6 +91,88 @@ export async function readNarrationSourceManifests(articles, root = ROOT) {
 			])
 		)
 	);
+}
+
+/** Hook failures are state failures: never continue a batch after durability was lost. */
+export function createNarrationPersistenceHooks(quota, hooks = {}) {
+	if (!hooks || typeof hooks !== 'object' || Array.isArray(hooks))
+		throw new GoogleTTSError('STATE', 'Narration persistence hooks must be an object.');
+	async function invoke(name, value) {
+		if (hooks[name] === undefined) return;
+		if (typeof hooks[name] !== 'function')
+			throw new GoogleTTSError('STATE', 'Narration persistence hooks must be functions.');
+		try {
+			await hooks[name](value);
+		} catch {
+			throw new GoogleTTSError(
+				'STATE',
+				`Narration ${name} persistence failed; stopped before further provider requests.`
+			);
+		}
+	}
+	return {
+		async beforeRequest() {
+			await quota.beforeRequest();
+			await invoke('beforeRequest');
+		},
+		async onQuota() {
+			await quota.markQuota();
+			await invoke('onQuota');
+		},
+		onSegment: (event) => invoke('onSegment', event),
+		onArticle: (event) => invoke('onArticle', event)
+	};
+}
+
+/** Presence selects work; the rendered-text/source or delivery validators establish readiness. */
+export async function selectNarrationArticles({
+	articles,
+	sourceManifests,
+	deliveredManifests,
+	options,
+	outputRoot
+}) {
+	if (articles.some((article) => !SLUG.test(article.slug)))
+		throw new Error('Invalid article slug.');
+	let selected = options.slug
+		? articles.filter((article) => article.slug === options.slug)
+		: articles.filter((article) => {
+				const present = Boolean(
+					sourceManifests.get(article.slug) || deliveredManifests.get(article.slug)
+				);
+				return options.missing ? !present : present;
+			});
+	if (options.missing) {
+		const partial = new Set();
+		for (const article of selected) {
+			const directory = path.join(outputRoot, article.slug);
+			let files;
+			try {
+				if ((await fs.lstat(directory)).isSymbolicLink()) continue;
+				files = await fs.readdir(directory);
+			} catch (error) {
+				if (['ENOENT', 'ENOTDIR'].includes(error.code)) continue;
+				throw error;
+			}
+			for (const file of files) {
+				const match = file.match(/^([a-f0-9]{64})\.wav$/u);
+				if (
+					match &&
+					files.includes(`${match[1]}.json`) &&
+					(await readCachedSegment(directory, match[1]))
+				) {
+					partial.add(article.slug);
+					break;
+				}
+			}
+		}
+		// Stable partition: finish durable partials first, preserving publication order in each group.
+		selected = [
+			...selected.filter((article) => partial.has(article.slug)),
+			...selected.filter((article) => !partial.has(article.slug))
+		];
+	}
+	return selected;
 }
 
 export function parseArgs(argv) {
@@ -240,8 +344,8 @@ export async function generateArticle({
 			cached = inspectWav(result.audio);
 			await atomicWrite(path.join(directory, `${name}.wav`), result.audio);
 			await atomicWrite(path.join(directory, `${name}.json`), JSON.stringify(cached));
-			onSegment({ reused: false, name });
-		} else onSegment({ reused: true, name });
+			await onSegment({ slug: article.slug, reused: false, name });
+		} else await onSegment({ slug: article.slug, reused: true, name });
 		segments.push({
 			src: `/audio/articles/${article.slug}/${name}.wav`,
 			duration: cached.duration,
@@ -313,6 +417,118 @@ export async function manifestIsReady(manifest, article, config, outputRoot) {
 		if (!cached || cached.duration !== actual.duration) return false;
 	}
 	return true;
+}
+
+/** A complete MP3 delivery remains reusable after its lossless authoring sources are pruned. */
+export async function deliveredManifestIsReady(manifest, article, config, outputRoot) {
+	const record = (value) => value && typeof value === 'object' && !Array.isArray(value);
+	const hash = (value) => typeof value === 'string' && /^[a-f0-9]{64}$/u.test(value);
+	if (
+		!record(manifest) ||
+		!SLUG.test(article.slug) ||
+		manifest.version !== NARRATION_VERSION ||
+		manifest.textHash !== digest(article.text) ||
+		manifest.fingerprint !== fingerprint(article.text, config) ||
+		manifest.title !== article.title ||
+		manifest.articlePath !== article.pathname ||
+		['language', 'model', 'voice', 'style', 'format'].some(
+			(field) => manifest[field] !== config[field]
+		)
+	)
+		return false;
+	const segmentation =
+		manifest.segmentation === undefined ? LEGACY_SEGMENTATION_POLICY : manifest.segmentation;
+	if (![SEGMENTATION_POLICY, LEGACY_SEGMENTATION_POLICY].includes(segmentation)) return false;
+	const expected = segmentNarration(
+		article.text,
+		segmentation === LEGACY_SEGMENTATION_POLICY ? 1800 : 6000
+	);
+	const delivery = manifest.delivery;
+	const settings = {
+		version: 1,
+		format: 'audio/mpeg',
+		codec: 'mp3',
+		bitrate: 64_000,
+		sampleRate: 24_000,
+		channels: 1
+	};
+	if (
+		!expected.length ||
+		!Array.isArray(manifest.segments) ||
+		manifest.segments.length !== expected.length ||
+		!record(delivery) ||
+		Object.entries(settings).some(([key, value]) => delivery[key] !== value) ||
+		typeof delivery.encoderVersion !== 'string' ||
+		!/^ffmpeg version \S/u.test(delivery.encoderVersion) ||
+		delivery.encoderVersion.length > 1000 ||
+		!Number.isFinite(Date.parse(delivery.encodedAt)) ||
+		!Array.isArray(delivery.segments) ||
+		delivery.segments.length !== expected.length
+	)
+		return false;
+	let total = 0;
+	try {
+		const directory = path.join(outputRoot, article.slug);
+		const [realRoot, realDirectory] = await Promise.all([
+			fs.realpath(outputRoot),
+			fs.realpath(directory)
+		]);
+		if (path.dirname(realDirectory) !== realRoot) return false;
+		for (const [index, part] of expected.entries()) {
+			const segment = manifest.segments[index];
+			const encoded = delivery.segments[index];
+			if (
+				!record(segment) ||
+				!record(encoded) ||
+				segment.textStart !== part.textStart ||
+				segment.textEnd !== part.textEnd ||
+				!Number.isFinite(segment.duration) ||
+				segment.duration <= 0 ||
+				segment.duration > 600 ||
+				encoded.sourceFingerprint !== fingerprint(part.text, config) ||
+				!hash(encoded.sourceAudioHash) ||
+				!Number.isInteger(encoded.sourceBytes) ||
+				encoded.sourceBytes < Math.round(segment.duration * 48_000) + 44 ||
+				encoded.sourceBytes > 32 * 1024 * 1024 ||
+				!hash(encoded.audioHash) ||
+				!hash(encoded.decodedPCMHash) ||
+				!Number.isInteger(encoded.bytes) ||
+				encoded.bytes < 100 ||
+				encoded.bytes > 10 * 1024 * 1024 ||
+				!Number.isFinite(encoded.decodedDuration) ||
+				encoded.decodedDuration <= 0 ||
+				encoded.decodedDuration > 600.12 ||
+				Math.abs(encoded.decodedDuration - segment.duration) > 0.12 ||
+				segment.src !== `/audio/articles/${article.slug}/${encoded.audioHash}.mp3`
+			)
+				return false;
+			const file = path.join(directory, `${encoded.audioHash}.mp3`);
+			const stat = await fs.lstat(file);
+			if (!stat.isFile() || stat.isSymbolicLink() || stat.size !== encoded.bytes) return false;
+			const handle = await fs.open(file, 'r');
+			let audio;
+			try {
+				audio = Buffer.alloc(encoded.bytes + 1);
+				const { bytesRead } = await handle.read(audio, 0, audio.length, 0);
+				if (bytesRead !== encoded.bytes) return false;
+				audio = audio.subarray(0, bytesRead);
+			} finally {
+				await handle.close();
+			}
+			if (
+				digest(audio) !== encoded.audioHash ||
+				(audio.toString('ascii', 0, 3) !== 'ID3' && !(audio[0] === 255 && (audio[1] & 224) === 224))
+			)
+				return false;
+			total += segment.duration;
+		}
+	} catch (error) {
+		if (['ENOENT', 'ENOTDIR'].includes(error.code)) return false;
+		throw error;
+	}
+	return (
+		Number.isFinite(manifest.totalDuration) && Math.abs(total - manifest.totalDuration) < 0.000_01
+	);
 }
 
 /** The sitemap uses the canonical published-post registry; source metadata adds a future-date guard. */
@@ -425,7 +641,7 @@ export async function lockGeneration(root, { lockDirectory = os.tmpdir() } = {})
 	return () => fs.rm(file, { force: true });
 }
 
-async function main(argv = process.argv.slice(2)) {
+export async function runNarration(argv = process.argv.slice(2), hooks = {}) {
 	const options = parseArgs(argv);
 	if (options.help) {
 		console.log(HELP);
@@ -455,10 +671,11 @@ async function main(argv = process.argv.slice(2)) {
 					);
 			}
 		});
+		const persistence = createNarrationPersistenceHooks(quota, hooks);
 		const client = createGoogleClient({
 			maxRequests: options.maxRequests,
-			beforeRequest: () => quota.beforeRequest(),
-			onQuota: () => quota.markQuota()
+			beforeRequest: persistence.beforeRequest,
+			onQuota: persistence.onQuota
 		});
 		if (options.listVoices || options.sample) {
 			const voices = await client.listVoices();
@@ -485,7 +702,14 @@ async function main(argv = process.argv.slice(2)) {
 				pathname: '',
 				text: 'A quiet morning begins in Calcutta. What makes a familiar place feel like home?\n\n"Pay attention to the small things," the traveller said. Suvro Ghosh walked past Howrah Bridge and thought of Rabindranath Tagore.\n\nআজ কলকাতার আকাশ পরিষ্কার। The story continues, with room to breathe between sentences.'
 			};
-			const result = await generateArticle({ article: audition, config, client, outputRoot });
+			const result = await generateArticle({
+				article: audition,
+				config,
+				client,
+				outputRoot,
+				onSegment: persistence.onSegment
+			});
+			await persistence.onArticle({ slug: audition.slug, manifest: result });
 			console.log(
 				JSON.stringify(
 					{
@@ -506,10 +730,21 @@ async function main(argv = process.argv.slice(2)) {
 		// Dedicated games render an application rather than an article reading region.
 		const narratable = inventory.filter((article) => !article.interactiveGame);
 		const manifests = await readNarrationSourceManifests(inventory);
-		const missing = narratable.filter((article) => !manifests.get(article.slug)).length;
+		const deliveryRoot = path.join(ROOT, 'static/audio/articles');
+		const delivered = new Map(
+			await Promise.all(
+				narratable.map(async (article) => [
+					article.slug,
+					await readJson(path.join(deliveryRoot, article.slug, 'manifest.json'))
+				])
+			)
+		);
+		const missing = narratable.filter(
+			(article) => !manifests.get(article.slug) && !delivered.get(article.slug)
+		).length;
 		if (!config.voice) {
 			const prior =
-				[...manifests.values()].find(
+				[...manifests.values(), ...delivered.values()].find(
 					(manifest) =>
 						manifest?.version === NARRATION_VERSION &&
 						manifest.language === 'en-US' &&
@@ -519,11 +754,6 @@ async function main(argv = process.argv.slice(2)) {
 				config.voice = prior.voice;
 		}
 		if (options.status) {
-			const delivered = await Promise.all(
-				narratable.map((article) =>
-					readJson(path.join(ROOT, 'static/audio/articles', article.slug, 'manifest.json'))
-				)
-			);
 			console.log(
 				JSON.stringify(
 					{
@@ -532,10 +762,11 @@ async function main(argv = process.argv.slice(2)) {
 						excludedInteractiveGames: inventory.length - narratable.length,
 						missing,
 						presentUnverified: narratable.length - missing,
-						deliveredPresentUnverified: delivered.filter(Boolean).length,
+						sourcePresentUnverified: [...manifests.values()].filter(Boolean).length,
+						deliveredPresentUnverified: [...delivered.values()].filter(Boolean).length,
 						ready: 0,
 						stale: 'Run --stale --dry-run to verify rendered text and cached audio.',
-						note: 'Missing/present counts describe private WAV sources; delivery is counted separately. Manifest presence alone does not prove full, current narration.'
+						note: 'Missing means neither a private source nor public delivery manifest is present. Source and delivery presence overlap; readiness requires rendered-text and asset validation.'
 					},
 					null,
 					2
@@ -543,11 +774,13 @@ async function main(argv = process.argv.slice(2)) {
 			);
 			return;
 		}
-		let selected = options.slug
-			? narratable.filter((article) => article.slug === options.slug)
-			: narratable.filter((article) =>
-					options.missing ? !manifests.get(article.slug) : Boolean(manifests.get(article.slug))
-				);
+		let selected = await selectNarrationArticles({
+			articles: narratable,
+			sourceManifests: manifests,
+			deliveredManifests: delivered,
+			options,
+			outputRoot
+		});
 		if (options.slug && !selected.length)
 			throw new Error(
 				'Slug is absent from the canonical published, non-future prose inventory (interactive games are excluded).'
@@ -581,13 +814,14 @@ async function main(argv = process.argv.slice(2)) {
 					`${JSON.stringify({ updatedAt: new Date().toISOString(), voice: config.voice, model: config.model, ...summary, quota: await quota.inspect() }, null, 2)}\n`
 				);
 			console.log(JSON.stringify(summary, null, 2));
+			return summary;
 		}
 		if (!selected.length) {
-			await reportSummary();
-			return;
+			return await reportSummary();
 		}
 		browser = await chromium.launch({
 			channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? undefined : 'chrome'),
+			env: narrationBrowserEnvironment(),
 			headless: true
 		});
 		const context = await browser.newContext({
@@ -615,13 +849,20 @@ async function main(argv = process.argv.slice(2)) {
 				if (!article.text.trim()) throw new Error('Article has no readable SSR narration region.');
 				summary.inspected += 1;
 				const current = manifests.get(article.slug);
+				const delivery = delivered.get(article.slug);
 				// A previous catalogue-selected voice remains stable until explicitly reconfigured.
-				const comparisonConfig = { ...config, voice: config.voice || current?.voice || '' };
-				if (await manifestIsReady(current, article, comparisonConfig, outputRoot)) {
+				const comparisonConfig = {
+					...config,
+					voice: config.voice || current?.voice || delivery?.voice || ''
+				};
+				if (
+					(await manifestIsReady(current, article, comparisonConfig, outputRoot)) ||
+					(await deliveredManifestIsReady(delivery, article, comparisonConfig, deliveryRoot))
+				) {
 					summary.ready += 1;
 					continue;
 				}
-				if (current) summary.stale += 1;
+				if (current || delivery) summary.stale += 1;
 				const { parts, segmentation } = await selectArticleSegments({
 					article,
 					config,
@@ -648,12 +889,22 @@ async function main(argv = process.argv.slice(2)) {
 				if (!configured) {
 					assertFreeTier();
 					const voices = await client.listVoices();
-					config.voice = chooseVoice(voices, config.voice || current?.voice || '').id;
+					config.voice = chooseVoice(
+						voices,
+						config.voice || current?.voice || delivery?.voice || ''
+					).id;
 					configured = true;
 				}
-				await generateArticle({ article, config, client, outputRoot });
+				const manifest = await generateArticle({
+					article,
+					config,
+					client,
+					outputRoot,
+					onSegment: persistence.onSegment
+				});
+				await persistence.onArticle({ slug: article.slug, manifest });
 				summary.generated += 1;
-				if (!current) summary.missing -= 1;
+				if (!current && !delivery) summary.missing -= 1;
 			} catch (error) {
 				console.error(`${article.slug}: ${error.message}`);
 				if (error instanceof GoogleTTSError) {
@@ -668,7 +919,7 @@ async function main(argv = process.argv.slice(2)) {
 				process.exitCode = 1;
 			}
 		}
-		await reportSummary();
+		return await reportSummary();
 	} finally {
 		await browser?.close();
 		await release?.();
@@ -676,7 +927,7 @@ async function main(argv = process.argv.slice(2)) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-	main().catch((error) => {
+	runNarration().catch((error) => {
 		console.error(error.message);
 		process.exitCode = 1;
 	});

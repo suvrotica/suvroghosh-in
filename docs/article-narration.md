@@ -34,6 +34,123 @@ voice is **Achird (`achird`)**, verified against the prebuilt US English regiona
 Voice selection and concise delivery metadata follow Google's
 [speech-generation documentation](https://ai.google.dev/gemini-api/docs/speech-generation).
 
+## Hosted daily continuation
+
+The hosted authoring lane is `.github/workflows/article-narration.yml`, backed by
+`scripts/github-narration.mjs` (`npm run narration:hosted`). It uses a standard GitHub-hosted
+Ubuntu 24.04 runner in this public repository. Its daily schedule is **08:45 UTC / 2:15 p.m.
+India time**; manual dispatch is also available. Both entry points run the `main` revision only.
+There are no pull-request triggers. One repository-wide concurrency group queues narration runs
+with cancellation disabled, so a manual dispatch cannot cancel a run that has already reserved
+quota or saved part of an article.
+
+Activation requires a successful hosted validation run, including durable state restoration and
+production verification. Pause the former local Codex heartbeat only after that succeeds; do not
+leave both schedules generating independently. The hosted lane then continues without this
+computer or Codex running. An ordinary site build and public playback remain independent of it.
+
+Configure these repository settings through GitHub's Actions secrets and variables UI or the
+authenticated GitHub CLI. Never paste either secret into chat, commit it, or put it in a command
+argument or public variable.
+
+| Setting                          | Kind                        | Required value and purpose                                                                                                                         |
+| -------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `GEMINI_API_KEY`                 | Actions repository secret   | The existing key already verified against the unlinked Free-tier project; transfer it privately from the local secret through CLI standard input.  |
+| `NARRATION_STATE_KEY`            | Actions repository secret   | 32 cryptographically random bytes encoded as exactly 64 hexadecimal characters; encrypts pending WAV state with AES-256-GCM. Keep a secure backup. |
+| `NARRATION_GOOGLE_PROJECT_ID`    | Actions repository variable | `gen-lang-client-0296473115`; pins the operator-verified Google project, number `570357561308`.                                                    |
+| `NARRATION_GOOGLE_KEY_SHA256`    | Actions repository variable | SHA-256 of that verified API key; detects an unexpected key replacement without exposing the key.                                                  |
+| `NARRATION_FREE_TIERS_CONFIRMED` | Actions repository variable | `true` after verifying the pinned Google project has billing unlinked and Vercel remains on Hobby; records operator attestation.                   |
+| `NARRATION_HOSTED_ENABLED`       | Actions repository variable | Initially `false`; set to `true` only after hosted validation succeeds and the former local schedule is paused.                                    |
+
+The workflow uses its repository-scoped `GITHUB_TOKEN` with `contents: write` and
+`deployments: read`. It needs no personal access token, Vercel token, Google service account,
+OIDC trust, or extra Google IAM grant. The Google key remains dedicated to synthesis. The job
+does not enable billing, choose a paid fallback, upgrade Vercel, or grant itself account access.
+
+The project and key pins are **configuration attestation, not a live billing audit**. On
+21 October 2026, AI Studio showed this project on the Free tier with billing unlinked, and the
+existing Vercel project was confirmed on Hobby. Future runs assume those account settings remain
+unchanged. The key cannot enable billing; a project administrator can change billing outside
+this workflow. Stop the workflow and review the pins before changing the key, project, model,
+or billing configuration. Google's [billing guide](https://ai.google.dev/gemini-api/docs/billing/)
+explains that keys inherit their project's tier. A live
+[billing-state API check](https://docs.cloud.google.com/billing/docs/reference/rest/v1/projects/getBillingInfo)
+requires separate OAuth/IAM credentials; this design deliberately avoids granting that additional
+access. A daily request cap cannot make a paid project free.
+
+### Durable quota and resumable audio
+
+The authoritative hosted quota state is tiny metadata on `codex/narration-state`, rather than
+the disposable runner filesystem or an Actions cache. Every catalogue or synthesis attempt is
+reserved there **before** its Google request. Updates use the previously read commit as their
+parent and a non-forced fast-forward ref update; a competing update or failure stops the request.
+The same ten-call Pacific-day cap, 65-second spacing, DST-aware reset, and HTTP 429 halt apply
+across restarts. The state pins the verified project/key identity and records quota plus the
+checksum and pointer for the current encrypted checkpoint snapshot. Its branch contains
+`vercel.json` with Git deployment disabled, so quota commits are not site deployments.
+
+Pending and incomplete WAV sources are encrypted with AES-256-GCM before upload as assets of
+the `narration-checkpoints` prerelease. This is a public repository: the ciphertext and minimal
+state metadata are public, while the encryption key remains an Actions secret. An authenticated
+snapshot and its checksum must validate before any source state is restored. The raw checkpoint
+payload is capped at **384 MiB**, the archive at **512 MiB**, and only the two current owned
+snapshot assets are retained. Upload the replacement, commit its state pointer, then prune older
+owned assets; never prune first. A failed checkpoint write blocks further provider requests.
+Actions artifacts and caches are not the authoritative WAV or quota store.
+
+Keep `NARRATION_STATE_KEY` stable while snapshots depend on it. If it is lost or replaced, stop
+generation and restore the matching key or perform an explicit recovery; do not silently reset
+the quota ledger or discard pending state. Already-published MP3s remain playable. Local original
+WAVs are retained, and the hosted job does not delete files from this computer.
+
+The generator prioritizes validated partial articles and recognizes current, checksum-verified
+delivery MP3s even when their WAV sources have been retired from hosted state. Complete narration
+is compressed, validated, and committed to `main` as MP3s plus manifests. Vercel's existing Git
+integration deploys that commit. The job waits for the corresponding production deployment
+status and verifies the custom-domain manifests and audio before dropping those completed WAV
+copies from runner state. A missing deployment, failed live check, or state conflict stops
+cleanup and publication progress; it does not fall back to a Vercel administrative token.
+
+### Operation and limits
+
+After the workflow is on `main`, validate restoration and delivery with `verify_only` while
+hosted generation remains disabled. The one-time `deployment_probe` option creates an empty bot
+commit on `main` solely to prove that the existing Git integration deploys a `GITHUB_TOKEN` push;
+it does not spend Google quota. Ordinary runs do not create empty commits. Once the hosted checks
+pass, pause the local heartbeat and enable `NARRATION_HOSTED_ENABLED` before normal dispatch.
+An authorized maintainer can start or inspect runs with:
+
+```sh
+gh workflow run article-narration.yml --ref main
+gh run list --workflow article-narration.yml --limit 5
+```
+
+Use GitHub Actions to inspect the run summary and deployment verification. Expected quota pauses
+are resumable; authentication, state corruption, deployment failures and size limits need review.
+Do not delete the state branch, reseed a populated ledger, or force-push over a conflict to obtain
+another daily allowance. Manual local generation must not run alongside the hosted schedule with
+an independent quota ledger.
+
+Standard hosted runner time is [free for public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
+Larger runners and separately metered Actions storage are not part of this design. GitHub
+[release limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
+allow up to 1,000 assets per release, each under 2 GiB; this lane retains at most two bounded
+encrypted snapshots. Release storage does not make the repository, provider or hosting service
+unlimited. The publication guard caps delivery audio at **6 GiB** and the site's payload
+at **8 GiB**, leaving 2 GiB below the currently documented 10 GiB Hobby deployment-storage
+allowance. These are deployment-size safeguards, not measurements of account-wide
+Vercel storage, retained deployments, or transfer. The workflow has no Vercel read credential
+to audit that usage. Stay within the existing [Hobby limits](https://vercel.com/docs/plans/hobby)
+and review the account dashboard before increasing the caps; stop at limits without an upgrade.
+Hosted generation also requires at least 2 GiB of free runner disk for bounded pending work;
+manual local generation retains its 10 GiB free-disk guard. The 384 MiB pending-data cap does not
+permit accumulating the full WAV corpus on a runner.
+
+GitHub's scheduled events can be delayed or dropped, and public-repository schedules can be
+disabled after 60 days without repository activity. The workflow must exist on the default
+branch. Manual dispatch is the recovery path; a missed schedule does not justify a second quota
+allowance. See [GitHub's schedule behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+
 ## Preview and generate
 
 Start the local site in one terminal:
@@ -77,7 +194,8 @@ npm run narration:generate -- --stale --limit 3 --max-requests 5
 npm run narration:generate -- --stale --dry-run --limit 20 --offset 20
 ```
 
-`narration:batch` inspects up to 20 missing articles from newest to oldest and permits at most
+`narration:batch` inspects up to 20 missing articles, prioritizing validated partial work before
+new articles from newest to oldest, and permits at most
 10 Google calls, including catalogue lookup. Repeat from offset zero: the missing queue shrinks
 as manifests become complete. Interactive game routes have no prose reading region and are
 counted separately from narratable articles. Drafts and future posts remain excluded.
@@ -91,7 +209,7 @@ corrupt state, clock rollback or persistence errors stop requests. Do not delete
 restart a batch. If initial project usage predates the ledger, seed its dated initial usage
 after inspecting AI Studio; normal runs never reseed an existing file.
 
-These are local safeguards, not replacements for Google's project quotas or a billing audit.
+These request safeguards are not replacements for Google's project quotas or a billing audit.
 They cannot see requests from other clients. AI Studio showed 3 RPM, 10,000 input TPM and
 10 RPD for this project's `gemini-3.8-flash-tts` on 21 October 2026. The slower local spacing
 and transcripts bounded by characters, UTF-8 bytes and word count leave room below the minute limits. Verify current
@@ -144,7 +262,8 @@ storage account, storage credentials or paid service. The three MP3s total **3,4
 compared with **20,919,474 bytes** of WAV: **83.34% smaller**, with 435.44 seconds of narration.
 Manifests revalidate; content-hashed MP3 URLs are cached immutably. Keep account-wide deployment
 storage and transfer within the current [Hobby limits](https://vercel.com/docs/plans/hobby).
-This initial release does not authorize automatic deployment of later generated batches.
+The initial three-file release used an explicit deployment. Hosted daily publication is the
+separate authoring lane described above and in [ADR 0004](architecture/decisions/0004-github-actions-article-narration.md).
 
 ## Storage, extraction and freshness
 
@@ -156,7 +275,7 @@ of WAV narration at 150 words/minute. Route/extraction errors were zero. The ign
 `.codex-artifacts/narration-corpus-plan.json` records that snapshot, including public transcripts;
 generation still extracts the current rendered page and does not trust this cache for freshness.
 
-Retain validated provider WAV locally during daily generation. The available disk had about
+Retain validated provider WAV locally during manual generation. The available disk had about
 196 GiB free before rollout, enough for that snapshot. At the chosen MP3 bitrate, the same full
 corpus would be roughly **5.3 GiB** of delivery audio. Review account-wide storage, old deployments
 and transfer before a large release or a move to another same-origin media store. Current article
@@ -166,11 +285,12 @@ segment policy reduces the snapshot to **2,367 segments**, or about **264 daily 
 for the already-started legacy article, before failures, revisions or new posts. The initial
 1,800-character policy would have required about 792 daily batches.
 
-Daily continuation can run `npm run narration:batch` after Pacific midnight, with the current
-checkout's preview available. Completed batches can then be compressed locally. A local Codex heartbeat can resume this work; it needs the computer
-and Codex running. It must preserve Achird, billing-disabled Free tier, the ledger, and browser
-fallback, and stop when coverage is current or a real error needs attention. Ordinary builds and
-visitor requests remain independent of this authoring schedule.
+The hosted lane replaces local daily continuation after its activation checks pass. Local
+`narration:batch` and `narration:compress` remain useful for explicit operator work with the current
+checkout's preview available. Coordinate quota state before switching between local and hosted
+generation; independent ledgers cannot observe one another. Both lanes preserve Achird, the
+billing-disabled Free-tier assumption, quota stops and browser fallback. Hosted state retains
+only bounded pending work, rather than accumulating the estimated full WAV corpus.
 
 The generator and player share DOM-based narration extraction. It retains structural paragraph
 breaks, reading order, and the site's explicit article-reading/exclusion conventions. It excludes

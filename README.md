@@ -87,6 +87,8 @@ Article listening supports saved Google US English narration with browser/device
 fallback. Synthesis is a separate, bounded authoring operation using a confirmed Gemini Free-tier
 project; ordinary builds and visitor playback never call Google. See
 [article narration setup, commands and verification](docs/article-narration.md).
+The daily rollout uses GitHub Actions with a durable quota ledger and encrypted pending-audio
+checkpoints, so it can generate, compress and publish while the author's computer is off.
 
 To create a production version of your app:
 

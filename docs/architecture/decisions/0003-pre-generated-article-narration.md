@@ -3,6 +3,11 @@
 - Date: 21 October 2026
 - Status: Accepted for the article narration implementation
 
+The hosted daily-continuation and publication decision in
+[ADR 0004](0004-github-actions-article-narration.md) supersedes this record's local-heartbeat and
+manual-only publication scope. The original reasoning below is retained; saved narration,
+Achird, provider limits, compression, freshness and browser fallback remain applicable.
+
 ## Context
 
 The shared browser speech player selects the first matching device voice. Voice quality and

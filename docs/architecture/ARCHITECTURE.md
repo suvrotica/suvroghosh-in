@@ -31,12 +31,16 @@ flowchart LR
     SSR --> Supabase["Supabase Auth, Postgres/RLS, private Storage"]
     Supabase --> Cron["Scheduled-publication RPC via pg_cron"]
     Browser --> Local["IndexedDB drafts; public-note service-worker caches"]
-    Author["Explicit local narration batch; confirmed Free-tier key"] --> Ledger["Local Pacific-day quota ledger and 65-second pacing"]
+    Author["Local operator or daily main-only GitHub Actions authoring"] --> Ledger["Pacific-day reservations; 10 calls/day, 65-second spacing"]
+    Ledger --> State["Hosted metadata: CAS fast-forward state branch; site deployment disabled"]
+    State --> Checkpoints["Two bounded AES-256-GCM checkpoint release assets"]
     Ledger --> Google["Gemini Developer API; Achird US English narrator"]
-    Google --> SourcesAudio["Ignored local WAV sources, checkpoints and source manifests"]
-    SourcesAudio --> EncodeAudio["Explicit local FFmpeg compression; 64 kbps mono MP3"]
+    Google --> SourcesAudio["Ignored WAV authoring sources; local or ephemeral runner"]
+    Checkpoints --> SourcesAudio
+    SourcesAudio --> EncodeAudio["Authoring-only FFmpeg compression; 64 kbps mono MP3"]
     EncodeAudio --> Audio["Complete delivery manifests and content-hashed MP3"]
-    Audio --> Static
+    Audio --> PublishAudio["Main commit; Vercel Git deployment; verify production before WAV retirement"]
+    PublishAudio --> Static
     Browser --> Speech["Shared article player; device-voice fallback"]
 ```
 
@@ -68,7 +72,7 @@ Paths are relative to the repository root. This is a responsibility map rather t
 | `docs/`                                                                                          | Feature design/authoring documents and dated audit evidence. This directory's `architecture/` owns the cross-cutting current reference.                                                                |
 | `src/lib/SavedPosts/`, `suvroghosh-post-backups/`                                                | Retained editorial material/backups, not the active post registry. Excluded from normal formatting; SavedPosts has a separate inventory tool.                                                          |
 | `artifacts/`                                                                                     | Committed captures/reports and numerical evidence. Some BZ build checks deliberately consume evidence here; this is not uniformly disposable output.                                                   |
-| `.github/workflows/`                                                                             | Focused feature regressions, IndexNow submission, architecture documentation gate.                                                                                                                     |
+| `.github/workflows/`                                                                             | Focused feature regressions, IndexNow submission, architecture documentation gate and main-only daily narration authoring/publication.                                                                 |
 | `.agents/skills/`, `AGENTS.md`, `CONTRIBUTING.md`                                                | Authoring/agent guidance and the canonical contribution policy.                                                                                                                                        |
 
 The complete baseline inventory and inspection limits are in [AUDIT_COVERAGE.md](AUDIT_COVERAGE.md).
@@ -413,8 +417,9 @@ flowchart LR
 
 The forensic architecture audit did not inspect real secret values, live provider configuration, Vercel overrides, production Supabase settings or account quotas. `supabase/config.toml` is a development template, not production-state evidence.
 
-Article narration is a separate opt-in authoring lane, described in
-[ADR 0003](decisions/0003-pre-generated-article-narration.md) and the
+Article narration is a separate authoring lane, described in
+[ADR 0003](decisions/0003-pre-generated-article-narration.md), the hosted continuation decision
+[ADR 0004](decisions/0004-github-actions-article-narration.md), and the
 [operational guide](../article-narration.md); this boundary was reviewed on 21 October 2026.
 `narration:generate` reads canonical published URLs
 from a loopback site's sitemap, checks source publication metadata, and extracts rendered text
@@ -425,8 +430,10 @@ in ignored `.codex-artifacts/narration-sources/<slug>/`; incomplete work stays t
 fully decodes the result to check duration, and atomically publishes delivery manifests plus
 content-hashed MP3 files under `static/audio/articles/<slug>/`. It has no provider requests or
 uploads. Source fingerprints remain unchanged; delivery metadata separately identifies encoder
-settings, source hashes and encoded hashes. The generation CLI reads private source manifests,
-so later resumption cannot overwrite delivered MP3 manifests. Auditions and partial articles are
+settings, source hashes and encoded hashes. Generation reads private source manifests and
+recognizes current, checksum-verified MP3 delivery without requiring retained WAV sources;
+resumption cannot overwrite delivered MP3 manifests. Validated partial work takes priority over
+new articles. Auditions and partial articles are
 excluded from delivery. Missing/stale audio falls back to browser
 speech, preferring US English and permitting user voice selection. Playback and speed changes
 reuse saved audio; builds, hydration and visitor actions never synthesize through Google.
@@ -434,17 +441,54 @@ reuse saved audio; builds, hydration and visitor actions never synthesize throug
 Real generation requires `GEMINI_API_KEY` and `GEMINI_TTS_FREE_TIER_CONFIRMED=true`; the latter is
 an operator assertion, not an API verification of project billing. Use a Free-tier project with
 billing disabled. Achird is the default US English narrator; its regional catalogue metadata is
-verified during explicit authoring. All real CLI modes share the ignored local
+verified during authoring. Local CLI operations share the ignored
 `.codex-artifacts/narration-quota.json` ledger while holding the repository generation lock.
-Reservations persist before transport, conservatively include catalogue/failed attempts, cap
-invocations together at ten calls per Pacific day and retain 65-second spacing across restarts.
-Pacific midnight reset handles DST; HTTP 429 blocks until the next day. Corrupt state, clock
-rollback and persistence failures stop requests. This local ledger cannot audit billing or
-observe usage from other clients. Generation pauses on quota without a paid model/provider
-fallback. `narration:batch` processes missing prose articles from newest to oldest; dedicated
-interactive games are counted separately because they have no article reading region. An ignored
-last-batch summary supports local daily continuation. A Codex heartbeat can invoke this existing
-authoring lane after reset; no application cron or public synthesis endpoint is added.
+Hosted operations reserve each attempt on `codex/narration-state` before transport, using a
+commit based on the previous state and a non-forced fast-forward update. State conflicts or
+persistence failure prevent the provider request. Reservations conservatively include catalogue,
+failed and interrupted attempts, cap invocations together at ten calls per Pacific day and retain
+65-second spacing across restarts. Pacific midnight reset handles DST; HTTP 429 blocks until the
+next day. Corrupt state and clock rollback stop generation without a paid model/provider fallback.
+Local and hosted ledgers cannot observe one another or other clients; do not generate concurrently
+from independent ledgers. Interactive games are excluded from the prose queue.
+
+`.github/workflows/article-narration.yml` invokes `narration:hosted` on standard GitHub-hosted
+Ubuntu 24.04 at 08:45 UTC daily or by manual dispatch, from `main` only. It has no PR trigger and
+uses one repository-wide concurrency group with cancellation disabled. Its token has
+`contents: write` and `deployments: read`; no Vercel token, Google IAM credential, OIDC grant or
+personal access token is added. The pinned API-key hash and project identity record the
+21 October 2026 operator verification that Google billing was unlinked and Vercel was on Hobby.
+This is static configuration attestation, not an automatic account-tier/billing audit; future
+external billing changes are not observable by this job. The synthesis key cannot enable billing,
+and the job cannot upgrade Vercel. Account settings must remain within the verified free tiers.
+
+The hosted state branch contains only small quota/checkpoint metadata and a `vercel.json` that
+disables Git deployment. Pending WAV snapshots are AES-256-GCM encrypted with the 32-byte
+`NARRATION_STATE_KEY` repository secret before upload to the `narration-checkpoints` prerelease;
+their pointers and checksums are committed on the state branch. Ciphertext is public in this
+public repository. Raw pending data is capped at 384 MiB and the archive at 512 MiB. A new snapshot
+is uploaded and its pointer committed before older owned assets are pruned to two retained
+snapshots. Failed persistence blocks additional provider calls. Actions caches/artifacts and
+ephemeral runner disk are not the authoritative quota/checkpoint store.
+
+Complete MP3s/manifests are committed to `main` and published through the existing Vercel Git
+integration. The job reads the matching commit's production deployment status and verifies live
+custom-domain manifests/audio before retiring completed WAV copies from hosted state; local
+originals remain. Publication is bounded at 6 GiB of delivery audio and 8 GiB of site payload.
+These caps cannot measure account-wide retained deployment storage or transfer, and no account
+read credential is granted to do so. The limits sit below the documented 10 GiB Hobby
+deployment-storage allowance; old deployments and
+other projects can still consume that account allowance. Hosted generation requires 2 GiB free
+runner disk, compared with the manual lane's 10 GiB guard. Platform limits halt work without
+enabling paid capacity.
+`NARRATION_FREE_TIERS_CONFIRMED=true` records the operator attestation and
+`NARRATION_HOSTED_ENABLED` stays `false` during bootstrap. A `verify_only` dispatch validates
+restore/delivery without provider calls; the one-time `deployment_probe` can create an empty bot
+commit to prove GitHub-token pushes reach Vercel. Routine runs create no empty commits.
+Hosted activation requires a successful restore/publication/production-verification run before
+the former local heartbeat is paused, preventing duplicate schedules. GitHub schedules are best
+effort and public-repository inactivity can disable them; manual dispatch is the recovery path.
+No application cron or public synthesis endpoint is added.
 New segments are bounded at 6,000 UTF-16 code units, 7,000 UTF-8 bytes and 900 words, with a
 600-second WAV ceiling, 48 MiB response limit and 240-second provider deadline. Recognized
 manifest segmentation policies preserve completed legacy audio and legacy checkpoints for
@@ -468,7 +512,7 @@ New expensive/state-changing endpoints must follow the existing security invaria
 - Prerendered pages and immutable build chunks use the adapter/CDN path; dynamic archives execute server loads.
 - `vercel.json` gives semantic `/images`, `/photos`, `/sketch`, `/videos`, `/fonts` URLs one year of immutable caching. Other static families have separate long shared-cache rules. There is no general source-content hash in editorial image URLs; replacement at the same path can remain stale (`AF-008`).
 - `PostImage.svelte` emits responsive Vercel optimizer URLs with a local-original fallback. Its sizes must agree with adapter image sizes. Those URLs do not currently include a content revision.
-- Article narration uses revalidated `/audio/articles/<slug>/manifest.json` metadata and SHA-256-named MP3 URLs with one-year immutable caching. Browser playback validates the current extracted transcript hash before selecting saved audio. No audio bytes enter hydration payloads or JS bundles, no runtime disk is a persistent cache, and this feature adds no service-worker audio caching. WAV sources stay in the ignored authoring cache; Git and Vercel upload exclusions also reject public WAV/checkpoint/audition files. The first three complete narrations encode from 20,919,474 WAV bytes to 3,485,511 MP3 bytes (83.34% smaller). Delivery uses this existing project's free Vercel Hobby static storage/CDN, confirmed active on 21 October 2026; it adds no storage account, paid tier or cross-origin media dependency. The original corpus estimate of 31.56 GiB of WAV corresponds to roughly 5.3 GiB of 64 kbps MP3, so review account-wide storage/transfer allowances before larger releases. Compression and generation do not upload or deploy; publication is a separate authorized Git/deployment operation.
+- Article narration uses revalidated `/audio/articles/<slug>/manifest.json` metadata and SHA-256-named MP3 URLs with one-year immutable caching. Browser playback validates the current extracted transcript hash before selecting saved audio. No audio bytes enter hydration payloads or JS bundles, no application runtime disk is a persistent cache, and this feature adds no service-worker audio caching. Local WAV sources stay in the ignored authoring cache; hosted pending sources use bounded encrypted release snapshots and a durable state-branch pointer. Completed runner WAV copies are retired only after their `main` MP3/manifests and production delivery are verified. Git and Vercel upload exclusions reject public WAV/checkpoint/audition files. The first three complete narrations encode from 20,919,474 WAV bytes to 3,485,511 MP3 bytes (83.34% smaller). Delivery uses this existing project's free Vercel Hobby static storage/CDN, confirmed active on 21 October 2026; it adds no storage account, paid tier or cross-origin media dependency. The original corpus estimate of 31.56 GiB of WAV corresponds to roughly 5.3 GiB of 64 kbps MP3, within the hosted 6 GiB audio guard. The separate 8 GiB site-payload guard, evolving corpus size and account-wide storage/transfer still require review. Low-level generation/compression remain upload-free; the dedicated hosted authoring workflow owns checkpoint uploads and bounded Git publication.
 - Public notes use short HTTP caches; private responses use no-store. The notes sitemap has its own short shared cache.
 - `src/service-worker.ts` caches build assets and explicitly opened public note pages/documents/assets. It excludes private notes/auth/API paths, rejects private/no-store or cookie-bearing public responses, uses network-first public reads, evicts online 404/410, and permits retained public responses for up to 30 days with a 240-entry public-cache cap.
 - During service-worker activation, older build caches are removed when their recorded age exceeds 30 days; ordinary build-asset requests do not enforce a hard 30-day TTL. Retention supports old offline note HTML/runtime compatibility. The cache contains build assets, not a blanket copy of every public static video/image.

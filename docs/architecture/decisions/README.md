@@ -18,8 +18,9 @@ The [contribution policy](../../../CONTRIBUTING.md#architecture-change-gate) gov
 documentation must change. Review an ADR in the same change as its implementation; preserve the
 reasoning in old records when superseding them.
 
-| ADR                                              | Status   | Decision                                                                                                                  |
-| ------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------- |
-| [0001](0001-canonical-architecture.md)           | Accepted | Maintain a canonical current-state architecture reference and a proportionate PR gate.                                    |
-| [0002](0002-separate-post-and-feature-builds.md) | Accepted | Separate routine publication from visualization/notebook maintenance, retaining shared build and publication validation.  |
-| [0003](0003-pre-generated-article-narration.md)  | Accepted | Generate US English narration explicitly with a confirmed free-tier project; reuse static audio and retain device speech. |
+| ADR                                              | Status                                        | Decision                                                                                                                              |
+| ------------------------------------------------ | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [0001](0001-canonical-architecture.md)           | Accepted                                      | Maintain a canonical current-state architecture reference and a proportionate PR gate.                                                |
+| [0002](0002-separate-post-and-feature-builds.md) | Accepted                                      | Separate routine publication from visualization/notebook maintenance, retaining shared build and publication validation.              |
+| [0003](0003-pre-generated-article-narration.md)  | Accepted                                      | Generate US English narration explicitly with a confirmed free-tier project; reuse static audio and retain device speech.             |
+| [0004](0004-github-actions-article-narration.md) | Accepted for implementation; activation gated | Continue daily narration in GitHub Actions with durable quota reservations, encrypted pending state and verified bounded publication. |

@@ -23,7 +23,12 @@ import {
 	lockGeneration,
 	discoverArticles,
 	getNarrationSourceRoot,
-	readNarrationSourceManifests
+	readNarrationSourceManifests,
+	deliveredManifestIsReady,
+	createNarrationPersistenceHooks,
+	selectNarrationArticles,
+	runNarration,
+	narrationBrowserEnvironment
 } from './article-narration.mjs';
 import { hashNarration } from '../src/lib/components/blog/tts/narration.mjs';
 import {
@@ -76,6 +81,68 @@ async function temporary(t) {
 	return directory;
 }
 
+async function deliveryFixture(
+	t,
+	{ text = 'A complete article with a natural pause.', segmentation = SEGMENTATION_POLICY } = {}
+) {
+	const root = await temporary(t);
+	const outputRoot = path.join(root, 'delivery');
+	const article = {
+		slug: 'delivered-article',
+		title: 'Delivered article',
+		pathname: '/blog/personal/delivered-article',
+		text
+	};
+	const directory = path.join(outputRoot, article.slug);
+	await fs.mkdir(directory, { recursive: true });
+	const parts = segmentNarration(text, segmentation === LEGACY_SEGMENTATION_POLICY ? 1800 : 6000);
+	const manifest = {
+		version: 1,
+		segmentation,
+		textHash: digest(text),
+		fingerprint: fingerprint(text, config),
+		...config,
+		title: article.title,
+		articlePath: article.pathname,
+		generatedAt: '2026-10-21T00:00:00.000Z',
+		totalDuration: parts.length * 0.1,
+		segments: [],
+		delivery: {
+			version: 1,
+			format: 'audio/mpeg',
+			codec: 'mp3',
+			bitrate: 64_000,
+			sampleRate: 24_000,
+			channels: 1,
+			encoderVersion: 'ffmpeg version 5.1-old-platform',
+			encodedAt: '2026-10-21T00:01:00.000Z',
+			segments: []
+		}
+	};
+	for (const [index, part] of parts.entries()) {
+		const audio = Buffer.concat([Buffer.from('ID3'), Buffer.alloc(197, index + 1)]);
+		const audioHash = digest(audio);
+		await fs.writeFile(path.join(directory, `${audioHash}.mp3`), audio);
+		manifest.segments.push({
+			src: `/audio/articles/${article.slug}/${audioHash}.mp3`,
+			duration: 0.1,
+			textStart: part.textStart,
+			textEnd: part.textEnd
+		});
+		manifest.delivery.segments.push({
+			sourceFingerprint: fingerprint(part.text, config),
+			sourceAudioHash: digest(wav()),
+			sourceBytes: wav().length,
+			audioHash,
+			bytes: audio.length,
+			decodedPCMHash: digest(Buffer.alloc(4800)),
+			decodedDuration: 0.1
+		});
+	}
+	await fs.writeFile(path.join(directory, 'manifest.json'), JSON.stringify(manifest));
+	return { root, outputRoot, directory, article, manifest };
+}
+
 test('CLI is bounded, loopback-only and rejects ambiguous modes/path traversal', () => {
 	assert.equal(parseArgs(['--missing', '--dry-run']).origin, 'http://127.0.0.1:4218');
 	assert.equal(parseArgs(['--stale', '--offset', '20']).offset, 20);
@@ -95,6 +162,38 @@ test('CLI is bounded, loopback-only and rejects ambiguous modes/path traversal',
 		['--sample', '--origin', 'http://localhost:4218/path']
 	])
 		assert.throws(() => parseArgs(args));
+});
+
+test('extraction browsers receive runtime settings without authoring or Git credentials', () => {
+	const input = {
+		PATH: '/usr/bin:/bin',
+		CI: 'true',
+		PLAYWRIGHT_CHANNEL: 'chromium',
+		GEMINI_API_KEY: 'provider-secret',
+		GEMINI_TTS_VOICE: 'achird',
+		gemini_future_secret: 'private',
+		GH_TOKEN: 'gh-secret',
+		github_token: 'github-secret',
+		NARRATION_STATE_KEY: 'encryption-secret',
+		VERCEL_TOKEN: 'deployment-secret',
+		VERCEL_AUTOMATION_BYPASS_SECRET: 'bypass-secret',
+		GIT_CONFIG_COUNT: '1',
+		GIT_CONFIG_KEY_0: 'http.extraheader',
+		GIT_CONFIG_VALUE_0: 'authorization-secret',
+		git_config_global: '/private/credentials.gitconfig',
+		OPTIONAL: undefined
+	};
+	assert.deepEqual(narrationBrowserEnvironment(input), {
+		PATH: input.PATH,
+		CI: input.CI,
+		PLAYWRIGHT_CHANNEL: input.PLAYWRIGHT_CHANNEL
+	});
+	assert.equal(
+		input.GEMINI_API_KEY,
+		'provider-secret',
+		'Sanitizing a child environment must not mutate the authoring process.'
+	);
+	assert.equal(input.GIT_CONFIG_VALUE_0, 'authorization-secret');
 });
 
 test('free-tier confirmation and credentials fail closed before any transport', async () => {
@@ -153,6 +252,119 @@ test('persistent reservation precedes transport and quota rejection blocks trans
 		(error) => error.code === 'DAILY_LIMIT'
 	);
 	assert.equal(blocked.requests, 0);
+});
+
+test('durable hooks await local reservation and remote persistence before transport', async () => {
+	const events = [];
+	let release;
+	const gate = new Promise((resolve) => {
+		release = resolve;
+	});
+	let entered;
+	const started = new Promise((resolve) => {
+		entered = resolve;
+	});
+	const persistence = createNarrationPersistenceHooks(
+		{
+			beforeRequest: async () => {
+				events.push('local-reserved');
+			},
+			markQuota: async () => {
+				events.push('local-blocked');
+			}
+		},
+		{
+			beforeRequest: async () => {
+				events.push('remote-started');
+				entered();
+				await gate;
+				events.push('remote-persisted');
+			},
+			onQuota: async () => {
+				events.push('remote-blocked');
+			}
+		}
+	);
+	const client = createGoogleClient({
+		env,
+		...persistence,
+		fetchImpl: async () => {
+			events.push('transport');
+			return json({}, 429);
+		}
+	});
+	const result = client.listVoices();
+	await started;
+	assert.deepEqual(events, ['local-reserved', 'remote-started']);
+	assert.equal(client.requests, 0);
+	release();
+	await assert.rejects(result, (error) => error.code === 'QUOTA');
+	assert.deepEqual(events, [
+		'local-reserved',
+		'remote-started',
+		'remote-persisted',
+		'transport',
+		'local-blocked',
+		'remote-blocked'
+	]);
+	for (const failLocal of [false, true]) {
+		let fetches = 0;
+		const hooks = createNarrationPersistenceHooks(
+			{
+				beforeRequest: async () => {
+					if (failLocal) throw new GoogleTTSError('STATE', 'Local write failed.');
+				},
+				markQuota: async () => {}
+			},
+			{
+				beforeRequest: async () => {
+					throw new Error('Remote token must not be logged: unit-test-secret');
+				}
+			}
+		);
+		const blocked = createGoogleClient({
+			env,
+			...hooks,
+			fetchImpl: async () => {
+				fetches++;
+				return json({});
+			}
+		});
+		await assert.rejects(
+			() => blocked.listVoices(),
+			(error) => error.code === 'STATE' && !error.message.includes('unit-test-secret')
+		);
+		assert.equal(fetches, 0);
+		assert.equal(blocked.requests, 0);
+	}
+});
+
+test('article and quota persistence failures are fail-closed state errors', async () => {
+	const events = [];
+	const hooks = createNarrationPersistenceHooks(
+		{
+			beforeRequest: async () => {},
+			markQuota: async () => {
+				events.push('local-quota');
+			}
+		},
+		{
+			onQuota: async () => {
+				events.push('remote-quota');
+				throw new Error('Remote state unavailable.');
+			},
+			onArticle: async () => {
+				throw new Error('Remote publication unavailable.');
+			}
+		}
+	);
+	await assert.rejects(hooks.onQuota(), (error) => error.code === 'STATE');
+	assert.deepEqual(events, ['local-quota', 'remote-quota']);
+	await assert.rejects(
+		hooks.onArticle({ slug: 'article', manifest: {} }),
+		(error) => error.code === 'STATE'
+	);
+	await assert.rejects(() => runNarration(['--unknown-option']), /Unknown argument/);
 });
 
 test('segments preserve every Unicode character, paragraph and article ending', () => {
@@ -566,6 +778,222 @@ test('generation checkpoints each complete segment and resumes without republish
 	assert.equal(
 		(await fs.readdir(path.join(directory, article.slug))).some((file) => file.endsWith('.tmp')),
 		false
+	);
+});
+
+test('generation waits for durable segment acknowledgement and stops after a failed checkpoint push', async (t) => {
+	const outputRoot = await temporary(t);
+	const article = {
+		slug: 'durable-article',
+		title: 'Durable article',
+		pathname: '/blog/personal/durable-article',
+		text: 'A complete paragraph with a natural pause. '.repeat(400)
+	};
+	assert(segmentNarration(article.text).length > 1);
+	let calls = 0;
+	let rejectCheckpoint;
+	const checkpoint = new Promise((_resolve, reject) => {
+		rejectCheckpoint = reject;
+	});
+	let entered;
+	const checkpointStarted = new Promise((resolve) => {
+		entered = resolve;
+	});
+	const hooks = createNarrationPersistenceHooks(
+		{ beforeRequest: async () => {}, markQuota: async () => {} },
+		{
+			onSegment: async (event) => {
+				assert.equal(event.slug, article.slug);
+				assert.equal(event.reused, false);
+				assert.equal(
+					JSON.parse(
+						await fs.readFile(path.join(outputRoot, article.slug, `${event.name}.json`), 'utf8')
+					).audioHash,
+					digest(wav())
+				);
+				entered();
+				await checkpoint;
+			}
+		}
+	);
+	const generation = generateArticle({
+		article,
+		config,
+		outputRoot,
+		client: {
+			synthesize: async () => {
+				calls++;
+				return { audio: wav() };
+			}
+		},
+		onSegment: hooks.onSegment
+	});
+	await checkpointStarted;
+	assert.equal(calls, 1);
+	await assert.rejects(fs.readFile(path.join(outputRoot, article.slug, 'manifest.json')), {
+		code: 'ENOENT'
+	});
+	rejectCheckpoint(new Error('Remote checkpoint push failed.'));
+	await assert.rejects(generation, (error) => error.code === 'STATE');
+	assert.equal(calls, 1, 'No second synthesis may begin after checkpoint persistence fails.');
+});
+
+test('complete delivered MP3s remain ready without provisioning private WAV sources', async (t) => {
+	const { root, outputRoot, article, manifest } = await deliveryFixture(t);
+	const privateRoot = getNarrationSourceRoot(root);
+	assert.equal(await deliveredManifestIsReady(manifest, article, config, outputRoot), true);
+	const selected = await selectNarrationArticles({
+		articles: [article],
+		sourceManifests: new Map(),
+		deliveredManifests: new Map([[article.slug, manifest]]),
+		options: { missing: true },
+		outputRoot: privateRoot
+	});
+	assert.deepEqual(selected, []);
+	await assert.rejects(fs.stat(privateRoot), { code: 'ENOENT' });
+	assert.deepEqual(
+		await selectNarrationArticles({
+			articles: [article],
+			sourceManifests: new Map(),
+			deliveredManifests: new Map([[article.slug, manifest]]),
+			options: { stale: true },
+			outputRoot: privateRoot
+		}),
+		[article]
+	);
+	const oldEncoder = structuredClone(manifest);
+	oldEncoder.delivery.encoderVersion = 'ffmpeg version 7.0-another-operating-system';
+	assert.equal(await deliveredManifestIsReady(oldEncoder, article, config, outputRoot), true);
+});
+
+test('delivered readiness rejects stale generation identities, malformed metadata and corrupt MP3 bytes', async (t) => {
+	const { outputRoot, directory, article, manifest } = await deliveryFixture(t);
+	assert.equal(
+		await deliveredManifestIsReady(
+			manifest,
+			{ ...article, text: article.text + ' Revised.' },
+			config,
+			outputRoot
+		),
+		false
+	);
+	for (const field of ['language', 'model', 'voice', 'style', 'format'])
+		assert.equal(
+			await deliveredManifestIsReady(
+				manifest,
+				article,
+				{ ...config, [field]: 'changed' },
+				outputRoot
+			),
+			false
+		);
+	for (const alter of [
+		(copy) => {
+			copy.segmentation = 'unknown';
+		},
+		(copy) => {
+			copy.totalDuration += 1;
+		},
+		(copy) => {
+			copy.articlePath = '/blog/personal/another';
+		},
+		(copy) => {
+			copy.segments[0].textStart = 1;
+		},
+		(copy) => {
+			copy.segments[0].src = 'https://other.example/narration.mp3';
+		},
+		(copy) => {
+			copy.delivery.codec = 'other';
+		},
+		(copy) => {
+			copy.delivery.encodedAt = 'invalid';
+		},
+		(copy) => {
+			copy.delivery.segments[0].sourceFingerprint = '0'.repeat(64);
+		},
+		(copy) => {
+			copy.delivery.segments[0].decodedDuration = -0.01;
+		},
+		(copy) => {
+			copy.delivery.segments[0].sourceBytes = 44;
+		},
+		(copy) => {
+			copy.delivery.segments[0].bytes += 1;
+		}
+	]) {
+		const copy = structuredClone(manifest);
+		alter(copy);
+		assert.equal(await deliveredManifestIsReady(copy, article, config, outputRoot), false);
+	}
+	const file = path.join(directory, `${manifest.delivery.segments[0].audioHash}.mp3`);
+	const corrupt = await fs.readFile(file);
+	corrupt[20] ^= 1;
+	await fs.writeFile(file, corrupt);
+	assert.equal(await deliveredManifestIsReady(manifest, article, config, outputRoot), false);
+	await fs.rm(file);
+	assert.equal(await deliveredManifestIsReady(manifest, article, config, outputRoot), false);
+});
+
+test('delivered legacy boundaries and partial-source queue ordering survive independent runners', async (t) => {
+	const { root, outputRoot, article, manifest } = await deliveryFixture(t, {
+		text: 'A complete paragraph with a natural pause. '.repeat(240),
+		segmentation: LEGACY_SEGMENTATION_POLICY
+	});
+	assert.equal(await deliveredManifestIsReady(manifest, article, config, outputRoot), true);
+	const old = structuredClone(manifest);
+	delete old.segmentation;
+	assert.equal(await deliveredManifestIsReady(old, article, config, outputRoot), true);
+	const privateRoot = getNarrationSourceRoot(root);
+	const articles = [
+		'newest',
+		'private-complete',
+		'delivered-article',
+		'older-partial',
+		'oldest'
+	].map((slug) => ({ ...article, slug }));
+	const partialDirectory = path.join(privateRoot, 'older-partial');
+	await fs.mkdir(partialDirectory, { recursive: true });
+	const name = fingerprint('Durable partial.', config);
+	await fs.writeFile(path.join(partialDirectory, `${name}.wav`), wav());
+	await fs.writeFile(
+		path.join(partialDirectory, `${name}.json`),
+		JSON.stringify(inspectWav(wav()))
+	);
+	const sourceManifests = new Map([['private-complete', {}]]);
+	const deliveredManifests = new Map([[article.slug, manifest]]);
+	const selected = await selectNarrationArticles({
+		articles,
+		sourceManifests,
+		deliveredManifests,
+		options: { missing: true },
+		outputRoot: privateRoot
+	});
+	assert.deepEqual(
+		selected.map((item) => item.slug),
+		['older-partial', 'newest', 'oldest']
+	);
+	const stale = await selectNarrationArticles({
+		articles,
+		sourceManifests,
+		deliveredManifests,
+		options: { stale: true },
+		outputRoot: privateRoot
+	});
+	assert.deepEqual(
+		stale.map((item) => item.slug),
+		['private-complete', 'delivered-article']
+	);
+	await assert.rejects(
+		() =>
+			selectNarrationArticles({
+				articles: [{ slug: '../escape' }],
+				sourceManifests,
+				deliveredManifests,
+				options: { missing: true },
+				outputRoot: privateRoot
+			}),
+		/slug/
 	);
 });
 

@@ -1,0 +1,92 @@
+name: Daily free-tier Achird narration
+
+on:
+  schedule:
+    # After Pacific midnight in both daylight-saving and standard time.
+    - cron: '45 8 * * *'
+  workflow_dispatch:
+    inputs:
+      verify_only:
+        description: 'Restore state and verify existing live narration without Google generation or publication'
+        type: boolean
+        default: false
+      deployment_probe:
+        description: 'One-time manual verify-only test: push one empty bot commit and verify Vercel deploys it'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: article-narration-free-tier
+  cancel-in-progress: false
+
+jobs:
+  narrate-and-publish:
+    if: >-
+      github.repository == 'suvrotica/suvroghosh-in' &&
+      github.ref == 'refs/heads/main' &&
+      (vars.NARRATION_HOSTED_ENABLED == 'true' ||
+       (github.event_name == 'workflow_dispatch' && inputs.verify_only == true))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      deployments: read
+    env:
+      CI: 'true'
+      NODE_OPTIONS: '--max-old-space-size=6144'
+      IMAGE_OPTIMIZE_VERIFY_ONLY: '1'
+      WORDCLOUD_VERIFY_ONLY: '1'
+      SKETCH_MANIFEST_VERIFY_ONLY: '1'
+    steps:
+      - name: Check out trusted main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, reviewed 2026-10-21
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6, reviewed 2026-10-21
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Use Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6, reviewed 2026-10-21
+        with:
+          python-version: '3.12'
+
+      - name: Install reviewed project dependencies
+        run: |
+          npm ci
+          python -m pip install -r requirements-images.txt -r requirements-wordcloud.txt
+          npx playwright install --with-deps chromium --no-shell
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install --yes ffmpeg
+          fi
+
+      - name: Verify narration and hosted state contracts without secrets
+        run: |
+          npm run narration:test
+
+      - name: Restore, narrate, compress, publish and verify
+        run: node scripts/github-narration.mjs
+        env:
+          # Provider credentials exist only in this reviewed parent process. It
+          # scrubs them from every build, browser, test and publication child.
+          GITHUB_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NARRATION_STATE_KEY: ${{ secrets.NARRATION_STATE_KEY }}
+          NARRATION_GOOGLE_PROJECT_ID: ${{ vars.NARRATION_GOOGLE_PROJECT_ID }}
+          NARRATION_GOOGLE_KEY_SHA256: ${{ vars.NARRATION_GOOGLE_KEY_SHA256 }}
+          NARRATION_FREE_TIERS_CONFIRMED: ${{ vars.NARRATION_FREE_TIERS_CONFIRMED }}
+          NARRATION_HOSTED_ENABLED: ${{ vars.NARRATION_HOSTED_ENABLED }}
+          NARRATION_VERIFY_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_only == true && 'true' || 'false' }}
+          NARRATION_DEPLOYMENT_PROBE: ${{ github.event_name == 'workflow_dispatch' && inputs.deployment_probe == true && 'true' || 'false' }}
+          GEMINI_TTS_FREE_TIER_CONFIRMED: 'true'
+          GEMINI_TTS_MODEL: gemini-3.8-flash-tts
+          GEMINI_TTS_VOICE: achird
