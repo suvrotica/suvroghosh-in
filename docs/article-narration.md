@@ -142,9 +142,9 @@ allowance. These are deployment-size safeguards, not measurements of account-wid
 Vercel storage, retained deployments, or transfer. The workflow has no Vercel read credential
 to audit that usage. Stay within the existing [Hobby limits](https://vercel.com/docs/plans/hobby)
 and review the account dashboard before increasing the caps; stop at limits without an upgrade.
-Hosted generation also requires at least 2 GiB of free runner disk for bounded pending work;
-manual local generation retains its 10 GiB free-disk guard. The 384 MiB pending-data cap does not
-permit accumulating the full WAV corpus on a runner.
+Hosted generation also requires at least 2 GiB of free runner disk for bounded pending work.
+The 384 MiB pending-data cap does not permit accumulating the full WAV corpus on a runner.
+Manual local generation requires the operator to monitor available disk space.
 
 GitHub's scheduled events can be delayed or dropped, and public-repository schedules can be
 disabled after 60 days without repository activity. The workflow must exist on the default

@@ -64,8 +64,9 @@ Use a 6 GiB delivery-audio cap and an 8 GiB site-payload cap, with 2 GiB of head
 documented 10 GiB Hobby deployment-storage allowance. These are publication safeguards,
 not an account-wide Vercel storage/transfer audit. The workflow has no credential to query that
 usage or upgrade the account. Halt at provider/platform limits; never silently buy capacity.
-Require at least 2 GiB free runner disk for bounded pending sources; the manual local lane retains
-its 10 GiB guard. Standard hosted runner time is free in this public repository. Release checkpoints use bounded
+Require at least 2 GiB free runner disk for bounded pending sources; manual local generation
+requires operator monitoring of available disk space. Standard hosted runner time is free in
+this public repository. Release checkpoints use bounded
 ordinary release assets; no paid Actions artifact store or extra cache allowance is selected.
 
 ## Alternatives
@@ -90,8 +91,8 @@ Record the free-tier verification with `NARRATION_FREE_TIERS_CONFIRMED=true`, bu
 Its one-time `deployment_probe` option can make an empty bot commit on `main` to verify the
 GitHub-token-to-Vercel integration without spending Google quota; routine runs do not make empty
 commits. Successful hosted activation removes the local computer dependency. Pause the former heartbeat
-only after a hosted run proves state restore, quota reservation, publication and production
-delivery; then leave one active schedule. Bootstrap the current dated quota and existing pending
+only after a hosted run proves state restore, publication and production delivery, with quota
+reservation covered by the hosted-state tests; then leave one active schedule. Bootstrap the current dated quota and existing pending
 segments once from the verified local state. Do not reset existing state to recover an allowance.
 Protect the encryption key: losing it prevents recovery of the pending snapshot even though
 published MP3s remain available. Interrupted writes can consume a conservatively reserved call,

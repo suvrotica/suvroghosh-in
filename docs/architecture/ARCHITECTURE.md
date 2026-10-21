@@ -479,8 +479,8 @@ These caps cannot measure account-wide retained deployment storage or transfer, 
 read credential is granted to do so. The limits sit below the documented 10 GiB Hobby
 deployment-storage allowance; old deployments and
 other projects can still consume that account allowance. Hosted generation requires 2 GiB free
-runner disk, compared with the manual lane's 10 GiB guard. Platform limits halt work without
-enabling paid capacity.
+runner disk; manual local generation has no automatic free-disk admission guard. Platform limits
+halt hosted work without enabling paid capacity.
 `NARRATION_FREE_TIERS_CONFIRMED=true` records the operator attestation and
 `NARRATION_HOSTED_ENABLED` stays `false` during bootstrap. A `verify_only` dispatch validates
 restore/delivery without provider calls; the one-time `deployment_probe` can create an empty bot
