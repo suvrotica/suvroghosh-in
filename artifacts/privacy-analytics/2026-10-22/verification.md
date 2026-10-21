@@ -28,11 +28,18 @@ are not evidence of live collection, a connected Supabase project, or a successf
   YouTube activation/withdrawal, private responses, four themes, mobile and 200% text.
 - Dashboard component suite: three browser tests, desktop/mobile captures in all four themes,
   native filters, accessible daily figures, empty/error states and 200% text.
+- CT responsive browser suite: all 13 tests pass after its coordinate-gesture test completes the
+  real first-visit rejection flow. The notice intercepted that test's original touch target;
+  the canvas scroll/painting assertions remain intact. No CT engine change was needed.
 - Focused eligible-production-browser unit tests verify SDK and first-party request gating without
   relying on the local preview's development/origin/automation exclusions.
 - Focused lint/format checks and `git diff --check`.
 
-## Activation still required
+The initial application commit also passed GitHub's critical-boundary, full feature/notebook and
+double-pendulum checks, plus Vercel's Git preview build. The preview deployment is protected; the
+available Vercel connection denies its project/team access, so a hosted page fetch was not verified.
+
+## Production activation still required
 
 Reuse Vercel Hobby and an existing suitable Supabase Free project. Apply the analytics migration and
 separate database cron script, configure the existing Notes owner and private server environment,
