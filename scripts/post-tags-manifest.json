@@ -14919,9 +14919,9 @@
 			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/the-water-turned.md": {
-			"bodyHash": "255b7b577266470e14945ebc0d8ab63198a95f7335ee90f72310f4e11cfd64d4",
+			"bodyHash": "8dc86905179d376eff896d4f9634f6c1f89020ce413a850a93961664f1c14138",
 			"hashVersion": 2,
-			"revisionHash": "7347c2648db81ccb5f3791cc358451b573e5dfb8649bcfb5f550ba5716ccdb0d",
+			"revisionHash": "933317658448c9de47346cc5bff87cbe7f89e48865d278210dbf610f1df6bd31",
 			"generatedTags": [
 				"Short Fiction",
 				"Calcutta",
@@ -14946,7 +14946,8 @@
 				"Psychological Horror",
 				"Guilt"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		}
 	},
 	"maxTags": 10

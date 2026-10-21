@@ -2,6 +2,7 @@
 title: "The Water Turned"
 description: "In Diwali-week Calcutta, an unemployed virologist's last act turns the city's thirst against it, beginning across the road from a daycare."
 date: "2026-10-21"
+dateModified: "2026-10-21"
 thumbnail: "/images/the-water-turned.jpg"
 thumbnailAlt: "A steel cup of dark water contains a human mouth beneath the surface, beside a burning clay lamp overlooking a lantern-lit Calcutta lane."
 category: "Short Fiction"
