@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/two-calendars/**/*.test.ts',
 			'src/lib/visualizations/shape-of-waiting/**/*.test.ts',
 			'src/lib/visualizations/missing-data/**/*.test.ts',
 			'src/lib/components/blog/tts/**/*.test.ts',

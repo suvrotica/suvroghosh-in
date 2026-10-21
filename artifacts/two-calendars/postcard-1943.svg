@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="postcard-title postcard-description">
+	<title id="postcard-title">Two Calendars, One Life — 1943</title>
+	<desc id="postcard-description">Two Calendars, One Life · 1943: a year in two worlds.
+
+Calcutta / India — 1943: Hunger arrives in the city.
+
+America — 1943: A ration book beside the shopping list.
+
+Thematic comparison: Food allocation reached everyday life in both places in 1943, with profoundly unequal conditions. US rationing and Bengal’s famine are compared as questions of access and public responsibility; they are not equivalent experiences or a claim of direct causation.
+
+http://127.0.0.1:4283/blog/visualizations/two-calendars-one-life?year=1943
+Sources:
+US Department of State, Office of the Historian: Memorandum from Wallace Murray to the War Commodities Division, 28 August 1943 — https://history.state.gov/historicaldocuments/frus1943v04/d337
+Library of Congress: “Rationing Safeguards Your Share” — https://blogs.loc.gov/inside_adams/2020/04/rationing-ww2/
+US Office of War Information / Library of Congress: Food rationing and the war (1943) — https://www.loc.gov/item/43051838/</desc>
+	<metadata>US Department of State, Office of the Historian: Memorandum from Wallace Murray to the War Commodities Division, 28 August 1943 — https://history.state.gov/historicaldocuments/frus1943v04/d337
+Library of Congress: “Rationing Safeguards Your Share” — https://blogs.loc.gov/inside_adams/2020/04/rationing-ww2/
+US Office of War Information / Library of Congress: Food rationing and the war (1943) — https://www.loc.gov/item/43051838/</metadata>
+	<rect width="1600" height="1000" fill="#f5f0e3"/>
+	<path d="M40 40H1560V960H40Z" fill="none" stroke="#253d49" stroke-opacity=".3"/>
+	<path d="M55 55H1545V945H55Z" fill="none" stroke="#253d49" stroke-opacity=".12"/>
+	<g font-family="Georgia, 'Times New Roman', serif">
+		<text x="104" y="105" fill="#9d4233" font-family="Arial, sans-serif" font-size="16" letter-spacing="5">AN ATLAS OF PARALLEL LIVES · 1940–1959</text>
+		<text x="100" y="181" fill="#222e37" font-size="66">Two Calendars, One Life</text>
+		<text x="104" y="223" fill="#5c615b" font-size="26" font-style="italic">The same years, different worlds.</text>
+		<text x="1498" y="182" text-anchor="end" fill="#9d4233" font-size="81">1943</text>
+		<path d="M104 245H1496" stroke="#233c4b" stroke-opacity=".36"/>
+		<path d="M104 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M153 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M202 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M251 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M300 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M349 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M398 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M447 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M496 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M545 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M594 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M643 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M692 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M104 315h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 343.75h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 372.5h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 401.25h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 430h588" stroke="#303852" stroke-opacity=".15"/><text x="128" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">J</text><text x="177" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">F</text><text x="226" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">M</text><text x="275" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">A</text><text x="324" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">M</text><text x="373" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">J</text><text x="422" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">J</text><text x="471" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">A</text><text x="520" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">S</text><text x="569" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">O</text><text x="618" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">N</text><text x="667" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">D</text>
+		<path d="M908 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M957 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1006 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1055 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M1104 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1153 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1202 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M1251 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1300 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1349 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M1398 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1447 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1496 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M908 315h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 343.75h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 372.5h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 401.25h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 430h588" stroke="#21575b" stroke-opacity=".15"/><text x="932" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">J</text><text x="981" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">F</text><text x="1030" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">M</text><text x="1079" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">A</text><text x="1128" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">M</text><text x="1177" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">J</text><text x="1226" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">J</text><text x="1275" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">A</text><text x="1324" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">S</text><text x="1373" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">O</text><text x="1422" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">N</text><text x="1471" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">D</text>
+		<path d="M398 372C650 372 625 322 800 372S950 422 1202 372" fill="none" stroke="#ac5b3e" stroke-width="3" stroke-dasharray="8 9"/>
+		<g><title>1943 · year precision</title><path d="M104 358v28M104 372H692M692 358v28" fill="none" stroke="#303852" stroke-width="2"/><text x="398" y="340" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="12">year precision</text></g>
+		<g><title>1943 · year precision</title><path d="M908 358v28M908 372H1496M1496 358v28" fill="none" stroke="#21575b" stroke-width="2"/><text x="1202" y="340" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="12">year precision</text></g>
+		<rect x="729" y="350" width="142" height="42" fill="#f5f0e3"/>
+		<text x="800" y="377" text-anchor="middle" fill="#9d4233" font-size="23" font-style="italic">Meanwhile…</text>
+		<g fill="#303852">
+		<text x="104" y="280" font-family="Arial, sans-serif" font-size="19" letter-spacing="6">CALCUTTA / INDIA</text>
+		<text x="104" y="492" font-family="Arial, sans-serif" font-size="20"><tspan x="104" y="492">1943</tspan></text>
+		<text x="104" y="552" font-size="39"><tspan x="104" y="552">Hunger arrives in the city</tspan></text>
+		<text x="104" y="657" font-family="Arial, sans-serif" font-size="16" letter-spacing="1"><tspan x="104" y="657">Bengal · famine visible in Calcutta</tspan></text>
+		<text x="104" y="698" fill="#4e514c" font-family="Arial, sans-serif" font-size="22"><tspan x="104" y="698">A US diplomatic memorandum described starving villagers</tspan><tspan x="104" y="725">reaching Calcutta and people dying in its streets. It</tspan><tspan x="104" y="752">urged consideration of rice relief.</tspan></text>
+	</g>
+		<g fill="#21575b">
+		<text x="908" y="280" font-family="Arial, sans-serif" font-size="19" letter-spacing="6">AMERICA</text>
+		<text x="908" y="492" font-family="Arial, sans-serif" font-size="20"><tspan x="908" y="492">1943</tspan></text>
+		<text x="908" y="552" font-size="39"><tspan x="908" y="552">A ration book beside the</tspan><tspan x="908" y="597">shopping list</tspan></text>
+		<text x="908" y="657" font-family="Arial, sans-serif" font-size="16" letter-spacing="1"><tspan x="908" y="657">United States · household rationing</tspan></text>
+		<text x="908" y="698" fill="#4e514c" font-family="Arial, sans-serif" font-size="23"><tspan x="908" y="698">Food rationing and the war, a 1943 government</tspan><tspan x="908" y="729">pamphlet, explained a system that had entered</tspan><tspan x="908" y="760">household routines.</tspan></text>
+	</g>
+		<path d="M104 800H1496" stroke="#233c4b" stroke-opacity=".3"/>
+		<text x="104" y="833" fill="#9d4233" font-family="Arial, sans-serif" font-size="14" letter-spacing="3">THEMATIC COMPARISON</text>
+		<text x="104" y="868" fill="#3e4647" font-size="23"><tspan x="104" y="868">US rationing and Bengal’s famine are compared as questions of access and public responsibility; they are not equivalent</tspan><tspan x="104" y="897">experiences or a claim of direct causation.</tspan></text>
+		<text x="104" y="918" fill="#5e625c" font-family="Arial, sans-serif" font-size="13"><tspan x="104" y="918">Sources: [1] US Department of State, Office of the Historian · [2] Library of Congress · [3] US Office of War Information / Library of Congress</tspan></text>
+		<a href="http://127.0.0.1:4283/blog/visualizations/two-calendars-one-life?year=1943"><text x="104" y="940" fill="#303852" font-family="Arial, sans-serif" font-size="12">127.0.0.1:4283/blog/visualizations/two-calendars-one-life?year=1943</text></a>
+		<text x="1496" y="940" text-anchor="end" fill="#303852" font-family="Arial, sans-serif" font-size="14">SUVRO GHOSH · A YEAR IN TWO WORLDS</text>
+	</g>
+	</svg>

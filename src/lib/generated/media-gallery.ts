@@ -5179,6 +5179,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/two-calendars/two-calendars-postcard.svg",
+			"src": "/images/visualizations/two-calendars/two-calendars-postcard.svg",
+			"bytes": 10481,
+			"width": 1600,
+			"height": 1000
+		},
+		{
+			"name": "visualizations/two-calendars/two-calendars-social.png",
+			"src": "/images/visualizations/two-calendars/two-calendars-social.png",
+			"bytes": 99398,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "wait-until-she-finishes.jpg",
 			"src": "/images/wait-until-she-finishes.jpg",
 			"bytes": 95240,

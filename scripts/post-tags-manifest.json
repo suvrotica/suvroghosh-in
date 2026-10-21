@@ -15079,6 +15079,37 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/two-calendars-one-life.md": {
+			"bodyHash": "c3b3d759d7fde4740df7ce70d155fbda0da0ee06ddb4052d333ab521ce6a5dff",
+			"hashVersion": 2,
+			"revisionHash": "37bcb2a1934042749593c0b1ec8060c668d8b3e24cb30cdd6d95ff07623f95b8",
+			"generatedTags": [
+				"History",
+				"Calcutta",
+				"America",
+				"Historical Timelines",
+				"Data Visualisation",
+				"Comparative History",
+				"Archives",
+				"Storytelling",
+				"Indian History",
+				"American History"
+			],
+			"pinnedTags": [
+				"History",
+				"Calcutta",
+				"America",
+				"Historical Timelines",
+				"Data Visualisation",
+				"Comparative History",
+				"Archives",
+				"Storytelling",
+				"Indian History",
+				"American History"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		}
 	},
 	"maxTags": 10

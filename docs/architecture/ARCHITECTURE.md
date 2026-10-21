@@ -405,6 +405,29 @@ flowchart LR
 
 Local UI adapters use Bits UI/tailwind variants, `cn`, and barrel exports. Five bounded runtime import cycles occur inside these adapters (badge/button/sheet/tabs/tooltip); the static graph found no domain-wide runtime cycle. These cycles have no demonstrated initialization failure and are documented coupling, rather than a counted defect. The graph excluded type-only imports, glob expansion and nonliteral imports; it is not a formal proof of acyclicity.
 
+### Two Calendars, One Life
+
+The historical Calcutta–America edition uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/two-calendars-one-life`. Its Svelte component under `components/visualizations/two-calendars` owns year/comparison selection, native-scroll chapter observation and postcard controls per mount. The pure feature domain under `visualizations/two-calendars` owns the curated 1940–1959 records and references, explicit date/relationship contracts, chronology layout, bounded public URL selection and shared postcard composition. The feature introduces no endpoint, route exception, external runtime service, credential, persistence store, dependency or global state manager.
+
+Both calendar ribbons use the same Gregorian chronology. Record precision is separate from documented duration and uncertainty: a year-only record is not thereby a year-long event. Geographic scope and source references travel with the records. Connecting threads explicitly distinguish shared time, editorial thematic comparison and documented relationship; graphical proximity alone cannot establish a causal claim. The component server-renders historical reading and sources, then progressively enhances selection and scroll-linked emphasis. Observers and listeners belong to the mounted component and are released on teardown; native scrolling and motion preferences preserve the reading path.
+
+The selected records and relationship supply both the interactive reading and composed postcard SVG. Browser rasterization produces the PNG from that same composition; SVG/PNG exports and copyable captions retain precision, attribution and a replayable selection link. Validated URL state selects supported public records only. The article's publication artwork is a static default social preview, not a promise of selection-specific server-generated Open Graph images. See [the feature record](../two-calendars.md) for authoring constraints and future personal-edition privacy/time-zone boundaries. This extends the existing feature-owned model/UI pattern; no foundational decision changes, so a separate ADR is unnecessary.
+
+```mermaid
+flowchart LR
+    Article["Ordinary Markdown / generic blog route"] --> CalendarUI["Per-mount year / comparison / chapter state"]
+    URL["Validated public selection URL"] <--> CalendarUI
+    Sources["Curated records / precision / references"] --> Chronology["Pure shared chronology and relationship contracts"]
+    Chronology --> CalendarUI
+    Sources --> Reading["SSR records / explanations / source links"]
+    CalendarUI --> Ribbons["Paired SVG ribbons / native-scroll emphasis"]
+    CalendarUI --> Selection["Selected records and relationship"]
+    Sources --> Selection
+    Selection --> Postcard["Shared postcard SVG composition"]
+    Postcard --> Download["Local SVG / PNG / caption / replay link"]
+    Lifecycle["Motion preference / observer teardown"] --> Ribbons
+```
+
 ## 7. Notes client/server/persistence lifecycle
 
 ```mermaid

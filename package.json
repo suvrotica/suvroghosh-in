@@ -160,7 +160,7 @@
 		"notes:sql:test": "node --test scripts/handwritten-notes-migration.test.mjs",
 		"notes:test": "vitest run && npm run notes:sql:test",
 		"sketches:test": "node --test scripts/sketch-manifest.test.mjs && vitest run src/lib/components/sketch-museum",
-		"test": "npm run missing-data:test && npm run barnum-lab:test && npm run tags:test && npm run bengali:test && npm run post-images:test && npm run resources:test && npm run sketches:test && npm run visualizations:test && npm run ray-marching:test && npm run random-matrix:test && npm run strange-attractor-orchestra:test && npm run chitin-engine:test && npm run gastropod-shell-lab:test && npm run prior-authorization:test && npm run human-ai-icu-prediction:test && npm run static-equilibrium-illusion:test && npm run reaction-diffusion:test && npm run bz-laboratory:test && npm run artificial-life:test && npm run monte-carlo:test && npm run living-pigment:test && npm run spacetime:test && npm run ct-laboratory:test && npm run indexnow:test && npm run notes:test",
+		"test": "npm run two-calendars:test && npm run missing-data:test && npm run barnum-lab:test && npm run tags:test && npm run bengali:test && npm run post-images:test && npm run resources:test && npm run sketches:test && npm run visualizations:test && npm run ray-marching:test && npm run random-matrix:test && npm run strange-attractor-orchestra:test && npm run chitin-engine:test && npm run gastropod-shell-lab:test && npm run prior-authorization:test && npm run human-ai-icu-prediction:test && npm run static-equilibrium-illusion:test && npm run reaction-diffusion:test && npm run bz-laboratory:test && npm run artificial-life:test && npm run monte-carlo:test && npm run living-pigment:test && npm run spacetime:test && npm run ct-laboratory:test && npm run indexnow:test && npm run notes:test",
 		"music:generate": "node scripts/generate-music-posts.mjs",
 		"images:optimize": "python scripts/optimize_images.py",
 		"gallery:generate": "node scripts/generate-media-gallery.mjs",
@@ -198,7 +198,10 @@
 		"validate:links": "node scripts/validate-links.mjs",
 		"validate:discoverability": "node scripts/validate-discoverability.mjs",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"two-calendars:test": "vitest run src/lib/visualizations/two-calendars",
+		"two-calendars:browser:test": "playwright test --config=playwright.two-calendars.config.ts",
+		"two-calendars:poster": "node scripts/render-two-calendars.mjs"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",

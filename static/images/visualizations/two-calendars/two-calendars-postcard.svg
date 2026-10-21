@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="postcard-title postcard-description">
+	<title id="postcard-title">Two Calendars, One Life — 1947</title>
+	<desc id="postcard-description">Two Calendars, One Life · 1947: a year in two worlds.
+
+Calcutta / India — 15 August 1947: Freedom, with a border through Bengal.
+
+America — 15 April 1947: Number 42 steps onto the field.
+
+Shared time: In the same year, India became independent through Partition and Robinson crossed a colour barrier in Brooklyn. Their scale, causes and consequences differ. The shared-year thread asks what a public breakthrough changes, and which barriers remain outside its reach.
+
+https://suvroghosh.in/blog/visualizations/two-calendars-one-life?year=1947
+Sources:
+UK Parliament / The National Archives: Indian Independence Act 1947, original text — https://www.legislation.gov.uk/ukpga/1947/30/pdfs/ukpga_19470030_en.pdf
+Library of Congress: Jackie Robinson breaks the color line — https://www.loc.gov/item/today-in-history/april-15/</desc>
+	<metadata>UK Parliament / The National Archives: Indian Independence Act 1947, original text — https://www.legislation.gov.uk/ukpga/1947/30/pdfs/ukpga_19470030_en.pdf
+Library of Congress: Jackie Robinson breaks the color line — https://www.loc.gov/item/today-in-history/april-15/</metadata>
+	<rect width="1600" height="1000" fill="#f5f0e3"/>
+	<path d="M40 40H1560V960H40Z" fill="none" stroke="#253d49" stroke-opacity=".3"/>
+	<path d="M55 55H1545V945H55Z" fill="none" stroke="#253d49" stroke-opacity=".12"/>
+	<g font-family="Georgia, 'Times New Roman', serif">
+		<text x="104" y="105" fill="#9d4233" font-family="Arial, sans-serif" font-size="16" letter-spacing="5">AN ATLAS OF PARALLEL LIVES · 1940–1959</text>
+		<text x="100" y="181" fill="#222e37" font-size="66">Two Calendars, One Life</text>
+		<text x="104" y="223" fill="#5c615b" font-size="26" font-style="italic">The same years, different worlds.</text>
+		<text x="1498" y="182" text-anchor="end" fill="#9d4233" font-size="81">1947</text>
+		<path d="M104 245H1496" stroke="#233c4b" stroke-opacity=".36"/>
+		<path d="M104 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M153 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M202 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M251 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M300 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M349 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M398 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M447 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M496 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M545 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M594 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M643 315v115" stroke="#303852" stroke-opacity=".13"/><path d="M692 315v115" stroke="#303852" stroke-opacity=".32"/><path d="M104 315h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 343.75h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 372.5h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 401.25h588" stroke="#303852" stroke-opacity=".15"/><path d="M104 430h588" stroke="#303852" stroke-opacity=".15"/><text x="128" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">J</text><text x="177" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">F</text><text x="226" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">M</text><text x="275" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">A</text><text x="324" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">M</text><text x="373" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">J</text><text x="422" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">J</text><text x="471" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">A</text><text x="520" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">S</text><text x="569" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">O</text><text x="618" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">N</text><text x="667" y="451" text-anchor="middle" fill="#303852" font-family="Arial, sans-serif" font-size="11">D</text>
+		<path d="M908 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M957 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1006 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1055 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M1104 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1153 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1202 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M1251 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1300 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1349 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M1398 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1447 315v115" stroke="#21575b" stroke-opacity=".13"/><path d="M1496 315v115" stroke="#21575b" stroke-opacity=".32"/><path d="M908 315h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 343.75h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 372.5h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 401.25h588" stroke="#21575b" stroke-opacity=".15"/><path d="M908 430h588" stroke="#21575b" stroke-opacity=".15"/><text x="932" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">J</text><text x="981" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">F</text><text x="1030" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">M</text><text x="1079" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">A</text><text x="1128" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">M</text><text x="1177" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">J</text><text x="1226" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">J</text><text x="1275" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">A</text><text x="1324" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">S</text><text x="1373" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">O</text><text x="1422" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">N</text><text x="1471" y="451" text-anchor="middle" fill="#21575b" font-family="Arial, sans-serif" font-size="11">D</text>
+		<path d="M468.8821917808219 372C650 372 625 322 800 372S950 422 1076.345205479452 372" fill="none" stroke="#ac5b3e" stroke-width="3" stroke-dasharray="2 7"/>
+		<g><title>15 August 1947 · day precision</title><circle cx="468.8821917808219" cy="372" r="10" fill="#f5f0e3" stroke="#303852" stroke-width="3"/></g>
+		<g><title>15 April 1947 · day precision</title><circle cx="1076.345205479452" cy="372" r="10" fill="#f5f0e3" stroke="#21575b" stroke-width="3"/></g>
+		<rect x="729" y="350" width="142" height="42" fill="#f5f0e3"/>
+		<text x="800" y="377" text-anchor="middle" fill="#9d4233" font-size="23" font-style="italic">Meanwhile…</text>
+		<g fill="#303852">
+		<text x="104" y="280" font-family="Arial, sans-serif" font-size="19" letter-spacing="6">CALCUTTA / INDIA</text>
+		<text x="104" y="492" font-family="Arial, sans-serif" font-size="20"><tspan x="104" y="492">15 August 1947</tspan></text>
+		<text x="104" y="552" font-size="39"><tspan x="104" y="552">Freedom, with a border through</tspan><tspan x="104" y="597">Bengal</tspan></text>
+		<text x="104" y="657" font-family="Arial, sans-serif" font-size="16" letter-spacing="1"><tspan x="104" y="657">India · Bengal divided</tspan></text>
+		<text x="104" y="698" fill="#4e514c" font-family="Arial, sans-serif" font-size="23"><tspan x="104" y="698">India became independent as British India was</tspan><tspan x="104" y="729">partitioned.</tspan></text>
+	</g>
+		<g fill="#21575b">
+		<text x="908" y="280" font-family="Arial, sans-serif" font-size="19" letter-spacing="6">AMERICA</text>
+		<text x="908" y="492" font-family="Arial, sans-serif" font-size="20"><tspan x="908" y="492">15 April 1947</tspan></text>
+		<text x="908" y="552" font-size="39"><tspan x="908" y="552">Number 42 steps onto the field</tspan></text>
+		<text x="908" y="657" font-family="Arial, sans-serif" font-size="16" letter-spacing="1"><tspan x="908" y="657">Brooklyn, New York · Major League Baseball</tspan></text>
+		<text x="908" y="698" fill="#4e514c" font-family="Arial, sans-serif" font-size="23"><tspan x="908" y="698">Jackie Robinson debuted for the Brooklyn Dodgers,</tspan><tspan x="908" y="729">breaking Major League Baseball’s modern colour</tspan><tspan x="908" y="760">barrier.</tspan></text>
+	</g>
+		<path d="M104 800H1496" stroke="#233c4b" stroke-opacity=".3"/>
+		<text x="104" y="833" fill="#9d4233" font-family="Arial, sans-serif" font-size="14" letter-spacing="3">SHARED TIME</text>
+		<text x="104" y="868" fill="#3e4647" font-size="23"><tspan x="104" y="868">In the same year, India became independent through Partition and Robinson crossed a colour barrier in Brooklyn. Their scale,</tspan><tspan x="104" y="897">causes and consequences differ.</tspan></text>
+		<text x="104" y="918" fill="#5e625c" font-family="Arial, sans-serif" font-size="13"><tspan x="104" y="918">Sources: [1] UK Parliament / The National Archives · [2] Library of Congress</tspan></text>
+		<a href="https://suvroghosh.in/blog/visualizations/two-calendars-one-life?year=1947"><text x="104" y="940" fill="#303852" font-family="Arial, sans-serif" font-size="12">suvroghosh.in/blog/visualizations/two-calendars-one-life?year=1947</text></a>
+		<text x="1496" y="940" text-anchor="end" fill="#303852" font-family="Arial, sans-serif" font-size="14">SUVRO GHOSH · A YEAR IN TWO WORLDS</text>
+	</g>
+	</svg>

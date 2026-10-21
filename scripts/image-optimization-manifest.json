@@ -11725,6 +11725,33 @@
       "sourceHash": "c6e99d3e1741924f35513d08fd9173abedda5b897b76b1d91b1adbc71e26cd09",
       "width": 1200
     },
+    "static/images/visualizations/two-calendars/two-calendars-postcard.svg": {
+      "format": "SVG",
+      "height": 1000,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 10481,
+      "outputHash": "8df07cde080b68fbabeb7649bb21068fb9420810913f3f806e0a2d1297409353",
+      "reason": "vector source retained",
+      "sourceBytes": 10481,
+      "sourceHash": "8df07cde080b68fbabeb7649bb21068fb9420810913f3f806e0a2d1297409353",
+      "width": 1600
+    },
+    "static/images/visualizations/two-calendars/two-calendars-social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 99398,
+      "outputHash": "ae2d831fdbe716afe563e70701c84b0913eb1889022f04949fcef95f3954bab9",
+      "resized": false,
+      "sourceBytes": 99398,
+      "sourceHash": "ae2d831fdbe716afe563e70701c84b0913eb1889022f04949fcef95f3954bab9",
+      "width": 1200
+    },
     "static/images/wait-until-she-finishes.jpg": {
       "format": "JPEG",
       "height": 576,
