@@ -6,6 +6,7 @@ category: "Healthcare Science"
 tags: ["San Antonio","Kidney Disease","Urine Test","Blood Pressure","Kidney","DKD","Diabetes","FIND","Disease","Diabetic"]
 published: true
 color: "blue"
+thumbnailAlt: 'A woman studies an illuminated family-tree diagram at a desk with a microscope and a city skyline beyond the window.'
 thumbnail: "/thumbnail/art-find-study-diabetes-kidney-family-tree.jpg"
 ---
 

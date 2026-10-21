@@ -1,11 +1,12 @@
 ---
 title: "The Morning of the Cutouts"
-description: "A boy wakes in a Howrah-side slum to find everyone gone, except for a humanoid robot rehearsing violence on paper versions of his neighbors. What looks like a drill becomes an indictment written in data, rainwater, and guilt."
+description: 'A boy finds a robot rehearsing violence on paper neighbours in this Howrah horror story about vanished residents, data, and responsibility.'
 date: "2026-05-14"
 category: "Short Fiction"
 tags: ["SETU VISTA","Five Hundred Rupees","Likeness Asset","Paper Khokon","Paper Piyali","Tuhin","Robot","Khokon-kaku","Cutout","Piyali"]
 published: true
 color: "#3b3b36"
+thumbnailAlt: 'Charcoal drawing of an armed humanoid robot facing four standing human cutouts beside a river and steel bridge.'
 thumbnail: "/images/Compress_20260514_184755_5224.jpg"
 ---
 

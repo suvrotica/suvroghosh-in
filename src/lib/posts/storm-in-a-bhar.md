@@ -1,12 +1,13 @@
 ---
 title: "Storm in a Bhar"
-description: "A Calcutta tea-stall joke about chaos theory becomes a street-level experiment, and one flutter above a cup teaches North Calcutta the old city is never merely background noise."
+description: "A tea-stall joke becomes a chaos-theory experiment in this Calcutta science-fiction story, with a storm rising from a cup."
 date: "2026-05-14"
 category: "Short Fiction"
 tags: ["Professor Lahiri","Coaching Center","Delivery Riders","Pen Drive","Insurance Clerk","Arka","Gopal-da","Mithun","Father","Lahiri"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260514_202804_4190.jpg"
+thumbnailAlt: "Charcoal illustration of a swirling storm rising from a teacup on a saucer."
 ---
 
 <TTS />

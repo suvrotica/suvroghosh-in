@@ -1,12 +1,13 @@
 ---
 title: "The Radius of Dust"
-description: "In a crumbling Calcutta flat, a lonely proofreader discovers that his depression has begun to age the objects around him. As the decay spreads outward, he must choose between hiding from the city and entering the grief that has been waiting inside his own house."
+description: "A lonely Calcutta proofreader's depression makes nearby objects age and crumble in this horror story about spreading decay and grief within a home."
 date: "2026-06-07"
 category: "Short Fiction"
 tags: ["Anirban","Mili","Nirmal-da","Trunk","Desk","Bread","Nagen","Mother","Father","Stay"]
 published: true
 color: "Charcoal"
 thumbnail: "/images/Compress_20260607_062600_0744.jpg"
+thumbnailAlt: "A man hunches over a cluttered table in a crumbling room with a wall clock and a city visible through the window."
 ---
 
 <TTS />

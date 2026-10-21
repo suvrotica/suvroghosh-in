@@ -1,8 +1,9 @@
 ---
 title: "The Bride Price of Salt"
-description: "At a Calcutta wedding feast, a seafood restaurant serves oysters bought cheap from a drain by the landfill. By morning, the city has taken back more than anyone ordered."
+description: "A Calcutta wedding's cheap oysters unleash a city's buried appetite in this horror story of a restaurant, a landfill drain and a feast's aftermath."
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_193206_6725.jpg"
+thumbnailAlt: "Curved, wormlike microscopic forms sit within a tangled fibrous network in a dark monochrome image."
 category: "Short Fiction"
 tags: ["Red Slipper","Tea Stall","Nirmal Saw","Nirmal","Debnath","Raka","Mili","Arko","Oyster","Kartik"]
 published: true

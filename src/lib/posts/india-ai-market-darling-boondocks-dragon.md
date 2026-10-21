@@ -1,8 +1,9 @@
 ---
 title: "India Slept Through the AI Alarm, and the Market Has Started Packing Its Bags"
-description: "A sharp, street-level Calcutta-fringe essay on India’s AI-market problem: not that Indians lack talent, but that India has confused service labor, imported tools, and slogans with deep technological ownership."
+description: "A Calcutta-fringe essay on India's AI economy, questioning the gap between software services, imported tools and ownership of core technology."
 date: "2026-05-18"
 thumbnail: "/images/Compress_20260518_194331_1231.jpg"
+thumbnailAlt: "Charcoal drawing of a snarling dragon with spread batlike wings and a twisting plume of dark smoke."
 category: "AI Economy"
 tags: ["AI","India","Compute","Industry","Build","Digital","Wake","Coding","Capital","Indians"]
 published: true

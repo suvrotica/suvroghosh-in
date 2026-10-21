@@ -1,12 +1,13 @@
 ---
 title: "The Sword in the Frame"
-description: "A middle-aged Bengali man in North Calcutta takes up an old blade against impossible reptiles, only to discover the battlefield is stranger than madness. The city, the monsters, and his own face begin to repeat."
+description: "A middle-aged man fights impossible reptiles with an inherited blade in this Calcutta horror story, where monsters and his own face begin to repeat."
 date: "2026-06-07"
 category: "Short Fiction"
 tags: ["Reptile King","Mosquito Net","Tram Bell","Exercise Books","Fish Stall","Bishwanath","Reptile","Mitali","Blade","Haru"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260607_161730_0686.jpg"
+thumbnailAlt: "A reptilian figure holds a sword at a cliff edge while another creature opens its jaws below in a charcoal drawing."
 ---
 
 <TTS />

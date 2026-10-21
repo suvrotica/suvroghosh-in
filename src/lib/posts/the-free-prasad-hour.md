@@ -1,12 +1,13 @@
 ---
 title: "The Free Prasad Hour"
-description: "In a humid Calcutta afternoon, a televised miracle gathering becomes a trap, and one woman begins to understand that crowds can be murdered like individuals. A story about spectacle, faith, poverty, and the lethal vanity of being seen."
+description: "A televised miracle gathering traps a Calcutta crowd in this horror story, as a woman recognises the deadly machinery behind free gifts and spectacle."
 date: "2026-06-05"
 category: "Short Fiction"
 tags: ["FREE SAREE","Baba Bijoyananda","VIP Enclosure","Running Order","West Counter","Nandita","Rishav","Pulak","Baba","Coupon"]
 published: true
 color: "maroon"
 thumbnail: "/images/Compress_20260605_110848_8382.jpg"
+thumbnailAlt: "A dense crowd is trapped among toppled barricades while a camera operator films nearby in a charcoal drawing."
 ---
 
 <TTS />

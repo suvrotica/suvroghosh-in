@@ -1,12 +1,13 @@
 ---
 title: "The Router Behind the Television"
-description: "A funny, uneasy Calcutta essay on routers, weak passwords, smart devices, and the new age of automatic malware. The future does not always arrive in chrome and glass; sometimes it blinks behind the television."
+description: "A satirical Calcutta essay on routers, weak passwords, connected household devices, and the spread of automated malware."
 date: "2026-06-06"
 category: "Cybersecurity"
 tags: ["Router","Patch","Password","Device","Passwords","Worm","Updates","Nouns","Corporate","Television"]
 published: true
 color: "#22C55E"
 thumbnail: "/thumbnail/art-the-router-behind-the-television.jpg"
+thumbnailAlt: "A Wi-Fi router, smart speaker, charging phone, and rice cooker sit behind an old television."
 ---
 
 <TTS />

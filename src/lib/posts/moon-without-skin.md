@@ -1,7 +1,8 @@
 ---
 title: "Moon Without Skin"
-description: "When cancerous growths appear across the face of the moon, a retired healthcare data analyst in Kolkata notices that the first pattern is not astronomical but medical. The city looks upward, while something beneath ordinary life begins answering back."
+description: 'In this Calcutta horror story, a retired healthcare analyst sees a medical pattern in strange growths spreading across the moon''s surface.'
 date: "2026-06-03"
+thumbnailAlt: 'Charcoal drawing of the moon covered with rough, clustered growths against a black background.'
 thumbnail: "/images/Compress_20260603_065220_0026.jpg"
 category: "Short Fiction"
 tags: ["Partha","Ananya","Riddhi","Moon","Lunar","Lump","Lumps","Mother","Growths","Kolkata"]

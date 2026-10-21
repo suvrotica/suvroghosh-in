@@ -7,6 +7,7 @@ tags: ["Low Complaint Probability","SHUDDHO GOLD","Milk Powder","Power Cut","Mir
 published: true
 color: "Bone White"
 thumbnail: "/images/Compress_20260603_090627_7821.jpg"
+thumbnailAlt: "A round-bellied creature with a spiny back, scaly arms and a screaming humanlike face in a charcoal drawing."
 ---
 
 <TTS />

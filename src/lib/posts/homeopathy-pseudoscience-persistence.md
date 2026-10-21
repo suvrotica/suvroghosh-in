@@ -7,6 +7,7 @@ tags: ["Health Level Seven","Evidence-Based Medicine","Human Experience","Homeop
 published: true
 color: "red"
 thumbnail: "/thumbnail/art-homeopathy-pseudoscience-persistence.jpg"
+thumbnailAlt: "Rows of small glass remedy bottles and white pellets sit before two women and a microscope in a laboratory."
 ---
 
 <TTS />

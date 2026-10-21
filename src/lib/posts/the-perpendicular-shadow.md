@@ -3,6 +3,7 @@ title: "The Perpendicular Shadow"
 description: "A bipolar polemicist's manic-depressive rant about AI, meaning, and the slow death of Calcutta, written from a grey couch with a cup of tea."
 date: "2026-07-09"
 thumbnail: "/images/Compress_20260709_202155_5311.jpg"
+thumbnailAlt: "Top-down photograph of a black mug of milk tea on grey woven fabric, casting a dark shadow to the left."
 category: "Personal Essay"
 tags: ["Smooth Frictionless","Plumb Line","AI Overlords","Grey Couch","Cold Tea","Shadow","Perpendicular","Perpendicularity","Algorithms","Couch"]
 published: true

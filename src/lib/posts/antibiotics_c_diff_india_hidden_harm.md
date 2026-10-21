@@ -1,8 +1,9 @@
 ---
 title: "The Antibiotic That Came Back With a Stick"
-description: "In India, strong antibiotics are often prescribed as if they are harmless proof of decisive treatment. But disturbed gut bacteria, C. difficile infection, and avoidable deaths show that the bill can arrive after the clinic visit is forgotten."
+description: "An essay on antibiotic overuse in India, disrupted gut bacteria, and the overlooked harm of C. difficile infection."
 date: "2026-05-29"
 thumbnail: "/images/Compress_20260529_114503_3371.jpg"
+thumbnailAlt: "Black-and-white microscopic image of clustered rod-shaped bacteria."
 category: "Healthcare"
 tags: ["Antibiotic","Difficile","Antibiotics","Diarrhea","Patient","Prescription","Colon","Gut","Infection","Viral"]
 published: true

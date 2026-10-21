@@ -1,12 +1,13 @@
 ---
 title: "Pohela Baisakh"
-description: "Pohela Baisakh is narrated as timeless Bengali tradition, but the calendar as a fiscally usable, April-aligned year-start bears a decisive Mughal stamp - one a larger Indian habit prefers to sand out of memory."
+description: "An essay on Pohela Baisakh, the Mughal role in the Bengali calendar, revenue collection, and the politics of cultural memory."
 date: "2026-04-22"
 category: "history"
 tags: ["Pohela Baisakh","Mughal","Baisakh","Pohela","Muslim","Gregorian","Hybrid","Akbar","Calendar","Agrarian"]
 published: true
 color: "red"
 thumbnail: "/thumbnail/art-pohela-baisakh-mughal-calendar-memory.jpg"
+thumbnailAlt: "Two men in turbans examine ledgers beside grain baskets, books, and drawing instruments overlooking farmland."
 ---
 
 <TTS />

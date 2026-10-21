@@ -6,6 +6,7 @@ category: "Short Fiction"
 tags: ["Hari Mondal","Jharna Das","Lakshmi Nagar","Kartik Bose","Anirban Pal","Subir","Madhuri","Idol","Clay","Bose"]
 published: true
 color: "#8B0000"
+thumbnailAlt: 'Dark charcoal drawing of a many-armed goddess idol seated with a lion beneath hanging garlands.'
 thumbnail: "/images/Compress_20260718_173308_8326.jpg"
 ---
 

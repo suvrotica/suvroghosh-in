@@ -3,6 +3,7 @@ title: "The Curriculum Vitae of a Vanishing Man"
 description: "A fifty-one-year-old man examines failure, ordinariness, ambition, and the modern machinery that converts every human life into a badly formatted advertisement."
 date: "2026-07-19"
 thumbnail: "/photos/Compress_20260719_032411_1278.jpg"
+thumbnailAlt: "Black-and-white family photograph of a small child standing between two seated women."
 category: "Monologue"
 tags: ["Sonnets","Photograph","Outlast","Forgotten","Thick","Soul","Ambition","Rice","Merely","Time"]
 published: true

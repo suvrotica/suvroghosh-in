@@ -1,8 +1,9 @@
 ---
 title: "Dead Body in Stagnant Water"
-description: "A blunt, humane essay on bipolar depression, unemployment, middle age, shame, and the strange Calcutta art of continuing when the mind has already written the obituary."
+description: "A personal Calcutta essay on bipolar depression, unemployment and middle-aged shame, finding the stubborn rituals of carrying on through ordinary days."
 date: "2026-05-10"
 thumbnail: "/images/Compress_20260510_180901_1081.jpg"
+thumbnailAlt: "A crow perches on a distorted human head protruding from rippling dark water in a charcoal drawing."
 category: "Personal"
 tags: ["Bipolar Depression","Depression","Sure","Landfill","Skepticism","Bipolar","Sadness","Bath","Tea","Ending"]
 published: true

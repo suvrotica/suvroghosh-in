@@ -1,12 +1,13 @@
 ---
 title: "The Green Light on Bondel Road"
-description: "When the sweetshop on Bondel Road shuts its doors at the wrong hour, three children uncover a strange extortion plot involving an American mask, a chain of frightened shopkeepers, and a very ordinary villain."
+description: "Three children follow green handprints and frightened shopkeepers to uncover an extortion plot in this Calcutta adventure story."
 date: "2026-07-04"
 category: "Short Fiction"
 tags: ["Phuchka Wallah","Bondel Road","Lime Soda","Electrician Son","Green Handprint","Ananya","Bijoy","Fatima","Sweetshop","Green"]
 published: true
 color: "#4CAF50"
 thumbnail: "/images/Compress_20260704_140216_6585.jpg"
+thumbnailAlt: "Charcoal portrait of a gaunt figure with an elongated head, two antennae, and a small toothed mouth."
 ---
 
 <TTS />

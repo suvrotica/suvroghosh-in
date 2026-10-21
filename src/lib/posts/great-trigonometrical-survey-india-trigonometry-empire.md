@@ -1,11 +1,12 @@
 ---
 title: "Trigonometric  Colonization"
-description: "A historically grounded examination of how the Great Trigonometrical Survey turned trigonometry into an instrument of colonial power, converting angles into territory, revenue, and military advantage."
+description: 'How the Great Trigonometrical Survey used baselines and triangles to map British India, linking mathematical measurement to colonial rule.'
 date: "2026-04-21"
 category: "history-of-science"
 tags: ["Great Trigonometrical Survey","Trigonometrical","Survey","Trigonometry","Baseline","Geodetic","Lambton","Triangulation","Distances","Revenue"]
 published: true
 color: "amber"
+thumbnailAlt: 'Surveyors operate a large surveying instrument above a mountain landscape crossed by a network of drawn triangles.'
 thumbnail: "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg"
 ---
 

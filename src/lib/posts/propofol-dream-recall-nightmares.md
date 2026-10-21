@@ -1,12 +1,13 @@
 ---
 title: "Propofol, Nightmares"
-description: "An architecturally grounded look at the experimental use of propofol-induced dream states, delayed emergence, and active dream recall as a possible intervention for trauma-related nightmares and PTSD symptoms."
+description: "An examination of experimental propofol dream-recall protocols for trauma-related nightmares, their proposed mechanisms and limited evidence."
 date: "2026-04-22"
 category: "healthcare"
 tags: ["Dream Induction","Propofol","Dream","Emergence","Nightmares","Recall","Anesthesia","Trauma","Anesthetic","Imagery"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/art-propofol-dream-recall-nightmares.jpg"
+thumbnailAlt: "A clinician watches a patient in a hospital bed, with a waveform monitor and a sunlit woodland scene behind them."
 ---
 
 <TTS />

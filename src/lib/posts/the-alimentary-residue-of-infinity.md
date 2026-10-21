@@ -1,8 +1,9 @@
 ---
 title: "The Alimentary Residue of Infinity"
-description: "A bipolar bibliophile in Calcutta ruminates on the New York Times Book of Mathematics, brittle attention, and the grotesque futility of popular math essays in an age of trillionaires and quantum batteries."
+description: "A Calcutta bibliophile's monologue on The New York Times Book of Mathematics, fractured attention and popular science in an age of vast inequality."
 date: "2026-07-11"
 thumbnail: "/photos/Compress_20260711_203027_7116.jpg"
+thumbnailAlt: "The blue-covered New York Times Book of Mathematics lies beside a black mug of milk tea on woven fabric."
 category: "Mathematics"
 tags: ["Paul Hoffman","Cold Tea","Divisible","Book","Hoffman","Ford","Trillionaire","Mathematics","Prime","Paul"]
 published: true

@@ -1,11 +1,12 @@
 ---
 title: "The Blue Above Chandni"
-description: "When Calcutta begins to burn under an oddly polished sky, a spectacle-shop owner follows the trail of cataracts, dead crows, and old air-conditioner gas to a grievance nobody had thought important enough to remember."
+description: 'In this Calcutta horror story, an optician traces damaged eyes and dead crows beneath a polished blue sky to an overlooked grievance.'
 date: "2026-06-05"
 category: "Short Fiction"
 tags: ["Dark Glasses","Nirmal","Haru","Raka","Mitali","Shop","Glasses","Chowringhee","Chandni","Refrigerant"]
 published: true
 color: "ultraviolet"
+thumbnailAlt: 'Charcoal drawing of frightened people looking up at a bright shaft of light descending from a dark opening above a city street.'
 thumbnail: "/images/Compress_20260605_144100_0775.jpg"
 ---
 

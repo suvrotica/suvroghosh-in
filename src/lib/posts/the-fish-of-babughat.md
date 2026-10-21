@@ -1,12 +1,13 @@
 ---
 title: "The Fish of Babughat"
-description: "When Priya's uncle vanishes into the Hooghly River on a sweltering June day, she finds a puffer fish with his exact scar—and must carry it across Kolkata to bring him home."
+description: "In this Calcutta adventure story, Priya finds a puffer fish bearing her missing uncle's scar and carries it across the city in a bid to bring him home."
 date: "2026-06-30"
 category: "Short Fiction"
 tags: ["Thorn Bush","Bicycle Horn","Ferry Ghat","Priya Put","Priya","Kaku","Crate","Fish","Didima","Puffed"]
 published: true
 color: "#2E8B57"
 thumbnail: "/images/Compress_20260630_200233_3781.jpg"
+thumbnailAlt: "A round fish has a balding man's face, a bulging eye and a lit cigarette in a charcoal drawing."
 ---
 
 <TTS />

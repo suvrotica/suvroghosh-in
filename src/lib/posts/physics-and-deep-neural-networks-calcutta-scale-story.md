@@ -1,8 +1,9 @@
 ---
 title: "Why Physics Keeps Sneaking Into Deep Learning"
-description: "A readable, research-backed explanation of the state-of-the-art connection between physics and deep neural networks: scale, symmetry, diffusion, tensor networks, and scientific machine learning."
+description: "An essay tracing the links between physics and deep learning through scale, symmetry, diffusion, tensor networks, and scientific models."
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_014330_0107.jpg"
+thumbnailAlt: "Charcoal illustration of a frightened man clutching his swollen belly on a village path."
 category: "Artificial Intelligence"
 tags: ["Tensor Networks","Neural Network","Neural Operators","Layers Catch","Deep Learning","Physics","Model","Diffusion","DNNs","DNN"]
 published: true

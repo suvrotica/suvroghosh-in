@@ -1,8 +1,9 @@
 ---
 title: "Reading Is Not Homework. It Is How the Mind Keeps Change."
-description: "A plainspoken defense of reading without making it a religion. Books are not the only road to knowledge, but some kinds of understanding still need to be slowly installed inside the head."
+description: "A plainspoken essay defending slow reading as a way to absorb difficult ideas, while recognising the knowledge found in practice and conversation."
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_211115_5741.jpg"
+thumbnailAlt: "A hunched figure carries a stack of books while standing on a series of floating stones in a charcoal drawing."
 category: "Essay"
 tags: ["Reading","Mind","Books","Stay","Difficulty","Shelves","Friction","Knowledge","Explain","Book"]
 published: true

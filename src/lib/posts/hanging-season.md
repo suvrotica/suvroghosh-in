@@ -7,6 +7,7 @@ tags: ["Legs Curled","Middle Class","Second Landing","Single Thread","Tram Wires
 published: true
 color: "#2c1810"
 thumbnail: "/images/Compress_20260713_191444_4996.jpg"
+thumbnailAlt: "Charcoal illustration of a grotesque face with an enormous toothed mouth beneath a dangling spider."
 ---
 
 <TTS />

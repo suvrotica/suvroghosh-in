@@ -1,8 +1,9 @@
 ---
 title: "Will Darjeeling Stay Alive Like This?"
-description: "A personal Calcutta Bengali essay on Darjeeling’s counterfeit markets, bad hotels, trash burning, vehicle pollution, deforestation, overcrowding, alcohol and drug problems, and the uncomfortable question of whether the hill town can survive being loved so carelessly."
+description: "A personal Bengali essay on Darjeeling's tourism pressures, from counterfeit shops and smoke to overcrowding, and the cost of careless affection."
 date: "2026-05-30"
 thumbnail: "/images/Compress_20260530_075335_5425.jpg"
+thumbnailAlt: "A whisky bottle and two small glasses stand before a hillside town and distant snow-covered mountains."
 category: "Personal Essay"
 tags: ["Darjeeling","Fake","Tourist","Hill","Mountain","Hotels","Town","Hotel","Kanchenjunga","Tourism"]
 published: true

@@ -1,12 +1,13 @@
 ---
 title: "The Mothers of Tangra"
-description: "A cheap-protein factory near Tangra begins producing meat that remembers too much. When one worker hears her dead mother’s voice from a vat, hunger becomes a family matter."
+description: "A factory worker hears her dead mother's voice from a protein vat in this Calcutta horror story about cheap meat, hunger and family memory."
 date: "2026-06-09"
 category: "Short Fiction"
 tags: ["SaltMeat Foods","Vat Seven","Clay Cup","Rendering Room","Cheap Protein","Mira","Bose","Sanyal","Vat","Mrs"]
 published: true
 color: "maroon"
 thumbnail: "/images/Compress_20260609_083528_8762.jpg"
+thumbnailAlt: "A fleshy, many-headed creature tangled in fibrous strands rises above a round industrial vat in a charcoal drawing."
 ---
 
 <TTS />

@@ -1,12 +1,13 @@
 ---
 title: "The Eye-Eater of Hazra"
-description: "A city already trained to look away becomes terrified of seeing, after a series of attacks on young Bengali women spreads through south Calcutta. The answer, when it comes, is not the madness everyone expected, but something older and much nearer."
+description: "Attacks on women's eyes make south Calcutta afraid to look in this horror story about a city's practised blindness and an appetite close to home."
 date: "2026-06-05"
 category: "Short Fiction"
 tags: ["Tuition Teacher","Rupa Asked","Beautiful Eyes","Mrinmoy","Rupa","Nabaneeta","Krishna","Eyes","Nirmal","Fleck"]
 published: true
 color: "Black"
 thumbnail: "/images/Compress_20260605_103546_6526.jpg"
+thumbnailAlt: "A distorted man's mouth surrounds a single large eye with rows of teeth in a charcoal drawing."
 ---
 
 <TTS />

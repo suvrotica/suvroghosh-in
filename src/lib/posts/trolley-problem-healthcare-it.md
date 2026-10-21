@@ -1,7 +1,8 @@
 ---
 title: "The Trolley Problem Is Already Hiding in Healthcare"
-description: "Healthcare does not wait for a dramatic philosopher with a lever. It quietly moves risk through queues, dashboards, alerts, codes, claims, models, and policies until moral choice looks like normal workflow."
+description: 'An essay on the trolley problem inside healthcare software, where queues, alerts, data standards, and prediction models quietly distribute risk.'
 date: "2026-05-29"
+thumbnailAlt: 'Charcoal drawing of a worried man holding a lever beside branching railway tracks, with a tram approaching behind him.'
 thumbnail: "/images/Compress_20260529_135024_4353.jpg"
 category: "Healthcare IT"
 tags: ["Sees No-Show","Data Exchange","Research Data","Trolley Problem","Representation Failure","Trolley","Healthcare","Clinical","Model","Patient"]

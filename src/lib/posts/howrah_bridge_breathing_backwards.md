@@ -2,6 +2,7 @@
 title: "The Bridge That Breathed Backwards"
 description: "When a wormhole opens on Howrah Bridge, Calcutta discovers that the past is not waiting politely behind glass. It is hungry, crowded, and carrying unpaid debts."
 date: "2026-06-18"
+thumbnailAlt: 'Charcoal cityscape of a suspension bridge divided by a tall dark opening above a river crowded with boats.'
 thumbnail: "/images/Compress_20260618_202519_9501.jpg"
 category: "Short Fiction"
 tags: ["Tiffin Carrier","Union Office","Howrah Bridge","Haripada","Reba","Bappa","Nagen","Bridge","Tiffin","Wormhole"]

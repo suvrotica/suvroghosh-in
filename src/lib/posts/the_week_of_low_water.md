@@ -1,12 +1,13 @@
 ---
 title: "The Week of Low Water"
-description: "When a stalled typhoon drowns Calcutta for seven days, a school clerk in an old north-city house discovers that the rain has not come for everyone equally. Some debts rise faster than water."
+description: "As a stalled typhoon floods Calcutta, a clerk finds that the rising water follows old debts in this horror story of rain, memory and unequal loss."
 date: "2026-06-18"
 category: "Short Fiction"
 tags: ["Paper Boats","Salt Lake","Nirmalya","Shibu","Mili","Mother","Boat","Ground-Floor","Courtyard","Boats"]
 published: true
 color: "slate"
 thumbnail: "/images/Compress_20260618_205659_9778.jpg"
+thumbnailAlt: "A vast skull-shaped storm spirals above a riverside city and bridge in a charcoal drawing."
 ---
 
 <TTS />

@@ -3,6 +3,7 @@ title: "Settled Water"
 description: "In a rain-soaked Calcutta lane, dengue begins choosing its victims with a private and impossible cruelty: it kills only those who have recently become happy."
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_073554_4430.jpg"
+thumbnailAlt: "A translucent, segmented insect form with a human skull hangs beneath dark water in a charcoal drawing."
 category: "Short Fiction"
 tags: ["Tapan Dey","Coconut Shells","Neem Tree","Brass Bowl","Main Road","Mitali","Rini","Bula","Arup","Larvae"]
 published: true

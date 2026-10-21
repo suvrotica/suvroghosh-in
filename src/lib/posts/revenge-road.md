@@ -1,8 +1,9 @@
 ---
 title: "The Ledger of Soft Parts"
-description: "A ruined healthcare founder in South Calcutta begins hearing that the people who destroyed him are dying of a disease that makes the body confess its debts. As the deaths circle closer, he must decide whether justice is a god, an infection, or only another form of hunger."
+description: "A ruined healthcare founder hears of former enemies dying as their bodies confess debts in this Calcutta horror story about justice and revenge."
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_151422_2879.jpg"
+thumbnailAlt: "Shadowy faces loom over an open handwritten ledger covered in dark stains in a charcoal drawing."
 category: "Short Fiction"
 tags: ["Rakesh Jalan","Mrinal Senapati","Anirban MUKHERJEE","Nirmal Dutta","Cash Flow","Anirban","Jalan","Nandini","Ledger","Bhaduri"]
 published: true

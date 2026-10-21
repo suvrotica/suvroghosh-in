@@ -1,8 +1,9 @@
 ---
 title: "The Cow That Spoke Like NPR"
-description: "In a rain-darkened Calcutta temple lane, a sacred cow begins speaking in immaculate American English and gently abolishes heaven. The city answers, as cities do, first with wonder, then with appetite."
+description: "A cow speaks in an American accent in this Calcutta satire, drawing a crowd whose wonder gives way to cruelty and profit."
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_171552_2091.jpg"
+thumbnailAlt: "Charcoal illustration of a garlanded cow surrounded by an agitated crowd in a narrow temple courtyard."
 category: "Short Fiction"
 tags: ["Banyan Tree","Parimal","Gouri","Cow","Haradhan","Bappa","Temple","Cows","Accent","Priest"]
 published: true

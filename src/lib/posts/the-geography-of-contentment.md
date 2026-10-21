@@ -1,7 +1,8 @@
 ---
 title: "The Geography of Contentment"
-description: "A personal essay on why happiness does not live neatly inside America or India, but in solitude, control, work, memory, terraces, grocers, parents, and the private weather of temperament."
+description: 'A personal essay on happiness across America and India, and why solitude, control over time, and daily writing matter more than a country alone.'
 date: "2026-05-15"
+thumbnailAlt: 'Charcoal drawing of a fish head in profile, its mouth open to show teeth, against a dark textured background.'
 thumbnail: "/images/Compress_20260515_233018_8846.jpg"
 category: "Life"
 tags: ["America","Drove","Terrace","Happiness","Country","Streets","Long","American","Calcutta","India"]

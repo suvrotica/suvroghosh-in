@@ -1,11 +1,12 @@
 ---
 title: "The Bridgerat of Cossipore"
-description: "A Class Ten biology student in north Kolkata tries to raise an impossible creature from ancient fragments, street animals, and borrowed ambition. What grows from his rooftop tank is not quite a dinosaur, not quite a son, and not quite an accident."
+description: 'A Calcutta horror story about a schoolboy''s rooftop biology experiment and the impossible creature he raises from fragments and street animals.'
 date: "2026-05-20"
 category: "Short Fiction"
 tags: ["Tea Stall","Ishaan","Ketu","Mitali","Aquarium","Sen","Sourav","Father","Roof","Cossipore"]
 published: true
 color: "charcoal"
+thumbnailAlt: 'Charcoal drawing of a giant, spiny, long-snouted creature crouching over a steel bridge above a river.'
 thumbnail: "/images/Compress_20260520_203404_4420.jpg"
 ---
 

@@ -1,12 +1,13 @@
 ---
 title: "The Loadshedding Shape"
-description: "During a power cut in a narrow Calcutta lane, everyone in one neighborhood becomes a skull-faced crawling thing—and keeps talking. The terror is not that they changed, but that they may have been waiting for permission."
+description: "In this Calcutta horror story, a power cut turns neighbors into skull-faced crawling creatures who keep up their everyday talk."
 date: "2026-06-19"
 category: "Short Fiction"
 tags: ["Consumer Number","Club Boys","Mustard Oil","Main Road","Six Legs","Bablu","Bina-di","Legs","Lane","Candle"]
 published: true
 color: "#1b1715"
 thumbnail: "/images/Compress_20260619_210439_9413.jpg"
+thumbnailAlt: "Charcoal illustration of a human skull with long spider legs on a wooden surface."
 ---
 
 <TTS />

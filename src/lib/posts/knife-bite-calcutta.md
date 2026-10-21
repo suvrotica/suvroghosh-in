@@ -7,6 +7,7 @@ tags: ["Knife Bite","Ritwick","Nilanjana","Mira","Jingle","Khabo","Bite","Eyelid
 published: true
 color: "blood orange"
 thumbnail: "/images/Compress_20260603_105956_6470.jpg"
+thumbnailAlt: "A distorted human face opens an enormous mouth full of uneven teeth in a charcoal drawing."
 ---
 
 <TTS />

@@ -7,6 +7,7 @@ tags: ["Shanti Medical Hall","Eastern Meridian Pharma","Nalin Dutta","Tea Stall"
 published: true
 color: "dark red"
 thumbnail: "/images/Compress_20260602_121411_1900.jpg"
+thumbnailAlt: "A gaunt man's open mouth releases a long, twisted tongue in a dark charcoal drawing."
 ---
 
 <TTS />

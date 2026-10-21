@@ -1,12 +1,13 @@
 ---
 title: "The Filth That Learned to Stand"
-description: "In a heat-struck Calcutta, a dismissed municipal data analyst notices that the city’s garbage is moving before the people do. When the cockroaches rise, the real mutation is not only in their bodies."
+description: "A dismissed municipal analyst watches garbage breathe and giant cockroaches rise in this Calcutta horror story of waste, neglect and mutation."
 date: "2026-06-02"
 category: "Short Fiction"
 tags: ["Cleaner Version Meant","Lake Market","Red Zones","Aritra","Sanyal","Mili","Cockroach","Taps","Dum","Mother"]
 published: true
 color: "sickly green"
 thumbnail: "/images/Compress_20260602_063022_2977.jpg"
+thumbnailAlt: "Giant cockroaches crawl among densely packed city buildings beside a river in a charcoal drawing."
 ---
 
 <TTS />

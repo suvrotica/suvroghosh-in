@@ -1,12 +1,13 @@
 ---
 title: "The Black Reservoir"
-description: "A lonely Calcutta geneticist breeds fish to cleanse a poisoned municipal reservoir, but the creatures learn to breathe, climb, and remember the human hunger that made them."
+description: "In this Calcutta horror story, a geneticist breeds fish to clean a poisoned reservoir, but his creatures begin to climb out."
 date: "2026-06-09"
 category: "Short Fiction"
 tags: ["Toy Bus","Nose Ring","Nirmal","Haru","Babai","Reservoir","Nalini","Arch","Ghat","Fish"]
 published: true
 color: "black"
 thumbnail: "/images/Compress_20260609_082228_8378.jpg"
+thumbnailAlt: "Charcoal illustration of a sharp-toothed fish creature crawling from dark water beside a man on stone steps."
 ---
 
 <TTS />

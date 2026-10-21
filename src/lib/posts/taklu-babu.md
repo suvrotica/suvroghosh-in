@@ -6,6 +6,7 @@ category: "Short Fiction"
 tags: ["Taklu Babu","Pink Scalp","College Girl","Taklu","Babu","Bald","Steered","Fish","Rickshaw-Wallah","Cat"]
 published: true
 color: "#2c3e50"
+thumbnailAlt: 'Charcoal drawing of a large, round-bodied cat with small pointed ears sitting on a dark surface.'
 thumbnail: "/images/Compress_20260622_124351_1146.jpg"
 ---
 

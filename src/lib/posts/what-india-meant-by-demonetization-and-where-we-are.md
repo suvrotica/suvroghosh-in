@@ -1,8 +1,9 @@
 ---
 title: "What India Meant by Demonetization, and Where We Are"
-description: "A plainspoken, skeptical look at India’s 2016 demonetization: what it promised, what it broke, what it accidentally accelerated, and why cash still walks beside QR codes in modern India."
+description: "A sceptical essay revisiting India's 2016 demonetization, its promises and disruption, and the continuing coexistence of cash and digital payments."
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_222640_0073.jpg"
+thumbnailAlt: "A round-bodied creature with bulging eyes and a long tongue clutches crumpled paper atop a narrow ledge in a charcoal drawing."
 category: "Economy"
 tags: ["Less Helpless","Black Money","Digital Payments","Demonetization","Cash","UPI","India","Cashless","Helpless","Payments"]
 published: true

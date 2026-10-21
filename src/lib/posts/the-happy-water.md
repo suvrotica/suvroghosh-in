@@ -1,11 +1,12 @@
 ---
 title: "The Happy Water"
-description: "After a dismissed water department employee poisons Kolkata’s old Tala water tank, the city’s joy becomes forensic evidence. A hidden bottling racket carries the disaster across oceans, where another set of deaths reveals a deeper betrayal."
+description: 'A water chemist investigates deadly laughter in this Kolkata horror story, tracing poisoned supplies from the Tala tank to an overseas racket.'
 date: "2026-06-01"
 category: "Short Fiction"
 tags: ["Partha Pal","Eastern Spring","Pumping Station","Bottling Plant","Tala Pumping","Ira","Partha","Rafiq","Bhattacharya","Tala"]
 published: true
 color: "blue"
+thumbnailAlt: 'Charcoal drawing of a giant, staring face with an open, tooth-filled mouth looming above a cylindrical water tower.'
 thumbnail: "/images/Compress_20260601_103901_1947.jpg"
 ---
 

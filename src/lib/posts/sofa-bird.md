@@ -1,11 +1,12 @@
 ---
 title: "The Sofa Bird"
-description: "A talking bird arrives in a damp Calcutta flat, drinks tea, smokes biri, and refuses to perch anywhere except one cushioned sofa support. Its small domestic tyranny begins as comedy and ends by unfastening a family secret."
+description: 'A talking bird claims a sofa, demands tea, and smokes biri in this Calcutta story where domestic comedy gives way to a buried family secret.'
 date: "2026-06-07"
 category: "Short Fiction"
 tags: ["Cushioned Support","Maniktala House","Bird Watched","Bird","Anirban","Mina","Sofa","Support","Father","Biri"]
 published: true
 color: "teal"
+thumbnailAlt: 'Charcoal drawing of a round-bodied, human-faced bird smoking beside a teacup.'
 thumbnail: "/images/Compress_20260607_092515_5525.jpg"
 ---
 

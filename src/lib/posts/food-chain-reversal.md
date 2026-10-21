@@ -7,6 +7,7 @@ tags: ["Sister Madhuri","Nirmalya","Madhuri","Bappa","Vegetarian","Sister","Ward
 published: true
 color: "dark green"
 thumbnail: "/images/Compress_20260602_104130_0905.jpg"
+thumbnailAlt: "A man's face stretches into an enormous dark mouth lined with large teeth in a charcoal drawing."
 ---
 
 <TTS />

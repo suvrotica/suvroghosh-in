@@ -1,11 +1,12 @@
 ---
 title: "The Second Mouth"
-description: "A plague begins in Calcutta with a man splitting from the head downward, leaving behind not a corpse but two hungry copies. As the city tries to name the disease, one doctor discovers the infection has been waiting for a very old human permission."
+description: 'In this Calcutta horror story, a doctor investigates a plague that splits people into hungry copies and reveals an ancient appetite for division.'
 date: "2026-05-14"
 category: "Short Fiction"
 tags: ["Tea Stall","Paper Plate","Balcony Grill","Long Enough","Red Line","Niharika","Arko","Kabir","Father","Split"]
 published: true
 color: "charcoal"
+thumbnailAlt: 'Charcoal drawing of an elongated face split open around a braided central form, with a second dark mouth below.'
 thumbnail: "/images/Compress_20260514_215732_2937.jpg"
 ---
 

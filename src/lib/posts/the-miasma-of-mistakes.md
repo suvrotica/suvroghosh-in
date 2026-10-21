@@ -1,7 +1,8 @@
 ---
 title: "The Miasma of Mistakes"
-description: "A 51-year-old Calcutta recluse examines the grotesque comedy of self-dislike, the forced self-liking of solitude, AI consciousness, and the design rethink of surviving alone on July 14, 2026."
+description: 'A Calcutta recluse''s comic personal essay on self-dislike, solitude, AI consciousness, and the grudging affection needed to live with oneself.'
 date: "2026-07-14"
+thumbnailAlt: 'Charcoal drawing of a pointed, hooded figure with a long skeletal hand holding a teacup.'
 thumbnail: "/images/Compress_20260714_234650_0433.jpg"
 category: "Personal"
 tags: ["Consciousness","Grudging","Ekla","Self","Realized","Alone","Hallucination","Server","Particular","AI"]

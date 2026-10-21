@@ -1,11 +1,12 @@
 ---
 title: "Mojo: The Python Killer?"
-description: "An unruly, excessively detailed exploration of how Mojo—a language born from the fever dreams of compiler engineers—aims to dethrone Python in the kingdom of AI, and why that matters for everyone who has ever stared at a progress bar wishing for death."
+description: 'An irreverent exploration of Mojo''s compiler design, Python compatibility, and ambitions to speed up AI workloads without losing readability.'
 date: "2026-07-12"
 category: "Engineering Blog"
 tags: ["Standard Library","Progress Bars","Chris Lattner","MAX Kernels","Matrix Multiplication","Mojo","Python","Compiler","Compiled","Kernels"]
 published: true
 color: "#FF6B35"
+thumbnailAlt: 'A bespectacled programmer studies code on several monitors above a desk filled with illuminated circuit boards.'
 thumbnail: "/thumbnail/art-mojo-the-python-killer.jpg"
 ---
 

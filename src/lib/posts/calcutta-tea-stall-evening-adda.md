@@ -2,6 +2,7 @@
 title: "One More Bhaar Cha Before Night Falls"
 description: "A humid evening portrait of tea stall adda, middle-aged panic, cracked ambition, and the strange comedy of surviving in the forgotten edges of Calcutta."
 date: "2026-05-13"
+thumbnailAlt: 'Monochrome drawing of an upright horned goat holding a long gun on a dark mound.'
 thumbnail: "/images/Compress_20260513_184315_5629.jpg"
 category: "Calcutta"
 tags: ["Tea Stall","Somebody","Hantavirus","Cow","Tea","Adda","Hormuz","Fear","Stall","Healthcare"]

@@ -1,11 +1,12 @@
 ---
 title: "The Seasonal Crop"
-description: "A retired physicist in Beliaghata opens a homemade quantum window above a pond and finds a Calcutta where insects won the long argument of evolution. The first thing to come through is not a monster, but a farming instruction."
+description: 'A Beliaghata physicist opens a homemade quantum window into an insect-ruled Calcutta in this horror story of experiments and human crops.'
 date: "2026-06-19"
 category: "Short Fiction"
 tags: ["Anirban Understood","Far Side","Anirban","Pond","Tap","Bappa","Mantis","Tapped","Mira","Mosquito"]
 published: true
 color: "#31412f"
+thumbnailAlt: 'Charcoal drawing of an elderly man beside machinery and a glowing circular opening filled with giant insects and city buildings.'
 thumbnail: "/images/Compress_20260619_135628_8812.jpg"
 ---
 

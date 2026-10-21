@@ -1,8 +1,9 @@
 ---
 title: "The Tamarind Orbit"
-description: "An alien girl pauses over Calcutta for one harmless taste of street food and finds, in fuchka water, friendship, hunger, and a reason not to return to the stars. A strange, tender science-fiction story about appetite, attention, and choosing where to belong."
+description: "An alien girl's taste of Calcutta fuchka becomes a reason to stay in this tender science-fiction story about friendship, appetite and belonging."
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_114531_1411.jpg"
+thumbnailAlt: "A vendor offers a snack to a pointed-eared woman beside a tray of fuchka, with a tram and flying saucer behind them."
 category: "Short Fiction"
 tags: ["News Vans","Tamarind Water","Metal Band","Tram Wire","Ila","Piu","Mili","Fuchka","Nirmal","Saucer"]
 published: true

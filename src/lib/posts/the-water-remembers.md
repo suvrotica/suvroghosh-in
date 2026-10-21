@@ -3,6 +3,7 @@ title: "The Water Remembers"
 description: "A failed pathology lab assistant in Calcutta thinks he has found a way to punish a city that has ignored him. But the city has its own older, wetter memory."
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_055556_6872.jpg"
+thumbnailAlt: "Monochrome illustration of clustered rod-shaped microbes with skull-like faces and webbed textures."
 category: "Short Fiction"
 tags: ["Diagnostic Center","Partha","Nilotpal","Hari","Mother","Diagnostic","Queues","Plastic","Bhowmik","Incubator"]
 published: true

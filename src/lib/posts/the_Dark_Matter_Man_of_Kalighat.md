@@ -1,12 +1,13 @@
 ---
 title: "The Dark Matter Man of Kalighat"
-description: "A failed cosmologist turned hospital data worker meets a future visitor whose body refuses light. In rain-soaked Calcutta, a clerical act of erasure becomes the beginning of an impossible species."
+description: "A failed cosmologist meets a visitor whose body refuses light in this Calcutta science-fiction story of erased records and altered futures."
 date: "2026-05-29"
 category: "Short Fiction"
 tags: ["Eastern Regency","Riddhi Sen","Mira Nandi","Riddhi Asked","Dark Matter","Abhra","Mira","Nandi","Haru","Subtraction"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260529_110838_8356.jpg"
+thumbnailAlt: "Charcoal portrait of a gaunt, hollow-eyed man with a deeply lined face."
 ---
 
 <TTS />

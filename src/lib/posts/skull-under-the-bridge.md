@@ -1,12 +1,13 @@
 ---
 title: "The Skull Under the Bridge"
-description: "When a maintenance painter on Howrah Bridge notices bone-white threads clinging to the old steel, he thinks first of rust, then neglect, then hunger. By evening, Calcutta learns what has been living beneath its most familiar crossing."
+description: "A maintenance painter discovers cutting white threads on Howrah Bridge in this horror story of a creature hidden beneath Calcutta's crossing."
 date: "2026-06-07"
 category: "Short Fiction"
 tags: ["Pedestrian Path","Inspection Hatch","Howrah Bridge","Nirmal Cut","Nirmal","Spider","Mukherjee","Bishu","Rini","Bridge"]
 published: true
 color: "bone-white"
 thumbnail: "/images/Compress_20260607_135747_7487.jpg"
+thumbnailAlt: "A giant skull-headed spider looms over a steel truss bridge and river in a charcoal drawing."
 ---
 
 <TTS />

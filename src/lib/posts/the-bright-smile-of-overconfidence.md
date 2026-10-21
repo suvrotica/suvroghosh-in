@@ -1,8 +1,9 @@
 ---
 title: "The Bright Smile of Overconfidence"
-description: "A caustic reflection on corporate positivity, fake certainty, exploited productivity, unpaid work, and the strange social theater where insecurity dresses itself as leadership."
+description: "A satirical essay on corporate positivity, false certainty, unpaid work, and the insecurity that passes for confident leadership."
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_154131_1600.jpg"
+thumbnailAlt: "Charcoal portrait of a suited man holding a cigar between long, thin fingers."
 category: "Society"
 tags: ["Negativity","Productivity","Project","Tools","Corporate","Sounds","Optimism","Process","Trick","Office"]
 published: true

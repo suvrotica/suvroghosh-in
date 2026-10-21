@@ -1,8 +1,9 @@
 ---
 title: "The Examination That Predicts When You Die"
-description: "Students at an elite Calcutta coaching centre receive a surprise examination whose results reveal the ages at which they will die. The only student to score perfectly is offered the power to alter those numbers."
+description: "A girl's surprise coaching-centre exam predicts when students will die, then offers her power over the results in this Calcutta supernatural story."
 date: "2026-07-19"
 thumbnail: "/images/Compress_20260719_015938_8142.jpg"
+thumbnailAlt: "A girl holds a marked examination paper at a classroom desk while other pupils face a shadowy teacher in a charcoal drawing."
 category: "Short Fiction"
 tags: ["Singara Seller","Tiffin Box","Steel Cabinet","Meena","Das","Vikram","Priya","Riya","Ledger","Examination"]
 published: true

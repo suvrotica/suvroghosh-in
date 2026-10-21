@@ -1,7 +1,8 @@
 ---
 title: "AI, Erdős, and the Great Dot Mischief"
-description: "A plain-language Calcutta-friendly explanation of how AI made a serious breakthrough on Paul Erdős’s unit distance problem, and why it matters without turning mathematics into temple smoke."
+description: 'A plain-language explanation of AI''s work on Erdős''s unit distance problem, the geometry of dots, and the limits of mathematical hype.'
 date: "2026-06-06"
+thumbnailAlt: 'Charcoal drawing of an elderly man and a seated reader facing a board covered with connected dots and geometric diagrams.'
 thumbnail: "/images/Compress_20260606_154743_3738.jpg"
 category: "Science"
 tags: ["Algebraic Number Theory","Paul Erdős","Unit Distance","Proper Response","Distance Problem","Erdős","Dots","AI","Mathematics","Unit"]

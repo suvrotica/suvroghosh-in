@@ -6,6 +6,7 @@ category: "Short Fiction"
 tags: ["Iron Rod","Haripada","Kedar","Mili","Gecko","Belly","Tok","Canal","Wall","Tok-tok"]
 published: true
 color: "sickly green"
+thumbnailAlt: 'Charcoal drawing of a giant lizard-like creature looming over prone human figures in a ruined street.'
 thumbnail: "/images/Compress_20260606_053211_1558.jpg"
 ---
 

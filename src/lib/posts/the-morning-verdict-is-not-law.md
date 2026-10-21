@@ -3,6 +3,7 @@ title: "The Morning Verdict Is Not Law"
 description: "A darkly funny Calcutta essay on older depression, morning self-disgust, neural weather, and the small procedural rebellion of surviving the first hour."
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_143000_0691.jpg"
+thumbnailAlt: "Charcoal illustration of a fish beside a dangling bare fishhook."
 category: "Mental Health"
 tags: ["Bank Balance","Depression","Exhibit","Verdict","Bankruptcy","Fate","Weather","Mind","Mirror","Suffering"]
 published: true

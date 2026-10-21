@@ -7,6 +7,7 @@ tags: ["Tea Stall","Arka","Rishav","Hair","Keshjol","Sachet","Mother","K-Index",
 published: true
 color: "black"
 thumbnail: "/images/Compress_20260602_095341_1784.jpg"
+thumbnailAlt: "Charcoal illustration of people engulfed in tangled hair beside a small table and bottle."
 ---
 
 <TTS />

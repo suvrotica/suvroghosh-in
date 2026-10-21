@@ -1,8 +1,9 @@
 ---
 title: "The Great Unemployment of the Soul"
-description: "A feverish, serpentine monologue from a burnt-out Bengali polemicist in Calcutta, ruminating on AI, obsolescence, and the grotesque comedy of human necessity in an age of algorithmic displacement."
+description: "A feverish Calcutta monologue on AI, unemployment and obsolescence, as a burnt-out Bengali polemicist questions human necessity in an automated age."
 date: "2026-06-22"
 thumbnail: "/images/Compress_20260622_182829_9457.jpg"
+thumbnailAlt: "A heavily textured portrait of a man's face in black, yellow, red and blue."
 category: "Personal Essay"
 tags: ["Canceled Bruised Burnt","Silicon Valley","Cloud Nine","Human Beings","Pyramid","Fungal","Utterly","Bacterial","Seceding","Calcutta"]
 published: true

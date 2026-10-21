@@ -1,8 +1,9 @@
 ---
 title: "Failing Well Without Looking Successful"
-description: "A system-level essay on why repeated failure is often the real ingredient of learning, even though Curriculum Vitae culture, family expectation, and institutional respectability are built to hide it."
+description: "An essay on learning through repeated failure and honest feedback, and why CVs, family expectations and respectable institutions hide the process."
 date: "2026-05-01"
 thumbnail: "/images/Compress_20260430_194445_5279.jpg"
+thumbnailAlt: "A skull-faced figure sits beside a kettle, teacup and plate of small skulls under a bare bulb in a charcoal drawing."
 category: "Society"
 tags: ["Mud Teaches","Failed Attempts","Formal Rule","Lived Reality","Failure","Fail","Shallow","Reveal","Signal","Taught"]
 published: true

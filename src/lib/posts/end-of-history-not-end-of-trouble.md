@@ -1,11 +1,12 @@
 ---
 title: "The End of History, and Other Overconfident Announcements"
-description: "A skeptical, readable reflection on Fukuyama’s End of History thesis, liberal democracy, capitalism, fascism, recognition, and why reading a powerful idea does not mean surrendering one’s brain to it."
+description: 'A skeptical personal reading of Fukuyama''s End of History thesis, examining liberal democracy, capitalism, fascism, and recognition.'
 date: "2026-06-01"
 category: "Ideas"
 tags: ["Liberal Democracy","Francis Fukuyama","Market Capitalism","Liberal","Democracy","Fukuyama","Capitalism","Fascism","History","End"]
 published: true
 color: "#4F46E5"
+thumbnailAlt: 'A man reads at a crowded desk in an old room, beside hanging coats and a red curtain opening onto a city street.'
 thumbnail: "/thumbnail/art-end-of-history-not-end-of-trouble.jpg"
 ---
 

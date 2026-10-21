@@ -1,8 +1,9 @@
 ---
 title: "My Father, Samarendra Kumar Ghosh, and the Family That Came Home with a Few Clothes"
-description: "A personal essay on Samarendra Kumar Ghosh, his discipline, his generous faith, and a Bengali family line that travelled from Bikrampur to Rangoon, Naihati, and Sinthi through war, work, loss, and memory."
+description: "A son's remembrance of Samarendra Kumar Ghosh, his disciplined and generous faith, and a Bengali family history shaped by migration, war and loss."
 date: "2026-06-08"
 thumbnail: "/photos/Compress_20260608_083349_9832.jpg"
+thumbnailAlt: "An older man in a yellow sleeveless sweater holds a red checked mug while reading a newspaper."
 category: "Personal Essay"
 tags: ["Kumar Ghosh","Hundred Rupees","Ghosh","Father","Rangoon","Kumar","Grandfather","Dhaka","Naihati","Sinthi"]
 published: true

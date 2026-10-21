@@ -1,7 +1,8 @@
 ---
 title: "The Animals That Did Not Know Smiling"
-description: "When a cheap brand of children's crayons floods Kolkata, the drawings begin to climb out of school notebooks and apartment walls. A failed illustrator follows the trail through markets, balconies, hospitals, and old family guilt."
+description: 'A Kolkata horror story about cheap children''s crayons, drawings that leave the page, and a failed illustrator confronting old family guilt.'
 date: "2026-06-02"
+thumbnailAlt: 'Charcoal drawing of a tall, thin cat with a wide grin, large round eyes, and a curling tail among sparse plants.'
 thumbnail: "/images/Compress_20260602_090456_6566.jpg"
 category: "Short Fiction"
 tags: ["Happy Jaanu","Jaanu Wax Colours","Mira Asked","Human Eye","Mira","Nandita","Ishaan","Crayons","Crayon","Wax"]

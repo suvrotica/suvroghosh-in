@@ -1,8 +1,9 @@
 ---
 title: "The Second Rain"
-description: "When two impossible cloudbursts strike Calcutta within three hours, a bookbinder tries to reach his daughter through a city filling like a locked room. The water brings back not only bodies, but names the living had taught themselves not to hear."
+description: "A bookbinder tries to reach his daughter as two cloudbursts flood Calcutta in this horror story of rising water and names the living have buried."
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_164005_5829.jpg"
+thumbnailAlt: "People struggle through floodwater beside a tram as towering curtains of rain engulf a city street in a charcoal drawing."
 category: "Short Fiction"
 tags: ["Red Ribbons","Projection Room","Tram Wires","Medicine Shop","Rent Money","Piu","Nirmal","Farida","Bela","Mukherjee-mashi"]
 published: true

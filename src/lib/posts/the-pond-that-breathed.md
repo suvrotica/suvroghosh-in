@@ -1,12 +1,13 @@
 ---
 title: "The Pond That Breathed"
-description: "A municipal mosquito worker in Calcutta discovers that the city’s oldest enemy has been remade in a hidden pond. As the swarm rises, his private grief becomes the bait."
+description: "A grieving municipal mosquito worker finds a hidden pond breeding a changed enemy in this Calcutta horror story of a rising swarm and private loss."
 date: "2026-06-09"
 category: "Short Fiction"
 tags: ["Chandra Pukur","Bamboo Platform","Tram Depot","Fogging Machine","Haripada Thought","Haripada","Nandita","Pond","Sen","Cylinders"]
 published: true
 color: "green"
 thumbnail: "/images/Compress_20260609_080959_9483.jpg"
+thumbnailAlt: "Giant mosquitoes hover over a crowded city beside a river and steel bridge as a man watches in a charcoal drawing."
 ---
 
 <TTS />

@@ -1,12 +1,13 @@
 ---
 title: "The North-Facing Room"
-description: "During a June heat wave, a solar storm knocks Calcutta dark, and a decent man in a sealed apartment block must decide whom he can save. What moves through the dead wires may be weather, memory, or something older than electricity."
+description: "A solar storm darkens Calcutta during a heat wave, forcing one man to ration shelter in this horror story of memory and neglect."
 date: "2026-06-07"
 category: "Short Fiction"
 tags: ["Azure Nest","Shantiniketan Apartments","Courier Boy","North-Facing Room","Tram Wires","Partha","Noor","North-Facing","Basu","Shantiniketan"]
 published: true
 color: "ember"
 thumbnail: "/images/Compress_20260607_123944_4675.jpg"
+thumbnailAlt: "Charcoal illustration of a screaming man beneath a blazing sun in a ruined street with fallen bodies."
 ---
 
 <TTS />

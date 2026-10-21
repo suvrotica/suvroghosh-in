@@ -1,12 +1,13 @@
 ---
 title: "The Humming Under the Bandage"
-description: "An NRI family returns from Texas to Calcutta carrying a small, unnoticed horror. In the city’s heat, among stray animals, leaking drains, and old family wounds, something hungry discovers abundance."
+description: "A family returning from Texas carries an unnoticed infestation into Calcutta in this horror story of wounds, grief, and hungry larvae."
 date: "2026-06-05"
 category: "Short Fiction"
 tags: ["Brass Bowl","Nine Years","Arun","Bela","Nandita","Mira","Calf","Purnima","Bandage","Flies"]
 published: true
 color: "oxblood"
 thumbnail: "/images/Compress_20260605_153151_1076.jpg"
+thumbnailAlt: "Charcoal illustration of a segmented, bristly larva with a skull-like head on a textured background."
 ---
 
 <TTS />

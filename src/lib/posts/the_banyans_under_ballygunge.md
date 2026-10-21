@@ -1,12 +1,13 @@
 ---
 title: "The Banyans Under Ballygunge"
-description: "A grieving botanist plants shade trees along Calcutta’s broken pavements, hoping to cool the city that took his wife. When entire lanes begin sinking into root-darkness, he must learn what kind of shade he has made."
+description: "A grieving botanist's shade-tree project turns sinister as roots swallow Calcutta's lanes in this horror story of loss and the cost of cooling a city."
 date: "2026-06-09"
 category: "Short Fiction"
 tags: ["Aerial Roots","Ananya Roy","Tea Stall","Nirmal","Malini","Roots","Saplings","Root","Ananya","Pavement"]
 published: true
 color: "Green"
 thumbnail: "/images/Compress_20260609_093627_7182.jpg"
+thumbnailAlt: "A man sits beside a tree whose tangled roots spread through a deep chasm beneath a city pavement in a charcoal drawing."
 ---
 
 <TTS />

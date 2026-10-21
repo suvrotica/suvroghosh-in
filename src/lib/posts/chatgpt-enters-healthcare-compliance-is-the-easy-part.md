@@ -1,8 +1,9 @@
 ---
 title: "ChatGPT Enters Healthcare, and Compliance Is the Easy Part"
-description: "OpenAI’s healthcare platform is important not because it makes artificial intelligence medically trustworthy, but because it finally wraps the model in governance, evidence retrieval, access control, and contractual accountability. The harder problem remains the meaning of the data passing through it."
+description: "A Calcutta essay on ChatGPT's healthcare pitch, the attention economy's hunger for novelty, and the patient craft of maintaining useful systems."
 date: "2026-07-21"
 thumbnail: "/photos/Compress_20260721_033941_1365.jpg"
+thumbnailAlt: "Top-down photograph of a black mug of orange-coloured tea on grey woven fabric, casting a long shadow."
 category: "Healthcare IT"
 tags: ["Feels Scientific","Plastic Chair","Creator","Novelty","OpenAI","Framework","Craft","Healthcare","Proof","Pretense"]
 published: true

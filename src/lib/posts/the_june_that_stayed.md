@@ -1,12 +1,13 @@
 ---
 title: "The June That Stayed"
-description: "A heat dome settles over Calcutta and refuses to move. As electricity fails and the city begins to cook, a man in an old apartment building discovers the heat may not be weather at all."
+description: "A Calcutta horror story about a heat dome that will not move, failing electricity and a man who suspects his apartment's heat is more than weather."
 date: "2026-06-03"
 category: "Short Fiction"
 tags: ["Heat Dome","Delivery Bag","Arindam","Nandita","Rafiq","Mira","Heat","Gel","Roof","Delivery"]
 published: true
 color: "burnt orange"
 thumbnail: "/images/Compress_20260603_032454_4137.jpg"
+thumbnailAlt: "People slump on balconies above a crowded city lane beneath a dark, turbulent sky in a charcoal drawing."
 ---
 
 <TTS />

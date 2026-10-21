@@ -1,8 +1,9 @@
 ---
 title: "The Curious Day When the Sun Pauses and Humanity Stretches"
-description: "World Yoga Day and the Summer Solstice share a date, but the connection runs deeper than social media poses and ceremonial greetings. It is a story of astronomy, history, biology, and the strange human urge to find meaning in the sky."
+description: "An essay linking World Yoga Day with the northern summer solstice, exploring Earth's tilt, seasonal light and the human search for meaning in the sky."
 date: "2026-06-21"
 thumbnail: "/images/Compress_20260621_171233_3434.jpg"
+thumbnailAlt: "A smiling, round-bodied figure sits cross-legged with four arms and palms joined above its head and chest in a charcoal drawing."
 category: "Science and Society"
 tags: ["Yoga","Solstice","Sun","June","Earth","Summer"]
 published: true

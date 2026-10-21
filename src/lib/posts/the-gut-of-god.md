@@ -7,6 +7,7 @@ tags: ["Anandomoy Baba","Free Spoon","Baba Eyes","Nirmal","Tublu","Amrit-Gut","S
 published: true
 color: "Ochre"
 thumbnail: "/images/Compress_20260609_150923_3785.jpg"
+thumbnailAlt: "Charcoal illustration of a distorted face with an enormous mouth full of pointed teeth."
 ---
 
 <TTS />

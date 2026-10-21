@@ -1,7 +1,8 @@
 ---
 title: "Tea"
-description: "A clear-eyed guide to what Darjeeling Orange Pekoe actually means, what first flush and second flush are, why muscatel tea smells the way it does, and how black tea, green tea, oolong, white tea, and matcha differ at the level of leaf handling rather than romance."
+description: "A guide to Darjeeling flushes, Orange Pekoe and muscatel flavour, explaining how leaf processing distinguishes black, green, oolong and other teas."
 thumbnail : "/images/IMG-20260424-WA0002.jpg"
+thumbnailAlt: "A seated man holds a cup beside his impossibly wide-open mouth under a hanging bare bulb in a charcoal drawing."
 date: "2026-04-24"
 category: "food-and-culture"
 tags: ["Orange Pekoe","Japanese Green","Plucking Standard","Second Flush","Black Tea","Leaf","Darjeeling","Flush","Pekoe","Matcha"]

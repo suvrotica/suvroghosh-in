@@ -1,8 +1,9 @@
 ---
 title: "Samir Ranjan Das and the Visual Mind"
-description: "A personal essay on a PhD advisor, Bengal’s habit of losing brilliant minds, visual thinking, AI, inequality, and the strange business of trying to remain intellectually alive from the edge of Kolkata."
+description: "A personal essay remembering PhD advisor Samir Ranjan Das, connecting visual thinking with Bengal's lost talent, AI, inequality and intellectual survival."
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_202547_7320.jpg"
+thumbnailAlt: "Painted portrait of a balding man with a short grey beard and a pale checked shirt against a textured background."
 category: "Personal"
 tags: ["Stony Brook","Samirda","University","PhD","Samir","Stony","Brook","Minds","Wireless","Inequality"]
 published: true

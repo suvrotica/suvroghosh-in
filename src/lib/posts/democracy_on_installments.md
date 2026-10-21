@@ -1,8 +1,9 @@
 ---
 title: "Democracy on Installments"
-description: "A fifty-one-year-old Bengali man watches a march near Jantar Mantar dissolve into tear gas, arithmetic, television theatre and the familiar administrative pulverization of citizenship."
+description: "A satirical Calcutta essay follows a televised Jantar Mantar protest through tear gas, party arithmetic, and battered citizenship."
 date: "2026-07-21"
 thumbnail: "/thumbnail/Compress_20260721_122416_6834.jpg"
+thumbnailAlt: "Giant cockroaches crawl over a weathered masonry structure with curved walls and staircases."
 category: "Personal Essay"
 tags: ["Jantar Mantar","Party President","Jantar","Mantar","Petition","Supporters","Lathi","Acceleration","Democracy","Television"]
 published: true

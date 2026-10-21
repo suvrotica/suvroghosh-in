@@ -1,8 +1,9 @@
 ---
 title: "The SpudCell and the Border of Life"
-description: "A deep dive into SpudCell, a bottom-up synthetic cell capable of growth, genome replication, and division, and what it reveals about the nature of life, engineering, and the blurry boundary between the living and the non-living."
+description: "An essay examining SpudCell's reported growth, genetic replication and division, and the uneasy boundary between assembled chemistry and life."
 date: "2026-07-11"
 thumbnail: "/images/Compress_20260711_014421_1403.jpg"
+thumbnailAlt: "A luminous green and gold cell-like form narrows into two rounded lobes, with smaller spheres floating nearby."
 category: "Science"
 tags: ["Amino Acids","Transfer RNAs","Craig Venter","Potato-Shaped Droplet","Venter Institute","SpudCell","Ribosomes","Genome","Cell","Genetic"]
 published: true

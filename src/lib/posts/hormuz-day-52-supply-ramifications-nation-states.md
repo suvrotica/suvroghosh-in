@@ -1,12 +1,13 @@
 ---
 title: "Hormuz, Day 52"
-description: "A system-level look at how a prolonged Strait of Hormuz disruption propagates through energy, fertilizer, food, healthcare, transport, finance, and state capacity—and why the damage is asymmetric across countries."
+description: "An analysis of how prolonged Hormuz disruption spreads through fuel, fertiliser, food and hospitals, exposing unequal pressures on state capacity."
 date: "2026-04-21"
 category: "geopolitics"
 tags: ["Weaker Currencies","Reuters Reported","Fertilizer","Gulf","LNG","Hormuz","Reuters","Freight","Imports","Inflation"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/art-hormuz-day-52-supply-ramifications-nation-states.jpg"
+thumbnailAlt: "A tanker truck and stacked cargo stand at a port overlooking ships on sunlit water."
 ---
 
 <TTS />

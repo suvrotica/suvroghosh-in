@@ -1,8 +1,9 @@
 ---
 title: "CRISPR: The Tiny Bacterial Trick That May Change Human Destiny"
-description: "CRISPR sounds like a villain from a science fiction film, but its story begins in bacteria, yogurt vats, and scientific accidents. This is the strange and exciting history of how humanity discovered a way to edit life itself."
+description: "The story of CRISPR, from bacterial defences and yoghurt research to gene editing, with an accessible account of its discovery and implications."
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260512_181005_5984.jpg"
+thumbnailAlt: "Pencil sketch of a DNA double helix surrounded by handwritten scientific notes."
 category: "Science"
 tags: ["Human Beings","CRISPR","Bacteria","Genetic","DNA","Genes","Scientists","Humanity","Bacterial","Biology"]
 published: true

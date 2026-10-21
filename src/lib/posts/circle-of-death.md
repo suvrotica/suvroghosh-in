@@ -1,12 +1,13 @@
 ---
 title: "Circle of Death"
-description: "After losing his job to the man he was ordered to train, a Texas programmer builds a revenge that escapes its target. In Calcutta and San Antonio, two men discover that old humiliation can travel farther than justice."
+description: "A Texas programmer takes revenge after training his replacement, unleashing a threat that reaches Calcutta in this dark thriller."
 date: "2026-06-07"
 category: "Short Fiction"
 tags: ["San Antonio","Colin","Arindam","Meera","Luz","Garage","Mother","Texas","Worm","Generator"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260607_080940_0677.jpg"
+thumbnailAlt: "Charcoal illustration of a crouching man surrounded by bodies, computer equipment, and thick loops of cable."
 ---
 
 <TTS />

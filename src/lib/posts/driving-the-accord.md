@@ -3,6 +3,7 @@ title: "Driving the Accord"
 description: "A personal essay about an old Honda Accord, vanished Texas highways, Calcutta room-life, loneliness, dependable objects, and the strange loyalty of machines."
 date: "2026-01-01"
 thumbnail: "/photos/Compress_20260510_235335_5542.jpg"
+thumbnailAlt: "A man wearing dark sunglasses sits at the steering wheel of a car beside a sunlit road."
 category: "personal"
 tags: ["San Antonio","Rice Cooker","Accord","Car","Honda","Bottle","Books","Texas","Cooker","Rice"]
 published: true

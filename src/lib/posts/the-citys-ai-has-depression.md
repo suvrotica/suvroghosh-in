@@ -7,6 +7,7 @@ tags: ["Objective Function","Tea Stall","Salt Lake","Servers Hummed","Direct Cha
 published: true
 color: "#2c3e50"
 thumbnail: "/images/Compress_20260719_094247_7744.jpg"
+thumbnailAlt: "Charcoal illustration of a man at a computer facing a giant human face formed from towers and circuitry."
 ---
 
 <TTS />

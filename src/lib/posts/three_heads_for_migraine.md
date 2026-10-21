@@ -1,11 +1,12 @@
 ---
 title: "Three Heads for Migraine"
-description: "A new Calcutta headache medicine promises relief for the city’s splitting pain, until its cure becomes gruesomely literal. A medical consultant follows the first cases and discovers the side effect was not an accident."
+description: 'A Calcutta medical consultant investigates a headache drug with a gruesomely literal effect in this horror story about a concealed side effect.'
 date: "2026-06-04"
 category: "Short Fiction"
 tags: ["Ishani Roy","Splitting Headache","Tea Stall","Power Cut","Arka","Trinocet-MR","Heads","Prabal","Asterion","Migraine"]
 published: true
 color: "crimson"
+thumbnailAlt: 'Charcoal portrait of a sweater-clad figure with three joined faces, one looking forward and two in profile.'
 thumbnail: "/images/Compress_20260604_131043_3530.jpg"
 ---
 

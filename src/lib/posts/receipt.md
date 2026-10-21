@@ -7,6 +7,7 @@ tags: ["Seventy Million","Trailer Door","Darlene","Jessie","Crab","Crabs","Dent"
 published: true
 color: "#8B4513"
 thumbnail: "/images/Compress_20260708_060120_0194.jpg"
+thumbnailAlt: "A crablike creature with large raised claws and a human skull at its centre in a charcoal drawing."
 ---
 
 <TTS />

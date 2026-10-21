@@ -1,7 +1,8 @@
 ---
 title: "Label: Road"
-description: "A displaced Calcutta software professional takes a desperate image-labeling job and begins making one private correction to the machine’s vision. The city later discovers that some mistakes do not stay inside a spreadsheet."
+description: 'A Calcutta story about a displaced software worker whose sabotaged image labels teach driverless vehicles to treat people as road.'
 date: "2026-06-11"
+thumbnailAlt: 'Charcoal drawing of a weary man at a desk, studying a screen of road images in a room crowded with tangled forms.'
 thumbnail: "/images/Compress_20260613_160142_2362.jpg"
 category: "Short Fiction"
 tags: ["Blue Shirt","Nirmal Asked","Indian Roads","Anirban","Nirmal","Bela","Shuttle","Road","Taxi","Sensor"]

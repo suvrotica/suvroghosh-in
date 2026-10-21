@@ -1,12 +1,13 @@
 ---
 title: "Silk Season"
-description: "After a new household pesticide turns Calcutta’s huntsman spiders into beautiful, woman-sized creatures, lonely men begin vanishing into old apartment walls. A pest-control technician who helped spread the spray must decide whether desire is a trap, a punishment, or merely the city learning a new language."
+description: "A Calcutta horror story in which a household pesticide transforms spiders into woman-sized creatures, drawing its salesman into a web of desire."
 date: "2026-06-04"
 category: "Short Fiction"
 tags: ["Prabir Babu","Huntsman Spider","Spider Women","Rice Cooker","Ritwick","Mala","Shuddho-Home","Spiders","Spray","Silk"]
 published: true
 color: "indigo"
 thumbnail: "/images/Compress_20260604_155930_0658.jpg"
+thumbnailAlt: "A spider with a woman's face and long hairy legs crouches on a cracked floor in a dark charcoal drawing."
 ---
 
 <TTS />

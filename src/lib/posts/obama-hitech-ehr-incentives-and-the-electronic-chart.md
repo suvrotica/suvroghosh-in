@@ -1,8 +1,9 @@
 ---
 title: "Obama, HITECH, and the Day the American Medical Chart Was Dragged Into Electricity"
-description: "How Obama’s 2008 health IT promise became the 2009 HITECH incentive machine, why EHR adoption suddenly accelerated, and why digitizing healthcare solved one problem while quietly creating several new ones."
+description: "An essay tracing Obama's health IT agenda through HITECH incentives and rapid EHR adoption, including the costs of digitising American medicine."
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_202821_1802.jpg"
+thumbnailAlt: "Painted portrait of a man in a dark suit, white shirt and blue tie against a textured blue and ochre background."
 category: "Healthcare IT"
 tags: ["Medication Lists","EHR Adoption","Health Information","Patient Safety","American Healthcare","EHR","HITECH","Healthcare","Health","Obama"]
 published: true

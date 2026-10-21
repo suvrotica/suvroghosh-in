@@ -3,6 +3,7 @@ title: "Clay Stoves, Hormuz, and the Price of Breath in Calcutta"
 description: "A street-level Calcutta essay on clay stoves, LPG prices, cooking smoke, poor air quality, and the private arithmetic of damaged lungs."
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_172338_8335.jpg"
+thumbnailAlt: "Monochrome drawing of a steaming metal pot on a clay stove amid thick smoke."
 category: "Calcutta Life"
 tags: ["Clay Stove","Smoke","Stove","Adjust","Clay","Lungs","Cough","Air","Fuel","Cardboard"]
 published: true

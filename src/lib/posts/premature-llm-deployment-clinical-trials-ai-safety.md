@@ -1,12 +1,13 @@
 ---
 title: "The Chatbot Arrived Before the Seatbelt"
-description: "A plainspoken, skeptical, and balanced post on why LLMs should not be rushed into intimate, clinical, emotional, and child-facing use before society knows how to test them properly."
+description: "An essay questioning the rush to use LLMs with children, patients and lonely adults, arguing for better testing before intimate and clinical deployment."
 date: "2026-05-11"
 category: "AI Safety"
 tags: ["LLMs","Chatbot","Pill","Users","Conversation","Engagement","Boring","User","Drug","Software"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg"
+thumbnailAlt: "A man studies a laptop at a desk lit by a lamp, with a calculator, notebook and darkening window nearby."
 ---
 
 <TTS />

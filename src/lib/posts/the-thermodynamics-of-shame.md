@@ -1,7 +1,8 @@
 ---
 title: "The Thermodynamics of Shame: A South Calcutta Canticle"
-description: "A fevered, unwashed monologue from a decaying South Calcutta flat, where childhood Bengali fairy tales collide with the American Semiquincentennial, rice cooker theology, and the slow erosion of a man who consults for crumbs."
+description: 'A South Calcutta personal essay weaving childhood fairy tales, America''s 250th birthday, rice-cooker steam, and the shame of precarious work.'
 date: "2026-07-04"
+thumbnailAlt: 'A Bengali paperback with a colourful illustrated cover lies beside a black mug of tea on grey fabric.'
 thumbnail: "/photos/Compress_20260704_231636_6936.jpg"
 category: "Essay"
 tags: ["Rice Cooker","Fox","Loose-Leaf","Silverfish","Envied","Pages","Believe","South","Except","Believed"]

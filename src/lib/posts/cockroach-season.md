@@ -6,6 +6,7 @@ category: "Short Fiction"
 tags: ["Raka Lahiri","Forty Percent","Tea Stall","Nilotpal","Mili","Raka","Cockroaches","Clinic","Lahiri","Nil"]
 published: true
 color: "black"
+thumbnailAlt: 'Charcoal profile of a scowling man with a thick, hairy tongue curling out of his mouth.'
 thumbnail: "/images/Compress_20260601_111522_2382.jpg"
 ---
 

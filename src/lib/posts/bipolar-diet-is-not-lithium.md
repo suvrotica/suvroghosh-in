@@ -1,8 +1,9 @@
 ---
 title: "The Bipolar Diet Is Not Lithium"
-description: "A readable, skeptical Calcutta essay on bipolar disorder, diet, supplements, probiotics, sleep, caffeine, alcohol, mindfulness, and why cabbage cannot replace serious treatment."
+description: "A skeptical essay on bipolar disorder, diet, supplements, sleep, and the limits of treating a serious mood illness through food."
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_094716_6304.jpg"
+thumbnailAlt: "Charcoal illustration of a man swallowing a metal gas cylinder through an enlarged mouth."
 category: "Mental Health"
 tags: ["Oxidative Stress","Systematic Review","Bipolar Disorder","Bipolar","Probiotics","Magnesium","Sleep","Mood","Alcohol","MBCT"]
 published: true

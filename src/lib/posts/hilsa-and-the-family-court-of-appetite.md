@@ -1,7 +1,8 @@
 ---
 title: "Hilsa and the Family Court of Appetite"
-description: "A Calcutta Bengali essay on hilsa, mustard oil, memory, river ecology, family politics, fish markets, class, appetite, and the strange sovereignty of ilish over the Bengali lunch plate."
+description: 'A Calcutta essay on hilsa as food, family memory, and cultural obligation, from mustard-scented kitchens to changing river ecology.'
 date: "2026-06-18"
+thumbnailAlt: 'Charcoal drawing of a sari-clad woman cleaning fish on a curved cutting blade beside a shallow bowl.'
 thumbnail: "/images/Compress_20260618_141556_6381.jpg"
 category: "Culture"
 tags: ["Mustard Oil","Hilsa","Rivers","Mustard","Fish","Swims","Salmon","River","Plate","Fishmonger"]

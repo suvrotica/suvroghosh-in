@@ -6,6 +6,7 @@ category: "Short Fiction"
 tags: ["Buck Teeth","White-Sari Woman","BEST STATEMENT","PRICE TOLERANCE","Damp Patch","Baba","Buck","Devotees","Grin","Statements"]
 published: true
 color: "maroon"
+thumbnailAlt: 'Charcoal portrait of a broad, round-faced figure smiling and holding up one hand.'
 thumbnail: "/images/Compress_20260619_150418_8216.jpg"
 ---
 

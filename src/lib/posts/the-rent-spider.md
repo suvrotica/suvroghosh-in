@@ -7,6 +7,7 @@ tags: ["Terrace Room","Somnath","Nirmal","Minati","Rini","Father","Fractions","T
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260614_112536_6388.jpg"
+thumbnailAlt: "A spider with a man's face, hanging mouthparts and long angular legs faces forward in a charcoal drawing."
 ---
 
 <TTS />

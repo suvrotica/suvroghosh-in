@@ -1,12 +1,13 @@
 ---
 title: "The Ten-Kilo Children"
-description: "In a Calcutta maternity clinic, newborns begin arriving impossibly heavy after their mothers are given a cheap prenatal vitamin. A doctor follows the pattern and discovers that hunger, once packaged, is difficult to stop."
+description: "A doctor traces impossibly heavy newborns to a cheap prenatal vitamin in this Calcutta horror story of a clinic, packaged hunger and its spreading cost."
 date: "2026-06-05"
 category: "Short Fiction"
 tags: ["Supramatrin Gold","Matri Sadan","Grey Paste","Nursing Home","Tea Stall","Nandini","Ruma","Piyali","Supramatrin","Tapas"]
 published: true
 color: "maroon"
 thumbnail: "/images/Compress_20260605_074511_1368.jpg"
+thumbnailAlt: "A sleeping infant is cradled in two large, wrinkled hands in a charcoal drawing."
 ---
 
 <TTS />

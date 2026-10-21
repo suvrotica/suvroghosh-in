@@ -1,12 +1,13 @@
 ---
 title: "Phage at Beliaghata"
-description: "A Bengali doctoral researcher studying antibiotic resistance wakes to find his body replaced by something older, smaller, and hungry. In a damp Calcutta lane, his private grief becomes a living cure with a price."
+description: "In this Calcutta horror story, an antibiotic-resistance researcher wakes in a strange new body, becoming a cure with a price."
 date: "2026-06-08"
 category: "Short Fiction"
 tags: ["Sharmila Sen","Arka","Chatterjee","Mili","Freezer","Bacteria","Sharmila","Phage","Mother","Vial"]
 published: true
 color: "indigo"
 thumbnail: "/images/Compress_20260608_045909_9124.jpg"
+thumbnailAlt: "Charcoal illustration of a creature with a human head, a long ribbed neck, a bulbous body, and thin jointed legs."
 ---
 
 <TTS />

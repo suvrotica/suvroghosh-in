@@ -1,8 +1,9 @@
 ---
 title: "The Cockroach Party and the Politics of Being Insulted"
-description: "A fact-based, readable look at how a satirical online party turned an insult into a symbol of youth anger, exam anxiety, democratic distrust, and platform censorship in India."
+description: "An essay on India's Cockroach Janata Party, tracing how a disputed insult became online satire amid youth anger, exam anxiety and distrust."
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_205830_0242.jpg"
+thumbnailAlt: "A giant cockroach in a cap addresses a crowd from a microphone beside Hindi posters in a charcoal drawing."
 category: "Politics"
 tags: ["Fifteen Million","Social Media","Young Indians","CJP","Cockroach","India","Young","Indians","Satire","Party"]
 published: true

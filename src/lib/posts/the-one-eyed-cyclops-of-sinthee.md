@@ -6,6 +6,7 @@ category: "Short Fiction"
 tags: ["Tin Box","Poltu Put","Single Eye","Brass Torch","Poltu","Bhattacharya","Jhuma","Playground","Eye","Chatterjee"]
 published: true
 color: "#D2691E"
+thumbnailAlt: 'Charcoal portrait of a long-faced figure with one large eye, a pointed tuft of hair, and exposed front teeth.'
 thumbnail: "/images/Compress_20260704_010515_5707.jpg"
 ---
 

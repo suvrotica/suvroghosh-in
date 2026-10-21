@@ -1,12 +1,13 @@
 ---
 title: "The Men Who Became Water"
-description: "During a murderous Calcutta heat wave, a decent man sells cheap cooling patches to survive, until sweat wakes something inside the gel. Soon the city’s skin begins to turn clear."
+description: "Cheap cooling patches turn skin transparent during a Calcutta heat wave in this horror story about a tea seller and his customers."
 date: "2026-06-09"
 category: "Short Fiction"
 tags: ["Desperate Enough","Cold Storage","Tea Stall","Nirmal","Rupa","Joydeep","Gel","Patch","Hari","Transparent"]
 published: true
 color: "blue"
 thumbnail: "/images/Compress_20260609_095409_9999.jpg"
+thumbnailAlt: "Charcoal portrait of a hooded, deeply wrinkled face with large black eyes and an open mouth."
 ---
 
 <TTS />

@@ -1,11 +1,12 @@
 ---
 title: "English Is Not a Subject. It Is a Passport."
-description: "A plain-spoken Calcutta essay on why English has become more important than ever for students, workers, readers, writers, and anyone trying to survive science, commerce, software, and AI."
+description: 'A Calcutta essay on English as a working language for science, software, commerce, and AI, alongside the enduring value of mother tongues.'
 date: "2026-06-04"
 category: "Education"
 tags: ["Mother Tongue","Ask Whether","Dangerous Means","English","Participant","Manuals","Writing","Language","Write","AI"]
 published: true
 color: "indigo"
+thumbnailAlt: 'A woman works with open books, a notebook, and a laptop at a desk beside green shutters in a college building.'
 thumbnail: "/thumbnail/art-english-is-not-a-subject-it-is-a-passport.jpg"
 ---
 

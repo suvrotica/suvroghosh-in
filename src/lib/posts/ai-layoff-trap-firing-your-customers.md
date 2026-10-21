@@ -1,12 +1,13 @@
 ---
 title: "The AI Layoff Trap: How Companies Can Fire Their Own Customers"
-description: "A readable dissection of The AI Layoff Trap, the paper arguing that AI-driven layoffs may create a demand-collapse loop where rational firms become collectively foolish."
+description: "An accessible reading of The AI Layoff Trap, exploring how firms' AI-driven job cuts could reduce customer spending and create a demand-collapse loop."
 date: "2026-05-09"
 category: "AI Economics"
 tags: ["AI Layoff","Layoff Trap","Firm","Firms","AI","Automation","Demand","Automates","Spending","Company"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg"
+thumbnailAlt: "Self-service kiosks stand inside a quiet cafe while office workers walk past its glass front."
 ---
 
 <TTS />

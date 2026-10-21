@@ -1,8 +1,9 @@
 ---
 title: "The Ground We Dream On"
-description: "A reflective essay from Calcutta on the invisible geology of risk—how cities, startups, and ambitions build towers on unstable ground, and what it means to wake up to the shaking only after it has already begun."
+description: "A personal Calcutta essay connects trembling ground, startup failure, healthcare IT, and the danger of mistaking confidence for knowledge."
 date: "2026-06-25"
 thumbnail: "/images/Compress_20260625_133137_7976.jpg"
+thumbnailAlt: "Charcoal illustration of a screaming human head emerging from a teacup on a stool amid collapsing buildings."
 category: "Personal Essay"
 tags: ["Long Term","Ground","Tremor","Build","Tower","Term","Subsidence","Foundation","Towers","Solid"]
 published: true

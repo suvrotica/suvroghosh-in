@@ -1,12 +1,13 @@
 ---
 title: "The Rain in Anirban’s Head"
-description: "In the boondocks of Calcutta, a failed healthcare entrepreneur’s depression rises from him as a black weather system and rains private dread over the city. What soaks everyone is not water but memory, shame, and something Calcutta has been storing for years."
+description: "A failed Calcutta entrepreneur's depression becomes a dark cloud raining memory and shame over the city in this horror story of private despair."
 date: "2026-06-04"
 category: "Short Fiction"
 tags: ["Inspector Ghosh","Source Node","Tea Stall","Anirban","Debolina","Rini","SomaLink","Cloud","Rain","Inspector"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260604_081644_4173.jpg"
+thumbnailAlt: "A man stands on a balcony as shadowy human forms rain from dark clouds over a city in a charcoal drawing."
 ---
 
 <TTS />

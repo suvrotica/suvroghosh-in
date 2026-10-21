@@ -1,7 +1,8 @@
 ---
 title: "Politics Is a Machine for Spoiling Ordinary People"
-description: "Politicians are rarely clean fairy-tale villains. More often, politics turns normal human weakness into public damage by rewarding vanity, tribal loyalty, opaque money, bureaucratic evasion, and power without immediate consequence."
+description: "A satirical essay on political incentives, opaque money, tribal loyalty, and the machinery that turns ordinary weakness into public harm."
 thumbnail : "/images/Compress_20260428_160801_1383.jpg"
+thumbnailAlt: "Charcoal portrait of a stern man in a cap with his hand raised to his lips."
 date: "2026-04-28"
 category: "Politics"
 tags: ["Electoral Bonds","Political Finance","Citizens","Donor","Politicians","Electoral","Party","Bonds","Public","Parties"]

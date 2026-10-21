@@ -1,11 +1,12 @@
 ---
 title: "The Voice Under the Loudspeaker"
-description: "A modest Calcutta electrician discovers that a celebrated godman’s divine voice has a machine hidden inside it. But the deeper sound is not the one coming from the amplifier."
+description: 'A Calcutta electrician investigates the machinery behind a godman''s divine voice in this horror story of amplified faith and a deeper sound.'
 date: "2026-06-09"
 category: "Short Fiction"
 tags: ["Baba Shabdananda","Tea Stall","Nirmal","Baba","Mili","Shabdananda","Prabal","Bangle","Pandal","Wire"]
 published: true
 color: "Charcoal"
+thumbnailAlt: 'Charcoal profile of a man with a stretched open jaw, large teeth, and a long curling tongue.'
 thumbnail: "/images/Compress_20260609_161137_7456.jpg"
 ---
 

@@ -1,12 +1,13 @@
 ---
 title: "Body Rent"
-description: "A bankrupt middle-aged Bengali in the southern edge of Calcutta begins to suspect his rented room is not enclosing him but becoming him. As rent, shame, illness, and neighborhood gossip tighten around his life, he discovers what the city has been collecting from its discarded men."
+description: "A bankrupt man suspects his rented Calcutta room is becoming his body in this horror story about rent, bipolar illness and the men a city discards."
 date: "2026-06-07"
 category: "Short Fiction"
 tags: ["Chair Leg","Broken Chair","Nirmal-babu","Arindam","Minati-di","Terrace","Tap","Knocking","Father","Opened"]
 published: true
 color: "Charcoal"
 thumbnail: "/images/Compress_20260607_131646_6816.jpg"
+thumbnailAlt: "A gaunt, wide-eyed man has a long distorted face and a thick rope around his neck in a charcoal drawing."
 ---
 
 <TTS />

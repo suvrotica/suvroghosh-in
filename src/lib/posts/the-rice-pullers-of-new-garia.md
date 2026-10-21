@@ -1,12 +1,13 @@
 ---
 title: "The Rice Pullers of New Garia"
-description: "When a trail of strange white rice and a missing bicycle pump lead three friends to the Kabi Subhash Metro, they uncover a cunning fraud that only a child's curiosity can crack."
+description: "Three friends follow magnetic rice and a missing bicycle pump to Kabi Subhash Metro in a Calcutta adventure story about curiosity and a clever fraud."
 date: "2026-07-04"
 category: "Short Fiction"
 tags: ["Faded Sari","Inspector Banerjee","Low Chord","Loudspeaker Man","Mustard Oil","Jojo","Mimi","Polo","Harmonium","Rice"]
 published: true
 color: "#E67E22"
 thumbnail: "/images/Compress_20260704_193744_4418.jpg"
+thumbnailAlt: "Three elongated, skull-like faces have cavernous open mouths in a monochrome charcoal drawing."
 ---
 
 <TTS />

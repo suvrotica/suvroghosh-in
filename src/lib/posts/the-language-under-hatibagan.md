@@ -1,8 +1,9 @@
 ---
 title: "The Language Under Hatibagan"
-description: "When a man's head opens in a crowded Calcutta crossing and something inside begins speaking, a failed teacher must decide whether to protect a stranger, expose a lie, or listen to the city’s oldest debt."
+description: "A stranger's head opens at Hatibagan crossing in this Calcutta horror story, drawing a failed teacher into voices, lies, and old debts."
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_105104_4133.jpg"
+thumbnailAlt: "A crowd at Hatibagan Crossing watches a translucent head rise from a man's open skull beneath a Bengali speech bubble."
 category: "Short Fiction"
 tags: ["Prabir Sen","Hatibagan Crossing","Red Thread","Clay Cup","Cinema Hall","Mrinmoy","Raka","Prabir","Listener","Tublu"]
 published: true

@@ -1,8 +1,9 @@
 ---
 title: "The Vitruvian Man: A Naked Man, Two Shapes, and Our Old Hunger for Order"
-description: "Leonardo da Vinci’s Vitruvian Man is not just a famous Renaissance drawing. It is a compact, beautiful, slightly ridiculous argument about the human body, geometry, perfection, and why messy people keep dreaming of clean proportions."
+description: "An essay exploring Leonardo's Vitruvian Man, its circle and square, and the enduring desire to find geometric order in the untidy human body."
 date: "2026-05-27"
 thumbnail: "/images/Compress_20260527_231749_9546.jpg"
+thumbnailAlt: "A large-bellied man in a cap and draped trousers spreads his arms and legs inside a circle and square in a charcoal drawing."
 category: "Art History"
 tags: ["Leonardo","Drawing","Vitruvius","Vitruvian","Square","Circle","Geometry","Perfection","Roman","Proportions"]
 published: true

@@ -1,8 +1,9 @@
 ---
 title: "The Small Republic of No One"
-description: "A middle-aged Calcutta essay about childhood ambition, adult invisibility, failure without fireworks, and the stubborn little dignity of still noticing the world clearly."
+description: "A personal Calcutta essay on childhood ambition, middle-aged invisibility, and the small dignity of continuing to notice the world."
 date: "2026-06-03"
 thumbnail: "/photos/Compress_20260603_094652_2288.jpg"
+thumbnailAlt: "A young boy sits behind a birthday cake at a table beside a greeting card."
 category: "Personal"
 tags: ["Adjust","Respected","Merit","Childhood","Middle-Class","Books","Serious","Large","Lower","Funny"]
 published: true

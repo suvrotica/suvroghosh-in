@@ -3,6 +3,7 @@ title: "Ebola From First Principles: The Small Thread That Can Frighten a Planet
 description: "A plain, lively biology introduction to Ebola, its major strains, why Bundibugyo is causing fresh concern, and what someone in Calcutta should actually worry about."
 date: "2026-05-19"
 thumbnail: "/images/Compress_20260519_015740_0133.jpg"
+thumbnailAlt: "Black-and-white microscopic image of a long, looping threadlike virus."
 category: "Public Health"
 tags: ["Public Health","Healthcare Workers","Outbreak Response","Ebola","Outbreak","Virus","Bundibugyo","RNA","Zaire","Uganda"]
 published: true

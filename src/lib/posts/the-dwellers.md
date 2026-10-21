@@ -7,6 +7,7 @@ tags: ["Loudon Street","Film Dialogue","Boy Mother","Tania's Father","Keya","Aru
 published: true
 color: "#6B1C1C"
 thumbnail: "/images/Compress_20260622_224433_3263.jpg"
+thumbnailAlt: "An elderly woman's screaming head on thick, clawed legs emerges from a round tunnel in a charcoal drawing."
 ---
 
 <TTS />

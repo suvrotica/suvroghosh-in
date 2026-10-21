@@ -2,6 +2,7 @@
 title: "The Dhoti, the Toothache, and the Great Bengali Flapping Problem"
 description: "A comic personal essay about toothache, loneliness, Bengali dress, ancestral irritation, and the strange theater of middle-class Calcutta life."
 date: "2026-05-16"
+thumbnailAlt: 'Monochrome drawing of a man in a dhoti and embroidered coat holding a closed umbrella and looking upward.'
 thumbnail: "/images/Compress_20260516_191129_9936.jpg"
 category: "Personal"
 tags: ["Dhoti","Toothache","Safe"]

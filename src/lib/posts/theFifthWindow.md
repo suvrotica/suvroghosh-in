@@ -1,11 +1,12 @@
 ---
 title: "The Fifth Window"
-description: "After a software professional returns to his old Calcutta building from a psychiatric hospital, a sequence of deaths begins to arrange itself like a mathematical proof. A retired schoolteacher, a young delivery rider, and the city itself slowly discover that numbers can be both pattern and prison."
+description: 'A retired maths teacher investigates deaths arranged like a numerical proof after a neighbour returns home in this Calcutta psychological thriller.'
 date: "2026-06-04"
 category: "Short Fiction"
 tags: ["Purnima Basu","Malabika","Ritwik","Ira","Purnima","Naren","Dutta","Parimal","ArcNest","Murders"]
 published: true
 color: "Charcoal"
+thumbnailAlt: 'Charcoal drawing of a large snail with a spiralling shell, an elongated human face, pointed horns, and a tooth-filled mouth.'
 thumbnail: "/images/Compress_20260604_085305_5318.jpg"
 ---
 

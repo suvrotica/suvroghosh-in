@@ -7,6 +7,7 @@ tags: ["Courier Boy","Shambhu Dutta","Dutta Whispered","Wooden Box","Tea Stall",
 published: true
 color: "Crimson"
 thumbnail: "/images/Compress_20260618_153952_2294.jpg"
+thumbnailAlt: "Charcoal portrait of a man whose face is covered with blisters, nodules, and sores."
 ---
 
 <TTS />

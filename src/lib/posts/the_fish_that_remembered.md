@@ -1,11 +1,12 @@
 ---
 title: "The Fish That Remembered"
-description: "When whole fish begin forcing their way out of Calcutta bodies, a widowed cook follows their impossible migration to a buried pond and an old guilt the city thought it had digested."
+description: 'A widowed cook follows fish emerging from Calcutta bodies toward a buried pond and an old civic guilt in this unsettling horror story.'
 date: "2026-06-13"
 category: "Short Fiction"
 tags: ["Benu Babu","Aqua Residency","Returned Fish","Anima","Paltu","Fish","Haru","Benu","Lahiri","Mrs"]
 published: true
 color: "charcoal"
+thumbnailAlt: 'Charcoal drawing of a fish-headed figure in a long coat, leaning backward with hands at its hips.'
 thumbnail: "/images/Compress_20260613_183058_8488.jpg"
 ---
 

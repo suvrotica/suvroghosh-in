@@ -1,8 +1,9 @@
 ---
 title: "Rain Before Rain"
-description: "A billionaire’s private resurrection park near the wetlands promises extinct Bengal as entertainment. When the animals begin to remember a country before people mattered, a woman hired to keep them calm must decide what should stay buried."
+description: "A horror story about a resurrection park near Calcutta, where a woman hired to calm revived animals confronts memories older than human rule."
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_085848_8252.jpg"
+thumbnailAlt: "Charcoal drawing of large prehistoric-looking animals advancing through a flooded, ruined landscape under storm clouds."
 category: "Short Fiction"
 tags: ["Sadhan Kaku","Flightless Bird","Son School","Fish Meal","Malati Found","Malati","Sadhan","Basu","Animals","Borobilli"]
 published: true

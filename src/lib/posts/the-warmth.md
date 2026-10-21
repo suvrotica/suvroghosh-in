@@ -7,6 +7,7 @@ tags: ["Eight Months","Arun","Jacket","Compartment","Bapi","Toddler","Mala","Ore
 published: true
 color: "#5C0000"
 thumbnail: "/images/Compress_20260705_022650_0245.jpg"
+thumbnailAlt: "A figure with dark eyes and an elongated open mouth wears a coat riddled with black-edged holes in a charcoal drawing."
 ---
 
 <TTS />

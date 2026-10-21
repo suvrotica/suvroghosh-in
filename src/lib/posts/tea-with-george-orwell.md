@@ -3,6 +3,7 @@ title: "Tea with George Orwell"
 description: "A nostalgic Calcutta essay on a schoolteacher’s praise, diary-writing, short essays, poems, and the late arrival of George Orwell as a severe but useful companion."
 date: "2026-05-16"
 thumbnail: "/photos/Compress_20260516_184128_8866.jpg"
+thumbnailAlt: "A white floral mug of amber tea rests on a paperback copy of George Orwell's Essays."
 category: "Essay"
 tags: ["Ira Paul","Actually Happening","School Memory","Orwell","Diary","Motihari","Tea","Happening","Writing","Repeats"]
 published: true

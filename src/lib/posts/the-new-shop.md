@@ -3,6 +3,7 @@ title: "The New Shop"
 description: "A widowed proofreader orders sweets from a discount shop for his niece's wedding, and discovers that Calcutta's oldest appetite is served in white, round parcels."
 date: "2026-07-13"
 thumbnail: "/images/Compress_20260713_213758_8476.jpg"
+thumbnailAlt: "A man with a bulging eye bites a huge round mass covered in holes and writhing strands in a charcoal drawing."
 category: "Short Fiction"
 tags: ["White Spheres","Young Man","Anirban","Mala","Sweets","Tiya","Groom","Hall","Balaram","Rosogolla"]
 published: true

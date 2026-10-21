@@ -1,6 +1,6 @@
 ---
 title: "The Lizard in Your Pen"
-description: "How a slow venomous desert reptile gave medicine a peptide that helped crack open the GLP-1 age, how we turned metabolic therapy into a pre-wedding business, and why scarcity keeps haunting abundance."
+description: "A satire tracing Gila-monster exendin-4 into GLP-1 medicine, then into wedding-season weight-loss ambitions, commercial appetite and scarcity."
 date: "2026-04-15"
 thumbnail: "/thumbnail/art-the-lizard-in-your-pen.jpg"
 thumbnailAlt: "A Gila monster in the desert beside a GLP-1 injection pen"

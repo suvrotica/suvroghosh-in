@@ -3,6 +3,7 @@ title: "When Brains Are Bright but Systems Are Blind"
 description: "A reflection on human potential, broken incentive structures, AI alignment, and why environments shape intelligence more than intelligence shapes outcomes."
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260512_193939_9310.jpg"
+thumbnailAlt: "Charcoal illustration of a battered kettle, cooking pots, and small glasses on a dark counter."
 category: "Artificial Intelligence"
 tags: ["Outlives","Systems","Minds","Environments","Optimize","Alignment","Environment","Drift","Intelligence","Rewards"]
 published: true

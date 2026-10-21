@@ -1,8 +1,9 @@
 ---
 title: "The Last Notification"
-description: "When a large asteroid is announced to be heading for Calcutta, a hospital data clerk notices that the city has begun recording deaths before they happen. In a city where everyone survives by looking away, the sky becomes only the second-worst thing falling."
+description: "In this Calcutta science-fiction story, an asteroid alert leads a hospital data clerk to deaths recorded before they happen."
 date: "2026-05-26"
 thumbnail: "/images/Compress_20260529_130736_6731.jpg"
+thumbnailAlt: "A woman holding a phone looks up at a fiery asteroid above a crowded Calcutta street."
 category: "Short Fiction"
 tags: ["Delivery Rider","Shantimoy MEMORIAL","Coaching Center","Debabrata Sen","Hard Enough","Mira","Rafiq","Asteroid","Shantimoy","Debabrata"]
 published: true

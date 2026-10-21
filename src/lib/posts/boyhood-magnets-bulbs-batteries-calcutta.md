@@ -2,6 +2,7 @@
 title: "The Magnet, the Bulb, and the Battery"
 description: "A science memoir about boyhood curiosity, cheap magnets, glowing bulbs, and the small private university that existed on the floor of a Calcutta childhood."
 date: "2026-05-09"
+thumbnailAlt: 'Charcoal drawing of a bespectacled boy studying an open book beneath a hanging light bulb.'
 thumbnail: "/images/Compress_20260509_172719_9415.jpg"
 category: "Personal"
 tags: ["Bulb","Magnet","Battery","Magnetism","Filament","Magnets","Circuit","Glow","Current","Objects"]

@@ -1,8 +1,9 @@
 ---
 title: "The Weight of Pages"
-description: "A reflective essay on the compulsion to acquire books one cannot afford, set against the humid, unrelenting backdrop of Calcutta, where memory fails and paper accumulates."
+description: "A personal Calcutta essay on buying more books than one can read, failing memory, financial strain, and the weight of accumulated pages."
 date: "2026-06-27"
 thumbnail: "/photos/Compress_20260627_142204_4685.jpg"
+thumbnailAlt: "A brightly illustrated Bengali book lies beside a blue-and-white mug of milky tea on dark fabric."
 category: "Culture"
 tags: ["Glass Bead Game","Remember Choosing","Forgetting Curve","Books","Contentment","Book","Remember","Read","Constitute","Ebbinghaus"]
 published: true

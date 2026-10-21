@@ -1,7 +1,8 @@
 ---
 title: "The Epistemic Iceberg Effect"
-description: "A reflection on why learning often reveals only the visible crust of a subject while the real mass remains hidden beneath assumptions, history, tacit skill, and unknown unknowns."
+description: "An essay on the hidden assumptions, tacit skills and historical accidents beneath textbook knowledge, and why expertise begins with uncertainty."
 thumbnail : "/images/IMG-20260425-WA0003.jpg"
+thumbnailAlt: "A sailboat passes an iceberg whose vast submerged mass fills the dark water in a monochrome drawing."
 date: "2026-04-25"
 category: "knowledge"
 tags: ["Iceberg","Learning","Learner","Knowledge","Visible","Exceptions","Subject","Diagram","Certainty","Negative"]

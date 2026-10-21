@@ -1,11 +1,12 @@
 ---
 title: "The Temperature of Attention"
-description: "During a June heat wave in Calcutta, a hospital data contractor discovers that the city’s poorest bodies are not merely dying from heat, but being edited out of consciousness itself."
+description: 'A Calcutta horror story in which a hospital data contractor discovers a heat wave erasing the city''s poorest people from consciousness.'
 date: "2026-06-05"
 category: "Short Fiction"
 tags: ["Azure Heights","North Star","Low ATTENTION DETECTED","ATTENTION INDEX","Server Room","Arindam","Mina","Hospital","Server","Rickshaw-Wala"]
 published: true
 color: "copper"
+thumbnailAlt: 'Charcoal drawing of distressed people and a hand-pulled rickshaw in a crowded street beneath a huge blazing sun.'
 thumbnail: "/images/Compress_20260605_050121_1354.jpg"
 ---
 

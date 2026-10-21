@@ -7,6 +7,7 @@ tags: ["Grey Shine","Garbage Mountain","Blue Cloth","Nirmal Asked","Debu","Nirma
 published: true
 color: "#4D4030"
 thumbnail: "/images/Compress_20260609_100753_3619.jpg"
+thumbnailAlt: "A towering rubbish-covered creature with a screaming face rises on a city street in a charcoal drawing."
 ---
 
 <TTS />

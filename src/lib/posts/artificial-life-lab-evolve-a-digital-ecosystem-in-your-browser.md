@@ -1,6 +1,6 @@
 ---
 title: "Artificial Life Lab: Evolve a Digital Ecosystem in Your Browser"
-description: "Grow a seeded digital ecosystem in the browser: microbes inherit traits, forage, reproduce with mutation, face selection pressure, drift, predators, ageing, and death."
+description: "Explore a seeded artificial-life garden where digital microbes inherit traits, mutate, compete for food and face predators, ageing and chance."
 date: "2026-07-20"
 category: "Visualizations"
 tags: ["Prey Arms Race","Sensory Radius","Reproduction Threshold","Keeping Mutation Bounded","Abundant Garden","Population","Mutation","Garden","Energy","Harshness"]

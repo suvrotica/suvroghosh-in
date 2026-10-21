@@ -1,6 +1,6 @@
 ---
 title: "Hello, Observable: Your First Living D3 Visualization"
-description: "Build a responsive, animated sine-wave explorer from first principles while learning Observable cells, D3 selections, SVG marks, scales, data joins, interaction, and browser-safe embedding."
+description: "Build a sine-wave explorer while learning Observable cells, D3 scales, SVG marks, data joins, and reactive controls."
 date: "2026-07-19"
 category: "Visualizations"
 tags: ["Data Visualization","Interactive Learning","Reactive State","Visual Mark","Screen Coordinates","D3","SVG","Observable","JavaScript","Visualization"]

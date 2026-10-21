@@ -6,6 +6,7 @@ category: "Short Fiction"
 tags: ["Young Doctor","Bappa Dutta","Nirmalya Asked","Twelve Men","Nirmalya","Pascal","Mili","Bappa","Clinic","Doctor"]
 published: true
 color: "dark green"
+thumbnailAlt: 'Monochrome drawing of a round, tentacled organism surrounded by smaller textured forms.'
 thumbnail: "/images/Compress_20260605_081913_3915.jpg"
 ---
 

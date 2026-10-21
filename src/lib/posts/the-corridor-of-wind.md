@@ -1,8 +1,9 @@
 ---
 title: "The Corridor of Wind"
-description: "When an impossible EF5 tornado tears through Calcutta, a failed weather analyst searches the wreckage for his sister and finds that the city had been warned by the dead all along."
+description: "A failed weather analyst searches for his sister after an impossible tornado strikes Calcutta in this horror story of ignored warnings and the dead."
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_071217_7571.jpg"
+thumbnailAlt: "A huge tornado scatters debris over a dense city, with a bridge visible in the distance, in a charcoal drawing."
 category: "Short Fiction"
 tags: ["KOLKATA CIVIC WEATHER","Oxygen Concentrator","ACCOUNTABLE NODE","Phone Buzzed","Park Circus","Niloy","Mili","Imran","Rider","Tornado"]
 published: true

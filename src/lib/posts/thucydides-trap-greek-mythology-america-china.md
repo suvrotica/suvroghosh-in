@@ -1,8 +1,9 @@
 ---
 title: "The Thucydides Trap, Two Superpowers, and a Very Old Greek Headache"
-description: "A readable Calcutta-flavored essay on the Thucydides Trap, Greek mythology, Trump, Xi, America, China, fear, pride, empire, and why history does not repeat until foolish people help it along."
+description: "A satirical essay uses Greek history and mythology to examine US-China rivalry, fear, pride, and the limits of the Thucydides Trap."
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_061746_6927.jpg"
+thumbnailAlt: "Charcoal illustration of two ancient warriors confronting each other with spears and shields before ruined buildings."
 category: "Geopolitics"
 tags: ["Thucydides Trap","Thucydides","Sparta","War","Athens","Hubris","Trap","Disguised","Fear","Cassandra"]
 published: true

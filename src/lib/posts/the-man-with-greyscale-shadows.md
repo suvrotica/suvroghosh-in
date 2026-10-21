@@ -1,12 +1,13 @@
 ---
 title: "The Man with the Greyscale Shadows"
-description: "A Calcutta child follows a strange Bengali man whose body casts many grey shadows in the noon sun. What begins as a search for a missing kite becomes a small adventure about courage, fairness, and seeing what grown-ups choose not to notice."
+description: "Tuli follows a man with many grey shadows to recover her missing kite in this Calcutta adventure story about courage, fairness and overlooked lives."
 date: "2026-06-30"
 category: "Short Fiction"
 tags: ["Guava Tree","Seven Shadows","Pale Silver","Library Book","Blue Kite","Tuli","Kite","Nirmal-kaku","Paltu","Ronit-da"]
 published: true
 color: "charcoal"
 thumbnail: "/images/charcoal-horror-zigzag-presence.jpg"
+thumbnailAlt: "Repeated zigzag profiles merge beside a dark face with one pale eye in a charcoal drawing."
 ---
 
 <TTS />

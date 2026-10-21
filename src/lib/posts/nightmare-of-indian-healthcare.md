@@ -1,11 +1,12 @@
 ---
 title: "The Nightmare of Indian Healthcare for the Common Man"
-description: "India has world-class hospitals, brilliant doctors, and ambitious public schemes, yet ordinary illness can still become a family financial disaster. This post looks at healthcare in India from the street-level view of the patient who cannot buy his way out."
+description: 'A patient''s view of Indian healthcare, examining household costs, uneven access, public schemes, and the burden illness places on families.'
 date: "2026-05-11"
 category: "Healthcare"
 tags: ["Kidney Disease","Indian Healthcare","India","Hospital","Patient","Healthcare","Medicine","Disease","Hospitalization","Health"]
 published: true
 color: "#111827"
+thumbnailAlt: 'An elderly woman in a wheelchair sits with three people in a busy hospital corridor as a man studies paperwork.'
 thumbnail: "/thumbnail/art-nightmare-of-indian-healthcare.jpg"
 ---
 

@@ -2,6 +2,7 @@
 title: "The Lake That Lit Up Genes: Maracaibo, Memory, and Huntington’s Disease"
 description: "A human, slightly chaotic journey through Venezuela’s lightning lake and the unlikely genetic detective story that changed modern medicine."
 date: "2026-05-12"
+thumbnailAlt: 'Monochrome illustration of a textured DNA double helix over handwritten molecular diagrams and formulas.'
 thumbnail: "/images/Compress_20260512_191418_8592.jpg"
 category: "Science & Healthcare IT"
 tags: ["Huntington Disease","Lake Maracaibo","Huntington","Maracaibo","Disease","Gene","DNA","Marker","Lightning","Inheritance"]

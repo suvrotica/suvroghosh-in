@@ -7,6 +7,7 @@ tags: ["Bhola Baba","Donation Box","Bell Rang","Baba Mat","Sanctum Wall","Nirmal
 published: true
 color: "Ochre"
 thumbnail: "/images/Compress_20260610_205242_2401.jpg"
+thumbnailAlt: "Charcoal illustration of a thick wormlike creature with a human face and rows of sharp teeth in a bamboo grove."
 ---
 
 <TTS />

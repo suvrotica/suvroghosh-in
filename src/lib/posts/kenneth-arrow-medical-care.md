@@ -7,6 +7,7 @@ tags: ["Adverse Selection","Public Provision","Moral Hazard","Medical Care","Uni
 published: true
 color: "#2c5282"
 thumbnail: "/thumbnail/art-kenneth-arrow-medical-care.jpg"
+thumbnailAlt: "A man holding papers sits in a clinic waiting area, with other people and an office counter beyond the doorway."
 ---
 
 <TTS />

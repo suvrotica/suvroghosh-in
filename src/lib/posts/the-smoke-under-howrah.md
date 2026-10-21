@@ -2,6 +2,7 @@
 title: "The Smoke Under Howrah"
 description: "When smoke begins rising from cracks near Howrah Bridge, a disgraced geologist follows the old city’s whispers down into its buried fire."
 date: "2026-06-03"
+thumbnailAlt: 'People gather on a wet riverside street as flames and thick smoke rise beside a steel bridge at dusk.'
 thumbnail: "/images/Compress_20260603_122054_4966.jpg"
 category: "Short Fiction"
 tags: ["Strand Road","Howrah Bridge","Eastern Habitat","Amended Report","Caught Fire","Paromita","Arka","Riddhi","Ash","Bridge"]

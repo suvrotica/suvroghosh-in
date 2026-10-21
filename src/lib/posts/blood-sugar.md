@@ -1,12 +1,13 @@
 ---
 title: "Blood Sugar"
-description: "A Calcutta child with a missing tiffin carrier meets Arjun of Flat 3B, a lonely man who can taste the hidden sweetness and trouble in the people around him. Together they must solve a small building mystery before fear turns into something worse."
+description: "A Calcutta adventure story in which a child's missing tiffin leads to a reclusive neighbour who can taste hidden sweetness and trouble in other people."
 date: "2026-06-28"
 category: "Short Fiction"
 tags: ["Mrs Banerjee","Alur Dom","Mrs Gomes","Glucose Biscuits","Red Ribbon","Rini","Arjun","Neel","Ronit","Tiffin"]
 published: true
 color: "#8B0000"
 thumbnail: "/images/Compress_20260628_232447_7373.jpg"
+thumbnailAlt: "A broad-faced man bares two long tusks beside an open mouth with a second set of teeth in a charcoal drawing."
 ---
 
 <TTS />

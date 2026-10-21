@@ -1,12 +1,13 @@
 ---
 title: "Faces in the Municipal Water"
-description: "When a water-borne parasite enters Kolkata’s drinking-water network, the city begins losing the one thing even poverty, politics, and shame had left intact: the human face."
+description: "A Calcutta horror story about a water-quality analyst confronting a parasite in the drinking supply as people's faces begin to fall away."
 date: "2026-06-03"
 category: "Short Fiction"
 tags: ["Chhaya Bari","Niloy Phone","Specimen Box","Tea Stalls","Niloy Thought","Mira","Dutta","Ashfaq","Worms","Reservoir"]
 published: true
 color: "slate"
 thumbnail: "/images/Compress_20260603_144743_3968.jpg"
+thumbnailAlt: "Charcoal drawing of a screaming, decaying face with tangled strands across its skin on a city street."
 ---
 
 <TTS />

@@ -1,12 +1,13 @@
 ---
 title: "Calcutta’s Sugar Problem Is Not Only Sugar"
-description: "A technically serious look at how sweets, rice, refined starch, hidden sugars, obesity, insulin resistance, diabetes, kidney disease, and fatty liver are part of one metabolic system in Bengali life."
+description: "An essay on Bengal's rice, sweets and refined starch, examining their links to insulin resistance and the wider burden of metabolic disease."
 date: "2026-04-29"
 category: "Health & Society"
 tags: ["Insulin Resistance","Fatty Liver","Blood Pressure","Glucose","Metabolic","Liver","Insulin","Carbohydrate","Protein","Sugar"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/art-calcutta-carbohydrate-problem.jpg"
+thumbnailAlt: "A hand reaches into a rice-filled platter surrounded by curry, fish, bread, biscuits and sweets."
 ---
 
 <TTS />

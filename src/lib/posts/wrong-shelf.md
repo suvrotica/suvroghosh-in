@@ -1,12 +1,13 @@
 ---
 title: "Wrong Shelf"
-description: "A Calcutta preschool receives a carton of donated picture books that should never have entered a classroom. As children fall asleep and do not wake, a teacher follows the trail of paper into the city’s newest appetite."
+description: "A preschool teacher traces a carton of donated picture books after children fail to wake in this Calcutta horror story of paper and predatory appetite."
 date: "2026-06-01"
 category: "Short Fiction"
 tags: ["Yellow Duck","Duck Book","Reading Corner","Good Morning Moon","Tea Stall","Nandita","Mou","Tia","Books","Children"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260601_045407_7366.jpg"
+thumbnailAlt: "A human skull with long spider legs clings to a slanting wooden surface in a dark charcoal drawing."
 ---
 
 <TTS />

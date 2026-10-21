@@ -1,8 +1,9 @@
 ---
 title: "Simpson's Paradox I See Around Me"
-description: "A Calcutta resident reflects on how statistical illusion mirrors everyday contradictions in a world of deferred AI rollouts, distant wars, and the quiet mathematics of survival."
+description: "A Calcutta resident's reflective essay on Simpson's paradox, connecting reversals in grouped data with neighbourhood change, AI and daily survival."
 date: "2026-06-27"
 thumbnail: "/images/Compress_20260627_201325_5812.jpg"
+thumbnailAlt: "A hand-drawn Simpson's paradox diagram shows two rising group trends and a falling combined trend."
 category: "Statistics"
 tags: ["Simpson's Paradox","Suggest Otherwise","United States","Disaggregated Reality","Aggregate Number","Aggregate","Disaggregated","Particular","Paradox","Simpson's"]
 published: true

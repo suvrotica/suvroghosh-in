@@ -1,12 +1,13 @@
 ---
 title: "The Pressure in Sinthee"
-description: "In a small South Sinthee lane, people begin dying from impossible swelling, their bodies rupturing from within. As the sickness spreads across Calcutta, one man discovers the parasite is not merely biological—it has learned the city’s oldest habit."
+description: "In this Calcutta horror story, impossible swelling spreads from South Sinthee as a parasite learns the habits of a city built on adjustment."
 date: "2026-06-02"
 category: "Short Fiction"
 tags: ["South Sinthee","Bodies Popped","Tea Stall","Anirban","Riju","Pal","Minati","Worms","Sinthee","Dhoom"]
 published: true
 color: "sickly green"
 thumbnail: "/images/Compress_20260602_075554_4121.jpg"
+thumbnailAlt: "Charcoal illustration of a screaming man with an enormously distended belly in a narrow city street."
 ---
 
 <TTS />

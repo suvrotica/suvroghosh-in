@@ -1,7 +1,8 @@
 ---
 title: "China Rose Like A Factory, India Is Rising Like A Bazaar"
-description: "China and India are both rising, but they are not climbing the same ladder. China adapted through disciplined state-led manufacturing; India is adapting through services, digital public infrastructure, youthful disorder, and stubborn democratic improvisation."
+description: 'An essay comparing China''s manufacturing-led rise with India''s services, digital infrastructure, and democratic improvisation through evolution.'
 date: "2026-05-26"
+thumbnailAlt: 'Charcoal drawing of a long-nosed creature facing a man in a cap, with clawed hands beneath its chin.'
 thumbnail: "/images/Compress_20260526_083225_5452.jpg"
 category: "Geopolitics"
 tags: ["China Rise","China","India","Manufacturing","UPI","Export","Queues","Investment","Plus","Variation"]

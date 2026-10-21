@@ -3,6 +3,7 @@ title: "The Alpine Glow of Embezzlement"
 description: "A manic-depressive rant on the arithmetic of civic sedation, Swiss banking, and the woodlice theology of modern governance."
 date: "2026-07-13"
 thumbnail: "/images/Compress_20260713_212019_9276.jpg"
+thumbnailAlt: "A large man holding a bottle and a smoking cigarette balances on one foot at a cliff's edge in a charcoal drawing."
 category: "Essay"
 tags: ["Data Centers","Woodlice","Swiss","Excise","Villas","Manic","Oblivion","Sedation","Orbital","Holy"]
 published: true

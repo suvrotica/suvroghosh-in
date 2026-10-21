@@ -1,8 +1,9 @@
 ---
 title: "How To Start Machine Learning Without Buying Magic Beans"
-description: "A frank, readable guide for confused beginners who want to enter machine learning, AI, and LLMs without pretending the mathematics, statistics, and hard thinking can be skipped."
+description: "A beginner guide to machine learning through mathematics, statistics, Python, SQL, and the habit of examining model errors."
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_043636_6238.jpg"
+thumbnailAlt: "Charcoal illustration of a thin man balancing on a spinning top above a precarious stack of stones."
 category: "AI Education"
 tags: ["Linear Algebra","ML","AI","Learn","Model","LLM","Linear","Probability","Data","Python"]
 published: true

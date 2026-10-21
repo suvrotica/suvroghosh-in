@@ -7,6 +7,7 @@ tags: ["Neighbor Radio","Pradeep","Cane","Harvesters","Sun","Village","Harvest",
 published: true
 color: "#5D4037"
 thumbnail: "/images/Compress_20260707_202310_0018.jpg"
+thumbnailAlt: "Charcoal illustration of an enormous seated figure holding a cleaver beside a cluster of bamboo."
 ---
 
 <TTS />

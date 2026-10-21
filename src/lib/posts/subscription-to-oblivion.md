@@ -3,6 +3,7 @@ title: "Subscription to Oblivion"
 description: "A manic-depressive rant on algorithmic invisibility, agentic AI, and the grotesque comedy of being marked obsolete in the panopticon of contemporary apathy."
 date: "2026-07-12"
 thumbnail: "/images/Compress_20260712_085232_2670.jpg"
+thumbnailAlt: "Charcoal drawing of a round, bulging-eyed fish with rough scales, a spiny back and an open mouth."
 category: "Essay"
 tags: ["Agentic","Persistent","Shunya","Basket","Void","Trams","Upon","Perform","Algorithmic","Agents"]
 published: true

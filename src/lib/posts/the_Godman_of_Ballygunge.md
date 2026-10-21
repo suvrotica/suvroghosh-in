@@ -7,6 +7,7 @@ tags: ["Baba Shibananda","Blue Curtains","Silver Cup","Riddhi Asked","Riddhi","B
 published: true
 color: "ash violet"
 thumbnail: "/images/Compress_20260605_054753_3428.jpg"
+thumbnailAlt: "A robed figure with a flower-covered head and an elongated open mouth raises one palm in a charcoal drawing."
 ---
 
 <TTS />

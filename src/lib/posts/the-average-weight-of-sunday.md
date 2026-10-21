@@ -1,12 +1,13 @@
 ---
 title: "The Average Weight of Sunday"
-description: "In a humid Calcutta where app food, imported office habits, and sweetened comfort have quietly colonized the body, a reluctant hospital data analyst notices that the city’s obesity epidemic has begun obeying impossible arithmetic."
+description: "In this Calcutta horror story, impossible weight gains expose a city shaped by food apps, sweetened comfort, and routine neglect."
 date: "2026-06-03"
 category: "Short Fiction"
 tags: ["SweetBelly Calm","Nine Hundred","Medical College","Ishani","Ananya","Rafiq","NutriNest","SweetBelly","Dessert","Polymer"]
 published: true
 color: "maroon"
 thumbnail: "/images/Compress_20260603_041131_1164.jpg"
+thumbnailAlt: "Charcoal illustration of a bloated, open-mouthed figure covered in lumps and seated on a chair."
 ---
 
 <TTS />

@@ -7,6 +7,7 @@ tags: ["Neel Soda","Blue Fluid","Keya","Bimal-da","Bottles","Blue","Nihar","Perf
 published: true
 color: "#1a3a5c"
 thumbnail: "/images/Compress_20260714_065333_3173.jpg"
+thumbnailAlt: "Charcoal illustration of a seated figure with an enormous belly and a torn side releasing dark shapes."
 ---
 
 <TTS />

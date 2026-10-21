@@ -7,6 +7,7 @@ tags: ["Number Four","Iron Rod","Goat Liver","Arunava","Sulekha","Mili","Paromit
 published: true
 color: "maroon"
 thumbnail: "/images/Compress_20260610_164136_6970.jpg"
+thumbnailAlt: "Two snarling reptilian creatures face one another in a dark charcoal drawing."
 ---
 
 <TTS />

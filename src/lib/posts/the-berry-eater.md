@@ -7,6 +7,7 @@ tags: ["Stone Slab","Hemanta Bose","Brass Bowl","Pratim","Rhea","Painting","Bish
 published: true
 color: "#3E2723"
 thumbnail: "/images/Compress_20260712_205045_5085.jpg"
+thumbnailAlt: "A hunched, hairy creature crouches over berries on a floating stone ledge in a charcoal drawing."
 ---
 
 <TTS />

@@ -1,12 +1,13 @@
 ---
 title: "The Thin-Fat Bengali and the Treacherous Little Belly"
-description: "A Kolkata street-level essay on the thin-fat Bengali body, insulin resistance, belly fat, rice, stress, muscle, and the quiet metabolic danger hiding under ordinary shirts."
+description: "A Calcutta essay examining the thin-fat Bengali body, abdominal fat and insulin resistance through everyday meals, stress and low muscle mass."
 date: "2026-05-10"
 category: "Health"
 tags: ["Insulin Resistance","Tea Stall","Fat","Insulin","Mishti","Muscle","Liver","Belly","Sugar","BMI"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/art-thin-fat-bellied-bengali-insulin-resistance.jpg"
+thumbnailAlt: "A man measures his waist beside a table with rice, biscuits and dumbbells, overlooking a sunlit street."
 ---
 
 <TTS />

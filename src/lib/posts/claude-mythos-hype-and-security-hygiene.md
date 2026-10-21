@@ -7,6 +7,7 @@ tags: ["Claude Mythos","Model Weights","Mythos","Model","Anthropic","Release","A
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-claude-mythos-hype-and-security-hygiene.jpg"
+thumbnailAlt: "A dragon-shaped shadow looms over server racks behind glass, beside an open door."
 ---
 
 <TTS />

@@ -1,12 +1,13 @@
 ---
 title: "The Protein Man"
-description: "In a humid Calcutta of hospitals, app deliveries, and old para gossip, a failed biotech trial returns as a hunger walking on two legs. A data man follows the trail and finds the city has been feeding something it does not want to name."
+description: "A healthcare data worker follows a trail of body parts to a failed biotech trial in this Calcutta horror story about a hunger the city has fed."
 date: "2026-05-29"
 category: "Short Fiction"
 tags: ["Meera","Kartik","Arunava","Lopa","LifeCrown","ANNAPURNA","K-19","Mansion","Gun","Signed"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260529_091946_6601.jpg"
+thumbnailAlt: "A broad-faced man with bulging eyes bares an unnaturally wide mouth full of pointed teeth in a charcoal drawing."
 ---
 
 <TTS />

@@ -7,6 +7,7 @@ tags: ["Young Men","Anirban","Nandita","Haradhan","Madan","Buro","Leela","Specta
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260608_113614_4700.jpg"
+thumbnailAlt: "A bald man in dark rectangular glasses has an unnaturally wide grin filled with sharp teeth in a charcoal drawing."
 ---
 
 <TTS />

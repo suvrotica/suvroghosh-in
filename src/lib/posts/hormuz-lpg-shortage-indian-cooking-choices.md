@@ -1,12 +1,13 @@
 ---
 title: "LPG debacle"
-description: "A system-level look at how Indian kitchens are adapting to the Liquefied Petroleum Gas shortage triggered by the Strait of Hormuz blockade, and what those choices reveal about energy, class, cooking, and resilience."
+description: "An essay on India's LPG shortage and the kitchen choices that expose limits in fuel supply, infrastructure, and household budgets."
 date: "2026-04-24"
 category: "energy"
 tags: ["Saves Fuel","Rice Dal","Indian Cooking","Pressure Cooker","LPG","Cooking","Induction","Fuel","PNG","Biogas"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/art-hormuz-lpg-shortage-indian-cooking-choices.jpg"
+thumbnailAlt: "A woman cooks beside an LPG cylinder and pressure cookers in a kitchen overlooking the city."
 ---
 
 <TTS />
