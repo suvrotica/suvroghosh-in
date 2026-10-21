@@ -14917,6 +14917,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
+		},
+		"src/lib/posts/the-water-turned.md": {
+			"bodyHash": "255b7b577266470e14945ebc0d8ab63198a95f7335ee90f72310f4e11cfd64d4",
+			"hashVersion": 2,
+			"revisionHash": "7347c2648db81ccb5f3791cc358451b573e5dfb8649bcfb5f550ba5716ccdb0d",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Horror",
+				"Body Horror",
+				"Diwali",
+				"Contamination",
+				"Desperation",
+				"Thirst",
+				"Psychological Horror",
+				"Guilt"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Horror",
+				"Body Horror",
+				"Diwali",
+				"Contamination",
+				"Desperation",
+				"Thirst",
+				"Psychological Horror",
+				"Guilt"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

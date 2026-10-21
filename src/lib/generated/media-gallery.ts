@@ -4514,6 +4514,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1086
 		},
 		{
+			"name": "the-water-turned.jpg",
+			"src": "/images/the-water-turned.jpg",
+			"bytes": 255811,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "the-year-we-breathed-her-in.jpg",
 			"src": "/images/the-year-we-breathed-her-in.jpg",
 			"bytes": 168143,

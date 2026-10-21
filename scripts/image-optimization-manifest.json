@@ -10246,6 +10246,22 @@
       "sourceHash": "f1dec40dce58d4a4bceb6073ab8262d9187227dad7f6717215932be362060ff2",
       "width": 1448
     },
+    "static/images/the-water-turned.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 255811,
+      "outputHash": "97d40cacaeecca2d5a9ea001377432b749acbe9943cfd84b25a36540f8e29a4a",
+      "psnrDb": 36.0,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 538557,
+      "sourceHash": "3939c4ccbc3861bdff7e3017f1abd3037af2442ad64de27cb9d3895848c3707b",
+      "width": 1672
+    },
     "static/images/the-year-we-breathed-her-in.jpg": {
       "format": "JPEG",
       "height": 576,
