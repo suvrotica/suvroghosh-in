@@ -251,8 +251,13 @@ test('child builds/tests/previews receive no provider, GitHub or encryption cred
 			NARRATION_STATE_KEY: 'private',
 			GIT_CONFIG_VALUE_0: 'AUTHORIZATION: private'
 		}),
-		{ headless: true, env: { PATH: '/bin' } }
+		{ headless: true, channel: 'chromium', env: { PATH: '/bin' } }
 	);
+	assert.deepEqual(browserLaunchOptions({ PATH: '/bin', PLAYWRIGHT_CHANNEL: ' chrome ' }), {
+		headless: true,
+		channel: 'chrome',
+		env: { PATH: '/bin', PLAYWRIGHT_CHANNEL: ' chrome ' }
+	});
 });
 
 test('automatic publication paths reject prose, credentials, source WAV and unrelated assets', () => {
@@ -729,6 +734,7 @@ test('workflow is main-only, free standard runner, durable-state serialized and 
 	assert.equal(workflow.concurrency['cancel-in-progress'], false);
 	const job = workflow.jobs['narrate-and-publish'];
 	assert.equal(job['runs-on'], 'ubuntu-24.04');
+	assert.equal(job.env.PLAYWRIGHT_CHANNEL, 'chromium');
 	assert.match(job.if, /refs\/heads\/main/u);
 	assert.match(job.if, /NARRATION_HOSTED_ENABLED/u);
 	assert.deepEqual(job.permissions, { contents: 'write', deployments: 'read' });

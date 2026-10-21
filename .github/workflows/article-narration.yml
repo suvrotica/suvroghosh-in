@@ -36,6 +36,7 @@ jobs:
       deployments: read
     env:
       CI: 'true'
+      PLAYWRIGHT_CHANNEL: 'chromium'
       NODE_OPTIONS: '--max-old-space-size=6144'
       IMAGE_OPTIMIZE_VERIFY_ONLY: '1'
       WORDCLOUD_VERIFY_ONLY: '1'

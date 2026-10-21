@@ -448,7 +448,13 @@ export async function verifyLiveArticle({
 }
 
 export function browserLaunchOptions(env = process.env) {
-	return { headless: true, env: publicChildEnvironment(env) };
+	// The workflow installs full Chromium with --no-shell. An explicit channel
+	// prevents Playwright from looking for the separate headless-shell binary.
+	return {
+		headless: true,
+		channel: env.PLAYWRIGHT_CHANNEL?.trim() || 'chromium',
+		env: publicChildEnvironment(env)
+	};
 }
 
 async function browserSmoke(manifests, { origin = PUBLIC_ORIGIN, env = process.env } = {}) {
