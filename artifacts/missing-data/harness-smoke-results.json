@@ -1,0 +1,54 @@
+{
+  "supplementalHarness": true,
+  "sevenDistinctMatrixRenders": 7,
+  "checks": [
+    {
+      "scenario": "Scattered holes",
+      "title": "Missing completely at random"
+    },
+    {
+      "scenario": "The observed clue",
+      "title": "Missing depending on observed information"
+    },
+    {
+      "scenario": "The unseen clue",
+      "title": "Missing depending on the missing value itself"
+    },
+    {
+      "scenario": "The vanishing cohort",
+      "title": "Dropout over time"
+    },
+    {
+      "scenario": "Silent instruments",
+      "title": "Entire missing variables"
+    },
+    {
+      "scenario": "An outage, then recovery",
+      "title": "Failed instruments"
+    },
+    {
+      "scenario": "Dark continents",
+      "title": "Selective nonresponse"
+    },
+    {
+      "audioContextsBeforeGesture": 0,
+      "audioContextsAfterGesture": [
+        "running"
+      ]
+    },
+    {
+      "downloadedReport": {
+        "missingCells": 528,
+        "rate": 0.34375,
+        "schema": 1
+      }
+    },
+    {
+      "shareReplay": true
+    },
+    {
+      "webglFallback": "WebGL is switched off for this visit. This 2D preview shows observed values only. The controls, numerical summaries,\n\t\t\t\t\t\t\tand downloads still work."
+    }
+  ],
+  "pageErrors": []
+}

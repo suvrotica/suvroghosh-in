@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "modelVersion": "missing-score-1",
+  "sourceHash": "2e4290245afa73913015f19c04944177c55e9357b903c230217702c53f040334",
+  "captureMode": "bundled-browser-source",
+  "provenance": "The actual seeded missing-data model and shared fingerprint Canvas renderer. The WebGL explorer and these plates use the same fixed score-point colours and provenance markers. PNG compression is lossless.",
+  "settings": {
+    "seed": 1847,
+    "scenario": "dropout",
+    "view": "time",
+    "rate": 0.4,
+    "strength": 2,
+    "imputation": "none",
+    "draw": 0,
+    "delta": 0,
+    "ordering": "dropout",
+    "reveal": false
+  },
+  "files": {
+    "missing-data-social.png": {
+      "width": 1200,
+      "height": 630,
+      "bytes": 54853,
+      "pixelSha256": "48461d5371762efd1eac36504ef4cd5c7c2f768eff73548abac79d59c56d8d4c"
+    },
+    "missing-data-poster.png": {
+      "width": 1800,
+      "height": 1300,
+      "bytes": 102914,
+      "pixelSha256": "16b0397691d6be54f6cdc24212f608961d78ecc5680ed6a3ff1333c3a3015c8e"
+    }
+  }
+}

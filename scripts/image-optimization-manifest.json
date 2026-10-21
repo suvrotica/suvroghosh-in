@@ -10971,6 +10971,36 @@
       "sourceHash": "67e3d1a4d26ad02871e3c6ff03ef1110be3c43e46e84b76ceb79dcb8a6d76ed0",
       "width": 1600
     },
+    "static/images/visualizations/missing-data/missing-data-poster.png": {
+      "format": "PNG",
+      "height": 1300,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1300,
+      "originalWidth": 1800,
+      "outputBytes": 102914,
+      "outputHash": "12e88d76d3c6ea80dc51bcc2c0d8827aa845c561813191d5cba9e782a664bf2f",
+      "resized": false,
+      "sourceBytes": 102914,
+      "sourceHash": "12e88d76d3c6ea80dc51bcc2c0d8827aa845c561813191d5cba9e782a664bf2f",
+      "width": 1800
+    },
+    "static/images/visualizations/missing-data/missing-data-social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 54853,
+      "outputHash": "5d51364edefbc378a82d766f34a0ee91603b1f5b944a60396710da4cd279b01c",
+      "resized": false,
+      "sourceBytes": 54853,
+      "sourceHash": "5d51364edefbc378a82d766f34a0ee91603b1f5b944a60396710da4cd279b01c",
+      "width": 1200
+    },
     "static/images/visualizations/mrinmoyee/mrinmoyee-poster.jpg": {
       "format": "JPEG",
       "height": 1050,

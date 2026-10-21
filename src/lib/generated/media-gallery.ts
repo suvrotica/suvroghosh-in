@@ -4843,6 +4843,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/missing-data/missing-data-poster.png",
+			"src": "/images/visualizations/missing-data/missing-data-poster.png",
+			"bytes": 102914,
+			"width": 1800,
+			"height": 1300
+		},
+		{
+			"name": "visualizations/missing-data/missing-data-social.png",
+			"src": "/images/visualizations/missing-data/missing-data-social.png",
+			"bytes": 54853,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/mrinmoyee/mrinmoyee-poster.jpg",
 			"src": "/images/visualizations/mrinmoyee/mrinmoyee-poster.jpg",
 			"bytes": 108601,

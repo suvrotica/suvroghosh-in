@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Music of Missing Data: A Missingness-Pattern Explorer" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Music of Missing Data: A Missingness-Pattern Explorer</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(1006,578) rotate(-90)" font-size="118" style="fill:#d9c89e">Missing</text>
+<text transform="translate(68,237)" font-size="101" style="fill:#d88988">Different</text>
+<text transform="translate(765,671)" font-size="96" style="fill:#a9b7a3">Mean</text>
+<text transform="translate(129,102)" font-size="91" style="fill:#d6a79f">Observed</text>
+<text transform="translate(607,585)" font-size="80" style="fill:#d6a79f">Values</text>
+<text transform="translate(1101,497) rotate(-90)" font-size="80" style="fill:#8fb7d0">Complete</text>
+<text transform="translate(642,114)" font-size="80" style="fill:#d88988">Value</text>
+<text transform="translate(521,400)" font-size="74" style="fill:#e0b879">Column</text>
+<text transform="translate(214,581)" font-size="74" style="fill:#a9b7a3">Fixed</text>
+<text transform="translate(655,245)" font-size="74" style="fill:#d9c89e">Cell</text>
+<text transform="translate(70,416)" font-size="74" style="fill:#b6c3dd">Sample</text>
+<text transform="translate(363,385)" font-size="67" style="fill:#d9c89e">Per</text>
+<text transform="translate(652,473)" font-size="67" style="fill:#d9c89e">Rows</text>
+<text transform="translate(654,318)" font-size="67" style="fill:#d9c89e">Columns</text>
+<text transform="translate(446,335)" font-size="67" style="fill:#e0b879">MCAR</text>
+<text transform="translate(62,500)" font-size="67" style="fill:#d88988">Missingness</text>
+<text transform="translate(60,341)" font-size="67" style="fill:#8fb7d0">MNAR</text>
+<text transform="translate(359,693)" font-size="67" style="fill:#e0b879">Every</text>
+<text transform="translate(1181,646) rotate(-90)" font-size="67" style="fill:#e0b879">Assumptions</text>
+<text transform="translate(422,643)" font-size="60" style="fill:#b6c3dd">Dataset</text>
+<text transform="translate(5,598)" font-size="60" style="fill:#9fc9c5">Cent</text>
+<text transform="translate(104,656)" font-size="60" style="fill:#b6c3dd">Dropout</text>
+<text transform="translate(918,69)" font-size="60" style="fill:#b6c3dd">Remain</text>
+<text transform="translate(258,290)" font-size="60" style="fill:#d9c89e">Small</text>
+<text transform="translate(789,413)" font-size="60" style="fill:#c49a6c">View</text>
+<text transform="translate(628,166)" font-size="60" style="fill:#a9b7a3">Variable</text>
+<text transform="translate(251,151)" font-size="60" style="fill:#a9b7a3">Measure</text>
+<text transform="translate(1249,409) rotate(-90)" font-size="60" style="fill:#8fb7d0">Inspector</text>
+<text transform="translate(490,450)" font-size="60" style="fill:#d88988">Seed</text>
+<text transform="translate(568,698)" font-size="60" style="fill:#d88988">Rule</text>
+<text transform="translate(343,448)" font-size="60" style="fill:#d9c89e">Draw</text>
+<text transform="translate(56,342) rotate(-90)" font-size="60" style="fill:#8fb7d0">Predictor</text>
+<text transform="translate(594,47)" font-size="57" style="fill:#c49a6c">Variables</text>
+<text transform="translate(994,703)" font-size="47" style="fill:#d5d2c2">Percentage</text>
+<text transform="translate(229,37)" font-size="43" style="fill:#8fb7d0">Uncertainty</text>
+<text transform="translate(809,456)" font-size="43" style="fill:#8fb7d0">Model</text>
+<text transform="translate(134,152)" font-size="37" style="fill:#9fc9c5">Plate</text>
+<text transform="translate(554,508)" font-size="37" style="fill:#e0b879">Explorer</text>
+<text transform="translate(760,714)" font-size="37" style="fill:#d9c89e">Visits</text>
+<text transform="translate(53,703)" font-size="37" style="fill:#d88988">Cells</text>
+<text transform="translate(769,506)" font-size="37" style="fill:#d6a79f">Matrix</text>
+<text transform="translate(172,705)" font-size="37" style="fill:#e0b879">Records</text>
+<text transform="translate(38,531)" font-size="37" style="fill:#9fc9c5">Real</text>
+<text transform="translate(897,702)" font-size="37" style="fill:#c49a6c">Zero</text>
+<text transform="translate(673,346)" font-size="32" style="fill:#d88988">Disappearance</text>
+<text transform="translate(185,612)" font-size="32" style="fill:#d88988">Data</text>
+<text transform="translate(62,266)" font-size="32" style="fill:#c7d7b5">Imputation</text>
+<text transform="translate(896,608)" font-size="32" style="fill:#d9c89e">Measurements</text>
+<text transform="translate(446,582)" font-size="32" style="fill:#b6c3dd">Holes</text>
+<text transform="translate(444,540)" font-size="32" style="fill:#9fc9c5">Removes</text>
+<text transform="translate(477,280)" font-size="32" style="fill:#d9c89e">Remainder</text>
+<text transform="translate(295,321)" font-size="32" style="fill:#d6a79f">Leaves</text>
+<text transform="translate(1039,97)" font-size="32" style="fill:#d6a79f">Mechanism</text>
+<text transform="translate(54,28)" font-size="32" style="fill:#d5d2c2">Establish</text>
+<text transform="translate(1236,574) rotate(-90)" font-size="32" style="fill:#d6a79f">Analysis</text>
+<text transform="translate(1145,37)" font-size="32" style="fill:#d88988">Target</text>
+<text transform="translate(11,444)" font-size="32" style="fill:#c7d7b5">Summaries</text>
+<text transform="translate(758,534)" font-size="32" style="fill:#d88988">Estimate</text>
+<text transform="translate(1034,490) rotate(-90)" font-size="32" style="fill:#b6c3dd">Describes</text>
+<text transform="translate(1129,306) rotate(-90)" font-size="32" style="fill:#d6a79f">Experiment</text>
+<text transform="translate(761,273)" font-size="32" style="fill:#9fc9c5">Error</text>
+<text transform="translate(1130,574) rotate(-90)" font-size="32" style="fill:#9fc9c5">Completed</text>
+<text transform="translate(1271,618) rotate(-90)" font-size="32" style="fill:#d88988">Conditional</text>
+<text transform="translate(1211,374) rotate(-90)" font-size="32" style="fill:#c7d7b5">Predictive</text>
+<text transform="translate(1001,655)" font-size="32" style="fill:#d6a79f">Sound</text>
+<text transform="translate(520,150)" font-size="26" style="fill:#9fc9c5">Ways</text>
+<text transform="translate(816,191)" font-size="26" style="fill:#9fc9c5">Looks</text>
+<text transform="translate(823,226)" font-size="26" style="fill:#9fc9c5">Though</text>
+<text transform="translate(233,344)" font-size="26" style="fill:#d9c89e">Somebody</text>
+<text transform="translate(1028,558)" font-size="26" style="fill:#e0b879">Away</text>
+<text transform="translate(380,176)" font-size="26" style="fill:#c49a6c">Receive</text>
+<text transform="translate(119,369)" font-size="26" style="fill:#a9b7a3">Measured</text>
+<text transform="translate(7,646)" font-size="26" style="fill:#9fc9c5">Light</text>
+<text transform="translate(279,610)" font-size="26" style="fill:#b6c3dd">Darkness</text>
+<text transform="translate(503,469)" font-size="20" style="fill:#b6c3dd">Participants</text>
+<text transform="translate(679,659)" font-size="20" style="fill:#d9c89e">October</text>
+<text transform="translate(1013,523)" font-size="20" style="fill:#c49a6c">Lights</text>
+<text transform="translate(1201,65)" font-size="20" style="fill:#c49a6c">Wholly</text>
+<text transform="translate(230,439)" font-size="20" style="fill:#d88988">Synthetic</text>
+<text transform="translate(9,411)" font-size="20" style="fill:#9fc9c5">Row</text>
+<text transform="translate(196,286)" font-size="20" style="fill:#d5d2c2">Scale</text>
+<text transform="translate(699,421)" font-size="20" style="fill:#c7d7b5">Remains</text>
+<text transform="translate(570,97)" font-size="20" style="fill:#d5d2c2">Never</text>
+<text transform="translate(953,24)" font-size="20" style="fill:#c7d7b5">Secretly</text>
+<text transform="translate(371,711)" font-size="20" style="fill:#b6c3dd">Becomes</text>
+<text transform="translate(88,116)" font-size="20" style="fill:#e0b879">Read</text>
+<text transform="translate(393,405)" font-size="20" style="fill:#e0b879">Changing</text>
+<text transform="translate(156,518)" font-size="20" style="fill:#d88988">Instrument</text>
+<text transform="translate(1270,172) rotate(-90)" font-size="20" style="fill:#a9b7a3">Changes</text>
+<text transform="translate(504,126)" font-size="20" style="fill:#d6a79f">Vanished</text>
+<text transform="translate(545,574)" font-size="20" style="fill:#8fb7d0">Open</text>
+<text transform="translate(1191,651)" font-size="20" style="fill:#d88988">Silence</text>
+<text transform="translate(79,151) rotate(-90)" font-size="20" style="fill:#a9b7a3">Start</text>
+<text transform="translate(86,551)" font-size="20" style="fill:#d88988">Process</text>
+<text transform="translate(907,246)" font-size="20" style="fill:#c49a6c">Numbers</text>
+<text transform="translate(901,19)" font-size="20" style="fill:#d88988">Next</text>
+<text transform="translate(731,706) rotate(-90)" font-size="20" style="fill:#a9b7a3">Try</text>
+<text transform="translate(1270,284) rotate(-90)" font-size="20" style="fill:#d88988">Depending</text>
+<text transform="translate(1035,266) rotate(-90)" font-size="20" style="fill:#c49a6c">Fully</text>
+<text transform="translate(777,65)" font-size="20" style="fill:#d88988">Measurement</text>
+<text transform="translate(1135,185)" font-size="20" style="fill:#d88988">MAR</text>
+<text transform="translate(1202,624) rotate(-90)" font-size="20" style="fill:#c7d7b5">Dependence</text>
+<text transform="translate(680,621)" font-size="20" style="fill:#d6a79f">Outcome</text>
+<text transform="translate(518,602)" font-size="20" style="fill:#d88988">Visible</text>
+<text transform="translate(627,185)" font-size="20" style="fill:#d5d2c2">Simulation</text>
+<text transform="translate(297,535)" font-size="20" style="fill:#8fb7d0">Describe</text>
+<text transform="translate(838,606)" font-size="20" style="fill:#d9c89e">Time</text>
+<text transform="translate(28,548) rotate(-90)" font-size="20" style="fill:#c7d7b5">Diagonal</text>
+<text transform="translate(866,374)" font-size="20" style="fill:#d88988">Entire</text>
+<text transform="translate(1206,669)" font-size="20" style="fill:#d9c89e">Whole</text>
+<text transform="translate(1059,673)" font-size="20" style="fill:#d5d2c2">Defined</text>
+<text transform="translate(1269,393) rotate(-90)" font-size="20" style="fill:#a9b7a3">Preset</text>
+<text transform="translate(1006,626)" font-size="20" style="fill:#c49a6c">National</text>
+<text transform="translate(936,200) rotate(-90)" font-size="20" style="fill:#e0b879">Research</text>
+<text transform="translate(15,621)" font-size="20" style="fill:#d5d2c2">Council</text>
+<text transform="translate(813,473)" font-size="20" style="fill:#d88988">Patterns</text>
+<text transform="translate(464,518)" font-size="20" style="fill:#d88988">Counts</text>
+<text transform="translate(671,639)" font-size="20" style="fill:#d6a79f">Overall</text>
+<text transform="translate(309,172)" font-size="20" style="fill:#d5d2c2">Share</text>
+<text transform="translate(652,263)" font-size="20" style="fill:#a9b7a3">Pattern</text>
+<text transform="translate(6,668)" font-size="16" style="fill:#c7d7b5">Disappear</text>
+<text transform="translate(109,282)" font-size="16" style="fill:#e0b879">Together</text>
+<text transform="translate(1133,63)" font-size="16" style="fill:#c49a6c">Keeps</text>
+<text transform="translate(1076,113)" font-size="16" style="fill:#8fb7d0">Denominators</text>
+<text transform="translate(556,715)" font-size="16" style="fill:#c49a6c">Availabledata</text>
+<text transform="translate(935,299)" font-size="16" style="fill:#a9b7a3">Difference</text>
+<text transform="translate(623,206) rotate(-90)" font-size="16" style="fill:#d88988">Estimation</text>
+<text transform="translate(1011,578)" font-size="14" style="fill:#e0b879">Appropriate</text>
+<text transform="translate(16,297) rotate(-90)" font-size="14" style="fill:#b6c3dd">Switch</text>
+<text transform="translate(1141,132)" font-size="14" style="fill:#c7d7b5">Settings</text>
+</svg>

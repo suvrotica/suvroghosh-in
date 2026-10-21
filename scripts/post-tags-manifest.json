@@ -14987,6 +14987,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
+		},
+		"src/lib/posts/the-music-of-missing-data.md": {
+			"bodyHash": "ffdc0902fa5bb7c618731998c93dec502c8e56f1c54f9d97c40ce4732d53b457",
+			"hashVersion": 2,
+			"revisionHash": "049b1c2ce09baf25993837c0daf1fdac255ee057d3a7a3d618ec019f603cf821",
+			"generatedTags": [
+				"Missing Data",
+				"Statistics",
+				"Data Visualisation",
+				"Imputation",
+				"Uncertainty",
+				"Sonification",
+				"Scientific Computing",
+				"Data Quality",
+				"Missingness Mechanisms",
+				"Sensitivity Analysis"
+			],
+			"pinnedTags": [
+				"Missing Data",
+				"Statistics",
+				"Data Visualisation",
+				"Imputation",
+				"Uncertainty",
+				"Sonification",
+				"Scientific Computing",
+				"Data Quality",
+				"Missingness Mechanisms",
+				"Sensitivity Analysis"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-21"
 		}
 	},
 	"maxTags": 10

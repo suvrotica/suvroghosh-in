@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'the-music-of-missing-data': {
+		id: 'the-music-of-missing-data',
+		title: 'The Music of Missing Data: A Missingness-Pattern Explorer',
+		description:
+			'Change how measurements disappear, compare estimates and clearly marked imputations, and download a reproducible missingness fingerprint.',
+		subjects: ['Statistics', 'Scientific Computing', 'Generative Art'],
+		poster: '/images/visualizations/missing-data/missing-data-social.png',
+		posterAlt:
+			'A dropout-over-time fingerprint with a stepped dark frontier across a teal and coral participant-by-visit matrix, labelled 40 per cent missing and seed 1847',
+		href: '/blog/visualizations/the-music-of-missing-data',
+		status: 'published'
+	},
 	'the-piano-that-forgives': {
 		id: 'the-piano-that-forgives',
 		title: 'The Piano That Forgives: Painting Jazz with Probability',

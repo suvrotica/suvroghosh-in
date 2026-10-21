@@ -1,0 +1,58 @@
+{
+	"verifiedOn": "2026-10-21",
+	"article": "/blog/visualizations/the-music-of-missing-data",
+	"canonicalUrl": "https://www.suvroghosh.in/blog/visualizations/the-music-of-missing-data",
+	"architectureImpact": true,
+	"checks": [
+		{ "command": "npm run missing-data:test", "result": "passed", "tests": 30 },
+		{ "command": "npm run visualizations:test", "result": "passed", "tests": 23 },
+		{ "command": "npm run check", "result": "passed", "errors": 0, "warnings": 0 },
+		{ "command": "npm run build:full", "result": "passed" },
+		{
+			"command": "npm run build:site",
+			"result": "passed",
+			"note": "Final title whitespace and scoped estimate contrast corrections were rebuilt after the full build."
+		},
+		{
+			"command": "node scripts/validate-discoverability.mjs",
+			"result": "passed",
+			"publishedPostsChecked": 711
+		},
+		{
+			"command": "PLAYWRIGHT_PORT=4280 PLAYWRIGHT_REUSE_SERVER=1 npm run missing-data:browser:test",
+			"result": "passed",
+			"tests": 10,
+			"against": "production build"
+		},
+		{ "command": "npm run missing-data:assets:check", "result": "passed" },
+		{
+			"command": "Scoped ESLint and Prettier checks on feature, tests, configuration and documentation",
+			"result": "passed"
+		},
+		{ "command": "git diff --check", "result": "passed" }
+	],
+	"browserCoverage": [
+		"Server-rendered article, one H1, no-JavaScript poster and sources",
+		"Seven distinct rendered WebGL missingness scenarios",
+		"Stable complete sample, observed-only imputation and MNAR sensitivity",
+		"Presentation-only sorting and keyboard inspection",
+		"Explicit truth-reveal gate",
+		"Actual 1800 by 1300 PNG and exact JSON downloads",
+		"Validated scene-link replay",
+		"Gesture-only native Web Audio, mute and transport",
+		"390-pixel touch layout, no overflow and reduced motion",
+		"Forced fallback, wholly unestimable columns and actual WebGL context loss",
+		"Automated WCAG A/AA audit with advanced controls and comparison open"
+	],
+	"interpretationLimits": [
+		"Seeded synthetic data; patterns do not diagnose a mechanism in real datasets.",
+		"Conditional Normal predictive draws use an observed-data linear model with plug-in residual variance; analyses are not pooled as multiple imputation.",
+		"Mean filling does not estimate uncertainty. Unestimable columns remain absent.",
+		"Automated accessibility checks and interaction coverage are not a complete conformance audit."
+	],
+	"evidence": {
+		"production": "article-*.png and article-visual-results.json",
+		"supplemental": "harness-* files capture the same feature in an isolated development harness",
+		"publicationAssets": "static/images/visualizations/missing-data/assets.json"
+	}
+}

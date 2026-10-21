@@ -1,0 +1,28 @@
+{
+  "supplementalHarness": true,
+  "url": "http://127.0.0.1:4279/",
+  "findings": [
+    {
+      "view": "MCAR",
+      "complete": "49.95",
+      "available": "50.65",
+      "webgl": true
+    },
+    {
+      "view": "MNAR mean fill",
+      "available": "45.81",
+      "completed": "45.81"
+    },
+    {
+      "sensitivityBefore": "48.71",
+      "sensitivityAfter": "50.10"
+    },
+    {
+      "mobile": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    }
+  ],
+  "pageErrors": []
+}

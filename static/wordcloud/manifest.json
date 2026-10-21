@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T10:15:39.656569+00:00",
+  "generatedAt": "2026-10-21T11:40:56.085280+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12924,6 +12924,29 @@
         "Local",
         "Depth",
         "Text"
+      ],
+      "wordCount": 130
+    },
+    "the-music-of-missing-data": {
+      "generatedAt": "2026-10-21T11:40:55.894666+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-music-of-missing-data.svg",
+      "source": "src/lib/posts/the-music-of-missing-data.md",
+      "sourceHash": "c4f7f613c8573e653182470b4f16fa76a3a813d1ca0e2b3d48e2984c4a9c100c",
+      "sourceModified": "2026-10-21T11:40:43.511198+00:00",
+      "topWords": [
+        "Missing",
+        "Different",
+        "Mean",
+        "Observed",
+        "Values",
+        "Complete",
+        "Value",
+        "Column",
+        "Fixed",
+        "Cell",
+        "Sample",
+        "Per"
       ],
       "wordCount": 130
     },
