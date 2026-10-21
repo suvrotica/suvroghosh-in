@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
+import { parsePostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const read = (...segments) => fs.readFileSync(path.join(root, ...segments), 'utf8');
@@ -234,7 +235,12 @@ test('the mdsvex post uses the normal publishing and visible FAQ pipeline', () =
 	assert.match(post, /category: "Visualizations"/);
 	assert.match(post, /published: true/);
 	assert.match(post, /date: "2026-07-26"/);
-	assert.match(post, /dateModified: "2026-07-28"/);
+	const metadata = parsePostFrontmatter(post);
+	assert.match(metadata.dateModified, /^\d{4}-\d{2}-\d{2}$/);
+	const modifiedAt = Date.parse(metadata.dateModified);
+	assert.ok(Number.isFinite(modifiedAt), 'the revision date must be a valid ISO date');
+	assert.equal(new Date(modifiedAt).toISOString().slice(0, 10), metadata.dateModified);
+	assert.ok(metadata.dateModified >= metadata.date, 'a revision cannot precede publication');
 	assert.match(post, /interactiveFirst: true/);
 	assert.match(contentValidator, /'interactiveFirst'/);
 	assert.match(contentValidator, /typeof metadata\.interactiveFirst !== 'boolean'/);
