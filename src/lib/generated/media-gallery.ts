@@ -20,6 +20,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-statistically-significant-and-other-lies-numbers-tell.jpg",
+			"src": "/images/art-statistically-significant-and-other-lies-numbers-tell.jpg",
+			"bytes": 286726,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-stupidly-hopeful.jpg",
 			"src": "/images/art-stupidly-hopeful.jpg",
 			"bytes": 140906,

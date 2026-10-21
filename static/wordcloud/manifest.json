@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T14:00:25.763428+00:00",
+  "generatedAt": "2026-10-21T16:09:33.792339+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9382,6 +9382,29 @@
         "Homeostasis",
         "Feedback",
         "Changes"
+      ],
+      "wordCount": 130
+    },
+    "statistically-significant-and-other-lies-numbers-tell": {
+      "generatedAt": "2026-10-21T16:09:30.205008+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/statistically-significant-and-other-lies-numbers-tell.svg",
+      "source": "src/lib/posts/statistically-significant-and-other-lies-numbers-tell.md",
+      "sourceHash": "4bf2b65e1d8994fe526f5b26dfa7440a138261686e56fb474d6903b1a9ebf5a3",
+      "sourceModified": "2026-10-21T16:07:41.392289+00:00",
+      "topWords": [
+        "Whether",
+        "Enough",
+        "Significant",
+        "Result",
+        "Somebody",
+        "Answer",
+        "Study",
+        "Effect",
+        "Small",
+        "Uncertainty",
+        "Twelve",
+        "Seconds"
       ],
       "wordCount": 130
     },

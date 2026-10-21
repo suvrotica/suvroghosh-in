@@ -8016,6 +8016,22 @@
       "sourceHash": "10bb1fb644ce9b7e9a2cca65ca359b17afc4d80a0776fd65bc587e21f2db09f7",
       "width": 1672
     },
+    "static/images/art-statistically-significant-and-other-lies-numbers-tell.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 286726,
+      "outputHash": "5b119e7ff35b9eb25e4b10cb8065a9d82467c7f0063c98c1d3d32360704e5ab3",
+      "psnrDb": 36.07,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 627402,
+      "sourceHash": "ba3ea81a9a604f04c7d1f60392bfaf599eb5607c0a296d30b91dda123528b19a",
+      "width": 1672
+    },
     "static/images/art-stupidly-hopeful.jpg": {
       "format": "JPEG",
       "height": 1536,

@@ -15049,6 +15049,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
+		},
+		"src/lib/posts/statistically-significant-and-other-lies-numbers-tell.md": {
+			"bodyHash": "4c0c09aeadde62713dc42329e67ee82b921bcd5b179ffb5503cd49e914f609d6",
+			"hashVersion": 2,
+			"revisionHash": "d818cb1d5fe8ebbe2d7409df931686ce7999c1685111bd75b1836627bd381130",
+			"generatedTags": [
+				"Statistics",
+				"Science",
+				"Mathematics",
+				"P-value",
+				"Statistical Significance",
+				"Research",
+				"Humor",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Statistics",
+				"Science",
+				"Mathematics",
+				"P-value",
+				"Statistical Significance",
+				"Research",
+				"Humor",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
