@@ -59,6 +59,9 @@ flowchart LR
     Audio --> PublishAudio["Main/Vercel release; verify before WAV retirement; save final checkpoint once"]
     PublishAudio --> Static
     Browser --> Speech["Shared article player; device-voice fallback"]
+    Audio --> ManifestPaths["Build-time saved-manifest path registry"]
+    ManifestPaths --> NarrationData["Article server load: canonical slug + availability"]
+    NarrationData --> Speech
 ```
 
 ## 2. Directory responsibilities
@@ -718,6 +721,17 @@ validated partial work takes priority over new articles. Auditions and partial a
 excluded from delivery. Missing/stale audio falls back to browser
 speech, preferring US English and permitting user voice selection. Playback and speed changes
 reuse saved audio; builds, hydration and visitor actions never synthesize through Google.
+
+The 23 October manifest-availability correction makes `loadPublishedBlogPost` derive
+`narrationAvailable` from a server-only Vite glob of committed delivery-manifest paths. The
+shared player reacts to that boolean and the canonical loaded slug on each navigation. Articles
+without a saved manifest, including the piano article, select device speech without a manifest
+request. Existing paths still undergo the bounded fetch, streamed-size limit, timeout and
+current-transcript validation before saved audio is offered; presence does not imply validity.
+Only the slug and availability flag enter page data. The registry requires no runtime filesystem
+access, new endpoint or authoring step, and newly committed narration is discovered on the next
+site build. This refines the existing authoring/playback boundary without a foundational ADR
+change.
 
 Real generation requires `GEMINI_API_KEY` and `GEMINI_TTS_FREE_TIER_CONFIRMED=true`; the latter is
 an operator assertion, not an API verification of project billing. Use a Free-tier project with

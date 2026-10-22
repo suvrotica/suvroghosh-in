@@ -20,6 +20,12 @@ import {
 	getRelatedPosts
 } from '$lib/server/content/posts';
 
+// Resolve committed delivery paths at build time; no runtime disk reads or manifest probes.
+const narrationManifests = import.meta.glob('/static/audio/articles/*/manifest.json', {
+	query: '?raw',
+	import: 'default'
+});
+
 export function loadPublishedBlogPost(category: string, slug: string) {
 	const aliasPath = redirectedPostPath(category, slug);
 	if (aliasPath) redirect(308, aliasPath);
@@ -57,6 +63,10 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 
 	return {
 		slug,
+		narrationAvailable: Object.hasOwn(
+			narrationManifests,
+			`/static/audio/articles/${slug}/manifest.json`
+		),
 		categoryBreadcrumbs,
 		essayInk: sanitizeEssayInk(metadata.color),
 		postNavigation: getPostNavigation(slug),

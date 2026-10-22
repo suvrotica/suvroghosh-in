@@ -5,6 +5,12 @@ exists. Its default locale is **US English (`en-US`)**. When narration is unavai
 listen with their browser/device voices and select another installed voice. Device voices vary
 by operating system and browser; the site cannot install or guarantee a particular device voice.
 
+Article page data includes saved-manifest availability, discovered from committed delivery paths
+at build time. When no manifest exists, the player selects device voice without requesting a
+missing file. Existing manifests are still fetched and checked against the current transcript;
+stale, malformed or failed deliveries use the same device fallback. Newly published narration is
+discovered automatically by the next site build.
+
 Google synthesis is an explicit authoring operation. A visitor, page load, ordinary build,
 pause/resume, or playback-speed change never initiates a Google generation request. Saved audio
 can be played repeatedly without spending generation quota. There is no new public speech API.

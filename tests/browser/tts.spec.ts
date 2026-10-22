@@ -1,11 +1,14 @@
 import { expect, test, type Page } from '@playwright/test';
 import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { extractNarration } from '../../src/lib/components/blog/tts/narration.mjs';
 
 const shortArticle = '/blog/personal-essay/a-trapezoid-in-low-light';
 const longArticle = '/blog/short-fiction/ashtami-approach';
 const folioArticle = '/blog/healthcare-it/why-read-a-healthcare-it-blog-in-the-age-of-ai';
 const mixedLanguageArticle = '/blog/short-fiction/ashruto-the-unheard';
+const pianoArticle = '/blog/visualizations/the-piano-that-forgives';
 const playerSelector = '[data-testid="article-tts"]';
 
 interface TestMedia {
@@ -192,6 +195,19 @@ async function mockNarration(
 	return requests;
 }
 
+async function navigateArticle(page: Page, path: string) {
+	await page.evaluate((destination) => {
+		document.getElementById('tts-test-navigation')?.remove();
+		const link = document.createElement('a');
+		link.id = 'tts-test-navigation';
+		link.href = destination;
+		link.textContent = 'TTS test navigation';
+		document.body.append(link);
+	}, path);
+	await page.getByRole('link', { name: 'TTS test navigation' }).click();
+	await expect(page).toHaveURL(path);
+}
+
 test.beforeEach(async ({ page }) => {
 	await installPlaybackFakes(page);
 });
@@ -334,36 +350,81 @@ test('an asynchronously loaded device voice list selects US English', async ({ p
 	expect(await page.evaluate(() => window.__ttsTest.speech[0].voice)).toBe('test-us');
 });
 
-test('long article narration stops on client navigation before a folio player starts', async ({
+test('piano skips absent narration on load, reload and client navigation while saved audio remains available', async ({
 	page
 }) => {
-	await mockNarration(page);
-	await page.goto(longArticle);
+	test.skip(
+		existsSync(join(process.cwd(), 'static/audio/articles/the-piano-that-forgives/manifest.json')),
+		'Piano narration is now committed; the absent-delivery regression no longer applies.'
+	);
+	const requests = await mockNarration(page);
+	const pianoRequests: string[] = [];
+	page.on('request', (request) => {
+		if (new URL(request.url()).pathname.startsWith('/audio/articles/the-piano-that-forgives/'))
+			pianoRequests.push(request.url());
+	});
 	const player = page.locator(playerSelector);
-	await expect(player).toContainText('Google narration');
+	const fallbackDetail =
+		'Google narration is not available for this article. Device voice uses US English when available.';
+	await page.goto(pianoArticle);
+	await expect(player).toContainText(fallbackDetail);
+	await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toBeVisible();
+	expect(requests).toEqual({ manifest: 0, audio: 0, provider: 0 });
+	await page.reload();
+	await expect(player).toContainText(fallbackDetail);
+	expect(requests).toEqual({ manifest: 0, audio: 0, provider: 0 });
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBe(1);
+	expect(await page.evaluate(() => window.__ttsTest.speech[0].voice)).toBe('test-us');
+	const cancellations = await page.evaluate(() => window.__ttsTest.cancelCalls);
+
+	await navigateArticle(page, shortArticle);
+	await expect(player.getByRole('combobox', { name: 'Narration source' })).toBeVisible();
+	expect(requests.manifest).toBe(1);
+	expect(await page.evaluate(() => window.__ttsTest.speech.length)).toBe(1);
+	expect(await page.evaluate(() => window.speechSynthesis.speaking)).toBe(false);
+	expect(await page.evaluate(() => window.__ttsTest.cancelCalls)).toBeGreaterThan(cancellations);
 	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
 	await expect(player.getByRole('button', { name: 'Pause article audio' })).toBeVisible();
-	await page.evaluate((path) => {
-		const link = document.createElement('a');
-		link.href = path;
-		link.textContent = 'TTS test navigation';
-		document.body.append(link);
-	}, folioArticle);
-	await page.getByRole('link', { name: 'TTS test navigation' }).click();
-	await expect(page).toHaveURL(folioArticle);
-	await expect(page.locator('[data-thought-folio="healthcare-human-margin"]')).toBeVisible();
-	await expect(page.locator(playerSelector)).toContainText('Google narration');
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(1);
+	expect(await page.evaluate(() => window.__ttsTest.media[0].element.paused)).toBe(false);
+
+	await navigateArticle(page, pianoArticle);
+	await expect(player).toContainText(fallbackDetail);
+	await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toBeVisible();
 	expect(await page.evaluate(() => window.__ttsTest.media[0].element.paused)).toBe(true);
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBe(2);
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(1);
+	expect(pianoRequests).toEqual([]);
+	expect(requests).toEqual({ manifest: 1, audio: 0, provider: 0 });
+});
+
+test('long article device narration stops on client navigation before a folio player starts', async ({
+	page
+}) => {
+	const requests = await mockNarration(page, 'missing');
+	await page.goto(longArticle);
+	const player = page.locator(playerSelector);
+	await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toBeVisible();
+	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
+	await expect(player.getByRole('button', { name: 'Pause article audio' })).toBeVisible();
+	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBe(1);
+	const cancellations = await page.evaluate(() => window.__ttsTest.cancelCalls);
+	await navigateArticle(page, folioArticle);
+	await expect(page.locator('[data-thought-folio="healthcare-human-margin"]')).toBeVisible();
+	await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toBeVisible();
+	expect(await page.evaluate(() => window.speechSynthesis.speaking)).toBe(false);
+	expect(await page.evaluate(() => window.__ttsTest.cancelCalls)).toBeGreaterThan(cancellations);
 	await page
 		.locator(playerSelector)
 		.getByRole('button', { name: 'Listen to article', exact: true })
 		.click();
-	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(2);
-	expect(
-		await page.evaluate(
-			() => window.__ttsTest.media.filter(({ element }) => !element.paused).length
-		)
-	).toBe(1);
+	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBe(2);
+	expect(await page.evaluate(() => window.speechSynthesis.speaking)).toBe(true);
+	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(0);
+	expect(requests.audio).toBe(0);
+	expect(requests.provider).toBe(0);
 });
 
 test('published SSR and hydrated reading order match for standard, mixed-language and folio articles', async ({

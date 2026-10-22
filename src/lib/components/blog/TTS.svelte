@@ -21,6 +21,8 @@
 	const owner = {};
 	const id = $props.id();
 	const preferenceKey = 'article-narration-preferences-v1';
+	const unavailableNarrationDetail =
+		'Google narration is not available for this article. Device voice uses US English when available.';
 	let mounted = $state(false);
 	let supported = $state(false);
 	let manifest = $state<NarrationManifest | null>(null);
@@ -104,9 +106,10 @@
 	);
 
 	$effect(() => {
-		const slug = page.params.slug ?? '';
+		const slug = page.data.slug ?? page.params.slug ?? '';
 		const path = page.url.pathname;
-		if (mounted) untrack(() => void prepareArticle(slug, path));
+		const available = page.data.narrationAvailable === true;
+		if (mounted) untrack(() => void prepareArticle(slug, path, available));
 	});
 
 	onMount(() => {
@@ -135,7 +138,7 @@
 		};
 	});
 
-	async function prepareArticle(slug: string, path: string) {
+	async function prepareArticle(slug: string, path: string, available: boolean) {
 		const revision = ++articleRevision;
 		manifestController?.abort();
 		stopPlayback(false);
@@ -147,6 +150,11 @@
 		await tick();
 		if (!mounted || revision !== articleRevision || path !== page.url.pathname) return;
 		articleText = extractNarration(document);
+		if (!available) {
+			detail = unavailableNarrationDetail;
+			checking = false;
+			return;
+		}
 		const controller = new AbortController();
 		manifestController = controller;
 		const timeout = setTimeout(() => controller.abort(), 8000);
@@ -168,8 +176,7 @@
 				'Natural US English narration, generated with Google. Audio loads when you press Play.';
 		} catch {
 			if (!mounted || revision !== articleRevision) return;
-			detail =
-				'Google narration is not available for this article. Device voice uses US English when available.';
+			detail = unavailableNarrationDetail;
 		} finally {
 			clearTimeout(timeout);
 			if (revision === articleRevision) checking = false;
