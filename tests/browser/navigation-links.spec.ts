@@ -316,6 +316,77 @@ test('command palette search preserves the query, closes the modal and allows fu
 	await expectPage(page, '/privacy', /A small note\s*about privacy/);
 });
 
+test('a skipped view transition cannot strand a destination or leak a browser error', async ({
+	page
+}) => {
+	await page.emulateMedia({ reducedMotion: 'no-preference' });
+	await page.addInitScript(() => {
+		localStorage.setItem('site-motion', 'gentle');
+		const testWindow = window as Window & { __skippedTransitionCalls?: number };
+		testWindow.__skippedTransitionCalls = 0;
+		Object.defineProperty(document, 'startViewTransition', {
+			configurable: true,
+			value: () => {
+				testWindow.__skippedTransitionCalls = (testWindow.__skippedTransitionCalls ?? 0) + 1;
+				// A rejected capture must not prevent Kit from committing the destination.
+				return {
+					ready: Promise.reject(new DOMException('Transition was skipped', 'AbortError')),
+					updateCallbackDone: Promise.resolve(),
+					finished: Promise.resolve(),
+					skipTransition() {}
+				} as ViewTransition;
+			}
+		});
+	});
+	await load(page, '/privacy');
+	await page.locator('footer').getByRole('link', { name: 'Writing', exact: true }).click();
+	await expectPage(page, '/writing', 'Writings');
+	await page.locator('footer').getByRole('link', { name: 'Topics', exact: true }).click();
+	await expectPage(page, '/topics', 'Topic Headquarters');
+	await page.goBack();
+	await expectPage(page, '/writing', 'Writings');
+	await page.goForward();
+	await expectPage(page, '/topics', 'Topic Headquarters');
+	expect(
+		await page.evaluate(
+			() => (window as Window & { __skippedTransitionCalls?: number }).__skippedTransitionCalls
+		)
+	).toBeGreaterThan(0);
+});
+
+test('reduced motion bypasses view transitions through navigation and history', async ({
+	page
+}) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.addInitScript(() => {
+		localStorage.setItem('site-motion', 'gentle');
+		const testWindow = window as Window & { __unexpectedTransitionCalls?: number };
+		testWindow.__unexpectedTransitionCalls = 0;
+		Object.defineProperty(document, 'startViewTransition', {
+			configurable: true,
+			value: () => {
+				testWindow.__unexpectedTransitionCalls = (testWindow.__unexpectedTransitionCalls ?? 0) + 1;
+				throw new Error('Reduced motion must bypass view transitions');
+			}
+		});
+	});
+	await load(page, '/privacy');
+	await expect(page.locator('html')).toHaveAttribute('data-motion', 'still');
+	await page.locator('footer').getByRole('link', { name: 'Writing', exact: true }).click();
+	await expectPage(page, '/writing', 'Writings');
+	await page.locator('footer').getByRole('link', { name: 'Topics', exact: true }).click();
+	await expectPage(page, '/topics', 'Topic Headquarters');
+	await page.goBack();
+	await expectPage(page, '/writing', 'Writings');
+	await expect(page.locator('html')).toHaveAttribute('data-motion', 'still');
+	expect(
+		await page.evaluate(
+			() =>
+				(window as Window & { __unexpectedTransitionCalls?: number }).__unexpectedTransitionCalls
+		)
+	).toBe(0);
+});
+
 test('browser history closes shared dialogs before leaving their source page', async ({ page }) => {
 	await load(page, '/privacy');
 	await page.locator('footer').getByRole('link', { name: 'About Suvro', exact: true }).click();
