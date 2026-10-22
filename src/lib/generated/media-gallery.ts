@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "art-durga-durga-durga-five-days-debauchery.jpg",
+			"src": "/images/art-durga-durga-durga-five-days-debauchery.jpg",
+			"bytes": 263519,
+			"width": 1536,
+			"height": 768
+		},
+		{
 			"name": "art-php2shell-wordpress-security-alert.jpg",
 			"src": "/images/art-php2shell-wordpress-security-alert.jpg",
 			"bytes": 310312,

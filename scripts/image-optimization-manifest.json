@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/art-durga-durga-durga-five-days-debauchery.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1536,
+      "outputBytes": 263519,
+      "outputHash": "206918f8a1cafdc81517002de867305fe5ee4f23866d0d05e4143a0d2e9b282f",
+      "psnrDb": 36.45,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 340725,
+      "sourceHash": "22bc7fe9cde2aa14c64640cf0474bcb38386b52544a71e6dc7fb435beb9ecf1a",
+      "width": 1536
+    },
     "static/images/art-php2shell-wordpress-security-alert.jpg": {
       "format": "JPEG",
       "height": 1024,
