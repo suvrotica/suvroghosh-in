@@ -70,12 +70,22 @@ async function load(page: Page, href: string) {
 
 async function expectPage(page: Page, href: string, heading?: string | RegExp) {
 	await expect(page).toHaveURL((url) => url.pathname === href);
-	if (heading)
-		await expect(page.locator('main').getByRole('heading', { level: 1 })).toHaveText(heading);
+	const expectedHeading =
+		heading ?? footerPages.find((destination) => destination.href === href)?.heading;
+	const title = page.locator('main').getByRole('heading', { level: 1 });
+	if (expectedHeading) await expect(title).toHaveText(expectedHeading);
+	else await expect(title).toBeVisible();
 	await expect(page.locator('dialog[open]')).toHaveCount(0);
-	// History APIs can resolve while Kit is still committing the destination. This bounded local
-	// quiet period prevents the next history/reload action from deliberately aborting that commit.
-	await page.waitForLoadState('networkidle', { timeout: 10_000 });
+	// A changed URL and an already idle document can precede Kit's DOM commit.
+	// Match the destination, then let its commit and paint finish before another history action.
+	if (await page.locator('html').getAttribute('data-view-transitions')) {
+		await page.evaluate(
+			() =>
+				new Promise<void>((resolve) =>
+					requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
+				)
+		);
+	}
 }
 
 for (const destination of footerPages) {
