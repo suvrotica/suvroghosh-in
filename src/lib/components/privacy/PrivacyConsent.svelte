@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import {
@@ -19,6 +20,7 @@
 	let analytics = $state(false);
 	let media = $state(false);
 	let settingsOpen = $state(false);
+	let noticeDismissed = $state(false);
 	let notice = $state('');
 	let dialog: HTMLDialogElement;
 	let heading: HTMLHeadingElement;
@@ -45,6 +47,8 @@
 	function closeSettings() {
 		dialog?.close();
 	}
+	// This shared-layout dialog must not keep the destination page inert after navigation.
+	beforeNavigate(closeSettings);
 	function containFocus(event: KeyboardEvent) {
 		if (event.key !== 'Tab') return;
 		const controls = Array.from(
@@ -106,9 +110,21 @@
 	});
 </script>
 
-{#if ready && !suppressed && !consent}
+{#if ready && !suppressed && !consent && !noticeDismissed}
 	<aside class="privacy-note" aria-labelledby="privacy-note-title" data-privacy-note>
-		<div class="note-topline"><span>FROM THE FIELDBOOK</span><span>PRIVACY / 01</span></div>
+		<div class="note-topline">
+			<span>FROM THE FIELDBOOK</span>
+			<span class="note-edition"
+				>PRIVACY / 01<button
+					type="button"
+					class="dismiss-notice"
+					onclick={() => {
+						noticeDismissed = true;
+					}}
+					aria-label="Dismiss privacy notice without choosing">×</button
+				></span
+			>
+		</div>
 		<div class="note-heading">
 			<h2 id="privacy-note-title">A small note<br />about privacy.</h2>
 			<ChoiceReceipt small />
@@ -129,7 +145,7 @@
 	</aside>
 {/if}
 
-{#if compactTrigger && !suppressed && (consent || !ready)}
+{#if compactTrigger && !suppressed && (consent || !ready || noticeDismissed)}
 	<button
 		class="privacy-trigger"
 		type="button"
@@ -298,6 +314,28 @@
 		font: 500 0.55rem/1.4 var(--font-mono, monospace);
 		letter-spacing: 0.13em;
 		color: var(--ink-muted);
+	}
+	.note-topline {
+		align-items: center;
+	}
+	.note-edition {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.dismiss-notice {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		min-width: 2.75rem;
+		min-height: 2.75rem;
+		border: 1px solid var(--control-border);
+		border-radius: 50%;
+		background: transparent;
+		color: var(--ink);
+		font: 400 1.25rem/1 var(--font-sans, sans-serif);
+		cursor: pointer;
 	}
 	.note-heading {
 		display: flex;

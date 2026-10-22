@@ -3,11 +3,11 @@ title: "The Matrix Is Random. Why Does It Have a Shape?"
 seoTitle: "Random Matrix Shapes — Interactive Spectral Laboratory"
 description: "Generate one seeded random matrix, inspect its entries, spectrum, singular values and geometry, then watch stable shapes emerge across an ensemble."
 date: "2026-08-13"
-dateModified: "2026-08-15"
+dateModified: "2026-10-22"
 thumbnail: "/images/visualizations/random-matrix-shape/the-matrix-is-random.png"
 thumbnailAlt: "An interactive random-matrix instrument showing a blue-and-amber matrix heatmap, a circular cloud of complex eigenvalues and a descending singular-value profile"
 category: "Visualizations"
-tags: ["Random Matrices","Linear Algebra","Probability","Eigenvalues","Singular Values","Scientific Computing","Spectral Radius","Sample Indices","Non-Normal Trap","Marchenko Pastur"]
+tags: ["Random Matrices","Linear Algebra","Probability","Eigenvalues","Singular Values","Scientific Computing","Spectral Radius","Non-Normal Trap","Sample Indices","Marchenko Pastur"]
 pinnedTags: ["Random Matrices", "Linear Algebra", "Probability", "Eigenvalues", "Singular Values", "Scientific Computing"]
 published: true
 interactiveFirst: true
@@ -395,7 +395,7 @@ Random-matrix theory is useful because high-dimensional noise has structure of i
 
 - **Covariance estimation and PCA:** Marchenko–Pastur behaviour helps explain why sample eigenvalues spread when variables and observations are comparable in number. Spiked models study when a low-rank population feature separates from this noise. Real data may be heavy-tailed, dependent, missing or heteroscedastic.
 - **Noisy scientific measurements:** a null spectral bulk can provide a baseline for separating coherent low-rank variation from instrument or sampling noise. The scientific design must still supply the correct noise model.
-- **Wireless communication:** large random channel matrices give tractable limits for multi-antenna capacity and signal-processing questions; Tulino and Verdú provide an authoritative treatment ([Foundations and Trends in Communications and Information Theory](https://doi.org/10.1516/0100000001)). A browser IID matrix is not a complete radio channel.
+- **Wireless communication:** large random channel matrices give tractable limits for multi-antenna capacity and signal-processing questions; Tulino and Verdú provide an authoritative treatment ([Foundations and Trends in Communications and Information Theory](https://doi.org/10.1561/0100000001)). A browser IID matrix is not a complete radio channel.
 - **Neural networks:** weight-matrix singular values influence how signals and gradients stretch through layers. Initialization studies use random-matrix ideas ([Pennington, Schoenholz and Ganguli, 2017](https://papers.nips.cc/paper_files/paper/2017/hash/d9fc0cdb67638d50f411432d0d41d0ba-Abstract.html)), but trained networks are structured, nonlinear and data-dependent.
 - **Dynamical systems:** spectral radius, non-normality and pseudospectra help distinguish asymptotic stability from transient amplification.
 - **Graph spectra:** adjacency and Laplacian eigenvalues can reflect degree structure, components and communities. Sparse graphs require models different from dense Wigner matrices.
@@ -429,7 +429,7 @@ The experiment cards inside the instrument change the required controls together
 - Lloyd N. Trefethen, [“Pseudospectra of Linear Operators”](https://doi.org/10.1137/S0036144595295284), _SIAM Review_ 39(3), 1997.
 - Carl Eckart and Gale Young, [“The Approximation of One Matrix by Another of Lower Rank”](https://doi.org/10.1007/BF02288367), _Psychometrika_ 1, 1936.
 - Nicholas J. Higham, [“Accuracy and Stability of Numerical Algorithms”](https://doi.org/10.1137/1.9780898718027), second edition, SIAM, 2002.
-- Antonia M. Tulino and Sergio Verdú, [“Random Matrix Theory and Wireless Communications”](https://doi.org/10.1516/0100000001), _Foundations and Trends in Communications and Information Theory_ 1(1), 2004.
+- Antonia M. Tulino and Sergio Verdú, [“Random Matrix Theory and Wireless Communications”](https://doi.org/10.1561/0100000001), _Foundations and Trends in Communications and Information Theory_ 1(1), 2004.
 - Vasiliki Plerou and colleagues, [“Universal and Nonuniversal Properties of Cross Correlations in Financial Time Series”](https://doi.org/10.1103/PhysRevLett.83.1471), _Physical Review Letters_ 83, 1999.
 - phase space, [“I Tried Making Generative Art (p5js)”](http://www.youtube.com/watch?v=UsIF5r8rAvk), used only as a seed for the spirit of generative experimentation. Its code, graphics, structure, wording and branding are not used here; the mathematical and numerical claims above come from the cited literature and stated calculations.
 

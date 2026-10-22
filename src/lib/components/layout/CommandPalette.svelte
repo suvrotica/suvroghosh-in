@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { beforeNavigate } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
 
@@ -94,6 +95,10 @@
 		event.preventDefault();
 		openPalette();
 	}
+
+	// The header survives client navigation, including GET search submissions and history changes.
+	// Release the top-layer dialog before navigation resets focus on the destination page.
+	beforeNavigate(closePalette);
 </script>
 
 <svelte:window onkeydown={handleWindowKeydown} />

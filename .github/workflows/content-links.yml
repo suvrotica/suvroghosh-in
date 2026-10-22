@@ -1,0 +1,77 @@
+name: Published content links
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/content-links.yml'
+      - 'src/lib/posts/**'
+      - 'src/lib/topics/**'
+      - 'src/lib/prompts/**'
+      - 'src/lib/lists/**'
+      - 'static/**'
+      - '!static/audio/**'
+      - 'scripts/audit-site-links*'
+      - 'scripts/validate-links*'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/content-links.yml'
+      - 'src/lib/posts/**'
+      - 'src/lib/topics/**'
+      - 'src/lib/prompts/**'
+      - 'src/lib/lists/**'
+      - 'static/**'
+      - '!static/audio/**'
+      - 'scripts/audit-site-links*'
+      - 'scripts/validate-links*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: content-links-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  content-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      IMAGE_OPTIMIZE_VERIFY_ONLY: '1'
+      WORDCLOUD_VERIFY_ONLY: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify link checker fixtures
+        run: npm run links:test
+
+      # Ordinary publishing retains its routine build lane; this does not run feature audits
+      # or prepare notebooks. The local HTTP audit needs no browser or provider credentials.
+      - name: Build published content
+        run: npm run build
+
+      - name: Audit rendered destinations and section targets locally
+        run: npm run links:audit
+
+      - name: Retain link-audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-content-link-audit
+          path: .codex-artifacts/site-links.json
+          if-no-files-found: ignore

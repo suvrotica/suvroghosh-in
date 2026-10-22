@@ -2,11 +2,11 @@
 title: "FHIR and the Clerk With the Clipboard"
 description: "How FHIR uses web APIs, resources, profiles, and terminology to exchange health data—and why a standard alone cannot fix fragmented care."
 date: "2026-06-23"
-dateModified: "2026-07-23"
+dateModified: "2026-10-22"
 thumbnail: "/images/IMG-20260427-WA0009.jpg"
 thumbnailAlt: "Monochrome charcoal illustration of a skeletal figure reading a large book"
 category: "Healthcare-IT"
-tags: ["Implementation Guides","United States","Cures Act","Public Health","Blood Pressure","FHIR","Health","JSON","Resource","HL7"]
+tags: ["Implementation Guides","United States","Cures Act","Public Health","Blood Pressure","FHIR","Health","HL7","Resource","JSON"]
 published: true
 color: "#0D7377"
 inPlainEnglish: "FHIR is a healthcare data exchange standard built from modular resources and familiar web technologies. It makes information easier to request and share, but useful interoperability still depends on profiles, terminology, identity, governance, and workflow agreements."
@@ -250,4 +250,4 @@ HL7 International. FHIR Specification: [https://hl7.org/fhir](https://hl7.org/fh
 
 SMART Health IT. SMART on FHIR: [https://smarthealthit.org](https://smarthealthit.org)
 
-Argonaut Project archive: [https://argonautwiki.hl7.org](https://argonautwiki.hl7.org)
+Argonaut Project: [HL7 project overview](https://projectlifedashboard.hl7.org/accelerators/argonaut-project/)

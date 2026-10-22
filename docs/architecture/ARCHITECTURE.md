@@ -791,6 +791,11 @@ per daily request without increasing the request quota or introducing paid infer
 Root-layout measurement is owned by `src/lib/analytics/client.ts` and the browser-safe
 `src/lib/measurement.ts` policy. `src/lib/privacy/consent.ts` validates a version-one, browser-local
 `suvroghosh:consent` choice with a 180-day lifetime, in-memory fallback, expiry and cross-tab updates.
+The initial privacy notice can be dismissed for the current layout lifetime without writing a
+consent choice or enabling optional services. The footer settings button, or the compact trigger
+on immersive pages, reopens preferences. Shared privacy and command-palette dialogs close before
+client navigation, including search-form submissions and history changes, so their native modal
+top layer does not leave the destination inert.
 Analytics and Speed Insights initialize only after affirmative analytics consent on the canonical
 production origin, outside development and `navigator.webdriver` contexts, and when neither local
 nor session storage contains `suvroghosh:measurement=off`. Denied storage still fails closed for
@@ -881,6 +886,47 @@ local engine when available; these do not establish hosted migration or cron act
 critical-boundaries workflow includes the new privacy suite and affected application/migration paths.
 
 The critical-boundaries workflow also watches the measurement policy/root layout, deferred YouTube component/résumé, notebook header configuration, internal-link validator and their Node regression files. `test:critical` includes `seo:test` for production-origin/opt-out/private-URL measurement rules, real Svelte server rendering of deferred/default players, notebook-to-published-parent canonical consistency and internal-link CLI fixtures. The link validator recognises canonical topic paths only when strict topic frontmatter matches its lowercase kebab-case filename, is published and has the actual topic route handler; missing, unpublished and nested topic paths remain errors. `seo:browser:test` uses an already-built loopback preview, blocks service workers and external requests, and checks keyboard player activation/focus, narrow-screen Writing links and rendered metadata. It does not rebuild the app or serve as a field-performance measurement.
+
+Link integrity has three complementary checks. `validate:links` parses authored Markdown and
+Svelte/TypeScript navigation expressions and scans shared public registries; canonical same-site
+absolute/protocol-relative URLs and route-relative URLs are checked alongside root-relative paths.
+Published topic/resource metadata and actual route handlers determine valid dynamic destinations;
+directories alone do not qualify as downloadable files, and static paths must match the actual
+entry's letter case on every host OS. Code examples do not create navigation
+references. This deterministic source check remains in the publishing prebuild.
+
+`links:audit` starts a loopback production preview (or accepts an explicitly supplied HTTP loopback
+origin), reuses the existing source URL inventory, reconciles the sitemap, and follows rendered
+public links with bounded GETs and redirects. It preserves query states, validates cross-page
+fragments against rendered IDs/named anchors, and records referring pages, redirects, exclusions,
+external destinations and incomplete/failing checks in `.codex-artifacts/site-links.json`.
+Private/auth/API routes are excluded; public Notes use the available local fixture/backend state,
+so this check does not establish hosted publication availability or owner authorization.
+
+`links:browser:test` uses the built loopback preview with service workers blocked and external
+navigation fixtures to exercise footer controls and shared navigation at desktop/mobile sizes.
+`links:test` tests source resolution, crawl boundaries, rendered failures and external-checker
+classification. The feature-artifacts workflow runs those fixtures, the local rendered audit and
+the navigation browser suite around its existing full build, retaining audit evidence.
+The separate content-links workflow covers ordinary post/topic/resource and static-asset changes
+with the routine build and local HTTP audit, preserving the publishing/feature build separation;
+compressed narration-only changes are excluded. Both workflows retain read-only repository
+permissions and require no provider credentials. External
+availability is checked separately with `external-links:audit`, consuming the rendered inventory:
+bounded unauthenticated GETs distinguish confirmed failures from publisher challenges, authentication,
+rate limits and transport failures. External network checks do not gate ordinary builds or CI.
+
+```mermaid
+flowchart LR
+    Sources["Published content / route and public registries"] --> Static["AST source link validation / publishing prebuild"]
+    Sources --> Inventory["Existing source URL inventory + sitemap"]
+    Preview["Loopback production preview"] --> Crawl["Bounded GET crawl / fragments / references"]
+    Inventory --> Crawl
+    Preview --> Browser["Desktop + mobile control activation / dialogs / history"]
+    Crawl --> Evidence["Local audit evidence + CI artifacts"]
+    Browser --> Evidence
+    Crawl --> External["Separate bounded external availability check"]
+```
 
 Unit tests primarily live alongside engines and models. The main Vitest config includes 283 baseline source test files; separate ray-marching and Human+AI ICU configurations account for ten additional source test files. Its coverage-report include list is narrowly notes-focused; it is not a repository-wide coverage promise. `notes:test` invokes the entire default Vitest collection and then SQL-pattern tests, despite its name. `npm test` invokes several focused suites before that global run, repeating work (`AF-010`).
 
