@@ -15,6 +15,7 @@
 	import RouteAtmosphere from '$lib/components/motion/RouteAtmosphere.svelte';
 	import { normaliseMotionPreference, resolveMotion } from '$lib/motion/preferences';
 	import { resolveRouteMotion, shouldUseViewTransition } from '$lib/motion/route-biomes';
+	import { runNavigationTransition } from '$lib/motion/navigation-transition';
 	import type { ResolvedMotion } from '$lib/motion/types';
 
 	type PageDataShellContext = {
@@ -78,22 +79,13 @@
 			return;
 		}
 
-		return new Promise<void>((navigationMayContinue) => {
-			try {
-				const transition = document.startViewTransition(async () => {
-					navigationMayContinue();
-					await navigation.complete;
-				});
-
-				void transition.finished.catch(() => {
-					// Navigation already owns error handling; animation failure is non-fatal.
-				});
-			} catch {
-				// A partial or failing implementation must never block normal navigation.
+		return runNavigationTransition(
+			(update) => document.startViewTransition(update),
+			navigation.complete,
+			() => {
 				document.documentElement.dataset.viewTransitions = 'unavailable';
-				navigationMayContinue();
 			}
-		});
+		);
 	});
 
 	$effect(() => {

@@ -154,6 +154,7 @@ test('ordinary articles and their generated catalogs do not activate full featur
 test('feature inputs, notebooks and shared application or build changes activate full feature CI', () => {
 	for (const file of [
 		'.github/workflows/feature-artifacts.yml',
+		'tests/browser/navigation-links.spec.ts',
 		'package.json',
 		'package-lock.json',
 		'svelte.config.js',

@@ -94,9 +94,10 @@ and corrected DOI repairs; its obsolete Argonaut reference is superseded by the 
 External fragment references are retained for traceability; this bounded HTTP checker does not
 establish foreign-page fragment existence.
 
-## Final production-build reconciliation
+## Initial production-build reconciliation
 
-The successful full production build and complete local crawl produced
+The initial successful full production build and complete local crawl, before the concurrent
+Memory Palace publication, produced
 `.codex-artifacts/site-links.json`. Its **544 external destinations across 44,350 rendered
 references** reconcile to **405 passed, zero confirmed broken, 139 unresolved and zero
 unsupported**. The final unresolved breakdown is 112 browser-verification pages, eight access
@@ -122,3 +123,39 @@ oEmbed audit at 18:34 IST; no video IDs were added or removed. Its existing meta
 therefore apply to the final build without repeating requests. The 139 unresolved destinations
 remain explicit verification limits, including LinkedIn's automation refusal; they have not been
 silently treated as passed or removed from the inventory.
+
+## Supplementary Memory Palace check
+
+The later hosted feature run
+[39814349282](https://github.com/suvrotica/suvroghosh-in/actions/runs/39814349282/job/119948787575)
+at commit `f1d62a1c4de39255f3b53ae46a1f39132d60b21d` completed its local rendered crawl with
+550 external destinations. The new `src/lib/posts/a-place-for-every-idea.md` contains exactly
+six external Markdown destinations, all absent from the initial 544-result report. They are
+consistent with the six-destination increase. The full hosted URL-to-reference map was not
+available locally, so identifying these as the entire hosted difference is an inference from
+the article and counts, not a fresh rendered set comparison. Referring labels in the supplement
+come from the authored article; hosted referring-instance counts are not asserted.
+
+Only these six public destinations were checked, using the existing bounded external checker
+with three global workers, two per initial host, a 12-second attempt deadline, at most two
+attempts, five redirects and a 64 KiB response-prefix limit. Checks completed on 22 October at
+17:03:31 UTC / 22:33:31 IST: **one passed, zero confirmed broken, five unresolved and zero
+unsupported**.
+
+| Destination                                                                                                           | Supplementary outcome                                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| [Rhetorica ad Herennium, Book III](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Rhetorica_ad_Herennium/3*.html) | **Passed:** HTTP 200, title “LacusCurtius • Ad Herennium — Book III”.                                                                     |
+| [USGS water-cycle guide](https://www.usgs.gov/water-science-school/water-cycle)                                       | **Unresolved:** both attempts returned pending/empty HTTP 202 responses.                                                                  |
+| [Karpicke and Roediger DOI](https://doi.org/10.1126/science.1152408)                                                  | **Unresolved:** HTTP 302 resolved to the matching Science DOI path, which returned HTTP 403 with “Just a moment...” browser verification. |
+| [Wagner and colleagues, PMC7929507](https://pmc.ncbi.nlm.nih.gov/articles/PMC7929507/)                                | **Unresolved:** HTTP 200 delivered “Checking your browser - reCAPTCHA”, not verified article content.                                     |
+| [Cepeda and colleagues, eScholarship](https://escholarship.org/uc/item/0kp5q19x)                                      | **Unresolved:** both attempts returned pending/empty HTTP 202 responses.                                                                  |
+| [Zeman, Dewar and Della Sala, PubMed 26115582](https://pubmed.ncbi.nlm.nih.gov/26115582/)                             | **Unresolved:** HTTP 203 delivered the JavaScript cookie/proof-of-work verification gate.                                                 |
+
+Evidence is separate in
+`.codex-artifacts/site-links-2026-10-22/memory-palace-external-supplement.json`, including the
+source/hosted-count provenance, original-report SHA-256 and each attempt. The earlier
+`.codex-artifacts/external-links-final.json` was verified byte-for-byte unchanged; its 405
+passed / 139 unresolved outcomes and original timestamps remain intact. This supplement does
+not claim a newly reconciled 550-destination report, and the five blocked/pending checks are
+not counted as verified or used to justify speculative URL replacements. No whole-site crawl,
+credentialed provider call or account mutation was performed.

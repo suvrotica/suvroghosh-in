@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/feature-artifacts.yml'
+      - 'tests/browser/navigation-links.spec.ts'
       - 'package.json'
       - 'package-lock.json'
       - '*.config.*'
@@ -53,6 +54,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/feature-artifacts.yml'
+      - 'tests/browser/navigation-links.spec.ts'
       - 'package.json'
       - 'package-lock.json'
       - '*.config.*'

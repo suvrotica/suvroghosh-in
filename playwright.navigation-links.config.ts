@@ -12,10 +12,11 @@ export default defineConfig({
 	use: {
 		baseURL,
 		browserName: 'chromium',
-		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? undefined : 'chrome'),
+		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? 'chromium' : 'chrome'),
 		headless: true,
 		serviceWorkers: 'block',
-		reducedMotion: 'reduce',
+		// Keep native transitions covered; the reduced-motion regression opts in explicitly.
+		contextOptions: { reducedMotion: 'no-preference' },
 		screenshot: 'only-on-failure',
 		trace: 'retain-on-failure'
 	},

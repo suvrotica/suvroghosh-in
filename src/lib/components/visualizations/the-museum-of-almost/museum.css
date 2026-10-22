@@ -688,7 +688,7 @@
 		font-size: 1.5rem;
 	}
 	.ma-drawers {
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr);
 		padding: 0 1rem 1rem;
 		gap: 0.5rem;
 	}
@@ -727,8 +727,9 @@
 		padding: 1rem 0 0;
 	}
 	.ma-decision dl {
-		justify-content: space-between;
-		gap: 0.4rem;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1rem;
 	}
 	.ma-record-footer > button {
 		margin-left: 0;
@@ -754,6 +755,7 @@
 		padding: 1rem;
 	}
 	.ma-connector-bench {
+		grid-template-columns: minmax(0, 1fr);
 		gap: 0.7rem;
 	}
 	.ma-connector-bench p {
