@@ -11,6 +11,10 @@ consent, adds bounded geographic page-view rollups in Supabase, and reuses the c
 workspace for reports. Hosted migration/configuration and retention-job activation must be verified
 separately from application tests. See [ADR 0006](decisions/0006-consented-aggregate-analytics.md).
 
+The 23 October owner-requested restoration separates default cookieless Vercel pageviews from
+consented first-party reporting, Speed Insights and custom events. It preserves the SEO/discovery
+changes and private-URL protections. See [ADR 0007](decisions/0007-default-vercel-pageviews.md).
+
 ## 1. System and principles
 
 SuvroGhosh.IN is one SvelteKit application deployed through the Vercel adapter. It combines a repository-backed publishing site, interactive scientific/educational experiences, browser games, downloadable resources, a media library, and a single-owner handwritten-notes application. There is no separate application server, generic CMS, global state store, or shared simulation engine governing every experience.
@@ -40,7 +44,8 @@ flowchart LR
     Browser --> Local["IndexedDB drafts; public-note service-worker caches"]
     Browser --> Consent["Browser-local, versioned privacy choices"]
     Consent -->|optional, eligible production views| Intake["Bounded same-origin analytics collector"]
-    Consent -->|analytics permission and measurement eligibility| Measurement["Vercel Analytics / Speed Insights"]
+    Browser -->|default public pageviews; sanitized URLs and explicit opt-out| WebAnalytics["Vercel Web Analytics"]
+    Consent -->|analytics permission and optional eligibility| Measurement["Speed Insights / custom events"]
     Consent -->|remembered media permission| Media["YouTube embeds"]
     Browser -->|explained one-time media load| Media
     Intake --> Rollups["Supabase daily dimension counters; no visitor history"]
@@ -83,7 +88,7 @@ Paths are relative to the repository root. This is a responsibility map rather t
 | `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                            |
 | `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                |
 | `src/lib/privacy/`                                                                               | Browser-local consent validation, persistence, expiry, cross-tab subscriptions and privacy-settings events; no visitor identifier.                                                                     |
-| `src/lib/analytics/`                                                                             | Browser-safe report types, per-document page-view ledger and consent-gated provider/first-party measurement lifecycle.                                                                                 |
+| `src/lib/analytics/`                                                                             | Browser-safe report types, independent per-document ledgers for default Vercel pageviews and consented first-party/performance measurement.                                                            |
 | `src/lib/server/analytics/`                                                                      | Server-only public-path registry, trusted-geography/dimension policy and bounded aggregate write/report RPCs.                                                                                          |
 | `src/lib/motion/`, `src/lib/attachments/`, `src/lib/utils/`                                      | Motion policy and procedural helpers, DOM attachments, small shared utilities.                                                                                                                         |
 | `src/lib/generated/`, `src/lib/server/generated/`                                                | Generated media/music/sketch indexes and server image dimensions; edit their generators/inputs.                                                                                                        |
@@ -822,14 +827,25 @@ consent choice or enabling optional services. The footer settings button, or the
 on immersive pages, reopens preferences. Shared privacy and command-palette dialogs close before
 client navigation, including search-form submissions and history changes, so their native modal
 top layer does not leave the destination inert.
-Analytics and Speed Insights initialize only after affirmative analytics consent on the canonical
-production origin, outside development and `navigator.webdriver` contexts, and when neither local
-nor session storage contains `suvroghosh:measurement=off`. Denied storage still fails closed for
-measurement. SDK `beforeSend` callbacks recheck eligibility, strip query/fragment state and suppress
-API and Notes studio/auth paths, including encoded forms. Custom visualization events use the same
-gate. A per-document navigation ledger sends one view per eligible pathname visit; it stores no
-visitor/session identifier. Withdrawal aborts pending first-party requests and blocks subsequent
-provider callbacks. Already accepted aggregates cannot be traced back to a withdrawing browser.
+Vercel Web Analytics public pageviews start without an affirmative consent choice. The provider
+lane uses the SDK's ordinary development/production mode and does not require the canonical www
+origin, readable storage or an application webdriver check. Readable local/session
+`suvroghosh:measurement=off` preferences still opt out; a storage exception alone does not opt out
+the cookieless provider. SDK built-in automation behavior remains unchanged. Its `beforeSend`
+callback validates the current browser origin, strips query/fragment state from measured page URLs,
+and suppresses API and Notes studio/auth paths, including encoded forms. No country or location is
+an eligibility input, and the browser sends directly to the existing Vercel endpoints.
+
+First-party rollups, Speed Insights and custom visualization events still require affirmative
+analytics consent on the canonical production origin, outside development and `navigator.webdriver`
+contexts, with neither local nor session opt-out. Denied storage fails closed for that optional lane.
+Independent per-document ledgers send one provider view and one eligible first-party view per pathname
+visit without storing visitor/session identifiers. Granting optional permission can count the current
+first-party visit even if the provider already counted it. Withdrawal aborts pending first-party
+requests, clears queued optional events and blocks future optional callbacks while preserving default
+provider pageviews. Explicit measurement opt-out and lifecycle teardown also suppress provider work.
+Already accepted aggregates cannot be traced back to a withdrawing browser. Privacy controls and the
+public policy distinguish default page counts from optional additional measurement.
 
 The first-party `POST /api/analytics/pageview` accepts a small, schema-validated consent indication
 and known public pathname. It enforces a streamed body limit, exact same-origin requests, production
@@ -907,11 +923,14 @@ Delivered publications cannot be recalled from an offline device. This is a docu
 
 ## 11. Tests and architectural verification
 
-`privacy:test` covers consent parsing/lifecycle, eligible-browser SDK/collector gating, navigation
-deduplication, bounded intake, geographic normalization, report ranges, private owner access and CSV
+`privacy:test` covers consent parsing/lifecycle, default provider versus optional collector/event
+gating, separate navigation ledgers, storage-denial and explicit-opt-out behavior, bounded intake,
+geographic normalization, report ranges, private owner access and CSV
 escaping. `privacy:browser:test` runs against a built loopback preview with service workers blocked;
 the separately isolated test-only dashboard harness contains labelled synthetic aggregate fixtures,
-not a production auth bypass. Database migration execution/grant/retention tests use an isolated
+not a production auth bypass. Provider browser fixtures intercept the SDK locally to verify app
+dispatch without sending test telemetry; these fixtures do not prove live provider acceptance or
+multi-country audience activity. Database migration execution/grant/retention tests use an isolated
 local engine when available; these do not establish hosted migration or cron activation. The
 critical-boundaries workflow includes the new privacy suite and affected application/migration paths.
 

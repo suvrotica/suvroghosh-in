@@ -4,6 +4,7 @@ import {
 	MEASUREMENT_OPTOUT_KEY,
 	filterMeasurementEvent,
 	measurementAllowed,
+	providerPageviewAllowed,
 	readMeasurementPreference
 } from '../src/lib/measurement.ts';
 
@@ -52,6 +53,50 @@ test('honours only the explicit off preference in either browser-local storage s
 		}),
 		'off'
 	);
+});
+
+test('baseline provider views ignore optional eligibility while honoring only explicit opt-outs', () => {
+	assert.equal(providerPageviewAllowed({ localPreference: null, sessionPreference: null }), true);
+	for (const key of ['localPreference', 'sessionPreference']) {
+		assert.equal(providerPageviewAllowed({ ...reader, [key]: 'off' }), false);
+		for (const value of ['', 'false', undefined, 'OFF']) {
+			assert.equal(providerPageviewAllowed({ ...reader, [key]: value }), true);
+		}
+	}
+	for (const override of [
+		{ analyticsConsent: false },
+		{ webdriver: true },
+		{ development: true },
+		{ currentOrigin: 'https://other.example' }
+	]) {
+		assert.equal(providerPageviewAllowed({ ...reader, ...override }), true);
+	}
+	assert.equal(
+		readMeasurementPreference(
+			() => {
+				throw new Error('denied');
+			},
+			{ failClosed: false }
+		),
+		null
+	);
+	assert.equal(
+		readMeasurementPreference(() => ({ getItem: () => 'off' }), { failClosed: false }),
+		'off'
+	);
+});
+
+test('provider redaction works on the actual browser origin without requiring canonical www', () => {
+	const origin = 'https://alternate.example';
+	assert.deepEqual(
+		filterMeasurementEvent({ url: `${origin}/writing?token=secret#state` }, true, origin),
+		{ url: `${origin}/writing` }
+	);
+	assert.equal(
+		filterMeasurementEvent({ url: `${origin}/notes/%73tudio/private?token=secret` }, true, origin),
+		null
+	);
+	assert.equal(filterMeasurementEvent({ url: `${productionOrigin}/writing` }, true, origin), null);
 });
 
 test('strips sensitive URL state without mutating the original pageview or vital', () => {

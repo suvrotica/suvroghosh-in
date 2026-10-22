@@ -19,7 +19,7 @@
 		<path class="rule" d="M32 42h126M32 116h126M32 139h55" />
 		<text x="32" y="29" class="receipt-heading">FIELD NOTES / 01</text>
 		<text x="32" y="65">Essential</text>
-		<text x="32" y="86">Measurement</text>
+		<text x="32" y="86">Optional counts</text>
 		<text x="32" y="107">External media</text>
 		<path class="mark" d="m139 59 4 4 8-9" />
 		{#if analytics}<path class="mark" d="m139 80 4 4 8-9" />{:else}<path

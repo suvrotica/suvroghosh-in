@@ -1,6 +1,7 @@
 # Privacy choices and the Fieldbook Observatory
 
-The application implements optional measurement/media choices and an owner-only aggregate report.
+The application runs default cookieless Vercel public-page counts, optional additional
+measurement/media choices and an owner-only aggregate report.
 Application deployment does not apply database migrations or configure the existing owner account.
 
 ## Hosting constraint
@@ -28,9 +29,13 @@ deployment, as described in [Vercel's setup guide](https://vercel.com/docs/analy
   footerless public experiences reopen the same preferences dialog.
 - `suvroghosh:consent` is a version-one localStorage record with analytics/media booleans and save/expiry
   timestamps, retained for 180 days. It is not an identifier. Rejection has the same lifetime.
-- Invalid/expired choices disable optional services. Storage denial leaves a choice in memory for
-  that document; existing measurement storage checks still fail closed.
-- Both localStorage and sessionStorage `suvroghosh:measurement=off` override analytics permission.
+- Vercel Web Analytics public pageviews run without an optional consent choice, including after
+  rejection/expiry and with unavailable storage. Its own SDK behavior, private-path protections
+  and sanitized measured page URLs still apply; there is no geographic eligibility condition.
+- Invalid/expired choices disable first-party reporting, Speed Insights and custom events. Storage
+  denial leaves a choice in memory for that document; optional measurement still fails closed.
+- A readable localStorage or sessionStorage `suvroghosh:measurement=off` value disables both
+  measurement lanes. Storage errors alone do not disable default cookieless Vercel pageviews.
 - YouTube server-renders local placeholders. One-video activation is distinct from remembered media
   permission; withdrawal removes active players. No new YouTube/CSP host is introduced.
 - Theme/motion settings, saved feature work, same-origin notebooks and Notes authentication remain
@@ -38,9 +43,13 @@ deployment, as described in [Vercel's setup guide](https://vercel.com/docs/analy
 
 ## Collection and reporting
 
-The root layout owns optional provider initialization and first-party navigation counting. An
-in-memory ledger counts a pathname visit once, including the current page when permission is first
-given; query/hash changes and repeated effects do not generate new views. No visitor ID is stored.
+The root layout owns default Vercel initialization and separate optional first-party/performance
+counting. Independent in-memory ledgers count each eligible pathname visit once; the optional
+ledger can count the current page when permission is first given even if Vercel already counted
+it. Query/hash changes and repeated effects do not generate new views. The application stores no
+visitor ID. Provider pageviews use the current browser origin rather than a canonical-origin gate;
+the SDK's own development/production behavior remains intact. Vercel receives browser events
+directly through its existing endpoints, without a first-party proxy or country override.
 
 `POST /api/analytics/pageview` requires exact same-origin JSON with
 `{ "v": 1, "consent": true, "path": "/writing" }` and an optional sanitized referrer hostname.
@@ -100,6 +109,8 @@ large backlogs need repeated bounded batches, not an unbounded deletion.
 
 Withdrawal cancels unsent first-party work and blocks future optional events. It cannot recall a
 request already received or identify one browser's contribution inside identifier-free aggregates.
+Default Vercel pageviews continue separately; full measurement opt-out and lifecycle disposal also
+block those callbacks. Queued optional events are discarded without dropping default pageviews.
 
 An unconfigured backend does not prevent reading. Reports show an honest unavailable state; the
 collector returns an unavailable response without throwing into the visitor UI. Do not interpret an
@@ -107,7 +118,8 @@ empty report as proof that hosted collection or retention is configured.
 
 ## Verification
 
-- `npm run privacy:test`: consent lifecycle, eligible-browser network/SDK gating, navigation ledger,
+- `npm run privacy:test`: consent lifecycle, default provider versus optional SDK/collector gating,
+  independent navigation ledgers, explicit opt-out and blocked-storage behavior,
   bounded endpoint policy, report ranges, configured-owner authorization and safe CSV.
 - `npm run privacy:browser:test`: built loopback preview, blocked service workers, full-site privacy
   controls and private-response checks.

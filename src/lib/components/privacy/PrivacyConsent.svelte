@@ -82,7 +82,7 @@
 		const { persisted } = saveConsent({ analytics: nextAnalytics, media: nextMedia });
 		notice = persisted
 			? 'Your choices are saved. Change them any time in Privacy & cookies.'
-			: 'Your browser could not save these choices. They apply for this visit; measurement stays off when storage is unavailable.';
+			: 'Your browser could not save these choices. They apply for this visit; optional measurement stays off when storage is unavailable.';
 		closeSettings();
 		if (persisted)
 			noticeTimer = setTimeout(() => {
@@ -130,8 +130,8 @@
 			<ChoiceReceipt small />
 		</div>
 		<p>
-			Make yourself at home. Optional measurement helps me understand what gets read and roughly
-			where. YouTube stays paused until you choose.
+			Make yourself at home. Vercel’s cookieless page counts run by default. Choose whether to add
+			first-party audience reports, performance measurement and YouTube players.
 		</p>
 		<div class="note-actions">
 			<button type="button" onclick={() => commit(false, false)}>Reject optional</button>
@@ -208,7 +208,11 @@
 			</section>
 			<section class="category">
 				<div class="category-heading">
-					<h3><label for="privacy-analytics"><span>02</span> Audience &amp; performance</label></h3>
+					<h3>
+						<label for="privacy-analytics"
+							><span>02</span> Optional audience &amp; performance</label
+						>
+					</h3>
 					<input
 						id="privacy-analytics"
 						type="checkbox"
@@ -218,9 +222,10 @@
 					/>
 				</div>
 				<p id="analytics-description">
-					Allow first-party page counts with approximate city, region and country, plus Vercel
-					Analytics and Speed Insights. No precise location or persistent visitor ID is kept in the
-					first-party reports.
+					Allow first-party page counts with approximate city, region and country, plus Speed
+					Insights and custom visualization events. No precise location or persistent visitor ID is
+					kept in the first-party reports. Vercel’s cookieless page counts run separately by
+					default; this switch controls the additional measurement only.
 				</p>
 			</section>
 			<section class="category">
@@ -249,7 +254,7 @@
 					<dd>Available</dd>
 				</div>
 				<div>
-					<dt>Measurement</dt>
+					<dt>Optional measurement</dt>
 					<dd>{analytics ? 'Allowed' : 'Off'}</dd>
 				</div>
 				<div>

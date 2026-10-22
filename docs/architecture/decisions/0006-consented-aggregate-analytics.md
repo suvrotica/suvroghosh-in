@@ -3,6 +3,11 @@
 - Date: 22 October 2026
 - Status: Accepted for implementation; hosted migration and configuration require verification
 
+The consent and application eligibility requirements for Vercel Web Analytics pageviews are superseded by
+[ADR 0007](0007-default-vercel-pageviews.md), dated 23 October 2026. The first-party collector,
+geographic rollups, owner authorization, optional performance/custom events and media decisions
+below remain in effect. This record preserves the original reasoning.
+
 ## Context
 
 The site needs an explicit optional-measurement choice, approximate geographic audience reporting,
