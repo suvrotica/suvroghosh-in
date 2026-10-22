@@ -23,6 +23,29 @@ const assert = (condition, message) => {
 };
 const integer = (value) => Number.isSafeInteger(value) && value >= 0;
 
+function stateApiOperation(route, method, upload) {
+	// Describe only known endpoint categories. Never log a URL, query, request
+	// payload, response body, or upstream message from this credentialed client.
+	const endpoint = route.slice(`/repos/${NARRATION_REPOSITORY}`.length).split('?', 1)[0];
+	const categories = [
+		[/^\/git\/ref\/heads\/codex\/narration-state$/, 'state reference read'],
+		[/^\/contents\/state\.json$/, 'state metadata read'],
+		[/^\/git\/commits\/[a-f0-9]{40}$/, 'state parent commit read'],
+		[/^\/git\/trees$/, 'state tree creation'],
+		[/^\/git\/commits$/, 'state commit creation'],
+		[/^\/git\/refs\/heads\/codex\/narration-state$/, 'state reference update'],
+		[/^\/git\/refs$/, 'state reference creation'],
+		[/^\/releases\/tags\/narration-checkpoints$/, 'checkpoint release read'],
+		[/^\/releases$/, 'checkpoint release creation'],
+		[/^\/releases\/[0-9]+\/assets$/, upload ? 'checkpoint asset upload' : 'checkpoint asset list'],
+		[/^\/releases\/assets\/[0-9]+$/, 'checkpoint asset deletion']
+	];
+	const category =
+		categories.find(([pattern]) => pattern.test(endpoint))?.[1] ?? 'other state endpoint';
+	const safeMethod = ['GET', 'POST', 'PATCH', 'DELETE'].includes(method) ? method : 'OTHER';
+	return `${safeMethod} ${category}`;
+}
+
 export function validateHostedQuota(quota) {
 	assert(
 		quota?.version === 1 && /^\d{4}-\d{2}-\d{2}$/.test(quota.day ?? ''),
@@ -289,7 +312,7 @@ export async function createGithubNarrationState({
 		});
 		assert(
 			response.ok,
-			`GitHub narration state operation failed (HTTP ${response.status}). No provider request may proceed.`
+			`GitHub narration state operation failed (HTTP ${response.status}; ${stateApiOperation(route, method, upload)}). No provider request may proceed.`
 		);
 		if (response.status === 204) return null;
 		return JSON.parse((await boundedBody(response, 8 * 1024 * 1024)).toString('utf8'));

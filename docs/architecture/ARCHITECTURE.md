@@ -56,7 +56,7 @@ flowchart LR
     Checkpoints --> SourcesAudio
     SourcesAudio --> EncodeAudio["Authoring-only FFmpeg compression; 64 kbps mono MP3"]
     EncodeAudio --> Audio["Complete delivery manifests and content-hashed MP3"]
-    Audio --> PublishAudio["Main commit; Vercel Git deployment; verify production before WAV retirement"]
+    Audio --> PublishAudio["Main/Vercel release; verify before WAV retirement; save final checkpoint once"]
     PublishAudio --> Static
     Browser --> Speech["Shared article player; device-voice fallback"]
 ```
@@ -642,7 +642,13 @@ Complete MP3s/manifests are committed to `main` and published through the existi
 integration. The job reads the matching commit's production deployment status and verifies live
 custom-domain manifests/audio before retiring completed WAV copies from hosted state; local
 originals remain. Routine runs verify only newly ready deliveries and unverified pending
-publications; a no-work run does not launch production verification. Explicit `verify_only`
+publications. Post-verification source pruning attempts one final checkpoint write; cleanup does
+not blindly repeat an uncertain write. Preview shutdown, fallback checkpoint preservation and the
+run summary each run independently, with original and cleanup failures retained together. State
+API errors identify the failed operation without response bodies or credentials; state failures
+remain fatal and cannot authorize another provider request. A later housekeeping failure leaves
+the verified publication receipt intact.
+A no-work run does not launch production verification. Explicit `verify_only`
 and deployment probes retain the three initial smoke fixtures. All narration browser contexts
 block service workers, preventing verification from warming unrelated offline assets.
 Publication is bounded at 6 GiB of delivery audio and 8 GiB of site payload.

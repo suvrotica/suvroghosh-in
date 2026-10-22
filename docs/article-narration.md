@@ -165,6 +165,13 @@ quota state rather than starting a separate local generator. The report records 
 
 Use GitHub Actions to inspect the run summary and deployment verification. Expected quota pauses
 are resumable; authentication, state corruption, deployment failures and size limits need review.
+Publication verification and final checkpoint persistence are separate outcomes. A verified live
+recording remains published if later checkpoint housekeeping fails. The runner saves the pruned
+checkpoint once, preserves the original error alongside any cleanup failures, and still attempts
+its run summary. Failed GitHub state writes identify their operation without exposing response
+bodies or credentials. The final checkpoint after source pruning is not implicitly retried. An
+earlier failure still permits one fallback checkpoint attempt, retaining both errors if that
+also fails; neither failure permits further provider requests.
 Do not delete the state branch, reseed a populated ledger, or force-push over a conflict to obtain
 another daily allowance. Manual local generation must not run alongside the hosted schedule with
 an independent quota ledger.

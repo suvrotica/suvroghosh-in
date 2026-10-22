@@ -667,6 +667,77 @@ test('provider real failure and deployment failure preserve sources without prun
 	}
 });
 
+test('verified publication saves its pruned checkpoint once without an implicit second write', async (t) => {
+	const f = await fixture(t);
+	await f.source(initial[0]);
+	let saves = 0;
+	f.state.saveCheckpoint = async () => {
+		f.events.push('saveCheckpoint');
+		if (++saves > 1) throw new Error('Redundant final checkpoint write.');
+	};
+	await runGithubNarration(f);
+	assert.equal(saves, 1);
+	assert.equal(f.data.publication.status, 'verified');
+	assert.ok(f.events.indexOf('prune') < f.events.indexOf('saveCheckpoint'));
+	assert.equal(f.events.at(-1), 'summary');
+});
+
+test('a failed final checkpoint remains the original error and is not blindly retried', async (t) => {
+	const f = await fixture(t);
+	await f.source(initial[0]);
+	const failure = new Error('Checkpoint ref update failed.');
+	let saves = 0;
+	f.state.saveCheckpoint = async () => {
+		saves++;
+		throw failure;
+	};
+	await assert.rejects(runGithubNarration(f), (error) => error === failure);
+	assert.equal(saves, 1);
+	assert.equal(f.data.publication.status, 'verified');
+	assert.equal(f.events.at(-1), 'summary');
+});
+
+test('generation and checkpoint failures are both retained while the summary still runs', async (t) => {
+	const f = await fixture(t);
+	const generation = new Error('Original generation failure.');
+	const checkpoint = new Error('Final checkpoint failure.');
+	f.dependencies.generate = async () => {
+		throw generation;
+	};
+	f.state.saveCheckpoint = async () => {
+		throw checkpoint;
+	};
+	await assert.rejects(runGithubNarration(f), (error) => {
+		assert(error instanceof AggregateError);
+		assert.deepEqual(error.errors, [generation, checkpoint]);
+		assert.match(error.message, /Original generation failure.*Final checkpoint failure/u);
+		return true;
+	});
+	assert.equal(f.events.includes('push'), false);
+	assert.equal(f.events.at(-1), 'summary');
+});
+
+test('preview cleanup failure cannot prevent checkpoint preservation or the run summary', async (t) => {
+	const f = await fixture(t);
+	const generation = new Error('Generation stopped.');
+	const close = new Error('Preview cleanup stopped.');
+	f.dependencies.generate = async () => {
+		throw generation;
+	};
+	f.dependencies.preview = async () => ({
+		close: async () => {
+			throw close;
+		}
+	});
+	await assert.rejects(runGithubNarration(f), (error) => {
+		assert(error instanceof AggregateError);
+		assert.deepEqual(error.errors, [generation, close]);
+		return true;
+	});
+	assert.equal(f.events.includes('saveCheckpoint'), true);
+	assert.equal(f.events.at(-1), 'summary');
+});
+
 test('already published valid MP3s keep older encoder identity and can prune matching saved WAVs', async (t) => {
 	const f = await fixture(t);
 	await f.source(initial[0]);

@@ -859,6 +859,8 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 		commit: base
 	};
 	let preview;
+	let finalCheckpointAttempted = false;
+	const failures = [];
 	try {
 		preview = await deps.preview();
 		const inventory = new Map(
@@ -1016,14 +1018,32 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 				status: 'verified'
 			});
 			await state.dropPublishedSources([...manifests.keys()]);
+			// An uncertain GitHub write must not be repeated implicitly during cleanup.
+			finalCheckpointAttempted = true;
 			await state.saveCheckpoint();
 		}
-		return report;
-	} finally {
-		await preview?.close();
-		if (!verifyOnly) await state.saveCheckpoint();
-		await deps.summary(report);
+	} catch (error) {
+		failures.push(error);
 	}
+	// Attempt each finalizer even if another one fails. Keep the original failure
+	// and the report instead of replacing them with a later checkpoint/close error.
+	const finalize = async (operation) => {
+		try {
+			await operation();
+		} catch (error) {
+			failures.push(error);
+		}
+	};
+	await finalize(() => preview?.close());
+	if (!verifyOnly && !finalCheckpointAttempted) await finalize(() => state.saveCheckpoint());
+	await finalize(() => deps.summary(report));
+	if (failures.length === 1) throw failures[0];
+	if (failures.length > 1)
+		throw new AggregateError(
+			failures,
+			failures.map((error) => (error instanceof Error ? error.message : String(error))).join('; ')
+		);
+	return report;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {

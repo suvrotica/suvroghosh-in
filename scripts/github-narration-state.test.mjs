@@ -360,6 +360,101 @@ test('same-day ledger rewinds and checkpoint persistence failure retain durable 
 	assert.deepEqual(remote.current.checkpoint, pointer);
 });
 
+for (const failure of [
+	{
+		name: 'checkpoint upload',
+		method: 'POST',
+		route: '/releases/11/assets',
+		operation: 'POST checkpoint asset upload',
+		newAssets: 0
+	},
+	{
+		name: 'state tree creation',
+		method: 'POST',
+		route: '/git/trees',
+		operation: 'POST state tree creation',
+		newAssets: 1
+	},
+	{
+		name: 'state reference update',
+		method: 'PATCH',
+		route: '/git/refs/heads/codex/narration-state',
+		operation: 'PATCH state reference update',
+		newAssets: 1
+	}
+]) {
+	test(`HTTP 422 during ${failure.name} identifies the operation, redacts upstream data, and preserves durable state`, async (t) => {
+		const root = await fixture(t);
+		const remote = github();
+		const credentials = env();
+		let fail = false;
+		let rejectedRequests = 0;
+		let exposedQuery;
+		const fetchImpl = async (url, options = {}) => {
+			const parsed = new URL(url);
+			const route = parsed.pathname.replace('/repos/suvrotica/suvroghosh-in', '');
+			if (fail && options.method === failure.method && route === failure.route) {
+				rejectedRequests++;
+				exposedQuery = parsed.search;
+				return Response.json(
+					{
+						message: `Do not echo: ${credentials.GH_TOKEN} ${credentials.GEMINI_API_KEY} ${credentials.NARRATION_STATE_KEY}`,
+						errors: [{ resource: 'SecretResource', field: 'private-field', code: 'private-code' }],
+						request: { url, body: String(options.body) }
+					},
+					{ status: 422, headers: { 'X-GitHub-Request-Id': credentials.GH_TOKEN } }
+				);
+			}
+			return remote.fetch(url, options);
+		};
+		const client = await createGithubNarrationState({ root, env: credentials, fetchImpl });
+		await client.bootstrap(quota());
+		const before = structuredClone(client.data);
+		const assetsBefore = remote.assets.size;
+		fail = true;
+		let proceeded = false;
+		await assert.rejects(
+			(async () => {
+				await client.saveCheckpoint();
+				proceeded = true;
+			})(),
+			(error) => {
+				assert.equal(
+					error.message,
+					`GitHub narration state operation failed (HTTP 422; ${failure.operation}). No provider request may proceed.`
+				);
+				for (const privateValue of [
+					credentials.GH_TOKEN,
+					credentials.GEMINI_API_KEY,
+					credentials.NARRATION_STATE_KEY,
+					'SecretResource',
+					'private-field',
+					'private-code',
+					'public narration metadata',
+					'/repos/',
+					'name=',
+					'narration-checkpoint-v1-'
+				])
+					assert.equal(`${error.message}\n${error.stack}`.includes(privateValue), false);
+				if (exposedQuery) assert.equal(error.message.includes(exposedQuery), false);
+				return true;
+			}
+		);
+		assert.equal(rejectedRequests, 1, 'A failed state write must not be retried automatically.');
+		assert.equal(proceeded, false);
+		assert.deepEqual(client.data, before);
+		assert.deepEqual(remote.current, before);
+		assert.equal(remote.current.quota.used, 10);
+		assert.equal(remote.assets.size, assetsBefore + failure.newAssets);
+		assert(
+			remote.calls
+				.filter((call) => call.method === 'PATCH')
+				.every((call) => call.body.force === false),
+			'State diagnostics must not permit a forced reference update.'
+		);
+	});
+}
+
 test('only current and previous owned snapshots remain after successful pointer replacement', async (t) => {
 	const root = await fixture(t);
 	const remote = github();
