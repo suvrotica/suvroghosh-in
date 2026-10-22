@@ -15188,6 +15188,36 @@
 				"Data Provenance"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/php2shell-wordpress-security-alert.md": {
+			"bodyHash": "4fd304661f048a9ae4233f8245e60dad6d256f7aaaff16541b073848bb7f313e",
+			"hashVersion": 2,
+			"revisionHash": "2a47ffe9a5be1560e9d841064f64a9dbf2831ad7a96ec0d786a112d512c2ad06",
+			"generatedTags": [
+				"PHP",
+				"PHP2Shell",
+				"WordPress",
+				"Cybersecurity",
+				"Web Hosting",
+				"Security Updates",
+				"Remote Code Execution",
+				"Server Security",
+				"Vulnerability Management",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"PHP",
+				"PHP2Shell",
+				"WordPress",
+				"Cybersecurity",
+				"Web Hosting",
+				"Security Updates",
+				"Remote Code Execution",
+				"Server Security",
+				"Vulnerability Management",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

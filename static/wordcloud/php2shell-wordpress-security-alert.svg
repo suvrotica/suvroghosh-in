@@ -1,0 +1,134 @@
+<svg role="img" aria-label="PHP2Shell Alert: WordPress Owners, Check Your Host Now" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>PHP2Shell Alert: WordPress Owners, Check Your Host Now</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(633,685)" font-size="118" style="fill:#a9b7a3">PHP</text>
+<text transform="translate(25,659)" font-size="99" style="fill:#d9c89e">Wordpress</text>
+<text transform="translate(162,449)" font-size="76" style="fill:#e0b879">Server</text>
+<text transform="translate(698,116)" font-size="71" style="fill:#b6c3dd">Security</text>
+<text transform="translate(273,390)" font-size="71" style="fill:#9fc9c5">Site</text>
+<text transform="translate(89,249)" font-size="65" style="fill:#b6c3dd">Check</text>
+<text transform="translate(505,453)" font-size="65" style="fill:#c7d7b5">Update</text>
+<text transform="translate(573,358)" font-size="59" style="fill:#c7d7b5">Patched</text>
+<text transform="translate(845,461)" font-size="53" style="fill:#c7d7b5">October</text>
+<text transform="translate(882,182)" font-size="53" style="fill:#b6c3dd">Hosting</text>
+<text transform="translate(85,561)" font-size="53" style="fill:#a9b7a3">Fix</text>
+<text transform="translate(431,269)" font-size="53" style="fill:#c49a6c">Wordpresscom</text>
+<text transform="translate(871,575)" font-size="53" style="fill:#e0b879">Project</text>
+<text transform="translate(875,708)" font-size="53" style="fill:#b6c3dd">Affected</text>
+<text transform="translate(867,342)" font-size="53" style="fill:#c49a6c">Advisory</text>
+<text transform="translate(708,403)" font-size="53" style="fill:#d6a79f">Release</text>
+<text transform="translate(117,40)" font-size="46" style="fill:#9fc9c5">Website</text>
+<text transform="translate(166,89)" font-size="46" style="fill:#d88988">Whether</text>
+<text transform="translate(34,323)" font-size="46" style="fill:#d5d2c2">Already</text>
+<text transform="translate(1257,698) rotate(-90)" font-size="46" style="fill:#a9b7a3">Wordpressorg</text>
+<text transform="translate(109,182)" font-size="46" style="fill:#d88988">Required</text>
+<text transform="translate(319,129)" font-size="46" style="fill:#d5d2c2">Automattic</text>
+<text transform="translate(435,218)" font-size="46" style="fill:#8fb7d0">Protection</text>
+<text transform="translate(353,46)" font-size="46" style="fill:#d88988">Announcement</text>
+<text transform="translate(234,511)" font-size="46" style="fill:#d6a79f">Serving</text>
+<text transform="translate(817,523)" font-size="46" style="fill:#d6a79f">Vendor</text>
+<text transform="translate(18,502)" font-size="46" style="fill:#b6c3dd">Service</text>
+<text transform="translate(931,632)" font-size="38" style="fill:#9fc9c5">Run</text>
+<text transform="translate(1069,38)" font-size="38" style="fill:#b6c3dd">Php2shell</text>
+<text transform="translate(446,361)" font-size="38" style="fill:#e0b879">Sites</text>
+<text transform="translate(15,407)" font-size="38" style="fill:#d9c89e">Needs</text>
+<text transform="translate(30,123)" font-size="38" style="fill:#d6a79f">Patching</text>
+<text transform="translate(480,586)" font-size="38" style="fill:#d6a79f">Released</text>
+<text transform="translate(577,525)" font-size="38" style="fill:#d6a79f">Updates</text>
+<text transform="translate(1153,636) rotate(-90)" font-size="38" style="fill:#9fc9c5">Vulnerabilities</text>
+<text transform="translate(352,159)" font-size="38" style="fill:#b6c3dd">Cve2026109618</text>
+<text transform="translate(938,248)" font-size="38" style="fill:#9fc9c5">Cve2026109619</text>
+<text transform="translate(969,50)" font-size="38" style="fill:#c49a6c">Code</text>
+<text transform="translate(1197,509) rotate(-90)" font-size="38" style="fill:#a9b7a3">Runs</text>
+<text transform="translate(780,558) rotate(-90)" font-size="38" style="fill:#c49a6c">Owners</text>
+<text transform="translate(707,48)" font-size="38" style="fill:#d9c89e">Running</text>
+<text transform="translate(686,171)" font-size="38" style="fill:#8fb7d0">Software</text>
+<text transform="translate(390,693)" font-size="38" style="fill:#d6a79f">Waiting</text>
+<text transform="translate(214,545)" font-size="38" style="fill:#8fb7d0">Company</text>
+<text transform="translate(935,401)" font-size="38" style="fill:#9fc9c5">Current</text>
+<text transform="translate(1214,708) rotate(-90)" font-size="38" style="fill:#e0b879">Confirm</text>
+<text transform="translate(240,305)" font-size="38" style="fill:#c49a6c">Administer</text>
+<text transform="translate(1048,139)" font-size="38" style="fill:#e0b879">Apply</text>
+<text transform="translate(819,285)" font-size="38" style="fill:#c49a6c">Appropriate</text>
+<text transform="translate(7,694)" font-size="38" style="fill:#d5d2c2">Follow</text>
+<text transform="translate(1269,334) rotate(-90)" font-size="38" style="fill:#d9c89e">Instructions</text>
+<text transform="translate(375,80)" font-size="38" style="fill:#9fc9c5">Different</text>
+<text transform="translate(1065,84)" font-size="38" style="fill:#d5d2c2">Host</text>
+<text transform="translate(721,225)" font-size="38" style="fill:#c7d7b5">Statement</text>
+<text transform="translate(279,585)" font-size="38" style="fill:#d6a79f">Upstream</text>
+<text transform="translate(522,393)" font-size="38" style="fill:#b6c3dd">Official</text>
+<text transform="translate(8,361)" font-size="38" style="fill:#a9b7a3">Backport</text>
+<text transform="translate(981,667)" font-size="38" style="fill:#c7d7b5">Fixes</text>
+<text transform="translate(485,531) rotate(-90)" font-size="38" style="fill:#c7d7b5">Package</text>
+<text transform="translate(606,307)" font-size="38" style="fill:#e0b879">Version</text>
+<text transform="translate(603,715)" font-size="36" style="fill:#d88988">Installation</text>
+<text transform="translate(37,281)" font-size="36" style="fill:#c49a6c">Answer</text>
+<text transform="translate(284,225)" font-size="36" style="fill:#d5d2c2">Depend</text>
+<text transform="translate(669,596)" font-size="36" style="fill:#d88988">Firewall</text>
+<text transform="translate(989,216)" font-size="26" style="fill:#c49a6c">Alert</text>
+<text transform="translate(12,89)" font-size="26" style="fill:#8fb7d0">Provider</text>
+<text transform="translate(985,496)" font-size="26" style="fill:#d5d2c2">Updating</text>
+<text transform="translate(294,696)" font-size="26" style="fill:#e0b879">Alone</text>
+<text transform="translate(13,186)" font-size="26" style="fill:#d6a79f">Hosted</text>
+<text transform="translate(937,367)" font-size="26" style="fill:#b6c3dd">Protected</text>
+<text transform="translate(462,311)" font-size="26" style="fill:#d9c89e">Dashboard</text>
+<text transform="translate(1167,537)" font-size="26" style="fill:#d6a79f">Say</text>
+<text transform="translate(1071,284)" font-size="26" style="fill:#c7d7b5">Everything</text>
+<text transform="translate(1185,354)" font-size="26" style="fill:#d6a79f">Date</text>
+<text transform="translate(1226,514) rotate(-90)" font-size="26" style="fill:#d5d2c2">Underneath</text>
+<text transform="translate(1184,131) rotate(-90)" font-size="26" style="fill:#b6c3dd">Part</text>
+<text transform="translate(19,432)" font-size="26" style="fill:#e0b879">Emergency</text>
+<text transform="translate(559,478)" font-size="26" style="fill:#a9b7a3">Critical</text>
+<text transform="translate(280,325)" font-size="22" style="fill:#8fb7d0">Collectively</text>
+<text transform="translate(1233,177) rotate(-90)" font-size="22" style="fill:#e0b879">Called</text>
+<text transform="translate(300,264)" font-size="22" style="fill:#d9c89e">Relevant</text>
+<text transform="translate(818,139)" font-size="22" style="fill:#c7d7b5">Conditions</text>
+<text transform="translate(164,471)" font-size="22" style="fill:#e0b879">Attacker</text>
+<text transform="translate(806,530) rotate(-90)" font-size="22" style="fill:#d9c89e">Logging</text>
+<text transform="translate(1204,175) rotate(-90)" font-size="22" style="fill:#a9b7a3">Foundation</text>
+<text transform="translate(464,552)" font-size="22" style="fill:#c49a6c">Technical</text>
+<text transform="translate(40,715)" font-size="22" style="fill:#d88988">Account</text>
+<text transform="translate(978,525)" font-size="22" style="fill:#d6a79f">Describes</text>
+<text transform="translate(821,21)" font-size="22" style="fill:#a9b7a3">Problems</text>
+<text transform="translate(891,655)" font-size="22" style="fill:#d6a79f">Memory</text>
+<text transform="translate(23,457)" font-size="22" style="fill:#d5d2c2">Management</text>
+<text transform="translate(554,661)" font-size="22" style="fill:#c49a6c">Error</text>
+<text transform="translate(158,690)" font-size="22" style="fill:#c49a6c">Handling</text>
+<text transform="translate(587,72)" font-size="22" style="fill:#a9b7a3">Remote</text>
+<text transform="translate(992,424)" font-size="22" style="fill:#c7d7b5">Execution</text>
+<text transform="translate(461,181)" font-size="22" style="fill:#d5d2c2">Demonstrated</text>
+<text transform="translate(726,189)" font-size="18" style="fill:#b6c3dd">Configurations</text>
+<text transform="translate(804,672)" font-size="18" style="fill:#d88988">Yes</text>
+<text transform="translate(1007,630)" font-size="18" style="fill:#d88988">Concerns</text>
+<text transform="translate(860,690) rotate(-90)" font-size="18" style="fill:#c7d7b5">Including</text>
+<text transform="translate(163,379)" font-size="18" style="fill:#c49a6c">Ordinary</text>
+<text transform="translate(1037,609)" font-size="18" style="fill:#a9b7a3">Never</text>
+<text transform="translate(318,714)" font-size="18" style="fill:#d5d2c2">Reason</text>
+<text transform="translate(609,113)" font-size="18" style="fill:#d5d2c2">Think</text>
+<text transform="translate(850,363)" font-size="18" style="fill:#d6a79f">Beneath</text>
+<text transform="translate(17,578)" font-size="18" style="fill:#c49a6c">Vulnerability</text>
+<text transform="translate(65,140)" font-size="18" style="fill:#c7d7b5">Underlying</text>
+<text transform="translate(1160,212)" font-size="18" style="fill:#d88988">Runtime</text>
+<text transform="translate(173,595)" font-size="18" style="fill:#d9c89e">Urges</text>
+<text transform="translate(229,142)" font-size="18" style="fill:#c7d7b5">Planned</text>
+<text transform="translate(624,550)" font-size="18" style="fill:#d5d2c2">Particular</text>
+<text transform="translate(838,480) rotate(-90)" font-size="18" style="fill:#c7d7b5">Issues</text>
+<text transform="translate(225,562)" font-size="18" style="fill:#8fb7d0">Mean</text>
+<text transform="translate(888,39)" font-size="18" style="fill:#8fb7d0">Wrong</text>
+<text transform="translate(22,41)" font-size="18" style="fill:#d5d2c2">Need</text>
+<text transform="translate(687,136)" font-size="18" style="fill:#8fb7d0">Attention</text>
+<text transform="translate(1177,381) rotate(-90)" font-size="18" style="fill:#d9c89e">Owner</text>
+<text transform="translate(508,507)" font-size="18" style="fill:#b6c3dd">Place</text>
+<text transform="translate(638,679) rotate(-90)" font-size="18" style="fill:#c7d7b5">Customer</text>
+<text transform="translate(338,242)" font-size="18" style="fill:#d6a79f">Action</text>
+<text transform="translate(236,340)" font-size="18" style="fill:#d9c89e">VIP</text>
+<text transform="translate(580,94)" font-size="18" style="fill:#e0b879">Cloud</text>
+<text transform="translate(188,267)" font-size="18" style="fill:#b6c3dd">Pressable</text>
+<text transform="translate(396,714)" font-size="18" style="fill:#a9b7a3">Tumblr</text>
+<text transform="translate(310,200)" font-size="18" style="fill:#c49a6c">Includes</text>
+<text transform="translate(143,715)" font-size="18" style="fill:#c7d7b5">Services</text>
+<text transform="translate(830,242)" font-size="18" style="fill:#d6a79f">Installed</text>
+<text transform="translate(928,619) rotate(-90)" font-size="18" style="fill:#d5d2c2">VPS</text>
+<text transform="translate(864,479)" font-size="18" style="fill:#d5d2c2">Deployment</text>
+<text transform="translate(30,214)" font-size="18" style="fill:#b6c3dd">First</text>
+</svg>

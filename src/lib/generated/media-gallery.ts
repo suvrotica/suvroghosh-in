@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "art-php2shell-wordpress-security-alert.jpg",
+			"src": "/images/art-php2shell-wordpress-security-alert.jpg",
+			"bytes": 310312,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "art-shubho-glucose.jpg",
 			"src": "/images/art-shubho-glucose.jpg",
 			"bytes": 369083,
