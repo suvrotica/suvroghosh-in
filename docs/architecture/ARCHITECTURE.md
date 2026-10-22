@@ -6,14 +6,14 @@ The mandatory architecture-change policy has one authoritative definition: [CONT
 
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
-The 22 October privacy/analytics implementation changes optional browser measurement to explicit
-consent, adds bounded geographic page-view rollups in Supabase, and reuses the configured-owner
-workspace for reports. Hosted migration/configuration and retention-job activation must be verified
-separately from application tests. See [ADR 0006](decisions/0006-consented-aggregate-analytics.md).
-
-The 23 October owner-requested restoration separates default cookieless Vercel pageviews from
-consented first-party reporting, Speed Insights and custom events. It preserves the SEO/discovery
-changes and private-URL protections. See [ADR 0007](decisions/0007-default-vercel-pageviews.md).
+The 22 October privacy/analytics implementation added bounded geographic page-view rollups in
+Supabase and reused the configured-owner workspace for reports. The 23 October decision removes
+analytics choices and current-browser first-party, performance and custom-event collection: public
+pageviews use default cookieless Vercel Web Analytics, while version-two preferences govern YouTube
+only. The bounded legacy collector and owner reports remain available. Hosted migration/configuration
+and retention-job activation require separate verification. See [ADR 0008](decisions/0008-media-only-consent.md),
+which supersedes the affected browser policies in [ADR 0006](decisions/0006-consented-aggregate-analytics.md)
+and [ADR 0007](decisions/0007-default-vercel-pageviews.md). SEO/discovery fixes are preserved.
 
 ## 1. System and principles
 
@@ -42,10 +42,9 @@ flowchart LR
     SSR --> Supabase["Supabase Auth, Postgres/RLS, private Storage"]
     Supabase --> Cron["Scheduled-publication RPC via pg_cron"]
     Browser --> Local["IndexedDB drafts; public-note service-worker caches"]
-    Browser --> Consent["Browser-local, versioned privacy choices"]
-    Consent -->|optional, eligible production views| Intake["Bounded same-origin analytics collector"]
-    Browser -->|default public pageviews; sanitized URLs and explicit opt-out| WebAnalytics["Vercel Web Analytics"]
-    Consent -->|analytics permission and optional eligibility| Measurement["Speed Insights / custom events"]
+    Browser --> Consent["Browser-local v2 YouTube preference"]
+    Browser -->|default public pageviews; sanitized URLs| WebAnalytics["Vercel Web Analytics"]
+    Legacy["Older consented browser clients"] -->|bounded compatible requests| Intake["Existing same-origin analytics collector"]
     Consent -->|remembered media permission| Media["YouTube embeds"]
     Browser -->|explained one-time media load| Media
     Intake --> Rollups["Supabase daily dimension counters; no visitor history"]
@@ -87,8 +86,8 @@ Paths are relative to the repository root. This is a responsibility map rather t
 | `src/lib/games/`                                                                                 | Game catalog, domain models/engines/content, rendering helpers and local tests.                                                                                                                        |
 | `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                            |
 | `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                |
-| `src/lib/privacy/`                                                                               | Browser-local consent validation, persistence, expiry, cross-tab subscriptions and privacy-settings events; no visitor identifier.                                                                     |
-| `src/lib/analytics/`                                                                             | Browser-safe report types, independent per-document ledgers for default Vercel pageviews and consented first-party/performance measurement.                                                            |
+| `src/lib/privacy/`                                                                               | Browser-local media-only v2 preferences, v1 media migration, persistence, expiry, cross-tab subscriptions and settings events; no visitor identifier.                                                  |
+| `src/lib/analytics/`                                                                             | Browser-safe report types and one per-document navigation ledger for default Vercel public pageviews; no current-browser first-party/performance/custom-event dispatch.                                |
 | `src/lib/server/analytics/`                                                                      | Server-only public-path registry, trusted-geography/dimension policy and bounded aggregate write/report RPCs.                                                                                          |
 | `src/lib/motion/`, `src/lib/attachments/`, `src/lib/utils/`                                      | Motion policy and procedural helpers, DOM attachments, small shared utilities.                                                                                                                         |
 | `src/lib/generated/`, `src/lib/server/generated/`                                                | Generated media/music/sketch indexes and server image dimensions; edit their generators/inputs.                                                                                                        |
@@ -149,7 +148,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/notes/**`                                                                                            | Inherits `prerender = false`; public list/read, owner auth/recovery, protected studio/editor/preview.                                                                                                                                                                                                              |
 | `/notes/studio/analytics`, `/notes/studio/analytics/export`                                            | Configured-owner aggregate dashboard and CSV download; each independently authorizes before bounded report queries and returns private/no-store/noindex responses.                                                                                                                                                 |
 | `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
-| `/api/analytics/pageview`                                                                              | Same-origin consented page-view intake with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                                      |
+| `/api/analytics/pageview`                                                                              | Compatibility intake for older consented clients, with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                           |
 | `/api/notes/**`                                                                                        | Owner-only document/assets APIs.                                                                                                                                                                                                                                                                                   |
 | `/api/public/notes/**`                                                                                 | Visible snapshot document and publication-gated private-storage asset reads.                                                                                                                                                                                                                                       |
 | `/contact`, `/api/tts/chatterbox`                                                                      | Contact form action and optional speech proxy.                                                                                                                                                                                                                                                                     |
@@ -676,7 +675,7 @@ Supabase rows are manually described/asserted in `repository.ts`; clients do not
 | Google article narration              | Explicit `scripts/article-narration.mjs` authoring command; script-only Gemini key and Free-tier confirmation. Saved same-origin audio/manifests feed the shared player, with US English device speech as fallback. No public synthesis endpoint or build-time provider call. |
 | Supabase                              | Server-only URL/publishable/service credentials and owner UUID. Browser drafts are local Dexie data; browser code does not receive a service-role client.                                                                                                                     |
 | IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots, verifies live ownership against the repository secret, and submits changed URLs only after that proof matches.                                                                         |
-| Vercel analytics / speed insights     | Root layout browser initialization; CSP allows the named Vercel endpoints.                                                                                                                                                                                                    |
+| Vercel Web Analytics                  | Root layout initializes default public pageviews; CSP allows the named Vercel endpoints. Current browser code does not initialize Speed Insights or send custom events.                                                                                                       |
 | YouTube and static notebooks          | CSP permits self/YouTube frame destinations; notebook HTML uses a sandboxed iframe. Compatibility with Vercel's blanket frame-denial response header needs deployed-header/browser verification.                                                                              |
 | Jupyter/Mojo and Python asset tooling | Author/build tools, not request-time notebook execution.                                                                                                                                                                                                                      |
 
@@ -819,36 +818,34 @@ per daily request without increasing the request quota or introducing paid infer
 
 ## 9. Security, errors and validation
 
-Root-layout measurement is owned by `src/lib/analytics/client.ts` and the browser-safe
-`src/lib/measurement.ts` policy. `src/lib/privacy/consent.ts` validates a version-one, browser-local
-`suvroghosh:consent` choice with a 180-day lifetime, in-memory fallback, expiry and cross-tab updates.
-The initial privacy notice can be dismissed for the current layout lifetime without writing a
-consent choice or enabling optional services. The footer settings button, or the compact trigger
-on immersive pages, reopens preferences. Shared privacy and command-palette dialogs close before
-client navigation, including search-form submissions and history changes, so their native modal
-top layer does not leave the destination inert.
-Vercel Web Analytics public pageviews start without an affirmative consent choice. The provider
-lane uses the SDK's ordinary development/production mode and does not require the canonical www
-origin, readable storage or an application webdriver check. Readable local/session
-`suvroghosh:measurement=off` preferences still opt out; a storage exception alone does not opt out
-the cookieless provider. SDK built-in automation behavior remains unchanged. Its `beforeSend`
+Root-layout public-page measurement is owned by `src/lib/analytics/client.ts` and the browser-safe
+`src/lib/measurement.ts` URL policy. Vercel Web Analytics starts without a consent choice, browser
+storage or a hidden `suvroghosh:measurement=off` preference. The provider uses its ordinary
+SDK development/production mode; the application adds no canonical-origin, webdriver, country or
+location eligibility gate. SDK built-in automation behavior remains unchanged. Its `beforeSend`
 callback validates the current browser origin, strips query/fragment state from measured page URLs,
-and suppresses API and Notes studio/auth paths, including encoded forms. No country or location is
-an eligibility input, and the browser sends directly to the existing Vercel endpoints.
+and suppresses API and Notes studio/auth paths, including encoded forms. Custom events are not
+sent. The browser sends public pageviews directly to the existing Vercel endpoints.
 
-First-party rollups, Speed Insights and custom visualization events still require affirmative
-analytics consent on the canonical production origin, outside development and `navigator.webdriver`
-contexts, with neither local nor session opt-out. Denied storage fails closed for that optional lane.
-Independent per-document ledgers send one provider view and one eligible first-party view per pathname
-visit without storing visitor/session identifiers. Granting optional permission can count the current
-first-party visit even if the provider already counted it. Withdrawal aborts pending first-party
-requests, clears queued optional events and blocks future optional callbacks while preserving default
-provider pageviews. Explicit measurement opt-out and lifecycle teardown also suppress provider work.
-Already accepted aggregates cannot be traced back to a withdrawing browser. Privacy controls and the
-public policy distinguish default page counts from optional additional measurement.
+One per-document navigation ledger sends one view per eligible pathname visit, without storing a
+visitor/session identifier. The root layout supplies completed navigation events; the SDK's separate
+automatic navigation subscription is disabled. Media preference changes do not start, stop or repeat
+pageviews. Lifecycle teardown suppresses pending provider callbacks. Current browser code does not
+initialize Speed Insights, send custom visualization events or call the first-party collector.
 
-The first-party `POST /api/analytics/pageview` accepts a small, schema-validated consent indication
-and known public pathname. It enforces a streamed body limit, exact same-origin requests, production
+`src/lib/privacy/consent.ts` validates a version-two, media-only `suvroghosh:consent` record with a
+180-day lifetime, in-memory fallback, expiry and cross-tab updates. A valid version-one record is read
+as version two while preserving its media choice and original save/expiry times; its analytics value
+is discarded. New writes contain only media permission and those timestamps. Invalid or expired
+records leave YouTube paused. The initial media notice can be dismissed for the current layout
+lifetime without saving a preference or enabling YouTube. The footer settings button, or the compact
+trigger on immersive pages, reopens media preferences. The choices are “Keep videos paused” and
+“Allow YouTube”; there is no analytics control. Shared preferences and command-palette dialogs close
+before client navigation, including search-form submissions and history changes, so their native
+modal top layer does not leave the destination inert.
+
+The existing first-party `POST /api/analytics/pageview` remains compatible with older consented
+clients. It accepts a small, schema-validated consent indication and known public pathname. It enforces a streamed body limit, exact same-origin requests, production
 eligibility, bounded deadlines and admission controls. Geography comes from Vercel production
 headers, never the submitted body; unknown/malformed geography stays Unknown. Separate daily
 rollups retain total/page/country/city/referrer/device/browser counts for 180 Asia/Kolkata reporting
@@ -859,9 +856,12 @@ documented in [the setup guide](../privacy-analytics.md); app deployment alone d
 
 `/notes/studio/analytics` and its CSV export independently require the existing configured owner
 before querying. They inherit the studio session resolution and no-store/noindex headers. No public
-report endpoint or client authentication bypass is added. Reports describe consented recorded page
-views rather than unique people, and provider analytics are not added to first-party totals. Provider
-infrastructure logging remains outside the application's aggregate-only storage claim.
+report endpoint or client authentication bypass is added. Reports describe retained first-party
+consented page views, including any accepted older-client requests, rather than unique people or
+current Vercel pageviews. Existing report/backend behavior is retained, and provider analytics are
+not added to first-party totals. Removing current-browser intake does not disable this server route
+or delete historical aggregates. Provider infrastructure logging remains outside the application's
+aggregate-only storage claim.
 
 The shared Notes owner identity lookup now has a five-second deadline and passes its abort signal
 through the Supabase SSR client's fetch without discarding a downstream request's own signal. The
@@ -923,9 +923,10 @@ Delivered publications cannot be recalled from an offline device. This is a docu
 
 ## 11. Tests and architectural verification
 
-`privacy:test` covers consent parsing/lifecycle, default provider versus optional collector/event
-gating, separate navigation ledgers, storage-denial and explicit-opt-out behavior, bounded intake,
-geographic normalization, report ranges, private owner access and CSV
+`privacy:test` covers media-only v2 preferences, valid v1 media migration without renewing expiry,
+default provider views independent of consent/storage/legacy opt-out values, one navigation ledger,
+URL sanitation and private-path exclusions, absence of current-browser intake/performance/custom
+events, bounded legacy intake, geographic normalization, report ranges, private owner access and CSV
 escaping. `privacy:browser:test` runs against a built loopback preview with service workers blocked;
 the separately isolated test-only dashboard harness contains labelled synthetic aggregate fixtures,
 not a production auth bypass. Provider browser fixtures intercept the SDK locally to verify app
@@ -934,7 +935,7 @@ multi-country audience activity. Database migration execution/grant/retention te
 local engine when available; these do not establish hosted migration or cron activation. The
 critical-boundaries workflow includes the new privacy suite and affected application/migration paths.
 
-The critical-boundaries workflow also watches the measurement policy/root layout, deferred YouTube component/résumé, notebook header configuration, internal-link validator and their Node regression files. `test:critical` includes `seo:test` for production-origin/opt-out/private-URL measurement rules, real Svelte server rendering of deferred/default players, notebook-to-published-parent canonical consistency and internal-link CLI fixtures. The link validator recognises canonical topic paths only when strict topic frontmatter matches its lowercase kebab-case filename, is published and has the actual topic route handler; missing, unpublished and nested topic paths remain errors. `seo:browser:test` uses an already-built loopback preview, blocks service workers and external requests, and checks keyboard player activation/focus, narrow-screen Writing links and rendered metadata. It does not rebuild the app or serve as a field-performance measurement.
+The critical-boundaries workflow also watches the measurement policy/root layout, deferred YouTube component/résumé, notebook header configuration, internal-link validator and their Node regression files. `test:critical` includes `seo:test` for same-browser-origin/private-URL measurement rules, real Svelte server rendering of deferred/default players, notebook-to-published-parent canonical consistency and internal-link CLI fixtures. The link validator recognises canonical topic paths only when strict topic frontmatter matches its lowercase kebab-case filename, is published and has the actual topic route handler; missing, unpublished and nested topic paths remain errors. `seo:browser:test` uses an already-built loopback preview, blocks service workers and external requests, and checks keyboard player activation/focus, narrow-screen Writing links and rendered metadata. It does not rebuild the app or serve as a field-performance measurement.
 
 Link integrity has three complementary checks. `validate:links` parses authored Markdown and
 Svelte/TypeScript navigation expressions and scans shared public registries; canonical same-site

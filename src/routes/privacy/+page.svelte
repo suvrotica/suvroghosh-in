@@ -6,7 +6,7 @@
 
 <SEO
 	title="Privacy & cookies | Suvro Ghosh"
-	description="A plain-language field note on cookieless page counts, optional audience reports, external videos and your privacy choices on SuvroGhosh.IN."
+	description="A plain-language field note on default cookieless page counts, external videos and your privacy choices on SuvroGhosh.IN."
 	canonicalUrl={`${siteUrl}/privacy`}
 />
 
@@ -28,24 +28,24 @@
 		<div>
 			<h2>Your choices come first</h2>
 			<p>
-				Vercel’s cookieless page counts run by default on public pages. Additional first-party
-				audience reports, Speed Insights and external video players start off. Accept or reject
-				these optional services together, or choose each category. Reading the site does not require
-				accepting them. Scrolling, following a link and closing the settings panel do not give
-				permission for the optional services.
+				Vercel’s cookieless page counts run by default on public pages. The privacy controls only
+				choose whether YouTube players may connect. Keeping videos paused, dismissing the notice or
+				leaving the settings unchanged does not stop those page counts. Reading the site does not
+				require loading external videos.
 			</p>
 			<p>
 				The site remembers your selection in your browser’s local storage under <code
 					>suvroghosh:consent</code
-				>, for 180 days. The record contains the two choices, a version and save/expiry times. It is
-				not a visitor identifier. Acceptance and rejection are remembered for the same period.
+				>, for 180 days. The record contains your media choice, a version and save/expiry times. It
+				is not a visitor identifier. Allowing and declining YouTube are remembered for the same
+				period. Older saved choices retain their video permission and original expiry; their former
+				analytics setting is no longer used.
 			</p>
 			<p>
 				Use “Privacy &amp; cookies” in the footer, or the small settings button on full-screen
 				public experiences, to change your mind. If storage is blocked, the choice applies in memory
-				during the visit and may be requested again on reload. Optional measurement remains off if
-				its storage safeguards cannot run. Vercel’s cookieless page counts do not require this
-				stored consent choice.
+				during the visit and may be requested again on reload. Vercel’s cookieless page counts do
+				not require browser storage or a saved privacy choice.
 			</p>
 		</div>
 	</section>
@@ -60,9 +60,9 @@
 				your request.
 			</p>
 			<p>
-				These functions are separate from optional audience measurement. Rejecting measurement does
-				not erase your saved work or sign you out. Clear individual feature data through that
-				feature, or remove site data in your browser.
+				These functions are separate from page counts and external video permission. Keeping videos
+				paused does not erase your saved work or sign you out. Clear individual feature data through
+				that feature, or remove site data in your browser.
 			</p>
 		</div>
 	</section>
@@ -74,34 +74,29 @@
 				Vercel Web Analytics records public page loads and navigations by default, without analytics
 				cookies. Its own reports include approximate country, device and referrer information.
 				Private Notes studio, authentication and API paths are excluded, and query strings and URL
-				fragments are removed from measurement. These page counts continue when optional measurement
-				is declined or browser storage is unavailable. Blockers and Vercel’s automated-traffic
+				fragments are removed from measurement. These page counts do not depend on the video choice,
+				an older analytics preference or browser storage. Blockers and Vercel’s automated-traffic
 				filters can still prevent recording.
 			</p>
 			<p>
-				If you enable optional audience and performance measurement, the site also records public
-				page views in first-party aggregate reports and enables Speed Insights and custom events.
-				Those services keep their development, automated-browser, canonical-origin and storage
-				safeguards. An existing <code>suvroghosh:measurement=off</code> preference in local or session
-				storage disables both measurement paths when it can be read.
+				The current site no longer starts the additional site-run audience collector, Speed Insights
+				or custom visualization events. There is no analytics switch in the privacy controls.
 			</p>
 			<p>
-				For the first-party reports, Vercel’s infrastructure can derive an approximate country,
-				region and city from a request’s IP address. The application stores aggregate counts,
-				without retaining raw IP addresses, precise coordinates, raw user-agent strings, persistent
-				visitor identifiers or individual browsing histories. It never asks for your device’s
-				location.
+				Earlier versions could record consented public page views in separate first-party aggregate
+				reports, including approximate country, region and city. Those reports do not retain raw IP
+				addresses, precise coordinates, raw user-agent strings, persistent visitor identifiers or
+				individual browsing histories. The site never asks for your device’s location.
 			</p>
 			<p>
 				Location can be wrong: VPNs, mobile networks and shared connections can point to another
-				city. Unavailable location is shown as Unknown in the first-party reports. Those reports
-				contain consented page loads and navigations, not a count of unique people. Blockers and
-				failed requests can reduce totals.
+				city. Page views are not a count of unique people, and failed requests can reduce totals.
 			</p>
 			<p>
-				First-party reports use a 180-day retention window, with a scheduled cleanup removing older
-				buckets in bounded batches. Only the configured owner can read or export them. First-party
-				counts and Vercel’s own provider reports are separate; their totals are not added together.
+				Retained first-party reports use a 180-day retention window, with cleanup of older buckets
+				when the database retention job is configured. Only the configured owner can read or export
+				them. These historical reports and Vercel’s own reports are separate; their totals are not
+				added together.
 			</p>
 			<p>
 				Vercel also processes requests to host the site and provide its services. Application-level
@@ -140,15 +135,14 @@
 		<div>
 			<h2>Changing your mind</h2>
 			<p>
-				Withdrawing permission stops future optional collection, cancels unsent first-party
-				page-view work and unloads active optional video players. Vercel’s default cookieless page
-				counts continue separately. Withdrawal cannot reverse a request already received by a
+				Turning off external media unloads active YouTube players. Vercel’s default cookieless page
+				counts continue. Changing the video choice cannot reverse a request already received by a
 				provider. Historical first-party totals deliberately have no visitor identifier, so the
 				application cannot find and remove an individual’s contribution to them.
 			</p>
 			<p>
 				The contact form uses the details you submit to deliver your message through the site’s
-				email provider, Resend. That requested communication is separate from optional analytics.
+				email provider, Resend. That requested communication is separate from page counts.
 			</p>
 			<p>
 				For a privacy question, write to <a href="mailto:contact@suvroghosh.in"

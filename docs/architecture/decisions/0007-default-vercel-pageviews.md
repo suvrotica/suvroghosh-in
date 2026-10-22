@@ -1,8 +1,13 @@
 # 0007 — Default Vercel pageviews with separate optional measurement
 
 - Date: 23 October 2026
-- Status: Accepted
+- Status: Superseded by [0008](0008-media-only-consent.md)
 - Partially supersedes: [0006](0006-consented-aggregate-analytics.md), provider pageview consent and eligibility
+
+[ADR 0008](0008-media-only-consent.md), also dated 23 October 2026, removes the remaining analytics
+choice and hidden measurement opt-out, retires current-browser optional measurement, and adopts
+media-only v2 preferences. Default sanitized Vercel public pageviews and the retained backend remain.
+The decisions below describe the intermediate policy and preserve its reasoning.
 
 ## Context
 

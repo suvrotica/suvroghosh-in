@@ -57,8 +57,7 @@ test.beforeEach(async ({ context, baseURL, page }) => {
 		localStorage.setItem(
 			'suvroghosh:consent',
 			JSON.stringify({
-				v: 1,
-				analytics: false,
+				v: 2,
 				media: false,
 				savedAt,
 				expiresAt: savedAt + 180 * 24 * 60 * 60 * 1000
@@ -511,7 +510,7 @@ test.describe('native navigation transitions', () => {
 	}
 });
 
-test('fresh visit initializes baseline Analytics while dismissing its notice without optional measurement', async ({
+test('fresh visit initializes Analytics while dismissing its media notice without a choice', async ({
 	browser,
 	baseURL
 }, testInfo) => {
@@ -543,7 +542,7 @@ test('fresh visit initializes baseline Analytics while dismissing its notice wit
 	try {
 		const page = await context.newPage();
 		await load(page, '/about');
-		// Default Analytics initialization is local and independent of optional consent;
+		// Default Analytics initialization is local and independent of media consent;
 		// its no-op script cannot dispatch provider pageviews or custom-event transports.
 		await expect.poll(() => baselineScripts.length).toBe(1);
 		expect(await page.evaluate(() => localStorage.getItem('suvroghosh:consent'))).toBeNull();

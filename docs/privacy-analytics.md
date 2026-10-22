@@ -1,8 +1,11 @@
 # Privacy choices and the Fieldbook Observatory
 
-The application runs default cookieless Vercel public-page counts, optional additional
-measurement/media choices and an owner-only aggregate report.
+The current browser runs default cookieless Vercel public-page counts and media-only YouTube
+preferences. It does not send first-party page counts, initialize Speed Insights or send custom
+visualization events. The bounded first-party endpoint remains available for older consented
+clients, and the owner-only aggregate report retains its existing backend and historical data.
 Application deployment does not apply database migrations or configure the existing owner account.
+See [ADR 0008](architecture/decisions/0008-media-only-consent.md).
 
 ## Hosting constraint
 
@@ -11,51 +14,63 @@ analytics add-on, geolocation service, map service or database upgrade. Reuse a 
 where available and verify its actual capacity before activation. No Vercel Cron job is added; cleanup
 uses Supabase's database scheduler. The code does not enable any paid Vercel analytics tier.
 
-The application adds one small Function request per consented recorded page view and bounded owner
-report reads. Those requests consume the existing Hobby allowance; aggregate storage consumes the
-database's allowance. [Vercel Hobby](https://vercel.com/docs/plans/hobby) applies usage limits, and
-[Supabase Free](https://supabase.com/pricing) currently includes a 500 MB database and can pause after
-inactivity. This is not a guarantee of unlimited collection or continuously available free storage.
+The current browser does not add a first-party Function request for each view. Accepted older-client
+collector requests and bounded owner report reads still consume the existing hosting/database
+allowances. [Vercel Hobby](https://vercel.com/docs/plans/hobby) applies usage limits, and
+[Supabase Free](https://supabase.com/pricing) has its own capacity and availability constraints. This
+is not a guarantee of unlimited collection or continuously available free storage.
 
-The new page-view and city dashboard does not depend on Vercel's paid custom-event reports. The
-existing custom-event calls are now consent-gated, but [Vercel custom-event reporting](https://vercel.com/docs/analytics/custom-events)
-is available only on Pro/Enterprise. Do not upgrade to enable it for this feature. The separate
-Vercel Web Analytics integration also requires its existing project-level enablement and a subsequent
-deployment, as described in [Vercel's setup guide](https://vercel.com/docs/analytics/quickstart).
+Custom-event and Speed Insights dispatch have been retired from the browser. Vercel Web Analytics
+still requires its existing project-level enablement and a subsequent deployment, as described in
+[Vercel's setup guide](https://vercel.com/docs/analytics/quickstart). No paid analytics tier is enabled
+by this change.
 
 ## Visitor experience
 
-- `/privacy` explains actual storage and optional services. Footer settings and a compact control on
-  footerless public experiences reopen the same preferences dialog.
-- `suvroghosh:consent` is a version-one localStorage record with analytics/media booleans and save/expiry
-  timestamps, retained for 180 days. It is not an identifier. Rejection has the same lifetime.
-- Vercel Web Analytics public pageviews run without an optional consent choice, including after
-  rejection/expiry and with unavailable storage. Its own SDK behavior, private-path protections
-  and sanitized measured page URLs still apply; there is no geographic eligibility condition.
-- Invalid/expired choices disable first-party reporting, Speed Insights and custom events. Storage
-  denial leaves a choice in memory for that document; optional measurement still fails closed.
-- A readable localStorage or sessionStorage `suvroghosh:measurement=off` value disables both
-  measurement lanes. Storage errors alone do not disable default cookieless Vercel pageviews.
+- `/privacy` explains actual storage, default Vercel page counts, YouTube loading and retained legacy
+  collection. Footer settings and a compact control on footerless public experiences reopen the
+  same media preferences dialog.
+- `suvroghosh:consent` is a version-two localStorage record containing `v`, `media`, `savedAt` and
+  `expiresAt`. A saved media choice lasts 180 days and is not a visitor identifier. New records have
+  no analytics field. Valid version-one records preserve media permission and their original
+  timestamps; the analytics value is discarded and the expiry is not extended.
+- The media controls offer "Keep videos paused" and "Allow YouTube". There is no analytics choice,
+  and neither media preference changes nor legacy `suvroghosh:measurement=off` values affect default
+  public-page counts. Storage denial does not prevent Vercel pageviews.
+- Invalid/expired preferences leave YouTube paused. If storage is blocked, a saved media choice
+  stays in memory for that document. The notice can be dismissed without saving a choice or loading
+  a video.
 - YouTube server-renders local placeholders. One-video activation is distinct from remembered media
-  permission; withdrawal removes active players. No new YouTube/CSP host is introduced.
+  permission; withdrawal, expiry and cross-tab preference changes remove active players. No new
+  YouTube/CSP host is introduced.
 - Theme/motion settings, saved feature work, same-origin notebooks and Notes authentication remain
-  independent of optional measurement. Rejection never clears all site data.
+  independent. A media choice never clears all site data.
 
-## Collection and reporting
+## Current browser collection
 
-The root layout owns default Vercel initialization and separate optional first-party/performance
-counting. Independent in-memory ledgers count each eligible pathname visit once; the optional
-ledger can count the current page when permission is first given even if Vercel already counted
-it. Query/hash changes and repeated effects do not generate new views. The application stores no
-visitor ID. Provider pageviews use the current browser origin rather than a canonical-origin gate;
-the SDK's own development/production behavior remains intact. Vercel receives browser events
-directly through its existing endpoints, without a first-party proxy or country override.
+The root layout owns Vercel initialization and one in-memory navigation ledger. It counts each
+eligible pathname visit once; query/hash changes and media preference updates do not generate new
+views. The SDK's automatic navigation subscription is disabled to keep one navigation owner. The
+application stores no visitor ID for this ledger. Lifecycle disposal blocks later callbacks.
 
-`POST /api/analytics/pageview` requires exact same-origin JSON with
-`{ "v": 1, "consent": true, "path": "/writing" }` and an optional sanitized referrer hostname.
-The indication is a browser choice, not proof of a human or protection against arbitrary clients.
-The endpoint limits streamed input to 2 KiB, bounds read/database duration, validates known public
-paths, and applies process-local and atomic database admission limits. No retries are queued.
+Public pageviews do not read consent or browser storage, including the old local/session
+`suvroghosh:measurement=off` preference. Provider pageviews use the current browser origin rather
+than a canonical-origin gate; the application adds no webdriver, country or location condition.
+The SDK's own development/production and automation behavior remains intact. Provider callbacks
+validate same-browser-origin URLs, remove query/fragment state and exclude API and Notes
+studio/auth paths, including encoded forms. Vercel receives pageviews directly through its existing
+endpoints, without a first-party proxy or country override. The current browser sends no custom
+events, Speed Insights or `/api/analytics/pageview` requests.
+
+## Retained legacy collection and reporting
+
+`POST /api/analytics/pageview` remains available to older consented clients. It requires exact
+same-origin JSON with `{ "v": 1, "consent": true, "path": "/writing" }` and an optional sanitized
+referrer hostname. The indication is a browser choice, not proof of a human or protection against
+arbitrary clients. The endpoint limits streamed input to 2 KiB, bounds read/database duration,
+validates known public paths, and applies process-local and atomic database admission limits.
+Current browser code does not dispatch to it; existing server acceptance and reporting behavior
+are retained.
 
 Writes occur only in canonical Vercel production, never local development or previews. Approximate
 geography uses provider headers, not body-supplied cities or browser GPS. Missing/malformed geography
@@ -66,11 +81,17 @@ Asia/Kolkata. It does not store per-view events, raw IP/UA, precise coordinates,
 durable IP hashes or individual browsing histories. Admission control uses separate expiring keys.
 Provider infrastructure logs and Vercel's own reports have separate policies.
 
-The dashboard measures recorded consented page views, not unique people or all traffic. Daily
-cardinality caps put overflow into Other. Reports are bounded to the retained 180 reporting days;
-top lists return at most 200 rows. First-party and provider counts must not be summed.
+The owner dashboard measures retained consented first-party page views, including any accepted
+older-client requests, rather than unique people or current Vercel traffic. Its existing labels and
+backend do not imply that a current reader can enable first-party collection. Daily cardinality caps
+put overflow into Other. Reports are bounded to the retained 180 reporting days; top lists return
+at most 200 rows. First-party and provider counts must not be summed. This change neither deletes
+historical aggregates nor disables the compatibility endpoint.
 
-## Hosted setup
+## Retained backend setup
+
+These steps apply to the retained first-party backend and owner reports, not to enabling current
+browser collection. Review existing hosted configuration before making any operational change.
 
 1. Reuse the existing Notes Supabase project and configured-owner identity. Ensure these private
    server variables are present in the correct deployment environment:
@@ -97,8 +118,8 @@ not sufficient. CSV exports repeat authorization independently and escape spread
 Owner identity verification is bounded to five seconds with fetch cancellation; hook-level failures
 return private no-store errors before a report can be queried.
 
-The public `/notes` shelf is eligible for first-party counts. Individual dynamic Notes URLs are
-deliberately excluded from this registry; the existing provider measurement policy remains separate.
+The legacy registry permits the public `/notes` shelf and excludes individual dynamic Notes URLs.
+The current Vercel pageview policy remains separate.
 
 ## Retention and operational checks
 
@@ -107,10 +128,10 @@ than 180 reporting days and expired admission keys in bounded batches. Expiry do
 rows: the installed job must run successfully. Check its run results and backlog after activation;
 large backlogs need repeated bounded batches, not an unbounded deletion.
 
-Withdrawal cancels unsent first-party work and blocks future optional events. It cannot recall a
-request already received or identify one browser's contribution inside identifier-free aggregates.
-Default Vercel pageviews continue separately; full measurement opt-out and lifecycle disposal also
-block those callbacks. Queued optional events are discarded without dropping default pageviews.
+Media withdrawal removes active YouTube players and stops remembered media loading. It has no
+measurement effect. Removing current-browser first-party dispatch cannot recall accepted older
+requests or identify a browser's contribution inside identifier-free aggregates. Retention and
+owner access continue to apply to the retained dataset.
 
 An unconfigured backend does not prevent reading. Reports show an honest unavailable state; the
 collector returns an unavailable response without throwing into the visitor UI. Do not interpret an
@@ -118,9 +139,10 @@ empty report as proof that hosted collection or retention is configured.
 
 ## Verification
 
-- `npm run privacy:test`: consent lifecycle, default provider versus optional SDK/collector gating,
-  independent navigation ledgers, explicit opt-out and blocked-storage behavior,
-  bounded endpoint policy, report ranges, configured-owner authorization and safe CSV.
+- `npm run privacy:test`: media-only v2 preferences, valid v1 media migration with original expiry,
+  default provider views independent of consent/storage/legacy opt-out values, one navigation
+  ledger, URL sanitation/private-path exclusions, absence of current-browser intake/performance/
+  custom events, bounded legacy endpoint policy, report ranges, owner authorization and safe CSV.
 - `npm run privacy:browser:test`: built loopback preview, blocked service workers, full-site privacy
   controls and private-response checks.
 - `npm run privacy:dashboard:test`: the isolated, labelled synthetic dashboard visual harness.
@@ -135,9 +157,11 @@ empty report as proof that hosted collection or retention is configured.
   affected shared boundaries. The older named `security:audit`/`security:smoke` commands do not exist
   in this checkout and are not reported as passing.
 
-Hosted verification additionally requires successful migration/cron checks, a bounded real consented
-view, a protected owner report showing the increment, and unauthorized page/export checks. Do not
-seed fake traffic into production to make a screenshot. Local mocked tests do not prove hosted access.
+Verify default provider recording separately from retained first-party backend readiness. Hosted
+backend checks cover existing migration/cron state, authorized historical reports and unauthorized
+page/export responses. Do not seed fake traffic into production to make a screenshot or treat an
+empty report as proof of current audience loss. Local mocked tests do not prove hosted access or
+live provider acceptance; regional HTTP probes do not prove browser analytics ingestion.
 
 ## Shared media resource budget
 

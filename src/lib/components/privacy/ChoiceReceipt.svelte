@@ -1,10 +1,8 @@
 <script lang="ts">
 	let {
-		analytics = false,
 		media = false,
 		small = false
 	}: {
-		analytics?: boolean;
 		media?: boolean;
 		small?: boolean;
 	} = $props();
@@ -18,17 +16,12 @@
 		/>
 		<path class="rule" d="M32 42h126M32 116h126M32 139h55" />
 		<text x="32" y="29" class="receipt-heading">FIELD NOTES / 01</text>
-		<text x="32" y="65">Essential</text>
-		<text x="32" y="86">Optional counts</text>
-		<text x="32" y="107">External media</text>
-		<path class="mark" d="m139 59 4 4 8-9" />
-		{#if analytics}<path class="mark" d="m139 80 4 4 8-9" />{:else}<path
+		<text x="32" y="72">Essential</text>
+		<text x="32" y="99">External media</text>
+		<path class="mark" d="m139 66 4 4 8-9" />
+		{#if media}<path class="mark" d="m139 93 4 4 8-9" />{:else}<path
 				class="off"
-				d="M139 80h12"
-			/>{/if}
-		{#if media}<path class="mark" d="m139 101 4 4 8-9" />{:else}<path
-				class="off"
-				d="M139 101h12"
+				d="M139 93h12"
 			/>{/if}
 		<text x="32" y="131" class="receipt-foot">YOURS TO CHOOSE.</text>
 		<path class="signature" d="m106 142 6-13-2 14 9-8-2 7 11-4m-5-8-4 16m8-11 4 9 6-11" />

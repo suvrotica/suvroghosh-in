@@ -1,92 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {
-	MEASUREMENT_OPTOUT_KEY,
-	filterMeasurementEvent,
-	measurementAllowed,
-	providerPageviewAllowed,
-	readMeasurementPreference
-} from '../src/lib/measurement.ts';
+import { filterMeasurementEvent } from '../src/lib/measurement.ts';
 
 const productionOrigin = 'https://www.suvroghosh.in';
-const reader = {
-	development: false,
-	currentOrigin: productionOrigin,
-	productionOrigin,
-	webdriver: false,
-	localPreference: null,
-	sessionPreference: null,
-	analyticsConsent: true
-};
 
-test('measures canonical production readers while excluding development, previews and webdriver', () => {
-	assert.equal(measurementAllowed(reader), true);
-	for (const override of [
-		{ analyticsConsent: false },
-		{ analyticsConsent: undefined },
-		{ development: true },
-		{ currentOrigin: 'http://localhost:4173' },
-		{ currentOrigin: 'https://preview.vercel.app' },
-		{ currentOrigin: 'https://www.suvroghosh.in.example.test' },
-		{ currentOrigin: 'http://www.suvroghosh.in' },
-		{ webdriver: true }
-	]) {
-		assert.equal(measurementAllowed({ ...reader, ...override }), false);
-	}
-});
-
-test('honours only the explicit off preference in either browser-local storage scope', () => {
-	for (const key of ['localPreference', 'sessionPreference']) {
-		assert.equal(measurementAllowed({ ...reader, [key]: 'off' }), false);
-		for (const invalid of ['', 'false', 'on', 'OFF', {}, true]) {
-			assert.equal(measurementAllowed({ ...reader, [key]: invalid }), true);
-		}
-	}
-	const storage = new Map([[MEASUREMENT_OPTOUT_KEY, 'off']]);
-	const getStorage = () => ({ getItem: (key) => storage.get(key) ?? null });
-	assert.equal(readMeasurementPreference(getStorage), 'off');
-	storage.set(MEASUREMENT_OPTOUT_KEY, 'unexpected');
-	assert.equal(readMeasurementPreference(getStorage), null);
-	assert.equal(
-		readMeasurementPreference(() => {
-			throw new Error('Storage denied');
-		}),
-		'off'
-	);
-});
-
-test('baseline provider views ignore optional eligibility while honoring only explicit opt-outs', () => {
-	assert.equal(providerPageviewAllowed({ localPreference: null, sessionPreference: null }), true);
-	for (const key of ['localPreference', 'sessionPreference']) {
-		assert.equal(providerPageviewAllowed({ ...reader, [key]: 'off' }), false);
-		for (const value of ['', 'false', undefined, 'OFF']) {
-			assert.equal(providerPageviewAllowed({ ...reader, [key]: value }), true);
-		}
-	}
-	for (const override of [
-		{ analyticsConsent: false },
-		{ webdriver: true },
-		{ development: true },
-		{ currentOrigin: 'https://other.example' }
-	]) {
-		assert.equal(providerPageviewAllowed({ ...reader, ...override }), true);
-	}
-	assert.equal(
-		readMeasurementPreference(
-			() => {
-				throw new Error('denied');
-			},
-			{ failClosed: false }
-		),
-		null
-	);
-	assert.equal(
-		readMeasurementPreference(() => ({ getItem: () => 'off' }), { failClosed: false }),
-		'off'
-	);
-});
-
-test('provider redaction works on the actual browser origin without requiring canonical www', () => {
+test('redacts on the actual browser origin without requiring canonical www', () => {
 	const origin = 'https://alternate.example';
 	assert.deepEqual(
 		filterMeasurementEvent({ url: `${origin}/writing?token=secret#state` }, true, origin),
@@ -99,27 +17,26 @@ test('provider redaction works on the actual browser origin without requiring ca
 	assert.equal(filterMeasurementEvent({ url: `${productionOrigin}/writing` }, true, origin), null);
 });
 
-test('strips sensitive URL state without mutating the original pageview or vital', () => {
-	for (const type of ['pageview', 'event', 'vital']) {
-		const event = {
-			type,
-			url: `${productionOrigin}/blog/example?email=private%40example.test&token=secret#state`,
-			route: '/blog/[slug]'
-		};
-		assert.deepEqual(filterMeasurementEvent(event, true, productionOrigin), {
-			...event,
-			url: `${productionOrigin}/blog/example`
-		});
-		assert.match(event.url, /email=/);
-	}
+test('strips sensitive URL state without mutating the original event', () => {
+	const event = {
+		type: 'pageview',
+		url: `${productionOrigin}/blog/example?email=private%40example.test&token=secret#state`,
+		route: '/blog/[slug]'
+	};
+	assert.deepEqual(filterMeasurementEvent(event, true, productionOrigin), {
+		...event,
+		url: `${productionOrigin}/blog/example`
+	});
+	assert.match(event.url, /email=/);
 });
 
-test('drops opted-out, off-origin, credential-bearing, API and owner/auth events', () => {
+test('drops disabled, off-origin, credential-bearing, malformed and private events', () => {
 	assert.equal(filterMeasurementEvent({ url: productionOrigin }, false, productionOrigin), null);
 	for (const url of [
 		'https://external.test/blog/example',
 		'https://user:password@www.suvroghosh.in/blog/example',
 		'http://[invalid',
+		'/bad%escape',
 		'/api',
 		'/api/public/notes/example/document',
 		'/notes/studio',
@@ -129,10 +46,15 @@ test('drops opted-out, off-origin, credential-bearing, API and owner/auth events
 		'/notes/sign-in',
 		'/notes/forgot-password',
 		'/notes/reset-password?token=secret'
-	]) {
+	])
 		assert.equal(filterMeasurementEvent({ url }, true, productionOrigin), null, url);
+});
+
+test('allows public Notes, page names sharing prefixes, and same-origin relative paths', () => {
+	for (const path of ['/notes/public-note', '/apiary', '/notes/studio-tour', '/writing']) {
+		assert.deepEqual(
+			filterMeasurementEvent({ url: `${path}?secret=yes#state` }, true, productionOrigin),
+			{ url: `${productionOrigin}${path}` }
+		);
 	}
-	assert.deepEqual(filterMeasurementEvent({ url: '/notes/public-note' }, true, productionOrigin), {
-		url: `${productionOrigin}/notes/public-note`
-	});
 });
