@@ -1,6 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { compile } from 'mdsvex';
+import { parse as parseSvelte } from 'svelte/compiler';
+import ts from 'typescript';
+import {
+	isResourceSlug,
+	parseResourceMetadata,
+	resourcePath
+} from '../src/lib/content/resources.ts';
 import { parsePostFrontmatter } from './lib/post-metadata.mjs';
+import { scanResourceSources } from './validate-resources.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
@@ -8,8 +17,12 @@ const topicsDir = path.join(root, 'src', 'lib', 'topics');
 const routesDir = path.join(root, 'src', 'routes');
 const componentsDir = path.join(root, 'src', 'lib', 'components');
 const staticDir = path.join(root, 'static');
+const siteOrigin = 'https://www.suvroghosh.in';
+const siteHosts = new Set(['www.suvroghosh.in', 'suvroghosh.in']);
+const navigationKeys = new Set(['href', 'action', 'url', 'path']);
 const errors = [];
 const references = [];
+const markdownPages = [];
 
 function read(file) {
 	return fs.readFileSync(file, 'utf8');
@@ -22,6 +35,14 @@ function walk(directory) {
 		const fullPath = path.join(directory, entry.name);
 		return entry.isDirectory() ? walk(fullPath) : [fullPath];
 	});
+}
+
+function markdownFiles(directory) {
+	if (!fs.existsSync(directory)) return [];
+	return fs
+		.readdirSync(directory, { withFileTypes: true })
+		.filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
+		.map((entry) => path.join(directory, entry.name));
 }
 
 function toPosix(value) {
@@ -48,7 +69,11 @@ function slugifyCategory(category = 'uncategorized') {
 function normalizePathname(value) {
 	let pathname;
 	try {
-		pathname = new URL(value, 'https://www.suvroghosh.in/').pathname;
+		pathname = new URL(value, `${siteOrigin}/`).pathname;
+		// Match the decoded route/file, while keeping encoded separators from
+		// manufacturing an otherwise valid nested route.
+		if (/%(?:2f|5c)/i.test(pathname)) return null;
+		pathname = decodeURIComponent(pathname);
 	} catch {
 		return null;
 	}
@@ -116,7 +141,11 @@ function canonicalTopicRoutes() {
 			);
 			continue;
 		}
-		if (metadata.published !== false) topics.add(`/topics/${slug}`);
+		if (metadata.published !== false) {
+			const publicPath = `/topics/${slug}`;
+			topics.add(publicPath);
+			markdownPages.push({ file, text: read(file), metadata, publicPath });
+		}
 	}
 	return topics;
 }
@@ -126,88 +155,192 @@ function addReference(file, text, index, target, basePath = null) {
 	if (
 		!trimmed ||
 		trimmed.startsWith('#') ||
-		trimmed.startsWith('//') ||
-		/^[a-z][a-z0-9+.-]*:/i.test(trimmed)
+		(/^[a-z][a-z0-9+.-]*:/i.test(trimmed) && !/^https?:/i.test(trimmed))
 	) {
 		return;
 	}
 
-	let resolved = trimmed;
-	if (!trimmed.startsWith('/')) {
-		if (!basePath) return;
-		resolved = new URL(trimmed, `https://www.suvroghosh.in${basePath}`).pathname;
+	// Shared components have no single public base. Their relative links are
+	// verified in the rendered crawl; do not silently resolve them at '/'.
+	if (!basePath && !trimmed.startsWith('/') && !/^https?:/i.test(trimmed)) return;
+	let url;
+	try {
+		url = new URL(trimmed, `${siteOrigin}${basePath ?? '/'}`);
+	} catch {
+		errors.push(`${relativeFile(file)}:${lineNumber(text, index)}: malformed link ${trimmed}.`);
+		return;
 	}
+	if (!siteHosts.has(url.hostname)) return;
 
 	references.push({
 		file: relativeFile(file),
 		line: lineNumber(text, index),
 		target: trimmed,
-		pathname: normalizePathname(resolved)
+		pathname: normalizePathname(url.href)
 	});
 }
 
-function extractPostReferences(post) {
+async function extractPostReferences(post) {
 	const { file, text, publicPath } = post;
-	const markdownLink = /\[[^\]]*\]\(\s*(?:<([^>]+)>|([^\s)"']+))/g;
-	const htmlLink = /\b(?:href|action)\s*=\s*["']([^"']+)["']/g;
+	// Use the site's Markdown parser so code examples, escaped text and unused
+	// reference definitions do not become fictitious navigational links.
+	try {
+		await compile(text, {
+			filename: file,
+			extensions: ['.md', '.txt'],
+			highlight: false,
+			smartypants: false,
+			remarkPlugins: [
+				() => (tree) => {
+					const definitions = new Map();
+					visitChildren(tree, (node) => {
+						if (node.type === 'definition' && !definitions.has(node.identifier)) {
+							definitions.set(node.identifier, node.url);
+						}
+					});
+					visitChildren(tree, (node) => {
+						const index = node.position?.start?.offset ?? 0;
+						if (node.type === 'link') addReference(file, text, index, node.url, publicPath);
+						if (node.type === 'linkReference' && definitions.has(node.identifier)) {
+							addReference(file, text, index, definitions.get(node.identifier), publicPath);
+						}
+						if (node.type === 'html') {
+							extractHtmlReferences(file, text, node.value, index, publicPath);
+						}
+					});
+				}
+			]
+		});
+	} catch (error) {
+		errors.push(`${relativeFile(file)}: could not parse Markdown links: ${error.message}`);
+	}
+}
 
-	for (const match of text.matchAll(markdownLink)) {
-		addReference(file, text, match.index, match[1] ?? match[2], publicPath);
+function visitChildren(node, visitor) {
+	visitor(node);
+	for (const child of node.children ?? []) visitChildren(child, visitor);
+}
+
+function extractHtmlReferences(file, text, html, offset, basePath) {
+	// HTML may be split into separate opening/closing Markdown nodes. Mask
+	// comments/scripts before extracting literal attributes from opening tags.
+	const markup = html
+		.replace(/<!--[\s\S]*?-->/g, (match) => ' '.repeat(match.length))
+		.replace(/<script\b[\s\S]*?<\/script>/gi, (match) => ' '.repeat(match.length));
+	for (const tag of markup.matchAll(/<[A-Za-z][^>]*>/g)) {
+		for (const match of tag[0].matchAll(
+			/\b(?:href|action)\s*=\s*(?:["']([^"']*)["']|\{\s*["']([^"']*)["']\s*\})/g
+		)) {
+			addReference(file, text, offset + tag.index + match.index, match[1] ?? match[2], basePath);
+		}
 	}
-	for (const match of text.matchAll(htmlLink)) {
-		addReference(file, text, match.index, match[1], publicPath);
+}
+
+function staticString(node) {
+	if (node?.type === 'Literal' && typeof node.value === 'string') return node.value;
+	if (node?.type === 'TemplateLiteral' && node.expressions.length === 0) {
+		return node.quasis[0].value.cooked;
 	}
+	return undefined;
+}
+
+function routeBase(file) {
+	if (!file.startsWith(`${routesDir}${path.sep}`)) return null;
+	const segments = toPosix(path.relative(routesDir, path.dirname(file)))
+		.split('/')
+		.filter((segment) => segment && !/^\(.*\)$/.test(segment));
+	return segments.some((segment) => segment.includes('[')) ? null : `/${segments.join('/')}`;
 }
 
 function extractCodeReferences(file) {
 	const text = read(file);
-	const patterns = [
-		/\b(?:href|action)\s*=\s*["'](\/[^"']*)["']/g,
-		/\bhref\s*:\s*["'](\/[^"']*)["']/g,
-		/\bresolve\(\s*["'](\/[^"']*)["']/g
-	];
-
-	const seen = new Set();
-	for (const pattern of patterns) {
-		for (const match of text.matchAll(pattern)) {
-			const key = `${match.index}:${match[1]}`;
-			if (seen.has(key) || match[1].includes('[')) continue;
-			seen.add(key);
-			addReference(file, text, match.index, match[1]);
-		}
+	const basePath = routeBase(file);
+	const add = (index, value, routeId = false) => {
+		if (typeof value !== 'string' || (routeId && /\[[^\]]+\]/.test(value))) return;
+		addReference(file, text, index, value, basePath);
+	};
+	if (!file.endsWith('.svelte')) {
+		const source = ts.createSourceFile(
+			file,
+			text,
+			ts.ScriptTarget.Latest,
+			true,
+			file.endsWith('.json') ? ts.ScriptKind.JSON : undefined
+		);
+		const literal = (node) =>
+			node && (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node))
+				? node.text
+				: undefined;
+		const visit = (node) => {
+			if (
+				ts.isPropertyAssignment(node) &&
+				navigationKeys.has(node.name.getText(source).replace(/^['"]|['"]$/g, ''))
+			) {
+				add(node.initializer.getStart(source), literal(node.initializer));
+			}
+			if (ts.isCallExpression(node) && ts.isIdentifier(node.expression)) {
+				const name = node.expression.text;
+				if (['resolve', 'goto', 'redirect'].includes(name)) {
+					const argument = node.arguments[name === 'redirect' ? 1 : 0];
+					if (argument) add(argument.getStart(source), literal(argument), name === 'resolve');
+				}
+			}
+			ts.forEachChild(node, visit);
+		};
+		visit(source);
+		return;
 	}
-}
 
-function extractLlmsReferences(file) {
-	if (!fs.existsSync(file)) return;
-	const text = read(file);
-	const markdownLink = /\[[^\]]*\]\((https:\/\/www\.suvroghosh\.in\/[^)\s]*)\)/g;
-
-	for (const match of text.matchAll(markdownLink)) {
-		let url;
-		try {
-			url = new URL(match[1]);
-		} catch {
-			errors.push(
-				`${relativeFile(file)}:${lineNumber(text, match.index)}: malformed site URL ${match[1]}.`
-			);
-			continue;
-		}
-		addReference(file, text, match.index, `${url.pathname}${url.search}`);
+	try {
+		const ast = parseSvelte(text, { modern: true });
+		const visit = (node) => {
+			if (!node || typeof node !== 'object') return;
+			if (node.type === 'Attribute' && ['href', 'action'].includes(node.name)) {
+				if (Array.isArray(node.value) && node.value.every((value) => value.type === 'Text')) {
+					add(node.start, node.value.map((value) => value.data).join(''));
+				} else {
+					const value = Array.isArray(node.value) ? node.value[0] : node.value;
+					add(node.start, staticString(value?.expression));
+				}
+			}
+			if (node.type === 'Property' && navigationKeys.has(node.key?.name ?? node.key?.value)) {
+				add(node.start, staticString(node.value));
+			}
+			if (
+				node.type === 'CallExpression' &&
+				['resolve', 'goto', 'redirect'].includes(node.callee?.name)
+			) {
+				const name = node.callee.name;
+				const argument = node.arguments[name === 'redirect' ? 1 : 0];
+				if (argument) add(argument.start, staticString(argument), name === 'resolve');
+			}
+			for (const [key, value] of Object.entries(node)) {
+				if (['loc', 'comments', 'css'].includes(key)) continue;
+				if (Array.isArray(value)) value.forEach(visit);
+				else if (value && typeof value === 'object') visit(value);
+			}
+		};
+		visit(ast);
+	} catch (error) {
+		errors.push(`${relativeFile(file)}: could not parse Svelte links: ${error.message}`);
 	}
 }
 
 function staticFileExists(pathname) {
-	let decoded;
-	try {
-		decoded = decodeURIComponent(pathname);
-	} catch {
-		return false;
-	}
-
-	const candidate = path.resolve(staticDir, `.${decoded}`);
-	return candidate.startsWith(`${path.resolve(staticDir)}${path.sep}`) && fs.existsSync(candidate);
+	const candidate = path.resolve(staticDir, `.${pathname}`);
+	return (
+		candidate.startsWith(`${path.resolve(staticDir)}${path.sep}`) &&
+		knownStaticFiles.has(toPosix(path.relative(staticDir, candidate)))
+	);
 }
+
+// Deployment filesystems are case-sensitive even when the author's checkout is
+// on Windows. Compare against directory-entry spelling, not filesystem lookup.
+const knownStaticFiles = new Set(
+	walk(staticDir)
+		.filter((file) => fs.statSync(file).isFile())
+		.map((file) => toPosix(path.relative(staticDir, file)))
+);
 
 const aliases = readAliases();
 const redirectedSlugs = new Set(
@@ -215,7 +348,8 @@ const redirectedSlugs = new Set(
 );
 const posts = [];
 
-for (const file of walk(postsDir).filter((candidate) => candidate.endsWith('.md'))) {
+// The runtime registry uses /src/lib/posts/*.md, not recursive globbing.
+for (const file of markdownFiles(postsDir)) {
 	const text = read(file);
 	let metadata;
 	try {
@@ -233,13 +367,42 @@ for (const file of walk(postsDir).filter((candidate) => candidate.endsWith('.md'
 	posts.push({ file, text, slug, metadata, publicPath });
 }
 
-const canonicalPosts = new Set(posts.map((post) => post.publicPath));
+const canonicalPosts = new Set(posts.map((post) => normalizePathname(post.publicPath)));
 const canonicalBySlug = new Map(posts.map((post) => [post.slug, post.publicPath]));
 const categoryPaths = new Set(
 	posts.map((post) => `/blog/${slugifyCategory(post.metadata.category)}`)
 );
 const knownRoutes = routePaths();
 const knownTopicRoutes = canonicalTopicRoutes();
+const knownResourceRoutes = new Set();
+
+for (const source of scanResourceSources(root)) {
+	const { sourcePath: file, rawMarkdown: text, expectedKind: kind } = source;
+	try {
+		const metadata = parseResourceMetadata(
+			parsePostFrontmatter(text, relativeFile(file)),
+			relativeFile(file),
+			kind
+		);
+		const slug = path.basename(file, '.md');
+		if (!isResourceSlug(slug)) {
+			errors.push(`${relativeFile(file)}: resource filename must use lowercase kebab case.`);
+			continue;
+		}
+		if (!metadata.published) continue;
+		const publicPath = resourcePath({ kind, slug });
+		markdownPages.push({ file, text, metadata, publicPath });
+		if (
+			fs.existsSync(
+				path.join(routesDir, 'resources', '[kind=resourceKind]', '[slug]', '+page.svelte')
+			)
+		) {
+			knownResourceRoutes.add(publicPath);
+		}
+	} catch (error) {
+		errors.push(error.message);
+	}
+}
 
 for (const [source, destination] of aliases) {
 	if (!canonicalPosts.has(destination)) {
@@ -249,11 +412,43 @@ for (const [source, destination] of aliases) {
 	}
 }
 
-for (const post of posts) extractPostReferences(post);
-for (const file of [...walk(routesDir), ...walk(componentsDir)]) {
-	if (/\.(?:js|mjs|ts|svelte)$/.test(file)) extractCodeReferences(file);
+for (const page of [...posts, ...markdownPages]) await extractPostReferences(page);
+// Topic frontmatter contains the paths rendered as reading lists/glossary links.
+// Check every authored root/absolute URL there, including values in nested lists.
+for (const page of markdownPages.filter((page) => page.file.startsWith(topicsDir))) {
+	const visit = (value) => {
+		if (typeof value === 'string' && /^(?:\/|https?:)/i.test(value)) {
+			addReference(
+				page.file,
+				page.text,
+				Math.max(0, page.text.indexOf(value)),
+				value,
+				page.publicPath
+			);
+		} else if (value && typeof value === 'object') {
+			Object.values(value).forEach(visit);
+		}
+	};
+	visit(page.metadata);
 }
-extractLlmsReferences(path.join(staticDir, 'llms.txt'));
+const codeDirectories = [
+	routesDir,
+	componentsDir,
+	...['config', 'content', 'data'].map((directory) => path.join(root, 'src', 'lib', directory))
+];
+for (const file of codeDirectories.flatMap(walk)) {
+	if (
+		/\.(?:js|mjs|ts|svelte|json)$/.test(file) &&
+		!/\.(?:test|spec)\.[^.]+$/.test(file) &&
+		!file.endsWith('.d.ts')
+	) {
+		extractCodeReferences(file);
+	}
+}
+const llmsFile = path.join(staticDir, 'llms.txt');
+if (fs.existsSync(llmsFile)) {
+	await extractPostReferences({ file: llmsFile, text: read(llmsFile), publicPath: '/llms.txt' });
+}
 
 const uniqueReferences = new Map();
 for (const reference of references) {
@@ -276,6 +471,7 @@ for (const reference of uniqueReferences.values()) {
 	if (
 		knownRoutes.has(pathname) ||
 		knownTopicRoutes.has(pathname) ||
+		knownResourceRoutes.has(pathname) ||
 		staticFileExists(pathname) ||
 		canonicalPosts.has(pathname)
 	) {
@@ -313,5 +509,7 @@ if (errors.length > 0) {
 
 console.log(
 	`Internal-link validation passed: ${uniqueReferences.size} references across ${posts.length} published posts; ` +
-		`${canonicalPosts.size} canonical posts, ${aliases.size} aliases, ${knownTopicRoutes.size} published topic routes, and ${knownRoutes.size} static routes recognised.`
+		`${canonicalPosts.size} canonical posts, ${aliases.size} aliases, ${knownTopicRoutes.size} published topic routes, ` +
+		`${knownResourceRoutes.size} published resource routes, and ${knownRoutes.size} static routes recognised. ` +
+		'Fragments, computed URLs and shared-component relative links require the rendered navigation audit.'
 );

@@ -3,7 +3,7 @@ title: "How a Scanner Sees: Reconstructing a Body from Shadows"
 seoTitle: "CT Reconstruction Simulator — Sinograms & Filtered Back-Projection"
 description: "Paint a synthetic CT phantom, collect X-ray projections, and rebuild it with back-projection and filtered back-projection."
 date: "2026-07-26"
-dateModified: "2026-10-21"
+dateModified: "2026-10-22"
 thumbnail: "/images/visualizations/how-a-scanner-sees-ct-reconstruction.webp"
 thumbnailAlt: "Synthetic CT laboratory showing an editable cross-sectional phantom, a sinogram, and grayscale back-projection and filtered back-projection images"
 category: "Visualizations"
@@ -296,7 +296,7 @@ The apparent impossibility has now been reduced to a chain of modest operations:
 
 ## Sources for the reconstruction model
 
-- [Kak and Slaney, *Principles of Computerized Tomographic Imaging*](https://www.slaney.org/pct/pct-toc.html): the authors' online edition provides the mathematical background for projections, Fourier methods, filtered back-projection and the effects of limited or noisy measurements. See the chapters on reconstruction algorithms and practical measurement problems.
+- [Kak and Slaney, *Principles of Computerized Tomographic Imaging*](https://engineering.purdue.edu/~malcolm/pct/pct-toc.html): the authors' online edition provides the mathematical background for projections, Fourier methods, filtered back-projection and the effects of limited or noisy measurements. See the chapters on reconstruction algorithms and practical measurement problems.
 - [TU Delft's illustrated tomography chapter](https://interactivetextbooks.tudelft.nl/basic-principles-of-biological-electron-microscopy/content/12_tomography.html): a complementary teaching account of projection geometry, sinograms, reconstruction and missing-angle information. Its electron-microscopy setting differs from medical CT.
 
 These references explain the principles. The laboratory's scientific-boundary section states which effects its teaching model represents; the exhibit is not a scanner calibration, dose recommendation or clinical reconstruction system.

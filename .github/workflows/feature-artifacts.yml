@@ -131,5 +131,27 @@ jobs:
       - name: Verify incremental notebook preparation
         run: npm run notebooks:test
 
+      - name: Verify deterministic link-checking fixtures
+        run: npm run links:test
+
       - name: Check feature artifacts, notebooks and the complete site
         run: npm run build:full
+
+      - name: Audit all public links on the local production preview
+        run: npm run links:audit
+
+      - name: Install full Chromium for navigation checks
+        run: npx playwright install --with-deps --no-shell chromium
+
+      - name: Verify footer and shared navigation on desktop and mobile
+        run: npm run links:browser:test
+
+      - name: Retain link-audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-link-audit
+          path: |
+            .codex-artifacts/site-links.json
+            test-results
+          if-no-files-found: ignore

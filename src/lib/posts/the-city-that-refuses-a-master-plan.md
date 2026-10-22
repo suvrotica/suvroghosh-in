@@ -2,11 +2,11 @@
 title: "The City That Refuses a Master Plan"
 description: "Place one sweet shop and let Wave Function Collapse grow a fictional Calcutta neighbourhood of lanes, ponds, tram tracks, drains, and civic exceptions."
 date: "2026-07-30"
-dateModified: "2026-07-31"
+dateModified: "2026-10-22"
 thumbnail: "/images/the-city-that-refuses-a-master-plan.webp"
 thumbnailAlt: "Illustrated fictional neighbourhood survey with ochre lanes, ponds, tram rails, clustered houses, trees, and a stamped municipal exception"
 category: "Visualizations"
-tags: ["Scores Actually Measure","Neighbourhood Begins Gossiping","Uncertain Square Goes","Model Deliberately Leaves","Lab Mode","Cell","WFC","Tile","Propagation","Frontage"]
+tags: ["Neighbourhood Begins Gossiping","Scores Actually Measure","Uncertain Square Goes","Lab Mode","Model Deliberately Leaves","WFC","Cell","Tile","Propagation","Frontage"]
 published: true
 interactiveFirst: true
 color: "#A85C3C"
@@ -211,5 +211,5 @@ The article and poster are server-rendered. JavaScript hydration starts the Work
 # References
 
 - Maxim Gumin, [WaveFunctionCollapse reference implementation and simple tiled model](https://github.com/mxgmn/WaveFunctionCollapse). The repository documents observation, propagation, contradiction, tile adjacency, and the algorithm’s deliberately metaphorical name.
-- Paul Merrell, [Model Synthesis](https://graphics.stanford.edu/~pmerrell/thesis.pdf), doctoral dissertation, 2009. This develops the model-synthesis lineage of generating larger structures from local constraints.
+- Paul Merrell, [Model Synthesis](https://paulmerrell.org/wp-content/uploads/2021/06/thesis.pdf), doctoral dissertation, 2009. This develops the model-synthesis lineage of generating larger structures from local constraints.
 - Isaac Karth and Adam M. Smith, [“WaveFunctionCollapse is Constraint Solving in the Wild”](https://escholarship.org/uc/item/1f29235t), *Foundations of Digital Games*, 2017. The paper examines WFC as constraint solving and distinguishes its operational machinery from the quantum metaphor.
