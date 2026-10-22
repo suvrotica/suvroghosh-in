@@ -68,24 +68,29 @@ async function load(page: Page, href: string) {
 	);
 }
 
-async function expectPage(page: Page, href: string, heading?: string | RegExp) {
+async function expectPage(
+	page: Page,
+	href: string,
+	heading?: string | RegExp,
+	options: { clientNavigation?: boolean } = {}
+) {
 	await expect(page).toHaveURL((url) => url.pathname === href);
-	const expectedHeading =
-		heading ?? footerPages.find((destination) => destination.href === href)?.heading;
+	const expectedHeading = heading ?? footerPages.find((entry) => entry.href === href)?.heading;
 	const title = page.locator('main').getByRole('heading', { level: 1 });
 	if (expectedHeading) await expect(title).toHaveText(expectedHeading);
 	else await expect(title).toBeVisible();
 	await expect(page.locator('dialog[open]')).toHaveCount(0);
-	// A changed URL and an already idle document can precede Kit's DOM commit.
-	// Match the destination, then let its commit and paint finish before another history action.
-	if (await page.locator('html').getAttribute('data-view-transitions')) {
-		await page.evaluate(
-			() =>
-				new Promise<void>((resolve) =>
-					requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
-				)
-		);
-	}
+	// A changed URL can precede Kit's DOM commit, and an already idle document does not prove
+	// navigation completed. Match destination content, then let the commit's microtasks and paint
+	// complete before another history action can abort it. Ordinary no-JS anchors complete a
+	// document load and do not run animation callbacks, so they only need the content checks.
+	if (options.clientNavigation === false) return;
+	await page.evaluate(
+		() =>
+			new Promise<void>((resolve) =>
+				requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
+			)
+	);
 }
 
 for (const destination of footerPages) {
@@ -93,18 +98,19 @@ for (const destination of footerPages) {
 		page
 	}) => {
 		const source = destination.href === '/privacy' ? '/about' : '/privacy';
+		const sourceHeading = source === '/about' ? 'Suvro Ghosh' : /A small note\s*about privacy/;
 		await load(page, source);
 		const link = page.locator('footer').getByRole('link', { name: destination.label, exact: true });
 		await expect(link).toHaveAttribute('href', destination.href);
 		await link.click();
 		await expectPage(page, destination.href, destination.heading);
 		await page.goBack();
-		await expectPage(page, source);
+		await expectPage(page, source, sourceHeading);
 		await link.focus();
 		await link.press('Enter');
 		await expectPage(page, destination.href, destination.heading);
 		await page.goBack();
-		await expectPage(page, source);
+		await expectPage(page, source, sourceHeading);
 		await page.goForward();
 		await expectPage(page, destination.href, destination.heading);
 		const response = await page.reload();
@@ -296,14 +302,21 @@ test('command palette search preserves the query, closes the modal and allows fu
 	await expect(dialog).toBeHidden();
 	await expectPage(page, '/blog', 'All Posts');
 	await expect(page.locator('main').getByRole('searchbox').first()).toHaveValue('healthcare');
-	const result = page
-		.locator('section[aria-labelledby="search-results-heading"] a[href^="/blog/"]')
-		.first();
+	const searchResults = page.locator('section[aria-labelledby="search-results-heading"]');
+	// Pagefind replaces the SSR metadata cards asynchronously. Wait for its public completion
+	// status, then pin the selected href/title so a changing first result cannot change the click.
+	await expect(searchResults.locator('[aria-live="polite"]')).toHaveText(/^\s*\d+\s+results?\b/);
+	const result = searchResults.locator('a[href^="/blog/"]').first();
 	await expect(result).toBeVisible();
 	const resultPath = await result.getAttribute('href');
-	await result.click();
-	await expectPage(page, resultPath!);
-	await expect(page.locator('main').getByRole('heading', { level: 1 })).toBeVisible();
+	expect(resultPath).not.toBeNull();
+	const selectedResult = searchResults.locator(`a[href="${resultPath}"]`);
+	const cardHeading = selectedResult.getByRole('heading').first();
+	const resultTitle = (
+		await ((await cardHeading.count()) ? cardHeading : selectedResult).innerText()
+	).trim();
+	await selectedResult.click();
+	await expectPage(page, resultPath!, resultTitle);
 	await page.goBack();
 	await expect(page).toHaveURL(
 		(url) => url.pathname === '/blog' && url.searchParams.get('search') === 'healthcare'
@@ -416,6 +429,73 @@ test('browser history closes shared dialogs before leaving their source page', a
 	await expectPage(page, '/privacy', /A small note\s*about privacy/);
 });
 
+test.describe('native navigation transitions', () => {
+	test.use({ contextOptions: { reducedMotion: 'no-preference' } });
+
+	for (const failure of ['completed', 'skipped-ready', 'rejected-callback'] as const) {
+		test(`${failure} keeps destination content and subsequent history usable`, async ({
+			context,
+			page
+		}) => {
+			await context.addInitScript((mode) => {
+				localStorage.setItem('site-motion', 'gentle');
+				const start = document.startViewTransition.bind(document);
+				document.startViewTransition = (update) => {
+					const root = document.documentElement;
+					root.dataset.testTransitionStarts = String(
+						Number(root.dataset.testTransitionStarts || 0) + 1
+					);
+					const transition = start(async () => {
+						if (typeof update === 'function') await update();
+						else await update?.update?.();
+						if (mode === 'rejected-callback')
+							throw new Error('Injected transition callback rejection');
+					});
+					const settled = () => {
+						root.dataset.testTransitionSettled = String(
+							Number(root.dataset.testTransitionSettled || 0) + 1
+						);
+					};
+					// Observe completion without consuming ready/updateCallbackDone in the failure cases:
+					// the application owns those independent rejection paths.
+					void transition.finished.then(settled, settled);
+					if (mode === 'completed') {
+						void transition.ready.then(
+							() => {
+								root.dataset.testTransitionReady = String(
+									Number(root.dataset.testTransitionReady || 0) + 1
+								);
+							},
+							() => {
+								root.dataset.testTransitionReady = 'rejected';
+							}
+						);
+					}
+					if (mode === 'skipped-ready') transition.skipTransition();
+					return transition;
+				};
+			}, failure);
+			await load(page, '/privacy');
+			await expect(page.locator('html')).toHaveAttribute('data-motion', 'gentle');
+			expect(
+				await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)
+			).toBe(false);
+			await page.locator('footer').getByRole('link', { name: 'About Suvro', exact: true }).click();
+			await expectPage(page, '/about', 'Suvro Ghosh');
+			await expect(page.locator('html')).toHaveAttribute('data-test-transition-settled', '1');
+			await page.goBack();
+			await expectPage(page, '/privacy', /A small note\s*about privacy/);
+			await expect(page.locator('html')).toHaveAttribute('data-test-transition-settled', '2');
+			await page.goForward();
+			await expectPage(page, '/about', 'Suvro Ghosh');
+			await expect(page.locator('html')).toHaveAttribute('data-test-transition-starts', '3');
+			await expect(page.locator('html')).toHaveAttribute('data-test-transition-settled', '3');
+			if (failure === 'completed')
+				await expect(page.locator('html')).toHaveAttribute('data-test-transition-ready', '3');
+		});
+	}
+});
+
 test('fresh visit can dismiss its notice and use footer links without choosing optional consent', async ({
 	browser,
 	baseURL
@@ -522,7 +602,7 @@ test.describe('progressive navigation without JavaScript', () => {
 				.locator('footer')
 				.getByRole('link', { name: destination.label, exact: true })
 				.click();
-			await expectPage(page, destination.href, destination.heading);
+			await expectPage(page, destination.href, destination.heading, { clientNavigation: false });
 		}
 	});
 });
