@@ -6,6 +6,7 @@ __pycache__/
 .codex/
 .codex-artifacts/
 .audit-private/
+/artifacts/memory-palace/
 
 # Published narration contains only compressed audio and complete manifests.
 /static/audio/articles/**/*.wav

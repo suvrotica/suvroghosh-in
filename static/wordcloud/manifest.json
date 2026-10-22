@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T11:20:40.017369+00:00",
+  "generatedAt": "2026-10-22T13:07:46.687963+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -44,6 +44,29 @@
         "Cosmic",
         "Infinity",
         "Mind"
+      ],
+      "wordCount": 130
+    },
+    "a-place-for-every-idea": {
+      "generatedAt": "2026-10-22T13:07:24.965531+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/a-place-for-every-idea.svg",
+      "source": "src/lib/posts/a-place-for-every-idea.md",
+      "sourceHash": "af70c077167188a1b151bc4c898a87f3a5d7119e65b519a44ca136e1861a0f63",
+      "sourceModified": "2026-10-22T13:07:08.810588+00:00",
+      "topWords": [
+        "Water",
+        "Route",
+        "Scene",
+        "Table",
+        "Gate",
+        "Memory",
+        "Steps",
+        "Material",
+        "Study",
+        "Every",
+        "Droplets",
+        "Front"
       ],
       "wordCount": 130
     },

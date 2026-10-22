@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'a-place-for-every-idea': {
+		id: 'a-place-for-every-idea',
+		title: 'A Place for Every Idea: Build Your Own Memory Palace',
+		description:
+			'Turn words or a paragraph into editable scenes along a Calcutta house route, then practise recalling the material before revealing it.',
+		subjects: ['Psychology', 'Learning'],
+		poster: '/images/visualizations/memory-palace/social.png',
+		posterAlt:
+			'An isometric Calcutta house with twelve numbered landmarks for a memory palace route',
+		href: '/blog/visualizations/a-place-for-every-idea',
+		status: 'published'
+	},
 	'build-one-build-a-thousand': {
 		id: 'build-one-build-a-thousand',
 		title: 'Build One. Now Build a Thousand.',

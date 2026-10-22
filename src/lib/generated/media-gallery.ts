@@ -4864,6 +4864,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/memory-palace/social.png",
+			"src": "/images/visualizations/memory-palace/social.png",
+			"bytes": 297618,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/missing-data/missing-data-poster.png",
 			"src": "/images/visualizations/missing-data/missing-data-poster.png",
 			"bytes": 102914,

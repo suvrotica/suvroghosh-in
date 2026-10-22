@@ -11018,6 +11018,21 @@
       "sourceHash": "67e3d1a4d26ad02871e3c6ff03ef1110be3c43e46e84b76ceb79dcb8a6d76ed0",
       "width": 1600
     },
+    "static/images/visualizations/memory-palace/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 297618,
+      "outputHash": "51c9d0acc17ae4c15dacfa8084f60332933f52ac2e645d1813a55865bf56c87d",
+      "resized": false,
+      "sourceBytes": 297618,
+      "sourceHash": "51c9d0acc17ae4c15dacfa8084f60332933f52ac2e645d1813a55865bf56c87d",
+      "width": 1200
+    },
     "static/images/visualizations/missing-data/missing-data-poster.png": {
       "format": "PNG",
       "height": 1300,

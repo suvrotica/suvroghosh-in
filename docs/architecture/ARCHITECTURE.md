@@ -567,6 +567,53 @@ flowchart LR
     Policy["Site theme / Still / reduced motion / visibility / teardown"] --> Shells
 ```
 
+### Memory palace: learner-owned units and retrieval
+
+The Memory Palace uses the ordinary Visualizations Markdown article at
+`/blog/visualizations/a-place-for-every-idea`. Its server-rendered shell under
+`components/visualizations/memory-palace` displays the house and lazily imports
+the mounted interaction. The gallery reads lightweight metadata only. The pure
+TypeScript domain under `visualizations/memory-palace` owns bounded parsing,
+authored examples, occurrence identities, global route slots, answer comparison,
+attempt summaries and escaped Markdown study-sheet export.
+
+All material and practice state belong to the component mount. Reader input stays
+in memory; there is no endpoint, account, external inference call, browser storage,
+input-bearing URL or new route exception. Word parsing exposes delimiter selection
+and retains duplicates. Paragraph suggestions are exact sentence/semicolon
+fragments, not automatic semantic analysis; the learner edits meanings and
+relationships before confirmation. Source or association edits clear prior
+practice state. A 6,000-character / 48-unit interface bound and explicit twelve-locus
+practice batches contain the work. Batches reuse the illustration as separate
+sessions and are labelled for interference; they do not claim separate physical
+palaces. Retry selection retains original global loci.
+
+Recall removes targets and answer-bearing scene details from the mounted study
+interface. Optional scene hints are logged. Word checks normalise Unicode, case
+and whitespace while retaining occurrence/position identity; concept assessment
+belongs to the learner after reveal. A submitted-before-reveal flag distinguishes
+attempted retrieval from prior exposure. Static house geometry comes from the
+existing authoring-only Anatomy kit; the browser receives controlled committed
+SVG fragments, never user-supplied markup. The geometry and captured publication
+image have deterministic source checks in the full feature lane. No foundational
+decision changes, so no additional ADR is required. See the
+[feature record](../visualizations/memory-palace.md) for contracts and verification.
+
+```mermaid
+flowchart LR
+    Article["Markdown prose / generic route"] --> Shell["SSR house / lazy mounted runtime"]
+    Input["Bounded word list or paragraph"] --> Units["Editable source-linked units / stable occurrence IDs"]
+    Units --> Scenes["Learner scenes / global loci / explicit batches"]
+    Scenes --> Study["Route rehearsal"]
+    Study --> Recall["Hidden targets / recorded attempt / optional hint"]
+    Recall --> Feedback["Word comparison or concept self-assessment"]
+    Feedback --> Retry["Original-locus retry / scene revision"]
+    Scenes --> Export["Local escaped Markdown download"]
+    Kit["Existing authoring-only Anatomy kit"] --> Geometry["Committed controlled house geometry"]
+    Geometry --> Shell
+    Shell --> Capture["Loopback browser poster / source and pixel provenance"]
+```
+
 ## 7. Notes client/server/persistence lifecycle
 
 ```mermaid

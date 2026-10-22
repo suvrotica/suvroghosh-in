@@ -15308,6 +15308,37 @@
 				"Prototyping"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/a-place-for-every-idea.md": {
+			"bodyHash": "6c4ffef91b5f6d5b79221ca111ef1ad60261d9572980ea17a035b050d4a09fff",
+			"hashVersion": 2,
+			"revisionHash": "6f920f383f1709940f27a862c91cc9e7ecf89c3aa4bd00d1845e1982ce58295b",
+			"generatedTags": [
+				"Memory Palace",
+				"Method of Loci",
+				"Learning",
+				"Retrieval Practice",
+				"Memory",
+				"Concepts",
+				"Interactive Learning",
+				"Cognitive Psychology",
+				"Mnemonic Techniques",
+				"Spaced Repetition"
+			],
+			"pinnedTags": [
+				"Memory Palace",
+				"Method of Loci",
+				"Learning",
+				"Retrieval Practice",
+				"Memory",
+				"Concepts",
+				"Interactive Learning",
+				"Cognitive Psychology",
+				"Mnemonic Techniques",
+				"Spaced Repetition"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-22"
 		}
 	},
 	"maxTags": 10

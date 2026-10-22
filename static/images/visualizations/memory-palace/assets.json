@@ -1,0 +1,20 @@
+{
+  "sources": {
+    "scripts/render-memory-palace-assets.mjs": "a01513663a3462e98e6aa3750ccb06928eb9f1dc061c6b5c80dcbbb00dde8e56",
+    "src/lib/components/visualizations/memory-palace/MemoryPalace.svelte": "268bf2b963f0d866d7fd43e234f0c820d047d7b47b1f94276e931acfa8d3273f",
+    "src/lib/components/visualizations/memory-palace/Palace.svelte": "595600975540efa423ebdb7ef1f1cb2860c8543cb40f849fc87bf126dbda7cb3",
+    "src/lib/components/visualizations/memory-palace/PalaceRuntime.svelte": "33824f0dcf610e5fb6892b2407c27c0a87942a0b5c355e571b692e60fad52f92",
+    "src/lib/components/visualizations/memory-palace/memory-palace.css": "d943df162b2089e6b48fc73ab897d098ce0424649f50a194658c4ff571f4b59d",
+    "src/lib/visualizations/memory-palace/examples.ts": "56892c10be963d2bbfcae6f357bda0ecb71a6aac37770d782cff2a287a8a8c73",
+    "src/lib/visualizations/memory-palace/generate-geometry.mjs": "5d6ddf611998a1371a86a1636e7984329156db3b693c04b77c7e3d066c726ad5",
+    "src/lib/visualizations/memory-palace/geometry.json": "b363cf89a81f48b575812917bf4ea6d2e27e6e448962237167b61a9e16c7843d",
+    "src/lib/visualizations/memory-palace/model.ts": "e32a69eea0ba06e9f629fbde057ea624148493029bbb0f13274cfd727df4953f"
+  },
+  "sourceHash": "5bedb16cc4faaa5ac9530cc14c073e84342b795dcca214302cb4216fced6522b",
+  "articlePath": "/blog/visualizations/a-place-for-every-idea",
+  "captureMode": "local-article-browser",
+  "state": "empty-route-prepare",
+  "width": 1200,
+  "height": 630,
+  "pixelSha256": "648ee893b55a2e7bc8390749b22100f3094fd9371a127d65adfe181ab9a1ade6"
+}

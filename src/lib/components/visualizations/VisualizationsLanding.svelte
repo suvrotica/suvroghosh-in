@@ -11,6 +11,7 @@
 
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
+		'a-place-for-every-idea': visualizationSummaries['a-place-for-every-idea'].subjects,
 		'build-one-build-a-thousand': visualizationSummaries['build-one-build-a-thousand'].subjects,
 		'the-six-week-shadow': visualizationSummaries['the-six-week-shadow'].subjects,
 		'the-museum-of-almost': visualizationSummaries['the-museum-of-almost'].subjects,
@@ -54,6 +55,8 @@
 		'All',
 		'Design',
 		'Entrepreneurship',
+		'Psychology',
+		'Learning',
 		'Physics',
 		'Chemistry',
 		'Biology',
