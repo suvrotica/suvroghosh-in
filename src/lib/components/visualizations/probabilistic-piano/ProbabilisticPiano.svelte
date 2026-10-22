@@ -1,23 +1,49 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { SvelteMap } from 'svelte/reactivity';
 	import {
 		PRESETS,
 		DEMO,
+		MIDI_MIN,
+		MIDI_MAX,
 		decide,
 		noteName,
 		type Mode,
 		type Decision
 	} from '$lib/visualizations/probabilistic-piano/model';
 	import { VoiceLedger } from '$lib/visualizations/probabilistic-piano/voices';
-	import { PIANO_KEYS } from '$lib/visualizations/probabilistic-piano/painting';
+	import { PIANO_KEYS } from '$lib/visualizations/probabilistic-piano/keyboard';
 	import { resolveMotion } from '$lib/motion/preferences';
 	import { PianoAudio } from '$lib/visualizations/probabilistic-piano/audio';
 	import './piano.css';
 
 	let root: HTMLElement;
 	let canvas: HTMLCanvasElement;
+	let effectsCanvas: HTMLCanvasElement;
+	let stage: HTMLDivElement;
 	let keyboardWindow: HTMLDivElement;
+	let keyboardElement: HTMLDivElement;
+	let view = $state<'fit' | 'playing'>('playing');
+	let viewChosen = false;
+	let focusView = $state(false);
+	let keyboardBase = $state(60);
+	let focusedPitch = $state(60);
+	let activePointers = $state<number[]>([]);
+	let onScreen = $state(true);
+	let pageVisible = $state(true);
+	let geometry = $state({
+		width: 1,
+		height: 1,
+		left: 0,
+		top: 0,
+		content: 1,
+		viewport: 1,
+		scroll: 0
+	});
+	const overviewPosition = $derived(
+		Math.max(0, Math.min(100, ((geometry.scroll + geometry.viewport / 2) / geometry.content) * 100))
+	);
+	const overviewWidth = $derived(Math.min(100, (geometry.viewport / geometry.content) * 100));
 	let mounted = $state(false);
 	let presetIndex = $state(0);
 	let chordIndex = $state(0);
@@ -38,7 +64,10 @@
 	let latest = $state<Decision | null>(null);
 	let inspected = $state<Decision | null>(null);
 	let history = $state<Decision[]>([]);
-	let held = $state<{ id: string; input: number; output: number; voiceId: string }[]>([]);
+	let held = $state<
+		{ id: string; input: number; output: number; voiceId: string; effectId: string }[]
+	>([]);
+	let sustained = $state<{ pitch: number; effectId: string; voiceId: string }[]>([]);
 	let progressing = $state(false);
 	let accompaniment = $state(false);
 	let replaying = $state(false);
@@ -54,6 +83,8 @@
 	let eventIndex = 0;
 	let recent: number[] = [];
 	let painter: typeof import('$lib/visualizations/probabilistic-piano/painting') | undefined;
+	let effects: import('$lib/visualizations/probabilistic-piano/effects').PondEffects | undefined;
+	let effectSerial = 0;
 	let transportTimer: ReturnType<typeof setInterval> | undefined;
 	let replayTimer: ReturnType<typeof setInterval> | undefined;
 	let nextChordAt = 0;
@@ -80,12 +111,100 @@
 		';',
 		"'"
 	];
-	const shortcutPitches = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77];
+	const shortcutPitches = $derived(
+		shortcuts.map((_, index) => keyboardBase + index).filter((pitch) => pitch <= MIDI_MAX)
+	);
 	const shortcutFor = (pitch: number) => shortcuts[shortcutPitches.indexOf(pitch)] ?? '';
-	const keyCentre = (pitch: number) => {
-		const key = PIANO_KEYS.find((item) => item.pitch === pitch)!;
-		return (key.left + (key.black ? 1.4 : 2.27)) * 10;
-	};
+	const keyX = (pitch: number) =>
+		((PIANO_KEYS.find((item) => item.pitch === pitch)?.centre ?? 0) / 100) * geometry.content -
+		geometry.scroll;
+	const effectPosition = (pitch: number) => (geometry.left + keyX(pitch)) / geometry.width;
+	const navigationBusy = $derived(activePointers.length > 0);
+
+	function measure() {
+		if (!stage || !keyboardElement || !keyboardWindow) return;
+		const initialView = keyboardWindow.clientWidth >= 1080 ? 'fit' : 'playing';
+		if (
+			(view === 'fit' && initialView === 'playing') ||
+			(!viewChosen && !navigationBusy && view !== initialView)
+		) {
+			view = initialView;
+			void tick().then(() => {
+				if (!disposed) {
+					centreOn(focusedPitch);
+					measure();
+				}
+			});
+			return;
+		}
+		const bounds = stage.getBoundingClientRect();
+		const keys = keyboardWindow.getBoundingClientRect();
+		geometry = {
+			width: bounds.width,
+			height: bounds.height,
+			left: keys.left - bounds.left,
+			top: keys.top - bounds.top,
+			content: keyboardElement.clientWidth,
+			viewport: keyboardWindow.clientWidth,
+			scroll: keyboardWindow.scrollLeft
+		};
+		effects?.configure({ position: effectPosition, baseline: geometry.top / geometry.height });
+	}
+	function centreOn(pitch: number) {
+		if (!keyboardWindow || navigationBusy) return;
+		const centre = PIANO_KEYS.find((key) => key.pitch === pitch)?.centre ?? 50;
+		keyboardWindow.scrollLeft =
+			(centre / 100) * keyboardElement.clientWidth - keyboardWindow.clientWidth / 2;
+		measure();
+	}
+	async function changeView(next: 'fit' | 'playing', pitch = focusedPitch) {
+		if (navigationBusy) return;
+		viewChosen = true;
+		view = next === 'fit' && keyboardWindow.clientWidth < 1080 ? 'playing' : next;
+		await tick();
+		centreOn(pitch);
+	}
+	function navigateOctave(direction: number) {
+		if (navigationBusy) return;
+		viewChosen = true;
+		if (view === 'fit') {
+			void changeView(
+				'playing',
+				Math.max(MIDI_MIN, Math.min(MIDI_MAX, focusedPitch + direction * 12))
+			);
+			return;
+		}
+		keyboardWindow.scrollBy({ left: (geometry.content / 52) * 7 * direction, behavior: 'instant' });
+		measure();
+	}
+	async function navigateOverview(value: number) {
+		if (navigationBusy) return;
+		viewChosen = true;
+		view = 'playing';
+		await tick();
+		keyboardWindow.scrollLeft =
+			(value / 100) * keyboardElement.clientWidth - keyboardWindow.clientWidth / 2;
+		measure();
+	}
+	function shiftShortcuts(direction: number) {
+		viewChosen = true;
+		keyboardBase = Math.max(MIDI_MIN, Math.min(96, keyboardBase + direction * 12));
+		if (!navigationBusy) centreOn(Math.min(MIDI_MAX, keyboardBase + 6));
+	}
+	async function toggleFocus() {
+		if (navigationBusy) return;
+		focusView = !focusView;
+		await tick();
+		measure();
+		root.scrollIntoView({ block: 'start', behavior: 'instant' });
+	}
+	function pedalChanged() {
+		audio?.setSustain(sustain);
+		if (!sustain) {
+			for (const note of sustained) effects?.noteOff(note.effectId);
+			sustained = [];
+		}
+	}
 
 	function repaint() {
 		if (!painter || !canvas || quality === 'simple' || canvasFailed) return;
@@ -98,10 +217,28 @@
 	$effect(() => {
 		if (mounted) repaint();
 	});
+	$effect(() => {
+		if (mounted)
+			effects?.configure({
+				still,
+				visible: onScreen && pageVisible && quality === 'painted' && !canvasFailed,
+				palette: preset.colours
+			});
+	});
 
 	function release(id: string) {
+		const note = held.find((item) => item.id === id);
 		const voice = ledger.release(id);
 		if (voice?.voiceId) audio?.noteOff(voice.voiceId);
+		if (note) {
+			if (sustain) {
+				if (sustained.length >= 24) effects?.noteOff(sustained[0].effectId);
+				sustained = [
+					...sustained,
+					{ pitch: note.output, effectId: note.effectId, voiceId: note.voiceId }
+				].slice(-24);
+			} else effects?.noteOff(note.effectId);
+		}
 		held = held.filter((item) => item.id !== id);
 	}
 	function press(
@@ -128,15 +265,26 @@
 					active: held.map((v) => v.output)
 				});
 			const voiceId = scheduledVoice ?? audio?.noteOn(decision.output, velocity) ?? '';
+			if (sound && audio) {
+				for (const note of sustained)
+					if (note.voiceId && !audio.hasVoice(note.voiceId)) effects?.noteOff(note.effectId);
+				sustained = sustained.filter((note) => !note.voiceId || audio?.hasVoice(note.voiceId));
+			}
 			ledger.bind(id, voiceId, decision.output);
 			const remaining = sound ? held.filter((v) => !v.voiceId || audio?.hasVoice(v.voiceId)) : held;
-			held = [...remaining, { id, input: pitch, output: decision.output, voiceId }];
+			for (const note of held) if (!remaining.includes(note)) effects?.noteOff(note.effectId);
+			const effectId = `note-${++effectSerial}`;
+			effects?.noteOn(effectId, decision.output, velocity);
+			held = [...remaining, { id, input: pitch, output: decision.output, voiceId, effectId }];
 			latest = decision;
 			if (!frozen) inspected = decision;
 			history = [decision, ...history].slice(0, 16);
 			recent = [...recent, decision.output].slice(-8);
 			scheduleMs = performance.now() - began;
 			error = '';
+			status = sound
+				? 'Sound enabled. A synthesised piano, gently played.'
+				: 'Sound is off. You can still play the painting.';
 		} catch (caught) {
 			error = caught instanceof Error ? caught.message : 'Unable to choose this note.';
 		}
@@ -156,7 +304,10 @@
 		transportTimer = undefined;
 		progressing = false;
 		ledger.clear();
+		activePointers = [];
 		held = [];
+		sustained = [];
+		effects?.releaseAll();
 		sustain = false;
 		audio?.setSustain(false);
 		audio?.stopAll();
@@ -324,6 +475,8 @@
 	function pointerDown(event: PointerEvent, pitch: number) {
 		if (event.button !== 0) return;
 		event.preventDefault();
+		viewChosen = true;
+		activePointers = [...activePointers.filter((id) => id !== event.pointerId), event.pointerId];
 		(event.currentTarget as HTMLElement).focus({ preventScroll: true });
 		(event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
 		press(
@@ -332,27 +485,74 @@
 			event.pointerType === 'pen' && event.pressure > 0 ? event.pressure : 0.65
 		);
 	}
+	function pointerEnd(event: PointerEvent) {
+		release(`pointer-${event.pointerId}`);
+		activePointers = activePointers.filter((id) => id !== event.pointerId);
+	}
+	function focusKey(pitch: number) {
+		focusedPitch = Math.max(MIDI_MIN, Math.min(MIDI_MAX, pitch));
+		const button = keyboardElement.querySelector<HTMLButtonElement>(
+			`[data-piano-key="${focusedPitch}"]`
+		);
+		button?.focus({ preventScroll: true });
+		if (!navigationBusy && button) {
+			const bounds = button.getBoundingClientRect();
+			const windowBounds = keyboardWindow.getBoundingClientRect();
+			if (bounds.left < windowBounds.left || bounds.right > windowBounds.right)
+				centreOn(focusedPitch);
+		}
+	}
 	function pointerMove(event: PointerEvent) {
 		const id = `pointer-${event.pointerId}`;
-		if (!ledger.get(id)) return;
+		if (!activePointers.includes(event.pointerId)) return;
 		const pitch = pointerPitch(event);
 		const old = held.find((item) => item.id === id);
 		if (old?.input === pitch) return;
 		release(id);
-		if (pitch !== undefined && event.buttons) press(id, pitch);
+		if (pitch !== undefined && event.buttons)
+			press(id, pitch, event.pointerType === 'pen' && event.pressure > 0 ? event.pressure : 0.65);
 	}
 	function keyboardDown(event: KeyboardEvent) {
 		const target = event.target as HTMLElement;
+		if (event.key === 'Escape' && focusView) {
+			event.preventDefault();
+			void toggleFocus();
+			return;
+		}
 		if (
-			target.closest('input,select,textarea,summary') ||
+			target.closest('input,select,textarea,summary,[contenteditable="true"]') ||
 			event.ctrlKey ||
 			event.altKey ||
 			event.metaKey ||
 			event.repeat
 		)
 			return;
+		if (event.key === '[' || event.key === ']') {
+			event.preventDefault();
+			shiftShortcuts(event.key === '[' ? -1 : 1);
+			return;
+		}
+		if (target.closest('[data-piano-key]')) {
+			const moves: Record<string, number> = {
+				ArrowLeft: -1,
+				ArrowRight: 1,
+				PageUp: 12,
+				PageDown: -12
+			};
+			if (event.key in moves || event.key === 'Home' || event.key === 'End') {
+				event.preventDefault();
+				focusKey(
+					event.key === 'Home'
+						? MIDI_MIN
+						: event.key === 'End'
+							? MIDI_MAX
+							: focusedPitch + moves[event.key]
+				);
+				return;
+			}
+		}
 		const position = shortcuts.indexOf(event.key.toLowerCase());
-		if (position >= 0) {
+		if (position >= 0 && shortcutPitches[position] !== undefined) {
 			event.preventDefault();
 			press(`key-${event.code}`, shortcutPitches[position]);
 		}
@@ -380,15 +580,30 @@
 		mounted = true;
 		disposed = false;
 		let alive = true;
-		import('$lib/visualizations/probabilistic-piano/painting').then((module) => {
-			if (alive) {
-				painter = module;
-				repaint();
-			}
-		});
+		Promise.all([
+			import('$lib/visualizations/probabilistic-piano/painting'),
+			import('$lib/visualizations/probabilistic-piano/effects')
+		])
+			.then(([module, visual]) => {
+				if (alive) {
+					painter = module;
+					effects = visual.createPondEffects(effectsCanvas, {
+						palette: preset.colours,
+						position: effectPosition,
+						baseline: geometry.top / geometry.height,
+						still,
+						visible: onScreen && pageVisible && quality === 'painted' && !canvasFailed
+					});
+					repaint();
+				}
+			})
+			.catch(() => {
+				canvasFailed = true;
+			});
 		const media = window.matchMedia('(prefers-reduced-motion: reduce)');
 		const updateMotion = () => {
 			still = resolveMotion(document.documentElement.dataset.motion, media.matches) === 'still';
+			effects?.configure({ still });
 		};
 		updateMotion();
 		media.addEventListener('change', updateMotion);
@@ -397,33 +612,54 @@
 			attributes: true,
 			attributeFilter: ['data-motion']
 		});
-		const resize = new ResizeObserver(repaint);
-		resize.observe(canvas);
+		const resize = new ResizeObserver(() => {
+			measure();
+			repaint();
+			effects?.resize();
+		});
+		resize.observe(stage);
+		resize.observe(keyboardWindow);
 		const visibility = () => {
+			pageVisible = !document.hidden;
 			if (document.hidden) stopAll('Paused while the page is hidden.');
 		};
 		const blur = () => stopAll('All notes released when focus left the window.');
+		const guardWheel = (event: WheelEvent) => {
+			if (navigationBusy) event.preventDefault();
+		};
 		const intersection = new IntersectionObserver(
 			([entry]) => {
+				onScreen = entry.isIntersecting;
 				if (!entry.isIntersecting) stopAll('Paused outside the viewport.');
 			},
 			{ threshold: 0 }
 		);
 		intersection.observe(root);
 		window.addEventListener('keyup', keyUp);
+		root.addEventListener('keydown', keyboardDown);
+		keyboardWindow.addEventListener('wheel', guardWheel, { passive: false });
 		window.addEventListener('blur', blur);
 		document.addEventListener('visibilitychange', visibility);
-		keyboardWindow.scrollLeft = keyboardWindow.scrollWidth * 0.22;
+		view = keyboardWindow.clientWidth >= 1080 ? 'fit' : 'playing';
+		void tick().then(() => {
+			if (alive) {
+				measure();
+				centreOn(60);
+			}
+		});
 		return () => {
 			alive = false;
 			disposed = true;
 			stopAll();
+			effects?.dispose();
 			audio?.dispose();
 			resize.disconnect();
 			intersection.disconnect();
 			mutations.disconnect();
 			media.removeEventListener('change', updateMotion);
 			window.removeEventListener('keyup', keyUp);
+			root.removeEventListener('keydown', keyboardDown);
+			keyboardWindow.removeEventListener('wheel', guardWheel);
 			window.removeEventListener('blur', blur);
 			document.removeEventListener('visibilitychange', visibility);
 		};
@@ -434,7 +670,11 @@
 	bind:this={root}
 	class="forgiving-piano not-prose"
 	class:still
+	class:focus-view={focusView}
 	data-piano-root
+	data-view={view}
+	data-focus={focusView}
+	data-keyboard-base={keyboardBase}
 	data-held={held.length}
 	data-sound={sound}
 	data-schedule-ms={scheduleMs.toFixed(3)}
@@ -459,6 +699,7 @@
 	</header>
 	<div
 		class="piano-world"
+		bind:this={stage}
 		class:ready={mounted}
 		class:simple={quality === 'simple' || canvasFailed}
 		data-piano-stage
@@ -471,8 +712,45 @@
 				height="760"
 			/>{/if}
 		<canvas bind:this={canvas} aria-hidden="true"></canvas>
+		<canvas class="piano-effects" bind:this={effectsCanvas} aria-hidden="true"></canvas>
+		{#if shown}
+			{#key shown}
+				<svg
+					class="probability-light"
+					style={`left:${geometry.left}px;width:${geometry.viewport}px;height:${geometry.top + 28}px`}
+					viewBox={`0 0 ${geometry.viewport} ${geometry.top + 28}`}
+					preserveAspectRatio="none"
+					aria-hidden="true"
+				>
+					{#each shown.candidates as candidate (candidate.pitch)}
+						<path
+							class:selected={candidate.pitch === shown.output}
+							data-probability={candidate.probability}
+							d={`M ${keyX(shown.input)} ${geometry.top + 14} C ${keyX(shown.input)} ${geometry.top - 100}, ${keyX(candidate.pitch)} ${geometry.top - 100}, ${keyX(candidate.pitch)} ${geometry.top + 8}`}
+							style={`stroke-width:${1 + candidate.probability * 4};opacity:${0.25 + candidate.probability * 0.65}`}
+						/>
+						<circle
+							cx={keyX(candidate.pitch)}
+							cy={geometry.top + 8}
+							r={candidate.pitch === shown.output ? 5 : 3}
+							class:selected={candidate.pitch === shown.output}
+						/>
+					{/each}
+					<circle class="requested-mark" cx={keyX(shown.input)} cy={geometry.top + 14} r="7" />
+				</svg>
+			{/key}
+		{/if}
 		<div class="piano-world-top">
 			<span>01 — {preset.name}</span><span>HARMONY <b>{chord.name}</b></span>
+			<button
+				class="focus-button"
+				type="button"
+				aria-pressed={focusView}
+				disabled={navigationBusy}
+				onclick={toggleFocus}
+				>{focusView ? 'Exit focus view' : 'Enter focus view'}
+				<span aria-hidden="true">⤢</span></button
+			>
 		</div>
 		<div class="piano-whisper">
 			{shown
@@ -507,13 +785,14 @@
 			<span
 				>YOU TOUCH <i class="outline-dot"></i>
 				<span class="caption-gap">THE PIANO ANSWERS <i class="fill-dot"></i></span></span
-			><span>C3 — C6 · MIDDLE C = C4 / MIDI 60</span>
+			><span>88 KEYS · A0 — C8 · MIDDLE C = C4</span>
 		</div>
 		<div
 			class="keyboard-window"
 			bind:this={keyboardWindow}
 			role="group"
 			aria-label="Playable piano, scroll sideways for more octaves"
+			onscroll={measure}
 			onfocusout={(event) => {
 				if (
 					!(event.relatedTarget instanceof Node) ||
@@ -523,38 +802,32 @@
 				}
 			}}
 		>
-			<div class="painted-keyboard" data-piano-keyboard>
-				{#if shown && shown.shift !== 0}<svg
-						class="correction-stroke"
-						viewBox="0 0 1000 195"
-						preserveAspectRatio="none"
-						aria-hidden="true"
-						><path
-							d={`M ${keyCentre(shown.input)} 149 Q ${(keyCentre(shown.input) + keyCentre(shown.output)) / 2} 40 ${keyCentre(shown.output)} 149`}
-						/><circle
-							cx={keyCentre(shown.input)}
-							cy="149"
-							r="5"
-							fill="none"
-							stroke="#b07d37"
-							stroke-width="2"
-						/><circle cx={keyCentre(shown.output)} cy="149" r="5" fill="#b07d37" /></svg
-					>{/if}
+			<div
+				class="painted-keyboard"
+				class:fit={view === 'fit'}
+				bind:this={keyboardElement}
+				data-piano-keyboard
+			>
 				{#each PIANO_KEYS as key (key.pitch)}<button
 						type="button"
 						data-piano-key={key.pitch}
 						aria-label={`Play ${noteName(key.pitch)}`}
-						onkeydown={keyboardDown}
+						tabindex={key.pitch === focusedPitch ? 0 : -1}
+						onfocus={() => {
+							focusedPitch = key.pitch;
+						}}
 						class="painted-key"
 						class:black={key.black}
 						class:requested={held.some((v) => v.input === key.pitch)}
-						class:sounded={held.some((v) => v.output === key.pitch)}
-						style={`left:${key.left}%; --key-paint:${preset.colours[key.pitch % preset.colours.length]}`}
+						class:sounded={held.some((v) => v.output === key.pitch) ||
+							sustained.some((v) => v.pitch === key.pitch)}
+						class:middle-c={key.pitch === 60}
+						style={`left:${key.left}%;width:calc(${key.width}% - ${key.black ? 0 : 1}px); --key-paint:${preset.colours[key.pitch % preset.colours.length]}`}
 						onpointerdown={(event) => pointerDown(event, key.pitch)}
 						onpointermove={pointerMove}
-						onpointerup={(event) => release(`pointer-${event.pointerId}`)}
-						onpointercancel={(event) => release(`pointer-${event.pointerId}`)}
-						onlostpointercapture={(event) => release(`pointer-${event.pointerId}`)}
+						onpointerup={pointerEnd}
+						onpointercancel={pointerEnd}
+						onlostpointercapture={pointerEnd}
 						onclick={(event) => {
 							if (event.detail === 0) {
 								activateKey(key.pitch);
@@ -565,14 +838,62 @@
 					>{/each}
 			</div>
 		</div>
+		<div class="keyboard-overview">
+			<div class="overview-head">
+				<span>THE WHOLE PIANO <b>A0 — C8</b></span><span
+					>Drag the map to travel · drag the keys to play</span
+				>
+			</div>
+			<div class="overview-track">
+				<div class="overview-keys" aria-hidden="true">
+					{#each PIANO_KEYS as key (key.pitch)}<i
+							class:black={key.black}
+							class:lit={held.some((v) => v.output === key.pitch) ||
+								sustained.some((v) => v.pitch === key.pitch)}
+							style={`left:${key.left}%;width:${key.width}%`}
+						></i>{/each}
+				</div>
+				<div
+					class="overview-window"
+					style={`left:${Math.max(0, overviewPosition - overviewWidth / 2)}%;width:${overviewWidth}%`}
+					aria-hidden="true"
+				></div>
+				<input
+					type="range"
+					aria-label="Keyboard overview"
+					min="0"
+					max="100"
+					step="1"
+					value={overviewPosition}
+					disabled={navigationBusy}
+					oninput={(event) => navigateOverview(Number(event.currentTarget.value))}
+				/>
+			</div>
+		</div>
 		<div class="keyboard-scroll-tools">
-			<button
-				type="button"
-				onclick={() => keyboardWindow.scrollBy({ left: -294, behavior: 'instant' })}
+			<button type="button" disabled={navigationBusy} onclick={() => navigateOctave(-1)}
 				>← Lower octave</button
-			><span>C3 — C6</span><button
+			><button
 				type="button"
-				onclick={() => keyboardWindow.scrollBy({ left: 294, behavior: 'instant' })}
+				aria-pressed={view === 'fit'}
+				disabled={navigationBusy || geometry.viewport < 1080}
+				title={geometry.viewport < 1080
+					? 'Use the overview to explore all 88 keys on a narrow screen.'
+					: undefined}
+				onclick={() => changeView('fit')}>Fit all 88 keys</button
+			><button
+				type="button"
+				aria-pressed={view === 'playing'}
+				disabled={navigationBusy}
+				onclick={() => changeView('playing')}>Playing view</button
+			><button
+				type="button"
+				disabled={navigationBusy}
+				onclick={() => {
+					focusedPitch = 60;
+					void changeView('playing', 60);
+				}}>Return to middle C</button
+			><button type="button" disabled={navigationBusy} onclick={() => navigateOctave(1)}
 				>Higher octave →</button
 			>
 		</div>
@@ -622,6 +943,37 @@
 			>■ <span>Stop all sound</span></button
 		>
 	</div>
+
+	<div class="piano-playing-tools">
+		<div class="shortcut-range">
+			<span>COMPUTER KEYS</span><button
+				type="button"
+				aria-label="Lower computer-keyboard octave"
+				disabled={keyboardBase <= MIDI_MIN}
+				onclick={() => shiftShortcuts(-1)}>[ −</button
+			><output>{noteName(keyboardBase)}–{noteName(shortcutPitches.at(-1) ?? keyboardBase)}</output
+			><button
+				type="button"
+				aria-label="Higher computer-keyboard octave"
+				disabled={keyboardBase >= 96}
+				onclick={() => shiftShortcuts(1)}>+ ]</button
+			>
+		</div>
+		<label class="check pedal-control"
+			><input type="checkbox" bind:checked={sustain} onchange={pedalChanged} /> Hold pedal</label
+		>
+
+		<label
+			>Current chord<select aria-label="Current chord" bind:value={chordIndex}
+				>{#each preset.chords as item, index (item.id)}<option value={index}>{item.name}</option
+					>{/each}</select
+			></label
+		>
+		<button class="phrase-button" type="button" onclick={replay} disabled={replaying}
+			>Replay phrase
+			<span aria-hidden="true">↗</span></button
+		>
+	</div>
 	<div class="piano-footnote">
 		<p>
 			{mode === 'nearest'
@@ -643,26 +995,14 @@
 		<div class="workbench-grid">
 			<div class="musical-tools">
 				<h2>A few ways to listen</h2>
-				<label
-					>Current chord<select aria-label="Current chord" bind:value={chordIndex}
-						>{#each preset.chords as item, index (item.id)}<option value={index}>{item.name}</option
-							>{/each}</select
-					></label
-				>
 				<p class="palette-notes">Palette: {chord.tones.map((tone) => tone.label).join(' · ')}</p>
 				<div class="tool-buttons">
 					<button type="button" aria-pressed={progressing} onclick={toggleTransport}
 						>{progressing ? 'Stop progression' : 'Start progression'}</button
-					><button type="button" onclick={replay} disabled={replaying}>Replay phrase</button>
+					>
 				</div>
 				<label class="check"
 					><input type="checkbox" bind:checked={accompaniment} /> Soft accompaniment (with sound and progression)</label
-				><label class="check"
-					><input
-						type="checkbox"
-						bind:checked={sustain}
-						onchange={() => audio?.setSustain(sustain)}
-					/> Hold pedal</label
 				><label class="check"
 					><input type="checkbox" bind:checked={muted} onchange={() => audio?.setMuted(muted)} /> Mute</label
 				><label
@@ -728,7 +1068,7 @@
 						>
 					</table>
 					<p>
-						Eligible within C3–C6: {shown.eligible.map(noteName).join(', ')}. Eligible pitches
+						Eligible within A0–C8: {shown.eligible.map(noteName).join(', ')}. Eligible pitches
 						outside this mode’s distance bound are omitted from the sampler.
 					</p>{:else}<p>Play a key to see the complete decision here.</p>{/if}
 				<details>
@@ -763,8 +1103,10 @@
 			>
 		</div>
 		<p>
-			Computer keys A W S E D F T G Y H U J K O L P ; ’ play C4–F5 while the piano has focus. Scroll
-			the keyboard for more octaves. Your touch supplies the rhythm; assistance changes pitch.
+			Computer keys A W S E D F T G Y H U J K O L P ; ’ play the marked range while the piano has
+			focus. Use [ and ] to shift that range; arrow keys move between piano keys, Home/End reach
+			A0/C8, and Page Up/Down move an octave. The overview travels across all 88 keys. Your touch
+			supplies the rhythm; assistance changes pitch.
 		</p>
 	</div>
 </section>

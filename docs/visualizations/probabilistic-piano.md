@@ -13,7 +13,9 @@ phrasing and arbitrary dense clusters remain outside that promise.
 | `src/lib/visualizations/probabilistic-piano/model.ts`    | Browser-independent versioned harmony, presets, deterministic decisions, probability calculation, note names and original demo fixture. |
 | `src/lib/visualizations/probabilistic-piano/voices.ts`   | Physical-input ownership of a frozen output pitch and its independent audio voice ID.                                                   |
 | `src/lib/visualizations/probabilistic-piano/audio.ts`    | Explicitly enabled, per-instance Web Audio synthesis, sustain, finite voice resources and disposal.                                     |
-| `src/lib/visualizations/probabilistic-piano/painting.ts` | Deterministic pond atmosphere and stable piano-key geometry; no musical decision.                                                       |
+| `src/lib/visualizations/probabilistic-piano/keyboard.ts` | Pure 88-key geometry shared by native keys, overview and musical overlays.                                                              |
+| `src/lib/visualizations/probabilistic-piano/painting.ts` | Deterministic cached pond atmosphere; no musical decision.                                                                              |
+| `src/lib/visualizations/probabilistic-piano/effects.ts`  | Per-mount, bounded note blooms, ripples, duration ribbons and held reflections with an independent animation clock.                     |
 | `src/lib/components/visualizations/probabilistic-piano/` | Per-mount Svelte shell, native playable keys, controls, visual probability marks and readable decision inspector.                       |
 | `src/lib/posts/the-piano-that-forgives.md`               | Article, metadata, worked example and primary educational references.                                                                   |
 | `static/images/visualizations/probabilistic-piano/`      | Captures of the implemented instrument used by the article and gallery.                                                                 |
@@ -26,7 +28,8 @@ inference service, account, provider credential or persistent player profile is
 introduced. The model is authored preference logic rather than machine learning.
 
 The shell owns mode, seed, temperature, chord, transport, recent history, active
-inputs, frozen inspector state and presentation preferences. A note-on freezes
+inputs, frozen inspector state, keyboard viewport, computer-keyboard range and
+presentation preferences. A note-on freezes
 the harmony/settings and selects one output. Its one decision record feeds the
 keyboard, probabilities, text ledger and audio. Note-off releases the voice ID
 stored for that physical input; it never runs correction again. Two inputs that
@@ -35,7 +38,8 @@ selected pitch across a chord change.
 
 ## Musical contract
 
-The supported request/output span is integer MIDI 48–84, C3–C6. Middle C is
+The supported request/output span is integer MIDI 21–108, A0–C8: the complete
+88-key piano with 52 white and 36 black keys. Middle C is
 explicitly C4 / MIDI 60. There is one authored pitch-class palette per chord;
 the preset's painted colours do not modify eligibility.
 
@@ -95,8 +99,9 @@ The article's fixture is a fresh C6/9 request for C♯4 / MIDI 61. With clean
 history and no held notes, C4 and D4 are equally near. Their scores are −1.25
 and −1.39; at temperature 0.7 their probabilities are 54.9833997% and
 45.0166003%. These values express the sampler's rule, not measured listener
-preferences. Model version `1` and the original twelve-note `DEMO` fixture
-establish ordered replay inputs. Visual random draws cannot consume musical
+preferences. Model version `2` expands the range while retaining the scoring
+rule, musical sampling salt and original twelve-note `DEMO` fixture. The clean
+C♯4 probabilities and original ordered demo choices remain unchanged. Visual random draws cannot consume musical
 randomness or choose a note.
 
 Correction changes pitch only. It introduces no rhythmic quantisation, swing,
@@ -108,10 +113,12 @@ the model.
 
 ## Audio and interaction lifetime
 
-The original additive voice uses five sine partials with slight increasing
+The original additive voice uses up to five sine partials with slight increasing
 inharmonicity, a 6 ms attack, register/velocity-dependent brightness, quicker
-upper-partial decay and a 150 ms key-up release. Main decay is approximately
-3.32–4.28 seconds across C3–C6. This is an explicitly labelled synthesised piano approximation;
+upper-partial decay and a 150 ms key-up release. Main decay ranges from
+5.4 seconds at A0 to 2.4 seconds at C8. Partials at or above 46% of the audio
+context's sample rate are omitted, keeping the highest partials below Nyquist.
+This is an explicitly labelled synthesised piano approximation;
 no downloaded sample, runtime audio CDN or third-party sound recording is used.
 The conservative master scale is 0.24 times the bounded volume control. This
 does not certify a universal speaker-output limit.
@@ -137,32 +144,63 @@ Pointer identity/capture supplies independent touch ownership, with cancellation
 and lost-capture cleanup. Glissando releases the previous owned input before
 starting a new one. Keyboard shortcuts act inside the focused instrument, ignore
 auto-repeat and modified browser shortcuts, and avoid editable controls. Native
-key buttons also support ordinary keyboard activation. These choices use the
+key buttons also support ordinary keyboard activation. The keyboard has one
+roving Tab stop. Left/right arrows move by a semitone, Page Up/Down by an octave,
+and Home/End reach A0/C8. Computer shortcuts initially cover C4–F5; `[` and `]`
+shift their base by an octave within MIDI 21–96, with out-of-range high notes
+omitted. Releases retain the original input ownership after a range change.
+These choices use the
 [Pointer Events model](https://www.w3.org/TR/pointerevents3/) while providing
 explicit keyboard behaviour alongside it.
 
 ## Painting, access and fallbacks
 
 The pond is original procedural artwork. Its bounded, deterministic laid strokes,
-moon and lilies describe atmosphere. Native DOM buttons supply stable key
-geometry and the familiar two/three black-key grouping; decorative texture does
-not change hit targets. Candidate bars and numeric percentages read the same
+moon and lilies describe atmosphere. Pure geometry in `keyboard.ts` covers the
+partial A0/B0 octave, familiar two/three black-key grouping and final C8. Native
+DOM buttons use those exact dimensions; decorative texture does not change hit
+targets. Candidate bars and numeric percentages read the same
 decision that audio receives. Requested and selected notes have labels and
 different marks as well as colour. The full text inspector is available in
 silent mode, with a bounded sixteen-event history and a frozen-decision option.
 
-Slow-changing atmosphere renders on demand with pixel density capped at 1.5.
+The background canvas is cached separately from transient note effects and
+repaints only when its atmosphere or dimensions change. The transparent effects
+canvas receives the same selected output and actual velocity used by sound.
+Pitch positions follow the measured native keyboard through scroll, view changes
+and resize. Bass notes produce broader, slower moonlit ripples; treble notes
+produce finer rings. Ribbons encode note duration and velocity, and notes within
+240 ms can join into a brush gesture. Held and pedal-owned notes retain a
+reflection until release. At most 48 note marks survive in decorative history.
+
+The owned animation frame runs only while a visible effect moves. Held marks
+settle after 3.8 seconds; released marks fade over 2.8 seconds. Stop clears all
+marks immediately. Hidden/offscreen state cancels work, and teardown cancels the
+frame and clears the effects canvas. Both canvases cap pixel density at 1.5.
+Probability curves are SVG paths from the request to each admitted candidate;
+their width/opacity encode the actual probability and the selected branch is
+gold. They share the displayed frozen decision with the numerical inspector.
+
 The quiet-wash setting retains the semantic keyboard if canvas painting is
 unavailable or the visitor wants lower cost. The feature uses the existing
 motion preference resolver and observes both operating-system and site Still
-changes. Stable marks preserve the explanation in Still mode. There is no
+changes. Stable rings, ribbons, reflections and probability marks preserve the
+explanation in Still mode, without scheduling animation. There is no
 requirement to hear audio, follow a moving mark or distinguish colours alone to
 read the decision. These design choices draw on
 [WCAG 2.2](https://www.w3.org/TR/WCAG22/); they are not a claim of complete
 assistive-technology or conformance certification.
 
-The phone keyboard scrolls inside its own labelled window rather than shrinking
-all thirty-seven keys into the page width. The server-rendered poster and prose
+Fit view shows all 88 keys when the keyboard window is at least 1080 CSS pixels
+wide; narrower windows use playing view with comfortable key sizes, opening
+around C4. The labelled miniature overview shows the visible window and lets the
+reader reach both range boundaries. Octave controls and Return to middle C offer
+another navigation path. Active pointers lock viewport navigation so the
+keyboard cannot slide under a held finger. The phone keyboard scrolls inside its
+own labelled window with a separate navigation surface. Focus view expands the
+stage within the article; Escape or its exit button restores the ordinary
+layout. Sound activation, volume, sustain, mode, chord and Stop remain available.
+The server-rendered poster and prose
 remain readable without JavaScript. Publication artwork must show the actual
 implemented instrument in a specified seeded state, with source provenance and
 dimensions checked through the feature's asset tooling. Generated artwork is
@@ -174,18 +212,28 @@ probability marks. Start the local site first at `http://127.0.0.1:5175`, or
 provide `BASE_URL` for another development/preview origin. The capture uses
 Moonlit pond / C6/9, Nearest, temperature 0.7, seed 1907, no previous or held
 notes and a first request for C♯4. The selected result is C4. Sound stays off.
+Publication captures use Still mode for reproducible effect marks and explicitly
+select full-keyboard fit on desktop; phone captures retain the playing viewport.
+The capture browser uses a fixed 3000-pixel-high viewport at the documented
+desktop, tablet and phone widths, then crops actual viewport pixels. This avoids
+screenshot-time viewport emulation changing the instrument's fit/playing state.
+The capture fails if that state changes. Browser interaction tests separately
+exercise ordinary 390 × 844, tablet and desktop viewport sizes.
 
 The 1440 × 760 `piano-poster.jpg` retains the whole stage with letterboxing.
 The 1200 × 630 `piano-social.jpg` adds an editorial title band above the same
-stage capture. Five review PNGs under `artifacts/probabilistic-piano/` show the
-desktop, portrait phone, Still, exact inspector and unchanged-note views.
+stage capture. Seven review PNGs under `artifacts/probabilistic-piano/` show the
+desktop, portrait phone, tablet, Still, exact inspector, unchanged-note and
+animated focus views. The focus capture records a real multi-note gesture after
+700 ms; it is review evidence rather than the reproducible publication fixture.
 These PNGs support human inspection; the two JPEGs are publication inputs.
 `static/images/visualizations/probabilistic-piano/assets.json` records the fixed
 capture state, normalized source provenance and each publication file's dimensions,
 bytes and SHA-256. `npm run probabilistic-piano:assets:check` verifies those
 records without a running browser, including a 750 KiB limit per JPEG. The
 checker belongs to `features:check`, so the feature build validates committed
-captures against the current model, painting, shell, CSS and capture script.
+captures against the current model, keyboard geometry, background/effects
+renderers, shell, CSS and capture script.
 The normal repository image optimizer may re-encode JPEGs during the build.
 The checker accepts either the original captured bytes or a same-dimension
 derivation recorded in `scripts/image-optimization-manifest.json`: its source
@@ -194,7 +242,40 @@ current file. Arbitrary replacement files and resized derivatives fail.
 
 ## Verification record
 
-Verified locally on **21 October 2026**:
+Verified locally on **22 October 2026** for the 88-key enhancement:
+
+- `npm run probabilistic-piano:test -- --maxWorkers=2`: **74 tests across five
+  files passed**. These cover the complete A0–C8 geometry, all 88 fundamental
+  frequency schedules at 32/44.1/48 kHz, boundary corrections, unchanged middle-
+  register probability/demo fixtures, independent voices and bounded effect
+  ownership, settling, Still rendering and disposal.
+- `PLAYWRIGHT_PORT=5175 PLAYWRIGHT_REUSE_SERVER=1 npm run probabilistic-piano:browser:test`:
+  **all 17 cases passed against the final production preview** in 2.2 minutes.
+  They cover automatic desktop fit, phone overview endpoints, roving and octave
+  shortcuts, focus view, actual probability weights and alignment through view/
+  scroll/resize changes, held-pointer navigation/wheel locks, native multi-touch,
+  glissando exit/re-entry, two pedal reflections across a chord change, real
+  effect pixels/settling, stable Still pixels, silent/denied sound, pending audio
+  disposal, unchanged replay/fixtures, both themes and JavaScript-free reading.
+- `npm run build-workflow:test`: **15 tests passed**.
+- `npm run check`: **zero errors and warnings**. Scoped ESLint and Prettier
+  checks passed for the feature and capture tooling.
+- `npm run build:full`: **passed** all feature artifact checks, two current
+  notebook verifications, content/resource/contrast/SEO/media/link checks,
+  search indexing, production compilation, rendered discoverability and the
+  emitted-route asset audit. The build retains existing large-chunk, BZ import
+  and optional package/platform warnings.
+- Final captures were regenerated from that compiled instrument using the fixed
+  viewport capture method, then `images:optimize`, `gallery:generate`,
+  `probabilistic-piano:assets:check` and `validate:media` passed. Both publication
+  JPEGs retain their specified dimensions and stay below 750 KiB; all seven QA
+  PNGs were inspected. Only capture tooling and generated media metadata changed
+  after the production/browser checks, so those affected checks were rerun
+  without another application build.
+
+The following dated record describes the original 37-key release.
+
+Verified locally on **21 October 2026** (original 37-key release):
 
 - `npm run probabilistic-piano:test`: all 60 tests passed across three files,
   including exhaustive pitch/chord/mode cases, empirical sampling, ownership,
@@ -244,8 +325,10 @@ No remote deployment was performed by this verification run.
 Architecture impact: yes
 
 Architecture rationale: The canonical architecture and contribution gate were
-reviewed. This adds a feature-owned decision/audio/painting lifecycle using the
-existing ordinary-article pattern. Section 6 of the canonical reference and its
-data-flow diagram describe the per-mount owners and shared decision boundary.
-No foundational route, integration, persistence or shared-state decision changes,
-so a separate ADR is unnecessary.
+reviewed. Section 6 and its data-flow diagram now describe the pure 88-key
+geometry boundary, measured viewport overlays and bounded transient effects
+controller alongside the shared musical decision and owned audio lifecycle.
+Implementation imports, ownership, cleanup paths and browser behaviour were
+checked against that description. The established per-mount ordinary-article
+pattern still applies; no foundational decision changes, so no separate ADR is
+needed.

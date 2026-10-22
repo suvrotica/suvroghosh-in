@@ -228,6 +228,69 @@ describe('piano audio activation and resource ownership', () => {
 		audio.dispose();
 	});
 
+	it.each([32_000, 44_100, 48_000])(
+		'plays every A0–C8 fundamental with bounded, below-Nyquist partials at %i Hz',
+		async (sampleRate) => {
+			const { audio, context } = await enabledInstrument();
+			context.sampleRate = sampleRate;
+			for (let pitch = 21; pitch <= 108; pitch++) {
+				const firstSource = context.sources.length;
+				const id = audio.noteOn(pitch, 0.7);
+				expect(id).not.toBe('');
+				expect(audio.activeCount).toBe(1);
+				const partials = context.sources.slice(firstSource);
+				expect(partials.length).toBeGreaterThanOrEqual(1);
+				expect(partials.length).toBeLessThanOrEqual(5);
+				expect(partials[0].frequency.setValueAtTime.mock.calls[0][0]).toBeCloseTo(
+					440 * 2 ** ((pitch - 69) / 12),
+					10
+				);
+				for (const partial of partials) {
+					expect(partial.frequency.setValueAtTime.mock.calls[0][0]).toBeLessThan(sampleRate * 0.46);
+				}
+				audio.noteOff(id);
+				context.advance(0.2);
+				expect(audio.activeCount).toBe(0);
+			}
+			expect(context.sources.every((source) => source.disconnect.mock.calls.length === 1)).toBe(
+				true
+			);
+			audio.dispose();
+		}
+	);
+
+	it('gives bass more decay and treble a softer overtone balance without changing the attack', async () => {
+		const { audio, context } = await enabledInstrument();
+		audio.noteOn(21, 0.8);
+		const bassSources = [...context.sources];
+		const bassOvertone = context.gains[3].gain.linearRampToValueAtTime.mock.calls[0][0];
+		const firstTrebleGain = context.gains.length;
+		audio.noteOn(108, 0.8);
+		const trebleSources = context.sources.slice(bassSources.length);
+		const trebleOvertone =
+			context.gains[firstTrebleGain + 2].gain.linearRampToValueAtTime.mock.calls[0][0];
+		expect(bassSources[0].frequency.setValueAtTime).toHaveBeenCalledWith(27.5, 8);
+		expect(bassSources[0].stopAt).toBeCloseTo(8 + 5.4 + 0.025, 12);
+		expect(trebleSources[0].stopAt).toBeCloseTo(8 + 2.4 + 0.025, 12);
+		expect(trebleSources).toHaveLength(4);
+		expect(trebleOvertone).toBeCloseTo(bassOvertone * 0.6, 12);
+		for (const gain of [context.gains[2], context.gains[firstTrebleGain + 1]])
+			expect(gain.gain.linearRampToValueAtTime.mock.calls[0][1]).toBeCloseTo(8.006, 12);
+		context.advance(5.5);
+		expect(audio.activeCount).toBe(0);
+		audio.dispose();
+	});
+
+	it('returns a silent result and cleans its output if the device cannot represent a fundamental', async () => {
+		const { audio, context } = await enabledInstrument();
+		context.sampleRate = 8_000;
+		expect(audio.noteOn(108)).toBe('');
+		expect(audio.activeCount).toBe(0);
+		expect(context.sources).toHaveLength(0);
+		expect(context.gains[1].disconnect).toHaveBeenCalledOnce();
+		audio.dispose();
+	});
+
 	it('caps all graph voices including steal tails under a same-clock pathological burst', async () => {
 		const { audio, context } = await enabledInstrument();
 		const ids = Array.from({ length: PIANO_MAX_NODE_VOICES + 500 }, () => audio.noteOn(60));

@@ -14944,9 +14944,9 @@
 			"dateModified": "2026-10-21"
 		},
 		"src/lib/posts/the-piano-that-forgives.md": {
-			"bodyHash": "019d6c9f1ff77d55a416ef5faeaa78a9e908297bd404a05be185806542d48b0a",
+			"bodyHash": "2851b1eebb21a40ee746e2b0809020d5d6b8353852f76c355eac710593b30496",
 			"hashVersion": 2,
-			"revisionHash": "1d7a2226c55c08829ad917154089c98c5d732c79df29c0383532fe4f1374e42f",
+			"revisionHash": "7816a68a8bfc35d2a8586da827c0f6db97ea6d877093bbede7a6a9219601faf6",
 			"generatedTags": [
 				"Probability",
 				"Statistics",
@@ -14972,7 +14972,7 @@
 				"Jazz Harmony"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-10-21"
+			"dateModified": "2026-10-22"
 		},
 		"src/lib/posts/the-water-turned.md": {
 			"bodyHash": "8dc86905179d376eff896d4f9634f6c1f89020ce413a850a93961664f1c14138",

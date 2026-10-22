@@ -5,9 +5,10 @@
  * Interval construction: https://musictheory.pugetsound.edu/mt21c/JazzChordBasics.html
  * Voicing principles: https://online.berklee.edu/takenote/basic-piano-voicing-techniques/
  */
-export const MODEL_VERSION = '1' as const;
-export const MIDI_MIN = 48;
-export const MIDI_MAX = 84;
+/** Version 2 expands replay eligibility to A0–C8; the musical draw stays compatible. */
+export const MODEL_VERSION = '2' as const;
+export const MIDI_MIN = 21;
+export const MIDI_MAX = 108;
 export const DEFAULT_TEMPERATURE = 0.7;
 export const DEFAULT_SEED = 20261021;
 
@@ -224,7 +225,7 @@ export function noteName(pitch: number): string {
 
 function validatePitch(pitch: number, name: string): void {
 	if (!Number.isInteger(pitch) || pitch < MIDI_MIN || pitch > MIDI_MAX)
-		throw new RangeError(`${name} must be an integer MIDI pitch from C3 (48) to C6 (84).`);
+		throw new RangeError(`${name} must be an integer MIDI pitch from A0 (21) to C8 (108).`);
 }
 function validateUint(value: number, name: string): void {
 	if (!Number.isInteger(value) || value < 0 || value > 0xffffffff)

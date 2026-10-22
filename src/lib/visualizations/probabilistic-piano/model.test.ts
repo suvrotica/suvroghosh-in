@@ -35,7 +35,11 @@ const equalTie: Chord = {
 describe('probabilistic piano authored harmony', () => {
 	it('runs server-side and labels middle C unambiguously', () => {
 		expect(typeof window).toBe('undefined');
-		expect(MODEL_VERSION).toBe('1');
+		expect(MODEL_VERSION).toBe('2');
+		expect(MIDI_MIN).toBe(21);
+		expect(MIDI_MAX).toBe(108);
+		expect(noteName(MIDI_MIN)).toBe('A0');
+		expect(noteName(MIDI_MAX)).toBe('C8');
 		expect(noteName(48)).toBe('C3');
 		expect(noteName(60)).toBe('C4');
 		expect(noteName(84)).toBe('C6');
@@ -122,6 +126,34 @@ describe('probabilistic piano authored harmony', () => {
 		expect(decision.candidates[0].probability).toBeCloseTo(0.549833997312478, 12);
 		expect(decision.candidates[1].probability).toBeCloseTo(0.450166002687522, 12);
 	});
+	it('uses literal semitone distances at both ends without wrapping a palette into another octave', () => {
+		const gOnly: Chord = {
+			id: 'g-only',
+			name: 'G only',
+			tones: [{ pc: 7, label: 'G', role: 1 }],
+			voicing: [67]
+		};
+		const bOnly: Chord = {
+			id: 'b-only',
+			name: 'B only',
+			tones: [{ pc: 11, label: 'B', role: 1 }],
+			voicing: [71]
+		};
+		for (const mode of ['nearest', 'wander'] as const) {
+			const bass = decide({ ...defaults, pitch: 21, chord: gOnly, mode });
+			expect(bass.output).toBe(31);
+			expect(bass.shift).toBe(10);
+			expect(bass.candidates.map((candidate) => candidate.pitch)).toEqual([31]);
+			const treble = decide({ ...defaults, pitch: 108, chord: bOnly, mode });
+			expect(treble.output).toBe(107);
+			expect(treble.shift).toBe(-1);
+		}
+		const fullPalette = decide({ ...defaults, pitch: 21 });
+		expect(fullPalette.output).toBe(21);
+		expect(fullPalette.eligible).toHaveLength(37);
+		expect(fullPalette.eligible[0]).toBe(21);
+		expect(fullPalette.eligible.at(-1)).toBe(108);
+	});
 	it('breaks exact score ties at zero temperature by lower MIDI, independent of seed', () => {
 		for (const seed of [0, 1, 31, 20261021, 0xffffffff]) {
 			const decision = decide({ ...defaults, chord: equalTie, temperature: 0, seed });
@@ -173,6 +205,10 @@ describe('seeded sampling and snapshots', () => {
 		const replay = () =>
 			DEMO.map((event, eventIndex) => decide({ ...defaults, pitch: event.pitch, eventIndex }));
 		expect(replay()).toEqual(replay());
+		// Version 2 keeps the version 1 draw/seed and all prior middle-register outputs.
+		expect(replay().map((decision) => decision.output)).toEqual([
+			60, 60, 64, 67, 67, 67, 69, 74, 62, 62, 60, 60
+		]);
 		const outputs = new Set(
 			Array.from({ length: 64 }, (_, seed) => decide({ ...defaults, seed }).output)
 		);
@@ -223,8 +259,8 @@ describe('seeded sampling and snapshots', () => {
 
 describe('visible validation errors instead of invented harmony', () => {
 	it.each([
-		{ pitch: 47 },
-		{ pitch: 85 },
+		{ pitch: 20 },
+		{ pitch: 109 },
 		{ pitch: 60.5 },
 		{ pitch: NaN },
 		{ temperature: -0.1 },
@@ -237,9 +273,9 @@ describe('visible validation errors instead of invented harmony', () => {
 		{ eventIndex: -1 },
 		{ eventIndex: NaN },
 		{ mode: 'unknown' },
-		{ lastPitch: 85 },
+		{ lastPitch: 109 },
 		{ recent: [NaN] },
-		{ active: [40] },
+		{ active: [20] },
 		{ recent: Array(65).fill(60) },
 		{ active: Array(65).fill(60) }
 	])('rejects malformed settings %j', (patch) => {

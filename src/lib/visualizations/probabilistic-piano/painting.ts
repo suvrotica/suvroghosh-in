@@ -93,15 +93,5 @@ export function paintPond(canvas: HTMLCanvasElement, state: PaintState): void {
 	ctx.fillRect(0, 0, width, height);
 }
 
-export const PIANO_KEYS = Array.from({ length: 37 }, (_, i) => {
-	const pitch = i + 48;
-	const black = [1, 3, 6, 8, 10].includes(pitch % 12);
-	const whitesBefore = Array.from({ length: i }, (_, j) => j + 48).filter(
-		(n) => ![1, 3, 6, 8, 10].includes(n % 12)
-	).length;
-	return {
-		pitch,
-		black,
-		left: black ? ((whitesBefore - 0.31) / 22) * 100 : (whitesBefore / 22) * 100
-	};
-});
+// Compatibility for callers predating the independently importable geometry module.
+export { PIANO_KEYS } from './keyboard';

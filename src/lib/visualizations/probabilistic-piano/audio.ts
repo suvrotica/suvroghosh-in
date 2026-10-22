@@ -1,3 +1,5 @@
+import { MIDI_MAX, MIDI_MIN } from './model';
+
 /** This is an original synthesised piano approximation, with no downloaded sound assets. */
 export const PIANO_PLAYABLE_VOICES = 20;
 export const PIANO_MAX_NODE_VOICES = 24;
@@ -160,15 +162,16 @@ export class PianoAudio {
 		}
 		this.voices.set(voice.id, voice);
 		const frequency = 440 * 2 ** ((pitch - 69) / 12);
-		const register = unit((pitch - 36) / 60);
-		const decay = 4.6 - register * 1.6;
+		// Bass strings ring longer; the short, less brilliant treble stays clear at C8.
+		const register = unit((pitch - MIDI_MIN) / (MIDI_MAX - MIDI_MIN));
+		const decay = 5.4 - register * 3;
 		for (let index = 0; index < PARTIALS.length; index++) {
 			// Skip inaudible/aliased harmonics outside Nyquist at extreme MIDI inputs.
 			const partialFrequency = frequency * PARTIALS[index];
 			if (partialFrequency >= context.sampleRate * 0.46) continue;
 			const source = context.createOscillator();
 			const envelope = context.createGain();
-			const brightness = index === 0 ? 1 : (0.5 + strength * 0.5) * (1 - register * 0.35);
+			const brightness = index === 0 ? 1 : (0.5 + strength * 0.5) * (1 - register * 0.4);
 			const peak = 0.12 * strength ** 1.35 * PARTIAL_LEVELS[index] * brightness;
 			const duration = decay / (1 + index * 0.5);
 			source.type = 'sine';
@@ -191,7 +194,10 @@ export class PianoAudio {
 			source.start(now);
 			source.stop(Math.min(now + duration + 0.025, voice.releaseAt + RELEASE_SECONDS + 0.002));
 		}
-		if (voice.partials.length === 0) this.cleanupVoice(voice);
+		if (voice.partials.length === 0) {
+			this.cleanupVoice(voice);
+			return '';
+		}
 		return voice.id;
 	}
 

@@ -15,10 +15,13 @@ const ARTIFACTS = path.join(ROOT, 'artifacts/probabilistic-piano');
 const MANIFEST = path.join(OUTPUT, 'assets.json');
 const BASE_URL = process.env.BASE_URL || 'http://127.0.0.1:5175';
 const ROUTE = '/blog/visualizations/the-piano-that-forgives';
-const CAPTURE_VERSION = 'probabilistic-piano-browser-capture-v1';
+const CAPTURE_VERSION = 'probabilistic-piano-browser-capture-v2';
 const MAX_BYTES = 750 * 1024;
 const SOURCES = [
 	'src/lib/visualizations/probabilistic-piano/model.ts',
+	'src/lib/visualizations/probabilistic-piano/keyboard.ts',
+	'src/lib/visualizations/probabilistic-piano/effects.ts',
+	'src/lib/visualizations/probabilistic-piano/audio.ts',
 	'src/lib/visualizations/probabilistic-piano/painting.ts',
 	'src/lib/components/visualizations/probabilistic-piano/ProbabilisticPiano.svelte',
 	'src/lib/components/visualizations/probabilistic-piano/piano.css',
@@ -29,7 +32,12 @@ const EXPECTED = {
 	'piano-social.jpg': { width: 1200, height: 630 }
 };
 const STATE = {
-	modelVersion: '1',
+	modelVersion: '2',
+	keyboardRange: 'A0–C8 / MIDI 21–108',
+	publicationMotion: 'still',
+	desktopView: 'fit',
+	phoneView: 'playing',
+	captureViewportHeight: 3000,
 	preset: 'pond',
 	chord: 'C6/9',
 	mode: 'nearest',
@@ -115,11 +123,12 @@ async function verify(fingerprint) {
 
 async function openCapture(browser, options = {}) {
 	const context = await browser.newContext({
-		viewport: { width: 1472, height: 1150 },
 		deviceScaleFactor: 1,
 		colorScheme: 'light',
-		reducedMotion: 'no-preference',
+		reducedMotion: 'reduce',
 		...options,
+		// The whole instrument fits without screenshot-time viewport emulation.
+		viewport: { width: options.viewport?.width ?? 1472, height: STATE.captureViewportHeight },
 		serviceWorkers: 'block'
 	});
 	const page = await context.newPage();
@@ -136,6 +145,15 @@ async function openCapture(browser, options = {}) {
 		return button && !button.disabled && canvas && canvas.width > 300;
 	});
 	await page.evaluate(() => document.fonts.ready);
+	const rejectOptional = page.getByRole('button', { name: 'Reject optional', exact: true });
+	await rejectOptional.waitFor({ state: 'visible', timeout: 5000 }).catch((error) => {
+		if (error.name !== 'TimeoutError') throw error;
+	});
+	if (await rejectOptional.isVisible()) await rejectOptional.click();
+	await page
+		.getByText('Your choices are saved.', { exact: false })
+		.waitFor({ state: 'hidden', timeout: 10000 });
+	const fit = page.getByRole('button', { name: 'Fit all 88 keys', exact: true });
 	const summary = page.locator('details.piano-workbench > summary');
 	await summary.click();
 	await page.getByLabel('Musical seed', { exact: true }).fill(String(STATE.seed));
@@ -144,6 +162,7 @@ async function openCapture(browser, options = {}) {
 	await temperature.press('Home');
 	for (let index = 0; index < 14; index++) await temperature.press('ArrowRight');
 	await summary.click();
+	if ((options.viewport?.width ?? 1472) >= 1200) await fit.click();
 	const key = page.locator('[data-piano-key="61"]');
 	await key.focus();
 	await page.keyboard.down('w');
@@ -157,7 +176,46 @@ async function openCapture(browser, options = {}) {
 	await page.waitForFunction(() =>
 		document.querySelector('.piano-whisper')?.textContent.includes('C♯4 → C4')
 	);
+	await page.waitForFunction(
+		(expected) =>
+			document.querySelector('[data-piano-root]')?.getAttribute('data-view') === expected,
+		(options.viewport?.width ?? 1472) >= 1200 ? 'fit' : 'playing'
+	);
 	return { context, page, errors, summary };
+}
+
+/** Crop the real viewport pixels; never resize it implicitly for an element capture. */
+async function captureElement(page, selector, destination) {
+	const target = page.locator(selector);
+	await target.scrollIntoViewIfNeeded();
+	const view = await page.locator('[data-piano-root]').getAttribute('data-view');
+	const clip = await target.evaluate((element) => {
+		const rect = element.getBoundingClientRect();
+		return {
+			left: Math.round(rect.left),
+			top: Math.round(rect.top),
+			width: Math.round(rect.width),
+			height: Math.round(rect.height)
+		};
+	});
+	const viewport = page.viewportSize();
+	if (
+		clip.left < 0 ||
+		clip.top < 0 ||
+		clip.left + clip.width > viewport.width ||
+		clip.top + clip.height > viewport.height
+	)
+		throw new Error('Capture target does not fit the fixed viewport.');
+	const screenshot = await page.screenshot({
+		type: 'png',
+		fullPage: false,
+		animations: 'disabled'
+	});
+	const bytes = await sharp(screenshot).extract(clip).png().toBuffer();
+	if (destination) await writeFile(destination, bytes);
+	if ((await page.locator('[data-piano-root]').getAttribute('data-view')) !== view)
+		throw new Error('Capture changed the keyboard viewport.');
+	return bytes;
 }
 
 async function generate(fingerprint) {
@@ -188,12 +246,8 @@ async function generate(fingerprint) {
 	}
 	try {
 		const desktop = await openCapture(browser);
-		await desktop.page
-			.locator('[data-piano-root]')
-			.screenshot({ path: path.join(ARTIFACTS, 'desktop.png'), animations: 'disabled' });
-		const stage = await desktop.page
-			.locator('[data-piano-stage]')
-			.screenshot({ type: 'png', animations: 'disabled' });
+		await captureElement(desktop.page, '[data-piano-root]', path.join(ARTIFACTS, 'desktop.png'));
+		const stage = await captureElement(desktop.page, '[data-piano-stage]');
 		const poster = await sharp(stage)
 			.resize(1440, 760, { fit: 'contain', background: '#14252a' })
 			.png()
@@ -215,14 +269,14 @@ async function generate(fingerprint) {
 		await saveJpeg('piano-social.jpg', social);
 		await desktop.page.keyboard.up('w');
 		await desktop.summary.click();
-		await desktop.page
-			.locator('.decision-inspector')
-			.screenshot({ path: path.join(ARTIFACTS, 'inspector.png'), animations: 'disabled' });
+		await captureElement(
+			desktop.page,
+			'.decision-inspector',
+			path.join(ARTIFACTS, 'inspector.png')
+		);
 		await desktop.summary.click();
 		await desktop.page.getByRole('button', { name: /Find a home note/ }).click();
-		await desktop.page
-			.locator('[data-piano-stage]')
-			.screenshot({ path: path.join(ARTIFACTS, 'unchanged.png'), animations: 'disabled' });
+		await captureElement(desktop.page, '[data-piano-stage]', path.join(ARTIFACTS, 'unchanged.png'));
 		if (desktop.errors.length) throw new Error(desktop.errors.join('; '));
 		await desktop.context.close();
 		const phone = await openCapture(browser, {
@@ -231,20 +285,37 @@ async function generate(fingerprint) {
 			hasTouch: true,
 			colorScheme: 'dark'
 		});
-		await phone.page
-			.locator('[data-piano-root]')
-			.screenshot({ path: path.join(ARTIFACTS, 'mobile.png'), animations: 'disabled' });
+		await captureElement(phone.page, '[data-piano-root]', path.join(ARTIFACTS, 'mobile.png'));
 		await phone.page.keyboard.up('w');
 		if (phone.errors.length) throw new Error(phone.errors.join('; '));
 		await phone.context.close();
 		const still = await openCapture(browser, { reducedMotion: 'reduce' });
 		await still.page.locator('[data-piano-root].still').waitFor();
-		await still.page
-			.locator('[data-piano-root]')
-			.screenshot({ path: path.join(ARTIFACTS, 'still.png'), animations: 'disabled' });
+		await captureElement(still.page, '[data-piano-root]', path.join(ARTIFACTS, 'still.png'));
 		await still.page.keyboard.up('w');
 		if (still.errors.length) throw new Error(still.errors.join('; '));
 		await still.context.close();
+		const tablet = await openCapture(browser, { viewport: { width: 768, height: 1024 } });
+		await captureElement(tablet.page, '[data-piano-root]', path.join(ARTIFACTS, 'tablet.png'));
+		await tablet.page.keyboard.up('w');
+		if (tablet.errors.length) throw new Error(tablet.errors.join('; '));
+		await tablet.context.close();
+		const motion = await openCapture(browser, { reducedMotion: 'no-preference' });
+		await motion.page.getByRole('button', { name: 'Enter focus view', exact: true }).click();
+		await motion.page.locator('[data-piano-key="64"]').focus();
+		await motion.page.keyboard.down('d');
+		await motion.page.keyboard.down('g');
+		await motion.page.waitForTimeout(700);
+		await captureElement(
+			motion.page,
+			'[data-piano-root]',
+			path.join(ARTIFACTS, 'focus-motion.png')
+		);
+		await motion.page.keyboard.up('w');
+		await motion.page.keyboard.up('d');
+		await motion.page.keyboard.up('g');
+		if (motion.errors.length) throw new Error(motion.errors.join('; '));
+		await motion.context.close();
 		await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`);
 	} finally {
 		await browser.close();

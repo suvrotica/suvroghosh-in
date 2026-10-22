@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(492,256)" font-size="118" style="fill:#a9b7a3">Note</text>
-<text transform="translate(187,702)" font-size="91" style="fill:#c7d7b5">Chord</text>
-<text transform="translate(840,539)" font-size="86" style="fill:#c7d7b5">Pitch</text>
-<text transform="translate(768,173)" font-size="81" style="fill:#c7d7b5">Small</text>
-<text transform="translate(792,104)" font-size="75" style="fill:#a9b7a3">Press</text>
-<text transform="translate(675,458)" font-size="75" style="fill:#d6a79f">Instrument</text>
-<text transform="translate(1004,228)" font-size="69" style="fill:#b6c3dd">Remain</text>
-<text transform="translate(410,412)" font-size="69" style="fill:#d5d2c2">Three</text>
-<text transform="translate(186,191)" font-size="69" style="fill:#c49a6c">Piano</text>
-<text transform="translate(99,383)" font-size="69" style="fill:#9fc9c5">Phrase</text>
-<text transform="translate(375,620)" font-size="69" style="fill:#d88988">Nearest</text>
-<text transform="translate(475,530)" font-size="69" style="fill:#c49a6c">Sound</text>
-<text transform="translate(955,294)" font-size="69" style="fill:#9fc9c5">Palette</text>
-<text transform="translate(640,365)" font-size="69" style="fill:#9fc9c5">Notes</text>
-<text transform="translate(648,707)" font-size="69" style="fill:#b6c3dd">Semitone</text>
-<text transform="translate(55,519)" font-size="69" style="fill:#9fc9c5">Distance</text>
-<text transform="translate(360,73)" font-size="69" style="fill:#a9b7a3">Preference</text>
-<text transform="translate(954,634)" font-size="63" style="fill:#b6c3dd">Keyboard</text>
-<text transform="translate(58,51)" font-size="63" style="fill:#c7d7b5">Harmony</text>
-<text transform="translate(166,308)" font-size="63" style="fill:#d9c89e">Request</text>
-<text transform="translate(212,256)" font-size="63" style="fill:#e0b879">Allowed</text>
-<text transform="translate(912,349)" font-size="63" style="fill:#d6a79f">Candidate</text>
-<text transform="translate(375,128)" font-size="63" style="fill:#d5d2c2">Scores</text>
-<text transform="translate(813,228)" font-size="63" style="fill:#9fc9c5">Voice</text>
-<text transform="translate(227,121)" font-size="56" style="fill:#c49a6c">Mark</text>
-<text transform="translate(24,107)" font-size="56" style="fill:#d6a79f">Keys</text>
-<text transform="translate(129,450)" font-size="56" style="fill:#8fb7d0">Rather</text>
-<text transform="translate(54,620)" font-size="56" style="fill:#e0b879">Available</text>
-<text transform="translate(71,451) rotate(-90)" font-size="56" style="fill:#8fb7d0">Different</text>
-<text transform="translate(1048,402)" font-size="56" style="fill:#d5d2c2">MIDI</text>
-<text transform="translate(1067,80)" font-size="56" style="fill:#a9b7a3">Gives</text>
-<text transform="translate(538,298)" font-size="53" style="fill:#b6c3dd">Temperature</text>
-<text transform="translate(45,565)" font-size="53" style="fill:#c7d7b5">Probabilities</text>
-<text transform="translate(1008,693)" font-size="53" style="fill:#d88988">Selected</text>
-<text transform="translate(666,614)" font-size="53" style="fill:#c49a6c">Requested</text>
-<text transform="translate(402,462)" font-size="53" style="fill:#e0b879">Keeps</text>
-<text transform="translate(1016,165)" font-size="53" style="fill:#e0b879">Colour</text>
-<text transform="translate(623,150)" font-size="46" style="fill:#d88988">Key</text>
-<text transform="translate(18,700)" font-size="46" style="fill:#9fc9c5">Finger</text>
-<text transform="translate(872,410)" font-size="46" style="fill:#a9b7a3">Across</text>
-<text transform="translate(467,657)" font-size="46" style="fill:#c7d7b5">Room</text>
-<text transform="translate(346,345)" font-size="43" style="fill:#d9c89e">Possibility</text>
-<text transform="translate(659,120)" font-size="43" style="fill:#9fc9c5">Pond</text>
-<text transform="translate(855,37)" font-size="43" style="fill:#b6c3dd">Supplies</text>
-<text transform="translate(469,567)" font-size="43" style="fill:#d6a79f">Outside</text>
-<text transform="translate(394,165)" font-size="43" style="fill:#d5d2c2">Measures</text>
-<text transform="translate(1111,539)" font-size="43" style="fill:#d5d2c2">Answer</text>
-<text transform="translate(1045,572)" font-size="39" style="fill:#d9c89e">Neighbours</text>
-<text transform="translate(473,699)" font-size="39" style="fill:#e0b879">Rule</text>
-<text transform="translate(617,399)" font-size="39" style="fill:#a9b7a3">Previous</text>
-<text transform="translate(683,553)" font-size="39" style="fill:#d5d2c2">Melody</text>
-<text transform="translate(1087,118)" font-size="39" style="fill:#c49a6c">Authored</text>
-<text transform="translate(1127,438)" font-size="39" style="fill:#d88988">Exact</text>
-<text transform="translate(718,501)" font-size="39" style="fill:#c49a6c">Score</text>
-<text transform="translate(1137,473)" font-size="39" style="fill:#d9c89e">Giving</text>
-<text transform="translate(461,301)" font-size="39" style="fill:#d88988">Raw</text>
-<text transform="translate(767,649)" font-size="39" style="fill:#b6c3dd">Result</text>
-<text transform="translate(78,253)" font-size="39" style="fill:#b6c3dd">Jazz</text>
-<text transform="translate(1126,35)" font-size="39" style="fill:#c7d7b5">Every</text>
-<text transform="translate(34,660) rotate(-90)" font-size="39" style="fill:#d88988">Explains</text>
-<text transform="translate(115,199)" font-size="39" style="fill:#c7d7b5">Use</text>
-<text transform="translate(790,256)" font-size="32" style="fill:#8fb7d0">Changing</text>
-<text transform="translate(400,467) rotate(-90)" font-size="26" style="fill:#8fb7d0">October</text>
-<text transform="translate(598,24)" font-size="26" style="fill:#b6c3dd">Forgiveness</text>
-<text transform="translate(133,223)" font-size="26" style="fill:#9fc9c5">Touch</text>
-<text transform="translate(67,659)" font-size="26" style="fill:#d9c89e">Beneath</text>
-<text transform="translate(626,648)" font-size="26" style="fill:#9fc9c5">Little</text>
-<text transform="translate(833,567)" font-size="26" style="fill:#9fc9c5">Brushstroke</text>
-<text transform="translate(64,146)" font-size="26" style="fill:#d9c89e">Painted</text>
-<text transform="translate(560,454)" font-size="26" style="fill:#d5d2c2">Surface</text>
-<text transform="translate(910,378)" font-size="26" style="fill:#a9b7a3">Strokes</text>
-<text transform="translate(248,412)" font-size="26" style="fill:#a9b7a3">Decide</text>
-<text transform="translate(1144,507)" font-size="26" style="fill:#c7d7b5">Whether</text>
-<text transform="translate(272,644)" font-size="26" style="fill:#c49a6c">Distant</text>
-<text transform="translate(1269,305) rotate(-90)" font-size="26" style="fill:#c49a6c">Ordinary</text>
-<text transform="translate(168,332)" font-size="26" style="fill:#c7d7b5">Enough</text>
-<text transform="translate(35,308) rotate(-90)" font-size="26" style="fill:#8fb7d0">Offers</text>
-<text transform="translate(1273,445) rotate(-90)" font-size="26" style="fill:#a9b7a3">Current</text>
-<text transform="translate(98,456) rotate(-90)" font-size="26" style="fill:#d5d2c2">Intervention</text>
-<text transform="translate(385,488)" font-size="26" style="fill:#d88988">Start</text>
-<text transform="translate(326,216)" font-size="26" style="fill:#d5d2c2">Moonlit</text>
-<text transform="translate(101,319)" font-size="26" style="fill:#d5d2c2">Mode</text>
-<text transform="translate(591,477)" font-size="26" style="fill:#8fb7d0">Play</text>
-<text transform="translate(366,462) rotate(-90)" font-size="26" style="fill:#d6a79f">Leaving</text>
-<text transform="translate(171,75)" font-size="26" style="fill:#e0b879">Silence</text>
-<text transform="translate(226,476)" font-size="26" style="fill:#d88988">Listen</text>
-<text transform="translate(1037,106) rotate(-90)" font-size="26" style="fill:#d88988">Work</text>
-<text transform="translate(266,143)" font-size="22" style="fill:#d9c89e">Painting</text>
-<text transform="translate(861,409) rotate(-90)" font-size="22" style="fill:#9fc9c5">Explicit</text>
-<text transform="translate(1164,715)" font-size="22" style="fill:#d5d2c2">Harmonic</text>
-<text transform="translate(473,364)" font-size="21" style="fill:#d9c89e">Adjacent</text>
-<text transform="translate(585,685)" font-size="21" style="fill:#d5d2c2">Step</text>
-<text transform="translate(586,711)" font-size="21" style="fill:#d5d2c2">Move</text>
-<text transform="translate(408,522)" font-size="21" style="fill:#d6a79f">Stays</text>
-<text transform="translate(399,185)" font-size="21" style="fill:#b6c3dd">Exactly</text>
-<text transform="translate(1051,185)" font-size="21" style="fill:#a9b7a3">Sometimes</text>
-<text transform="translate(1174,387)" font-size="21" style="fill:#c7d7b5">Close</text>
-<text transform="translate(982,713)" font-size="21" style="fill:#e0b879">Particular</text>
-<text transform="translate(166,109)" font-size="21" style="fill:#d5d2c2">Held</text>
-<text transform="translate(924,662)" font-size="21" style="fill:#d5d2c2">Voices</text>
-<text transform="translate(111,404)" font-size="21" style="fill:#d88988">Semitones</text>
-<text transform="translate(684,179)" font-size="21" style="fill:#c49a6c">Draw</text>
-<text transform="translate(790,322)" font-size="21" style="fill:#d5d2c2">Per</text>
-<text transform="translate(1190,656)" font-size="21" style="fill:#d5d2c2">Cent</text>
-<text transform="translate(976,484)" font-size="21" style="fill:#b6c3dd">Added</text>
-<text transform="translate(722,580)" font-size="21" style="fill:#c7d7b5">Ninth</text>
-<text transform="translate(1195,165)" font-size="21" style="fill:#a9b7a3">Shows</text>
-<text transform="translate(90,166)" font-size="21" style="fill:#c7d7b5">Sounded</text>
-<text transform="translate(407,23)" font-size="21" style="fill:#a9b7a3">Begins</text>
-<text transform="translate(775,21)" font-size="21" style="fill:#a9b7a3">Capped</text>
-<text transform="translate(816,124)" font-size="21" style="fill:#c7d7b5">Relative</text>
-<text transform="translate(902,288)" font-size="21" style="fill:#d6a79f">Exp</text>
-<text transform="translate(555,23)" font-size="21" style="fill:#a9b7a3">Max</text>
-<text transform="translate(617,183) rotate(-90)" font-size="21" style="fill:#d9c89e">Directly</text>
-<text transform="translate(21,153) rotate(-90)" font-size="21" style="fill:#d88988">Correction</text>
-<text transform="translate(1096,654)" font-size="19" style="fill:#b6c3dd">Leading</text>
-<text transform="translate(1159,592)" font-size="19" style="fill:#d9c89e">Wander</text>
-<text transform="translate(1208,138)" font-size="19" style="fill:#c7d7b5">Allows</text>
-<text transform="translate(20,447) rotate(-90)" font-size="19" style="fill:#c7d7b5">Candidates</text>
-<text transform="translate(1259,82) rotate(-90)" font-size="19" style="fill:#d9c89e">Keeping</text>
-<text transform="translate(78,69)" font-size="19" style="fill:#d5d2c2">Presses</text>
-<text transform="translate(771,41)" font-size="15" style="fill:#a9b7a3">Unchanged</text>
-<text transform="translate(479,428)" font-size="15" style="fill:#9fc9c5">Deliberate</text>
-<text transform="translate(770,474)" font-size="15" style="fill:#d5d2c2">Useful</text>
-<text transform="translate(1275,678) rotate(-90)" font-size="15" style="fill:#d6a79f">Information</text>
-<text transform="translate(681,317)" font-size="15" style="fill:#8fb7d0">Fan</text>
-<text transform="translate(957,584)" font-size="15" style="fill:#d5d2c2">Freeze</text>
-<text transform="translate(85,636)" font-size="15" style="fill:#c49a6c">Decision</text>
-<text transform="translate(9,464)" font-size="15" style="fill:#d6a79f">Read</text>
-<text transform="translate(1031,588) rotate(-90)" font-size="15" style="fill:#d6a79f">Paint</text>
+<text transform="translate(879,685)" font-size="87" style="fill:#c7d7b5">Chord</text>
+<text transform="translate(124,526)" font-size="82" style="fill:#c7d7b5">Small</text>
+<text transform="translate(773,171)" font-size="82" style="fill:#c7d7b5">Keys</text>
+<text transform="translate(232,116)" font-size="82" style="fill:#a9b7a3">Pitch</text>
+<text transform="translate(666,389)" font-size="82" style="fill:#d6a79f">Notes</text>
+<text transform="translate(172,278)" font-size="77" style="fill:#b6c3dd">Piano</text>
+<text transform="translate(562,578)" font-size="77" style="fill:#d5d2c2">Instrument</text>
+<text transform="translate(998,281)" font-size="72" style="fill:#c49a6c">Press</text>
+<text transform="translate(139,442)" font-size="66" style="fill:#9fc9c5">Keyboard</text>
+<text transform="translate(884,505)" font-size="66" style="fill:#a9b7a3">Remain</text>
+<text transform="translate(466,704)" font-size="66" style="fill:#e0b879">Three</text>
+<text transform="translate(568,460)" font-size="66" style="fill:#d9c89e">Phrase</text>
+<text transform="translate(113,584)" font-size="66" style="fill:#b6c3dd">Nearest</text>
+<text transform="translate(234,709)" font-size="66" style="fill:#a9b7a3">Sound</text>
+<text transform="translate(86,474) rotate(-90)" font-size="66" style="fill:#8fb7d0">Request</text>
+<text transform="translate(835,92)" font-size="66" style="fill:#9fc9c5">Palette</text>
+<text transform="translate(638,324)" font-size="66" style="fill:#a9b7a3">Semitone</text>
+<text transform="translate(970,199)" font-size="66" style="fill:#d5d2c2">Gives</text>
+<text transform="translate(61,185)" font-size="66" style="fill:#d88988">Distance</text>
+<text transform="translate(203,370)" font-size="66" style="fill:#d9c89e">Preference</text>
+<text transform="translate(500,140)" font-size="60" style="fill:#e0b879">Harmony</text>
+<text transform="translate(946,443)" font-size="60" style="fill:#d6a79f">Allowed</text>
+<text transform="translate(910,378)" font-size="60" style="fill:#d5d2c2">Candidate</text>
+<text transform="translate(542,517)" font-size="60" style="fill:#9fc9c5">Scores</text>
+<text transform="translate(4,636)" font-size="60" style="fill:#c49a6c">Probabilities</text>
+<text transform="translate(485,641)" font-size="60" style="fill:#c7d7b5">Selected</text>
+<text transform="translate(797,249)" font-size="60" style="fill:#e0b879">Keeps</text>
+<text transform="translate(448,309)" font-size="60" style="fill:#d6a79f">Voice</text>
+<text transform="translate(1130,558)" font-size="53" style="fill:#a9b7a3">Key</text>
+<text transform="translate(723,691)" font-size="53" style="fill:#c7d7b5">Mark</text>
+<text transform="translate(39,699)" font-size="53" style="fill:#b6c3dd">Finger</text>
+<text transform="translate(97,54)" font-size="53" style="fill:#c7d7b5">Room</text>
+<text transform="translate(756,523)" font-size="53" style="fill:#d88988">Pond</text>
+<text transform="translate(487,79)" font-size="53" style="fill:#a9b7a3">Available</text>
+<text transform="translate(972,139)" font-size="53" style="fill:#8fb7d0">Different</text>
+<text transform="translate(444,282) rotate(-90)" font-size="53" style="fill:#d88988">MIDI</text>
+<text transform="translate(420,534)" font-size="53" style="fill:#d9c89e">Use</text>
+<text transform="translate(1006,326)" font-size="53" style="fill:#8fb7d0">Octave</text>
+<text transform="translate(226,36)" font-size="40" style="fill:#d6a79f">Temperature</text>
+<text transform="translate(16,107)" font-size="40" style="fill:#d9c89e">Requested</text>
+<text transform="translate(1056,36)" font-size="40" style="fill:#d88988">Colour</text>
+<text transform="translate(1147,690)" font-size="34" style="fill:#d5d2c2">Opens</text>
+<text transform="translate(1128,613)" font-size="34" style="fill:#e0b879">Across</text>
+<text transform="translate(1263,556) rotate(-90)" font-size="34" style="fill:#a9b7a3">Possibility</text>
+<text transform="translate(960,628)" font-size="34" style="fill:#c7d7b5">Moonlit</text>
+<text transform="translate(147,310)" font-size="34" style="fill:#d9c89e">Rather</text>
+<text transform="translate(366,472)" font-size="34" style="fill:#9fc9c5">Supplies</text>
+<text transform="translate(790,34)" font-size="34" style="fill:#b6c3dd">Low</text>
+<text transform="translate(280,228)" font-size="34" style="fill:#d6a79f">Moves</text>
+<text transform="translate(590,171)" font-size="34" style="fill:#d5d2c2">Within</text>
+<text transform="translate(1087,232)" font-size="34" style="fill:#d5d2c2">Outside</text>
+<text transform="translate(471,404)" font-size="34" style="fill:#d9c89e">Measures</text>
+<text transform="translate(825,426)" font-size="34" style="fill:#b6c3dd">Answer</text>
+<text transform="translate(131,444) rotate(-90)" font-size="34" style="fill:#e0b879">Neighbours</text>
+<text transform="translate(1179,651)" font-size="34" style="fill:#d6a79f">Rule</text>
+<text transform="translate(398,578)" font-size="34" style="fill:#c49a6c">Previous</text>
+<text transform="translate(1141,70)" font-size="34" style="fill:#d88988">Melody</text>
+<text transform="translate(12,507)" font-size="34" style="fill:#c49a6c">Held</text>
+<text transform="translate(879,30)" font-size="34" style="fill:#d9c89e">Authored</text>
+<text transform="translate(942,715)" font-size="34" style="fill:#b6c3dd">Sounded</text>
+<text transform="translate(120,665)" font-size="34" style="fill:#e0b879">Exact</text>
+<text transform="translate(28,420) rotate(-90)" font-size="34" style="fill:#d88988">Score</text>
+<text transform="translate(799,609)" font-size="34" style="fill:#d88988">Giving</text>
+<text transform="translate(532,30)" font-size="34" style="fill:#8fb7d0">Candidates</text>
+<text transform="translate(23,32)" font-size="34" style="fill:#9fc9c5">Raw</text>
+<text transform="translate(316,400)" font-size="34" style="fill:#e0b879">Result</text>
+<text transform="translate(30,311) rotate(-90)" font-size="34" style="fill:#d88988">Individual</text>
+<text transform="translate(461,434)" font-size="34" style="fill:#b6c3dd">Jazz</text>
+<text transform="translate(1128,482)" font-size="34" style="fill:#9fc9c5">Every</text>
+<text transform="translate(1263,326) rotate(-90)" font-size="34" style="fill:#c49a6c">Explains</text>
+<text transform="translate(340,315)" font-size="34" style="fill:#9fc9c5">Move</text>
+<text transform="translate(96,211)" font-size="29" style="fill:#9fc9c5">Changing</text>
+<text transform="translate(321,663)" font-size="29" style="fill:#c7d7b5">Pedal</text>
+<text transform="translate(1023,572)" font-size="29" style="fill:#d6a79f">Leave</text>
+<text transform="translate(494,241) rotate(-90)" font-size="24" style="fill:#a9b7a3">October</text>
+<text transform="translate(636,413)" font-size="24" style="fill:#d6a79f">Forgiveness</text>
+<text transform="translate(821,449)" font-size="24" style="fill:#d5d2c2">Beneath</text>
+<text transform="translate(1145,102)" font-size="24" style="fill:#d6a79f">Little</text>
+<text transform="translate(318,143)" font-size="24" style="fill:#c49a6c">Brushstroke</text>
+<text transform="translate(6,572)" font-size="24" style="fill:#a9b7a3">Painted</text>
+<text transform="translate(609,663)" font-size="24" style="fill:#e0b879">Surface</text>
+<text transform="translate(757,714)" font-size="24" style="fill:#d6a79f">Strokes</text>
+<text transform="translate(115,523) rotate(-90)" font-size="24" style="fill:#a9b7a3">Gold</text>
+<text transform="translate(1228,336) rotate(-90)" font-size="24" style="fill:#d5d2c2">Decide</text>
+<text transform="translate(1026,595)" font-size="24" style="fill:#d88988">Whether</text>
+<text transform="translate(638,102)" font-size="24" style="fill:#d5d2c2">Distant</text>
+<text transform="translate(856,114)" font-size="24" style="fill:#d5d2c2">Ordinary</text>
+<text transform="translate(1029,537)" font-size="24" style="fill:#8fb7d0">Enough</text>
+<text transform="translate(61,80)" font-size="24" style="fill:#d6a79f">Offers</text>
+<text transform="translate(97,128)" font-size="24" style="fill:#e0b879">Current</text>
+<text transform="translate(839,283)" font-size="22" style="fill:#d6a79f">Intervention</text>
+<text transform="translate(782,645)" font-size="22" style="fill:#e0b879">Start</text>
+<text transform="translate(1199,160)" font-size="22" style="fill:#d6a79f">Mode</text>
+<text transform="translate(773,96)" font-size="22" style="fill:#9fc9c5">Play</text>
+<text transform="translate(793,268) rotate(-90)" font-size="22" style="fill:#d88988">Leaving</text>
+<text transform="translate(981,220)" font-size="22" style="fill:#d9c89e">Silence</text>
+<text transform="translate(4,528)" font-size="22" style="fill:#d5d2c2">Listen</text>
+<text transform="translate(983,463)" font-size="22" style="fill:#a9b7a3">Work</text>
+<text transform="translate(466,261) rotate(-90)" font-size="22" style="fill:#d6a79f">Painting</text>
+<text transform="translate(1043,399)" font-size="22" style="fill:#b6c3dd">Explicit</text>
+<text transform="translate(206,136)" font-size="22" style="fill:#a9b7a3">Harmonic</text>
+<text transform="translate(458,492)" font-size="22" style="fill:#c7d7b5">Middle</text>
+<text transform="translate(1131,509)" font-size="21" style="fill:#c7d7b5">Adjacent</text>
+<text transform="translate(883,525)" font-size="19" style="fill:#d5d2c2">Including</text>
+<text transform="translate(368,526)" font-size="19" style="fill:#d88988">Step</text>
+<text transform="translate(261,313)" font-size="19" style="fill:#c49a6c">Black</text>
+<text transform="translate(861,707)" font-size="19" style="fill:#d5d2c2">Playing</text>
+<text transform="translate(1228,710)" font-size="19" style="fill:#d5d2c2">View</text>
+<text transform="translate(808,473)" font-size="19" style="fill:#b6c3dd">Fingers</text>
+<text transform="translate(1099,708)" font-size="19" style="fill:#c7d7b5">Lets</text>
+<text transform="translate(621,361)" font-size="19" style="fill:#a9b7a3">Home</text>
+<text transform="translate(10,654)" font-size="19" style="fill:#c7d7b5">Enter</text>
+<text transform="translate(106,236)" font-size="19" style="fill:#a9b7a3">Stays</text>
+<text transform="translate(501,160)" font-size="19" style="fill:#a9b7a3">Exactly</text>
+<text transform="translate(100,461)" font-size="19" style="fill:#c7d7b5">Sometimes</text>
+<text transform="translate(423,329)" font-size="19" style="fill:#d6a79f">Close</text>
+<text transform="translate(659,479)" font-size="19" style="fill:#d9c89e">Particular</text>
+<text transform="translate(159,389)" font-size="19" style="fill:#c7d7b5">Voices</text>
+<text transform="translate(10,549)" font-size="19" style="fill:#d9c89e">Semitones</text>
+<text transform="translate(322,53)" font-size="19" style="fill:#d88988">Draw</text>
+<text transform="translate(718,713)" font-size="19" style="fill:#c49a6c">Per</text>
+<text transform="translate(151,352)" font-size="19" style="fill:#c49a6c">Cent</text>
+<text transform="translate(1216,576)" font-size="19" style="fill:#e0b879">Added</text>
+<text transform="translate(911,195)" font-size="19" style="fill:#c7d7b5">Ninth</text>
+<text transform="translate(778,59)" font-size="19" style="fill:#d9c89e">Shows</text>
+<text transform="translate(20,50)" font-size="19" style="fill:#d5d2c2">Begins</text>
+<text transform="translate(702,277)" font-size="19" style="fill:#a9b7a3">Capped</text>
+<text transform="translate(1205,34)" font-size="19" style="fill:#9fc9c5">Recent</text>
+<text transform="translate(484,328)" font-size="19" style="fill:#d5d2c2">Relative</text>
 </svg>

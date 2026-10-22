@@ -3,7 +3,7 @@ title: "The Piano That Forgives: Painting Jazz with Probability"
 seoTitle: "The Piano That Forgives — A Probabilistic Jazz Piano"
 description: "Play an impressionist piano that guides uncertain notes towards nearby jazz possibilities, then see the exact probability behind each gentle correction."
 date: "2026-10-21"
-dateModified: "2026-10-21"
+dateModified: "2026-10-22"
 thumbnail: "/images/visualizations/probabilistic-piano/piano-social.jpg"
 thumbnailAlt: "An impressionist piano above ultramarine water, with a brushstroke connecting a requested C sharp to the selected nearby note and labelled probability marks"
 category: "Visualizations"
@@ -36,7 +36,7 @@ faq:
 
 <ProbabilisticPiano />
 
-<p><small>Published <time datetime="2026-10-21">21 October 2026</time> · Updated <time datetime="2026-10-21">21 October 2026</time></small></p>
+<p><small>Published <time datetime="2026-10-21">21 October 2026</time> · Updated <time datetime="2026-10-22">22 October 2026</time></small></p>
 
 <TTS />
 
@@ -54,7 +54,9 @@ Start with the **Moonlit pond** preset and **Nearest** mode. Play slowly, leavin
 
 A press is a request for a pitch, rather than an instruction that the instrument must obey literally. The current chord supplies a small, explicit palette of allowed notes. **C6/9**, the pond's stationary harmony, uses C, D, E, G and A, repeated across the available octaves.
 
-These are **pitch classes**: C4 and C5 share a letter and harmonic identity while occupying different registers. This instrument labels middle C as **C4, MIDI 60**. Adjacent piano keys differ by one **semitone**, including the step from E to F where no black key intervenes. The playable span runs from C3 to C6; on a narrow screen, move through the keyboard locally rather than trying to touch thirty-seven miniature targets.
+These are **pitch classes**: C4 and C5 share a letter and harmonic identity while occupying different registers. This instrument labels middle C as **C4, MIDI 60**. Adjacent piano keys differ by one **semitone**, including the step from E to F where no black key intervenes. The complete piano runs from A0 to C8: eighty-eight keys, with fifty-two white and thirty-six black.
+
+On a wide screen, **Fit all 88 keys** opens the whole instrument at once. **Playing view** gives your fingers more room, while the small keyboard overview lets you travel from the low bass to the bright treble. Use the octave arrows or **Return to middle C** to find your way home. On a phone, the keyboard moves inside its own window. **Enter focus view** gives the pond and keys more space within the article.
 
 Press an allowed note and it stays exactly where you put it. Press an outside note and Nearest measures the semitone distance to each allowed pitch. Only the closest survive. Sometimes that leaves one answer; sometimes two equally close neighbours remain.
 
@@ -119,9 +121,11 @@ Hold a note through a chord change and it keeps its chosen pitch. Later presses 
 
 Broken colour offers an artistic analogy for possibility: adjacent strokes can suggest a changing surface without dissolving into one flat mixture. Here a requested pitch and its neighbours remain distinct, even while a connecting stroke lets the eye imagine their relationship. This is a visual conversation between music and painting, rather than a historical theory about how impressionists composed.
 
-The surrounding atmosphere is decoration. The labelled musical marks have stricter duties. An outline identifies the request; a filled mark identifies the result; an unchanged note receives a combined mark. The selected candidate is named as well as coloured. That follows the principle in [WCAG's guidance on colour](https://www.w3.org/TR/WCAG22/#use-of-color) that information needs another visual means of identification.
+Each sounded note opens a moonlit bloom and a few expanding ripples. Low notes make broader, slower rings; high notes leave finer glints. A held note keeps a quiet reflection, including when the pedal carries it after your finger has lifted. Short ribbons of pigment remember the length and strength of recent notes, joining a quick run into one passing brush gesture.
 
-Choose Still, or use your device's reduced-motion preference, for stable marks without travelling trails. The probabilities remain available as numbers. Computer shortcuts work inside the focused instrument and are shown beside the keys; ordinary buttons support keyboard activation too. The recent-note history gives a quieter way to inspect a phrase after playing it.
+The surrounding atmosphere is decoration. The labelled musical marks have stricter duties. An outline identifies the request; a filled mark identifies the result; an unchanged note receives a combined mark. Curves of light connect the request to its admitted candidates, with stronger lines for larger probabilities and warm gold for the selected branch. The selected candidate is named as well as coloured. That follows the principle in [WCAG's guidance on colour](https://www.w3.org/TR/WCAG22/#use-of-color) that information needs another visual means of identification.
+
+Choose Still, or use your device's reduced-motion preference, for stable rings, ribbons and probability marks. The probabilities remain available as numbers. Computer shortcuts work inside the focused instrument and are shown beside the keys; **[** and **]** shift their range by an octave. Arrow keys move between individual piano keys, **Home** and **End** reach A0 and C8, and **Page Up** and **Page Down** move an octave. One Tab stop enters the keyboard, and ordinary key buttons support activation too. The recent-note history gives a quieter way to inspect a phrase after playing it.
 
 The voice is an original synthesised piano approximation, made from decaying partials with a small struck attack. It evokes a gentle keyboard rather than reproducing a recorded concert grand. Sound begins through an explicit action: the [Web Audio specification](https://www.w3.org/TR/webaudio/#allowed-to-start) allows browsers to require user activation before starting an audio context. Volume, mute and **Stop all sound** remain within reach.
 

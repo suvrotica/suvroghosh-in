@@ -1,10 +1,15 @@
 {
   "version": 1,
-  "captureVersion": "probabilistic-piano-browser-capture-v1",
-  "sourceHash": "2465de0821c2373e33138fde3daa2e664a234683127f9cd94acc3cfa65bde0a2",
+  "captureVersion": "probabilistic-piano-browser-capture-v2",
+  "sourceHash": "7e5cf6d899132304e5db4b9c2f3b095fdb6eb3bafe77dcd905e5bcc7895a15ac",
   "provenance": "Actual local Svelte instrument, native keys and Canvas2D pond. The social image adds an editorial title band above the same unaltered stage capture. Poster letterboxing preserves the entire stage geometry.",
   "state": {
-    "modelVersion": "1",
+    "modelVersion": "2",
+    "keyboardRange": "A0–C8 / MIDI 21–108",
+    "publicationMotion": "still",
+    "desktopView": "fit",
+    "phoneView": "playing",
+    "captureViewportHeight": 3000,
     "preset": "pond",
     "chord": "C6/9",
     "mode": "nearest",
@@ -19,6 +24,9 @@
   },
   "sources": [
     "src/lib/visualizations/probabilistic-piano/model.ts",
+    "src/lib/visualizations/probabilistic-piano/keyboard.ts",
+    "src/lib/visualizations/probabilistic-piano/effects.ts",
+    "src/lib/visualizations/probabilistic-piano/audio.ts",
     "src/lib/visualizations/probabilistic-piano/painting.ts",
     "src/lib/components/visualizations/probabilistic-piano/ProbabilisticPiano.svelte",
     "src/lib/components/visualizations/probabilistic-piano/piano.css",
@@ -28,14 +36,14 @@
     "piano-poster.jpg": {
       "width": 1440,
       "height": 760,
-      "bytes": 159560,
-      "sha256": "660c5c713f27b119b72ad182a078a0deb83d334464ae3094d337297ae5effe1e"
+      "bytes": 206105,
+      "sha256": "edf0c69f67ffc54f7cbce2e78a94c67651e6cb4e47051e4f4a585792ded95821"
     },
     "piano-social.jpg": {
       "width": 1200,
       "height": 630,
-      "bytes": 134105,
-      "sha256": "42ec7f8e390143498a7d2e4592458588d3045a3134f0b9a1c08de367d64c66f2"
+      "bytes": 141674,
+      "sha256": "c86b18587ad133a6fee2acfb04e4efe0e221f60a5d2e8e1ad4a5d7d2b1ec1272"
     }
   }
 }
