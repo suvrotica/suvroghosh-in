@@ -172,6 +172,7 @@ const config = {
 	],
 	extensions: ['.svelte', '.md'],
 	kit: {
+		serviceWorker: { register: false },
 		csp: {
 			mode: 'auto',
 			directives: {
