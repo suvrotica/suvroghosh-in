@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "segmentation": "bounded-6000-v2",
+  "textHash": "938345ff23634a9c8e2f7be4d13e5dee5c254415cae999e25e5e50f56b3f8e4e",
+  "fingerprint": "ca13b4c06adc7add0189a86098cec6fbaba95554d09628c26c427b0de4c1cb98",
+  "language": "en-US",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "achird",
+  "style": "Warm, clear editorial narration in natural US English. Relaxed pacing, natural sentence emphasis, and sensible pauses. Preserve Bengali pronunciation in Bengali passages. Read the transcript verbatim.",
+  "format": "audio/wav",
+  "title": "The Shape of Waiting: An Interactive Queue-Distribution Laboratory",
+  "articlePath": "/blog/visualizations/the-shape-of-waiting",
+  "generatedAt": "2026-10-22T10:38:45.030Z",
+  "totalDuration": 471.8,
+  "segments": [
+    {
+      "src": "/audio/articles/the-shape-of-waiting/18f2b7518bd8d6589e07170ad1f02a2f82c39b54129a54716823f1bf9aae12c3.mp3",
+      "duration": 358.16,
+      "textStart": 0,
+      "textEnd": 5874
+    },
+    {
+      "src": "/audio/articles/the-shape-of-waiting/44308a2ba6362ec57fdfe8e6f3907b9178e49b695adfb126243978c1a5e2e9c6.mp3",
+      "duration": 113.64,
+      "textStart": 5874,
+      "textEnd": 7675
+    }
+  ],
+  "delivery": {
+    "version": 1,
+    "format": "audio/mpeg",
+    "codec": "mp3",
+    "bitrate": 64000,
+    "sampleRate": 24000,
+    "channels": 1,
+    "encoderVersion": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "encodedAt": "2026-10-22T10:46:28.817Z",
+    "segments": [
+      {
+        "sourceFingerprint": "0f7eada4f9ed4a5c288a623a9e317d5fb3f4d6ce1191f6c3cbed9789f216b43d",
+        "sourceAudioHash": "d520237eb866f63c3546c33d332a7e0eb589721afa87e43cf9562043e0f02e56",
+        "sourceBytes": 17197798,
+        "audioHash": "18f2b7518bd8d6589e07170ad1f02a2f82c39b54129a54716823f1bf9aae12c3",
+        "bytes": 2866029,
+        "decodedPCMHash": "b0f40ba0cc88adeb958ff2bca10dac94ae7178bd7928d2f78cecb277368fbd32",
+        "decodedDuration": 358.16
+      },
+      {
+        "sourceFingerprint": "7e7669753030ed8023d58e62303de0d3a4f5d3f9cbcd0acace149d8160e5299c",
+        "sourceAudioHash": "31970a8a9279db6603d83b6c9370ff14516020da62bb716792a60df314868e71",
+        "sourceBytes": 5460838,
+        "audioHash": "44308a2ba6362ec57fdfe8e6f3907b9178e49b695adfb126243978c1a5e2e9c6",
+        "bytes": 909741,
+        "decodedPCMHash": "6fd23a230cb1301d86bc3b1a925559e1b771caed964f3957ea6ecab949b74534",
+        "decodedDuration": 113.64
+      }
+    ]
+  }
+}
