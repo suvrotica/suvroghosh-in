@@ -273,6 +273,95 @@ test('museum records retain distinct evidence statuses through rapid switching, 
 	await expect(lab.locator('#ma-open-record')).toHaveCount(0);
 });
 
+for (const theme of ['paper', 'night'] as const) {
+	for (const width of [320, 390, 600, 700, 701, 1440]) {
+		test(`museum comparison fits its frame at ${width}px in ${theme}`, async ({ page }) => {
+			await page.setViewportSize({ width, height: 1000 });
+			await page.emulateMedia({ reducedMotion: 'reduce' });
+			await page.addInitScript((selectedTheme) => {
+				localStorage.setItem('site-theme', selectedTheme);
+				localStorage.setItem('site-motion', 'still');
+			}, theme);
+			const errors: string[] = [];
+			page.on('pageerror', (error) => errors.push(error.message));
+			const museum = await ready(page, 'the-museum-of-almost');
+			await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+			const drawer = museum.locator('[data-drawer="lamp"]');
+			await drawer.focus();
+			await drawer.press('Enter');
+			const record = museum.locator('#ma-open-record');
+			await record.getByRole('tab', { name: 'What happened next?', exact: true }).click();
+			await record
+				.getByRole('button', { name: 'Compare the supported connector revision', exact: true })
+				.click();
+			const comparison = record.locator('.ma-comparison');
+			await expect(comparison).toBeVisible();
+			await expect(comparison).toContainText('fictional');
+			await expect(comparison.locator('svg')).toHaveCount(2);
+			await expect(record.locator('.ma-decision dd')).toHaveText(['Unknown', 'Unknown', 'Unknown']);
+			await page.evaluate(() => document.fonts.ready);
+
+			// Frame clipping can hide overflow without changing the document's scroll width.
+			const overflow = await museum.evaluate((element) => {
+				const frameElement = element.closest('.ma-museum') ?? element;
+				const frame = frameElement.getBoundingClientRect();
+				return [
+					frameElement,
+					element,
+					...Array.from(
+						element.querySelectorAll(
+							'.ma-drawers, #ma-open-record, .ma-tabs, .ma-comparison, .ma-connector-bench, .ma-decision dl'
+						)
+					)
+				].flatMap((container) => {
+					const rect = container.getBoundingClientRect();
+					return container.scrollWidth > container.clientWidth + 1 ||
+						rect.left < frame.left - 1 ||
+						rect.right > frame.right + 1
+						? [
+								{
+									name: container.id || container.className,
+									left: rect.left,
+									right: rect.right,
+									clientWidth: container.clientWidth,
+									scrollWidth: container.scrollWidth
+								}
+							]
+						: [];
+				});
+			});
+			expect(overflow).toEqual([]);
+			const connectors = await comparison
+				.locator('.ma-connector-bench > div')
+				.evaluateAll((elements) =>
+					elements.map((element) => {
+						const { left, right, top, bottom } = element.getBoundingClientRect();
+						return { left, right, top, bottom };
+					})
+				);
+			if (width <= 700) {
+				expect(Math.abs(connectors[0].left - connectors[1].left)).toBeLessThanOrEqual(1);
+				expect(connectors[1].top).toBeGreaterThanOrEqual(connectors[0].bottom);
+			} else {
+				expect(Math.abs(connectors[0].top - connectors[1].top)).toBeLessThanOrEqual(1);
+				expect(connectors[1].left).toBeGreaterThanOrEqual(connectors[0].right);
+			}
+			const audit = await new AxeBuilder({ page })
+				.include('[data-maker-feature="the-museum-of-almost"]')
+				.withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+				.analyze();
+			expect(audit.violations).toEqual([]);
+			expect(errors).toEqual([]);
+			await mkdir(`${output}/mobile-fix`, { recursive: true });
+			await record.screenshot({
+				path: `${output}/mobile-fix/museum-${width}-${theme}.png`,
+				animations: 'disabled',
+				style: '.site-header { visibility: hidden !important; }'
+			});
+		});
+	}
+}
+
 test('repeated article navigation creates fresh independent mounts', async ({ page }) => {
 	const errors: string[] = [];
 	page.on('pageerror', (error) => errors.push(error.message));
