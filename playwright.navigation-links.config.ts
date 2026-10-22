@@ -12,7 +12,7 @@ export default defineConfig({
 	use: {
 		baseURL,
 		browserName: 'chromium',
-		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? undefined : 'chrome'),
+		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? 'chromium' : 'chrome'),
 		headless: true,
 		serviceWorkers: 'block',
 		reducedMotion: 'reduce',
