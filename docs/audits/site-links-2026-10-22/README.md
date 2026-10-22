@@ -105,14 +105,19 @@ sending a message.
 - `npm run build:full`: passed, including feature artifacts, committed notebooks, content/SEO/media,
   source links, production compilation, rendered discoverability and Barnum route assets.
 - `npm run links:audit`: passed as the exact self-managed-preview CLI; inventory complete, zero issues.
-- Source-validator fixtures: 25 passed; rendered-crawler fixtures: 14 passed; external-checker
-  fixtures: 13 passed (52 link fixtures in total). The final source validator was rerun after the exact-case refinement and
+- Source-validator fixtures: 25 passed; rendered-crawler fixtures: 15 passed; external-checker
+  fixtures: 13 passed (53 link fixtures in total). The final source validator was rerun after the exact-case refinement and
   still recognises the same 738 valid references; that refinement changes no application output.
 - `npm run check`: zero errors and zero warnings.
 - Scoped ESLint and Prettier: passed. Architecture gate fixtures: 13 passed.
 - Final navigation browser suite: 54 passed across desktop and mobile, zero failed.
 - Existing privacy browser suite: 16 passed, including accessibility, consent withdrawal,
   media gating, private routes, mobile layouts and enlarged text.
+
+The first hosted content-links run passed its fixtures and routine build, then exposed ANSI colour
+codes inside Vite's preview URL. Startup detection now strips terminal control characters; a
+regression uses the exact emitted CI line. The complete local audit was repeated with
+`FORCE_COLOR=1` to verify the actual CLI startup and crawl together.
 
 Initial hash-based feature/sketch checks exposed CRLF checkout differences. The isolated worktree
 was normalized to its committed LF text and configured to preserve that locally; the two scripts

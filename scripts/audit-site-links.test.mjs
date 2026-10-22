@@ -9,6 +9,7 @@ import {
 	inspectHtmlNavigation,
 	localPreviewOrigin,
 	missingFragment,
+	previewStartupReady,
 	resolveLink,
 	SITE
 } from './audit-site-links.mjs';
@@ -62,6 +63,15 @@ test('a comprehensive crawl is confined to an HTTP loopback preview', () => {
 	]) {
 		assert.throws(() => localPreviewOrigin(value), /loopback/);
 	}
+});
+
+test('preview readiness recognises the ANSI-coloured URL emitted by Vite on GitHub Actions', () => {
+	const emitted =
+		'  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4268\u001b[22m/\u001b[39m\n';
+	assert.equal(previewStartupReady(emitted), true);
+	assert.equal(previewStartupReady('Local: http://127.0.0.1:4268/\n'), true);
+	assert.equal(previewStartupReady(emitted.replace('4268', '4269')), false);
+	assert.equal(previewStartupReady('Starting local preview...'), false);
 });
 
 test('relative, protocol-relative and absolute same-site links retain queries and decoded fragments', () => {

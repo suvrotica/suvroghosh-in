@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
+import { stripVTControlCharacters } from 'node:util';
 import {
 	decodeHtmlEntities,
 	discoverSourceUrls,
@@ -21,6 +22,10 @@ export function localPreviewOrigin(value) {
 		throw new Error('The comprehensive link audit requires an HTTP loopback production preview.');
 	}
 	return url.origin;
+}
+
+export function previewStartupReady(output) {
+	return stripVTControlCharacters(output).includes('http://127.0.0.1:4268/');
 }
 
 export function resolveLink(href, source = `${SITE}/`) {
@@ -448,7 +453,7 @@ async function main() {
 			for (let attempt = 0; attempt < 120; attempt++) {
 				await new Promise((resolve) => setTimeout(resolve, 250));
 				if (server.exitCode !== null) throw new Error(`Preview startup failed: ${startup}`);
-				if (startup.includes('http://127.0.0.1:4268/')) {
+				if (previewStartupReady(startup)) {
 					ready = true;
 					break;
 				}
