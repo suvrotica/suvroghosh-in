@@ -15218,6 +15218,96 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/build-one-build-a-thousand.md": {
+			"bodyHash": "80e81731a481dfb7767fe818c52c77e2315fbcdb3a65ad2cd3401e32457e48db",
+			"hashVersion": 2,
+			"revisionHash": "5851bc5aa1ae54900c025ff52438a6274621f32a28189928163b1ebe50af6dc9",
+			"generatedTags": [
+				"Making",
+				"Entrepreneurship",
+				"Manufacturing",
+				"Product Development",
+				"Operations",
+				"Interactive Explainers",
+				"Product Design",
+				"Production Planning",
+				"Small Batch Production",
+				"Packaging"
+			],
+			"pinnedTags": [
+				"Making",
+				"Entrepreneurship",
+				"Manufacturing",
+				"Product Development",
+				"Operations",
+				"Interactive Explainers",
+				"Product Design",
+				"Production Planning",
+				"Small Batch Production",
+				"Packaging"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-museum-of-almost.md": {
+			"bodyHash": "437a8e1e34bc8bc949438844a1f0f2668d7d05a5b4dbcaeccfeb8190ccb94e7a",
+			"hashVersion": 2,
+			"revisionHash": "2d28e88415ed7261b65078f0bebe188ed341306f1c729db948e89aaf1704c130",
+			"generatedTags": [
+				"Making",
+				"Product Development",
+				"Evidence",
+				"Entrepreneurship",
+				"Design",
+				"Decision Making",
+				"Prototyping",
+				"Project Archives",
+				"Uncertainty",
+				"Design Iteration"
+			],
+			"pinnedTags": [
+				"Making",
+				"Product Development",
+				"Evidence",
+				"Entrepreneurship",
+				"Design",
+				"Decision Making",
+				"Prototyping",
+				"Project Archives",
+				"Uncertainty",
+				"Design Iteration"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-six-week-shadow.md": {
+			"bodyHash": "76799b438b82e57c9c46b1388ad77c53fbe99104181b5823ab0d4b6c03281862",
+			"hashVersion": 2,
+			"revisionHash": "6bac26d53f1354ea54ec3d0b6e6e80f35bcee9e7ca7242b88e32724e9ac8b19b",
+			"generatedTags": [
+				"Product Development",
+				"Dependencies",
+				"Manufacturing",
+				"Entrepreneurship",
+				"Scheduling",
+				"Design Changes",
+				"Interactive Explainers",
+				"Waiting Time",
+				"Parallel Work",
+				"Prototyping"
+			],
+			"pinnedTags": [
+				"Product Development",
+				"Dependencies",
+				"Manufacturing",
+				"Entrepreneurship",
+				"Scheduling",
+				"Design Changes",
+				"Interactive Explainers",
+				"Waiting Time",
+				"Parallel Work",
+				"Prototyping"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -4815,6 +4815,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1200
 		},
 		{
+			"name": "visualizations/build-one-build-a-thousand/social.png",
+			"src": "/images/visualizations/build-one-build-a-thousand/social.png",
+			"bytes": 260070,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/chitin-engine/chitin-engine-four-worlds.png",
 			"src": "/images/visualizations/chitin-engine/chitin-engine-four-worlds.png",
 			"bytes": 142999,
@@ -5189,6 +5196,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png",
 			"src": "/images/visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png",
 			"bytes": 321407,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/the-museum-of-almost/social.png",
+			"src": "/images/visualizations/the-museum-of-almost/social.png",
+			"bytes": 161917,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/the-six-week-shadow/social.png",
+			"src": "/images/visualizations/the-six-week-shadow/social.png",
+			"bytes": 184741,
 			"width": 1200,
 			"height": 630
 		},

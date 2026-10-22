@@ -53,6 +53,20 @@ src/lib/visualizations/
 
 ## Embed a visualization in Markdown
 
+The maker / entrepreneur / explainer collection follows the dedicated feature
+pattern: three independent Markdown articles import their own lazy Svelte shells,
+while pure models and curated records stay in matching domains. See
+[Build One](visualizations/build-one-build-a-thousand.md),
+[The Six-Week Shadow](visualizations/the-six-week-shadow.md) and
+[The Museum of Almost](visualizations/the-museum-of-almost.md). Their Anatomy
+geometry is authored with the existing vendored MIT kit; it is not a browser
+dependency. `maker-collection:test`, `maker-collection:geometry`,
+`maker-collection:assets:check` and `maker-collection:browser:test` are focused
+verification commands. Capture new posters explicitly with
+`maker-collection:assets -- --base http://127.0.0.1:4292` after source edits; the
+full feature lane verifies committed geometry and poster provenance. Keep the
+museum's demonstration labels when editing or linking to any record.
+
 Import the two author-facing components in the Markdown file that needs them. Explicit imports keep the visualization framework out of every ordinary article bundle; the site's existing mdsvex preprocessor still injects its normal image, video, TTS, and notebook helpers into the same script block.
 
 ```svelte

@@ -10913,6 +10913,21 @@
       "sourceHash": "ca2a5d659b1c4eca5fea6593b4b815643898c159a06c8d34ccf4e0f426e86043",
       "width": 1800
     },
+    "static/images/visualizations/build-one-build-a-thousand/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 260070,
+      "outputHash": "e96068d50cdfab352986da8393a8ca4b7952623302cebeb91c5e84b242f93334",
+      "resized": false,
+      "sourceBytes": 260070,
+      "sourceHash": "e96068d50cdfab352986da8393a8ca4b7952623302cebeb91c5e84b242f93334",
+      "width": 1200
+    },
     "static/images/visualizations/chitin-engine/chitin-engine-four-worlds.png": {
       "format": "PNG",
       "height": 900,
@@ -11754,6 +11769,36 @@
       "resized": false,
       "sourceBytes": 321407,
       "sourceHash": "c6e99d3e1741924f35513d08fd9173abedda5b897b76b1d91b1adbc71e26cd09",
+      "width": 1200
+    },
+    "static/images/visualizations/the-museum-of-almost/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 161917,
+      "outputHash": "ba2f10b99fa4b7e9ca11ad9fbcb5ecbda6a494927bd22c30fd1fdac2827a7cf5",
+      "resized": false,
+      "sourceBytes": 161917,
+      "sourceHash": "ba2f10b99fa4b7e9ca11ad9fbcb5ecbda6a494927bd22c30fd1fdac2827a7cf5",
+      "width": 1200
+    },
+    "static/images/visualizations/the-six-week-shadow/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 184741,
+      "outputHash": "878ad4001c6c803b2e1ee1e8536876e86d67adfb0ebe8021840b9d87bff6b76a",
+      "resized": false,
+      "sourceBytes": 184741,
+      "sourceHash": "878ad4001c6c803b2e1ee1e8536876e86d67adfb0ebe8021840b9d87bff6b76a",
       "width": 1200
     },
     "static/images/visualizations/two-calendars/two-calendars-postcard.svg": {

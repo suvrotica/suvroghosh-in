@@ -16,6 +16,42 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'build-one-build-a-thousand': {
+		id: 'build-one-build-a-thousand',
+		title: 'Build One. Now Build a Thousand.',
+		description:
+			'Make a wooden phone stand, grow the order and discover the work behind a repeatable promise in a declared teaching model.',
+		subjects: ['Design', 'Entrepreneurship'],
+		poster: '/images/visualizations/build-one-build-a-thousand/social.png',
+		posterAlt:
+			'A dimensional wooden phone-stand workshop with cutting, assembly and packing areas, captured from the illustrative model',
+		href: '/blog/visualizations/build-one-build-a-thousand',
+		status: 'published'
+	},
+	'the-six-week-shadow': {
+		id: 'the-six-week-shadow',
+		title: 'The Six-Week Shadow of a Ten-Minute Idea',
+		description:
+			'Move a fictional lamp button and follow the work, waiting and parallel preparation before a revised batch can leave.',
+		subjects: ['Design', 'Entrepreneurship'],
+		poster: '/images/visualizations/the-six-week-shadow/social.png',
+		posterAlt:
+			'A desk lamp and foldout workshop with a ruler showing the modelled work and waiting caused by moving its button',
+		href: '/blog/visualizations/the-six-week-shadow',
+		status: 'published'
+	},
+	'the-museum-of-almost': {
+		id: 'the-museum-of-almost',
+		title: 'The Museum of Almost',
+		description:
+			'Open four fictional specimen drawers and separate what happened, what might explain it and what can be supported afterwards.',
+		subjects: ['Design', 'Entrepreneurship'],
+		poster: '/images/visualizations/the-museum-of-almost/social.png',
+		posterAlt:
+			'A four-drawer specimen cabinet labelled as a demonstration collection of fictional projects and evidence',
+		href: '/blog/visualizations/the-museum-of-almost',
+		status: 'published'
+	},
 	'the-patient-between-the-systems': {
 		id: 'the-patient-between-the-systems',
 		title: 'The Patient Between the Systems',

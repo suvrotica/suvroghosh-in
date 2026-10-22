@@ -33,4 +33,7 @@ src/lib/generated/media-gallery.ts
 src/lib/generated/sketch-manifest.ts
 src/lib/server/generated/image-dimensions.js
 src/lib/visualizations/openhie/instrument.json
+src/lib/visualizations/build-one-build-a-thousand/geometry.json
+src/lib/visualizations/the-six-week-shadow/geometry.json
+src/lib/visualizations/the-museum-of-almost/geometry.json
 scripts/lib/openhie-anatomy/

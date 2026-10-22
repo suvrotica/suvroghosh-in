@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T23:41:40.425267+00:00",
+  "generatedAt": "2026-10-22T11:20:40.017369+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1838,6 +1838,29 @@
         "Sqrt",
         "Diffusion",
         "Velocity"
+      ],
+      "wordCount": 130
+    },
+    "build-one-build-a-thousand": {
+      "generatedAt": "2026-10-22T11:20:26.387973+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/build-one-build-a-thousand.svg",
+      "source": "src/lib/posts/build-one-build-a-thousand.md",
+      "sourceHash": "0954da75809d257731358d6840c5df8136fb2d60cc610d2548ebfa87e54c4dd2",
+      "sourceModified": "2026-10-22T11:20:14.129414+00:00",
+      "topWords": [
+        "Minutes",
+        "Work",
+        "Stands",
+        "Per",
+        "Stand",
+        "Working",
+        "Packing",
+        "Maker",
+        "Ten",
+        "Model",
+        "Batch",
+        "Three"
       ],
       "wordCount": 130
     },
@@ -12950,6 +12973,29 @@
       ],
       "wordCount": 130
     },
+    "the-museum-of-almost": {
+      "generatedAt": "2026-10-22T11:20:36.384800+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-museum-of-almost.svg",
+      "source": "src/lib/posts/the-museum-of-almost.md",
+      "sourceHash": "265d44298e965d83205ce9e479f7adf33d1b5adef29f3116463c7eed13caa6a8",
+      "sourceModified": "2026-10-22T11:20:14.598902+00:00",
+      "topWords": [
+        "Record",
+        "Lamp",
+        "Cabinet",
+        "Fictional",
+        "Decision",
+        "Work",
+        "Promises",
+        "Later",
+        "Synthetic",
+        "Trial",
+        "Purpose",
+        "Proposal"
+      ],
+      "wordCount": 130
+    },
     "the-museum-of-invisible-weather": {
       "generatedAt": "2026-08-07T16:27:10.695599+00:00",
       "generatorVersion": "2026-07-13.1",
@@ -14005,6 +14051,29 @@
         "Sentence",
         "Becomes",
         "Static"
+      ],
+      "wordCount": 130
+    },
+    "the-six-week-shadow": {
+      "generatedAt": "2026-10-22T11:20:37.998530+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-six-week-shadow.svg",
+      "source": "src/lib/posts/the-six-week-shadow.md",
+      "sourceHash": "eaeaaf6d79f218c414b1d3f168c2cc6d547fd1cb9f19740497135cb460c34331",
+      "sourceModified": "2026-10-22T11:20:14.664488+00:00",
+      "topWords": [
+        "Days",
+        "Batch",
+        "Working",
+        "Work",
+        "Change",
+        "Person",
+        "Needs",
+        "Revised",
+        "Sample",
+        "Supplier",
+        "Release",
+        "Next"
       ],
       "wordCount": 130
     },

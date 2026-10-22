@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "scripts/render-maker-collection-assets.mjs": "82c0b0d04ec0eed450fbdcbcbc5b7f31ba69b6e102c7c31ba7d0523bcf59270d",
+    "src/lib/components/visualizations/the-museum-of-almost/Cabinet.svelte": "9d8d595c2b11ec8de7db1eb1c2a11bc6dd747c4352b0da56cf7901bd715a1251",
+    "src/lib/components/visualizations/the-museum-of-almost/CollectionLedger.svelte": "90f5f9a234a02612ebf23fbde46eab5f368808cc86498230ea6f7bcf02392707",
+    "src/lib/components/visualizations/the-museum-of-almost/Comparison.svelte": "2ae7194f8c78618c44687169ad396ca6e4b650cfd81634989c6b2e6b6d139c34",
+    "src/lib/components/visualizations/the-museum-of-almost/MuseumRuntime.svelte": "e48e038dd6f9b63f9cc2d2b7f349f6a7c18320600c9e1ee9a2fe087512a5079d",
+    "src/lib/components/visualizations/the-museum-of-almost/MuseumShell.svelte": "c85a5c87b81f087f3b340cf821de5f26e7644c7e8b484128fe815f7975cdb7bc",
+    "src/lib/components/visualizations/the-museum-of-almost/SourceReferences.svelte": "8a88ab5dc7675fc2353e92c095a2a2e61a76d2320fb6c8d18aceec7e300d2916",
+    "src/lib/components/visualizations/the-museum-of-almost/museum.css": "8911f9a502ef50469e96c4ccbb4cfa399309ce8f98352ea0cadfdfae53d99c7a",
+    "src/lib/visualizations/the-museum-of-almost/fixtures.ts": "825b954739d0c20f9b24a3fa4c8b92706c5b5412a95734ecf7f49f6e6628e33a",
+    "src/lib/visualizations/the-museum-of-almost/generate-geometry.mjs": "eaed852893b6a9cc8ea5e4785b85e6fd43488be0451031e8392d5def0b99c036",
+    "src/lib/visualizations/the-museum-of-almost/geometry.json": "08f8f4afefc2f8384d0660db957df4d652804f2e3efd5dbaaa31ab6775d52e56",
+    "src/lib/visualizations/the-museum-of-almost/model.ts": "bc8f8ca22eccf788f05fb66ccf501ed3fb66451566da6be1df5bf16a6e2efdc6"
+  },
+  "sourceHash": "a21eb7fe7b8aeda38779c021fd0141fd58cea3f0afd20cc9cafd0ea642b904fb",
+  "articlePath": "/blog/visualizations/the-museum-of-almost",
+  "captureMode": "local-article-browser",
+  "state": "default",
+  "capturePath": "/blog/visualizations/the-museum-of-almost",
+  "contentStatus": "demonstration",
+  "width": 1200,
+  "height": 630,
+  "pixelSha256": "090284f31bdd1affdc019f4082d9fa039d00286f40e2d10f4c33bb0c119279f6"
+}

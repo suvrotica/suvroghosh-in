@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Six-Week Shadow of a Ten-Minute Idea" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Six-Week Shadow of a Ten-Minute Idea</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(698,174)" font-size="118" style="fill:#c7d7b5">Days</text>
+<text transform="translate(509,324)" font-size="90" style="fill:#d6a79f">Batch</text>
+<text transform="translate(766,567)" font-size="90" style="fill:#8fb7d0">Working</text>
+<text transform="translate(201,343) rotate(-90)" font-size="84" style="fill:#9fc9c5">Work</text>
+<text transform="translate(503,638) rotate(-90)" font-size="78" style="fill:#d5d2c2">Change</text>
+<text transform="translate(359,109)" font-size="78" style="fill:#c49a6c">Person</text>
+<text transform="translate(245,177)" font-size="78" style="fill:#c49a6c">Needs</text>
+<text transform="translate(122,681)" font-size="72" style="fill:#e0b879">Revised</text>
+<text transform="translate(852,436)" font-size="72" style="fill:#c7d7b5">Sample</text>
+<text transform="translate(852,67)" font-size="72" style="fill:#d9c89e">Supplier</text>
+<text transform="translate(580,497)" font-size="72" style="fill:#d88988">Release</text>
+<text transform="translate(1099,134)" font-size="65" style="fill:#e0b879">Next</text>
+<text transform="translate(9,69)" font-size="65" style="fill:#d88988">Checked</text>
+<text transform="translate(135,474)" font-size="65" style="fill:#9fc9c5">Packing</text>
+<text transform="translate(715,695)" font-size="65" style="fill:#e0b879">Workshop</text>
+<text transform="translate(102,381) rotate(-90)" font-size="65" style="fill:#d9c89e">Model</text>
+<text transform="translate(594,618)" font-size="65" style="fill:#d5d2c2">Task</text>
+<text transform="translate(882,322)" font-size="65" style="fill:#8fb7d0">Effort</text>
+<text transform="translate(501,211)" font-size="65" style="fill:#9fc9c5">Means</text>
+<text transform="translate(42,553)" font-size="65" style="fill:#d88988">Support</text>
+<text transform="translate(1037,689)" font-size="58" style="fill:#b6c3dd">Button</text>
+<text transform="translate(411,353) rotate(-90)" font-size="58" style="fill:#b6c3dd">Lamp</text>
+<text transform="translate(1075,185)" font-size="58" style="fill:#d9c89e">Setup</text>
+<text transform="translate(109,416)" font-size="58" style="fill:#d5d2c2">Fictional</text>
+<text transform="translate(1022,254)" font-size="58" style="fill:#d6a79f">Product</text>
+<text transform="translate(759,253)" font-size="58" style="fill:#e0b879">Tasks</text>
+<text transform="translate(585,411)" font-size="58" style="fill:#9fc9c5">Waiting</text>
+<text transform="translate(1186,512) rotate(-90)" font-size="58" style="fill:#8fb7d0">Five</text>
+<text transform="translate(507,545)" font-size="58" style="fill:#d6a79f">Shadow</text>
+<text transform="translate(626,48)" font-size="58" style="fill:#b6c3dd">Slot</text>
+<text transform="translate(451,684)" font-size="58" style="fill:#d9c89e">Pilot</text>
+<text transform="translate(959,373)" font-size="58" style="fill:#c7d7b5">Ruler</text>
+<text transform="translate(868,615)" font-size="58" style="fill:#b6c3dd">Twenty</text>
+<text transform="translate(1248,648) rotate(-90)" font-size="58" style="fill:#c49a6c">Persondays</text>
+<text transform="translate(236,608)" font-size="50" style="fill:#d88988">Moving</text>
+<text transform="translate(12,126)" font-size="50" style="fill:#c7d7b5">Drawing</text>
+<text transform="translate(214,325)" font-size="50" style="fill:#d5d2c2">Need</text>
+<text transform="translate(45,492) rotate(-90)" font-size="50" style="fill:#c7d7b5">Version</text>
+<text transform="translate(405,44)" font-size="50" style="fill:#d5d2c2">Object</text>
+<text transform="translate(434,254)" font-size="49" style="fill:#d88988">Production</text>
+<text transform="translate(80,697) rotate(-90)" font-size="49" style="fill:#d6a79f">Week</text>
+<text transform="translate(797,370)" font-size="49" style="fill:#a9b7a3">First</text>
+<text transform="translate(884,485)" font-size="38" style="fill:#a9b7a3">Preparation</text>
+<text transform="translate(1084,626)" font-size="38" style="fill:#8fb7d0">Begin</text>
+<text transform="translate(569,161)" font-size="38" style="fill:#d5d2c2">Bases</text>
+<text transform="translate(325,549)" font-size="38" style="fill:#c49a6c">Waits</text>
+<text transform="translate(978,166)" font-size="38" style="fill:#d6a79f">Time</text>
+<text transform="translate(205,222)" font-size="35" style="fill:#d6a79f">Together</text>
+<text transform="translate(208,269)" font-size="35" style="fill:#d6a79f">Changes</text>
+<text transform="translate(95,713)" font-size="35" style="fill:#d6a79f">Outside</text>
+<text transform="translate(563,628) rotate(-90)" font-size="29" style="fill:#8fb7d0">Ten</text>
+<text transform="translate(895,207)" font-size="29" style="fill:#c49a6c">Suggest</text>
+<text transform="translate(1128,287)" font-size="29" style="fill:#c49a6c">Happens</text>
+<text transform="translate(573,420) rotate(-90)" font-size="29" style="fill:#d88988">Send</text>
+<text transform="translate(580,357)" font-size="29" style="fill:#a9b7a3">Finished</text>
+<text transform="translate(285,38)" font-size="29" style="fill:#9fc9c5">Reach</text>
+<text transform="translate(691,123) rotate(-90)" font-size="29" style="fill:#d6a79f">Base</text>
+<text transform="translate(128,365) rotate(-90)" font-size="29" style="fill:#a9b7a3">Suggestion</text>
+<text transform="translate(269,100)" font-size="29" style="fill:#c49a6c">Fits</text>
+<text transform="translate(326,709)" font-size="29" style="fill:#8fb7d0">Sentence</text>
+<text transform="translate(635,437)" font-size="29" style="fill:#c49a6c">Visible</text>
+<text transform="translate(845,640)" font-size="29" style="fill:#c49a6c">Edit</text>
+<text transform="translate(756,92)" font-size="29" style="fill:#a9b7a3">Someone</text>
+<text transform="translate(126,500)" font-size="29" style="fill:#d5d2c2">Instructions</text>
+<text transform="translate(243,353)" font-size="29" style="fill:#b6c3dd">Changed</text>
+<text transform="translate(486,342) rotate(-90)" font-size="29" style="fill:#c49a6c">Real</text>
+<text transform="translate(489,711)" font-size="29" style="fill:#c7d7b5">Electrical</text>
+<text transform="translate(20,154)" font-size="29" style="fill:#a9b7a3">Travels</text>
+<text transform="translate(976,127)" font-size="29" style="fill:#b6c3dd">Contain</text>
+<text transform="translate(111,599)" font-size="29" style="fill:#d88988">Default</text>
+<text transform="translate(776,320)" font-size="29" style="fill:#a9b7a3">Thirty</text>
+<text transform="translate(696,200)" font-size="29" style="fill:#8fb7d0">Elapsed</text>
+<text transform="translate(1027,715)" font-size="29" style="fill:#8fb7d0">Review</text>
+<text transform="translate(769,605)" font-size="29" style="fill:#d88988">Begins</text>
+<text transform="translate(778,286)" font-size="29" style="fill:#d5d2c2">Ready</text>
+<text transform="translate(177,632)" font-size="29" style="fill:#d9c89e">Pass</text>
+<text transform="translate(1180,71)" font-size="29" style="fill:#9fc9c5">Later</text>
+<text transform="translate(476,160)" font-size="29" style="fill:#8fb7d0">Small</text>
+<text transform="translate(666,644)" font-size="29" style="fill:#e0b879">Fifteen</text>
+<text transform="translate(1018,511)" font-size="29" style="fill:#d88988">Limited</text>
+<text transform="translate(767,30)" font-size="29" style="fill:#d9c89e">Zero</text>
+<text transform="translate(14,180)" font-size="29" style="fill:#b6c3dd">Active</text>
+<text transform="translate(375,207)" font-size="29" style="fill:#c49a6c">Shorter</text>
+<text transform="translate(1134,715)" font-size="29" style="fill:#d9c89e">Scenario</text>
+<text transform="translate(446,486) rotate(-90)" font-size="29" style="fill:#d88988">Separate</text>
+<text transform="translate(31,626) rotate(-90)" font-size="29" style="fill:#d6a79f">Prepare</text>
+<text transform="translate(1274,682) rotate(-90)" font-size="29" style="fill:#c7d7b5">References</text>
+<text transform="translate(527,567)" font-size="24" style="fill:#c7d7b5">Instruction</text>
+<text transform="translate(1017,207)" font-size="24" style="fill:#b6c3dd">Parallel</text>
+<text transform="translate(926,640)" font-size="24" style="fill:#d88988">Require</text>
+<text transform="translate(86,494) rotate(-90)" font-size="24" style="fill:#d9c89e">Assembly</text>
+<text transform="translate(1124,22)" font-size="24" style="fill:#c7d7b5">Branches</text>
+<text transform="translate(1123,330)" font-size="24" style="fill:#9fc9c5">Wait</text>
+<text transform="translate(896,22)" font-size="24" style="fill:#d9c89e">Different</text>
+<text transform="translate(327,129)" font-size="24" style="fill:#a9b7a3">Moment</text>
+<text transform="translate(1269,207) rotate(-90)" font-size="24" style="fill:#c7d7b5">Prototype</text>
+<text transform="translate(166,361)" font-size="24" style="fill:#a9b7a3">Tells</text>
+<text transform="translate(332,508)" font-size="19" style="fill:#d5d2c2">Obligations</text>
+<text transform="translate(505,128)" font-size="19" style="fill:#e0b879">Attached</text>
+<text transform="translate(627,669)" font-size="19" style="fill:#9fc9c5">Inspect</text>
+<text transform="translate(1205,593) rotate(-90)" font-size="19" style="fill:#9fc9c5">Prerequisites</text>
+<text transform="translate(536,400) rotate(-90)" font-size="19" style="fill:#e0b879">Happen</text>
+<text transform="translate(583,638)" font-size="19" style="fill:#a9b7a3">Actual</text>
+<text transform="translate(742,715)" font-size="19" style="fill:#d88988">Determines</text>
+<text transform="translate(524,472)" font-size="19" style="fill:#c7d7b5">Every</text>
+<text transform="translate(429,344) rotate(-90)" font-size="19" style="fill:#b6c3dd">Stays</text>
+<text transform="translate(292,627)" font-size="19" style="fill:#d5d2c2">Existing</text>
+<text transform="translate(181,28)" font-size="19" style="fill:#d5d2c2">Build</text>
+<text transform="translate(311,236)" font-size="14" style="fill:#8fb7d0">Minutes</text>
+<text transform="translate(894,99)" font-size="14" style="fill:#9fc9c5">Imagine</text>
+<text transform="translate(891,505)" font-size="14" style="fill:#8fb7d0">Desk</text>
+<text transform="translate(67,88)" font-size="14" style="fill:#d6a79f">Shade</text>
+<text transform="translate(391,47) rotate(-90)" font-size="14" style="fill:#e0b879">Hand</text>
+<text transform="translate(900,384)" font-size="14" style="fill:#d5d2c2">Find</text>
+<text transform="translate(297,710)" font-size="14" style="fill:#d88988">Put</text>
+<text transform="translate(960,233)" font-size="14" style="fill:#d88988">Feel</text>
+<text transform="translate(1164,205)" font-size="14" style="fill:#c49a6c">Easier</text>
+<text transform="translate(244,702)" font-size="14" style="fill:#c49a6c">Use</text>
+<text transform="translate(104,507) rotate(-90)" font-size="14" style="fill:#d6a79f">Millimetres</text>
+<text transform="translate(183,92)" font-size="14" style="fill:#e0b879">Assemble</text>
+<text transform="translate(1088,388)" font-size="14" style="fill:#e0b879">Opening</text>
+<text transform="translate(79,24)" font-size="14" style="fill:#a9b7a3">Place</text>
+<text transform="translate(1089,82)" font-size="14" style="fill:#d88988">Internal</text>
+<text transform="translate(702,451)" font-size="14" style="fill:#d5d2c2">Route</text>
+<text transform="translate(783,441)" font-size="14" style="fill:#d5d2c2">Belongs</text>
+<text transform="translate(532,434)" font-size="14" style="fill:#d6a79f">Arrangement</text>
+<text transform="translate(368,565)" font-size="14" style="fill:#9fc9c5">Preparing</text>
+<text transform="translate(230,194)" font-size="14" style="fill:#d88988">Holds</text>
+<text transform="translate(1150,347)" font-size="14" style="fill:#c49a6c">Insert</text>
+<text transform="translate(973,181)" font-size="14" style="fill:#b6c3dd">Reference</text>
+</svg>

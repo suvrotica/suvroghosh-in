@@ -500,6 +500,73 @@ flowchart LR
     Lifecycle["Still / visibility / observers / timer cleanup"] --> Shell
 ```
 
+### Maker / entrepreneur / explainer collection
+
+The three connected articles, `build-one-build-a-thousand`, `the-six-week-shadow`
+and `the-museum-of-almost`, use ordinary Markdown under `src/lib/posts` and the
+generic `/blog/visualizations/<slug>` route. Each owns an independent pure
+TypeScript domain under `visualizations/<slug>` and a viewport-lazy Svelte shell
+and runtime under `components/visualizations/<slug>`. Editorial prose remains in
+Markdown. The gallery reads lightweight registry entries, including Design and
+Entrepreneurship subjects; it does not import the three runtimes. These are local
+feature additions with no new endpoint, external runtime service, account,
+persistence layer, shared simulation engine or foundational renderer decision.
+No additional ADR is required.
+
+Build One derives preparation, per-unit work, workshop fixes, material waiting,
+ready-to-send day and separately labelled after-shipping problems from one
+validated workshop snapshot. Its original-setup comparison preserves quantity
+and stock assumptions while disabling the three decisions. The Six-Week Shadow
+derives start/finish times, elapsed working days, person-day effort and a stable
+controlling path from a validated dependency graph. Parallel effort is distinct
+from elapsed time; visual filters and replay do not remove tasks. The museum
+uses typed author-controlled specimens, evidence, interpretations, unknowns and
+explicit onward relationships. Its four initial records are fictional. Content
+status and reuse status are separate; URL selections cannot turn demonstration
+evidence into verified personal claims. Onward targets are terminal, validated
+records rather than an unbounded traversal graph.
+
+Each component mount owns its guided beat, choices and inspection. Presentation
+progress remains separate from calculated results or curated record content.
+The site's existing theme/motion preferences remain authoritative. Visibility,
+Still/reduced-motion policy and teardown govern owned presentation frames and
+observers/listeners. SSR shells expose representative SVG scenes and readable
+accounts, with `data-tts-exclude` keeping live controls out of article narration.
+Small allowlisted versioned URL selections, where offered, select model inputs
+or existing records, never results or SVG markup.
+
+Each feature's `generate-geometry.mjs` uses the existing MIT-licensed Anatomy kit
+under `scripts/lib/openhie-anatomy` at authoring/verification time and commits
+controlled `geometry.json` fragments. Browser code consumes those fragments;
+it does not import the kit or depend on a user's skill directory. The three
+generators check recorded true solids and deterministic output through
+`maker-collection:geometry`. `scripts/render-maker-collection-assets.mjs` captures
+the implemented local articles with service workers blocked, producing 1200 ×
+630 posters and source/pixel provenance. `maker-collection:assets:check` verifies
+the committed captures without starting a browser. Both checks belong to
+`features:check`; the feature-artifact workflow also tracks the three Markdown
+entries. The shared capture script reflects the repeated publication task;
+models, fixtures and UI state remain independent. See the feature records for
+[Build One](../visualizations/build-one-build-a-thousand.md),
+[the Shadow](../visualizations/the-six-week-shadow.md) and
+[the Museum](../visualizations/the-museum-of-almost.md), including model limits
+and the museum's verified-record authoring guide.
+
+```mermaid
+flowchart LR
+    Articles["Three ordinary Markdown articles / generic route"] --> Shells["Independent SSR shells / viewport-lazy Svelte runtimes"]
+    Shells --> Workshop["Validated workshop inputs / one work snapshot"]
+    Shells --> Schedule["Validated task DAG / schedule and controlling path"]
+    Shells --> Archive["Typed fictional specimens / evidence / terminal onward records"]
+    Workshop --> Views["Feature-owned SVG objects / HTML inspection and readouts"]
+    Schedule --> Views
+    Archive --> Views
+    Kit["Existing vendored Anatomy kit / authoring only"] --> Geometry["Per-feature generators / committed controlled geometry"]
+    Geometry --> Views
+    Views --> Posters["Local article capture / source and pixel provenance"]
+    Policy["Site theme / Still / reduced motion / visibility / teardown"] --> Shells
+```
+
 ## 7. Notes client/server/persistence lifecycle
 
 ```mermaid

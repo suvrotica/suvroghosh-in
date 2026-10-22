@@ -1,0 +1,23 @@
+{
+  "sources": {
+    "scripts/render-maker-collection-assets.mjs": "82c0b0d04ec0eed450fbdcbcbc5b7f31ba69b6e102c7c31ba7d0523bcf59270d",
+    "src/lib/components/visualizations/the-six-week-shadow/ConsequenceObject.svelte": "e0a08efee185cba87251691469ed9471aae2270e5973297b5e266f5e13972e2a",
+    "src/lib/components/visualizations/the-six-week-shadow/ShadowRuntime.svelte": "e6b5f4415ef6023e8794e03144010a7927259538859fa56b863d7167b19232d7",
+    "src/lib/components/visualizations/the-six-week-shadow/ShadowScene.svelte": "90fc10b5c1bf2bc48b99e4a1a1d6bcfd2587ab71885a82bebec42c631ca28f1d",
+    "src/lib/components/visualizations/the-six-week-shadow/SixWeekShadow.svelte": "0228a231cabb42fbc12f94a2f5183551c3b1718f99ad07497184f49b4399a739",
+    "src/lib/components/visualizations/the-six-week-shadow/shadow.css": "60a2944119d551c4de2faf8102055bbe7a6f111914d3d75cdf42472f959df3fc",
+    "src/lib/visualizations/the-six-week-shadow/generate-geometry.mjs": "3feadfcd7ac032d3550352f7c0334a2bd8930e7689c7b7098af6c8d43253513a",
+    "src/lib/visualizations/the-six-week-shadow/geometry.json": "39e0bb1a77c41e457290d4eedf23617a4bdfcbec1c6b18a6034c3db8463eb673",
+    "src/lib/visualizations/the-six-week-shadow/model.ts": "7369bea65a9e54e96534a5134b90d56a6326af3c4d0d6c77cf7a635d327331b2",
+    "src/lib/visualizations/the-six-week-shadow/url-state.ts": "6bf5af8d1ba3c631243b10bd1ded4e27536f0a4aeadfc183ec56237285d453d4"
+  },
+  "sourceHash": "cd5b0255d70ee45fe9a8808803720ebbcaf5b2a0b6be97777515cbcacbe38e78",
+  "articlePath": "/blog/visualizations/the-six-week-shadow",
+  "captureMode": "local-article-browser",
+  "state": "default-proposed-change",
+  "capturePath": "/blog/visualizations/the-six-week-shadow?shadow=1.1.b.10.5",
+  "contentStatus": "illustrative-model",
+  "width": 1200,
+  "height": 630,
+  "pixelSha256": "f02cfa2de9ebd434a3fa50602ec803d77be9e36e1811499d5f269bcd252e5e7c"
+}

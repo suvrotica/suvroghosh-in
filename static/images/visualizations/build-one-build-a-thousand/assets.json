@@ -1,0 +1,21 @@
+{
+  "sources": {
+    "scripts/render-maker-collection-assets.mjs": "82c0b0d04ec0eed450fbdcbcbc5b7f31ba69b6e102c7c31ba7d0523bcf59270d",
+    "src/lib/components/visualizations/build-one-build-a-thousand/BuildOne.svelte": "1bdc1747867fab18454dfb194072c80d033f8d28bf10a80207645ad85844f607",
+    "src/lib/components/visualizations/build-one-build-a-thousand/WorkshopRuntime.svelte": "123994edc1c0e81bb49636afe9b5c54de3f85ceac6c33da0a4f3a6073d3be52b",
+    "src/lib/components/visualizations/build-one-build-a-thousand/WorkshopScene.svelte": "81389156f810fac7f6561e0c0e86e186843f5362e8352a2980860f35c29c14cb",
+    "src/lib/components/visualizations/build-one-build-a-thousand/workshop.css": "680570d05c3d99fa396a0a877e6ca641adce0b556a1cef0999b818aefaa86d6d",
+    "src/lib/visualizations/build-one-build-a-thousand/generate-geometry.mjs": "1c5c51c28b88f5abf7e12d7660f05f4d9bf4d89dfe7e28b6b37989ba4a1d63e3",
+    "src/lib/visualizations/build-one-build-a-thousand/geometry.json": "acd48dd91911fc24b51d2cf40d5fad315c2b31806c0321767922356ce8abaa92",
+    "src/lib/visualizations/build-one-build-a-thousand/model.ts": "6bc68d17b54d42506d77862345e7aed256123a2ba3b005236f01e24193e0b577"
+  },
+  "sourceHash": "61b969c85617dce51988fe0fee3728e8bcde8c7db6efe71c751ea21822a151cb",
+  "articlePath": "/blog/visualizations/build-one-build-a-thousand",
+  "captureMode": "local-article-browser",
+  "state": "default",
+  "capturePath": "/blog/visualizations/build-one-build-a-thousand",
+  "contentStatus": "illustrative-model",
+  "width": 1200,
+  "height": 630,
+  "pixelSha256": "8ed81eaa0b2eb971e3fe4402e6bdf0da2470b9cacd8c071c11b34e030e6b6da0"
+}
