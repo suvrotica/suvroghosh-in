@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { posix } from 'node:path';
 import test from 'node:test';
@@ -61,6 +62,50 @@ function matchesPaths(file, patterns) {
 	}
 	return included;
 }
+
+function browserConfig(environment) {
+	const env = { ...process.env };
+	for (const name of ['CI', 'PLAYWRIGHT_CHANNEL']) delete env[name];
+	Object.assign(env, environment);
+	const result = spawnSync(
+		process.execPath,
+		[
+			'--input-type=module',
+			'-e',
+			`import config from './playwright.http-tcp.config.ts';
+			 console.log(JSON.stringify(config.use));`
+		],
+		{ cwd: new URL('..', import.meta.url), env, encoding: 'utf8', timeout: 10_000 }
+	);
+	assert.equal(result.status, 0, result.error?.message ?? result.stderr);
+	return JSON.parse(result.stdout);
+}
+
+test('HTTP/TCP browser selection matches the full Chromium installed by feature CI', () => {
+	const steps = workflow.jobs['feature-artifacts'].steps;
+	const install = steps.findIndex((step) => /playwright install/u.test(step.run ?? ''));
+	assert.ok(install >= 0, 'feature CI must install its browser');
+	assert.match(steps[install].run, /--no-shell\b/u);
+	assert.match(steps[install].run, /\bchromium\b/u);
+	for (const script of ['links:browser:test', 'http-tcp:browser:test']) {
+		assert.ok(
+			steps.findIndex((step) => step.run === `npm run ${script}`) > install,
+			`${script} must run after browser installation`
+		);
+	}
+	for (const environment of [{ CI: '1' }, { CI: '1', PLAYWRIGHT_CHANNEL: '  ' }]) {
+		const use = browserConfig(environment);
+		assert.equal(use.browserName, 'chromium');
+		assert.equal(use.headless, true);
+		assert.equal(use.channel, 'chromium', '--no-shell requires the full Chromium channel');
+	}
+	assert.equal(browserConfig({}).channel, 'chrome', 'local runs retain installed Chrome');
+	assert.equal(
+		browserConfig({ CI: '1', PLAYWRIGHT_CHANNEL: ' msedge ' }).channel,
+		'msedge',
+		'explicit channel overrides remain supported and trimmed'
+	);
+});
 
 test('routine builds retain publishing checks without reaching feature audits or notebook rendering', () => {
 	const events = npmExecution('build');

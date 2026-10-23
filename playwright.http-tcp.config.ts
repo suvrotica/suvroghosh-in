@@ -18,7 +18,8 @@ export default defineConfig({
 		baseURL,
 		serviceWorkers: 'block',
 		browserName: 'chromium',
-		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? undefined : 'chrome'),
+		// Feature CI installs full Chromium with --no-shell, not chromium-headless-shell.
+		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? 'chromium' : 'chrome'),
 		headless: true,
 		viewport: { width: 1440, height: 1000 },
 		trace: 'retain-on-failure',

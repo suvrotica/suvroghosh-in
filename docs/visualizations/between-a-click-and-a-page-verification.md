@@ -11,7 +11,7 @@ Production preview: `http://127.0.0.1:4296/blog/visualizations/between-a-click-a
 - `npm run check`: zero errors and zero warnings.
 - Focused ESLint over the three new Svelte components, model/tests, asset renderer
   and browser harness: clean.
-- `npm run build-workflow:test`: 15 tests. The routine publishing lane remains
+- `npm run build-workflow:test`: 16 tests. The routine publishing lane remains
   separate from the feature-artifact lane, and the new artifact checks participate
   in the latter.
 - `npm run http-tcp:geometry`: 145 true recorded solids; all audit checks zero,
@@ -69,6 +69,24 @@ needed regeneration. A checkout fixture with `core.autocrlf=true` confirmed that
 the Bias layout, BZ metadata and synthetic FHIR JSON remain byte-identical to Git.
 Strict JSON and binary checksum checks remain intact. The full lane subsequently
 passed, including the Barnum initial-asset budget and lazy comments boundary.
+
+## CI browser-launch repair
+
+Feature run `39972089507` passed its full build, model checks, rendered-link audit
+and navigation browser suite. Its HTTP/TCP suite then failed before opening any
+page: the runner had installed full Chromium with `--no-shell`, while this suite's
+unspecified CI channel made Playwright look for the absent headless-shell binary.
+
+The HTTP/TCP configuration now explicitly selects `chromium` in CI, matching the
+existing navigation configuration and installation command. Local runs retain
+installed Chrome, and a trimmed `PLAYWRIGHT_CHANNEL` override remains supported.
+A regression imports the actual configuration in isolated Node subprocesses and
+checks CI, whitespace, local and explicit-override cases against the workflow's
+installation and execution order. It failed on the original configuration and
+passes with the fix. All eight browser tests also passed locally under `CI=1`
+with full Chromium and no channel override (21.5 seconds). Focused ESLint and all
+16 publishing-workflow/media-generator tests passed. No application, model,
+article or publication-image source changed for this repair.
 
 ## Scope and architecture
 
