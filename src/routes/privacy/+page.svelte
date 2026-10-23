@@ -143,9 +143,10 @@
 			</p>
 			<p>
 				A new submission also queues an email alert to the site owner through Resend, the site's
-				existing email provider. The alert contains the article title, submission time and a link to
-				the private moderation board. Your display name and comment text are not included in that
-				email. Delivery and retry records are stored privately in Supabase.
+				existing email provider. The alert includes your display name and full comment so the owner
+				can review it, together with the article title, submission time and a link to the private
+				moderation board. This email does not publish your comment. Delivery and retry records are
+				stored privately in Supabase.
 			</p>
 			<p>
 				Hiding or rejecting a comment removes it from public view but retains the submission and
@@ -158,7 +159,7 @@
 				To request removal of a stored comment, use the <a href={resolve('/contact')}
 					>contact form</a
 				> with the article link, display name and approximate posting date. Hiding cannot recall text
-				already viewed or copied.
+				already viewed or copied, including notification emails already delivered to the owner.
 			</p>
 		</div>
 	</section>

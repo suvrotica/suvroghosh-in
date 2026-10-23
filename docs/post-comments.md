@@ -70,6 +70,12 @@ verifies the hosted SQL lifecycle, separately from application deployment and br
    [notification setup contract](../supabase/post-comments.md#email-notification-outbox) for
    permissions, scheduler activation and verification. This document does not establish that the
    third migration or hosted scheduler has been activated; record those release checks separately.
+   Content-bearing alerts additionally require
+   [202610230004_post_comments_notification_content.sql](../supabase/migrations/202610230004_post_comments_notification_content.sql).
+   Deploy the compatible application and updated privacy notice first, then apply this fourth
+   migration once its ledger entry is confirmed absent. Existing notification rows keep their
+   metadata-only payload and provider key; only future rows default to full-content alerts.
+   Follow the [content-upgrade order](../supabase/post-comments.md#notification-content-upgrade).
 5. Deploy the application with that configuration. Environment changes require a fresh deployment.
    Use the existing [owner sign-in](https://www.suvroghosh.in/notes/sign-in?returnTo=%2Fnotes%2Fstudio%2Fcomments), then open
    [comment moderation](https://www.suvroghosh.in/notes/studio/comments).
@@ -79,7 +85,7 @@ verifies the hosted SQL lifecycle, separately from application deployment and br
    non-owner sessions cannot access counts, exports or mutations. Remove test content through an
    authorised operator procedure if needed; the UI supplies moderation rather than deletion.
    For alerts, confirm a single new pending guest submission queues one email to the contact
-   inbox with the correct article context and moderation link, while a retry does not create
+   inbox with the correct display name, complete comment, article context and moderation link, while a retry does not create
    another outbox row. Verify the job and bearer endpoint separately; a provider acceptance is
    distinct from inbox delivery. Use isolated local tests for failure/retry fixtures.
 
@@ -116,17 +122,33 @@ without editing it to reuse its submission ID and avoid duplicates.
 Hiding and rejection retain the stored submission and history. There is no delete action or
 automatic retention policy for comments/history. Privacy removal requests can be sent through
 [the contact form](https://www.suvroghosh.in/contact), identifying the article, display name and approximate posting date for
-operator review. Hiding cannot retract previously viewed text or downloaded exports.
+operator review. Hiding cannot retract previously viewed text, downloaded exports or delivered
+notification emails.
 
 ## Email alerts
 
 Each newly saved pending reader comment or reply queues one private notification. The subject is
-**A new comment is waiting for approval | SuvroGhosh.IN**. The email contains the article title,
+**A new comment is waiting for approval | SuvroGhosh.IN**. After the content upgrade, new alerts
+contain the reader's display name and complete comment as plain text, the article title,
 submission timestamp and a link to
-[the moderation board](https://www.suvroghosh.in/notes/studio/comments). It contains no reader
-display name or comment text. Open the board with your existing owner login to read and moderate.
+[the moderation board](https://www.suvroghosh.in/notes/studio/comments). Names and comments retain
+their stored Unicode text and line breaks within the existing 60/3,000-character limits; the
+email does not use an excerpt. Reader text does not supply mail headers or HTML. Review the text
+in your inbox, then use your existing owner login on the board to approve, reject or reply.
+Email delivery does not publish a submission. The same contact-form inbox remains the recipient.
+The display name and full comment pass through the existing Resend provider and remain in the
+delivered email; later moderation cannot recall that copy.
 Author replies, changing a comment's status and comments saved before activation do not create
 new alerts.
+
+The fourth migration records a content version on each notification. Existing version-one jobs
+retain their original article/time/link-only body and `post-comment-approval/<comment_id>` key,
+including uncertain deliveries awaiting retry. Future version-two jobs include the stored name
+and full body and use `post-comment-approval-v2/<comment_id>`. The outbox does not duplicate the
+comment prose: the service-only claim joins the immutable original submission. This transition
+does not resend historical notifications or reset delivery state. Deploy the compatible
+application before applying migration 004; claims from migration 003 without a version are
+handled as version one.
 
 The submission handler awaits one bounded delivery attempt after saving the comment. If email
 delivery fails, the comment still succeeds and remains private in Pending. A Supabase job retries
@@ -153,9 +175,10 @@ Run `npm run comments:test` for validation, public/owner API boundaries, page ac
 deadlines. Run `npm run comments:sql:test` with the optional temporary PostgreSQL WASM runtime
 described in the [SQL verification instructions](../supabase/post-comments.md#local-sql-verification)
 to execute the actual migration, role grants, moderation flows, durable caps and persistence
-checks. Include the notification migration when verifying outbox creation, claim/acknowledgement
-leases, retries and moderation suppression. Application tests cover minimal email payloads,
-production gating, bounded provider failure and the private worker boundary without real email
+checks. Include both notification migrations when verifying outbox creation, content-version
+compatibility, claim/acknowledgement leases, retries and moderation suppression. Application tests
+cover complete plain-text name/body content, literal multiline Unicode input, fixed mail headers,
+legacy payload/key preservation, production gating, bounded provider failure and the private worker boundary without real email
 delivery. Without the SQL runtime, the SQL suite explicitly skips. For `npm run comments:browser:test`,
 install that pinned temporary runtime at `.codex-artifacts/comments-sql-runtime`, then run the
 command with local Chrome available (or set `PLAYWRIGHT_CHANNEL` to an installed browser). The

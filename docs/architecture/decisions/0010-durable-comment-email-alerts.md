@@ -4,6 +4,12 @@
 - Status: Accepted; hosted migration, scheduler, secret configuration and delivery require release verification
 - Supersedes: The in-app-only alert decision in [ADR 0009](0009-premoderated-post-comments.md)
 
+On 23 October 2026, [ADR 0011](0011-comment-email-review-content.md) supersedes only this record's
+minimal email-content decision. New version-two notifications include the display name and full
+comment at the owner's request; existing notification identities retain their original payload
+and provider key. The durable outbox, fixed recipient, production gate and retry design remain.
+The original reasoning below is preserved as historical context.
+
 ## Context
 
 The owner wants an email whenever a new reader comment or reply is waiting for approval,
