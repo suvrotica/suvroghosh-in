@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T17:06:44.803467+00:00",
+  "generatedAt": "2026-10-23T14:06:07.087269+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1539,6 +1539,29 @@
         "Independent",
         "Point",
         "Space"
+      ],
+      "wordCount": 130
+    },
+    "between-a-click-and-a-page": {
+      "generatedAt": "2026-10-23T14:06:06.422346+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/between-a-click-and-a-page.svg",
+      "source": "src/lib/posts/between-a-click-and-a-page.md",
+      "sourceHash": "c8dc93aa571a463edae427886201b9bf208cd3e1cb5f53b058452b4f1b49e72b",
+      "sourceModified": "2026-10-23T14:06:00.209475+00:00",
+      "topWords": [
+        "Server",
+        "Browser",
+        "Connection",
+        "TCP",
+        "Request",
+        "Answer",
+        "Every",
+        "Bytes",
+        "TLS",
+        "Work",
+        "Response",
+        "Address"
       ],
       "wordCount": 130
     },

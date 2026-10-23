@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/between-a-click-and-a-page/**/*.test.ts',
 			'src/lib/visualizations/memory-palace/**/*.test.ts',
 			'src/lib/visualizations/build-one-build-a-thousand/**/*.test.ts',
 			'src/lib/visualizations/the-six-week-shadow/**/*.test.ts',

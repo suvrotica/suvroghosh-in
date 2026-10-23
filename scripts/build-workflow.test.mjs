@@ -12,6 +12,8 @@ const criticalWorkflow = parse(
 	readFileSync(new URL('../.github/workflows/critical-boundaries.yml', import.meta.url), 'utf8')
 );
 const featureChecks = [
+	'http-tcp:geometry',
+	'http-tcp:assets:check',
 	'maker-collection:geometry',
 	'maker-collection:assets:check',
 	'shape-of-waiting:assets:check',
@@ -181,6 +183,7 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'src/routes/blog/[category]/[slug]/+page.svelte',
 		'src/lib/posts/the-profile-that-knows-almost-nothing-about-you.md',
 		'src/lib/posts/the-shape-of-waiting.md',
+		'src/lib/posts/between-a-click-and-a-page.md',
 		'src/lib/posts/build-one-build-a-thousand.md',
 		'src/lib/posts/the-six-week-shadow.md',
 		'src/lib/posts/the-museum-of-almost.md',

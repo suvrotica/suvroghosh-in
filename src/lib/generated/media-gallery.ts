@@ -4815,6 +4815,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1200
 		},
 		{
+			"name": "visualizations/between-a-click-and-a-page/social.png",
+			"src": "/images/visualizations/between-a-click-and-a-page/social.png",
+			"bytes": 204984,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/build-one-build-a-thousand/social.png",
 			"src": "/images/visualizations/build-one-build-a-thousand/social.png",
 			"bytes": 260070,

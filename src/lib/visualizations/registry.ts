@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'between-a-click-and-a-page': {
+		id: 'between-a-click-and-a-page',
+		title: 'Between a Click and a Page',
+		description:
+			'Follow one HTTPS request through DNS, TCP, TLS and a web server. Lose a piece, reuse a connection and see where the waiting goes.',
+		subjects: ['Computer Science'],
+		poster: '/images/visualizations/between-a-click-and-a-page/social.png',
+		posterAlt:
+			'A fitted isometric request bench with an address index, connection couplings, transport tracks, receiving trays and a server rack',
+		href: '/blog/visualizations/between-a-click-and-a-page',
+		status: 'published'
+	},
 	'a-place-for-every-idea': {
 		id: 'a-place-for-every-idea',
 		title: 'A Place for Every Idea: Build Your Own Memory Palace',

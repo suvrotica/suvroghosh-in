@@ -35,6 +35,7 @@ on:
       - 'src/lib/posts/the-strange-attractor-orchestra.md'
       - 'src/lib/posts/the-piano-that-forgives.md'
       - 'src/lib/posts/the-shape-of-waiting.md'
+      - 'src/lib/posts/between-a-click-and-a-page.md'
       - 'src/lib/posts/build-one-build-a-thousand.md'
       - 'src/lib/posts/the-six-week-shadow.md'
       - 'src/lib/posts/the-museum-of-almost.md'
@@ -82,6 +83,7 @@ on:
       - 'src/lib/posts/the-strange-attractor-orchestra.md'
       - 'src/lib/posts/the-piano-that-forgives.md'
       - 'src/lib/posts/the-shape-of-waiting.md'
+      - 'src/lib/posts/between-a-click-and-a-page.md'
       - 'src/lib/posts/build-one-build-a-thousand.md'
       - 'src/lib/posts/the-six-week-shadow.md'
       - 'src/lib/posts/the-museum-of-almost.md'
@@ -138,6 +140,9 @@ jobs:
       - name: Verify deterministic link-checking fixtures
         run: npm run links:test
 
+      - name: Verify HTTP and TCP teaching-model invariants
+        run: npm run http-tcp:test
+
       - name: Check feature artifacts, notebooks and the complete site
         run: npm run build:full
 
@@ -149,6 +154,9 @@ jobs:
 
       - name: Verify footer and shared navigation on desktop and mobile
         run: npm run links:browser:test
+
+      - name: Verify the HTTP and TCP instrument
+        run: npm run http-tcp:browser:test
 
       - name: Retain link-audit evidence
         if: always()

@@ -10913,6 +10913,21 @@
       "sourceHash": "ca2a5d659b1c4eca5fea6593b4b815643898c159a06c8d34ccf4e0f426e86043",
       "width": 1800
     },
+    "static/images/visualizations/between-a-click-and-a-page/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 204984,
+      "outputHash": "17ef670f0d72c94e871a95bd9ee62e4980f2bfc6c003ccbf1fef107f4b0afbbf",
+      "resized": false,
+      "sourceBytes": 204984,
+      "sourceHash": "17ef670f0d72c94e871a95bd9ee62e4980f2bfc6c003ccbf1fef107f4b0afbbf",
+      "width": 1200
+    },
     "static/images/visualizations/build-one-build-a-thousand/social.png": {
       "format": "PNG",
       "height": 630,

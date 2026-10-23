@@ -15339,6 +15339,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-22"
+		},
+		"src/lib/posts/between-a-click-and-a-page.md": {
+			"bodyHash": "8f526f95ce4ea128d5a70c3857f71ece46295363bc8f310cf09f53d360632eaa",
+			"hashVersion": 2,
+			"revisionHash": "84c6c12fedec97918c1ee33ba9355595df930870da552bfe5e4c40a3794a81a6",
+			"generatedTags": [
+				"Computer Science",
+				"Internet",
+				"HTTP",
+				"TCP",
+				"Web Servers",
+				"Networking",
+				"HTTPS",
+				"Interactive Explainers",
+				"DNS",
+				"TLS"
+			],
+			"pinnedTags": [
+				"Computer Science",
+				"Internet",
+				"HTTP",
+				"TCP",
+				"Web Servers",
+				"Networking",
+				"HTTPS",
+				"Interactive Explainers",
+				"DNS",
+				"TLS"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-23"
 		}
 	},
 	"maxTags": 10

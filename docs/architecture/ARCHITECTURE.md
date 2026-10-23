@@ -489,6 +489,50 @@ flowchart LR
     Lifecycle["Motion preference / observer teardown"] --> Ribbons
 ```
 
+### Between a Click and a Page: HTTP/TCP request bench
+
+The HTTP/TCP instrument is an ordinary Visualizations Markdown article at
+`/blog/visualizations/between-a-click-and-a-page`. Its SSR shell under
+`components/visualizations/between-a-click-and-a-page` renders a meaningful static
+buffering example and lazily loads the interactive runtime near the viewport.
+The gallery imports only the registry's lightweight summary and Computer Science
+subject mapping. No route exception, endpoint, external network request, socket,
+credential, persistence or global simulation engine is introduced.
+
+The pure TypeScript domain under `visualizations/between-a-click-and-a-page` owns
+bounded inputs, an immutable deterministic journey, cumulative byte-offset delivery,
+loss buffering and an exact timing receipt. Four response ranges describe a decoded
+illustrative response, not literal encrypted wire segments. Fresh browser cache,
+already-secured connection reuse and fresh HTTPS setup are distinct scenarios.
+One grouped follow-up exchange makes additional resources visible. The fixed
+loss-recovery rule and pedagogic page-progress gauge are documented simplifications.
+
+Each runtime mount owns input, scrub position, playback and selected mechanism.
+Animation samples model time independently of wall time and writes token transforms
+on scene refs; UI snapshots update at a bounded cadence. Still/reduced motion disables
+automatic progression, and offscreen/hidden state stops frames. Intersection and
+preference observers, media-query listeners, visibility listeners and frames are
+released at teardown. Committed SVG fragments come from the existing vendored
+MIT Anatomy kit through the feature's generator and measured geometry audit;
+reader input never supplies markup. The local asset renderer captures the implemented
+article and records source and pixel provenance. `http-tcp:geometry` and
+`http-tcp:assets:check` participate in `features:check`; the feature workflow tracks
+the article and runs its focused model and browser suites. See the
+[feature record](../visualizations/between-a-click-and-a-page.md). This extends the
+existing pure-model/lazy-UI pattern without a new foundational choice or ADR.
+
+```mermaid
+flowchart LR
+    Article["Markdown / generic blog route"] --> Shell["SSR static bench / lazy runtime"]
+    Controls["Per-mount conditions / timeline / inspection"] --> Journey["Pure deterministic timeline and byte ranges"]
+    Journey --> Snapshot["One sampled state / exact timing receipt"]
+    Snapshot --> Scene["Anatomy SVG / token transforms / receiving tray"]
+    Snapshot --> Reading["Step explanation / counters / model limits"]
+    Geometry["Vendored kit / recorded shapes / audit"] --> Scene
+    Scene --> Assets["Local article capture / source and pixel provenance"]
+    Lifecycle["Still / reduced motion / visibility / teardown"] --> Scene
+```
+
 ### The Patient Between the Systems: OpenHIE exchange instrument
 
 The OpenHIE teaching instrument uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/the-patient-between-the-systems`. The server-rendered shell under `components/visualizations/openhie` carries `data-tts-exclude` and lazily imports its interactive runtime as the figure approaches the viewport. Surrounding authored prose, sources and a captured publication image remain readable without JavaScript. The gallery imports lightweight summary and subject metadata only. The feature adds no route exception, backend, network integration, account, credential, uploaded patient data, persistence store or global state manager.

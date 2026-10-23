@@ -9,6 +9,11 @@
 		}
 	},
 	"scripts": {
+		"http-tcp:test": "vitest run src/lib/visualizations/between-a-click-and-a-page --maxWorkers=2",
+		"http-tcp:browser:test": "playwright test --config=playwright.http-tcp.config.ts",
+		"http-tcp:geometry": "node src/lib/visualizations/between-a-click-and-a-page/generate-geometry.mjs --check --audit",
+		"http-tcp:assets": "node scripts/render-http-tcp-assets.mjs",
+		"http-tcp:assets:check": "node scripts/render-http-tcp-assets.mjs --check",
 		"memory-palace:test": "vitest run src/lib/visualizations/memory-palace --maxWorkers=2",
 		"memory-palace:browser:test": "playwright test --config=playwright.memory-palace.config.ts",
 		"memory-palace:geometry": "node src/lib/visualizations/memory-palace/generate-geometry.mjs --check",
@@ -192,7 +197,7 @@
 		"notebooks:prepare": "python scripts/prebuild_notebooks.py",
 		"notebooks:test": "python -m unittest scripts/test_prebuild_notebooks.py",
 		"content:generate": "npm run tags:generate && npm run music:generate && npm run images:optimize && npm run sketches:generate && npm run gallery:generate && python scripts/prebuild_wordclouds.py",
-		"features:check": "npm run memory-palace:geometry && npm run memory-palace:assets:check && npm run maker-collection:geometry && npm run maker-collection:assets:check && npm run openhie:assets:check && npm run shape-of-waiting:assets:check && npm run missing-data:assets:check && npm run probabilistic-piano:assets:check && npm run barnum-lab:surface-bank && npm run barnum-lab:editorial-review && npm run barnum-lab:surface-audit:check && npm run bias-archipelago:data:validate && npm run bias-archipelago:sources:check && npm run bias-archipelago:layout:check && npm run bz:assets:check && npm run bz:checkpoint-posters:check && npm run bz:manifest:check && npm run prior-authorization:assets:check && npm run strange-attractor-orchestra:assets:check && npm run mrinmoyee:assets:check && npm run scale-elevator:assets:check",
+		"features:check": "npm run http-tcp:geometry && npm run http-tcp:assets:check && npm run memory-palace:geometry && npm run memory-palace:assets:check && npm run maker-collection:geometry && npm run maker-collection:assets:check && npm run openhie:assets:check && npm run shape-of-waiting:assets:check && npm run missing-data:assets:check && npm run probabilistic-piano:assets:check && npm run barnum-lab:surface-bank && npm run barnum-lab:editorial-review && npm run barnum-lab:surface-audit:check && npm run bias-archipelago:data:validate && npm run bias-archipelago:sources:check && npm run bias-archipelago:layout:check && npm run bz:assets:check && npm run bz:checkpoint-posters:check && npm run bz:manifest:check && npm run prior-authorization:assets:check && npm run strange-attractor-orchestra:assets:check && npm run mrinmoyee:assets:check && npm run scale-elevator:assets:check",
 		"prebuild": "npm run content:generate && npm run validate:content && npm run validate:resources && npm run validate:contrast && npm run validate:seo && npm run validate:media && npm run search:index && npm run validate:links",
 		"build:site": "vite build",
 		"build": "npm run build:site && npm run validate:discoverability",

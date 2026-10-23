@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Between a Click and a Page" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Between a Click and a Page</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(619,520) rotate(-90)" font-size="118" style="fill:#c49a6c">Server</text>
+<text transform="translate(667,506)" font-size="114" style="fill:#d6a79f">Browser</text>
+<text transform="translate(436,97)" font-size="102" style="fill:#8fb7d0">Connection</text>
+<text transform="translate(714,408) rotate(-90)" font-size="93" style="fill:#d5d2c2">TCP</text>
+<text transform="translate(461,531) rotate(-90)" font-size="84" style="fill:#d9c89e">Request</text>
+<text transform="translate(777,614)" font-size="79" style="fill:#8fb7d0">Answer</text>
+<text transform="translate(893,270)" font-size="79" style="fill:#d5d2c2">Every</text>
+<text transform="translate(171,456)" font-size="79" style="fill:#d5d2c2">Bytes</text>
+<text transform="translate(1118,520)" font-size="79" style="fill:#c49a6c">TLS</text>
+<text transform="translate(176,612)" font-size="74" style="fill:#d88988">Work</text>
+<text transform="translate(202,693)" font-size="74" style="fill:#a9b7a3">Response</text>
+<text transform="translate(715,161)" font-size="74" style="fill:#c7d7b5">Address</text>
+<text transform="translate(598,678)" font-size="74" style="fill:#d5d2c2">Specification</text>
+<text transform="translate(91,499) rotate(-90)" font-size="68" style="fill:#d5d2c2">Information</text>
+<text transform="translate(966,387)" font-size="68" style="fill:#a9b7a3">Network</text>
+<text transform="translate(169,153)" font-size="68" style="fill:#d5d2c2">Different</text>
+<text transform="translate(446,608)" font-size="62" style="fill:#d5d2c2">Article</text>
+<text transform="translate(103,377)" font-size="62" style="fill:#d5d2c2">Use</text>
+<text transform="translate(96,530)" font-size="62" style="fill:#d5d2c2">Journey</text>
+<text transform="translate(12,699)" font-size="62" style="fill:#d6a79f">Page</text>
+<text transform="translate(100,88)" font-size="62" style="fill:#d5d2c2">DNS</text>
+<text transform="translate(1192,331) rotate(-90)" font-size="62" style="fill:#c49a6c">Protocol</text>
+<text transform="translate(1255,321) rotate(-90)" font-size="62" style="fill:#e0b879">Exchange</text>
+<text transform="translate(206,304)" font-size="62" style="fill:#a9b7a3">Fresh</text>
+<text transform="translate(728,346)" font-size="62" style="fill:#c7d7b5">Socket</text>
+<text transform="translate(661,229)" font-size="55" style="fill:#d5d2c2">Several</text>
+<text transform="translate(154,233)" font-size="55" style="fill:#b6c3dd">Next</text>
+<text transform="translate(1066,598)" font-size="55" style="fill:#d9c89e">Needs</text>
+<text transform="translate(530,434) rotate(-90)" font-size="55" style="fill:#8fb7d0">Small</text>
+<text transform="translate(464,554)" font-size="55" style="fill:#d9c89e">Internet</text>
+<text transform="translate(999,437)" font-size="54" style="fill:#d9c89e">Networks</text>
+<text transform="translate(27,644)" font-size="54" style="fill:#e0b879">Web</text>
+<text transform="translate(150,288) rotate(-90)" font-size="54" style="fill:#d6a79f">Rather</text>
+<text transform="translate(272,78)" font-size="54" style="fill:#a9b7a3">Means</text>
+<text transform="translate(732,427)" font-size="49" style="fill:#e0b879">Receiving</text>
+<text transform="translate(808,554)" font-size="49" style="fill:#8fb7d0">Software</text>
+<text transform="translate(787,715)" font-size="44" style="fill:#d5d2c2">Communication</text>
+<text transform="translate(1140,188) rotate(-90)" font-size="44" style="fill:#d9c89e">Name</text>
+<text transform="translate(884,198)" font-size="44" style="fill:#c49a6c">Supplies</text>
+<text transform="translate(301,373)" font-size="44" style="fill:#d6a79f">Asks</text>
+<text transform="translate(1269,714) rotate(-90)" font-size="44" style="fill:#a9b7a3">Content</text>
+<text transform="translate(764,269)" font-size="44" style="fill:#8fb7d0">Setup</text>
+<text transform="translate(311,647)" font-size="44" style="fill:#c7d7b5">Gets</text>
+<text transform="translate(8,598)" font-size="44" style="fill:#d9c89e">Client</text>
+<text transform="translate(504,36)" font-size="42" style="fill:#c7d7b5">Connections</text>
+<text transform="translate(295,247)" font-size="42" style="fill:#d9c89e">Four</text>
+<text transform="translate(1073,36)" font-size="42" style="fill:#c7d7b5">Time</text>
+<text transform="translate(954,322)" font-size="42" style="fill:#9fc9c5">Cache</text>
+<text transform="translate(811,383)" font-size="36" style="fill:#a9b7a3">Choose</text>
+<text transform="translate(600,133)" font-size="36" style="fill:#d6a79f">Piece</text>
+<text transform="translate(36,366) rotate(-90)" font-size="36" style="fill:#9fc9c5">Missing</text>
+<text transform="translate(1069,168) rotate(-90)" font-size="36" style="fill:#9fc9c5">Opening</text>
+<text transform="translate(31,556) rotate(-90)" font-size="36" style="fill:#9fc9c5">Gives</text>
+<text transform="translate(220,335)" font-size="36" style="fill:#d5d2c2">Bench</text>
+<text transform="translate(164,34)" font-size="36" style="fill:#c49a6c">HTTPS</text>
+<text transform="translate(233,183)" font-size="36" style="fill:#c49a6c">Used</text>
+<text transform="translate(417,636)" font-size="34" style="fill:#8fb7d0">Transport</text>
+<text transform="translate(7,30)" font-size="32" style="fill:#d5d2c2">Security</text>
+<text transform="translate(156,475) rotate(-90)" font-size="32" style="fill:#d88988">Tray</text>
+<text transform="translate(288,26)" font-size="31" style="fill:#d9c89e">Computer</text>
+<text transform="translate(382,559)" font-size="31" style="fill:#a9b7a3">Try</text>
+<text transform="translate(1042,553)" font-size="31" style="fill:#9fc9c5">Records</text>
+<text transform="translate(907,29)" font-size="31" style="fill:#9fc9c5">Already</text>
+<text transform="translate(33,209) rotate(-90)" font-size="31" style="fill:#d9c89e">Usable</text>
+<text transform="translate(270,490)" font-size="31" style="fill:#d5d2c2">Cached</text>
+<text transform="translate(387,177)" font-size="27" style="fill:#8fb7d0">Represents</text>
+<text transform="translate(708,190)" font-size="27" style="fill:#c49a6c">Addresses</text>
+<text transform="translate(1116,629)" font-size="27" style="fill:#d9c89e">Towards</text>
+<text transform="translate(1133,704)" font-size="27" style="fill:#9fc9c5">Across</text>
+<text transform="translate(662,704)" font-size="27" style="fill:#d5d2c2">Example</text>
+<text transform="translate(655,519) rotate(-90)" font-size="27" style="fill:#d6a79f">Shared</text>
+<text transform="translate(39,554)" font-size="26" style="fill:#b6c3dd">Starting</text>
+<text transform="translate(339,103)" font-size="26" style="fill:#9fc9c5">Uses</text>
+<text transform="translate(73,315)" font-size="26" style="fill:#d5d2c2">Reused</text>
+<text transform="translate(1006,221)" font-size="26" style="fill:#d5d2c2">Suitable</text>
+<text transform="translate(722,294)" font-size="26" style="fill:#d9c89e">Resource</text>
+<text transform="translate(642,391) rotate(-90)" font-size="26" style="fill:#9fc9c5">Interface</text>
+<text transform="translate(252,397)" font-size="26" style="fill:#d88988">Handler</text>
+<text transform="translate(753,632) rotate(-90)" font-size="26" style="fill:#b6c3dd">Parsing</text>
+<text transform="translate(474,248)" font-size="26" style="fill:#c7d7b5">Need</text>
+<text transform="translate(466,209)" font-size="26" style="fill:#d9c89e">Watch</text>
+<text transform="translate(364,596)" font-size="26" style="fill:#d9c89e">Model</text>
+<text transform="translate(723,375)" font-size="26" style="fill:#e0b879">Tiles</text>
+<text transform="translate(636,155)" font-size="26" style="fill:#8fb7d0">Byte</text>
+<text transform="translate(190,554)" font-size="26" style="fill:#b6c3dd">Stream</text>
+<text transform="translate(285,206)" font-size="24" style="fill:#e0b879">Messages</text>
+<text transform="translate(1214,193) rotate(-90)" font-size="24" style="fill:#d5d2c2">Later</text>
+<text transform="translate(116,481) rotate(-90)" font-size="24" style="fill:#c49a6c">Waiting</text>
+<text transform="translate(321,177)" font-size="24" style="fill:#b6c3dd">RTT</text>
+<text transform="translate(138,635)" font-size="24" style="fill:#c7d7b5">Milliseconds</text>
+<text transform="translate(206,336) rotate(-90)" font-size="24" style="fill:#c7d7b5">Becomes</text>
+<text transform="translate(491,714)" font-size="24" style="fill:#a9b7a3">Streams</text>
+<text transform="translate(664,411)" font-size="20" style="fill:#b6c3dd">Click</text>
+<text transform="translate(810,22)" font-size="20" style="fill:#9fc9c5">Little</text>
+<text transform="translate(213,714)" font-size="20" style="fill:#d5d2c2">Somewhere</text>
+<text transform="translate(1105,157) rotate(-90)" font-size="20" style="fill:#d9c89e">Paragraph</text>
+<text transform="translate(1160,454)" font-size="20" style="fill:#d9c89e">Terms</text>
+<text transform="translate(215,356)" font-size="20" style="fill:#d5d2c2">Inspect</text>
+<text transform="translate(1268,368) rotate(-90)" font-size="20" style="fill:#d88988">Lose</text>
+<text transform="translate(1041,526)" font-size="20" style="fill:#c7d7b5">October</text>
+<text transform="translate(364,711)" font-size="18" style="fill:#9fc9c5">Arrangement</text>
+<text transform="translate(404,338) rotate(-90)" font-size="18" style="fill:#c49a6c">Linked</text>
+<text transform="translate(1176,18)" font-size="18" style="fill:#d6a79f">Requested</text>
+<text transform="translate(183,175)" font-size="18" style="fill:#d6a79f">Many</text>
+<text transform="translate(36,512)" font-size="18" style="fill:#d9c89e">Calling</text>
+<text transform="translate(481,380) rotate(-90)" font-size="18" style="fill:#d5d2c2">Arrived</text>
+<text transform="translate(707,252)" font-size="18" style="fill:#d88988">Index</text>
+<text transform="translate(782,567) rotate(-90)" font-size="18" style="fill:#d5d2c2">Couplings</text>
+<text transform="translate(1170,655)" font-size="18" style="fill:#c7d7b5">Tracks</text>
+<text transform="translate(894,287)" font-size="18" style="fill:#a9b7a3">Machine</text>
+<text transform="translate(624,184)" font-size="18" style="fill:#8fb7d0">Data</text>
+<text transform="translate(466,450)" font-size="18" style="fill:#c49a6c">Reaching</text>
+<text transform="translate(213,253)" font-size="18" style="fill:#d9c89e">Service</text>
+<text transform="translate(1102,343)" font-size="18" style="fill:#d88988">Associated</text>
+<text transform="translate(173,395)" font-size="18" style="fill:#e0b879">Names</text>
+<text transform="translate(643,627)" font-size="18" style="fill:#d5d2c2">Servers</text>
+<text transform="translate(573,695)" font-size="18" style="fill:#a9b7a3">Drawer</text>
+<text transform="translate(913,115)" font-size="18" style="fill:#d6a79f">Visitors</text>
+<text transform="translate(373,572) rotate(-90)" font-size="18" style="fill:#d6a79f">Serving</text>
+<text transform="translate(129,653)" font-size="18" style="fill:#8fb7d0">Packet</text>
+<text transform="translate(914,523)" font-size="18" style="fill:#d88988">Routers</text>
+<text transform="translate(910,632)" font-size="18" style="fill:#d5d2c2">Forward</text>
+<text transform="translate(16,48)" font-size="18" style="fill:#e0b879">Packets</text>
+<text transform="translate(232,96)" font-size="18" style="fill:#a9b7a3">Discover</text>
+<text transform="translate(1006,338)" font-size="18" style="fill:#a9b7a3">Turn</text>
+<text transform="translate(473,501)" font-size="18" style="fill:#d9c89e">Route</text>
+<text transform="translate(835,77)" font-size="18" style="fill:#d6a79f">Jobs</text>
+<text transform="translate(140,484)" font-size="18" style="fill:#8fb7d0">State</text>
+<text transform="translate(1271,511) rotate(-90)" font-size="18" style="fill:#d9c89e">Including</text>
+<text transform="translate(1211,117) rotate(-90)" font-size="18" style="fill:#a9b7a3">Sequence</text>
+</svg>

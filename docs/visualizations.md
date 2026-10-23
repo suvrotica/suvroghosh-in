@@ -1,5 +1,11 @@
 # Visualizations authoring and architecture
 
+The HTTP/TCP request bench at `/blog/visualizations/between-a-click-and-a-page`
+uses the established pure-model and lazy Svelte/SVG pattern. Its
+[feature record](visualizations/between-a-click-and-a-page.md) documents the
+Anatomy mechanism, exact timing account, accessible reading fallback, lifecycle,
+protocol simplifications and focused verification commands.
+
 ## Repository fit
 
 Visualizations extends the site's existing SvelteKit 5 and mdsvex publishing path. A visualization article remains an ordinary Markdown file in `src/lib/posts`, so the existing metadata loader supplies its category archive, search facets, Pagefind record, RSS item, sitemap entry, article SEO, topic links, post navigation, and related-post candidates. The category gallery is a specialised view of the normal `/blog/[category]` route rather than a parallel content system.
