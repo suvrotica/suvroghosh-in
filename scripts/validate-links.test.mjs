@@ -243,6 +243,55 @@ test('resolves static route-relative links and excludes source comments, test fi
 	assert.equal(result.status, 0, result.output);
 });
 
+test('ignores JSON command action strings in TypeScript, Svelte scripts and inline handlers', (t) => {
+	const result = validateFixture(t, {
+		files: {
+			'src/routes/commands/+page.server.ts':
+				'export const payloads = [{action: "moderate"}, {"action": `read`}, {action: "reply"}];',
+			'src/routes/commands/+page.svelte':
+				'<script lang="ts">const payload = {action: "moderate"}; const command = {"action": `read`}; const send = (data: unknown) => data;</script><button onclick={() => send({action: "reply"})}>Reply</button>',
+			'src/lib/data/commands.json':
+				'{"commands":[{"action":"moderate"},{"action":"read"},{"action":"reply"}]}'
+		}
+	});
+	assert.equal(result.status, 0, result.output);
+	assert.match(result.output, /1 references/);
+});
+
+test('still checks path-like action properties and all literal DOM form action destinations', (t) => {
+	const result = validateFixture(t, {
+		body: '<form action="missing-markdown-submit"><button>Send</button></form>',
+		files: {
+			'src/routes/commands/+page.server.ts':
+				'export const destinations = [{action: "/missing-action-root"}, {action: "./missing-action-relative"}, {action: "../missing-action-parent"}, {action: "https://suvroghosh.in/missing-action-absolute"}, {action: "//suvroghosh.in/missing-action-protocol-relative"}, {href: "missing-href"}, {path: "missing-path"}, {url: "missing-url"}];',
+			'src/routes/commands/+page.svelte':
+				'<script>const destination = {action: "/missing-svelte-action"}; const query = {action: "?view=pending"};</script><button onclick={() => ({action: "./missing-inline-action"})}>Submit</button><form action="missing-form-submit"><button>Send</button></form><form action={"missing-form-expression"}><button>Send</button></form>'
+		}
+	});
+	assert.equal(result.status, 1, result.output);
+	for (const target of [
+		'/missing-action-root',
+		'./missing-action-relative',
+		'../missing-action-parent',
+		'https://suvroghosh.in/missing-action-absolute',
+		'//suvroghosh.in/missing-action-protocol-relative',
+		'missing-href',
+		'missing-path',
+		'missing-url',
+		'/missing-svelte-action',
+		'./missing-inline-action',
+		'missing-form-submit',
+		'missing-form-expression',
+		'missing-markdown-submit'
+	]) {
+		assert.ok(
+			result.output.includes(`internal link ${target} has no matching route`),
+			result.output
+		);
+	}
+	assert.doesNotMatch(result.output, /internal link \?view=pending/);
+});
+
 test('does not accept a static directory as a downloadable file', (t) => {
 	const result = validateFixture(t, {
 		target: '/files',
