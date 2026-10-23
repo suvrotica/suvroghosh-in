@@ -43,7 +43,8 @@
 		// An uncertain response can be retried with the same key without creating a duplicate.
 		submissionId ??= crypto.randomUUID();
 		controller = new AbortController();
-		const timeout = setTimeout(() => controller?.abort(), 15_000);
+		// Allow the bounded save and immediate notification attempt to finish before reporting failure.
+		const timeout = setTimeout(() => controller?.abort(), 30_000);
 		try {
 			const response = await fetch('/api/comments', {
 				method: 'POST',
