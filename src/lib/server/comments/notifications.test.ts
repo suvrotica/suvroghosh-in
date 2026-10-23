@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const state = vi.hoisted(() => ({
@@ -48,6 +49,8 @@ const actionJob = {
 };
 const approveUrl = `https://www.suvroghosh.in/api/comments/moderate?action=approve&token=${actionJob.approve_token}`;
 const rejectUrl = `https://www.suvroghosh.in/api/comments/moderate?action=reject&token=${actionJob.reject_token}`;
+const replyJob = { ...actionJob, content_version: 4, reply_token: 'c3'.repeat(32) };
+const replyUrl = `https://www.suvroghosh.in/api/comments/moderate?action=reply&token=${replyJob.reply_token}`;
 
 beforeEach(() => {
 	vi.clearAllMocks();
@@ -385,7 +388,9 @@ describe('private email moderation action content', () => {
 				headers: { 'X-Reader': 'attacker' },
 				html: '<script>attacker</script>',
 				approve_url: 'https://attacker.example/approve',
-				reject_url: 'https://attacker.example/reject'
+				reject_url: 'https://attacker.example/reject',
+				reply_token: replyJob.reply_token,
+				reply_url: 'https://attacker.example/reply'
 			}
 		]);
 		const { dispatchCommentNotifications, COMMENT_MODERATION_URL } =
@@ -448,6 +453,10 @@ The comment stays hidden until you approve it. The moderation board uses your ex
 		expect(email.html).toContain('No admin sign-in is needed.');
 		expect(email.html).toContain('2026-10-30T12:00:00.000Z');
 		expect(email.html).not.toMatch(/<form|<script|<img|<iframe/i);
+		// Captured from the shipped v3 renderer before adding v4: preserve every HTML byte.
+		expect(createHash('sha256').update(email.html).digest('hex')).toBe(
+			'c00a34d1104a9fa7009fb20ea96442180a322d72f5fe7b79bf1a454e2d0c293d'
+		);
 		expect(String(request?.body)).not.toContain('attacker');
 		expect(new Headers(request?.headers).get('idempotency-key')).toBe(
 			`post-comment-approval-v3/${job.comment_id}`
@@ -565,5 +574,169 @@ The comment stays hidden until you approve it. The moderation board uses your ex
 			'PRIVATE_DATABASE_DETAIL'
 		])
 			expect(logs).not.toContain(value);
+	});
+});
+
+describe('private email author-reply action content', () => {
+	it('adds a distinct fixed Reply button and text URL with explicit pending-approval, expiry and forwarding copy', async () => {
+		state.rpc.mockResolvedValueOnce([
+			{
+				...replyJob,
+				from: 'attacker@example.com',
+				to: 'attacker@example.com',
+				subject: 'Attacker subject',
+				reply_url: 'https://attacker.example/reply',
+				headers: { 'X-Reader': 'attacker' },
+				html: '<script>attacker</script>'
+			}
+		]);
+		const { dispatchCommentNotifications, COMMENT_MODERATION_URL } =
+			await import('./notifications');
+		expect((await dispatchCommentNotifications()).sent).toBe(1);
+		const request = vi.mocked(fetch).mock.calls[0][1];
+		const email = JSON.parse(String(request?.body));
+		expect(email).toMatchObject({
+			from: 'SuvroGhosh.IN Comments <notifications@example.com>',
+			to: 'owner@example.com',
+			subject: 'A new comment is waiting for approval | SuvroGhosh.IN'
+		});
+		expect(email.text).toContain(
+			`Commenter: ${replyJob.display_name}\n\nFull comment:\n${replyJob.body}\n`
+		);
+		expect(email.text).toContain(`Approve comment:\n${approveUrl}\n`);
+		expect(email.text).toContain(`Reject comment:\n${rejectUrl}\n`);
+		expect(email.text).toContain(`Reply to comment:\n${replyUrl}\n`);
+		const links = Array.from(String(email.html).matchAll(/href="([^"]+)"/g), (match) =>
+			match[1].replaceAll('&amp;', '&')
+		);
+		expect(links).toEqual([approveUrl, rejectUrl, replyUrl, COMMENT_MODERATION_URL]);
+		expect(new URL(links[2]).origin).toBe('https://www.suvroghosh.in');
+		expect(new URL(links[2]).pathname).toBe('/api/comments/moderate');
+		expect([...new URL(links[2]).searchParams]).toEqual([
+			['action', 'reply'],
+			['token', replyJob.reply_token]
+		]);
+		expect(email.html).toMatch(/>Reply<\/a>/);
+		for (const part of [
+			'No admin sign-in is needed.',
+			'Approve and reply for a pending comment',
+			'Publish reply after approving it from this email',
+			'Opening a link does not change the comment.',
+			'2026-10-30T12:00:00.000Z',
+			'Reply can publish one author reply',
+			'remains available after using Approve in this email',
+			'Reject or an explicit status change in the moderation board closes Reply',
+			'Keep this email private: anyone with a link can moderate or reply'
+		]) {
+			expect(email.text).toContain(part);
+			expect(email.html).toContain(part);
+		}
+		expect(email.text).not.toContain(
+			'Once the comment has been handled, neither link can be used.'
+		);
+		expect(email.html).not.toMatch(/<form|<script|<img|<iframe/i);
+		expect(String(request?.body)).not.toContain('attacker');
+		expect(new Headers(request?.headers).get('idempotency-key')).toBe(
+			`post-comment-approval-v4/${job.comment_id}`
+		);
+		expect(JSON.stringify([...new Headers(request?.headers)])).not.toContain(replyJob.reply_token);
+	});
+	it('escapes the full maximum-length Unicode reader content without changing paragraphs in a v4 email', async () => {
+		const name = '<&"\' বাংলা ' + '😀'.repeat(60 - Array.from('<&"\' বাংলা ').length);
+		const prefix = '<script>literal</script> & "reader"\n\n  ';
+		const suffix = '\n\nFinal বাংলা 😀';
+		const body = prefix + '😀'.repeat(3000 - Array.from(prefix + suffix).length) + suffix;
+		state.rpc.mockResolvedValueOnce([{ ...replyJob, display_name: name, body }]);
+		state.post.mockReturnValue({ title: 'The <title> & "article"' });
+		const { dispatchCommentNotifications } = await import('./notifications');
+		expect((await dispatchCommentNotifications()).sent).toBe(1);
+		const email = JSON.parse(String(vi.mocked(fetch).mock.calls[0][1]?.body));
+		expect(email.text).toContain(`Commenter: ${name}\n\nFull comment:\n${body}\n`);
+		expect(email.html).toContain('The &lt;title&gt; &amp; &quot;article&quot;');
+		expect(email.html).toContain('&lt;&amp;&quot;&#39; বাংলা ');
+		expect(email.html).toContain(
+			'&lt;script&gt;literal&lt;/script&gt; &amp; &quot;reader&quot;\n\n  '
+		);
+		expect(email.html).toContain(suffix);
+		expect(email.html).toContain('white-space:pre-wrap');
+		expect(email.html).not.toContain('<script>');
+		expect(Array.from(body)).toHaveLength(3000);
+		expect(Array.from(name)).toHaveLength(60);
+	});
+	it.each([
+		{ reply_token: undefined },
+		{ reply_token: null },
+		{ reply_token: '' },
+		{ reply_token: 'C3'.repeat(32) },
+		{ reply_token: 'c'.repeat(63) },
+		{ reply_token: 'c'.repeat(65) },
+		{ reply_token: 'g3'.repeat(32) },
+		{ reply_token: replyJob.approve_token },
+		{ reply_token: replyJob.reject_token },
+		{ approve_token: undefined },
+		{ reject_token: undefined },
+		{ reject_token: replyJob.approve_token },
+		{ action_expires_at: undefined },
+		{ action_expires_at: 'next week' },
+		{ display_name: null },
+		{ body: null },
+		{ content_version: 5 }
+	])(
+		'fails closed for malformed v4 reply claims without logging capabilities: %j',
+		async (invalid) => {
+			state.rpc.mockResolvedValueOnce([{ ...replyJob, ...invalid }]);
+			const { dispatchCommentNotifications } = await import('./notifications');
+			expect(await dispatchCommentNotifications()).toMatchObject({
+				attempted: 0,
+				sent: 0,
+				failed: 1
+			});
+			expect(fetch).not.toHaveBeenCalled();
+			const logs = JSON.stringify(vi.mocked(console.error).mock.calls);
+			for (const secret of [
+				replyJob.approve_token,
+				replyJob.reject_token,
+				replyJob.reply_token,
+				replyJob.body
+			])
+				expect(logs).not.toContain(secret);
+		}
+	);
+	it('retains the exact v4 payload, all three capabilities, fixed expiry and provider key after an uncertain delivery', async () => {
+		vi.mocked(fetch).mockImplementation(
+			async () => new Response(JSON.stringify({ id: 'email-123' }))
+		);
+		state.rpc.mockImplementation((_client, name) =>
+			name === 'claim_post_comment_notifications'
+				? [replyJob]
+				: Promise.reject(new Error('PRIVATE_DATABASE_DETAIL'))
+		);
+		const { dispatchCommentNotifications } = await import('./notifications');
+		expect((await dispatchCommentNotifications()).failed).toBe(1);
+		vi.useFakeTimers();
+		vi.setSystemTime(new Date('2026-10-26T16:00:00Z'));
+		state.rpc.mockImplementation((_client, name) =>
+			name === 'claim_post_comment_notifications' ? [replyJob] : true
+		);
+		expect((await dispatchCommentNotifications()).sent).toBe(1);
+		const requests = vi.mocked(fetch).mock.calls.map(([, request]) => request);
+		expect(requests).toHaveLength(2);
+		expect(requests[0]?.body).toBe(requests[1]?.body);
+		for (const request of requests) {
+			expect(new Headers(request?.headers).get('idempotency-key')).toBe(
+				`post-comment-approval-v4/${job.comment_id}`
+			);
+			const email = JSON.parse(String(request?.body));
+			for (const url of [approveUrl, rejectUrl, replyUrl]) expect(email.text).toContain(url);
+			expect(email.text).toContain('2026-10-30T12:00:00.000Z');
+		}
+		const logs = JSON.stringify(vi.mocked(console.error).mock.calls);
+		for (const secret of [
+			replyJob.approve_token,
+			replyJob.reject_token,
+			replyJob.reply_token,
+			'PRIVATE_DATABASE_DETAIL'
+		])
+			expect(logs).not.toContain(secret);
 	});
 });

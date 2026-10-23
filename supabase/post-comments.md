@@ -30,12 +30,19 @@ dispatcher, standalone confirmation route and privacy notice first; see
 [Email action upgrade](#email-action-upgrade). Existing versions keep their exact payloads and
 keys. Only future queued guest comments gain a private expiring action pair.
 
+The separate Reply capability uses
+`migrations/202610230006_post_comments_email_reply.sql`. Deploy version-four application
+support first; see [Email reply upgrade](#email-reply-upgrade). It adds only future email
+reply authority and preserves all existing notification versions and provider identities.
+
 The application also checks the configured owner before serving its admin routes.
 Every owner RPC independently requires a non-null `auth.uid()` present in
 `public.note_owners`. Owner calls use the authenticated session client; passing the
 service-role key cannot substitute for an owner session.
 The separate email-action path uses a scoped bearer capability and service-only SQL rather
 than an owner session; it authorises only one pending guest comment's approve/reject decision.
+Version-four Reply is a separate capability for one author response under that source's
+approved root; it never provides general owner-session or arbitrary reply authority.
 
 No hosted migration is performed by the local tests. Deployment requires applying
 the migration to the intended Supabase project and verifying the configured owner
@@ -251,6 +258,73 @@ suspend dispatch until compatible code is restored. Do not regenerate tokens, ex
 change a retry's payload under the same provider key. Normal scheduler and worker-secret
 rotation do not change the stored random action URLs.
 
+### Email reply upgrade
+
+1. Deploy the compatible version-four dispatcher, standalone Reply composer/helper and privacy
+   notice before applying migration 006. Preserve the exact version-one/two/three payloads,
+   button sets and keys. New version-four jobs use `post-comment-approval-v4/<comment_id>`,
+   escaped HTML and a complete plain-text alternative with the independent Reply link.
+2. Confirm `202610230006` is absent from the intended ledger, then apply
+   [202610230006_post_comments_email_reply.sql](migrations/202610230006_post_comments_email_reply.sql)
+   through the privileged migration connection. Record its ledger entry and reload
+   PostgREST's schema cache. It defaults future outbox rows to version four, with no legacy
+   backfill/resend, and adds independent reply token/hash, used/revoked state, a fixed
+   `reply_submission_id` and the resulting reply identity to `post_comment_email_actions`.
+   Forced RLS, revoked direct grants and the shared seven-day expiry remain. Raw capability
+   material supports only unsent exact retries and is cleared on acknowledged delivery or
+   applicable moderation. Expired unsent notifications retain their original board fallback
+   rather than being silently dropped or receiving new authority. No new environment, Vault,
+   scheduler, recipient or provider configuration is needed.
+3. The extended/new bounded RPCs remain service-only:
+
+   | RPC                                                        | Purpose and boundary                                                                                                                                                                                                                                                                                                                                                                   |
+   | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `preview_post_comment_email_action(p_token_hash,p_action)` | Accepts `reply` in addition to the existing moderation actions. A ready reply preview includes the common comment fields plus `comment_status` (`pending` or `approved`), `reply_parent_id` (the root UUID) and `reply_is_sibling`. It has no mutations.                                                                                                                               |
+   | `reply_post_comment_email_action(p_token_hash,p_body)`     | Uses only the hash-bound source and durable reply identity. Atomically approves an eligible pending source when explicitly confirmed, publishes one author reply under its approved root, marks read and records email audit history. Matching retries acknowledge the existing reply without new writes; changed content conflicts and later-moderated replies are never republished. |
+
+   The reply body follows the existing 1–3,000-character/control-character rules. The server
+   hashes the raw token; browser input cannot select an author identity, parent, status or
+   reply UUID. A successful result identifies the source, reply and root; unavailable states
+   include invalid, expired, used and no-longer-eligible links. Validation and changed-body
+   conflicts fail closed. The existing approval/rejection RPC interface stays unchanged.
+
+4. Reply has independent used/revoked state. Email Approve captures an active reply grant
+   under locks, lets the status trigger revoke it during the transition, then restores only
+   that captured active grant before commit. Email Reject and every explicit owner status
+   call, including a no-op, revoke it permanently; mark-read-only calls need not. Reply from
+   a pending source explicitly combines approval and publication in one transaction and
+   consumes the moderation pair as well as Reply. A guest child resolves to its existing
+   approved root, producing a sibling author reply and never a grandchild. For child sources,
+   both preview and consumption require that existing root still approved; the operation
+   never restores hidden roots. Revocation is source-only and does not scan descendants:
+   hiding a root blocks child Reply temporarily, while restoring it can make an otherwise
+   unexpired, unused and unrevoked child-source grant usable again.
+   Mutations follow the advisory lock and consistent source/root comment → outbox → action
+   lock order. A durable enqueue-time UUID prevents duplicate replies after uncertain commits.
+   The shared expiry is strict even for matching acknowledgement retries; source, reply and
+   root must still be eligible, and expired retries do not republish or bypass revocation.
+5. The existing production-only standalone route uses safe GET/HEAD, clean capability cookies,
+   private headers, no scripts/analytics/external resources and the same-origin nonce form.
+   Pending sources show **Approve and reply**; approved sources show **Publish reply**. Reply
+   forms accept exactly their action, confirmation nonce and plain-text body. Enforce an
+   actual streamed 40 KiB body limit and three-second read deadline to support up to 36 KiB
+   of percent-encoded astral text, plus existing local admission and five-second RPC deadlines.
+   Only after a valid nonce may errors return the escaped draft in the private POST response;
+   do not log it or persist it in browser/offline caches.
+6. Verify local fixtures for legacy payload preservation, fixed version-four links/identity,
+   independent authority, explicit pending approval, already-approved replies, child-to-root
+   placement, root visibility races, body limits/escaping, draft recovery, rejection/board
+   revocation, matching uncertain retries, changed-body conflicts and no republishing after
+   later moderation. Record hosted schema/grants, deployment, inbox readability and one
+   bounded live reply flow separately. Provider acceptance alone is not inbox/action proof,
+   and single-engine PGlite is not a multi-connection contention test.
+
+Forwarding a Reply link can transfer authority to approve its pending source and publish one
+author response before expiry. It creates no owner session, board access or arbitrary target
+privilege. Preserve version-four-compatible code and durable state on rollback; do not change
+queued payloads, capability expiry or reply submission identities. Use the board for expired
+or revoked links and later moderation corrections.
+
 ### Hosted scheduler activation
 
 1. Confirm migration version `202610230003` is absent before applying the exact tested SQL to
@@ -332,6 +406,15 @@ cover safe GET/HEAD, clean capability cookies, private headers, production gatin
 body/origin/nonce controls, HTML escaping and preserved legacy provider payloads. Sequential
 PGlite calls cannot prove real multi-connection locking; hosted action activation and a bounded
 live notification remain separate release observations.
+
+Migration-006 verification must additionally cover unchanged version-one/two/three payloads,
+stable version-four capabilities and reply UUIDs, independent reply used/revoked state,
+pending-source approval intent, already-approved sources, child-to-root placement, hidden-root
+denial, matching uncertain retries, changed-body conflicts, email approval preservation,
+rejection/board revocation, no later republication and email-reply audit identity. App checks
+must exercise the 40 KiB encoded body boundary, nonce/origin checks, escaped private draft
+recovery and inert GET/HEAD. These are required checks, separate from their recorded results
+and hosted migration/reply-flow activation.
 
 The runtime is intentionally temporary and is not a website dependency:
 

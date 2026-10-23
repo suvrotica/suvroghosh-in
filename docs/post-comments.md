@@ -83,6 +83,11 @@ verifies the hosted SQL lifecycle, separately from application deployment and br
    version-one/version-two payloads and keys stay unchanged. Use the
    [email-action upgrade order](../supabase/post-comments.md#email-action-upgrade), without
    changing the existing recipient, secrets or scheduler.
+   The separate Reply button additionally requires
+   [202610230006_post_comments_email_reply.sql](../supabase/migrations/202610230006_post_comments_email_reply.sql).
+   Deploy the version-four application and privacy notice before applying migration 006;
+   preserve all earlier notification payloads and follow the
+   [email-reply upgrade order](../supabase/post-comments.md#email-reply-upgrade).
 5. Deploy the application with that configuration. Environment changes require a fresh deployment.
    Use the existing [owner sign-in](https://www.suvroghosh.in/notes/sign-in?returnTo=%2Fnotes%2Fstudio%2Fcomments), then open
    [comment moderation](https://www.suvroghosh.in/notes/studio/comments).
@@ -155,8 +160,9 @@ After the email-action upgrade, new messages have **Approve** and **Reject** but
 chosen button, review the comment on the small confirmation page and confirm your choice.
 No owner login or admin-board visit is needed for that one action. Merely
 receiving or opening the email, or following the link, does not moderate it. The confirmation
-page works without JavaScript. The signed-in board remains available for author replies and
-later changes.
+page works without JavaScript. Version-four alerts additionally support the separate
+[Reply flow](#reply-from-an-email). The signed-in board remains available for author replies
+and later changes.
 
 Each pair expires seven days after the comment is queued. Approving or rejecting consumes the
 pair, so the other button cannot undo the decision. Any explicit status action on the board,
@@ -190,6 +196,13 @@ retries with its original payload and the board fallback, rather than silently d
 alert or changing its provider identity. Deploy the compatible application before this
 migration. Do not roll back to a dispatcher that cannot preserve existing version-three jobs.
 
+Migration 006 adds Reply only to future version-four jobs, using
+`post-comment-approval-v4/<comment_id>` and a distinct reply capability with its own used/revoked
+state. It shares the original seven-day expiry; email approval leaves an active Reply link
+available, while rejection and explicit board status actions revoke it. The enqueue-time reply
+submission UUID stays fixed so an uncertain network retry cannot create a second author reply.
+Earlier emails keep their exact payloads, keys and button set.
+
 The submission handler awaits one bounded delivery attempt after saving the comment. If email
 delivery fails, the comment still succeeds and remains private in Pending. A Supabase job retries
 available notifications every five minutes, up to five per run. Attempts use a two-minute lease
@@ -208,6 +221,38 @@ Successful sends are acknowledged durably in Supabase. If Resend accepted a mess
 acknowledgement was lost, recovery after that window can rarely produce a duplicate. Email
 acceptance does not guarantee arrival in the inbox or prevent spam filtering. Notification state
 persists independently of site deployments; do not remove it when rolling back application code.
+
+### Reply from an email
+
+New version-four emails include **Reply** beside Approve and Reject. Open it to review the
+comment and write your author reply without signing in. Opening the composer does not publish
+anything. If the reader comment is still pending, the final button says **Approve and reply**:
+it explicitly approves that comment and publishes your reply together. If you already approved
+through the email, choose **Publish reply**. Your reply uses the fixed “Suvro Ghosh” name and
+Author badge; it cannot impersonate another display name.
+
+Replies remain one level deep. When answering a guest reply, your response appears under that
+comment's approved root alongside the other replies; the composer explains this placement.
+It does not create a nested grandchild or restore a hidden root. If the root is no longer
+approved, use the board to review the thread before replying.
+Hiding that root blocks its child Reply links while hidden. Restoring the root can make an
+otherwise valid child link usable again; it does not revive a link revoked on the source
+comment itself.
+
+Each Reply link permits one author reply of up to 3,000 characters, with the same seven-day
+expiry as its email's moderation links. Email Approve can leave it available. Email Reject,
+or an explicit status action on the board even when the status is unchanged, revokes it.
+Marking a comment read alone need not. Once a reply is saved, retrying identical text after
+an uncertain response can acknowledge that existing reply before expiry while the thread
+remains eligible; it cannot create a duplicate or
+republish a reply later hidden or rejected. Edited text cannot reuse a consumed link.
+
+When a valid submission fails, the private response keeps your escaped draft available for
+retry. Leaving or reloading can lose unsent text; the draft is not stored in a browser or
+offline comment database. Keep the email private: forwarding Reply can let another person
+approve that source and publish its one author reply. The link grants no general owner session,
+board access or arbitrary reply target. Use the signed-in board for later edits to moderation
+and further author replies.
 
 ## Validation and maintenance
 
@@ -231,6 +276,12 @@ test configuration builds the site, starts a loopback production preview and a t
 Supabase-shaped HTTP bridge backed by
 the actual migration in PGlite. It supplies isolated test sessions; it does not verify live owner
 login. Service workers and remote provider requests are blocked. Never deploy the test bridge.
+
+Version-four checks must cover exact earlier-version payload preservation, independent Reply
+state, explicit pending approval, approved-source publication, guest-child placement under its
+approved root, stale parent visibility, rejection/board revocation, matching uncertain retries,
+changed-body conflicts, draft recovery and no republishing after later moderation. These
+requirements do not establish that migration 006 or the live reply flow has been activated.
 
 Also run the relevant Svelte/build checks for application changes. Security-command availability
 must be reported accurately: this checkout's existing `security:audit` and `security:smoke`

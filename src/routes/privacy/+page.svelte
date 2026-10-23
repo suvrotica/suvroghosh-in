@@ -145,11 +145,13 @@
 				A new submission also queues an email alert to the site owner through Resend, the site's
 				existing email provider. The alert includes your display name and full comment so the owner
 				can review it, together with the article title, submission time and a link to the private
-				moderation board. New alerts also contain private, expiring Approve and Reject links. Each
-				opens a confirmation page where the owner can moderate that one comment without signing in.
-				Receiving or previewing the email does not publish your comment. Delivery, retry and email
-				moderation records are stored privately in Supabase; a short-lived essential cookie carries
-				the selected action while the confirmation page is open.
+				moderation board. New alerts also contain private, expiring Approve, Reject and Reply links.
+				Each opens a confirmation page where the owner can moderate that comment or publish one
+				author reply without signing in. Replying to a pending comment requires explicit approval
+				together with publishing the reply. Receiving or previewing the email does not publish your
+				comment. Delivery, retry and email moderation records are stored privately in Supabase; a
+				short-lived essential cookie carries the selected action while the confirmation page is
+				open.
 			</p>
 			<p>
 				Hiding or rejecting a comment removes it from public view but retains the submission and
