@@ -39,7 +39,8 @@ viewport approach or explicit activation. The complete form/thread code stays ou
 article asset closure. The loaded component fetches approved comments separately, with expandable
 paged replies. Comment APIs
 return no-store responses so moderation affects subsequent reads without a rebuild. Use the
-validated filename slug as the stable article key; category moves preserve it, while renaming the
+validated, case-sensitive filename slug as the stable article key, including ASCII capitals in
+older filenames; category moves preserve it, while renaming the
 slug requires a data migration. Draft text and retries stay in component memory, with no durable
 browser comment store or offline comment cache.
 

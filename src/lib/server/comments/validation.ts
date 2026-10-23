@@ -7,7 +7,7 @@ export const postSlug = z
 	.string()
 	.min(1)
 	.max(180)
-	.regex(/^[a-z0-9_-]+$/);
+	.regex(/^[A-Za-z0-9_-]+$/);
 function hasControlCharacters(value: string, allowLineWhitespace = false) {
 	return Array.from(value).some((character) => {
 		const code = character.charCodeAt(0);

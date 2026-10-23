@@ -5,6 +5,77 @@ const slug = 'hl7-vs-fhir-explained-simply';
 const article = `/blog/healthcare-it/${slug}`;
 const bridge = 'http://127.0.0.1:54329';
 
+test('a published mixed-case legacy article keeps its exact conversation through approval', async ({
+	browser,
+	request,
+	baseURL
+}) => {
+	const legacySlug = 'theFifthWindow';
+	const text = 'The legacy article keeps its own conversation.';
+	await request.post(`${bridge}/__test/reset`);
+	const readerContext = await browser.newContext({ baseURL, serviceWorkers: 'block' });
+	const ownerContext = await browser.newContext({ baseURL, serviceWorkers: 'block' });
+	try {
+		await usePausedMediaPreference(readerContext);
+		const { cookie } = await (await request.get(`${bridge}/__test/session`)).json();
+		await ownerContext.addCookies([cookie]);
+		await readerContext.route('**/*', (route) =>
+			new URL(route.request().url()).origin === baseURL ? route.continue() : route.abort()
+		);
+		const reader = await readerContext.newPage();
+		await reader.goto(`/blog/short-fiction/${legacySlug}`);
+		await expect(reader).toHaveURL(new RegExp(`/blog/short-fiction/${legacySlug}$`));
+		const comments = reader.locator('#comments');
+		await comments.scrollIntoViewIfNeeded();
+		const form = comments.getByRole('form', { name: 'Leave a comment', exact: true });
+		await form.getByLabel('Display name', { exact: true }).fill('Legacy reader');
+		await form.getByLabel('Your comment', { exact: true }).fill(text);
+		await form.getByRole('button', { name: 'Send for approval', exact: true }).click();
+		await expect(form.getByRole('status')).toContainText('awaiting approval');
+		await expect(comments.getByText(text, { exact: true })).toHaveCount(0);
+		const publicUrl = `/api/comments?post=${legacySlug}`;
+		const before = await readerContext.request.get(publicUrl);
+		expect(before.status()).toBe(200);
+		expect(await before.json()).toMatchObject({ comments: [], commentCount: 0 });
+
+		const queue = await ownerContext.request.get(
+			`/api/notes/comments?status=pending&post=${legacySlug}`
+		);
+		expect(queue.status()).toBe(200);
+		const pending = (await queue.json()).comments;
+		expect(pending).toHaveLength(1);
+		expect(pending[0]).toMatchObject({ post_slug: legacySlug, body: text, status: 'pending' });
+		const approval = await ownerContext.request.post('/api/notes/comments', {
+			headers: { origin: baseURL! },
+			data: { action: 'moderate', id: pending[0].id, status: 'approved' }
+		});
+		expect(approval.status()).toBe(200);
+		await comments.getByRole('button', { name: 'Refresh comments', exact: true }).click();
+		await expect(comments.getByText(text, { exact: true })).toBeVisible();
+		expect(await (await readerContext.request.get(publicUrl)).json()).toMatchObject({
+			commentCount: 1
+		});
+		expect(
+			(await readerContext.request.get(`/api/comments?post=${legacySlug.toLowerCase()}`)).status()
+		).toBe(404);
+		const wrongCase = await readerContext.request.post('/api/comments', {
+			headers: { origin: baseURL! },
+			data: {
+				postSlug: legacySlug.toLowerCase(),
+				parentId: null,
+				name: 'Legacy reader',
+				body: 'This case variant is not a published article.',
+				submissionId: '9b498db0-0705-4052-85d7-e4c4e6019b95',
+				website: ''
+			}
+		});
+		expect(wrongCase.status()).toBe(404);
+	} finally {
+		await readerContext.close();
+		await ownerContext.close();
+	}
+});
+
 test('reader → private queue → approval → author reply → hidden thread → restoration', async ({
 	browser,
 	request,

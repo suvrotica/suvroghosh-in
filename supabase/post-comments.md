@@ -5,6 +5,12 @@ migration, using the project's privileged Supabase migration connection. The Not
 owner must already exist in `auth.users` and `public.note_owners`. This migration
 does not create accounts, add owners, or change login configuration.
 
+Then apply `migrations/202610230002_post_comments_legacy_slugs.sql`. This additive
+compatibility migration accepts existing ASCII capital letters in article filename
+keys. It preserves their exact case, existing rows, grants and moderation rules.
+An installation that already has version `202610230001` needs only the second
+migration; check its migration ledger before applying either file.
+
 The application also checks the configured owner before serving its admin routes.
 Every owner RPC independently requires a non-null `auth.uid()` present in
 `public.note_owners`. Owner calls use the authenticated session client; passing the
@@ -37,8 +43,9 @@ configuration. Application transport deadlines remain necessary.
 ## RPCs
 
 All list pages contain at most 20 comments; page numbers are integers 1–5000.
-Slugs accept 1–180 lowercase ASCII letters, digits, underscores and hyphens,
-including legacy Markdown filenames. Display names contain 1–60 non-control
+Slugs accept 1–180 ASCII letters in either case, digits, underscores and hyphens,
+including legacy Markdown filenames. Keys remain case-sensitive and the application
+checks the exact published registry entry before reader RPCs. Display names contain 1–60 non-control
 characters. Comment bodies contain 1–3000 characters; newlines, carriage returns
 and tabs are allowed, other control characters are rejected. The application
 renders the stored text literally.

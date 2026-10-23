@@ -18,6 +18,11 @@ registered Notes owner before applying the exact tested migration. Version `2026
 `post_comments`, was recorded in `supabase_migrations.schema_migrations` within the same
 transaction, and the PostgREST schema cache was notified to reload.
 
+Compatibility version `202610230002` (`post_comments_legacy_slugs`) was also applied and recorded
+on 23 October. It extends the slug alphabet for eight existing filenames with ASCII capitals,
+preserving exact keys, rows, function grants and all moderation rules. Both hosted ledger entries
+are present; do not reapply either migration there.
+
 Hosted inspection confirmed the comment schema is ready, anonymous direct table reads and reader
 RPC execution are denied, service-role reader RPC execution is allowed, and the migration record
 exists. The intended Vercel project/team and all five existing required production secret variable
@@ -49,7 +54,11 @@ verifies the hosted SQL lifecycle, separately from application deployment and br
    [202610230001_post_comments.sql](../supabase/migrations/202610230001_post_comments.sql) once
    through its privileged migration connection after the Notes schema. Use the
    [database setup and RPC contract](../supabase/post-comments.md) for grants, limits and role
-   details. This migration does not create accounts or modify login settings.
+   details. Then apply
+   [202610230002_post_comments_legacy_slugs.sql](../supabase/migrations/202610230002_post_comments_legacy_slugs.sql)
+   once on another installation if its ledger entry is absent. It extends validation for eight existing mixed-case article
+   filenames without changing their URLs, keys or existing comment data. These migrations do not
+   create accounts or modify login settings.
 4. Deploy the application with that configuration. Environment changes require a fresh deployment.
    Use the existing [owner sign-in](https://www.suvroghosh.in/notes/sign-in?returnTo=%2Fnotes%2Fstudio%2Fcomments), then open
    [comment moderation](https://www.suvroghosh.in/notes/studio/comments).
@@ -112,7 +121,8 @@ Also run the relevant Svelte/build checks for application changes. Security-comm
 must be reported accurately: this checkout's existing `security:audit` and `security:smoke`
 commands are absent, so they cannot establish passing security checks.
 
-Comments use the Markdown filename slug as their article key. Category moves preserve a thread;
+Comments use the exact, case-sensitive Markdown filename slug as their article key, including
+ASCII capitals in older filenames. Category moves preserve a thread;
 renaming a filename slug needs a deliberate database migration. Applying/rolling back site code
 must not drop submitted comments. If comment functions or configuration are missing, the reader
 interface reports unavailability and existing Notes pages continue working.

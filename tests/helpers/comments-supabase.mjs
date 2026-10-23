@@ -23,6 +23,9 @@ await db.exec(`
 await db.query('insert into auth.users values ($1)', [ownerId]);
 await db.query('insert into public.note_owners values ($1)', [ownerId]);
 await db.exec(await readFile('supabase/migrations/202610230001_post_comments.sql', 'utf8'));
+await db.exec(
+	await readFile('supabase/migrations/202610230002_post_comments_legacy_slugs.sql', 'utf8')
+);
 const user = {
 	id: ownerId,
 	aud: 'authenticated',
