@@ -1,3 +1,4 @@
 *.svg text eol=lf
 # Generated JSON manifests include byte-exact hashes; preserve their committed bytes on Windows.
 *.json text eol=lf
+*.ipynb text eol=lf

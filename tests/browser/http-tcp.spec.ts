@@ -18,8 +18,14 @@ function watchErrors(page: Page): string[] {
 	return messages;
 }
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page, baseURL }) => {
 	errors.set(page, watchErrors(page));
+	if (baseURL && ['127.0.0.1', 'localhost'].includes(new URL(baseURL).hostname)) {
+		// Vercel supplies this platform script in production; Vite preview does not.
+		await page.route('**/_vercel/insights/script.js', (route) =>
+			route.fulfill({ status: 200, contentType: 'application/javascript', body: '' })
+		);
+	}
 	await page.addInitScript(() => {
 		localStorage.setItem('site-theme', 'paper');
 		localStorage.setItem('site-motion', 'still');

@@ -10969,11 +10969,11 @@
       "optimizerVersion": "2026-07-18.1",
       "originalHeight": 630,
       "originalWidth": 1200,
-      "outputBytes": 204984,
-      "outputHash": "17ef670f0d72c94e871a95bd9ee62e4980f2bfc6c003ccbf1fef107f4b0afbbf",
+      "outputBytes": 204988,
+      "outputHash": "c553d94dd43a91f1d818f3e4d787f02856723531936211cc697008bb1a850e6d",
       "resized": false,
-      "sourceBytes": 204984,
-      "sourceHash": "17ef670f0d72c94e871a95bd9ee62e4980f2bfc6c003ccbf1fef107f4b0afbbf",
+      "sourceBytes": 204988,
+      "sourceHash": "c553d94dd43a91f1d818f3e4d787f02856723531936211cc697008bb1a850e6d",
       "width": 1200
     },
     "static/images/visualizations/build-one-build-a-thousand/social.png": {
