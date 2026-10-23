@@ -7,13 +7,31 @@ import { getPublishedPost } from '$lib/server/content/posts';
 import { commentsRpc } from './repository';
 
 export const COMMENT_MODERATION_URL = 'https://www.suvroghosh.in/notes/studio/comments';
-const notification = z.object({
-	comment_id: z.string().uuid(),
-	submission_id: z.string().uuid(),
-	post_slug: z.string().regex(/^[A-Za-z0-9_-]{1,180}$/),
-	created_at: z.string().datetime({ offset: true }),
-	lease_token: z.string().uuid()
-});
+const notification = z
+	.object({
+		comment_id: z.string().uuid(),
+		submission_id: z.string().uuid(),
+		post_slug: z.string().regex(/^[A-Za-z0-9_-]{1,180}$/),
+		created_at: z.string().datetime({ offset: true }),
+		lease_token: z.string().uuid(),
+		// Missing fields are the original RPC contract during an app-first rollout.
+		content_version: z.union([z.literal(1), z.literal(2)]).default(1),
+		display_name: z
+			.string()
+			.refine((value) => Array.from(value).length >= 1 && Array.from(value).length <= 60)
+			.nullish(),
+		body: z
+			.string()
+			.refine((value) => Array.from(value).length >= 1 && Array.from(value).length <= 3000)
+			.nullish()
+	})
+	.superRefine((job, context) => {
+		if (job.content_version === 2 && (!job.display_name || !job.body))
+			context.addIssue({
+				code: z.ZodIssueCode.custom,
+				message: 'Full comment notification content is missing.'
+			});
+	});
 
 export function commentEmailConfigured() {
 	// Preview deployments share no permission to deliver production notifications.
@@ -46,7 +64,7 @@ export async function dispatchCommentNotifications(submissionId: string | null =
 					.slice(0, 240);
 				const delivered = await withDeadline((signal) => {
 					const options = {
-						idempotencyKey: `post-comment-approval/${job.comment_id}`,
+						idempotencyKey: `${job.content_version === 2 ? 'post-comment-approval-v2' : 'post-comment-approval'}/${job.comment_id}`,
 						headers: {},
 						signal
 					};
@@ -61,6 +79,9 @@ export async function dispatchCommentNotifications(submissionId: string | null =
 								`Article: ${title}`,
 								`Submitted: ${new Date(job.created_at).toISOString()}`,
 								'',
+								...(job.content_version === 2
+									? [`Commenter: ${job.display_name}`, '', 'Full comment:', job.body!, '']
+									: []),
 								'Review and approve, reject or reply in your moderation board:',
 								COMMENT_MODERATION_URL,
 								'',

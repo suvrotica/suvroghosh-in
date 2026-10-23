@@ -17,6 +17,13 @@ private delivery outbox and trigger for newly inserted pending guest comments; i
 backfill existing submissions or change their approval state. The unattended retry job is a
 separate hosted activation step described under [Email notification outbox](#email-notification-outbox).
 
+Full-comment email review additionally uses
+`migrations/202610230004_post_comments_notification_content.sql`. Deploy the compatible
+application before applying this additive migration; see
+[Notification content upgrade](#notification-content-upgrade). It preserves existing delivery
+state and metadata-only retries, while future notifications include stored names and complete
+comment text through the same private owner-email path.
+
 The application also checks the configured owner before serving its admin routes.
 Every owner RPC independently requires a non-null `auth.uid()` present in
 `public.note_owners`. Owner calls use the authenticated session client; passing the
@@ -113,10 +120,10 @@ idempotent reader retries do not produce more notifications. Owner replies, mode
 and historical comments are excluded. Delivery state does not copy reader names, comment text
 or email addresses.
 
-| RPC                                                                                         | Caller       | Result and boundary                                                                                                                                                                                          |
-| ------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `claim_post_comment_notifications(p_submission_id := null,p_limit := 1)`                    | Service role | At most five leased rows with `comment_id`, `submission_id`, `post_slug`, `created_at` and `lease_token`. An optional UUID narrows the immediate submission attempt. Claims skip comments no longer pending. |
-| `finish_post_comment_notification(p_comment_id,p_lease_token,p_sent,p_provider_id := null)` | Service role | Acknowledges the current lease's successful delivery or schedules retry after failure. Stale/mismatched lease tokens cannot acknowledge another claim.                                                       |
+| RPC                                                                                         | Caller       | Result and boundary                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `claim_post_comment_notifications(p_submission_id := null,p_limit := 1)`                    | Service role | At most five leased rows with `comment_id`, `submission_id`, `post_slug`, `created_at`, `lease_token` and, after migration 004, `content_version`. Version-two claims additionally contain stored `display_name` and `body`; version-one text fields are null. An optional UUID narrows the immediate submission attempt. Claims skip comments no longer pending. |
+| `finish_post_comment_notification(p_comment_id,p_lease_token,p_sent,p_provider_id := null)` | Service role | Acknowledges the current lease's successful delivery or schedules retry after failure. Stale/mismatched lease tokens cannot acknowledge another claim.                                                                                                                                                                                                            |
 
 A claim lasts two minutes. An unacknowledged claim can be recovered after its lease expires.
 Failed sends use exponential backoff starting at 60 seconds, capped at one hour. Success is
@@ -125,6 +132,34 @@ provider deduplication lasts 24 hours, so a send accepted before a lost acknowle
 rarely duplicate after that window. There is no automatic outbox deletion or arbitrary retry
 count that discards an unsent notification. A claim checks moderation state, but an in-flight
 email cannot be recalled if moderation happens after it was claimed.
+
+### Notification content upgrade
+
+1. Deploy the application that supports both content versions, including the privacy notice,
+   before changing the hosted schema. A claim from migration 003 has no `content_version` and
+   must retain the exact version-one article/time/link-only payload and
+   `post-comment-approval/<comment_id>` provider idempotency key.
+2. Confirm version `202610230004` is absent from the intended project's migration ledger, then
+   apply [202610230004_post_comments_notification_content.sql](migrations/202610230004_post_comments_notification_content.sql)
+   through the privileged migration connection. Record the ledger entry and reload PostgREST's
+   schema cache. The migration gives existing outbox rows `content_version = 1`, then changes
+   the insert default to `2`; it does not requeue old comments or reset leases, acknowledgements,
+   cancellation or provider identities. It preserves forced RLS and service-only RPC grants.
+3. The updated claim joins the immutable comment source to return the display name and full body
+   for version two only. It returns null text fields for version one. The outbox stores only a
+   constrained delivery-content version alongside existing delivery state, without a second
+   copy of private prose. Version-two email keys use `post-comment-approval-v2/<comment_id>`;
+   retries preserve the version's payload and key.
+4. Verify the hosted ledger/default/RPC grants without exposing reader text. Use one bounded new
+   pending submission to check the full display name and multiline Unicode body reach the
+   existing contact inbox with the moderation link. Confirm it remains absent from public reads.
+   Record provider acceptance separately from inbox arrival; isolated local tests cover legacy
+   retries and provider failures. No new recipient, provider, secret or scheduler job is needed.
+
+Keep the outbox and version-aware dispatcher when rolling back application code. Returning to a
+dispatcher that omits version-two content would change its payload under an existing provider
+key. Moderation never recalls email already delivered; rejection/removal affects stored and
+public site content independently of copies in the owner's inbox.
 
 ### Hosted scheduler activation
 
@@ -162,9 +197,14 @@ The guest submission handler first saves the comment, then awaits one bounded at
 submission; a delivery failure does not undo the saved comment or change its normal 202 response.
 The scheduled endpoint is the recovery path after request termination, missing configuration or
 provider failure. Its fixed five-minute schedule is not a guaranteed inbox-arrival deadline.
-Email payloads use a static subject, the published article title, submission timestamp and fixed
-moderation-board URL; reader names and comment bodies are never sent to Resend for these alerts.
-No new public environment setting or browser mail client is introduced.
+Email payloads use a static subject, configured sender/recipient, the published article title,
+submission timestamp and fixed moderation-board URL. Version-two notifications also send the
+stored display name and entire comment body to Resend as plain text for owner review. Preserve
+Unicode and line breaks within the existing 60/3,000-character limits without truncation; reader
+text never supplies headers or HTML. Version-one jobs retain the original metadata-only payload.
+Provider content and delivered inbox copies remain private to the owner; approval still controls
+public website visibility. Logs and worker responses do not contain reader prose. No new public
+environment setting or browser mail client is introduced.
 
 Local SQL tests do not establish that the hosted third migration, extensions, Vault secret, job
 or Vercel environment are configured. Record those release observations separately; the schema
@@ -187,7 +227,10 @@ guest retry uniqueness, author/backfill exclusion, revoked browser/direct access
 claims, lease tokens/expiry, retry delays and acknowledgement, plus moderation suppression.
 Concurrent claim statements in a single PGlite engine do not establish multi-connection hosted
 contention behavior. Email provider calls and the hosted scheduler are not part of this isolated
-database suite.
+database suite. Content-upgrade coverage also checks existing version-one payload identities,
+new version-two defaults, immutable joined text, preserved delivery state and grants, and no
+duplicate prose stored in the outbox. Applying migrations in a local engine does not establish
+that hosted migration 004 or content-bearing email delivery is active.
 
 The runtime is intentionally temporary and is not a website dependency:
 
