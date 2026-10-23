@@ -12,11 +12,13 @@
 			There’s always another idea to explore. Questions, corrections and thoughtful disagreements
 			are welcome.
 		</p>
+		<p>Need help with software or data? I also work with businesses on small, agreed projects.</p>
 		<nav aria-label="Follow or contact Suvro Ghosh">
 			<a class="fb-closing__contact" href={resolve('/contact')}
 				>Get in touch <span aria-hidden="true">↗</span></a
 			>
 			<a href={resolve('/about')}>About Suvro</a>
+			<a href={resolve('/consulting')}>Services &amp; partnerships</a>
 			<!-- eslint-disable svelte/no-navigation-without-resolve -->
 			<a href={youtubeProfile.url} target="_blank" rel="noopener noreferrer"
 				>Videos <span aria-hidden="true">↗</span><span class="sr-only">, opens in a new tab</span
