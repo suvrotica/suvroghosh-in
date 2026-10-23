@@ -32,6 +32,11 @@ subsequent request adds the display name and full plain-text comment to new vers
 through that same provider and inbox. Migration 004 preserves legacy retry payloads and keys;
 deploy its compatible application before applying it. See
 [ADR 0011](decisions/0011-comment-email-review-content.md).
+The next owner-requested extension adds Approve and Reject buttons to future version-three
+alerts. A standalone confirmation route uses expiring, single-comment bearer authority without
+an owner login; safe GET/HEAD handling and atomic service-only SQL preserve moderation intent.
+Migration 005 requires the compatible application first and separate hosted verification. See
+[ADR 0012](decisions/0012-comment-email-moderation-actions.md).
 
 ## 1. System and principles
 
@@ -44,7 +49,7 @@ The principal boundaries are:
 - Framework-independent numerical engines, domain models, workers, and persistence helpers sit beside feature-specific Svelte interfaces. Features use different renderers and lifecycles where their needs differ.
 - Private notes use authenticated server actions/APIs and Supabase authorization. Public notes expose frozen publication snapshots, never the mutable working document.
 - Reader comments use server-gated Supabase RPCs. Reader submissions stay private until owner approval; owner replies derive their identity and publication privileges on the server and in SQL.
-- New guest comments atomically queue private owner-email alerts. Production server dispatch and a leased Supabase outbox handle delivery; new version-two alerts include the stored display name and complete plain-text comment for owner review, while legacy jobs retain their metadata-only payloads.
+- New guest comments atomically queue private owner-email alerts. Production server dispatch and a leased Supabase outbox handle delivery. Future version-three alerts include complete comment content and private expiring Approve/Reject capabilities; earlier versions retain their exact payloads and keys. An explicit confirmation POST may moderate only its one pending comment.
 - Browser capabilities progressively enhance readable SSR content: canvas/WebGL, motion, theme persistence, offline public-note reading, and media controls.
 
 These principles are reconstructed from imports, route options, tests, and feature documents. They are not evidence that every feature fully complies. See findings `AF-001` through `AF-013` in the audit.
@@ -64,7 +69,9 @@ flowchart LR
     Comments --> Supabase
     Supabase --> CommentOutbox["Atomic new-pending comment outbox"]
     CommentOutbox --> CommentMail["Production-only bounded alert dispatcher"]
-    CommentMail -->|existing contact inbox; v2 stored name and full text| Providers
+    CommentMail -->|existing contact inbox; full content and v3 action links| Providers
+    Providers --> MailAction["Private capability / standalone confirmation"]
+    MailAction -->|explicit POST; pending guest only; one use| Supabase
     Supabase --> CommentCron["pg_cron / pg_net / Vault: five-minute retry"]
     CommentCron -->|private bearer| CommentWorker["/api/internal/comment-notifications"]
     CommentWorker --> CommentMail
@@ -183,6 +190,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
 | `/api/analytics/pageview`                                                                              | Compatibility intake for older consented clients, with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                           |
 | `/api/comments`                                                                                        | Published-article approved comments/replies and pending guest submission; server-only service-role RPCs, bounded input/admission and no-store responses.                                                                                                                                                           |
+| `/api/comments/moderate`                                                                               | Standalone private HTML email-action confirmation; expiring single-comment bearer capability, safe GET/HEAD and bounded same-origin POST; no Notes session, Svelte layout, analytics or external resources.                                                                                                        |
 | `/api/notes/comments`                                                                                  | Independently configured-owner-authorized queue/count/session/page-export reads and moderation/read/author-reply mutations; authenticated session RPCs, private/no-store/noindex responses.                                                                                                                        |
 | `/api/internal/comment-notifications`                                                                  | Production-only service POST with private bearer authentication, bounded empty JSON and a maximum five leased alerts per call; no owner cookie session, caller-selected destination or private comment response.                                                                                                   |
 | `/api/notes/**`                                                                                        | Owner-only document/assets APIs and the separately described comment moderation API.                                                                                                                                                                                                                               |
@@ -798,7 +806,7 @@ thread on subsequent reads. Restoring the parent preserves each child's status. 
 not delete rows or audit history, and cannot recall text already read or copied. Accepted guest
 UUID retries disclose only `pending`, including after moderation, and create no duplicate row.
 
-The private board and every API read/mutation independently authorize the owner. It supports
+The private board and each of its API reads/mutations independently authorize the owner. It supports
 pending/approved/rejected/hidden/all views, article filters, 20-row pages, parent context, unread
 indicators and ten recent history events per row. Viewing a queue does not mark it read; explicit
 read/moderation actions persist that state. Queue polling runs every 30 seconds and shared Studio
@@ -823,6 +831,42 @@ prose. Deploy the version-aware application and updated privacy notice before ap
 additive migration. Claims from migration 003 without a version are handled as version one.
 Existing leases, sent/cancelled state, forced RLS and service-only grants remain unchanged.
 
+Migration 005 extends only future outbox rows to content version three and atomically creates
+private `post_comment_email_actions` state for each new pending guest comment. Each action has
+a distinct 64-hex random bearer token made from two UUIDs (244 random bits), a lookup hash and
+a fixed seven-day expiry from enqueueing. Forced RLS and revoked direct grants keep this table
+behind bounded service-only RPCs. The raw pair is retained only for unsent email retries, then
+cleared on successful send acknowledgement or explicit owner moderation; hashes and
+used/revoked state remain. No new secret, provider or scheduler is required, and no old job is
+backfilled. Raw capability material is never included in public comment projections, board
+exports, application logs or worker responses. It leaves the server only in the intended
+private email links and scoped confirmation cookie.
+Expired unsent jobs retain their unchanged payload and board fallback for delivery recovery;
+expiry denies moderation and does not silently discard an alert or extend its authority.
+
+The production-only `/api/comments/moderate` endpoint returns standalone server HTML, outside the global Svelte layout,
+measurement and scripts. A syntactically valid token/action GET sets a narrow HttpOnly,
+Secure, SameSite=Lax cookie with a random confirmation nonce for at most 15 minutes and
+redirects to the clean URL. Token-bearing responses use `no-referrer`; clean pages use
+`same-origin` so native form POSTs retain Origin. HEAD does no SQL work. GET and HEAD never
+consume authority, mark read or moderate. A clean GET previews one eligible comment through a
+bounded service-only RPC; the page contains no capability or nonce-bearing URL and no
+external resources. A restrictive standalone CSP permits only its nonce-bound styles and
+same-origin form submission, with no scripts. Its `/api/` path is excluded from analytics and
+service-worker caching; private no-store/noindex headers also apply to errors and redirects.
+
+The confirmation POST validates an actual streamed body, exact action/nonce fields, origin and
+Fetch-Site before a five-second bounded service-only RPC, with local admission/concurrency
+limits. Consumption can approve or reject only the still-pending guest comment bound to the
+chosen token. In one transaction it changes status, marks read, invalidates both links and
+adds an `email_moderated` history event with a null actor ID. Both email and board moderation
+lock advisory state, comment, outbox and action rows in that order. Every explicit board
+status call, including a no-op, revokes old links; a mark-read-only call can leave them valid.
+Returning to pending does not restore authority. Expired, used or stale links cannot override
+a newer decision, and opposite actions racing have at most one successful consumption. The
+capability grants no board access or reply privilege; forwarding the email can transfer its
+limited authority and should be avoided. After expiry, use the existing signed-in board.
+
 After saving a guest comment, the server awaits one bounded alert attempt; a mail failure leaves
 the comment successful and its notification queued. The submission form allows 30 seconds before
 aborting: its three-second body read and four five-second save/claim/mail/acknowledgement deadlines
@@ -845,15 +889,21 @@ and [Supabase's header-access guidance](https://supabase.com/docs/guides/trouble
 Dispatch requires `VERCEL_ENV=production`; preview/local runs cannot email the owner's real
 inbox. The server reuses private `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL` and
 the existing contact defaults. No public flag, recipient input or new provider is introduced.
-The static-subject plain-text email contains the published article title, submission timestamp
+The static-subject email contains the published article title, submission timestamp
 and fixed `https://www.suvroghosh.in/notes/studio/comments` link. Version-two alerts additionally
 include the stored display name and entire comment without truncation, preserving multiline
-Unicode within the existing 60/3,000-character limits. Reader text never supplies HTML, headers,
-subject, sender or recipient. The existing Resend provider and owner inbox receive this private
+Unicode within the existing 60/3,000-character limits. Version-three alerts add escaped HTML
+with Approve/Reject buttons and a full plain-text alternative. Untrusted content is escaped
+before HTML insertion and never supplies markup, headers, subject, sender or recipient.
+The existing Resend provider and owner inbox receive this private
 content before public approval; logs and aggregate worker responses exclude reader prose.
 Delivered email cannot be recalled by later moderation or deletion. Version-one jobs keep their
 exact original metadata-only body and `post-comment-approval/<comment_id>` key; version-two jobs
-use `post-comment-approval-v2/<comment_id>`. A stable version-specific Resend key supplies
+use `post-comment-approval-v2/<comment_id>`. Version-three jobs use
+`post-comment-approval-v3/<comment_id>` with immutable action URLs and expiry across retries.
+Deploy the compatible dispatcher/confirmation route before applying migration 005; do not
+rewrite old payloads or roll back to code that cannot dispatch an existing version.
+A stable version-specific Resend key supplies
 24-hour provider deduplication, followed by durable SQL
 acknowledgement. A provider-accepted send whose acknowledgement is lost can rarely duplicate if
 recovery occurs after that window. Provider acceptance and inbox arrival are separate evidence;
@@ -877,9 +927,14 @@ flowchart LR
     Scheduled["pg_cron / pg_net every five minutes"] -->|Vault bearer; fixed destination| Worker["/api/internal/comment-notifications"]
     Worker -->|at most five| Dispatch
     Outbox -->|service-only claim; version and two-minute lease| Dispatch
-    DB -->|v2 immutable stored name and full body| Dispatch
+    DB -->|v2/v3 immutable stored name and full body| Dispatch
+    DB -->|atomic v3 enqueue| Actions["Private action hashes / fixed expiry / unsent raw pair"]
+    Actions -->|service-only claim; immutable URLs| Dispatch
     Dispatch -->|ack or bounded exponential retry| Outbox
-    Dispatch -->|plain text; v2 name and full body / article / time / board link| Inbox["Existing contact-form owner inbox"]
+    Dispatch -->|full content; v3 escaped HTML buttons + text alternative| Inbox["Existing contact-form owner inbox"]
+    Inbox -->|private action link GET| Confirm["Standalone /api/comments/moderate / clean confirmation"]
+    Confirm -->|explicit same-origin POST / one use / pending guest only| DB
+    DB -->|consume or board status call; revoke both / clear raw pair| Actions
 ```
 
 The exact tested migration was applied on 23 October 2026 to the existing hosted `suvroghoshin`
@@ -906,23 +961,26 @@ See [the operational guide](../post-comments.md), [database contract](../../supa
 [ADR 0010](decisions/0010-durable-comment-email-alerts.md). Migration 004 and live version-two
 email content require separate release observations; earlier metadata-only delivery does not
 establish the upgrade. See [ADR 0011](decisions/0011-comment-email-review-content.md).
+Migration 005 and live version-three inbox actions likewise require separate ledger/grant,
+deployment and bounded email-action observations; earlier full-content email delivery does not
+prove capability activation. See [ADR 0012](decisions/0012-comment-email-moderation-actions.md).
 Local tests and an isolated PostgreSQL
 engine remain separate evidence from hosted inspection and do not prove live login or release.
 
 ## 8. Integrations and environment
 
-| Boundary                              | Implementation and credential placement                                                                                                                                                                                                                                                                                                                 |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resend contact / comment alerts       | `/contact` server action and production-only comment dispatcher reuse private API key, sender and recipient/defaults. Version-two plain-text alerts include stored display name/full body, article context and a fixed private-board link; legacy jobs retain original payloads/keys. Contact retains its normal HTML form with optional `use:enhance`. |
-| Chatterbox speech                     | `/api/tts/chatterbox` server proxy; private endpoint/key/model/voice settings; optional browser visibility flag. Supports native/OpenAI-compatible request mapping and WAV/MP3/Opus choices; accepts upstream `audio/*` bytes.                                                                                                                          |
-| Google article narration              | Explicit `scripts/article-narration.mjs` authoring command; script-only Gemini key and Free-tier confirmation. Saved same-origin audio/manifests feed the shared player, with US English device speech as fallback. No public synthesis endpoint or build-time provider call.                                                                           |
-| Supabase                              | Server-only URL/publishable/service credentials and owner UUID. Browser drafts are local Dexie data; browser code does not receive a service-role client.                                                                                                                                                                                               |
-| Moderated article comments            | Reuses the existing Supabase clients, configured owner and `NOTES_RATE_LIMIT_SALT`; no new provider, public environment flag or third-party comment widget. Server-only HMAC keys and privileged RPCs; plain text and approved fields only reach readers.                                                                                               |
-| Comment-alert scheduler               | Supabase `pg_cron`/`pg_net` and Vault call a fixed private production endpoint every five minutes. `COMMENTS_NOTIFICATION_SECRET` authorizes only bounded worker dispatch; it is private in Vercel Production and Vault. Hosted activation is verified separately.                                                                                      |
-| IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots, verifies live ownership against the repository secret, and submits changed URLs only after that proof matches.                                                                                                                                                   |
-| Vercel Web Analytics                  | Root layout initializes default public pageviews; CSP allows the named Vercel endpoints. Current browser code does not initialize Speed Insights or send custom events.                                                                                                                                                                                 |
-| YouTube and static notebooks          | CSP permits self/YouTube frame destinations; notebook HTML uses a sandboxed iframe. Compatibility with Vercel's blanket frame-denial response header needs deployed-header/browser verification.                                                                                                                                                        |
-| Jupyter/Mojo and Python asset tooling | Author/build tools, not request-time notebook execution.                                                                                                                                                                                                                                                                                                |
+| Boundary                              | Implementation and credential placement                                                                                                                                                                                                                                                                                                                                                         |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resend contact / comment alerts       | `/contact` server action and production-only comment dispatcher reuse private API key, sender and recipient/defaults. Version-three alerts add escaped HTML action buttons and a full-text alternative; expiring service-only capabilities permit one-comment confirmation, while earlier jobs retain original payloads/keys. Contact retains its normal HTML form with optional `use:enhance`. |
+| Chatterbox speech                     | `/api/tts/chatterbox` server proxy; private endpoint/key/model/voice settings; optional browser visibility flag. Supports native/OpenAI-compatible request mapping and WAV/MP3/Opus choices; accepts upstream `audio/*` bytes.                                                                                                                                                                  |
+| Google article narration              | Explicit `scripts/article-narration.mjs` authoring command; script-only Gemini key and Free-tier confirmation. Saved same-origin audio/manifests feed the shared player, with US English device speech as fallback. No public synthesis endpoint or build-time provider call.                                                                                                                   |
+| Supabase                              | Server-only URL/publishable/service credentials and owner UUID. Browser drafts are local Dexie data; browser code does not receive a service-role client.                                                                                                                                                                                                                                       |
+| Moderated article comments            | Reuses the existing Supabase clients, configured owner and `NOTES_RATE_LIMIT_SALT`; no new provider, public environment flag or third-party comment widget. Server-only HMAC keys and privileged RPCs; plain text and approved fields only reach readers.                                                                                                                                       |
+| Comment-alert scheduler               | Supabase `pg_cron`/`pg_net` and Vault call a fixed private production endpoint every five minutes. `COMMENTS_NOTIFICATION_SECRET` authorizes only bounded worker dispatch; it is private in Vercel Production and Vault. Hosted activation is verified separately.                                                                                                                              |
+| IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots, verifies live ownership against the repository secret, and submits changed URLs only after that proof matches.                                                                                                                                                                                           |
+| Vercel Web Analytics                  | Root layout initializes default public pageviews; CSP allows the named Vercel endpoints. Current browser code does not initialize Speed Insights or send custom events.                                                                                                                                                                                                                         |
+| YouTube and static notebooks          | CSP permits self/YouTube frame destinations; notebook HTML uses a sandboxed iframe. Compatibility with Vercel's blanket frame-denial response header needs deployed-header/browser verification.                                                                                                                                                                                                |
+| Jupyter/Mojo and Python asset tooling | Author/build tools, not request-time notebook execution.                                                                                                                                                                                                                                                                                                                                        |
 
 For each nonempty live IndexNow submission, `scripts/indexnow.mjs` first fetches the canonical
 secret-backed verification URL with redirects rejected and a 15-second deadline. It requires
@@ -1124,7 +1182,7 @@ preserved. Same-origin notebook frames are outside this optional external-media 
 
 The checked-in CSP is defined in `svelte.config.js` with automatic nonce/hash handling, self-by-default scripts, named Vercel endpoints, bounded frame/worker policy, no objects and no framing. `vercel.json` adds transport response headers and apex-to-www redirects. `hooks.server.ts` adds request IDs and headers to resolved application responses; it normalizes blog categories and resolves notes sessions only for protected/auth-dependent routes.
 
-Private studio/auth/API responses receive private no-cache/no-store headers and noindex/noarchive directives. Auth pages intentionally use `same-origin` referrers on clean URLs and `no-referrer` while a recovery/callback secret remains in the URL; recovery tokens are consumed only after an explicit same-origin confirmation POST. Local auth config must not be treated as proof of hosted signup/session settings.
+Private studio/auth/API responses receive private no-cache/no-store headers and noindex/noarchive directives. Auth pages intentionally use `same-origin` referrers on clean URLs and `no-referrer` while a recovery/callback secret remains in the URL; recovery tokens are consumed only after an explicit same-origin confirmation POST. The standalone email-comment action route follows the same clean-URL referrer rule without resolving a Notes session; its scoped capability cookie and explicit bounded POST authorise only one pending guest moderation. Local auth config must not be treated as proof of hosted signup/session settings.
 
 Owner authorization checks both the configured immutable user UUID and database membership/RLS. Public notes are filtered through active/unrevoked publication visibility, then publication-specific assets are checked. The public asset path is not permission to read arbitrary private blobs.
 
@@ -1138,7 +1196,11 @@ reader payload. The independent notification endpoint requires a private bearer 
 accepts only bounded empty JSON, without reader inputs, owner cookies or caller-selected mail
 destinations. Production-only mail dispatch uses leased service-role outbox RPCs. Version-two
 alerts forward the stored name and complete plain-text comment through existing Resend to the
-fixed owner inbox; reader text never supplies HTML or headers. Outbox state, logs and worker
+fixed owner inbox. Version-three alerts add escaped HTML buttons and complete text alternatives;
+reader text never supplies raw HTML or headers. The standalone production-only action route
+uses scoped bearer authority and a same-origin confirmation POST to a service-only SQL
+consumer. Safe previews cannot change state; expiry, one-use checks and explicit board
+revocation prevent stale inbox actions. Outbox state, application logs and worker
 responses do not copy reader prose. Rejected/hidden content remains private in durable storage until an operator
 performs a separately authorised deletion. See [the comment boundary](#moderated-post-comments).
 
@@ -1208,7 +1270,12 @@ cover migration-003 compatibility, preserved legacy payloads/keys, new version-t
 immutable joined content and unchanged permissions/delivery state. Application fixtures verify
 complete plain-text name/body content with multiline Unicode and literal HTML-like input, fixed
 headers/addressing, stable version-specific payloads/keys, production gating, provider failure preserving submission success,
-and the worker's bearer/input/admission bounds without sending real mail. Isolated SQL tests do
+and the worker's bearer/input/admission bounds without sending real mail. Version-three fixtures
+cover legacy preservation, escaped HTML/full-text alternatives, stable action pairs, fixed
+expiry, service-only access, raw-material cleanup, one-use consumption, explicit board
+revocation and audit identity. Route fixtures check safe GET/HEAD behavior, private headers,
+token-to-cookie cleanup, strict streamed body/origin/nonce handling and stale confirmations.
+Isolated SQL tests do
 not prove multi-connection contention, Vault/cron activation or provider/inbox delivery. Those
 remain explicit release checks against the selected project and contact inbox.
 
@@ -1307,7 +1374,8 @@ The existing agent/contributor rules govern changes. In practical terms:
 9. Preserve determinism and numerical limits where a feature defines them; do not force unrelated engines into a shared abstraction without evidence.
 10. Treat generated output and source assets according to their generator contract. Resolve the optimizer/as-is conflict before claiming lossless preservation.
 11. Keep all reader comments pending until explicit owner approval, derive author privileges on the server/in SQL, and apply approved-parent visibility to every public row/count/reply lookup. Preserve static article rendering and keep submitted comments out of browser/offline stores.
-12. Queue each new guest-comment email atomically, preserve saved-comment success when mail fails, and dispatch only from production through leased service-only work. Keep the recipient fixed to contact configuration; version-two alerts include complete stored name/body only as plain text, never HTML or headers. Preserve version-one retry payloads and version-specific provider keys. Keep reader prose out of the outbox, logs and worker responses, and never expose the worker bearer secret to visitors.
+12. Queue each new guest-comment email atomically, preserve saved-comment success when mail fails, and dispatch only from production through leased service-only work. Keep the recipient fixed to contact configuration and preserve exact version-one/version-two payloads and version-specific keys. Version-three HTML must escape all reader content and retain the full plain-text alternative. Keep reader prose out of the outbox, application logs and worker responses, and never expose the worker bearer secret to visitors.
+13. Email moderation authority is action-scoped, single-comment, expiring and one-use. GET/HEAD never moderate or consume it. Only an explicit bounded same-origin confirmation POST can atomically moderate a pending guest comment, revoke both actions and record its email source. Explicit board status calls revoke old capabilities permanently. Retain raw action material privately only for unsent retries, then clear it; exclude capability values from public data, exports, confirmation HTML, application logs and analytics.
 
 Known violations remain audit findings. Listing an invariant does not claim it is automatically enforced everywhere.
 
@@ -1356,6 +1424,12 @@ email-content choice at the owner's explicit request. New content-version-two jo
 stored name and full plain-text comment to the same Resend/contact inbox. The additive migration
 and application-first rollout preserve legacy notification payloads and retry identities;
 moderation cannot recall delivered email copies.
+
+[ADR 0012](decisions/0012-comment-email-moderation-actions.md) adds expiring bearer Approve and
+Reject capabilities only to new version-three notifications. Standalone confirmation HTML and
+an explicit POST preserve scanner safety without owner login; service-only SQL consumption,
+board revocation and private raw-material cleanup maintain one-comment authority and audit
+history. Existing payload identities, provider configuration and owner-session board remain.
 
 The [forensic findings](FORENSIC_AUDIT.md#findings) are the remediation inventory. Open debt includes remaining distributed/Notes request controls; notes transaction and integration-test gaps; browser save deadlines; comprehensive accessibility verification of Meaning Map's corrected interaction state; image provenance/cache policy; duplicated path rules; and repeated test orchestration. Fractal's laboratory-envelope validation and Meaning Map's composed interaction state are corrected, with focused unit and browser regressions. The earlier map resource leak and stale-session metadata no-op path are also corrected. Proposed remediation does not change this document's as-built descriptions until implemented and verified.
 

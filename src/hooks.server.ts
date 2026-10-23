@@ -36,6 +36,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const isNotesAuthCallback = matchesPath('/notes/auth');
 	const isNotesAuth = isSignIn || isForgotPassword || isResetPassword || isNotesAuthCallback;
 	const isProtectedNotesApi = matchesPath('/api/notes');
+	const isCommentEmailAction = matchesPath('/api/comments/moderate');
 	const needsNotesSession = isStudio || isSignIn || isResetPassword || isProtectedNotesApi;
 	if (needsNotesSession) {
 		try {
@@ -68,12 +69,18 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// A native form POST can serialize Origin as null under no-referrer, which
 		// SvelteKit correctly rejects. Keep no-referrer only while a secret is still
 		// present in the URL; clean auth pages never send a referrer cross-origin.
-		isNotesAuth ? notesAuthReferrerPolicy(event.url) : 'strict-origin-when-cross-origin'
+		isNotesAuth
+			? notesAuthReferrerPolicy(event.url)
+			: isCommentEmailAction
+				? event.url.search
+					? 'no-referrer'
+					: 'same-origin'
+				: 'strict-origin-when-cross-origin'
 	);
 	response.headers.set('x-content-type-options', 'nosniff');
 	response.headers.set('x-frame-options', 'DENY');
 	response.headers.set('permissions-policy', 'camera=(), microphone=(), geolocation=()');
-	if (isStudio || isNotesAuth || isProtectedNotesApi) {
+	if (isStudio || isNotesAuth || isProtectedNotesApi || isCommentEmailAction) {
 		response.headers.set(
 			'cache-control',
 			'private, no-cache, no-store, must-revalidate, max-age=0'

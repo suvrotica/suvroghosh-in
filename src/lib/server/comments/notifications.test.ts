@@ -39,6 +39,15 @@ const fullContentJob = {
 	display_name: 'PRIVATE_READER_NAME <&"\' 😀',
 	body: 'PRIVATE_COMMENT_TEXT\nA second line with <script>alert("literal text")</script> & Bengali: বাংলা.'
 };
+const actionJob = {
+	...fullContentJob,
+	content_version: 3,
+	approve_token: 'a1'.repeat(32),
+	reject_token: 'b2'.repeat(32),
+	action_expires_at: '2026-10-30T12:00:00+00:00'
+};
+const approveUrl = `https://www.suvroghosh.in/api/comments/moderate?action=approve&token=${actionJob.approve_token}`;
+const rejectUrl = `https://www.suvroghosh.in/api/comments/moderate?action=reject&token=${actionJob.reject_token}`;
 
 beforeEach(() => {
 	vi.clearAllMocks();
@@ -170,6 +179,37 @@ If you have already moderated it, the board shows its current status.`
 		);
 		expect(JSON.stringify([...new Headers(request?.headers)])).not.toContain(displayName);
 		expect(String(request?.body)).not.toContain('attacker');
+	});
+	it('preserves the exact version 2 email wire payload and key without adding HTML or action links', async () => {
+		state.rpc.mockResolvedValueOnce([{ ...actionJob, content_version: 2 }]);
+		const { dispatchCommentNotifications } = await import('./notifications');
+		await dispatchCommentNotifications(job.submission_id);
+		const request = vi.mocked(fetch).mock.calls[0][1];
+		expect(String(request?.body)).toBe(
+			JSON.stringify({
+				from: 'SuvroGhosh.IN Comments <notifications@example.com>',
+				subject: 'A new comment is waiting for approval | SuvroGhosh.IN',
+				text: `A new reader comment was submitted for approval.
+
+Article: The Fifth Window
+Submitted: 2026-10-23T12:00:00.000Z
+
+Commenter: ${fullContentJob.display_name}
+
+Full comment:
+${fullContentJob.body}
+
+Review and approve, reject or reply in your moderation board:
+https://www.suvroghosh.in/notes/studio/comments
+
+The comment stays hidden until you approve it. Sign in with your existing owner account.
+If you have already moderated it, the board shows its current status.`,
+				to: 'owner@example.com'
+			})
+		);
+		expect(new Headers(request?.headers).get('idempotency-key')).toBe(
+			`post-comment-approval-v2/${job.comment_id}`
+		);
 	});
 	it.each([
 		{ display_name: undefined },
@@ -331,5 +371,199 @@ If you have already moderated it, the board shows its current status.`
 		expect((await dispatchCommentNotifications()).failed).toBe(1);
 		expect(fetch).not.toHaveBeenCalled();
 		expect(JSON.stringify(vi.mocked(console.error).mock.calls)).not.toContain('PRIVATE_SECRET');
+	});
+});
+
+describe('private email moderation action content', () => {
+	it('sends action-bound buttons and a full plain-text alternative only to the existing fixed inbox', async () => {
+		state.rpc.mockResolvedValueOnce([
+			{
+				...actionJob,
+				from: 'attacker@example.com',
+				to: 'attacker@example.com',
+				subject: 'Attacker subject',
+				headers: { 'X-Reader': 'attacker' },
+				html: '<script>attacker</script>',
+				approve_url: 'https://attacker.example/approve',
+				reject_url: 'https://attacker.example/reject'
+			}
+		]);
+		const { dispatchCommentNotifications, COMMENT_MODERATION_URL } =
+			await import('./notifications');
+		expect(await dispatchCommentNotifications()).toEqual({
+			enabled: true,
+			attempted: 1,
+			sent: 1,
+			failed: 0
+		});
+		const request = vi.mocked(fetch).mock.calls[0][1];
+		const email = JSON.parse(String(request?.body));
+		expect(email).toMatchObject({
+			from: 'SuvroGhosh.IN Comments <notifications@example.com>',
+			to: 'owner@example.com',
+			subject: 'A new comment is waiting for approval | SuvroGhosh.IN'
+		});
+		expect(email.text).toBe(`A new reader comment was submitted for approval.
+
+Article: The Fifth Window
+Submitted: 2026-10-23T12:00:00.000Z
+
+Commenter: ${actionJob.display_name}
+
+Full comment:
+${actionJob.body}
+
+Choose Approve or Reject, then confirm your choice on the page that opens. No admin sign-in is needed. Opening a link does not change the comment until you confirm.
+
+Approve comment:
+${approveUrl}
+
+Reject comment:
+${rejectUrl}
+
+These private links expire 7 days after submission, at 2026-10-30T12:00:00.000Z. Once the comment has been handled, neither link can be used. Keep this email private: anyone with an action link can moderate this comment.
+
+Review the current status or reply in your moderation board:
+${COMMENT_MODERATION_URL}
+
+The comment stays hidden until you approve it. The moderation board uses your existing owner sign-in.`);
+		const links = Array.from(String(email.html).matchAll(/href="([^"]+)"/g), (match) =>
+			match[1].replaceAll('&amp;', '&')
+		);
+		expect(links).toEqual([approveUrl, rejectUrl, COMMENT_MODERATION_URL]);
+		for (const [index, action, token] of [
+			[0, 'approve', actionJob.approve_token],
+			[1, 'reject', actionJob.reject_token]
+		] as const) {
+			const link = new URL(links[index]);
+			expect(link.origin).toBe('https://www.suvroghosh.in');
+			expect(link.pathname).toBe('/api/comments/moderate');
+			expect([...link.searchParams]).toEqual([
+				['action', action],
+				['token', token]
+			]);
+		}
+		expect(email.html).toMatch(/>Approve<\/a>/);
+		expect(email.html).toMatch(/>Reject<\/a>/);
+		expect(email.html).toContain('No admin sign-in is needed.');
+		expect(email.html).toContain('2026-10-30T12:00:00.000Z');
+		expect(email.html).not.toMatch(/<form|<script|<img|<iframe/i);
+		expect(String(request?.body)).not.toContain('attacker');
+		expect(new Headers(request?.headers).get('idempotency-key')).toBe(
+			`post-comment-approval-v3/${job.comment_id}`
+		);
+		expect(JSON.stringify([...new Headers(request?.headers)])).not.toContain(
+			actionJob.approve_token
+		);
+	});
+	it('escapes reader and article HTML while preserving all 3000 Unicode codepoints and paragraph spacing', async () => {
+		const title = 'An <article> & "quoted" \'title\'\r\nSecond line';
+		const namePrefix = 'বাংলা <&"\' ';
+		const name = namePrefix + '😀'.repeat(60 - Array.from(namePrefix).length);
+		const bodyPrefix = '  First paragraph: <script>alert("reader")</script> & \'quoted\'\n\n';
+		const bodySuffix = '\n\n  Last paragraph বাংলা 😀';
+		const body =
+			bodyPrefix + '😀'.repeat(3000 - Array.from(bodyPrefix + bodySuffix).length) + bodySuffix;
+		expect(Array.from(name)).toHaveLength(60);
+		expect(Array.from(body)).toHaveLength(3000);
+		state.post.mockReturnValue({ title });
+		state.rpc.mockResolvedValueOnce([{ ...actionJob, display_name: name, body }]);
+		const { dispatchCommentNotifications } = await import('./notifications');
+		expect((await dispatchCommentNotifications()).sent).toBe(1);
+		const email = JSON.parse(String(vi.mocked(fetch).mock.calls[0][1]?.body));
+		expect(email.text).toContain(`Commenter: ${name}\n\nFull comment:\n${body}\n`);
+		expect(email.html).toContain(
+			'An &lt;article&gt; &amp; &quot;quoted&quot; &#39;title&#39;  Second line'
+		);
+		expect(email.html).toContain('বাংলা &lt;&amp;&quot;&#39; ');
+		expect(email.html).toContain(
+			'  First paragraph: &lt;script&gt;alert(&quot;reader&quot;)&lt;/script&gt; &amp; &#39;quoted&#39;\n\n'
+		);
+		expect(email.html).toContain(bodySuffix);
+		expect(email.html).toContain('white-space:pre-wrap');
+		expect(email.html).not.toContain('<script>');
+		const escapedBody = String(email.html).match(/border-radius:4px">([\s\S]*?)<\/div>/)?.[1];
+		const decodedBody = escapedBody
+			?.replaceAll('&lt;', '<')
+			.replaceAll('&gt;', '>')
+			.replaceAll('&quot;', '"')
+			.replaceAll('&#39;', "'")
+			.replaceAll('&amp;', '&');
+		expect(decodedBody).toBe(body);
+	});
+	it.each([
+		{ display_name: undefined },
+		{ body: null },
+		{ approve_token: undefined },
+		{ approve_token: null },
+		{ approve_token: '' },
+		{ approve_token: 'A1'.repeat(32) },
+		{ approve_token: 'a'.repeat(63) },
+		{ approve_token: 'a'.repeat(65) },
+		{ approve_token: 'g1'.repeat(32) },
+		{ reject_token: undefined },
+		{ reject_token: actionJob.approve_token },
+		{ action_expires_at: undefined },
+		{ action_expires_at: null },
+		{ action_expires_at: 'next week' },
+		{ action_expires_at: '2026-10-30' },
+		{ content_version: 4 }
+	])('fails closed without exposing a malformed action claim: %j', async (invalidContent) => {
+		state.rpc.mockResolvedValueOnce([{ ...actionJob, ...invalidContent }]);
+		const { dispatchCommentNotifications } = await import('./notifications');
+		expect(await dispatchCommentNotifications()).toMatchObject({
+			attempted: 0,
+			sent: 0,
+			failed: 1
+		});
+		expect(fetch).not.toHaveBeenCalled();
+		expect(state.rpc).toHaveBeenCalledTimes(1);
+		const logs = JSON.stringify(vi.mocked(console.error).mock.calls);
+		for (const value of [
+			actionJob.display_name,
+			actionJob.body,
+			actionJob.approve_token,
+			actionJob.reject_token
+		])
+			expect(logs).not.toContain(value);
+	});
+	it('keeps the exact v3 payload, capability pair, expiry and provider key after an uncertain acknowledgement', async () => {
+		vi.mocked(fetch).mockImplementation(async () => {
+			return new Response(JSON.stringify({ id: 'email-123' }), {
+				headers: { 'content-type': 'application/json' }
+			});
+		});
+		state.rpc.mockImplementation((_client, name) => {
+			if (name === 'claim_post_comment_notifications') return [actionJob];
+			return Promise.reject(new Error('PRIVATE_DATABASE_DETAIL'));
+		});
+		const { dispatchCommentNotifications } = await import('./notifications');
+		expect((await dispatchCommentNotifications()).failed).toBe(1);
+		// A later retry must retain the original expiry rather than grant another seven days.
+		vi.useFakeTimers();
+		vi.setSystemTime(new Date('2026-10-26T16:00:00Z'));
+		state.rpc.mockImplementation((_client, name) =>
+			name === 'claim_post_comment_notifications' ? [actionJob] : true
+		);
+		expect((await dispatchCommentNotifications()).sent).toBe(1);
+		const requests = vi.mocked(fetch).mock.calls.map(([, request]) => request);
+		expect(requests).toHaveLength(2);
+		expect(requests[0]?.body).toBe(requests[1]?.body);
+		for (const request of requests) {
+			expect(new Headers(request?.headers).get('idempotency-key')).toBe(
+				`post-comment-approval-v3/${job.comment_id}`
+			);
+			const email = JSON.parse(String(request?.body));
+			expect(email.text).toContain(approveUrl);
+			expect(email.text).toContain(rejectUrl);
+			expect(email.text).toContain('2026-10-30T12:00:00.000Z');
+		}
+		const logs = JSON.stringify(vi.mocked(console.error).mock.calls);
+		for (const value of [
+			actionJob.approve_token,
+			actionJob.reject_token,
+			'PRIVATE_DATABASE_DETAIL'
+		])
+			expect(logs).not.toContain(value);
 	});
 });
