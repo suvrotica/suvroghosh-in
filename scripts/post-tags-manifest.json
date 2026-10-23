@@ -66,10 +66,7 @@
 			"bodyHash": "b0c4f0c22b437600a27cc3057266a312b7584f32e36bfaad0ea01d9d9fbc0787",
 			"hashVersion": 2,
 			"revisionHash": "6bc5b9bbb02e282851d785c142cf970c39546db838207ff12bb3820534dc849b",
-			"generatedTags": [
-				"Rectangle",
-				"Tea"
-			],
+			"generatedTags": ["Rectangle", "Tea"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-07"
@@ -436,10 +433,7 @@
 			"bodyHash": "adf7def3d037665971609ee4e4e574c2b0480daa6be0d93a103feb86b6e8b52c",
 			"hashVersion": 2,
 			"revisionHash": "f1d0a53abba0c3ae48bd594f09736563373c479174856f3ba845b92f646b17f2",
-			"generatedTags": [
-				"Tracks Whenever",
-				"AI"
-			],
+			"generatedTags": ["Tracks Whenever", "AI"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
@@ -448,9 +442,7 @@
 			"bodyHash": "bd4fcdbadde97314df51ef78bb0504aaf702c1b4e6d072b1063c8f185767c4b8",
 			"hashVersion": 2,
 			"revisionHash": "87a6be7a356be57892f88ff7c561088ddc9fcaa1b0234d9aae6c8cbc6c46d966",
-			"generatedTags": [
-				"AI"
-			],
+			"generatedTags": ["AI"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
@@ -459,21 +451,8 @@
 			"bodyHash": "4c40536da9a60d9860ef2d10862ebe459af8fbccdbf23e6c1958b99dbb903efd",
 			"hashVersion": 2,
 			"revisionHash": "4f5fc17d9ebeaebd3fe624f81cd461fa3b2f5d659c37eeb3b9c196072631ca55",
-			"generatedTags": [
-				"AI Music",
-				"AI Songs",
-				"Songs",
-				"Music Videos",
-				"Generative AI",
-				"AI"
-			],
-			"pinnedTags": [
-				"AI Music",
-				"AI Songs",
-				"Songs",
-				"Music Videos",
-				"Generative AI"
-			],
+			"generatedTags": ["AI Music", "AI Songs", "Songs", "Music Videos", "Generative AI", "AI"],
+			"pinnedTags": ["AI Music", "AI Songs", "Songs", "Music Videos", "Generative AI"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
 		},
@@ -3037,9 +3016,7 @@
 			"bodyHash": "14c4caf929490dbfc4e46cc982ce57f02c1fb710671e5e5b6901fd7bdeb3782a",
 			"hashVersion": 2,
 			"revisionHash": "eeb8be1208422e95d76a65f1f4c758a0b110fb240d50ffbc8cfda846f6ee5039",
-			"generatedTags": [
-				"AI"
-			],
+			"generatedTags": ["AI"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
@@ -6773,11 +6750,7 @@
 		},
 		"src/lib/posts/the-dhoti-the-toothache-and-the-great-bengali-flapping-problem.md": {
 			"bodyHash": "79d76890cf568031c660736479d95ecb57d5764e0558f20981b1d5b7d03f6622",
-			"generatedTags": [
-				"Dhoti",
-				"Toothache",
-				"Safe"
-			],
+			"generatedTags": ["Dhoti", "Toothache", "Safe"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"revisionHash": "64808c13d0b4549d99dc79f5f2a7bb7c7d4b8cad4c7e245fdb287593bc536634",
@@ -9758,14 +9731,7 @@
 		},
 		"src/lib/posts/world-yoga-day-summer-solstice-2026.md": {
 			"bodyHash": "badb2582d6ecdbd43bcaba69a900290001f3f9feb28c2f4dc52375b82fa5c87e",
-			"generatedTags": [
-				"Yoga",
-				"Solstice",
-				"Sun",
-				"June",
-				"Earth",
-				"Summer"
-			],
+			"generatedTags": ["Yoga", "Solstice", "Sun", "June", "Earth", "Summer"],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"revisionHash": "94ded1eb8d30e36329e7d0f72c4f072f3346200df0274b175f0752910d291546",
@@ -10236,9 +10202,7 @@
 				"Colour",
 				"Canvas"
 			],
-			"pinnedTags": [
-				"Fragment Shader"
-			],
+			"pinnedTags": ["Fragment Shader"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-15"
 		},
@@ -10597,14 +10561,7 @@
 				"Route",
 				"Game"
 			],
-			"pinnedTags": [
-				"Games",
-				"Calcutta",
-				"Kolkata",
-				"Browser Game",
-				"Satire",
-				"Svelte"
-			],
+			"pinnedTags": ["Games", "Calcutta", "Kolkata", "Browser Game", "Satire", "Svelte"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-09"
 		},
@@ -10702,18 +10659,8 @@
 			"bodyHash": "952849d6c149c270e52d697b60b7bb9fadb4cf067c50b3ccba53cc3909178fcc",
 			"hashVersion": 2,
 			"revisionHash": "fc6cb37ff815e5bc91ea51a6496867668b6d4fadf1391fb5620a1cc21d35c13a",
-			"generatedTags": [
-				"Video",
-				"Screen Time",
-				"Teenagers",
-				"Digital Wellbeing"
-			],
-			"pinnedTags": [
-				"Video",
-				"Screen Time",
-				"Teenagers",
-				"Digital Wellbeing"
-			],
+			"generatedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
+			"pinnedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
 		},
@@ -10729,12 +10676,7 @@
 				"Episode",
 				"History"
 			],
-			"pinnedTags": [
-				"Video",
-				"Mental Illness",
-				"Psychiatry",
-				"Mental Health History"
-			],
+			"pinnedTags": ["Video", "Mental Illness", "Psychiatry", "Mental Health History"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
 		},
@@ -11012,18 +10954,8 @@
 			"bodyHash": "54506487d654ee5f8d278d4bef591548e8d745d547f989f3de39e743355a2931",
 			"hashVersion": 2,
 			"revisionHash": "c3765619d46153956dd70081e8b56230688d21e958a610d18285a0480d4bf3ea",
-			"generatedTags": [
-				"Video",
-				"Major Depressive Disorder",
-				"Depression",
-				"Mental Health"
-			],
-			"pinnedTags": [
-				"Video",
-				"Major Depressive Disorder",
-				"Depression",
-				"Mental Health"
-			],
+			"generatedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
+			"pinnedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-21"
 		},
@@ -11460,14 +11392,7 @@
 				"City Assembled",
 				"Height"
 			],
-			"pinnedTags": [
-				"Games",
-				"Calcutta",
-				"Kolkata",
-				"Browser Game",
-				"Three.js",
-				"Flight"
-			],
+			"pinnedTags": ["Games", "Calcutta", "Kolkata", "Browser Game", "Three.js", "Flight"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-10"
 		},
@@ -11612,14 +11537,7 @@
 				"Game",
 				"Data"
 			],
-			"pinnedTags": [
-				"Games",
-				"Healthcare IT",
-				"Crossword",
-				"Learning Game",
-				"FHIR",
-				"HL7"
-			],
+			"pinnedTags": ["Games", "Healthcare IT", "Crossword", "Learning Game", "FHIR", "HL7"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-13"
 		},
@@ -11697,16 +11615,8 @@
 			"bodyHash": "9ffac173989ed974f3b07554d88949cb9a9e0f741c921bfac85fbf71c7b97b65",
 			"hashVersion": 2,
 			"revisionHash": "cba0cff60c21b7567fc98d1475040d6452eb8ee444c661b47e3495ae6db3a458",
-			"generatedTags": [
-				"Personal Essay",
-				"Reflection",
-				"SuvroGhosh"
-			],
-			"pinnedTags": [
-				"Personal Essay",
-				"Reflection",
-				"SuvroGhosh"
-			],
+			"generatedTags": ["Personal Essay", "Reflection", "SuvroGhosh"],
+			"pinnedTags": ["Personal Essay", "Reflection", "SuvroGhosh"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-ai-scribe-the-false-mushroom-and-the-rural-clinic.md": {
@@ -11957,13 +11867,7 @@
 				"Fixed Point",
 				"Resting Range"
 			],
-			"pinnedTags": [
-				"Homeostasis",
-				"Oscillations",
-				"Complex Systems",
-				"Physiology",
-				"Ecology"
-			],
+			"pinnedTags": ["Homeostasis", "Oscillations", "Complex Systems", "Physiology", "Ecology"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-16"
 		},
@@ -13387,13 +13291,7 @@
 				"Rabies",
 				"Factory"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Science Fiction",
-				"Horror",
-				"Apocalypse"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Science Fiction", "Horror", "Apocalypse"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/sketching-the-void.md": {
@@ -13701,13 +13599,7 @@
 				"Rono",
 				"Goddess"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Weird Fiction",
-				"Dread",
-				"Disappearance"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Dread", "Disappearance"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-tenth-limb.md": {
@@ -13726,13 +13618,7 @@
 				"Kaka",
 				"Limbs"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Weird Fiction",
-				"Reverent Dread",
-				"Faith"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Reverent Dread", "Faith"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/hot-wind.md": {
@@ -13751,13 +13637,7 @@
 				"Cable",
 				"Cables"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Weird Fiction",
-				"Apocalyptic",
-				"Guilt"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Apocalyptic", "Guilt"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/ashtami-approach.md": {
@@ -13776,13 +13656,7 @@
 				"Aircraft",
 				"Captain"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Horror",
-				"Claustrophobic",
-				"Guilt"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Horror", "Claustrophobic", "Guilt"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-second-smile.md": {
@@ -13826,13 +13700,7 @@
 				"Mahalaya",
 				"Sweetness"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Horror",
-				"Festive Dread",
-				"Contagion"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Horror", "Festive Dread", "Contagion"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/shobar-din.md": {
@@ -13902,13 +13770,7 @@
 				"Mosquitoes",
 				"Glove"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Medical Horror",
-				"Epidemic Dread",
-				"Contagion"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Medical Horror", "Epidemic Dread", "Contagion"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/beneath-the-last-tram.md": {
@@ -14174,13 +14036,7 @@
 				"Hole",
 				"Mother"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Cosmic Horror",
-				"Apocalyptic",
-				"Devouring"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Cosmic Horror", "Apocalyptic", "Devouring"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-ballot-and-the-banana-peel.md": {
@@ -14229,13 +14085,7 @@
 				"Deb",
 				"Shadow"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Cosmic Horror",
-				"Apocalyptic",
-				"Memory"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Cosmic Horror", "Apocalyptic", "Memory"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/alienation-during-durga-puja-and-democracy.md": {
@@ -14632,13 +14482,7 @@
 				"Flowers",
 				"Opened"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Body Horror",
-				"Devouring",
-				"Festival"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Devouring", "Festival"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/durga-puja-the-great-hiatus-of-larceny.md": {
@@ -14744,13 +14588,7 @@
 				"Tongue",
 				"Eye"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Body Horror",
-				"Dread",
-				"Quantum Entanglement"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Quantum Entanglement"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/one-mouthful.md": {
@@ -14769,13 +14607,7 @@
 				"Molten",
 				"Mat"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Apocalyptic Horror",
-				"Dread",
-				"Isolation"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Apocalyptic Horror", "Dread", "Isolation"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/chorbagan-who-signed.md": {
@@ -14824,13 +14656,7 @@
 				"Doctor",
 				"Dressing"
 			],
-			"pinnedTags": [
-				"Short Fiction",
-				"Calcutta",
-				"Body Horror",
-				"Dread",
-				"Complicity"
-			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Complicity"],
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-last-fuchka.md": {
@@ -15631,6 +15457,35 @@
 				"White Coat Hypertension",
 				"Kidney Health",
 				"Science",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-future-is-late-again.md": {
+			"bodyHash": "3232462b7199ea3fc3d7e535af08522f9780ff771ed1da494edfb0af943a03e8",
+			"hashVersion": 2,
+			"revisionHash": "6b37e21a3f17b5152a281be7a5cdb9cb412b232eff02d3a0b1cf47e8da2c8aa0",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"AI History",
+				"AI Hype",
+				"AI Safety",
+				"Automation",
+				"AGI",
+				"Robotaxis",
+				"Technology Forecasts",
+				"SuvroGhosh",
+				"Sources Dates"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"AI History",
+				"AI Hype",
+				"AI Safety",
+				"Automation",
+				"AGI",
+				"Robotaxis",
+				"Technology Forecasts",
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"

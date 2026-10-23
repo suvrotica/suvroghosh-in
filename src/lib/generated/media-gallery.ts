@@ -62,6 +62,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-the-future-is-late-again.jpg",
+			"src": "/images/art-the-future-is-late-again.jpg",
+			"bytes": 166573,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "art-the-machines-insides.jpg",
 			"src": "/images/art-the-machines-insides.jpg",
 			"bytes": 274012,

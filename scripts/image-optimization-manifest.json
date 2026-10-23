@@ -8112,6 +8112,22 @@
       "sourceHash": "0965fd2ca5ff9430f49055e7d6a4377c095ec6b1844db4c4b8108e396deb682d",
       "width": 1672
     },
+    "static/images/art-the-future-is-late-again.jpg": {
+      "format": "JPEG",
+      "height": 630,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 166573,
+      "outputHash": "3cf5c3f4aeb9a0d0f5bfcee5055c886608adaff1e2cb448307ac160a61a7daff",
+      "psnrDb": 39.26,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 173601,
+      "sourceHash": "50cdd9e1b621d3f89c77143c8da9dc6f4de4611a596600f19c72174ac03ea3f4",
+      "width": 1200
+    },
     "static/images/art-the-machines-insides.jpg": {
       "format": "JPEG",
       "height": 940,
