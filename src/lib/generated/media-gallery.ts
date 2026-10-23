@@ -20,6 +20,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "art-hypertension-salt-sugar-and-certainty.jpg",
+			"src": "/images/art-hypertension-salt-sugar-and-certainty.jpg",
+			"bytes": 131538,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "art-php2shell-wordpress-security-alert.jpg",
 			"src": "/images/art-php2shell-wordpress-security-alert.jpg",
 			"bytes": 310312,

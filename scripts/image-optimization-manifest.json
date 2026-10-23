@@ -8016,6 +8016,22 @@
       "sourceHash": "22bc7fe9cde2aa14c64640cf0474bcb38386b52544a71e6dc7fb435beb9ecf1a",
       "width": 1536
     },
+    "static/images/art-hypertension-salt-sugar-and-certainty.jpg": {
+      "format": "JPEG",
+      "height": 630,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 131538,
+      "outputHash": "aa4943710c70c8777944e04a9e0394afe3dee052d5e6388aa738775bea77f3a0",
+      "psnrDb": 38.04,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 151986,
+      "sourceHash": "3f8047ba0be269ce6ef6023263a209d312b7034ff0b357c286cc6933fde3a97d",
+      "width": 1200
+    },
     "static/images/art-php2shell-wordpress-security-alert.jpg": {
       "format": "JPEG",
       "height": 1024,

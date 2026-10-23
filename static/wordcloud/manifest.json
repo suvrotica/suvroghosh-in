@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T09:59:38.057041+00:00",
+  "generatedAt": "2026-10-23T10:35:26.266192+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5104,6 +5104,29 @@
         "Man",
         "Municipal",
         "Posture"
+      ],
+      "wordCount": 130
+    },
+    "hypertension-salt-sugar-and-certainty": {
+      "generatedAt": "2026-10-23T10:35:25.689675+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/hypertension-salt-sugar-and-certainty.svg",
+      "source": "src/lib/posts/hypertension-salt-sugar-and-certainty.md",
+      "sourceHash": "a7f46fafc974ec80dbccfe97e113db41d5fa28a4676822df0146cdf5606fd130",
+      "sourceModified": "2026-10-23T10:34:43.623058+00:00",
+      "topWords": [
+        "Pressure",
+        "Hypertension",
+        "Sodium",
+        "Treatment",
+        "Disease",
+        "Salt",
+        "Transcript",
+        "Blood",
+        "Systolic",
+        "Percent",
+        "Cardiovascular",
+        "Potassium"
       ],
       "wordCount": 130
     },
