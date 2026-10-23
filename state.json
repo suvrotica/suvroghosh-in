@@ -31,11 +31,12 @@
     "bytes": 121458036
   },
   "publication": {
-    "commit": "3fc69166e91614de64beb7e54e355221c4cbafb3",
+    "commit": "2ea04792c3dd21793923761967e2df0d709b5b72",
     "slugs": [
-      "the-shape-of-waiting"
+      "the-piano-that-forgives",
+      "the-colony-where-nobody-is-allowed-to-sleep"
     ],
-    "status": "verified"
+    "status": "pending"
   },
-  "updatedAt": "2026-10-23T14:05:42.662Z"
+  "updatedAt": "2026-10-23T14:09:31.315Z"
 }
