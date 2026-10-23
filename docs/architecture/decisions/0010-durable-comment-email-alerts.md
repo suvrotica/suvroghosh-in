@@ -10,6 +10,10 @@ comment at the owner's request; existing notification identities retain their or
 and provider key. The durable outbox, fixed recipient, production gate and retry design remain.
 The original reasoning below is preserved as historical context.
 
+[ADR 0012](0012-comment-email-moderation-actions.md) subsequently adds private, expiring email
+Approve/Reject capabilities for new version-three alerts, without changing this record's
+original payload identities or the existing owner-session moderation board.
+
 ## Context
 
 The owner wants an email whenever a new reader comment or reply is waiting for approval,

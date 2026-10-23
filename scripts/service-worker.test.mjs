@@ -211,7 +211,13 @@ test('rescue rejects private/cross-origin clients, non-window senders, unknown m
 
 test('private paths and non-GET requests bypass caching; no-store/private/set-cookie responses never enter caches', async () => {
 	const worker = workerHarness();
-	for (const path of ['/notes/studio', '/notes/auth/callback', '/api/notes/secret/document'])
+	for (const path of [
+		'/notes/studio',
+		'/notes/auth/callback',
+		'/api/notes/secret/document',
+		'/api/comments/moderate',
+		'/api/comments/moderate?action=approve&token=private-test-token'
+	])
 		assert.equal(await worker.fetch(path), undefined);
 	assert.equal(await worker.fetch(asset, { method: 'POST' }), undefined);
 	for (const headers of [

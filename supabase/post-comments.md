@@ -24,10 +24,18 @@ application before applying this additive migration; see
 state and metadata-only retries, while future notifications include stored names and complete
 comment text through the same private owner-email path.
 
+Email Approve/Reject actions additionally use
+`migrations/202610230005_post_comments_email_actions.sql`. Deploy the compatible version-three
+dispatcher, standalone confirmation route and privacy notice first; see
+[Email action upgrade](#email-action-upgrade). Existing versions keep their exact payloads and
+keys. Only future queued guest comments gain a private expiring action pair.
+
 The application also checks the configured owner before serving its admin routes.
 Every owner RPC independently requires a non-null `auth.uid()` present in
 `public.note_owners`. Owner calls use the authenticated session client; passing the
 service-role key cannot substitute for an owner session.
+The separate email-action path uses a scoped bearer capability and service-only SQL rather
+than an owner session; it authorises only one pending guest comment's approve/reject decision.
 
 No hosted migration is performed by the local tests. Deployment requires applying
 the migration to the intended Supabase project and verifying the configured owner
@@ -79,6 +87,9 @@ status, read/update timestamps, parent body/name/status and at most ten recent
 history entries. History records submission, author reply, moderation and first
 read events; only an owner sees them. Owner JSON downloads can page through this
 same bounded queue interface.
+Email moderation adds an `email_moderated` event with a null `actor_id`, recording its bearer
+source without impersonating an authenticated owner. Action tokens and hashes are excluded
+from the queue and its exports.
 
 Replies have exactly one level: their parent must be an approved root in the same
 article. Public reads apply one predicate to rows, counts and reply lookups:
@@ -133,6 +144,12 @@ rarely duplicate after that window. There is no automatic outbox deletion or arb
 count that discards an unsent notification. A claim checks moderation state, but an in-flight
 email cannot be recalled if moderation happens after it was claimed.
 
+After migration 005, version-three claims additionally include immutable `approve_token`,
+`reject_token` and `action_expires_at` fields for the outgoing owner email. Earlier versions
+return null action fields. Only service-role claim/finish/preview/consume RPCs can access this
+path; there is no direct table or browser RPC grant. Successful send acknowledgement clears
+the raw pair atomically while retaining its lookup hashes and durable moderation state.
+
 ### Notification content upgrade
 
 1. Deploy the application that supports both content versions, including the privacy notice,
@@ -160,6 +177,79 @@ Keep the outbox and version-aware dispatcher when rolling back application code.
 dispatcher that omits version-two content would change its payload under an existing provider
 key. Moderation never recalls email already delivered; rejection/removal affects stored and
 public site content independently of copies in the owner's inbox.
+
+### Email action upgrade
+
+1. Deploy the compatible version-three dispatcher, `/api/comments/moderate` confirmation route
+   and privacy notice before applying migration 005. Preserve the exact version-one and
+   version-two payloads, absence of HTML and respective provider keys. Version-three jobs use
+   `post-comment-approval-v3/<comment_id>` with escaped HTML buttons and a complete plain-text
+   alternative. Both formats contain the full stored name/body and the existing board link.
+2. Confirm `202610230005` is absent from the intended project's migration ledger, then apply
+   [202610230005_post_comments_email_actions.sql](migrations/202610230005_post_comments_email_actions.sql)
+   through the privileged migration connection. Record its ledger entry and reload PostgREST's
+   schema cache in the same transaction. It extends the allowed content versions and defaults
+   future outbox rows to version three, with no historical backfill or resend. Existing sent,
+   cancelled, leased, provider and version-one/version-two state remain intact. No recipient,
+   provider, environment secret, Vault value or scheduler change is needed.
+3. Inspect the forced-RLS `post_comment_email_actions` table and explicit service-only RPC
+   grants. Each newly queued guest comment receives distinct 64-hex approval/rejection tokens
+   formed from two random UUIDs per token, with 244 random bits each. Store lookup hashes and
+   a fixed seven-day expiry from enqueueing. The private raw pair is retained only while
+   delivery is unacknowledged, allowing byte-identical retry URLs; acknowledged send or
+   explicit board moderation clears it. This includes expired unsent jobs: they still retry
+   with unchanged expired links and the board fallback, rather than silently discarding an
+   alert or extending authority. Hashes and used/revoked state are retained; no claim is made
+   that every stored token representation is hashed.
+4. The two bounded action RPCs are service-only:
+
+   | RPC                                                        | Purpose and boundary                                                                                                                                                        |
+   | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `preview_post_comment_email_action(p_token_hash,p_action)` | Returns one eligible pending guest comment for confirmation only; checks hash, bound action, expiry and unused/unrevoked state without marking read or consuming authority. |
+   | `consume_post_comment_email_action(p_token_hash,p_action)` | Atomically moderates only that still-pending guest comment, marks read, invalidates both links and appends `email_moderated` with null actor identity.                      |
+
+   The application hashes the raw token before the RPC, validates the bounded response and
+   resolves published article titles for display; it passes no arbitrary next status or owner
+   identity. Action values are restricted to approve/reject. Existing
+   `moderate_post_comment` remains an authenticated-owner function and cannot be authorised
+   by passing the service key. Every explicit owner status call, including a no-op, revokes
+   the email pair; mark-read-only calls may leave it valid. A later return to pending cannot
+   revive old links. The comment transaction advisory lock and comment → outbox → action
+   row-lock order serialize email and board decisions. Claim/finish paths lock outbox then
+   action state without taking a later comment lock, avoiding an opposing row-lock order.
+
+5. The production-only `/api/comments/moderate` endpoint renders standalone HTML with no
+   Svelte layout, scripts, external resources or analytics. A syntactically valid token/action
+   GET sets a 15-minute path-scoped HttpOnly, Secure, SameSite=Lax cookie containing the
+   capability and a random nonce, then redirects to the clean URL. HEAD does no SQL work;
+   GET/HEAD never moderate, consume or mark read. A clean GET previews through the bounded
+   RPC. The native POST uses strict action/nonce fields, actual streamed body bounds,
+   same-origin/Fetch-Site enforcement, local admission/concurrency and five-second transport
+   deadlines. It cannot change another comment or override newer moderation. Private
+   no-store/noindex headers cover errors and redirects; referrers are `no-referrer` while a
+   secret is in the URL and `same-origin` on clean pages. The route's `/api/` path is excluded
+   from service-worker caching and analytics.
+6. After deployment and migration, use a bounded private live notification to verify that its
+   email links show the correct full comment without login, a preview leaves it pending, and
+   an explicit rejection consumes both links and retains public invisibility. Confirm the
+   `email_moderated` audit source, read state, raw-material cleanup and no public capability
+   disclosure. Use isolated fixtures for approval/public visibility, tampering, expiry,
+   replay, opposite-action racing and board revocation. Distinguish provider acceptance from
+   readable inbox receipt and successful moderation. Local fixtures do not establish hosted
+   installation or multi-connection contention.
+
+Keep these emails private. Forwarding a message can transfer its limited one-comment authority
+until expiry or moderation. A consumed, revoked, expired or unavailable link requires the
+existing signed-in moderation board; it grants no board access, author reply or general owner
+session. GET preview safety protects ordinary link fetchers, not a deliberate confirmation POST
+made with the bearer capability. Raw token values never enter public projections, owner exports,
+confirmation HTML, application logs or worker responses; only the intended email URLs and
+private confirmation cookie carry them outside service-only storage.
+
+Preserve action state and a version-three-capable dispatcher/route on rollback, or explicitly
+suspend dispatch until compatible code is restored. Do not regenerate tokens, extend expiry or
+change a retry's payload under the same provider key. Normal scheduler and worker-secret
+rotation do not change the stored random action URLs.
 
 ### Hosted scheduler activation
 
@@ -199,9 +289,11 @@ The scheduled endpoint is the recovery path after request termination, missing c
 provider failure. Its fixed five-minute schedule is not a guaranteed inbox-arrival deadline.
 Email payloads use a static subject, configured sender/recipient, the published article title,
 submission timestamp and fixed moderation-board URL. Version-two notifications also send the
-stored display name and entire comment body to Resend as plain text for owner review. Preserve
+stored display name and entire comment body to Resend as plain text for owner review. Version
+three adds escaped HTML buttons and a complete plain-text alternative with the action links.
+Preserve
 Unicode and line breaks within the existing 60/3,000-character limits without truncation; reader
-text never supplies headers or HTML. Version-one jobs retain the original metadata-only payload.
+text never supplies headers or raw HTML. Versions one and two retain their exact prior payloads.
 Provider content and delivered inbox copies remain private to the owner; approval still controls
 public website visibility. Logs and worker responses do not contain reader prose. No new public
 environment setting or browser mail client is introduced.
@@ -231,6 +323,15 @@ database suite. Content-upgrade coverage also checks existing version-one payloa
 new version-two defaults, immutable joined text, preserved delivery state and grants, and no
 duplicate prose stored in the outbox. Applying migrations in a local engine does not establish
 that hosted migration 004 or content-bearing email delivery is active.
+
+Email-action fixtures execute migration 005 to verify version-three defaults, immutable random
+pairs and expiry, hash lookup, no legacy backfill, raw-material cleanup, private grants,
+pending-only action consumption, replay/opposite-action rejection, explicit board revocation
+including no-op status calls, mark-read-only behavior and distinct audit identity. App fixtures
+cover safe GET/HEAD, clean capability cookies, private headers, production gating, streamed
+body/origin/nonce controls, HTML escaping and preserved legacy provider payloads. Sequential
+PGlite calls cannot prove real multi-connection locking; hosted action activation and a bounded
+live notification remain separate release observations.
 
 The runtime is intentionally temporary and is not a website dependency:
 

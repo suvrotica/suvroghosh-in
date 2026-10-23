@@ -4,6 +4,12 @@
 - Status: Accepted; hosted migration and version-two delivery require release verification
 - Supersedes: The minimal email-content decision in [ADR 0010](0010-durable-comment-email-alerts.md)
 
+On 23 October 2026, [ADR 0012](0012-comment-email-moderation-actions.md) adds expiring,
+single-comment email moderation capabilities and escaped HTML buttons to new version-three
+alerts. It supersedes this record's plain-text-only and board-only action decisions for those
+new alerts. Version-one and version-two payloads and keys remain unchanged; the original
+reasoning below is preserved as historical context.
+
 ## Context
 
 The owner explicitly requests the commenter's name and full comment in approval notifications

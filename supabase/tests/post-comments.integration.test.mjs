@@ -2,7 +2,7 @@
 // npm install --prefix <temporary-folder> --no-save @electric-sql/pglite@0.5.11
 // COMMENTS_SQL_RUNTIME=<temporary-folder> node --test supabase/tests/post-comments.integration.test.mjs
 import assert from 'node:assert/strict';
-import { randomUUID } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { tmpdir } from 'node:os';
@@ -34,8 +34,551 @@ const notificationContentMigration = await readFile(
 	new URL('../migrations/202610230004_post_comments_notification_content.sql', import.meta.url),
 	'utf8'
 );
+const emailActionsMigration = await readFile(
+	new URL('../migrations/202610230005_post_comments_email_actions.sql', import.meta.url),
+	'utf8'
+);
 const ownerId = 'd66ad910-1e06-4bb7-8f0c-fcf107193d73';
 const outsiderId = '34c166ef-c242-41bb-a397-c185f263b1f1';
+
+test(
+	'email moderation capabilities are private, one-use, revocable and compatible with durable retries',
+	{
+		skip:
+			!PGlite &&
+			'Install the pinned temporary PGlite runtime and set COMMENTS_SQL_RUNTIME to execute SQL integration.'
+	},
+	async (t) => {
+		const dataDir = await mkdtemp(path.join(tmpdir(), 'comment-email-actions-sql-'));
+		let db = new PGlite(dataDir);
+		try {
+			await db.exec(`
+      create role anon; create role authenticated; create role service_role bypassrls;
+      create schema auth;
+      create table auth.users (id uuid primary key);
+      create function auth.uid() returns uuid language sql stable as $$
+        select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
+      $$;
+      grant usage on schema auth to anon,authenticated,service_role;
+      create table public.note_owners (user_id uuid primary key references auth.users(id));
+    `);
+			await db.query('insert into auth.users values ($1),($2)', [ownerId, outsiderId]);
+			await db.query('insert into public.note_owners values ($1)', [ownerId]);
+			await db.exec(migration);
+			await db.exec(legacySlugMigration);
+			await db.exec(notificationMigration);
+			const result = async (sql, params = []) => (await db.query(sql, params)).rows[0].result;
+			const as = async (role, actor = '') => {
+				await db.exec('reset role');
+				await db.query("select set_config('request.jwt.claim.sub',$1,false)", [actor]);
+				if (role) await db.exec(`set role ${role}`);
+			};
+			const submit = (
+				id = randomUUID(),
+				name = 'Email reader',
+				body = 'Private email comment',
+				parent = null
+			) =>
+				result('select public.submit_post_comment($1,$2,$3,$4,$5,$6) as result', [
+					'email-moderation',
+					parent,
+					name,
+					body,
+					id,
+					randomUUID().replaceAll('-', '').repeat(2)
+				]);
+			const claim = (id) =>
+				result('select public.claim_post_comment_notifications($1,1) as result', [id]);
+			const finish = (job, sent, provider = null) =>
+				result('select public.finish_post_comment_notification($1,$2,$3,$4) as result', [
+					job.comment_id,
+					job.lease_token,
+					sent,
+					provider
+				]);
+			const hash = (token) => createHash('sha256').update(token).digest('hex');
+			const preview = (tokenHash, action = 'approve') =>
+				result('select public.preview_post_comment_email_action($1,$2) as result', [
+					tokenHash,
+					action
+				]);
+			const consume = (tokenHash, action = 'approve') =>
+				result('select public.consume_post_comment_email_action($1,$2) as result', [
+					tokenHash,
+					action
+				]);
+			const moderate = (id, status = null, read = false) =>
+				result('select public.moderate_post_comment($1,$2,$3) as result', [id, status, read]);
+			const inspect = async (id) => {
+				await as();
+				const stored = (
+					await db.query(
+						`select to_jsonb(c) as comment,to_jsonb(n) as notification,
+          to_jsonb(a) as actions,(select jsonb_agg(to_jsonb(h) order by h.id)
+          from public.post_comment_history h where h.comment_id=c.id) as history
+          from public.post_comments c join public.post_comment_notifications n on n.comment_id=c.id
+          left join public.post_comment_email_actions a on a.comment_id=c.id where c.id=$1`,
+						[id]
+					)
+				).rows[0];
+				await as('service_role');
+				return stored;
+			};
+			const makeDue = async (id) => {
+				await as();
+				await db.query(
+					`update public.post_comment_notifications set
+          due_at=clock_timestamp()-interval '1 second', leased_until=null, lease_token=null
+          where comment_id=$1`,
+					[id]
+				);
+				await as('service_role');
+			};
+			const newJob = async () => {
+				await as('service_role');
+				const id = randomUUID();
+				assert.equal(await submit(id), 'pending');
+				return (await claim(id))[0];
+			};
+			const rpcState = () =>
+				db.query(`select proname,proacl::text as grants,proconfig
+        from pg_proc where pronamespace='public'::regnamespace and proname in (
+          'claim_post_comment_notifications','finish_post_comment_notification',
+          'enqueue_post_comment_notification','moderate_post_comment') order by proname`);
+			await as('service_role');
+			const v1Submission = randomUUID();
+			assert.equal(await submit(v1Submission), 'pending');
+			const initialV1 = (await claim(v1Submission))[0];
+			assert.equal(await finish(initialV1, false), true);
+			await makeDue(initialV1.comment_id);
+			await as();
+			await db.exec(notificationContentMigration);
+			const v2Submission = randomUUID();
+			await as('service_role');
+			assert.equal(await submit(v2Submission), 'pending');
+			const initialV2 = (await claim(v2Submission))[0];
+			assert.equal(await finish(initialV2, false), true);
+			await makeDue(initialV2.comment_id);
+			await as();
+			const oldRows = (
+				await db.query('select * from public.post_comment_notifications order by content_version')
+			).rows;
+			const oldRpcs = (await rpcState()).rows;
+			await db.exec(emailActionsMigration);
+
+			await t.test(
+				'migration preserves all legacy state, content and grants without backfilling actions',
+				async () => {
+					assert.deepEqual(
+						(
+							await db.query(
+								'select * from public.post_comment_notifications order by content_version'
+							)
+						).rows,
+						oldRows
+					);
+					assert.deepEqual((await rpcState()).rows, oldRpcs);
+					assert.equal(
+						(await db.query('select count(*)::integer as n from public.post_comment_email_actions'))
+							.rows[0].n,
+						0
+					);
+					await as('service_role');
+					for (const [submission, version] of [
+						[v1Submission, 1],
+						[v2Submission, 2]
+					]) {
+						const job = (await claim(submission))[0];
+						assert.equal(job.content_version, version);
+						assert.equal(job.display_name, version === 1 ? null : 'Email reader');
+						assert.equal(job.body, version === 1 ? null : 'Private email comment');
+						for (const field of ['approve_token', 'reject_token', 'action_expires_at'])
+							assert.equal(job[field], null);
+						assert.equal(await finish(job, true, `legacy-v${version}`), true);
+						assert.deepEqual(await claim(submission), []);
+					}
+				}
+			);
+
+			await t.test(
+				'forced RLS, explicit grants, owner auth and private trigger helpers protect action capabilities',
+				async () => {
+					await as();
+					assert.deepEqual(
+						(
+							await db.query(
+								"select relrowsecurity,relforcerowsecurity from pg_class where oid='public.post_comment_email_actions'::regclass"
+							)
+						).rows[0],
+						{ relrowsecurity: true, relforcerowsecurity: true }
+					);
+					for (const role of ['anon', 'authenticated', 'service_role']) {
+						await as(role, role === 'authenticated' ? ownerId : '');
+						await assert.rejects(
+							db.query('select * from public.post_comment_email_actions'),
+							/permission denied/
+						);
+						await assert.rejects(
+							db.query('update public.post_comment_email_actions set revoked_at=clock_timestamp()'),
+							/permission denied/
+						);
+						await assert.rejects(
+							db.query('select public.revoke_post_comment_email_actions($1)', [randomUUID()]),
+							/permission denied/
+						);
+						await assert.rejects(
+							db.query('select public.revoke_changed_post_comment_email_actions()'),
+							/permission denied/
+						);
+						if (role !== 'service_role') {
+							await assert.rejects(preview('a'.repeat(64)), /permission denied/);
+							await assert.rejects(consume('a'.repeat(64)), /permission denied/);
+						}
+					}
+					await as('authenticated', outsiderId);
+					await assert.rejects(moderate(initialV1.comment_id, 'pending'), /not_authorized/);
+					await as('service_role');
+					await assert.rejects(moderate(initialV1.comment_id, 'pending'), /permission denied/);
+				}
+			);
+
+			let job;
+			const submission = randomUUID();
+			const name = 'পাঠক <Reader> & "quoted"';
+			const body =
+				'First <script>literal</script> paragraph.\n\nদ্বিতীয় অনুচ্ছেদ.\n\nThird & final paragraph.';
+			await t.test(
+				'new v3 enqueue atomically generates distinct fixed action-bound tokens and seven-day expiry once',
+				async () => {
+					await as('service_role');
+					assert.equal(await submit(submission, name, body), 'pending');
+					job = (await claim(submission))[0];
+					assert.equal(job.content_version, 3);
+					assert.equal(job.display_name, name);
+					assert.equal(job.body, body);
+					assert.match(job.approve_token, /^[a-f0-9]{64}$/);
+					assert.match(job.reject_token, /^[a-f0-9]{64}$/);
+					assert.notEqual(job.approve_token, job.reject_token);
+					const state = await inspect(job.comment_id);
+					assert.equal(state.actions.approve_token_hash, hash(job.approve_token));
+					assert.equal(state.actions.reject_token_hash, hash(job.reject_token));
+					await as();
+					assert.equal(
+						(
+							await db.query(
+								`select extract(epoch from (a.expires_at-n.created_at))::integer as seconds
+          from public.post_comment_email_actions a join public.post_comment_notifications n using(comment_id)
+          where a.comment_id=$1`,
+								[job.comment_id]
+							)
+						).rows[0].seconds,
+						604800
+					);
+					await db.exec('begin');
+					const rolledBack = randomUUID();
+					await db.query(
+						`insert into public.post_comments(submission_id,post_slug,display_name,body)
+          values($1,'rollback-action','Reader','Must roll back with outbox and capabilities')`,
+						[rolledBack]
+					);
+					assert.equal(
+						(
+							await db.query(
+								`select count(*)::integer as n from public.post_comment_email_actions a
+          join public.post_comments c on c.id=a.comment_id where c.submission_id=$1`,
+								[rolledBack]
+							)
+						).rows[0].n,
+						1
+					);
+					await db.exec('rollback');
+					assert.equal(
+						(
+							await db.query(
+								'select count(*)::integer as n from public.post_comments where submission_id=$1',
+								[rolledBack]
+							)
+						).rows[0].n,
+						0
+					);
+					await as('service_role');
+					assert.equal(
+						await submit(submission, 'Retry name must not replace', 'Retry body must not replace'),
+						'pending'
+					);
+					assert.deepEqual(await inspect(job.comment_id), state);
+				}
+			);
+
+			await t.test(
+				'preview exposes only the selected private comment, never changes state, and binds the action to its own hash',
+				async () => {
+					const before = await inspect(job.comment_id);
+					for (const action of ['approve', 'reject']) {
+						const tokenHash = hash(job[`${action}_token`]);
+						const details = await preview(tokenHash, action);
+						assert.deepEqual(details, {
+							state: 'ready',
+							action,
+							comment_id: job.comment_id,
+							post_slug: 'email-moderation',
+							display_name: name,
+							body,
+							expires_at: job.action_expires_at
+						});
+						assert.deepEqual(await preview(tokenHash, action), details);
+						assert.deepEqual(
+							await preview(tokenHash, action === 'approve' ? 'reject' : 'approve'),
+							{ state: 'invalid' }
+						);
+						assert.deepEqual(
+							await consume(tokenHash, action === 'approve' ? 'reject' : 'approve'),
+							{ state: 'invalid' }
+						);
+					}
+					for (const [tokenHash, action] of [
+						[null, 'approve'],
+						['', 'approve'],
+						['A'.repeat(64), 'approve'],
+						['x'.repeat(64), 'approve'],
+						['a'.repeat(64), 'approve'],
+						[hash(job.approve_token), null],
+						[hash(job.approve_token), 'delete']
+					]) {
+						assert.deepEqual(await preview(tokenHash, action), { state: 'invalid' });
+						assert.deepEqual(await consume(tokenHash, action), { state: 'invalid' });
+					}
+					assert.deepEqual(await inspect(job.comment_id), before);
+					assert.deepEqual(
+						await result("select public.get_post_comments('email-moderation',null,1) as result"),
+						{ comments: [], total: 0, commentCount: 0 }
+					);
+				}
+			);
+
+			await t.test(
+				'failed and uncertain retries preserve both raw URLs and expiry; successful acknowledgement erases raws but keeps actions usable',
+				async () => {
+					assert.equal(await finish(job, false), true);
+					await makeDue(job.comment_id);
+					const retry = (await claim(submission))[0];
+					assert.notEqual(retry.lease_token, job.lease_token);
+					for (const field of [
+						'approve_token',
+						'reject_token',
+						'action_expires_at',
+						'display_name',
+						'body'
+					])
+						assert.equal(retry[field], job[field]);
+					assert.equal(await finish(job, true, 'stale'), false);
+					assert.equal((await inspect(job.comment_id)).actions.approve_token, job.approve_token);
+					assert.equal(await finish(retry, true, 'v3-provider'), true);
+					const sent = await inspect(job.comment_id);
+					assert.equal(sent.actions.approve_token, null);
+					assert.equal(sent.actions.reject_token, null);
+					assert.equal(sent.actions.approve_token_hash, hash(job.approve_token));
+					assert.equal(sent.actions.revoked_at, null);
+					assert.equal((await preview(hash(job.approve_token))).state, 'ready');
+					assert.deepEqual(await claim(submission), []);
+				}
+			);
+
+			await t.test(
+				'approval uses both links once, marks read, records honest email audit and resists opposite-link or parallel replays',
+				async () => {
+					const expected = {
+						state: 'updated',
+						action: 'approve',
+						comment_id: job.comment_id,
+						post_slug: 'email-moderation'
+					};
+					assert.deepEqual(await consume(hash(job.approve_token)), expected);
+					const after = await inspect(job.comment_id);
+					assert.equal(after.comment.status, 'approved');
+					assert.ok(after.comment.read_at);
+					assert.equal(after.actions.used_action, 'approve');
+					assert.ok(after.actions.used_at);
+					assert.equal(after.actions.revoked_at, null);
+					assert.equal(after.notification.cancelled_at, null); // A sent notification stays sent.
+					assert.ok(after.notification.sent_at);
+					assert.deepEqual(
+						after.history.slice(-2).map(({ action, actor_id, from_status, to_status }) => ({
+							action,
+							actor_id,
+							from_status,
+							to_status
+						})),
+						[
+							{
+								action: 'email_moderated',
+								actor_id: null,
+								from_status: 'pending',
+								to_status: 'approved'
+							},
+							{ action: 'read', actor_id: null, from_status: 'pending', to_status: 'approved' }
+						]
+					);
+					assert.deepEqual(await consume(hash(job.approve_token)), { state: 'used' });
+					assert.deepEqual(await consume(hash(job.reject_token), 'reject'), { state: 'used' });
+					assert.deepEqual(await preview(hash(job.reject_token), 'reject'), { state: 'used' });
+					assert.deepEqual(await inspect(job.comment_id), after);
+					const raced = await newJob();
+					// A single-engine PGlite queue verifies persisted one-use state, not lock contention.
+					const outcomes = await Promise.all([
+						consume(hash(raced.reject_token), 'reject'),
+						consume(hash(raced.approve_token), 'approve')
+					]);
+					assert.deepEqual(
+						outcomes.map((entry) => entry.state),
+						['updated', 'used']
+					);
+					assert.equal((await inspect(raced.comment_id)).comment.status, 'rejected');
+					assert.ok((await inspect(raced.comment_id)).notification.cancelled_at);
+					assert.equal(await finish(raced, true, 'late-provider'), false);
+				}
+			);
+
+			await t.test(
+				'owner mark-read preserves links, explicit status intent revokes even a no-op, and return-to-pending never revives links',
+				async () => {
+					const readOnly = await newJob();
+					await as('authenticated', ownerId);
+					assert.equal(await moderate(readOnly.comment_id, null, true), 'updated');
+					await as('service_role');
+					assert.equal((await preview(hash(readOnly.reject_token), 'reject')).state, 'ready');
+					assert.equal((await consume(hash(readOnly.reject_token), 'reject')).state, 'updated');
+					assert.equal(
+						(await inspect(readOnly.comment_id)).history.filter((entry) => entry.action === 'read')
+							.length,
+						1
+					);
+					for (const status of ['pending', 'approved', 'rejected', 'hidden']) {
+						const boardJob = await newJob();
+						await as('authenticated', ownerId);
+						assert.equal(await moderate(boardJob.comment_id, status), 'updated');
+						assert.equal(await moderate(boardJob.comment_id, 'pending'), 'updated');
+						await as('service_role');
+						for (const action of ['approve', 'reject']) {
+							assert.deepEqual(await preview(hash(boardJob[`${action}_token`]), action), {
+								state: 'unavailable'
+							});
+							assert.deepEqual(await consume(hash(boardJob[`${action}_token`]), action), {
+								state: 'unavailable'
+							});
+						}
+						const revoked = await inspect(boardJob.comment_id);
+						assert.equal(revoked.comment.status, 'pending');
+						assert.ok(revoked.actions.revoked_at);
+						assert.equal(revoked.actions.approve_token, null);
+						assert.equal(revoked.actions.reject_token, null);
+						assert.ok(revoked.notification.cancelled_at);
+						assert.equal(await finish(boardJob, true, 'must-not-resurrect'), false);
+						assert.deepEqual(await claim(boardJob.submission_id), []);
+					}
+					const directJob = await newJob();
+					await as();
+					await db.query("update public.post_comments set status='hidden' where id=$1", [
+						directJob.comment_id
+					]);
+					await db.query("update public.post_comments set status='pending' where id=$1", [
+						directJob.comment_id
+					]);
+					await as('service_role');
+					assert.deepEqual(await consume(hash(directJob.approve_token)), { state: 'unavailable' });
+					assert.ok((await inspect(directJob.comment_id)).notification.cancelled_at);
+					// Bounded claim cleanup also handles a privately revoked row that predates cancellation.
+					const obsolete = await newJob();
+					assert.equal(await finish(obsolete, false), true);
+					await makeDue(obsolete.comment_id);
+					await as();
+					await db.query(
+						'update public.post_comment_email_actions set revoked_at=clock_timestamp() where comment_id=$1',
+						[obsolete.comment_id]
+					);
+					await as('service_role');
+					assert.deepEqual(await claim(obsolete.submission_id), []);
+					const cancelled = await inspect(obsolete.comment_id);
+					assert.equal(cancelled.comment.status, 'pending');
+					assert.ok(cancelled.notification.cancelled_at);
+					assert.equal(cancelled.actions.approve_token, null);
+					assert.equal(cancelled.actions.reject_token, null);
+				}
+			);
+
+			await t.test(
+				'expired links never mutate a comment; late retries keep original expired URLs and the durable alert',
+				async () => {
+					const expired = await newJob();
+					assert.equal(await finish(expired, false), true);
+					await as();
+					await db.query(
+						"update public.post_comment_email_actions set expires_at=clock_timestamp()-interval '1 second' where comment_id=$1",
+						[expired.comment_id]
+					);
+					await makeDue(expired.comment_id);
+					const before = await inspect(expired.comment_id);
+					for (const action of ['approve', 'reject']) {
+						assert.deepEqual(await preview(hash(expired[`${action}_token`]), action), {
+							state: 'expired'
+						});
+						assert.deepEqual(await consume(hash(expired[`${action}_token`]), action), {
+							state: 'expired'
+						});
+					}
+					assert.deepEqual(await inspect(expired.comment_id), before);
+					const late = (await claim(expired.submission_id))[0];
+					assert.equal(late.approve_token, expired.approve_token);
+					assert.equal(late.reject_token, expired.reject_token);
+					assert.equal(late.action_expires_at, before.actions.expires_at);
+					assert.equal((await inspect(expired.comment_id)).notification.cancelled_at, null);
+					assert.equal(await finish(late, true, 'late-expired-links-provider'), true);
+					assert.equal((await inspect(expired.comment_id)).actions.approve_token, null);
+					assert.deepEqual(await consume(hash(late.approve_token)), { state: 'expired' });
+				}
+			);
+
+			await t.test(
+				'author replies never create capabilities, guest replies do, and durable capability state survives restart',
+				async () => {
+					await as('authenticated', ownerId);
+					const authorSubmission = randomUUID();
+					assert.equal(
+						await result('select public.reply_to_post_comment($1,$2,$3) as result', [
+							job.comment_id,
+							'Author response',
+							authorSubmission
+						]),
+						'approved'
+					);
+					await as('service_role');
+					assert.deepEqual(await claim(authorSubmission), []);
+					const readerSubmission = randomUUID();
+					assert.equal(
+						await submit(readerSubmission, 'Guest reply', 'A pending reader reply', job.comment_id),
+						'pending'
+					);
+					const guestReply = (await claim(readerSubmission))[0];
+					assert.equal(guestReply.content_version, 3);
+					assert.equal((await preview(hash(guestReply.reject_token), 'reject')).state, 'ready');
+					assert.equal(await finish(guestReply, true, 'guest-reply-provider'), true);
+					await db.close();
+					db = new PGlite(dataDir);
+					await as('service_role');
+					assert.deepEqual(await consume(hash(job.reject_token), 'reject'), { state: 'used' });
+					assert.equal((await consume(hash(guestReply.reject_token), 'reject')).state, 'updated');
+					assert.deepEqual(await preview(hash(guestReply.approve_token)), { state: 'used' });
+					assert.equal((await inspect(guestReply.comment_id)).actions.approve_token, null);
+				}
+			);
+		} finally {
+			await db.close();
+			assert.equal(path.dirname(dataDir), path.resolve(tmpdir()));
+			assert.ok(path.basename(dataDir).startsWith('comment-email-actions-sql-'));
+			await rm(dataDir, { recursive: true, force: true });
+		}
+	}
+);
 
 test(
 	'comments SQL enforces private moderation, ownership, durable limits and persistence',

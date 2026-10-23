@@ -76,6 +76,13 @@ verifies the hosted SQL lifecycle, separately from application deployment and br
    migration once its ledger entry is confirmed absent. Existing notification rows keep their
    metadata-only payload and provider key; only future rows default to full-content alerts.
    Follow the [content-upgrade order](../supabase/post-comments.md#notification-content-upgrade).
+   Email Approve/Reject buttons additionally require
+   [202610230005_post_comments_email_actions.sql](../supabase/migrations/202610230005_post_comments_email_actions.sql).
+   Deploy the version-three dispatcher, confirmation route and privacy notice first, then apply
+   migration 005 once its ledger entry is absent. Only future alerts gain the buttons; existing
+   version-one/version-two payloads and keys stay unchanged. Use the
+   [email-action upgrade order](../supabase/post-comments.md#email-action-upgrade), without
+   changing the existing recipient, secrets or scheduler.
 5. Deploy the application with that configuration. Environment changes require a fresh deployment.
    Use the existing [owner sign-in](https://www.suvroghosh.in/notes/sign-in?returnTo=%2Fnotes%2Fstudio%2Fcomments), then open
    [comment moderation](https://www.suvroghosh.in/notes/studio/comments).
@@ -88,6 +95,9 @@ verifies the hosted SQL lifecycle, separately from application deployment and br
    inbox with the correct display name, complete comment, article context and moderation link, while a retry does not create
    another outbox row. Verify the job and bearer endpoint separately; a provider acceptance is
    distinct from inbox delivery. Use isolated local tests for failure/retry fixtures.
+   For version-three alerts, verify an email-link GET leaves the comment pending, then confirm
+   Reject on the small action page and verify that both email links become unusable. Verify
+   approval/public visibility with isolated fixtures or an explicitly authorised live comment.
 
 Keep service credentials private. The application calls reader-facing functions using the service
 role after validating the published Markdown registry; readers do not call Supabase directly.
@@ -128,18 +138,39 @@ notification emails.
 ## Email alerts
 
 Each newly saved pending reader comment or reply queues one private notification. The subject is
-**A new comment is waiting for approval | SuvroGhosh.IN**. After the content upgrade, new alerts
-contain the reader's display name and complete comment as plain text, the article title,
+**A new comment is waiting for approval | SuvroGhosh.IN**. After the content upgrade, alerts
+contain the reader's display name and complete comment, the article title,
 submission timestamp and a link to
 [the moderation board](https://www.suvroghosh.in/notes/studio/comments). Names and comments retain
 their stored Unicode text and line breaks within the existing 60/3,000-character limits; the
-email does not use an excerpt. Reader text does not supply mail headers or HTML. Review the text
-in your inbox, then use your existing owner login on the board to approve, reject or reply.
+email does not use an excerpt. Version-three messages provide escaped HTML and a complete
+plain-text alternative; reader text never supplies raw markup or mail headers.
 Email delivery does not publish a submission. The same contact-form inbox remains the recipient.
 The display name and full comment pass through the existing Resend provider and remain in the
 delivered email; later moderation cannot recall that copy.
 Author replies, changing a comment's status and comments saved before activation do not create
 new alerts.
+
+After the email-action upgrade, new messages have **Approve** and **Reject** buttons. Open the
+chosen button, review the comment on the small confirmation page and confirm your choice.
+No owner login or admin-board visit is needed for that one action. Merely
+receiving or opening the email, or following the link, does not moderate it. The confirmation
+page works without JavaScript. The signed-in board remains available for author replies and
+later changes.
+
+Each pair expires seven days after the comment is queued. Approving or rejecting consumes the
+pair, so the other button cannot undo the decision. Any explicit status action on the board,
+including choosing its current status, revokes old links; returning to pending does not revive
+them. Marking a comment read without changing status can leave them valid. Expired or already
+handled links direct you to the board. Keep these messages private: forwarding the email can
+give its recipient authority over that one pending comment until expiry or moderation.
+
+The confirmation route is production-only and uses a path-scoped, HttpOnly, Secure,
+SameSite=Lax cookie lasting at most 15 minutes. It carries the selected private action and a
+confirmation nonce while you review the page. A clean URL, private no-store/noindex responses,
+no external resources and no analytics keep this separate from public browsing. A same-origin,
+size-limited POST applies only the selected action; a stale page cannot replace a newer board
+decision. The audit records email moderation separately from a signed-in owner action.
 
 The fourth migration records a content version on each notification. Existing version-one jobs
 retain their original article/time/link-only body and `post-comment-approval/<comment_id>` key,
@@ -149,6 +180,15 @@ comment prose: the service-only claim joins the immutable original submission. T
 does not resend historical notifications or reset delivery state. Deploy the compatible
 application before applying migration 004; claims from migration 003 without a version are
 handled as version one.
+
+Migration 005 changes only future rows to version three, using
+`post-comment-approval-v3/<comment_id>` and immutable action URLs. Each pair is created once
+in private service-only storage with fixed expiry; raw token material is retained only for
+unsent retries and cleared on acknowledged delivery or explicit board moderation. Lookup
+hashes and used/revoked state remain. An unsent notification whose links have expired still
+retries with its original payload and the board fallback, rather than silently dropping the
+alert or changing its provider identity. Deploy the compatible application before this
+migration. Do not roll back to a dispatcher that cannot preserve existing version-three jobs.
 
 The submission handler awaits one bounded delivery attempt after saving the comment. If email
 delivery fails, the comment still succeeds and remains private in Pending. A Supabase job retries
@@ -175,11 +215,16 @@ Run `npm run comments:test` for validation, public/owner API boundaries, page ac
 deadlines. Run `npm run comments:sql:test` with the optional temporary PostgreSQL WASM runtime
 described in the [SQL verification instructions](../supabase/post-comments.md#local-sql-verification)
 to execute the actual migration, role grants, moderation flows, durable caps and persistence
-checks. Include both notification migrations when verifying outbox creation, content-version
+checks. Include all notification migrations when verifying outbox creation, content-version
 compatibility, claim/acknowledgement leases, retries and moderation suppression. Application tests
 cover complete plain-text name/body content, literal multiline Unicode input, fixed mail headers,
 legacy payload/key preservation, production gating, bounded provider failure and the private worker boundary without real email
-delivery. Without the SQL runtime, the SQL suite explicitly skips. For `npm run comments:browser:test`,
+delivery. Email-action fixtures additionally verify stable version-three retries, escaped HTML,
+full-text alternatives, scoped/expiring capabilities, raw-material cleanup, GET/HEAD safety,
+private headers/cookies, strict body/origin/nonce checks, one-use consumption, board revocation
+and email audit identity. The isolated single-engine SQL suite does not establish real
+multi-connection contention or hosted activation. Without the SQL runtime, the SQL suite
+explicitly skips. For `npm run comments:browser:test`,
 install that pinned temporary runtime at `.codex-artifacts/comments-sql-runtime`, then run the
 command with local Chrome available (or set `PLAYWRIGHT_CHANNEL` to an installed browser). The
 test configuration builds the site, starts a loopback production preview and a test-only

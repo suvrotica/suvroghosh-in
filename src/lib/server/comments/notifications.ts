@@ -15,7 +15,7 @@ const notification = z
 		created_at: z.string().datetime({ offset: true }),
 		lease_token: z.string().uuid(),
 		// Missing fields are the original RPC contract during an app-first rollout.
-		content_version: z.union([z.literal(1), z.literal(2)]).default(1),
+		content_version: z.union([z.literal(1), z.literal(2), z.literal(3)]).default(1),
 		display_name: z
 			.string()
 			.refine((value) => Array.from(value).length >= 1 && Array.from(value).length <= 60)
@@ -23,15 +23,119 @@ const notification = z
 		body: z
 			.string()
 			.refine((value) => Array.from(value).length >= 1 && Array.from(value).length <= 3000)
-			.nullish()
+			.nullish(),
+		approve_token: z
+			.string()
+			.regex(/^[a-f0-9]{64}$/)
+			.nullish(),
+		reject_token: z
+			.string()
+			.regex(/^[a-f0-9]{64}$/)
+			.nullish(),
+		action_expires_at: z.string().datetime({ offset: true }).nullish()
 	})
 	.superRefine((job, context) => {
-		if (job.content_version === 2 && (!job.display_name || !job.body))
+		if (job.content_version >= 2 && (!job.display_name || !job.body))
 			context.addIssue({
 				code: z.ZodIssueCode.custom,
 				message: 'Full comment notification content is missing.'
 			});
+		if (
+			job.content_version === 3 &&
+			(!job.approve_token ||
+				!job.reject_token ||
+				job.approve_token === job.reject_token ||
+				!job.action_expires_at)
+		)
+			context.addIssue({
+				code: z.ZodIssueCode.custom,
+				message: 'Email moderation actions are missing or invalid.'
+			});
 	});
+
+function escapeHtml(value: string) {
+	const entities: Record<string, string> = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#39;'
+	};
+	return value.replace(/[&<>"']/g, (character) => entities[character]);
+}
+
+function notificationContent(job: z.infer<typeof notification>, title: string) {
+	const introduction = [
+		'A new reader comment was submitted for approval.',
+		'',
+		`Article: ${title}`,
+		`Submitted: ${new Date(job.created_at).toISOString()}`,
+		''
+	];
+	const content =
+		job.content_version >= 2
+			? [`Commenter: ${job.display_name}`, '', 'Full comment:', job.body!, '']
+			: [];
+	if (job.content_version !== 3)
+		return {
+			text: [
+				...introduction,
+				...content,
+				'Review and approve, reject or reply in your moderation board:',
+				COMMENT_MODERATION_URL,
+				'',
+				'The comment stays hidden until you approve it. Sign in with your existing owner account.',
+				'If you have already moderated it, the board shows its current status.'
+			].join('\n')
+		};
+
+	// The database fixes these private capabilities and their expiry when the job is enqueued.
+	// Never reconstruct them or refresh their expiry during an uncertain provider retry.
+	const approveUrl = `https://www.suvroghosh.in/api/comments/moderate?action=approve&token=${job.approve_token}`;
+	const rejectUrl = `https://www.suvroghosh.in/api/comments/moderate?action=reject&token=${job.reject_token}`;
+	const expires = new Date(job.action_expires_at!).toISOString();
+	const confirmation =
+		'Choose Approve or Reject, then confirm your choice on the page that opens. No admin sign-in is needed. Opening a link does not change the comment until you confirm.';
+	const expiry = `These private links expire 7 days after submission, at ${expires}. Once the comment has been handled, neither link can be used. Keep this email private: anyone with an action link can moderate this comment.`;
+	return {
+		text: [
+			...introduction,
+			...content,
+			confirmation,
+			'',
+			'Approve comment:',
+			approveUrl,
+			'',
+			'Reject comment:',
+			rejectUrl,
+			'',
+			expiry,
+			'',
+			'Review the current status or reply in your moderation board:',
+			COMMENT_MODERATION_URL,
+			'',
+			'The comment stays hidden until you approve it. The moderation board uses your existing owner sign-in.'
+		].join('\n'),
+		html: `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Comment awaiting approval</title></head>
+<body style="margin:0;background:#f5f5f5;color:#202020;font-family:Arial,sans-serif;line-height:1.6">
+<main style="max-width:640px;margin:24px auto;padding:24px;background:#fff;border:1px solid #ddd;border-radius:8px">
+<h1 style="font-size:22px;line-height:1.3;margin:0 0 20px">A new comment is waiting for approval</h1>
+<p><strong>Article:</strong> ${escapeHtml(title)}<br><strong>Submitted:</strong> ${escapeHtml(new Date(job.created_at).toISOString())}</p>
+<p><strong>Commenter:</strong> ${escapeHtml(job.display_name!)}</p>
+<h2 style="font-size:16px;margin:24px 0 8px">Full comment</h2>
+<div style="white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;background:#f5f5f5;border:1px solid #ddd;border-radius:4px">${escapeHtml(job.body!)}</div>
+<p>${confirmation}</p>
+<table role="presentation" cellspacing="0" cellpadding="0" style="margin:24px 0"><tr>
+<td style="padding-right:12px"><a href="${escapeHtml(approveUrl)}" style="display:inline-block;background:#166534;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold">Approve</a></td>
+<td><a href="${escapeHtml(rejectUrl)}" style="display:inline-block;background:#991b1b;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold">Reject</a></td>
+</tr></table>
+<p style="font-size:14px">${expiry}</p>
+<p>The comment stays hidden until you approve it.</p>
+<p><a href="${COMMENT_MODERATION_URL}">Open your moderation board</a> to see its current status or reply. The board uses your existing owner sign-in.</p>
+</main></body></html>`
+	};
+}
 
 export function commentEmailConfigured() {
 	// Preview deployments share no permission to deliver production notifications.
@@ -64,7 +168,7 @@ export async function dispatchCommentNotifications(submissionId: string | null =
 					.slice(0, 240);
 				const delivered = await withDeadline((signal) => {
 					const options = {
-						idempotencyKey: `${job.content_version === 2 ? 'post-comment-approval-v2' : 'post-comment-approval'}/${job.comment_id}`,
+						idempotencyKey: `${job.content_version === 3 ? 'post-comment-approval-v3' : job.content_version === 2 ? 'post-comment-approval-v2' : 'post-comment-approval'}/${job.comment_id}`,
 						headers: {},
 						signal
 					};
@@ -73,21 +177,7 @@ export async function dispatchCommentNotifications(submissionId: string | null =
 							from: `SuvroGhosh.IN Comments <${env.CONTACT_FROM_EMAIL || 'noreply@suvroghosh.in'}>`,
 							to: env.CONTACT_TO_EMAIL || 'contact@suvroghosh.in',
 							subject: 'A new comment is waiting for approval | SuvroGhosh.IN',
-							text: [
-								'A new reader comment was submitted for approval.',
-								'',
-								`Article: ${title}`,
-								`Submitted: ${new Date(job.created_at).toISOString()}`,
-								'',
-								...(job.content_version === 2
-									? [`Commenter: ${job.display_name}`, '', 'Full comment:', job.body!, '']
-									: []),
-								'Review and approve, reject or reply in your moderation board:',
-								COMMENT_MODERATION_URL,
-								'',
-								'The comment stays hidden until you approve it. Sign in with your existing owner account.',
-								'If you have already moderated it, the board shows its current status.'
-							].join('\n')
+							...notificationContent(job, title)
 						},
 						options
 					);
