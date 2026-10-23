@@ -13,6 +13,7 @@ import {
 	submitGuestComment
 } from '$lib/server/comments/repository';
 import { commentId, guestSubmission, parsePage, parsePost } from '$lib/server/comments/validation';
+import { dispatchCommentNotifications } from '$lib/server/comments/notifications';
 
 const admit = createLocalAdmission({
 	attempts: 60,
@@ -78,6 +79,8 @@ export const POST: RequestHandler = async (event) => {
 				);
 			if (result === 'invalid_parent') throw error(409, 'This thread is no longer available.');
 			if (result !== 'pending') throw error(503, 'The comment could not be saved.');
+			// The insert has committed. Email failures must never undo a saved comment.
+			await dispatchCommentNotifications(parsed.data.submissionId);
 			return json(
 				{ status: 'pending', message: 'Your comment has been received and is awaiting approval.' },
 				{ status: 202, headers: commentHeaders }

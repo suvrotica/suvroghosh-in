@@ -3,6 +3,11 @@
 - Date: 23 October 2026
 - Status: Accepted; hosted schema applied, application release checks tracked in PR 12
 
+The original in-app-only alert decision below is superseded by
+[ADR 0010](0010-durable-comment-email-alerts.md), which adds durable email alerts using the
+existing Resend contact integration. The moderation, rendering and owner-authorization decisions
+remain in force.
+
 ## Context
 
 Readers need to leave comments and threaded replies beneath articles, and the site owner needs

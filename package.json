@@ -203,7 +203,7 @@
 		"build": "npm run build:site && npm run validate:discoverability",
 		"build:full": "npm run features:check && npm run notebooks:prepare && npm run build && npm run barnum-lab:route-assets",
 		"build-workflow:test": "node --test scripts/build-workflow.test.mjs scripts/generate-media-gallery.test.mjs",
-		"test:critical": "node --test scripts/service-worker.test.mjs && npm run seo:test && vitest run src/lib/server/http src/lib/server/notes src/lib/notes/public-offline.test.ts src/routes/api/tts/chatterbox/server.test.ts src/routes/contact/page.server.test.ts src/lib/visualizations/meaning-connection-map src/lib/server/comments src/routes/api/comments src/routes/api/notes/comments src/routes/notes/studio/comments --maxWorkers=2",
+		"test:critical": "node --test scripts/service-worker.test.mjs && npm run seo:test && vitest run src/lib/server/http src/lib/server/notes src/lib/notes/public-offline.test.ts src/routes/api/tts/chatterbox/server.test.ts src/routes/contact/page.server.test.ts src/lib/visualizations/meaning-connection-map src/lib/server/comments src/routes/api/comments src/routes/api/notes/comments src/routes/api/internal/comment-notifications src/routes/notes/studio/comments --maxWorkers=2",
 		"seo:test": "node --experimental-strip-types --test scripts/measurement-policy.test.mjs scripts/youtube-deferred.test.mjs scripts/notebook-canonical.test.mjs scripts/validate-links.test.mjs scripts/refresh-seo-metadata.test.mjs",
 		"seo:browser:test": "playwright test --config=playwright.seo-aeo.config.ts",
 		"privacy:test": "node --experimental-strip-types --test scripts/measurement-policy.test.mjs scripts/youtube-deferred.test.mjs && vitest run src/lib/privacy src/lib/analytics src/lib/server/analytics src/lib/server/notes/supabase-timeout.test.ts src/routes/api/analytics src/routes/notes/studio/analytics --maxWorkers=2",
@@ -232,7 +232,7 @@
 		"two-calendars:test": "vitest run src/lib/visualizations/two-calendars",
 		"two-calendars:browser:test": "playwright test --config=playwright.two-calendars.config.ts",
 		"two-calendars:poster": "node scripts/render-two-calendars.mjs",
-		"comments:test": "vitest run src/lib/server/comments src/routes/api/comments src/routes/api/notes/comments src/routes/notes/studio/comments --maxWorkers=2",
+		"comments:test": "vitest run src/lib/server/comments src/routes/api/comments src/routes/api/notes/comments src/routes/api/internal/comment-notifications src/routes/notes/studio/comments --maxWorkers=2",
 		"comments:sql:test": "node --test supabase/tests/post-comments.integration.test.mjs",
 		"comments:browser:test": "playwright test --config=playwright.comments.config.ts"
 	},

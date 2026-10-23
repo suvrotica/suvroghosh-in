@@ -142,6 +142,12 @@
 				Author replies can appear immediately with an Author badge.
 			</p>
 			<p>
+				A new submission also queues an email alert to the site owner through Resend, the site's
+				existing email provider. The alert contains the article title, submission time and a link to
+				the private moderation board. Your display name and comment text are not included in that
+				email. Delivery and retry records are stored privately in Supabase.
+			</p>
+			<p>
 				Hiding or rejecting a comment removes it from public view but retains the submission and
 				moderation history privately. Comment records contain no email address or raw IP address;
 				separate short-lived salted counters help limit repeated submissions. Comments do not use a
