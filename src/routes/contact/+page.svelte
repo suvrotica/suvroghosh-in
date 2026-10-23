@@ -70,6 +70,20 @@
 		</p>
 	</header>
 
+	<section
+		class="mb-6 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"
+		aria-label="Partnership enquiries"
+	>
+		<p class="mb-3">
+			For business enquiries, tell me what needs doing, which software is involved and when it is
+			needed. A short outline is enough.
+		</p>
+		<p>
+			Do not send patient records, passwords or private client data through this form. We will agree
+			how to handle any needed access or data later.
+		</p>
+	</section>
+
 	<div class="card">
 		{#if form?.success}
 			<div

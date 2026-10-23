@@ -8,9 +8,9 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const title = 'Healthcare IT Background & Writing | Suvro Ghosh';
+	const title = 'Services & Partnerships | Suvro Ghosh';
 	const description =
-		'Suvro Ghosh’s earlier work in clinical research systems, healthcare data and interoperability, with related technical writing and project notes.';
+		'Software and data help from Calcutta for Gulf firms. Connect systems, reduce manual work and test useful AI ideas. Start with one small paid project.';
 	const canonicalUrl = siteUrl + '/consulting';
 
 	const areasOfExperience = [
@@ -50,18 +50,95 @@
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10" data-route-scene="healthcare">
 		<h1 class="mb-4 text-4xl font-bold text-neutral-900 md:text-5xl dark:text-neutral-100">
-			Healthcare IT background
+			Services &amp; partnerships
 		</h1>
 		<p class="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-			Clinical research systems, healthcare data and interoperability are part of my working
-			history—and subjects I continue to write about.
+			I’m Suvro Ghosh, an independent maker based in Calcutta. I build my own projects and help
+			businesses with software and data work.
 		</p>
 		<p class="mt-4 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-			My earlier work included VA research data, SQL warehouses, ETL pipelines and clinical trial
-			platforms. ClinZen, the healthcare technology venture I founded, closed in 2016. These notes
-			connect that background with the writing and demonstrations on this site.
+			I’m looking to work with Gulf-based firms that have clients but need help with the technical
+			work. You handle the client relationship. I help plan and do the work from India.
 		</p>
 	</header>
+
+	<section class="card mb-8" aria-labelledby="services-heading">
+		<h2 id="services-heading" class="mb-4 text-2xl font-bold">What I can help with</h2>
+		<ul
+			class="list-disc space-y-4 pl-5 text-base leading-relaxed text-neutral-700 dark:text-neutral-300"
+		>
+			<li>
+				<strong>Connect software:</strong> help systems share data and check that it arrives correctly.
+			</li>
+			<li><strong>Organise data:</strong> clean, move and check data, and build useful reports.</li>
+			<li>
+				<strong>Reduce manual work:</strong> build tools for repeated tasks and make errors easier to
+				spot.
+			</li>
+			<li>
+				<strong>Use AI where it helps:</strong> start with a small test and check the results before relying
+				on it.
+			</li>
+			<li>
+				<strong>Work with healthcare data:</strong> help with older systems, research data and sharing
+				information between systems.
+			</li>
+			<li>
+				<strong>Improve basic security:</strong> review who can access what and fix agreed settings. This
+				is not a security certification or a specialist security test.
+			</li>
+		</ul>
+		<p class="mt-6 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+			I check that I can do the work before agreeing to it. If another specialist is needed, we
+			agree their work and cost first.
+		</p>
+	</section>
+
+	<section class="card mb-8" aria-labelledby="partnership-heading">
+		<h2 id="partnership-heading" class="mb-4 text-2xl font-bold">How we start</h2>
+		<div class="space-y-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+			<p>
+				Start with one small paid project. Agree the work, price, dates and how we will check the
+				result. Part payment upfront.
+			</p>
+			<p>
+				You manage the client and the sale. I help plan and do the agreed technical work. You speak
+				directly with me, not an account manager.
+			</p>
+			<p>
+				We can agree a fixed fee for my work or a share of the project margin. Put the costs and
+				payment dates in writing. Any later support or changes are agreed separately.
+			</p>
+		</div>
+	</section>
+
+	<section class="mb-10" aria-labelledby="requirement-heading">
+		<h2 id="requirement-heading" class="mb-4 text-2xl font-bold">Tell me what needs doing</h2>
+		<p class="mb-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+			What does your client need? What software do they use? What is not working, and when is it
+			needed? A short outline is enough to start.
+		</p>
+		<p class="mb-6 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+			Do not send patient records, passwords or private client data through the form. We will agree
+			how to handle any needed access or data later.
+		</p>
+		<div class="flex flex-wrap gap-3">
+			<Button href="/contact" size="lg">Tell me about the work</Button>
+			<Button href="/resume" variant="outline" size="lg">My background</Button>
+		</div>
+	</section>
+
+	<section class="mb-8" aria-labelledby="background-heading">
+		<h2 id="background-heading" class="mb-4 text-2xl font-bold">Background and writing</h2>
+		<p class="mb-4 text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+			My earlier work includes U.S. healthcare research, software and data systems. The resume
+			records that history. ClinZen ended in 2016.
+		</p>
+		<p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+			The articles below explain how I think about technical problems. They are not client case
+			studies. My interactive projects are labelled to show what they do and do not demonstrate.
+		</p>
+	</section>
 
 	<ScrollReveal>
 		<div class="card mb-8">

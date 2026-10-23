@@ -30,6 +30,12 @@
 			My current direction is independent work as an entrepreneur, maker and writer. Healthcare IT
 			is part of my background, alongside systems software, research and teaching.
 		</p>
+		<p class="mt-4 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+			For help with a project, see <a
+				href={resolve('/consulting')}
+				class="font-semibold underline underline-offset-4">Services &amp; partnerships</a
+			>. This page does not claim that I have worked for Gulf clients.
+		</p>
 	</header>
 
 	<div class="card mb-8">
@@ -48,8 +54,8 @@
 			>
 			explores interoperability, legacy systems, clinical data and the assumptions behind analytics. The
 			<a href={resolve('/consulting')} class="font-semibold underline underline-offset-4"
-				>healthcare background page</a
-			> connects that writing to earlier experience.
+				>services and partnerships page</a
+			> connects that writing to earlier experience and the current service offer.
 		</p>
 	</div>
 

@@ -29,6 +29,7 @@
 				{ href: '/projects', label: 'Work & experiments' },
 				{ href: '/about', label: 'About Suvro' },
 				{ href: '/resume', label: 'Résumé & career history' },
+				{ href: '/consulting', label: 'Services & partnerships' },
 				{ href: '/contact', label: 'Contact' }
 			]
 		}
