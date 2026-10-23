@@ -103,7 +103,7 @@
 		"barnum-lab:route-assets:test": "node --test scripts/check-barnum-route-assets.test.mjs",
 		"barnum-lab:lighthouse": "node scripts/audit-barnum-performance.mjs",
 		"barnum-lab:lighthouse:test": "node --test scripts/audit-barnum-performance.test.mjs",
-		"barnum-lab:test": "npm run barnum-lab:surface-bank && npm run barnum-lab:editorial-review && npm run barnum-lab:surface-audit:check && npm run barnum-lab:route-assets:test && npm run barnum-lab:lighthouse:test && vitest run src/lib/visualizations/barnum-lab",
+		"barnum-lab:test": "node --test scripts/generate-barnum-surface-bank.test.mjs && npm run barnum-lab:surface-bank && npm run barnum-lab:editorial-review && npm run barnum-lab:surface-audit:check && npm run barnum-lab:route-assets:test && npm run barnum-lab:lighthouse:test && vitest run src/lib/visualizations/barnum-lab",
 		"barnum-lab:stress": "node scripts/run-barnum-stress.mjs",
 		"barnum-lab:browser:test": "playwright test --config=playwright.barnum-lab.config.ts",
 		"static-equilibrium-illusion:test": "vitest run src/lib/visualizations/homeodynamics",

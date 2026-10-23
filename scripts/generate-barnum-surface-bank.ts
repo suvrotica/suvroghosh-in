@@ -248,7 +248,8 @@ const output = await format(rawOutput, {
 
 if (process.argv.includes('--check')) {
 	const existing = await readFile(outputPath, 'utf8').catch(() => '');
-	if (existing !== output) {
+	// Git may check text out as CRLF; line endings do not make the corpus stale.
+	if (existing.replace(/\r\n/g, '\n') !== output) {
 		throw new Error('The committed Barnum v2 surface bank is stale. Regenerate it before release.');
 	}
 	console.log(
