@@ -22,6 +22,10 @@ const migration = await readFile(
 	new URL('../migrations/202610230001_post_comments.sql', import.meta.url),
 	'utf8'
 );
+const legacySlugMigration = await readFile(
+	new URL('../migrations/202610230002_post_comments_legacy_slugs.sql', import.meta.url),
+	'utf8'
+);
 const ownerId = 'd66ad910-1e06-4bb7-8f0c-fcf107193d73';
 const outsiderId = '34c166ef-c242-41bb-a397-c185f263b1f1';
 
@@ -49,6 +53,14 @@ test(
 			await db.query('insert into auth.users values ($1),($2)', [ownerId, outsiderId]);
 			await db.query('insert into public.note_owners values ($1)', [ownerId]);
 			await db.exec(migration);
+			const initialRpcGrants = await db.query(
+				"select proname, proacl::text as grants from pg_proc where pronamespace = 'public'::regnamespace and proname in ('get_post_comments','submit_post_comment','get_comment_moderation_queue') order by proname"
+			);
+			await db.exec(legacySlugMigration);
+			const updatedRpcGrants = await db.query(
+				"select proname, proacl::text as grants from pg_proc where pronamespace = 'public'::regnamespace and proname in ('get_post_comments','submit_post_comment','get_comment_moderation_queue') order by proname"
+			);
+			assert.deepEqual(updatedRpcGrants.rows, initialRpcGrants.rows);
 			const result = async (sql, params = []) => (await db.query(sql, params)).rows[0].result;
 			const as = async (role, actor = '') => {
 				await db.exec('reset role');
@@ -227,6 +239,69 @@ test(
 			for (let i = 0; i < 12; i++)
 				await moderate(duplicateRow.id, i % 2 === 0 ? 'approved' : 'hidden');
 			assert.equal((await queue('hidden', 'article-one')).comments[0].history.length, 10);
+
+			// Additive legacy compatibility preserves case-sensitive filename identities.
+			const mixedSlug = 'theFifthWindow';
+			const lowerSlug = mixedSlug.toLowerCase();
+			const legacyRate = '9'.repeat(64);
+			await as('service_role');
+			assert.equal(
+				await submit({ slug: mixedSlug, body: 'Mixed-case article comment', rate: legacyRate }),
+				'pending'
+			);
+			assert.equal(
+				await submit({
+					slug: lowerSlug,
+					body: 'Distinct lowercase article comment',
+					rate: legacyRate
+				}),
+				'pending'
+			);
+			assert.equal((await publicRead(mixedSlug)).commentCount, 0);
+			assert.equal((await publicRead(lowerSlug)).commentCount, 0);
+			await as('authenticated', ownerId);
+			const mixedQueue = await queue('pending', mixedSlug);
+			const lowerQueue = await queue('pending', lowerSlug);
+			assert.equal(mixedQueue.total, 1);
+			assert.equal(lowerQueue.total, 1);
+			assert.equal(mixedQueue.comments[0].post_slug, mixedSlug);
+			assert.equal(lowerQueue.comments[0].post_slug, lowerSlug);
+			const mixedRoot = mixedQueue.comments[0];
+			assert.equal(await moderate(mixedRoot.id, 'approved', true), 'updated');
+			assert.equal(
+				await reply(mixedRoot.id, 'Author reply on the exact legacy filename'),
+				'approved'
+			);
+			await as('service_role');
+			assert.equal((await publicRead(mixedSlug)).commentCount, 2);
+			assert.equal((await publicRead(lowerSlug)).commentCount, 0);
+			assert.equal((await publicRead(mixedSlug, mixedRoot.id)).comments[0].is_author, true);
+			assert.equal(
+				await submit({ slug: lowerSlug, parent: mixedRoot.id, rate: legacyRate }),
+				'invalid_parent'
+			);
+			assert.equal(
+				await submit({
+					slug: mixedSlug,
+					parent: mixedRoot.id,
+					body: 'Reader reply on mixed case',
+					rate: legacyRate
+				}),
+				'pending'
+			);
+			await as('authenticated', ownerId);
+			const mixedReaderReply = (await queue('pending', mixedSlug)).comments[0];
+			assert.equal(await moderate(mixedReaderReply.id, 'approved', true), 'updated');
+			assert.equal(await moderate(lowerQueue.comments[0].id, 'approved', true), 'updated');
+			await as('service_role');
+			assert.equal((await publicRead(mixedSlug)).commentCount, 3);
+			assert.equal((await publicRead(lowerSlug)).commentCount, 1);
+			await as('authenticated', ownerId);
+			assert.equal(await moderate(mixedRoot.id, 'hidden'), 'updated');
+			await as('service_role');
+			assert.equal((await publicRead(mixedSlug)).commentCount, 0);
+			assert.equal((await publicRead(mixedSlug, mixedRoot.id)).total, 0);
+			assert.equal((await publicRead(lowerSlug)).commentCount, 1);
 
 			// Durable per-hash and global admission caps; a retry does not consume another slot.
 			await as('service_role');

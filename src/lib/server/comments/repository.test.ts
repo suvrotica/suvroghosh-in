@@ -30,6 +30,58 @@ beforeEach(() => {
 	});
 });
 describe('comments persistence boundary', () => {
+	it('keeps mixed-case published identifiers unchanged in public read and submission RPCs', async () => {
+		const { listPublicComments, submitGuestComment } = await import('./repository');
+		const postSlug = 'theFifthWindow';
+		mocks.post.mockImplementation((slug) => (slug === postSlug ? { slug } : null));
+		await listPublicComments(postSlug, null, 1);
+		expect(mocks.post).toHaveBeenCalledWith(postSlug);
+		expect(mocks.rpc).toHaveBeenCalledWith('get_post_comments', {
+			p_post_slug: postSlug,
+			p_parent_id: null,
+			p_page: 1
+		});
+		mocks.rpc.mockReturnValue({
+			abortSignal: vi.fn().mockResolvedValue({ data: 'pending', error: null })
+		});
+		await expect(
+			submitGuestComment(
+				{
+					postSlug,
+					parentId: null,
+					name: 'Reader',
+					body: 'A question on this legacy article.',
+					submissionId: '10000000-0000-4000-8000-000000000001'
+				},
+				'rate-key'
+			)
+		).resolves.toBe('pending');
+		expect(mocks.rpc).toHaveBeenLastCalledWith(
+			'submit_post_comment',
+			expect.objectContaining({ p_post_slug: postSlug })
+		);
+	});
+	it.each(['thefifthwindow', 'TheFifthWindow'])(
+		'rejects the unpublished case variant %s before either read or write reaches the database',
+		async (postSlug) => {
+			const { listPublicComments, submitGuestComment } = await import('./repository');
+			mocks.post.mockImplementation((slug) => (slug === 'theFifthWindow' ? { slug } : null));
+			await expect(listPublicComments(postSlug, null, 1)).rejects.toMatchObject({ status: 404 });
+			await expect(
+				submitGuestComment(
+					{
+						postSlug,
+						parentId: null,
+						name: 'Reader',
+						body: 'An incorrectly cased article identifier.',
+						submissionId: '10000000-0000-4000-8000-000000000001'
+					},
+					'rate-key'
+				)
+			).rejects.toMatchObject({ status: 404 });
+			expect(mocks.rpc).not.toHaveBeenCalled();
+		}
+	);
 	it('rejects unpublished article identities before database access', async () => {
 		const { listPublicComments } = await import('./repository');
 		mocks.post.mockReturnValue(null);

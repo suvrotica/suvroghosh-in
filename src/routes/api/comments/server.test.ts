@@ -50,6 +50,32 @@ beforeEach(() => {
 afterEach(() => vi.useRealTimers());
 
 describe('public moderated comment boundary', () => {
+	it.each([
+		'theFifthWindow',
+		'the-Return-of-the-Sweets',
+		'the-AI-Alignment-and-Human-Learning-Calcutta'
+	])(
+		'preserves the published legacy identifier %s for reads and pending submissions',
+		async (postSlug) => {
+			const response = await invoke('GET', '', `?post=${postSlug}`);
+			expect(response.status).toBe(200);
+			expect(mocks.list).toHaveBeenCalledWith(postSlug, null, 1);
+			const submission = { ...payload, postSlug };
+			const pending = await invoke('POST', JSON.stringify(submission));
+			expect(pending.status).toBe(202);
+			expect(await pending.json()).toMatchObject({ status: 'pending' });
+			expect(mocks.submit).toHaveBeenCalledWith(submission, 'a'.repeat(64));
+		}
+	);
+	it.each(['theFifthWindow/private', 'theFifthWindow.md', 'The Fifth Window', 'ThéFifthWindow'])(
+		'rejects unsafe legacy-like article identifier %s for both reads and submissions',
+		async (postSlug) => {
+			expect((await invoke('GET', '', `?post=${encodeURIComponent(postSlug)}`)).status).toBe(400);
+			expect((await invoke('POST', JSON.stringify({ ...payload, postSlug }))).status).toBe(400);
+			expect(mocks.list).not.toHaveBeenCalled();
+			expect(mocks.submit).not.toHaveBeenCalled();
+		}
+	);
 	it('saves guest input as pending and never echoes a private comment', async () => {
 		const response = await invoke('POST');
 		expect(response.status).toBe(202);

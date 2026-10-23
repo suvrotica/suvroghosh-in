@@ -688,7 +688,8 @@ Supabase rows are manually described/asserted in `repository.ts`; clients do not
 ### Moderated post comments
 
 The generic article page mounts `DeferredPostComments.svelte` after its article/folio branches, keyed by the
-validated Markdown filename slug. Category or canonical-path changes do not change this key; a
+validated, case-sensitive Markdown filename slug, including ASCII capitals in older filenames.
+Category or canonical-path changes do not change this key; a
 filename-slug rename needs a deliberate comment-data migration. Existing article prerendering,
 metadata, Markdown and crawler-visible prose remain independent of Supabase. The initial article
 contains only a comment-section heading and load control. At 250 px from the viewport, or on
@@ -762,6 +763,9 @@ The exact tested migration was applied on 23 October 2026 to the existing hosted
 Supabase project, matched beforehand against its Notes/analytics tables and one registered owner.
 Version `202610230001`, name `post_comments`, was recorded in the migration ledger within the same
 transaction; PostgREST was notified to reload its schema cache. Hosted inspection confirmed
+the subsequent compatibility migration `202610230002` is also recorded and its constraint accepts
+ASCII capitals. It preserves exact filename keys and replaces only the slug alphabet in three
+existing RPCs; their remaining definitions and grants are unchanged. Hosted inspection confirmed
 comment schema readiness, denied anonymous direct table reads/reader-RPC execution, allowed
 service-role reader-RPC execution, and the recorded migration. A separate transaction under the
 actual hosted service/authenticated roles and existing owner membership passed assertions for
