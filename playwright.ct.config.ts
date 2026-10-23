@@ -17,6 +17,7 @@ export default defineConfig({
 	reporter: [['list']],
 	use: {
 		baseURL,
+		serviceWorkers: 'block',
 		browserName: 'chromium',
 		// Use full Chromium's headless mode in CI; the standalone shell crashes
 		// while creating later test contexts after these navigation/canvas checks.

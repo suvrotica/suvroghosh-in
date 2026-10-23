@@ -1,4 +1,5 @@
 import { expect, test, type Download, type Locator, type Page } from '@playwright/test';
+import { usePausedMediaPreference } from '../helpers/privacy-choice';
 
 const articlePath = '/blog/visualizations/double-pendulum-chaos';
 const articleTitle = 'The Machine That Misplaces Tomorrow: A Double-Pendulum Atlas of Chaos';
@@ -239,7 +240,8 @@ async function workerCounts(
 	);
 }
 
-test.beforeEach(({ page }) => {
+test.beforeEach(async ({ page, context }) => {
+	await usePausedMediaPreference(context);
 	runtimeDiagnostics.set(page, collectUnexpectedRuntimeDiagnostics(page));
 });
 
@@ -393,6 +395,7 @@ test('a 390 × 844 touch viewport preserves scrolling while both vertical and di
 	});
 	const lab = await waitForLaboratory(page);
 	const lowerHandle = lab.locator('[data-drag-target="lower"]');
+	await expect(page.locator('[data-privacy-note]')).toHaveCount(0);
 	await expect(lowerHandle).toBeVisible();
 	await expect(lowerHandle).toHaveCSS('touch-action', 'none');
 	await expect(lab.locator('.stage-shell')).toHaveCSS('touch-action', /pan-y/u);
@@ -408,6 +411,14 @@ test('a 390 × 844 touch viewport preserves scrolling while both vertical and di
 	await lowerHandle.scrollIntoViewIfNeeded();
 	const initialScroll = await page.evaluate(() => window.scrollY);
 	const verticalStart = await centreOf(lowerHandle);
+	expect(
+		await page.evaluate(
+			({ x, y }) =>
+				document.elementFromPoint(x, y)?.closest<HTMLElement>('[data-drag-target]')?.dataset
+					.dragTarget,
+			verticalStart
+		)
+	).toBe('lower');
 	await dispatchTouchDrag(page, verticalStart, {
 		x: verticalStart.x,
 		y: verticalStart.y - 145

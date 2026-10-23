@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl } from '$lib/components/seo/SEO';
 	import { openPrivacySettings } from '$lib/privacy/consent';
@@ -132,6 +133,31 @@
 	</section>
 	<section>
 		<span class="section-no">05</span>
+		<div>
+			<h2>When you join the conversation</h2>
+			<p>
+				Article comments ask for a display name and your words, without an email address or reader
+				account. Submissions and reader replies are stored durably in the site's shared Supabase
+				database for owner review. Your display name and text become public only after approval.
+				Author replies can appear immediately with an Author badge.
+			</p>
+			<p>
+				Hiding or rejecting a comment removes it from public view but retains the submission and
+				moderation history privately. Comment records contain no email address or raw IP address;
+				separate short-lived salted counters help limit repeated submissions. Comments do not use a
+				browser-local comment database. Text kept in an open form after a connection failure can be
+				lost when you leave or reload the page.
+			</p>
+			<p>
+				To request removal of a stored comment, use the <a href={resolve('/contact')}
+					>contact form</a
+				> with the article link, display name and approximate posting date. Hiding cannot recall text
+				already viewed or copied.
+			</p>
+		</div>
+	</section>
+	<section>
+		<span class="section-no">06</span>
 		<div>
 			<h2>Changing your mind</h2>
 			<p>

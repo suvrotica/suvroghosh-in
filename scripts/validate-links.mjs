@@ -244,6 +244,17 @@ function staticString(node) {
 	return undefined;
 }
 
+function isNavigationProperty(name, value) {
+	if (!navigationKeys.has(name)) return false;
+	// Command payloads also use `action` (for example { action: 'approve' }).
+	// Object properties need an explicit URL/path shape; DOM action attributes
+	// remain navigation even when their value is a plain relative destination.
+	return (
+		name !== 'action' ||
+		(typeof value === 'string' && /^(?:\/|\.{1,2}\/|\?|https?:)/i.test(value.trim()))
+	);
+}
+
 function routeBase(file) {
 	if (!file.startsWith(`${routesDir}${path.sep}`)) return null;
 	const segments = toPosix(path.relative(routesDir, path.dirname(file)))
@@ -272,11 +283,10 @@ function extractCodeReferences(file) {
 				? node.text
 				: undefined;
 		const visit = (node) => {
-			if (
-				ts.isPropertyAssignment(node) &&
-				navigationKeys.has(node.name.getText(source).replace(/^['"]|['"]$/g, ''))
-			) {
-				add(node.initializer.getStart(source), literal(node.initializer));
+			if (ts.isPropertyAssignment(node)) {
+				const name = node.name.getText(source).replace(/^['"]|['"]$/g, '');
+				const value = literal(node.initializer);
+				if (isNavigationProperty(name, value)) add(node.initializer.getStart(source), value);
 			}
 			if (ts.isCallExpression(node) && ts.isIdentifier(node.expression)) {
 				const name = node.expression.text;
@@ -303,8 +313,10 @@ function extractCodeReferences(file) {
 					add(node.start, staticString(value?.expression));
 				}
 			}
-			if (node.type === 'Property' && navigationKeys.has(node.key?.name ?? node.key?.value)) {
-				add(node.start, staticString(node.value));
+			if (node.type === 'Property') {
+				const name = node.key?.name ?? node.key?.value;
+				const value = staticString(node.value);
+				if (isNavigationProperty(name, value)) add(node.start, value);
 			}
 			if (
 				node.type === 'CallExpression' &&

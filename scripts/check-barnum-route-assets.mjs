@@ -8,6 +8,7 @@ export const BARNUM_SHELL_ENTRY = 'src/lib/visualizations/barnum-lab/components/
 export const BARNUM_RUNTIME_SPECIFIER = './BarnumLabRuntime.svelte';
 export const BARNUM_RUNTIME_ENTRY =
 	'src/lib/visualizations/barnum-lab/components/BarnumLabRuntime.svelte';
+export const POST_COMMENTS_ENTRY = 'src/lib/components/comments/PostComments.svelte';
 
 // The activation-only corpus/runtime must stay outside this initial static closure.
 // These ceilings leave normal chunk-hash variation while catching an eager corpus import,
@@ -17,9 +18,12 @@ export const BARNUM_ROUTE_ASSET_BUDGET = Object.freeze({
 	cssGzipBytes: 24 * 1024,
 	jsRawBytes: 320 * 1024,
 	jsGzipBytes: 110 * 1024,
-	// Shared media consent adds its controller, stylesheet and framework split edges.
-	// Preserve every byte ceiling and the forbidden-asset/activation-boundary checks.
-	assetCount: 34
+	// Deferred comments preserve the measured pre-comments CSS closure (33,199 raw /
+	// 9,491 gzip bytes); the final loader build adds 2,818 raw / 1,227 gzip JS bytes.
+	// Shared Svelte helpers split into two extra requests: 34 -> 36. The complete
+	// comments UI/CSS is checked outside this closure below; every byte ceiling,
+	// unrelated-asset check and Barnum activation boundary stays unchanged.
+	assetCount: 36
 });
 
 export const FORBIDDEN_ROUTE_ASSET_MARKERS = Object.freeze([
@@ -186,6 +190,21 @@ export function auditBarnumRouteAssets({ manifest, clientRoot }) {
 	const budgetFailures = Object.entries(BARNUM_ROUTE_ASSET_BUDGET)
 		.filter(([metric, limit]) => totals[metric] > limit)
 		.map(([metric, limit]) => ({ metric, actual: totals[metric], limit }));
+	const commentEntry = manifest[POST_COMMENTS_ENTRY];
+	const commentAssets = commentEntry
+		? [commentEntry.file, ...(commentEntry.css ?? [])].filter(Boolean)
+		: [];
+	const commentBoundaryFailures = [];
+	if (!commentEntry?.isDynamicEntry || !commentEntry.file) {
+		commentBoundaryFailures.push('The complete comments UI must remain a separate dynamic entry.');
+	}
+	for (const file of commentAssets) {
+		if (closure.files.includes(file)) {
+			commentBoundaryFailures.push(
+				`The initial article closure eagerly includes comments asset: ${file}`
+			);
+		}
+	}
 
 	return {
 		routeEntry,
@@ -195,6 +214,11 @@ export function auditBarnumRouteAssets({ manifest, clientRoot }) {
 		budget: BARNUM_ROUTE_ASSET_BUDGET,
 		forbiddenAssets,
 		budgetFailures,
+		commentBoundary: {
+			entry: POST_COMMENTS_ENTRY,
+			assets: commentAssets,
+			failures: commentBoundaryFailures
+		},
 		assets
 	};
 }
@@ -222,6 +246,7 @@ function main() {
 	if (
 		report.forbiddenAssets.length > 0 ||
 		report.budgetFailures.length > 0 ||
+		report.commentBoundary.failures.length > 0 ||
 		report.lazyBoundary.failures.length > 0
 	) {
 		process.exitCode = 1;

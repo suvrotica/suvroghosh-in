@@ -4,6 +4,7 @@ type Options = {
 	windowMs: number;
 	concurrency: number;
 	maxKeys: number;
+	perKeyConcurrency?: number;
 };
 
 /** A bounded, process-local guard. It does not coordinate separate server instances. */
@@ -27,7 +28,7 @@ export function createLocalAdmission(options: Options) {
 		if (
 			limitedSince !== null ||
 			active >= options.concurrency ||
-			bucket.active > 0 ||
+			bucket.active >= (options.perKeyConcurrency ?? 1) ||
 			(!buckets.has(key) && buckets.size >= options.maxKeys)
 		) {
 			return {
