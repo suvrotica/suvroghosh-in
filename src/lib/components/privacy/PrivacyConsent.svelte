@@ -17,7 +17,6 @@
 	let { compactTrigger = false }: { compactTrigger?: boolean } = $props();
 	let ready = $state(false);
 	let consent: ConsentRecord | null = $state(null);
-	let analytics = $state(false);
 	let media = $state(false);
 	let settingsOpen = $state(false);
 	let noticeDismissed = $state(false);
@@ -35,7 +34,6 @@
 	async function showSettings() {
 		if (!dialog || dialog.open) return;
 		const current = getConsent();
-		analytics = current?.analytics ?? false;
 		media = current?.media ?? false;
 		previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
 		settingsOpen = true;
@@ -77,12 +75,12 @@
 		destination?.focus({ preventScroll: true });
 	}
 
-	function commit(nextAnalytics: boolean, nextMedia: boolean) {
+	function commit(nextMedia: boolean) {
 		clearTimeout(noticeTimer);
-		const { persisted } = saveConsent({ analytics: nextAnalytics, media: nextMedia });
+		const { persisted } = saveConsent({ media: nextMedia });
 		notice = persisted
-			? 'Your choices are saved. Change them any time in Privacy & cookies.'
-			: 'Your browser could not save these choices. They apply for this visit; measurement stays off when storage is unavailable.';
+			? 'Your video preference is saved. Change it any time in Privacy & cookies.'
+			: 'Your browser could not save this video preference. It applies for this visit only. Vercel’s cookieless page counts continue by default.';
 		closeSettings();
 		if (persisted)
 			noticeTimer = setTimeout(() => {
@@ -130,12 +128,12 @@
 			<ChoiceReceipt small />
 		</div>
 		<p>
-			Make yourself at home. Optional measurement helps me understand what gets read and roughly
-			where. YouTube stays paused until you choose.
+			Make yourself at home. Vercel’s cookieless page counts run by default. Choose whether embedded
+			YouTube players may connect to Google. You can also load a video once when you reach it.
 		</p>
 		<div class="note-actions">
-			<button type="button" onclick={() => commit(false, false)}>Reject optional</button>
-			<button type="button" onclick={() => commit(true, true)}>Accept optional</button>
+			<button type="button" onclick={() => commit(false)}>Keep videos paused</button>
+			<button type="button" onclick={() => commit(true)}>Allow YouTube</button>
 		</div>
 		<div class="note-foot">
 			<button type="button" class="text-action" onclick={showSettings}
@@ -191,7 +189,8 @@
 			Your visit.<br /><em>Your choices.</em>
 		</h2>
 		<p id="privacy-intro">
-			A good fieldbook leaves room for its reader. Choose what this one may remember and connect to.
+			Choose whether YouTube players may connect to Google. Vercel’s cookieless page counts run by
+			default, independently of this video preference.
 		</p>
 	</div>
 	<div class="preferences-grid">
@@ -208,24 +207,7 @@
 			</section>
 			<section class="category">
 				<div class="category-heading">
-					<h3><label for="privacy-analytics"><span>02</span> Audience &amp; performance</label></h3>
-					<input
-						id="privacy-analytics"
-						type="checkbox"
-						role="switch"
-						bind:checked={analytics}
-						aria-describedby="analytics-description"
-					/>
-				</div>
-				<p id="analytics-description">
-					Allow first-party page counts with approximate city, region and country, plus Vercel
-					Analytics and Speed Insights. No precise location or persistent visitor ID is kept in the
-					first-party reports.
-				</p>
-			</section>
-			<section class="category">
-				<div class="category-heading">
-					<h3><label for="privacy-media"><span>03</span> External media</label></h3>
+					<h3><label for="privacy-media"><span>02</span> External media</label></h3>
 					<input
 						id="privacy-media"
 						type="checkbox"
@@ -241,16 +223,12 @@
 			</section>
 		</div>
 		<aside class="receipt-panel" aria-label="Your choices">
-			<ChoiceReceipt {analytics} {media} />
+			<ChoiceReceipt {media} />
 			<h3>Your choices</h3>
 			<dl>
 				<div>
 					<dt>Essential</dt>
 					<dd>Available</dd>
-				</div>
-				<div>
-					<dt>Measurement</dt>
-					<dd>{analytics ? 'Allowed' : 'Off'}</dd>
 				</div>
 				<div>
 					<dt>External media</dt>
@@ -263,18 +241,18 @@
 	</div>
 	<div class="dialog-bottom">
 		<p>
-			Change your mind any time. Withdrawing stops future optional collection. <a
+			Change your mind any time. Keeping videos paused unloads active YouTube players. <a
 				href={resolve('/privacy')}>Read the full privacy note ↗</a
 			>
 		</p>
 		<div class="dialog-actions">
 			<div class="balanced-actions">
-				<button type="button" onclick={() => commit(false, false)}>Reject optional</button><button
+				<button type="button" onclick={() => commit(false)}>Keep videos paused</button><button
 					type="button"
-					onclick={() => commit(true, true)}>Accept optional</button
+					onclick={() => commit(true)}>Allow YouTube</button
 				>
 			</div>
-			<button class="save-settings" type="button" onclick={() => commit(analytics, media)}
+			<button class="save-settings" type="button" onclick={() => commit(media)}
 				>Save preferences <span aria-hidden="true">↗</span></button
 			>
 		</div>

@@ -19,6 +19,8 @@ on:
       - 'src/lib/visualizations/ct-reconstruction/**'
       - 'src/routes/blog/[category]/[slug]/+page.svelte'
       - 'tests/browser/ct-reconstruction-responsive.spec.ts'
+      - 'tests/helpers/privacy-choice.ts'
+      - 'src/lib/privacy/consent.ts'
   push:
     branches:
       - main
@@ -39,6 +41,8 @@ on:
       - 'src/lib/visualizations/ct-reconstruction/**'
       - 'src/routes/blog/[category]/[slug]/+page.svelte'
       - 'tests/browser/ct-reconstruction-responsive.spec.ts'
+      - 'tests/helpers/privacy-choice.ts'
+      - 'src/lib/privacy/consent.ts'
 
 permissions:
   contents: read

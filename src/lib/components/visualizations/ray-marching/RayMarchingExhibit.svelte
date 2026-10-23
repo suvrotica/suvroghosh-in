@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { trackConsented as track } from '$lib/analytics/client';
 	import RayMarchingCanvas from './RayMarchingCanvas.svelte';
 	import RayMarchingSourceExplorer from './RayMarchingSourceExplorer.svelte';
 	import { rayMarchingMetadata } from '$lib/visualizations/experiments/ray-marching/metadata';
@@ -129,14 +128,6 @@
 			lifecycle === 'unavailable'
 	);
 
-	function safeTrack(name: string, properties?: Record<string, string | number | boolean>) {
-		try {
-			track(name, properties);
-		} catch {
-			// Measurement is deliberately non-essential; the local exhibit always works without it.
-		}
-	}
-
 	function replaceState(patch: Partial<RayMarchingExperienceState>) {
 		sceneState = createRayMarchingState({ ...sceneState, ...patch });
 	}
@@ -186,12 +177,10 @@
 		if (status === 'context-lost') {
 			ready = false;
 			lifecycle = 'context-lost';
-			safeTrack('ray_marching_fallback_shown', { reason: 'context-lost' });
 		} else if (status === 'shader-error') {
 			ready = false;
 			lifecycle = /webgl|context/iu.test(message) ? 'unavailable' : 'shader-error';
 			statusMessage = `${lifecycle === 'unavailable' ? 'Fallback' : 'Shader error'}: ${message}`;
-			safeTrack('ray_marching_fallback_shown', { reason: lifecycle });
 		} else {
 			lifecycle = 'initializing';
 		}
@@ -200,7 +189,6 @@
 	function handleReady() {
 		ready = true;
 		describeReadyState('Ready. The first visible GPU frame replaced the poster.');
-		safeTrack('ray_marching_loaded', { tier: qualityTier });
 		if (pendingPulse || captureMode) {
 			pendingPulse = false;
 			pulseStatic = captureMode || !sceneState.playing;
@@ -219,7 +207,6 @@
 		if (sceneState.quality !== 'auto' || qualityTier === to) return;
 		qualityTier = to;
 		statusMessage = `Quality changed from ${qualityLabels[from]} to ${qualityLabels[to]} after sustained slow frames.`;
-		safeTrack('ray_marching_quality_changed', { from, to });
 	}
 
 	function selectStage(stage: RayMarchingStageId) {
@@ -227,7 +214,6 @@
 		const message = `Build stage ${stage} of 8: ${rayMarchingStages[stage - 1].title}.`;
 		if (!loadRequested || !ready) requestLoad();
 		else describeReadyState(message);
-		safeTrack('ray_marching_stage_selected', { stage });
 	}
 
 	function explore() {
@@ -262,7 +248,6 @@
 			statusMessage = 'Pulse is available in Explore mode and completed stage 8.';
 			return;
 		}
-		safeTrack('ray_marching_pulse_used', { control: 'button-or-key' });
 		if (!loadRequested || !ready) {
 			pendingPulse = true;
 			requestLoad();
@@ -318,7 +303,6 @@
 		try {
 			await navigator.clipboard.writeText(shareUrl);
 			copyStatus = 'Scene link copied.';
-			safeTrack('ray_marching_scene_link_copied');
 		} catch {
 			copyStatus =
 				'Could not copy automatically; the address bar still has the canonical article URL.';
@@ -374,7 +358,6 @@
 			document.body.style.overflow = 'hidden';
 			cssExpanded = true;
 			statusMessage = 'Expanded view opened. Press Escape or Exit expanded view to return.';
-			safeTrack('ray_marching_fullscreen_entered', { mode: 'expanded-fallback' });
 		}
 	}
 
@@ -434,7 +417,6 @@
 			lifecycle = 'unavailable';
 			statusMessage =
 				'Fallback: WebGL is disabled for this visit. Showing the complete static version.';
-			safeTrack('ray_marching_fallback_shown', { reason: 'query-disabled' });
 		}
 
 		const loadObserver = new IntersectionObserver(
@@ -472,7 +454,6 @@
 			nativeFullscreen = document.fullscreenElement === shell;
 			if (nativeFullscreen && !wasFullscreen) {
 				statusMessage = 'Fullscreen view opened. Press Escape to return.';
-				safeTrack('ray_marching_fullscreen_entered', { mode: 'native' });
 			} else if (!nativeFullscreen && wasFullscreen) {
 				restoreFullscreenFocus();
 			}
@@ -797,7 +778,7 @@
 		</details>
 	</div>
 
-	<RayMarchingSourceExplorer onopen={() => safeTrack('ray_marching_source_opened')} />
+	<RayMarchingSourceExplorer />
 
 	<figcaption id={`${uid}-caption`}>
 		<strong>The Cathedral of Distance.</strong> A symmetrical hall of dark arches recedes into blue fog

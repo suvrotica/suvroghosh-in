@@ -19,6 +19,18 @@ const footerPages = [
 ] as const;
 
 const runtimeErrors = new WeakMap<Page, string[]>();
+const analyticsScriptFixture = {
+	status: 200,
+	contentType: 'application/javascript',
+	body: '/* Local Analytics fixture: preserve queued pageviews without provider telemetry. */'
+};
+
+function isBaselineAnalyticsScript(url: URL) {
+	return (
+		url.pathname === '/_vercel/insights/script.js' ||
+		(url.hostname === 'va.vercel-scripts.com' && url.pathname === '/v1/script.debug.js')
+	);
+}
 
 // These checks exercise clicks locally. Third-party destination availability is audited separately;
 // a stub document proves the requested URL/new tab without sending traffic or subscribing.
@@ -27,7 +39,10 @@ test.beforeEach(async ({ context, baseURL, page }) => {
 	runtimeErrors.set(page, errors);
 	page.on('pageerror', (error) => errors.push(error.message));
 	await context.route('**/*', (route) => {
-		if (new URL(route.request().url()).origin === baseURL) return route.continue();
+		const url = new URL(route.request().url());
+		if (isBaselineAnalyticsScript(url)) return route.fulfill(analyticsScriptFixture);
+		if (url.pathname.startsWith('/_vercel/insights/')) return route.abort();
+		if (url.origin === baseURL) return route.continue();
 		if (route.request().isNavigationRequest()) {
 			return route.fulfill({
 				status: 200,
@@ -42,8 +57,7 @@ test.beforeEach(async ({ context, baseURL, page }) => {
 		localStorage.setItem(
 			'suvroghosh:consent',
 			JSON.stringify({
-				v: 1,
-				analytics: false,
+				v: 2,
 				media: false,
 				savedAt,
 				expiresAt: savedAt + 180 * 24 * 60 * 60 * 1000
@@ -496,7 +510,7 @@ test.describe('native navigation transitions', () => {
 	}
 });
 
-test('fresh visit can dismiss its notice and use footer links without choosing optional consent', async ({
+test('fresh visit initializes Analytics while dismissing its media notice without a choice', async ({
 	browser,
 	baseURL
 }, testInfo) => {
@@ -507,19 +521,30 @@ test('fresh visit can dismiss its notice and use footer links without choosing o
 		reducedMotion: 'reduce'
 	});
 	const optionalRequests: string[] = [];
+	const baselineScripts: string[] = [];
 	await context.route('**/*', (route) => {
 		const url = route.request().url();
+		const parsed = new URL(url);
+		if (isBaselineAnalyticsScript(parsed)) {
+			baselineScripts.push(url);
+			return route.fulfill(analyticsScriptFixture);
+		}
 		if (
-			/youtube|ytimg|googlevideo|vercel-insights|vitals\.vercel|\/api\/analytics\/pageview|\/_vercel\//.test(
+			/youtube|ytimg|googlevideo|speed-insights|vercel-insights|vitals\.vercel|va\.vercel-scripts\.com|\/api\/analytics\/pageview|\/_vercel\//.test(
 				url
 			)
-		)
+		) {
 			optionalRequests.push(url);
-		return new URL(url).origin === baseURL ? route.continue() : route.abort();
+			return route.abort();
+		}
+		return parsed.origin === baseURL ? route.continue() : route.abort();
 	});
 	try {
 		const page = await context.newPage();
 		await load(page, '/about');
+		// Default Analytics initialization is local and independent of media consent;
+		// its no-op script cannot dispatch provider pageviews or custom-event transports.
+		await expect.poll(() => baselineScripts.length).toBe(1);
 		expect(await page.evaluate(() => localStorage.getItem('suvroghosh:consent'))).toBeNull();
 		const dismiss = page.getByRole('button', {
 			name: 'Dismiss privacy notice without choosing',

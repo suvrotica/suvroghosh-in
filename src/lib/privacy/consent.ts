@@ -1,7 +1,6 @@
 /** Browser-local preferences. This record is a choice, never a visitor identifier. */
 export interface ConsentRecord {
-	v: 1;
-	analytics: boolean;
+	v: 2;
 	media: boolean;
 	savedAt: number;
 	expiresAt: number;
@@ -23,8 +22,8 @@ export function parseConsent(value: string | null, now = Date.now()): ConsentRec
 	try {
 		const candidate = JSON.parse(value);
 		if (
-			candidate?.v !== 1 ||
-			typeof candidate.analytics !== 'boolean' ||
+			(candidate?.v !== 1 && candidate?.v !== 2) ||
+			(candidate.v === 1 && typeof candidate.analytics !== 'boolean') ||
 			typeof candidate.media !== 'boolean' ||
 			!Number.isSafeInteger(candidate.savedAt) ||
 			!Number.isSafeInteger(candidate.expiresAt) ||
@@ -35,8 +34,9 @@ export function parseConsent(value: string | null, now = Date.now()): ConsentRec
 		)
 			return null;
 		return {
-			v: 1,
-			analytics: candidate.analytics,
+			// Old audience choices have no bearing on measurement or media permission.
+			// Preserve the original media lifetime rather than renewing it on migration.
+			v: 2,
 			media: candidate.media,
 			savedAt: candidate.savedAt,
 			expiresAt: candidate.expiresAt
@@ -136,14 +136,13 @@ export function initializeConsent(): () => void {
 	};
 }
 
-export function saveConsent(choice: { analytics: boolean; media: boolean }): {
+export function saveConsent(choice: { media: boolean }): {
 	persisted: boolean;
 } {
 	if (typeof window === 'undefined') return { persisted: false };
 	const savedAt = Date.now();
 	const next: ConsentRecord = {
-		v: 1,
-		analytics: choice.analytics === true,
+		v: 2,
 		media: choice.media === true,
 		savedAt,
 		expiresAt: savedAt + CONSENT_LIFETIME_MS

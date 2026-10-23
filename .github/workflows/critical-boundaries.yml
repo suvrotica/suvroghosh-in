@@ -24,6 +24,10 @@ on:
       - 'src/lib/privacy/**'
       - 'src/lib/analytics/**'
       - 'src/lib/components/privacy/**'
+      - 'src/lib/components/comments/**'
+      - 'src/lib/comments/**'
+      - 'supabase/migrations/*post_comments*'
+      - 'supabase/tests/post-comments.integration.test.mjs'
       - 'src/lib/components/analytics/**'
       - 'src/routes/privacy/**'
       - 'supabase/migrations/*analytics*'
@@ -78,6 +82,10 @@ on:
       - 'src/lib/privacy/**'
       - 'src/lib/analytics/**'
       - 'src/lib/components/privacy/**'
+      - 'src/lib/components/comments/**'
+      - 'src/lib/comments/**'
+      - 'supabase/migrations/*post_comments*'
+      - 'supabase/tests/post-comments.integration.test.mjs'
       - 'src/lib/components/analytics/**'
       - 'src/routes/privacy/**'
       - 'supabase/migrations/*analytics*'
@@ -127,6 +135,12 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run test:critical
+      - name: Install isolated comments SQL test runtime
+        run: npm install --prefix "$RUNNER_TEMP/comments-sql-runtime" --no-save --package-lock=false @electric-sql/pglite@0.5.11
+      - name: Verify comments migration under database roles
+        run: npm run comments:sql:test
+        env:
+          COMMENTS_SQL_RUNTIME: ${{ runner.temp }}/comments-sql-runtime
       - run: npm run privacy:test
       - name: Install isolated SQL verification runtime
         run: npm install --prefix "${{ runner.temp }}/privacy-sql" --no-save --ignore-scripts --package-lock=false @electric-sql/pglite@0.5.11

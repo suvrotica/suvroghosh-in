@@ -4,7 +4,9 @@
 	import '@fontsource-variable/noto-serif-bengali/wght.css';
 	import robotoLatinUrl from '@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2?url';
 	import '../app.css';
+	import { dev } from '$app/environment';
 	import { afterNavigate, onNavigate } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/layout/Header.svelte';
@@ -17,6 +19,7 @@
 	import { resolveRouteMotion, shouldUseViewTransition } from '$lib/motion/route-biomes';
 	import { runNavigationTransition } from '$lib/motion/navigation-transition';
 	import type { ResolvedMotion } from '$lib/motion/types';
+	import { registerServiceWorker } from '$lib/notes/register-service-worker';
 
 	type PageDataShellContext = {
 		game?: {
@@ -91,6 +94,8 @@
 	$effect(() => {
 		document.documentElement.dataset.biome = routeMotion.biome;
 	});
+
+	onMount(() => registerServiceWorker(`${base}/service-worker.js`, dev));
 
 	onMount(() => {
 		measurement = startMeasurement();

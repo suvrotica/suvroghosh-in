@@ -1,15 +1,18 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const state = vi.hoisted(() => ({
-	consent: false,
-	subscriber: (() => {}) as () => void,
+	development: false,
 	inject: vi.fn(),
 	pageview: vi.fn(),
 	track: vi.fn(),
-	speed: vi.fn(() => ({ setRoute: vi.fn() }))
+	speed: vi.fn(),
+	consentRead: vi.fn()
 }));
-vi.mock('$app/environment', () => ({ dev: false }));
-vi.mock('$lib/components/seo/SEO', () => ({ siteUrl: 'https://www.suvroghosh.in' }));
+vi.mock('$app/environment', () => ({
+	get dev() {
+		return state.development;
+	}
+}));
 vi.mock('@vercel/analytics', () => ({
 	inject: state.inject,
 	pageview: state.pageview,
@@ -17,38 +20,41 @@ vi.mock('@vercel/analytics', () => ({
 }));
 vi.mock('@vercel/speed-insights', () => ({ injectSpeedInsights: state.speed }));
 vi.mock('$lib/privacy/consent', () => ({
-	getConsent: () => ({ analytics: state.consent }),
-	initializeConsent: () => () => {},
-	subscribeConsent: (fn: () => void) => {
-		state.subscriber = fn;
-		fn();
-		return () => {};
-	}
+	getConsent: state.consentRead,
+	initializeConsent: state.consentRead,
+	subscribeConsent: state.consentRead
 }));
-import { startMeasurement, trackConsented } from './client';
+import { startMeasurement } from './client';
 
-describe('eligible-browser consent and collection integration', () => {
+describe('default public Vercel pageviews', () => {
 	const origin = 'https://www.suvroghosh.in';
 	let collector: ReturnType<typeof startMeasurement> | undefined;
 	let local: Map<string, string>;
 	let session: Map<string, string>;
 	let location: { origin: string; pathname: string; href: string };
 	let fetcher: ReturnType<typeof vi.fn>;
+	let localRead: ReturnType<typeof vi.fn>;
+	let sessionRead: ReturnType<typeof vi.fn>;
+	function navigate(path: string) {
+		location.pathname = path;
+		location.href = `${location.origin}${path}`;
+		collector!.navigate(path);
+	}
 	beforeEach(() => {
 		vi.clearAllMocks();
-		state.consent = false;
+		state.development = false;
 		local = new Map();
 		session = new Map();
 		location = { origin, pathname: '/writing', href: `${origin}/writing?token=secret#state` };
-		fetcher = vi.fn().mockResolvedValue(new Response(null, { status: 202 }));
+		fetcher = vi.fn();
+		localRead = vi.fn((key: string) => local.get(key) ?? null);
+		sessionRead = vi.fn((key: string) => session.get(key) ?? null);
 		vi.stubGlobal('fetch', fetcher);
 		vi.stubGlobal('navigator', { webdriver: false });
-		vi.stubGlobal('document', { referrer: 'https://example.test/search?private=secret' });
 		vi.stubGlobal('window', {
 			location,
-			localStorage: { getItem: (key: string) => local.get(key) ?? null },
-			sessionStorage: { getItem: (key: string) => session.get(key) ?? null },
-			setTimeout,
+			localStorage: { getItem: localRead },
+			sessionStorage: { getItem: sessionRead },
 			addEventListener: vi.fn(),
 			removeEventListener: vi.fn()
 		});
@@ -56,81 +62,135 @@ describe('eligible-browser consent and collection integration', () => {
 	afterEach(() => {
 		collector?.stop();
 		collector = undefined;
+		// This integration owns only Vercel views: no collector, performance or custom events.
+		expect(fetcher).not.toHaveBeenCalled();
+		expect(state.speed).not.toHaveBeenCalled();
+		expect(state.track).not.toHaveBeenCalled();
+		expect(state.consentRead).not.toHaveBeenCalled();
+		expect(localRead).not.toHaveBeenCalled();
+		expect(sessionRead).not.toHaveBeenCalled();
 		vi.unstubAllGlobals();
 	});
-	it('sends nothing without consent; granting initializes once and sends only sanitized values', () => {
+	it('initializes once and counts initial, completed and revisited paths without duplicates', () => {
 		collector = startMeasurement();
-		trackConsented('example');
-		expect(state.inject).not.toHaveBeenCalled();
-		expect(state.track).not.toHaveBeenCalled();
-		expect(fetcher).not.toHaveBeenCalled();
-		state.consent = true;
-		state.subscriber();
-		expect(state.inject).toHaveBeenCalledTimes(1);
-		expect(state.speed).toHaveBeenCalledTimes(1);
-		expect(fetcher).toHaveBeenCalledTimes(1);
-		expect(JSON.parse(fetcher.mock.calls[0][1].body)).toEqual({
-			v: 1,
-			consent: true,
-			path: '/writing',
-			referrer: 'example.test'
+		expect(state.inject).toHaveBeenCalledOnce();
+		expect(state.inject.mock.calls[0][0]).toEqual({
+			mode: 'production',
+			disableAutoTrack: true,
+			framework: 'sveltekit',
+			beforeSend: expect.any(Function)
 		});
-		collector.navigate('/writing');
-		state.subscriber();
-		expect(fetcher).toHaveBeenCalledTimes(1);
-		location.pathname = '/about';
-		location.href = `${origin}/about`;
-		collector.navigate('/about');
-		expect(fetcher).toHaveBeenCalledTimes(2);
-		expect(state.inject).toHaveBeenCalledTimes(1);
+		navigate('/writing');
+		navigate('/about');
+		navigate('/about');
+		navigate('/writing');
+		expect(state.pageview.mock.calls).toEqual([
+			[{ path: '/writing' }],
+			[{ path: '/about' }],
+			[{ path: '/writing' }]
+		]);
+		expect(state.inject).toHaveBeenCalledOnce();
 	});
-	it('withdrawal aborts in-flight collection and blocks provider callbacks and custom events', () => {
-		fetcher.mockImplementation(() => new Promise(() => {}));
-		state.consent = true;
+	it.each([false, true])(
+		'ignores legacy analytics=%s and both hidden measurement preferences',
+		(analytics) => {
+			const savedAt = Date.now();
+			local.set(
+				'suvroghosh:consent',
+				JSON.stringify({
+					v: 1,
+					analytics,
+					media: false,
+					savedAt,
+					expiresAt: savedAt + 180 * 24 * 60 * 60 * 1000
+				})
+			);
+			local.set('suvroghosh:measurement', 'off');
+			session.set('suvroghosh:measurement', 'off');
+			collector = startMeasurement();
+			expect(state.pageview.mock.calls).toEqual([[{ path: '/writing' }]]);
+			local.set('suvroghosh:consent', '{malformed');
+			navigate('/about');
+			expect(state.pageview).toHaveBeenCalledTimes(2);
+		}
+	);
+	it.each(['storage', 'alternate-host', 'webdriver', 'development'])(
+		'initializes public pageviews under %s without application-level eligibility gates',
+		(condition) => {
+			if (condition === 'storage') {
+				for (const key of ['localStorage', 'sessionStorage']) {
+					Object.defineProperty(window, key, {
+						get: () => {
+							throw new Error('denied');
+						}
+					});
+				}
+			} else if (condition === 'alternate-host') {
+				location.origin = 'https://preview.vercel.app';
+				location.href = `${location.origin}/writing?token=secret`;
+			} else if (condition === 'webdriver') {
+				vi.stubGlobal('navigator', { webdriver: true });
+			} else state.development = true;
+			collector = startMeasurement();
+			expect(state.inject).toHaveBeenCalledOnce();
+			expect(state.inject.mock.calls[0][0].mode).toBe(
+				condition === 'development' ? 'development' : 'production'
+			);
+			expect(state.pageview.mock.calls).toEqual([[{ path: '/writing' }]]);
+			const callback = state.inject.mock.calls[0][0].beforeSend;
+			expect(
+				callback({ type: 'pageview', url: `${location.origin}/writing?secret=yes#state` })
+			).toEqual({
+				type: 'pageview',
+				url: `${location.origin}/writing`
+			});
+		}
+	);
+	it('suppresses private URLs before SDK initialization and after public navigation', () => {
+		location.pathname = '/notes/%73tudio/analytics';
+		location.href = `${origin}${location.pathname}?token=secret`;
+		collector = startMeasurement();
+		expect(state.inject).not.toHaveBeenCalled();
+		navigate('/writing');
+		expect(state.pageview).toHaveBeenCalledOnce();
+		const callback = state.inject.mock.calls[0][0].beforeSend;
+		for (const path of [
+			'/notes/auth/callback',
+			'/notes/reset-password',
+			'/api/analytics/pageview',
+			'/notes/studio'
+		]) {
+			navigate(path);
+			expect(callback({ type: 'pageview', url: `${origin}${path}?token=secret` })).toBeNull();
+		}
+		expect(state.pageview).toHaveBeenCalledOnce();
+		navigate('/notes/public-note');
+		expect(state.pageview).toHaveBeenCalledTimes(2);
+	});
+	it('rejects custom events and external URLs while preserving sanitized public callbacks', () => {
 		collector = startMeasurement();
 		const callback = state.inject.mock.calls[0][0].beforeSend;
-		expect(callback({ url: `${origin}/writing?secret=yes` })).toEqual({ url: `${origin}/writing` });
-		trackConsented('allowed');
-		expect(state.track).toHaveBeenCalledTimes(1);
-		state.consent = false;
-		state.subscriber();
-		expect(fetcher.mock.calls[0][1].signal.aborted).toBe(true);
-		expect(callback({ url: `${origin}/writing` })).toBeNull();
-		trackConsented('denied');
-		expect(state.track).toHaveBeenCalledTimes(1);
-		location.pathname = '/about';
-		collector.navigate('/about');
-		expect(fetcher).toHaveBeenCalledTimes(1);
-	});
-	it('preserves opt-out and blocks automation, previews, unavailable storage and private routes', () => {
-		state.consent = true;
-		local.set('suvroghosh:measurement', 'off');
-		collector = startMeasurement();
-		expect(fetcher).not.toHaveBeenCalled();
-		local.clear();
-		session.set('suvroghosh:measurement', 'off');
-		state.subscriber();
-		expect(fetcher).not.toHaveBeenCalled();
-		session.clear();
-		vi.stubGlobal('navigator', { webdriver: true });
-		state.subscriber();
-		expect(fetcher).not.toHaveBeenCalled();
-		vi.stubGlobal('navigator', { webdriver: false });
-		location.origin = 'https://preview.vercel.app';
-		state.subscriber();
-		expect(fetcher).not.toHaveBeenCalled();
-		location.origin = origin;
-		location.href = `${origin}/notes/studio/analytics`;
-		collector.navigate('/notes/studio/analytics');
-		expect(fetcher).not.toHaveBeenCalled();
-		location.href = `${origin}/writing`;
-		Object.defineProperty(window, 'localStorage', {
-			get: () => {
-				throw new Error('denied');
-			}
+		expect(
+			callback({ type: 'event', url: `${origin}/writing`, payload: { name: 'custom' } })
+		).toBeNull();
+		expect(callback({ type: 'pageview', url: 'https://external.test/writing' })).toBeNull();
+		expect(callback({ type: 'pageview', url: `${origin}/writing?token=secret#state` })).toEqual({
+			type: 'pageview',
+			url: `${origin}/writing`
 		});
-		collector.navigate('/writing');
-		state.subscriber();
-		expect(fetcher).not.toHaveBeenCalled();
+	});
+	it('disposal clears pending views and disables navigation and retained callbacks', () => {
+		collector = startMeasurement();
+		const callback = state.inject.mock.calls[0][0].beforeSend;
+		window.vaq = [
+			['beforeSend', callback],
+			['pageview', { path: '/writing' }],
+			['event', { name: 'queued' }]
+		];
+		collector.stop();
+		expect(window.vaq.map(([kind]) => kind)).toEqual(['beforeSend']);
+		expect(callback({ type: 'pageview', url: `${origin}/writing` })).toBeNull();
+		navigate('/about');
+		expect(state.pageview).toHaveBeenCalledOnce();
 	});
 });

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl } from '$lib/components/seo/SEO';
 	import { openPrivacySettings } from '$lib/privacy/consent';
@@ -6,7 +7,7 @@
 
 <SEO
 	title="Privacy & cookies | Suvro Ghosh"
-	description="A plain-language field note on optional measurement, approximate location, external videos and your privacy choices on SuvroGhosh.IN."
+	description="A plain-language field note on default cookieless page counts, external videos and your privacy choices on SuvroGhosh.IN."
 	canonicalUrl={`${siteUrl}/privacy`}
 />
 
@@ -21,28 +22,31 @@
 		<button type="button" onclick={openPrivacySettings}
 			>Change privacy preferences <span aria-hidden="true">↗</span></button
 		>
-		<p class="updated">Updated 22 October 2026</p>
+		<p class="updated">Updated 23 October 2026</p>
 	</header>
 	<section>
 		<span class="section-no">01</span>
 		<div>
 			<h2>Your choices come first</h2>
 			<p>
-				Optional measurement and external video players start off. Accept or reject them together,
-				or choose each category. Reading the site does not require accepting either. Scrolling,
-				following a link and closing the settings panel do not give permission.
+				Vercel’s cookieless page counts run by default on public pages. The privacy controls only
+				choose whether YouTube players may connect. Keeping videos paused, dismissing the notice or
+				leaving the settings unchanged does not stop those page counts. Reading the site does not
+				require loading external videos.
 			</p>
 			<p>
 				The site remembers your selection in your browser’s local storage under <code
 					>suvroghosh:consent</code
-				>, for 180 days. The record contains the two choices, a version and save/expiry times. It is
-				not a visitor identifier. Acceptance and rejection are remembered for the same period.
+				>, for 180 days. The record contains your media choice, a version and save/expiry times. It
+				is not a visitor identifier. Allowing and declining YouTube are remembered for the same
+				period. Older saved choices retain their video permission and original expiry; their former
+				analytics setting is no longer used.
 			</p>
 			<p>
 				Use “Privacy &amp; cookies” in the footer, or the small settings button on full-screen
 				public experiences, to change your mind. If storage is blocked, the choice applies in memory
-				during the visit and may be requested again on reload. Measurement remains off if its
-				storage safeguards cannot run.
+				during the visit and may be requested again on reload. Vercel’s cookieless page counts do
+				not require browser storage or a saved privacy choice.
 			</p>
 		</div>
 	</section>
@@ -57,9 +61,9 @@
 				your request.
 			</p>
 			<p>
-				These functions are separate from optional audience measurement. Rejecting measurement does
-				not erase your saved work or sign you out. Clear individual feature data through that
-				feature, or remove site data in your browser.
+				These functions are separate from page counts and external video permission. Keeping videos
+				paused does not erase your saved work or sign you out. Clear individual feature data through
+				that feature, or remove site data in your browser.
 			</p>
 		</div>
 	</section>
@@ -68,28 +72,32 @@
 		<div>
 			<h2>Counting reads, approximately</h2>
 			<p>
-				If you enable audience and performance measurement, the site can record public page views in
-				first-party aggregate reports, and enable Vercel Analytics and Vercel Speed Insights.
-				Existing development, automated-browser, private-page and opt-out exclusions still apply. A
-				saved <code>suvroghosh:measurement=off</code> opt-out takes precedence.
+				Vercel Web Analytics records public page loads and navigations by default, without analytics
+				cookies. Its own reports include approximate country, device and referrer information.
+				Private Notes studio, authentication and API paths are excluded, and query strings and URL
+				fragments are removed from measurement. These page counts do not depend on the video choice,
+				an older analytics preference or browser storage. Blockers and Vercel’s automated-traffic
+				filters can still prevent recording.
 			</p>
 			<p>
-				For the first-party reports, Vercel’s infrastructure can derive an approximate country,
-				region and city from a request’s IP address. The application stores aggregate counts,
-				without retaining raw IP addresses, precise coordinates, raw user-agent strings, persistent
-				visitor identifiers or individual browsing histories. It never asks for your device’s
-				location.
+				The current site no longer starts the additional site-run audience collector, Speed Insights
+				or custom visualization events. There is no analytics switch in the privacy controls.
+			</p>
+			<p>
+				Earlier versions could record consented public page views in separate first-party aggregate
+				reports, including approximate country, region and city. Those reports do not retain raw IP
+				addresses, precise coordinates, raw user-agent strings, persistent visitor identifiers or
+				individual browsing histories. The site never asks for your device’s location.
 			</p>
 			<p>
 				Location can be wrong: VPNs, mobile networks and shared connections can point to another
-				city. Unavailable location is shown as Unknown. Reported views are recorded, consented page
-				loads and navigations, not a count of unique people. Blockers and failed requests can reduce
-				totals.
+				city. Page views are not a count of unique people, and failed requests can reduce totals.
 			</p>
 			<p>
-				First-party reports use a 180-day retention window, with a scheduled cleanup removing older
-				buckets in bounded batches. Only the configured owner can read or export them. First-party
-				counts and Vercel’s own provider reports are separate; their totals are not added together.
+				Retained first-party reports use a 180-day retention window, with cleanup of older buckets
+				when the database retention job is configured. Only the configured owner can read or export
+				them. These historical reports and Vercel’s own reports are separate; their totals are not
+				added together.
 			</p>
 			<p>
 				Vercel also processes requests to host the site and provide its services. Application-level
@@ -126,16 +134,41 @@
 	<section>
 		<span class="section-no">05</span>
 		<div>
+			<h2>When you join the conversation</h2>
+			<p>
+				Article comments ask for a display name and your words, without an email address or reader
+				account. Submissions and reader replies are stored durably in the site's shared Supabase
+				database for owner review. Your display name and text become public only after approval.
+				Author replies can appear immediately with an Author badge.
+			</p>
+			<p>
+				Hiding or rejecting a comment removes it from public view but retains the submission and
+				moderation history privately. Comment records contain no email address or raw IP address;
+				separate short-lived salted counters help limit repeated submissions. Comments do not use a
+				browser-local comment database. Text kept in an open form after a connection failure can be
+				lost when you leave or reload the page.
+			</p>
+			<p>
+				To request removal of a stored comment, use the <a href={resolve('/contact')}
+					>contact form</a
+				> with the article link, display name and approximate posting date. Hiding cannot recall text
+				already viewed or copied.
+			</p>
+		</div>
+	</section>
+	<section>
+		<span class="section-no">06</span>
+		<div>
 			<h2>Changing your mind</h2>
 			<p>
-				Withdrawing permission stops future optional collection, cancels unsent page-view work and
-				unloads active optional video players. It cannot reverse a request already received by a
+				Turning off external media unloads active YouTube players. Vercel’s default cookieless page
+				counts continue. Changing the video choice cannot reverse a request already received by a
 				provider. Historical first-party totals deliberately have no visitor identifier, so the
 				application cannot find and remove an individual’s contribution to them.
 			</p>
 			<p>
 				The contact form uses the details you submit to deliver your message through the site’s
-				email provider, Resend. That requested communication is separate from optional analytics.
+				email provider, Resend. That requested communication is separate from page counts.
 			</p>
 			<p>
 				For a privacy question, write to <a href="mailto:contact@suvroghosh.in"

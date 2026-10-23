@@ -6,10 +6,22 @@ The mandatory architecture-change policy has one authoritative definition: [CONT
 
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
-The 22 October privacy/analytics implementation changes optional browser measurement to explicit
-consent, adds bounded geographic page-view rollups in Supabase, and reuses the configured-owner
-workspace for reports. Hosted migration/configuration and retention-job activation must be verified
-separately from application tests. See [ADR 0006](decisions/0006-consented-aggregate-analytics.md).
+The 22 October privacy/analytics implementation added bounded geographic page-view rollups in
+Supabase and reused the configured-owner workspace for reports. The 23 October decision removes
+analytics choices and current-browser first-party, performance and custom-event collection: public
+pageviews use default cookieless Vercel Web Analytics, while version-two preferences govern YouTube
+only. The bounded legacy collector and owner reports remain available. Hosted migration/configuration
+and retention-job activation require separate verification. See [ADR 0008](decisions/0008-media-only-consent.md),
+which supersedes the affected browser policies in [ADR 0006](decisions/0006-consented-aggregate-analytics.md)
+and [ADR 0007](decisions/0007-default-vercel-pageviews.md). SEO/discovery fixes are preserved.
+
+The 23 October moderated-comments implementation adds shared Supabase comment storage and a
+private queue under the existing owner workspace. Article HTML keeps its existing rendering mode;
+browser components fetch approved comments separately. The exact tested migration was applied
+to the existing hosted Supabase project on 23 October; schema/grant inspection is recorded below.
+Application deployment and live owner-browser checks are tracked in
+[PR 12](https://github.com/suvrotica/suvroghosh-in/pull/12). See
+[ADR 0009](decisions/0009-premoderated-post-comments.md) and the [setup guide](../post-comments.md).
 
 ## 1. System and principles
 
@@ -21,6 +33,7 @@ The principal boundaries are:
 - Public content metadata is collected in server registries. Universal loads import compiled Markdown components for SSR and browser navigation. Components themselves are not serialized out of a server load.
 - Framework-independent numerical engines, domain models, workers, and persistence helpers sit beside feature-specific Svelte interfaces. Features use different renderers and lifecycles where their needs differ.
 - Private notes use authenticated server actions/APIs and Supabase authorization. Public notes expose frozen publication snapshots, never the mutable working document.
+- Reader comments use server-gated Supabase RPCs. Reader submissions stay private until owner approval; owner replies derive their identity and publication privileges on the server and in SQL.
 - Browser capabilities progressively enhance readable SSR content: canvas/WebGL, motion, theme persistence, offline public-note reading, and media controls.
 
 These principles are reconstructed from imports, route options, tests, and feature documents. They are not evidence that every feature fully complies. See findings `AF-001` through `AF-013` in the audit.
@@ -36,11 +49,15 @@ flowchart LR
     Browser --> Engines["Local Svelte UI, engines, workers, Canvas/WebGL"]
     SSR --> Providers["Resend / optional Chatterbox service"]
     SSR --> Supabase["Supabase Auth, Postgres/RLS, private Storage"]
+    Browser --> Comments["Bounded same-origin comment API"]
+    Comments --> Supabase
+    Owner --> Moderation["Private comment queue / author replies / JSON export"]
+    Moderation --> Supabase
     Supabase --> Cron["Scheduled-publication RPC via pg_cron"]
     Browser --> Local["IndexedDB drafts; public-note service-worker caches"]
-    Browser --> Consent["Browser-local, versioned privacy choices"]
-    Consent -->|optional, eligible production views| Intake["Bounded same-origin analytics collector"]
-    Consent -->|analytics permission and measurement eligibility| Measurement["Vercel Analytics / Speed Insights"]
+    Browser --> Consent["Browser-local v2 YouTube preference"]
+    Browser -->|default public pageviews; sanitized URLs| WebAnalytics["Vercel Web Analytics"]
+    Legacy["Older consented browser clients"] -->|bounded compatible requests| Intake["Existing same-origin analytics collector"]
     Consent -->|remembered media permission| Media["YouTube embeds"]
     Browser -->|explained one-time media load| Media
     Intake --> Rollups["Supabase daily dimension counters; no visitor history"]
@@ -68,35 +85,37 @@ flowchart LR
 
 Paths are relative to the repository root. This is a responsibility map rather than a claim of team ownership; the repository has no CODEOWNERS file.
 
-| Path                                                                                             | Responsibility and boundary                                                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `src/routes/`                                                                                    | SvelteKit pages/layouts, server loads, actions, endpoints, route-local specialization.                                                                                                                 |
-| `src/hooks.server.ts`                                                                            | URL normalization, selective notes-session resolution, response headers and private-cache policy.                                                                                                      |
-| `src/app.html`, `src/app.css`, `static/app-bootstrap.js`                                         | Document shell, shared visual tokens/styles, pre-hydration theme/motion and image fallback.                                                                                                            |
-| `src/lib/content/`                                                                               | Browser-safe editorial types, path helpers, sections/category mapping, series and reading-path definitions.                                                                                            |
-| `src/lib/server/content/`                                                                        | Eager metadata registries, published-post/resource/topic resolution, metadata search, SEO-ready page data.                                                                                             |
-| `src/lib/posts/`                                                                                 | Active article Markdown and a crosslink data file. The post glob does not load retained archives.                                                                                                      |
-| `src/lib/topics/`, `src/lib/prompts/`, `src/lib/lists/`                                          | Curated headquarters and resource Markdown, with stricter topic/resource contracts.                                                                                                                    |
-| `src/lib/components/`                                                                            | Site shell, editorial UI, feature interfaces, notes editor/viewer, UI adapters, visualization components.                                                                                              |
-| `src/lib/visualizations/`                                                                        | Feature models, simulation/rendering helpers, data, workers, local tests, generic experiment registry and contracts. Some features also co-locate Svelte interfaces here (Barnum Lab and Meaning Map). |
-| `src/lib/games/`                                                                                 | Game catalog, domain models/engines/content, rendering helpers and local tests.                                                                                                                        |
-| `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                            |
-| `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                |
-| `src/lib/privacy/`                                                                               | Browser-local consent validation, persistence, expiry, cross-tab subscriptions and privacy-settings events; no visitor identifier.                                                                     |
-| `src/lib/analytics/`                                                                             | Browser-safe report types, per-document page-view ledger and consent-gated provider/first-party measurement lifecycle.                                                                                 |
-| `src/lib/server/analytics/`                                                                      | Server-only public-path registry, trusted-geography/dimension policy and bounded aggregate write/report RPCs.                                                                                          |
-| `src/lib/motion/`, `src/lib/attachments/`, `src/lib/utils/`                                      | Motion policy and procedural helpers, DOM attachments, small shared utilities.                                                                                                                         |
-| `src/lib/generated/`, `src/lib/server/generated/`                                                | Generated media/music/sketch indexes and server image dimensions; edit their generators/inputs.                                                                                                        |
-| `src/lib/data/`, `src/lib/notebooks/`, `src/lib/config/`, `src/lib/sketches/`, `src/lib/assets/` | Curated folio/model data, notebook sources, public link definitions, sketch types, source assets.                                                                                                      |
-| `scripts/`                                                                                       | Build generators, source/render validators, asset tools, Node tests and architecture gate.                                                                                                             |
-| `tests/`, `playwright.*.config.ts`, `vitest*.config.ts`                                          | Browser/visual checks and unit-runner configuration; most unit tests live with source.                                                                                                                 |
-| `supabase/`                                                                                      | Notes and analytics migrations, development configuration, publication scheduling and bounded analytics-retention SQL. No generated database types are committed.                                      |
-| `static/`                                                                                        | Public media, notebook HTML, generated word clouds/search inputs, bootstrap script and crawler assets. Never private storage.                                                                          |
-| `docs/`                                                                                          | Feature design/authoring documents and dated audit evidence. This directory's `architecture/` owns the cross-cutting current reference.                                                                |
-| `src/lib/SavedPosts/`, `suvroghosh-post-backups/`                                                | Retained editorial material/backups, not the active post registry. Excluded from normal formatting; SavedPosts has a separate inventory tool.                                                          |
-| `artifacts/`                                                                                     | Committed captures/reports and numerical evidence. Some BZ build checks deliberately consume evidence here; this is not uniformly disposable output.                                                   |
-| `.github/workflows/`                                                                             | Focused feature regressions, IndexNow submission, architecture documentation gate and main-only daily narration authoring/publication.                                                                 |
-| `.agents/skills/`, `AGENTS.md`, `CONTRIBUTING.md`                                                | Authoring/agent guidance and the canonical contribution policy.                                                                                                                                        |
+| Path                                                                                             | Responsibility and boundary                                                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `src/routes/`                                                                                    | SvelteKit pages/layouts, server loads, actions, endpoints, route-local specialization.                                                                                                                                   |
+| `src/hooks.server.ts`                                                                            | URL normalization, selective notes-session resolution, response headers and private-cache policy.                                                                                                                        |
+| `src/app.html`, `src/app.css`, `static/app-bootstrap.js`                                         | Document shell, shared visual tokens/styles, pre-hydration theme/motion and image fallback.                                                                                                                              |
+| `src/lib/content/`                                                                               | Browser-safe editorial types, path helpers, sections/category mapping, series and reading-path definitions.                                                                                                              |
+| `src/lib/server/content/`                                                                        | Eager metadata registries, published-post/resource/topic resolution, metadata search, SEO-ready page data.                                                                                                               |
+| `src/lib/posts/`                                                                                 | Active article Markdown and a crosslink data file. The post glob does not load retained archives.                                                                                                                        |
+| `src/lib/topics/`, `src/lib/prompts/`, `src/lib/lists/`                                          | Curated headquarters and resource Markdown, with stricter topic/resource contracts.                                                                                                                                      |
+| `src/lib/components/`                                                                            | Site shell, editorial UI, feature interfaces, notes editor/viewer, UI adapters, visualization components.                                                                                                                |
+| `src/lib/visualizations/`                                                                        | Feature models, simulation/rendering helpers, data, workers, local tests, generic experiment registry and contracts. Some features also co-locate Svelte interfaces here (Barnum Lab and Meaning Map).                   |
+| `src/lib/games/`                                                                                 | Game catalog, domain models/engines/content, rendering helpers and local tests.                                                                                                                                          |
+| `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                                              |
+| `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                                  |
+| `src/lib/comments/`, `src/lib/components/comments/`                                              | Browser-safe comment contracts and reusable plain-text submission, thread and lazy article-comment interfaces. Submitted comments have no browser database.                                                              |
+| `src/lib/server/comments/`                                                                       | Published-article validation, strict request schemas, bounded HTTP handling, salted abuse keys and server-only Supabase comment RPC access.                                                                              |
+| `src/lib/privacy/`                                                                               | Browser-local media-only v2 preferences, v1 media migration, persistence, expiry, cross-tab subscriptions and settings events; no visitor identifier.                                                                    |
+| `src/lib/analytics/`                                                                             | Browser-safe report types and one per-document navigation ledger for default Vercel public pageviews; no current-browser first-party/performance/custom-event dispatch.                                                  |
+| `src/lib/server/analytics/`                                                                      | Server-only public-path registry, trusted-geography/dimension policy and bounded aggregate write/report RPCs.                                                                                                            |
+| `src/lib/motion/`, `src/lib/attachments/`, `src/lib/utils/`                                      | Motion policy and procedural helpers, DOM attachments, small shared utilities.                                                                                                                                           |
+| `src/lib/generated/`, `src/lib/server/generated/`                                                | Generated media/music/sketch indexes and server image dimensions; edit their generators/inputs.                                                                                                                          |
+| `src/lib/data/`, `src/lib/notebooks/`, `src/lib/config/`, `src/lib/sketches/`, `src/lib/assets/` | Curated folio/model data, notebook sources, public link definitions, sketch types, source assets.                                                                                                                        |
+| `scripts/`                                                                                       | Build generators, source/render validators, asset tools, Node tests and architecture gate.                                                                                                                               |
+| `tests/`, `playwright.*.config.ts`, `vitest*.config.ts`                                          | Browser/visual checks and unit-runner configuration; most unit tests live with source.                                                                                                                                   |
+| `supabase/`                                                                                      | Notes, analytics and moderated-comment migrations, development configuration, publication scheduling, bounded analytics retention and isolated comment SQL integration tests. No generated database types are committed. |
+| `static/`                                                                                        | Public media, notebook HTML, generated word clouds/search inputs, bootstrap script and crawler assets. Never private storage.                                                                                            |
+| `docs/`                                                                                          | Feature design/authoring documents and dated audit evidence. This directory's `architecture/` owns the cross-cutting current reference.                                                                                  |
+| `src/lib/SavedPosts/`, `suvroghosh-post-backups/`                                                | Retained editorial material/backups, not the active post registry. Excluded from normal formatting; SavedPosts has a separate inventory tool.                                                                            |
+| `artifacts/`                                                                                     | Committed captures/reports and numerical evidence. Some BZ build checks deliberately consume evidence here; this is not uniformly disposable output.                                                                     |
+| `.github/workflows/`                                                                             | Focused feature regressions, IndexNow submission, architecture documentation gate and main-only daily narration authoring/publication.                                                                                   |
+| `.agents/skills/`, `AGENTS.md`, `CONTRIBUTING.md`                                                | Authoring/agent guidance and the canonical contribution policy.                                                                                                                                                          |
 
 The complete baseline inventory and inspection limits are in [AUDIT_COVERAGE.md](AUDIT_COVERAGE.md).
 
@@ -143,9 +162,12 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/images`, `/images/sketches`                                                                          | Server gallery/sketch loads; generated asset catalogs; the museum has browser enhancement.                                                                                                                                                                                                                         |
 | `/notes/**`                                                                                            | Inherits `prerender = false`; public list/read, owner auth/recovery, protected studio/editor/preview.                                                                                                                                                                                                              |
 | `/notes/studio/analytics`, `/notes/studio/analytics/export`                                            | Configured-owner aggregate dashboard and CSV download; each independently authorizes before bounded report queries and returns private/no-store/noindex responses.                                                                                                                                                 |
+| `/notes/studio/comments`                                                                               | Independently authenticated moderation board, with status/article filters, unread state, author replies, page export and visibility-aware polling. Shared Studio navigation shows pending/unread counts.                                                                                                           |
 | `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
-| `/api/analytics/pageview`                                                                              | Same-origin consented page-view intake with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                                      |
-| `/api/notes/**`                                                                                        | Owner-only document/assets APIs.                                                                                                                                                                                                                                                                                   |
+| `/api/analytics/pageview`                                                                              | Compatibility intake for older consented clients, with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                           |
+| `/api/comments`                                                                                        | Published-article approved comments/replies and pending guest submission; server-only service-role RPCs, bounded input/admission and no-store responses.                                                                                                                                                           |
+| `/api/notes/comments`                                                                                  | Independently configured-owner-authorized queue/count/session/page-export reads and moderation/read/author-reply mutations; authenticated session RPCs, private/no-store/noindex responses.                                                                                                                        |
+| `/api/notes/**`                                                                                        | Owner-only document/assets APIs and the separately described comment moderation API.                                                                                                                                                                                                                               |
 | `/api/public/notes/**`                                                                                 | Visible snapshot document and publication-gated private-storage asset reads.                                                                                                                                                                                                                                       |
 | `/contact`, `/api/tts/chatterbox`                                                                      | Contact form action and optional speech proxy.                                                                                                                                                                                                                                                                     |
 | `/rss.xml`, `/sitemap.xml`                                                                             | Prerendered repository-backed discovery outputs. Notes has a separate dynamic sitemap.                                                                                                                                                                                                                             |
@@ -279,6 +301,7 @@ State ownership follows the feature:
 - Page inputs arrive through generated `PageData`/`ActionData` types, although not every older page declares an explicit annotation.
 - Local UI state is component-owned; derived values normally use `$derived`.
 - Notes' editor state is built by `editor-state.svelte.ts`, with model/history/index helpers and IndexedDB recovery/outbox storage.
+- Comments keep unsent text, retry UUIDs, filters and expanded threads in component memory. Approved data comes from the API; neither submitted comments nor moderation state is persisted to localStorage or IndexedDB. Requests, the lazy-load observer and owner polling/listeners are released at teardown.
 - Simulations use feature-owned engines/controllers, deterministic random streams where supplied, workers/message protocols and explicit lifecycle methods. Renderer needs differ; the shader registry is not the interface for every visualization.
 - Theme/motion preference is stored in browser localStorage and document datasets. Bootstrap code applies it before hydration; layout/header modules maintain it after mount.
 - Browser DOM/resource side effects belong to a component/attachment lifecycle and must release listeners, frames, simulations, observers, contexts and document styles at teardown. Meaning Map now returns instance-owned mount cleanup through `meaning-connection-map/lifecycle.ts`; its earlier resource leak is resolved. The audit found exceptions, not an absence of lifecycle facilities.
@@ -698,13 +721,108 @@ sequenceDiagram
 
 `notes` is the mutable private working row. `note_versions` preserves working history; `note_publications` contains immutable editions. Scheduling freezes the scheduling-time state. Editing a draft does not update the edition already visible to readers. Assets remain in a private bucket and are linked to publication manifests.
 
-The server creates three distinct clients: request-cookie SSR client, anonymous publication reader, and privileged service-role client. The privileged client performs gated storage/manifest duties, durable auth-throttle RPCs and the configured-owner email lookup during recovery. It must never be exposed to browser imports. Database security-definer functions use an empty search path, explicit actor checks and controlled grants. Fresh authentication (12 hours) is required by sensitive RPCs. The metadata action now checks freshness before actual status changes and every publish/schedule operation; unchanged draft/private/archived metadata avoids an unnecessary transition RPC. Its repository update checks the server-observed status and undeleted row, returning 409 on an intervening status/deletion change (`AF-002`, corrected). Metadata and subsequent RPCs remain separate operations; this is not complete atomicity or same-status edit concurrency protection.
+The server creates three distinct clients: request-cookie SSR client, anonymous publication reader, and privileged service-role client. The privileged client performs gated storage/manifest duties, durable auth-throttle RPCs, the configured-owner email lookup during recovery and the separately described reader-facing comment RPCs. It must never be exposed to browser imports. Database security-definer functions use an empty search path, explicit actor checks and controlled grants. Fresh authentication (12 hours) is required by sensitive Notes publication RPCs. The metadata action now checks freshness before actual status changes and every publish/schedule operation; unchanged draft/private/archived metadata avoids an unnecessary transition RPC. Its repository update checks the server-observed status and undeleted row, returning 409 on an intervening status/deletion change (`AF-002`, corrected). Metadata and subsequent RPCs remain separate operations; this is not complete atomicity or same-status edit concurrency protection.
 
 When Supabase URL/publishable-key configuration is absent, public repository reads intentionally return the demo published note; protected authoring fails configuration checks. This is different from an empty, configured database. Hosted data and configuration were not inspected.
 
 Public viewers fetch the document separately from metadata, draw culled canvas objects, and retain a semantic transcript/controls around canvas output. Owner editing supports local draft recovery and a queued save path; a stalled unbounded browser request can currently hold the autosave path (`AF-004`). Fractal Atlas now normalizes imported and locally saved laboratory envelopes through its feature-local `specimen-state.ts`: bounded finite divider/path controls, strict boolean/enum values, validated comparison core state, and finite decimal coordinates describing the same numeric point. Its existing core-state parser remains responsible for the fractal recipe (`AF-005`, corrected).
 
 Supabase rows are manually described/asserted in `repository.ts`; clients do not use generated end-to-end database types. Existing tests cover shared geometry/schema/history/export, recovery/referrer helpers and SQL source patterns. Running the migration under real roles and testing concurrent RPC behavior remains open work (`AF-003`).
+
+### Moderated post comments
+
+The generic article page mounts `DeferredPostComments.svelte` after its article/folio branches, keyed by the
+validated, case-sensitive Markdown filename slug, including ASCII capitals in older filenames.
+Category or canonical-path changes do not change this key; a
+filename-slug rename needs a deliberate comment-data migration. Existing article prerendering,
+metadata, Markdown and crawler-visible prose remain independent of Supabase. The initial article
+contains only a comment-section heading and load control. At 250 px from the viewport, or on
+explicit request, that wrapper dynamically imports `PostComments.svelte` with its form, thread
+code and styles, then fetches approved rows. This keeps the complete comment interface outside
+the initial static article asset closure, including the bounded Barnum route. Comments have
+paged expandable replies and a refresh control. JavaScript is required for reading/submitting
+comments; submitted comments are not embedded in prerendered article HTML.
+
+The measured deferred Barnum closure contains 36 assets versus the preserved pre-comments
+reference's 34: shared framework helpers introduce two additional split requests. Raw/gzip CSS
+remains 33,199/9,491 bytes, while the final loader build and shared-module reshaping add 2,818 raw and
+1,227 gzip JavaScript bytes. Its count ceiling is therefore 36, with all existing byte ceilings
+and unrelated-feature/Barnum runtime checks preserved. The route audit resolves the complete
+comment component through its manifest source entry and rejects its JavaScript or CSS appearing
+in the initial static closure, including a missing dynamic boundary.
+
+`/api/comments` validates the published-post registry before calling the privileged read or guest
+submission RPC. Guest payloads are strict plain-text objects with a 60-character name, a
+3,000-character body, a UUID retry identity and at most one parent level. A hidden honeypot rejects
+basic automated submissions. The same-origin POST reads at most 16 KiB of actual streamed bytes
+within three seconds; Supabase calls have a five-second transport deadline. Process-local
+admission bounds request volume/concurrency. New guest attempts additionally consume durable
+ten-minute database counters: five per daily salted address HMAC and 100 globally. Raw addresses
+are used to derive the key, never stored with comments; separate abuse counters expire after
+24 hours and are pruned opportunistically in bounded batches. This is not an ongoing scheduled
+retention job or a distributed limit on public reads/owner actions.
+
+The migration adds `post_comments`, `post_comment_history` and `post_comment_limits` with forced
+RLS, revoked direct table access and explicit function grants. Only the service role can execute
+reader-facing RPCs; public browsers receive no Supabase client or credentials. Owner RPCs instead
+use the request-cookie client, require `auth.uid()` membership in `note_owners` in SQL, and are
+preceded by the application's configured immutable-owner UUID check. They reuse the existing
+owner session; the separate fresh-session rules for sensitive Notes publication do not apply to
+comment moderation. Functions fix their search path and statement/lock timeout settings, and
+one transaction advisory lock serializes comment mutations. This favors consistency at a small
+site's submission volume over high write throughput.
+
+Every reader comment/reply starts `pending`; owner replies beneath approved roots publish
+immediately with the SQL-derived name “Suvro Ghosh” and author badge. Public projections include
+only approved rows whose root parent is also approved, applying the same predicate to replies,
+counts and parent lookups. Hiding, rejecting or returning a parent to pending hides the whole
+thread on subsequent reads. Restoring the parent preserves each child's status. Moderation does
+not delete rows or audit history, and cannot recall text already read or copied. Accepted guest
+UUID retries disclose only `pending`, including after moderation, and create no duplicate row.
+
+The private board and every API read/mutation independently authorize the owner. It supports
+pending/approved/rejected/hidden/all views, article filters, 20-row pages, parent context, unread
+indicators and ten recent history events per row. Viewing a queue does not mark it read; explicit
+read/moderation actions persist that state. Queue polling runs every 30 seconds and shared Studio
+count polling every 60 seconds while visible, without overlapping reads. Missing comment setup
+does not break the other Studio pages. Alerts are in-app badges and queue updates; there is no
+email or push delivery. JSON export downloads the selected private page, not an unbounded dump.
+
+```mermaid
+flowchart LR
+    Article["Prerendered article / folio"] --> Placeholder["Comment heading / load control"]
+    Placeholder -->|viewport approach or explicit load| Reader["Dynamic comment UI + styles"]
+    Reader -->|read approved / submit plain text| PublicAPI["Same-origin /api/comments"]
+    Registry["Published Markdown slug registry"] --> PublicAPI
+    PublicAPI -->|server service-role RPCs| DB["Supabase comments + audit + abuse counters"]
+    DB -->|approved rows and approved parents only| Reader
+    OwnerBrowser["Existing configured-owner session"] --> Board["Private moderation board / count badge"]
+    Board -->|independent authorization| OwnerAPI["/api/notes/comments"]
+    OwnerAPI -->|session RPC + SQL owner membership| DB
+    OwnerAPI --> Export["Private paged JSON download"]
+    DB -->|pending / unread queue| Board
+```
+
+The exact tested migration was applied on 23 October 2026 to the existing hosted `suvroghoshin`
+Supabase project, matched beforehand against its Notes/analytics tables and one registered owner.
+Version `202610230001`, name `post_comments`, was recorded in the migration ledger within the same
+transaction; PostgREST was notified to reload its schema cache. Hosted inspection confirmed
+the subsequent compatibility migration `202610230002` is also recorded and its constraint accepts
+ASCII capitals. It preserves exact filename keys and replaces only the slug alphabet in three
+existing RPCs; their remaining definitions and grants are unchanged. Hosted inspection confirmed
+comment schema readiness, denied anonymous direct table reads/reader-RPC execution, allowed
+service-role reader-RPC execution, and the recorded migration. A separate transaction under the
+actual hosted service/authenticated roles and existing owner membership passed assertions for
+pending-reader privacy, owner queue access, approval, the author-badged reply and hidden-parent
+protection including direct reply reads. It was rolled back, and a subsequent check confirmed no
+test rows remained. This establishes schema/grant installation and the hosted SQL lifecycle,
+separately from a live site-owner session or a complete deployed browser flow. Application
+deployment and owner-browser release checks are recorded in
+[the implementation pull request](https://github.com/suvrotica/suvroghosh-in/pull/12).
+
+See [the operational guide](../post-comments.md), [database contract](../../supabase/post-comments.md)
+and [ADR 0009](decisions/0009-premoderated-post-comments.md). Local tests and an isolated PostgreSQL
+engine remain separate evidence from this hosted inspection and do not prove live login or release.
 
 ## 8. Integrations and environment
 
@@ -714,8 +832,9 @@ Supabase rows are manually described/asserted in `repository.ts`; clients do not
 | Chatterbox speech                     | `/api/tts/chatterbox` server proxy; private endpoint/key/model/voice settings; optional browser visibility flag. Supports native/OpenAI-compatible request mapping and WAV/MP3/Opus choices; accepts upstream `audio/*` bytes.                                                |
 | Google article narration              | Explicit `scripts/article-narration.mjs` authoring command; script-only Gemini key and Free-tier confirmation. Saved same-origin audio/manifests feed the shared player, with US English device speech as fallback. No public synthesis endpoint or build-time provider call. |
 | Supabase                              | Server-only URL/publishable/service credentials and owner UUID. Browser drafts are local Dexie data; browser code does not receive a service-role client.                                                                                                                     |
+| Moderated article comments            | Reuses the existing Supabase clients, configured owner and `NOTES_RATE_LIMIT_SALT`; no new provider, public environment flag or third-party comment widget. Server-only HMAC keys and privileged RPCs; plain text and approved fields only reach readers.                     |
 | IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots, verifies live ownership against the repository secret, and submits changed URLs only after that proof matches.                                                                         |
-| Vercel analytics / speed insights     | Root layout browser initialization; CSP allows the named Vercel endpoints.                                                                                                                                                                                                    |
+| Vercel Web Analytics                  | Root layout initializes default public pageviews; CSP allows the named Vercel endpoints. Current browser code does not initialize Speed Insights or send custom events.                                                                                                       |
 | YouTube and static notebooks          | CSP permits self/YouTube frame destinations; notebook HTML uses a sandboxed iframe. Compatibility with Vercel's blanket frame-denial response header needs deployed-header/browser verification.                                                                              |
 | Jupyter/Mojo and Python asset tooling | Author/build tools, not request-time notebook execution.                                                                                                                                                                                                                      |
 
@@ -858,25 +977,34 @@ per daily request without increasing the request quota or introducing paid infer
 
 ## 9. Security, errors and validation
 
-Root-layout measurement is owned by `src/lib/analytics/client.ts` and the browser-safe
-`src/lib/measurement.ts` policy. `src/lib/privacy/consent.ts` validates a version-one, browser-local
-`suvroghosh:consent` choice with a 180-day lifetime, in-memory fallback, expiry and cross-tab updates.
-The initial privacy notice can be dismissed for the current layout lifetime without writing a
-consent choice or enabling optional services. The footer settings button, or the compact trigger
-on immersive pages, reopens preferences. Shared privacy and command-palette dialogs close before
-client navigation, including search-form submissions and history changes, so their native modal
-top layer does not leave the destination inert.
-Analytics and Speed Insights initialize only after affirmative analytics consent on the canonical
-production origin, outside development and `navigator.webdriver` contexts, and when neither local
-nor session storage contains `suvroghosh:measurement=off`. Denied storage still fails closed for
-measurement. SDK `beforeSend` callbacks recheck eligibility, strip query/fragment state and suppress
-API and Notes studio/auth paths, including encoded forms. Custom visualization events use the same
-gate. A per-document navigation ledger sends one view per eligible pathname visit; it stores no
-visitor/session identifier. Withdrawal aborts pending first-party requests and blocks subsequent
-provider callbacks. Already accepted aggregates cannot be traced back to a withdrawing browser.
+Root-layout public-page measurement is owned by `src/lib/analytics/client.ts` and the browser-safe
+`src/lib/measurement.ts` URL policy. Vercel Web Analytics starts without a consent choice, browser
+storage or a hidden `suvroghosh:measurement=off` preference. The provider uses its ordinary
+SDK development/production mode; the application adds no canonical-origin, webdriver, country or
+location eligibility gate. SDK built-in automation behavior remains unchanged. Its `beforeSend`
+callback validates the current browser origin, strips query/fragment state from measured page URLs,
+and suppresses API and Notes studio/auth paths, including encoded forms. Custom events are not
+sent. The browser sends public pageviews directly to the existing Vercel endpoints.
 
-The first-party `POST /api/analytics/pageview` accepts a small, schema-validated consent indication
-and known public pathname. It enforces a streamed body limit, exact same-origin requests, production
+One per-document navigation ledger sends one view per eligible pathname visit, without storing a
+visitor/session identifier. The root layout supplies completed navigation events; the SDK's separate
+automatic navigation subscription is disabled. Media preference changes do not start, stop or repeat
+pageviews. Lifecycle teardown suppresses pending provider callbacks. Current browser code does not
+initialize Speed Insights, send custom visualization events or call the first-party collector.
+
+`src/lib/privacy/consent.ts` validates a version-two, media-only `suvroghosh:consent` record with a
+180-day lifetime, in-memory fallback, expiry and cross-tab updates. A valid version-one record is read
+as version two while preserving its media choice and original save/expiry times; its analytics value
+is discarded. New writes contain only media permission and those timestamps. Invalid or expired
+records leave YouTube paused. The initial media notice can be dismissed for the current layout
+lifetime without saving a preference or enabling YouTube. The footer settings button, or the compact
+trigger on immersive pages, reopens media preferences. The choices are “Keep videos paused” and
+“Allow YouTube”; there is no analytics control. Shared preferences and command-palette dialogs close
+before client navigation, including search-form submissions and history changes, so their native
+modal top layer does not leave the destination inert.
+
+The existing first-party `POST /api/analytics/pageview` remains compatible with older consented
+clients. It accepts a small, schema-validated consent indication and known public pathname. It enforces a streamed body limit, exact same-origin requests, production
 eligibility, bounded deadlines and admission controls. Geography comes from Vercel production
 headers, never the submitted body; unknown/malformed geography stays Unknown. Separate daily
 rollups retain total/page/country/city/referrer/device/browser counts for 180 Asia/Kolkata reporting
@@ -887,9 +1015,12 @@ documented in [the setup guide](../privacy-analytics.md); app deployment alone d
 
 `/notes/studio/analytics` and its CSV export independently require the existing configured owner
 before querying. They inherit the studio session resolution and no-store/noindex headers. No public
-report endpoint or client authentication bypass is added. Reports describe consented recorded page
-views rather than unique people, and provider analytics are not added to first-party totals. Provider
-infrastructure logging remains outside the application's aggregate-only storage claim.
+report endpoint or client authentication bypass is added. Reports describe retained first-party
+consented page views, including any accepted older-client requests, rather than unique people or
+current Vercel pageviews. Existing report/backend behavior is retained, and provider analytics are
+not added to first-party totals. Removing current-browser intake does not disable this server route
+or delete historical aggregates. Provider infrastructure logging remains outside the application's
+aggregate-only storage claim.
 
 The shared Notes owner identity lookup now has a five-second deadline and passes its abort signal
 through the Supabase SSR client's fetch without discarding a downstream request's own signal. The
@@ -911,6 +1042,15 @@ Private studio/auth/API responses receive private no-cache/no-store headers and 
 
 Owner authorization checks both the configured immutable user UUID and database membership/RLS. Public notes are filtered through active/unrevoked publication visibility, then publication-specific assets are checked. The public asset path is not permission to read arbitrary private blobs.
 
+Comment public reads and submissions validate published Markdown slugs, strict UUID/text/page
+inputs and approved root relationships. Public response projection excludes moderation, unread,
+retry and audit metadata; anonymous direct database access is revoked. Comment JSON mutations
+require an exact same origin, enforce streamed body/read limits and use bounded Supabase calls.
+The durable guest abuse window complements process-local request admission; owner/public-read
+limits remain process-local. Author identity is assigned in owner SQL, never accepted from a
+reader payload. Rejected/hidden content remains private in durable storage until an operator
+performs a separately authorised deletion. See [the comment boundary](#moderated-post-comments).
+
 Errors currently follow several mechanisms: Kit `error`/`redirect`, form `fail` data, Zod parsing, repository error translation, provider HTTP responses, and a site `+error.svelte`. Universal Markdown import failures are logged and mapped to 404; they do not expose a detailed import error to readers. Notes use bounded runtime Zod validation (ordinary object schemas strip unknown keys); topic/resource authored metadata contracts are stricter. Article metadata uses a lighter validator and build checks. This diversity is real; a single universal error/schema layer does not exist.
 
 New expensive/state-changing endpoints must follow the existing security invariants in [AGENTS.md](../../AGENTS.md): validate input, enforce streamed body limits, same-origin rules where browser-invoked, timeouts and cost-appropriate throttling. TTS and contact now use the shared server-only `http/body.ts` streamed reader/deadline helper and bounded `local-admission.ts` guard. Their 64 KiB input limits apply before parsing, with ten-second read deadlines and exact origin checks. TTS limits audio to 32 MiB within a 120-second provider deadline; contact delivery has a 15-second deadline. Admission is process-local, including a bounded fallback bucket when the adapter cannot resolve an address, and is not a distributed guarantee. Notes mutation readers and non-auth Supabase deadlines outside the bounded analytics repository remain gaps (`AF-001`, in progress); the shared identity lookup is bounded as described above. SvelteKit's built-in form CSRF check is present; it does not replace explicit policy for every JSON endpoint. The named `security:audit` and `security:smoke` commands are currently absent, so they cannot be presented as passing safeguards.
@@ -922,6 +1062,8 @@ New expensive/state-changing endpoints must follow the existing security invaria
 - `PostImage.svelte` emits responsive Vercel optimizer URLs with a local-original fallback. Its sizes must agree with adapter image sizes. Those URLs do not currently include a content revision.
 - Article narration uses revalidated `/audio/articles/<slug>/manifest.json` metadata and SHA-256-named MP3 URLs with one-year immutable caching. Browser playback validates the current extracted transcript hash before selecting saved audio. No audio bytes enter hydration payloads or JS bundles, no application runtime disk is a persistent cache, and this feature adds no service-worker audio caching. Local WAV sources stay in the ignored authoring cache; hosted pending sources use bounded encrypted release snapshots and a durable state-branch pointer. Completed runner WAV copies are retired only after their `main` MP3/manifests and production delivery are verified. Git and Vercel upload exclusions reject public WAV/checkpoint/audition files. The first three complete narrations encode from 20,919,474 WAV bytes to 3,485,511 MP3 bytes (83.34% smaller). Delivery uses this existing project's free Vercel Hobby static storage/CDN, confirmed active on 21 October 2026; it adds no storage account, paid tier or cross-origin media dependency. The original corpus estimate of 31.56 GiB of WAV corresponds to roughly 5.3 GiB of 64 kbps MP3, within the hosted 6 GiB audio guard. The separate 8 GiB site-payload guard, evolving corpus size and account-wide storage/transfer still require review. Low-level generation/compression remain upload-free; the dedicated hosted authoring workflow owns checkpoint uploads and bounded Git publication.
 - Public notes use short HTTP caches; private responses use no-store. The notes sitemap has its own short shared cache.
+- Comment APIs, including approved-reader reads, use private/no-store and noindex headers. Approved comments are fetched separately from static articles; moderation changes require no rebuild and appear on subsequent reads. The service worker excludes API and Studio paths; there is no offline comment store.
+- The root layout owns service-worker registration through `notes/register-service-worker.ts`; Kit's generated auto-registration is disabled, while worker compilation remains enabled. Registration waits for window load, or runs immediately if load already completed, and teardown removes a pending listener. The base-prefixed `/service-worker.js` retains its default directory scope, with module mode in development and the browser's classic-worker default in production. Synchronous API failures and rejected registration promises are handled so online reading continues when offline support is unavailable. There are no user-agent exceptions or retries, and registration does not gate consent, measurement or navigation.
 - `src/service-worker.ts` creates an empty build cache at installation and caches allowed build assets only on actual requests, with concurrent fetch deduplication. It no longer downloads the complete `$service-worker` build list on every installation. This matters to the Hobby request allowance even for CDN cache hits. The decision and migration trade-off are recorded in [ADR 0005](decisions/0005-demand-driven-offline-caching.md).
 - Public notes retain network-first page/document/asset reads. The worker excludes private notes/auth/API paths, rejects private/no-store or cookie-bearing public responses, evicts online 404/410, and permits retained public responses for up to 30 days with a 240-entry public-cache cap. `PublicNoteCanvas.svelte` calls the browser-only `notes/public-offline.ts` helper after rendering a publication. Its bounded readiness message rescues resources already requested before worker control: at most 128 URLs, with a five-second resource observer. The worker validates the actual same-origin public-note window, checks immutable URLs against the build allowlist, and permits public image URLs only when referenced by that note's frozen document. Rescue fetches omit credentials, and a 32-client map avoids repeated metadata preparation. Private note viewers do not invoke this helper.
 - During service-worker activation, older build caches are removed when their recorded age exceeds 30 days; ordinary build-asset requests do not enforce a hard 30-day TTL. Retention supports old offline note HTML/runtime compatibility. The cache contains build assets, not a blanket copy of every public static video/image.
@@ -933,6 +1075,9 @@ finishing outside its observation window are not promised offline availability.
 
 ```mermaid
 flowchart LR
+    Load["Root layout after window load"] --> Register["Guarded worker registration"]
+    Register -->|available| Install
+    Register -->|unavailable or rejected| Online["Continue online without offline support"]
     Install["Worker installation"] --> Empty["Versioned cache and timestamp only"]
     Reader["Reader requests a build resource"] --> Lookup["Current / retained cache lookup"]
     Lookup -->|miss| Network["Fetch requested resource; deduplicate in flight"]
@@ -947,15 +1092,37 @@ Delivered publications cannot be recalled from an offline device. This is a docu
 
 ## 11. Tests and architectural verification
 
-`privacy:test` covers consent parsing/lifecycle, eligible-browser SDK/collector gating, navigation
-deduplication, bounded intake, geographic normalization, report ranges, private owner access and CSV
+`comments:test` covers strict schemas and bounded body/origin handling, public API metadata
+projection, guest/owner role separation, page authorization, private exports and bounded repository
+RPC calls. `comments:sql:test` executes the migration under isolated Supabase-shaped roles in
+PGlite when its optional temporary runtime is configured; otherwise it explicitly skips. It covers
+function/table grants, owner membership, approval/audit/read flows, author replies, hidden parents,
+retry idempotency, limits, pagination and persistence across engine restart. The single-engine
+duplicate burst is not a multi-connection contention test. `comments:browser:test` builds the site
+and uses a loopback production preview, isolated interaction fixtures and a test-only
+Supabase-shaped HTTP bridge backed by the
+actual comments migration in PGlite; the application follows its normal session/API/RPC path with
+synthetic test sessions. Service workers and remote provider requests are blocked. That bridge
+is test tooling, never a production auth bypass or deployment input. Application/SQL/browser
+checks do not prove hosted Supabase activation or live provider authentication. The separately
+inspected hosted comment migration/grants and rolled-back role/lifecycle assertions are recorded
+in [the comment boundary](#moderated-post-comments). Application deployment and live owner-browser
+release evidence is tracked separately in the implementation pull request. See
+[the database verification instructions](../../supabase/post-comments.md#local-sql-verification).
+
+`privacy:test` covers media-only v2 preferences, valid v1 media migration without renewing expiry,
+default provider views independent of consent/storage/legacy opt-out values, one navigation ledger,
+URL sanitation and private-path exclusions, absence of current-browser intake/performance/custom
+events, bounded legacy intake, geographic normalization, report ranges, private owner access and CSV
 escaping. `privacy:browser:test` runs against a built loopback preview with service workers blocked;
 the separately isolated test-only dashboard harness contains labelled synthetic aggregate fixtures,
-not a production auth bypass. Database migration execution/grant/retention tests use an isolated
+not a production auth bypass. Provider browser fixtures intercept the SDK locally to verify app
+dispatch without sending test telemetry; these fixtures do not prove live provider acceptance or
+multi-country audience activity. Database migration execution/grant/retention tests use an isolated
 local engine when available; these do not establish hosted migration or cron activation. The
 critical-boundaries workflow includes the new privacy suite and affected application/migration paths.
 
-The critical-boundaries workflow also watches the measurement policy/root layout, deferred YouTube component/résumé, notebook header configuration, internal-link validator and their Node regression files. `test:critical` includes `seo:test` for production-origin/opt-out/private-URL measurement rules, real Svelte server rendering of deferred/default players, notebook-to-published-parent canonical consistency and internal-link CLI fixtures. The link validator recognises canonical topic paths only when strict topic frontmatter matches its lowercase kebab-case filename, is published and has the actual topic route handler; missing, unpublished and nested topic paths remain errors. `seo:browser:test` uses an already-built loopback preview, blocks service workers and external requests, and checks keyboard player activation/focus, narrow-screen Writing links and rendered metadata. It does not rebuild the app or serve as a field-performance measurement.
+The critical-boundaries workflow also watches the measurement policy/root layout, deferred YouTube component/résumé, notebook header configuration, internal-link validator and their Node regression files. `test:critical` includes `seo:test` for same-browser-origin/private-URL measurement rules, real Svelte server rendering of deferred/default players, notebook-to-published-parent canonical consistency and internal-link CLI fixtures. The link validator recognises canonical topic paths only when strict topic frontmatter matches its lowercase kebab-case filename, is published and has the actual topic route handler; missing, unpublished and nested topic paths remain errors. `seo:browser:test` uses an already-built loopback preview, blocks service workers and external requests, and checks keyboard player activation/focus, narrow-screen Writing links and rendered metadata. It does not rebuild the app or serve as a field-performance measurement.
 
 Link integrity has three complementary checks. `validate:links` parses authored Markdown and
 Svelte/TypeScript navigation expressions and scans shared public registries; canonical same-site
@@ -1009,7 +1176,11 @@ repeated performance checks belong on loopback production previews; release chec
 small and bounded, as specified in [CONTRIBUTING.md](../../CONTRIBUTING.md#verification-and-scope).
 The critical-boundaries workflow watches the worker, its regression harness and public-note
 viewer as well as existing Notes paths. `test:critical` runs the worker's Node harness and
-browser-helper unit tests alongside the existing security, Notes and map checks.
+browser-helper unit tests alongside the existing security, Notes and map checks. The existing
+`public-offline.test.ts` suite also covers successful registration before/after load, base-path
+and development options, unavailable APIs, teardown, synchronous failures and a renderer-like
+rejected registration without an unhandled rejection or retry. These tests preserve the worker's
+demand-caching and private-content boundaries; they do not establish search indexing outcomes.
 
 Use `npm run check`, focused unit/Node/browser suites, and relevant validators for the changed boundary. `npm run lint` runs formatting first and only reaches ESLint if formatting succeeds. For routine publication use `npm run build` once; do not separately run its generators first or broaden the task into unrelated feature audits. Use `npm run build:full` when changing feature/notebook/shared-build inputs. For documentation-only work, check links, evidence, Markdown, gate fixtures and diff integrity without regenerating production content.
 
@@ -1033,6 +1204,7 @@ The existing agent/contributor rules govern changes. In practical terms:
 8. Keep prose in the active Markdown/content directories and heavy feature logic in feature modules. Use the relevant registry/schema rather than creating a parallel route-discovery mechanism.
 9. Preserve determinism and numerical limits where a feature defines them; do not force unrelated engines into a shared abstraction without evidence.
 10. Treat generated output and source assets according to their generator contract. Resolve the optimizer/as-is conflict before claiming lossless preservation.
+11. Keep all reader comments pending until explicit owner approval, derive author privileges on the server/in SQL, and apply approved-parent visibility to every public row/count/reply lookup. Preserve static article rendering and keep submitted comments out of browser/offline stores.
 
 Known violations remain audit findings. Listing an invariant does not claim it is automatically enforced everywhere.
 
@@ -1042,7 +1214,7 @@ Known violations remain audit findings. Listing an invariant does not claim it i
 flowchart TB
     Routes["Route pages and universal loads"] --> UI["Svelte components / feature shells"]
     Routes --> Contracts["Browser-safe content and domain contracts"]
-    ServerRoutes["Server loads, actions, endpoints, hooks"] --> Server["lib/server content + notes repositories"]
+    ServerRoutes["Server loads, actions, endpoints, hooks"] --> Server["lib/server content + notes + comments repositories"]
     Server --> Contracts
     Server --> Backend["Providers / Supabase"]
     UI --> Contracts
@@ -1064,6 +1236,12 @@ Start with [decisions/README.md](decisions/README.md) and [ADR 0001](decisions/0
 
 [ADR 0005](decisions/0005-demand-driven-offline-caching.md) records demand-driven offline caching
 and bounded live verification after the 21 October 2026 Edge Request incident.
+
+[ADR 0009](decisions/0009-premoderated-post-comments.md) records first-party premoderation using
+existing Supabase/owner boundaries while preserving static article rendering. The hosted schema
+and grants were applied/inspected separately from local tests. Application deployment and live
+owner-browser verification are release checks recorded in the implementation pull request.
+Local code/tests alone do not establish release readiness.
 
 The [forensic findings](FORENSIC_AUDIT.md#findings) are the remediation inventory. Open debt includes remaining distributed/Notes request controls; notes transaction and integration-test gaps; browser save deadlines; comprehensive accessibility verification of Meaning Map's corrected interaction state; image provenance/cache policy; duplicated path rules; and repeated test orchestration. Fractal's laboratory-envelope validation and Meaning Map's composed interaction state are corrected, with focused unit and browser regressions. The earlier map resource leak and stale-session metadata no-op path are also corrected. Proposed remediation does not change this document's as-built descriptions until implemented and verified.
 

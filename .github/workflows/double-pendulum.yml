@@ -13,6 +13,8 @@ on:
       - 'src/routes/blog/**'
       - 'static/images/double-pendulum-chaos.svg'
       - 'tests/browser/double-pendulum.spec.ts'
+      - 'tests/helpers/privacy-choice.ts'
+      - 'src/lib/privacy/consent.ts'
   push:
     branches:
       - main
@@ -27,6 +29,8 @@ on:
       - 'src/routes/blog/**'
       - 'static/images/double-pendulum-chaos.svg'
       - 'tests/browser/double-pendulum.spec.ts'
+      - 'tests/helpers/privacy-choice.ts'
+      - 'src/lib/privacy/consent.ts'
 
 permissions:
   contents: read

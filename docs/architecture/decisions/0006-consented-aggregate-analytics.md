@@ -1,7 +1,14 @@
 # 0006 — Consented aggregate analytics and one owner workspace
 
 - Date: 22 October 2026
-- Status: Accepted for implementation; hosted migration and configuration require verification
+- Status: Partially superseded by ADRs 0007 and 0008; retained backend hosted configuration requires verification
+
+[ADR 0007](0007-default-vercel-pageviews.md) first superseded provider pageview consent and
+application eligibility on 23 October 2026. [ADR 0008](0008-media-only-consent.md) then removes all
+analytics preferences and current-browser first-party, performance and custom-event dispatch, and
+replaces version-one choices with media-only version-two preferences. The bounded legacy collector,
+aggregate storage/retention, owner authorization and historical reporting below remain in effect.
+This record preserves the original reasoning; its superseded browser behavior is not current policy.
 
 ## Context
 

@@ -7,6 +7,7 @@ import {
 	BARNUM_ROUTE_ASSET_BUDGET,
 	BARNUM_RUNTIME_ENTRY,
 	BARNUM_SHELL_ENTRY,
+	POST_COMMENTS_ENTRY,
 	auditBarnumLazyBoundary,
 	auditBarnumRouteAssets
 } from './check-barnum-route-assets.mjs';
@@ -17,6 +18,8 @@ function fixture() {
 		'_app/nodes/barnum.js': 'export const route = "barnum";',
 		'_app/posts/barnum.js': 'export const post = "local";',
 		'_app/runtime/barnum.js': 'export const runtime = "activation only";',
+		'_app/comments/interface.js': 'export const comments = "viewport only";',
+		'_app/assets/comments.css': '.comments{display:block}',
 		'_app/chunks/shared.js': 'export const shared = true;',
 		'_app/assets/barnum.css': '.barnum{display:block}'
 	};
@@ -45,6 +48,11 @@ function fixture() {
 			file: '_app/runtime/barnum.js',
 			isDynamicEntry: true
 		},
+		[POST_COMMENTS_ENTRY]: {
+			file: '_app/comments/interface.js',
+			isDynamicEntry: true,
+			css: ['_app/assets/comments.css']
+		},
 		'_shared.js': { file: '_app/chunks/shared.js' }
 	};
 	return { clientRoot, manifest };
@@ -59,6 +67,7 @@ test('the route audit chooses the one-post literal route and counts each static 
 	assert.equal(report.totals.assetCount, 4);
 	assert.deepEqual(report.forbiddenAssets, []);
 	assert.deepEqual(report.budgetFailures, []);
+	assert.deepEqual(report.commentBoundary.failures, []);
 	assert.ok(report.totals.cssRawBytes < BARNUM_ROUTE_ASSET_BUDGET.cssRawBytes);
 });
 
@@ -107,9 +116,9 @@ test('the intro shell keeps the generated Barnum corpus behind the activation bo
 test('many small static requests still fail the count ceiling independently of byte size', (t) => {
 	const { clientRoot, manifest } = fixture();
 	t.after(() => fs.rmSync(clientRoot, { recursive: true, force: true }));
-	// The fixture starts with four static files. Thirty-one tiny edges exceed the
-	// consent-adjusted ceiling while remaining comfortably below all byte limits.
-	for (let index = 0; index < 31; index++) {
+	// Exceed the request ceiling independently of the preserved byte ceilings.
+	const extraEdges = BARNUM_ROUTE_ASSET_BUDGET.assetCount - 4 + 1;
+	for (let index = 0; index < extraEdges; index++) {
 		const key = `_tiny-${index}.js`;
 		const file = `_app/chunks/tiny-${index}.js`;
 		fs.writeFileSync(path.join(clientRoot, file), 'export {};');
@@ -117,6 +126,29 @@ test('many small static requests still fail the count ceiling independently of b
 		manifest['_barnum-post.js'].imports.push(key);
 	}
 	const report = auditBarnumRouteAssets({ manifest, clientRoot });
-	assert.deepEqual(report.budgetFailures, [{ metric: 'assetCount', actual: 35, limit: 34 }]);
+	assert.deepEqual(report.budgetFailures, [
+		{
+			metric: 'assetCount',
+			actual: BARNUM_ROUTE_ASSET_BUDGET.assetCount + 1,
+			limit: BARNUM_ROUTE_ASSET_BUDGET.assetCount
+		}
+	]);
 	assert.deepEqual(report.forbiddenAssets, []);
+});
+
+test('the initial closure excludes the complete comments interface and its stylesheet by source entry', (t) => {
+	const { clientRoot, manifest } = fixture();
+	t.after(() => fs.rmSync(clientRoot, { recursive: true, force: true }));
+	assert.deepEqual(auditBarnumRouteAssets({ manifest, clientRoot }).commentBoundary.failures, []);
+	manifest['_shared.js'].imports = [POST_COMMENTS_ENTRY];
+	const eager = auditBarnumRouteAssets({ manifest, clientRoot });
+	assert.equal(eager.commentBoundary.failures.length, 2);
+	assert.ok(eager.commentBoundary.failures.some((failure) => failure.endsWith('interface.js')));
+	assert.ok(eager.commentBoundary.failures.some((failure) => failure.endsWith('comments.css')));
+	delete manifest['_shared.js'].imports;
+	delete manifest[POST_COMMENTS_ENTRY];
+	assert.match(
+		auditBarnumRouteAssets({ manifest, clientRoot }).commentBoundary.failures[0],
+		/separate dynamic entry/
+	);
 });

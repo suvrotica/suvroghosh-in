@@ -36,39 +36,64 @@ afterEach(() => {
 	vi.unstubAllGlobals();
 });
 
-describe('privacy consent lifecycle', () => {
+describe('media privacy consent lifecycle', () => {
 	it('starts off and remembers rejection and acceptance for the same 180 days', async () => {
 		const consent = await import('./consent');
 		cleanup.push(consent.initializeConsent());
 		expect(consent.getConsent()).toBeNull();
-		expect(consent.saveConsent({ analytics: false, media: false })).toEqual({ persisted: true });
+		expect(consent.saveConsent({ media: false })).toEqual({ persisted: true });
 		const rejected = consent.getConsent()!;
-		expect(rejected.analytics).toBe(false);
+		expect(rejected).toMatchObject({ v: 2, media: false });
+		expect(rejected).not.toHaveProperty('analytics');
 		expect(rejected.expiresAt - rejected.savedAt).toBe(consent.CONSENT_LIFETIME_MS);
-		consent.saveConsent({ analytics: true, media: true });
+		consent.saveConsent({ media: true });
 		const accepted = consent.getConsent()!;
+		expect(accepted).toMatchObject({ v: 2, media: true });
 		expect(accepted.expiresAt - accepted.savedAt).toBe(consent.CONSENT_LIFETIME_MS);
 		expect(JSON.parse(storage.getItem(consent.CONSENT_KEY)!)).toEqual(accepted);
 	});
 
 	it('loads a saved choice after a fresh module lifecycle and returns immutable snapshots', async () => {
 		const original = await import('./consent');
-		original.saveConsent({ analytics: true, media: false });
+		original.saveConsent({ media: true });
 		vi.resetModules();
 		const consent = await import('./consent');
 		const record = consent.getConsent()!;
-		expect(record.analytics).toBe(true);
-		expect(record.media).toBe(false);
-		record.analytics = false;
-		expect(consent.getConsent()!.analytics).toBe(true);
+		expect(record.media).toBe(true);
+		record.media = false;
+		expect(consent.getConsent()!.media).toBe(true);
+	});
+
+	it('reads legacy records as media-only without renewing or changing their permission', async () => {
+		const consent = await import('./consent');
+		const savedAt = Date.now() - 86_400_000;
+		const expiresAt = savedAt + consent.CONSENT_LIFETIME_MS;
+		for (const analytics of [false, true]) {
+			for (const media of [false, true]) {
+				const legacy = { v: 1, analytics, media, savedAt, expiresAt };
+				expect(consent.parseConsent(JSON.stringify(legacy))).toEqual({
+					v: 2,
+					media,
+					savedAt,
+					expiresAt
+				});
+			}
+		}
+		storage.setItem(
+			consent.CONSENT_KEY,
+			JSON.stringify({ v: 1, analytics: true, media: true, savedAt, expiresAt })
+		);
+		cleanup.push(consent.initializeConsent());
+		expect(consent.getConsent()).toEqual({ v: 2, media: true, savedAt, expiresAt });
+		vi.advanceTimersByTime(expiresAt - Date.now());
+		expect(consent.getConsent()).toBeNull();
 	});
 
 	it('fails closed for malformed, unsupported, expired or forged-duration records', async () => {
 		const consent = await import('./consent');
 		const now = Date.now();
 		const valid = {
-			v: 1,
-			analytics: true,
+			v: 2,
 			media: true,
 			savedAt: now,
 			expiresAt: now + consent.CONSENT_LIFETIME_MS
@@ -77,8 +102,11 @@ describe('privacy consent lifecycle', () => {
 			'{',
 			'null',
 			'true',
-			JSON.stringify({ ...valid, v: 2 }),
-			JSON.stringify({ ...valid, analytics: 1 }),
+			JSON.stringify({ ...valid, v: 3 }),
+			JSON.stringify({ ...valid, media: 1 }),
+			JSON.stringify({ ...valid, v: 1 }),
+			JSON.stringify({ ...valid, v: 1, analytics: 1 }),
+			JSON.stringify({ ...valid, v: 1, analytics: true, expiresAt: now + 1 }),
 			JSON.stringify({ ...valid, expiresAt: now + 1 }),
 			JSON.stringify({
 				...valid,
@@ -90,6 +118,7 @@ describe('privacy consent lifecycle', () => {
 		}
 		expect(consent.parseConsent(JSON.stringify(valid), valid.expiresAt)).toBeNull();
 		expect(consent.parseConsent(JSON.stringify(valid))).toEqual(valid);
+		expect(consent.parseConsent(JSON.stringify({ ...valid, analytics: true }))).toEqual(valid);
 	});
 
 	it('notifies subscribers immediately and on current-visit changes and expiry', async () => {
@@ -98,8 +127,8 @@ describe('privacy consent lifecycle', () => {
 		const listener = vi.fn();
 		cleanup.push(consent.subscribeConsent(listener));
 		expect(listener).toHaveBeenLastCalledWith(null);
-		consent.saveConsent({ analytics: true, media: false });
-		expect(listener).toHaveBeenLastCalledWith(expect.objectContaining({ analytics: true }));
+		consent.saveConsent({ media: true });
+		expect(listener).toHaveBeenLastCalledWith(expect.objectContaining({ v: 2, media: true }));
 		vi.advanceTimersByTime(consent.CONSENT_LIFETIME_MS + 1);
 		expect(listener).toHaveBeenLastCalledWith(null);
 		expect(consent.getConsent()).toBeNull();
@@ -109,37 +138,35 @@ describe('privacy consent lifecycle', () => {
 		storage.blocked = true;
 		const consent = await import('./consent');
 		cleanup.push(consent.initializeConsent());
-		expect(consent.saveConsent({ analytics: false, media: true })).toEqual({ persisted: false });
+		expect(consent.saveConsent({ media: true })).toEqual({ persisted: false });
 		browser.dispatchEvent(new Event('focus'));
-		expect(consent.getConsent()).toEqual(
-			expect.objectContaining({ analytics: false, media: true })
-		);
+		expect(consent.getConsent()).toEqual(expect.objectContaining({ v: 2, media: true }));
 	});
 
 	it('announces repeated rejection so a one-time video can be unloaded', async () => {
 		const consent = await import('./consent');
 		const listener = vi.fn();
 		cleanup.push(consent.subscribeConsent(listener));
-		consent.saveConsent({ analytics: false, media: false });
+		consent.saveConsent({ media: false });
 		listener.mockClear();
-		consent.saveConsent({ analytics: false, media: false });
+		consent.saveConsent({ media: false });
 		expect(listener).toHaveBeenCalledOnce();
 	});
 
 	it('synchronizes cross-tab rejection, removal and invalid records', async () => {
 		const consent = await import('./consent');
 		cleanup.push(consent.initializeConsent());
-		consent.saveConsent({ analytics: true, media: true });
+		consent.saveConsent({ media: true });
 		const emit = (key: string | null, newValue: string | null) =>
 			browser.dispatchEvent(
 				Object.assign(new Event('storage'), { key, newValue, storageArea: storage })
 			);
-		const rejected = { ...consent.getConsent()!, analytics: false, media: false };
+		const rejected = { ...consent.getConsent()!, media: false };
 		emit(consent.CONSENT_KEY, JSON.stringify(rejected));
-		expect(consent.getConsent()!.analytics).toBe(false);
+		expect(consent.getConsent()!.media).toBe(false);
 		emit(consent.CONSENT_KEY, '{');
 		expect(consent.getConsent()).toBeNull();
-		consent.saveConsent({ analytics: true, media: true });
+		consent.saveConsent({ media: true });
 		emit(null, null);
 		expect(consent.getConsent()).toBeNull();
 	});

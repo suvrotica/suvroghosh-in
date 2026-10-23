@@ -8000,6 +8000,38 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/art-durga-durga-durga-five-days-debauchery.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1536,
+      "outputBytes": 263519,
+      "outputHash": "206918f8a1cafdc81517002de867305fe5ee4f23866d0d05e4143a0d2e9b282f",
+      "psnrDb": 36.45,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 340725,
+      "sourceHash": "22bc7fe9cde2aa14c64640cf0474bcb38386b52544a71e6dc7fb435beb9ecf1a",
+      "width": 1536
+    },
+    "static/images/art-hypertension-salt-sugar-and-certainty.jpg": {
+      "format": "JPEG",
+      "height": 630,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 131538,
+      "outputHash": "aa4943710c70c8777944e04a9e0394afe3dee052d5e6388aa738775bea77f3a0",
+      "psnrDb": 38.04,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 151986,
+      "sourceHash": "3f8047ba0be269ce6ef6023263a209d312b7034ff0b357c286cc6933fde3a97d",
+      "width": 1200
+    },
     "static/images/art-php2shell-wordpress-security-alert.jpg": {
       "format": "JPEG",
       "height": 1024,
@@ -8094,6 +8126,22 @@
       "resized": false,
       "sourceBytes": 356465,
       "sourceHash": "8206546f897785df8fab16c891f2edfb417f2edad630cd05c427ad86f7954999",
+      "width": 1672
+    },
+    "static/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 179183,
+      "outputHash": "26a340ea5da3ec6048850a8e9ecf3923b3c795993d9cb7c81394409e26a2837d",
+      "psnrDb": 40.09,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 198561,
+      "sourceHash": "25699c5ec357ad65f653a7f962d14814a844e0ecfdeeb41f4b0f25d45c199d21",
       "width": 1672
     },
     "static/images/ashruto-the-unheard.jpg": {

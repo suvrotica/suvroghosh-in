@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { replaceState as replaceNavigationState } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import { trackConsented as track } from '$lib/analytics/client';
 	import { onMount, tick } from 'svelte';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
 	import AccessibleCityReport from './AccessibleCityReport.svelte';
@@ -76,7 +75,6 @@
 		fit: () => void;
 		focus: () => void;
 	};
-	type AggregateProperties = Record<string, string | number | boolean | null | undefined>;
 
 	const POSTER = '/images/the-city-that-refuses-a-master-plan.webp';
 	const REVEAL_DURATION_MS = 6_500;
@@ -220,20 +218,6 @@
 		return { ...value, anchor: { ...value.anchor } };
 	}
 
-	function trackAggregate(name: string, properties?: AggregateProperties): void {
-		try {
-			track(name, properties);
-		} catch {
-			// Analytics is deliberately non-essential. Generation and export must remain local.
-		}
-	}
-
-	function exceptionBand(count: number): string {
-		if (count === 0) return 'none';
-		if (count <= 3) return 'one-to-three';
-		return 'four-or-more';
-	}
-
 	function connectMainWorker(): boolean {
 		disconnectMainWorker();
 		try {
@@ -319,12 +303,6 @@
 			source === 'shared'
 				? 'Recomputing the exact shared city in a local Worker.'
 				: 'The neighbourhood is negotiating lanes, addresses, and precedents.';
-		trackAggregate('City generation started', {
-			source,
-			anchor: config.anchor.id,
-			size: config.size,
-			mode
-		});
 	}
 
 	function handleMainWorkerMessage(response: CityWorkerResponse): void {
@@ -343,12 +321,6 @@
 				const completed = response.result;
 				config = cloneConfig(completed.config);
 				beginReplay(completed);
-				trackAggregate('City generation completed', {
-					source: active.source,
-					anchor: completed.anchor.id,
-					size: completed.config.size,
-					exceptions: exceptionBand(completed.municipalPatches.length)
-				});
 				break;
 			}
 			case 'ERROR':
@@ -535,7 +507,6 @@
 		draftAnchorId = id;
 		draftRotation = definition.rotations[0];
 		placementCommitted = false;
-		trackAggregate('City anchor selected', { anchor: id });
 	}
 
 	function rotateDraftAnchor(): void {
@@ -640,11 +611,6 @@
 		activeTrial = trial.id;
 		challengeError = '';
 		commitCurrentUrl();
-		trackAggregate('City guided trial selected', {
-			trial: trial.id,
-			anchor: trial.config.anchor.id,
-			size: trial.config.size
-		});
 		startGeneration('trial', false);
 	}
 
@@ -674,7 +640,6 @@
 			mode === 'lab'
 				? 'Lab mode exposes the genuine observation and propagation history.'
 				: 'Play mode keeps the same generated city and simplifies its presentation.';
-		trackAggregate('City presentation mode changed', { mode });
 	}
 
 	function selectCell(cell: CellCoordinate): void {
@@ -789,10 +754,6 @@
 		try {
 			await copyText(permanentUrl(panelResult.config));
 			actionStatus = 'Permanent URL copied. It contains the exact version and topology settings.';
-			trackAggregate('City permanent URL copied', {
-				anchor: panelResult.anchor.id,
-				size: panelResult.config.size
-			});
 		} catch (error) {
 			actionStatus =
 				error instanceof Error
@@ -811,10 +772,6 @@
 				outcome === 'shared'
 					? 'The city was handed to the device share sheet.'
 					: 'Native sharing was unavailable, so the exact city text and URL were copied.';
-			trackAggregate(
-				outcome === 'shared' ? 'City native share invoked' : 'City share fallback copied',
-				{ anchor: panelResult.anchor.id, size: panelResult.config.size }
-			);
 		} catch (error) {
 			if (error instanceof DOMException && error.name === 'AbortError') {
 				actionStatus = 'Sharing was cancelled; the city is unchanged.';
@@ -844,10 +801,6 @@
 			});
 			downloadBlob(blob, `${safeFilename(panelResult.cityName)}-${panelResult.fingerprint}.json`);
 			actionStatus = 'Versioned city JSON downloaded.';
-			trackAggregate('City JSON downloaded', {
-				anchor: panelResult.anchor.id,
-				size: panelResult.config.size
-			});
 		} catch (error) {
 			actionStatus =
 				error instanceof Error ? error.message : 'The JSON export could not be created.';
@@ -882,11 +835,6 @@
 			);
 			actionStatus =
 				kind === 'map' ? 'High-resolution map PNG downloaded.' : 'Social PNG downloaded.';
-			trackAggregate('City PNG downloaded', {
-				kind,
-				anchor: panelResult.anchor.id,
-				size: panelResult.config.size
-			});
 		} catch (error) {
 			actionStatus =
 				error instanceof Error ? error.message : 'The PNG export could not be created.';
@@ -906,11 +854,6 @@
 		const copyOperation = copyText(url);
 		startChallengeGeneration(challengerConfig);
 		startGeneration(kind === 'anchor' ? 'placement' : 'new-seed', false);
-		trackAggregate('City challenge started', {
-			kind,
-			anchor: challenger.anchor.id,
-			size: challenger.config.size
-		});
 		try {
 			await copyOperation;
 			actionStatus =
@@ -979,11 +922,6 @@
 				challengerResult = completed;
 				actionStatus =
 					'Opponent recomputed locally with the engine hard-step budget; no supplied score was trusted.';
-				trackAggregate('City challenge completed', {
-					kind: challengeKind ?? 'functional',
-					size: completed.config.size,
-					exceptions: exceptionBand(completed.municipalPatches.length)
-				});
 			} catch (error) {
 				activeChallenge = null;
 				challengeError =
@@ -1010,11 +948,6 @@
 				challengerResult = response.result;
 				actionStatus =
 					'Opponent recomputed from seed and settings in a local Worker; supplied scores were ignored.';
-				trackAggregate('City challenge completed', {
-					kind: challengeKind ?? 'functional',
-					size: response.result.config.size,
-					exceptions: exceptionBand(response.result.municipalPatches.length)
-				});
 				break;
 			case 'ERROR':
 				activeChallenge = null;

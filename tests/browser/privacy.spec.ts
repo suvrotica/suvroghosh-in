@@ -7,17 +7,73 @@ const storageKey = 'suvroghosh:consent';
 const lifetime = 180 * 24 * 60 * 60 * 1000;
 const artifactDirectory = path.resolve('.codex-artifacts/privacy');
 const optionalPattern =
-	/youtube|ytimg|googlevideo|vercel-insights|vitals\.vercel|\/_vercel\/|\/api\/analytics\/pageview/;
+	/youtube|ytimg|googlevideo|speed-insights|vitals\.vercel|\/api\/analytics\/pageview/;
+type GuardedTraffic = {
+	optionalRequests: string[];
+	baselineScripts: string[];
+	providerTransports: string[];
+};
+const guardedTraffic = new WeakMap<BrowserContext, GuardedTraffic>();
 
 async function guardNetwork(context: BrowserContext, baseURL: string) {
-	const optionalRequests: string[] = [];
+	const traffic: GuardedTraffic = {
+		optionalRequests: [],
+		baselineScripts: [],
+		providerTransports: []
+	};
+	guardedTraffic.set(context, traffic);
 	await context.route('**/*', (route) => {
 		const url = route.request().url();
-		if (optionalPattern.test(url)) optionalRequests.push(url);
-		return new URL(url).origin === new URL(baseURL).origin ? route.continue() : route.abort();
+		const parsed = new URL(url);
+		if (
+			parsed.pathname === '/_vercel/insights/script.js' ||
+			(parsed.hostname === 'va.vercel-scripts.com' && parsed.pathname === '/v1/script.debug.js')
+		) {
+			traffic.baselineScripts.push(url);
+			// Exercise the installed SDK's initialization and pageview queue without loading
+			// provider code, applying its headless filter, or sending any telemetry.
+			return route.fulfill({
+				status: 200,
+				contentType: 'application/javascript',
+				body: '/* Local Vercel Analytics fixture: leave window.vaq queued. */'
+			});
+		}
+		if (optionalPattern.test(url)) {
+			traffic.optionalRequests.push(url);
+			return route.abort();
+		}
+		if (/\/_vercel\/insights\/|vercel-insights|va\.vercel-scripts\.com/.test(url)) {
+			traffic.providerTransports.push(url);
+			return route.abort();
+		}
+		return parsed.origin === new URL(baseURL).origin ? route.continue() : route.abort();
 	});
-	return optionalRequests;
+	return traffic;
 }
+
+async function queuedPageviews(page: Page) {
+	return page.evaluate(() =>
+		(window.vaq ?? [])
+			.filter(([event]) => event === 'pageview')
+			.map(([, properties]) => (properties as { path?: string } | undefined)?.path)
+	);
+}
+
+test.afterEach(async ({ context, page }) => {
+	// A real provider transport must never escape the local script fixture.
+	expect(guardedTraffic.get(context)?.providerTransports ?? []).toEqual([]);
+	// Video permission must never start the removed collector or performance SDK.
+	expect(
+		(guardedTraffic.get(context)?.optionalRequests ?? []).filter((url) =>
+			/speed-insights|vitals\.vercel|\/api\/analytics\/pageview/.test(url)
+		)
+	).toEqual([]);
+	if (guardedTraffic.has(context)) {
+		expect(
+			await page.evaluate(() => (window.vaq ?? []).filter(([event]) => event === 'event'))
+		).toEqual([]);
+	}
+});
 
 async function savedChoice(page: Page) {
 	return page.evaluate((key) => JSON.parse(window.localStorage.getItem(key) ?? 'null'), storageKey);
@@ -33,15 +89,15 @@ test('first visit stays readable and non-modal, with equal choices and no option
 	context,
 	baseURL
 }) => {
-	const requests = await guardNetwork(context, baseURL!);
+	const traffic = await guardNetwork(context, baseURL!);
 	await page.goto('/privacy');
 	const note = page.locator('[data-privacy-note]');
 	await expect(note).toBeVisible();
 	await expect(page.getByRole('dialog')).not.toBeVisible();
 	expect(await note.evaluate((element) => element.contains(document.activeElement))).toBe(false);
 	await expect(page.locator('main')).not.toHaveAttribute('inert', '');
-	const reject = note.getByRole('button', { name: 'Reject optional', exact: true });
-	const accept = note.getByRole('button', { name: 'Accept optional', exact: true });
+	const reject = note.getByRole('button', { name: 'Keep videos paused', exact: true });
+	const accept = note.getByRole('button', { name: 'Allow YouTube', exact: true });
 	const rejectBox = await reject.boundingBox();
 	const acceptBox = await accept.boundingBox();
 	expect(rejectBox!.height).toBeGreaterThanOrEqual(44);
@@ -55,37 +111,110 @@ test('first visit stays readable and non-modal, with equal choices and no option
 	await page.getByRole('heading', { name: 'Your choices come first' }).scrollIntoViewIfNeeded();
 	await expect(note).toBeVisible();
 	expect(await savedChoice(page)).toBeNull();
-	expect(requests).toEqual([]);
+	await expect.poll(() => traffic.baselineScripts.length).toBe(1);
+	await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy']);
+	expect(traffic.optionalRequests).toEqual([]);
+	expect(
+		await page.evaluate(() => (window.vaq ?? []).filter(([event]) => event === 'event'))
+	).toEqual([]);
 });
+
+test('pageviews survive paused videos and pathname navigation without additional measurement', async ({
+	page,
+	context,
+	baseURL
+}) => {
+	const traffic = await guardNetwork(context, baseURL!);
+	await page.goto('/privacy?search=private-reader-state#preferences');
+	await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy']);
+	await page
+		.locator('[data-privacy-note]')
+		.getByRole('button', { name: 'Keep videos paused', exact: true })
+		.click();
+	await expect(page.locator('[data-privacy-note]')).toHaveCount(0);
+	await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy']);
+	await page.locator('footer').getByRole('link', { name: 'Writing', exact: true }).click();
+	await expect(page.locator('main h1')).toHaveText('Writings');
+	await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy', '/writing']);
+	await page.goBack();
+	await expect(page.locator('main h1')).toHaveText(/A small note\s*about privacy\./);
+	await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy', '/writing', '/privacy']);
+	expect(traffic.baselineScripts).toHaveLength(1);
+	expect(traffic.optionalRequests).toEqual([]);
+	expect(await savedChoice(page)).toMatchObject({ v: 2, media: false });
+	expect(await savedChoice(page)).not.toHaveProperty('analytics');
+	expect(
+		await page.evaluate(() => (window.vaq ?? []).filter(([event]) => event === 'event'))
+	).toEqual([]);
+});
+
+for (const analytics of [false, true]) {
+	test(`legacy analytics=${analytics} and hidden measurement opt-outs do not gate public views`, async ({
+		page,
+		context,
+		baseURL
+	}) => {
+		const traffic = await guardNetwork(context, baseURL!);
+		await page.addInitScript(
+			({ storageKey, lifetime, analytics }) => {
+				const savedAt = Date.now();
+				localStorage.setItem(
+					storageKey,
+					JSON.stringify({ v: 1, analytics, media: false, savedAt, expiresAt: savedAt + lifetime })
+				);
+				localStorage.setItem('suvroghosh:measurement', 'off');
+				sessionStorage.setItem('suvroghosh:measurement', 'off');
+			},
+			{ storageKey, lifetime, analytics }
+		);
+		await page.goto('/privacy');
+		await expect(page.locator('[data-privacy-note]')).toHaveCount(0);
+		await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy']);
+		await openFromFooter(page);
+		const dialog = page.getByRole('dialog');
+		await expect(dialog.getByRole('switch')).toHaveCount(1);
+		await expect(
+			dialog.getByRole('switch', { name: /analytics|audience|performance/i })
+		).toHaveCount(0);
+		await expect(dialog.getByRole('switch', { name: /External media/ })).not.toBeChecked();
+		await dialog.getByRole('button', { name: 'Save preferences' }).click();
+		expect(await savedChoice(page)).toMatchObject({ v: 2, media: false });
+		expect(await savedChoice(page)).not.toHaveProperty('analytics');
+		await page.locator('footer').getByRole('link', { name: 'Writing', exact: true }).click();
+		await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy', '/writing']);
+		expect(traffic.baselineScripts).toHaveLength(1);
+		expect(traffic.optionalRequests).toEqual([]);
+	});
+}
 
 test('reject, reopen, edit, Escape, save, reload and cross-tab withdrawal preserve the committed choice', async ({
 	page,
 	context,
 	baseURL
 }) => {
-	const requests = await guardNetwork(context, baseURL!);
+	const { optionalRequests: requests } = await guardNetwork(context, baseURL!);
 	await page.goto('/privacy');
 	await page
 		.locator('[data-privacy-note]')
-		.getByRole('button', { name: 'Reject optional', exact: true })
+		.getByRole('button', { name: 'Keep videos paused', exact: true })
 		.click();
 	await expect(page.locator('[data-privacy-note]')).toHaveCount(0);
 	const rejection = await savedChoice(page);
-	expect(rejection).toMatchObject({ v: 1, analytics: false, media: false });
+	expect(rejection).toMatchObject({ v: 2, media: false });
 	expect(rejection.expiresAt - rejection.savedAt).toBe(lifetime);
 	await openFromFooter(page);
 	const dialog = page.getByRole('dialog');
-	await expect(dialog.getByRole('switch', { name: /Audience/ })).not.toBeChecked();
-	await dialog.getByRole('switch', { name: /Audience/ }).check();
+	await expect(dialog.getByRole('switch', { name: /External media/ })).not.toBeChecked();
+	await dialog.getByRole('switch', { name: /External media/ }).check();
 	await page.keyboard.press('Escape');
 	await expect(dialog).not.toBeVisible();
 	await expect(page.getByRole('button', { name: 'Privacy & cookies', exact: true })).toBeFocused();
 	expect(await savedChoice(page)).toEqual(rejection);
 	await openFromFooter(page);
-	await expect(dialog.getByRole('switch', { name: /Audience/ })).not.toBeChecked();
-	await dialog.getByRole('switch', { name: /Audience/ }).check();
+	await expect(dialog.getByRole('switch', { name: /External media/ })).not.toBeChecked();
+	await dialog.getByRole('switch', { name: /External media/ }).check();
 	await dialog.getByRole('button', { name: 'Save preferences' }).click();
-	expect(await savedChoice(page)).toMatchObject({ analytics: true, media: false });
+	expect(await savedChoice(page)).toMatchObject({ v: 2, media: true });
 	await page.reload();
 	await expect(page.locator('[data-privacy-note]')).toHaveCount(0);
 	const second = await context.newPage();
@@ -93,16 +222,16 @@ test('reject, reopen, edit, Escape, save, reload and cross-tab withdrawal preser
 	await openFromFooter(second);
 	await second
 		.getByRole('dialog')
-		.getByRole('button', { name: 'Reject optional', exact: true })
+		.getByRole('button', { name: 'Keep videos paused', exact: true })
 		.click();
 	await openFromFooter(page);
-	await expect(dialog.getByRole('switch', { name: /Audience/ })).not.toBeChecked();
+	await expect(dialog.getByRole('switch', { name: /External media/ })).not.toBeChecked();
 	await page.keyboard.press('Escape');
 	await second.evaluate((key) => localStorage.removeItem(key), storageKey);
 	await expect(page.locator('[data-privacy-note]')).toBeVisible();
 	await second.close();
-	// These browsers are deliberately excluded by both local-origin and webdriver rules.
-	// Positive, otherwise eligible consent/network behaviour is covered by the client integration suite.
+	// Media choices never start first-party, performance or custom-event collection.
+	// Vercel pageviews use the local script fixture independently of these choices.
 	expect(requests).toEqual([]);
 });
 
@@ -119,7 +248,7 @@ test('first-visit dialog traps focus, Escape restores its opener, and unsaved ch
 	await choose.click();
 	const dialog = page.getByRole('dialog');
 	await expect(dialog.getByRole('heading', { name: 'Your visit. Your choices.' })).toBeFocused();
-	await expect(dialog.getByRole('switch')).toHaveCount(2);
+	await expect(dialog.getByRole('switch')).toHaveCount(1);
 	await dialog.getByRole('switch', { name: /External media/ }).check();
 	for (let i = 0; i < 12; i++) {
 		await page.keyboard.press('Tab');
@@ -157,9 +286,6 @@ test('invalid and expired preference records fail closed', async ({ page, contex
 	await page.evaluate((key) => localStorage.setItem(key, '{malformed'), storageKey);
 	await page.getByRole('button', { name: 'Change privacy preferences' }).click();
 	await expect(
-		page.getByRole('dialog').getByRole('switch', { name: /Audience/ })
-	).not.toBeChecked();
-	await expect(
 		page.getByRole('dialog').getByRole('switch', { name: /External media/ })
 	).not.toBeChecked();
 });
@@ -169,28 +295,34 @@ test('blocked storage keeps a visit-only choice and a truthful explanation witho
 	context,
 	baseURL
 }) => {
-	const requests = await guardNetwork(context, baseURL!);
+	const traffic = await guardNetwork(context, baseURL!);
 	await page.addInitScript(() => {
-		Object.defineProperty(window, 'localStorage', {
-			configurable: true,
-			get() {
-				throw new DOMException('Storage blocked', 'SecurityError');
-			}
-		});
+		for (const storage of ['localStorage', 'sessionStorage']) {
+			Object.defineProperty(window, storage, {
+				configurable: true,
+				get() {
+					throw new DOMException('Storage blocked', 'SecurityError');
+				}
+			});
+		}
 	});
 	await page.goto('/privacy');
 	await page
 		.locator('[data-privacy-note]')
-		.getByRole('button', { name: 'Accept optional', exact: true })
+		.getByRole('button', { name: 'Allow YouTube', exact: true })
 		.click();
-	await expect(page.getByRole('status')).toContainText('could not save these choices');
+	await expect(page.getByRole('status')).toContainText('could not save this video preference');
 	await expect(page.locator('[data-privacy-note]')).toHaveCount(0);
 	await openFromFooter(page);
-	await expect(page.getByRole('dialog').getByRole('switch', { name: /Audience/ })).toBeChecked();
+	await expect(
+		page.getByRole('dialog').getByRole('switch', { name: /External media/ })
+	).toBeChecked();
 	await page.keyboard.press('Escape');
 	await page.reload();
 	await expect(page.locator('[data-privacy-note]')).toBeVisible();
-	expect(requests).toEqual([]);
+	await expect.poll(() => queuedPageviews(page)).toEqual(['/privacy']);
+	await expect.poll(() => traffic.baselineScripts.length).toBe(2);
+	expect(traffic.optionalRequests).toEqual([]);
 });
 
 test('YouTube is blocked by default, one-time loading is explicit, and rejection unloads it', async ({
@@ -198,7 +330,7 @@ test('YouTube is blocked by default, one-time loading is explicit, and rejection
 	context,
 	baseURL
 }) => {
-	const requests = await guardNetwork(context, baseURL!);
+	const { optionalRequests: requests } = await guardNetwork(context, baseURL!);
 	await page.goto('/resume');
 	await expect(page.getByRole('button', { name: /^Load YouTube video:/ })).toHaveCount(3);
 	await expect(page.locator('iframe[src*="youtube"]')).toHaveCount(0);
@@ -212,7 +344,7 @@ test('YouTube is blocked by default, one-time loading is explicit, and rejection
 	expect(await savedChoice(page)).toBeNull();
 	await page
 		.locator('[data-privacy-note]')
-		.getByRole('button', { name: 'Reject optional', exact: true })
+		.getByRole('button', { name: 'Keep videos paused', exact: true })
 		.click();
 	await expect(player).toHaveCount(0);
 	await openFromFooter(page);
@@ -231,7 +363,7 @@ test('YouTube is blocked by default, one-time loading is explicit, and rejection
 	await openFromFooter(page);
 	await page
 		.getByRole('dialog')
-		.getByRole('button', { name: 'Reject optional', exact: true })
+		.getByRole('button', { name: 'Keep videos paused', exact: true })
 		.click();
 	await expect(player).toHaveCount(0);
 	await expect(page.getByRole('link', { name: '(Watch on YouTube)', exact: true })).toHaveCount(3);
@@ -259,7 +391,7 @@ test('remembered media permission loads a standard article player and withdrawal
 	await openFromFooter(page);
 	await page
 		.getByRole('dialog')
-		.getByRole('button', { name: 'Reject optional', exact: true })
+		.getByRole('button', { name: 'Keep videos paused', exact: true })
 		.click();
 	await expect(page.locator('iframe[src*="youtube"]')).toHaveCount(0);
 });
@@ -306,7 +438,7 @@ for (const theme of ['paper', 'light', 'night', 'high-contrast']) {
 				.click();
 			const dialog = page.getByRole('dialog');
 			await expect(dialog).toBeVisible();
-			await dialog.getByRole('switch', { name: /Audience/ }).check();
+			await dialog.getByRole('switch', { name: /External media/ }).check();
 			await page.screenshot({ path: path.join(artifactDirectory, `settings-${name}.png`) });
 			expect(await dialog.evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(
 				true

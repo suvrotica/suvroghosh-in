@@ -13,6 +13,20 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "art-durga-durga-durga-five-days-debauchery.jpg",
+			"src": "/images/art-durga-durga-durga-five-days-debauchery.jpg",
+			"bytes": 263519,
+			"width": 1536,
+			"height": 768
+		},
+		{
+			"name": "art-hypertension-salt-sugar-and-certainty.jpg",
+			"src": "/images/art-hypertension-salt-sugar-and-certainty.jpg",
+			"bytes": 131538,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "art-php2shell-wordpress-security-alert.jpg",
 			"src": "/images/art-php2shell-wordpress-security-alert.jpg",
 			"bytes": 310312,
@@ -53,6 +67,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 274012,
 			"width": 1672,
 			"height": 940
+		},
+		{
+			"name": "art-what-exactly-have-i-let-my-local-ai-touch.jpg",
+			"src": "/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg",
+			"bytes": 179183,
+			"width": 1672,
+			"height": 941
 		},
 		{
 			"name": "ashruto-the-unheard.jpg",
