@@ -25,9 +25,9 @@
   },
   "checkpoint": {
     "releaseId": 419440880,
-    "assetId": 669312177,
-    "name": "narration-checkpoint-v1-77b9f137a71871373ee9e2623fa10443dd1471a5182c343403fff2d702b683bc.bin",
-    "sha256": "77b9f137a71871373ee9e2623fa10443dd1471a5182c343403fff2d702b683bc",
+    "assetId": 669322630,
+    "name": "narration-checkpoint-v1-fe394c06edfcdba12694c5856ca880f4be17425029b83a52bbf507773d14b10e.bin",
+    "sha256": "fe394c06edfcdba12694c5856ca880f4be17425029b83a52bbf507773d14b10e",
     "bytes": 121458036
   },
   "publication": {
@@ -38,5 +38,5 @@
     ],
     "status": "pending"
   },
-  "updatedAt": "2026-10-23T14:09:31.315Z"
+  "updatedAt": "2026-10-23T14:09:45.716Z"
 }
