@@ -15,7 +15,7 @@ const notification = z
 		created_at: z.string().datetime({ offset: true }),
 		lease_token: z.string().uuid(),
 		// Missing fields are the original RPC contract during an app-first rollout.
-		content_version: z.union([z.literal(1), z.literal(2), z.literal(3)]).default(1),
+		content_version: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]).default(1),
 		display_name: z
 			.string()
 			.refine((value) => Array.from(value).length >= 1 && Array.from(value).length <= 60)
@@ -32,6 +32,10 @@ const notification = z
 			.string()
 			.regex(/^[a-f0-9]{64}$/)
 			.nullish(),
+		reply_token: z
+			.string()
+			.regex(/^[a-f0-9]{64}$/)
+			.nullish(),
 		action_expires_at: z.string().datetime({ offset: true }).nullish()
 	})
 	.superRefine((job, context) => {
@@ -41,7 +45,7 @@ const notification = z
 				message: 'Full comment notification content is missing.'
 			});
 		if (
-			job.content_version === 3 &&
+			job.content_version >= 3 &&
 			(!job.approve_token ||
 				!job.reject_token ||
 				job.approve_token === job.reject_token ||
@@ -50,6 +54,16 @@ const notification = z
 			context.addIssue({
 				code: z.ZodIssueCode.custom,
 				message: 'Email moderation actions are missing or invalid.'
+			});
+		if (
+			job.content_version === 4 &&
+			(!job.reply_token ||
+				job.reply_token === job.approve_token ||
+				job.reply_token === job.reject_token)
+		)
+			context.addIssue({
+				code: z.ZodIssueCode.custom,
+				message: 'The email reply action is missing or invalid.'
 			});
 	});
 
@@ -76,7 +90,7 @@ function notificationContent(job: z.infer<typeof notification>, title: string) {
 		job.content_version >= 2
 			? [`Commenter: ${job.display_name}`, '', 'Full comment:', job.body!, '']
 			: [];
-	if (job.content_version !== 3)
+	if (job.content_version < 3)
 		return {
 			text: [
 				...introduction,
@@ -93,10 +107,16 @@ function notificationContent(job: z.infer<typeof notification>, title: string) {
 	// Never reconstruct them or refresh their expiry during an uncertain provider retry.
 	const approveUrl = `https://www.suvroghosh.in/api/comments/moderate?action=approve&token=${job.approve_token}`;
 	const rejectUrl = `https://www.suvroghosh.in/api/comments/moderate?action=reject&token=${job.reject_token}`;
+	const replyUrl = `https://www.suvroghosh.in/api/comments/moderate?action=reply&token=${job.reply_token}`;
 	const expires = new Date(job.action_expires_at!).toISOString();
 	const confirmation =
-		'Choose Approve or Reject, then confirm your choice on the page that opens. No admin sign-in is needed. Opening a link does not change the comment until you confirm.';
-	const expiry = `These private links expire 7 days after submission, at ${expires}. Once the comment has been handled, neither link can be used. Keep this email private: anyone with an action link can moderate this comment.`;
+		job.content_version === 4
+			? 'Choose Approve, Reject or Reply, then confirm on the page that opens. No admin sign-in is needed. Reply opens an author-reply form: use Approve and reply for a pending comment, or Publish reply after approving it from this email. Opening a link does not change the comment.'
+			: 'Choose Approve or Reject, then confirm your choice on the page that opens. No admin sign-in is needed. Opening a link does not change the comment until you confirm.';
+	const expiry =
+		job.content_version === 4
+			? `These private links expire 7 days after submission, at ${expires}. Reply can publish one author reply and remains available after using Approve in this email. Reject or an explicit status change in the moderation board closes Reply. Keep this email private: anyone with a link can moderate or reply to this comment.`
+			: `These private links expire 7 days after submission, at ${expires}. Once the comment has been handled, neither link can be used. Keep this email private: anyone with an action link can moderate this comment.`;
 	return {
 		text: [
 			...introduction,
@@ -109,6 +129,7 @@ function notificationContent(job: z.infer<typeof notification>, title: string) {
 			'Reject comment:',
 			rejectUrl,
 			'',
+			...(job.content_version === 4 ? ['Reply to comment:', replyUrl, ''] : []),
 			expiry,
 			'',
 			'Review the current status or reply in your moderation board:',
@@ -128,7 +149,7 @@ function notificationContent(job: z.infer<typeof notification>, title: string) {
 <p>${confirmation}</p>
 <table role="presentation" cellspacing="0" cellpadding="0" style="margin:24px 0"><tr>
 <td style="padding-right:12px"><a href="${escapeHtml(approveUrl)}" style="display:inline-block;background:#166534;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold">Approve</a></td>
-<td><a href="${escapeHtml(rejectUrl)}" style="display:inline-block;background:#991b1b;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold">Reject</a></td>
+<td><a href="${escapeHtml(rejectUrl)}" style="display:inline-block;background:#991b1b;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold">Reject</a></td>${job.content_version === 4 ? `\n</tr><tr><td colspan="2" style="padding-top:12px"><a href="${escapeHtml(replyUrl)}" style="display:inline-block;background:#1e40af;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:bold">Reply</a></td>` : ''}
 </tr></table>
 <p style="font-size:14px">${expiry}</p>
 <p>The comment stays hidden until you approve it.</p>
@@ -168,7 +189,7 @@ export async function dispatchCommentNotifications(submissionId: string | null =
 					.slice(0, 240);
 				const delivered = await withDeadline((signal) => {
 					const options = {
-						idempotencyKey: `${job.content_version === 3 ? 'post-comment-approval-v3' : job.content_version === 2 ? 'post-comment-approval-v2' : 'post-comment-approval'}/${job.comment_id}`,
+						idempotencyKey: `${job.content_version >= 2 ? `post-comment-approval-v${job.content_version}` : 'post-comment-approval'}/${job.comment_id}`,
 						headers: {},
 						signal
 					};

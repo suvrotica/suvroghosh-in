@@ -4,6 +4,12 @@
 - Status: Accepted; hosted migration and live email-action flow require release verification
 - Supersedes: The board-only action and plain-text-only email decisions in [ADR 0011](0011-comment-email-review-content.md) for new version-three notifications
 
+On 23 October 2026, [ADR 0013](0013-comment-email-author-replies.md) adds a separate one-use
+Reply capability only to future version-four notifications. Email approval can preserve that
+independent reply authority, while rejection and explicit board status calls revoke it.
+Existing version-three email payloads and keys remain unchanged. The original decision below
+is preserved as historical context.
+
 ## Context
 
 The owner wants Approve and Reject buttons in the existing full-comment notification, so a

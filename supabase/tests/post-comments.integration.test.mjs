@@ -38,8 +38,558 @@ const emailActionsMigration = await readFile(
 	new URL('../migrations/202610230005_post_comments_email_actions.sql', import.meta.url),
 	'utf8'
 );
+const emailReplyMigration = await readFile(
+	new URL('../migrations/202610230006_post_comments_email_reply.sql', import.meta.url),
+	'utf8'
+);
 const ownerId = 'd66ad910-1e06-4bb7-8f0c-fcf107193d73';
 const outsiderId = '34c166ef-c242-41bb-a397-c185f263b1f1';
+
+test(
+	'email author replies approve only their source, remain one-level, and retry exactly once',
+	{
+		skip:
+			!PGlite &&
+			'Install the pinned temporary PGlite runtime and set COMMENTS_SQL_RUNTIME to execute SQL integration.'
+	},
+	async (t) => {
+		const dataDir = await mkdtemp(path.join(tmpdir(), 'comment-email-reply-sql-'));
+		let db = new PGlite(dataDir);
+		try {
+			await db.exec(`
+      create role anon; create role authenticated; create role service_role bypassrls;
+      create schema auth; create table auth.users (id uuid primary key);
+      create function auth.uid() returns uuid language sql stable as $$
+        select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
+      $$;
+      grant usage on schema auth to anon,authenticated,service_role;
+      create table public.note_owners (user_id uuid primary key references auth.users(id));
+    `);
+			await db.query('insert into auth.users values ($1),($2)', [ownerId, outsiderId]);
+			await db.query('insert into public.note_owners values ($1)', [ownerId]);
+			await db.exec(migration);
+			await db.exec(legacySlugMigration);
+			await db.exec(notificationMigration);
+			const result = async (sql, params = []) => (await db.query(sql, params)).rows[0].result;
+			const as = async (role, actor = '') => {
+				await db.exec('reset role');
+				await db.query("select set_config('request.jwt.claim.sub',$1,false)", [actor]);
+				if (role) await db.exec(`set role ${role}`);
+			};
+			const hash = (token) => createHash('sha256').update(token).digest('hex');
+			const submit = (
+				id,
+				parent = null,
+				name = 'Reply reader',
+				body = 'Private reader comment\n\nSecond paragraph'
+			) =>
+				result('select public.submit_post_comment($1,$2,$3,$4,$5,$6) as result', [
+					'email-reply',
+					parent,
+					name,
+					body,
+					id,
+					randomUUID().replaceAll('-', '').repeat(2)
+				]);
+			const claim = (id) =>
+				result('select public.claim_post_comment_notifications($1,1) as result', [id]);
+			const finish = (job, sent, provider = null) =>
+				result('select public.finish_post_comment_notification($1,$2,$3,$4) as result', [
+					job.comment_id,
+					job.lease_token,
+					sent,
+					provider
+				]);
+			const preview = (tokenHash, action = 'reply') =>
+				result('select public.preview_post_comment_email_action($1,$2) as result', [
+					tokenHash,
+					action
+				]);
+			const consume = (tokenHash, action = 'approve') =>
+				result('select public.consume_post_comment_email_action($1,$2) as result', [
+					tokenHash,
+					action
+				]);
+			const reply = (tokenHash, body = 'The full author reply.\n\nThank you for reading.') =>
+				result('select public.reply_post_comment_email_action($1,$2) as result', [tokenHash, body]);
+			const moderate = (id, status = null, read = false) =>
+				result('select public.moderate_post_comment($1,$2,$3) as result', [id, status, read]);
+			const stored = async (id) => {
+				await as();
+				const row = (
+					await db.query(
+						`select to_jsonb(c) as comment,to_jsonb(n) as notification,to_jsonb(a) as actions,
+          (select jsonb_agg(to_jsonb(h) order by h.id) from public.post_comment_history h where h.comment_id=c.id) as history
+          from public.post_comments c left join public.post_comment_notifications n on n.comment_id=c.id
+          left join public.post_comment_email_actions a on a.comment_id=c.id where c.id=$1`,
+						[id]
+					)
+				).rows[0];
+				await as('service_role');
+				return row;
+			};
+			const makeDue = async (id) => {
+				await as();
+				await db.query(
+					"update public.post_comment_notifications set due_at=clock_timestamp()-interval '1 second',lease_token=null,leased_until=null where comment_id=$1",
+					[id]
+				);
+				await as('service_role');
+			};
+			const make = async (parent = null) => {
+				await as('service_role');
+				const id = randomUUID();
+				assert.equal(await submit(id, parent), 'pending');
+				return (await claim(id))[0];
+			};
+			const legacy = [];
+			for (const [version, next] of [
+				[1, notificationContentMigration],
+				[2, emailActionsMigration],
+				[3, null]
+			]) {
+				const job = await make();
+				assert.equal(await finish(job, false), true);
+				await makeDue(job.comment_id);
+				legacy.push(job);
+				if (next) {
+					await as();
+					await db.exec(next);
+				}
+			}
+			await as();
+			const oldRows = (
+				await db.query('select * from public.post_comment_notifications order by content_version')
+			).rows;
+			const oldActions = (await db.query('select * from public.post_comment_email_actions')).rows;
+			const rpcNames = [
+				'claim_post_comment_notifications',
+				'finish_post_comment_notification',
+				'enqueue_post_comment_notification',
+				'preview_post_comment_email_action',
+				'consume_post_comment_email_action',
+				'moderate_post_comment',
+				'revoke_post_comment_email_actions'
+			];
+			const rpcState = () =>
+				db.query(
+					"select proname,proacl::text as grants,proconfig from pg_proc where pronamespace='public'::regnamespace and proname=any($1::text[]) order by proname",
+					[rpcNames]
+				);
+			const oldRpcs = (await rpcState()).rows;
+			await db.exec(emailReplyMigration);
+
+			await t.test(
+				'migration retains v1/v2/v3 payload state and private grants; no old job gains Reply',
+				async () => {
+					assert.deepEqual(
+						(
+							await db.query(
+								'select * from public.post_comment_notifications order by content_version'
+							)
+						).rows,
+						oldRows
+					);
+					assert.deepEqual((await rpcState()).rows, oldRpcs);
+					const migrated = (await db.query('select * from public.post_comment_email_actions')).rows;
+					assert.equal(migrated.length, 1);
+					for (const row of migrated)
+						for (const key of [
+							'reply_token',
+							'reply_token_hash',
+							'reply_submission_id',
+							'reply_used_at',
+							'reply_revoked_at',
+							'reply_comment_id'
+						]) {
+							assert.equal(row[key], null);
+							delete row[key];
+						}
+					assert.deepEqual(migrated, oldActions);
+					await as('service_role');
+					for (const [index, old] of legacy.entries()) {
+						const retried = (await claim(old.submission_id))[0];
+						assert.equal(retried.content_version, index + 1);
+						assert.equal(retried.reply_token, null);
+						for (const field of [
+							'display_name',
+							'body',
+							'approve_token',
+							'reject_token',
+							'action_expires_at'
+						])
+							if (field in old) assert.equal(retried[field], old[field]);
+						assert.equal(await finish(retried, true, `legacy-reply-v${index + 1}`), true);
+						if (index === 2) {
+							assert.deepEqual(await preview(hash(old.approve_token), 'reply'), {
+								state: 'invalid'
+							});
+							assert.equal((await consume(hash(old.approve_token))).state, 'updated');
+						}
+					}
+				}
+			);
+
+			await t.test(
+				'only bounded service RPC grants can read or publish an email reply',
+				async () => {
+					await as();
+					assert.deepEqual(
+						(
+							await db.query(
+								"select relrowsecurity,relforcerowsecurity from pg_class where oid='public.post_comment_email_actions'::regclass"
+							)
+						).rows[0],
+						{ relrowsecurity: true, relforcerowsecurity: true }
+					);
+					const config = (
+						await db.query(
+							"select proconfig from pg_proc where oid='public.reply_post_comment_email_action(text,text)'::regprocedure"
+						)
+					).rows[0].proconfig;
+					assert.deepEqual(config, [
+						'search_path=""',
+						'statement_timeout=3s',
+						'lock_timeout=1500ms'
+					]);
+					for (const role of ['anon', 'authenticated', 'service_role']) {
+						await as(role, role === 'authenticated' ? ownerId : '');
+						await assert.rejects(
+							db.query(
+								'select reply_token,reply_submission_id from public.post_comment_email_actions'
+							),
+							/permission denied/
+						);
+						await assert.rejects(
+							db.query('update public.post_comment_email_actions set reply_token=null'),
+							/permission denied/
+						);
+						if (role !== 'service_role')
+							await assert.rejects(reply('a'.repeat(64)), /permission denied/);
+					}
+					await as('authenticated', outsiderId);
+					await assert.rejects(reply('a'.repeat(64)), /permission denied/);
+				}
+			);
+
+			let pending;
+			await t.test(
+				'v4 captures three fixed tokens and one private retry UUID; failed retries preserve them and successful delivery erases raws',
+				async () => {
+					pending = await make();
+					assert.equal(pending.content_version, 4);
+					for (const key of ['approve_token', 'reject_token', 'reply_token'])
+						assert.match(pending[key], /^[a-f0-9]{64}$/);
+					assert.equal(
+						new Set([pending.approve_token, pending.reject_token, pending.reply_token]).size,
+						3
+					);
+					const state = await stored(pending.comment_id);
+					assert.equal(state.actions.reply_token_hash, hash(pending.reply_token));
+					assert.match(state.actions.reply_submission_id, /^[a-f0-9-]{36}$/);
+					assert.ok(!('reply_submission_id' in pending));
+					assert.equal(await finish(pending, false), true);
+					await makeDue(pending.comment_id);
+					const retried = (await claim(pending.submission_id))[0];
+					for (const field of [
+						'approve_token',
+						'reject_token',
+						'reply_token',
+						'action_expires_at',
+						'body',
+						'display_name'
+					])
+						assert.equal(retried[field], pending[field]);
+					assert.equal(
+						(await stored(pending.comment_id)).actions.reply_submission_id,
+						state.actions.reply_submission_id
+					);
+					assert.equal(await finish(pending, true, 'stale'), false);
+					assert.equal(await finish(retried, true, 'reply-provider'), true);
+					const sent = await stored(pending.comment_id);
+					for (const key of ['approve_token', 'reject_token', 'reply_token'])
+						assert.equal(sent.actions[key], null);
+					assert.equal(sent.actions.reply_token_hash, hash(pending.reply_token));
+					assert.equal(sent.actions.reply_submission_id, state.actions.reply_submission_id);
+				}
+			);
+
+			await t.test(
+				'Reply preview is read-only and discloses pending approval and placement; hashes cannot cross actions',
+				async () => {
+					const before = await stored(pending.comment_id);
+					const details = await preview(hash(pending.reply_token));
+					assert.deepEqual(details, {
+						state: 'ready',
+						action: 'reply',
+						comment_id: pending.comment_id,
+						post_slug: 'email-reply',
+						display_name: pending.display_name,
+						body: pending.body,
+						expires_at: pending.action_expires_at,
+						comment_status: 'pending',
+						reply_parent_id: pending.comment_id,
+						reply_is_sibling: false
+					});
+					assert.deepEqual(await preview(hash(pending.reply_token)), details);
+					assert.deepEqual(await preview(hash(pending.reply_token), 'approve'), {
+						state: 'invalid'
+					});
+					assert.deepEqual(await consume(hash(pending.reply_token), 'reply'), { state: 'invalid' });
+					assert.deepEqual(await reply(hash(pending.approve_token)), { state: 'invalid' });
+					assert.deepEqual(await stored(pending.comment_id), before);
+				}
+			);
+
+			let firstReply;
+			const authorBody = '  Full <literal> reply & "quoted".\n\nবাংলা 😀\n\nThird paragraph.  ';
+			await t.test(
+				'pending root Approve and reply atomically creates a fixed-identity child with honest audit and exactly-once body retries',
+				async () => {
+					firstReply = await reply(hash(pending.reply_token), authorBody);
+					assert.deepEqual(firstReply, {
+						state: 'replied',
+						action: 'reply',
+						comment_id: pending.comment_id,
+						post_slug: 'email-reply',
+						reply_id: firstReply.reply_id,
+						reply_parent_id: pending.comment_id
+					});
+					const source = await stored(pending.comment_id),
+						author = await stored(firstReply.reply_id);
+					assert.equal(source.comment.status, 'approved');
+					assert.ok(source.comment.read_at);
+					assert.equal(source.actions.reply_comment_id, firstReply.reply_id);
+					assert.ok(source.actions.reply_used_at);
+					assert.equal(source.actions.reply_revoked_at, null);
+					assert.equal(source.actions.used_action, 'approve');
+					assert.equal(author.comment.is_author, true);
+					assert.equal(author.comment.display_name, 'Suvro Ghosh');
+					assert.equal(author.comment.status, 'approved');
+					assert.equal(author.comment.body, authorBody.trim());
+					assert.equal(author.comment.parent_id, pending.comment_id);
+					assert.equal(author.comment.submission_id, source.actions.reply_submission_id);
+					assert.equal(author.notification, null);
+					assert.equal(author.actions, null);
+					assert.deepEqual(
+						author.history.map(({ action, actor_id, to_status }) => ({
+							action,
+							actor_id,
+							to_status
+						})),
+						[{ action: 'email_replied', actor_id: null, to_status: 'approved' }]
+					);
+					assert.equal(
+						source.history.filter((h) => h.action === 'email_moderated' && h.actor_id === null)
+							.length,
+						1
+					);
+					assert.equal(source.history.filter((h) => h.action === 'read').length, 1);
+					assert.deepEqual(await reply(hash(pending.reply_token), authorBody.trim()), firstReply);
+					assert.deepEqual(
+						await Promise.all([
+							reply(hash(pending.reply_token), authorBody),
+							reply(hash(pending.reply_token), authorBody)
+						]),
+						[firstReply, firstReply]
+					);
+					await assert.rejects(
+						reply(hash(pending.reply_token), 'Different proposed reply'),
+						/submission_conflict/
+					);
+					assert.deepEqual(await preview(hash(pending.reply_token)), { state: 'used' });
+					assert.deepEqual(await consume(hash(pending.reject_token), 'reject'), { state: 'used' });
+					assert.deepEqual(await stored(pending.comment_id), source);
+					assert.deepEqual(await stored(firstReply.reply_id), author);
+					const visible = await result(
+						"select public.get_post_comments('email-reply',$1,1) as result",
+						[pending.comment_id]
+					);
+					assert.equal(visible.comments.length, 1);
+					assert.equal(visible.comments[0].id, firstReply.reply_id);
+				}
+			);
+
+			await t.test(
+				'email Approve preserves only its own independent Reply, while Reject and explicit board status intent revoke it',
+				async () => {
+					const approved = await make();
+					assert.equal((await consume(hash(approved.approve_token))).state, 'updated');
+					const details = await preview(hash(approved.reply_token));
+					assert.equal(details.state, 'ready');
+					assert.equal(details.comment_status, 'approved');
+					assert.equal((await stored(approved.comment_id)).actions.reply_revoked_at, null);
+					assert.equal((await reply(hash(approved.reply_token))).state, 'replied');
+					const rejected = await make();
+					assert.equal((await consume(hash(rejected.reject_token), 'reject')).state, 'updated');
+					assert.deepEqual(await preview(hash(rejected.reply_token)), { state: 'unavailable' });
+					assert.deepEqual(await reply(hash(rejected.reply_token)), { state: 'unavailable' });
+					for (const status of ['pending', 'approved', 'rejected', 'hidden']) {
+						const board = await make();
+						await as('authenticated', ownerId);
+						assert.equal(await moderate(board.comment_id, status), 'updated');
+						assert.equal(await moderate(board.comment_id, 'pending'), 'updated');
+						await as('service_role');
+						assert.deepEqual(await reply(hash(board.reply_token)), { state: 'unavailable' });
+						assert.ok((await stored(board.comment_id)).actions.reply_revoked_at);
+					}
+					const read = await make();
+					await as('authenticated', ownerId);
+					assert.equal(await moderate(read.comment_id, null, true), 'updated');
+					await as('service_role');
+					assert.equal((await preview(hash(read.reply_token))).state, 'ready');
+					assert.equal((await reply(hash(read.reply_token))).state, 'replied');
+					assert.equal(
+						(await stored(read.comment_id)).history.filter((h) => h.action === 'read').length,
+						1
+					);
+					const noOpApproved = await make();
+					await consume(hash(noOpApproved.approve_token));
+					await as('authenticated', ownerId);
+					await moderate(noOpApproved.comment_id, 'approved');
+					await as('service_role');
+					assert.deepEqual(await reply(hash(noOpApproved.reply_token)), { state: 'unavailable' });
+				}
+			);
+
+			await t.test(
+				'replying to a guest child creates an author sibling under its approved root and never approves an unavailable parent',
+				async () => {
+					const root = await make();
+					await consume(hash(root.approve_token));
+					const child = await make(root.comment_id);
+					const details = await preview(hash(child.reply_token));
+					assert.equal(details.reply_is_sibling, true);
+					assert.equal(details.reply_parent_id, root.comment_id);
+					assert.equal(details.comment_status, 'pending');
+					for (const status of ['hidden', 'pending', 'rejected']) {
+						await as('authenticated', ownerId);
+						await moderate(root.comment_id, status);
+						await as('service_role');
+						const before = await stored(child.comment_id);
+						assert.deepEqual(await preview(hash(child.reply_token)), { state: 'unavailable' });
+						assert.deepEqual(await reply(hash(child.reply_token)), { state: 'unavailable' });
+						assert.equal((await stored(root.comment_id)).comment.status, status);
+						assert.deepEqual(await stored(child.comment_id), before);
+					}
+					await as('authenticated', ownerId);
+					await moderate(root.comment_id, 'approved');
+					await as('service_role');
+					const sibling = await reply(hash(child.reply_token), 'A sibling reply under the root.');
+					assert.equal(sibling.state, 'replied');
+					assert.equal(sibling.reply_parent_id, root.comment_id);
+					assert.equal((await stored(child.comment_id)).comment.status, 'approved');
+					assert.equal((await stored(sibling.reply_id)).comment.parent_id, root.comment_id);
+					assert.notEqual((await stored(sibling.reply_id)).comment.parent_id, child.comment_id);
+				}
+			);
+
+			await t.test(
+				'replay never republishes a later-moderated source, root or reply, and board no-op also invalidates an exact completed retry',
+				async () => {
+					const source = await make();
+					const result = await reply(hash(source.reply_token), 'Existing reply.');
+					await as('authenticated', ownerId);
+					await moderate(result.reply_id, 'hidden');
+					await as('service_role');
+					assert.deepEqual(await reply(hash(source.reply_token), 'Existing reply.'), {
+						state: 'unavailable'
+					});
+					assert.equal((await stored(result.reply_id)).comment.status, 'hidden');
+					await as('authenticated', ownerId);
+					await moderate(result.reply_id, 'approved');
+					await as('service_role');
+					assert.deepEqual(await reply(hash(source.reply_token), 'Existing reply.'), result);
+					await as('authenticated', ownerId);
+					await moderate(source.comment_id, 'approved');
+					await as('service_role');
+					assert.deepEqual(await reply(hash(source.reply_token), 'Existing reply.'), {
+						state: 'unavailable'
+					});
+					const parent = await make();
+					await consume(hash(parent.approve_token));
+					const child = await make(parent.comment_id);
+					const childReply = await reply(hash(child.reply_token), 'Existing child response.');
+					await as('authenticated', ownerId);
+					await moderate(parent.comment_id, 'hidden');
+					await as('service_role');
+					assert.deepEqual(await reply(hash(child.reply_token), 'Existing child response.'), {
+						state: 'unavailable'
+					});
+					assert.equal((await stored(childReply.reply_id)).comment.status, 'approved');
+				}
+			);
+
+			await t.test(
+				'expiry and body bounds fail before mutation, maximum Unicode body is retained and fixed UUID conflicts roll back approval',
+				async () => {
+					const valid = await make();
+					const before = await stored(valid.comment_id);
+					for (const body of [null, '', ' \t\r\n ', 'x'.repeat(3001), 'bad\u0001control'])
+						await assert.rejects(reply(hash(valid.reply_token), body), /invalid_comment/);
+					for (const tokenHash of [null, 'bad', 'A'.repeat(64), 'a'.repeat(64)])
+						assert.deepEqual(await reply(tokenHash, 'Valid body'), { state: 'invalid' });
+					assert.deepEqual(await stored(valid.comment_id), before);
+					const unicode = '😀'.repeat(3000);
+					const max = await reply(hash(valid.reply_token), unicode);
+					assert.equal((await stored(max.reply_id)).comment.body, unicode);
+					const expired = await make();
+					await as();
+					await db.query(
+						"update public.post_comment_email_actions set expires_at=clock_timestamp()-interval '1 second' where comment_id=$1",
+						[expired.comment_id]
+					);
+					await as('service_role');
+					const expiredBefore = await stored(expired.comment_id);
+					assert.deepEqual(await preview(hash(expired.reply_token)), { state: 'expired' });
+					assert.deepEqual(await reply(hash(expired.reply_token)), { state: 'expired' });
+					assert.deepEqual(await stored(expired.comment_id), expiredBefore);
+					await as();
+					await db.query(
+						"update public.post_comment_email_actions set expires_at=clock_timestamp()-interval '1 second' where comment_id=$1",
+						[valid.comment_id]
+					);
+					await as('service_role');
+					assert.deepEqual(await reply(hash(valid.reply_token), unicode), { state: 'expired' });
+					const conflict = await make();
+					const conflictBefore = await stored(conflict.comment_id);
+					await as('service_role');
+					assert.equal(await submit(conflictBefore.actions.reply_submission_id), 'pending');
+					await assert.rejects(reply(hash(conflict.reply_token)), /duplicate key/);
+					assert.deepEqual(await stored(conflict.comment_id), conflictBefore);
+				}
+			);
+
+			await t.test(
+				'a restarted database preserves completed reply identity and cannot create another author row',
+				async () => {
+					await db.close();
+					db = new PGlite(dataDir);
+					await as('service_role');
+					assert.deepEqual(await reply(hash(pending.reply_token), authorBody), firstReply);
+					const state = await stored(pending.comment_id);
+					assert.equal(state.actions.reply_comment_id, firstReply.reply_id);
+					assert.equal(state.actions.reply_token, null);
+					await as();
+					assert.equal(
+						(
+							await db.query(
+								'select count(*)::integer as n from public.post_comments where submission_id=$1',
+								[state.actions.reply_submission_id]
+							)
+						).rows[0].n,
+						1
+					);
+				}
+			);
+		} finally {
+			await db.close();
+			assert.equal(path.dirname(dataDir), path.resolve(tmpdir()));
+			assert.ok(path.basename(dataDir).startsWith('comment-email-reply-sql-'));
+			await rm(dataDir, { recursive: true, force: true });
+		}
+	}
+);
 
 test(
 	'email moderation capabilities are private, one-use, revocable and compatible with durable retries',
