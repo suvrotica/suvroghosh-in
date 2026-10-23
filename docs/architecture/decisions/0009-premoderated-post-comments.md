@@ -1,7 +1,7 @@
 # 0009 — Premoderated article comments in existing Supabase
 
 - Date: 23 October 2026
-- Status: Accepted; hosted schema applied, site deployment/live owner flow pending
+- Status: Accepted; hosted schema applied, application release checks tracked in PR 12
 
 ## Context
 
@@ -33,8 +33,11 @@ opening the queue alone does not clear unread state. Keep UUID retries idempoten
 mutations with one bounded advisory lock, accepting lower write throughput for simple parent,
 moderation and retry consistency at personal-site volume.
 
-Keep the article's existing render mode and Markdown content. A reusable Svelte component fetches
-approved comments separately when near the viewport, with expandable paged replies. Comment APIs
+Keep the article's existing render mode and Markdown content. A small Svelte wrapper renders the
+section heading/load control, then dynamically imports the comment interface and its styles at
+viewport approach or explicit activation. The complete form/thread code stays outside the initial
+article asset closure. The loaded component fetches approved comments separately, with expandable
+paged replies. Comment APIs
 return no-store responses so moderation affects subsequent reads without a rebuild. Use the
 validated filename slug as the stable article key; category moves preserve it, while renaming the
 slug requires a data migration. Draft text and retries stay in component memory, with no durable
@@ -94,10 +97,12 @@ The assertions passed, then the transaction was rolled back; a separate check co
 rows remained. This exercises the real database role/lifecycle boundary without claiming a live
 site login or browser/API release check.
 
-Site deployment, effective deployment credentials and one bounded live
-submit/approve/reply/hide flow remain pending. Dashboard authentication is separate from the
-site's configured-owner login; it does not verify that live browser flow. Local fixtures and SQL
-tests likewise do not establish production behavior. Retain submitted rows during rollbacks and
+Site deployment, effective deployment credentials and live owner-browser verification are
+separate release checks, recorded in
+[the implementation pull request](https://github.com/suvrotica/suvroghosh-in/pull/12).
+Dashboard authentication is separate from the site's configured-owner login; it does not verify
+that live browser flow. Local fixtures and SQL tests likewise do not establish production behavior.
+Retain submitted rows during rollbacks and
 check the recorded migration version before attempting any schema operation. See
 [the setup guide](../../post-comments.md) and
 [database contract](../../../supabase/post-comments.md).

@@ -6,6 +6,10 @@
 	let { children }: { children: Snippet } = $props();
 	let pending = $state<number | null>(null);
 	let unread = $state(0);
+	// The editor owns its full-viewport canvas and existing Back to studio control.
+	let showWorkspaceNav = $derived(
+		page.route.id !== '/notes/studio/[id]' && page.route.id !== '/notes/studio/[id]/preview'
+	);
 
 	onMount(() => {
 		let busy = false;
@@ -57,31 +61,33 @@
 	});
 </script>
 
-<nav class="workspace-nav" aria-label="Owner workspace">
-	<a
-		href={resolve('/notes/studio')}
-		aria-current={page.url.pathname === '/notes/studio' ? 'page' : undefined}>Notes studio</a
-	>
-	<a
-		href={resolve('/notes/studio/analytics')}
-		aria-current={page.url.pathname.startsWith('/notes/studio/analytics') ? 'page' : undefined}
-		>Analytics</a
-	>
-	<a
-		href={resolve('/notes/studio/comments')}
-		aria-current={page.url.pathname === '/notes/studio/comments' ? 'page' : undefined}
-	>
-		Comments
-		{#if pending !== null}
-			<span class="pending-count" aria-label={`${pending} pending comments`}>{pending}</span>
-		{/if}
-		{#if unread > 0}
-			<span class="unread-dot" title={`${unread} unread comments`}>
-				<span class="sr-only">{unread} unread</span>
-			</span>
-		{/if}
-	</a>
-</nav>
+{#if showWorkspaceNav}
+	<nav class="workspace-nav" aria-label="Owner workspace">
+		<a
+			href={resolve('/notes/studio')}
+			aria-current={page.url.pathname === '/notes/studio' ? 'page' : undefined}>Notes studio</a
+		>
+		<a
+			href={resolve('/notes/studio/analytics')}
+			aria-current={page.url.pathname.startsWith('/notes/studio/analytics') ? 'page' : undefined}
+			>Analytics</a
+		>
+		<a
+			href={resolve('/notes/studio/comments')}
+			aria-current={page.url.pathname === '/notes/studio/comments' ? 'page' : undefined}
+		>
+			Comments
+			{#if pending !== null}
+				<span class="pending-count" aria-label={`${pending} pending comments`}>{pending}</span>
+			{/if}
+			{#if unread > 0}
+				<span class="unread-dot" title={`${unread} unread comments`}>
+					<span class="sr-only">{unread} unread</span>
+				</span>
+			{/if}
+		</a>
+	</nav>
+{/if}
 
 {@render children()}
 

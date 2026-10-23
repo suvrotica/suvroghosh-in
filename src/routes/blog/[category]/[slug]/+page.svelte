@@ -8,7 +8,7 @@
 	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
 	import ArticleActions from '$lib/components/blog/ArticleActions.svelte';
 	import ArticleQuickAnswer from '$lib/components/blog/ArticleQuickAnswer.svelte';
-	import PostComments from '$lib/components/comments/PostComments.svelte';
+	import DeferredPostComments from '$lib/components/comments/DeferredPostComments.svelte';
 	import AuthorPanel from '$lib/components/blog/AuthorPanel.svelte';
 	import Notebook from '$lib/components/blog/Notebook.svelte';
 	import PostNavigation from '$lib/components/blog/PostNavigation.svelte';
@@ -387,7 +387,7 @@
 
 <div class="mx-auto max-w-3xl px-4 pt-4 pb-12 md:px-8 print:hidden">
 	{#key data.slug}
-		<PostComments postSlug={data.slug} />
+		<DeferredPostComments postSlug={data.slug} />
 	{/key}
 </div>
 

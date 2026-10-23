@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { usePausedMediaPreference } from '../helpers/privacy-choice';
 
 const slug = 'hl7-vs-fhir-explained-simply';
 const article = `/blog/healthcare-it/${slug}`;
@@ -13,6 +14,7 @@ test('reader → private queue → approval → author reply → hidden thread �
 	const readerContext = await browser.newContext({ baseURL, serviceWorkers: 'block' });
 	const ownerContext = await browser.newContext({ baseURL, serviceWorkers: 'block' });
 	try {
+		await usePausedMediaPreference(readerContext);
 		const { cookie } = await (await request.get(`${bridge}/__test/session`)).json();
 		await ownerContext.addCookies([cookie]);
 		for (const context of [readerContext, ownerContext])

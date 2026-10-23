@@ -19,7 +19,8 @@ The 23 October moderated-comments implementation adds shared Supabase comment st
 private queue under the existing owner workspace. Article HTML keeps its existing rendering mode;
 browser components fetch approved comments separately. The exact tested migration was applied
 to the existing hosted Supabase project on 23 October; schema/grant inspection is recorded below.
-Site deployment and live owner-flow verification remain pending. See
+Application deployment and live owner-browser checks are tracked in
+[PR 12](https://github.com/suvrotica/suvroghosh-in/pull/12). See
 [ADR 0009](decisions/0009-premoderated-post-comments.md) and the [setup guide](../post-comments.md).
 
 ## 1. System and principles
@@ -686,13 +687,24 @@ Supabase rows are manually described/asserted in `repository.ts`; clients do not
 
 ### Moderated post comments
 
-The generic article page mounts `PostComments.svelte` after its article/folio branches, keyed by the
+The generic article page mounts `DeferredPostComments.svelte` after its article/folio branches, keyed by the
 validated Markdown filename slug. Category or canonical-path changes do not change this key; a
 filename-slug rename needs a deliberate comment-data migration. Existing article prerendering,
-metadata, Markdown and crawler-visible prose remain independent of Supabase. Comments load when
-their section approaches the viewport, or on explicit request, with paged expandable replies and a
-refresh control. JavaScript is required for reading/submitting comments; comments are not embedded
-in prerendered article HTML.
+metadata, Markdown and crawler-visible prose remain independent of Supabase. The initial article
+contains only a comment-section heading and load control. At 250 px from the viewport, or on
+explicit request, that wrapper dynamically imports `PostComments.svelte` with its form, thread
+code and styles, then fetches approved rows. This keeps the complete comment interface outside
+the initial static article asset closure, including the bounded Barnum route. Comments have
+paged expandable replies and a refresh control. JavaScript is required for reading/submitting
+comments; submitted comments are not embedded in prerendered article HTML.
+
+The measured deferred Barnum closure contains 36 assets versus the preserved pre-comments
+reference's 34: shared framework helpers introduce two additional split requests. Raw/gzip CSS
+remains 33,199/9,491 bytes, while the final loader build and shared-module reshaping add 2,818 raw and
+1,227 gzip JavaScript bytes. Its count ceiling is therefore 36, with all existing byte ceilings
+and unrelated-feature/Barnum runtime checks preserved. The route audit resolves the complete
+comment component through its manifest source entry and rejects its JavaScript or CSS appearing
+in the initial static closure, including a missing dynamic boundary.
 
 `/api/comments` validates the published-post registry before calling the privileged read or guest
 submission RPC. Guest payloads are strict plain-text objects with a 60-character name, a
@@ -733,7 +745,8 @@ email or push delivery. JSON export downloads the selected private page, not an 
 
 ```mermaid
 flowchart LR
-    Article["Prerendered article / folio"] --> Reader["Lazy comment component"]
+    Article["Prerendered article / folio"] --> Placeholder["Comment heading / load control"]
+    Placeholder -->|viewport approach or explicit load| Reader["Dynamic comment UI + styles"]
     Reader -->|read approved / submit plain text| PublicAPI["Same-origin /api/comments"]
     Registry["Published Markdown slug registry"] --> PublicAPI
     PublicAPI -->|server service-role RPCs| DB["Supabase comments + audit + abuse counters"]
@@ -755,8 +768,9 @@ actual hosted service/authenticated roles and existing owner membership passed a
 pending-reader privacy, owner queue access, approval, the author-badged reply and hidden-parent
 protection including direct reply reads. It was rolled back, and a subsequent check confirmed no
 test rows remained. This establishes schema/grant installation and the hosted SQL lifecycle,
-not a live site-owner session or a complete deployed browser flow. Site deployment and bounded
-live browser submit/approve/reply/hide verification remain pending.
+separately from a live site-owner session or a complete deployed browser flow. Application
+deployment and owner-browser release checks are recorded in
+[the implementation pull request](https://github.com/suvrotica/suvroghosh-in/pull/12).
 
 See [the operational guide](../post-comments.md), [database contract](../../supabase/post-comments.md)
 and [ADR 0009](decisions/0009-premoderated-post-comments.md). Local tests and an isolated PostgreSQL
@@ -1036,15 +1050,16 @@ RPC calls. `comments:sql:test` executes the migration under isolated Supabase-sh
 PGlite when its optional temporary runtime is configured; otherwise it explicitly skips. It covers
 function/table grants, owner membership, approval/audit/read flows, author replies, hidden parents,
 retry idempotency, limits, pagination and persistence across engine restart. The single-engine
-duplicate burst is not a multi-connection contention test. `comments:browser:test` uses loopback
-Vite, isolated interaction fixtures and a test-only Supabase-shaped HTTP bridge backed by the
+duplicate burst is not a multi-connection contention test. `comments:browser:test` builds the site
+and uses a loopback production preview, isolated interaction fixtures and a test-only
+Supabase-shaped HTTP bridge backed by the
 actual comments migration in PGlite; the application follows its normal session/API/RPC path with
 synthetic test sessions. Service workers and remote provider requests are blocked. That bridge
 is test tooling, never a production auth bypass or deployment input. Application/SQL/browser
 checks do not prove hosted Supabase activation or live provider authentication. The separately
 inspected hosted comment migration/grants and rolled-back role/lifecycle assertions are recorded
-in [the comment boundary](#moderated-post-comments);
-deployment and the live site-owner flow remain pending. See
+in [the comment boundary](#moderated-post-comments). Application deployment and live owner-browser
+release evidence is tracked separately in the implementation pull request. See
 [the database verification instructions](../../supabase/post-comments.md#local-sql-verification).
 
 `privacy:test` covers media-only v2 preferences, valid v1 media migration without renewing expiry,
@@ -1176,8 +1191,9 @@ and bounded live verification after the 21 October 2026 Edge Request incident.
 
 [ADR 0009](decisions/0009-premoderated-post-comments.md) records first-party premoderation using
 existing Supabase/owner boundaries while preserving static article rendering. The hosted schema
-and grants were applied/inspected separately from local tests; site deployment and the live owner
-flow remain pending. Local code/tests alone do not establish release readiness.
+and grants were applied/inspected separately from local tests. Application deployment and live
+owner-browser verification are release checks recorded in the implementation pull request.
+Local code/tests alone do not establish release readiness.
 
 The [forensic findings](FORENSIC_AUDIT.md#findings) are the remediation inventory. Open debt includes remaining distributed/Notes request controls; notes transaction and integration-test gaps; browser save deadlines; comprehensive accessibility verification of Meaning Map's corrected interaction state; image provenance/cache policy; duplicated path rules; and repeated test orchestration. Fractal's laboratory-envelope validation and Meaning Map's composed interaction state are corrected, with focused unit and browser regressions. The earlier map resource leak and stale-session metadata no-op path are also corrected. Proposed remediation does not change this document's as-built descriptions until implemented and verified.
 

@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import type { CommentPage, PublicComment } from '../../src/lib/comments/types';
+import { usePausedMediaPreference } from '../helpers/privacy-choice';
 
 const standardArticle = '/blog/healthcare-it/hl7-vs-fhir-explained-simply';
 const articleSlug = 'hl7-vs-fhir-explained-simply';
@@ -43,6 +44,7 @@ async function openComments(page: Page, path = standardArticle) {
 }
 
 test.beforeEach(async ({ context, baseURL }) => {
+	await usePausedMediaPreference(context);
 	// Browser fixtures never contact Supabase, analytics, embeds or any other remote provider.
 	await context.route('**/*', (route) =>
 		new URL(route.request().url()).origin === baseURL ? route.continue() : route.abort()
@@ -70,7 +72,7 @@ test('comments load on approach, and a pending submission stays out of the publi
 	});
 	await page.goto(standardArticle);
 	const comments = page.locator('#comments');
-	await expect(comments.locator('fieldset')).toBeEnabled();
+	await expect(comments.getByRole('button', { name: 'Load comments', exact: true })).toBeVisible();
 	expect(reads).toBe(0);
 	await comments.scrollIntoViewIfNeeded();
 	await expect(comments.getByText('Start the conversation.', { exact: true })).toBeVisible();

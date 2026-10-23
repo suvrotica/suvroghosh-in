@@ -27,9 +27,10 @@ export default defineConfig({
 			reuseExistingServer: false
 		},
 		{
-			command: 'node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5184 --strictPort',
-			url: `${baseURL}/@vite/client`,
-			timeout: 90_000,
+			command:
+				'npm run build:site && node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 5184 --strictPort',
+			url: `${baseURL}/notes/sign-in`,
+			timeout: 600_000,
 			reuseExistingServer: false,
 			env: {
 				SUPABASE_URL: 'http://127.0.0.1:54329',

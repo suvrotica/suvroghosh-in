@@ -21,16 +21,16 @@ transaction, and the PostgREST schema cache was notified to reload.
 Hosted inspection confirmed the comment schema is ready, anonymous direct table reads and reader
 RPC execution are denied, service-role reader RPC execution is allowed, and the migration record
 exists. The intended Vercel project/team and all five existing required production secret variable
-names were also confirmed without reading their values. Site deployment and a bounded live
-reader/owner moderation flow remain pending; dashboard access does not establish a signed-in
-site-owner session.
+names were also confirmed without reading their values. Application deployment and signed-in
+owner-browser verification are separate release checks, recorded in
+[the implementation pull request](https://github.com/suvrotica/suvroghosh-in/pull/12).
 
 A separate transactional check on that hosted database exercised the actual service-role and
 authenticated-owner SQL boundaries: a guest submission stayed pending and invisible publicly,
 appeared in the owner's queue, became visible on approval, gained a correctly badged author reply,
 and disappeared with its replies when the parent was hidden. The transaction was rolled back;
 the lifecycle assertions passed and a subsequent read confirmed no test rows remained. This
-verifies the hosted SQL lifecycle, separately from the pending production browser flow.
+verifies the hosted SQL lifecycle, separately from application deployment and browser checks.
 
 1. Use the existing Supabase project and owner account. The Notes migration and the owner's
    `auth.users`/`public.note_owners` membership must already exist.
@@ -103,7 +103,8 @@ to execute the actual migration, role grants, moderation flows, durable caps and
 checks. Without that runtime, the SQL suite explicitly skips. For `npm run comments:browser:test`,
 install that pinned temporary runtime at `.codex-artifacts/comments-sql-runtime`, then run the
 command with local Chrome available (or set `PLAYWRIGHT_CHANNEL` to an installed browser). The
-test configuration starts loopback Vite and a test-only Supabase-shaped HTTP bridge backed by
+test configuration builds the site, starts a loopback production preview and a test-only
+Supabase-shaped HTTP bridge backed by
 the actual migration in PGlite. It supplies isolated test sessions; it does not verify live owner
 login. Service workers and remote provider requests are blocked. Never deploy the test bridge.
 

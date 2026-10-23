@@ -1,10 +1,15 @@
 import { expect, test, type Page } from '@playwright/test';
+import { usePausedMediaPreference } from '../helpers/privacy-choice';
 
 const articlePath = '/blog/visualizations/how-a-scanner-sees-reconstructing-a-body-from-shadows';
 const breakpointWidths = [
 	360, 390, 412, 430, 431, 560, 620, 621, 720, 721, 768, 900, 901, 1024, 1180, 1181, 1200, 1240,
 	1256, 1257, 1300, 1440
 ];
+
+test.beforeEach(async ({ context }) => {
+	await usePausedMediaPreference(context);
+});
 
 for (const path of ['/', '/blog']) {
 	test(`shared navigation fits and preserves keyboard access with enlarged text on ${path}`, async ({
@@ -387,10 +392,8 @@ test('inspect and shape gestures scroll, while a brush drag paints without scrol
 	page
 }) => {
 	await openLaboratory(page, 390, 760);
-	// Complete the separate first-visit choice before sending viewport-coordinate gestures.
-	const privacyNote = page.locator('[data-privacy-note]');
-	await privacyNote.getByRole('button', { name: 'Reject optional', exact: true }).click();
-	await expect(privacyNote).toHaveCount(0);
+	// The fixture persists paused videos before navigation, leaving gesture coordinates unobstructed.
+	await expect(page.locator('[data-privacy-note]')).toHaveCount(0);
 	const canvas = page.locator('.phantom-editor canvas');
 	await expect(canvas).toHaveAttribute('data-tool', 'inspect');
 	let points = await phantomDragPoints(page);
