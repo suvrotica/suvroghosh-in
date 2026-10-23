@@ -27,6 +27,10 @@ Production preview: `http://127.0.0.1:4296/blog/visualizations/between-a-click-a
   generators and validators, production compilation, discoverability validation
   and the final Barnum route-asset audit passed. Both committed notebook renders
   also pass `npm run notebooks:verify` without unrelated regeneration.
+- After that full build, upstream PR #15 changed only the comment-form timeout
+  and its architecture description. It was merged without changing this feature.
+  The final integrated Svelte check again reported zero errors and warnings, and
+  all 82 comment tests passed.
 - `npm run validate:discoverability`: 724 published posts checked, with
   representative rendered routes verified, including the new article's visible
   publication date. Content, SEO, media, internal links, contrast and search-index
