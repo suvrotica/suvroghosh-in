@@ -30,6 +30,10 @@ const notificationMigration = await readFile(
 	new URL('../migrations/202610230003_post_comments_notifications.sql', import.meta.url),
 	'utf8'
 );
+const notificationContentMigration = await readFile(
+	new URL('../migrations/202610230004_post_comments_notification_content.sql', import.meta.url),
+	'utf8'
+);
 const ownerId = 'd66ad910-1e06-4bb7-8f0c-fcf107193d73';
 const outsiderId = '34c166ef-c242-41bb-a397-c185f263b1f1';
 
@@ -705,6 +709,276 @@ test(
 			await db.close();
 			assert.equal(path.dirname(dataDir), path.resolve(tmpdir()));
 			assert.ok(path.basename(dataDir).startsWith('comment-notifications-sql-'));
+			await rm(dataDir, { recursive: true, force: true });
+		}
+	}
+);
+
+test(
+	'comment notification content migration preserves old deliveries and privately claims full new content',
+	{
+		skip:
+			!PGlite &&
+			'Install the pinned temporary PGlite runtime and set COMMENTS_SQL_RUNTIME to execute SQL integration.'
+	},
+	async (t) => {
+		const dataDir = await mkdtemp(path.join(tmpdir(), 'comment-content-sql-'));
+		let db = new PGlite(dataDir);
+		try {
+			await db.exec(`
+      create role anon; create role authenticated; create role service_role bypassrls;
+      create schema auth;
+      create table auth.users (id uuid primary key);
+      create function auth.uid() returns uuid language sql stable as $$
+        select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
+      $$;
+      grant usage on schema auth to anon,authenticated,service_role;
+      create table public.note_owners (user_id uuid primary key references auth.users(id));
+    `);
+			await db.query('insert into auth.users values ($1)', [ownerId]);
+			await db.query('insert into public.note_owners values ($1)', [ownerId]);
+			await db.exec(migration);
+			await db.exec(legacySlugMigration);
+			await db.exec(notificationMigration);
+			const result = async (sql, params = []) => (await db.query(sql, params)).rows[0].result;
+			const as = async (role, actor = '') => {
+				await db.exec('reset role');
+				await db.query("select set_config('request.jwt.claim.sub',$1,false)", [actor]);
+				if (role) await db.exec(`set role ${role}`);
+			};
+			const submit = (id, name, body, parent = null) =>
+				result('select public.submit_post_comment($1,$2,$3,$4,$5,$6) as result', [
+					'theFifthWindow',
+					parent,
+					name,
+					body,
+					id,
+					randomUUID().replaceAll('-', '').repeat(2)
+				]);
+			const claim = (id) =>
+				result('select public.claim_post_comment_notifications($1,1) as result', [id]);
+			const finish = (job, sent, provider = null) =>
+				result('select public.finish_post_comment_notification($1,$2,$3,$4) as result', [
+					job.comment_id,
+					job.lease_token,
+					sent,
+					provider
+				]);
+			const makeDue = async (id) => {
+				await as();
+				await db.query(
+					`update public.post_comment_notifications n
+           set due_at=clock_timestamp()-interval '1 second'
+           from public.post_comments c where c.id=n.comment_id and c.submission_id=$1`,
+					[id]
+				);
+				await as('service_role');
+			};
+			const rpcState = () =>
+				db.query(`select proname, proacl::text as grants, proconfig
+        from pg_proc where pronamespace='public'::regnamespace
+        and proname in ('claim_post_comment_notifications','finish_post_comment_notification',
+          'enqueue_post_comment_notification') order by proname`);
+			const originalRpcs = (await rpcState()).rows;
+			const legacySubmission = randomUUID();
+			await as('service_role');
+			assert.equal(
+				await submit(legacySubmission, 'Old private reader', 'Old private comment'),
+				'pending'
+			);
+			const initialLegacyJob = (await claim(legacySubmission))[0];
+			assert.equal(await finish(initialLegacyJob, false), true);
+			await makeDue(legacySubmission);
+			await as();
+			const oldRow = (
+				await db.query('select * from public.post_comment_notifications where comment_id=$1', [
+					initialLegacyJob.comment_id
+				])
+			).rows[0];
+			await db.exec(notificationContentMigration);
+
+			await t.test(
+				'existing retry jobs remain version one without changing stored state or grants',
+				async () => {
+					assert.deepEqual((await rpcState()).rows, originalRpcs);
+					const migratedRow = (
+						await db.query('select * from public.post_comment_notifications where comment_id=$1', [
+							initialLegacyJob.comment_id
+						])
+					).rows[0];
+					assert.deepEqual(migratedRow, { ...oldRow, content_version: 1 });
+					await as('service_role');
+					const legacy = (await claim(legacySubmission))[0];
+					assert.equal(legacy.content_version, 1);
+					assert.equal(legacy.display_name, null);
+					assert.equal(legacy.body, null);
+					assert.deepEqual(
+						Object.keys(legacy).sort(),
+						[
+							'comment_id',
+							'submission_id',
+							'post_slug',
+							'created_at',
+							'lease_token',
+							'content_version',
+							'display_name',
+							'body'
+						].sort()
+					);
+					assert.ok(!JSON.stringify(legacy).includes('private'));
+					assert.equal(await finish(legacy, false), true);
+					await makeDue(legacySubmission);
+					const retried = (await claim(legacySubmission))[0];
+					assert.equal(retried.content_version, 1);
+					assert.equal(retried.body, null);
+					assert.equal(await finish(retried, true, 'legacy-provider-id'), true);
+				}
+			);
+
+			await t.test(
+				'new content remains behind the same service-only RPC and forced RLS',
+				async () => {
+					await as();
+					const flags = (
+						await db.query(
+							"select relrowsecurity,relforcerowsecurity from pg_class where oid='public.post_comment_notifications'::regclass"
+						)
+					).rows[0];
+					assert.deepEqual(flags, { relrowsecurity: true, relforcerowsecurity: true });
+					for (const role of ['anon', 'authenticated', 'service_role']) {
+						await as(role, role === 'authenticated' ? ownerId : '');
+						await assert.rejects(
+							db.query('select content_version from public.post_comment_notifications'),
+							/permission denied/
+						);
+						if (role !== 'service_role')
+							await assert.rejects(claim(legacySubmission), /permission denied/);
+					}
+					await as();
+					const columns = (
+						await db.query(
+							"select column_name from information_schema.columns where table_schema='public' and table_name='post_comment_notifications'"
+						)
+					).rows.map((row) => row.column_name);
+					assert.ok(!columns.includes('display_name'));
+					assert.ok(!columns.includes('body'));
+					await assert.rejects(
+						db.query('update public.post_comment_notifications set content_version=3'),
+						/check constraint/
+					);
+				}
+			);
+
+			let newJob;
+			const newSubmission = randomUUID();
+			const name = 'পাঠক <Reader> ' + 'ক'.repeat(60 - 'পাঠক <Reader> '.length);
+			const prefix =
+				'বাংলা <script>alert("literal")</script>\nFirst paragraph.\n\nSecond paragraph.\n';
+			const body = prefix + 'ক'.repeat(3000 - prefix.length);
+			await t.test(
+				'new version-two jobs claim the full name and 3000-character multiline Unicode body',
+				async () => {
+					assert.equal(name.length, 60);
+					assert.equal(body.length, 3000);
+					await as('service_role');
+					assert.equal(await submit(newSubmission, name, body), 'pending');
+					assert.equal(
+						await submit(newSubmission, 'Different retry name', 'Changed retry body'),
+						'pending'
+					);
+					newJob = (await claim(newSubmission))[0];
+					assert.equal(newJob.content_version, 2);
+					assert.equal(newJob.display_name, name);
+					assert.equal(newJob.body, body);
+					assert.deepEqual(await claim(newSubmission), []);
+					assert.deepEqual(
+						await result('select public.get_post_comments($1,null,1) as result', [
+							'theFifthWindow'
+						]),
+						{ comments: [], total: 0, commentCount: 0 }
+					);
+					assert.equal(await finish(newJob, false), true);
+					await makeDue(newSubmission);
+					newJob = (await claim(newSubmission))[0];
+					assert.equal(newJob.content_version, 2);
+					assert.equal(newJob.display_name, name);
+					assert.equal(newJob.body, body);
+					assert.equal(await finish(newJob, true, 'content-provider-id'), true);
+					assert.deepEqual(await claim(newSubmission), []);
+				}
+			);
+
+			await t.test(
+				'new guest replies include content, author replies do not enqueue, and versioned delivery survives restart',
+				async () => {
+					await as('authenticated', ownerId);
+					assert.equal(
+						await result('select public.moderate_post_comment($1,$2,true) as result', [
+							newJob.comment_id,
+							'approved'
+						]),
+						'updated'
+					);
+					const authorSubmission = randomUUID();
+					assert.equal(
+						await result('select public.reply_to_post_comment($1,$2,$3) as result', [
+							newJob.comment_id,
+							'Owner response',
+							authorSubmission
+						]),
+						'approved'
+					);
+					await as('service_role');
+					assert.deepEqual(await claim(authorSubmission), []);
+					const replySubmission = randomUUID();
+					assert.equal(
+						await submit(
+							replySubmission,
+							'Reply reader',
+							'Full reader reply\nNext line',
+							newJob.comment_id
+						),
+						'pending'
+					);
+					const replyJob = (await claim(replySubmission))[0];
+					assert.equal(replyJob.content_version, 2);
+					assert.equal(replyJob.display_name, 'Reply reader');
+					assert.equal(replyJob.body, 'Full reader reply\nNext line');
+					assert.equal(await finish(replyJob, false), true);
+					await as('authenticated', ownerId);
+					assert.equal(
+						await result('select public.moderate_post_comment($1,$2,true) as result', [
+							replyJob.comment_id,
+							'rejected'
+						]),
+						'updated'
+					);
+					await makeDue(replySubmission);
+					assert.deepEqual(await claim(replySubmission), []);
+					await db.close();
+					db = new PGlite(dataDir);
+					await as('service_role');
+					assert.deepEqual(await claim(legacySubmission), []);
+					assert.deepEqual(await claim(newSubmission), []);
+					assert.deepEqual(await claim(replySubmission), []);
+					await as();
+					const rows = (
+						await db.query(
+							'select content_version,provider_id,sent_at,cancelled_at from public.post_comment_notifications order by content_version,created_at'
+						)
+					).rows;
+					assert.equal(rows.length, 3);
+					assert.equal(rows[0].content_version, 1);
+					assert.equal(rows[0].provider_id, 'legacy-provider-id');
+					assert.equal(rows[1].content_version, 2);
+					assert.equal(rows[1].provider_id, 'content-provider-id');
+					assert.ok(rows[2].cancelled_at);
+				}
+			);
+		} finally {
+			await db.close();
+			assert.equal(path.dirname(dataDir), path.resolve(tmpdir()));
+			assert.ok(path.basename(dataDir).startsWith('comment-content-sql-'));
 			await rm(dataDir, { recursive: true, force: true });
 		}
 	}

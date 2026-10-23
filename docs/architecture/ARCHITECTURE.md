@@ -27,7 +27,11 @@ The subsequent 23 October email-alert change adds an atomic private comment-noti
 a production-only Resend dispatcher and a bearer-authenticated retry endpoint. It reuses the
 contact form's sender and owner-selected inbox. A separately activated Supabase scheduled job
 retries delivery; local implementation/tests do not establish hosted migration, Vault, job or
-email activation. See [ADR 0010](decisions/0010-durable-comment-email-alerts.md).
+email activation. See [ADR 0010](decisions/0010-durable-comment-email-alerts.md). The owner's
+subsequent request adds the display name and full plain-text comment to new version-two alerts
+through that same provider and inbox. Migration 004 preserves legacy retry payloads and keys;
+deploy its compatible application before applying it. See
+[ADR 0011](decisions/0011-comment-email-review-content.md).
 
 ## 1. System and principles
 
@@ -40,7 +44,7 @@ The principal boundaries are:
 - Framework-independent numerical engines, domain models, workers, and persistence helpers sit beside feature-specific Svelte interfaces. Features use different renderers and lifecycles where their needs differ.
 - Private notes use authenticated server actions/APIs and Supabase authorization. Public notes expose frozen publication snapshots, never the mutable working document.
 - Reader comments use server-gated Supabase RPCs. Reader submissions stay private until owner approval; owner replies derive their identity and publication privileges on the server and in SQL.
-- New guest comments atomically queue private owner-email alerts. Production server dispatch and a leased Supabase outbox handle delivery; alert emails exclude reader names and comment bodies.
+- New guest comments atomically queue private owner-email alerts. Production server dispatch and a leased Supabase outbox handle delivery; new version-two alerts include the stored display name and complete plain-text comment for owner review, while legacy jobs retain their metadata-only payloads.
 - Browser capabilities progressively enhance readable SSR content: canvas/WebGL, motion, theme persistence, offline public-note reading, and media controls.
 
 These principles are reconstructed from imports, route options, tests, and feature documents. They are not evidence that every feature fully complies. See findings `AF-001` through `AF-013` in the audit.
@@ -60,7 +64,7 @@ flowchart LR
     Comments --> Supabase
     Supabase --> CommentOutbox["Atomic new-pending comment outbox"]
     CommentOutbox --> CommentMail["Production-only bounded alert dispatcher"]
-    CommentMail -->|existing contact inbox; no reader text| Providers
+    CommentMail -->|existing contact inbox; v2 stored name and full text| Providers
     Supabase --> CommentCron["pg_cron / pg_net / Vault: five-minute retry"]
     CommentCron -->|private bearer| CommentWorker["/api/internal/comment-notifications"]
     CommentWorker --> CommentMail
@@ -811,6 +815,14 @@ delivery identities and state without copying a reader name, body or email. Two-
 leases make overlapping/restarted workers recoverable; expired claims can be retried. Claims
 skip comments already moderated, though an email in flight can arrive after a moderation action.
 
+Migration `202610230004_post_comments_notification_content.sql` adds a constrained
+`content_version`: existing rows retain version one and future inserts default to version two.
+The claim RPC joins immutable submitted comments for the stored display name and full body only
+on version-two jobs; version-one text fields are null. The outbox stores no duplicate reader
+prose. Deploy the version-aware application and updated privacy notice before applying this
+additive migration. Claims from migration 003 without a version are handled as version one.
+Existing leases, sent/cancelled state, forced RLS and service-only grants remain unchanged.
+
 After saving a guest comment, the server awaits one bounded alert attempt; a mail failure leaves
 the comment successful and its notification queued. The submission form allows 30 seconds before
 aborting: its three-second body read and four five-second save/claim/mail/acknowledgement deadlines
@@ -833,9 +845,16 @@ and [Supabase's header-access guidance](https://supabase.com/docs/guides/trouble
 Dispatch requires `VERCEL_ENV=production`; preview/local runs cannot email the owner's real
 inbox. The server reuses private `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL` and
 the existing contact defaults. No public flag, recipient input or new provider is introduced.
-The static-subject email contains only the published article title, submission timestamp and
-fixed `https://www.suvroghosh.in/notes/studio/comments` link, with no reader name or comment body.
-A stable Resend idempotency key supplies 24-hour provider deduplication, followed by durable SQL
+The static-subject plain-text email contains the published article title, submission timestamp
+and fixed `https://www.suvroghosh.in/notes/studio/comments` link. Version-two alerts additionally
+include the stored display name and entire comment without truncation, preserving multiline
+Unicode within the existing 60/3,000-character limits. Reader text never supplies HTML, headers,
+subject, sender or recipient. The existing Resend provider and owner inbox receive this private
+content before public approval; logs and aggregate worker responses exclude reader prose.
+Delivered email cannot be recalled by later moderation or deletion. Version-one jobs keep their
+exact original metadata-only body and `post-comment-approval/<comment_id>` key; version-two jobs
+use `post-comment-approval-v2/<comment_id>`. A stable version-specific Resend key supplies
+24-hour provider deduplication, followed by durable SQL
 acknowledgement. A provider-accepted send whose acknowledgement is lost can rarely duplicate if
 recovery occurs after that window. Provider acceptance and inbox arrival are separate evidence;
 neither the retry schedule nor these controls guarantee a delivery deadline.
@@ -857,9 +876,10 @@ flowchart LR
     PublicAPI -->|after save; one bounded attempt| Dispatch["Production-only Resend dispatcher"]
     Scheduled["pg_cron / pg_net every five minutes"] -->|Vault bearer; fixed destination| Worker["/api/internal/comment-notifications"]
     Worker -->|at most five| Dispatch
-    Outbox -->|service-only claim; two-minute lease| Dispatch
+    Outbox -->|service-only claim; version and two-minute lease| Dispatch
+    DB -->|v2 immutable stored name and full body| Dispatch
     Dispatch -->|ack or bounded exponential retry| Outbox
-    Dispatch -->|article title / time / fixed board link| Inbox["Existing contact-form owner inbox"]
+    Dispatch -->|plain text; v2 name and full body / article / time / board link| Inbox["Existing contact-form owner inbox"]
 ```
 
 The exact tested migration was applied on 23 October 2026 to the existing hosted `suvroghoshin`
@@ -883,23 +903,26 @@ The notification migration, Vault secret, five-minute job and live email dispatc
 own recorded hosted release checks; the preceding comment lifecycle evidence predates alerts.
 See [the operational guide](../post-comments.md), [database contract](../../supabase/post-comments.md),
 [ADR 0009](decisions/0009-premoderated-post-comments.md) and
-[ADR 0010](decisions/0010-durable-comment-email-alerts.md). Local tests and an isolated PostgreSQL
+[ADR 0010](decisions/0010-durable-comment-email-alerts.md). Migration 004 and live version-two
+email content require separate release observations; earlier metadata-only delivery does not
+establish the upgrade. See [ADR 0011](decisions/0011-comment-email-review-content.md).
+Local tests and an isolated PostgreSQL
 engine remain separate evidence from hosted inspection and do not prove live login or release.
 
 ## 8. Integrations and environment
 
-| Boundary                              | Implementation and credential placement                                                                                                                                                                                                                                          |
-| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resend contact / comment alerts       | `/contact` server action and production-only comment dispatcher reuse private API key, sender and recipient/defaults. Alerts contain article context and a fixed private-board link, without reader name/body. Contact retains its normal HTML form with optional `use:enhance`. |
-| Chatterbox speech                     | `/api/tts/chatterbox` server proxy; private endpoint/key/model/voice settings; optional browser visibility flag. Supports native/OpenAI-compatible request mapping and WAV/MP3/Opus choices; accepts upstream `audio/*` bytes.                                                   |
-| Google article narration              | Explicit `scripts/article-narration.mjs` authoring command; script-only Gemini key and Free-tier confirmation. Saved same-origin audio/manifests feed the shared player, with US English device speech as fallback. No public synthesis endpoint or build-time provider call.    |
-| Supabase                              | Server-only URL/publishable/service credentials and owner UUID. Browser drafts are local Dexie data; browser code does not receive a service-role client.                                                                                                                        |
-| Moderated article comments            | Reuses the existing Supabase clients, configured owner and `NOTES_RATE_LIMIT_SALT`; no new provider, public environment flag or third-party comment widget. Server-only HMAC keys and privileged RPCs; plain text and approved fields only reach readers.                        |
-| Comment-alert scheduler               | Supabase `pg_cron`/`pg_net` and Vault call a fixed private production endpoint every five minutes. `COMMENTS_NOTIFICATION_SECRET` authorizes only bounded worker dispatch; it is private in Vercel Production and Vault. Hosted activation is verified separately.               |
-| IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots, verifies live ownership against the repository secret, and submits changed URLs only after that proof matches.                                                                            |
-| Vercel Web Analytics                  | Root layout initializes default public pageviews; CSP allows the named Vercel endpoints. Current browser code does not initialize Speed Insights or send custom events.                                                                                                          |
-| YouTube and static notebooks          | CSP permits self/YouTube frame destinations; notebook HTML uses a sandboxed iframe. Compatibility with Vercel's blanket frame-denial response header needs deployed-header/browser verification.                                                                                 |
-| Jupyter/Mojo and Python asset tooling | Author/build tools, not request-time notebook execution.                                                                                                                                                                                                                         |
+| Boundary                              | Implementation and credential placement                                                                                                                                                                                                                                                                                                                 |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resend contact / comment alerts       | `/contact` server action and production-only comment dispatcher reuse private API key, sender and recipient/defaults. Version-two plain-text alerts include stored display name/full body, article context and a fixed private-board link; legacy jobs retain original payloads/keys. Contact retains its normal HTML form with optional `use:enhance`. |
+| Chatterbox speech                     | `/api/tts/chatterbox` server proxy; private endpoint/key/model/voice settings; optional browser visibility flag. Supports native/OpenAI-compatible request mapping and WAV/MP3/Opus choices; accepts upstream `audio/*` bytes.                                                                                                                          |
+| Google article narration              | Explicit `scripts/article-narration.mjs` authoring command; script-only Gemini key and Free-tier confirmation. Saved same-origin audio/manifests feed the shared player, with US English device speech as fallback. No public synthesis endpoint or build-time provider call.                                                                           |
+| Supabase                              | Server-only URL/publishable/service credentials and owner UUID. Browser drafts are local Dexie data; browser code does not receive a service-role client.                                                                                                                                                                                               |
+| Moderated article comments            | Reuses the existing Supabase clients, configured owner and `NOTES_RATE_LIMIT_SALT`; no new provider, public environment flag or third-party comment widget. Server-only HMAC keys and privileged RPCs; plain text and approved fields only reach readers.                                                                                               |
+| Comment-alert scheduler               | Supabase `pg_cron`/`pg_net` and Vault call a fixed private production endpoint every five minutes. `COMMENTS_NOTIFICATION_SECRET` authorizes only bounded worker dispatch; it is private in Vercel Production and Vault. Hosted activation is verified separately.                                                                                      |
+| IndexNow                              | Secret-backed verification route; deployment workflow compares live sitemap snapshots, verifies live ownership against the repository secret, and submits changed URLs only after that proof matches.                                                                                                                                                   |
+| Vercel Web Analytics                  | Root layout initializes default public pageviews; CSP allows the named Vercel endpoints. Current browser code does not initialize Speed Insights or send custom events.                                                                                                                                                                                 |
+| YouTube and static notebooks          | CSP permits self/YouTube frame destinations; notebook HTML uses a sandboxed iframe. Compatibility with Vercel's blanket frame-denial response header needs deployed-header/browser verification.                                                                                                                                                        |
+| Jupyter/Mojo and Python asset tooling | Author/build tools, not request-time notebook execution.                                                                                                                                                                                                                                                                                                |
 
 For each nonempty live IndexNow submission, `scripts/indexnow.mjs` first fetches the canonical
 secret-backed verification URL with redirects rejected and a 15-second deadline. It requires
@@ -1113,8 +1136,10 @@ The durable guest abuse window complements process-local request admission; owne
 limits remain process-local. Author identity is assigned in owner SQL, never accepted from a
 reader payload. The independent notification endpoint requires a private bearer value and
 accepts only bounded empty JSON, without reader inputs, owner cookies or caller-selected mail
-destinations. Production-only mail dispatch uses leased service-role outbox RPCs and excludes
-reader names/bodies from provider payloads. Rejected/hidden content remains private in durable storage until an operator
+destinations. Production-only mail dispatch uses leased service-role outbox RPCs. Version-two
+alerts forward the stored name and complete plain-text comment through existing Resend to the
+fixed owner inbox; reader text never supplies HTML or headers. Outbox state, logs and worker
+responses do not copy reader prose. Rejected/hidden content remains private in durable storage until an operator
 performs a separately authorised deletion. See [the comment boundary](#moderated-post-comments).
 
 Errors currently follow several mechanisms: Kit `error`/`redirect`, form `fail` data, Zod parsing, repository error translation, provider HTTP responses, and a site `+error.svelte`. Universal Markdown import failures are logged and mapped to 404; they do not expose a detailed import error to readers. Notes use bounded runtime Zod validation (ordinary object schemas strip unknown keys); topic/resource authored metadata contracts are stricter. Article metadata uses a lighter validator and build checks. This diversity is real; a single universal error/schema layer does not exist.
@@ -1178,8 +1203,11 @@ release evidence is tracked separately in the implementation pull request. See
 
 Notification tests additionally cover atomic guest-only outbox creation, no historical backfill,
 retry uniqueness, revoked direct/browser access, service-only claims/acknowledgements, lease
-ownership and expiry, retry delay and suppression after moderation. Application fixtures verify
-minimal/fixed email content, production gating, provider failure preserving submission success,
+ownership and expiry, retry delay and suppression after moderation. Content-version fixtures
+cover migration-003 compatibility, preserved legacy payloads/keys, new version-two defaults,
+immutable joined content and unchanged permissions/delivery state. Application fixtures verify
+complete plain-text name/body content with multiline Unicode and literal HTML-like input, fixed
+headers/addressing, stable version-specific payloads/keys, production gating, provider failure preserving submission success,
 and the worker's bearer/input/admission bounds without sending real mail. Isolated SQL tests do
 not prove multi-connection contention, Vault/cron activation or provider/inbox delivery. Those
 remain explicit release checks against the selected project and contact inbox.
@@ -1279,7 +1307,7 @@ The existing agent/contributor rules govern changes. In practical terms:
 9. Preserve determinism and numerical limits where a feature defines them; do not force unrelated engines into a shared abstraction without evidence.
 10. Treat generated output and source assets according to their generator contract. Resolve the optimizer/as-is conflict before claiming lossless preservation.
 11. Keep all reader comments pending until explicit owner approval, derive author privileges on the server/in SQL, and apply approved-parent visibility to every public row/count/reply lookup. Preserve static article rendering and keep submitted comments out of browser/offline stores.
-12. Queue each new guest-comment email atomically, preserve saved-comment success when mail fails, and dispatch only from production through leased service-only work. Keep the recipient fixed to contact configuration and exclude reader names/bodies from notification email. Never expose the worker bearer secret to visitors.
+12. Queue each new guest-comment email atomically, preserve saved-comment success when mail fails, and dispatch only from production through leased service-only work. Keep the recipient fixed to contact configuration; version-two alerts include complete stored name/body only as plain text, never HTML or headers. Preserve version-one retry payloads and version-specific provider keys. Keep reader prose out of the outbox, logs and worker responses, and never expose the worker bearer secret to visitors.
 
 Known violations remain audit findings. Listing an invariant does not claim it is automatically enforced everywhere.
 
@@ -1322,6 +1350,12 @@ Local code/tests alone do not establish release readiness.
 alert decision with a durable Supabase outbox and the existing Resend contact inbox. Its private
 scheduled worker and production gate preserve the moderation boundary; hosted job/secret/schema
 activation and actual inbox delivery require separate release observations.
+
+[ADR 0011](decisions/0011-comment-email-review-content.md) supersedes only ADR 0010's minimal
+email-content choice at the owner's explicit request. New content-version-two jobs send the
+stored name and full plain-text comment to the same Resend/contact inbox. The additive migration
+and application-first rollout preserve legacy notification payloads and retry identities;
+moderation cannot recall delivered email copies.
 
 The [forensic findings](FORENSIC_AUDIT.md#findings) are the remediation inventory. Open debt includes remaining distributed/Notes request controls; notes transaction and integration-test gaps; browser save deadlines; comprehensive accessibility verification of Meaning Map's corrected interaction state; image provenance/cache policy; duplicated path rules; and repeated test orchestration. Fractal's laboratory-envelope validation and Meaning Map's composed interaction state are corrected, with focused unit and browser regressions. The earlier map resource leak and stale-session metadata no-op path are also corrected. Proposed remediation does not change this document's as-built descriptions until implemented and verified.
 
