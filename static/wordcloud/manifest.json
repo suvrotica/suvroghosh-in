@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T19:10:07.465399+00:00",
+  "generatedAt": "2026-10-23T09:59:38.057041+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -16236,6 +16236,29 @@
         "Hot",
         "Fan",
         "Dry"
+      ],
+      "wordCount": 130
+    },
+    "what-exactly-have-i-let-my-local-ai-touch": {
+      "generatedAt": "2026-10-23T09:59:38.043138+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/what-exactly-have-i-let-my-local-ai-touch.svg",
+      "source": "src/lib/posts/what-exactly-have-i-let-my-local-ai-touch.md",
+      "sourceHash": "52e4951ea23b2147b95e909acb5f0a83e5dfcd0ac6eebe56c108890c3ca9f104",
+      "sourceModified": "2026-10-23T09:58:29.816386+00:00",
+      "topWords": [
+        "Model",
+        "Ollama",
+        "Template",
+        "Models",
+        "Agent",
+        "Every",
+        "Research",
+        "Need",
+        "Percent",
+        "Exposed",
+        "Access",
+        "Behavior"
       ],
       "wordCount": 130
     },

@@ -62,6 +62,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 940
 		},
 		{
+			"name": "art-what-exactly-have-i-let-my-local-ai-touch.jpg",
+			"src": "/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg",
+			"bytes": 179183,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "ashruto-the-unheard.jpg",
 			"src": "/images/ashruto-the-unheard.jpg",
 			"bytes": 144849,

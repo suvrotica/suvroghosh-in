@@ -15369,6 +15369,36 @@
 				"Bengali Culture"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/what-exactly-have-i-let-my-local-ai-touch.md": {
+			"bodyHash": "b1a62ee966bee86ba564a2644d4ac333e664da1db409c4c4f825dc974f3bd761",
+			"hashVersion": 2,
+			"revisionHash": "3a9a5daec9d2565198552a6b1da751711f711af6aa57295b25a48571f62c4754",
+			"generatedTags": [
+				"Local AI",
+				"AI Agents",
+				"Ollama",
+				"GGUF",
+				"Cybersecurity",
+				"Model Security",
+				"Supply Chain Security",
+				"Prompt Injection",
+				"AI Safety",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Local AI",
+				"AI Agents",
+				"Ollama",
+				"GGUF",
+				"Cybersecurity",
+				"Model Security",
+				"Supply Chain Security",
+				"Prompt Injection",
+				"AI Safety",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

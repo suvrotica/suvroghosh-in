@@ -8112,6 +8112,22 @@
       "sourceHash": "8206546f897785df8fab16c891f2edfb417f2edad630cd05c427ad86f7954999",
       "width": 1672
     },
+    "static/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 179183,
+      "outputHash": "26a340ea5da3ec6048850a8e9ecf3923b3c795993d9cb7c81394409e26a2837d",
+      "psnrDb": 40.09,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 198561,
+      "sourceHash": "25699c5ec357ad65f653a7f962d14814a844e0ecfdeeb41f4b0f25d45c199d21",
+      "width": 1672
+    },
     "static/images/ashruto-the-unheard.jpg": {
       "format": "JPEG",
       "height": 576,
