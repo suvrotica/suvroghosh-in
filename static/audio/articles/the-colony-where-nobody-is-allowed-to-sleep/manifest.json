@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "segmentation": "bounded-1800-v1",
+  "textHash": "05657e809e9b56b7063ab4dabb9abf77b6eb99d7dbdcf380e49c39b46f3d9579",
+  "fingerprint": "92f7814675d942503fe9956878a3811e214470b87fa0ff32a13916e52e3bd8df",
+  "language": "en-US",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "achird",
+  "style": "Warm, clear editorial narration in natural US English. Relaxed pacing, natural sentence emphasis, and sensible pauses. Preserve Bengali pronunciation in Bengali passages. Read the transcript verbatim.",
+  "format": "audio/wav",
+  "title": "The Colony Where Nobody Is Allowed to Sleep",
+  "articlePath": "/blog/short-fiction/the-colony-where-nobody-is-allowed-to-sleep",
+  "generatedAt": "2026-10-23T14:02:03.049Z",
+  "totalDuration": 1169,
+  "segments": [
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/6c44acc9acd5efed0ca6823c4da6bc28968e6039bf3131df302c48aa10805ef7.mp3",
+      "duration": 121.24,
+      "textStart": 0,
+      "textEnd": 1759
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/5f2258e57d80e2b36ed94e5086171c2e7b9dd639b0c8478c90847296d683106a.mp3",
+      "duration": 100.56,
+      "textStart": 1759,
+      "textEnd": 3428
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/1ab49f1fb636c2b2c2a2220f224efd57fbd2b07575e25613af90e41fe4d27dea.mp3",
+      "duration": 113.24,
+      "textStart": 3428,
+      "textEnd": 5225
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/188fb951377b8923860bad29263a8510c68b05b2179cf66fc9ef502aa67cb81b.mp3",
+      "duration": 96.24,
+      "textStart": 5225,
+      "textEnd": 6863
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/58dfdc1ad3ab3f7b92bae2eb60b218d2c5e56ada977bfd934f723070f375ce8c.mp3",
+      "duration": 102.84,
+      "textStart": 6863,
+      "textEnd": 8560
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/47d02167e47c90a23339a03b8909687fd93a79f43ed0e2912b81144cc8469b28.mp3",
+      "duration": 107.2,
+      "textStart": 8560,
+      "textEnd": 10249
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/d177d27075db866461c669e3baac0f62e9c38540744a991fe8b7a016413288ba.mp3",
+      "duration": 115.48,
+      "textStart": 10249,
+      "textEnd": 12003
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/2005b054235f39bf50a3b9a1e02c3f1e361ce935cba6c023a310dfac84f5a5a9.mp3",
+      "duration": 107.52,
+      "textStart": 12003,
+      "textEnd": 13781
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/54c3da581a4cc68b9ac8ee3aa32b4a8e301472672b7d39ec74dd333b835c99de.mp3",
+      "duration": 123.76,
+      "textStart": 13781,
+      "textEnd": 15564
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/a195354f24ff5a42c53869bbf43470601f29368d843dbc846d99aaf0d14472f3.mp3",
+      "duration": 115.12,
+      "textStart": 15564,
+      "textEnd": 17295
+    },
+    {
+      "src": "/audio/articles/the-colony-where-nobody-is-allowed-to-sleep/73469fc53cb8eebb1b97fed86df425a632daa29569b3780d88b886554af21d1e.mp3",
+      "duration": 65.8,
+      "textStart": 17295,
+      "textEnd": 18231
+    }
+  ],
+  "delivery": {
+    "version": 1,
+    "format": "audio/mpeg",
+    "codec": "mp3",
+    "bitrate": 64000,
+    "sampleRate": 24000,
+    "channels": 1,
+    "encoderVersion": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "encodedAt": "2026-10-23T14:05:57.131Z",
+    "segments": [
+      {
+        "sourceFingerprint": "ae4fa856e04113588fb90a35717d877cb94d124c6d3ddf3b42f029231dfad26b",
+        "sourceAudioHash": "17c8ad09c1cc4368682e349c2df3d48928f2dbcaca15894fcd6411ff6b2ace19",
+        "sourceBytes": 5825638,
+        "audioHash": "6c44acc9acd5efed0ca6823c4da6bc28968e6039bf3131df302c48aa10805ef7",
+        "bytes": 970605,
+        "decodedPCMHash": "530c997cb716069a4bc5266580eab96178fc76308416ee87f30aceaee88d8e1b",
+        "decodedDuration": 121.24
+      },
+      {
+        "sourceFingerprint": "fb54880c4e1c88a3549400b0d8b69f102d28bdb6ebc9c1f519d9fa8186bd4099",
+        "sourceAudioHash": "1915cd815d4c55aef7391f7d86ed482076b992c4f54a4af872d95c6a879ed5d5",
+        "sourceBytes": 4832998,
+        "audioHash": "5f2258e57d80e2b36ed94e5086171c2e7b9dd639b0c8478c90847296d683106a",
+        "bytes": 805101,
+        "decodedPCMHash": "0b32bd7d12e66291ce6153535248d96a428c7fd30666fbc7c395854ee4645dcf",
+        "decodedDuration": 100.56
+      },
+      {
+        "sourceFingerprint": "21a3dafccec8af19f0a8401fa91c752328079637866f485e80b15294056cd845",
+        "sourceAudioHash": "98262cfde3f4a916e4b9e412aa995aa60926cb0a69ab57dc7288c780bc9d4530",
+        "sourceBytes": 5441638,
+        "audioHash": "1ab49f1fb636c2b2c2a2220f224efd57fbd2b07575e25613af90e41fe4d27dea",
+        "bytes": 906669,
+        "decodedPCMHash": "a1bb8b9532b0506ac994c65b7d32f44146b03ebeebc0948d267cda659937b93b",
+        "decodedDuration": 113.24
+      },
+      {
+        "sourceFingerprint": "00deb53edbe1d680aea897a2f9939b56f6d2cd1a02d2e6778a7e7bf688f8e7f4",
+        "sourceAudioHash": "ed5a71d6279085f5d9913e3a69e611e8036441041cf3efc4b4b6b1ee0d817047",
+        "sourceBytes": 4625638,
+        "audioHash": "188fb951377b8923860bad29263a8510c68b05b2179cf66fc9ef502aa67cb81b",
+        "bytes": 770541,
+        "decodedPCMHash": "74287c4aa172bab8e0bfc2e1ffd0b2bfeea7e36f0c9299f8acdeb348339ad940",
+        "decodedDuration": 96.24
+      },
+      {
+        "sourceFingerprint": "2399434e52e909c10b30daef794de2d8667379e562b8b3d7feacc800263a588b",
+        "sourceAudioHash": "a437cec1721de5f6f1e1ffa867bb609e93c976ce927a229a196d1d3ddff9c9fa",
+        "sourceBytes": 4942438,
+        "audioHash": "58dfdc1ad3ab3f7b92bae2eb60b218d2c5e56ada977bfd934f723070f375ce8c",
+        "bytes": 823341,
+        "decodedPCMHash": "7994f62de22191ddfc028db63bece77de20e8e510238146d7a5a2ef1637a32d4",
+        "decodedDuration": 102.84
+      },
+      {
+        "sourceFingerprint": "3d7303b772c5d9edb55ea06f2b20509168010ecf14f45dddc8e2349c8d6689dc",
+        "sourceAudioHash": "a634fee0eafa0cbe3c1469e55b353cee72d4cf8fc0994558945e39d19affd623",
+        "sourceBytes": 5151718,
+        "audioHash": "47d02167e47c90a23339a03b8909687fd93a79f43ed0e2912b81144cc8469b28",
+        "bytes": 858285,
+        "decodedPCMHash": "c58bfb613f57b10dba3c6976913132019c58a3e9108e04da8909336a066e2bb8",
+        "decodedDuration": 107.2
+      },
+      {
+        "sourceFingerprint": "08342dd9f785aead3cb92d1a22c202deb213340ae325e887d597504e0c503fa6",
+        "sourceAudioHash": "d0fa357d097bce3359ed90acf87967c5ce3807e36be644164279b8f0c116d151",
+        "sourceBytes": 5549158,
+        "audioHash": "d177d27075db866461c669e3baac0f62e9c38540744a991fe8b7a016413288ba",
+        "bytes": 924525,
+        "decodedPCMHash": "0110576f9b3ecafc3023976955bb115b240e2bfc6aa8fc556b23d12040a236a9",
+        "decodedDuration": 115.48
+      },
+      {
+        "sourceFingerprint": "580b1f96872150497d30f15eff438b34b094d64aaf7a8e48d6f49a8b0c1d17f7",
+        "sourceAudioHash": "b3c4483023d6a751f5d222241c8978d703c773fe5cf2be2e4e1a5f8261d89258",
+        "sourceBytes": 5167078,
+        "audioHash": "2005b054235f39bf50a3b9a1e02c3f1e361ce935cba6c023a310dfac84f5a5a9",
+        "bytes": 860781,
+        "decodedPCMHash": "8d48f3b5ec3aff420c1bb523e4f2342f9d62c9de34b10c0a93add2f9ca354d28",
+        "decodedDuration": 107.52
+      },
+      {
+        "sourceFingerprint": "2d849e411f03cb878fa90cc15aefcaada25bc67d47b30cecc52284db780745dc",
+        "sourceAudioHash": "d28fd93fa33ffaeba2af718a968a6d7c421b2047cb2d5523b4acfd5c09cd6936",
+        "sourceBytes": 5946598,
+        "audioHash": "54c3da581a4cc68b9ac8ee3aa32b4a8e301472672b7d39ec74dd333b835c99de",
+        "bytes": 990765,
+        "decodedPCMHash": "cafda14b88a47d15c11d517d84882720b50cd8cf884aeeeab1c7529aa8cbf9cb",
+        "decodedDuration": 123.76
+      },
+      {
+        "sourceFingerprint": "dee3b4b4e632205df02b0379014daf86db47c51b42046a9e117346b1da3d9a04",
+        "sourceAudioHash": "3a1b6a998e3c9f9877705b4d6a9a3247410d6da59c62ba8f474ba0576eb424f9",
+        "sourceBytes": 5531876,
+        "audioHash": "a195354f24ff5a42c53869bbf43470601f29368d843dbc846d99aaf0d14472f3",
+        "bytes": 921645,
+        "decodedPCMHash": "6dde27824ed48f84051ab5b28c85895a4df1a55f6563401f82de6301845326d8",
+        "decodedDuration": 115.12
+      },
+      {
+        "sourceFingerprint": "ce2f262fe1cfd6fa5bf22c01a3f1e65b9b3e1dfd4a3a1bf774e29ca4f3c26cb8",
+        "sourceAudioHash": "770ba72cfbcb5745ca144c3d145f695b3c6b09c1f373c232789882b6f97e3a2b",
+        "sourceBytes": 3164516,
+        "audioHash": "73469fc53cb8eebb1b97fed86df425a632daa29569b3780d88b886554af21d1e",
+        "bytes": 527085,
+        "decodedPCMHash": "707e1918580ade1385b1adef3523c216415eb5b5b2fee3a7e25eacc1e64a7a08",
+        "decodedDuration": 65.8
+      }
+    ]
+  }
+}

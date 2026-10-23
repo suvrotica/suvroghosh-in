@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "segmentation": "bounded-6000-v2",
+  "textHash": "4924bf10d9edce57b74b583dde88dab44104355c3de534e3d5402b40d094879d",
+  "fingerprint": "2c917abf61c4635ab0081d142961daeae6c8e297f1f8671031820601a1b2b544",
+  "language": "en-US",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "achird",
+  "style": "Warm, clear editorial narration in natural US English. Relaxed pacing, natural sentence emphasis, and sensible pauses. Preserve Bengali pronunciation in Bengali passages. Read the transcript verbatim.",
+  "format": "audio/wav",
+  "title": "The Piano That Forgives: Painting Jazz with Probability",
+  "articlePath": "/blog/visualizations/the-piano-that-forgives",
+  "generatedAt": "2026-10-23T13:58:52.161Z",
+  "totalDuration": 818.72,
+  "segments": [
+    {
+      "src": "/audio/articles/the-piano-that-forgives/88f8a125d6a3314a8383748e0e8da4744961a66343feab2a5fb5063666dab0b6.mp3",
+      "duration": 400.2,
+      "textStart": 0,
+      "textEnd": 5348
+    },
+    {
+      "src": "/audio/articles/the-piano-that-forgives/cd88ef96a944977b404a0b0f439dd989e2712238dc03b289d991955791fc5897.mp3",
+      "duration": 335.76,
+      "textStart": 5348,
+      "textEnd": 10907
+    },
+    {
+      "src": "/audio/articles/the-piano-that-forgives/61d2661293cc2bcd989910d0bf43512dc6eadb771475a869d1b646727ade609e.mp3",
+      "duration": 82.76,
+      "textStart": 10907,
+      "textEnd": 12223
+    }
+  ],
+  "delivery": {
+    "version": 1,
+    "format": "audio/mpeg",
+    "codec": "mp3",
+    "bitrate": 64000,
+    "sampleRate": 24000,
+    "channels": 1,
+    "encoderVersion": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "encodedAt": "2026-10-23T14:06:04.181Z",
+    "segments": [
+      {
+        "sourceFingerprint": "da48e1342fb8eb782269f1415b66b8c0c6656648e93c2983cbdcece60c1c2a29",
+        "sourceAudioHash": "015d767802e1fccd4bd8445a9696e12d591d689b16d0e4e5efc1cbca75de6e97",
+        "sourceBytes": 19215716,
+        "audioHash": "88f8a125d6a3314a8383748e0e8da4744961a66343feab2a5fb5063666dab0b6",
+        "bytes": 3202221,
+        "decodedPCMHash": "2f6c4e4b64384f3931e87fe1fb8b0a4734f6dc0ed4c5228bb4feaf6523b2a802",
+        "decodedDuration": 400.2
+      },
+      {
+        "sourceFingerprint": "6932757df98c4cdea8c7a1f77176e88c659d6cc50645d9591312554301473784",
+        "sourceAudioHash": "e5b69d3b56c0960bd24c2802f57c57b7b7655f1514bdb077048671d0017c0df8",
+        "sourceBytes": 16122596,
+        "audioHash": "cd88ef96a944977b404a0b0f439dd989e2712238dc03b289d991955791fc5897",
+        "bytes": 2686701,
+        "decodedPCMHash": "e4b4bba2c8c079a955fbde12cf3775cc83e04819273f1d6a2ece15a20e27ffa1",
+        "decodedDuration": 335.76
+      },
+      {
+        "sourceFingerprint": "e59435447da416c456c427cf88d8825e4bf030854754034c6ef5f71b56604fe1",
+        "sourceAudioHash": "1d1c28c8f0757ca0c16b629180c1184234cfa7ac2f2f4072f6b3aba987917fad",
+        "sourceBytes": 3978596,
+        "audioHash": "61d2661293cc2bcd989910d0bf43512dc6eadb771475a869d1b646727ade609e",
+        "bytes": 662829,
+        "decodedPCMHash": "504a60dfe2c26273110259875622f624274fb506b92abaf10aa00edce8c01486",
+        "decodedDuration": 82.76
+      }
+    ]
+  }
+}
