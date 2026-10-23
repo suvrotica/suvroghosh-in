@@ -1,6 +1,6 @@
 {
   "sources": {
-    "scripts/render-http-tcp-assets.mjs": "eee06b358550639a0219a531040b64059aa98e4ed7803f48c5f7dfd386277b60",
+    "scripts/render-http-tcp-assets.mjs": "da955e602a68c99088e4203d811c8ef9b15cd933f53990c2768ca7923e3d4f22",
     "src/lib/components/visualizations/between-a-click-and-a-page/ClickToPage.svelte": "18681c8745f671842e14c873eedcf38dcb8b96bab5ec4f5be14bf62b6baec919",
     "src/lib/components/visualizations/between-a-click-and-a-page/RequestRuntime.svelte": "baebfaf5379ea11c087ff38ed2a51384d37edcbd905848860e5f907cc97333e6",
     "src/lib/components/visualizations/between-a-click-and-a-page/RequestScene.svelte": "5b51fce569647d41dc44f1abbe14074e0dca249e9fa1997c52a8a30899b0caa1",
@@ -10,7 +10,7 @@
     "src/lib/visualizations/between-a-click-and-a-page/geometry.json": "731e9a93cbbb874609fc74b757b901dcd37e0ace6fd49383e4f3130e5595dd58",
     "src/lib/visualizations/between-a-click-and-a-page/model.ts": "3c4a9b4275f1ff1b4a84043ae25bb64af8dae35f9da7a2af4757773d2da21a4b"
   },
-  "sourceHash": "61a20e788c03e807a7d318e0aab16795781080fbaea64c7ce9ff4e071a272da2",
+  "sourceHash": "62199cc6646790f7172738def86df1de519bf85037524cc39428878540401f89",
   "articlePath": "/blog/visualizations/between-a-click-and-a-page",
   "capturePath": "/blog/visualizations/between-a-click-and-a-page",
   "captureMode": "local-article-browser",

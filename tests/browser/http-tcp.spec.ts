@@ -34,14 +34,16 @@ test.afterEach(async ({ page }) => {
 
 async function ready(page: Page): Promise<Locator> {
 	await page.goto(route, { waitUntil: 'domcontentloaded' });
-	for (const name of ['Reject optional', 'Dismiss privacy confirmation']) {
-		const button = page.getByRole('button', { name, exact: true });
-		if (await button.isVisible()) await button.click();
-	}
 	await feature(page).scrollIntoViewIfNeeded();
 	const runtime = feature(page).locator('[data-network-ready]');
 	await expect(runtime).toBeVisible();
 	await expect(runtime).toHaveAttribute('data-still', 'true');
+	const privacyNote = page.locator('[data-privacy-note]');
+	await expect(privacyNote).toBeVisible();
+	await privacyNote
+		.getByRole('button', { name: 'Dismiss privacy notice without choosing', exact: true })
+		.click();
+	await expect(privacyNote).toBeHidden();
 	return runtime;
 }
 
@@ -314,24 +316,7 @@ for (const preference of ['stored Still mode', 'OS reduced motion'] as const) {
 test('desktop themes and phone mechanism crops produce readable deterministic evidence', async ({
 	page
 }) => {
-	await page.goto(route, { waitUntil: 'domcontentloaded' });
-	// The privacy UI hydrates independently of the lazy instrument. Wait for the
-	// real choice instead of checking visibility before that UI has appeared.
-	const rejectOptional = page.getByRole('button', { name: 'Reject optional', exact: true });
-	await expect(rejectOptional).toBeVisible();
-	await rejectOptional.click();
-	await expect(page.locator('[data-privacy-note]')).toBeHidden();
-	const confirmation = page.getByRole('button', {
-		name: 'Dismiss privacy confirmation',
-		exact: true
-	});
-	await expect(confirmation).toBeVisible({ timeout: 3000 });
-	await confirmation.click();
-	await expect(confirmation).toBeHidden();
-	await feature(page).scrollIntoViewIfNeeded();
-	const runtime = feature(page).locator('[data-network-ready]');
-	await expect(runtime).toBeVisible();
-	await expect(runtime).toHaveAttribute('data-still', 'true');
+	const runtime = await ready(page);
 	const capture = async (target: Locator, name: string) => {
 		await expect(
 			page.locator('[data-privacy-note], .privacy-status, .privacy-dialog[open]')

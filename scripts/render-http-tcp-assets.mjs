@@ -136,18 +136,14 @@ if (checking) {
 		const ready = shell.locator('[data-network-ready]').first();
 		await ready.waitFor({ timeout: 60_000 });
 		await shell.locator('[data-network-ready][data-still="true"]').waitFor({ timeout: 10_000 });
-		// A fresh browser context has no consent choice. Wait for the native notice
-		// rather than racing layout hydration and recording an obscured instrument.
+		// Wait for and dismiss the native notice without storing a preference. This
+		// keeps capture independent of the site's current media-choice button labels.
 		const privacyNote = page.locator('[data-privacy-note]');
 		await privacyNote.waitFor({ state: 'visible', timeout: 15_000 });
-		await privacyNote.getByRole('button', { name: 'Reject optional', exact: true }).click();
+		await privacyNote
+			.getByRole('button', { name: 'Dismiss privacy notice without choosing', exact: true })
+			.click();
 		await privacyNote.waitFor({ state: 'hidden' });
-		const confirmation = page.getByRole('button', {
-			name: 'Dismiss privacy confirmation',
-			exact: true
-		});
-		await confirmation.waitFor({ state: 'visible' });
-		await confirmation.click();
 		await page.evaluate(() => document.fonts.ready);
 		const capture = ready.locator('[data-network-poster]').first();
 		await capture.scrollIntoViewIfNeeded();
