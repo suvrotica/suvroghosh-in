@@ -768,7 +768,10 @@ leases make overlapping/restarted workers recoverable; expired claims can be ret
 skip comments already moderated, though an email in flight can arrive after a moderation action.
 
 After saving a guest comment, the server awaits one bounded alert attempt; a mail failure leaves
-the comment successful and its notification queued. A separately activated `pg_cron`/`pg_net`
+the comment successful and its notification queued. The submission form allows 30 seconds before
+aborting: its three-second body read and four five-second save/claim/mail/acknowledgement deadlines
+can use 23 seconds of server I/O budgets, with the remaining allowance for transport overhead.
+An uncertain result retains the existing retry UUID. A separately activated `pg_cron`/`pg_net`
 job, `deliver-post-comment-notifications`, POSTs `{}` every five minutes to the fixed production
 `/api/internal/comment-notifications` endpoint. The worker uses a private bearer secret matched
 between `COMMENTS_NOTIFICATION_SECRET` in Vercel Production and Supabase Vault, independently
