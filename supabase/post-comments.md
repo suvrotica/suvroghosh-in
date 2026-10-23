@@ -11,6 +11,12 @@ keys. It preserves their exact case, existing rows, grants and moderation rules.
 An installation that already has version `202610230001` needs only the second
 migration; check its migration ledger before applying either file.
 
+Email alerts additionally require
+`migrations/202610230003_post_comments_notifications.sql` after both versions above. It adds a
+private delivery outbox and trigger for newly inserted pending guest comments; it does not
+backfill existing submissions or change their approval state. The unattended retry job is a
+separate hosted activation step described under [Email notification outbox](#email-notification-outbox).
+
 The application also checks the configured owner before serving its admin routes.
 Every owner RPC independently requires a non-null `auth.uid()` present in
 `public.note_owners`. Owner calls use the authenticated session client; passing the
@@ -23,7 +29,7 @@ deployments; rolling back the site must not drop submitted comments.
 
 ## Access boundary
 
-All three tables (`post_comments`, `post_comment_history`, `post_comment_limits`)
+The comment tables (`post_comments`, `post_comment_history`, `post_comment_limits`)
 have forced RLS and no browser policies. Direct reads and writes are revoked from
 `anon`, `authenticated` and `service_role`, including the audit sequence. New
 functions revoke the default `PUBLIC` execute permission explicitly.
@@ -97,6 +103,73 @@ in batches of at most 100 on subsequent new-submission attempts. Expired rows ca
 remain while the site receives no new submissions; this is opportunistic cleanup,
 not a separately scheduled retention job.
 
+## Email notification outbox
+
+The additive notification migration creates `post_comment_notifications` with forced RLS,
+revokes direct access from `PUBLIC`, `anon`, `authenticated` and `service_role`, and exposes
+only bounded service-role claim/finish functions. Its trigger inserts an outbox row in the same
+transaction as each new guest comment whose state is pending. Unique comment identity means
+idempotent reader retries do not produce more notifications. Owner replies, moderation updates
+and historical comments are excluded. Delivery state does not copy reader names, comment text
+or email addresses.
+
+| RPC                                                                                         | Caller       | Result and boundary                                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `claim_post_comment_notifications(p_submission_id := null,p_limit := 1)`                    | Service role | At most five leased rows with `comment_id`, `submission_id`, `post_slug`, `created_at` and `lease_token`. An optional UUID narrows the immediate submission attempt. Claims skip comments no longer pending. |
+| `finish_post_comment_notification(p_comment_id,p_lease_token,p_sent,p_provider_id := null)` | Service role | Acknowledges the current lease's successful delivery or schedules retry after failure. Stale/mismatched lease tokens cannot acknowledge another claim.                                                       |
+
+A claim lasts two minutes. An unacknowledged claim can be recovered after its lease expires.
+Failed sends use exponential backoff starting at 60 seconds, capped at one hour. Success is
+recorded durably and prevents future claims. The worker uses a stable Resend idempotency key;
+provider deduplication lasts 24 hours, so a send accepted before a lost acknowledgement can
+rarely duplicate after that window. There is no automatic outbox deletion or arbitrary retry
+count that discards an unsent notification. A claim checks moderation state, but an in-flight
+email cannot be recalled if moderation happens after it was claimed.
+
+### Hosted scheduler activation
+
+1. Confirm migration version `202610230003` is absent before applying the exact tested SQL to
+   the intended project. Record its ledger entry and reload PostgREST's schema cache. Preserve
+   the outbox on application rollback.
+2. Reuse the existing production `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` and `CONTACT_TO_EMAIL`
+   values and contact-form defaults. Generate at least 32 random bytes for the new private
+   `COMMENTS_NOTIFICATION_SECRET`. Set it in Vercel Production and as the matching private
+   Supabase Vault secret expected by the activation SQL. Do not print or commit the value.
+3. Review and run [post-comments-notifications-cron.sql](post-comments-notifications-cron.sql)
+   through the privileged migration connection. It uses `pg_cron`, `pg_net` and Vault to register
+   `deliver-post-comment-notifications` every five minutes. Each call POSTs `{}` to the fixed
+   `https://www.suvroghosh.in/api/internal/comment-notifications` endpoint with its private
+   bearer value. Reuse/update this named job rather than creating duplicates.
+4. Deploy the matching application after environment changes. Dispatch requires
+   `VERCEL_ENV=production`; preview and local deployments cannot email the owner's real inbox.
+   The service endpoint uses bearer authentication, bounded streamed JSON, timeouts and local
+   admission. It accepts neither owner cookies nor caller-selected recipients or destinations,
+   processes at most five notifications, and returns only aggregate results without comment data.
+5. Inspect the hosted job schedule/active state and private permissions without exposing the
+   Vault value. Verify unauthorized calls cannot claim work. Confirm one new pending guest
+   comment creates one notification and a bounded live attempt reaches Resend, then separately
+   confirm inbox arrival with the owner. Use local isolated failure fixtures for retry tests.
+
+Supabase documents that `pg_net` temporarily stores decrypted request headers in its queue, where
+direct database LOGIN roles can read the bearer value; Vault protects its storage at rest, not
+that queued copy. Keep `net` outside the Data API's exposed schemas and restrict direct database
+logins to trusted operators. The scoped `COMMENTS_NOTIFICATION_SECRET` authorizes only bounded
+alert dispatch, and the endpoint returns aggregate counts without private queue content. Review
+the [documented pg_net header boundary](https://supabase.com/docs/guides/troubleshooting/database-roles-can-read-request-headers-queued-by-pg_net-ad6357)
+when activating or rotating this secret.
+
+The guest submission handler first saves the comment, then awaits one bounded attempt for that
+submission; a delivery failure does not undo the saved comment or change its normal 202 response.
+The scheduled endpoint is the recovery path after request termination, missing configuration or
+provider failure. Its fixed five-minute schedule is not a guaranteed inbox-arrival deadline.
+Email payloads use a static subject, the published article title, submission timestamp and fixed
+moderation-board URL; reader names and comment bodies are never sent to Resend for these alerts.
+No new public environment setting or browser mail client is introduced.
+
+Local SQL tests do not establish that the hosted third migration, extensions, Vault secret, job
+or Vercel environment are configured. Record those release observations separately; the schema
+and job setup files alone are not evidence of activation.
+
 ## Local SQL verification
 
 The integration test executes this migration in a real PostgreSQL WASM engine
@@ -108,6 +181,13 @@ persistence after restarting the engine. PGlite queues calls in one engine;
 the duplicate burst is not a multi-connection lock-contention benchmark. Hosted
 Supabase configuration, network behavior and live authentication require separate
 release verification.
+
+Notification coverage executes the additive migration and checks atomic outbox insertion,
+guest retry uniqueness, author/backfill exclusion, revoked browser/direct access, service-only
+claims, lease tokens/expiry, retry delays and acknowledgement, plus moderation suppression.
+Concurrent claim statements in a single PGlite engine do not establish multi-connection hosted
+contention behavior. Email provider calls and the hosted scheduler are not part of this isolated
+database suite.
 
 The runtime is intentionally temporary and is not a website dependency:
 

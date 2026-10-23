@@ -8,6 +8,7 @@ export default defineConfig({
 			'src/lib/server/comments/**/*.test.ts',
 			'src/routes/api/comments/**/*.test.ts',
 			'src/routes/api/notes/comments/**/*.test.ts',
+			'src/routes/api/internal/comment-notifications/**/*.test.ts',
 			'src/routes/notes/studio/comments/**/*.test.ts',
 			'src/lib/visualizations/memory-palace/**/*.test.ts',
 			'src/lib/visualizations/build-one-build-a-thousand/**/*.test.ts',

@@ -26,6 +26,10 @@ const legacySlugMigration = await readFile(
 	new URL('../migrations/202610230002_post_comments_legacy_slugs.sql', import.meta.url),
 	'utf8'
 );
+const notificationMigration = await readFile(
+	new URL('../migrations/202610230003_post_comments_notifications.sql', import.meta.url),
+	'utf8'
+);
 const ownerId = 'd66ad910-1e06-4bb7-8f0c-fcf107193d73';
 const outsiderId = '34c166ef-c242-41bb-a397-c185f263b1f1';
 
@@ -355,6 +359,352 @@ test(
 			await db.close();
 			assert.equal(path.dirname(dataDir), path.resolve(tmpdir()));
 			assert.ok(path.basename(dataDir).startsWith('post-comments-sql-'));
+			await rm(dataDir, { recursive: true, force: true });
+		}
+	}
+);
+
+test(
+	'comment notification SQL preserves transactional enqueue, private leases and retry delivery',
+	{
+		skip:
+			!PGlite &&
+			'Install the pinned temporary PGlite runtime and set COMMENTS_SQL_RUNTIME to execute SQL integration.'
+	},
+	async (t) => {
+		const dataDir = await mkdtemp(path.join(tmpdir(), 'comment-notifications-sql-'));
+		let db = new PGlite(dataDir);
+		try {
+			await db.exec(`
+      create role anon; create role authenticated; create role service_role bypassrls;
+      create schema auth;
+      create table auth.users (id uuid primary key);
+      create function auth.uid() returns uuid language sql stable as $$
+        select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
+      $$;
+      grant usage on schema auth to anon,authenticated,service_role;
+      create table public.note_owners (user_id uuid primary key references auth.users(id));
+    `);
+			await db.query('insert into auth.users values ($1),($2)', [ownerId, outsiderId]);
+			await db.query('insert into public.note_owners values ($1)', [ownerId]);
+			await db.exec(migration);
+			await db.exec(legacySlugMigration);
+			// Applying the additive migration must not email an existing moderation backlog.
+			const oldSubmission = randomUUID();
+			await db.query(
+				`insert into public.post_comments (submission_id,post_slug,display_name,body)
+         values ($1,'pre-notifications','Old reader','Old pending comment')`,
+				[oldSubmission]
+			);
+			await db.exec(notificationMigration);
+
+			const result = async (sql, params = []) => (await db.query(sql, params)).rows[0].result;
+			const as = async (role, actor = '') => {
+				await db.exec('reset role');
+				await db.query("select set_config('request.jwt.claim.sub',$1,false)", [actor]);
+				if (role) await db.exec(`set role ${role}`);
+			};
+			const claim = (submission = null, limit = 1) =>
+				result('select public.claim_post_comment_notifications($1,$2) as result', [
+					submission,
+					limit
+				]);
+			const finish = (id, token, sent, provider = null) =>
+				result('select public.finish_post_comment_notification($1,$2,$3,$4) as result', [
+					id,
+					token,
+					sent,
+					provider
+				]);
+			const submit = (id = randomUUID(), parent = null) =>
+				result('select public.submit_post_comment($1,$2,$3,$4,$5,$6) as result', [
+					'theFifthWindow',
+					parent,
+					'Private reader name',
+					'Private body must not reach the email worker.',
+					id,
+					randomUUID().replaceAll('-', '').repeat(2)
+				]);
+			const rowFor = async (submission) => {
+				await as();
+				return (
+					await db.query(
+						`select n.*, c.submission_id from public.post_comment_notifications n
+             join public.post_comments c on c.id=n.comment_id where c.submission_id=$1`,
+						[submission]
+					)
+				).rows[0];
+			};
+
+			await t.test('forced RLS and revoked direct access protect notification state', async () => {
+				const flags = (
+					await db.query(
+						"select relrowsecurity,relforcerowsecurity from pg_class where oid='public.post_comment_notifications'::regclass"
+					)
+				).rows[0];
+				assert.deepEqual(flags, { relrowsecurity: true, relforcerowsecurity: true });
+				for (const role of ['anon', 'authenticated', 'service_role']) {
+					await as(role, role === 'authenticated' ? ownerId : '');
+					await assert.rejects(
+						db.query('select * from public.post_comment_notifications'),
+						/permission denied/
+					);
+					await assert.rejects(
+						db.query('insert into public.post_comment_notifications (comment_id) values ($1)', [
+							randomUUID()
+						]),
+						/permission denied/
+					);
+					await assert.rejects(
+						db.query('update public.post_comment_notifications set sent_at=clock_timestamp()'),
+						/permission denied/
+					);
+					await assert.rejects(
+						db.query('select public.enqueue_post_comment_notification()'),
+						/permission denied/
+					);
+					if (role !== 'service_role') {
+						await assert.rejects(claim(), /permission denied/);
+						await assert.rejects(finish(randomUUID(), randomUUID(), true), /permission denied/);
+					}
+				}
+				await as('authenticated', outsiderId);
+				await assert.rejects(claim(), /permission denied/);
+			});
+
+			let root;
+			const submission = randomUUID();
+			await t.test(
+				'enqueue is atomic, does not backfill, and deduplicates submission retries',
+				async () => {
+					await as('service_role');
+					assert.deepEqual(await claim(oldSubmission), []);
+					assert.equal(await submit(submission), 'pending');
+					assert.equal(await submit(submission), 'pending');
+					root = await rowFor(submission);
+					assert.ok(root);
+					assert.equal(root.attempts, 0);
+					assert.equal(root.sent_at, null);
+					assert.equal(
+						(await db.query('select count(*)::integer as n from public.post_comment_notifications'))
+							.rows[0].n,
+						1
+					);
+					await db.exec('begin');
+					await db.query(
+						`insert into public.post_comments (submission_id,post_slug,display_name,body)
+           values ($1,'rolled-back','Reader','Rolled back transaction')`,
+						[randomUUID()]
+					);
+					assert.equal(
+						(await db.query('select count(*)::integer as n from public.post_comment_notifications'))
+							.rows[0].n,
+						2
+					);
+					await db.exec('rollback');
+					assert.equal(
+						(await db.query('select count(*)::integer as n from public.post_comment_notifications'))
+							.rows[0].n,
+						1
+					);
+				}
+			);
+
+			await t.test(
+				'claim excludes private content, prevents overlap, and validates bounds',
+				async () => {
+					await as('service_role');
+					for (const limit of [null, 0, 6, -1])
+						await assert.rejects(claim(null, limit), /invalid_notification_claim/);
+					const claimed = await claim(submission);
+					assert.equal(claimed.length, 1);
+					assert.deepEqual(
+						Object.keys(claimed[0]).sort(),
+						['comment_id', 'submission_id', 'post_slug', 'created_at', 'lease_token'].sort()
+					);
+					assert.equal(claimed[0].post_slug, 'theFifthWindow');
+					assert.equal(claimed[0].submission_id, submission);
+					assert.ok(!JSON.stringify(claimed).includes('Private'));
+					root.lease_token = claimed[0].lease_token;
+					// Queued single-engine calls verify persisted leases, not multi-connection lock throughput.
+					assert.deepEqual(await Promise.all([claim(submission), claim(submission)]), [[], []]);
+					assert.deepEqual(await claim(randomUUID()), []);
+					const stored = await rowFor(submission);
+					assert.ok(new Date(stored.leased_until).getTime() - Date.now() > 110000);
+					assert.equal(stored.attempts, 1);
+				}
+			);
+
+			await t.test(
+				'token-checked failures back off and expired leases reject stale acknowledgements',
+				async () => {
+					await as('service_role');
+					assert.equal(await finish(root.comment_id, randomUUID(), true, 'forged'), false);
+					assert.equal(await finish(root.comment_id, root.lease_token, false), true);
+					assert.deepEqual(await claim(submission), []);
+					let stored = await rowFor(submission);
+					assert.equal(stored.lease_token, null);
+					assert.equal(stored.leased_until, null);
+					assert.ok(new Date(stored.due_at).getTime() - Date.now() > 50000);
+					assert.ok(new Date(stored.due_at).getTime() - Date.now() <= 60000);
+					await db.query(
+						"update public.post_comment_notifications set due_at=clock_timestamp()-interval '1 second' where comment_id=$1",
+						[root.comment_id]
+					);
+					await as('service_role');
+					const second = (await claim(submission))[0];
+					assert.notEqual(second.lease_token, root.lease_token);
+					await as();
+					await db.query(
+						"update public.post_comment_notifications set leased_until=clock_timestamp()-interval '1 second' where comment_id=$1",
+						[root.comment_id]
+					);
+					await as('service_role');
+					const reclaimed = (await claim(submission))[0];
+					assert.notEqual(reclaimed.lease_token, second.lease_token);
+					assert.equal(await finish(root.comment_id, second.lease_token, true, 'stale'), false);
+					for (const provider of ['', 'x'.repeat(201), 'bad\nprovider'])
+						await assert.rejects(
+							finish(root.comment_id, reclaimed.lease_token, true, provider),
+							/invalid_notification_result/
+						);
+					await assert.rejects(
+						finish(null, reclaimed.lease_token, true),
+						/invalid_notification_result/
+					);
+					await assert.rejects(finish(root.comment_id, null, true), /invalid_notification_result/);
+					await assert.rejects(
+						finish(root.comment_id, reclaimed.lease_token, null),
+						/invalid_notification_result/
+					);
+					assert.equal(
+						await finish(root.comment_id, reclaimed.lease_token, true, 'resend-test-id'),
+						true
+					);
+					assert.equal(
+						await finish(root.comment_id, reclaimed.lease_token, true, 'duplicate'),
+						false
+					);
+					assert.deepEqual(await claim(submission), []);
+					stored = await rowFor(submission);
+					assert.equal(stored.attempts, 3);
+					assert.equal(stored.provider_id, 'resend-test-id');
+					assert.ok(stored.sent_at);
+				}
+			);
+
+			await t.test('owner replies never enqueue and reader replies each enqueue once', async () => {
+				await as('authenticated', ownerId);
+				assert.equal(
+					await result('select public.moderate_post_comment($1,$2,true) as result', [
+						root.comment_id,
+						'approved'
+					]),
+					'updated'
+				);
+				const authorSubmission = randomUUID();
+				assert.equal(
+					await result('select public.reply_to_post_comment($1,$2,$3) as result', [
+						root.comment_id,
+						'Author reply',
+						authorSubmission
+					]),
+					'approved'
+				);
+				assert.equal(await rowFor(authorSubmission), undefined);
+				const readerSubmission = randomUUID();
+				await as('service_role');
+				assert.equal(await submit(readerSubmission, root.comment_id), 'pending');
+				assert.equal(await submit(readerSubmission, root.comment_id), 'pending');
+				assert.ok(await rowFor(readerSubmission));
+			});
+
+			await t.test(
+				'moderated submissions are cancelled and are not requeued by later moderation',
+				async () => {
+					for (const status of ['approved', 'rejected', 'hidden']) {
+						const id = randomUUID();
+						await as('service_role');
+						assert.equal(await submit(id), 'pending');
+						const stored = await rowFor(id);
+						await as('authenticated', ownerId);
+						assert.equal(
+							await result('select public.moderate_post_comment($1,$2,true) as result', [
+								stored.comment_id,
+								status
+							]),
+							'updated'
+						);
+						await as('service_role');
+						assert.deepEqual(await claim(id), []);
+						assert.ok((await rowFor(id)).cancelled_at);
+						await as('authenticated', ownerId);
+						assert.equal(
+							await result('select public.moderate_post_comment($1,$2,true) as result', [
+								stored.comment_id,
+								'pending'
+							]),
+							'updated'
+						);
+						await as('service_role');
+						assert.equal(await submit(id), 'pending');
+						assert.deepEqual(await claim(id), []);
+					}
+				}
+			);
+
+			await t.test(
+				'bounded batches and saturated retry delays survive prolonged delivery failure',
+				async () => {
+					await as('service_role');
+					for (let i = 0; i < 7; i++) assert.equal(await submit(), 'pending');
+					const batch = await claim(null, 5);
+					assert.equal(batch.length, 5);
+					const next = await claim(null, 5);
+					assert.equal(next.length, 3); // Includes the pending reader reply from the earlier test.
+					assert.equal(new Set([...batch, ...next].map((row) => row.comment_id)).size, 8);
+					const candidate = batch[0];
+					await as();
+					await db.query(
+						'update public.post_comment_notifications set attempts=1000000 where comment_id=$1',
+						[candidate.comment_id]
+					);
+					await as('service_role');
+					assert.equal(await finish(candidate.comment_id, candidate.lease_token, false), true);
+					const stored = await rowFor(candidate.submission_id);
+					const delay = new Date(stored.due_at).getTime() - Date.now();
+					assert.ok(delay > 3590000 && delay <= 3600000);
+					await db.query(
+						"update public.post_comment_notifications set due_at=clock_timestamp()-interval '1 second' where comment_id=$1",
+						[candidate.comment_id]
+					);
+					await as('service_role');
+					assert.equal((await claim(candidate.submission_id)).length, 1);
+					assert.equal((await rowFor(candidate.submission_id)).attempts, 1000000);
+				}
+			);
+			await t.test(
+				'a restarted database retains delivery acknowledgement and pending leases',
+				async () => {
+					await db.close();
+					db = new PGlite(dataDir);
+					await as('service_role');
+					assert.deepEqual(await claim(submission), []);
+					const stored = await rowFor(submission);
+					assert.equal(stored.provider_id, 'resend-test-id');
+					assert.ok(stored.sent_at);
+					const leased = (
+						await db.query(
+							'select count(*)::integer as n from public.post_comment_notifications where lease_token is not null'
+						)
+					).rows[0].n;
+					assert.equal(leased, 8);
+				}
+			);
+		} finally {
+			await db.close();
+			assert.equal(path.dirname(dataDir), path.resolve(tmpdir()));
+			assert.ok(path.basename(dataDir).startsWith('comment-notifications-sql-'));
 			await rm(dataDir, { recursive: true, force: true });
 		}
 	}

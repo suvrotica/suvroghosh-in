@@ -1,11 +1,19 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { RequestHandler } from '@sveltejs/kit';
 
-const mocks = vi.hoisted(() => ({ list: vi.fn(), submit: vi.fn(), rate: vi.fn() }));
+const mocks = vi.hoisted(() => ({
+	list: vi.fn(),
+	submit: vi.fn(),
+	rate: vi.fn(),
+	dispatch: vi.fn()
+}));
 vi.mock('$lib/server/comments/repository', () => ({
 	listPublicComments: mocks.list,
 	submitGuestComment: mocks.submit,
 	commentRateKey: mocks.rate
+}));
+vi.mock('$lib/server/comments/notifications', () => ({
+	dispatchCommentNotifications: mocks.dispatch
 }));
 
 const id = '10000000-0000-4000-8000-000000000001';
@@ -44,6 +52,7 @@ beforeEach(() => {
 	vi.resetModules();
 	vi.clearAllMocks();
 	mocks.submit.mockResolvedValue('pending');
+	mocks.dispatch.mockResolvedValue({ enabled: true, attempted: 1, sent: 1, failed: 0 });
 	mocks.rate.mockResolvedValue('a'.repeat(64));
 	mocks.list.mockResolvedValue({ comments: [], total: 0, commentCount: 0, page: 1, pageSize: 20 });
 });
@@ -74,6 +83,7 @@ describe('public moderated comment boundary', () => {
 			expect((await invoke('POST', JSON.stringify({ ...payload, postSlug }))).status).toBe(400);
 			expect(mocks.list).not.toHaveBeenCalled();
 			expect(mocks.submit).not.toHaveBeenCalled();
+			expect(mocks.dispatch).not.toHaveBeenCalled();
 		}
 	);
 	it('saves guest input as pending and never echoes a private comment', async () => {
@@ -84,7 +94,22 @@ describe('public moderated comment boundary', () => {
 			message: 'Your comment has been received and is awaiting approval.'
 		});
 		expect(mocks.submit).toHaveBeenCalledWith(payload, 'a'.repeat(64));
+		expect(mocks.dispatch).toHaveBeenCalledExactlyOnceWith(id);
+		expect(mocks.submit.mock.invocationCallOrder[0]).toBeLessThan(
+			mocks.dispatch.mock.invocationCallOrder[0]
+		);
 		expect(response.headers.get('cache-control')).toContain('no-store');
+	});
+	it('keeps a saved comment pending when the email service reports a caught delivery failure', async () => {
+		mocks.dispatch.mockResolvedValueOnce({ enabled: true, attempted: 1, sent: 0, failed: 1 });
+		const response = await invoke('POST');
+		expect(response.status).toBe(202);
+		expect(await response.json()).toEqual({
+			status: 'pending',
+			message: 'Your comment has been received and is awaiting approval.'
+		});
+		expect(mocks.submit).toHaveBeenCalledTimes(1);
+		expect(mocks.dispatch).toHaveBeenCalledExactlyOnceWith(id);
 	});
 	it('rejects forged owner and moderation fields', async () => {
 		for (const extra of [
@@ -95,6 +120,7 @@ describe('public moderated comment boundary', () => {
 		])
 			expect((await invoke('POST', JSON.stringify({ ...payload, ...extra }))).status).toBe(400);
 		expect(mocks.submit).not.toHaveBeenCalled();
+		expect(mocks.dispatch).not.toHaveBeenCalled();
 	});
 	it('requires the exact origin even if a spoofed fetch-site header says same-origin', async () => {
 		expect(
@@ -160,6 +186,12 @@ describe('public moderated comment boundary', () => {
 		expect(limited.headers.get('retry-after')).toBe('600');
 		mocks.submit.mockResolvedValueOnce('invalid_parent');
 		expect((await invoke('POST')).status).toBe(409);
+		expect(mocks.dispatch).not.toHaveBeenCalled();
+	});
+	it('does not start email delivery when comment persistence fails', async () => {
+		mocks.submit.mockRejectedValueOnce(new Error('private storage failure'));
+		expect((await invoke('POST')).status).toBe(503);
+		expect(mocks.dispatch).not.toHaveBeenCalled();
 	});
 	it('never exposes provider secrets when storage fails', async () => {
 		mocks.list.mockRejectedValue(new Error('connection contains PRIVATE_SECRET'));
@@ -184,5 +216,6 @@ describe('public moderated comment boundary', () => {
 		for (let n = 0; n < 60; n++) expect((await invoke('GET')).status).toBe(200);
 		expect((await invoke('GET')).status).toBe(429);
 		expect(mocks.list).toHaveBeenCalledTimes(60);
+		expect(mocks.dispatch).not.toHaveBeenCalled();
 	});
 });

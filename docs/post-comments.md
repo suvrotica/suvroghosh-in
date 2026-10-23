@@ -59,14 +59,29 @@ verifies the hosted SQL lifecycle, separately from application deployment and br
    once on another installation if its ledger entry is absent. It extends validation for eight existing mixed-case article
    filenames without changing their URLs, keys or existing comment data. These migrations do not
    create accounts or modify login settings.
-4. Deploy the application with that configuration. Environment changes require a fresh deployment.
+4. For new-comment email alerts, apply
+   [202610230003_post_comments_notifications.sql](../supabase/migrations/202610230003_post_comments_notifications.sql)
+   once after the first two versions, when its ledger entry is absent. It adds the private outbox
+   and service-only delivery RPCs without queueing existing comments. Reuse the contact form's
+   `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` and `CONTACT_TO_EMAIL`; the owner has selected the same
+   contact-form inbox. Configure one new private `COMMENTS_NOTIFICATION_SECRET` in Vercel
+   Production and the matching Supabase Vault scheduler secret, then activate
+   [the five-minute retry job](../supabase/post-comments-notifications-cron.sql). Follow the
+   [notification setup contract](../supabase/post-comments.md#email-notification-outbox) for
+   permissions, scheduler activation and verification. This document does not establish that the
+   third migration or hosted scheduler has been activated; record those release checks separately.
+5. Deploy the application with that configuration. Environment changes require a fresh deployment.
    Use the existing [owner sign-in](https://www.suvroghosh.in/notes/sign-in?returnTo=%2Fnotes%2Fstudio%2Fcomments), then open
    [comment moderation](https://www.suvroghosh.in/notes/studio/comments).
-5. Verify one bounded end-to-end flow: submit as a reader, confirm it is private, approve as owner,
+6. Verify one bounded end-to-end flow: submit as a reader, confirm it is private, approve as owner,
    refresh a separate reader session, publish an author reply, hide the parent and confirm the
    thread disappears on a fresh public read. Check pending rows cannot be retrieved publicly and
    non-owner sessions cannot access counts, exports or mutations. Remove test content through an
    authorised operator procedure if needed; the UI supplies moderation rather than deletion.
+   For alerts, confirm a single new pending guest submission queues one email to the contact
+   inbox with the correct article context and moderation link, while a retry does not create
+   another outbox row. Verify the job and bearer endpoint separately; a provider acceptance is
+   distinct from inbox delivery. Use isolated local tests for failure/retry fixtures.
 
 Keep service credentials private. The application calls reader-facing functions using the service
 role after validating the published Markdown registry; readers do not call Supabase directly.
@@ -76,8 +91,8 @@ Owner functions use the authenticated session and verify database owner membersh
 
 Open `/notes/studio/comments`, or choose **Comments** in Studio navigation. The navigation badge
 shows pending submissions and an unread marker. The board refreshes every 30 seconds while its
-tab is visible; the shared badge refreshes every 60 seconds. These are in-app alerts; email and
-push alerts are not implemented.
+tab is visible; the shared badge refreshes every 60 seconds. Production also queues email alerts
+for new pending reader comments and replies, using the existing contact-form inbox and sender.
 
 - **Pending** is the default queue. Filter by article or use Approved, Rejected, Hidden or All.
 - **Approve** publishes a reader comment. **Reject** keeps an unwanted submission private.
@@ -103,13 +118,45 @@ automatic retention policy for comments/history. Privacy removal requests can be
 [the contact form](https://www.suvroghosh.in/contact), identifying the article, display name and approximate posting date for
 operator review. Hiding cannot retract previously viewed text or downloaded exports.
 
+## Email alerts
+
+Each newly saved pending reader comment or reply queues one private notification. The subject is
+**A new comment is waiting for approval | SuvroGhosh.IN**. The email contains the article title,
+submission timestamp and a link to
+[the moderation board](https://www.suvroghosh.in/notes/studio/comments). It contains no reader
+display name or comment text. Open the board with your existing owner login to read and moderate.
+Author replies, changing a comment's status and comments saved before activation do not create
+new alerts.
+
+The submission handler awaits one bounded delivery attempt after saving the comment. If email
+delivery fails, the comment still succeeds and remains private in Pending. A Supabase job retries
+available notifications every five minutes, up to five per run. Attempts use a two-minute lease
+and exponential retry delay starting at 60 seconds, capped at one hour. A provider outage or a
+queue backlog can delay alerts; the schedule is not a delivery-time guarantee. Rows that have
+already been moderated are skipped when claimed, though an email already being sent can still
+arrive after a moderation action.
+
+Delivery runs only with Vercel's production environment marker; previews and local development
+do not email the real inbox. Missing provider or worker configuration leaves queued notifications
+for later recovery. Contact settings and the worker secret stay server-only. The worker has no
+cookie login or configurable recipient in its request.
+
+A stable Resend idempotency key suppresses repeated sends within its 24-hour provider window.
+Successful sends are acknowledged durably in Supabase. If Resend accepted a message but its
+acknowledgement was lost, recovery after that window can rarely produce a duplicate. Email
+acceptance does not guarantee arrival in the inbox or prevent spam filtering. Notification state
+persists independently of site deployments; do not remove it when rolling back application code.
+
 ## Validation and maintenance
 
 Run `npm run comments:test` for validation, public/owner API boundaries, page access and repository
 deadlines. Run `npm run comments:sql:test` with the optional temporary PostgreSQL WASM runtime
 described in the [SQL verification instructions](../supabase/post-comments.md#local-sql-verification)
 to execute the actual migration, role grants, moderation flows, durable caps and persistence
-checks. Without that runtime, the SQL suite explicitly skips. For `npm run comments:browser:test`,
+checks. Include the notification migration when verifying outbox creation, claim/acknowledgement
+leases, retries and moderation suppression. Application tests cover minimal email payloads,
+production gating, bounded provider failure and the private worker boundary without real email
+delivery. Without the SQL runtime, the SQL suite explicitly skips. For `npm run comments:browser:test`,
 install that pinned temporary runtime at `.codex-artifacts/comments-sql-runtime`, then run the
 command with local Chrome available (or set `PLAYWRIGHT_CHANNEL` to an installed browser). The
 test configuration builds the site, starts a loopback production preview and a test-only
