@@ -534,6 +534,105 @@ test('no-work routine run makes no production verification requests or smoke-bro
 	assert.equal(f.events.includes('push'), false);
 });
 
+test('manual publication recovery verifies all pending saved audio and records a receipt without authoring', async (t) => {
+	const f = await fixture(t);
+	await f.delivery('recovered-story');
+	await f.delivery('new-story');
+	await f.source('recovered-story');
+	f.data.publication = { commit: NEXT, slugs: ['recovered-story', 'new-story'], status: 'pushed' };
+	f.env.NARRATION_RESUME_PUBLICATION = 'true';
+	f.env.NARRATION_HOSTED_ENABLED = 'false';
+	const result = await runGithubNarration(f);
+	assert.equal(result.resumePublication, true);
+	assert.deepEqual(
+		f.events.filter((event) => event.startsWith('verify:')),
+		[`verify:${BASE}:recovered-story,new-story`]
+	);
+	assert.deepEqual(f.data.publication, {
+		commit: BASE,
+		slugs: ['recovered-story', 'new-story'],
+		status: 'verified'
+	});
+	assert.ok(
+		f.events.indexOf(`verify:${BASE}:recovered-story,new-story`) <
+			f.events.indexOf('publication:verified')
+	);
+	for (const event of [
+		'generate',
+		'compress:',
+		'saveQuota',
+		'saveCheckpoint',
+		'prune',
+		'buildAndCommit',
+		'push',
+		'probe'
+	])
+		assert.equal(
+			f.events.some((value) => value.startsWith(event)),
+			false,
+			event
+		);
+	assert.equal(f.sources.has('recovered-story'), true);
+});
+
+test('publication receipt persistence failure never prunes or writes a replacement checkpoint', async (t) => {
+	const f = await fixture(t);
+	await f.delivery('recovered-story');
+	const publication = { commit: NEXT, slugs: ['recovered-story'], status: 'pushed' };
+	f.data.publication = publication;
+	f.env.NARRATION_RESUME_PUBLICATION = 'true';
+	f.state.savePublication = async () => {
+		throw new Error('Uncertain receipt acknowledgement.');
+	};
+	await assert.rejects(runGithubNarration(f), /Uncertain receipt acknowledgement/u);
+	assert.ok(f.events.includes(`verify:${BASE}:recovered-story`));
+	assert.equal(f.data.publication, publication);
+	for (const event of ['generate', 'saveQuota', 'saveCheckpoint', 'prune'])
+		assert.equal(f.events.includes(event), false, event);
+});
+
+test('publication recovery preserves the whole pending receipt on missing, stale or failed delivery', async (t) => {
+	for (const failure of ['missing', 'stale', 'live']) {
+		const f = await fixture(t);
+		await f.delivery('recovered-story');
+		const publication = { commit: NEXT, slugs: ['recovered-story', 'new-story'], status: 'pushed' };
+		f.data.publication = publication;
+		f.env.NARRATION_RESUME_PUBLICATION = 'true';
+		if (failure !== 'missing') await f.delivery('new-story');
+		if (failure === 'stale') f.articles.get('new-story').text += ' Changed prose.';
+		if (failure === 'live')
+			f.dependencies.verify = async () => {
+				throw new Error('Live transcript mismatch.');
+			};
+		await assert.rejects(runGithubNarration(f), /stale or incomplete|Live transcript mismatch/u);
+		assert.equal(f.data.publication, publication);
+		for (const event of [
+			'generate',
+			'saveQuota',
+			'saveCheckpoint',
+			'prune',
+			'publication:verified'
+		])
+			assert.equal(f.events.includes(event), false, `${failure}: ${event}`);
+	}
+});
+
+test('publication recovery rejects automatic, mixed-mode and absent pending targets', async (t) => {
+	for (const mode of ['schedule', 'verify-only', 'probe', 'absent', 'verified']) {
+		const f = await fixture(t);
+		f.env.NARRATION_RESUME_PUBLICATION = 'true';
+		f.data.publication = { commit: BASE, slugs: ['recovered-story'], status: 'pushed' };
+		if (mode === 'schedule') f.env.GITHUB_EVENT_NAME = 'schedule';
+		if (mode === 'verify-only') f.env.NARRATION_VERIFY_ONLY = 'true';
+		if (mode === 'probe') f.env.NARRATION_DEPLOYMENT_PROBE = 'true';
+		if (mode === 'absent') f.data.publication = null;
+		if (mode === 'verified') f.data.publication.status = 'verified';
+		await assert.rejects(runGithubNarration(f), /explicit manual dispatch|No pending narration/u);
+		assert.equal(f.events.includes('generate'), false);
+		assert.equal(f.events.includes('saveCheckpoint'), false);
+	}
+});
+
 test('routine run retries an unverified published delivery without unrelated initial articles', async (t) => {
 	const f = await fixture(t);
 	await f.delivery('recovered-story');

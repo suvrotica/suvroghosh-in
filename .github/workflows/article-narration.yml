@@ -14,6 +14,10 @@ on:
         description: 'One-time manual verify-only test: push one empty bot commit and verify Vercel deploys it'
         type: boolean
         default: false
+      resume_publication:
+        description: 'Verify only the pending saved publication and record its receipt; no Google requests or new audio'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -28,7 +32,7 @@ jobs:
       github.repository == 'suvrotica/suvroghosh-in' &&
       github.ref == 'refs/heads/main' &&
       (vars.NARRATION_HOSTED_ENABLED == 'true' ||
-       (github.event_name == 'workflow_dispatch' && inputs.verify_only == true))
+       (github.event_name == 'workflow_dispatch' && (inputs.verify_only == true || inputs.resume_publication == true)))
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     permissions:
@@ -89,6 +93,7 @@ jobs:
           NARRATION_PRIORITY_SLUGS: ${{ vars.NARRATION_PRIORITY_SLUGS }}
           NARRATION_VERIFY_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_only == true && 'true' || 'false' }}
           NARRATION_DEPLOYMENT_PROBE: ${{ github.event_name == 'workflow_dispatch' && inputs.deployment_probe == true && 'true' || 'false' }}
+          NARRATION_RESUME_PUBLICATION: ${{ github.event_name == 'workflow_dispatch' && inputs.resume_publication == true && 'true' || 'false' }}
           GEMINI_TTS_FREE_TIER_CONFIRMED: 'true'
           GEMINI_TTS_MODEL: gemini-3.8-flash-tts
           GEMINI_TTS_VOICE: achird

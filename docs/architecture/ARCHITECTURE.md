@@ -94,7 +94,7 @@ flowchart LR
     Author["Local operator"] --> Ledger["Pacific-day reservations; 10 calls/day, 65-second spacing"]
     HostedAuthor["Daily main-only GitHub Actions authoring"] --> Priority["Validate optional priority slugs / skip current delivery"]
     Priority --> Ledger
-    Ledger --> State["Hosted metadata: CAS fast-forward state branch; site deployment disabled"]
+    Ledger --> State["Hosted metadata: acknowledged non-forced fast-forward state updates; site deployment disabled"]
     State --> Checkpoints["Two bounded AES-256-GCM checkpoint release assets"]
     Ledger --> Google["Gemini Developer API; Achird US English narrator"]
     Google --> SourcesAudio["Ignored WAV authoring sources; local or ephemeral runner"]
@@ -102,6 +102,7 @@ flowchart LR
     SourcesAudio --> EncodeAudio["Authoring-only FFmpeg compression; 64 kbps mono MP3"]
     EncodeAudio --> Audio["Complete delivery manifests and content-hashed MP3"]
     Audio --> PublishAudio["Main/Vercel release; verify before WAV retirement; save final checkpoint once"]
+    Recovery["Manual pending-publication recovery; no synthesis"] --> PublishAudio
     PublishAudio --> Static
     Browser --> Speech["Shared article player; device-voice fallback"]
     Audio --> ManifestPaths["Build-time saved-manifest path registry"]
@@ -1076,10 +1077,18 @@ excluded from delivery. Missing/stale audio falls back to browser
 speech, preferring US English and permitting user voice selection. Playback and speed changes
 reuse saved audio; builds, hydration and visitor actions never synthesize through Google.
 
+Changing non-prose displays can declare an explicit plain-text `data-tts-text` reading alias.
+The shared extractor uses that authored wording instead of the display's children, while all
+existing exclusion rules still take precedence. The piano uses its original server-rendered
+wording for changing light, musical-setting and probability/status labels. Its visible controls
+remain live, but hydration and interaction cannot change the saved transcript hash. Unannotated
+authored prose is still read and hashed normally; this additive annotation preserves the
+existing extraction version and the already-generated piano audio without rewriting manifests.
+
 The 23 October manifest-availability correction makes `loadPublishedBlogPost` derive
 `narrationAvailable` from a server-only Vite glob of committed delivery-manifest paths. The
 shared player reacts to that boolean and the canonical loaded slug on each navigation. Articles
-without a saved manifest, including the piano article, select device speech without a manifest
+without a saved manifest select device speech without a manifest
 request. Existing paths still undergo the bounded fetch, streamed-size limit, timeout and
 current-transcript validation before saved audio is offered; presence does not imply validity.
 Only the slug and availability flag enter page data. The registry requires no runtime filesystem
@@ -1100,6 +1109,14 @@ failed and interrupted attempts, cap invocations together at ten calls per Pacif
 next day. Corrupt state and clock rollback stop generation without a paid model/provider fallback.
 Local and hosted ledgers cannot observe one another or other clients; do not generate concurrently
 from independent ledgers. Interactive games are excluded from the prose queue.
+
+The 24 October checkpoint correction accepts a state write only when GitHub's successful PATCH
+response identifies the exact candidate commit. It does not use an immediately following ref GET
+as the acknowledgement: that read can still return the old revision after an accepted write.
+A rejected, interrupted or malformed acknowledgement latches the state client against further
+mutation and checkpoint upload for that run. It never force-updates, blindly retries a write,
+or authorizes another provider request from uncertain state. A new hosted run restores the
+authoritative branch and encrypted checkpoint before continuing.
 
 `.github/workflows/article-narration.yml` invokes `narration:hosted` on standard GitHub-hosted
 Ubuntu 24.04 at 08:45 UTC daily or by manual dispatch, from `main` only. It has no PR trigger and
@@ -1145,6 +1162,14 @@ the verified publication receipt intact.
 A no-work run does not launch production verification. Explicit `verify_only`
 and deployment probes retain the three initial smoke fixtures. All narration browser contexts
 block service workers, preventing verification from warming unrelated offline assets.
+An explicit manual `resume_publication` dispatch instead checks only every slug in the pending
+publication, using current committed manifests and the exact current `main` production deployment.
+All pending deliveries must remain complete and match the current transcript. Only after the
+deployment, transcript, MP3 checksums and browser playback pass does it record a verified receipt
+for that commit. This recovery mode performs no Google transport, quota reservation, compression,
+site publication, source pruning or replacement checkpoint upload; saved audio and pending source
+snapshots remain intact. It cannot be combined with the bootstrap verification/probe modes or
+run from the schedule. The existing hosted workflow remains the sole authoring owner.
 Publication is bounded at 6 GiB of delivery audio and 8 GiB of site payload.
 These caps cannot measure account-wide retained deployment storage or transfer, and no account
 read credential is granted to do so. The limits sit below the documented 10 GiB Hobby

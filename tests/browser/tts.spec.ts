@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { createHash } from 'node:crypto';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { extractNarration } from '../../src/lib/components/blog/tts/narration.mjs';
 
@@ -229,6 +229,115 @@ test('extraction respects leaf order and exclusions without losing Bengali or th
 	);
 });
 
+test('authored UI narration aliases are plain text and never override exclusions or article prose', async ({
+	page
+}) => {
+	await page.setContent(`<article data-article-reading-region><p>Authored paragraph.</p>
+		<div data-tts-text="Initial &lt;em&gt;display&lt;/em&gt;."><p>Changing display.</p></div>
+		<p hidden data-tts-text="Still hidden">Hidden display.</p>
+		<button data-tts-text="Still excluded">A control.</button><p>The final sentence.</p></article>`);
+	const text = await page.locator('[data-article-reading-region]').evaluate(extractNarration);
+	expect(text).toBe('Authored paragraph.\n\nInitial <em>display</em>.\n\nThe final sentence.');
+	await page
+		.locator('[data-tts-text]')
+		.first()
+		.evaluate((element) => {
+			element.textContent = 'A new live display.';
+		});
+	expect(await page.locator('[data-article-reading-region]').evaluate(extractNarration)).toBe(text);
+	await page
+		.locator('article > p')
+		.first()
+		.evaluate((element) => {
+			element.textContent = 'An edited authored paragraph.';
+		});
+	expect(await page.locator('[data-article-reading-region]').evaluate(extractNarration)).not.toBe(
+		text
+	);
+});
+
+test('saved piano narration retains its SSR transcript through hydration, motion and musical controls', async ({
+	page,
+	browser
+}) => {
+	const saved = JSON.parse(
+		readFileSync(
+			join(process.cwd(), 'static/audio/articles/the-piano-that-forgives/manifest.json'),
+			'utf8'
+		)
+	);
+	const requests = { audio: 0, provider: 0 };
+	page.on('request', (request) => {
+		if (/generativelanguage\.googleapis\.com|texttospeech\.googleapis\.com/u.test(request.url()))
+			requests.provider++;
+	});
+	await page.route('**/audio/articles/**', async (route) => {
+		if (route.request().url().endsWith('/manifest.json')) await route.fulfill({ json: saved });
+		else {
+			requests.audio++;
+			await route.abort();
+		}
+	});
+	await page.goto(pianoArticle);
+	const piano = page.locator('[data-piano-root]');
+	await expect(piano.getByRole('button', { name: /^Enable sound/ })).toBeEnabled();
+	const privacy = page.getByRole('button', {
+		name: 'Dismiss privacy notice without choosing',
+		exact: true
+	});
+	if (await privacy.isVisible()) await privacy.click();
+	await expect(page.locator(playerSelector)).toContainText('Google narration');
+	const noJsPage = await browser.newPage({ javaScriptEnabled: false, serviceWorkers: 'block' });
+	let serverRendered: string;
+	try {
+		await noJsPage.goto(new URL(pianoArticle, page.url()).href);
+		serverRendered = await noJsPage
+			.locator('[data-article-reading-region]')
+			.evaluate(extractNarration);
+	} finally {
+		await noJsPage.close();
+	}
+	const hash = (text: string) => createHash('sha256').update(text).digest('hex');
+	expect(hash(serverRendered)).toBe(saved.textHash);
+	expect(await page.locator('[data-article-reading-region]').evaluate(extractNarration)).toBe(
+		serverRendered
+	);
+	await piano.locator('.piano-workbench > summary').click();
+	await piano.getByRole('button', { name: /Try the space between/ }).click();
+	await expect(piano.locator('[data-decision-reason]')).toBeVisible();
+	await piano.getByLabel('Temperature', { exact: true }).evaluate((element) => {
+		(element as HTMLInputElement).value = '1.25';
+		element.dispatchEvent(new Event('input', { bubbles: true }));
+	});
+	await piano.getByRole('button', { name: 'Higher computer-keyboard octave', exact: true }).click();
+	await piano.getByLabel('Painting and harmony preset', { exact: true }).selectOption('1');
+	await piano.getByRole('button', { name: 'Raw', exact: true }).click();
+	await piano.locator('[data-piano-key="61"]').click();
+	await page.evaluate(() => {
+		document.documentElement.dataset.motion = 'still';
+	});
+	await expect(piano).toHaveClass(/still/);
+	expect(await page.locator('[data-article-reading-region]').evaluate(extractNarration)).toBe(
+		serverRendered
+	);
+	await page.evaluate(() => {
+		document.documentElement.dataset.motion = 'gentle';
+	});
+	await expect(piano).not.toHaveClass(/still/);
+	expect(await page.locator('[data-article-reading-region]').evaluate(extractNarration)).toBe(
+		serverRendered
+	);
+	await page
+		.getByRole('heading', { name: 'A small act of forgiveness', exact: true })
+		.evaluate((element) => {
+			element.textContent += ' An editorial change.';
+		});
+	expect(
+		hash(await page.locator('[data-article-reading-region]').evaluate(extractNarration))
+	).not.toBe(saved.textHash);
+	expect(requests).toEqual({ audio: 0, provider: 0 });
+});
+
 test('saved Google audio is lazy and supports pause, resume, speed, seeking, completion and replay', async ({
 	page
 }) => {
@@ -350,23 +459,25 @@ test('an asynchronously loaded device voice list selects US English', async ({ p
 	expect(await page.evaluate(() => window.__ttsTest.speech[0].voice)).toBe('test-us');
 });
 
-test('piano skips absent narration on load, reload and client navigation while saved audio remains available', async ({
+test('an unrecorded article skips absent narration on load, reload and client navigation while saved audio remains available', async ({
 	page
 }) => {
+	const unrecordedSlug = 'ashtami-approach';
+	const unrecordedArticle = longArticle;
 	test.skip(
-		existsSync(join(process.cwd(), 'static/audio/articles/the-piano-that-forgives/manifest.json')),
-		'Piano narration is now committed; the absent-delivery regression no longer applies.'
+		existsSync(join(process.cwd(), 'static/audio/articles', unrecordedSlug, 'manifest.json')),
+		'This article now has committed narration; select another absent-delivery fixture.'
 	);
 	const requests = await mockNarration(page);
-	const pianoRequests: string[] = [];
+	const unrecordedRequests: string[] = [];
 	page.on('request', (request) => {
-		if (new URL(request.url()).pathname.startsWith('/audio/articles/the-piano-that-forgives/'))
-			pianoRequests.push(request.url());
+		if (new URL(request.url()).pathname.startsWith(`/audio/articles/${unrecordedSlug}/`))
+			unrecordedRequests.push(request.url());
 	});
 	const player = page.locator(playerSelector);
 	const fallbackDetail =
 		'Google narration is not available for this article. Device voice uses US English when available.';
-	await page.goto(pianoArticle);
+	await page.goto(unrecordedArticle);
 	await expect(player).toContainText(fallbackDetail);
 	await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toBeVisible();
 	expect(requests).toEqual({ manifest: 0, audio: 0, provider: 0 });
@@ -389,14 +500,14 @@ test('piano skips absent narration on load, reload and client navigation while s
 	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(1);
 	expect(await page.evaluate(() => window.__ttsTest.media[0].element.paused)).toBe(false);
 
-	await navigateArticle(page, pianoArticle);
+	await navigateArticle(page, unrecordedArticle);
 	await expect(player).toContainText(fallbackDetail);
 	await expect(player.getByRole('combobox', { name: 'Device voice', exact: true })).toBeVisible();
 	expect(await page.evaluate(() => window.__ttsTest.media[0].element.paused)).toBe(true);
 	await player.getByRole('button', { name: 'Listen to article', exact: true }).click();
 	await expect.poll(() => page.evaluate(() => window.__ttsTest.speech.length)).toBe(2);
 	expect(await page.evaluate(() => window.__ttsTest.media.length)).toBe(1);
-	expect(pianoRequests).toEqual([]);
+	expect(unrecordedRequests).toEqual([]);
 	expect(requests).toEqual({ manifest: 1, audio: 0, provider: 0 });
 });
 

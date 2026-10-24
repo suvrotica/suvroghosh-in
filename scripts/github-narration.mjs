@@ -530,7 +530,9 @@ async function browserSmoke(manifests, { origin = PUBLIC_ORIGIN, env = process.e
 			});
 			const text = await page.evaluate(extractNarration);
 			if (digest(text) !== manifest.textHash)
-				throw new Error('Live article transcript does not match its narration.');
+				throw new Error(
+					`Live article transcript does not match its narration for ${manifest.articlePath} (expected ${manifest.textHash}; received ${digest(text)}).`
+				);
 			const player = page.locator('[data-testid="article-tts"]');
 			await player
 				.getByText('Google narration', { exact: true })
@@ -832,21 +834,34 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 	const deps = dependencies ?? (await defaultDependencies(root, env));
 	const verifyOnly = env.NARRATION_VERIFY_ONLY === 'true';
 	const deploymentProbe = env.NARRATION_DEPLOYMENT_PROBE === 'true';
+	const resumePublication = env.NARRATION_RESUME_PUBLICATION === 'true';
+	if (
+		resumePublication &&
+		(verifyOnly || deploymentProbe || env.GITHUB_EVENT_NAME !== 'workflow_dispatch')
+	)
+		throw new Error('Publication recovery requires a separate explicit manual dispatch.');
+	const deliveryOnly = verifyOnly || resumePublication;
 	if (deploymentProbe && (!verifyOnly || env.GITHUB_EVENT_NAME !== 'workflow_dispatch'))
 		throw new Error('A deployment probe requires explicit manual verify-only dispatch.');
 	if (env.GITHUB_REPOSITORY !== REPOSITORY || env.GITHUB_REF !== 'refs/heads/main')
 		throw new Error('Hosted narration requires trusted main.');
-	if (!verifyOnly && env.NARRATION_HOSTED_ENABLED !== 'true')
+	if (!deliveryOnly && env.NARRATION_HOSTED_ENABLED !== 'true')
 		throw new Error('Hosted narration is not activated.');
 	const prioritySlugs = parsePrioritySlugs(env.NARRATION_PRIORITY_SLUGS);
 	const state = await deps.createState();
 	const restored = await state.restore();
 	const config = assertHostedConfiguration(restored, env);
+	if (
+		resumePublication &&
+		(!restored.publication?.slugs?.length || restored.publication.status === 'verified')
+	)
+		throw new Error('No pending narration publication is available to recover.');
 	const base = await deps.prepare();
 	await deps.storage();
 	const report = {
 		verifyOnly,
 		deploymentProbe,
+		resumePublication,
 		generated: 0,
 		published: [],
 		recovered: [],
@@ -906,8 +921,8 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 			}
 			return compress;
 		};
-		if (!verifyOnly) report.recovered = await recover();
-		if (!verifyOnly) {
+		if (!deliveryOnly) report.recovered = await recover();
+		if (!deliveryOnly) {
 			const hooks = {
 				beforeRequest: () => state.saveQuota(),
 				onQuota: () => state.saveQuota(),
@@ -951,7 +966,7 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 			...(restored.publication?.status !== 'verified'
 				? (restored.publication?.slugs ?? [])
 				: []
-			).filter((slug) => all.has(slug))
+			).filter((slug) => resumePublication || all.has(slug))
 		]);
 		const manifests = new Map();
 		for (const slug of verifySlugs) {
@@ -960,7 +975,7 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 				!inventory.has(slug) ||
 				!(await deps.deliveryReady(manifest, await currentArticle(slug), config))
 			) {
-				if (verifyOnly || ready.has(slug))
+				if (deliveryOnly || ready.has(slug))
 					throw new Error(
 						'Pending delivery is stale or incomplete; browser fallback remains available.'
 					);
@@ -974,7 +989,7 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 				'No complete article delivery is available for the initial hosted smoke test.'
 			);
 		await deps.storage();
-		if (!verifyOnly) {
+		if (!deliveryOnly) {
 			await deps.test();
 			await preview.close();
 			preview = null;
@@ -1005,13 +1020,19 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 			});
 		}
 		if (manifests.size) await deps.verify(report.commit, manifests);
+		if (resumePublication)
+			await state.savePublication({
+				commit: report.commit,
+				slugs: [...manifests.keys()],
+				status: 'verified'
+			});
 		if (deploymentProbe)
 			await state.savePublication({
 				commit: report.commit,
 				slugs: [...manifests.keys()],
 				status: 'verified'
 			});
-		if (!verifyOnly && manifests.size) {
+		if (!deliveryOnly && manifests.size) {
 			await state.savePublication({
 				commit: report.commit,
 				slugs: [...manifests.keys()],
@@ -1035,7 +1056,7 @@ export async function runGithubNarration({ root = ROOT, env = process.env, depen
 		}
 	};
 	await finalize(() => preview?.close());
-	if (!verifyOnly && !finalCheckpointAttempted) await finalize(() => state.saveCheckpoint());
+	if (!deliveryOnly && !finalCheckpointAttempted) await finalize(() => state.saveCheckpoint());
 	await finalize(() => deps.summary(report));
 	if (failures.length === 1) throw failures[0];
 	if (failures.length > 1)

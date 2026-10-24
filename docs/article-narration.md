@@ -15,6 +15,12 @@ Google synthesis is an explicit authoring operation. A visitor, page load, ordin
 pause/resume, or playback-speed change never initiates a Google generation request. Saved audio
 can be played repeatedly without spending generation quota. There is no new public speech API.
 
+For a changing non-prose display, `data-tts-text` can preserve its authored initial read-aloud
+wording. The shared extractor treats the alias as plain text, never markup, and existing
+`data-tts-exclude`/control exclusions still take precedence. The piano's changing labels use
+this annotation so the original SSR transcript and saved audio stay valid after hydration or
+interaction. Surrounding article prose remains subject to the normal transcript hash check.
+
 ## Free-tier setup
 
 1. Create a Gemini Developer API project/key in [Google AI Studio](https://aistudio.google.com/api-keys).
@@ -91,6 +97,10 @@ The authoritative hosted quota state is tiny metadata on `codex/narration-state`
 the disposable runner filesystem or an Actions cache. Every catalogue or synthesis attempt is
 reserved there **before** its Google request. Updates use the previously read commit as their
 parent and a non-forced fast-forward ref update; a competing update or failure stops the request.
+The successful PATCH response must acknowledge that exact commit. An immediate ref read is not
+used as a write receipt because GitHub can briefly return the previous ref. Rejected or uncertain
+acknowledgements stop further writes and uploads in that run; recovery starts by restoring the
+authoritative state in a fresh run, without forcing or blindly retrying the update.
 The same ten-call Pacific-day cap, 65-second spacing, DST-aware reset, and HTTP 429 halt apply
 across restarts. The state pins the verified project/key identity and records quota plus the
 checksum and pointer for the current encrypted checkpoint snapshot. Its branch contains
@@ -131,6 +141,20 @@ An authorized maintainer can start or inspect runs with:
 gh workflow run article-narration.yml --ref main
 gh run list --workflow article-narration.yml --limit 5
 ```
+
+To recover a publication whose saved MP3s/manifests were pushed but not verified, use the explicit
+manual recovery mode after deploying the relevant fix:
+
+```sh
+gh workflow run article-narration.yml --ref main -f resume_publication=true
+```
+
+It restores the existing checkpoint, validates every pending delivery against the current article,
+waits for the exact current `main` deployment and runs the live checks for those pending articles
+only. A verified receipt is saved only after transcript, MP3 checksums and actual playback pass.
+It makes no Google requests, reserves no quota, creates no audio or site commits, and keeps all
+source snapshots. Missing, stale or failed deliveries leave the pending receipt intact. Do not
+combine this mode with `verify_only` or `deployment_probe`; those remain bootstrap smoke checks.
 
 ### Prioritize published articles
 

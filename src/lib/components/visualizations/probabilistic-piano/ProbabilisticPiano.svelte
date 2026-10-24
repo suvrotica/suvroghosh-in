@@ -741,7 +741,9 @@
 			{/key}
 		{/if}
 		<div class="piano-world-top">
-			<span>01 — {preset.name}</span><span>HARMONY <b>{chord.name}</b></span>
+			<span data-tts-text={`01 — ${PRESETS[0].name}`}>01 — {preset.name}</span><span
+				data-tts-text={`HARMONY ${PRESETS[0].chords[0].name}`}>HARMONY <b>{chord.name}</b></span
+			>
 			<button
 				class="focus-button"
 				type="button"
@@ -752,7 +754,10 @@
 				<span aria-hidden="true">⤢</span></button
 			>
 		</div>
-		<div class="piano-whisper">
+		<div
+			class="piano-whisper"
+			data-tts-text="Every note begins as a possibility.A POND, A PIANO, A SMALL ACT OF FORGIVENESS"
+		>
 			{shown
 				? `${noteName(shown.input)} → ${noteName(shown.output)}`
 				: 'Every note begins as a possibility.'}<span
@@ -763,7 +768,11 @@
 					: 'A POND, A PIANO, A SMALL ACT OF FORGIVENESS'}</span
 			>
 		</div>
-		<div class="possibility-fan" aria-label="Actual note selection probabilities">
+		<div
+			class="possibility-fan"
+			aria-label="Actual note selection probabilities"
+			data-tts-text="The possibilities appear when you play."
+		>
 			{#if shown}
 				{#each shown.candidates as candidate (candidate.pitch)}<div
 						class:selected={candidate.pitch === shown.output}
@@ -899,6 +908,7 @@
 		</div>
 		<div class="piano-world-bottom">
 			<span>A SYNTHESISED PIANO · AN ORIGINAL PAINTING</span><span
+				data-tts-text="STILL LIGHT / LOCAL & PRIVATE"
 				>{still ? 'STILL LIGHT' : 'GENTLE LIGHT'} / LOCAL & PRIVATE</span
 			>
 		</div>
@@ -951,7 +961,8 @@
 				aria-label="Lower computer-keyboard octave"
 				disabled={keyboardBase <= MIDI_MIN}
 				onclick={() => shiftShortcuts(-1)}>[ −</button
-			><output>{noteName(keyboardBase)}–{noteName(shortcutPitches.at(-1) ?? keyboardBase)}</output
+			><output data-tts-text={`${noteName(60)}–${noteName(77)}`}
+				>{noteName(keyboardBase)}–{noteName(shortcutPitches.at(-1) ?? keyboardBase)}</output
 			><button
 				type="button"
 				aria-label="Higher computer-keyboard octave"
@@ -975,14 +986,20 @@
 		>
 	</div>
 	<div class="piano-footnote">
-		<p>
+		<p data-tts-text="The closest note in this harmony. Equally close? A little probability.">
 			{mode === 'nearest'
 				? 'The closest note in this harmony. Equally close? A little probability.'
 				: mode === 'wander'
 					? 'Nearby alternatives, at most one extra semitone beyond the closest.'
 					: 'Your original notes, untouched. Every possibility is yours.'}
 		</p>
-		<p class="sound-status" role="status">{error || status}</p>
+		<p
+			class="sound-status"
+			role="status"
+			data-tts-text="Sound is off. You can still play the painting."
+		>
+			{error || status}
+		</p>
 	</div>
 	<noscript
 		><p class="piano-noscript">
@@ -995,7 +1012,12 @@
 		<div class="workbench-grid">
 			<div class="musical-tools">
 				<h2>A few ways to listen</h2>
-				<p class="palette-notes">Palette: {chord.tones.map((tone) => tone.label).join(' · ')}</p>
+				<p
+					class="palette-notes"
+					data-tts-text={`Palette: ${PRESETS[0].chords[0].tones.map((tone) => tone.label).join(' · ')}`}
+				>
+					Palette: {chord.tones.map((tone) => tone.label).join(' · ')}
+				</p>
 				<div class="tool-buttons">
 					<button type="button" aria-pressed={progressing} onclick={toggleTransport}
 						>{progressing ? 'Stop progression' : 'Start progression'}</button
@@ -1006,7 +1028,7 @@
 				><label class="check"
 					><input type="checkbox" bind:checked={muted} onchange={() => audio?.setMuted(muted)} /> Mute</label
 				><label
-					>Temperature <output>{Number(temperature).toFixed(2)}</output><input
+					>Temperature <output data-tts-text="0.70">{Number(temperature).toFixed(2)}</output><input
 						aria-label="Temperature"
 						type="range"
 						min="0"
@@ -1037,7 +1059,7 @@
 				<h2>The note, with its workings</h2>
 				<label class="check"
 					><input type="checkbox" bind:checked={frozen} onchange={freezeChanged} /> Freeze decision</label
-				>{#if shown}<dl>
+				>{#if shown}<dl data-tts-text="Play a key to see the complete decision here.">
 						<div>
 							<dt>Requested</dt>
 							<dd>{noteName(shown.input)} / MIDI {shown.input}</dd>
@@ -1055,8 +1077,8 @@
 							<dd>{shown.chord} · {shown.mode}</dd>
 						</div>
 					</dl>
-					<p data-decision-reason>{shown.reason}</p>
-					<table>
+					<p data-decision-reason data-tts-exclude>{shown.reason}</p>
+					<table data-tts-exclude>
 						<caption>Actual sampler distribution</caption><thead
 							><tr><th>Candidate</th><th>Probability</th><th>Selected</th></tr></thead
 						><tbody
@@ -1067,13 +1089,15 @@
 								>{/each}</tbody
 						>
 					</table>
-					<p>
+					<p data-tts-exclude>
 						Eligible within A0–C8: {shown.eligible.map(noteName).join(', ')}. Eligible pitches
 						outside this mode’s distance bound are omitted from the sampler.
 					</p>{:else}<p>Play a key to see the complete decision here.</p>{/if}
 				<details>
-					<summary>Recent notes ({history.length} / 16)</summary>
-					<ol>
+					<summary data-tts-text="Recent notes (0 / 16)"
+						>Recent notes ({history.length} / 16)</summary
+					>
+					<ol data-tts-exclude>
 						{#each history as item, index (index)}<li>
 								{noteName(item.input)} → {noteName(item.output)} · {item.chord} · {item.mode}
 							</li>{/each}

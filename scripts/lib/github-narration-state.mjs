@@ -295,6 +295,12 @@ export async function createGithubNarrationState({
 	const quotaFile = path.join(root, '.codex-artifacts/narration-quota.json');
 	let head;
 	let data;
+	let referenceWriteFailed = false;
+	const assertWritable = () =>
+		assert(
+			!referenceWriteFailed,
+			'A narration state reference write was not acknowledged. Restore authoritative state in a new run before any further write or provider request.'
+		);
 	async function api(route, { method = 'GET', body, binary, upload = false } = {}) {
 		assert(route.startsWith(`${prefix}/`), 'Unexpected GitHub API target.');
 		const response = await fetchImpl(`https://${upload ? 'uploads' : 'api'}.github.com${route}`, {
@@ -333,6 +339,7 @@ export async function createGithubNarrationState({
 		return data;
 	}
 	async function commit(next, message) {
+		assertWritable();
 		assert(head, 'Narration state was not restored.');
 		validateHostedState(next, { projectId, keyHash });
 		const parent = head;
@@ -357,15 +364,37 @@ export async function createGithubNarrationState({
 			body: { message, tree: tree.sha, parents: [parent] }
 		});
 		assert(SHA.test(revision.sha ?? ''), 'Invalid GitHub state commit.');
-		await api(`${prefix}/git/refs/heads/${NARRATION_STATE_BRANCH}`, {
-			method: 'PATCH',
-			body: { sha: revision.sha, force: false }
-		});
-		const ref = await api(`${prefix}/git/ref/heads/${NARRATION_STATE_BRANCH}`);
-		assert(
-			ref.object?.sha === revision.sha,
-			'Narration state changed concurrently. No provider request may proceed.'
-		);
+		try {
+			const acknowledged = await api(`${prefix}/git/refs/heads/${NARRATION_STATE_BRANCH}`, {
+				method: 'PATCH',
+				body: { sha: revision.sha, force: false }
+			});
+			// The successful non-forced update acknowledges the durable candidate.
+			// A separate GET can still return the previous ref; treating that stale
+			// read as a failed write would leave our next commit on an old parent.
+			assert(
+				acknowledged?.object?.sha === revision.sha,
+				'GitHub narration state reference acknowledgement did not match its commit. No provider request may proceed.'
+			);
+		} catch (error) {
+			// The ref may already have advanced even when its response is lost.
+			// Never retry that write or upload a fallback checkpoint from stale state.
+			referenceWriteFailed = true;
+			const message = error instanceof Error ? error.message : '';
+			if (
+				/^GitHub narration state operation failed \(HTTP [0-9]+; PATCH state reference update\)\. No provider request may proceed\.$/u.test(
+					message
+				) ||
+				message ===
+					'GitHub narration state reference acknowledgement did not match its commit. No provider request may proceed.'
+			)
+				throw error;
+			// Transport error causes may contain credentialed URLs or headers.
+			// eslint-disable-next-line preserve-caught-error -- Do not attach private transport diagnostics.
+			throw new Error(
+				'GitHub narration state reference acknowledgement was not received. No provider request may proceed.'
+			);
+		}
 		head = revision.sha;
 		data = next;
 		return next;
@@ -434,6 +463,7 @@ export async function createGithubNarrationState({
 		return data;
 	}
 	async function saveQuota() {
+		assertWritable();
 		assert(data, 'Narration state was not restored.');
 		const quota = validateHostedQuota(JSON.parse(await fs.readFile(quotaFile, 'utf8')));
 		assert(
@@ -450,6 +480,7 @@ export async function createGithubNarrationState({
 		);
 	}
 	async function saveCheckpoint() {
+		assertWritable();
 		assert(data, 'Narration state was not restored.');
 		const bytes = encodeCheckpoint(await collectCheckpoint(sourceRoot), keyValue);
 		const sha256 = digest(bytes);
@@ -507,6 +538,7 @@ export async function createGithubNarrationState({
 		);
 	}
 	async function dropPublishedSources(slugs) {
+		assertWritable();
 		assert(
 			env.GITHUB_ACTIONS === 'true' && data?.publication?.status === 'verified',
 			'Source pruning requires a verified hosted publication.'
@@ -532,6 +564,7 @@ export async function createGithubNarrationState({
 		}
 	}
 	async function bootstrap(quota) {
+		assertWritable();
 		assert(env.GITHUB_ACTIONS !== 'true', 'Hosted jobs cannot bootstrap or reset quota state.');
 		validateHostedQuota(quota);
 		const initial = {

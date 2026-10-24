@@ -55,7 +55,11 @@ export function extractNarration(root = document) {
 		}
 		const block = blocks.has(node.tagName);
 		if (block) parts.push('\n\n');
-		for (const child of node.childNodes) visit(child);
+		// A changing non-prose display can retain its authored initial read-aloud wording.
+		// This is plain text, never parsed markup; exclusions still take precedence.
+		const authoredText = node.getAttribute('data-tts-text');
+		if (authoredText !== null) parts.push(authoredText);
+		else for (const child of node.childNodes) visit(child);
 		if (block) parts.push('\n\n');
 	}
 	visit(region);

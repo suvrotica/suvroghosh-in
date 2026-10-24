@@ -73,6 +73,7 @@ function github(initial = state()) {
 	let sequence = 2;
 	let head = '1'.repeat(40);
 	const revisions = new Map([[head, structuredClone(initial)]]);
+	const parents = new Map([[head, []]]);
 	const trees = new Map();
 	const assets = new Map();
 	const calls = [];
@@ -84,8 +85,17 @@ function github(initial = state()) {
 	return {
 		calls,
 		assets,
+		get head() {
+			return head;
+		},
 		get current() {
 			return revisions.get(head);
+		},
+		advance(next) {
+			const id = sha();
+			parents.set(id, [head]);
+			revisions.set(id, structuredClone(next));
+			head = id;
 		},
 		set conflict(value) {
 			conflicting = value;
@@ -124,11 +134,13 @@ function github(initial = state()) {
 			if (route === '/git/commits') {
 				const id = sha();
 				revisions.set(id, trees.get(body.tree));
+				parents.set(id, body.parents);
 				return json({ sha: id });
 			}
 			if (route === '/git/refs/heads/codex/narration-state') {
 				if (conflicting) return new Response('', { status: 409 });
 				assert.equal(body.force, false);
+				if (parents.get(body.sha)?.[0] !== head) return new Response('', { status: 422 });
 				head = body.sha;
 				return json({ object: { sha: head } });
 			}
@@ -338,6 +350,143 @@ test('remote quota reservation is fast-forward-only and conflicts prevent provid
 	);
 	assert.equal(transported, false);
 	assert.equal(remote.current.quota.used, 4);
+});
+
+test('successful PATCH acknowledgements advance state without an eventually stale ref GET', async (t) => {
+	const root = await fixture(t);
+	const remote = github();
+	const initial = { ...quota(), used: 3 };
+	await fs.writeFile(
+		path.join(root, '.codex-artifacts/narration-quota.json'),
+		JSON.stringify(initial)
+	);
+	let staleRead;
+	let staleReads = 0;
+	const fetchImpl = async (url, options = {}) => {
+		const route = new URL(url).pathname;
+		if (route.endsWith('/git/ref/heads/codex/narration-state') && staleRead) {
+			staleReads++;
+			return Response.json({ object: { sha: staleRead } });
+		}
+		const previous = remote.head;
+		const response = await remote.fetch(url, options);
+		if (options.method === 'PATCH') staleRead = previous;
+		return response;
+	};
+	const client = await createGithubNarrationState({ root, env: env(), fetchImpl });
+	await client.bootstrap(initial);
+	await fs.writeFile(
+		path.join(root, '.codex-artifacts/narration-quota.json'),
+		JSON.stringify({ ...initial, used: 4, updatedAt: 11, lastRequestAt: 11 })
+	);
+	await client.saveQuota();
+	assert.equal(client.data.quota.used, 4);
+	assert.equal(remote.current.quota.used, 4);
+	await client.saveCheckpoint();
+	await client.savePublication({ commit: 'a'.repeat(40), slugs: ['example'], status: 'pushed' });
+	assert.deepEqual(client.data, remote.current);
+	assert.equal(staleReads, 0, 'An acknowledged PATCH must not be invalidated by a stale read.');
+	assert(remote.calls.filter((call) => call.method === 'PATCH').every((call) => !call.body.force));
+});
+
+for (const acknowledgement of ['missing', 'different', 'lost']) {
+	test(`an accepted ref update with ${acknowledgement} acknowledgement blocks transport and all subsequent writes`, async (t) => {
+		const root = await fixture(t);
+		const remote = github();
+		const credentials = env();
+		const initial = { ...quota(), used: 3 };
+		await fs.writeFile(
+			path.join(root, '.codex-artifacts/narration-quota.json'),
+			JSON.stringify(initial)
+		);
+		let fail = false;
+		const fetchImpl = async (url, options = {}) => {
+			const response = await remote.fetch(url, options);
+			if (fail && options.method === 'PATCH') {
+				if (acknowledgement === 'lost') throw new Error(credentials.GH_TOKEN);
+				return Response.json(
+					acknowledgement === 'missing' ? {} : { object: { sha: 'f'.repeat(40) } }
+				);
+			}
+			return response;
+		};
+		const client = await createGithubNarrationState({ root, env: credentials, fetchImpl });
+		await client.bootstrap(initial);
+		const before = structuredClone(client.data);
+		await fs.writeFile(
+			path.join(root, '.codex-artifacts/narration-quota.json'),
+			JSON.stringify({ ...initial, used: 4, updatedAt: 11, lastRequestAt: 11 })
+		);
+		fail = true;
+		let transported = false;
+		await assert.rejects(
+			(async () => {
+				await client.saveQuota();
+				transported = true;
+			})(),
+			(error) => {
+				assert.match(error.message, /reference acknowledgement/);
+				assert.equal(`${error.message}\n${error.stack}`.includes(credentials.GH_TOKEN), false);
+				return true;
+			}
+		);
+		assert.equal(transported, false);
+		assert.equal(remote.current.quota.used, 4, 'Accepted reservations must remain durable.');
+		assert.deepEqual(client.data, before, 'An unacknowledged response cannot authorize use.');
+		const callsBeforeCleanup = remote.calls.length;
+		const assetsBeforeCleanup = remote.assets.size;
+		await assert.rejects(client.saveCheckpoint(), /Restore authoritative state in a new run/);
+		await assert.rejects(client.saveQuota(), /Restore authoritative state in a new run/);
+		await assert.rejects(
+			client.savePublication({ commit: 'a'.repeat(40), slugs: ['example'], status: 'verified' }),
+			/Restore authoritative state in a new run/
+		);
+		await assert.rejects(
+			client.dropPublishedSources(['example']),
+			/Restore authoritative state in a new run/
+		);
+		await assert.rejects(client.bootstrap(initial), /Restore authoritative state in a new run/);
+		assert.equal(remote.calls.length, callsBeforeCleanup, 'No API write or retry may follow.');
+		assert.equal(remote.assets.size, assetsBeforeCleanup, 'No orphan fallback upload may follow.');
+	});
+}
+
+test('a competing committed quota causes a real non-fast-forward conflict without overwriting or retrying it', async (t) => {
+	const root = await fixture(t);
+	const remote = github();
+	const initial = { ...quota(), used: 3 };
+	await fs.writeFile(
+		path.join(root, '.codex-artifacts/narration-quota.json'),
+		JSON.stringify(initial)
+	);
+	const client = await createGithubNarrationState({ root, env: env(), fetchImpl: remote.fetch });
+	await client.bootstrap(initial);
+	const before = structuredClone(client.data);
+	remote.advance({
+		...structuredClone(before),
+		quota: { ...initial, used: 6, updatedAt: 15, lastRequestAt: 15 }
+	});
+	const competingHead = remote.head;
+	await fs.writeFile(
+		path.join(root, '.codex-artifacts/narration-quota.json'),
+		JSON.stringify({ ...initial, used: 4, updatedAt: 11, lastRequestAt: 11 })
+	);
+	const patchesBefore = remote.calls.filter((call) => call.method === 'PATCH').length;
+	let transported = false;
+	await assert.rejects(
+		(async () => {
+			await client.saveQuota();
+			transported = true;
+		})(),
+		/HTTP 422; PATCH state reference update/
+	);
+	assert.equal(transported, false);
+	assert.equal(remote.head, competingHead);
+	assert.equal(remote.current.quota.used, 6);
+	assert.deepEqual(client.data, before);
+	await assert.rejects(client.saveCheckpoint(), /Restore authoritative state in a new run/);
+	assert.equal(remote.calls.filter((call) => call.method === 'PATCH').length, patchesBefore + 1);
+	assert(remote.calls.filter((call) => call.method === 'PATCH').every((call) => !call.body.force));
 });
 
 test('same-day ledger rewinds and checkpoint persistence failure retain durable progress', async (t) => {
