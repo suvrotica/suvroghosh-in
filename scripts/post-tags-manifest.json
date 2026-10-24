@@ -15489,6 +15489,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/pedagogy-after-ai.md": {
+			"bodyHash": "6ba7cde59ae79d56de44ec2d1ad452fa1a9905dd7d424da9c473d746b5485cba",
+			"hashVersion": 2,
+			"revisionHash": "422076e6046d6df8f1a578462980a222fed562f32b2a1dea4187022e3a39dfb4",
+			"generatedTags": [
+				"AI",
+				"Education",
+				"Pedagogy",
+				"Transhumanism",
+				"Inequality",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Technology",
+				"Society"
+			],
+			"pinnedTags": [
+				"AI",
+				"Education",
+				"Pedagogy",
+				"Transhumanism",
+				"Inequality",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Technology",
+				"Society"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

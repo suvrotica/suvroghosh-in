@@ -27,6 +27,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "art-pedagogy-after-ai.jpg",
+			"src": "/images/art-pedagogy-after-ai.jpg",
+			"bytes": 348635,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-php2shell-wordpress-security-alert.jpg",
 			"src": "/images/art-php2shell-wordpress-security-alert.jpg",
 			"bytes": 310312,

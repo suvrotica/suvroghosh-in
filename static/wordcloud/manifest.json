@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T17:18:41.124110+00:00",
+  "generatedAt": "2026-10-24T20:02:49.154523+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7450,6 +7450,29 @@
         "Fairy",
         "Dental",
         "Merely"
+      ],
+      "wordCount": 130
+    },
+    "pedagogy-after-ai": {
+      "generatedAt": "2026-10-24T20:02:48.676154+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/pedagogy-after-ai.svg",
+      "source": "src/lib/posts/pedagogy-after-ai.md",
+      "sourceHash": "63d96890a5fcfbc7f144431c5c19ca48760aef2e40510ebd3839f7f3b036aad1",
+      "sourceModified": "2026-10-24T20:01:51.777097+00:00",
+      "topWords": [
+        "AI",
+        "Work",
+        "Machine",
+        "Need",
+        "Students",
+        "Evidence",
+        "Somebody",
+        "Understand",
+        "Person",
+        "Give",
+        "Answer",
+        "Help"
       ],
       "wordCount": 130
     },
