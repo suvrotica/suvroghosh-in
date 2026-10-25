@@ -15640,6 +15640,36 @@
 				"Dark Humor"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/adversarial-noise-in-the-machine.md": {
+			"bodyHash": "5187366fa1d63591f0d2d3dd6e651baeb96a06b00d3f5e7ef2a0848c5a20de8e",
+			"hashVersion": 2,
+			"revisionHash": "a57e173d66128a99b4efe3b46e47d9130dde4d953d385e7d1a20cafeb573db10",
+			"generatedTags": [
+				"Adversarial Machine Learning",
+				"Medical Imaging",
+				"Cybersecurity",
+				"Artificial Intelligence",
+				"Deep Learning",
+				"Healthcare Technology",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Digital Ethics"
+			],
+			"pinnedTags": [
+				"Adversarial Machine Learning",
+				"Medical Imaging",
+				"Cybersecurity",
+				"Artificial Intelligence",
+				"Deep Learning",
+				"Healthcare Technology",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Digital Ethics"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

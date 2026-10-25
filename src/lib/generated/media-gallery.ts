@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "art-adversarial-noise-in-the-machine.webp",
+			"src": "/images/art-adversarial-noise-in-the-machine.webp",
+			"bytes": 165128,
+			"width": 1672,
+			"height": 940
+		},
+		{
 			"name": "art-durga-durga-durga-five-days-debauchery.jpg",
 			"src": "/images/art-durga-durga-durga-five-days-debauchery.jpg",
 			"bytes": 263519,

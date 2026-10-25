@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T20:22:12.804435+00:00",
+  "generatedAt": "2026-10-25T20:43:06.974907+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -136,6 +136,29 @@
         "Face",
         "Women",
         "Death"
+      ],
+      "wordCount": 130
+    },
+    "adversarial-noise-in-the-machine": {
+      "generatedAt": "2026-10-25T20:43:06.343860+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/adversarial-noise-in-the-machine.svg",
+      "source": "src/lib/posts/adversarial-noise-in-the-machine.md",
+      "sourceHash": "d846b369a0bd1c44d92d92b9a5e61970190bea93e16460e43050b64dbe282598",
+      "sourceModified": "2026-10-25T20:42:29.347346+00:00",
+      "topWords": [
+        "Model",
+        "Somebody",
+        "Wrong",
+        "Adversarial",
+        "Already",
+        "Attacker",
+        "Need",
+        "Work",
+        "Answer",
+        "Attacks",
+        "Person",
+        "System"
       ],
       "wordCount": 130
     },

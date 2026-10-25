@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/art-adversarial-noise-in-the-machine.webp": {
+      "format": "WEBP",
+      "height": 940,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 940,
+      "originalWidth": 1672,
+      "outputBytes": 165128,
+      "outputHash": "c1b45bf3ce12a78b49f6bb0d01cd6bd3c4d481dc035d3bfe4b55eb1048685e28",
+      "psnrDb": 36.27,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 1556654,
+      "sourceHash": "42d9e7d4181a666017ea26678f46035d95bc8907de2d4e31c05c17ae4b112378",
+      "width": 1672
+    },
     "static/images/art-durga-durga-durga-five-days-debauchery.jpg": {
       "format": "JPEG",
       "height": 768,
