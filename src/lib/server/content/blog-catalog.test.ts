@@ -36,7 +36,7 @@ describe('public blog metadata catalog', () => {
 			dateModified: '2026-10-22',
 			author: 'DO_NOT_EXPORT_AUTHOR',
 			body: 'DO_NOT_EXPORT_BODY',
-			thumbnail: '/images/DO_NOT_EXPORT_THUMBNAIL.jpg',
+			thumbnail: '/thumbnail/art-hie-first-principles-openhie.jpg',
 			faq: ['DO_NOT_EXPORT_FAQ']
 		});
 		const catalog = createPublicBlogCatalog([source], now);
