@@ -15579,6 +15579,36 @@
 				"Image Geometry"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/one-bad-afternoon.md": {
+			"bodyHash": "c77078ffc5a10f83302055499169c9a9863d38e14ff40ecb26aab9e1fdaf37b3",
+			"hashVersion": 2,
+			"revisionHash": "7b6480207c8d0ad0b7923d8523c20063ca6ac15424c02a4d2223d0a95ce01e06",
+			"generatedTags": [
+				"Engineering Blog",
+				"Requirements",
+				"Systems",
+				"Operations",
+				"Software",
+				"Automation",
+				"Data Integration",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Engineering Blog",
+				"Requirements",
+				"Systems",
+				"Operations",
+				"Software",
+				"Automation",
+				"Data Integration",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

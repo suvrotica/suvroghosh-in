@@ -8032,6 +8032,22 @@
       "sourceHash": "3f8047ba0be269ce6ef6023263a209d312b7034ff0b357c286cc6933fde3a97d",
       "width": 1200
     },
+    "static/images/art-one-bad-afternoon.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 455078,
+      "outputHash": "15f13e62e6011ff05e1dc8a5c87d61a251489d5a2d6aca6ca4d0166b9830d372",
+      "psnrDb": 34.97,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 614779,
+      "sourceHash": "0fe5b91f506ba3535c93032c3ed82faa9bf2a9eb3ce1ad362a551e4bb65d81e9",
+      "width": 1672
+    },
     "static/images/art-pedagogy-after-ai.jpg": {
       "format": "JPEG",
       "height": 941,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T11:12:58.851655+00:00",
+  "generatedAt": "2026-10-25T12:16:11.202103+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7266,6 +7266,29 @@
         "Mind",
         "Almost",
         "Month"
+      ],
+      "wordCount": 130
+    },
+    "one-bad-afternoon": {
+      "generatedAt": "2026-10-25T12:16:10.856438+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/one-bad-afternoon.svg",
+      "source": "src/lib/posts/one-bad-afternoon.md",
+      "sourceHash": "55de1ee0433e57f7ab855b2232362f2a79ff7f2448995d5018549b448d270962",
+      "sourceModified": "2026-10-25T12:15:24.943883+00:00",
+      "topWords": [
+        "Report",
+        "Sharmistha",
+        "Records",
+        "Client",
+        "Bapi",
+        "Afternoon",
+        "Quarterly",
+        "Late",
+        "Problem",
+        "Manager",
+        "Spreadsheet",
+        "Reporting"
       ],
       "wordCount": 130
     },

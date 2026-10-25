@@ -27,6 +27,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "art-one-bad-afternoon.jpg",
+			"src": "/images/art-one-bad-afternoon.jpg",
+			"bytes": 455078,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-pedagogy-after-ai.jpg",
 			"src": "/images/art-pedagogy-after-ai.jpg",
 			"bytes": 348635,
