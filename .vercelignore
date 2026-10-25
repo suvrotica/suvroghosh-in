@@ -5,6 +5,10 @@
 .codex/
 .codex-artifacts/
 .audit-private/
+.codex-artifacts-*.log
+services/synthetic-data-lab/.agents/
+services/synthetic-data-lab/skills-lock.json
+services/synthetic-data-lab/.pytest_cache/
 
 # Publish only complete, compressed narration assets.
 static/audio/articles/**/*.wav
