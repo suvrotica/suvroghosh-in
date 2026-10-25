@@ -8,6 +8,7 @@ export type ProjectLink =
 				| '/blog/visualizations/human-ai-icu-prediction-laboratory'
 				| '/blog/visualizations/create-art-living-pigment-studio'
 				| '/writing'
+				| '/demos/customer-enquiries'
 				| '/tools/synthetic-data-lab';
 			label: string;
 	  }
@@ -42,6 +43,7 @@ export type ProfessionalProject = {
 		| 'visualizations'
 		| 'living-pigment-studio'
 		| 'editorial-publishing-system'
+		| 'customer-enquiries'
 		| 'synthetic-data-lab';
 	name: string;
 	context: string;
@@ -62,6 +64,28 @@ export type ProfessionalProject = {
 };
 
 export const professionalProjects: readonly ProfessionalProject[] = [
+	{
+		id: 'customer-enquiries',
+		name: 'Stop losing customer enquiries',
+		status: 'Working demo',
+		context: 'Customer enquiries · Workflow automation · ClinConsult portfolio',
+		detail:
+			'Try a fictional office’s enquiry workflow: send a request, switch to the staff desk, and follow assignments, response deadlines and simulated acknowledgements. Each visitor gets private example data; no real emails are sent.',
+		contributions: [
+			'Built a customer form that saves each request before queuing its simulated acknowledgement.',
+			'Added automatic routing, a staff desk, four-hour first-response deadlines and overdue reminders.',
+			'Kept each visitor’s fictional records in a private 24-hour workspace, with controls to explore failure and retry.'
+		],
+		disciplines: ['SvelteKit', 'TypeScript', 'Workflow automation', 'Background jobs', 'Supabase'],
+		relatedPostSlugs: [],
+		link: {
+			kind: 'internal',
+			href: '/demos/customer-enquiries',
+			label: 'Try the enquiry demo'
+		},
+		featured: true,
+		showOnResume: false
+	},
 	{
 		id: 'synthetic-data-lab',
 		name: 'Synthetic Data Lab',
