@@ -28,6 +28,18 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/between-a-click-and-a-page',
 		status: 'published'
 	},
+	'prompt-atlas': {
+		id: 'prompt-atlas',
+		title: 'Prompt Atlas: See the Structure Inside Your Prompt',
+		description:
+			'Count characters, inspect evidence and uncertainty, and explore your prompt as a mind map, workflow or supported data model in your browser.',
+		subjects: ['Computer Science', 'Design', 'Learning'],
+		poster: '/images/visualizations/prompt-atlas/social.png',
+		posterAlt:
+			'Prompt Atlas with a prompt editor, a character count and a branching mind map of the prompt’s task, subject and constraints',
+		href: '/blog/visualizations/prompt-atlas',
+		status: 'published'
+	},
 	'a-place-for-every-idea': {
 		id: 'a-place-for-every-idea',
 		title: 'A Place for Every Idea: Build Your Own Memory Palace',

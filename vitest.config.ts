@@ -11,6 +11,8 @@ export default defineConfig({
 			'src/routes/api/notes/comments/**/*.test.ts',
 			'src/routes/api/internal/comment-notifications/**/*.test.ts',
 			'src/routes/notes/studio/comments/**/*.test.ts',
+			'src/lib/visualizations/prompt-atlas/**/*.test.ts',
+			'src/lib/server/content/post-collections.test.ts',
 			'src/lib/visualizations/memory-palace/**/*.test.ts',
 			'src/lib/visualizations/build-one-build-a-thousand/**/*.test.ts',
 			'src/lib/visualizations/the-six-week-shadow/**/*.test.ts',
@@ -67,7 +69,11 @@ export default defineConfig({
 		environment: 'node',
 		coverage: {
 			reporter: ['text', 'html'],
-			include: ['src/lib/notes/{geometry,history,model,schema,spatial-index,strokes,export}.ts']
+			include: [
+				'src/lib/visualizations/prompt-atlas/**/*.test.ts',
+				'src/lib/server/content/post-collections.test.ts',
+				'src/lib/notes/{geometry,history,model,schema,spatial-index,strokes,export}.ts'
+			]
 		}
 	}
 });

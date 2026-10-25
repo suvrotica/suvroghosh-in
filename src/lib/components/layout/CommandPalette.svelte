@@ -30,6 +30,11 @@
 			description: 'Explore the interactive science laboratory'
 		},
 		{
+			href: '/blog/apps',
+			label: 'Apps',
+			description: 'Use practical browser tools, starting with Prompt Atlas'
+		},
+		{
 			href: '/blog/games',
 			label: 'Games',
 			description: 'Play simulations, learning games, and strange little systems'

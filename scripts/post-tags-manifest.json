@@ -15519,6 +15519,36 @@
 				"Society"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/prompt-atlas.md": {
+			"bodyHash": "79cc9fe52c9aa21635920c0e7089068e9d947104c70392a8aa9292b3a38a3f6f",
+			"hashVersion": 2,
+			"revisionHash": "8e5032b33a527a384f6d3bc27fdb7db7aa07ab492daa676c82d663a49365790b",
+			"generatedTags": [
+				"Prompt Analysis",
+				"Mind Maps",
+				"Ontologies",
+				"Data Modelling",
+				"UML",
+				"Browser Tools",
+				"Computer Science",
+				"Design",
+				"Prompt Engineering",
+				"Knowledge Representation"
+			],
+			"pinnedTags": [
+				"Prompt Analysis",
+				"Mind Maps",
+				"Ontologies",
+				"Data Modelling",
+				"UML",
+				"Browser Tools",
+				"Computer Science",
+				"Design",
+				"Prompt Engineering",
+				"Knowledge Representation"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

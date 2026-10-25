@@ -12,6 +12,7 @@
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
 		'between-a-click-and-a-page': visualizationSummaries['between-a-click-and-a-page'].subjects,
+		'prompt-atlas': visualizationSummaries['prompt-atlas'].subjects,
 		'a-place-for-every-idea': visualizationSummaries['a-place-for-every-idea'].subjects,
 		'build-one-build-a-thousand': visualizationSummaries['build-one-build-a-thousand'].subjects,
 		'the-six-week-shadow': visualizationSummaries['the-six-week-shadow'].subjects,
@@ -140,6 +141,12 @@
 				computer science, healthcare systems, and machine learning with D3, Observable notebooks,
 				p5.js, Canvas, SVG, GLSL, and WebGL.
 			</p>
+			<a
+				href={resolve('/blog/apps')}
+				class="mt-6 inline-flex min-h-11 items-center rounded-full border border-cyan-300/50 px-5 py-2 text-sm font-bold !text-cyan-200 underline-offset-4 hover:underline"
+			>
+				Looking for a useful tool? Browse Apps <span class="ml-2" aria-hidden="true">→</span>
+			</a>
 		</div>
 	</section>
 

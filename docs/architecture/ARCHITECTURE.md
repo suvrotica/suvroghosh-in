@@ -249,14 +249,14 @@ the build rather than producing a partial misleading catalog. A supplied modific
 be real, at least the publication date and no later than the UTC export day; absence stays absent.
 This stricter export rule does not change existing article publication or routing semantics.
 
-| Contract | Version 1 |
-| --- | --- |
-| Envelope | `schemaVersion: 1`, `source: "suvroghosh.in"`, `canonicalOrigin: "https://www.suvroghosh.in"`, ISO `generatedAt`, SHA-256 `revision`, `items` |
-| Identity and URL | `id: "suvroghosh.in:<slug>"`; source filename slug, at most 200 ASCII letters/digits/underscores/hyphens; production origin plus existing `postPath` for the canonical `/blog/<category>/<slug>` URL |
-| Metadata | Original `title` (240 characters maximum), `description` (1,200), calendar `publishedAt`, optional actual `modifiedAt`, normalized category `{slug, label}` (128/120), and `tags` (at most 20, each at most 80 characters) |
-| Exclusions | No article body, compiled Svelte component, author biography, image/thumbnail, FAQ, private note, draft record, credential, selection state or arbitrary metadata field |
-| Bounds and ordering | At most 2,000 source entries and 2 MiB serialized UTF-8 output; duplicate slugs fail; newest publication date first, then stable ID by code-point order |
-| Revision | SHA-256 of the deterministic projected `items` JSON; independent of input order and generation time; dates and prose metadata are not rewritten |
+| Contract            | Version 1                                                                                                                                                                                                                  |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Envelope            | `schemaVersion: 1`, `source: "suvroghosh.in"`, `canonicalOrigin: "https://www.suvroghosh.in"`, ISO `generatedAt`, SHA-256 `revision`, `items`                                                                              |
+| Identity and URL    | `id: "suvroghosh.in:<slug>"`; source filename slug, at most 200 ASCII letters/digits/underscores/hyphens; production origin plus existing `postPath` for the canonical `/blog/<category>/<slug>` URL                       |
+| Metadata            | Original `title` (240 characters maximum), `description` (1,200), calendar `publishedAt`, optional actual `modifiedAt`, normalized category `{slug, label}` (128/120), and `tags` (at most 20, each at most 80 characters) |
+| Exclusions          | No article body, compiled Svelte component, author biography, image/thumbnail, FAQ, private note, draft record, credential, selection state or arbitrary metadata field                                                    |
+| Bounds and ordering | At most 2,000 source entries and 2 MiB serialized UTF-8 output; duplicate slugs fail; newest publication date first, then stable ID by code-point order                                                                    |
+| Revision            | SHA-256 of the deterministic projected `items` JSON; independent of input order and generation time; dates and prose metadata are not rewritten                                                                            |
 
 The fixed production origin is used even in a local development catalog. Category changes retain
 the same slug-derived ID while the canonical URL updates. A future slug rename needs an explicit
@@ -299,6 +299,58 @@ flowchart TB
 ```
 
 `src/lib/content/professional-projects.ts` remains the single work registry used by the work page and résumé. Optional factual status labels distinguish experiments, demos, the in-use publishing system and past work without constraining future media or industries. The homepage server load selects three IDs from that same registry and sends serializable card and optional image metadata (source, alternative text and dimensions) to `WorkWorlds`; recent writing continues to come from the published-post registry. Work-page ordering puts existing independent work before career projects while preserving each project anchor. The shared YouTube destination lives in `config/links.ts`; no video feed, new third-party integration or separate product catalog was added.
+
+### App collections and Prompt Atlas
+
+Posts retain one primary category and one canonical article URL. Optional, validated
+`collections: ['apps']` membership adds an independent discovery facet. The prerendered
+`/blog/apps` route filters the same published-post registry; the Viz archive continues to
+filter by the primary category. Both listings link to
+`/blog/visualizations/prompt-atlas`. The sitemap adds the Apps collection once, while RSS,
+search and article canonical generation continue to use the single post registry. Navigation
+in the header, command palette, footer and Viz page exposes the Apps collection.
+
+Prompt Atlas uses feature-local TypeScript modules under `src/lib/visualizations/prompt-atlas`
+and Svelte UI under `src/lib/components/visualizations/prompt-atlas`. Text statistics update
+locally. Explicit analysis runs a deterministic rules-based reader in a browser worker;
+cancellation, input edits, a ten-second deadline and component destruction terminate that worker.
+Results pass the same strict ontology validator as imported sessions, with exact UTF-16 source
+evidence, referential integrity, provenance and bounded graph sizes. It is a limited local
+reader, not a general semantic language model. Existing narration credentials are not reused.
+
+An editable, versioned ontology is the state owner. Ten fixed diagram projections and their
+eligibility/fit rules consume it without re-extraction or network calls. Conceptual/logical/
+physical modeling levels remain separate from UML notation. Native SVG layouts preserve the
+distinction between explicit, inferred and user-confirmed information, and the inspection list
+provides a text equivalent. Source changes make results stale and pause corrections/exports.
+No analysis endpoint or remote provider is installed; `provider.ts` defines the isolated adapter
+contract for a future integration, whose endpoint security and spending controls would require
+a separate implementation review. See [ADR 0014](decisions/0014-prompt-atlas-local-ontology.md).
+
+Prompt text remains in browser memory by default. Device persistence requires an explicit Save
+action and can be deleted. Versioned session import validates size, shape, source evidence and
+identifiers. JSON reports omit the original source/evidence quotes; including source is an
+explicit choice that produces an importable session. All exports still contain extracted user
+content. SVG export escapes text and contains no executable HTML or external resources.
+
+```mermaid
+flowchart LR
+    MD["One Markdown post: Visualizations + apps membership"] --> Registry["Published-post registry"]
+    Registry --> Viz["Viz listing"]
+    Registry --> Apps["Apps listing"]
+    Viz --> Canonical["One canonical Prompt Atlas article"]
+    Apps --> Canonical
+    Text["Exact editor text"] --> Counts["Local Unicode statistics"]
+    Text --> Worker["Explicit analysis: bounded browser worker"]
+    Worker --> Validation["Strict ontology + exact source evidence validation"]
+    Import["Explicit session import"] --> Validation
+    Validation --> Ontology["Feature-local editable ontology"]
+    Ontology --> Fit["Fixed model eligibility and fit"]
+    Fit --> Projection["Selected deterministic SVG projection"]
+    Ontology --> Inspector["Evidence, corrections and accessible list"]
+    Inspector --> Ontology
+    Ontology --> Save["Explicit device save / export"]
+```
 
 ### Homepage fieldbook rendering
 
@@ -1332,7 +1384,6 @@ New expensive/state-changing endpoints must follow the existing security invaria
 
 - The public blog catalog is regenerated with the source build, not on an editorial schedule or an external consumer's request. The GET handler declares `public, max-age=0, must-revalidate`, with no positive cache lifetime or stale-while-revalidate extension, so source cache grace does not intentionally compound a consumer's withdrawal window. It declares a strong SHA-256 ETag of the actual JSON response, including `generatedAt`; this differs from the metadata-only revision. Focused unit tests verify that handler declaration. The local Vercel static artifact contains the catalog file but no catalog-specific route/header rule in `.vercel/output/config.json`; the adapter or host may supply different caching/ETag behavior. Actual deployed revalidation/header behavior must be verified before release, and consumer withdrawal bounds are conditional on genuinely fresh source responses. No deployed-header acceptance is claimed and this change does not alter Vercel configuration. A consumer must apply its own freshness policy independently; ClinConsult's separate design sends revalidation requests, uses 15-minute refresh and a 24-hour stale bound. Source deployments and downstream cache refreshes are separate visibility steps. Publication removal cannot recall previously delivered public metadata or consumer caches. No service-worker catalog cache is added.
 
-
 - Prerendered pages and immutable build chunks use the adapter/CDN path; dynamic archives execute server loads.
 - `vercel.json` gives semantic `/images`, `/photos`, `/sketch`, `/videos`, `/fonts` URLs one year of immutable caching. Other static families have separate long shared-cache rules. There is no general source-content hash in editorial image URLs; replacement at the same path can remain stale (`AF-008`).
 - `PostImage.svelte` emits responsive Vercel optimizer URLs with a local-original fallback. Its sizes must agree with adapter image sizes. Those URLs do not currently include a content revision.
@@ -1374,7 +1425,6 @@ stable IDs, older evergreen membership beyond RSS limits, ordering, revision/ETa
 malformed metadata, duplicate IDs, item/UTF-8 byte limits and endpoint cache/JSON headers using
 synthetic metadata. The prerendered artifact still needs a source build and exact payload inspection;
 these tests do not establish hosted availability or downstream owner curation.
-
 
 `comments:test` covers strict schemas and bounded body/origin handling, public API metadata
 projection, guest/owner role separation, page authorization, private exports and bounded repository

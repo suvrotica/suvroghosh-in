@@ -7,9 +7,11 @@ import {
 } from '$lib/content/sections';
 import {
 	isIndexablePost,
+	postInCollection,
 	tagSearchPath,
 	validatePublishedPostMetadata,
-	type BlogPostMetadata
+	type BlogPostMetadata,
+	type PostCollection
 } from '$lib/content/posts';
 import {
 	canonicalTopicSlug,
@@ -275,6 +277,10 @@ export function getCuratedReadingPathSummaries(): ReadingPathSummary[] {
 export function getPublishedPostsByCategory(category: string) {
 	const categorySlug = slugifyCategory(category);
 	return publishedPosts.filter((post) => categoryTrail(post.categorySlug).includes(categorySlug));
+}
+
+export function getPublishedPostsByCollection(collection: PostCollection) {
+	return publishedPosts.filter((post) => postInCollection(post, collection));
 }
 
 export function getPublishedPostsBySection(section: string) {

@@ -5,6 +5,10 @@ import {
 	type RawThoughtLayout
 } from './raw-thought-layouts.js';
 
+/** Additional discovery collections preserve a post's single canonical category. */
+export const POST_COLLECTIONS = { apps: 'Apps' } as const;
+export type PostCollection = keyof typeof POST_COLLECTIONS;
+
 export type BlogPostMetadata = {
 	title: string;
 	seoTitle?: string;
@@ -12,6 +16,7 @@ export type BlogPostMetadata = {
 	date: string;
 	dateModified?: string;
 	category: string;
+	collections?: PostCollection[];
 	tags: string[];
 	pinnedTags?: string[];
 	series?: string[];
@@ -166,6 +171,19 @@ export function validatePublishedPostMetadata(
 	source = 'post'
 ) {
 	if (!isPublishedPost(metadata)) return;
+	if (
+		metadata.collections !== undefined &&
+		(!Array.isArray(metadata.collections) ||
+			metadata.collections.some(
+				(collection) =>
+					typeof collection !== 'string' || !Object.hasOwn(POST_COLLECTIONS, collection)
+			) ||
+			new Set(metadata.collections).size !== metadata.collections.length)
+	) {
+		throw new Error(
+			`${source} has invalid collections; use unique supported slugs: ${Object.keys(POST_COLLECTIONS).join(', ')}.`
+		);
+	}
 	if (metadata.rawThoughtLayout !== undefined && !isRawThoughtLayout(metadata.rawThoughtLayout)) {
 		throw new Error(
 			`${source} has an unsupported rawThoughtLayout; expected one of: ${SUPPORTED_RAW_THOUGHT_LAYOUTS.join(', ')}.`
@@ -184,6 +202,13 @@ export function validatePublishedPostMetadata(
 	if (missing.length > 0) {
 		throw new Error(`${source} is published but missing required metadata: ${missing.join(', ')}`);
 	}
+}
+
+export function postInCollection(
+	post: Pick<BlogPostMetadata, 'collections'>,
+	collection: PostCollection
+) {
+	return post.collections?.includes(collection) ?? false;
 }
 
 export function postPath(post: { category: string; slug: string }) {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T20:02:49.154523+00:00",
+  "generatedAt": "2026-10-25T10:17:47.948501+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7956,6 +7956,29 @@
         "World",
         "Age",
         "Bitter"
+      ],
+      "wordCount": 130
+    },
+    "prompt-atlas": {
+      "generatedAt": "2026-10-25T10:17:40.462391+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/prompt-atlas.svg",
+      "source": "src/lib/posts/prompt-atlas.md",
+      "sourceHash": "b254262c5b9da99e1f21d6bd7e3cf0aa4d4b2b6fe37fa4e633a3633a994beaf9",
+      "sourceModified": "2026-10-25T10:14:16.322792+00:00",
+      "topWords": [
+        "Prompt",
+        "Inspect",
+        "Interpretation",
+        "Visible",
+        "Useful",
+        "Map",
+        "View",
+        "Diagram",
+        "Rules",
+        "Points",
+        "Relationships",
+        "Story"
       ],
       "wordCount": 130
     },

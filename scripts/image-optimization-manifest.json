@@ -11348,6 +11348,21 @@
       "sourceHash": "c86b18587ad133a6fee2acfb04e4efe0e221f60a5d2e8e1ad4a5d7d2b1ec1272",
       "width": 1200
     },
+    "static/images/visualizations/prompt-atlas/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 76150,
+      "outputHash": "eef968fef85be39729bd7b199c4246f60eccc04a932c359ed9848ca97eff8206",
+      "resized": false,
+      "sourceBytes": 76150,
+      "sourceHash": "eef968fef85be39729bd7b199c4246f60eccc04a932c359ed9848ca97eff8206",
+      "width": 1200
+    },
     "static/images/visualizations/random-matrix-shape/the-matrix-is-random.png": {
       "format": "PNG",
       "height": 630,

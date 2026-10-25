@@ -7,7 +7,7 @@
 	import { substackLinks, youtubeProfile } from '$lib/config/links';
 
 	type NavigationItem = {
-		href: '/projects' | '/writing' | '/start-here' | '/about';
+		href: '/projects' | '/writing' | '/start-here' | '/about' | '/blog/apps';
 		label: string;
 		sections: readonly string[];
 	};
@@ -23,6 +23,7 @@
 			label: 'Writing',
 			sections: ['/writing', '/blog', '/topics', '/notes', '/resources']
 		},
+		{ href: '/blog/apps', label: 'Apps', sections: ['/blog/apps'] },
 		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
 		{
 			href: '/about',
@@ -36,6 +37,9 @@
 	let menuSummary: HTMLElement;
 
 	function isCurrent(item: NavigationItem) {
+		if (currentPath.startsWith('/blog/apps')) {
+			return item.href === '/blog/apps';
+		}
 		if (currentPath.startsWith('/blog/games')) {
 			return item.href === '/projects';
 		}

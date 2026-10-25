@@ -34,6 +34,7 @@ const allowedFields = new Set([
 	...stringFields,
 	'tags',
 	'pinnedTags',
+	'collections',
 	'series',
 	'seriesPart',
 	'published',
@@ -177,6 +178,14 @@ for (const file of postFiles) {
 	}
 
 	validateStringArray(file, 'tags', metadata.tags, { required: true });
+	if (metadata.collections !== undefined) {
+		validateStringArray(file, 'collections', metadata.collections);
+		if (Array.isArray(metadata.collections)) {
+			for (const collection of metadata.collections) {
+				if (collection !== 'apps') errors.push(`${file}: unsupported collection “${collection}”.`);
+			}
+		}
+	}
 	if (metadata.pinnedTags !== undefined) {
 		validateStringArray(file, 'pinnedTags', metadata.pinnedTags, { required: true });
 		if (Array.isArray(metadata.pinnedTags) && metadata.pinnedTags.length > 10) {

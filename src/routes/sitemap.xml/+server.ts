@@ -7,6 +7,7 @@ import {
 	getCuratedReadingPaths,
 	getPublishedArchiveMonths,
 	getPublishedPosts,
+	getPublishedPostsByCollection,
 	getPublishedTopics
 } from '$lib/server/content/posts';
 import {
@@ -58,6 +59,10 @@ export async function GET() {
 		(latest, post) => (post.lastMod > latest ? post.lastMod : latest),
 		'1970-01-01'
 	);
+	const appsLastMod = getPublishedPostsByCollection('apps').reduce((latest, post) => {
+		const modified = post.dateModified ?? post.date;
+		return modified > latest ? modified : latest;
+	}, '1970-01-01');
 
 	const categories = Array.from(categoryLastMod.entries()).map(([category, lastMod]) => ({
 		url: siteUrl + '/blog/' + category,
@@ -123,6 +128,7 @@ export async function GET() {
 			lastMod: sketchMuseumResource.dateModified ?? sketchMuseumResource.date
 		},
 		{ url: siteUrl + '/blog', lastMod: blogLastMod },
+		{ url: siteUrl + '/blog/apps', lastMod: appsLastMod },
 		{ url: siteUrl + '/blog/topics', lastMod: topicIndexLastMod },
 		{ url: siteUrl + '/topics', lastMod: headquartersIndexLastMod },
 		{ url: siteUrl + '/contact', lastMod: '2026-10-20' }

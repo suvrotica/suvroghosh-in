@@ -5011,6 +5011,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/prompt-atlas/social.png",
+			"src": "/images/visualizations/prompt-atlas/social.png",
+			"bytes": 76150,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/random-matrix-shape/the-matrix-is-random.png",
 			"src": "/images/visualizations/random-matrix-shape/the-matrix-is-random.png",
 			"bytes": 44313,
