@@ -9,6 +9,13 @@
 		}
 	},
 	"scripts": {
+		"enquiry-demo:setup": "node scripts/enquiry-demo.mjs setup",
+		"enquiry-demo:password": "node scripts/enquiry-demo.mjs password",
+		"enquiry-demo:reset": "node scripts/enquiry-demo.mjs reset",
+		"enquiry-demo:dev": "node scripts/enquiry-demo.mjs dev",
+		"enquiry-demo:worker": "node scripts/enquiry-demo-worker.mjs",
+		"enquiry-demo:test": "vitest run --config vitest.enquiry-demo.config.ts --maxWorkers=2 && node --test scripts/enquiry-demo-worker.test.mjs",
+		"enquiry-demo:browser:test": "playwright test --config playwright.enquiry-demo.config.ts",
 		"synthetic-data:setup": "node scripts/dev-synthetic-data-lab.mjs --setup",
 		"synthetic-data:dev": "node scripts/dev-synthetic-data-lab.mjs",
 		"synthetic-data:preview": "node scripts/dev-synthetic-data-lab.mjs --preview",

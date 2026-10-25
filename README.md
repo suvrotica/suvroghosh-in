@@ -34,6 +34,10 @@ npx sv@0.14.0 create --template minimal --types ts --add prettier eslint tailwin
 
 ## Developing
 
+The **Stop losing customer enquiries** portfolio prototype has a customer form, an isolated
+demonstration staff desk and simulated-message recovery. See [the runbook](docs/enquiry-demo.md)
+for local commands, public hosting, the two-minute walkthrough, screenshots and limitations.
+
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```sh

@@ -58,7 +58,10 @@
 		page.url.pathname.startsWith('/blog/games/') &&
 			(page.data as PageDataShellContext).game?.shell === 'site'
 	);
-	let labShell = $derived(page.url.pathname === '/tools/synthetic-data-lab');
+	let labShell = $derived(
+		page.url.pathname === '/tools/synthetic-data-lab' ||
+		page.url.pathname.startsWith('/demos/customer-enquiries')
+	);
 
 	function resolvedMotion(): ResolvedMotion {
 		const value = document.documentElement.dataset.motion;

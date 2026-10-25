@@ -1073,6 +1073,80 @@ changes and streamed CSV/ZIP, including a 100,000-row staged export. The feature
 the exact requests, measurements and delivered public-page capture. Earlier local measurements
 describe memory mode separately.
 
+## Customer enquiry demonstration
+
+`/demos/customer-enquiries` is a working ClinConsult portfolio prototype with simulated
+messaging. It has two separate storage/authorization modes. The loopback launcher retains the
+local SQLite files, generated local staff password and independent CLI worker described in
+[ADR 0017](decisions/0017-local-enquiry-demo.md). Hosted operation uses the visitor isolation in
+[ADR 0018](decisions/0018-public-enquiry-sandboxes.md), enabled only by the private
+`ENQUIRY_DEMO_PUBLIC_ENABLED` flag and a configured hosted repository. Hosted activation is a
+release operation, not implied by source availability.
+
+The browser-safe types are in `src/lib/enquiry-demo`; the state engine, snapshot repository,
+session boundary and worker are in `src/lib/server/enquiry-demo`. The page uses the existing
+SvelteKit shell with a full-width feature body. The public page has a readable introduction
+without allocating records. Explicit customer/staff entry POSTs create or resume that visitor's
+temporary workspace. Public staff entry grants access only to their own fictional data; the
+local password is never a public credential. The native form fallback uses POST, preventing
+entered values from entering query strings before hydration.
+
+```mermaid
+flowchart LR
+    Visitor["Visitor: opaque HttpOnly cookie"] --> API["Same-origin bounded enquiry API"]
+    API --> Scope["Server resolves cookie digest and real expiry"]
+    Scope --> Snapshot["Private Supabase workspace: state + revision + staff expiry"]
+    Snapshot --> Engine["Validated in-memory SQLite engine"]
+    Engine --> Commit["Expected-revision atomic commit; bounded conflict replay"]
+    Commit --> Snapshot
+    Commit --> Receipt["Saved receipt only after durable commit"]
+    Cron["Database cron: cleanup and due-work check each minute"] --> Worker["Bearer-protected Vercel fake-message worker"]
+    Worker --> Claim["Persist claim lease, then persist result separately"]
+    Claim --> Snapshot
+    Engine --> Domain["Enquiry + acknowledgement + history transaction; unique reminder"]
+    Browser["Receipt/submission storage by non-authorizing scope key"] --> Visitor
+```
+
+All mutable domain records and settings belong to a workspace snapshot: enquiries, jobs,
+attempts, history, reminders, ownership/routing, demo clock, failure mode and resets. A random
+256-bit cookie is hashed before lookup. A different random scope key namespaces sessionStorage
+and carries no authority. Browser-supplied workspace IDs never select another visitor's state.
+Snapshots expire after 24 real hours; staff grants expire after at most eight. Demo time affects
+four-elapsed-hour response deadlines and retry demonstrations, never authorization or retention.
+
+The existing domain transaction still saves the enquiry, stable reference, owner, deadline,
+acknowledgement and history together. Its validated snapshot is then persisted through one
+Supabase compare-and-swap. Requests return success only after that durable commit. Conflicts
+reload/replay at most four times. The hosted worker saves a claim and completion independently,
+so an interrupted function leaves a recoverable processing lease. A unique reminder stays in
+the snapshot and cannot duplicate on repeated worker passes. The fake adapter has no outbound
+email transport; neither a saved enquiry nor simulated success proves external delivery.
+
+`202610260001_enquiry_demo_workspaces.sql` adds forced-RLS tables with no browser-role policies
+or direct table grants. Only the server role executes the bounded storage RPCs. Shared advisory
+locking serializes global size/admission checks and revision writes. State is capped at 512 KiB
+compact JSON, 100 enquiries and 3,000 history events; SQL also enforces representation size,
+200 active workspaces, a 32 MiB aggregate state cap, and per-key/global hourly creation limits.
+`supabase/enquiry-demo-cron.sql` activates real-time expiry cleanup and an idle-aware minutely
+worker trigger. The bearer credential lives in private Vercel configuration and Supabase Vault.
+
+Every browser mutation checks exact origin, validates JSON and enforces a streamed 16 KiB body
+limit with a five-second read deadline. Hosted calls have 15-second response/read deadlines and
+bounded bytes. API/page responses are private/no-store/noindex; worker requests require an
+independent server credential, a bounded body, deadline and admission guard. Existing site CSP,
+security headers, articles and other services are preserved. The test HTTP bridge is loopback-only
+and refuses Vercel execution; production cannot use its HTTP backend exception. The dedicated
+local Vite configuration excludes authoring caches, outputs and database files from watching.
+
+The [runbook](../enquiry-demo.md) separates local-mode and public-mode source verification from
+hosted-release acceptance. It records commands, limits, screenshots and the activation/readback
+procedure for `https://www.suvroghosh.in/demos/customer-enquiries`. Each release requires checks
+with isolated visitors plus a successful scheduled-worker invocation and acknowledgement while
+its browser is closed; record that live evidence in the task handoff. Source tests and build
+success do not replace deployment readback. This feature preserves the current main branch's
+route-asset budget.
+The prototype remains fictional and is not a production security or exactly-once-delivery claim.
+
 ## 7. Notes client/server/persistence lifecycle
 
 ```mermaid

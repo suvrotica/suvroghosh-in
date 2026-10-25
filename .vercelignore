@@ -5,6 +5,7 @@
 .codex/
 .codex-artifacts/
 .audit-private/
+.data/enquiry-demo/
 .codex-artifacts-*.log
 services/synthetic-data-lab/.agents/
 services/synthetic-data-lab/skills-lock.json
