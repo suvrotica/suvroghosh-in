@@ -5,7 +5,8 @@ validation and exports. The SvelteKit route proxies it through a private server
 boundary. Local mode retains generated data in one service process; hosted mode
 persists private result snapshots in Vercel Blob with shared Redis control state.
 It is not sent to an external model or written into the repository. Hosted code
-is implemented; deployment activation and live verification remain pending.
+is deployed and direct backend plus public-domain HTTP acceptance passed on
+25 October 2026. The app is live at https://www.suvroghosh.in/tools/synthetic-data-lab.
 
 ## Run locally
 
@@ -35,18 +36,18 @@ of 16–128 letters, digits, underscores or hyphens in `X-Lab-Owner`.
 
 ## HTTP contract
 
-| Endpoint | Behaviour |
-| --- | --- |
-| `GET /capabilities` | Actual supported distributions, modules and limits |
-| `POST /validate` | `{config}` to structured validation errors/warnings |
-| `POST /preview` | `{config}` to one bounded, stored preview result |
-| `POST /jobs` | `{config, idempotency_key?}`; local queued job or hosted request-bound completed result |
-| `GET /jobs/{id}` | Status, progress, stage and completed result metadata |
-| `POST /jobs/{id}/cancel` | Local cooperative cancellation (`DELETE` also works); hosted running jobs require aborting the original request |
-| `GET /results/{id}?offset=0&limit=200` | Metadata plus a bounded main row page; `table=name` selects a secondary table |
-| `GET /results/{id}/download?format=csv` | Exact saved dataset, streamed as CSV |
-| `GET /results/{id}/download?format=zip` | Exact dataset plus provenance bundle |
-| `GET` or `POST /cleanup` | Hosted only; separate Cron bearer secret, no owner header; not publicly proxied |
+| Endpoint                                | Behaviour                                                                                                       |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `GET /capabilities`                     | Actual supported distributions, modules and limits                                                              |
+| `POST /validate`                        | `{config}` to structured validation errors/warnings                                                             |
+| `POST /preview`                         | `{config}` to one bounded, stored preview result                                                                |
+| `POST /jobs`                            | `{config, idempotency_key?}`; local queued job or hosted request-bound completed result                         |
+| `GET /jobs/{id}`                        | Status, progress, stage and completed result metadata                                                           |
+| `POST /jobs/{id}/cancel`                | Local cooperative cancellation (`DELETE` also works); hosted running jobs require aborting the original request |
+| `GET /results/{id}?offset=0&limit=200`  | Metadata plus a bounded main row page; `table=name` selects a secondary table                                   |
+| `GET /results/{id}/download?format=csv` | Exact saved dataset, streamed as CSV                                                                            |
+| `GET /results/{id}/download?format=zip` | Exact dataset plus provenance bundle                                                                            |
+| `GET` or `POST /cleanup`                | Hosted only; separate Cron bearer secret, no owner header; not publicly proxied                                 |
 
 `safe=true` enables an explicit spreadsheet protection mode for formula-like
 string values. It does not convert negative numeric values to strings. UTF-8 CSV
@@ -186,6 +187,21 @@ provenance; owner isolation; config-bound idempotency; body limits; cancellation
 result paging; and retention expiry. Engine tests validate statistical contracts
 separately. Hosted tests use separate service instances sharing fake Redis and
 private Blob fixtures to cover owner isolation, idempotency, request-bound
-execution, retained quotas, expiry and cleanup. Mocked tests do not establish
-live infrastructure activation. Record final clean-release test totals and live
-acceptance in [the feature guide](../../docs/visualizations/synthetic-data-lab.md).
+execution, retained quotas, expiry and cleanup. The clean release passed 97
+Python tests, including 11 hosted tests, plus 35 frontend Vitest tests. Svelte
+analysis checked 3,376 files with zero errors/warnings, `npm run build:full`
+exited zero, and the architecture gate plus all 13 gate fixtures passed.
+
+Production backend `dpl_4xHW5LcCu2eWYHUKsTWtNtnBBsuD` (source `8261963`) passed
+live previews for all 12 presets and exposed 34 distributions/423 factor
+records. A 100,000-row, 12-numeric-column full result completed in about 11.1
+seconds and streamed its 10,987,026-byte CSV in about 7.3 seconds. A smaller
+job's CSV and ZIP downloaded successfully, another owner received 404, and the
+stable alias read the same persisted result. These are single-run measurements.
+The native Vercel Cron Run action reached protected `GET /cleanup` with
+`vercel-cron/1.0`, HTTP 200 and 111 ms response time (request
+`5pchc-1792948415427-f964440c8d94`). That confirms Cron routing/authentication;
+no expired objects were present, and it does not establish a completed daily
+schedule or an elapsed 30-minute production-retention test. See the
+[feature guide](../../docs/visualizations/synthetic-data-lab.md) for the full
+evidence, staged/public HTTP acceptance and the delivered public-page capture.

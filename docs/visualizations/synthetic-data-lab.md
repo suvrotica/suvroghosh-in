@@ -5,8 +5,9 @@ SvelteKit site with a separate NumPy/SciPy service. The page is linked from Work
 
 The hosted adapter uses a separate Python Vercel project, private Blob result snapshots and
 shared Redis control state. Generation completes inside its original request. The implementation
-is present; release checks and live activation remain pending until recorded below. Earlier local
-measurements describe the supported memory mode and do not establish hosted availability.
+passed the release checks, direct hosted-backend acceptance and public-domain HTTP acceptance
+recorded below. The app is live at https://www.suvroghosh.in/tools/synthetic-data-lab.
+Earlier local measurements describe the supported memory mode.
 
 ## Run locally
 
@@ -191,11 +192,13 @@ node scripts/verify-synthetic-data-lab.mjs
 npm run build:full
 ```
 
-The feature test command runs independent Python engine/domain/service tests and the focused
-Vitest proxy and probability-chart suites. The earlier local implementation passed 86 Python
-tests and 20 Vitest tests. Hosted shared-store and streaming regressions are additional release
-checks; their final totals/results must be recorded after the clean release test run. The HTTP
-verification script exercises every shipped preset through
+The clean release passed **97 Python tests**, including 11 hosted shared-store tests, and
+**35 Vitest tests** covering the proxy, response streaming and chart logic.
+`npm run check` checked 3,376 files with zero errors and zero warnings. `npm run build:full`
+completed with exit status zero, including the feature/notebook checks and routine content,
+SEO, media, link and discoverability validation. The committed-tree architecture gate passed
+with 58 changed paths and five structural signals; all 13 architecture-check fixtures passed.
+The HTTP verification script exercises every shipped preset through
 the real SvelteKit proxy, tests a controlled parameter change, completes a job, compares repeated
 CSV bytes and inspects the ZIP. Its local sample outputs/report are ignored under
 `.codex-artifacts/synthetic-data-lab/`.
@@ -214,15 +217,53 @@ and SciPy 1.18.1: 100,000 rows by 20 normal columns took 9.393 seconds through j
 immutable storage, and 2.649 seconds for CSV size preflight/download. The CSV was 14.21 MiB and
 the serialized saved result including truth was 82.57 MiB. These are environment-specific
 measurements, not a latency guarantee. These results came from local memory mode before the
-hosted adapter and fresh-main release integration; they do not establish its test/build status.
+hosted adapter and fresh-main release integration.
 
-Hosted acceptance is pending: test owner isolation and config-bound retry identity across two
-service instances, private snapshot retrieval, expiry and bounded cleanup, interrupted commits,
-request abort, a streamed export above the host's buffered-response threshold, and actual
-frontend-to-protected-backend access. Confirm the deployment environment, daily Cron and a small
-public browser-to-CSV flow before marking the launch live. Use service-worker-blocked browsers
-for production acceptance so checks do not warm unrelated offline assets. No live result is
-claimed by the earlier local browser measurements.
+Direct hosted-backend acceptance on 25 October 2026 used production deployment
+`dpl_4xHW5LcCu2eWYHUKsTWtNtnBBsuD`, built from source `8261963`. Its capability response reported
+34 distributions and 423 factor records. All 12 shipped presets completed live previews. A full
+100,000-row, 12-numeric-column result completed in approximately 11.1 seconds, and its streamed
+CSV delivered 10,987,026 bytes and 100,000 data rows in approximately 7.3 seconds. This exceeds
+the host's ordinary buffered-response threshold and exercises the actual streaming route.
+These are one-run observations, not latency guarantees.
+
+A smaller completed job returned a CSV with 1,001 lines including its header and a 33,998-byte
+ZIP. A different owner received HTTP 404 for that result. Reading the same result through the
+stable backend alias succeeded, confirming that access used shared metadata/private persistence
+rather than only the original request's process memory. The ignored metadata report is
+`.codex-artifacts/synthetic-data-lab/hosted-backend-verification.json`; it contains no credentials
+or generated dataset rows. Cross-instance idempotency, quota/eviction, expiry, interrupted commit
+and bounded cleanup behavior additionally passed the hosted fixtures; those fixtures do not
+claim an elapsed 30-minute production-retention test.
+
+The native Vercel Cron Run action invoked `GET /cleanup` successfully with deployment protection
+retained: request `5pchc-1792948415427-f964440c8d94`, user agent `vercel-cron/1.0`, HTTP 200 and
+111 ms response time. The direct cleanup report also returned HTTP 200 with a 500-object limit
+and zero expired objects deleted. This verifies native Cron authentication/routing; it does not
+claim that a scheduled daily run has already occurred or that there were expired live objects
+to remove. Logical expiry and physical cleanup remain separate as described above.
+
+The staged production frontend passed HTTP acceptance through its same-origin proxy: a seeded
+normal preview shifted by exactly three when its mean changed from zero to three; a completed
+100,000-row job delivered the same 10,987,026-byte CSV through the site. Its 5,113,837-byte ZIP
+contained an identical CSV plus configuration, effective configuration, schema, data dictionary,
+validation, summary statistics, reproduction script and generation manifest. Another owner
+received HTTP 404 and a foreign-origin POST received HTTP 403. The temporary staging verification
+token was rotated after these checks.
+
+After production promotion, https://www.suvroghosh.in/tools/synthetic-data-lab returned HTTP 200
+and established its private owner session. Public-domain capability, preview, full generation,
+CSV and ZIP requests passed; the CSV contained 1,000 data rows, the ZIP contained the same CSV,
+and the mean-three preview measured 3.015781 for that seeded 1,000-row sample. The public page
+was also opened as the delivered app and displayed its initial 5,000-row preview, histogram,
+ECDF, relationship chart, observations and observed mean 0.0171. Its screenshot is saved as
+`.codex-artifacts/synthetic-data-lab/live-app.png`.
+
+Production HTTP checks use no browser service worker. The public page observation is a delivery
+capture, not a claim of an automated service-worker-blocked browser interaction suite. Interactive
+parameter, event-mode, download and responsive checks above were performed locally; cancellation
+and disconnect lifecycle regressions passed the focused client/proxy/hosted tests. The ignored
+public HTTP report is `.codex-artifacts/synthetic-data-lab/public-site-verification.json`.
 
 Architecture impact: yes
 

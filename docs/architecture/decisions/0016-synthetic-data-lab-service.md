@@ -1,7 +1,7 @@
 # 0016: Isolate Synthetic Data Lab scientific computation
 
 - Date: 25 October 2026
-- Status: Accepted; hosted implementation added, release verification and activation pending
+- Status: Accepted; deployed with hosted backend and public-domain HTTP acceptance
 
 ## Context
 
@@ -79,9 +79,18 @@ isolation, bounded input/output and cancellation, seeded reproducibility, indepe
 contracts, and the existing SvelteKit build. Record actual verification in the feature guide.
 Also verify two independent service instances against shared state, config-bound retries, failed
 and interrupted commits, private snapshot reads, expiry/cleanup, deployment protection and an
-export above the platform's ordinary buffered-response threshold. Existing local measurements
-do not establish hosted success. Hosted tests and production acceptance remain pending until
-their results are recorded. The canonical architecture was reviewed and updated in the same change.
+export above the platform's ordinary buffered-response threshold. The clean release passed 97
+Python tests (11 hosted), 35 Vitest tests, Svelte analysis of 3,376 files with zero errors/warnings,
+the full feature build, the committed architecture gate and its 13 fixtures. Direct backend
+production acceptance against deployment `dpl_4xHW5LcCu2eWYHUKsTWtNtnBBsuD` / source `8261963`
+passed all 12 live preset previews, a 100,000-row/12-column full result, its 10,987,026-byte streamed
+CSV, smaller CSV/ZIP downloads, owner rejection and reading the shared result through the stable
+alias. The protected native Cron Run action returned HTTP 200 for `/cleanup` with
+`vercel-cron/1.0`; no expired live objects were present. This does not establish an elapsed
+production-retention test or a completed daily scheduled run. Staged and public-domain HTTP
+acceptance also passed, including generation, streamed CSV/ZIP, owner isolation and parameter
+changes. Exact evidence and the public-page delivery capture are recorded in the feature guide. The canonical architecture
+was reviewed and updated in the same change.
 
 See [architecture sections 1, 6 and 9](../ARCHITECTURE.md) and the
 [mandatory change gate](../../../CONTRIBUTING.md#architecture-change-gate).

@@ -198,7 +198,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | Three concrete `/blog/visualizations/...` pages                                                        | Bias Archipelago, Barnum Lab and Meaning & Connection Map have route-specific SSR loads and component wrappers. They reuse the generic article page. Barnum has explicit critical-CSS/preload controls; Meaning Map overlays the article after mount. These exceptions are not a second general publishing engine. |
 | `/topics`, `/topics/[slug]`                                                                            | Prerendered index and `auto` headquarters entries with validated registry membership and lazy Markdown bodies.                                                                                                                                                                                                     |
 | `/resources`, `/resources/[kind=resourceKind]/[slug]`                                                  | Prerendered resource index/details; param matcher limits kind to prompts/lists; universal component import follows server metadata validation.                                                                                                                                                                     |
-| `/comics`, `/comics/[slug]` | Prerendered PDF comic gallery and finite catalogue-backed detail entries. Unknown comic slugs return 404; the covers and complete PDF editions are public static assets. |
+| `/comics`, `/comics/[slug]`                                                                            | Prerendered PDF comic gallery and finite catalogue-backed detail entries. Unknown comic slugs return 404; the covers and complete PDF editions are public static assets.                                                                                                                                           |
 | `/images`, `/images/sketches`                                                                          | Server gallery/sketch loads; generated asset catalogs; the museum has browser enhancement.                                                                                                                                                                                                                         |
 | `/notes/**`                                                                                            | Inherits `prerender = false`; public list/read, owner auth/recovery, protected studio/editor/preview.                                                                                                                                                                                                              |
 | `/notes/studio/analytics`, `/notes/studio/analytics/export`                                            | Configured-owner aggregate dashboard and CSV download; each independently authorizes before bounded report queries and returns private/no-store/noindex responses.                                                                                                                                                 |
@@ -1059,9 +1059,19 @@ The implementation scope, configuration contract, verification and unsupported c
 are recorded in [the feature guide](../visualizations/synthetic-data-lab.md).
 [ADR 0016](decisions/0016-synthetic-data-lab-service.md) explains the separate compute boundary.
 No formal differential-privacy guarantee is introduced by ordinary synthetic generation.
-The hosted adapter is implemented for this release; focused hosted tests and live activation are
-pending until recorded in that guide. Earlier local tests and performance measurements describe
-the memory mode and do not establish hosted availability or serverless latency.
+The clean release passed 97 Python tests (including 11 hosted), 35 Vitest tests, Svelte analysis
+of 3,376 files with zero errors/warnings, the full feature build, the architecture gate and its
+13 fixtures. Direct production-backend acceptance against deployment
+`dpl_4xHW5LcCu2eWYHUKsTWtNtnBBsuD` / source `8261963` completed all 12 live preset previews,
+a 100,000-row/12-numeric-column full result and a 10,987,026-byte streamed CSV. A different owner
+received 404, and the stable alias could read the same shared result. The native Vercel Cron Run
+action reached the protected cleanup endpoint with user agent `vercel-cron/1.0`, HTTP 200 and
+111 ms response time; no expired objects were present. These checks establish direct backend
+operation and Cron routing/authentication, not an elapsed production-retention test or a completed
+daily scheduled run. Staged and public-domain HTTP acceptance passed for generation, parameter
+changes and streamed CSV/ZIP, including a 100,000-row staged export. The feature guide records
+the exact requests, measurements and delivered public-page capture. Earlier local measurements
+describe memory mode separately.
 
 ## 7. Notes client/server/persistence lifecycle
 
