@@ -1,3 +1,12 @@
+# Social publishing routing
+
+- For Suvro Ghosh's user-requested four-channel article broadcasts, use the installed Typefully skill and API for LinkedIn, X, and Substack Notes. Use YouTube's native browser flow for Community posts.
+- Reuse Typefully social set `326643` (`Suvro Ghosh @suvroghoshin`) and matching broadcast drafts. Before publishing or retrying, check existing live posts, pending or scheduled drafts, and each destination's actual publication status for the same article or visualization's canonical URL. Skip destinations that are already live and do not retry publication while it is in progress.
+- If Typefully explicitly blocks an X post because it contains a URL (for example, HTTP 403: "Direct publishing of X drafts containing URLs is blocked"), automatically use X's native browser composer on `@suvroghoshin` for the prepared post, preserving the live article or visualization link. The user's broadcast request is standing authorization for this fallback; do not ask for another confirmation or routing exception. Preserve the requested publication timing; a draft-only request remains draft-only.
+- After a Typefully rejection, check each destination's actual publication status before retrying. Disable X in the matching Typefully draft before publishing the remaining destinations through Typefully. Check native X posts for the same canonical URL again immediately before the fallback, and leave X disabled in Typefully after native publication so retries cannot duplicate the post.
+- Verify each published permalink and its article or visualization link before reporting completion. Include the native X permalink in the task handoff.
+- This X fallback applies only to Typefully's policy rejection of posts containing links. Missing or invalid Typefully credentials, quota limits, and other errors retain the installed skill's handling requirements.
+
 # Repository security invariants
 
 ## Architecture review
