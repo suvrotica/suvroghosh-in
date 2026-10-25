@@ -239,6 +239,52 @@ flowchart LR
 
 `src/lib/server/content/posts.ts` eagerly imports only Markdown metadata, omits unpublished/redirected posts, validates required fields, maps categories into sections, and derives topic membership, archives, navigation, related posts, curated paths and facets. Publication currently means `published !== false`; missing publication flags are not implicitly private. `src/lib/content/posts.ts` defines the metadata interface and runtime checks, but does not offer the same strict runtime schema as notes or topic headquarters.
 
+### Public blog catalog
+
+`src/lib/server/content/blog-catalog.ts` projects exact fields from that existing registry into
+`/feeds/blog-catalog.v1.json`. Unlike the general registry, export requires `published === true`
+and a real calendar publication date no later than the UTC export day. Future or invalid publication
+dates are omitted. Eligible items with malformed identifiers, text, tags or modification dates fail
+the build rather than producing a partial misleading catalog. A supplied modification date must
+be real, at least the publication date and no later than the UTC export day; absence stays absent.
+This stricter export rule does not change existing article publication or routing semantics.
+
+| Contract | Version 1 |
+| --- | --- |
+| Envelope | `schemaVersion: 1`, `source: "suvroghosh.in"`, `canonicalOrigin: "https://www.suvroghosh.in"`, ISO `generatedAt`, SHA-256 `revision`, `items` |
+| Identity and URL | `id: "suvroghosh.in:<slug>"`; source filename slug, at most 200 ASCII letters/digits/underscores/hyphens; production origin plus existing `postPath` for the canonical `/blog/<category>/<slug>` URL |
+| Metadata | Original `title` (240 characters maximum), `description` (1,200), calendar `publishedAt`, optional actual `modifiedAt`, normalized category `{slug, label}` (128/120), and `tags` (at most 20, each at most 80 characters) |
+| Exclusions | No article body, compiled Svelte component, author biography, image/thumbnail, FAQ, private note, draft record, credential, selection state or arbitrary metadata field |
+| Bounds and ordering | At most 2,000 source entries and 2 MiB serialized UTF-8 output; duplicate slugs fail; newest publication date first, then stable ID by code-point order |
+| Revision | SHA-256 of the deterministic projected `items` JSON; independent of input order and generation time; dates and prose metadata are not rewritten |
+
+The fixed production origin is used even in a local development catalog. Category changes retain
+the same slug-derived ID while the canonical URL updates. A future slug rename needs an explicit
+consumer migration; version 1 does not invent old-ID aliases or infer relationships from titles.
+The catalog is a public candidate list, not a recommendation, endorsement or ClinConsult publishing
+decision. ClinConsult owns its separate owner-reviewed selection. Source article prose remains in
+this repository and full reading stays at its canonical URL. The existing latest-25 RSS and sitemap
+contracts remain unchanged. The catalog exports metadata only; existing Markdown compilation for
+the source site continues independently.
+
+```mermaid
+flowchart LR
+    Posts["Active Markdown metadata"] --> Registry["Existing published-post registry"]
+    Registry --> Projection["Strict due-publication checks + explicit metadata projection"]
+    Projection --> Catalog["Prerendered blog-catalog.v1.json; bounded JSON"]
+    Catalog --> Consumer["External curator; separate selection authority"]
+    Consumer --> Link["Canonical source article link"]
+    Posts --> Article["Existing source article rendering"]
+    Link --> Article
+```
+
+The endpoint performs no runtime source fetch or expensive input-dependent work. Adding new
+catalog fields, bodies, media, cross-origin embeds or a selection/admin protocol requires its own
+contract and boundary review. The source site's frame denial, CSP, canonical article graph, private
+Notes access and current hosting adapter are unchanged.
+
+### Categories and article discovery
+
 Categories may have parents, defined by `categoryParents` in `src/lib/content/categories.ts`; `categoryTrail` supplies the root-to-leaf ancestry with cycle detection. Poetry is the parent of Limerick. Both map into the existing Essays section in `sections.json`, leaving the six permanent sections intact. Posts retain one leaf `category` and the existing `/blog/[category]/[slug]` canonical URL. Parent archives and category search include descendant posts; archive facets/counts, the writing index and sitemap include their populated ancestors. Category archives link their published children and parents. Article breadcrumbs use the same ancestry in visible navigation and JSON-LD. Categories without parents preserve their existing behavior.
 
 ```mermaid
@@ -1284,6 +1330,9 @@ New expensive/state-changing endpoints must follow the existing security invaria
 
 ## 10. Caching and offline behavior
 
+- The public blog catalog is regenerated with the source build, not on an editorial schedule or an external consumer's request. The GET handler declares `public, max-age=0, must-revalidate`, with no positive cache lifetime or stale-while-revalidate extension, so source cache grace does not intentionally compound a consumer's withdrawal window. It declares a strong SHA-256 ETag of the actual JSON response, including `generatedAt`; this differs from the metadata-only revision. Focused unit tests verify that handler declaration. The local Vercel static artifact contains the catalog file but no catalog-specific route/header rule in `.vercel/output/config.json`; the adapter or host may supply different caching/ETag behavior. Actual deployed revalidation/header behavior must be verified before release, and consumer withdrawal bounds are conditional on genuinely fresh source responses. No deployed-header acceptance is claimed and this change does not alter Vercel configuration. A consumer must apply its own freshness policy independently; ClinConsult's separate design sends revalidation requests, uses 15-minute refresh and a 24-hour stale bound. Source deployments and downstream cache refreshes are separate visibility steps. Publication removal cannot recall previously delivered public metadata or consumer caches. No service-worker catalog cache is added.
+
+
 - Prerendered pages and immutable build chunks use the adapter/CDN path; dynamic archives execute server loads.
 - `vercel.json` gives semantic `/images`, `/photos`, `/sketch`, `/videos`, `/fonts` URLs one year of immutable caching. Other static families have separate long shared-cache rules. There is no general source-content hash in editorial image URLs; replacement at the same path can remain stale (`AF-008`).
 - `PostImage.svelte` emits responsive Vercel optimizer URLs with a local-original fallback. Its sizes must agree with adapter image sizes. Those URLs do not currently include a content revision.
@@ -1318,6 +1367,14 @@ flowchart LR
 Delivered publications cannot be recalled from an offline device. This is a documented product constraint, not an authorization guarantee. Do not extend the worker to cache authenticated pages or mutable draft APIs.
 
 ## 11. Tests and architectural verification
+
+`npx vitest run src/lib/server/content/blog-catalog.test.ts --maxWorkers=2` covers explicit field
+projection, publication flags and real/calendar/future dates, UTC cutoff, canonical category URLs,
+stable IDs, older evergreen membership beyond RSS limits, ordering, revision/ETag semantics,
+malformed metadata, duplicate IDs, item/UTF-8 byte limits and endpoint cache/JSON headers using
+synthetic metadata. The prerendered artifact still needs a source build and exact payload inspection;
+these tests do not establish hosted availability or downstream owner curation.
+
 
 `comments:test` covers strict schemas and bounded body/origin handling, public API metadata
 projection, guest/owner role separation, page authorization, private exports and bounded repository

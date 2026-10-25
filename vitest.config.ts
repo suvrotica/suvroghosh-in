@@ -50,6 +50,7 @@ export default defineConfig({
 			'src/lib/notes/**/*.test.ts',
 			'src/lib/server/notes/**/*.test.ts',
 			'src/lib/server/http/**/*.test.ts',
+			'src/lib/server/content/**/*.test.ts',
 			'src/routes/api/tts/chatterbox/**/*.test.ts',
 			'src/routes/contact/**/*.test.ts',
 			'src/lib/topics/**/*.test.ts',
