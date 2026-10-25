@@ -1,3 +1,5 @@
+import { getVercelOidcTokenSync } from '@vercel/oidc';
+
 export const SEMANTIC_MODEL = 'nvidia/nemotron-3.5-lightning-free';
 export const SEMANTIC_PROVIDER = 'Vercel AI Gateway / NVIDIA';
 export const SEMANTIC_TIMEOUT_MS = 60_000;
@@ -18,9 +20,18 @@ export type SemanticConfig = {
 };
 
 export function semanticConfig(env: Record<string, string | undefined>): SemanticConfig {
+	let credentialAvailable = Boolean(env.AI_GATEWAY_API_KEY || env.VERCEL_OIDC_TOKEN);
+	if (!credentialAvailable) {
+		try {
+			// Vercel Functions supply OIDC in trusted request context; check each invocation.
+			credentialAvailable = Boolean(getVercelOidcTokenSync());
+		} catch {
+			// Missing runtime context disables AI without retaining or exposing a token.
+		}
+	}
 	return {
 		enabled: env.PROMPT_ATLAS_AI_ENABLED === 'true',
-		credentialAvailable: Boolean(env.AI_GATEWAY_API_KEY || env.VERCEL_OIDC_TOKEN),
+		credentialAvailable,
 		salt: env.PROMPT_ATLAS_RATE_LIMIT_SALT ?? '',
 		supabaseUrl: env.SUPABASE_URL ?? '',
 		supabaseKey: env.SUPABASE_SERVICE_ROLE_KEY ?? ''

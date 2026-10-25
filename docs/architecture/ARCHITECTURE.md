@@ -364,6 +364,10 @@ even when model pricing is zero. NVIDIA may retain submitted prompts/responses f
 this. Local mode remains usable without provider credentials or database configuration.
 
 `src/lib/server/prompt-atlas` owns server configuration, provider access and request policy.
+Credential availability is checked per invocation with the server-only `@vercel/oidc` helper,
+which reads trusted Vercel Function request context or its environment fallback; a configured
+Gateway API key also qualifies. Only availability is retained, never the runtime token, and
+browser request headers are not used as an authentication source.
 POST requires exact Origin, JSON, per-request consent, valid UTF-8 and a streamed 2 MiB body limit;
 its body-read deadline is eight seconds and total work deadline sixty seconds. Provider bodies
 are streamed and capped at 2 MiB. Private/no-store headers also cover framework errors through

@@ -37,8 +37,11 @@ Primary references checked on 25 October 2026:
    denied anon/authenticated execution, RLS and revoked direct table grants.
 3. Configure `PROMPT_ATLAS_RATE_LIMIT_SALT` (at least 32 random bytes),
    `PROMPT_ATLAS_AI_ENABLED=true`, existing `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`.
-   Vercel supplies OIDC authentication automatically. Local development can use a private
-   `AI_GATEWAY_API_KEY`. Never prefix these values with `PUBLIC_` or commit real values.
+   Vercel supplies OIDC authentication through trusted Function request context. The server checks
+   availability on each invocation with the same `@vercel/oidc` helper used by Gateway; build/local
+   environment tokens and a private `AI_GATEWAY_API_KEY` are also supported. It retains only the
+   availability boolean, never a runtime token, and does not read browser request headers for
+   credentials. Never prefix these values with `PUBLIC_` or commit real values.
 4. Build/deploy. `GET /api/prompt-atlas` must return the fixed provider/model and `freeOnly:true`.
    GET checks configuration and public zero-price metadata; a successful GET alone does not
    prove quota RPC access or provider authorization. The POST checks both before generation.

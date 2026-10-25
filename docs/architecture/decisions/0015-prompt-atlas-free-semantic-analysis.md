@@ -24,6 +24,13 @@ generation. Fail closed on unavailable/unknown/nonzero pricing. Do not buy credi
 top-ups or repurpose the narration credential. The external free-route pricing contract may
 change; a different model is a future reviewed decision.
 
+Detect credential availability on each server invocation with the same pinned `@vercel/oidc`
+helper used by Gateway. Vercel Functions provide tokens through trusted runtime request context,
+while build/local execution can supply an environment token or private Gateway API key. An
+environment-only check would incorrectly disable deployed Functions. Keep only the availability
+boolean; do not persist or log runtime tokens, inspect browser request headers for credentials,
+or cache one request's authentication state for another. Missing context fails closed.
+
 Use the existing Supabase service boundary for one atomic global/per-client quota reservation
 before a provider attempt. An additive migration stores short-lived hourly HMAC keys and counts,
 with RLS, service-only RPC access and no raw prompt/address storage. Failed attempts consume
