@@ -17,6 +17,7 @@ export const ANALYSIS_MODE = {
 		'Your text stays in this browser. Rules identify common prompt and modeling patterns; review ambiguous or unusual language.'
 } as const;
 
+export const SEMANTIC_CONFIG_TIMEOUT_MS = 12_000;
 export const SEMANTIC_TIMEOUT_MS = 65_000;
 export const MAX_SEMANTIC_RESPONSE_BYTES = 4 * 1024 * 1024;
 export type AnalysisMode = 'local' | 'semantic';

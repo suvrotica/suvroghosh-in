@@ -772,6 +772,117 @@ test('loading examples in AI mode never sends a previously approved prompt', asy
 	expect(posts).toEqual([]);
 });
 
+test('a six-second availability probe enables AI while local analysis remains usable', async ({
+	page
+}) => {
+	let releaseConfig = () => {};
+	let markConfigStarted = () => {};
+	const configGate = new Promise<void>((resolve) => {
+		releaseConfig = resolve;
+	});
+	const configStarted = new Promise<void>((resolve) => {
+		markConfigStarted = resolve;
+	});
+	let posts = 0;
+	await page.route('**/api/prompt-atlas', async (route) => {
+		if (route.request().method() === 'GET') {
+			markConfigStarted();
+			await configGate;
+			await route.fulfill({
+				status: 200,
+				contentType: 'application/json',
+				body: JSON.stringify(semanticConfig)
+			});
+		} else {
+			posts += 1;
+			await route.abort('blockedbyclient');
+		}
+	});
+	await page.clock.install();
+	await ready(page);
+	await configStarted;
+	await analyze(page, 'Write a kind story about a robot gardener.');
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText('Local · rules-based');
+	await aiRadio(page).check();
+	const options = atlas(page).getByTestId('semantic-options');
+	await expect(options.locator('.atlas-ai-availability')).toContainText('Checking AI availability');
+	await expect(aiConsent(page)).toBeDisabled();
+	await page.clock.fastForward(6000);
+	releaseConfig();
+	await expect(options.locator('.atlas-ai-availability')).toContainText(
+		'AI is available within the configured free-credit limits.'
+	);
+	await expect(options).toContainText(semanticProvider);
+	await expect(options).toContainText(semanticModel);
+	await expect(options).toContainText(
+		'NVIDIA may retain prompts and responses for model improvement'
+	);
+	await expect(aiConsent(page)).toBeEnabled();
+	await expect(aiConsent(page)).not.toBeChecked();
+	await expect(
+		atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true })
+	).toBeDisabled();
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText('Local · rules-based');
+	expect(posts).toBe(0);
+});
+
+test('an availability probe times out after twelve seconds without enabling AI or blocking local analysis', async ({
+	page
+}) => {
+	await ready(page);
+	await editor(page).fill(semanticText);
+	await aiRadio(page).check();
+	let releaseConfig = () => {};
+	let markConfigStarted = () => {};
+	const configGate = new Promise<void>((resolve) => {
+		releaseConfig = resolve;
+	});
+	const configStarted = new Promise<void>((resolve) => {
+		markConfigStarted = resolve;
+	});
+	let posts = 0;
+	await page.route('**/api/prompt-atlas', async (route) => {
+		if (route.request().method() === 'GET') {
+			markConfigStarted();
+			await configGate;
+			await route
+				.fulfill({
+					status: 200,
+					contentType: 'application/json',
+					body: JSON.stringify(semanticConfig)
+				})
+				.catch(() => {});
+		} else {
+			posts += 1;
+			await route.abort('blockedbyclient');
+		}
+	});
+	const clockStart = new Date('2026-10-25T12:00:00Z');
+	await page.clock.install({ time: clockStart });
+	await page.clock.pauseAt(new Date(clockStart.getTime() + 1000));
+	await atlas(page).getByRole('button', { name: 'Check AI availability', exact: true }).click();
+	await configStarted;
+	const availability = atlas(page)
+		.getByTestId('semantic-options')
+		.locator('.atlas-ai-availability');
+	await page.clock.fastForward(11_999);
+	await expect(availability).toContainText('Checking AI availability');
+	await page.clock.fastForward(1);
+	await expect(availability).toContainText(
+		'AI availability did not respond in time. Local analysis is ready to use.'
+	);
+	releaseConfig();
+	await expect(aiConsent(page)).toBeDisabled();
+	await expect(
+		atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true })
+	).toBeDisabled();
+	await page.clock.resume();
+	await atlas(page).getByRole('button', { name: 'Analyze locally instead', exact: true }).click();
+	await expect(diagram(page)).toHaveAttribute('data-model', 'mindmap');
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText('Local · rules-based');
+	expect(posts).toBe(0);
+});
+
 test('unavailable or unverified free-only AI stays blocked and local fallback is explicit', async ({
 	page
 }) => {

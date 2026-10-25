@@ -43,6 +43,9 @@ Primary references checked on 25 October 2026:
    availability boolean, never a runtime token, and does not read browser request headers for
    credentials. Never prefix these values with `PUBLIC_` or commit real values.
 4. Build/deploy. `GET /api/prompt-atlas` must return the fixed provider/model and `freeOnly:true`.
+   The browser allows twelve seconds for this availability probe to accommodate cold starts;
+   local analysis remains usable while it is pending. A consented analysis has a separate
+   sixty-five-second browser deadline.
    GET checks configuration and public zero-price metadata; a successful GET alone does not
    prove quota RPC access or provider authorization. The POST checks both before generation.
 5. Make a bounded test request containing a synthetic prompt and `consent:true`, with exact

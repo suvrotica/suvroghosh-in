@@ -11,6 +11,7 @@
 	import { validateOntology } from '$lib/visualizations/prompt-atlas/validation';
 	import {
 		ANALYSIS_MODE,
+		SEMANTIC_CONFIG_TIMEOUT_MS,
 		SEMANTIC_TIMEOUT_MS,
 		UNAVAILABLE_SEMANTIC_CONFIG,
 		SemanticAnalysisError,
@@ -139,7 +140,7 @@
 		const controller = new AbortController();
 		configController = controller;
 		configLoading = true;
-		configDeadline = setTimeout(() => controller.abort(), 5000);
+		configDeadline = setTimeout(() => controller.abort(), SEMANTIC_CONFIG_TIMEOUT_MS);
 		try {
 			const config = await fetchSemanticConfig(controller.signal);
 			if (!destroyed && configController === controller) semanticConfig = config;

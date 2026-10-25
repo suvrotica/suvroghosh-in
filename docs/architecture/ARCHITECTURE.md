@@ -319,7 +319,9 @@ Prompt Atlas uses feature-local TypeScript modules under `src/lib/visualizations
 and Svelte UI under `src/lib/components/visualizations/prompt-atlas`. Local mode is the default:
 a deterministic reader runs in a cancellable browser worker with a ten-second deadline. Optional
 semantic mode explicitly sends one consented prompt to the same-origin `/api/prompt-atlas`
-endpoint, then through Vercel AI Gateway to NVIDIA. Choosing AI or typing does not submit text.
+endpoint, then through Vercel AI Gateway to NVIDIA. The browser gives public availability probes
+their own twelve-second deadline while local analysis remains usable; consented analysis has a
+separate sixty-five-second browser deadline. Choosing AI or typing does not submit text.
 Editing, cancellation, changing mode and destruction abort pending work; generation IDs reject
 late responses. A failure offers an explicit local-mode action. Existing narration credentials
 are never reused.
