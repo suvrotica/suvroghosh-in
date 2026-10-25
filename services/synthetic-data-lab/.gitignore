@@ -1,2 +1,6 @@
 .vercel
 .env*
+
+# Marketplace CLI authoring skills are local tooling.
+.agents/
+skills-lock.json

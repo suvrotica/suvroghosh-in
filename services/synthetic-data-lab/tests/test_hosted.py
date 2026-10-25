@@ -291,4 +291,3 @@ def test_hosted_configuration_fails_closed_and_accepts_vercel_kv_aliases(monkeyp
         monkeypatch.delenv(name, raising=False)
     with pytest.raises(RuntimeError):
         PrivateBlob().check_configuration()
-

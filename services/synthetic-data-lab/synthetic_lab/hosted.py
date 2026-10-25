@@ -448,4 +448,3 @@ class HostedLabStore(LabStore):
             raise
         finally:
             watcher.cancel()
-
