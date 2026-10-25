@@ -1,0 +1,28 @@
+import { defineConfig } from '@playwright/test';
+
+const baseURL = 'http://127.0.0.1:4285';
+
+export default defineConfig({
+	testDir: './tests/browser',
+	testMatch: ['comics.spec.ts'],
+	workers: 1,
+	timeout: 60_000,
+	expect: { timeout: 10_000 },
+	reporter: [['list']],
+	use: {
+		baseURL,
+		browserName: 'chromium',
+		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? 'chromium' : 'chrome'),
+		headless: true,
+		serviceWorkers: 'block',
+		reducedMotion: 'reduce',
+		screenshot: 'only-on-failure',
+		trace: 'retain-on-failure'
+	},
+	webServer: {
+		command: 'node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4285 --strictPort',
+		url: baseURL,
+		timeout: 60_000,
+		reuseExistingServer: !process.env.CI
+	}
+});

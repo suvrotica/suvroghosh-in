@@ -8,6 +8,11 @@
 		{ href: '/', label: 'Home', description: 'Return to the main page' },
 		{ href: '/start-here', label: 'Start Here', description: 'Follow five curated reading paths' },
 		{ href: '/writing', label: 'Writing', description: 'Browse the reading room' },
+		{
+			href: '/comics',
+			label: 'Comics',
+			description: 'Browse comic adaptations and download the PDFs'
+		},
 		{ href: '/blog', label: 'All posts', description: 'Search the complete archive' },
 		{
 			href: '/topics',

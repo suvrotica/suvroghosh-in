@@ -192,6 +192,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | Three concrete `/blog/visualizations/...` pages                                                        | Bias Archipelago, Barnum Lab and Meaning & Connection Map have route-specific SSR loads and component wrappers. They reuse the generic article page. Barnum has explicit critical-CSS/preload controls; Meaning Map overlays the article after mount. These exceptions are not a second general publishing engine. |
 | `/topics`, `/topics/[slug]`                                                                            | Prerendered index and `auto` headquarters entries with validated registry membership and lazy Markdown bodies.                                                                                                                                                                                                     |
 | `/resources`, `/resources/[kind=resourceKind]/[slug]`                                                  | Prerendered resource index/details; param matcher limits kind to prompts/lists; universal component import follows server metadata validation.                                                                                                                                                                     |
+| `/comics`, `/comics/[slug]` | Prerendered PDF comic gallery and finite catalogue-backed detail entries. Unknown comic slugs return 404; the covers and complete PDF editions are public static assets. |
 | `/images`, `/images/sketches`                                                                          | Server gallery/sketch loads; generated asset catalogs; the museum has browser enhancement.                                                                                                                                                                                                                         |
 | `/notes/**`                                                                                            | Inherits `prerender = false`; public list/read, owner auth/recovery, protected studio/editor/preview.                                                                                                                                                                                                              |
 | `/notes/studio/analytics`, `/notes/studio/analytics/export`                                            | Configured-owner aggregate dashboard and CSV download; each independently authorizes before bounded report queries and returns private/no-store/noindex responses.                                                                                                                                                 |
@@ -209,7 +210,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/rss.xml`, `/sitemap.xml`                                                                             | Prerendered repository-backed discovery outputs. Notes has a separate dynamic sitemap.                                                                                                                                                                                                                             |
 | `/tags/[slug]`, `/[indexnowKey].txt`                                                                   | Dynamic legacy tag redirects and secret-backed IndexNow verification.                                                                                                                                                                                                                                              |
 
-The personal-site introduction leads with independent entrepreneurship, making and writing. Primary navigation connects existing work (`/projects`), writing (`/writing`), the verified external YouTube channel, `/about`, and the existing Start Here reading guide. Secondary discovery remains in the footer and command palette. `/about` is a small prerendered profile using the shared `Person` identity, with career history linked at the unchanged `/resume` URL. `/consulting` retains its URL as a prerendered page for scoped independent technical services and Gulf delivery partnerships, with career background and public analysis below the offer. `/healthcare-it-gulf` remains a career-context page and links to that current offer without implying Gulf client engagements. The footer and home closing invitation expose the services page; enquiries reuse the unchanged `/contact` form and action. No article routes or publication metadata were renamed.
+The personal-site introduction leads with independent entrepreneurship, making and writing. Primary navigation connects existing work (`/projects`), writing (`/writing`), comics (`/comics`), the verified external YouTube channel, `/about`, and the existing Start Here reading guide. Secondary discovery remains in the footer and command palette. `/about` is a small prerendered profile using the shared `Person` identity, with career history linked at the unchanged `/resume` URL. `/consulting` retains its URL as a prerendered page for scoped independent technical services and Gulf delivery partnerships, with career background and public analysis below the offer. `/healthcare-it-gulf` remains a career-context page and links to that current offer without implying Gulf client engagements. The footer and home closing invitation expose the services page; enquiries reuse the unchanged `/contact` form and action. No article routes or publication metadata were renamed.
 
 SSR and client hydration remain enabled by default; there is no global SPA-only setting. Universal content loads intentionally return component constructors because that code executes in both environments. Server loads return serializable metadata. The generic article page supplies article SEO, breadcrumbs, author/tools, navigation, related posts and notebook/folio variants.
 
@@ -228,6 +229,38 @@ flowchart LR
 The three concrete visualization wrappers are intentional bundle/rendering adaptations. Their differing entry exclusions and duplicated load scaffolding are visible maintenance costs. The Meaning Map's earlier unbalanced global scroll mutation (`AF-006`) is corrected by mount-owned cleanup; it is not an approved route convention. Its separate interaction-state/accessibility debt remains `AF-013`.
 
 ## 5. Content, build and search data flow
+
+`src/lib/content/comics.ts` is the browser-safe source of truth for published comic editions,
+their original-story paths, cover dimensions/alternative text and PDF download metadata.
+It drives the homepage's paired cover feature, `/comics` gallery, prerendered detail entries,
+sitemap and finite public analytics path list. Detail loads resolve only catalogue slugs.
+`loadPublishedBlogPost` matches an article's canonical path against the same catalogue on
+the server and supplies a small nullable adaptation record. The standard article page renders
+reciprocal comic/download links inline outside the prose and TTS reading region, without
+importing a separate comic catalogue or UI component module into unrelated article clients; original
+Markdown bodies and their publication metadata remain unchanged. Comics have their own
+canonical URLs, CreativeWork/source relationships and collection discovery metadata.
+
+Approved full editions are copied byte-for-byte to `static/comics/<slug>/`; `.gitattributes`
+marks PDF files as binary so Windows Git line-ending conversion cannot alter them. Smaller WebP
+cover derivatives serve the homepage and comic pages. The PDF is a direct static download,
+with its size visible before downloading. It is not fetched by page loads, rendered in an
+iframe, proxied through a Function or added to service-worker prefetching. No credentials,
+new mutation endpoint, database, runtime storage or external integration is introduced.
+This extends the existing repository-backed/static publication pattern without a new ADR.
+
+```mermaid
+flowchart LR
+    Catalogue["content/comics.ts"] --> Home["Homepage cover pair"]
+    Catalogue --> Pages["Prerendered gallery + finite detail pages"]
+    Catalogue --> Discovery["Sitemap + finite public path registries"]
+    Catalogue --> Original["Matching original article: comic notice"]
+    Assets["static/comics: WebP covers + complete PDF"] --> Home
+    Assets --> Pages
+    Pages --> Download["Reader-initiated static PDF download"]
+    Original --> Pages
+    Pages --> Prose["Original canonical story"]
+```
 
 `svelte.config.js` preprocesses Markdown with author-helper imports, image markup enrichment and mdsvex; remark/rehype handle math, heading IDs/links, heading collection, H1 demotion, Bengali language markup and square-bracket styling. Its global imports are limited to the editorial helpers named there. Authors explicitly import substantial interactive experiences.
 
@@ -1534,6 +1567,14 @@ flowchart LR
 Delivered publications cannot be recalled from an offline device. This is a documented product constraint, not an authorization guarantee. Do not extend the worker to cache authenticated pages or mutable draft APIs.
 
 ## 11. Tests and architectural verification
+
+Comic catalogue/asset checks and the link-validator fixtures verify finite route membership,
+published original-story references, cover metadata and real PDF downloads. The analytics
+path fixtures admit only the gallery and registered comic details, excluding unknown slugs,
+nested paths and PDF/cover files. The focused comic browser suite runs against a loopback
+production preview with service workers blocked, exercises header/footer and both homepage
+covers, checks reciprocal story links and canonical metadata, and saves the PDF through the
+actual download control. Local checks do not by themselves establish production deployment.
 
 `npx vitest run src/lib/server/content/blog-catalog.test.ts --maxWorkers=2` covers explicit field
 projection, publication flags and real/calendar/future dates, UTC cutoff, canonical category URLs,

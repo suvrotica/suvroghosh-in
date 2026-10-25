@@ -7,7 +7,7 @@
 	import { substackLinks, youtubeProfile } from '$lib/config/links';
 
 	type NavigationItem = {
-		href: '/projects' | '/writing' | '/start-here' | '/about' | '/blog/apps';
+		href: '/projects' | '/writing' | '/comics' | '/start-here' | '/about' | '/blog/apps';
 		label: string;
 		sections: readonly string[];
 	};
@@ -23,6 +23,7 @@
 			label: 'Writing',
 			sections: ['/writing', '/blog', '/topics', '/notes', '/resources']
 		},
+		{ href: '/comics', label: 'Comics', sections: ['/comics'] },
 		{ href: '/blog/apps', label: 'Apps', sections: ['/blog/apps'] },
 		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
 		{

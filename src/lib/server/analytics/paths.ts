@@ -1,5 +1,6 @@
 import { postPath } from '$lib/content/posts';
 import { categoryTrail } from '$lib/content/categories';
+import { comicCatalog, comicPath } from '$lib/content/comics';
 import {
 	getPublishedPosts,
 	getPublishedArchiveMonths,
@@ -14,6 +15,7 @@ const paths = new Set([
 	'/',
 	'/about',
 	'/writing',
+	'/comics',
 	'/consulting',
 	'/projects',
 	'/start-here',
@@ -44,6 +46,7 @@ for (const topic of getPublishedTopics()) paths.add(`/blog/topics/${topic.slug}`
 for (const topic of getTopicHeadquartersSummaries()) paths.add(`/topics/${topic.slug}`);
 for (const resource of getAllPublishedResources()) paths.add(resource.path);
 for (const game of gamesCatalog) paths.add(`/blog/games/${game.slug}`);
+for (const comic of comicCatalog) paths.add(comicPath(comic));
 
 /** Only the public Notes shelf is measured; dynamic private/public note slugs are excluded. */
 export function eligibleAnalyticsPath(value: unknown) {

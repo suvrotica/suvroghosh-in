@@ -2,7 +2,7 @@
 	import 'katex/dist/katex.min.css';
 	import courierPrimeLatinUrl from '@fontsource/courier-prime/files/courier-prime-latin-400-normal.woff2?url';
 	import humanMarginSourceSerifLatinUrl from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
-	import { resolve } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
@@ -176,6 +176,39 @@
 
 					<ArticleActions title={data.metadata.title} />
 				</header>
+			{/if}
+
+			{#if data.comicAdaptation}
+				<aside
+					class="mb-10 border-y border-neutral-300 bg-neutral-100 px-6 py-5 dark:border-neutral-700 dark:bg-neutral-900 print:hidden"
+					aria-labelledby="comic-adaptation-heading"
+					data-comic-adaptation
+					data-tts-exclude
+				>
+					<p
+						class="mb-2 text-left text-xs font-semibold tracking-widest text-neutral-500 uppercase dark:text-neutral-400"
+					>
+						Also in panels
+					</p>
+					<h2 id="comic-adaptation-heading" class="m-0 text-left text-xl">
+						Read this story as a comic
+					</h2>
+					<div class="mt-3 flex flex-wrap gap-x-6 gap-y-1">
+						<a
+							class="inline-flex min-h-11 items-center gap-2 text-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4"
+							href={resolve('/comics/[slug]', { slug: data.comicAdaptation.slug })}
+							>View the comic <span aria-hidden="true">↗</span></a
+						>
+						<a
+							class="inline-flex min-h-11 items-center gap-2 text-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4"
+							href={asset(data.comicAdaptation.pdf.href)}
+							download={data.comicAdaptation.pdf.filename}
+							data-sveltekit-preload-data="off"
+							>Download {data.comicAdaptation.pageCount}-page PDF ({data.comicAdaptation
+								.fileSize})</a
+						>
+					</div>
+				</aside>
 			{/if}
 
 			{#if !data.metadata.interactiveFirst && !data.metadata.immersiveLead}

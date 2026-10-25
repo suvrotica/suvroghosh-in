@@ -150,6 +150,73 @@ function canonicalTopicRoutes() {
 	return topics;
 }
 
+function canonicalComicRoutes() {
+	const comics = new Set();
+	const handler = path.join(routesDir, 'comics', '[slug]', '+page.svelte');
+	const catalogFile = path.join(root, 'src', 'lib', 'content', 'comics.ts');
+	if (
+		!fs.existsSync(handler) ||
+		!fs.statSync(handler).isFile() ||
+		!fs.existsSync(catalogFile) ||
+		!fs.statSync(catalogFile).isFile()
+	) {
+		return comics;
+	}
+
+	// Read the selected source tree rather than importing the validator checkout's
+	// catalogue. Fixture roots and missing registries must not inherit real routes.
+	const source = ts.createSourceFile(catalogFile, read(catalogFile), ts.ScriptTarget.Latest, true);
+	const unwrap = (node) => {
+		while (
+			node &&
+			(ts.isAsExpression(node) ||
+				ts.isSatisfiesExpression(node) ||
+				ts.isParenthesizedExpression(node))
+		) {
+			node = node.expression;
+		}
+		return node;
+	};
+	const declaration = source.statements
+		.filter(
+			(statement) =>
+				ts.isVariableStatement(statement) &&
+				statement.modifiers?.some((modifier) => modifier.kind === ts.SyntaxKind.ExportKeyword)
+		)
+		.flatMap((statement) => [...statement.declarationList.declarations])
+		.find((item) => ts.isIdentifier(item.name) && item.name.text === 'comicCatalog');
+	const catalog = unwrap(declaration?.initializer);
+	if (!catalog || !ts.isArrayLiteralExpression(catalog)) {
+		errors.push(`${relativeFile(catalogFile)}: comicCatalog must be an exported literal array.`);
+		return comics;
+	}
+	for (const element of catalog.elements) {
+		const record = unwrap(element);
+		const property =
+			record && ts.isObjectLiteralExpression(record)
+				? record.properties.find(
+						(item) =>
+							ts.isPropertyAssignment(item) &&
+							item.name.getText(source).replace(/^['"]|['"]$/g, '') === 'slug'
+					)
+				: null;
+		const value = property && unwrap(property.initializer);
+		const slug = value && ts.isStringLiteral(value) ? value.text : null;
+		if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+			errors.push(
+				`${relativeFile(catalogFile)}: every comic must have a literal lowercase kebab-case slug.`
+			);
+			continue;
+		}
+		const comicRoute = `/comics/${slug}`;
+		if (comics.has(comicRoute)) {
+			errors.push(`${relativeFile(catalogFile)}: duplicate comic slug ${slug}.`);
+		}
+		comics.add(comicRoute);
+	}
+	return comics;
+}
+
 function addReference(file, text, index, target, basePath = null) {
 	const trimmed = target.trim();
 	if (
@@ -386,6 +453,7 @@ const categoryPaths = new Set(
 );
 const knownRoutes = routePaths();
 const knownTopicRoutes = canonicalTopicRoutes();
+const knownComicRoutes = canonicalComicRoutes();
 const knownResourceRoutes = new Set();
 
 for (const source of scanResourceSources(root)) {
@@ -484,6 +552,7 @@ for (const reference of uniqueReferences.values()) {
 		knownRoutes.has(pathname) ||
 		knownTopicRoutes.has(pathname) ||
 		knownResourceRoutes.has(pathname) ||
+		knownComicRoutes.has(pathname) ||
 		staticFileExists(pathname) ||
 		canonicalPosts.has(pathname)
 	) {
@@ -522,6 +591,6 @@ if (errors.length > 0) {
 console.log(
 	`Internal-link validation passed: ${uniqueReferences.size} references across ${posts.length} published posts; ` +
 		`${canonicalPosts.size} canonical posts, ${aliases.size} aliases, ${knownTopicRoutes.size} published topic routes, ` +
-		`${knownResourceRoutes.size} published resource routes, and ${knownRoutes.size} static routes recognised. ` +
+		`${knownResourceRoutes.size} published resource routes, ${knownComicRoutes.size} comic routes, and ${knownRoutes.size} static routes recognised. ` +
 		'Fragments, computed URLs and shared-component relative links require the rendered navigation audit.'
 );

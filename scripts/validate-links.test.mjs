@@ -398,6 +398,87 @@ test('does not invent resource routes when the dynamic handler is missing', (t) 
 	assert.match(result.output, /internal link \/resources\/prompts\/fixture has no matching route/);
 });
 
+const comicFixtureFiles = {
+	'src/lib/content/comics.ts':
+		"export const comicCatalog = [{ slug: 'fixture-comic' }] as const;\n",
+	'src/routes/comics/[slug]/+page.svelte': '<h1>Comic</h1>\n'
+};
+
+test('recognises literal comic catalogue entries only when their dynamic handler exists', (t) => {
+	const result = validateFixture(t, {
+		target: '/comics/fixture-comic',
+		files: comicFixtureFiles
+	});
+	assert.equal(result.status, 0, result.output);
+	assert.match(result.output, /1 comic routes/);
+});
+
+test('does not turn the comic handler into permission for unregistered or nested paths', (t) => {
+	const result = validateFixture(t, {
+		body: [
+			'[Registered](/comics/fixture-comic)',
+			'[Unknown](/comics/unknown-comic)',
+			'[Nested](/comics/fixture-comic/unknown)'
+		].join('\n'),
+		files: comicFixtureFiles
+	});
+	assert.equal(result.status, 1, result.output);
+	assert.match(result.output, /internal link \/comics\/unknown-comic has no matching route/);
+	assert.match(
+		result.output,
+		/internal link \/comics\/fixture-comic\/unknown has no matching route/
+	);
+	assert.doesNotMatch(result.output, /internal link \/comics\/fixture-comic has no matching route/);
+});
+
+test('does not invent comic routes without the actual page handler', (t) => {
+	const result = validateFixture(t, {
+		target: '/comics/fixture-comic',
+		files: { 'src/lib/content/comics.ts': comicFixtureFiles['src/lib/content/comics.ts'] }
+	});
+	assert.equal(result.status, 1, result.output);
+	assert.match(result.output, /internal link \/comics\/fixture-comic has no matching route/);
+});
+
+test('missing fixture catalogues cannot inherit a real comic from the validator checkout', (t) => {
+	const result = validateFixture(t, {
+		target: '/comics/the-colony-where-nobody-is-allowed-to-sleep',
+		files: { 'src/routes/comics/[slug]/+page.svelte': '<h1>Comic</h1>\n' }
+	});
+	assert.equal(result.status, 1, result.output);
+	assert.match(
+		result.output,
+		/internal link \/comics\/the-colony-where-nobody-is-allowed-to-sleep has no matching route/
+	);
+});
+
+test('does not recognise comic slugs mentioned outside the exported catalogue array', (t) => {
+	const result = validateFixture(t, {
+		target: '/comics/unlisted-comic',
+		files: {
+			...comicFixtureFiles,
+			'src/lib/content/comics.ts':
+				"const example = { slug: 'unlisted-comic' }; export const comicCatalog = [{ slug: 'fixture-comic' }] satisfies readonly unknown[];\n"
+		}
+	});
+	assert.equal(result.status, 1, result.output);
+	assert.match(result.output, /internal link \/comics\/unlisted-comic has no matching route/);
+});
+
+test('rejects invalid and duplicate comic catalogue slugs rather than manufacturing paths', (t) => {
+	const result = validateFixture(t, {
+		target: '/comics/fixture-comic',
+		files: {
+			...comicFixtureFiles,
+			'src/lib/content/comics.ts':
+				"export const comicCatalog = [{slug: '../secret'}, {slug: 'fixture-comic'}, {slug: 'fixture-comic'}];\n"
+		}
+	});
+	assert.equal(result.status, 1, result.output);
+	assert.match(result.output, /every comic must have a literal lowercase kebab-case slug/);
+	assert.match(result.output, /duplicate comic slug fixture-comic/);
+});
+
 test('rejects redirect aliases, wrong post categories, unpublished posts and sources outside runtime globs', (t) => {
 	const result = validateFixture(t, {
 		body: [

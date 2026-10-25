@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '$lib/components/home/fieldbook.css';
 	import ClosingInvitation from '$lib/components/home/ClosingInvitation.svelte';
+	import ComicsFeature from '$lib/components/home/ComicsFeature.svelte';
 	import FieldbookIndex from '$lib/components/home/FieldbookIndex.svelte';
 	import LivingHero from '$lib/components/home/LivingHero.svelte';
 	import RecentSignalGrid from '$lib/components/home/RecentSignalGrid.svelte';
@@ -21,6 +22,7 @@
 	</div>
 	<LivingHero />
 	<WorkWorlds projects={data.featuredProjects} />
+	<ComicsFeature />
 	<RecentSignalGrid posts={data.recentPosts} />
 	<FieldbookIndex paths={data.readingPaths} series={data.featuredSeries} />
 	<ClosingInvitation />

@@ -13,6 +13,7 @@
 			links: [
 				{ href: '/start-here', label: 'Start here' },
 				{ href: '/writing', label: 'Writing' },
+				{ href: '/comics', label: 'Comics' },
 				{ href: '/blog', label: 'Search & archive' },
 				{ href: '/topics', label: 'Topics' },
 				{ href: '/notes', label: 'Handwritten notes' },

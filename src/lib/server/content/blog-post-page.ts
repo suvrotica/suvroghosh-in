@@ -12,6 +12,7 @@ import {
 } from '$lib/components/seo/SEO';
 import { categoryLabel, categoryTrail, slugifyCategory } from '$lib/content/categories';
 import { postPath, redirectedPostPath, sanitizeEssayInk } from '$lib/content/posts';
+import { comicCatalog, formatComicFileSize } from '$lib/content/comics';
 import { getImageDimensions } from '$lib/server/image-metadata';
 import {
 	getPostNavigation,
@@ -38,6 +39,7 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 	if (`/blog/${category}/${slug}` !== expectedPath) redirect(308, expectedPath);
 
 	const canonicalUrl = blogPostUrl(metadata.category, slug);
+	const comic = comicCatalog.find((edition) => edition.source.href === expectedPath);
 	const catLabel = categoryLabel(normalizedCategory);
 	const categoryBreadcrumbs = categoryTrail(normalizedCategory).map((slug) => ({
 		slug,
@@ -63,6 +65,14 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 
 	return {
 		slug,
+		comicAdaptation: comic
+			? {
+					slug: comic.slug,
+					pageCount: comic.pageCount,
+					pdf: comic.pdf,
+					fileSize: formatComicFileSize(comic.pdf.bytes)
+				}
+			: null,
 		narrationAvailable: Object.hasOwn(
 			narrationManifests,
 			`/static/audio/articles/${slug}/manifest.json`

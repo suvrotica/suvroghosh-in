@@ -1,5 +1,6 @@
 import { siteUrl } from '$lib/components/seo/SEO';
 import { postPath } from '$lib/content/posts';
+import { comicCatalog, comicPath } from '$lib/content/comics';
 import { categoryTrail } from '$lib/content/categories';
 import { sketchMuseumResource } from '$lib/content/site-resources';
 import { promotedTopicPath, topicHeadquartersPath, topicPath } from '$lib/content/topics';
@@ -63,6 +64,14 @@ export async function GET() {
 		const modified = post.dateModified ?? post.date;
 		return modified > latest ? modified : latest;
 	}, '1970-01-01');
+	const comicsLastMod = comicCatalog.reduce<string | undefined>(
+		(latest, comic) => (!latest || comic.published > latest ? comic.published : latest),
+		undefined
+	);
+	const comics = comicCatalog.map((comic) => ({
+		url: siteUrl + comicPath(comic),
+		lastMod: comic.published
+	}));
 
 	const categories = Array.from(categoryLastMod.entries()).map(([category, lastMod]) => ({
 		url: siteUrl + '/blog/' + category,
@@ -111,7 +120,10 @@ export async function GET() {
 	}));
 
 	const pages: { url: string; lastMod?: string }[] = [
-		{ url: siteUrl + '/', lastMod: blogLastMod },
+		{
+			url: siteUrl + '/',
+			lastMod: comicsLastMod && comicsLastMod > blogLastMod ? comicsLastMod : blogLastMod
+		},
 		{ url: siteUrl + '/start-here', lastMod: startHereLastMod },
 		{ url: siteUrl + '/about', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/privacy', lastMod: '2026-10-22' },
@@ -120,6 +132,7 @@ export async function GET() {
 		{ url: siteUrl + '/consulting', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/writing', lastMod: blogLastMod },
+		{ url: siteUrl + '/comics', lastMod: comicsLastMod },
 		{ url: siteUrl + '/notes' },
 		{ url: siteUrl + '/resources', lastMod: newestPublishedResourceDate() },
 		{ url: siteUrl + '/images', lastMod: '2026-07-20' },
@@ -140,6 +153,7 @@ export async function GET() {
 		...topics,
 		...headquartersPages,
 		...resources,
+		...comics,
 		...categories,
 		...posts
 	];
