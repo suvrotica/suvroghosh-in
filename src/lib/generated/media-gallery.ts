@@ -48,6 +48,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "art-recursive-depression-concentricities.jpg",
+			"src": "/images/art-recursive-depression-concentricities.jpg",
+			"bytes": 136858,
+			"width": 1074,
+			"height": 1536
+		},
+		{
 			"name": "art-shubho-glucose.jpg",
 			"src": "/images/art-shubho-glucose.jpg",
 			"bytes": 369083,

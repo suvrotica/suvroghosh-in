@@ -15610,6 +15610,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/recursive-depression-concentricities.md": {
+			"bodyHash": "9fd9fb6e3b98bb065486b60ec6c65fd5028696001c12406e66a5305ab75c79d2",
+			"hashVersion": 2,
+			"revisionHash": "605fca9f7dc8d5e9f1a53c9c655b28a05668fa5bcb013d308ea2cb50b96fab8d",
+			"generatedTags": [
+				"Depression",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Existentialism",
+				"Consciousness",
+				"Futility",
+				"Recursive Thought",
+				"Dark Humor"
+			],
+			"pinnedTags": [
+				"Depression",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Existentialism",
+				"Consciousness",
+				"Futility",
+				"Recursive Thought",
+				"Dark Humor"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

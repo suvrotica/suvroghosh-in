@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T12:16:11.202103+00:00",
+  "generatedAt": "2026-10-25T20:22:12.804435+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8439,6 +8439,29 @@
         "Return",
         "System",
         "Evidence"
+      ],
+      "wordCount": 130
+    },
+    "recursive-depression-concentricities": {
+      "generatedAt": "2026-10-25T20:22:12.499834+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/recursive-depression-concentricities.svg",
+      "source": "src/lib/posts/recursive-depression-concentricities.md",
+      "sourceHash": "c783b56bb445b329f5f235d32675b14f1f00201a3580abaea4f24c0ce4246e4f",
+      "sourceModified": "2026-10-25T20:22:07.050635+00:00",
+      "topWords": [
+        "Water",
+        "Circling",
+        "Turd",
+        "Laughter",
+        "Even",
+        "Drain",
+        "Tired",
+        "Circles",
+        "Dark",
+        "Consciousness",
+        "Future",
+        "Knows"
       ],
       "wordCount": 130
     },
