@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "suvro-synthetic-data-lab"
+version = "1.0.0"
+description = "Reproducible synthetic dataset engine and bounded job service"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy==2.5.4",
+  "scipy==1.18.1",
+  "fastapi==0.162.0",
+  "uvicorn==0.54.0",
+  "pydantic==2.14.1",
+  "httpx==0.28.1",
+  "vercel-blob==0.5.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1", "fakeredis[lua]==2.40.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["synthetic_lab*"]
+
+[tool.setuptools.package-data]
+synthetic_lab = ["factor_coverage.json"]

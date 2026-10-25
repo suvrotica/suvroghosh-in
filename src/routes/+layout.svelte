@@ -58,6 +58,7 @@
 		page.url.pathname.startsWith('/blog/games/') &&
 			(page.data as PageDataShellContext).game?.shell === 'site'
 	);
+	let labShell = $derived(page.url.pathname === '/tools/synthetic-data-lab');
 
 	function resolvedMotion(): ResolvedMotion {
 		const value = document.documentElement.dataset.motion;
@@ -165,7 +166,7 @@
 		<Header />
 
 		<main id="main-content" tabindex="-1" class="flex-1 scroll-smooth focus:outline-none">
-			{#if wideSiteGameShell}
+			{#if wideSiteGameShell || labShell}
 				<div class="w-full min-w-0">
 					{@render children()}
 				</div>

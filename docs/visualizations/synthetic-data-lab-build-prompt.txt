@@ -1,0 +1,361 @@
+BUILD PROMPT: SYNTHETIC DATA LAB
+
+Build a working, polished web application for designing, generating, inspecting, comparing, validating, and downloading synthetic datasets for data analytics, statistics, simulation, and machine learning.
+
+The defining interaction is this: I choose a data-generating process, change its parameters, and immediately see how the generated data's shape and relationships change. I can then generate a full dataset and download the exact completed result as CSV, together with its configuration, data dictionary, validation report, and optional ground truth.
+
+Act as a senior full-stack engineer, statistical simulation engineer, ML practitioner, and visualization designer. Implement functioning software. Do not stop at a plan, UI mockup, static dashboard, or charts drawn from unrelated hard-coded data.
+
+Read the complete factor inventory in Appendix A. It is part of this specification. Preserve the breadth of that inventory through explicit capability tracking and staged delivery. Do not silently omit a factor because it is mathematically difficult. Do not promise that every factor can be combined with every other factor.
+
+1. PRODUCT EXPERIENCE AND FIRST SUCCESS
+
+Call the application Synthetic Data Lab unless the existing project has an established name. Open directly into a useful example: 5,000 rows, a normal feature, a skewed feature, a categorical feature, and an optional regression target. Show a live histogram, empirical distribution, summary statistics, and a browsable data table without requiring the user to configure everything first.
+
+Provide these workspaces:
+- Design: dataset purpose, schema, variable generators, relationships, constraints, and generation pipeline.
+- Explore: interactive distributions, joint relationships, time/event views, and the data table.
+- Compare: pinned baseline versus current configuration, parameter sweeps, and replicate variability.
+- Validate: requested versus achieved properties, violations, statistical diagnostics, and limitations.
+- Export: full generation, progress, completed artifacts, and download options.
+
+Use progressive disclosure. Basic mode exposes meaningful common settings. Advanced mode exposes specialized controls. Each setting needs a plain-language explanation, valid range, units where relevant, a sensible default, and immediate validation. Advanced controls must influence the actual generation engine. A disabled capability must explain why it is unavailable.
+
+Use a responsive three-part desktop layout: schema/settings on the left, charts in the centre, and statistics/validation on the right, with a resizable data table below. On narrow screens, turn these into navigable panels. Keep Generate, Resample, Compare, Save configuration, and Download discoverable. Use accessible contrast, keyboard controls, visible focus, labelled inputs, non-colour status cues, and reduced-motion support. Give each chart an accessible text summary.
+
+Make the interface feel like a usable scientific instrument: clear axes, readable numbers, informative tooltips, modest animation, and generous chart space. Avoid decorative dashboard metrics unrelated to the dataset. Technical provenance belongs in an expandable details panel, while the main interface explains what a setting changes.
+
+2. REPOSITORY INTEGRATION AND TECHNICAL APPROACH
+
+Inspect the repository and its instructions before implementation. If this is the suvroghosh-in repository, read docs/architecture/ARCHITECTURE.md and the architecture change gate in CONTRIBUTING.md. Classify the architecture impact before editing. This application may introduce new compute services and expensive endpoints, so it is not routine article publishing. Update architecture documentation and diagrams in the same change, add an ADR for significant decisions, and distinguish implemented safeguards from recommendations in the forensic audit.
+
+Reuse an existing application framework. In an existing SvelteKit project, use SvelteKit and TypeScript. For an empty standalone project, SvelteKit and TypeScript are the default frontend. Use an interactive plotting library with real axes, zoom, hover, brushing, heatmaps, and efficient large-data rendering; Plotly is a reasonable default if its bundle cost is acceptable.
+
+Use Python with NumPy and SciPy for the statistical engine, behind a typed API such as FastAPI. Use pandas or Polars where useful for tabular operations. Add other scientific packages only for a concrete implemented need. Choose compatible stable versions at implementation time and lock dependencies. Do not copy version numbers from the supplied factor inventory without checking them.
+
+Keep the generator a standalone testable Python package, separate from HTTP endpoints and frontend components. Previews, full generation, validation, and CSV output must use the same generation definitions. Do not maintain a simplistic frontend generator with different statistical semantics.
+
+Run expensive work in cancellable workers or jobs. Give the repository a documented local launch command, an example environment file, and a container-based setup when multiple services are needed. If the existing host cannot support the Python worker or long generation jobs, document and implement the separate service boundary. Do not assume that a static frontend or an edge function can execute arbitrary Python workloads.
+
+Use a versioned configuration schema and typed request/response contracts. Prefer a schema-driven capability registry so parameter controls and validation rules cannot drift apart. Keep secrets on the server. For browser-invoked expensive or state-changing endpoints, implement explicit input validation, streamed request-body limits, same-origin checks, timeouts, and rate limits. Preserve applicable repository CSP, security headers, private-cache controls, security audit, and smoke checks.
+
+3. DATASET AND SCHEMA DESIGNER
+
+Capture dataset name, description, intended use, target population, observation unit, number of rows, variables, independent replications, master seed, and output structure. Offer tabular, longitudinal, event, relational, spatial, graph, and survival modes when their respective engines are implemented.
+
+For every field, capture a stable internal ID, column name, meaning, role, type, units, allowed precision, nullability, support, generation rule, dependencies, and export policy. Roles include feature, target, identifier, entity key, group, timestamp, treatment, weight, and diagnostic/ground-truth metadata.
+
+Support continuous and discrete numeric fields; counts; binary values; unordered and ordered categories; dates/times; identifiers; and dictionary/template-based text. Preserve category dictionaries and ordinal ordering. Validate duplicate names and incompatible types. Vector-valued generators must declare all output columns together.
+
+For multiple tables, define each table's row strategy, primary key, foreign keys, relationship cardinalities, and child-count model. Generate keys deterministically without sacrificing uniqueness. Validate cross-table temporal and statistical relationships. Export a data dictionary and machine-readable schema.
+
+Metadata should describe types and relationships explicitly, consistent with the principles in the official [SDV metadata documentation](https://docs.sdv.dev/sdv/integration/metadata). SDV is an optional adapter for fitted synthesis, not a required dependency for user-specified parametric generation.
+
+4. DISTRIBUTION REGISTRY AND PARAMETER CONTROLS
+
+Each distribution adapter must expose its parameter schema, domain checks, support, sampling function, PDF or PMF, CDF/quantiles where available, valid theoretical statistics, and supported fitting methods. Use vetted numerical implementations and explicit conversions from UI parameters. See the official [SciPy statistics reference](https://docs.scipy.org/doc/scipy/reference/stats.html) for available statistical primitives.
+
+Implement these univariate families:
+- Normal: mean and standard deviation.
+- Uniform: lower and upper bounds; distinguish continuous from discrete uniform.
+- Lognormal: log-space mean and standard deviation; optionally accept arithmetic moments through an explicit conversion.
+- Exponential: rate or scale, with a clearly selected convention.
+- Gamma: shape and rate or scale.
+- Beta: two positive shape parameters, with an optional explicitly labelled affine support transformation.
+- Weibull: shape and scale.
+- Poisson: expected count for a stated exposure interval.
+- Bernoulli: success probability.
+- Binomial: integer trial count and success probability.
+- Negative binomial: an explicit count convention and parameterization.
+- Categorical: labels and probabilities.
+- Student's t: degrees of freedom, location, and scale.
+- Cauchy, Laplace, and logistic: location and scale.
+- Pareto: minimum value and tail index.
+- Zipf: exponent and any explicit finite-support variant.
+- Geometric: success probability and failures-before-success versus trials-until-success convention.
+- Hypergeometric: population size, number of successes, and draws.
+- Triangular: minimum, mode, maximum.
+- Generalized extreme value: shape, location, and scale, with the shape convention documented.
+
+Implement multivariate normal, multinomial, and Dirichlet as multicolumn generators. A multinomial row is a count vector with a fixed total; a Dirichlet row is a probability vector. Neither is an independent scalar generator repeated across columns.
+
+Use unmistakable parameter semantics. Exponential scale is the reciprocal of rate. Standard deviation is not variance. Lognormal log-space location is not its arithmetic mean. For a negative binomial failures-before-r-successes convention, state support and use mean r(1-p)/p; offer mean/dispersion only through a documented conversion. Use the official [negative binomial reference](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.nbinom.html) and [lognormal reference](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.lognorm.html) to verify adapter conventions.
+
+If the UI uses the conventional GEV tail-shape parameter xi, translate it explicitly to SciPy's c = -xi convention. If a truncated-normal UI accepts bounds in data units, convert to the standardized bounds required by the numerical implementation. Check the official [GEV reference](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.genextreme.html) and [truncated normal reference](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.truncnorm.html).
+
+Also implement empirical resampling, histogram distributions, KDE with bandwidth controls, mixtures with component-specific parameters and weights, and subgroup/conditional generators. Add custom discrete masses and validated custom CDF/PDF definitions through restricted declarative expressions or data points. Never execute arbitrary submitted Python or JavaScript. Validate nonnegativity, normalization, CDF monotonicity, support, and numerical integration/sampling error. If a custom sampler only supports bounded support, say so.
+
+Separate these observation mechanisms:
+- Truncation: sample from the distribution conditional on an allowed range.
+- Censoring: retain an observation bound and an indicator of censoring.
+- Clipping: replace values outside limits with boundary values.
+- Rounding/quantization: map observations to a specified resolution.
+- Zero inflation: add structural zeros to a base distribution.
+- Hurdle: generate zero/nonzero status, then sample the nonzero component on its declared nonzero support.
+
+Show the resulting observed distribution after these operations. Do not overlay the original density as if it remained the exact final distribution. Mixtures and clipping can produce mixed discrete/continuous distributions; render their point masses appropriately.
+
+Population parameters and realized sample statistics are different. Provide a separate constrained-sample mode for exact sample means/variances, exact category counts, or fitted quantile targets. Explain the method, feasibility, finite-precision tolerance, and distortion of shape or independence. Arbitrary combinations of exact moments, quantiles, tails, bounds, and dependence may be impossible: reject or explicitly relax them, never silently adjust.
+
+Report an undefined theoretical moment as undefined. Cauchy has no population mean or variance; Student's t, Pareto, and other heavy-tailed distributions have moment-existence conditions. Their finite sample summaries can still be displayed with accurate labels. Specify sample-variance denominator and quantile estimator.
+
+Allow parameter uncertainty distributions, with an explicit draw scope: once per dataset replication, per group, or per observation. These scopes describe different models and must not be interchangeable.
+
+5. DEPENDENCE, SAMPLING, AND REPRODUCIBILITY
+
+Distinguish independence across rows, identical distributions across rows, independence between features, conditional independence, and exchangeability. Display assumptions appropriate to the chosen model rather than one global iid checkbox that overrides everything.
+
+Support independent marginals, multivariate Gaussian dependence, and calibrated copula dependence for supported marginal combinations. Provide target Pearson, Spearman, and Kendall correlations only when their semantics and calibration are implemented. Separate latent copula correlation, requested output correlation, and achieved sample correlation. Include nonlinear and tail dependence through explicitly supported models, without claiming that a correlation matrix describes all dependence.
+
+Validate covariance/correlation dimensions, symmetry, finite entries, variance signs, unit diagonal for correlation, and positive semidefiniteness. Support valid singular matrices where possible. Never silently replace a matrix with a nearby valid one: offer the proposed correction and its size. The covariance requirements are documented in [NumPy's multivariate normal API](https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.multivariate_normal.html).
+
+Provide deterministic formulas and conditional generators through an acyclic dependency graph. Reject cycles unless an explicitly implemented joint solver handles them. Add latent factors, informative/redundant/irrelevant features, sparsity, low-rank structures, condition-number targets, clusters, subgroups, nested/crossed groups, random intercepts/slopes, and repeated entities through specialized generator modules. Report achieved quantities when exact targets are not guaranteed.
+
+Sampling modules must cover pseudorandom sampling; replacement rules; exact category allocation; stratification and strata allocation; cluster/multistage sampling; over/undersampling; rare-event and conditional sampling; inclusion probabilities and weights; importance proposals and weights; bootstrap and block bootstrap; antithetic sampling; linear/log/quantile grids; Latin hypercube; Sobol; Halton; and minimum-distance sampling. Clearly distinguish evenly spaced values from random uniform samples. Mark incompatible combinations.
+
+For quasi-Monte Carlo, expose scrambling, dimensionality, and applicable sample-size rules; support coverage/discrepancy diagnostics. See [SciPy's QMC documentation](https://docs.scipy.org/doc/scipy/reference/stats.qmc.html). Do not present QMC points as iid draws or apply iid uncertainty formulas automatically. Bootstrap sampling must have an identified source sample, and dependent data requires an appropriate block/group strategy.
+
+Use an explicit NumPy Generator and RNG algorithm. Derive stable named random streams from the master seed, replication ID, table/variable identity, and mechanism. Do not use process-dependent language hashes or scheduling order as stream identifiers. Use [NumPy's parallel random-stream guidance](https://numpy.org/doc/stable/reference/random/parallel.html). Save stream metadata and RNG state where checkpoint/resume needs it.
+
+Define the reproducibility contract: identical supported configuration, seed, algorithm, dependency versions, execution mode, and logical chunk plan produce the same data. Make logical chunks independent of worker scheduling, or document a narrower guarantee. Do not promise hardware/version independence without implementing and testing it; see [NumPy's compatibility policy](https://numpy.org/doc/stable/reference/random/compatibility.html). Keep generation timestamps outside deterministic data comparisons.
+
+6. TIME SERIES, EVENTS, AND INTERARRIVAL TIMES
+
+Treat event arrivals as a first-class workspace, with process-level controls and event-specific attributes. Support homogeneous Poisson arrivals; renewal processes with exponential, gamma, Weibull, lognormal, deterministic, and validated custom positive interarrival distributions; nonhomogeneous Poisson intensity; and state-dependent arrivals where implemented.
+
+Expose start/end or horizon, time units, rate units, time zone, timestamp resolution, initial-arrival policy, observation-window policy, simultaneous-event policy, independent sequence count, event ordering, and optional entity assignment. Enforce valid positive gaps for simple renewal processes. Handle discretized timestamp ties according to the selected policy, without silently perturbing events.
+
+A homogeneous Poisson process has exponential interarrival times. Poisson counts per interval and Poisson-process timestamps are different output representations. Arbitrary positive iid interarrival times define a renewal process. Time-varying Poisson intensity requires a valid integrated-hazard or thinning algorithm; substituting the current rate into a naive exponential step is insufficient.
+
+Let users choose fixed event count or fixed observation window. Explain that a fixed window generally produces a random count; conditioning on a fixed count within a window is a separate model. Distinguish the initial waiting-time assumption from equilibrium renewal initialization. Keep interarrival time, event duration, service duration, and state dwell time as separate controls. Include event_id, sequence/entity_id, timestamp, elapsed time, interarrival, and relevant attributes in output.
+
+Visualize event rasters, gap distributions, count-by-interval plots, cumulative counts, and intensity where defined. If durations/service are used, show overlapping intervals and implement queue/resource semantics explicitly before displaying queue metrics.
+
+For time series, support regular/irregular sampling, independent sequences, sequence-length distributions, initial conditions, warm-up, trends, seasonality, autocorrelation, cross-series dependence, lagged features, AR/MA/ARIMA-family settings, volatility, regimes, change points, and abrupt/gradual parameter drift through supported model adapters. Validate stability where required and stochastic transition rows. Distinguish Markov state transitions from semi-Markov dwell models.
+
+Treat covariate shift, class-prevalence shift, and concept drift as separate mechanisms. Plot their configured locations and realized effects. Use UTC for internal timestamp calculations with explicit display/export zones and documented DST/calendar rules. ACF/PACF and regular-grid spectral diagnostics require their assumptions; irregular timestamps need appropriate methods or an explicit unavailable state.
+
+7. ML DATASET BUILDER
+
+Provide regression, binary/multiclass classification, multilabel classification, clustering, anomaly detection, forecasting, and survival presets. Every supervised dataset must have an explicit label/outcome generation mechanism and known roles for features, targets, identifiers, and diagnostics.
+
+Regression controls: coefficients/intercept, nonlinear formulas, interactions, effect sizes, response links, irreducible noise, heteroscedasticity, and a precisely defined signal-to-noise measure. Classification controls: prevalence, class-conditional distributions, boundaries/margins, separability, latent probabilities, and class- or feature-dependent label noise. Multilabel controls: label dependencies and co-occurrence. Clustering controls: centres, covariance/shape, size, overlap, subspaces, and manifold geometry where implemented.
+
+Class prevalence and an arbitrary fixed response function cannot always both be prescribed exactly. If an intercept is calibrated to prevalence, report the calibration and achieved frequency. Distinguish structural signal, clean outcome, realized noisy label, and diagnostic probabilities.
+
+Offer train/validation/test splits with random, stratified, grouped/entity, and temporal strategies. Keep duplicate families and repeated entities together where required. Prevent future-derived and target-derived fields from entering feature exports by default. For forecasting, fit transformations on past training observations and generate lag features without looking ahead.
+
+For reference-data fitting, establish allowed splits before fitting distributions, transformations, imputers, encoders, or synthesizers. Fit only permitted training data; reserve held-out data for evaluation. Record synthetic-to-real ratios and synthetic-only versus synthetic-plus-real evaluation designs. Model benchmarks must name the metric, split strategy, and task, and must not claim usefulness on an unknown real-world problem solely from synthetic test performance.
+
+Export ordinary model features/targets separately from optional latent variables, clean outcomes, anomaly labels, causal truth, and corruption metadata. Ground-truth availability is valuable for benchmarking but must not create accidental model leakage.
+
+8. NOISE, MISSINGNESS, ANOMALIES, AND DATA QUALITY
+
+Provide a visible, ordered generation pipeline. A typical pipeline is latent/entity structure -> clean features -> clean outcome mechanism -> observation noise -> anomalies/corruptions -> missingness/censoring -> duplicate generation -> split-aware export. Some models need another order. Make the actual order explicit, validate dependencies, and record it in the configuration. Reordering operations must regenerate and revalidate the result.
+
+Support additive/multiplicative measurement and process noise; systematic bias; constant or feature-dependent variance; correlated errors; temporal/spatial correlation where supported; and magnitude or signal-to-noise controls. Identify whether noise affects the observed feature, outcome, or latent process.
+
+Support per-column and per-subgroup missingness rates with MCAR, MAR, MNAR, structural missingness, correlated masks, monotone dropout, intermittent observations, and missing timestamps. Let users choose probabilistic rates versus exact allocated counts where feasible. MAR rules may depend on explicitly available observed information; MNAR can depend on values that become unobserved. Explain these mechanisms in context and show achieved rates. Missingness indicator columns must be optional and clearly named.
+
+Support injected point, contextual, and collective anomalies with mechanisms, magnitudes, locations, and proportions. Keep naturally occurring tail observations distinct from injected anomaly labels. Include duplicates, near duplicates, typos, category miscoding, inconsistent formatting, and explicitly chosen invalid-value injection.
+
+Keep clean and observed/corrupted versions separate internally. Optional paired exports must join through stable identifiers. Report intended invalid injections separately from unintended validity failures; never silently repair intentional corruption or treat an unintentional key violation as an injected anomaly.
+
+9. CONSTRAINTS AND FEASIBILITY
+
+Implement constraints on ranges, nonnegativity, integers, allowed/forbidden category combinations, conditional rules, sums and percentages, probability simplexes, monotonicity, field inequalities, chronological order, keys, cardinalities, units, checksums, locale formats, and domain/physical plausibility.
+
+Provide declarative formulas for derived columns and constraints, with a safe allowlisted expression parser. Validate expression size, dependency depth, allowed operations, and computational cost. No eval, shell execution, unrestricted imports, filesystem access, or network calls from user-defined expressions.
+
+Detect contradictions before generation where possible. Explain an infeasible rule using the affected fields. Let the user explicitly choose any proposed relaxation. Prefer generation by construction; use bounded rejection or documented projection/repair only when appropriate. Set retry, time, and acceptance limits. Failed constraints must not cause an infinite loop.
+
+Report attempted and accepted rows, rejection causes, repaired values, violations, and resulting distribution distortion. A dataset must not be labelled valid merely because its unconstrained latent values had the requested distribution. Clarify which rules apply to clean data and which apply to observed/corrupted data.
+
+10. ADVANCED DOMAIN MODULES
+
+Implement these as real modules in later stages, with clear capability boundaries and domain-specific diagnostics. Their existence in the schema is not proof of working support.
+
+Causal simulation: user-specified DAGs, structural equations, observed/latent confounders, mediators/moderators, treatment assignment, interventions, heterogeneous effects, selection/inclusion mechanisms, and counterfactual scenarios. State the assumed structural model. Correlations and fitted reference data do not establish causal direction. Paired counterfactuals must preserve the appropriate unit-level exogenous variables.
+
+Survival: event-time distributions, baseline hazards, covariate effects, competing risks, dropout, delayed entry where supported, and censoring. Export observed times, event indicators/types, and optional latent event times. Provide survival/cumulative-incidence views appropriate to the model; do not confuse censoring with truncation or silently use ordinary survival estimators for incompatible designs.
+
+Spatial/spatiotemporal: dimensions, coordinate reference system, boundaries, point intensity, clustering, covariance kernel, correlation length, anisotropy, edge effects, trajectories, movement limits, and temporal dependence. Use distance units compatible with the coordinate system. Do not apply Euclidean kilometre-based kernels directly to longitude/latitude degrees.
+
+Graphs: node/edge counts, directedness, self-loop/multiedge policy, degree models, communities, connectivity, weights, attributes, and evolution. Validate feasible edge counts and degree specifications. Export nodes and edges separately with stable IDs and provide bounded-size network views.
+
+Relational/longitudinal: multiple tables, per-parent child counts, cardinalities, shared latent effects, nesting/crossed groups, repeated measures, within/between-group variation, intraclass correlation, and cross-table time/dependence rules. Validate referential integrity and prevent entities from leaking between protected data splits.
+
+Text: dictionary/template-based synthetic strings with locale/language, vocabulary version, length models, formatting, and consistency with structured fields. Do not claim rich semantic synthesis if the implementation only samples unrelated words. Any optional language-model backend must be separately configured and must not receive reference records without an explicit user action and documented data handling.
+
+11. LIVE VISUALIZATION AND PARAMETER EXPLORATION
+
+Changing a valid parameter should trigger a debounced preview, approximately 150-300 ms after editing stops, followed by a visible updating state if needed. Keep inputs responsive while generation runs. Use request cancellation and monotonically versioned configuration IDs so an older response cannot replace a newer chart.
+
+Default preview size: 5,000 rows, adjustable within declared resource limits. Display preview size and requested full size separately. Use a stable seed while editing; provide a distinct Resample action. Where supported, use common random numbers/inverse transforms for parameter comparisons so random redraw noise does not obscure shape changes. Do not promise pointwise smoothness for discrete, rejection-sampled, or structurally changing models.
+
+A smaller preview cannot automatically satisfy full-dataset exact category counts, relational cardinalities, event horizons/counts, or other global constraints. Define an explicit preview policy for each module: a bounded realization with an effective preview configuration, a labelled subset of a completed realization, or a full-generation-only mode. Record and display any changed counts, allocation, or time window. Preserve whole entities/relationships where needed. Mark full-only checks not evaluated in the preview. Never silently change the model or claim full-dataset constraint compliance from a small preview.
+
+All panels must display the same configuration version and result ID. Charts, table rows, statistics, and validation must not silently show different generations. Switching views or sorting a table must not regenerate the data. If a configuration changes after full generation, mark the completed result as belonging to the earlier configuration until a new job completes.
+
+Implement linked visualizations appropriate to the selected variables:
+- Numeric: histogram with adjustable bins, optional density overlay, ECDF/CDF, quantile plot, box/violin view, and robust summaries.
+- Discrete/categorical: counts/proportions, PMF where appropriate, category ordering, and contingency views.
+- Pairs/multivariate: scatter/hexbin, selected scatter-matrix panels, Pearson/Spearman/Kendall matrices where defined, subgroup facets, and pairwise sample counts under missingness.
+- ML: class balance, boundaries for suitable low-dimensional examples, feature/target relationships, residuals, and benchmark calibration when computed.
+- Temporal/event: timeline, line plots, ACF/PACF when appropriate, seasonality/drift views, arrival rasters, gaps, interval counts, and cumulative events.
+- Data quality: missingness matrix, subgroup missingness, corruption/anomaly overlays, and clean-versus-observed comparisons.
+- Advanced modes: survival, spatial, graph, and relational views provided by their implemented modules.
+
+Show theoretical and empirical curves as distinct layers. Use histogram density when comparing to a PDF and probability masses when comparing to a PMF. An estimated KDE is not a theoretical density. Include observed-space transformations in overlays when mathematically available; otherwise label the overlay as a base-model reference or unavailable.
+
+Offer fixed/shared axes, bin edges, bandwidth, and linear/log scales so before/after comparisons are meaningful. Handle zero and negative values explicitly on log scales. Preserve unsmoothed empirical views. Display plot sampling/downsampling and the exact rows or selection policy used. Large scatter plots may use deterministic samples or density aggregation; full-result summaries must not be presented as if calculated from all rows when they are sampled.
+
+Provide a baseline pin and side-by-side/overlay comparison with a parameter-difference panel. Add parameter sweeps: select one parameter, range, step count, replicate count, and fixed versus fresh random streams. Show shape evolution and metric-versus-parameter plots. Animation needs play/pause, speed, reduced-motion support, and resource limits. Distinguish uncertainty across independent replicates from a sequence of slider positions.
+
+Data-table features: virtualized rows, sorting/filtering, column roles/types, null representation, and clearly identified sampled views. Brushing should update linked views using a documented subset, without pretending that the selection changes the underlying generating distribution. A filtered/selected export must be an explicit export choice.
+
+12. VALIDATION, FITTING, AND PRIVACY
+
+Validate at three levels: configuration feasibility, generated-data integrity, and statistical/model fidelity. Use statuses such as pass, fail, warning, not applicable, and not evaluated. Unsupported or uncomputed checks must never appear as passing.
+
+For each applicable check, report target, achieved value, tolerance, sample size, relevant uncertainty, and interpretation. Include marginal and conditional distributions, quantiles/tails, joint dependence, subgroup representation, temporal/spatial dependence, effective sample size where meaningful, constraints, exact counts, keys, leakage checks, and downstream task metrics. Record pre- and post-corruption checks separately.
+
+Use suitable distributional distances and diagnostic tests for continuous, discrete, categorical, dependent, and fitted models. Do not apply the ordinary continuous KS null distribution blindly to discrete data or parameters estimated from the same sample. Large samples can flag tiny differences; accompany tests with effect sizes and plots. A goodness-of-fit p-value is not the probability that a model is correct. Account for dependent observations and multiple checks where needed. Monte Carlo intervals must state their method and assumptions.
+
+Reference data is optional. Accept a bounded CSV upload, show inferred schema for review, and allow explicit fitting subsets and candidate distributions. Record fitting method, parameter estimates, source metadata, representativeness concerns, and held-out diagnostics. Include reference summary-statistics-only input when feasible. Never quietly train on validation/test records or upload reference data to an external service.
+
+Reproducing reference-fitted, empirical, or KDE generation also requires the frozen fitted state or the same permitted source data. Version and hash that state, including preprocessing and category dictionaries. Treat fitted artifacts, empirical samples, and KDE centres as potentially sensitive; apply access, retention, deletion, and export controls to them. Record a protected source/model dependency when it cannot safely be bundled. Configuration plus seed alone must not be advertised as sufficient for these modes.
+
+Separate two workflows: generating from user-specified hypothetical models, and learning a generator from potentially sensitive real data. Synthetic output learned from real records is not automatically anonymous or private.
+
+For fitted synthesis, implement clear local/server processing disclosure, retention controls, deletion, sensitive-field handling, and no raw-record logging. Exact/near-copy, membership-inference, attribute-inference, and linkage-risk assessments are separate diagnostics with specified threat models; an unrun assessment is not a passed check.
+
+If formal differential privacy is implemented, require a supported mechanism, privacy unit/adjacency definition, clipping/bounds, epsilon/delta, accountant, budget composition across releases, and an auditable training/release path. A private deployment must also account for previews and diagnostics that access real data. Do not offer a working-looking DP toggle, privacy score, or privacy guarantee before this exists. Clearly report unsupported privacy requirements. Implementing ordinary parametric generation does not require pretending that a DP mechanism is present.
+
+13. DOWNLOADS, CONFIGURATIONS, AND PROVENANCE
+
+Make CSV the primary output. Generate an immutable result first, then export that exact result without resampling. A Download preview action exports the exact preview with a clear preview label; Download full dataset exports the completed full job. Do not silently replace one with the other.
+
+Use UTF-8 and correct CSV quoting/escaping, configurable delimiter and null representation, explicit column order, numerical precision, and documented timestamp/time-zone serialization. Preserve category labels unless encoded output is explicitly requested. Detect ambiguous null sentinels and nonfinite values. Avoid locale-dependent decimal formats by default. Never silently turn valid numeric negatives into strings for spreadsheet safety.
+
+Offer an explicitly labelled spreadsheet-safe mode for string cells that could be interpreted as formulas, with transformations recorded. Raw analytics CSV should preserve intended data values. Test commas, quotes, line breaks, Unicode, timestamps, categorical values, and empty versus missing strings.
+
+For multiple tables, replications, splits, or large partitions, provide a ZIP with clearly named CSV files and a manifest. Include these companion artifacts:
+- configuration.json: complete validated settings, schema version, seeds, sampling modes, mechanisms, ordering, and transformations.
+- schema.json and data_dictionary.csv: column meanings, types, roles, units, relationships, and missing-value conventions.
+- validation_report.json: machine-readable checks, failures, warnings, tolerances, and uncomputed checks.
+- summary_statistics.csv or JSON: actual output summaries and subgroup/temporal diagnostics.
+- generation_manifest.json: generator/dependency versions, configuration digest, result ID, timestamps, stream allocation, row counts, split membership policy, file checksums, and reference provenance without embedding private source records.
+- Optional ground_truth/ files: structural parameters, latent variables, clean values, class probabilities, anomaly/corruption masks, and causal quantities selected by the user.
+- A runnable Python reproduction script that uses the same engine/configuration rather than a simplified approximation, together with any approved fitted-state artifact or explicit instructions for supplying the protected model/source dependency. If a required dependency has been deleted or cannot be released, label the bundle as not self-contained for reproduction.
+
+Allow configuration import/export, presets, and saved local experiments. Use stable configuration hashes with a documented canonicalization strategy. Record the actual generated seed even when the user asks for a fresh seed. An imported configuration must be version-migrated or rejected with an actionable message.
+
+Support gzip/ZIP compression and Parquet as optional extras after correct CSV support. Define batch sizes, output partitions, file limits, stable IDs across batches, incremental append semantics, and checkpoint/resume where supported. Some global constraints prevent independent streaming: label or reject these combinations instead of falsely claiming arbitrary batch equivalence. Partial or failed jobs must not masquerade as completed datasets.
+
+14. INTERNAL CONTRACTS AND RESOURCE MANAGEMENT
+
+Use a configuration structure along these lines, expanding it through typed discriminated unions rather than unrestricted dictionaries:
+
+ExperimentConfig
+  schema_version, experiment_id, name, purpose, target_population, observation_unit
+  generation: rows, replications, seed, rng, stream_policy, ordering, budgets
+  tables[]: table_id, columns[], keys, relationships, row_count_model
+  columns[]: column_id, name, type, role, units, generator, transforms, export_policy
+  dependence: model, matrices, copula, groups, latent_structure
+  sampling: design, strata, weights, replacements, qmc, exact_count_rules
+  temporal/event/spatial/graph/causal/survival: applicable typed module configs
+  outcomes: task, function, coefficients, probabilities, label_noise
+  pipeline: ordered stages and their inputs/outputs
+  constraints[], corruption, missingness
+  splits: strategy, sizes, entity/duplicate policy, fitting_boundary
+  reference: optional permitted source metadata and fitting configuration
+  privacy: declared requirements and supported mechanism configuration
+  validation: checks, tolerances, replication/uncertainty settings
+  export: formats, encoding, nulls, precision, columns, partitions, truth_policy
+
+Provide conceptual API operations for:
+- Reading available capabilities, parameter schemas, and compatibility restrictions.
+- Validating configurations and returning path-specific errors and proposed fixes.
+- Requesting previews, with config version/hash and cancellation support.
+- Starting full generation with an idempotency token and immutable configuration.
+- Reading job progress/stage, cancelling, and retrieving completed result metadata.
+- Reading bounded result-table pages and chart aggregates.
+- Downloading artifacts by completed result ID.
+- Importing/exporting configurations and fitting bounded reference datasets when supported.
+
+Every result should identify its configuration, engine version, seed/stream policy, preview/full status, row counts, warnings, and validation status. Error responses should identify a field or stage and suggest an actionable next step.
+
+Bound row/column counts, expression complexity, category counts, upload size, preview size, job concurrency, memory, elapsed time, retries, output size, and chart rendering load. Show limits before costly work. Cancelled or expired jobs must release workers and temporary files. In a multiuser deployment, isolate job/result access and apply retention policies. Keep private results out of public/shared caches.
+
+Benchmark common workloads on stated hardware, such as a 5,000-row preview and a 100,000-row, 20-column full dataset. Aim for common preview updates within about one second after debounce on a documented local setup, then report measured results. Never advertise an unmeasured universal latency guarantee. Large jobs need progress and cancellation rather than a frozen interface. Millions of points must not be pushed directly into a DOM table or SVG chart.
+
+15. BUILT-IN PRESETS
+
+Include runnable, editable presets with explanations of the generating mechanisms:
+1. Normal versus skewed versus bimodal distributions, with a parameter sweep.
+2. Correlated features with a known regression equation and controllable noise.
+3. Imbalanced classification with rare subgroups and optional label noise.
+4. Overlapping clusters with informative, redundant, and irrelevant features.
+5. Seasonal demand with trend, autocorrelation, and a concept-drift example.
+6. Event arrivals: homogeneous Poisson versus gamma/lognormal renewal processes.
+7. Sensor readings with drift, missingness, bursts, and injected anomalies.
+8. Customers and orders with valid keys, conditional amounts, and time constraints.
+9. Repeated observations with group effects and group-safe train/test splits.
+10. Heavy-tail/extreme-value exploration with correct moment warnings.
+11. Survival with censoring, after that module is implemented.
+12. Spatial clusters or a community graph, after the relevant module is implemented.
+
+Provide small complete examples and downloadable output bundles. Presets are editable configurations, not separate hard-coded datasets. Each preset should explain what analytics/ML task it supports and which assumptions are deliberately simplified.
+
+16. IMPLEMENTATION STAGES AND CAPABILITY COVERAGE
+
+First create a factor-to-capability matrix from the complete Appendix A. Give each meaningful factor an ID, configuration path, UI location, implementation stage, engine method, applicable combinations, validation method, export/provenance effect, and status. Use implemented, planned, unsupported, or not applicable with reasons. Related factors can share a module but remain traceable individually. Include global modelling assumptions and export/operational factors, not only visible sliders.
+
+Stage 1: deliver a complete vertical slice with the dataset/schema designer, all listed standard univariate families, multivariate normal/multinomial/Dirichlet, basic mixtures, fixed/fresh seed, live charts, comparisons, common validity constraints, preview/full generation, reproducible CSV bundles, and normal/renewal/Poisson event examples.
+
+Stage 2: add calibrated dependence, conditional generators, ML targets and splits, structured noise/missingness/anomalies, sampling designs, safe formulas, parameter sweeps, reference fitting, and richer diagnostics. Cover supported time-series models, nonhomogeneous arrivals, and replication uncertainty.
+
+Stage 3: add relational/hierarchical, causal, survival, spatial/spatiotemporal, graph, and structured text modules; advanced constraints, sampling and dependence; parameter uncertainty; and applicable benchmark/risk assessments. Add formal differential privacy only through a real audited mechanism with documented boundaries.
+
+Proceed through stages as working increments. Do not call the whole specification complete when only Stage 1 is finished. Do not fill later-stage screens with fake functioning controls. Explicitly unsupported mathematical combinations are legitimate when explained; unfinished ordinary requirements are still planned work. Keep the matrix current and surface relevant limitations in the app.
+
+17. ACCEPTANCE CRITERIA AND MEANINGFUL TESTS
+
+Use unit/property tests for mathematical contracts, integration tests for engine/API/export consistency, and browser tests for important user flows. Test statistical behaviour with justified tolerances or simulations, not brittle requirements that random samples equal population moments. Prefer independent known properties and reference cases over assertions that simply repeat implementation formulas.
+
+The following must be demonstrated for supported release capabilities:
+1. The app launches from documented commands, loads a useful dataset, and has no fatal browser/server errors.
+2. Changing normal location shifts the observed shape; changing scale changes spread. Charts, statistics, and table show one result/configuration version.
+3. Lognormal and mixture controls change skewness and multimodality as expected. Discrete variables remain valid integers/categories.
+4. Multinomial rows meet their specified total and Dirichlet rows meet simplex tolerances. Invalid distribution parameters are rejected at both UI and API boundaries.
+5. Cauchy and other undefined theoretical moments are labelled correctly. Exact-sample constraints are distinct from population parameters.
+6. Truncation, censoring, clipping, and rounding produce their documented different outputs. Probability mass introduced at clipping boundaries is not hidden.
+7. Valid covariance matrices work, invalid matrices produce useful errors, and requested versus achieved correlations are distinguishable. Infeasible calibration reports failure.
+8. The same configuration and seed reproduce data under the documented contract. Independent replications use distinct streams. Worker scheduling cannot silently change results within that contract.
+9. Rapid slider changes cannot leave an old chart attached to a new parameter value. Resample changes the sample without changing the configured model.
+10. Poisson-arrival counts and interarrival diagnostics agree with the model within sampling uncertainty. Fixed-count and fixed-window modes behave differently as documented. Renewal distributions affect gap shape.
+11. Missingness/corruption controls produce their declared mechanisms and reports. Ground-truth fields remain out of ordinary feature exports.
+12. Group/time/duplicate-aware splits enforce their separation rules. Reference fitting cannot access held-out data through the fitting pipeline.
+13. Constraint contradictions, excessive rejection, invalid keys, and resource-limit failures are actionable and terminate safely.
+14. CSV round-trips preserve row count, column order, values, precision policy, Unicode, quotes/newlines, null semantics, and timestamps. Downloading twice does not regenerate data.
+15. Full dataset summaries and exported rows reconcile. Any approximate quantiles or sampled charts are explicitly identified. Preview downloads match the exact visible preview result.
+16. Multitable bundles have valid references; event sequences respect their temporal rules; optional domain modules pass their own model-specific invariants.
+17. Cancellation, progress, retention cleanup, and result access controls work. User expressions cannot escape their declared language.
+18. Presets exercise genuine engine configurations. Accessibility and a representative narrow-screen flow are checked.
+
+Run applicable repository build and security checks. Measure performance with representative configurations and report environment, timings, resource use, and limitations. Do not present unexecuted tests as successful.
+
+18. REQUIRED HANDOFF
+
+Deliver the runnable application, scientific engine, typed contracts, reusable presets, example configurations, tests, local setup documentation, applicable deployment instructions, architecture updates, capability matrix, sample CSV bundles, and validation reports.
+
+Show the working app in the available browser. Demonstrate changing a distribution parameter, changing an interarrival distribution, adding a relationship or target, generating a full dataset, and opening/downloading its CSV bundle. Verify the whole path from controls through generation to exported data.
+
+In the final handoff, state what works, how to run it, what was verified, the architecture impact/rationale, measured performance, and any unsupported or unfinished capabilities. Keep claims proportional to evidence. The essential outcome is that someone can deliberately construct a useful dataset, see the consequences of their choices, and reuse the exported data and configuration in an analytics or ML project.
+
+APPENDIX A: COMPLETE ORIGINAL FACTOR INVENTORY
+
+The following user-supplied inventory is authoritative for coverage. Preserve every factor in the capability matrix. Its embedded documentation version labels are reference context, not pinned dependency requirements.
+
+intended use of the synthetic dataset, target population, unit of observation, number of records, number of variables, number of independent dataset replications, tabular or longitudinal or relational data structure, number of tables, rows per table, column names and meanings, data dictionary, numerical versus categorical variables, continuous versus discrete numerical variables, nominal categories with unordered labels, ordinal categories with ordered labels, binary variables, count variables, date and time variables, text variables, identifiers and entity keys, units of measurement, numerical precision, allowed decimal places, categorical value dictionaries, category ordering, table relationships and key definitions [docs.sdv.dev](https://docs.sdv.dev/sdv/concepts/metadata?utm_source=chatgpt.com), marginal distribution for each variable, normal distribution with mean and standard deviation, uniform distribution with lower and upper bounds, lognormal distribution with log-space mean and standard deviation, exponential distribution with rate or scale, gamma distribution with shape and rate or scale, beta distribution with two shape parameters, weibull distribution with shape and scale, poisson distribution with expected event count, bernoulli distribution with success probability, binomial distribution with trial count and success probability, negative binomial distribution with explicit parameterization, categorical distribution with category probabilities, multinomial distribution with trial count and category probabilities, dirichlet distribution with concentration parameters, student’s t distribution with degrees of freedom and location and scale, cauchy distribution with location and scale, laplace distribution with location and scale, logistic distribution with location and scale, pareto distribution with minimum value and tail index, zipf distribution with exponent, geometric distribution with success probability and counting convention, hypergeometric distribution with population composition and draw count, triangular distribution with minimum and mode and maximum, generalized extreme value distribution with shape and location and scale [SciPy v1.18.0 Manual](https://docs.scipy.org/doc/scipy/reference/stats.html?utm_source=chatgpt.com), multivariate normal distribution with mean vector and covariance matrix, symmetric positive semidefinite covariance requirements [NumPy v2.5 Manual](https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.multivariate_normal.html?utm_source=chatgpt.com), custom probability density function, custom probability mass function, custom cumulative distribution function, empirical distribution from reference observations, histogram-based distribution, kernel density model and bandwidth, mixture component distributions, mixture component count, mixture component weights, component-specific parameters, subgroup-specific distributions, conditional distributions, distribution support, inclusive or exclusive interval boundaries, structural zeros, zero-inflation probability, hurdle model specification, distribution truncation thresholds, observation censoring thresholds, value clipping rules, rounding and quantization rules, parameter naming conventions, rate versus scale convention, variance versus standard deviation convention, population parameters versus requested sample statistics, exact versus approximate sample mean, exact versus approximate sample variance, required sample quantiles, skewness targets, kurtosis targets, tail probability targets, extreme-value thresholds, unimodal versus multimodal shape, parameter uncertainty distributions, parameter estimation method when fitting reference data, compatibility of requested distribution properties, iid status across observations (independent and identically distributed), feature independence within each observation, conditional independence assumptions, exchangeability assumptions, sampling with or without replacement, pseudorandom sampling, fixed seed or fresh seed per run, random number generator algorithm, saved random generator state, separate random streams for parallel workers, reproducibility across parallel runs [NumPy v2.5 Manual](https://numpy.org/doc/stable/reference/random/parallel.html?utm_source=chatgpt.com), reproducibility across software versions, reproducibility across hardware environments, sampling weights, inclusion probabilities, stratification variables, sample allocation across strata, cluster sampling design, multistage sampling design, oversampling rules, undersampling rules, rare-event sampling targets, importance sampling proposal distribution, importance weight calculation, conditional sampling criteria, exact category counts versus probabilistic category frequencies, uniformly random values versus evenly spaced values, linear spacing, logarithmic spacing, quantile spacing, grid dimensions and resolution, latin hypercube sampling settings, sobol sequence settings, halton sequence settings, quasi-random scrambling settings, minimum-distance sampling settings, space coverage targets [SciPy v2.0.0.dev Manual](https://scipy.github.io/devdocs/reference/stats.qmc.html?utm_source=chatgpt.com), antithetic sampling, bootstrap sampling, block bootstrap settings for dependent observations, observation ordering, row shuffling policy, joint distribution model, target correlation matrix, pearson correlation targets, spearman rank correlation targets, kendall rank correlation targets, nonlinear dependence structure, higher-order dependence structure, tail dependence, copula family and parameters, compatibility between marginals and dependence targets, deterministic relationships between variables, functional dependencies between columns, latent variable count, latent variable distributions, latent factor loadings, feature redundancy, irrelevant feature count, informative feature count, feature sparsity, matrix rank, matrix condition number, intrinsic dimensionality, underlying manifold geometry, cluster count, cluster centers, cluster shapes, cluster sizes, cluster overlap, subgroup proportions, hierarchical grouping variables, nesting and crossed-group structure, within-group variation, between-group variation, intraclass correlation, random intercept distributions, random slope distributions, repeated observations per entity, dependence between repeated observations, target variable definitions, prediction task type, ground-truth outcome function, regression intercept and coefficients, nonlinear response functions, interaction effects, effect sizes, class count, class prevalence, class-conditional feature distributions, classification boundary shape, classification margin, class separability, ground-truth class probabilities, multilabel co-occurrence patterns, label generation mechanism, label noise rate, class-dependent label noise, feature-dependent label noise, irreducible outcome noise, causal graph, structural equations, observed confounders, latent confounders, mediating variables, moderating variables, treatment assignment mechanism, intervention definitions, treatment effect size, treatment effect heterogeneity, counterfactual scenario definitions, selection mechanism, selection bias strength, sample inclusion and exclusion rules, measurement error distribution, systematic measurement bias, process noise distribution, additive versus multiplicative noise, noise magnitude, signal-to-noise ratio, homoscedastic versus heteroscedastic noise, feature-dependent noise variance, correlated measurement errors, temporal noise correlation, spatial noise correlation, contamination proportion, outlier generation mechanism, outlier magnitude, outlier location, point anomalies, contextual anomalies, collective anomalies, anomaly labels, natural extreme values versus injected anomalies, missingness rate per variable, missingness rate per subgroup, mcar missingness (missing completely at random), mar missingness (missing at random), mnar missingness (missing not at random), structural missingness, correlated missingness across variables, monotone dropout, intermittent missing observations, missing timestamps, missingness indicator columns, duplicate record rate, near-duplicate record rate, typographical error rate, category miscoding rate, inconsistent formatting rate, invalid value injection rules, clean versus corrupted record labels, time range, time zone, calendar conventions, timestamp resolution, regular versus irregular observation intervals, sampling frequency, sequence length distribution, number of independent sequences, initial conditions, warm-up period, stationarity assumptions, ergodicity assumptions, trend functions, seasonal periods, seasonal amplitudes, seasonal phases, autocorrelation targets, partial autocorrelation targets, cross-correlation between series, lagged relationships, autoregressive coefficients, moving average coefficients, differencing order, volatility dynamics, regime definitions, regime transition probabilities, change-point locations, abrupt versus gradual drift, time-varying distribution parameters, covariate shift, label prevalence shift, concept drift, event arrival process, event intensity, interarrival time distribution, event duration distribution, state transition matrix, state dwell time distribution, event ordering constraints, simultaneous event rules, time-to-event distribution, baseline hazard function, covariate effects on event risk, competing event types, dropout and censoring mechanisms for survival data, spatial dimensionality, coordinate reference system, geographical boundaries, spatial point intensity, spatial clustering strength, spatial correlation length, spatial covariance kernel, spatial anisotropy, boundary effects, movement trajectories, speed and acceleration limits, spatiotemporal dependence, graph node count, graph edge count, directed versus undirected edges, graph degree distribution, graph community structure, graph connectivity requirements, edge weights, node and edge attributes, evolving graph rules, primary key uniqueness, foreign key validity, relationship cardinality, child records per parent distribution, cross-table statistical dependencies, cross-table temporal consistency, minimum and maximum permitted values, nonnegative value requirements, integer-only requirements, permitted category combinations, forbidden category combinations, conditional validity rules, sum-to-total constraints, percentages summing to one hundred, probabilities summing to one, monotonicity constraints, inequality constraints between fields, chronological constraints between dates, conservation laws, physical plausibility constraints, domain-specific plausibility constraints, terminology dictionaries and versions, units consistency across fields, identifier format rules, identifier checksum rules, locale-specific formatting, language and vocabulary requirements for text fields, text length distribution, semantic consistency between text and structured fields, constraint enforcement method, rejection sampling limits, constraint violation tolerance, contradictory specification detection, distribution distortion after constraint enforcement, reference dataset selection, reference dataset representativeness, reference summary statistics, fitting subset selection, training and validation and test split sizes, random versus temporal versus grouped splitting, entity separation across splits, duplicate separation across splits, prevention of target leakage, prevention of future information leakage, generator fitting restricted to permitted training data, synthetic-to-real data ratio, subgroup representation targets, subgroup outcome disparity targets, rare subgroup coverage, statistical fidelity tolerances, marginal distribution validation, joint distribution validation, conditional distribution validation, correlation preservation checks, quantile preservation checks, tail behavior validation, temporal dependence validation, spatial dependence validation, subgroup fidelity checks, constraint compliance checks, exact target verification, finite-sample variability allowances, effective sample size assessment, distributional distance thresholds, goodness-of-fit criteria, space coverage discrepancy threshold, downstream predictive utility criteria, calibration preservation criteria, robustness evaluation scenarios, uncertainty across dataset replications, privacy requirements when learning from real data, sensitive field handling, privacy protection unit, differential privacy mechanism where required, differential privacy epsilon and delta where required, privacy budget accounting, exact real-record copying checks, near-copy detection, membership inference evaluation, attribute inference evaluation, linkage risk evaluation, allowed disclosure risk, synthetic record labeling, generation method documentation, configuration export, parameter provenance, source data provenance, generator version, dependency versions, generation timestamp, output schema, output file format, character encoding, null value representation, date and time serialization format, categorical encoding format, column ordering, output partitioning, compression settings, maximum file size, batch size, streaming output requirements, incremental generation requirements, stable identifiers across generation batches, memory budget, computation budget, generation time limit, retry and failure behavior, generation progress reporting, checkpoint and resume requirements, machine-readable validation report, summary statistics report, ground-truth parameter export, latent variable export policy, corruption and anomaly annotation export, known limitations and unsupported parameter combinations

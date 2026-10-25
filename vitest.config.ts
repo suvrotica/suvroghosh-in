@@ -5,6 +5,8 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/synthetic-data-lab/**/*.test.ts',
+			'src/lib/server/synthetic-data-lab/**/*.test.ts',
 			'src/lib/content/comics.test.ts',
 			'src/lib/visualizations/lens-mirror-lab/**/*.test.ts',
 			'src/lib/visualizations/between-a-click-and-a-page/**/*.test.ts',

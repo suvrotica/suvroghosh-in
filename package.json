@@ -9,6 +9,10 @@
 		}
 	},
 	"scripts": {
+		"synthetic-data:setup": "node scripts/dev-synthetic-data-lab.mjs --setup",
+		"synthetic-data:dev": "node scripts/dev-synthetic-data-lab.mjs",
+		"synthetic-data:preview": "node scripts/dev-synthetic-data-lab.mjs --preview",
+		"synthetic-data:test": "node scripts/test-synthetic-data-lab.mjs",
 		"lens-mirror:test": "vitest run src/lib/visualizations/lens-mirror-lab --maxWorkers=2",
 		"lens-mirror:dev": "node scripts/preview-lens-mirror.mjs",
 		"lens-mirror:browser:test": "playwright test --config=playwright.lens-mirror.config.ts",

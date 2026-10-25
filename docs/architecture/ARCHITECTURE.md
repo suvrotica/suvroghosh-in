@@ -44,7 +44,7 @@ source, while preserving all earlier payloads and the one-level thread model. Se
 
 ## 1. System and principles
 
-SuvroGhosh.IN is one SvelteKit application deployed through the Vercel adapter. It combines a repository-backed publishing site, interactive scientific/educational experiences, browser games, downloadable resources, a media library, and a single-owner handwritten-notes application. There is no separate application server, generic CMS, global state store, or shared simulation engine governing every experience.
+SuvroGhosh.IN is one SvelteKit application deployed through the Vercel adapter. It combines a repository-backed publishing site, interactive scientific/educational experiences, browser games, downloadable resources, a media library, and a single-owner handwritten-notes application. The optional Synthetic Data Lab adds a separate Python simulation service behind a SvelteKit proxy; the rest of the site has no generic CMS, global state store, or shared simulation engine governing every experience.
 
 The principal boundaries are:
 
@@ -68,6 +68,12 @@ flowchart LR
     Browser --> SSR
     Browser --> Engines["Local Svelte UI, engines, workers, Canvas/WebGL"]
     SSR --> Providers["Resend / optional Chatterbox service"]
+    SSR --> LabProxy["Private Synthetic Data Lab proxy: origin/body/deadline/admission"]
+    LabProxy --> LabService["Separate Python service: owner-scoped simulation and result access"]
+    LabService --> Scientific["Seeded NumPy/SciPy engine; CSV and reproducibility bundles"]
+    LabService --> LabRedis["Hosted Redis: atomic admission / jobs / idempotency / expiry metadata"]
+    LabService --> LabBlob["Private Blob: immutable expiring result snapshots"]
+    LabCron["Authenticated daily Cron + bounded opportunistic cleanup"] --> LabService
     SSR --> Supabase["Supabase Auth, Postgres/RLS, private Storage"]
     Browser -->|explicit AI consent| AtlasAPI["Bounded Prompt Atlas API"]
     AtlasAPI -->|shared quota reservations| Supabase
@@ -973,6 +979,89 @@ flowchart LR
     Controls --> URL["Allowlisted sample ID / scalar settings only"]
     Shell --> Fallback["Default static comparison / readable article"]
 ```
+
+### Synthetic Data Lab
+
+`/tools/synthetic-data-lab` is a wide site-shell Svelte application, with public descriptive SSR
+and client-driven previews. Its server load establishes a random HttpOnly, SameSite=Strict
+one-hour owner capability and returns a private/no-store page. The page does not load reference
+records or generate datasets during SSR. `src/lib/components/synthetic-data-lab/` owns the
+workbench; browser-safe types, presets and API calls live in `src/lib/synthetic-data-lab/`.
+
+`/api/synthetic-data-lab/[...path]` delegates only enumerated operations to the server-only
+`src/lib/server/synthetic-data-lab/proxy.ts`. It uses the existing streamed-body and process-local
+admission helpers: 512 KiB input, ten-second body deadline, exact-origin JSON mutations, and
+private/no-store/noindex output. The proxy streams JSON, CSV and ZIP bodies while retaining its
+admission lease, abort propagation and deadline until consumption, cancellation or failure.
+Full-generation requests have a 150-second deadline, previews 40 seconds and other operations
+30 seconds; the Vercel route declares `maxDuration: 180`. Actual output is capped at 64 MiB.
+A declared excessive length is rejected before headers; crossing the bound after headers errors
+the stream, so that transfer may be partial. It does not buffer the entire upstream response.
+The proxy generates the trusted owner header from its cookie and never forwards a submitted
+owner header. `SYNTHETIC_DATA_API_URL` and `SYNTHETIC_DATA_SERVICE_TOKEN` remain private. Production
+service connections require HTTPS; development and the explicit private local-preview flag
+`SYNTHETIC_DATA_ALLOW_LOOPBACK=true` permit loopback HTTP only. The optional server-only
+`SYNTHETIC_DATA_DEPLOYMENT_BYPASS` becomes an `x-vercel-protection-bypass` header to the private
+Python deployment and is never returned to the browser. The browser contacts only the site's
+own API, so this feature adds no public CSP origins.
+
+`services/synthetic-data-lab/` contains the optional FastAPI service and framework-independent
+NumPy/SciPy engine. Previews and completed jobs call the same engine. Owner-scoped result IDs
+refer to immutable generated rows; downloading does not resample. The local service mode's bounded,
+expiring in-memory job/result store is a single-process deployment design. It is not durable
+storage or a horizontally coordinated queue. Service restart or expiry removes results.
+Installing the site alone does not provision the Python service. The local launcher shares
+an ephemeral token directly through child-process environments without writing credentials.
+
+Hosted `SYNTHETIC_DATA_STORAGE_MODE=blob` selects a separate Python Vercel deployment, also the
+default when `VERCEL=1`. Its HTTP request awaits computation and persistence before returning;
+there is no dependency on detached work after response. The UI shows indeterminate progress
+and cancellation aborts the original request. A POST cancellation for an already running hosted
+job returns 409 with that instruction. Local `memory` mode retains queued progress and cooperative
+job cancellation. Native numerical calls cannot be forcibly interrupted in either mode.
+The full-generation compute budget is 120 seconds, hosted preview compute is 20 seconds, and a
+bounded 16-second commit allowance fits inside the proxy envelope. The Python function declares
+180 seconds. The shared engine limits generation to 100,000 rows, 100 columns and two million
+requested cells, with previews at most 5,000 rows. Backend bodies are streamed with a 2 MiB bound
+and ten-second deadline; the public proxy is stricter.
+
+Hosted mutable control state resides in dedicated Redis through its private HTTPS REST API.
+Lua admission atomically reserves an expiring lease, applies minute quotas and binds a supplied
+idempotency key to its owner and configuration. Two generation requests may run globally and
+per owner, with separate preview/full minute admission buckets. Redis also holds
+owner-hashed job/result metadata, read/download limits and retained-size accounting under the
+`{synthetic-lab-v1}:` namespace. The frontend's admission guard remains process-local; the backend
+Redis admission provides shared coordination. This does not make computation resumable after
+an interrupted request or turn it into a background queue.
+
+Immutable gzip JSON snapshots are uploaded with explicit private access and no overwrite to
+`synthetic-lab/v1/data/<expiry>/<result-id>.json.gz` in Vercel Blob. Read access requires both
+valid owner-scoped Redis metadata and an unexpired result; compressed snapshots are checksum
+verified and bounded when read/decompressed. Neither Blob paths nor service/bypass credentials
+are exposed as direct browser download capabilities. Hosted retention admits at most 24 results,
+128 MiB of serialized JSON each and 256 MiB globally, with early expiry of the oldest completed
+results under capacity pressure; these account for stored payloads, not
+Python resident memory. Generated rows, configuration and optional internal diagnostic truth
+may be stored in the private snapshot, while ordinary result responses omit truth. Reference
+or empirical values supplied in configuration can therefore persist until cleanup.
+
+Result metadata expires after 30 minutes and every read enforces that deadline. The Blob cleanup
+index is recorded before upload, so interrupted writes remain eligible for deletion. Each new
+generation opportunistically attempts at most 500 expired deletions with a 60-second shared gate.
+The service declares a daily `/cleanup` Cron at 03:00 UTC, authenticated by a separate private
+`CRON_SECRET`, and deletes at most 500 indexed expired objects per invocation. The normal service
+token and owner cookie cannot authorize this operation through the public proxy. Expiry denies
+access without waiting for Cron; physical Blob removal can be later if a scheduled run is delayed,
+storage is unavailable or the cleanup batch is full. The deployment, Redis, private Blob,
+protection bypass and Cron must each be verified before claiming hosted activation.
+
+The implementation scope, configuration contract, verification and unsupported combinations
+are recorded in [the feature guide](../visualizations/synthetic-data-lab.md).
+[ADR 0016](decisions/0016-synthetic-data-lab-service.md) explains the separate compute boundary.
+No formal differential-privacy guarantee is introduced by ordinary synthetic generation.
+The hosted adapter is implemented for this release; focused hosted tests and live activation are
+pending until recorded in that guide. Earlier local tests and performance measurements describe
+the memory mode and do not establish hosted availability or serverless latency.
 
 ## 7. Notes client/server/persistence lifecycle
 

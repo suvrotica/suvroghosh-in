@@ -7,7 +7,8 @@ export type ProjectLink =
 				| '/blog/visualizations'
 				| '/blog/visualizations/human-ai-icu-prediction-laboratory'
 				| '/blog/visualizations/create-art-living-pigment-studio'
-				| '/writing';
+				| '/writing'
+				| '/tools/synthetic-data-lab';
 			label: string;
 	  }
 	| {
@@ -40,7 +41,8 @@ export type ProfessionalProject = {
 		| 'mojollm-notebooks'
 		| 'visualizations'
 		| 'living-pigment-studio'
-		| 'editorial-publishing-system';
+		| 'editorial-publishing-system'
+		| 'synthetic-data-lab';
 	name: string;
 	context: string;
 	detail: string;
@@ -60,6 +62,27 @@ export type ProfessionalProject = {
 };
 
 export const professionalProjects: readonly ProfessionalProject[] = [
+	{
+		id: 'synthetic-data-lab',
+		name: 'Synthetic Data Lab',
+		status: 'Interactive data tool',
+		context: 'Statistics · Simulation · Machine learning',
+		detail:
+			'Design reproducible synthetic datasets, explore how distribution and arrival parameters change their shape, and download generated CSV data with a configuration and validation report.',
+		contributions: [
+			'Connected a Svelte workbench to a separate NumPy/SciPy generation engine through a private, bounded server proxy.',
+			'Combined editable distributions, event arrivals, ML targets and data-quality controls with live statistical views.',
+			'Kept preview and full generation on the same engine and exported immutable results with provenance.'
+		],
+		disciplines: ['Synthetic data', 'Statistics', 'Python', 'SvelteKit', 'Data visualization'],
+		relatedPostSlugs: [],
+		link: {
+			kind: 'internal',
+			href: '/tools/synthetic-data-lab',
+			label: 'Open Synthetic Data Lab →'
+		},
+		showOnResume: false
+	},
 	{
 		id: 'va-research-data-warehouse',
 		name: 'VA Hospital Research Data Warehouse',
