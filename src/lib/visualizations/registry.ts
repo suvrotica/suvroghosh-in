@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'through-a-different-glass': {
+		id: 'through-a-different-glass',
+		title: 'Through a Different Glass: The Lens and Mirror Lab',
+		description:
+			'Compare an original image with adjustable lens and mirror distortions. Explore five illustrated samples or process a bounded personal image entirely in your browser.',
+		subjects: ['Physics', 'Computer Science', 'Generative Art'],
+		poster: '/images/visualizations/through-a-different-glass/poster.png',
+		posterAlt:
+			'The optical workbench comparing an original calibration grid with adjustable barrel distortion.',
+		href: '/blog/visualizations/through-a-different-glass',
+		status: 'published'
+	},
 	'between-a-click-and-a-page': {
 		id: 'between-a-click-and-a-page',
 		title: 'Between a Click and a Page',

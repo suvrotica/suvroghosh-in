@@ -1,0 +1,32 @@
+{
+  "width": 1400,
+  "height": 1000,
+  "authorship": "Original procedural SVG illustrations created for the Lens and Mirror Lab. No third-party source images.",
+  "samples": {
+    "calibration": {
+      "file": "calibration.png",
+      "svgHash": "c35ad6274f9621c11cdc768b352cf5e085b5e66c5ede6f744fcd02cb8bfcd06f",
+      "pixelHash": "8f5672797859f79d8b1885543f9a4873b18ea583638ab5c6f9354bb56b0b2ada"
+    },
+    "facade": {
+      "file": "facade.png",
+      "svgHash": "b957e76ec1916d2f91d44869b677478d0933c4ad1589a33f8268ee4f8463a5ea",
+      "pixelHash": "9c3083f520e6698d061df6779ed7636d3a4db179ff82b1824b69f12e481d596f"
+    },
+    "portrait": {
+      "file": "portrait.png",
+      "svgHash": "6ee76457cbbd087ea7c4f0dfcbe1b0ac5f09c74f6040ae654217bc5cac97cc1b",
+      "pixelHash": "e5328b25b29d3532225938e95cbada47e66ff58b80137504cb501c9ea961627f"
+    },
+    "corridor": {
+      "file": "corridor.png",
+      "svgHash": "8170c3c0d9e55adaacb3e02fa29083157d44f8b71429f507570c73b5b1ed86d6",
+      "pixelHash": "f31a8a001c12c601815b6ea9c0ae97d070650d179354ea8257bd7ca12814cdb2"
+    },
+    "typography": {
+      "file": "typography.png",
+      "svgHash": "67b42584a15926abfe3f9b0a3486bc3ac47440abadaa14f94c49d356e0b3e3eb",
+      "pixelHash": "13043f9ad55614967735ef5385bf6fbfb9d79110f16e791f782162e7444afaf8"
+    }
+  }
+}

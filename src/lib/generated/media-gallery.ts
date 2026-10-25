@@ -5270,6 +5270,48 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/through-a-different-glass/calibration.png",
+			"src": "/images/visualizations/through-a-different-glass/calibration.png",
+			"bytes": 107868,
+			"width": 1400,
+			"height": 1000
+		},
+		{
+			"name": "visualizations/through-a-different-glass/corridor.png",
+			"src": "/images/visualizations/through-a-different-glass/corridor.png",
+			"bytes": 137422,
+			"width": 1400,
+			"height": 1000
+		},
+		{
+			"name": "visualizations/through-a-different-glass/facade.png",
+			"src": "/images/visualizations/through-a-different-glass/facade.png",
+			"bytes": 29244,
+			"width": 1400,
+			"height": 1000
+		},
+		{
+			"name": "visualizations/through-a-different-glass/portrait.png",
+			"src": "/images/visualizations/through-a-different-glass/portrait.png",
+			"bytes": 97570,
+			"width": 1400,
+			"height": 1000
+		},
+		{
+			"name": "visualizations/through-a-different-glass/poster.png",
+			"src": "/images/visualizations/through-a-different-glass/poster.png",
+			"bytes": 242987,
+			"width": 1400,
+			"height": 1271
+		},
+		{
+			"name": "visualizations/through-a-different-glass/typography.png",
+			"src": "/images/visualizations/through-a-different-glass/typography.png",
+			"bytes": 54697,
+			"width": 1400,
+			"height": 1000
+		},
+		{
 			"name": "visualizations/two-calendars/two-calendars-postcard.svg",
 			"src": "/images/visualizations/two-calendars/two-calendars-postcard.svg",
 			"bytes": 10481,

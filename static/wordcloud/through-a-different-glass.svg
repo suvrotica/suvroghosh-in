@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Through a Different Glass: The Lens and Mirror Lab" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Through a Different Glass: The Lens and Mirror Lab</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(562,209)" font-size="118" style="fill:#e0b879">Source</text>
+<text transform="translate(632,497)" font-size="86" style="fill:#c7d7b5">Effect</text>
+<text transform="translate(235,187)" font-size="86" style="fill:#d5d2c2">Mirror</text>
+<text transform="translate(160,544) rotate(-90)" font-size="86" style="fill:#e0b879">Distortion</text>
+<text transform="translate(460,635) rotate(-90)" font-size="86" style="fill:#b6c3dd">Lines</text>
+<text transform="translate(1090,567) rotate(-90)" font-size="86" style="fill:#9fc9c5">Centre</text>
+<text transform="translate(72,626)" font-size="79" style="fill:#d5d2c2">Choose</text>
+<text transform="translate(644,119)" font-size="79" style="fill:#b6c3dd">Original</text>
+<text transform="translate(631,351)" font-size="79" style="fill:#d9c89e">Grid</text>
+<text transform="translate(1182,707) rotate(-90)" font-size="72" style="fill:#d88988">Straight</text>
+<text transform="translate(473,288)" font-size="72" style="fill:#b6c3dd">Follow</text>
+<text transform="translate(66,407) rotate(-90)" font-size="72" style="fill:#9fc9c5">Different</text>
+<text transform="translate(562,639)" font-size="72" style="fill:#d9c89e">Change</text>
+<text transform="translate(210,59)" font-size="72" style="fill:#a9b7a3">Appearance</text>
+<text transform="translate(233,356)" font-size="72" style="fill:#9fc9c5">Reference</text>
+<text transform="translate(79,696)" font-size="72" style="fill:#e0b879">Photograph</text>
+<text transform="translate(483,556)" font-size="72" style="fill:#d5d2c2">Strength</text>
+<text transform="translate(613,416)" font-size="72" style="fill:#c49a6c">Picture</text>
+<text transform="translate(820,622)" font-size="72" style="fill:#b6c3dd">Compare</text>
+<text transform="translate(192,260)" font-size="72" style="fill:#a9b7a3">Output</text>
+<text transform="translate(372,114)" font-size="64" style="fill:#d88988">Line</text>
+<text transform="translate(222,517)" font-size="64" style="fill:#8fb7d0">Edge</text>
+<text transform="translate(973,53)" font-size="64" style="fill:#b6c3dd">Lab</text>
+<text transform="translate(636,713)" font-size="64" style="fill:#9fc9c5">Calibration</text>
+<text transform="translate(1048,127)" font-size="64" style="fill:#8fb7d0">Chart</text>
+<text transform="translate(995,224)" font-size="64" style="fill:#d88988">Preset</text>
+<text transform="translate(1270,633) rotate(-90)" font-size="64" style="fill:#9fc9c5">Small</text>
+<text transform="translate(751,266)" font-size="64" style="fill:#c49a6c">Simple</text>
+<text transform="translate(173,411)" font-size="64" style="fill:#d5d2c2">Rather</text>
+<text transform="translate(673,53)" font-size="64" style="fill:#8fb7d0">Model</text>
+<text transform="translate(990,541) rotate(-90)" font-size="64" style="fill:#c7d7b5">Fisheye</text>
+<text transform="translate(60,697) rotate(-90)" font-size="64" style="fill:#d88988">Becomes</text>
+<text transform="translate(499,495)" font-size="55" style="fill:#d88988">Bend</text>
+<text transform="translate(1112,278)" font-size="55" style="fill:#e0b879">Turn</text>
+<text transform="translate(173,458)" font-size="55" style="fill:#a9b7a3">Control</text>
+<text transform="translate(1087,49)" font-size="44" style="fill:#c7d7b5">Changes</text>
+<text transform="translate(992,171)" font-size="44" style="fill:#d88988">Direction</text>
+<text transform="translate(168,566)" font-size="44" style="fill:#9fc9c5">Geometry</text>
+<text transform="translate(1275,421) rotate(-90)" font-size="44" style="fill:#c49a6c">Rule</text>
+<text transform="translate(502,432)" font-size="44" style="fill:#e0b879">Lens</text>
+<text transform="translate(967,657)" font-size="44" style="fill:#9fc9c5">Images</text>
+<text transform="translate(164,105)" font-size="32" style="fill:#9fc9c5">Perspective</text>
+<text transform="translate(1106,340)" font-size="32" style="fill:#e0b879">Inspect</text>
+<text transform="translate(94,443) rotate(-90)" font-size="32" style="fill:#c49a6c">Transformation</text>
+<text transform="translate(897,568)" font-size="32" style="fill:#b6c3dd">Easier</text>
+<text transform="translate(170,295)" font-size="32" style="fill:#9fc9c5">Barrel</text>
+<text transform="translate(1116,310)" font-size="32" style="fill:#8fb7d0">Towards</text>
+<text transform="translate(829,362)" font-size="32" style="fill:#d9c89e">Radial</text>
+<text transform="translate(544,699) rotate(-90)" font-size="32" style="fill:#b6c3dd">Presets</text>
+<text transform="translate(467,394)" font-size="32" style="fill:#d9c89e">Visible</text>
+<text transform="translate(1217,688) rotate(-90)" font-size="32" style="fill:#8fb7d0">Corridor</text>
+<text transform="translate(1267,192) rotate(-90)" font-size="32" style="fill:#8fb7d0">Supply</text>
+<text transform="translate(336,288)" font-size="24" style="fill:#c49a6c">Projection</text>
+<text transform="translate(244,649)" font-size="24" style="fill:#b6c3dd">Choice</text>
+<text transform="translate(835,530)" font-size="24" style="fill:#8fb7d0">Mapping</text>
+<text transform="translate(632,580)" font-size="24" style="fill:#c49a6c">Try</text>
+<text transform="translate(880,60)" font-size="24" style="fill:#d9c89e">Pixels</text>
+<text transform="translate(1031,299) rotate(-90)" font-size="24" style="fill:#d88988">Asks</text>
+<text transform="translate(1268,311) rotate(-90)" font-size="24" style="fill:#d88988">Concave</text>
+<text transform="translate(1015,535) rotate(-90)" font-size="24" style="fill:#e0b879">Appearances</text>
+<text transform="translate(885,316)" font-size="24" style="fill:#d6a79f">Warp</text>
+<text transform="translate(556,661)" font-size="24" style="fill:#d9c89e">Controls</text>
+<text transform="translate(898,23)" font-size="24" style="fill:#9fc9c5">Stays</text>
+<text transform="translate(345,135)" font-size="24" style="fill:#d6a79f">Needs</text>
+<text transform="translate(524,96)" font-size="24" style="fill:#d9c89e">Personal</text>
+<text transform="translate(802,443)" font-size="24" style="fill:#d88988">Result</text>
+<text transform="translate(521,311)" font-size="24" style="fill:#9fc9c5">Point</text>
+<text transform="translate(469,232)" font-size="24" style="fill:#a9b7a3">Limit</text>
+<text transform="translate(173,139)" font-size="20" style="fill:#d9c89e">Frame</text>
+<text transform="translate(82,25)" font-size="20" style="fill:#e0b879">Useful</text>
+<text transform="translate(652,233)" font-size="20" style="fill:#d5d2c2">Vertical</text>
+<text transform="translate(558,222) rotate(-90)" font-size="20" style="fill:#b6c3dd">Building</text>
+<text transform="translate(562,710)" font-size="20" style="fill:#d6a79f">Beside</text>
+<text transform="translate(94,125) rotate(-90)" font-size="20" style="fill:#c49a6c">Added</text>
+<text transform="translate(810,663)" font-size="20" style="fill:#8fb7d0">Already</text>
+<text transform="translate(376,646)" font-size="20" style="fill:#c49a6c">Earlier</text>
+<text transform="translate(696,137)" font-size="20" style="fill:#8fb7d0">Letter</text>
+<text transform="translate(393,523) rotate(-90)" font-size="20" style="fill:#d5d2c2">Ways</text>
+<text transform="translate(388,546)" font-size="20" style="fill:#e0b879">Face</text>
+<text transform="translate(393,306)" font-size="20" style="fill:#d88988">Stretching</text>
+<text transform="translate(542,118)" font-size="20" style="fill:#e0b879">Familiar</text>
+<text transform="translate(174,176)" font-size="20" style="fill:#d88988">Story</text>
+<text transform="translate(171,511)" font-size="20" style="fill:#c49a6c">Away</text>
+<text transform="translate(482,615) rotate(-90)" font-size="20" style="fill:#c49a6c">Pincushion</text>
+<text transform="translate(5,421)" font-size="20" style="fill:#8fb7d0">Bends</text>
+<text transform="translate(169,77)" font-size="20" style="fill:#d6a79f">Often</text>
+<text transform="translate(837,560)" font-size="20" style="fill:#9fc9c5">Room</text>
+<text transform="translate(684,592)" font-size="20" style="fill:#9fc9c5">Introduces</text>
+<text transform="translate(27,714)" font-size="20" style="fill:#e0b879">Curvature</text>
+<text transform="translate(555,684)" font-size="20" style="fill:#8fb7d0">Across</text>
+<text transform="translate(330,207)" font-size="20" style="fill:#d88988">Beyond</text>
+<text transform="translate(1110,574) rotate(-90)" font-size="20" style="fill:#d88988">Tangential</text>
+<text transform="translate(85,542) rotate(-90)" font-size="20" style="fill:#c7d7b5">Symmetry</text>
+<text transform="translate(367,636) rotate(-90)" font-size="20" style="fill:#e0b879">Use</text>
+<text transform="translate(1196,705)" font-size="20" style="fill:#d5d2c2">Opencv</text>
+<text transform="translate(1105,78)" font-size="20" style="fill:#d9c89e">Describes</text>
+<text transform="translate(831,138)" font-size="20" style="fill:#a9b7a3">Coefficients</text>
+<text transform="translate(1199,438)" font-size="20" style="fill:#c7d7b5">Place</text>
+<text transform="translate(448,207)" font-size="20" style="fill:#c49a6c">Switch</text>
+<text transform="translate(1162,243)" font-size="20" style="fill:#e0b879">Floor</text>
+<text transform="translate(186,355)" font-size="20" style="fill:#d88988">Meet</text>
+<text transform="translate(422,133)" font-size="20" style="fill:#8fb7d0">Distance</text>
+<text transform="translate(151,715)" font-size="20" style="fill:#9fc9c5">Illustrated</text>
+<text transform="translate(223,535)" font-size="20" style="fill:#d5d2c2">Now</text>
+<text transform="translate(531,452)" font-size="20" style="fill:#d6a79f">Doorway</text>
+<text transform="translate(840,639)" font-size="17" style="fill:#d88988">Typography</text>
+<text transform="translate(128,232)" font-size="17" style="fill:#e0b879">Large</text>
+<text transform="translate(547,573)" font-size="17" style="fill:#c7d7b5">Explains</text>
+<text transform="translate(378,597)" font-size="17" style="fill:#b6c3dd">Setting</text>
+<text transform="translate(811,285)" font-size="17" style="fill:#d6a79f">Watch</text>
+<text transform="translate(1124,19)" font-size="17" style="fill:#d5d2c2">Outer</text>
+<text transform="translate(188,202)" font-size="17" style="fill:#c49a6c">Features</text>
+<text transform="translate(838,333)" font-size="17" style="fill:#e0b879">Renderer</text>
+<text transform="translate(582,227)" font-size="17" style="fill:#9fc9c5">Flat</text>
+<text transform="translate(904,298)" font-size="17" style="fill:#d5d2c2">Real</text>
+<text transform="translate(1190,19)" font-size="17" style="fill:#b6c3dd">Convex</text>
+<text transform="translate(1054,409)" font-size="17" style="fill:#d88988">Compress</text>
+<text transform="translate(17,201) rotate(-90)" font-size="17" style="fill:#a9b7a3">Cylindrical</text>
+<text transform="translate(746,284)" font-size="17" style="fill:#e0b879">First</text>
+<text transform="translate(1055,708)" font-size="17" style="fill:#c49a6c">Objects</text>
+<text transform="translate(168,314)" font-size="17" style="fill:#c49a6c">Slowly</text>
+<text transform="translate(804,193)" font-size="17" style="fill:#d88988">Keep</text>
+<text transform="translate(339,713)" font-size="17" style="fill:#c7d7b5">Feature</text>
+<text transform="translate(144,643)" font-size="17" style="fill:#c7d7b5">Drawing</text>
+<text transform="translate(1175,364)" font-size="17" style="fill:#9fc9c5">Limits</text>
+<text transform="translate(4,20)" font-size="17" style="fill:#d5d2c2">Shader</text>
+<text transform="translate(1188,404)" font-size="17" style="fill:#d88988">Pixel</text>
+<text transform="translate(1025,70)" font-size="17" style="fill:#d5d2c2">Lookup</text>
+<text transform="translate(16,573) rotate(-90)" font-size="17" style="fill:#d88988">Many</text>
+<text transform="translate(72,557)" font-size="17" style="fill:#c49a6c">Sampling</text>
+</svg>

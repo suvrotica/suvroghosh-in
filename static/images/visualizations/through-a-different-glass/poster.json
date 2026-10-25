@@ -1,0 +1,41 @@
+{
+  "articlePath": "/blog/visualizations/through-a-different-glass",
+  "captureMode": "local-article-browser",
+  "state": "default-calibration-barrel",
+  "captureSelector": "#lens-mirror-lab through .optics-notice",
+  "viewport": {
+    "width": 1600,
+    "height": 1354
+  },
+  "clip": {
+    "x": 100,
+    "y": 43,
+    "width": 1400,
+    "height": 1271
+  },
+  "width": 1400,
+  "height": 1271,
+  "sources": {
+    "scripts/capture-lens-mirror-poster.mjs": "0645e83905dd5809df944e81554bddc53a8a039dfabeeaa16d8181ff8271e676",
+    "scripts/render-lens-mirror-samples.mjs": "c91db271546ccff06870358c3a8ba20514dbc6a2a53bac0c04cdaf13c50126fc",
+    "src/lib/components/visualizations/lens-mirror-lab/ControlKnob.svelte": "14a8e93bde9238448f55cd9a0ec545d07d6d53b585dba864a93cf8a435bb3cff",
+    "src/lib/components/visualizations/lens-mirror-lab/LensMirrorLab.svelte": "6e68f5bf48e7c623ec9bc8d387112f2f7ea451e0f08ea74a0e6801952069d64c",
+    "src/lib/components/visualizations/lens-mirror-lab/LensMirrorRuntime.svelte": "6a7b5f52798c6966a9b5b2b74cf50d0581856f3c088ab7f67f7970b65101be30",
+    "src/lib/components/visualizations/lens-mirror-lab/optics.css": "031a663645c615e488c495944b229afc9e742caedf72c16672deb56d634df153",
+    "src/lib/visualizations/lens-mirror-lab/image.ts": "c8f181651b761ae3a7fdf58092a920040d598b1c1e9c50dc776dfcb0afec16b8",
+    "src/lib/visualizations/lens-mirror-lab/model.ts": "00adde2df355157004c725b522bd6f97b41d3ba44eec5940d1e359c6e8d750ba",
+    "src/lib/visualizations/lens-mirror-lab/renderer.ts": "a3885bb5778d274cc942486f37ed75656ff4f4ae8aa7b916535800ed527d3168",
+    "src/lib/visualizations/lens-mirror-lab/samples.ts": "d49f63e6ffe6a2fc46205b248ceac2147f2404c2f564fbc0595372c730f9c972",
+    "src/lib/visualizations/lens-mirror-lab/state.ts": "4f269bcc42cdfed94f0e0480e8be5235a11629d1ec93783df800327731c74c6f",
+    "static/images/visualizations/through-a-different-glass/samples.json": "b10de02e59509fc9675befc3cc0ea5e37f09de831fd7b17c81ad3b2bd8126728"
+  },
+  "samplePixels": {
+    "calibration": "8f5672797859f79d8b1885543f9a4873b18ea583638ab5c6f9354bb56b0b2ada",
+    "facade": "9c3083f520e6698d061df6779ed7636d3a4db179ff82b1824b69f12e481d596f",
+    "portrait": "e5328b25b29d3532225938e95cbada47e66ff58b80137504cb501c9ea961627f",
+    "corridor": "f31a8a001c12c601815b6ea9c0ae97d070650d179354ea8257bd7ca12814cdb2",
+    "typography": "13043f9ad55614967735ef5385bf6fbfb9d79110f16e791f782162e7444afaf8"
+  },
+  "sourceHash": "c8265f627d96031a477b8e2edd698c7b20053698ee4dd3540bd6300201ae950c",
+  "pixelSha256": "35a1e0e89f7aea0c2a41a26e800c06ba50d107902329b130fb9efe05ed5f2d3f"
+}

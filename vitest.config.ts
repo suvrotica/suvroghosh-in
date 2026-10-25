@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/lens-mirror-lab/**/*.test.ts',
 			'src/lib/visualizations/between-a-click-and-a-page/**/*.test.ts',
 			'src/lib/server/comments/**/*.test.ts',
 			'src/routes/api/comments/**/*.test.ts',

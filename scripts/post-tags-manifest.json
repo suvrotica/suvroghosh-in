@@ -15549,6 +15549,36 @@
 				"Knowledge Representation"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/through-a-different-glass.md": {
+			"bodyHash": "67c06fcc70d469d477693203b9a4356dd5922f84416c740b8bf70bd03080a64b",
+			"hashVersion": 2,
+			"revisionHash": "929277872cf6178986be28d7803cffb0b9b0daacedd38387855eee263424e0bc",
+			"generatedTags": [
+				"Optics",
+				"Lenses",
+				"Mirrors",
+				"Photography",
+				"Image Processing",
+				"WebGL",
+				"Interactive Explainers",
+				"Computer Graphics",
+				"Lens Distortion",
+				"Image Geometry"
+			],
+			"pinnedTags": [
+				"Optics",
+				"Lenses",
+				"Mirrors",
+				"Photography",
+				"Image Processing",
+				"WebGL",
+				"Interactive Explainers",
+				"Computer Graphics",
+				"Lens Distortion",
+				"Image Geometry"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

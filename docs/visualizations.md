@@ -59,6 +59,16 @@ src/lib/visualizations/
 
 ## Embed a visualization in Markdown
 
+The [Lens and Mirror Lab](visualizations/lens-mirror-lab.md) follows the dedicated
+feature pattern at `/blog/visualizations/through-a-different-glass`. Its lazy shell
+owns a local image comparison app, while the feature domain owns bounded CPU/GLSL
+warps, header validation and browser-only image preparation. The original source
+stays beside the transformed view. Curved-mirror presets are labelled 2D
+approximations. `lens-mirror:test`, `lens-mirror:browser:test`,
+`lens-mirror:samples:check` and `lens-mirror:poster:check` cover geometry, upload
+admission, browser behaviour and committed image provenance. The browser runtime
+adds no dependency or endpoint.
+
 The maker / entrepreneur / explainer collection follows the dedicated feature
 pattern: three independent Markdown articles import their own lazy Svelte shells,
 while pure models and curated records stay in matching domains. See

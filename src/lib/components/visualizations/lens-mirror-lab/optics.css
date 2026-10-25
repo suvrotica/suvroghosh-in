@@ -1,0 +1,1072 @@
+.optics-lab {
+	--op-paper: #eeebe3;
+	--op-card: #f6f3ed;
+	--op-ink: #242c2a;
+	--op-muted: #68706b;
+	--op-line: #c9cec4;
+	--op-accent: #a3462c;
+	--op-green: #1c6558;
+	position: relative;
+	left: calc(50% + var(--article-breakout-offset, 0rem));
+	transform: translateX(-50%);
+	width: min(1400px, calc(100vw - 2.5rem));
+	max-width: none;
+	margin: 0.5rem 0 4rem;
+	padding: clamp(20px, 4vw, 62px);
+	color: var(--op-ink);
+	background: var(--op-paper);
+	border: 1px solid var(--op-line);
+	border-radius: 4px;
+	font-family: 'Archivo Variable', Arial, sans-serif;
+	line-height: 1.5;
+	box-sizing: border-box;
+}
+.optics-lab * {
+	box-sizing: border-box;
+}
+.optics-lab button,
+.optics-lab input,
+.optics-lab select {
+	font: inherit;
+}
+.optics-lab button {
+	cursor: pointer;
+}
+.optics-lab button:disabled {
+	opacity: 0.5;
+	cursor: wait;
+}
+.optics-lab button:focus-visible,
+.optics-lab input:focus-visible,
+.optics-lab select:focus-visible,
+.optics-lab summary:focus-visible,
+.optics-lab canvas:focus-visible,
+.optics-lab a:focus-visible {
+	outline: 3px solid var(--op-green);
+	outline-offset: 4px;
+}
+.optics-lab button {
+	transition:
+		background 0.15s,
+		color 0.15s,
+		border-color 0.15s;
+}
+.optics-lab button:hover {
+	border-color: var(--op-ink);
+}
+.optics-edition {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid var(--op-ink);
+	font: 10px/1.4 monospace;
+	letter-spacing: 0.13em;
+}
+.optics-edition span:first-child {
+	font-weight: bold;
+}
+.optics-title-row {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 48px;
+	padding: 35px 0 40px;
+}
+.optics-lab .optics-title-row h1 {
+	font-family: var(--font-serif, 'Newsreader Variable', 'Newsreader', Georgia, serif);
+	font-size: clamp(54px, 7.3vw, 100px);
+	font-weight: 450;
+	letter-spacing: -0.055em;
+	line-height: 0.88;
+	margin: 0;
+}
+.optics-title-row h1 em {
+	color: var(--op-accent);
+	font-weight: 400;
+}
+.optics-intro {
+	width: 300px;
+	max-width: 40%;
+	padding-bottom: 3px;
+}
+.optics-eyebrow {
+	font: 10px monospace;
+	letter-spacing: 0.1em;
+	color: var(--op-green);
+}
+.optics-intro p {
+	font-size: 14px;
+	line-height: 1.65;
+	margin: 12px 0 16px;
+}
+.optics-intro a {
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--op-ink);
+	text-decoration: none;
+	border-bottom: 1px solid var(--op-line);
+	padding-bottom: 3px;
+}
+.optics-intro a span {
+	margin-left: 18px;
+	color: var(--op-accent);
+}
+.optics-runtime {
+	background: var(--op-paper);
+}
+.optics-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 12px 0;
+	border-top: 1px solid var(--op-line);
+}
+.optics-live-label {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	font: 10px monospace;
+	letter-spacing: 0.05em;
+}
+.optics-live-label > span {
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	background: var(--op-green);
+}
+.optics-live-label small {
+	font-size: 8px;
+	color: var(--op-muted);
+	border-left: 1px solid var(--op-line);
+	padding-left: 8px;
+	margin-left: 3px;
+}
+.optics-toolbar-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.optics-segment {
+	display: flex;
+	border: 1px solid var(--op-line);
+	padding: 3px;
+	border-radius: 4px;
+	gap: 3px;
+}
+.optics-segment button {
+	border: 0;
+	background: transparent;
+	color: var(--op-muted);
+	font-size: 10px;
+	padding: 5px 10px;
+	border-radius: 2px;
+}
+.optics-segment button[aria-pressed='true'] {
+	background: var(--op-ink);
+	color: var(--op-paper);
+}
+.optics-expand {
+	border: 1px solid var(--op-line);
+	background: transparent;
+	font-size: 22px;
+	line-height: 24px;
+	width: 34px;
+	height: 34px;
+	border-radius: 4px;
+	color: var(--op-ink);
+}
+.optics-stage {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	background: #27302e;
+	border: 1px solid #17211e;
+	padding: 12px;
+	border-radius: 5px;
+}
+.optics-pane {
+	margin: 0;
+	min-width: 0;
+	background: #17211e;
+	border: 1px solid #46514b;
+	border-radius: 2px;
+	overflow: hidden;
+}
+.optics-pane figcaption {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 14px;
+	color: #dbe0d7;
+	min-height: 45px;
+}
+.optics-pane figcaption > span {
+	font: 8px monospace;
+	color: #a1b0a7;
+	white-space: nowrap;
+	letter-spacing: 0.1em;
+}
+.optics-pane figcaption strong {
+	font-weight: 500;
+	font-size: 11px;
+	text-align: right;
+}
+.optics-pane figcaption small {
+	font-size: 9px;
+	color: #a1b0a7;
+	font-weight: normal;
+}
+.optics-image {
+	aspect-ratio: var(--image-ratio, 1.4);
+	background: #e7e8df;
+	position: relative;
+	overflow: hidden;
+}
+.optics-image canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.distorted-pane canvas {
+	touch-action: none;
+	cursor: crosshair;
+}
+.optics-stage-foot {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 2px 15px;
+	font: 9px monospace;
+	color: var(--op-muted);
+	border-bottom: 1px solid var(--op-line);
+}
+.optics-stage-foot > span:first-child {
+	color: var(--op-ink);
+}
+.optics-stage-foot button {
+	font-size: 9px;
+	border: 0;
+	border-bottom: 1px solid var(--op-line);
+	padding: 0;
+	color: var(--op-muted);
+	background: transparent;
+}
+.optics-stage.divider-mode {
+	position: relative;
+	display: block;
+	padding-bottom: 64px;
+}
+.divider-mode .optics-pane {
+	width: 100%;
+}
+.divider-mode .original-pane {
+	position: relative;
+}
+.divider-mode .distorted-pane {
+	position: absolute;
+	left: 12px;
+	right: 12px;
+	top: 12px;
+	width: calc(100% - 24px);
+	clip-path: inset(0 0 0 var(--divider));
+	border: 1px solid #46514b;
+}
+.divider-mode .distorted-pane:after {
+	content: '';
+	position: absolute;
+	top: 45px;
+	bottom: 0;
+	left: var(--divider);
+	border-left: 2px solid #e6b98a;
+	pointer-events: none;
+}
+.optics-divider-control {
+	position: absolute;
+	bottom: 10px;
+	left: 24px;
+	right: 24px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	color: #dbe0d7;
+	font-size: 10px;
+}
+.optics-divider-control input {
+	flex: 1;
+	accent-color: #d99c72;
+	min-width: 0;
+	height: 28px;
+}
+.optics-divider-control label {
+	white-space: nowrap;
+}
+.optics-instrument {
+	display: grid;
+	grid-template-columns: 1fr 1.6fr;
+	gap: 26px;
+	padding: 23px 0 22px;
+}
+.optics-group-title {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	margin-bottom: 17px;
+}
+.optics-group-title > span {
+	border: 1px solid var(--op-line);
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	font: 9px/18px monospace;
+	color: var(--op-muted);
+	flex-shrink: 0;
+}
+.optics-group-title h2 {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+}
+.optics-group-title > button {
+	font: 9px monospace;
+	margin-left: auto;
+	border: 0;
+	border-bottom: 1px solid var(--op-line);
+	padding: 2px 0;
+	background: transparent;
+	color: var(--op-muted);
+}
+.optics-effect-selector {
+	padding-right: 22px;
+	border-right: 1px solid var(--op-line);
+}
+.optics-effect-family {
+	display: flex;
+	gap: 9px;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+.optics-effect-family > span {
+	font: 8px monospace;
+	color: var(--op-muted);
+	min-width: 32px;
+	padding-top: 9px;
+	letter-spacing: 0.08em;
+}
+.optics-effect-family > div {
+	display: flex;
+	gap: 4px;
+	flex-wrap: wrap;
+}
+.optics-effect-family button {
+	font-size: 10px;
+	line-height: 1.2;
+	min-height: 32px;
+	padding: 7px 10px;
+	background: transparent;
+	border: 1px solid var(--op-line);
+	border-radius: 3px;
+	color: var(--op-ink);
+}
+.optics-effect-family button[aria-pressed='true'] {
+	border-color: var(--op-accent);
+	color: #fff7ec;
+	background: var(--op-accent);
+}
+.optics-knob-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 17px;
+}
+.knob-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 3px;
+	min-height: 22px;
+}
+.knob-heading label {
+	font-size: 10px;
+	font-weight: 500;
+}
+.knob-heading button {
+	font-size: 13px;
+	line-height: 1;
+	border: 0;
+	background: transparent;
+	color: var(--op-muted);
+	padding: 5px;
+}
+.knob-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0;
+}
+.knob-body svg {
+	width: 76px;
+	height: 76px;
+	flex-shrink: 0;
+	overflow: visible;
+}
+.knob-body .knob-turn {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	height: 76px;
+	width: 76px;
+	flex-shrink: 0;
+	touch-action: none;
+	cursor: ns-resize;
+}
+.knob-track {
+	fill: none;
+	stroke: #b2b7ac;
+	stroke-width: 0.6;
+	stroke-dasharray: 1 2;
+}
+.knob-tick {
+	stroke: #69766d;
+	stroke-width: 1;
+}
+.knob-shadow {
+	fill: #b9b9ad;
+}
+.knob-face {
+	fill: #e7e6dc;
+	stroke: #9baba0;
+	stroke-width: 1.2;
+}
+.knob-inner {
+	fill: #eeeee6;
+	stroke: #c9cec4;
+	stroke-width: 0.6;
+}
+.knob-pointer {
+	stroke: var(--op-accent);
+	stroke-width: 2.5;
+	stroke-linecap: round;
+}
+.knob-hub {
+	fill: #aeb7ac;
+}
+.knob-body input {
+	font: 12px monospace;
+	border: 0;
+	border-bottom: 1px solid var(--op-line);
+	background: transparent;
+	color: var(--op-ink);
+	width: 64px;
+	text-align: center;
+	padding: 3px 1px;
+	appearance: textfield;
+}
+.knob-body input::-webkit-inner-spin-button {
+	appearance: none;
+}
+.optics-knob > input[type='range'] {
+	display: block;
+	width: 100%;
+	height: 26px;
+	accent-color: var(--op-green);
+	cursor: ew-resize;
+	margin: 5px 0 1px;
+}
+.knob-hint {
+	display: block;
+	font-size: 9px;
+	line-height: 1.45;
+	color: var(--op-muted);
+	min-height: 26px;
+}
+.optics-neutral-copy {
+	font-size: 13px;
+	max-width: 420px;
+	padding: 20px 0;
+	color: var(--op-muted);
+}
+.optics-extra-controls {
+	display: flex;
+	gap: 15px;
+	margin-top: 15px;
+	align-items: center;
+	font-size: 11px;
+}
+.optics-extra-controls label {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+.optics-extra-controls select {
+	font-size: 11px;
+	background: var(--op-card);
+	color: var(--op-ink);
+	border: 1px solid var(--op-line);
+	padding: 6px;
+	border-radius: 3px;
+}
+.optics-extra-controls input {
+	width: 90px;
+	accent-color: var(--op-green);
+}
+.optics-extra-controls button {
+	background: transparent;
+	border: 1px solid var(--op-line);
+	border-radius: 3px;
+	padding: 7px 12px;
+	font-size: 10px;
+	color: var(--op-ink);
+}
+.optics-notice {
+	display: flex;
+	gap: 14px;
+	background: #dfe5d9;
+	border: 1px solid #c6d0bf;
+	padding: 16px 19px;
+	border-radius: 3px;
+}
+.optics-eye {
+	font-size: 22px;
+	color: var(--op-green);
+}
+.optics-notice strong {
+	font-size: 10px;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+}
+.optics-notice p {
+	font-size: 12px;
+	margin: 3px 0 0;
+	line-height: 1.5;
+}
+.optics-notice small {
+	font-size: 10px;
+	color: var(--op-muted);
+	display: block;
+	margin-top: 5px;
+}
+.optics-options {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 20px;
+	padding: 15px 0;
+	font-size: 10px;
+}
+.optics-options label,
+.optics-advanced > label {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+.optics-options input,
+.optics-advanced input[type='checkbox'] {
+	accent-color: var(--op-green);
+	height: 16px;
+	width: 16px;
+	margin: 0;
+}
+.optics-options > span {
+	color: var(--op-muted);
+	font-size: 9px;
+	flex-basis: 100%;
+}
+.optics-advanced {
+	font-size: 11px;
+	border-top: 1px solid var(--op-line);
+	border-bottom: 1px solid var(--op-line);
+	padding: 12px 0;
+	margin-bottom: 25px;
+}
+.optics-advanced summary {
+	cursor: pointer;
+	font-weight: 500;
+}
+.optics-advanced summary span {
+	float: right;
+	color: var(--op-muted);
+	font: 10px monospace;
+}
+.optics-advanced p {
+	font-size: 11px;
+	color: var(--op-muted);
+	max-width: 650px;
+	margin: 14px 0;
+}
+.optics-coefficients {
+	display: flex;
+	gap: 15px;
+	flex-wrap: wrap;
+	margin: 12px 0 3px;
+}
+.optics-coefficients label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	font: 10px monospace;
+}
+.optics-coefficients input {
+	width: 90px;
+	border: 1px solid var(--op-line);
+	border-radius: 3px;
+	background: var(--op-card);
+	color: var(--op-ink);
+	padding: 6px;
+}
+.optics-samples-section {
+	margin-top: 12px;
+}
+.optics-samples-section .optics-group-title {
+	margin-bottom: 12px;
+}
+.optics-group-title > p {
+	margin: 0 0 0 auto;
+	font-size: 10px;
+	color: var(--op-muted);
+}
+.optics-samples {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 12px;
+}
+.optics-samples button {
+	padding: 5px;
+	background: var(--op-card);
+	border: 1px solid var(--op-line);
+	border-radius: 3px;
+	text-align: left;
+	color: var(--op-ink);
+	min-width: 0;
+}
+.optics-samples button[aria-pressed='true'] {
+	border-color: var(--op-green);
+	box-shadow: inset 0 0 0 1px var(--op-green);
+}
+.optics-samples img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1.65;
+	object-fit: cover;
+	display: block;
+	border: 1px solid #d5d8ce;
+}
+.optics-samples button > span {
+	display: block;
+	font-size: 10px;
+	padding: 7px 5px 3px;
+}
+.optics-samples button[aria-pressed='true'] > span:after {
+	content: '↗';
+	float: right;
+	color: var(--op-green);
+}
+.optics-sample-hint {
+	font-size: 10px;
+	color: var(--op-muted);
+	margin: 11px 0 22px;
+	min-height: 15px;
+}
+.optics-upload {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	padding: 21px;
+	border: 1px dashed #9fae9f;
+	border-radius: 4px;
+	background: #e6e8dd;
+}
+.optics-upload.dragging {
+	outline: 3px solid var(--op-green);
+	background: #d4e1ce;
+}
+.optics-upload-icon {
+	font: 32px Georgia;
+	color: var(--op-green);
+	width: 34px;
+	flex-shrink: 0;
+}
+.optics-upload > div:nth-child(2) {
+	flex: 1;
+}
+.optics-upload strong {
+	font-family: 'Newsreader Variable', Georgia, serif;
+	font-size: 22px;
+	letter-spacing: -0.02em;
+	font-weight: 500;
+}
+.optics-upload p {
+	font-size: 10px;
+	margin: 3px 0 6px;
+	color: var(--op-muted);
+}
+.optics-upload small {
+	font-size: 9px;
+	line-height: 1.5;
+	display: block;
+	color: var(--op-green);
+}
+.optics-upload > button {
+	font-size: 10px;
+	white-space: nowrap;
+	border: 1px solid var(--op-green);
+	border-radius: 3px;
+	background: var(--op-green);
+	color: #f6f4e9;
+	padding: 11px 15px;
+}
+.optics-file-input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	overflow: hidden;
+	bottom: 0;
+	left: 0;
+}
+.optics-export {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	padding: 20px 0 0;
+}
+.optics-export > div {
+	display: flex;
+	gap: 14px;
+	flex-wrap: wrap;
+}
+.optics-export button {
+	font-size: 10px;
+	border: 0;
+	border-bottom: 1px solid var(--op-line);
+	background: transparent;
+	color: var(--op-ink);
+	padding: 5px 0;
+}
+.optics-export button:first-child {
+	font-weight: 600;
+}
+.optics-export button span {
+	margin-left: 12px;
+}
+.optics-export small {
+	max-width: 280px;
+	font-size: 9px;
+	line-height: 1.5;
+	text-align: right;
+	color: var(--op-muted);
+}
+.optics-status {
+	margin: 14px 0 0;
+	color: var(--op-green);
+	font: 10px/1.5 monospace;
+	min-height: 15px;
+}
+.optics-hidden {
+	display: none;
+}
+.optics-placeholder img,
+.optics-fallback img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--op-line);
+	border-radius: 4px;
+}
+.optics-placeholder p,
+.optics-fallback p {
+	font-size: 12px;
+	color: var(--op-muted);
+}
+.optics-fallback strong {
+	display: block;
+	font-size: 14px;
+	margin-top: 20px;
+}
+.optics-fallback button {
+	padding: 8px 14px;
+	border: 1px solid var(--op-line);
+	background: var(--op-card);
+	color: var(--op-ink);
+	border-radius: 3px;
+	font-size: 12px;
+}
+.optics-runtime:fullscreen,
+.optics-expanded {
+	padding: 32px;
+	background: var(--op-paper);
+	overflow-y: auto;
+}
+.optics-expanded {
+	position: fixed;
+	inset: 12px;
+	z-index: 1000;
+}
+.optics-runtime:fullscreen .optics-stage {
+	max-width: 1200px;
+	margin: auto;
+}
+.dark .optics-lab {
+	--op-paper: #242c29;
+	--op-card: #2b3530;
+	--op-ink: #e4e7db;
+	--op-muted: #adb7aa;
+	--op-line: #49564b;
+	--op-accent: #cf8061;
+	--op-green: #a0c3a9;
+}
+.dark .optics-notice {
+	background: #2c3a30;
+	border-color: #4b5e4d;
+}
+.dark .optics-upload {
+	background: #29372d;
+	border-color: #697f69;
+}
+.dark .optics-upload > button {
+	color: #1f2c22;
+}
+.dark .optics-effect-family button[aria-pressed='true'] {
+	color: #202923;
+}
+.dark .knob-pointer {
+	stroke: #a3462c;
+}
+@media (max-width: 1050px) {
+	.optics-instrument {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	.optics-effect-selector {
+		border-right: 0;
+		border-bottom: 1px solid var(--op-line);
+		padding: 0 0 12px;
+	}
+	.optics-knob-grid {
+		gap: 25px;
+	}
+	.knob-body {
+		flex-wrap: nowrap;
+	}
+	.optics-pane figcaption {
+		display: block;
+		padding: 9px 12px;
+		min-height: 56px;
+	}
+	.optics-pane figcaption > span {
+		display: block;
+		margin-bottom: 4px;
+	}
+	.optics-pane figcaption strong {
+		display: block;
+		text-align: left;
+	}
+	.optics-stage.divider-mode .distorted-pane:after {
+		top: 56px;
+	}
+	.optics-export {
+		align-items: flex-start;
+	}
+	.optics-upload {
+		flex-wrap: wrap;
+	}
+	.optics-upload > button {
+		margin-left: 52px;
+	}
+	.optics-upload > button + input + button {
+		margin-left: 0;
+	}
+}
+@media (max-width: 600px) {
+	.optics-lab {
+		padding: 18px 14px;
+		margin: 0 -8px 32px;
+		border-radius: 2px;
+	}
+	.optics-edition {
+		font-size: 8px;
+		letter-spacing: 0.07em;
+	}
+	.optics-edition span:last-child {
+		max-width: 125px;
+		text-align: right;
+	}
+	.optics-title-row {
+		display: block;
+		padding: 27px 0;
+	}
+	.optics-lab .optics-title-row h1 {
+		font-size: 66px;
+	}
+	.optics-intro {
+		width: auto;
+		max-width: none;
+		margin: 24px 0 0;
+		padding-left: 2px;
+	}
+	.optics-intro p {
+		font-size: 12px;
+		max-width: 320px;
+		margin: 8px 0 10px;
+	}
+	.optics-eyebrow {
+		font-size: 9px;
+	}
+	.optics-stage {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		padding: 8px;
+	}
+	.optics-pane figcaption {
+		display: flex;
+		min-height: 40px;
+		padding: 8px 10px;
+	}
+	.optics-pane figcaption > span {
+		margin: 0;
+		font-size: 7px;
+	}
+	.optics-pane figcaption strong {
+		font-size: 10px;
+		text-align: right;
+	}
+	.optics-pane figcaption small {
+		font-size: 8px;
+	}
+	.optics-stage.divider-mode {
+		padding-bottom: 62px;
+	}
+	.divider-mode .distorted-pane {
+		left: 8px;
+		right: 8px;
+		top: 8px;
+		width: calc(100% - 16px);
+	}
+	.optics-stage.divider-mode .distorted-pane:after {
+		top: 40px;
+	}
+	.optics-live-label {
+		font-size: 8px;
+	}
+	.optics-live-label small {
+		display: none;
+	}
+	.optics-segment button {
+		font-size: 9px;
+		padding: 5px 7px;
+	}
+	.optics-toolbar-actions {
+		gap: 6px;
+	}
+	.optics-stage-foot {
+		font-size: 8px;
+		gap: 6px;
+		flex-wrap: wrap;
+	}
+	.optics-stage-foot > span:nth-child(2) {
+		margin-left: auto;
+	}
+	.optics-stage-foot button {
+		font-size: 8px;
+	}
+	.optics-knob-grid {
+		grid-template-columns: 1fr 1fr;
+		gap: 14px 22px;
+	}
+	.knob-body {
+		justify-content: flex-start;
+		gap: 5px;
+	}
+	.knob-hint {
+		min-height: 0;
+	}
+	.optics-effect-family button {
+		min-height: 35px;
+		font-size: 10px;
+		padding: 7px 9px;
+	}
+	.optics-notice {
+		padding: 12px;
+		gap: 10px;
+	}
+	.optics-notice p {
+		font-size: 11px;
+	}
+	.optics-options {
+		font-size: 9px;
+		gap: 12px;
+	}
+	.optics-group-title > p {
+		display: none;
+	}
+	.optics-samples {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 8px;
+	}
+	.optics-samples button > span {
+		font-size: 9px;
+		padding-left: 1px;
+	}
+	.optics-sample-hint {
+		font-size: 10px;
+	}
+	.optics-upload {
+		padding: 15px;
+		gap: 12px;
+	}
+	.optics-upload-icon {
+		display: none;
+	}
+	.optics-upload > div:nth-child(2) {
+		flex-basis: 100%;
+	}
+	.optics-upload > button {
+		margin-left: 0;
+		min-height: 42px;
+	}
+	.optics-upload strong {
+		font-size: 23px;
+	}
+	.optics-upload small {
+		font-size: 10px;
+	}
+	.optics-export {
+		display: block;
+	}
+	.optics-export > div {
+		gap: 13px;
+	}
+	.optics-export button {
+		font-size: 10px;
+		min-height: 36px;
+	}
+	.optics-export small {
+		display: block;
+		max-width: none;
+		text-align: left;
+		margin-top: 10px;
+	}
+	.optics-extra-controls {
+		flex-wrap: wrap;
+	}
+	.optics-runtime:fullscreen,
+	.optics-expanded {
+		padding: 15px;
+	}
+	.optics-advanced summary span {
+		display: none;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.optics-lab button {
+		transition: none;
+	}
+}

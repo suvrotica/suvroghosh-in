@@ -825,6 +825,56 @@ flowchart LR
     Shell --> Capture["Loopback browser poster / source and pixel provenance"]
 ```
 
+### Lens and Mirror Lab
+
+The Lens and Mirror Lab uses the ordinary Visualizations Markdown article and generic
+blog route at `/blog/visualizations/through-a-different-glass`. Its server-rendered
+shell under `components/visualizations/lens-mirror-lab` lazily imports a per-mount
+runtime. The feature domain under `visualizations/lens-mirror-lab` owns bounded
+coordinate mappings, matching CPU/GLSL implementations, raster admission, sample
+metadata, allowlisted URL settings and one WebGL renderer. The gallery imports
+summary metadata only. This adds a feature-local image-processing boundary within
+the existing dedicated-feature pattern; no foundational decision changes or new
+ADR are required.
+
+Local JPEG, PNG and static WebP inputs are checked for signature, container
+dimensions and animation before decoding: 10,000,000 bytes, 20,000,000 pixels and
+8192 pixels per edge. Orientation-aware decoding prepares a browser-local canvas
+with a long edge at most 2048 pixels and within the GPU texture limit. Source
+images and filenames are absent from sharing, persistence, telemetry and server
+requests. The original canvas retains the prepared source while the GPU samples
+its transformed coordinates. The strength presets are bounded reverse warps;
+Advanced numerically inverts the documented forward Brown–Conrady model. Curved
+mirror appearances remain labelled 2D approximations. Invalid/out-of-source
+samples show a checkerboard rather than invented scene content.
+
+Rendering occurs after source/control changes; explicit wave playback alone
+requests continuous visible frames. Offscreen/hidden state and reduced-motion
+preferences suspend playback. Teardown releases the source canvas, GPU resources,
+listeners and observers. WebGL denial, initialization errors and context loss keep
+the article and default captured comparison available. PNG downloads use the
+current working resolution; shared URLs contain only bounded parameters and a
+built-in sample ID. An authoring-only preview helper renders the same Markdown
+and lab without the full eager article registry, shared site shell or read-aloud
+control. It is loopback-only and does not add a production route; focused browser
+checks against it do not establish the full site's routing/build status. See the
+[feature record](../visualizations/lens-mirror-lab.md).
+
+```mermaid
+flowchart LR
+    Article["Markdown / ordinary blog route"] --> Shell["SSR poster / lazy runtime"]
+    Samples["Five original local sample images"] --> Prepared["Bounded browser-local source canvas"]
+    File["Reader-selected local raster"] --> Admission["Signature / dimensions / animation / size checks"]
+    Admission --> Decode["Orientation-aware decode / bounded preview"]
+    Decode --> Prepared
+    Prepared --> Original["Unmodified reference canvas"]
+    Prepared --> GPU["Owned WebGL texture / reverse lookup shader"]
+    Controls["Per-mount bounded settings"] --> GPU
+    GPU --> Output["Distorted view / local PNG download"]
+    Controls --> URL["Allowlisted sample ID / scalar settings only"]
+    Shell --> Fallback["Default static comparison / readable article"]
+```
+
 ## 7. Notes client/server/persistence lifecycle
 
 ```mermaid

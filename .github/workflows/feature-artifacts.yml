@@ -27,6 +27,7 @@ on:
       - '!src/lib/server/generated/image-dimensions.js'
       # These Markdown entries own the audited interactive or notebook experiences.
       - 'src/lib/posts/the-profile-that-knows-almost-nothing-about-you.md'
+      - 'src/lib/posts/through-a-different-glass.md'
       - 'src/lib/posts/the-bias-archipelago.md'
       - 'src/lib/posts/belousov-zhabotinsky-laboratory.md'
       - 'src/lib/posts/the-prior-authorization-machine.md'
@@ -75,6 +76,7 @@ on:
       - '!src/lib/generated/media-gallery.ts'
       - '!src/lib/server/generated/image-dimensions.js'
       - 'src/lib/posts/the-profile-that-knows-almost-nothing-about-you.md'
+      - 'src/lib/posts/through-a-different-glass.md'
       - 'src/lib/posts/the-bias-archipelago.md'
       - 'src/lib/posts/belousov-zhabotinsky-laboratory.md'
       - 'src/lib/posts/the-prior-authorization-machine.md'

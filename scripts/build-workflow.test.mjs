@@ -13,6 +13,8 @@ const criticalWorkflow = parse(
 	readFileSync(new URL('../.github/workflows/critical-boundaries.yml', import.meta.url), 'utf8')
 );
 const featureChecks = [
+	'lens-mirror:samples:check',
+	'lens-mirror:poster:check',
 	'http-tcp:geometry',
 	'http-tcp:assets:check',
 	'maker-collection:geometry',
@@ -233,6 +235,7 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'src/lib/posts/the-six-week-shadow.md',
 		'src/lib/posts/the-museum-of-almost.md',
 		'src/lib/posts/the-bias-archipelago.md',
+		'src/lib/posts/through-a-different-glass.md',
 		'src/lib/posts/belousov-zhabotinsky-laboratory.md',
 		'src/lib/posts/the-prior-authorization-machine.md',
 		'src/lib/posts/the-strange-attractor-orchestra.md',
