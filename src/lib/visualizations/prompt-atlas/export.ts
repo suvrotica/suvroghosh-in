@@ -54,11 +54,13 @@ export function nodeFill(node: DiagramNode): string {
 
 /** Safe SVG made only from bounded, validated diagram state; no HTML or external resources. */
 export function exportDiagramSvg(diagram: Diagram): string {
+	const analysisDescription =
+		diagram.analysisMode === 'semantic' ? 'AI semantic analysis' : 'Local rules-based analysis';
 	const out = [
 		`<svg xmlns="http://www.w3.org/2000/svg" width="${diagram.width}" height="${diagram.height + 76}" viewBox="0 0 ${diagram.width} ${diagram.height + 76}" role="img" aria-labelledby="atlas-title atlas-desc">`,
 		`<title id="atlas-title">Prompt Atlas — ${escapeXml(diagram.title)}</title>`,
-		`<desc id="atlas-desc">Local rules-based analysis, ontology schema 1. Solid outlines: explicit information. Dashed outlines: inferred information. Thick purple outlines: user-confirmed information. Only supported relationships appear. ${escapeXml(diagram.notes.join(' '))} Unresolved issues are retained in the embedded metadata.</desc>`,
-		`<metadata>${escapeXml(JSON.stringify({ application: 'Prompt Atlas', model: diagram.model, analysisMode: diagram.analysisMode ?? 'local', ontologySchemaVersion: diagram.ontologySchemaVersion ?? 1, unresolvedIssues: diagram.unresolvedIssues ?? [], projectionNotes: diagram.notes }))}</metadata>`,
+		`<desc id="atlas-desc">${analysisDescription}, ontology schema ${diagram.ontologySchemaVersion ?? 1}. Solid outlines: explicit information. Dashed outlines: inferred information. Thick purple outlines: user-confirmed information. Only supported relationships appear. ${escapeXml(diagram.notes.join(' '))} Unresolved issues are retained in the embedded metadata.</desc>`,
+		`<metadata>${escapeXml(JSON.stringify({ application: 'Prompt Atlas', model: diagram.model, analysisMode: diagram.analysisMode ?? 'local', ...(diagram.analysisMetadata ? { analysisMetadata: diagram.analysisMetadata } : {}), ...(diagram.compression ? { compression: diagram.compression } : {}), ontologySchemaVersion: diagram.ontologySchemaVersion ?? 1, unresolvedIssues: diagram.unresolvedIssues ?? [], projectionNotes: diagram.notes }))}</metadata>`,
 		`<rect width="100%" height="100%" fill="${diagramPalette.paper}"/>`,
 		'<defs><marker id="atlas-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8 Z" fill="#79918a"/></marker></defs>',
 		`<text x="26" y="30" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="${diagramPalette.ink}">Prompt Atlas · ${escapeXml(diagram.title)}</text>`,
@@ -153,7 +155,12 @@ export function exportMarkdown(ontology: PromptOntology, model: ModelId): string
 	return [
 		`# Prompt Atlas: ${diagram.title}`,
 		'',
-		`Analysis mode: local rules. Ontology schema: ${ontology.schemaVersion}.`,
+		`Analysis mode: ${ontology.mode === 'semantic' ? 'AI semantic' : 'local rules'}. Ontology schema: ${ontology.schemaVersion}.${ontology.analysisMetadata ? ` Provider: ${safe(ontology.analysisMetadata.provider)}. Model: ${safe(ontology.analysisMetadata.model)}.` : ''}`,
+		...(ontology.compression?.applied
+			? [
+					`Coverage: ${ontology.compression.analysedCodePoints} of ${ontology.compression.originalCodePoints} code points in ${ontology.compression.fragmentCount} exact excerpts; ${ontology.compression.omittedCodePoints} omitted, including ${ontology.compression.duplicateCodePoints} detected repeats. Partial coverage.`
+				]
+			: []),
 		'',
 		'## Items',
 		'',

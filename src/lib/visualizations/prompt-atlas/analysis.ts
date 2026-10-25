@@ -11,9 +11,100 @@ import {
 	type Attribute
 } from './types';
 import { validateOntology } from './validation';
+import { prepareSemanticInput, SEMANTIC_EXCERPT_CODE_POINTS } from './compression';
 
 /** A deterministic rules-based reader, deliberately not a general semantic model. */
 export function analyzePrompt(text: string): PromptOntology {
+	let budget = SEMANTIC_EXCERPT_CODE_POINTS;
+	while (true) {
+		const prepared = prepareSemanticInput(text, budget);
+		const fragments = prepared.fragments;
+		const compact = fragments ? fragments.map((fragment) => fragment.text).join('\n') : text;
+		let result: PromptOntology;
+		try {
+			result = analyzeLocalText(compact);
+		} catch (cause) {
+			const message = cause instanceof Error ? cause.message : '';
+			if (
+				budget > 128 &&
+				(/This prompt needs more than|too many unresolved details/.test(message) ||
+					/Invalid Prompt Atlas session: Too big: expected array/.test(message))
+			) {
+				budget = Math.max(128, Math.floor(budget / 2));
+				continue;
+			}
+			throw cause;
+		}
+		if (!fragments) return result;
+		let position = 0;
+		const mappings = fragments.map((fragment) => {
+			const mapping = {
+				...fragment,
+				compactStart: position,
+				compactEnd: position + fragment.text.length
+			};
+			position += fragment.text.length + 1;
+			return mapping;
+		});
+		function remap(items: Evidence[]): Evidence[] {
+			const mapped = items.flatMap((span) =>
+				mappings.flatMap((fragment) => {
+					const start = Math.max(span.start, fragment.compactStart);
+					const end = Math.min(span.end, fragment.compactEnd);
+					if (start >= end) return [];
+					const originalStart = fragment.start + start - fragment.compactStart;
+					const originalEnd = fragment.start + end - fragment.compactStart;
+					return [
+						{
+							start: originalStart,
+							end: originalEnd,
+							quote: text.slice(originalStart, originalEnd)
+						}
+					];
+				})
+			);
+			return mapped.length > 16 ? [...mapped.slice(0, 8), ...mapped.slice(-8)] : mapped;
+		}
+		result.source = { text, revision: `text-${hash(text)}` };
+		result.compression = prepared.compression;
+		for (const item of [
+			...result.nodes,
+			...result.relations,
+			...result.issues,
+			...result.nodes.flatMap((node) => node.attributes)
+		])
+			item.evidence = remap(item.evidence);
+		for (const relation of result.relations) {
+			const from = result.nodes.find((node) => node.id === relation.from)?.evidence[0];
+			const to = result.nodes.find((node) => node.id === relation.to)?.evidence[0];
+			if (
+				from &&
+				to &&
+				mappings.find(
+					(fragment) =>
+						fragment.start <= from.start && from.start < fragment.start + fragment.text.length
+				)?.id !==
+					mappings.find(
+						(fragment) =>
+							fragment.start <= to.start && to.start < fragment.start + fragment.text.length
+					)?.id
+			) {
+				relation.provenance = 'inferred';
+				relation.rationale =
+					'This connection crosses compressed excerpts. Intervening source text may change its meaning; confirm it.';
+			}
+		}
+		result.issues.push({
+			id: 'issue-compression-coverage',
+			kind: 'limit',
+			description: `Extractive compression inspected ${prepared.compression.analysedCodePoints.toLocaleString('en')} of ${prepared.compression.originalCodePoints.toLocaleString('en')} code points across ${fragments.length} exact excerpts. ${prepared.compression.omittedCodePoints.toLocaleString('en')} code points were omitted, including ${prepared.compression.duplicateCodePoints.toLocaleString('en')} detected repeats. This map has partial coverage; the complete original remains in the editor.`,
+			evidence: []
+		});
+		return validateOntology(result);
+	}
+}
+
+function analyzeLocalText(text: string): PromptOntology {
 	if (Array.from(text).length > MAX_CODE_POINTS)
 		throw new Error(
 			`This prompt exceeds the ${MAX_CODE_POINTS.toLocaleString('en')} code-point analysis limit. The text has not been shortened.`

@@ -48,4 +48,20 @@ describe('safe portable exports', () => {
 		expect(svg).toContain('&quot;ontologySchemaVersion&quot;:1');
 		expect(svg).toContain('Meaning uncertain');
 	});
+	it('preserves semantic mode and provider metadata in SVG and Markdown', () => {
+		const semantic: PromptOntology = {
+			...ontology,
+			mode: 'semantic',
+			analysisMetadata: { provider: 'test-free-tier', model: 'test-model' }
+		};
+		const svg = exportDiagramSvg(projectOntology(semantic, 'mindmap'));
+		expect(svg).toContain('AI semantic analysis');
+		expect(svg).not.toContain('Local rules-based analysis');
+		expect(svg).toContain('&quot;analysisMode&quot;:&quot;semantic&quot;');
+		expect(svg).toContain('&quot;provider&quot;:&quot;test-free-tier&quot;');
+		expect(svg).toContain('&quot;model&quot;:&quot;test-model&quot;');
+		const markdown = exportMarkdown(semantic, 'mindmap');
+		expect(markdown).toContain('Analysis mode: AI semantic.');
+		expect(markdown).toContain('Provider: test-free-tier. Model: test-model.');
+	});
 });

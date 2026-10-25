@@ -67,7 +67,7 @@
 	outline: 3px solid var(--atlas-accent);
 	outline-offset: 3px;
 }
-.prompt-atlas :is(input:not([type='checkbox']), select, textarea) {
+.prompt-atlas :is(input:not([type='checkbox'], [type='radio']), select, textarea) {
 	width: 100%;
 	min-width: 0;
 	border: 1px solid var(--atlas-line);
@@ -78,11 +78,146 @@
 	font: inherit;
 	box-shadow: none;
 }
-.prompt-atlas input[type='checkbox'] {
+.prompt-atlas input:is([type='checkbox'], [type='radio']) {
 	width: 16px;
 	height: 16px;
 	accent-color: var(--atlas-accent);
 	flex-shrink: 0;
+}
+.prompt-atlas .atlas-methods {
+	border: 1px solid var(--atlas-line);
+	border-radius: 4px;
+	padding: 8px 12px 5px;
+	margin: 0 0 20px;
+	min-width: 0;
+}
+.atlas-methods legend {
+	color: var(--atlas-muted);
+	font-size: 11px;
+	font-weight: 600;
+	padding: 0 5px;
+}
+.prompt-atlas .atlas-method-option {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	min-height: 44px;
+	margin: 7px 0;
+	cursor: pointer;
+}
+.prompt-atlas .atlas-method-option input {
+	display: inline-block;
+	margin: 3px 0 0;
+}
+.atlas-method-option span {
+	min-width: 0;
+}
+.atlas-method-option strong,
+.atlas-method-option small {
+	display: block;
+}
+.atlas-method-option strong {
+	font-size: 12px;
+	font-weight: 600;
+}
+.atlas-method-option small {
+	margin-top: 3px;
+	font-size: 10px;
+	font-weight: 400;
+	color: var(--atlas-muted);
+}
+.atlas-ai-disclosure {
+	background: var(--atlas-light);
+	border: 1px solid #89a89e;
+	border-radius: 4px;
+	padding: 14px;
+	margin: -4px 0 20px;
+	font-size: 11px;
+	line-height: 1.65;
+	overflow-wrap: anywhere;
+}
+.prompt-atlas .atlas-ai-disclosure h3 {
+	font-size: 13px;
+	margin-bottom: 8px;
+}
+.prompt-atlas .atlas-ai-disclosure p + p {
+	margin-top: 9px;
+}
+.prompt-atlas .atlas-ai-disclosure dl {
+	margin: 12px 0;
+}
+.atlas-ai-disclosure dl div {
+	border-top: 1px solid var(--atlas-line);
+	padding: 7px 0;
+}
+.atlas-ai-disclosure dt {
+	font-weight: 650;
+	font-size: 10px;
+}
+.atlas-ai-disclosure dd {
+	margin: 2px 0 0;
+	color: var(--atlas-muted);
+}
+.prompt-atlas .atlas-ai-disclosure button {
+	font-size: 11px;
+	margin-top: 8px;
+	min-height: 36px;
+}
+.prompt-atlas .atlas-ai-consent {
+	align-items: flex-start;
+	font-size: 11px;
+	line-height: 1.6;
+}
+.prompt-atlas .atlas-ai-consent input {
+	margin-top: 2px;
+}
+.prompt-atlas .atlas-ai-consent-note {
+	font-size: 10px;
+	color: var(--atlas-muted);
+}
+.prompt-atlas .atlas-provider-retention {
+	padding-left: 9px;
+	border-left: 3px solid var(--atlas-rust);
+}
+.prompt-atlas .atlas-ai-availability {
+	font-weight: 600;
+	margin-top: 8px;
+}
+.prompt-atlas .atlas-ai-failure-note {
+	margin-bottom: 12px;
+	font-size: 11px;
+	color: var(--atlas-muted);
+}
+.prompt-atlas .atlas-result-mode {
+	display: grid;
+	gap: 4px;
+	margin: 0 0 14px;
+	border-left: 3px solid var(--atlas-accent);
+	padding: 8px 12px;
+	background: var(--atlas-light);
+	font-size: 11px;
+	overflow-wrap: anywhere;
+}
+.atlas-result-mode span {
+	color: var(--atlas-muted);
+}
+.atlas-source-coverage {
+	border: 1px solid #a77643;
+	border-left: 3px solid var(--atlas-rust);
+	border-radius: 4px;
+	padding: 12px;
+	margin: 0 0 15px;
+	background: #f4eadc;
+	font-size: 11px;
+	line-height: 1.65;
+	overflow-wrap: anywhere;
+}
+.prompt-atlas .atlas-source-coverage h3 {
+	font-size: 12px;
+	margin-bottom: 7px;
+}
+.prompt-atlas .atlas-source-coverage p + p {
+	margin-top: 7px;
 }
 .prompt-atlas label {
 	display: block;

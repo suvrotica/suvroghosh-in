@@ -19,6 +19,14 @@ export const MODEL_CATALOG: readonly CatalogEntry[] = [
 		description: 'Labelled relationships, including cross-links, without forcing a tree.'
 	},
 	{
+		id: 'knowledge-graph',
+		label: 'Knowledge graph',
+		family: 'Ontology graph',
+		level: 'All layers',
+		description:
+			'Every extracted item and labelled relationship, grouped by role while preserving cross-layer links.'
+	},
+	{
 		id: 'flowchart',
 		label: 'Flowchart',
 		family: 'Activity',
@@ -153,6 +161,13 @@ export function rankModels(ontology: PromptOntology): ModelFit[] {
 				? `Shows ${subjects.length} subject items and ${conceptLinks.length} supported subject connections.`
 				: 'Needs at least one extracted subject concept.'
 		},
+		'knowledge-graph': {
+			eligible: nodes.length > 0,
+			score: 65 + Math.min(25, relations.length * 3),
+			reason: nodes.length
+				? `Retains all ${nodes.length} ontology items and ${relations.length} labelled relationships across prompt and subject layers.`
+				: 'Needs at least one extracted ontology item.'
+		},
 		flowchart: {
 			eligible: actions.length > 0 && controls.length > 0,
 			score: 72 + Math.min(20, controls.length * 3),
@@ -228,6 +243,7 @@ export function rankModels(ontology: PromptOntology): ModelFit[] {
 	]);
 	const linksByModel: Record<ModelId, typeof relations> = {
 		mindmap: relations,
+		'knowledge-graph': relations,
 		concept: conceptLinks,
 		flowchart: controls,
 		'conceptual-er': structural,
@@ -246,6 +262,7 @@ export function rankModels(ontology: PromptOntology): ModelFit[] {
 	};
 	const idsByModel: Record<ModelId, Set<string>> = {
 		mindmap: new Set(nodes.map((node) => node.id)),
+		'knowledge-graph': new Set(nodes.map((node) => node.id)),
 		concept: subjectIds,
 		flowchart: flowIds,
 		'conceptual-er': entityIds,

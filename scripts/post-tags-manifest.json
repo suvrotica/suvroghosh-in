@@ -15521,9 +15521,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/prompt-atlas.md": {
-			"bodyHash": "79cc9fe52c9aa21635920c0e7089068e9d947104c70392a8aa9292b3a38a3f6f",
+			"bodyHash": "1707c2ec6101467df7a5b9a05bcf5a07053eb850829d4ed696d51b40b72d6ac4",
 			"hashVersion": 2,
-			"revisionHash": "8e5032b33a527a384f6d3bc27fdb7db7aa07ab492daa676c82d663a49365790b",
+			"revisionHash": "e8ddb88d23023f8769c11703bc9b7fd7e53e970008a085dfbef9595b4699aaf3",
 			"generatedTags": [
 				"Prompt Analysis",
 				"Mind Maps",
@@ -15531,8 +15531,8 @@
 				"Data Modelling",
 				"UML",
 				"Browser Tools",
-				"Computer Science",
-				"Design",
+				"Artificial Intelligence",
+				"Knowledge Graphs",
 				"Prompt Engineering",
 				"Knowledge Representation"
 			],
@@ -15543,12 +15543,13 @@
 				"Data Modelling",
 				"UML",
 				"Browser Tools",
-				"Computer Science",
-				"Design",
+				"Artificial Intelligence",
+				"Knowledge Graphs",
 				"Prompt Engineering",
 				"Knowledge Representation"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-25"
 		},
 		"src/lib/posts/through-a-different-glass.md": {
 			"bodyHash": "67c06fcc70d469d477693203b9a4356dd5922f84416c740b8bf70bd03080a64b",

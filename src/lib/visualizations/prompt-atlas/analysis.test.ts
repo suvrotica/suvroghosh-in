@@ -219,11 +219,14 @@ describe('Prompt Atlas local ontology', () => {
 	});
 	it('refuses over-budget work without silently shortening the source', () => {
 		expect(() => analyzePrompt('a'.repeat(MAX_CODE_POINTS + 1))).toThrow(/not been shortened/);
-		expect(() =>
-			analyzePrompt(
-				Array.from({ length: MAX_NODES + 1 }, (_, i) => `Thought number ${i}.`).join(' ')
-			)
-		).toThrow(/nothing has been discarded/);
+		const long = Array.from({ length: MAX_NODES + 1 }, (_, i) => `Thought number ${i}.`).join(' ');
+		const compressed = analyzePrompt(long);
+		expect(compressed.source.text).toBe(long);
+		expect(compressed.compression?.applied).toBe(true);
+		expect(compressed.nodes.length).toBeLessThanOrEqual(MAX_NODES);
+		expect(compressed.issues.some((issue) => /partial coverage/i.test(issue.description))).toBe(
+			true
+		);
 	});
 	it('all built-in examples pass the same runtime trust boundary', () => {
 		for (const example of examples)

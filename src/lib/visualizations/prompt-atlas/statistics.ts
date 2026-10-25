@@ -1,20 +1,31 @@
 /** Counts the unmodified editor value. Evidence offsets deliberately use UTF-16 instead. */
 export function countText(text: string) {
 	const hasSegmenter = typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function';
-	const graphemes = hasSegmenter
-		? Array.from(
-				new Intl.Segmenter('en', { granularity: 'grapheme' }).segment(text),
-				(item) => item.segment
-			)
-		: fallbackGraphemes(text);
-	const words = hasSegmenter
-		? Array.from(new Intl.Segmenter('en', { granularity: 'word' }).segment(text)).filter(
-				(item) => item.isWordLike
-			).length
-		: (text.match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu) ?? []).length;
+	let characters = 0;
+	let withoutWhitespace = 0;
+	// Do not retain one SegmentData object per character/word for long documents.
+	// ASCII has one grapheme per unit except CRLF, which is one grapheme.
+	if (/^[\x00-\x7f]*$/.test(text)) {
+		characters = text.length - (text.match(/\r\n/g)?.length ?? 0);
+		withoutWhitespace = text.replace(/\s/g, '').length;
+	} else {
+		const graphemes = hasSegmenter
+			? new Intl.Segmenter('en', { granularity: 'grapheme' }).segment(text)
+			: fallbackGraphemes(text);
+		for (const item of graphemes) {
+			const value = typeof item === 'string' ? item : item.segment;
+			characters += 1;
+			if (!/^\s+$/u.test(value)) withoutWhitespace += 1;
+		}
+	}
+	let words = 0;
+	if (hasSegmenter) {
+		for (const item of new Intl.Segmenter('en', { granularity: 'word' }).segment(text))
+			if (item.isWordLike) words += 1;
+	} else words = (text.match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu) ?? []).length;
 	return {
-		characters: graphemes.length,
-		withoutWhitespace: graphemes.filter((value) => !/^\s+$/u.test(value)).length,
+		characters,
+		withoutWhitespace,
 		words,
 		lines: text.length ? text.split(/\r\n|\r|\n/).length : 0,
 		codePoints: Array.from(text).length,

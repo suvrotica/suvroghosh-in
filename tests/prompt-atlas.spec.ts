@@ -1,5 +1,6 @@
-import { expect, test, type Download, type Locator, type Page } from '@playwright/test';
+import { expect, test, type Download, type Locator, type Page, type Route } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { MAX_CODE_POINTS, type PromptOntology } from '../src/lib/visualizations/prompt-atlas/types';
 
 const articlePath = '/blog/visualizations/prompt-atlas';
 const storageKey = 'suvro-prompt-atlas-session-v1';
@@ -10,6 +11,128 @@ const diagram = (page: Page): Locator => atlas(page).getByTestId('atlas-diagram'
 const selector = (page: Page): Locator =>
 	atlas(page).getByLabel('View this prompt as', { exact: true });
 const pageErrors = new WeakMap<Page, string[]>();
+const semanticProvider = 'Vercel AI Gateway / NVIDIA';
+const semanticModel = 'nvidia/nemotron-3.5-lightning-free';
+const semanticText = 'The moon invoices Tuesday. Tuesday disputes the moon.';
+const unobscuredCapture = { style: '.site-header { visibility: hidden !important; }' };
+const semanticConfig = {
+	available: true,
+	provider: semanticProvider,
+	model: semanticModel,
+	reason: null,
+	freeOnly: true,
+	maxCodePoints: MAX_CODE_POINTS,
+	timeoutMs: 65_000
+};
+const aiRadio = (page: Page): Locator =>
+	atlas(page).getByRole('radio', { name: /AI semantic analysis/ });
+const aiConsent = (page: Page): Locator =>
+	atlas(page).getByRole('checkbox', {
+		name: 'Send this prompt to the displayed AI provider for this analysis',
+		exact: true
+	});
+
+function semanticOntology(source = semanticText): PromptOntology {
+	const firstMoon = source.indexOf('moon');
+	const firstTuesday = source.indexOf('Tuesday');
+	const secondSentence = source.indexOf('Tuesday disputes');
+	const evidence = (start: number, end: number) => [
+		{ start, end, quote: source.slice(start, end) }
+	];
+	return {
+		schemaVersion: 1,
+		source: { text: source, revision: 'semantic-fixture-1' },
+		mode: 'semantic',
+		analysisMetadata: { provider: semanticProvider, model: semanticModel },
+		language: 'en',
+		nodes: [
+			{
+				id: 'moon',
+				label: 'moon',
+				kind: 'concept',
+				layer: 'subject',
+				provenance: 'explicit',
+				evidence: evidence(firstMoon, firstMoon + 4),
+				attributes: []
+			},
+			{
+				id: 'tuesday',
+				label: 'Tuesday',
+				kind: 'concept',
+				layer: 'subject',
+				provenance: 'explicit',
+				evidence: evidence(firstTuesday, firstTuesday + 7),
+				attributes: []
+			}
+		],
+		relations: [
+			{
+				id: 'invoices',
+				from: 'moon',
+				to: 'tuesday',
+				label: 'invoices',
+				kind: 'association',
+				provenance: 'explicit',
+				evidence: evidence(0, secondSentence - 1)
+			},
+			{
+				id: 'disputes',
+				from: 'tuesday',
+				to: 'moon',
+				label: 'disputes',
+				kind: 'association',
+				provenance: 'explicit',
+				evidence: evidence(secondSentence, source.length)
+			}
+		],
+		issues: [
+			{
+				id: 'metaphor',
+				kind: 'ambiguity',
+				description: 'These subjects may be metaphorical; no billing database is implied.',
+				evidence: evidence(0, source.length),
+				alternatives: ['Keep the literal wording', 'Treat this as a creative metaphor']
+			}
+		]
+	};
+}
+
+async function mockSemantic(
+	page: Page,
+	options: {
+		config?: Record<string, unknown>;
+		respond?: (route: Route) => Promise<void>;
+	} = {}
+): Promise<{ posts: unknown[] }> {
+	const posts: unknown[] = [];
+	await page.route('**/api/prompt-atlas', async (route) => {
+		if (route.request().method() === 'GET') {
+			await route.fulfill({
+				status: 200,
+				contentType: 'application/json',
+				body: JSON.stringify(options.config ?? semanticConfig)
+			});
+			return;
+		}
+		posts.push(route.request().postDataJSON());
+		if (options.respond) await options.respond(route);
+		else
+			await route.fulfill({
+				status: 200,
+				contentType: 'application/json',
+				body: JSON.stringify({ ontology: semanticOntology() })
+			});
+	});
+	return { posts };
+}
+
+async function requestSemantic(page: Page, text = semanticText): Promise<void> {
+	await editor(page).fill(text);
+	await aiRadio(page).check();
+	await expect(atlas(page).getByTestId('semantic-options')).toContainText(semanticModel);
+	await aiConsent(page).check();
+	await atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true }).click();
+}
 
 test.beforeEach(async ({ page, baseURL }) => {
 	const origin = new URL(baseURL!).origin;
@@ -23,6 +146,22 @@ test.beforeEach(async ({ page, baseURL }) => {
 			? route.continue()
 			: route.abort('blockedbyclient');
 	});
+	// Browser tests never contact an actual semantic provider or spend credits.
+	await page.route('**/api/prompt-atlas', (route) =>
+		route.fulfill({
+			status: route.request().method() === 'GET' ? 200 : 503,
+			contentType: 'application/json',
+			body: JSON.stringify(
+				route.request().method() === 'GET'
+					? {
+							...semanticConfig,
+							available: false,
+							reason: 'AI is unavailable in this local test. Local analysis is ready.'
+						}
+					: { error: 'Unexpected unmocked semantic analysis request.', code: 'test_blocked' }
+			)
+		})
+	);
 });
 
 test.afterEach(async ({ page }) => {
@@ -94,6 +233,41 @@ async function expectNoOverflow(page: Page): Promise<void> {
 	expect(box.overflow).toBeLessThanOrEqual(1);
 }
 
+async function deferGraphDigest(page: Page): Promise<void> {
+	await page.evaluate(() => {
+		const state = { started: 0, completed: 0, releases: [] as (() => void)[] };
+		(window as unknown as { __atlasDigest: typeof state }).__atlasDigest = state;
+		const original = crypto.subtle.digest.bind(crypto.subtle);
+		crypto.subtle.digest = async (...args: Parameters<SubtleCrypto['digest']>) => {
+			state.started += 1;
+			await new Promise<void>((resolve) => state.releases.push(resolve));
+			const value = await original(...args);
+			state.completed += 1;
+			return value;
+		};
+	});
+}
+
+async function releaseGraphDigest(page: Page): Promise<void> {
+	await page.evaluate(() => {
+		const state = (window as unknown as { __atlasDigest: { releases: (() => void)[] } })
+			.__atlasDigest;
+		state.releases.forEach((release) => release());
+	});
+	await expect
+		.poll(() =>
+			page.evaluate(
+				() =>
+					(
+						window as unknown as {
+							__atlasDigest: { completed: number };
+						}
+					).__atlasDigest.completed
+			)
+		)
+		.toBe(1);
+}
+
 test('counts exact editor text, Unicode graphemes and limits before analysis', async ({ page }) => {
 	await ready(page);
 	await expect(atlas(page).getByTestId('character-count')).toHaveText('0');
@@ -121,6 +295,13 @@ test('counts exact editor text, Unicode graphemes and limits before analysis', a
 	).toHaveText('15');
 	await editor(page).fill('A'.repeat(20_001));
 	await expect(atlas(page).getByTestId('character-count')).toHaveText('20,001');
+	await expect(
+		atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true })
+	).toBeEnabled();
+	await editor(page).fill('A'.repeat(MAX_CODE_POINTS + 1));
+	await expect(atlas(page).getByTestId('character-count')).toHaveText(
+		(MAX_CODE_POINTS + 1).toLocaleString('en-GB')
+	);
 	await expect(atlas(page)).toContainText('Analysis limit reached');
 	await expect(
 		atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true })
@@ -143,7 +324,7 @@ test('analyzes in a worker without sending prompt content over HTTP and gives an
 	);
 	await expect(diagram(page).locator('[data-atlas-select^="group:"]').first()).toBeVisible();
 	await expect(atlas(page).locator('.atlas-scroll-list')).toContainText('robot gardener');
-	await expect(atlas(page)).toContainText('A semantic AI provider is not configured');
+	await expect(atlas(page)).toContainText('AI semantic analysis is optional');
 	await choose(page, 'concept');
 	await choose(page, 'mindmap');
 	expect(transmitted).toEqual([]);
@@ -230,6 +411,7 @@ test('flags contradictions and freezes corrections and exports when the prompt c
 		/Export SVG/,
 		/Export Markdown/,
 		/Export JSON report/,
+		/Export graph JSON-LD/,
 		/Save session on this device/
 	]) {
 		await expect(atlas(page).getByRole('button', { name: label })).toBeDisabled();
@@ -402,7 +584,7 @@ test('exports safe SVG and source-optional JSON, and validates imported reports 
 	await expect(editor(page)).toHaveValue(sourceText);
 	await atlas(page)
 		.getByRole('checkbox', {
-			name: 'Include original prompt in JSON (enables restoring)',
+			name: 'Include original prompt and evidence in JSON exports',
 			exact: true
 		})
 		.check();
@@ -486,4 +668,491 @@ test('supports keyboard analysis, diagram controls and a narrow mobile workflow 
 			['critical', 'serious'].includes(violation.impact ?? '')
 		)
 	).toEqual([]);
+});
+
+test('AI requires fresh consent and an explicit request; semantic views and exports reuse the result', async ({
+	page
+}) => {
+	const { posts } = await mockSemantic(page);
+	await ready(page);
+	await expect(atlas(page).getByRole('radio', { name: /Local analysis/ })).toBeChecked();
+	await editor(page).fill(semanticText);
+	await aiRadio(page).check();
+	await expect(atlas(page).getByTestId('semantic-options')).toContainText(
+		'NVIDIA may retain prompts and responses for model improvement'
+	);
+	await expect(atlas(page).getByTestId('semantic-options')).toContainText(semanticModel);
+	await expect(
+		atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true })
+	).toBeDisabled();
+	expect(posts).toEqual([]);
+	await aiConsent(page).check();
+	await editor(page).fill(semanticText + ' ');
+	await expect(aiConsent(page)).not.toBeChecked();
+	await editor(page).fill(semanticText);
+	expect(posts).toEqual([]);
+	await aiConsent(page).check();
+	await atlas(page)
+		.getByTestId('semantic-options')
+		.screenshot({
+			path: '.codex-artifacts/prompt-atlas-ai-consent-desktop.png',
+			...unobscuredCapture
+		});
+	await page.setViewportSize({ width: 360, height: 800 });
+	await expectNoOverflow(page);
+	await atlas(page)
+		.getByTestId('semantic-options')
+		.screenshot({
+			path: '.codex-artifacts/prompt-atlas-ai-consent-mobile.png',
+			...unobscuredCapture
+		});
+	await page.setViewportSize({ width: 1440, height: 1000 });
+	await atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true }).click();
+	await expect(diagram(page)).toHaveAttribute('data-model', 'mindmap');
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText('AI · semantic');
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText(semanticModel);
+	expect(posts).toEqual([{ text: semanticText, consent: true }]);
+	await expect(aiConsent(page)).not.toBeChecked();
+	await expect(
+		atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true })
+	).toBeDisabled();
+	await choose(page, 'concept');
+	await expect(diagram(page).locator('.relation')).toHaveCount(2);
+	await choose(page, 'conceptual-er');
+	await choose(page, 'knowledge-graph');
+	const relationLabels = diagram(page).locator('.edge-label');
+	const firstLabel = await relationLabels.nth(0).boundingBox();
+	const secondLabel = await relationLabels.nth(1).boundingBox();
+	expect(firstLabel).not.toBeNull();
+	expect(secondLabel).not.toBeNull();
+	expect(
+		Math.abs(firstLabel!.x - secondLabel!.x) + Math.abs(firstLabel!.y - secondLabel!.y)
+	).toBeGreaterThan(20);
+	await diagram(page).screenshot({
+		path: '.codex-artifacts/prompt-atlas-ai-knowledge-graph-desktop.png',
+		...unobscuredCapture
+	});
+	await choose(page, 'mindmap');
+	expect(posts).toHaveLength(1);
+	const report = JSON.parse(await exportText(page, /Export JSON report/));
+	expect(report.analysisMode).toBe('semantic');
+	expect(report.analysisMetadata).toEqual({ provider: semanticProvider, model: semanticModel });
+	await atlas(page)
+		.getByRole('checkbox', {
+			name: 'Include original prompt and evidence in JSON exports',
+			exact: true
+		})
+		.check();
+	const sessionText = await exportText(page, /Export JSON session/);
+	await atlas(page).getByRole('button', { name: 'Clear', exact: true }).click();
+	await atlas(page)
+		.getByLabel('Import Prompt Atlas session', { exact: true })
+		.setInputFiles({
+			name: 'semantic-session.json',
+			mimeType: 'application/json',
+			buffer: Buffer.from(sessionText)
+		});
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText('AI · semantic');
+	await expect(editor(page)).toHaveValue(semanticText);
+	await expect(aiConsent(page)).not.toBeChecked();
+	expect(posts).toHaveLength(1);
+});
+
+test('loading examples in AI mode never sends a previously approved prompt', async ({ page }) => {
+	const { posts } = await mockSemantic(page);
+	await ready(page);
+	await editor(page).fill(semanticText);
+	await aiRadio(page).check();
+	await aiConsent(page).check();
+	await atlas(page).getByRole('button', { name: 'A creative brief', exact: true }).click();
+	await expect(editor(page)).toHaveValue(/robot gardener/);
+	await expect(atlas(page).locator('.atlas-notice')).toContainText('Example loaded');
+	await expect(aiConsent(page)).not.toBeChecked();
+	await expect(diagram(page)).toHaveCount(0);
+	expect(posts).toEqual([]);
+});
+
+test('unavailable or unverified free-only AI stays blocked and local fallback is explicit', async ({
+	page
+}) => {
+	const { posts } = await mockSemantic(page, {
+		config: {
+			...semanticConfig,
+			available: false,
+			reason: 'Free model or credits are unavailable.'
+		}
+	});
+	await ready(page);
+	await editor(page).fill('Write a story about a robot gardener.');
+	await aiRadio(page).check();
+	await expect(atlas(page).getByTestId('semantic-options')).toContainText(
+		'Free model or credits are unavailable.'
+	);
+	await expect(aiConsent(page)).toBeDisabled();
+	await expect(
+		atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true })
+	).toBeDisabled();
+	await expect(diagram(page)).toHaveCount(0);
+	expect(posts).toEqual([]);
+	await atlas(page).getByRole('button', { name: 'Analyze locally instead', exact: true }).click();
+	await expect(diagram(page)).toHaveAttribute('data-model', 'mindmap');
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText('Local · rules-based');
+	expect(posts).toEqual([]);
+});
+
+test('a configuration that allows paid fallback cannot enable AI', async ({ page }) => {
+	const { posts } = await mockSemantic(page, { config: { ...semanticConfig, freeOnly: false } });
+	await ready(page);
+	await editor(page).fill(semanticText);
+	await aiRadio(page).check();
+	await expect(atlas(page).getByTestId('semantic-options')).toContainText(
+		'did not confirm the free-credits-only configuration'
+	);
+	await expect(aiConsent(page)).toBeDisabled();
+	expect(posts).toEqual([]);
+});
+
+for (const failure of [
+	{
+		name: 'quota',
+		status: 429,
+		error: 'The free-credit request allowance has been reached.',
+		code: 'quota_exhausted',
+		retryAfterSeconds: 60
+	},
+	{
+		name: 'provider unavailable',
+		status: 503,
+		error: 'The approved free model is unavailable. No paid fallback was used.',
+		code: 'provider_unavailable'
+	}
+]) {
+	test(`AI ${failure.name} stops without automatic local or provider fallback`, async ({
+		page
+	}) => {
+		const { posts } = await mockSemantic(page, {
+			respond: (route) =>
+				route.fulfill({
+					status: failure.status,
+					contentType: 'application/json',
+					body: JSON.stringify(failure)
+				})
+		});
+		await ready(page);
+		await requestSemantic(page);
+		await expect(atlas(page).getByRole('alert')).toContainText(failure.error);
+		await expect(diagram(page)).toHaveCount(0);
+		await expect(aiRadio(page)).toBeChecked();
+		await expect(aiConsent(page)).not.toBeChecked();
+		expect(posts).toHaveLength(1);
+		await atlas(page).getByRole('button', { name: 'Analyze locally instead', exact: true }).click();
+		await expect(diagram(page)).toHaveAttribute('data-model', 'mindmap');
+		await expect(atlas(page).getByTestId('analysis-provenance')).toContainText(
+			'Local · rules-based'
+		);
+		expect(posts).toHaveLength(1);
+	});
+}
+
+test('AI cancellation and input edits discard delayed responses and require new consent', async ({
+	page
+}) => {
+	const releases: (() => void)[] = [];
+	const finished: Promise<void>[] = [];
+	const { posts } = await mockSemantic(page, {
+		respond: async (route) => {
+			let finish!: () => void;
+			finished.push(
+				new Promise<void>((resolve) => {
+					finish = resolve;
+				})
+			);
+			await new Promise<void>((resolve) => releases.push(resolve));
+			await route
+				.fulfill({
+					status: 200,
+					contentType: 'application/json',
+					body: JSON.stringify({ ontology: semanticOntology() })
+				})
+				.catch(() => {});
+			finish();
+		}
+	});
+	await ready(page);
+	await requestSemantic(page);
+	await expect.poll(() => posts.length).toBe(1);
+	await atlas(page).getByRole('button', { name: 'Cancel', exact: true }).click();
+	await expect(aiConsent(page)).not.toBeChecked();
+	releases[0]();
+	await finished[0];
+	await expect(diagram(page)).toHaveCount(0);
+	await expect(atlas(page).locator('.atlas-notice')).toContainText('Analysis cancelled');
+	await aiConsent(page).check();
+	await atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true }).click();
+	await expect.poll(() => posts.length).toBe(2);
+	await editor(page).fill('A different prompt now.');
+	releases[1]();
+	await finished[1];
+	await expect(editor(page)).toHaveValue('A different prompt now.');
+	await expect(aiConsent(page)).not.toBeChecked();
+	await expect(diagram(page)).toHaveCount(0);
+});
+
+test('AI enforces its deadline and ignores a result that arrives afterwards', async ({ page }) => {
+	let release!: () => void;
+	let finish!: () => void;
+	const finished = new Promise<void>((resolve) => {
+		finish = resolve;
+	});
+	const { posts } = await mockSemantic(page, {
+		respond: async (route) => {
+			await new Promise<void>((resolve) => {
+				release = resolve;
+			});
+			await route
+				.fulfill({
+					status: 200,
+					contentType: 'application/json',
+					body: JSON.stringify({ ontology: semanticOntology() })
+				})
+				.catch(() => {});
+			finish();
+		}
+	});
+	await ready(page);
+	await page.clock.install();
+	await requestSemantic(page);
+	await expect.poll(() => posts.length).toBe(1);
+	await page.clock.fastForward(65_001);
+	await expect(atlas(page).getByRole('alert')).toContainText('65-second deadline');
+	await expect(aiConsent(page)).not.toBeChecked();
+	release();
+	await finished;
+	await expect(diagram(page)).toHaveCount(0);
+	await expect(aiRadio(page)).toBeChecked();
+	expect(posts).toHaveLength(1);
+});
+
+for (const mismatch of ['model', 'source', 'mode'] as const) {
+	test(`AI rejects a mismatched ${mismatch} without applying it`, async ({ page }) => {
+		const changed = semanticOntology();
+		if (mismatch === 'model')
+			changed.analysisMetadata = { provider: semanticProvider, model: 'unapproved-model' };
+		if (mismatch === 'source') changed.source.text += ' Extra text.';
+		if (mismatch === 'mode') changed.mode = 'local';
+		const { posts } = await mockSemantic(page, {
+			respond: (route) =>
+				route.fulfill({
+					status: 200,
+					contentType: 'application/json',
+					body: JSON.stringify({ ontology: changed })
+				})
+		});
+		await ready(page);
+		await requestSemantic(page);
+		await expect(atlas(page).getByRole('alert')).toContainText(
+			mismatch === 'model'
+				? 'changed from the one you approved'
+				: 'did not match this prompt and analysis mode'
+		);
+		await expect(diagram(page)).toHaveCount(0);
+		expect(posts).toHaveLength(1);
+	});
+}
+
+test('knowledge graph retains all ontology items and exports source-optional JSON-LD', async ({
+	page
+}) => {
+	await ready(page);
+	await specimen(page, 'A creative brief');
+	const count = await atlas(page).locator('.atlas-scroll-list button').count();
+	await choose(page, 'knowledge-graph');
+	await expect(diagram(page).locator('.ontology-node')).toHaveCount(count);
+	await diagram(page).screenshot({
+		path: '.codex-artifacts/prompt-atlas-knowledge-graph-desktop.png',
+		...unobscuredCapture
+	});
+	await page.setViewportSize({ width: 360, height: 800 });
+	await expectNoOverflow(page);
+	await diagram(page).screenshot({
+		path: '.codex-artifacts/prompt-atlas-knowledge-graph-mobile.png',
+		...unobscuredCapture
+	});
+	await page.setViewportSize({ width: 1440, height: 1000 });
+	const text = await exportText(page, /Export graph JSON-LD/);
+	const graph = JSON.parse(text);
+	expect(graph['@context'].schema).toBe('https://schema.org/');
+	const records: Record<string, unknown>[] = graph['@graph'];
+	expect(records[0].sourceIncluded).toBe(false);
+	expect(records[0]).not.toHaveProperty('sourceText');
+	expect(records.filter((record) => record['@type'] === 'schema:Thing')).toHaveLength(count);
+	for (const record of records) {
+		expect(record).not.toHaveProperty('evidence');
+	}
+	expect(records.some((record) => record.provenance === 'explicit')).toBe(true);
+	await atlas(page)
+		.getByRole('checkbox', {
+			name: 'Include original prompt and evidence in JSON exports',
+			exact: true
+		})
+		.check();
+	const full = JSON.parse(await exportText(page, /Export graph JSON-LD/));
+	expect(full['@graph'][0].sourceText).toBe(await editor(page).inputValue());
+	expect(
+		full['@graph'].some((record: Record<string, unknown>) => record.provenance === 'explicit')
+	).toBe(true);
+});
+
+test('long semantic prompts preserve the full source and show compressed-reading coverage', async ({
+	page
+}) => {
+	const text = semanticText + '\n' + 'Keep the supplied source available.\n'.repeat(1500);
+	const ontology = semanticOntology(text);
+	const original = Array.from(text).length;
+	ontology.compression = {
+		originalCodePoints: original,
+		analysedCodePoints: 2000,
+		omittedCodePoints: original - 2000,
+		duplicateCodePoints: 0,
+		fragmentCount: 2,
+		applied: true
+	};
+	const { posts } = await mockSemantic(page, {
+		respond: (route) =>
+			route.fulfill({
+				status: 200,
+				contentType: 'application/json',
+				body: JSON.stringify({ ontology })
+			})
+	});
+	await ready(page);
+	await requestSemantic(page, text);
+	await expect(diagram(page)).toHaveAttribute('data-model', 'mindmap');
+	await expect(editor(page)).toHaveValue(text);
+	await expect(atlas(page).getByTestId('character-count')).toHaveText(
+		text.length.toLocaleString('en-GB')
+	);
+	await expect(atlas(page).getByTestId('source-coverage')).toContainText(
+		original.toLocaleString('en-GB')
+	);
+	await expect(atlas(page).getByTestId('source-coverage')).toContainText('partial reading');
+	await expect(atlas(page).getByTestId('source-coverage')).toContainText('2 source excerpts');
+	await choose(page, 'knowledge-graph');
+	expect(posts).toEqual([{ text, consent: true }]);
+	const report = JSON.parse(await exportText(page, /Export JSON report/));
+	expect(report.compression).toEqual(ontology.compression);
+});
+
+test('local analysis accepts a prompt over 20k and reports its compressed source coverage', async ({
+	page
+}) => {
+	const text = 'Write a kind story about a robot gardener.\n' + 'Use a warm tone.\n'.repeat(1800);
+	await ready(page);
+	await analyze(page, text);
+	await expect(editor(page)).toHaveValue(text);
+	await expect(atlas(page).getByTestId('character-count')).toHaveText(
+		text.length.toLocaleString('en-GB')
+	);
+	await expect(atlas(page).getByTestId('source-coverage')).toContainText('Compressed reading');
+	await expect(atlas(page).getByTestId('source-coverage')).toContainText('deduplicated');
+	const report = JSON.parse(await exportText(page, /Export JSON report/));
+	expect(report.analysisMode).toBe('local');
+	expect(report.compression.originalCodePoints).toBe(Array.from(text).length);
+	expect(report.compression.applied).toBe(true);
+	expect(report.compression.duplicateCodePoints).toBeGreaterThan(0);
+	await choose(page, 'knowledge-graph');
+});
+
+for (const mutation of ['prompt', 'correction', 'source choice', 'model', 'navigation'] as const) {
+	test(`pending graph export is discarded after ${mutation} changes`, async ({ page }) => {
+		await ready(page);
+		await specimen(page, 'A creative brief');
+		await choose(page, 'knowledge-graph');
+		if (mutation === 'correction')
+			await atlas(page).locator('.atlas-scroll-list button').first().click();
+		const sourceChoice = atlas(page).getByRole('checkbox', {
+			name: 'Include original prompt and evidence in JSON exports',
+			exact: true
+		});
+		if (mutation === 'source choice') await sourceChoice.check();
+		await deferGraphDigest(page);
+		await atlas(page)
+			.getByRole('button', { name: /Export graph JSON-LD/ })
+			.click();
+		await expect
+			.poll(() =>
+				page.evaluate(
+					() =>
+						(
+							window as unknown as {
+								__atlasDigest: { started: number };
+							}
+						).__atlasDigest.started
+				)
+			)
+			.toBe(1);
+		if (mutation === 'prompt') await editor(page).fill('A revised source prompt.');
+		if (mutation === 'correction') {
+			const label = atlas(page).locator('.atlas-detail').getByLabel('Label', { exact: true });
+			await label.fill('A correction made during export');
+			await label.press('Tab');
+		}
+		if (mutation === 'source choice') await sourceChoice.uncheck();
+		if (mutation === 'model') await choose(page, 'concept');
+		if (mutation === 'navigation') {
+			await atlas(page).getByRole('link', { name: 'Apps', exact: true }).click();
+			await expect(page).toHaveURL(/\/blog\/apps$/);
+		}
+		const unexpectedDownload = page.waitForEvent('download', { timeout: 500 }).then(
+			() => true,
+			() => false
+		);
+		await releaseGraphDigest(page);
+		expect(await unexpectedDownload).toBe(false);
+	});
+}
+
+test('a confirmed correction cancels pending AI analysis and survives its late response', async ({
+	page
+}) => {
+	let release!: () => void;
+	let finish!: () => void;
+	const finished = new Promise<void>((resolve) => {
+		finish = resolve;
+	});
+	const { posts } = await mockSemantic(page, {
+		respond: async (route) => {
+			await new Promise<void>((resolve) => {
+				release = resolve;
+			});
+			await route
+				.fulfill({
+					status: 200,
+					contentType: 'application/json',
+					body: JSON.stringify({ ontology: semanticOntology() })
+				})
+				.catch(() => {});
+			finish();
+		}
+	});
+	await ready(page);
+	await analyze(page, semanticText);
+	await atlas(page).locator('.atlas-scroll-list button').first().click();
+	await aiRadio(page).check();
+	await aiConsent(page).check();
+	await atlas(page).getByRole('button', { name: 'Analyze prompt', exact: true }).click();
+	await expect.poll(() => posts.length).toBe(1);
+	const label = atlas(page).locator('.atlas-detail').getByLabel('Label', { exact: true });
+	await expect(label).toBeEnabled();
+	await label.fill('User correction while AI waits');
+	await label.press('Tab');
+	await expect(atlas(page).locator('.atlas-notice')).toContainText(
+		'cancelled to keep your correction'
+	);
+	await expect(atlas(page).getByRole('button', { name: 'Cancel', exact: true })).toHaveCount(0);
+	release();
+	await finished;
+	await expect(label).toHaveValue('User correction while AI waits');
+	await expect(atlas(page).getByTestId('analysis-provenance')).toContainText('Local · rules-based');
+	await expect(aiConsent(page)).not.toBeChecked();
 });

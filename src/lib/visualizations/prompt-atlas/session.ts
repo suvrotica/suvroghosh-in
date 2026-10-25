@@ -2,10 +2,11 @@ import { validateOntology } from './validation';
 import type { ModelId, PromptOntology } from './types';
 
 export const SESSION_STORAGE_KEY = 'suvro-prompt-atlas-session-v1';
-export const MAX_SESSION_BYTES = 512 * 1024;
+export const MAX_SESSION_BYTES = 2 * 1024 * 1024;
 const modelIds: ModelId[] = [
 	'mindmap',
 	'concept',
+	'knowledge-graph',
 	'flowchart',
 	'conceptual-er',
 	'logical',
@@ -33,14 +34,14 @@ export function createSession(ontology: PromptOntology, model: ModelId): AtlasSe
 	// storage. Every session we save or export must fit the same restore boundary.
 	if (new TextEncoder().encode(JSON.stringify(session, null, 2)).byteLength > MAX_SESSION_BYTES)
 		throw new Error(
-			'This session exceeds 512 KiB after formatting. Shorten the prompt or remove details before saving or exporting a restorable session.'
+			'This session exceeds 2 MiB after formatting. Remove details before saving or exporting a restorable session.'
 		);
 	return session;
 }
 
 export function parseSession(text: string): AtlasSession {
 	if (new TextEncoder().encode(text).byteLength > MAX_SESSION_BYTES)
-		throw new Error('Session is larger than 512 KiB.');
+		throw new Error('Session is larger than 2 MiB.');
 	const value: unknown = JSON.parse(text);
 	if (!value || typeof value !== 'object' || Array.isArray(value))
 		throw new Error('Choose a Prompt Atlas session JSON file.');
@@ -67,6 +68,8 @@ export function createReport(ontology: PromptOntology, model: ModelId) {
 		model,
 		sourceIncluded: false,
 		analysisMode: ontology.mode,
+		...(ontology.compression ? { compression: ontology.compression } : {}),
+		...(ontology.analysisMetadata ? { analysisMetadata: ontology.analysisMetadata } : {}),
 		schemaVersion: ontology.schemaVersion,
 		...(ontology.databaseTarget ? { databaseTarget: ontology.databaseTarget } : {}),
 		nodes: ontology.nodes.map((node) => ({

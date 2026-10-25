@@ -13,6 +13,7 @@ export default defineConfig({
 			'src/routes/api/internal/comment-notifications/**/*.test.ts',
 			'src/routes/notes/studio/comments/**/*.test.ts',
 			'src/lib/visualizations/prompt-atlas/**/*.test.ts',
+			'src/lib/server/prompt-atlas/**/*.test.ts',
 			'src/lib/server/content/post-collections.test.ts',
 			'src/lib/visualizations/memory-palace/**/*.test.ts',
 			'src/lib/visualizations/build-one-build-a-thousand/**/*.test.ts',

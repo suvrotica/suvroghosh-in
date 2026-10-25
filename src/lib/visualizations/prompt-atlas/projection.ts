@@ -299,6 +299,164 @@ function entityModel(ontology: PromptOntology, model: ModelId): Diagram {
 	return finish(model, nodes, edges, notes);
 }
 
+/** Grouping frames are layout aids; only original ontology relationships become edges. */
+function knowledgeGraph(ontology: PromptOntology): Diagram {
+	const groupOrder = [
+		'task',
+		'audience',
+		'output',
+		'constraint',
+		'example',
+		'actor',
+		'system',
+		'object',
+		'concept',
+		'table',
+		'action',
+		'state'
+	];
+	const groups = new Map<string, OntologyNode[]>();
+	for (const item of ontology.nodes) {
+		const key = `${item.layer}:${item.kind}`;
+		groups.set(key, [...(groups.get(key) ?? []), item]);
+	}
+	const ordered = [...groups.entries()].sort(([left], [right]) => {
+		const [leftLayer, leftKind] = left.split(':');
+		const [rightLayer, rightKind] = right.split(':');
+		return (
+			Number(leftLayer === 'subject') - Number(rightLayer === 'subject') ||
+			groupOrder.indexOf(leftKind) - groupOrder.indexOf(rightKind)
+		);
+	});
+	const projected: DiagramNode[] = [];
+	let y = PADDING;
+	for (let offset = 0; offset < ordered.length; offset += 3) {
+		let rowHeight = 0;
+		for (const [column, [key, members]] of ordered.slice(offset, offset + 3).entries()) {
+			const [layer, kind] = key.split(':');
+			const x = PADDING + column * 310;
+			let memberY = y + 55;
+			const items = members.map((member) => {
+				const item = node(member, x + 25, memberY, 'rounded');
+				memberY += item.height + 22;
+				return item;
+			});
+			const height = memberY - y + 4;
+			projected.push(
+				{
+					id: `kg-group:${layer}:${kind}`,
+					label: `${layer === 'instruction' ? 'Prompt' : 'Subject'} / ${kind} · ${members.length}`,
+					x,
+					y,
+					width: 250,
+					height,
+					shape: 'box',
+					kind: 'boundary',
+					provenance: 'inferred'
+				},
+				...items
+			);
+			rowHeight = Math.max(rowHeight, height);
+		}
+		y += rowHeight + 90;
+	}
+	const pairs = new Map<string, OntologyRelation[]>();
+	for (const relation of ontology.relations) {
+		const key = [relation.from, relation.to].sort().join(':');
+		pairs.set(key, [...(pairs.get(key) ?? []), relation]);
+	}
+	const edges = ontology.relations.flatMap((relation) => {
+		const edge = connection(relation, projected);
+		if (!edge) return [];
+		const parallel = pairs.get([relation.from, relation.to].sort().join(':'))!;
+		if (parallel.length < 2) return [edge];
+		const from = projected.find((item) => item.id === relation.from)!;
+		const to = projected.find((item) => item.id === relation.to)!;
+		const index = parallel.findIndex((item) => item.id === relation.id);
+		const right = index % 2 === 0;
+		const distance = 65 + Math.floor(index / 2) * 30;
+		if (from.id !== to.id && Math.abs(from.x - to.x) >= Math.abs(from.y - to.y)) {
+			const channelY = right
+				? Math.max(from.y + from.height, to.y + to.height) + distance
+				: Math.min(from.y, to.y) - distance;
+			edge.points = [
+				{ x: from.x + from.width / 2, y: from.y + (right ? from.height : 0) },
+				{ x: (from.x + from.width / 2 + to.x + to.width / 2) / 2, y: channelY },
+				{ x: to.x + to.width / 2, y: to.y + (right ? to.height : 0) }
+			];
+			return [edge];
+		}
+		const channelX = right
+			? Math.max(from.x + from.width, to.x + to.width) + distance
+			: Math.min(from.x, to.x) - distance;
+		const fromY = from.y + (from.id === to.id ? 20 : from.height / 2);
+		const toY = to.y + (from.id === to.id ? to.height - 15 : to.height / 2);
+		edge.points = [
+			{ x: from.x + (right ? from.width : 0), y: fromY },
+			{ x: channelX, y: (fromY + toY) / 2 },
+			{ x: to.x + (right ? to.width : 0), y: toY }
+		];
+		return [edge];
+	});
+	// Keep both side channels and their wrapped labels inside the canvas, and
+	// centre compact graphs instead of pinning a single group to the left.
+	const labelBounds = edges.map((edge) => {
+		const first = edge.points[0];
+		const last = edge.points[edge.points.length - 1];
+		const x = edge.points.length > 2 ? edge.points[1].x : (first.x + last.x) / 2;
+		const labelY = edge.points.length > 2 ? edge.points[1].y - 9 : (first.y + last.y) / 2 - 10;
+		const lines = wrapLabel(edge.label, 38);
+		const halfWidth = Math.max(0, ...lines.map((line) => line.length)) * 4;
+		return {
+			left: x - halfWidth,
+			right: x + halfWidth,
+			top: labelY - 12,
+			bottom: labelY + (lines.length - 1) * 15 + 5
+		};
+	});
+	const minX = Math.min(
+		...projected.map((item) => item.x),
+		...edges.flatMap((edge) => edge.points.map((point) => point.x)),
+		...labelBounds.map((bound) => bound.left)
+	);
+	const maxX = Math.max(
+		...projected.map((item) => item.x + item.width),
+		...edges.flatMap((edge) => edge.points.map((point) => point.x)),
+		...labelBounds.map((bound) => bound.right)
+	);
+	const width = Math.max(720, maxX - minX + PADDING * 2);
+	const shift = (width - (maxX - minX)) / 2 - minX;
+	const minY = Math.min(
+		...projected.map((item) => item.y),
+		...edges.flatMap((edge) => edge.points.map((point) => point.y)),
+		...labelBounds.map((bound) => bound.top)
+	);
+	const maxY = Math.max(
+		...projected.map((item) => item.y + item.height),
+		...edges.flatMap((edge) => edge.points.map((point) => point.y)),
+		...labelBounds.map((bound) => bound.bottom)
+	);
+	const height = Math.max(360, maxY - minY + PADDING * 2);
+	const shiftY = (height - (maxY - minY)) / 2 - minY;
+	for (const item of projected) {
+		item.x += shift;
+		item.y += shiftY;
+	}
+	for (const edge of edges)
+		for (const point of edge.points) {
+			point.x += shift;
+			point.y += shiftY;
+		}
+	const result = finish('knowledge-graph', projected, edges, [
+		'Every ontology item and relationship is retained, including cross-links, cycles and links between prompt instructions and subject matter.',
+		'Frames group item types for reading. Frames do not assert additional semantic relationships.',
+		'Use the evidence inspector to review each labelled relation; inferred connections remain visually distinct.'
+	]);
+	result.width = Math.max(result.width, width);
+	result.height = Math.max(result.height, height);
+	return result;
+}
+
 function sequence(ontology: PromptOntology): Diagram {
 	const messages = ontology.relations
 		.filter((r) => r.kind === 'message')
@@ -467,6 +625,7 @@ function project(
 	const fit = rankModels(ontology).find((entry) => entry.id === model);
 	if (!fit?.eligible) return finish(model, [], [], [fit?.reason ?? 'Unknown model.']);
 	if (model === 'mindmap') return mindmap(ontology, collapsedIds);
+	if (model === 'knowledge-graph') return knowledgeGraph(ontology);
 	if (['conceptual-er', 'logical', 'physical', 'class'].includes(model))
 		return entityModel(ontology, model);
 	if (model === 'sequence') return sequence(ontology);
@@ -512,6 +671,8 @@ export function projectOntology(
 ): Diagram {
 	const diagram = project(ontology, model, collapsedIds);
 	diagram.analysisMode = ontology.mode;
+	if (ontology.analysisMetadata) diagram.analysisMetadata = ontology.analysisMetadata;
+	if (ontology.compression) diagram.compression = ontology.compression;
 	diagram.ontologySchemaVersion = ontology.schemaVersion;
 	diagram.unresolvedIssues = ontology.issues
 		.filter((issue) => !issue.resolved)

@@ -69,6 +69,9 @@ flowchart LR
     Browser --> Engines["Local Svelte UI, engines, workers, Canvas/WebGL"]
     SSR --> Providers["Resend / optional Chatterbox service"]
     SSR --> Supabase["Supabase Auth, Postgres/RLS, private Storage"]
+    Browser -->|explicit AI consent| AtlasAPI["Bounded Prompt Atlas API"]
+    AtlasAPI -->|shared quota reservations| Supabase
+    AtlasAPI --> FreeAI["AI Gateway / pinned free NVIDIA model"]
     Browser --> Comments["Bounded same-origin comment API"]
     Comments --> Supabase
     Supabase --> CommentOutbox["Atomic new-pending comment outbox"]
@@ -129,6 +132,7 @@ Paths are relative to the repository root. This is a responsibility map rather t
 | `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                                               |
 | `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                                   |
 | `src/lib/comments/`, `src/lib/components/comments/`                                              | Browser-safe comment contracts and reusable plain-text submission, thread and lazy article-comment interfaces. Submitted comments have no browser database.                                                               |
+| `src/lib/server/prompt-atlas/`                                                                   | Optional free-only semantic analysis, streamed request/provider bounds, source grounding and shared-quota adapter.                                                                                                        |
 | `src/lib/server/comments/`                                                                       | Published-article validation, strict request schemas, bounded HTTP handling, salted abuse keys, server-only Supabase RPC access and production-only durable email dispatch.                                               |
 | `src/lib/privacy/`                                                                               | Browser-local media-only v2 preferences, v1 media migration, persistence, expiry, cross-tab subscriptions and settings events; no visitor identifier.                                                                     |
 | `src/lib/analytics/`                                                                             | Browser-safe report types and one per-document navigation ledger for default Vercel public pageviews; no current-browser first-party/performance/custom-event dispatch.                                                   |
@@ -194,6 +198,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/notes/studio/comments`                                                                               | Independently authenticated moderation board, with status/article filters, unread state, author replies, page export and visibility-aware polling. Shared Studio navigation shows pending/unread counts.                                                                                                           |
 | `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
 | `/api/analytics/pageview`                                                                              | Compatibility intake for older consented clients, with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                           |
+| `/api/prompt-atlas`                                                                                    | GET public availability; explicit same-origin consented POST, free-route verification, atomic shared quota and bounded structured analysis; private/no-store.                                                                                                                                                      |
 | `/api/comments`                                                                                        | Published-article approved comments/replies and pending guest submission; server-only service-role RPCs, bounded input/admission and no-store responses.                                                                                                                                                           |
 | `/api/comments/moderate`                                                                               | Standalone private HTML email-action confirmation/composer; expiring single-comment moderation or one-author-reply capability, safe GET/HEAD and bounded same-origin POST; no Notes session, Svelte layout, analytics or external resources.                                                                       |
 | `/api/notes/comments`                                                                                  | Independently configured-owner-authorized queue/count/session/page-export reads and moderation/read/author-reply mutations; authenticated session RPCs, private/no-store/noindex responses.                                                                                                                        |
@@ -311,27 +316,74 @@ search and article canonical generation continue to use the single post registry
 in the header, command palette, footer and Viz page exposes the Apps collection.
 
 Prompt Atlas uses feature-local TypeScript modules under `src/lib/visualizations/prompt-atlas`
-and Svelte UI under `src/lib/components/visualizations/prompt-atlas`. Text statistics update
-locally. Explicit analysis runs a deterministic rules-based reader in a browser worker;
-cancellation, input edits, a ten-second deadline and component destruction terminate that worker.
-Results pass the same strict ontology validator as imported sessions, with exact UTF-16 source
-evidence, referential integrity, provenance and bounded graph sizes. It is a limited local
-reader, not a general semantic language model. Existing narration credentials are not reused.
+and Svelte UI under `src/lib/components/visualizations/prompt-atlas`. Local mode is the default:
+a deterministic reader runs in a cancellable browser worker with a ten-second deadline. Optional
+semantic mode explicitly sends one consented prompt to the same-origin `/api/prompt-atlas`
+endpoint, then through Vercel AI Gateway to NVIDIA. Choosing AI or typing does not submit text.
+Editing, cancellation, changing mode and destruction abort pending work; generation IDs reject
+late responses. A failure offers an explicit local-mode action. Existing narration credentials
+are never reused.
 
-An editable, versioned ontology is the state owner. Ten fixed diagram projections and their
-eligibility/fit rules consume it without re-extraction or network calls. Conceptual/logical/
-physical modeling levels remain separate from UML notation. Native SVG layouts preserve the
-distinction between explicit, inferred and user-confirmed information, and the inspection list
-provides a text equivalent. Source changes make results stale and pause corrections/exports.
-No analysis endpoint or remote provider is installed; `provider.ts` defines the isolated adapter
-contract for a future integration, whose endpoint security and spending controls would require
-a separate implementation review. See [ADR 0014](decisions/0014-prompt-atlas-local-ontology.md).
+The original editor value supports up to 200,000 Unicode code points. Feature-local extractive
+compression deduplicates exact sentence/line units before packing adjacent retained ranges, then
+selects bounded exact source fragments and prioritises
+instructions, constraints, conditions and distributed context. Both readers retain the full
+original text and remap evidence to its UTF-16 offsets. Compression is lossy: coverage counts
+and a limit issue identify omissions; a graph is never presented as exhaustive when excerpts
+were analysed. Provider-generated summaries cannot replace original evidence. A thin provider-only
+knowledge-graph contract requests nodes, relationships, provenance, rationales and trusted source
+unit IDs. The server derives layers from fixed kinds and reconstructs exact source context and
+UTF-16 spans; the model cannot supply offsets, quotes, provider identity or physical defaults.
+Unknown IDs, duplicate/dangling graph references and invalid provenance fail closed. Source
+context identifies what was inspected; it is not proof that a semantic interpretation is true.
+
+A deterministic local pass preserves omitted explicit instructions and storage facts without
+replacing AI claims. Subject joins require one unique exact normalised label match. Physical
+attributes, database targets, guards and cardinalities remain unknown unless recovered from
+explicit source-backed local facts within inspected coverage. Inferences require rationales.
+The canonical ontology, corrections and view eligibility rules remain shared with local mode.
+
+An editable, versioned ontology is the state owner. Eleven fixed diagram projections, including
+a knowledge graph across instruction and subject layers, consume that same graph without new
+analysis requests. Eligibility/fit rules keep conceptual/logical/physical levels separate from
+UML notation. Native SVG layouts and an accessible inspection list distinguish explicit,
+inferred and user-confirmed information. Source changes make results stale and pause
+corrections/exports. A JSON-LD graph export encodes nodes and reified, labelled relationships
+without inventing a domain vocabulary. See [ADR 0014](decisions/0014-prompt-atlas-local-ontology.md)
+and its optional-provider extension [ADR 0015](decisions/0015-prompt-atlas-free-semantic-analysis.md).
+
+The server pins `nvidia/nemotron-3.5-lightning-free` and restricts routing to NVIDIA, with no
+model fallback and no SDK retries. It checks the fixed model's live endpoint metadata before
+every generation and fails closed unless every reported monetary price is zero and structured
+output is supported. It never purchases credits, changes billing, or uses a paid route. Provider
+pricing is an external contract: a future model change requires review, and availability may
+end. Reasoning is disabled for bounded structured generation, and the native NVIDIA JSON Schema
+format is set explicitly rather than relying on the hosted adapter’s generic schema flag.
+Gateway reporting tags/user quota attribution are omitted because they can incur a surcharge
+even when model pricing is zero. NVIDIA may retain submitted prompts/responses for model improvement; the consent UI states
+this. Local mode remains usable without provider credentials or database configuration.
+
+`src/lib/server/prompt-atlas` owns server configuration, provider access and request policy.
+POST requires exact Origin, JSON, per-request consent, valid UTF-8 and a streamed 2 MiB body limit;
+its body-read deadline is eight seconds and total work deadline sixty seconds. Provider bodies
+are streamed and capped at 2 MiB. Private/no-store headers also cover framework errors through
+`hooks.server.ts`. A bounded process-local guard supplements the service-only Supabase
+`reserve_prompt_atlas_usage` RPC: an atomic reservation enforces fifty global requests per UTC
+day and five per client per UTC hour across instances. Only hourly rotating HMACs are stored,
+never prompts or raw addresses. Failed generations consume their reservation. Missing quota
+configuration/RPC, unverified pricing or provider errors fail closed; rate limits alone are not
+a billing guarantee. The additive migration has RLS, revoked direct table grants and bounded
+expired-row cleanup. GET exposes public availability/model metadata only and caches public price
+checks for thirty seconds; each POST rechecks independently.
 
 Prompt text remains in browser memory by default. Device persistence requires an explicit Save
-action and can be deleted. Versioned session import validates size, shape, source evidence and
-identifiers. JSON reports omit the original source/evidence quotes; including source is an
+action and can be deleted. Versioned session import validates size (2 MiB), shape, source evidence
+and identifiers. JSON reports omit the original source/evidence quotes; including source is an
 explicit choice that produces an importable session. All exports still contain extracted user
-content. SVG export escapes text and contains no executable HTML or external resources.
+content. Mode, provider/model and compression coverage travel with sessions and reports. SVG
+export escapes text and contains no executable HTML or external resources. Hosting activation,
+provider access and live zero-cost response verification are separate from mocked tests; see
+`docs/prompt-atlas.md` for the rollout procedure and recorded verification.
 
 ```mermaid
 flowchart LR
@@ -340,16 +392,24 @@ flowchart LR
     Registry --> Apps["Apps listing"]
     Viz --> Canonical["One canonical Prompt Atlas article"]
     Apps --> Canonical
-    Text["Exact editor text"] --> Counts["Local Unicode statistics"]
-    Text --> Worker["Explicit analysis: bounded browser worker"]
-    Worker --> Validation["Strict ontology + exact source evidence validation"]
-    Import["Explicit session import"] --> Validation
+    Text["Exact editor text; local Unicode statistics"] --> Worker["Local browser worker: compress + analyse; default"]
+    Text --> Consent["Explicit AI mode + per-request consent"]
+    Consent --> API["Same-origin bounded private API"]
+    API --> Price["Verify pinned free NVIDIA route"]
+    Price --> Quota["Atomic shared Supabase reservation"]
+    Quota --> ServerCompression["Source-fragment compression"]
+    ServerCompression --> Gateway["Gateway / NVIDIA; no retries or fallback"]
+    Gateway --> Grounding["Strict graph + trusted source ID validation"]
+    Grounding --> LocalFacts["Preserve exact local instructions and storage facts"]
+    Worker --> Validation["One validated ontology"]
+    LocalFacts --> Validation
+    Import["Explicit validated session import"] --> Validation
     Validation --> Ontology["Feature-local editable ontology"]
     Ontology --> Fit["Fixed model eligibility and fit"]
-    Fit --> Projection["Selected deterministic SVG projection"]
+    Fit --> Projection["Selected SVG view / knowledge graph"]
     Ontology --> Inspector["Evidence, corrections and accessible list"]
     Inspector --> Ontology
-    Ontology --> Save["Explicit device save / export"]
+    Ontology --> Save["Explicit save / SVG / JSON / Markdown / JSON-LD"]
 ```
 
 ### Homepage fieldbook rendering

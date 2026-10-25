@@ -7,8 +7,18 @@
 	import { rankModels } from '$lib/visualizations/prompt-atlas/models';
 	import { projectOntology } from '$lib/visualizations/prompt-atlas/projection';
 	import { exportDiagramSvg, exportMarkdown } from '$lib/visualizations/prompt-atlas/export';
+	import { createKnowledgeGraph } from '$lib/visualizations/prompt-atlas/knowledge-graph';
 	import { validateOntology } from '$lib/visualizations/prompt-atlas/validation';
-	import { ANALYSIS_MODE } from '$lib/visualizations/prompt-atlas/provider';
+	import {
+		ANALYSIS_MODE,
+		SEMANTIC_TIMEOUT_MS,
+		UNAVAILABLE_SEMANTIC_CONFIG,
+		SemanticAnalysisError,
+		analyzeSemantically,
+		fetchSemanticConfig,
+		type AnalysisMode,
+		type SemanticConfig
+	} from '$lib/visualizations/prompt-atlas/provider';
 	import {
 		createSession,
 		createReport,
@@ -32,6 +42,11 @@
 	let selectedId = $state('');
 	let collapsed = $state(new Set<string>());
 	let busy = $state(false);
+	let analysisMode = $state<AnalysisMode>('local');
+	let aiConsent = $state(false);
+	let semanticConfig = $state<SemanticConfig>({ ...UNAVAILABLE_SEMANTIC_CONFIG });
+	let configLoading = $state(false);
+	let semanticFailure = $state(false);
 	let error = $state('');
 	let notice = $state('');
 	let saved = $state(false);
@@ -46,8 +61,13 @@
 	let editor: HTMLTextAreaElement;
 	let importInput: HTMLInputElement;
 	let worker: Worker | undefined;
+	let semanticController: AbortController | undefined;
+	let configController: AbortController | undefined;
+	let configDeadline: ReturnType<typeof setTimeout> | undefined;
+	let destroyed = false;
 	let deadline: ReturnType<typeof setTimeout> | undefined;
 	let generation = 0;
+	let graphExportRevision = 0;
 	const kinds: NodeKind[] = [
 		'task',
 		'audience',
@@ -88,6 +108,13 @@
 		) ?? []
 	);
 	let unresolved = $derived(ontology?.issues.filter((issue) => !issue.resolved) ?? []);
+	let canAnalyze = $derived(
+		!busy &&
+			Boolean(text.trim()) &&
+			statistics.codePoints <= MAX_CODE_POINTS &&
+			(analysisMode === 'local' || (semanticConfig.available && aiConsent))
+	);
+	let actualMode = $derived(ontology?.mode === 'semantic' ? 'AI · semantic' : ANALYSIS_MODE.label);
 
 	onMount(() => {
 		try {
@@ -95,12 +122,61 @@
 		} catch {
 			/* Storage is optional. */
 		}
+		void checkAvailability();
 	});
-	onDestroy(stopWorker);
+	onDestroy(() => {
+		destroyed = true;
+		generation += 1;
+		stopWorker();
+		configController?.abort();
+		clearTimeout(configDeadline);
+	});
+
+	async function checkAvailability() {
+		aiConsent = false;
+		configController?.abort();
+		clearTimeout(configDeadline);
+		const controller = new AbortController();
+		configController = controller;
+		configLoading = true;
+		configDeadline = setTimeout(() => controller.abort(), 5000);
+		try {
+			const config = await fetchSemanticConfig(controller.signal);
+			if (!destroyed && configController === controller) semanticConfig = config;
+		} catch (cause) {
+			if (!destroyed && configController === controller) {
+				semanticConfig = {
+					...UNAVAILABLE_SEMANTIC_CONFIG,
+					reason: controller.signal.aborted
+						? 'AI availability did not respond in time. Local analysis is ready to use.'
+						: cause instanceof Error
+							? cause.message
+							: 'AI availability could not be checked.'
+				};
+			}
+		} finally {
+			if (!destroyed && configController === controller) {
+				clearTimeout(configDeadline);
+				configController = undefined;
+				configLoading = false;
+			}
+		}
+	}
+
+	function changeMode(mode: AnalysisMode) {
+		if (busy) cancel();
+		analysisMode = mode;
+		aiConsent = false;
+		semanticFailure = false;
+		error = '';
+		notice = '';
+	}
 
 	function stopWorker() {
 		worker?.terminate();
 		worker = undefined;
+		semanticController?.abort();
+		semanticController = undefined;
 		clearTimeout(deadline);
 		deadline = undefined;
 	}
@@ -108,6 +184,7 @@
 		generation += 1;
 		stopWorker();
 		busy = false;
+		aiConsent = false;
 		notice = 'Analysis cancelled. Your text is still here.';
 	}
 	function edited() {
@@ -115,6 +192,8 @@
 		if (busy) cancel();
 		error = '';
 		notice = '';
+		aiConsent = false;
+		semanticFailure = false;
 	}
 	function clear() {
 		cancel();
@@ -123,6 +202,7 @@
 		resetInspection();
 		error = '';
 		notice = '';
+		semanticFailure = false;
 		selectedModel = 'mindmap';
 		editor?.focus();
 	}
@@ -138,7 +218,11 @@
 		newRelationKind = 'association';
 	}
 	function analyze() {
-		if (!text.trim() || statistics.codePoints > MAX_CODE_POINTS) return;
+		if (!canAnalyze) return;
+		if (analysisMode === 'semantic') {
+			void analyzeRemote();
+			return;
+		}
 		stopWorker();
 		const run = ++generation;
 		const source = text;
@@ -157,6 +241,8 @@
 					const result = validateOntology(event.data.ontology);
 					if (result.source.text !== source)
 						throw new Error('The analysis no longer matches this prompt. Try again.');
+					if (result.mode !== 'local')
+						throw new Error('The local reader returned an unexpected analysis mode.');
 					ontology = result;
 					resetInspection();
 					selectedModel = 'mindmap';
@@ -188,6 +274,59 @@
 			error = 'This browser could not start the local analysis worker. Try a current browser.';
 		}
 	}
+	async function analyzeRemote() {
+		if (!aiConsent || !semanticConfig.available || !text.trim()) return;
+		stopWorker();
+		const run = ++generation;
+		const source = text;
+		const controller = new AbortController();
+		const expectedProvider = semanticConfig.provider;
+		const expectedModel = semanticConfig.model;
+		semanticController = controller;
+		aiConsent = false;
+		busy = true;
+		error = '';
+		notice = '';
+		semanticFailure = false;
+		deadline = setTimeout(() => {
+			if (generation !== run) return;
+			cancel();
+			error =
+				'AI analysis reached its 65-second deadline. No result was applied. You can choose local analysis instead.';
+			semanticFailure = true;
+		}, SEMANTIC_TIMEOUT_MS);
+		try {
+			const result = await analyzeSemantically(source, controller.signal);
+			if (generation !== run || source !== text || destroyed) return;
+			if (
+				result.analysisMetadata?.provider !== expectedProvider ||
+				result.analysisMetadata?.model !== expectedModel
+			)
+				throw new Error(
+					'The AI provider or model changed from the one you approved. The result was not applied; check AI availability before trying again.'
+				);
+			ontology = result;
+			resetInspection();
+			selectedModel = 'mindmap';
+			notice = `Analysis ready: ${result.nodes.length} items and ${result.relations.length} relationships. AI interpretation; follow its evidence and review inferences.`;
+		} catch (cause) {
+			if (generation !== run || controller.signal.aborted || destroyed) return;
+			error = cause instanceof Error ? cause.message : 'AI analysis could not finish.';
+			if (cause instanceof SemanticAnalysisError && cause.retryAfterSeconds) {
+				error += ` Wait at least ${cause.retryAfterSeconds} seconds before another AI request.`;
+			}
+			semanticFailure = true;
+		} finally {
+			if (generation === run && !destroyed) {
+				stopWorker();
+				busy = false;
+			}
+		}
+	}
+	function localFallback() {
+		changeMode('local');
+		analyze();
+	}
 	function loadExample(id: string) {
 		const example = examples.find((item) => item.id === id);
 		if (!example) return;
@@ -197,7 +336,11 @@
 		resetInspection();
 		notice = '';
 		error = '';
-		analyze();
+		semanticFailure = false;
+		if (analysisMode === 'semantic') {
+			notice =
+				'Example loaded. Review this prompt, then give consent and choose Analyze to send it for AI analysis.';
+		} else analyze();
 	}
 	function select(id: string) {
 		selectedId = id;
@@ -244,9 +387,15 @@
 	}
 	function apply(next: PromptOntology) {
 		try {
-			ontology = validateOntology(next);
+			const validated = validateOntology(next);
+			const wasBusy = busy;
+			if (wasBusy) cancel();
+			generation += 1;
+			ontology = validated;
 			error = '';
-			notice = 'Interpretation updated. All views use this correction.';
+			notice = wasBusy
+				? 'Interpretation updated. The pending analysis was cancelled to keep your correction.'
+				: 'Interpretation updated. All views use this correction.';
 		} catch (cause) {
 			error = cause instanceof Error ? cause.message : 'The correction is invalid.';
 		}
@@ -328,11 +477,16 @@
 		next.nodes.find((node) => node.id === selectedId)!.attributes.splice(index, 1);
 		apply(next);
 	}
-	function download(content: string, extension: string, mime: string) {
+	function download(
+		content: string,
+		extension: string,
+		mime: string,
+		model: ModelId = effectiveModel
+	) {
 		const url = URL.createObjectURL(new Blob([content], { type: mime }));
 		const link = document.createElement('a');
 		link.href = url;
-		link.download = `prompt-atlas-${effectiveModel}.${extension}`;
+		link.download = `prompt-atlas-${model}.${extension}`;
 		link.click();
 		setTimeout(() => URL.revokeObjectURL(url), 1000);
 	}
@@ -353,6 +507,35 @@
 			error = '';
 		} catch (cause) {
 			error = cause instanceof Error ? cause.message : 'This session could not be exported.';
+		}
+	}
+	async function exportGraph() {
+		if (!ontology || stale) return;
+		const revision = ++graphExportRevision;
+		const sourceOntology = ontology;
+		const sourceGeneration = generation;
+		const sourceChoice = includeSource;
+		const model = effectiveModel;
+		const chosenModel = selectedModel;
+		const snapshot = $state.snapshot(ontology);
+		const current = () =>
+			!destroyed &&
+			revision === graphExportRevision &&
+			sourceOntology === ontology &&
+			sourceGeneration === generation &&
+			sourceChoice === includeSource &&
+			model === effectiveModel &&
+			chosenModel === selectedModel &&
+			!stale;
+		try {
+			const graph = await createKnowledgeGraph(snapshot, sourceChoice);
+			if (!current()) return;
+			download(JSON.stringify(graph, null, 2), 'jsonld', 'application/ld+json', model);
+			error = '';
+		} catch (cause) {
+			if (current())
+				error =
+					cause instanceof Error ? cause.message : 'The knowledge graph could not be exported.';
 		}
 	}
 	function save() {
@@ -407,7 +590,7 @@
 		stopWorker();
 		busy = false;
 		try {
-			if (file.size > MAX_SESSION_BYTES) throw new Error('Choose a session smaller than 512 KiB.');
+			if (file.size > MAX_SESSION_BYTES) throw new Error('Choose a session smaller than 2 MiB.');
 			const contents = await file.text();
 			if (generation !== importedRevision) return;
 			restoreSession(parseSession(contents));
@@ -435,7 +618,10 @@
 					href={resolve('/blog/apps')}>Apps</a
 				>
 			</nav>
-			<span class="atlas-private"><span aria-hidden="true">●</span> Runs in your browser</span>
+			<span class="atlas-private"
+				><span aria-hidden="true">●</span>
+				{analysisMode === 'local' ? 'Runs in your browser' : 'AI only with your consent'}</span
+			>
 		</div>
 		<div class="atlas-heading">
 			<div>
@@ -463,8 +649,99 @@
 		<section class="atlas-editor-panel" aria-labelledby="editor-heading">
 			<div class="atlas-panel-heading">
 				<h2 id="editor-heading"><span>01</span> Your prompt</h2>
-				<span class="atlas-mode">{ANALYSIS_MODE.label}</span>
+				<span class="atlas-mode"
+					>{analysisMode === 'local' ? ANALYSIS_MODE.label : 'AI · free credits only'}</span
+				>
 			</div>
+			<fieldset class="atlas-methods">
+				<legend>Analysis method</legend>
+				<label class="atlas-method-option">
+					<input
+						type="radio"
+						name="atlas-analysis-mode"
+						value="local"
+						checked={analysisMode === 'local'}
+						onchange={() => changeMode('local')}
+					/>
+					<span
+						><strong>Local analysis</strong><small>Rules-based · text stays in your browser</small
+						></span
+					>
+				</label>
+				<label class="atlas-method-option">
+					<input
+						type="radio"
+						name="atlas-analysis-mode"
+						value="semantic"
+						checked={analysisMode === 'semantic'}
+						onchange={() => changeMode('semantic')}
+					/>
+					<span
+						><strong>AI semantic analysis</strong><small>Free credits only · explicit request</small
+						></span
+					>
+				</label>
+			</fieldset>
+			{#if analysisMode === 'semantic'}
+				<div
+					class="atlas-ai-disclosure"
+					aria-labelledby="atlas-ai-heading"
+					data-testid="semantic-options"
+				>
+					<h3 id="atlas-ai-heading">Inspect meaning with AI</h3>
+					<p>
+						Your original prompt goes to this site's server. The server sends the whole text when
+						short, or selected exact source excerpts when long, through Vercel AI Gateway to the
+						displayed model provider. Character counts, diagrams and corrections stay local. Review
+						AI interpretations against their evidence.
+					</p>
+					{#if semanticConfig.model?.startsWith('nvidia/')}<p class="atlas-provider-retention">
+							NVIDIA may retain prompts and responses for model improvement. Keep sensitive or
+							confidential information out of AI requests.
+						</p>{/if}
+					<dl>
+						<div>
+							<dt>Gateway</dt>
+							<dd>{semanticConfig.provider}</dd>
+						</div>
+						<div>
+							<dt>Model / provider</dt>
+							<dd>{semanticConfig.model ?? 'Not configured'}</dd>
+						</div>
+						<div>
+							<dt>Spending policy</dt>
+							<dd>Free credits only. Requests stop when unavailable; no paid fallback.</dd>
+						</div>
+					</dl>
+					<p class="atlas-ai-availability" role="status">
+						{configLoading
+							? 'Checking AI availability…'
+							: semanticConfig.available
+								? 'AI is available within the configured free-credit limits.'
+								: (semanticConfig.reason ?? 'AI is unavailable. Local analysis remains ready.')}
+					</p>
+					<button type="button" onclick={() => checkAvailability()} disabled={configLoading || busy}
+						>Check AI availability</button
+					>
+					<label class="atlas-check atlas-ai-consent"
+						><input
+							type="checkbox"
+							bind:checked={aiConsent}
+							disabled={!semanticConfig.available || busy || !text.trim()}
+						/> Send this prompt to the displayed AI provider for this analysis</label
+					>
+					<p class="atlas-ai-consent-note">
+						Consent applies once to the current text. Selecting AI, typing and changing views do not
+						send your prompt.
+					</p>
+					<button
+						type="button"
+						onclick={localFallback}
+						disabled={busy || !text.trim() || statistics.codePoints > MAX_CODE_POINTS}
+						>Analyze locally instead</button
+					>
+				</div>
+			{/if}
 			<label class="atlas-editor-label" for="atlas-prompt">English prompt text</label>
 			<textarea
 				id="atlas-prompt"
@@ -523,14 +800,11 @@
 				class="atlas-input-help"
 			>
 				{statistics.codePoints > MAX_CODE_POINTS
-					? 'Analysis limit reached. Reduce the prompt to 20,000 Unicode code points.'
-					: 'Up to 20,000 Unicode code points per analysis.'}
+					? `Analysis limit reached. This prompt exceeds the ${MAX_CODE_POINTS.toLocaleString('en-GB')}-code-point source budget.`
+					: `Up to ${MAX_CODE_POINTS.toLocaleString('en-GB')} Unicode code points. Long AI requests may use a compressed reading; your full source and character count are preserved.`}
 			</p>
 			<div class="atlas-actions">
-				<button
-					class="atlas-primary"
-					onclick={analyze}
-					disabled={busy || !text.trim() || statistics.codePoints > MAX_CODE_POINTS}
+				<button class="atlas-primary" onclick={analyze} disabled={!canAnalyze}
 					>{busy ? 'Inspecting…' : 'Analyze prompt'}<span aria-hidden="true">↗</span></button
 				>{#if busy}<button onclick={cancel}>Cancel</button>{:else}<button
 						onclick={clear}
@@ -538,7 +812,10 @@
 					>{/if}
 			</div>
 			<p id="atlas-input-help" class="atlas-privacy">
-				{ANALYSIS_MODE.description} A semantic AI provider is not configured.
+				{#if analysisMode === 'local'}{ANALYSIS_MODE.description} AI semantic analysis is optional and
+					uses a separate consent step.{:else}AI analysis runs only after you consent and choose
+					Analyze. Free credits are the only allowed funding; an unavailable request has no
+					automatic fallback.{/if}
 			</p>
 			<noscript><p>Enable JavaScript to count and inspect prompts locally.</p></noscript>
 			<div class="atlas-examples">
@@ -571,12 +848,54 @@
 					>{:else}<span class="atlas-item-count">Waiting for words</span>{/if}
 			</div>
 			{#if error}<p class="atlas-alert atlas-error" role="alert">{error}</p>{/if}
+			{#if semanticFailure}<p class="atlas-ai-failure-note">
+					AI stopped without switching providers or analysis methods. Use “Analyze locally instead”
+					to keep working in your browser, or give consent again for a later AI request.
+				</p>{/if}
 			{#if notice}<p class="atlas-notice" role="status">{notice}</p>{/if}
 			{#if stale}<p class="atlas-alert" role="status">
 					<strong>Your prompt has changed.</strong> Analyze again to update this map. Corrections and
 					exports are paused while it is out of date.
 				</p>{/if}
 			{#if ontology && diagram}
+				<p class="atlas-result-mode" data-testid="analysis-provenance">
+					<strong>Current interpretation: {actualMode}</strong>
+					{#if ontology.analysisMetadata}<span
+							>{ontology.analysisMetadata.provider} · {ontology.analysisMetadata.model}</span
+						>{/if}
+					<span
+						>{ontology.mode === 'semantic'
+							? 'AI can misinterpret unfamiliar language. Inferences need review; diagrams reuse this result without another request.'
+							: 'Local rules identify supported patterns. Review unusual or ambiguous wording.'}</span
+					>
+				</p>
+				{#if ontology.compression?.applied}
+					<section
+						class="atlas-source-coverage"
+						aria-labelledby="atlas-coverage-heading"
+						data-testid="source-coverage"
+					>
+						<h3 id="atlas-coverage-heading">Compressed reading · source coverage</h3>
+						<p>
+							Analysed {ontology.compression.analysedCodePoints.toLocaleString('en-GB')} of {ontology.compression.originalCodePoints.toLocaleString(
+								'en-GB'
+							)} source code points directly ({Math.round(
+								(ontology.compression.analysedCodePoints /
+									Math.max(1, ontology.compression.originalCodePoints)) *
+									100
+							)}%) across {ontology.compression.fragmentCount} source excerpts.
+						</p>
+						<p>
+							{ontology.compression.duplicateCodePoints.toLocaleString('en-GB')} repeated code points
+							deduplicated · {ontology.compression.omittedCodePoints.toLocaleString('en-GB')} code points
+							omitted. The full original prompt and its character count are preserved.
+						</p>
+						{#if ontology.compression.omittedCodePoints > 0}<p>
+								This is a partial reading. Unselected wording can contain constraints or
+								relationships that the graph misses. Review the source and the interpretation.
+							</p>{/if}
+					</section>
+				{/if}
 				<div class="atlas-view-choice">
 					<label for="atlas-model">View this prompt as</label><select
 						id="atlas-model"
@@ -647,8 +966,7 @@
 						Paste a prompt or choose a specimen.<br />We’ll lay out what is there, and flag what
 						needs a closer look.
 					</p>
-					<span class="atlas-empty-foot">NO SIGN-IN · NO UPLOAD · NO PROMPT STORAGE BY DEFAULT</span
-					>
+					<span class="atlas-empty-foot">NO SIGN-IN · LOCAL BY DEFAULT · AI REQUIRES CONSENT</span>
 				</div>
 			{/if}
 		</section>
@@ -967,11 +1285,16 @@
 					><button disabled={stale} onclick={exportJson}
 						>{includeSource ? 'Export JSON session' : 'Export JSON report'} ↗</button
 					>
+					<button disabled={stale} onclick={exportGraph}>Export graph JSON-LD ↗</button>
 				</div>
 				<label class="atlas-check"
-					><input type="checkbox" bind:checked={includeSource} /> Include original prompt in JSON (enables
-					restoring)</label
+					><input type="checkbox" bind:checked={includeSource} /> Include original prompt and evidence
+					in JSON exports</label
 				>
+				<p>
+					Source-included JSON sessions can be restored. JSON-LD shares the knowledge graph; every
+					export still contains extracted content.
+				</p>
 				<div class="atlas-actions">
 					<button disabled={stale} onclick={save}>Save session on this device</button
 					>{#if saved}<button onclick={forget}>Forget saved session</button>{/if}

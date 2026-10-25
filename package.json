@@ -21,7 +21,8 @@
 		"http-tcp:geometry": "node src/lib/visualizations/between-a-click-and-a-page/generate-geometry.mjs --check --audit",
 		"http-tcp:assets": "node scripts/render-http-tcp-assets.mjs",
 		"http-tcp:assets:check": "node scripts/render-http-tcp-assets.mjs --check",
-		"prompt-atlas:test": "vitest run src/lib/visualizations/prompt-atlas src/lib/server/content/post-collections.test.ts --maxWorkers=2",
+		"prompt-atlas:test": "vitest run src/lib/visualizations/prompt-atlas src/lib/server/prompt-atlas src/lib/server/content/post-collections.test.ts --maxWorkers=2",
+		"prompt-atlas:sql:test": "node --test supabase/tests/prompt-atlas-usage.test.mjs",
 		"prompt-atlas:browser:test": "playwright test --config=playwright.prompt-atlas.config.ts",
 		"prompt-atlas:poster": "node scripts/render-prompt-atlas-poster.mjs",
 		"memory-palace:test": "vitest run src/lib/visualizations/memory-palace --maxWorkers=2",
@@ -294,6 +295,7 @@
 		"yaml": "^2.9.0"
 	},
 	"dependencies": {
+		"@ai-sdk/gateway": "^4.0.126",
 		"@fontsource-variable/archivo": "^5.3.0",
 		"@fontsource-variable/caveat": "^5.3.0",
 		"@fontsource-variable/newsreader": "^5.3.0",
@@ -307,6 +309,7 @@
 		"@supabase/supabase-js": "^2.110.8",
 		"@vercel/analytics": "^2.0.1",
 		"@vercel/speed-insights": "^2.0.0",
+		"ai": "^7.0.153",
 		"d3": "^7.9.0",
 		"decimal.js": "^10.6.0",
 		"dexie": "^4.4.4",

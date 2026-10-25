@@ -32,8 +32,8 @@ function link(from: string, to: string, kind: OntologyRelation['kind']): Ontolog
 
 describe('model eligibility and fit', () => {
 	it('has a fixed catalog with separate notation and detail level', () => {
-		expect(MODEL_CATALOG).toHaveLength(10);
-		expect(new Set(MODEL_CATALOG.map((entry) => entry.id)).size).toBe(10);
+		expect(MODEL_CATALOG).toHaveLength(11);
+		expect(new Set(MODEL_CATALOG.map((entry) => entry.id)).size).toBe(11);
 		expect(MODEL_CATALOG.find((entry) => entry.id === 'class')).toMatchObject({
 			family: 'UML structure',
 			level: 'Conceptual / design'
@@ -46,7 +46,7 @@ describe('model eligibility and fit', () => {
 				.filter((fit) => fit.eligible)
 				.map((fit) => fit.id)
 				.sort()
-		).toEqual(['concept', 'mindmap']);
+		).toEqual(['concept', 'knowledge-graph', 'mindmap']);
 	});
 	it('requires supported ordering, messages, and transitions independently', () => {
 		const value = ontology([entity('a', 'action'), entity('b', 'action')]);

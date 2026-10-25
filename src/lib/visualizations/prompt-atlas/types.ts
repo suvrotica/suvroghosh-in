@@ -1,6 +1,16 @@
 /** Source offsets use JavaScript UTF-16 units into the unmodified editor text. */
 export type Evidence = { start: number; end: number; quote: string };
 export type Provenance = 'explicit' | 'inferred' | 'user-confirmed';
+export type AnalysisMode = 'local' | 'semantic';
+export type AnalysisMetadata = { provider: string; model: string };
+export type CompressionMetadata = {
+	originalCodePoints: number;
+	analysedCodePoints: number;
+	omittedCodePoints: number;
+	duplicateCodePoints: number;
+	fragmentCount: number;
+	applied: boolean;
+};
 export type NodeKind =
 	| 'task'
 	| 'audience'
@@ -23,6 +33,7 @@ export type Attribute = {
 	foreignKey?: string;
 	provenance: Provenance;
 	evidence: Evidence[];
+	rationale?: string;
 };
 export type OntologyNode = {
 	id: string;
@@ -66,7 +77,9 @@ export type OntologyIssue = {
 export type PromptOntology = {
 	schemaVersion: 1;
 	source: { text: string; revision: string };
-	mode: 'local';
+	mode: AnalysisMode;
+	analysisMetadata?: AnalysisMetadata;
+	compression?: CompressionMetadata;
 	language: 'en' | 'mixed' | 'unknown';
 	nodes: OntologyNode[];
 	relations: OntologyRelation[];
@@ -76,6 +89,7 @@ export type PromptOntology = {
 export type ModelId =
 	| 'mindmap'
 	| 'concept'
+	| 'knowledge-graph'
 	| 'flowchart'
 	| 'conceptual-er'
 	| 'logical'
@@ -124,10 +138,12 @@ export type Diagram = {
 	nodes: DiagramNode[];
 	edges: DiagramEdge[];
 	notes: string[];
-	analysisMode?: 'local';
+	analysisMode?: AnalysisMode;
+	analysisMetadata?: AnalysisMetadata;
+	compression?: CompressionMetadata;
 	ontologySchemaVersion?: 1;
 	unresolvedIssues?: string[];
 };
-export const MAX_CODE_POINTS = 20_000;
+export const MAX_CODE_POINTS = 200_000;
 export const MAX_NODES = 200;
 export const MAX_RELATIONS = 400;

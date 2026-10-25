@@ -28,7 +28,8 @@ const attribute = z.strictObject({
 	unique: z.boolean().optional(),
 	foreignKey: z.string().max(200).optional(),
 	provenance,
-	evidence: evidenceList
+	evidence: evidenceList,
+	rationale: z.string().max(1000).optional()
 });
 const ontologySchema = z.strictObject({
 	schemaVersion: z.literal(1),
@@ -36,7 +37,23 @@ const ontologySchema = z.strictObject({
 		text: z.string().max(MAX_CODE_POINTS * 2),
 		revision: z.string().min(1).max(100)
 	}),
-	mode: z.literal('local'),
+	mode: z.enum(['local', 'semantic']),
+	analysisMetadata: z
+		.strictObject({
+			provider: z.string().trim().min(1).max(80),
+			model: z.string().trim().min(1).max(160)
+		})
+		.optional(),
+	compression: z
+		.strictObject({
+			originalCodePoints: z.number().int().min(0).max(MAX_CODE_POINTS),
+			analysedCodePoints: z.number().int().min(0).max(MAX_CODE_POINTS),
+			omittedCodePoints: z.number().int().min(0).max(MAX_CODE_POINTS),
+			duplicateCodePoints: z.number().int().min(0).max(MAX_CODE_POINTS),
+			fragmentCount: z.number().int().min(0).max(1000),
+			applied: z.boolean()
+		})
+		.optional(),
 	language: z.enum(['en', 'mixed', 'unknown']),
 	nodes: z
 		.array(
@@ -132,6 +149,20 @@ export function validateOntology(value: unknown): PromptOntology {
 		throw new Error(
 			`Analysis supports at most ${MAX_CODE_POINTS.toLocaleString('en')} code points.`
 		);
+	if (result.compression) {
+		const coverage = result.compression;
+		if (
+			coverage.originalCodePoints !== Array.from(result.source.text).length ||
+			coverage.analysedCodePoints + coverage.omittedCodePoints !== coverage.originalCodePoints ||
+			coverage.duplicateCodePoints > coverage.omittedCodePoints
+		)
+			throw new Error('Compression coverage does not match the original prompt.');
+		if (
+			!coverage.applied &&
+			(coverage.omittedCodePoints !== 0 || coverage.duplicateCodePoints !== 0)
+		)
+			throw new Error('Uncompressed analysis cannot claim omitted text.');
+	}
 	const identifiers = [...result.nodes, ...result.relations, ...result.issues].map(
 		(item) => item.id
 	);
@@ -150,6 +181,8 @@ export function validateOntology(value: unknown): PromptOntology {
 	for (const claim of claims) {
 		if (claim.provenance !== 'user-confirmed' && !claim.evidence.length)
 			throw new Error('Extracted claims need source evidence.');
+		if (result.mode === 'semantic' && claim.provenance === 'inferred' && !claim.rationale?.trim())
+			throw new Error('Inferred semantic claims need a brief rationale.');
 	}
 	for (const item of [...claims, ...result.issues]) {
 		for (const span of item.evidence) {
