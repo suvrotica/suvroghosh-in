@@ -4465,6 +4465,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "suvros-law.jpg",
+			"src": "/images/suvros-law.jpg",
+			"bytes": 322710,
+			"width": 1774,
+			"height": 887
+		},
+		{
 			"name": "the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg",
 			"src": "/images/the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg",
 			"bytes": 293843,

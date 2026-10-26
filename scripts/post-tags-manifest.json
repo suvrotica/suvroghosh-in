@@ -15822,6 +15822,41 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-26"
+		},
+		"src/lib/posts/suvros-law.md": {
+			"bodyHash": "d2e4a090f52436ca9f55a6e23f9aa814b74198b376a0d8a743e1b290e1ad556a",
+			"hashVersion": 2,
+			"revisionHash": "316e8edf971c99250495dea48e905a9966d173d450e16d31fc6f45235eb6d6d9",
+			"generatedTags": [
+				"ai",
+				"india",
+				"jobs",
+				"engineer",
+				"bengali",
+				"technology",
+				"future",
+				"immigration",
+				"politics",
+				"postAI",
+				"trump",
+				"humor",
+				"satire",
+				"suvrotica",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"ai",
+				"india",
+				"jobs",
+				"engineer",
+				"bengali",
+				"technology",
+				"postAI",
+				"humor",
+				"satire",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

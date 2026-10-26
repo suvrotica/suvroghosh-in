@@ -10136,6 +10136,22 @@
       "sourceHash": "1bdfc09bd6c926bba9941ae43d1fee98cbedfd2822fb564d31ded057a100c840",
       "width": 1200
     },
+    "static/images/suvros-law.jpg": {
+      "format": "JPEG",
+      "height": 887,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 887,
+      "originalWidth": 1774,
+      "outputBytes": 322710,
+      "outputHash": "09b0e3a2eeff12756829e774755e83de72ed5035a737fe1e05776179a8db94a5",
+      "psnrDb": 36.23,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 358690,
+      "sourceHash": "42d0eca0b1f5d512ff47023f73eee98b9c13bff9be27b3255ec7e4595fa1393e",
+      "width": 1774
+    },
     "static/images/the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg": {
       "format": "JPEG",
       "height": 1280,
