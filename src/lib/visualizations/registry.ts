@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'strange-matter': {
+		id: 'strange-matter',
+		title: 'Strange Matter: Make Something Impossible',
+		description:
+			'Make iridescent sculptures, alien blooms and luminous worlds with a few simple controls. Discover, rotate and export your own generative artwork.',
+		subjects: ['Generative Art', 'Computer Science', 'Design'],
+		poster: '/images/visualizations/strange-matter/poster.png',
+		posterAlt:
+			'An iridescent folded sculpture suspended in the dark Strange Matter generative art studio',
+		href: '/blog/visualizations/strange-matter',
+		status: 'published'
+	},
 	'living-systems': {
 		id: 'living-systems',
 		title: 'Living Systems: Small Rules, Unexpected Worlds',

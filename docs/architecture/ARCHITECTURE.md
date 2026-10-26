@@ -199,7 +199,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/topics`, `/topics/[slug]`                                                                            | Prerendered index and `auto` headquarters entries with validated registry membership and lazy Markdown bodies.                                                                                                                                                                                                     |
 | `/resources`, `/resources/[kind=resourceKind]/[slug]`                                                  | Prerendered resource index/details; param matcher limits kind to prompts/lists; universal component import follows server metadata validation.                                                                                                                                                                     |
 | `/comics`, `/comics/[slug]`                                                                            | Prerendered PDF comic gallery and finite catalogue-backed detail entries. Unknown comic slugs return 404; the covers and complete PDF editions are public static assets.                                                                                                                                           |
-| `/tools/splat-studio`                                                                                  | Prerendered public procedural art tool with route-owned SEO and the existing immersive studio shell. The renderer, bounded URL settings, seed and PNG export remain browser-local. The visualization gallery links through a static captured-artwork card; the sitemap includes the tool URL.                                                                                         |
+| `/tools/splat-studio`                                                                                  | Prerendered public procedural art tool with route-owned SEO and the existing immersive studio shell. The renderer, bounded URL settings, seed and PNG export remain browser-local. The visualization gallery links through a static captured-artwork card; the sitemap includes the tool URL.                      |
 | `/images`, `/images/sketches`                                                                          | Server gallery/sketch loads; generated asset catalogs; the museum has browser enhancement.                                                                                                                                                                                                                         |
 | `/notes/**`                                                                                            | Inherits `prerender = false`; public list/read, owner auth/recovery, protected studio/editor/preview.                                                                                                                                                                                                              |
 | `/notes/studio/analytics`, `/notes/studio/analytics/export`                                            | Configured-owner aggregate dashboard and CSV download; each independently authorizes before bounded report queries and returns private/no-store/noindex responses.                                                                                                                                                 |
@@ -581,6 +581,55 @@ flowchart LR
     Canvas --> Renderer["WebGL2 context / shader renderer"]
     Renderer --> Shader["Spherical rays / labelled illustrations"]
     Renderer --> Fallback["Specific failure / retry / poster"]
+```
+
+### Strange Matter: browser-owned generative sculpture
+
+Strange Matter extends the dedicated visualization feature pattern through the
+ordinary immersive Markdown article at `/blog/visualizations/strange-matter`.
+Its server-rendered `StrangeMatter.svelte` shell lazily loads the feature's Svelte
+app. The gallery retains only summary, subject and captured-poster metadata.
+The generic article route continues to own publication discovery and SEO.
+
+The feature domain under `visualizations/strange-matter` owns a bounded design
+contract, deterministic seeded generation, curated palettes/presets and a versioned
+URL codec. Per-mount UI state and undo history belong to the Svelte app. The
+browser-only Three.js renderer owns the four procedural worlds, materials,
+camera, animation clock and GPU resources. Share state includes the seed,
+parameters, framing, camera and animation position; decoding normalises inputs
+before renderer allocation. This is a local extension of the existing Three.js
+feature pattern rather than a new shared renderer or state framework.
+
+PNG export renders the current composition without the interface at a bounded
+resolution and restores the live renderer after capture. Browser-supported canvas
+recording downloads a short clip in its detected format. Creation and export add
+no server endpoint, account, credential, external provider or durable visitor
+store. The renderer is mounted only in the browser, suspends hidden/offscreen
+animation, and releases its GPU and event resources at teardown. The SSR poster
+and authored guide remain the fallback. See the [feature record](../visualizations/strange-matter.md)
+for component ownership, export limits and verification commands.
+
+The publication poster comes from the app's ordinary PNG download at the default
+seed and paused animation time zero, resized to 1200 × 750. The authoring capture
+script records the model/geometry/renderer source hashes and decoded pixel hash;
+`strange-matter:assets:check` verifies those committed inputs during the full
+feature build without starting a browser. Lossless PNG re-encoding preserves that
+pixel provenance.
+
+The existing feature-artifacts workflow watches the Strange Matter article and
+browser spec, runs its seeded design/URL unit suite, and runs its production
+feature-bundle browser suite after the full Chromium installation. Its existing
+full-build step verifies the captured poster provenance. This adds feature
+coverage within the current read-only workflow; hosted execution and required
+status configuration remain separate verification concerns.
+
+```mermaid
+flowchart LR
+    MatterArticle["Markdown / SSR poster / gallery summary"] --> MatterShell["Lazy Svelte app / per-instance history"]
+    MatterURL["Bounded seed / settings / camera / clock URL"] <--> MatterModel["Feature-local design model"]
+    MatterModel <--> MatterShell
+    MatterShell --> MatterRenderer["Browser-only Three.js worlds / resource lifecycle"]
+    MatterRenderer --> MatterExport["Bounded PNG / capability-detected video download"]
 ```
 
 ### Splat Studio: browser-local procedural splat art

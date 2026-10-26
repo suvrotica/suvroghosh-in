@@ -5361,6 +5361,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/strange-matter/poster.png",
+			"src": "/images/visualizations/strange-matter/poster.png",
+			"bytes": 445822,
+			"width": 1200,
+			"height": 750
+		},
+		{
 			"name": "visualizations/the-museum-of-almost/social.png",
 			"src": "/images/visualizations/the-museum-of-almost/social.png",
 			"bytes": 161917,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T18:39:39.108384+00:00",
+  "generatedAt": "2026-10-26T20:16:10.711613+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9819,6 +9819,29 @@
         "Metro",
         "Three",
         "Small"
+      ],
+      "wordCount": 130
+    },
+    "strange-matter": {
+      "generatedAt": "2026-10-26T20:16:04.289886+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/strange-matter.svg",
+      "source": "src/lib/posts/strange-matter.md",
+      "sourceHash": "70c96210e74786a9b74f2035e5880ffae636caaeb2cc1041d348d1ad699dddec",
+      "sourceModified": "2026-10-26T19:20:58.169336+00:00",
+      "topWords": [
+        "Form",
+        "Colour",
+        "Artwork",
+        "Different",
+        "Changes",
+        "Keep",
+        "October",
+        "Light",
+        "Shape",
+        "Change",
+        "Pause",
+        "Begin"
       ],
       "wordCount": 130
     },

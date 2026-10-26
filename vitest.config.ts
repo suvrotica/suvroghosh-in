@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/strange-matter/**/*.test.ts',
 			'src/lib/visualizations/splat-studio/**/*.test.ts',
 			'src/lib/visualizations/living-systems/**/*.test.ts',
 			'src/lib/visualizations/anatomy-of-an-essay/**/*.test.ts',

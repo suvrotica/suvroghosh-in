@@ -1,0 +1,18 @@
+{
+  "fullscreen": true,
+  "highPNG": {
+    "width": 2560,
+    "height": 1600,
+    "bytes": 1847418
+  },
+  "manyTurnYaw": 1.83363,
+  "quickExportMeanPixelDifference": 0.00104765625,
+  "contextLossAbortsRecording": true,
+  "pageErrors": [],
+  "publicPageBlobMediaPolicy": {
+    "observed": true,
+    "effectiveDirective": "media-src",
+    "violatedDirective": "media-src",
+    "blockedURI": "blob"
+  }
+}

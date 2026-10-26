@@ -14,6 +14,12 @@ The runtime dependencies are deliberately narrow. `p5` supports instance-mode We
 
 ## Directory layout
 
+[Strange Matter](visualizations/strange-matter.md) uses the dedicated immersive
+feature pattern for four procedural Three.js art worlds. Its browser-owned design
+state includes a seed, bounded controls, camera and animation position; PNG and
+capability-detected video exports stay local. Use `strange-matter:test`,
+`strange-matter:preview` and `strange-matter:browser:test` for focused development.
+
 ```text
 src/lib/components/visualizations/
   artificial-life/

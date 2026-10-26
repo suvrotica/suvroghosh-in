@@ -11,6 +11,7 @@
 
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
+		'strange-matter': visualizationSummaries['strange-matter'].subjects,
 		'through-a-different-glass': visualizationSummaries['through-a-different-glass'].subjects,
 		'between-a-click-and-a-page': visualizationSummaries['between-a-click-and-a-page'].subjects,
 		'prompt-atlas': visualizationSummaries['prompt-atlas'].subjects,

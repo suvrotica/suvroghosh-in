@@ -13,6 +13,7 @@ const criticalWorkflow = parse(
 	readFileSync(new URL('../.github/workflows/critical-boundaries.yml', import.meta.url), 'utf8')
 );
 const featureChecks = [
+	'strange-matter:assets:check',
 	'living-systems:assets:check',
 	'lens-mirror:samples:check',
 	'lens-mirror:poster:check',
@@ -93,14 +94,19 @@ test('feature browser selection matches the full Chromium installed by feature C
 	for (const script of [
 		'links:browser:test',
 		'http-tcp:browser:test',
-		'living-systems:browser:test'
+		'living-systems:browser:test',
+		'strange-matter:browser:test'
 	]) {
 		assert.ok(
 			steps.findIndex((step) => step.run === `npm run ${script}`) > install,
 			`${script} must run after browser installation`
 		);
 	}
-	for (const file of ['playwright.http-tcp.config.ts', 'playwright.living-systems.config.ts']) {
+	for (const file of [
+		'playwright.http-tcp.config.ts',
+		'playwright.living-systems.config.ts',
+		'playwright.strange-matter.config.ts'
+	]) {
 		for (const environment of [{ CI: '1' }, { CI: '1', PLAYWRIGHT_CHANNEL: '  ' }]) {
 			const use = browserConfig(environment, file);
 			assert.equal(use.browserName, 'chromium');
@@ -211,6 +217,7 @@ test('feature inputs, notebooks and shared application or build changes activate
 	for (const file of [
 		'.github/workflows/feature-artifacts.yml',
 		'tests/browser/navigation-links.spec.ts',
+		'tests/browser/strange-matter.spec.ts',
 		'package.json',
 		'package-lock.json',
 		'svelte.config.js',
@@ -229,6 +236,8 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'scripts/render-scale-elevator-assets.mjs',
 		'scripts/render-probabilistic-piano-assets.mjs',
 		'src/lib/posts/living-systems.md',
+		'src/lib/posts/strange-matter.md',
+		'static/images/visualizations/strange-matter/poster.png',
 		'static/images/visualizations/living-systems/social.png',
 		'src/lib/visualizations/probabilistic-piano/model.ts',
 		'src/lib/visualizations/scale-elevator/core.ts',
@@ -278,6 +287,7 @@ test('feature CI verifies committed assets with read-only permissions and no pro
 	assert.ok(job.steps.some((step) => step.run === 'npm ci'));
 	assert.ok(job.steps.some((step) => step.run === 'npm run build-workflow:test'));
 	assert.ok(job.steps.some((step) => step.run === 'npm run notebooks:test'));
+	assert.ok(job.steps.some((step) => step.run === 'npm run strange-matter:test'));
 	assert.equal(job.steps.filter((step) => step.run === 'npm run build:full').length, 1);
 	assert.equal(
 		job.steps.find((step) => step.uses?.startsWith('actions/checkout@')).with[

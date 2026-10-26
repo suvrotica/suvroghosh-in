@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "articlePath": "/blog/visualizations/strange-matter",
+  "captureMode": "native-png-export",
+  "motion": "reduced",
+  "animationTime": 0,
+  "world": "liquid",
+  "width": 1200,
+  "height": 750,
+  "exportWidth": 1600,
+  "exportHeight": 1000,
+  "capturePngSha256": "9c6f95e825af00d2498a572b2dae3e164d9a397c5ac16f1604527a8b96420760",
+  "pixelSha256": "66ea62d4964fa6feb879d372fc13f77418a04f3e0be32c84497e4914f5201b75",
+  "sources": {
+    "src/lib/visualizations/strange-matter/model.ts": "eaee2ba8c2efc504caaa210f1d535d458db75547cda83e121d697bb9c66df38e",
+    "src/lib/visualizations/strange-matter/geometry.ts": "fdd562f2e626cfb2dcee9481c80bf026a8109d651d183522808fcb71ffdc3fb1",
+    "src/lib/visualizations/strange-matter/renderer.ts": "96ca9bb8099da1631cf6a114a54cf39f0ff6a4e80925c366e83e290189fb3864"
+  }
+}

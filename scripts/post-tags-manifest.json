@@ -15857,6 +15857,37 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/strange-matter.md": {
+			"bodyHash": "7f1a8a311339e8fab451139dc307acea0d7a88a65950b916cab3e5ce7e6fc6c5",
+			"hashVersion": 2,
+			"revisionHash": "ec455f0261da9e1605a6a9d653fafeab3f76ad620a1c58221a8f41000b8a16b5",
+			"generatedTags": [
+				"Generative Art",
+				"Creative Coding",
+				"3D Graphics",
+				"Procedural Geometry",
+				"Shaders",
+				"Colour",
+				"Interactive Art",
+				"WebGL",
+				"Digital Sculpture",
+				"Procedural Animation"
+			],
+			"pinnedTags": [
+				"Generative Art",
+				"Creative Coding",
+				"3D Graphics",
+				"Procedural Geometry",
+				"Shaders",
+				"Colour",
+				"Interactive Art",
+				"WebGL",
+				"Digital Sculpture",
+				"Procedural Animation"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-27"
 		}
 	},
 	"maxTags": 10

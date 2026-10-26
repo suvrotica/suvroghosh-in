@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/feature-artifacts.yml'
       - 'tests/browser/navigation-links.spec.ts'
+      - 'tests/browser/strange-matter.spec.ts'
       - 'package.json'
       - 'package-lock.json'
       - '*.config.*'
@@ -42,6 +43,7 @@ on:
       - 'src/lib/posts/the-museum-of-almost.md'
       - 'src/lib/posts/anatomy-of-an-essay.md'
       - 'src/lib/posts/living-systems.md'
+      - 'src/lib/posts/strange-matter.md'
       - 'src/lib/posts/reading-is-not-homework-it-is-how-the-mind-keeps-change.md'
       - 'src/lib/posts/pod-mara-gechhe-calcutta-essay.md'
       - 'static/essay-anatomy/**'
@@ -62,6 +64,7 @@ on:
     paths:
       - '.github/workflows/feature-artifacts.yml'
       - 'tests/browser/navigation-links.spec.ts'
+      - 'tests/browser/strange-matter.spec.ts'
       - 'package.json'
       - 'package-lock.json'
       - '*.config.*'
@@ -96,6 +99,7 @@ on:
       - 'src/lib/posts/the-museum-of-almost.md'
       - 'src/lib/posts/anatomy-of-an-essay.md'
       - 'src/lib/posts/living-systems.md'
+      - 'src/lib/posts/strange-matter.md'
       - 'src/lib/posts/reading-is-not-homework-it-is-how-the-mind-keeps-change.md'
       - 'src/lib/posts/pod-mara-gechhe-calcutta-essay.md'
       - 'static/essay-anatomy/**'
@@ -161,6 +165,9 @@ jobs:
       - name: Verify Living Systems numerical invariants
         run: npm run living-systems:test
 
+      - name: Verify Strange Matter seeded designs and URL state
+        run: npm run strange-matter:test
+
       - name: Check feature artifacts, notebooks and the complete site
         run: npm run build:full
 
@@ -181,6 +188,9 @@ jobs:
 
       - name: Verify Living Systems simulations, lifecycle and touch controls
         run: npm run living-systems:browser:test
+
+      - name: Verify Strange Matter production artwork, sharing and exports
+        run: npm run strange-matter:browser:test
 
       - name: Retain link-audit evidence
         if: always()

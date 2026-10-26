@@ -12116,6 +12116,21 @@
       "sourceHash": "c6e99d3e1741924f35513d08fd9173abedda5b897b76b1d91b1adbc71e26cd09",
       "width": 1200
     },
+    "static/images/visualizations/strange-matter/poster.png": {
+      "format": "PNG",
+      "height": 750,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 750,
+      "originalWidth": 1200,
+      "outputBytes": 445822,
+      "outputHash": "e3b740af445671d2946ad1892e8bc331aa8f11a4709ae2f3f88e6224ddafbda0",
+      "resized": false,
+      "sourceBytes": 445822,
+      "sourceHash": "e3b740af445671d2946ad1892e8bc331aa8f11a4709ae2f3f88e6224ddafbda0",
+      "width": 1200
+    },
     "static/images/visualizations/the-museum-of-almost/social.png": {
       "format": "PNG",
       "height": 630,
