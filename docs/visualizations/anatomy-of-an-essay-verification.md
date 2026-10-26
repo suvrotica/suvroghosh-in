@@ -87,3 +87,11 @@ The release checkout passed `npm run check` with zero errors and warnings, all
 twenty model/geometry tests, sixteen publishing-workflow tests, all eight browser
 scenarios, and `npm run build:full`, including discoverability and the final
 route-asset check. The lockfile and existing feature implementations were retained.
+
+The first live check additionally exposed narrow-screen overflow from an
+unbroken pasted identifier. Reader, title, inspector and recurrence text now
+wrap within the viewport. A ninth browser scenario exercises a 110-character
+title and repeated long words. Loopback tests stub Vercel-only analytics script
+routes and dismiss the site's privacy notice without choosing a video preference;
+production analytics and privacy behaviour are unchanged. All nine scenarios
+passed against the rebuilt complete production site, as did discoverability.

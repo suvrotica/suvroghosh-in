@@ -19,6 +19,7 @@
 	font-family: 'Archivo Variable', Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
+	overflow-wrap: anywhere;
 	box-sizing: border-box;
 	color-scheme: light;
 }
@@ -297,6 +298,7 @@
 	margin-bottom: 9px;
 }
 .essay-atlas .ea-inspector-quote {
+	overflow-wrap: anywhere;
 	font:
 		400 19px/1.4 'Newsreader Variable',
 		Georgia,
@@ -374,6 +376,7 @@
 	font-size: 9px;
 }
 .essay-atlas .ea-reader h2 {
+	overflow-wrap: anywhere;
 	font:
 		450 clamp(28px, 2.7vw, 40px)/1.06 'Newsreader Variable',
 		Georgia,
@@ -396,6 +399,7 @@
 	margin: 14px 0 25px !important;
 }
 .ea-reading-text {
+	overflow-wrap: anywhere;
 	font:
 		400 clamp(19px, 1.7vw, 23px)/1.6 'Newsreader Variable',
 		Georgia,

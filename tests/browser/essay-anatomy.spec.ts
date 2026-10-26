@@ -8,11 +8,20 @@ const errors = new WeakMap<Page, string[]>();
 async function ready(page: Page) {
 	await page.goto(route, { waitUntil: 'domcontentloaded' });
 	await page.locator('.essay-atlas').scrollIntoViewIfNeeded();
-	for (const name of ['Reject optional', 'Dismiss privacy confirmation']) {
+	for (const name of [
+		'Reject optional',
+		'Dismiss privacy notice without choosing',
+		'Dismiss privacy confirmation'
+	]) {
 		const button = page.getByRole('button', { name, exact: true });
 		if (await button.isVisible()) await button.click();
 	}
 	await expect(runtime(page)).toHaveAttribute('data-ready', 'true');
+	const notice = page.getByRole('button', {
+		name: 'Dismiss privacy notice without choosing',
+		exact: true
+	});
+	if (await notice.isVisible()) await notice.click();
 	await expect(runtime(page).locator('.ea-svg').first()).toBeVisible();
 	return runtime(page);
 }
@@ -25,7 +34,16 @@ async function downloadBytes(download: Download): Promise<Buffer> {
 	return Buffer.concat(chunks);
 }
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page, baseURL }) => {
+	// Vercel serves these scripts in production; a loopback Vite preview does not.
+	if (baseURL && ['localhost', '127.0.0.1'].includes(new URL(baseURL).hostname)) {
+		await page.route('**/_vercel/insights/**', (route) =>
+			route.fulfill({ status: 200, contentType: 'application/javascript', body: '' })
+		);
+		await page.route('**/_vercel/speed-insights/**', (route) =>
+			route.fulfill({ status: 200, contentType: 'application/javascript', body: '' })
+		);
+	}
 	const collected: string[] = [];
 	errors.set(page, collected);
 	page.on('pageerror', (error) => collected.push(error.message));
@@ -297,4 +315,28 @@ test('recurrence controls expose neural knots and source occurrences by keyboard
 	await expect(lab.locator('.ea-second .ea-inspector')).toContainText('B / RECURRENT WORD');
 	await lab.locator('.ea-second .ea-occurrences button').first().press('Enter');
 	await expect(lab.locator('.ea-second .ea-inspector')).toContainText('B / SELECTED PASSAGE');
+});
+
+test('long unbroken pasted words and titles wrap within a mobile reading pane', async ({
+	page
+}) => {
+	await page.setViewportSize({ width: 390, height: 844 });
+	const lab = await ready(page);
+	await lab.getByRole('button', { name: /Grow a specimen/ }).click();
+	await lab.getByLabel('Specimen title').fill('W'.repeat(110));
+	await lab
+		.getByLabel('Paste plain text')
+		.fill(
+			`${'unbroken'.repeat(30)} stays in this browser. ${'unbroken'.repeat(30)} returns.\n\nThe next chamber opens.`
+		);
+	await lab.getByRole('button', { name: /Grow this specimen/ }).click();
+	await expect(lab.locator('.ea-reader h2')).toHaveText('W'.repeat(110));
+	await lab.locator('[data-source-sentence]').first().click();
+	await lab.locator('.ea-word-index summary').click();
+	await lab.locator('.ea-word-index button').first().press('Enter');
+	const size = await page.evaluate(() => ({
+		content: document.documentElement.scrollWidth,
+		viewport: document.documentElement.clientWidth
+	}));
+	expect(size.content).toBeLessThanOrEqual(size.viewport + 1);
 });
