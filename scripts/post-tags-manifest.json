@@ -15730,6 +15730,37 @@
 				"Philosophy"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/anatomy-of-an-essay.md": {
+			"bodyHash": "5d6d8161de6fec84278943fb798a20be35ba9b9d08bf85745174e0372f279718",
+			"hashVersion": 2,
+			"revisionHash": "37ccd75e3f0ef9e987157071eedec1184542b9453c2e3b1f0a116e2d016063da",
+			"generatedTags": [
+				"Writing",
+				"Essays",
+				"Data Visualization",
+				"Typography",
+				"Text Analysis",
+				"Generative Art",
+				"Interactive Explainers",
+				"Reading",
+				"Literature",
+				"Information Design"
+			],
+			"pinnedTags": [
+				"Writing",
+				"Essays",
+				"Data Visualization",
+				"Typography",
+				"Text Analysis",
+				"Generative Art",
+				"Interactive Explainers",
+				"Reading",
+				"Literature",
+				"Information Design"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-26"
 		}
 	},
 	"maxTags": 10

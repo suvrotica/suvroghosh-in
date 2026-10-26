@@ -41,3 +41,6 @@ src/lib/visualizations/memory-palace/geometry.json
 scripts/lib/openhie-anatomy/
 src/lib/visualizations/between-a-click-and-a-page/geometry.json
 src/lib/components/visualizations/between-a-click-and-a-page/anatomy.css
+
+# Deterministic essay analysis catalogs (owned by generator)
+src/lib/visualizations/anatomy-of-an-essay/generated/

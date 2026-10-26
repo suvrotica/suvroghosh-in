@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T10:02:48.380300+00:00",
+  "generatedAt": "2026-10-26T10:42:40.003296+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -757,6 +757,29 @@
         "Horn",
         "Smell",
         "Fish"
+      ],
+      "wordCount": 130
+    },
+    "anatomy-of-an-essay": {
+      "generatedAt": "2026-10-26T10:42:22.186347+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/anatomy-of-an-essay.svg",
+      "source": "src/lib/posts/anatomy-of-an-essay.md",
+      "sourceHash": "24a36b73ac623151972779841f039497bb28656ae187e1e3780eb39d1d65a759",
+      "sourceModified": "2026-10-26T10:30:15.930220+00:00",
+      "topWords": [
+        "Sentence",
+        "Atlas",
+        "Sentences",
+        "Specimen",
+        "Long",
+        "Text",
+        "Keeps",
+        "Paragraphs",
+        "Every",
+        "Inspect",
+        "Visible",
+        "Ribs"
       ],
       "wordCount": 130
     },

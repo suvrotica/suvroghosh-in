@@ -1,0 +1,3389 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": 1,
+  "morphologyVersion": 1,
+  "id": "pod-mara-gechhe-calcutta-essay",
+  "title": "Pod Mara Gechhe: A Calcutta Weather Report From the Lower End of the Soul",
+  "author": "Suvro Ghosh",
+  "canonicalUrl": "https://www.suvroghosh.in/blog/personal-essay/pod-mara-gechhe-calcutta-essay",
+  "contentHash": "30fbce82f5a305c0040328daa362cf49511a80010614322cc1d218cf6c4c37bc",
+  "language": "en",
+  "paragraphs": [
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p1",
+      "index": 0,
+      "kind": "paragraph",
+      "text": "Some days the soul does not break. It simply sits down, removes its chappals, scratches itself gloomily, and refuses to get up.",
+      "sourceStart": 674,
+      "sourceEnd": 802,
+      "wordCount": 22,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p1-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p1",
+          "text": "Some days the soul does not break.",
+          "start": 0,
+          "end": 34,
+          "wordCount": 7,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p1-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p1",
+          "text": "It simply sits down, removes its chappals, scratches itself gloomily, and refuses to get up.",
+          "start": 35,
+          "end": 127,
+          "wordCount": 15,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p2",
+      "index": 1,
+      "kind": "paragraph",
+      "text": "This, in Bengali domestic science, is known as pod mara gechhe.",
+      "sourceStart": 803,
+      "sourceEnd": 867,
+      "wordCount": 11,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p2-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p2",
+          "text": "This, in Bengali domestic science, is known as pod mara gechhe.",
+          "start": 0,
+          "end": 63,
+          "wordCount": 11,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p3",
+      "index": 2,
+      "kind": "paragraph",
+      "text": "There are grander names, of course. Depression. Anxiety. Exhaustion. Anhedonia. Existential unease. The sort of language that arrives wearing spectacles and carrying a clipboard. But pod mara gechhe has a street-level accuracy that the medical dictionary, with all its polished shoes, cannot quite manage. It means the whole inner system has gone slack from the wrong end. The battery is not dead. The wiring is not entirely burnt. But something important has sat down in protest near the municipal drain of existence.",
+      "sourceStart": 868,
+      "sourceEnd": 1387,
+      "wordCount": 82,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "There are grander names, of course.",
+          "start": 0,
+          "end": 35,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "Depression.",
+          "start": 36,
+          "end": 47,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "Anxiety.",
+          "start": 48,
+          "end": 56,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "Exhaustion.",
+          "start": 57,
+          "end": 68,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "Anhedonia.",
+          "start": 69,
+          "end": 79,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "Existential unease.",
+          "start": 80,
+          "end": 99,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "The sort of language that arrives wearing spectacles and carrying a clipboard.",
+          "start": 100,
+          "end": 178,
+          "wordCount": 12,
+          "nesting": 1,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "But pod mara gechhe has a street-level accuracy that the medical dictionary, with all its polished shoes, cannot quite manage.",
+          "start": 179,
+          "end": 305,
+          "wordCount": 20,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "It means the whole inner system has gone slack from the wrong end.",
+          "start": 306,
+          "end": 372,
+          "wordCount": 13,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s10",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "The battery is not dead.",
+          "start": 373,
+          "end": 397,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s11",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "The wiring is not entirely burnt.",
+          "start": 398,
+          "end": 431,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p3-s12",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "text": "But something important has sat down in protest near the municipal drain of existence.",
+          "start": 432,
+          "end": 518,
+          "wordCount": 14,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p4",
+      "index": 3,
+      "kind": "paragraph",
+      "text": "I know this condition well.",
+      "sourceStart": 1388,
+      "sourceEnd": 1416,
+      "wordCount": 5,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p4-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p4",
+          "text": "I know this condition well.",
+          "start": 0,
+          "end": 27,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p5",
+      "index": 4,
+      "kind": "paragraph",
+      "text": "At fifty-one, living alone in the southern fringe of Calcutta, in that zone where the city has not fully ended and civilization has not fully arrived, I have become something of a reluctant field researcher in this subject. My laboratory contains a rice cooker, a laptop, a mattress, a few too many books, unpaid bills, and a fan that turns with the moral confidence of a tired government employee. Outside, the para runs on tea, gossip, construction dust, scooters, political posters, half-finished buildings, and the eternal Bengali belief that one more argument will improve reality.",
+      "sourceStart": 1417,
+      "sourceEnd": 2004,
+      "wordCount": 95,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p5-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p5",
+          "text": "At fifty-one, living alone in the southern fringe of Calcutta, in that zone where the city has not fully ended and civilization has not fully arrived, I have become something of a reluctant field researcher in this subject.",
+          "start": 0,
+          "end": 223,
+          "wordCount": 38,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p5-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p5",
+          "text": "My laboratory contains a rice cooker, a laptop, a mattress, a few too many books, unpaid bills, and a fan that turns with the moral confidence of a tired government employee.",
+          "start": 224,
+          "end": 398,
+          "wordCount": 31,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p5-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p5",
+          "text": "Outside, the para runs on tea, gossip, construction dust, scooters, political posters, half-finished buildings, and the eternal Bengali belief that one more argument will improve reality.",
+          "start": 399,
+          "end": 586,
+          "wordCount": 26,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p6",
+      "index": 5,
+      "kind": "paragraph",
+      "text": "It rarely does.",
+      "sourceStart": 2005,
+      "sourceEnd": 2021,
+      "wordCount": 3,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p6-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p6",
+          "text": "It rarely does.",
+          "start": 0,
+          "end": 15,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p7",
+      "index": 6,
+      "kind": "paragraph",
+      "text": "The day begins with the phone. This is already a mistake.",
+      "sourceStart": 2022,
+      "sourceEnd": 2080,
+      "wordCount": 11,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p7-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p7",
+          "text": "The day begins with the phone.",
+          "start": 0,
+          "end": 30,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p7-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p7",
+          "text": "This is already a mistake.",
+          "start": 31,
+          "end": 57,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p8",
+      "index": 7,
+      "kind": "paragraph",
+      "text": "Before tea, before brushing, before the face has negotiated peace with the mirror, the screen begins its little circus. War, heat, markets, cricket, someone shouting on television, someone declaring the end of civilization, someone selling a miracle course, someone else becoming rich by explaining how you too can become rich if you stop being the sort of person who has to think about rice prices. The world enters the room like a drunk uncle during Saraswati Puja and immediately starts rearranging the furniture.",
+      "sourceStart": 2081,
+      "sourceEnd": 2598,
+      "wordCount": 83,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p8-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p8",
+          "text": "Before tea, before brushing, before the face has negotiated peace with the mirror, the screen begins its little circus.",
+          "start": 0,
+          "end": 119,
+          "wordCount": 19,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p8-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p8",
+          "text": "War, heat, markets, cricket, someone shouting on television, someone declaring the end of civilization, someone selling a miracle course, someone else becoming rich by explaining how you too can become rich if you stop being the sort of person who has to think about rice prices.",
+          "start": 120,
+          "end": 399,
+          "wordCount": 46,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p8-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p8",
+          "text": "The world enters the room like a drunk uncle during Saraswati Puja and immediately starts rearranging the furniture.",
+          "start": 400,
+          "end": 516,
+          "wordCount": 18,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p9",
+      "index": 8,
+      "kind": "paragraph",
+      "text": "Then comes the body.",
+      "sourceStart": 2599,
+      "sourceEnd": 2620,
+      "wordCount": 4,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p9-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p9",
+          "text": "Then comes the body.",
+          "start": 0,
+          "end": 20,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p10",
+      "index": 9,
+      "kind": "paragraph",
+      "text": "The body at fifty-one is no longer a loyal servant. It is a coalition government. The back has its own party. The stomach is in opposition. The knees abstain from voting. The teeth have formed a breakaway faction. The hair left the alliance years ago and now sends occasional postcards from memory.",
+      "sourceStart": 2621,
+      "sourceEnd": 2920,
+      "wordCount": 52,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p10-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "text": "The body at fifty-one is no longer a loyal servant.",
+          "start": 0,
+          "end": 51,
+          "wordCount": 10,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p10-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "text": "It is a coalition government.",
+          "start": 52,
+          "end": 81,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p10-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "text": "The back has its own party.",
+          "start": 82,
+          "end": 109,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p10-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "text": "The stomach is in opposition.",
+          "start": 110,
+          "end": 139,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p10-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "text": "The knees abstain from voting.",
+          "start": 140,
+          "end": 170,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p10-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "text": "The teeth have formed a breakaway faction.",
+          "start": 171,
+          "end": 213,
+          "wordCount": 7,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p10-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "text": "The hair left the alliance years ago and now sends occasional postcards from memory.",
+          "start": 214,
+          "end": 298,
+          "wordCount": 14,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p11",
+      "index": 10,
+      "kind": "paragraph",
+      "text": "And somewhere in the lower bureaucracy of the body sits that special clerk of despair, stamping one file again and again: pod mara gechhe, pod mara gechhe, pod mara gechhe.",
+      "sourceStart": 2921,
+      "sourceEnd": 3094,
+      "wordCount": 30,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "text": "And somewhere in the lower bureaucracy of the body sits that special clerk of despair, stamping one file again and again: pod mara gechhe, pod mara gechhe, pod mara gechhe.",
+          "start": 0,
+          "end": 172,
+          "wordCount": 30,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ":",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p12",
+      "index": 11,
+      "kind": "paragraph",
+      "text": "This is not ordinary laziness. Laziness has leisure in it. Laziness stretches, yawns, eats muri, and enjoys itself. This thing does not enjoy. It delays. It stares. It opens the laptop and then looks at the wall. It makes tea and forgets to drink it. It thinks of bathing as if bathing were a Himalayan expedition requiring oxygen cylinders and a signed permission letter from the district magistrate.",
+      "sourceStart": 3095,
+      "sourceEnd": 3497,
+      "wordCount": 68,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "This is not ordinary laziness.",
+          "start": 0,
+          "end": 30,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "Laziness has leisure in it.",
+          "start": 31,
+          "end": 58,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "Laziness stretches, yawns, eats muri, and enjoys itself.",
+          "start": 59,
+          "end": 115,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "This thing does not enjoy.",
+          "start": 116,
+          "end": 142,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "It delays.",
+          "start": 143,
+          "end": 153,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "It stares.",
+          "start": 154,
+          "end": 164,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "It opens the laptop and then looks at the wall.",
+          "start": 165,
+          "end": 212,
+          "wordCount": 10,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "It makes tea and forgets to drink it.",
+          "start": 213,
+          "end": 250,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p12-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "text": "It thinks of bathing as if bathing were a Himalayan expedition requiring oxygen cylinders and a signed permission letter from the district magistrate.",
+          "start": 251,
+          "end": 401,
+          "wordCount": 23,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p13",
+      "index": 12,
+      "kind": "paragraph",
+      "text": "You think the problem is the bucket.",
+      "sourceStart": 3498,
+      "sourceEnd": 3535,
+      "wordCount": 7,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p13-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p13",
+          "text": "You think the problem is the bucket.",
+          "start": 0,
+          "end": 36,
+          "wordCount": 7,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p14",
+      "index": 13,
+      "kind": "paragraph",
+      "text": "It is not the bucket.",
+      "sourceStart": 3536,
+      "sourceEnd": 3558,
+      "wordCount": 5,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p14-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p14",
+          "text": "It is not the bucket.",
+          "start": 0,
+          "end": 21,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p15",
+      "index": 14,
+      "kind": "paragraph",
+      "text": "The bucket is only the visible villain, like the small-time goonda caught at the tea stall while the real syndicate sits elsewhere in an air-conditioned room. The real problem is the invisible load that gathers before action. Stand up. Find towel. Enter bathroom. Face body. Face water. Face mirror. Face the day. Face the fact that yesterday also existed and tomorrow is already waiting outside like a landlord.",
+      "sourceStart": 3559,
+      "sourceEnd": 3972,
+      "wordCount": 68,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "The bucket is only the visible villain, like the small-time goonda caught at the tea stall while the real syndicate sits elsewhere in an air-conditioned room.",
+          "start": 0,
+          "end": 158,
+          "wordCount": 26,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "The real problem is the invisible load that gathers before action.",
+          "start": 159,
+          "end": 225,
+          "wordCount": 11,
+          "nesting": 1,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Stand up.",
+          "start": 226,
+          "end": 235,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Find towel.",
+          "start": 236,
+          "end": 247,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Enter bathroom.",
+          "start": 248,
+          "end": 263,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Face body.",
+          "start": 264,
+          "end": 274,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Face water.",
+          "start": 275,
+          "end": 286,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Face mirror.",
+          "start": 287,
+          "end": 299,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Face the day.",
+          "start": 300,
+          "end": 313,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p15-s10",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "text": "Face the fact that yesterday also existed and tomorrow is already waiting outside like a landlord.",
+          "start": 314,
+          "end": 412,
+          "wordCount": 16,
+          "nesting": 1,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p16",
+      "index": 15,
+      "kind": "paragraph",
+      "text": "A normal person says, “Just take a bath.”",
+      "sourceStart": 3973,
+      "sourceEnd": 4015,
+      "wordCount": 8,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p16-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p16",
+          "text": "A normal person says, “Just take a bath.”",
+          "start": 0,
+          "end": 41,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p17",
+      "index": 16,
+      "kind": "paragraph",
+      "text": "A depressed person hears, “Please reorganize the entire constitution of your nervous system before lunch.”",
+      "sourceStart": 4016,
+      "sourceEnd": 4123,
+      "wordCount": 15,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p17-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p17",
+          "text": "A depressed person hears, “Please reorganize the entire constitution of your nervous system before lunch.”",
+          "start": 0,
+          "end": 106,
+          "wordCount": 15,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p18",
+      "index": 17,
+      "kind": "paragraph",
+      "text": "That is the private joke. It is not a very funny joke, but Calcutta has been running on not very funny jokes for a long time.",
+      "sourceStart": 4124,
+      "sourceEnd": 4250,
+      "wordCount": 26,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p18-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p18",
+          "text": "That is the private joke.",
+          "start": 0,
+          "end": 25,
+          "wordCount": 5,
+          "nesting": 1,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p18-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p18",
+          "text": "It is not a very funny joke, but Calcutta has been running on not very funny jokes for a long time.",
+          "start": 26,
+          "end": 125,
+          "wordCount": 21,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p19",
+      "index": 18,
+      "kind": "paragraph",
+      "text": "Tagore understood weariness, certainly. He gave it rivers, evening light, boats, clouds, songs, and that large aristocratic sadness which looks excellent in sepia. But Tagore did not, as far as I know, write clearly about the lower digestive address of despair. He had a Nobel Prize. I have acidity. Different departments.",
+      "sourceStart": 4251,
+      "sourceEnd": 4574,
+      "wordCount": 51,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p19-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p19",
+          "text": "Tagore understood weariness, certainly.",
+          "start": 0,
+          "end": 39,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p19-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p19",
+          "text": "He gave it rivers, evening light, boats, clouds, songs, and that large aristocratic sadness which looks excellent in sepia.",
+          "start": 40,
+          "end": 163,
+          "wordCount": 19,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p19-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p19",
+          "text": "But Tagore did not, as far as I know, write clearly about the lower digestive address of despair.",
+          "start": 164,
+          "end": 261,
+          "wordCount": 18,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p19-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p19",
+          "text": "He had a Nobel Prize.",
+          "start": 262,
+          "end": 283,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p19-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p19",
+          "text": "I have acidity.",
+          "start": 284,
+          "end": 299,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p19-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p19",
+          "text": "Different departments.",
+          "start": 300,
+          "end": 322,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p20",
+      "index": 19,
+      "kind": "paragraph",
+      "text": "Still, the old man knew something. Bengali sadness is rarely plain sadness. It comes with music, pride, indigestion, memory, philosophy, and a faint suspicion that someone in the family is disappointed in you. Even when no one is present, the disappointment sits there, perfectly punctual, like a relative who came for lunch in 1987 and never left.",
+      "sourceStart": 4575,
+      "sourceEnd": 4924,
+      "wordCount": 57,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p20-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p20",
+          "text": "Still, the old man knew something.",
+          "start": 0,
+          "end": 34,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p20-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p20",
+          "text": "Bengali sadness is rarely plain sadness.",
+          "start": 35,
+          "end": 75,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p20-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p20",
+          "text": "It comes with music, pride, indigestion, memory, philosophy, and a faint suspicion that someone in the family is disappointed in you.",
+          "start": 76,
+          "end": 209,
+          "wordCount": 21,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p20-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p20",
+          "text": "Even when no one is present, the disappointment sits there, perfectly punctual, like a relative who came for lunch in 1987 and never left.",
+          "start": 210,
+          "end": 348,
+          "wordCount": 24,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p21",
+      "index": 20,
+      "kind": "paragraph",
+      "text": "In my case, the disappointment has good material to work with.",
+      "sourceStart": 4925,
+      "sourceEnd": 4988,
+      "wordCount": 11,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p21-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p21",
+          "text": "In my case, the disappointment has good material to work with.",
+          "start": 0,
+          "end": 62,
+          "wordCount": 11,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p22",
+      "index": 21,
+      "kind": "paragraph",
+      "text": "Once upon a time, I was a bright boy. This is one of the more dangerous species produced by Bengal, along with the political uncle, the fish expert, and the retired man who reads three newspapers and trusts none of them. The bright boy is praised early. He writes well. He scores marks. He speaks English. He goes abroad. He studies. He works in America. He returns with experience, vocabulary, and the mistaken impression that intelligence will protect him from life.",
+      "sourceStart": 4989,
+      "sourceEnd": 5458,
+      "wordCount": 81,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "Once upon a time, I was a bright boy.",
+          "start": 0,
+          "end": 37,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "This is one of the more dangerous species produced by Bengal, along with the political uncle, the fish expert, and the retired man who reads three newspapers and trusts none of them.",
+          "start": 38,
+          "end": 220,
+          "wordCount": 32,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "The bright boy is praised early.",
+          "start": 221,
+          "end": 253,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "He writes well.",
+          "start": 254,
+          "end": 269,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "He scores marks.",
+          "start": 270,
+          "end": 286,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "He speaks English.",
+          "start": 287,
+          "end": 305,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "He goes abroad.",
+          "start": 306,
+          "end": 321,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "He studies.",
+          "start": 322,
+          "end": 333,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "He works in America.",
+          "start": 334,
+          "end": 354,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p22-s10",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "text": "He returns with experience, vocabulary, and the mistaken impression that intelligence will protect him from life.",
+          "start": 355,
+          "end": 468,
+          "wordCount": 16,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p23",
+      "index": 22,
+      "kind": "paragraph",
+      "text": "Life, being a seasoned local operator, laughs quietly and removes the man’s chair.",
+      "sourceStart": 5459,
+      "sourceEnd": 5542,
+      "wordCount": 13,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p23-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p23",
+          "text": "Life, being a seasoned local operator, laughs quietly and removes the man’s chair.",
+          "start": 0,
+          "end": 82,
+          "wordCount": 13,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p24",
+      "index": 23,
+      "kind": "paragraph",
+      "text": "So here I am. Educated enough to explain my own collapse, not rich enough to outsource it, proud enough to suffer privately, practical enough to keep checking whether consulting money will arrive, and Bengali enough to convert the whole mess into an essay before breakfast.",
+      "sourceStart": 5543,
+      "sourceEnd": 5817,
+      "wordCount": 45,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p24-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p24",
+          "text": "So here I am.",
+          "start": 0,
+          "end": 13,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p24-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p24",
+          "text": "Educated enough to explain my own collapse, not rich enough to outsource it, proud enough to suffer privately, practical enough to keep checking whether consulting money will arrive, and Bengali enough to convert the whole mess into an essay before breakfast.",
+          "start": 14,
+          "end": 273,
+          "wordCount": 41,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p25",
+      "index": 24,
+      "kind": "paragraph",
+      "text": "There is a special absurdity in knowing too much.",
+      "sourceStart": 5818,
+      "sourceEnd": 5868,
+      "wordCount": 9,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p25-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p25",
+          "text": "There is a special absurdity in knowing too much.",
+          "start": 0,
+          "end": 49,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p26",
+      "index": 25,
+      "kind": "paragraph",
+      "text": "A simpler man might say, “My mood is bad.”",
+      "sourceStart": 5869,
+      "sourceEnd": 5912,
+      "wordCount": 9,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p26-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p26",
+          "text": "A simpler man might say, “My mood is bad.”",
+          "start": 0,
+          "end": 42,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p27",
+      "index": 26,
+      "kind": "paragraph",
+      "text": "I say, “My frontal lobe is overprocessing threat, memory, regret, status failure, economic precarity, and the biochemical unreliability of hope.”",
+      "sourceStart": 5913,
+      "sourceEnd": 6059,
+      "wordCount": 20,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p27-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p27",
+          "text": "I say, “My frontal lobe is overprocessing threat, memory, regret, status failure, economic precarity, and the biochemical unreliability of hope.”",
+          "start": 0,
+          "end": 145,
+          "wordCount": 20,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p28",
+      "index": 27,
+      "kind": "paragraph",
+      "text": "This is not necessarily an improvement.",
+      "sourceStart": 6060,
+      "sourceEnd": 6100,
+      "wordCount": 6,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p28-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p28",
+          "text": "This is not necessarily an improvement.",
+          "start": 0,
+          "end": 39,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p29",
+      "index": 28,
+      "kind": "paragraph",
+      "text": "The brain, for all its fame, is a ridiculous organ. It can understand stars, algorithms, blood tests, railway timetables, and why the fish seller is lying about freshness. But it cannot reliably persuade a man to shave. It can read about philosophy and still be defeated by a towel. It can analyze civilization and still fear the doorbell.",
+      "sourceStart": 6101,
+      "sourceEnd": 6441,
+      "wordCount": 58,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p29-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p29",
+          "text": "The brain, for all its fame, is a ridiculous organ.",
+          "start": 0,
+          "end": 51,
+          "wordCount": 10,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p29-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p29",
+          "text": "It can understand stars, algorithms, blood tests, railway timetables, and why the fish seller is lying about freshness.",
+          "start": 52,
+          "end": 171,
+          "wordCount": 18,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p29-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p29",
+          "text": "But it cannot reliably persuade a man to shave.",
+          "start": 172,
+          "end": 219,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p29-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p29",
+          "text": "It can read about philosophy and still be defeated by a towel.",
+          "start": 220,
+          "end": 282,
+          "wordCount": 12,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p29-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p29",
+          "text": "It can analyze civilization and still fear the doorbell.",
+          "start": 283,
+          "end": 339,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p30",
+      "index": 29,
+      "kind": "paragraph",
+      "text": "The doorbell deserves its own paragraph.",
+      "sourceStart": 6442,
+      "sourceEnd": 6483,
+      "wordCount": 6,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p30-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p30",
+          "text": "The doorbell deserves its own paragraph.",
+          "start": 0,
+          "end": 40,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p31",
+      "index": 30,
+      "kind": "paragraph",
+      "text": "In a lonely room, the doorbell is not a sound. It is an accusation. Who is it? Landlord? Delivery boy? Wrong flat? Neighbor? Some new inconvenience wearing sandals? The heart jumps like a thief. The body freezes. The mind opens a thousand tabs. This is how anxiety works. It turns the smallest event into a press conference.",
+      "sourceStart": 6484,
+      "sourceEnd": 6809,
+      "wordCount": 57,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "In a lonely room, the doorbell is not a sound.",
+          "start": 0,
+          "end": 46,
+          "wordCount": 10,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "It is an accusation.",
+          "start": 47,
+          "end": 67,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "Who is it?",
+          "start": 68,
+          "end": 78,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "?"
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "Landlord?",
+          "start": 79,
+          "end": 88,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "?"
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "Delivery boy?",
+          "start": 89,
+          "end": 102,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "?"
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "Wrong flat?",
+          "start": 103,
+          "end": 114,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "?"
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "Neighbor?",
+          "start": 115,
+          "end": 124,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "?"
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "Some new inconvenience wearing sandals?",
+          "start": 125,
+          "end": 164,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "?"
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "The heart jumps like a thief.",
+          "start": 165,
+          "end": 194,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s10",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "The body freezes.",
+          "start": 195,
+          "end": 212,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s11",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "The mind opens a thousand tabs.",
+          "start": 213,
+          "end": 244,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s12",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "This is how anxiety works.",
+          "start": 245,
+          "end": 271,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p31-s13",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "text": "It turns the smallest event into a press conference.",
+          "start": 272,
+          "end": 324,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p32",
+      "index": 31,
+      "kind": "paragraph",
+      "text": "Meanwhile, outside, Calcutta continues its great boiling experiment.",
+      "sourceStart": 6810,
+      "sourceEnd": 6879,
+      "wordCount": 8,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p32-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p32",
+          "text": "Meanwhile, outside, Calcutta continues its great boiling experiment.",
+          "start": 0,
+          "end": 68,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p33",
+      "index": 32,
+      "kind": "paragraph",
+      "text": "The tea stall is active. The auto drivers are negotiating with destiny. A man is arguing into his phone as if the Reserve Bank is personally answerable to him. A dog sleeps under a scooter with more dignity than most public institutions. Somewhere a pressure cooker whistles. Somewhere a child is being told to study. Somewhere a middle-aged man like me is standing before a mirror, looking at his unshaven face and wondering when exactly the promising boy became this damp, irritable committee of symptoms.",
+      "sourceStart": 6880,
+      "sourceEnd": 7388,
+      "wordCount": 85,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p33-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "text": "The tea stall is active.",
+          "start": 0,
+          "end": 24,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p33-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "text": "The auto drivers are negotiating with destiny.",
+          "start": 25,
+          "end": 71,
+          "wordCount": 7,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p33-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "text": "A man is arguing into his phone as if the Reserve Bank is personally answerable to him.",
+          "start": 72,
+          "end": 159,
+          "wordCount": 17,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p33-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "text": "A dog sleeps under a scooter with more dignity than most public institutions.",
+          "start": 160,
+          "end": 237,
+          "wordCount": 13,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p33-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "text": "Somewhere a pressure cooker whistles.",
+          "start": 238,
+          "end": 275,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p33-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "text": "Somewhere a child is being told to study.",
+          "start": 276,
+          "end": 317,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p33-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "text": "Somewhere a middle-aged man like me is standing before a mirror, looking at his unshaven face and wondering when exactly the promising boy became this damp, irritable committee of symptoms.",
+          "start": 318,
+          "end": 507,
+          "wordCount": 30,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p34",
+      "index": 33,
+      "kind": "paragraph",
+      "text": "Not all of this is tragedy.",
+      "sourceStart": 7389,
+      "sourceEnd": 7417,
+      "wordCount": 6,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p34-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p34",
+          "text": "Not all of this is tragedy.",
+          "start": 0,
+          "end": 27,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p35",
+      "index": 34,
+      "kind": "paragraph",
+      "text": "Some of it is comedy wearing a lungi.",
+      "sourceStart": 7418,
+      "sourceEnd": 7456,
+      "wordCount": 8,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p35-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p35",
+          "text": "Some of it is comedy wearing a lungi.",
+          "start": 0,
+          "end": 37,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p36",
+      "index": 35,
+      "kind": "paragraph",
+      "text": "The body complains. The mind overthinks. The city sweats. The rice cooker clicks. The phone glows. The fan turns. The news feed screams. The stomach makes a legal objection. And through it all, some small stubborn creature inside says, “Write it down.”",
+      "sourceStart": 7457,
+      "sourceEnd": 7710,
+      "wordCount": 42,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The body complains.",
+          "start": 0,
+          "end": 19,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The mind overthinks.",
+          "start": 20,
+          "end": 40,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The city sweats.",
+          "start": 41,
+          "end": 57,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The rice cooker clicks.",
+          "start": 58,
+          "end": 81,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The phone glows.",
+          "start": 82,
+          "end": 98,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The fan turns.",
+          "start": 99,
+          "end": 113,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The news feed screams.",
+          "start": 114,
+          "end": 136,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "The stomach makes a legal objection.",
+          "start": 137,
+          "end": 173,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p36-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "text": "And through it all, some small stubborn creature inside says, “Write it down.”",
+          "start": 174,
+          "end": 252,
+          "wordCount": 13,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p37",
+      "index": 36,
+      "kind": "paragraph",
+      "text": "So I do.",
+      "sourceStart": 7711,
+      "sourceEnd": 7720,
+      "wordCount": 3,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p37-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p37",
+          "text": "So I do.",
+          "start": 0,
+          "end": 8,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p38",
+      "index": 37,
+      "kind": "paragraph",
+      "text": "Malaise is a fine word, but too polished. It sounds like something suffered by a Frenchman near a window. Our version is less decorative. It smells of old walls, mustard oil, damp towels, hot tea, mosquito coils, and the faint electrical burning smell that makes every Calcuttan briefly wonder whether this is the day the wiring achieves enlightenment.",
+      "sourceStart": 7721,
+      "sourceEnd": 8074,
+      "wordCount": 58,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p38-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p38",
+          "text": "Malaise is a fine word, but too polished.",
+          "start": 0,
+          "end": 41,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p38-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p38",
+          "text": "It sounds like something suffered by a Frenchman near a window.",
+          "start": 42,
+          "end": 105,
+          "wordCount": 11,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p38-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p38",
+          "text": "Our version is less decorative.",
+          "start": 106,
+          "end": 137,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p38-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p38",
+          "text": "It smells of old walls, mustard oil, damp towels, hot tea, mosquito coils, and the faint electrical burning smell that makes every Calcuttan briefly wonder whether this is the day the wiring achieves enlightenment.",
+          "start": 138,
+          "end": 352,
+          "wordCount": 34,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p39",
+      "index": 38,
+      "kind": "paragraph",
+      "text": "Duḥkha is closer. That old word has room. It can hold suffering, bad fit, unease, dissatisfaction, the shoe pinching the foot of existence. It can hold desire and failure. It can hold a broken tooth, a late payment, a lost career, a wet towel, a childhood prize, a family silence, a summer afternoon, and a plate of rice gone cold because the mind went somewhere else and forgot to return.",
+      "sourceStart": 8075,
+      "sourceEnd": 8465,
+      "wordCount": 70,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p39-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p39",
+          "text": "Duḥkha is closer.",
+          "start": 0,
+          "end": 17,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p39-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p39",
+          "text": "That old word has room.",
+          "start": 18,
+          "end": 41,
+          "wordCount": 5,
+          "nesting": 1,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p39-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p39",
+          "text": "It can hold suffering, bad fit, unease, dissatisfaction, the shoe pinching the foot of existence.",
+          "start": 42,
+          "end": 139,
+          "wordCount": 15,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p39-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p39",
+          "text": "It can hold desire and failure.",
+          "start": 140,
+          "end": 171,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p39-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p39",
+          "text": "It can hold a broken tooth, a late payment, a lost career, a wet towel, a childhood prize, a family silence, a summer afternoon, and a plate of rice gone cold because the mind went somewhere else and forgot to return.",
+          "start": 172,
+          "end": 389,
+          "wordCount": 41,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p40",
+      "index": 39,
+      "kind": "paragraph",
+      "text": "Hope is the dangerous ingredient.",
+      "sourceStart": 8466,
+      "sourceEnd": 8500,
+      "wordCount": 5,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p40-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p40",
+          "text": "Hope is the dangerous ingredient.",
+          "start": 0,
+          "end": 33,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p41",
+      "index": 40,
+      "kind": "paragraph",
+      "text": "Without hope, a man becomes stone. With too much hope, he becomes a salesman. With a little hope, he becomes ridiculous, which is perhaps the most human condition available. I am not optimistic. Optimism feels to me like a product sold in plastic bottles. But I am not finished either. This is irritating. One would like despair to be decisive. Instead it keeps leaving loopholes.",
+      "sourceStart": 8501,
+      "sourceEnd": 8882,
+      "wordCount": 65,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "Without hope, a man becomes stone.",
+          "start": 0,
+          "end": 34,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "With too much hope, he becomes a salesman.",
+          "start": 35,
+          "end": 77,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "With a little hope, he becomes ridiculous, which is perhaps the most human condition available.",
+          "start": 78,
+          "end": 173,
+          "wordCount": 15,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "I am not optimistic.",
+          "start": 174,
+          "end": 194,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "Optimism feels to me like a product sold in plastic bottles.",
+          "start": 195,
+          "end": 255,
+          "wordCount": 11,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "But I am not finished either.",
+          "start": 256,
+          "end": 285,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "This is irritating.",
+          "start": 286,
+          "end": 305,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "One would like despair to be decisive.",
+          "start": 306,
+          "end": 344,
+          "wordCount": 7,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p41-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "text": "Instead it keeps leaving loopholes.",
+          "start": 345,
+          "end": 380,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p42",
+      "index": 41,
+      "kind": "paragraph",
+      "text": "A sentence arrives.",
+      "sourceStart": 8883,
+      "sourceEnd": 8903,
+      "wordCount": 3,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p42-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p42",
+          "text": "A sentence arrives.",
+          "start": 0,
+          "end": 19,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p43",
+      "index": 42,
+      "kind": "paragraph",
+      "text": "A cup of tea helps.",
+      "sourceStart": 8904,
+      "sourceEnd": 8924,
+      "wordCount": 5,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p43-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p43",
+          "text": "A cup of tea helps.",
+          "start": 0,
+          "end": 19,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p44",
+      "index": 43,
+      "kind": "paragraph",
+      "text": "A crow lands on the parapet and looks like a badly dressed philosopher.",
+      "sourceStart": 8925,
+      "sourceEnd": 8997,
+      "wordCount": 13,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p44-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p44",
+          "text": "A crow lands on the parapet and looks like a badly dressed philosopher.",
+          "start": 0,
+          "end": 71,
+          "wordCount": 13,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p45",
+      "index": 44,
+      "kind": "paragraph",
+      "text": "A line becomes funny.",
+      "sourceStart": 8998,
+      "sourceEnd": 9020,
+      "wordCount": 4,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p45-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p45",
+          "text": "A line becomes funny.",
+          "start": 0,
+          "end": 21,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p46",
+      "index": 45,
+      "kind": "paragraph",
+      "text": "The afternoon, which had seemed like a government file lost forever, moves half an inch.",
+      "sourceStart": 9021,
+      "sourceEnd": 9110,
+      "wordCount": 15,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p46-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p46",
+          "text": "The afternoon, which had seemed like a government file lost forever, moves half an inch.",
+          "start": 0,
+          "end": 88,
+          "wordCount": 15,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p47",
+      "index": 46,
+      "kind": "paragraph",
+      "text": "This is how one survives, perhaps. Not by victory. Not by transformation. Not by becoming a radiant creature who drinks green juice and forgives everyone. One survives by small illegal constructions inside the day. Tea. Rice. A paragraph. A joke. A bath taken after three hours of negotiation. A bill paid late but paid. A little work done. A little shame ignored. A little air entering the room.",
+      "sourceStart": 9111,
+      "sourceEnd": 9508,
+      "wordCount": 68,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "This is how one survives, perhaps.",
+          "start": 0,
+          "end": 34,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "Not by victory.",
+          "start": 35,
+          "end": 50,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "Not by transformation.",
+          "start": 51,
+          "end": 73,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "Not by becoming a radiant creature who drinks green juice and forgives everyone.",
+          "start": 74,
+          "end": 154,
+          "wordCount": 13,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "One survives by small illegal constructions inside the day.",
+          "start": 155,
+          "end": 214,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s6",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "Tea.",
+          "start": 215,
+          "end": 219,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s7",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "Rice.",
+          "start": 220,
+          "end": 225,
+          "wordCount": 1,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s8",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "A paragraph.",
+          "start": 226,
+          "end": 238,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s9",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "A joke.",
+          "start": 239,
+          "end": 246,
+          "wordCount": 2,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s10",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "A bath taken after three hours of negotiation.",
+          "start": 247,
+          "end": 293,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s11",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "A bill paid late but paid.",
+          "start": 294,
+          "end": 320,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s12",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "A little work done.",
+          "start": 321,
+          "end": 340,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s13",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "A little shame ignored.",
+          "start": 341,
+          "end": 364,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p47-s14",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "text": "A little air entering the room.",
+          "start": 365,
+          "end": 396,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p48",
+      "index": 47,
+      "kind": "paragraph",
+      "text": "Pod mara gechhe does not vanish.",
+      "sourceStart": 9509,
+      "sourceEnd": 9542,
+      "wordCount": 6,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p48-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p48",
+          "text": "Pod mara gechhe does not vanish.",
+          "start": 0,
+          "end": 32,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p49",
+      "index": 48,
+      "kind": "paragraph",
+      "text": "It sits there, of course. Heavy, comic, rude, and strangely loyal. It has been with me since I first heard the invective as a college student, many times in those years, then in JU, through American winters, Calcutta summers as a returnee, hospital corridors, rented rooms, failed plans, bright beginnings, bad endings, and mornings when the mirror seemed like hostile evidence.",
+      "sourceStart": 9543,
+      "sourceEnd": 9922,
+      "wordCount": 61,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p49-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p49",
+          "text": "It sits there, of course.",
+          "start": 0,
+          "end": 25,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p49-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p49",
+          "text": "Heavy, comic, rude, and strangely loyal.",
+          "start": 26,
+          "end": 66,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p49-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p49",
+          "text": "It has been with me since I first heard the invective as a college student, many times in those years, then in JU, through American winters, Calcutta summers as a returnee, hospital corridors, rented rooms, failed plans, bright beginnings, bad endings, and mornings when the mirror seemed like hostile evidence.",
+          "start": 67,
+          "end": 378,
+          "wordCount": 50,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p50",
+      "index": 49,
+      "kind": "paragraph",
+      "text": "But now I know its trick.",
+      "sourceStart": 9923,
+      "sourceEnd": 9949,
+      "wordCount": 6,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p50-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p50",
+          "text": "But now I know its trick.",
+          "start": 0,
+          "end": 25,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p51",
+      "index": 50,
+      "kind": "paragraph",
+      "text": "It wants to become the whole story.",
+      "sourceStart": 9950,
+      "sourceEnd": 9986,
+      "wordCount": 7,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p51-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p51",
+          "text": "It wants to become the whole story.",
+          "start": 0,
+          "end": 35,
+          "wordCount": 7,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p52",
+      "index": 51,
+      "kind": "paragraph",
+      "text": "It is not.",
+      "sourceStart": 9987,
+      "sourceEnd": 9998,
+      "wordCount": 3,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p52-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p52",
+          "text": "It is not.",
+          "start": 0,
+          "end": 10,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p53",
+      "index": 52,
+      "kind": "paragraph",
+      "text": "It is a chapter written by a tired body, an anxious brain, a wounded ego, a hot city, and a lower-middle-class life with too many open tabs. A serious chapter, yes. A painful chapter. Sometimes a filthy one. But not the whole book.",
+      "sourceStart": 9999,
+      "sourceEnd": 10231,
+      "wordCount": 43,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p53-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p53",
+          "text": "It is a chapter written by a tired body, an anxious brain, a wounded ego, a hot city, and a lower-middle-class life with too many open tabs.",
+          "start": 0,
+          "end": 140,
+          "wordCount": 27,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p53-s2",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p53",
+          "text": "A serious chapter, yes.",
+          "start": 141,
+          "end": 164,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p53-s3",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p53",
+          "text": "A painful chapter.",
+          "start": 165,
+          "end": 183,
+          "wordCount": 3,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p53-s4",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p53",
+          "text": "Sometimes a filthy one.",
+          "start": 184,
+          "end": 207,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p53-s5",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p53",
+          "text": "But not the whole book.",
+          "start": 208,
+          "end": 231,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p54",
+      "index": 53,
+      "kind": "paragraph",
+      "text": "The rice cooker clicks again.",
+      "sourceStart": 10232,
+      "sourceEnd": 10262,
+      "wordCount": 5,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p54-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p54",
+          "text": "The rice cooker clicks again.",
+          "start": 0,
+          "end": 29,
+          "wordCount": 5,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p55",
+      "index": 54,
+      "kind": "paragraph",
+      "text": "The fan continues its tired revolution.",
+      "sourceStart": 10263,
+      "sourceEnd": 10303,
+      "wordCount": 6,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p55-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p55",
+          "text": "The fan continues its tired revolution.",
+          "start": 0,
+          "end": 39,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p56",
+      "index": 55,
+      "kind": "paragraph",
+      "text": "Outside, Calcutta clears its throat and prepares another absurd afternoon.",
+      "sourceStart": 10304,
+      "sourceEnd": 10379,
+      "wordCount": 10,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p56-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p56",
+          "text": "Outside, Calcutta clears its throat and prepares another absurd afternoon.",
+          "start": 0,
+          "end": 74,
+          "wordCount": 10,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p57",
+      "index": 56,
+      "kind": "paragraph",
+      "text": "Inside, I sit with tea, discomfort, memory, and one ridiculous advantage.",
+      "sourceStart": 10380,
+      "sourceEnd": 10454,
+      "wordCount": 11,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p57-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p57",
+          "text": "Inside, I sit with tea, discomfort, memory, and one ridiculous advantage.",
+          "start": 0,
+          "end": 73,
+          "wordCount": 11,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pod-mara-gechhe-calcutta-essay-p58",
+      "index": 57,
+      "kind": "paragraph",
+      "text": "I can still make a sentence out of it.",
+      "sourceStart": 10455,
+      "sourceEnd": 10494,
+      "wordCount": 9,
+      "sentences": [
+        {
+          "id": "pod-mara-gechhe-calcutta-essay-p58-s1",
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p58",
+          "text": "I can still make a sentence out of it.",
+          "start": 0,
+          "end": 38,
+          "wordCount": 9,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "citations": [],
+  "clusters": [
+    {
+      "word": "like",
+      "count": 12,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p8",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p8-s3",
+          "start": 426,
+          "end": 430
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s1",
+          "start": 40,
+          "end": 44
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s10",
+          "start": 396,
+          "end": 400
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p20",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p20-s4",
+          "start": 290,
+          "end": 294
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p31-s9",
+          "start": 181,
+          "end": 185
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p33-s7",
+          "start": 346,
+          "end": 350
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p38",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p38-s2",
+          "start": 52,
+          "end": 56
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p41-s5",
+          "start": 216,
+          "end": 220
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p41-s8",
+          "start": 316,
+          "end": 320
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p44",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p44-s1",
+          "start": 38,
+          "end": 42
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p46",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p46-s1",
+          "start": 32,
+          "end": 36
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p49",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p49-s3",
+          "start": 356,
+          "end": 360
+        }
+      ]
+    },
+    {
+      "word": "tea",
+      "count": 9,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p5",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p5-s3",
+          "start": 425,
+          "end": 428
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p8",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p8-s1",
+          "start": 7,
+          "end": 10
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p12",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p12-s8",
+          "start": 222,
+          "end": 225
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s1",
+          "start": 81,
+          "end": 84
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p33-s1",
+          "start": 4,
+          "end": 7
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p38",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p38-s4",
+          "start": 192,
+          "end": 195
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p43",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p43-s1",
+          "start": 9,
+          "end": 12
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p47",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p47-s6",
+          "start": 215,
+          "end": 218
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p57",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p57-s1",
+          "start": 19,
+          "end": 22
+        }
+      ]
+    },
+    {
+      "word": "body",
+      "count": 7,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p9",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p9-s1",
+          "start": 15,
+          "end": 19
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p10",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p10-s1",
+          "start": 4,
+          "end": 8
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 46,
+          "end": 50
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s6",
+          "start": 269,
+          "end": 273
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p31",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p31-s10",
+          "start": 199,
+          "end": 203
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p36",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p36-s1",
+          "start": 4,
+          "end": 8
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p53",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p53-s1",
+          "start": 35,
+          "end": 39
+        }
+      ]
+    },
+    {
+      "word": "face",
+      "count": 7,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p8",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p8-s1",
+          "start": 40,
+          "end": 44
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s6",
+          "start": 264,
+          "end": 268
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s7",
+          "start": 275,
+          "end": 279
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s8",
+          "start": 287,
+          "end": 291
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s9",
+          "start": 300,
+          "end": 304
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p15",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p15-s10",
+          "start": 314,
+          "end": 318
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p33-s7",
+          "start": 407,
+          "end": 411
+        }
+      ]
+    },
+    {
+      "word": "man",
+      "count": 7,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p20",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p20-s1",
+          "start": 15,
+          "end": 18
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p22",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p22-s2",
+          "start": 165,
+          "end": 168
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p26",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p26-s1",
+          "start": 10,
+          "end": 13
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p29",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p29-s3",
+          "start": 206,
+          "end": 209
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p33-s3",
+          "start": 74,
+          "end": 77
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p33",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p33-s7",
+          "start": 342,
+          "end": 345
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p41",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p41-s1",
+          "start": 16,
+          "end": 19
+        }
+      ]
+    },
+    {
+      "word": "gechhe",
+      "count": 6,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p2",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p2-s1",
+          "start": 56,
+          "end": 62
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p3-s8",
+          "start": 192,
+          "end": 198
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 131,
+          "end": 137
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 148,
+          "end": 154
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 165,
+          "end": 171
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p48",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p48-s1",
+          "start": 9,
+          "end": 15
+        }
+      ]
+    },
+    {
+      "word": "mara",
+      "count": 6,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p2",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p2-s1",
+          "start": 51,
+          "end": 55
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p3-s8",
+          "start": 187,
+          "end": 191
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 126,
+          "end": 130
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 143,
+          "end": 147
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 160,
+          "end": 164
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p48",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p48-s1",
+          "start": 4,
+          "end": 8
+        }
+      ]
+    },
+    {
+      "word": "pod",
+      "count": 6,
+      "occurrences": [
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p2",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p2-s1",
+          "start": 47,
+          "end": 50
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p3",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p3-s8",
+          "start": 183,
+          "end": 186
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 122,
+          "end": 125
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 139,
+          "end": 142
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p11",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p11-s1",
+          "start": 156,
+          "end": 159
+        },
+        {
+          "paragraphId": "pod-mara-gechhe-calcutta-essay-p48",
+          "sentenceId": "pod-mara-gechhe-calcutta-essay-p48-s1",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  ],
+  "omittedClusters": 126,
+  "warnings": [],
+  "measurements": {
+    "words": 1643,
+    "paragraphs": 58,
+    "sentences": 181,
+    "medianSentence": 6,
+    "longestSentence": 50,
+    "sentenceVariation": 8.9,
+    "estimatedNesting": 1,
+    "citations": 0,
+    "longSentences": 2
+  }
+}

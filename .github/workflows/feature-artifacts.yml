@@ -40,6 +40,10 @@ on:
       - 'src/lib/posts/build-one-build-a-thousand.md'
       - 'src/lib/posts/the-six-week-shadow.md'
       - 'src/lib/posts/the-museum-of-almost.md'
+      - 'src/lib/posts/anatomy-of-an-essay.md'
+      - 'src/lib/posts/reading-is-not-homework-it-is-how-the-mind-keeps-change.md'
+      - 'src/lib/posts/pod-mara-gechhe-calcutta-essay.md'
+      - 'static/essay-anatomy/**'
       - 'src/lib/posts/mrinmoyee-the-durga-atelier.md'
       - 'src/lib/posts/the-scale-elevator-from-ion-to-city.md'
       - 'src/lib/posts/perceptron-from-scratch-in-mojo.md'
@@ -89,6 +93,10 @@ on:
       - 'src/lib/posts/build-one-build-a-thousand.md'
       - 'src/lib/posts/the-six-week-shadow.md'
       - 'src/lib/posts/the-museum-of-almost.md'
+      - 'src/lib/posts/anatomy-of-an-essay.md'
+      - 'src/lib/posts/reading-is-not-homework-it-is-how-the-mind-keeps-change.md'
+      - 'src/lib/posts/pod-mara-gechhe-calcutta-essay.md'
+      - 'static/essay-anatomy/**'
       - 'src/lib/posts/mrinmoyee-the-durga-atelier.md'
       - 'src/lib/posts/the-scale-elevator-from-ion-to-city.md'
       - 'src/lib/posts/perceptron-from-scratch-in-mojo.md'
@@ -145,6 +153,9 @@ jobs:
       - name: Verify HTTP and TCP teaching-model invariants
         run: npm run http-tcp:test
 
+      - name: Verify essay source analysis and specimen geometry
+        run: npm run essay-anatomy:test
+
       - name: Check feature artifacts, notebooks and the complete site
         run: npm run build:full
 
@@ -159,6 +170,9 @@ jobs:
 
       - name: Verify the HTTP and TCP instrument
         run: npm run http-tcp:browser:test
+
+      - name: Verify essay anatomy reading, local analysis and portrait exports
+        run: npm run essay-anatomy:browser:test
 
       - name: Retain link-audit evidence
         if: always()

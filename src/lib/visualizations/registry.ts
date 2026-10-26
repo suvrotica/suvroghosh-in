@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'anatomy-of-an-essay': {
+		id: 'anatomy-of-an-essay',
+		title: 'The Anatomy of an Essay',
+		description:
+			'Read an essay as a living body: paragraph organs, sentence ribs, repeated-word neural knots and long-sentence coils.',
+		subjects: ['Literature', 'Data Visualization'],
+		poster: '/images/visualizations/anatomy-of-an-essay/social.png',
+		posterAlt:
+			'A literary organism with shaded paragraph chambers, articulated sentence ribs, branching vessels and winding long-sentence coils',
+		href: '/blog/visualizations/anatomy-of-an-essay',
+		status: 'published'
+	},
 	'through-a-different-glass': {
 		id: 'through-a-different-glass',
 		title: 'Through a Different Glass: The Lens and Mirror Lab',

@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": 1,
+  "morphologyVersion": 1,
+  "id": "perceptron-from-scratch-in-mojo",
+  "title": "A Perceptron from Scratch in Mojo",
+  "author": "Suvro Ghosh",
+  "canonicalUrl": "https://www.suvroghosh.in/blog/mojollm/perceptron-from-scratch-in-mojo",
+  "contentHash": "f5bf60f7311ad78ab6290927e943acc35cd3075d780ec40721a712d35a3d7be8",
+  "language": "en",
+  "paragraphs": [
+    {
+      "id": "perceptron-from-scratch-in-mojo-p1",
+      "index": 0,
+      "kind": "paragraph",
+      "heading": "What This Notebook Builds",
+      "text": "This is the first   computational notebook. It begins with the customary hello world, then replaces the greeting with a more useful small machine: a single perceptron trained to reproduce the logical AND gate.",
+      "sourceStart": 743,
+      "sourceEnd": 961,
+      "wordCount": 33,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p1-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p1",
+          "text": "This is the first   computational notebook.",
+          "start": 0,
+          "end": 43,
+          "wordCount": 6,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p1-s2",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p1",
+          "text": "It begins with the customary hello world, then replaces the greeting with a more useful small machine: a single perceptron trained to reproduce the logical AND gate.",
+          "start": 44,
+          "end": 209,
+          "wordCount": 27,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ":",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron-from-scratch-in-mojo-p2",
+      "index": 1,
+      "kind": "paragraph",
+      "heading": "What This Notebook Builds",
+      "text": "Nothing is hidden behind NumPy, a tensor package, or a machine-learning framework. The notebook defines the activation, step function, error, and update rule directly. The complete training set contains four rows, so every change remains small enough to inspect.",
+      "sourceStart": 962,
+      "sourceEnd": 1225,
+      "wordCount": 39,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p2-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p2",
+          "text": "Nothing is hidden behind NumPy, a tensor package, or a machine-learning framework.",
+          "start": 0,
+          "end": 82,
+          "wordCount": 12,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p2-s2",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p2",
+          "text": "The notebook defines the activation, step function, error, and update rule directly.",
+          "start": 83,
+          "end": 167,
+          "wordCount": 12,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p2-s3",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p2",
+          "text": "The complete training set contains four rows, so every change remains small enough to inspect.",
+          "start": 168,
+          "end": 262,
+          "wordCount": 15,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron-from-scratch-in-mojo-p3",
+      "index": 2,
+      "kind": "paragraph",
+      "heading": "How to Read It",
+      "text": "Follow the rendered cells from top to bottom. Each   cell is a complete Mojo program, as required by Mojo's Python-backed notebook integration. The early cells isolate one idea at a time; the final cell assembles those ideas into the full training loop and verifies all four predictions.",
+      "sourceStart": 1244,
+      "sourceEnd": 1539,
+      "wordCount": 47,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p3-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "text": "Follow the rendered cells from top to bottom.",
+          "start": 0,
+          "end": 45,
+          "wordCount": 8,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p3-s2",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "text": "Each   cell is a complete Mojo program, as required by Mojo's Python-backed notebook integration.",
+          "start": 46,
+          "end": 143,
+          "wordCount": 14,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p3-s3",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "text": "The early cells isolate one idea at a time; the final cell assembles those ideas into the full training loop and verifies all four predictions.",
+          "start": 144,
+          "end": 287,
+          "wordCount": 25,
+          "nesting": 0,
+          "punctuation": [
+            ";",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron-from-scratch-in-mojo-p4",
+      "index": 3,
+      "kind": "paragraph",
+      "heading": "How to Read It",
+      "text": "The important transition is not from “hello world” to a large model. It is from printing a fixed string to changing a model because evidence says the current parameters are wrong.",
+      "sourceStart": 1540,
+      "sourceEnd": 1720,
+      "wordCount": 31,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p4-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p4",
+          "text": "The important transition is not from “hello world” to a large model.",
+          "start": 0,
+          "end": 68,
+          "wordCount": 12,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p4-s2",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p4",
+          "text": "It is from printing a fixed string to changing a model because evidence says the current parameters are wrong.",
+          "start": 69,
+          "end": 179,
+          "wordCount": 19,
+          "nesting": 1,
+          "punctuation": [
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron-from-scratch-in-mojo-p5",
+      "index": 4,
+      "kind": "paragraph",
+      "heading": "The Rule in One Line",
+      "text": "For each training example, the perceptron computes  . It predicts one when that activation is zero or greater, otherwise zero. When the prediction is wrong, each weight moves by  , and the bias moves by  .",
+      "sourceStart": 1745,
+      "sourceEnd": 2024,
+      "wordCount": 33,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p5-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p5",
+          "text": "For each training example, the perceptron computes  .",
+          "start": 0,
+          "end": 53,
+          "wordCount": 7,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p5-s2",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p5",
+          "text": "It predicts one when that activation is zero or greater, otherwise zero.",
+          "start": 54,
+          "end": 126,
+          "wordCount": 12,
+          "nesting": 1,
+          "punctuation": [
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p5-s3",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p5",
+          "text": "When the prediction is wrong, each weight moves by  , and the bias moves by  .",
+          "start": 127,
+          "end": 205,
+          "wordCount": 14,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron-from-scratch-in-mojo-p6",
+      "index": 5,
+      "kind": "paragraph",
+      "heading": "The Rule in One Line",
+      "text": "That modest loop contains the basic rhythm of supervised learning: predict, compare, correct, repeat.",
+      "sourceStart": 2025,
+      "sourceEnd": 2127,
+      "wordCount": 14,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p6-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p6",
+          "text": "That modest loop contains the basic rhythm of supervised learning: predict, compare, correct, repeat.",
+          "start": 0,
+          "end": 101,
+          "wordCount": 14,
+          "nesting": 1,
+          "punctuation": [
+            ":",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron-from-scratch-in-mojo-p7",
+      "index": 6,
+      "kind": "paragraph",
+      "heading": "Running the Source Notebook",
+      "text": "The embedded version is static HTML so it remains fast, safe, and readable in an ordinary blog post. The source file is a standard   notebook using a Python kernel and Mojo's official   cell magic. On Linux, macOS, or Windows through WSL, install Mojo and the Jupyter tools described in the project README, open the source notebook, and run the cells normally.",
+      "sourceStart": 2159,
+      "sourceEnd": 2534,
+      "wordCount": 61,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p7-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p7",
+          "text": "The embedded version is static HTML so it remains fast, safe, and readable in an ordinary blog post.",
+          "start": 0,
+          "end": 100,
+          "wordCount": 18,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p7-s2",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p7",
+          "text": "The source file is a standard   notebook using a Python kernel and Mojo's official   cell magic.",
+          "start": 101,
+          "end": 197,
+          "wordCount": 16,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p7-s3",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p7",
+          "text": "On Linux, macOS, or Windows through WSL, install Mojo and the Jupyter tools described in the project README, open the source notebook, and run the cells normally.",
+          "start": 198,
+          "end": 360,
+          "wordCount": 27,
+          "nesting": 0,
+          "punctuation": [
+            ",",
+            ",",
+            ",",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perceptron-from-scratch-in-mojo-p8",
+      "index": 7,
+      "kind": "paragraph",
+      "heading": "What Comes Next",
+      "text": "A single perceptron can learn AND or OR because each is linearly separable. It cannot learn XOR. That failure is the useful next step: it creates the need for hidden units, multiple decision boundaries, and eventually a small multilayer network built from the same primitive operations.",
+      "sourceStart": 2554,
+      "sourceEnd": 2841,
+      "wordCount": 46,
+      "sentences": [
+        {
+          "id": "perceptron-from-scratch-in-mojo-p8-s1",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p8",
+          "text": "A single perceptron can learn AND or OR because each is linearly separable.",
+          "start": 0,
+          "end": 75,
+          "wordCount": 13,
+          "nesting": 1,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p8-s2",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p8",
+          "text": "It cannot learn XOR.",
+          "start": 76,
+          "end": 96,
+          "wordCount": 4,
+          "nesting": 0,
+          "punctuation": [
+            "."
+          ]
+        },
+        {
+          "id": "perceptron-from-scratch-in-mojo-p8-s3",
+          "paragraphId": "perceptron-from-scratch-in-mojo-p8",
+          "text": "That failure is the useful next step: it creates the need for hidden units, multiple decision boundaries, and eventually a small multilayer network built from the same primitive operations.",
+          "start": 97,
+          "end": 286,
+          "wordCount": 29,
+          "nesting": 1,
+          "punctuation": [
+            ":",
+            ",",
+            ",",
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "citations": [],
+  "clusters": [
+    {
+      "word": "notebook",
+      "count": 5,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p1",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p1-s1",
+          "start": 34,
+          "end": 42
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p2",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p2-s2",
+          "start": 87,
+          "end": 95
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p3-s2",
+          "start": 122,
+          "end": 130
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p7",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p7-s2",
+          "start": 133,
+          "end": 141
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p7",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p7-s3",
+          "start": 323,
+          "end": 331
+        }
+      ]
+    },
+    {
+      "word": "cell",
+      "count": 3,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p3-s2",
+          "start": 53,
+          "end": 57
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p3-s3",
+          "start": 198,
+          "end": 202
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p7",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p7-s2",
+          "start": 186,
+          "end": 190
+        }
+      ]
+    },
+    {
+      "word": "cells",
+      "count": 3,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p3-s1",
+          "start": 20,
+          "end": 25
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p3-s3",
+          "start": 154,
+          "end": 159
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p7",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p7-s3",
+          "start": 345,
+          "end": 350
+        }
+      ]
+    },
+    {
+      "word": "perceptron",
+      "count": 3,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p1",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p1-s2",
+          "start": 156,
+          "end": 166
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p5",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p5-s1",
+          "start": 31,
+          "end": 41
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p8",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p8-s1",
+          "start": 9,
+          "end": 19
+        }
+      ]
+    },
+    {
+      "word": "small",
+      "count": 3,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p1",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p1-s2",
+          "start": 132,
+          "end": 137
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p2",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p2-s3",
+          "start": 238,
+          "end": 243
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p8",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p8-s3",
+          "start": 220,
+          "end": 225
+        }
+      ]
+    },
+    {
+      "word": "training",
+      "count": 3,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p2",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p2-s3",
+          "start": 181,
+          "end": 189
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p3",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p3-s3",
+          "start": 239,
+          "end": 247
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p5",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p5-s1",
+          "start": 9,
+          "end": 17
+        }
+      ]
+    },
+    {
+      "word": "activation",
+      "count": 2,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p2",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p2-s2",
+          "start": 108,
+          "end": 118
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p5",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p5-s2",
+          "start": 80,
+          "end": 90
+        }
+      ]
+    },
+    {
+      "word": "because",
+      "count": 2,
+      "occurrences": [
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p4",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p4-s2",
+          "start": 124,
+          "end": 131
+        },
+        {
+          "paragraphId": "perceptron-from-scratch-in-mojo-p8",
+          "sentenceId": "perceptron-from-scratch-in-mojo-p8-s1",
+          "start": 40,
+          "end": 47
+        }
+      ]
+    }
+  ],
+  "omittedClusters": 19,
+  "warnings": [],
+  "measurements": {
+    "words": 304,
+    "paragraphs": 8,
+    "sentences": 20,
+    "medianSentence": 14,
+    "longestSentence": 29,
+    "sentenceVariation": 7,
+    "estimatedNesting": 1,
+    "citations": 0,
+    "longSentences": 0
+  }
+}

@@ -4759,6 +4759,48 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 864
 		},
 		{
+			"name": "visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg",
+			"src": "/images/visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg",
+			"bytes": 45123,
+			"width": 720,
+			"height": 900
+		},
+		{
+			"name": "visualizations/anatomy-of-an-essay/portraits/pod-mara-gechhe-calcutta-essay.svg",
+			"src": "/images/visualizations/anatomy-of-an-essay/portraits/pod-mara-gechhe-calcutta-essay.svg",
+			"bytes": 195919,
+			"width": 738,
+			"height": 923
+		},
+		{
+			"name": "visualizations/anatomy-of-an-essay/portraits/reading-is-not-homework-it-is-how-the-mind-keeps-change.svg",
+			"src": "/images/visualizations/anatomy-of-an-essay/portraits/reading-is-not-homework-it-is-how-the-mind-keeps-change.svg",
+			"bytes": 236275,
+			"width": 738,
+			"height": 923
+		},
+		{
+			"name": "visualizations/anatomy-of-an-essay/poster.png",
+			"src": "/images/visualizations/anatomy-of-an-essay/poster.png",
+			"bytes": 262007,
+			"width": 960,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/anatomy-of-an-essay/poster.svg",
+			"src": "/images/visualizations/anatomy-of-an-essay/poster.svg",
+			"bytes": 195920,
+			"width": 738,
+			"height": 923
+		},
+		{
+			"name": "visualizations/anatomy-of-an-essay/social.png",
+			"src": "/images/visualizations/anatomy-of-an-essay/social.png",
+			"bytes": 168950,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,

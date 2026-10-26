@@ -570,6 +570,52 @@ flowchart LR
     Renderer --> Fallback["Specific failure / retry / poster"]
 ```
 
+### Essay anatomy: source-linked literary specimens
+
+The Anatomy of an Essay remains a normal explicitly imported Markdown visualization
+at `/blog/visualizations/anatomy-of-an-essay`. Its lazy Svelte shell loads a
+feature-owned reading/comparison interface. A pure browser-safe text analysis model
+under `src/lib/visualizations/anatomy-of-an-essay` produces versioned paragraph,
+sentence, punctuation, recurrence and explicit-citation records with displayed-text
+offsets and original block source spans. Estimated English nesting is a documented
+heuristic. The reading-order spine is independent of citation attachments.
+
+An explicit public-post allowlist feeds `scripts/generate-essay-anatomy.ts`. The
+generator checks publication eligibility, derives content-hashed models and uses the
+same deterministic morphology/SVG renderer as the live specimen and portrait exports.
+It emits a small catalog, individually loaded public JSON models and SVG/PNG portraits;
+it does not replace other articles' thumbnails. Its read-only check recomputes expected
+artifacts and detects stale or missing output. `essay-anatomy:assets:check` belongs to
+the feature build lane. The generator is an explicit authoring operation, not a
+network corpus crawl or runtime endpoint.
+
+The mounted interface owns selection, reading position, comparison, fetch cancellation
+and cache. Pasted plain text is bounded to 60,000 UTF-16 code units and analysed in a
+disposable browser worker; it is not serialized into URLs, sent to an endpoint or
+persisted. Closing/navigation disposes workers, requests, observers and animation
+resources. SVG is the interactive and export source; a small Canvas punctuation trace
+uses the selected sentence's actual marks with explicitly interpretive timing. Motion suspends
+for visibility and reduced-motion preferences. Independent default scales are never
+used to imply equal corpus sizes; normalized comparison is explicitly labelled.
+
+```mermaid
+flowchart LR
+    Public["Allowlisted published Markdown"] --> Generator["Bounded structural parser + analysis"]
+    Generator --> Models["Versioned public JSON + small catalog"]
+    Generator --> Geometry["Deterministic specimen geometry"]
+    Models --> UI["Lazy reading / comparison interface"]
+    Paste["Local plain text"] --> Worker["Disposable browser worker"]
+    Worker --> UI
+    UI --> Geometry
+    Geometry --> SVG["Interactive SVG + still SVG/PNG portraits"]
+    UI --> Source["Source-linked sentence inspection"]
+```
+
+See [the feature contract](../visualizations/anatomy-of-an-essay.md) for source subset,
+scales, limits, provenance and opt-in automation. Focused model/geometry tests and
+local production-browser checks cover the feature; this does not claim comprehensive
+linguistic parsing or semantic assessment.
+
 ### Mrinmoyee sculpture atelier
 
 Mrinmoyee uses the ordinary Visualizations Markdown article and generic blog route, with an immersive Svelte shell under `components/visualizations/mrinmoyee`. It introduces no route exception, endpoint, provider or shared state manager. Its feature domain under `visualizations/mrinmoyee` owns the versioned design contract, six presets, bounded normalization, construction geometry, browser renderer, optional synthesized sound and device-gallery persistence. This extends the existing feature-owned Three.js pattern; it does not introduce a shared sculpture engine.

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "rendererSha256": "9106e030acdc46343b506ca32dbc71d35c51fc4fb4276181f277d0bca52be39f",
+  "specimens": {
+    "pod-mara-gechhe-calcutta-essay": {
+      "signature": "faf2b585d435d8e5126c5b468fd9a5b072f743800316a56a4d05f27e13f191d3",
+      "sourceSha256": "30fbce82f5a305c0040328daa362cf49511a80010614322cc1d218cf6c4c37bc",
+      "contentHash": "30fbce82f5a305c0040328daa362cf49511a80010614322cc1d218cf6c4c37bc",
+      "files": {
+        "static/essay-anatomy/pod-mara-gechhe-calcutta-essay.json": "bde4378917da12632952bcb3872d3bdbb09dad80dd26f91cf7c2cf2c5a36ca04",
+        "static/images/visualizations/anatomy-of-an-essay/portraits/pod-mara-gechhe-calcutta-essay.svg": "8d60f7042cd30420d1879037bf2768e3541678d180b2185887c3407ba0f22784"
+      }
+    },
+    "perceptron-from-scratch-in-mojo": {
+      "signature": "30f65b72938368636516b86288ba05012b304bbbc65cf0142612ec5c7651b63c",
+      "sourceSha256": "f5bf60f7311ad78ab6290927e943acc35cd3075d780ec40721a712d35a3d7be8",
+      "contentHash": "f5bf60f7311ad78ab6290927e943acc35cd3075d780ec40721a712d35a3d7be8",
+      "files": {
+        "static/essay-anatomy/perceptron-from-scratch-in-mojo.json": "896e735fef58081f8e2d7b88bb2c8222f0436a1986d19c58465da808c4f433d9",
+        "static/images/visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg": "64edbd736e4b085d198000d852fb0de44b3480760af6581fc0a4d11381a67e0e"
+      }
+    },
+    "reading-is-not-homework-it-is-how-the-mind-keeps-change": {
+      "signature": "8a802e9c44d1d4a3bd5c8479dcb3bdcae049c84556deb6bcb37c1d81026b7bb7",
+      "sourceSha256": "b8078d6044f80fe498df8ad53322df4eda8e14210d5f246bd18756ce170c9827",
+      "contentHash": "b8078d6044f80fe498df8ad53322df4eda8e14210d5f246bd18756ce170c9827",
+      "files": {
+        "static/essay-anatomy/reading-is-not-homework-it-is-how-the-mind-keeps-change.json": "8aeb219db59790465d6340f622996586c4c3e4771ec11b039f8229f215b6f30d",
+        "static/images/visualizations/anatomy-of-an-essay/portraits/reading-is-not-homework-it-is-how-the-mind-keeps-change.svg": "cdb781d6eea6ce1fd50eee615256aa156280896b763a9b38140c0e4349399a89"
+      }
+    }
+  },
+  "files": {
+    "src/lib/visualizations/anatomy-of-an-essay/generated/catalog.ts": "4bfd8e0e39e3a7968967cb83a1c6a15f2827bc495f2f000fd70911b596908822",
+    "src/lib/visualizations/anatomy-of-an-essay/generated/default.json": "bde4378917da12632952bcb3872d3bdbb09dad80dd26f91cf7c2cf2c5a36ca04",
+    "static/essay-anatomy/perceptron-from-scratch-in-mojo.json": "896e735fef58081f8e2d7b88bb2c8222f0436a1986d19c58465da808c4f433d9",
+    "static/essay-anatomy/pod-mara-gechhe-calcutta-essay.json": "bde4378917da12632952bcb3872d3bdbb09dad80dd26f91cf7c2cf2c5a36ca04",
+    "static/essay-anatomy/reading-is-not-homework-it-is-how-the-mind-keeps-change.json": "8aeb219db59790465d6340f622996586c4c3e4771ec11b039f8229f215b6f30d",
+    "static/images/visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg": "64edbd736e4b085d198000d852fb0de44b3480760af6581fc0a4d11381a67e0e",
+    "static/images/visualizations/anatomy-of-an-essay/portraits/pod-mara-gechhe-calcutta-essay.svg": "8d60f7042cd30420d1879037bf2768e3541678d180b2185887c3407ba0f22784",
+    "static/images/visualizations/anatomy-of-an-essay/portraits/reading-is-not-homework-it-is-how-the-mind-keeps-change.svg": "cdb781d6eea6ce1fd50eee615256aa156280896b763a9b38140c0e4349399a89",
+    "static/images/visualizations/anatomy-of-an-essay/poster.svg": "d99fc1617244ceb8b8dbf72d607af3b675462b03273abe72911f5df5f05a74e3"
+  },
+  "rasters": {
+    "static/images/visualizations/anatomy-of-an-essay/poster.png": {
+      "inputSvgSha256": "d99fc1617244ceb8b8dbf72d607af3b675462b03273abe72911f5df5f05a74e3",
+      "pixelSha256": "e861d3be9ece39310b1a58d26623184921d6a6d57e3d7e8c1c18e2e3da2abf84",
+      "width": 960,
+      "height": 1200,
+      "rasterizer": "sharp 0.35.3 / librsvg 2.62.3 / win32; system serif and monospace fonts"
+    },
+    "static/images/visualizations/anatomy-of-an-essay/social.png": {
+      "inputSvgSha256": "fb197cc57a5ffb5227dc44535566f4ef5340485517d33b3832f8afb3c33a18b0",
+      "pixelSha256": "48d93c897fa638a5f6453dde7e0934129038d93ec4245d04774fdf4a8034ea33",
+      "width": 1200,
+      "height": 630,
+      "rasterizer": "sharp 0.35.3 / librsvg 2.62.3 / win32; system serif and monospace fonts"
+    }
+  }
+}

@@ -5,6 +5,8 @@ __pycache__/
 *.egg-info/
 
 # Codex local artifacts
+# Essay anatomy authoring logs and first-pass captures
+/artifacts/essay-anatomy-*
 .codex/
 .codex-artifacts/
 .audit-private/
