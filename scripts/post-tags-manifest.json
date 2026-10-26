@@ -15670,6 +15670,36 @@
 				"Digital Ethics"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/one-good-thing-is-not-a-rebuttal.md": {
+			"bodyHash": "0551f4a5ba3fb1f373d55ae9ec72b35baf7d6a199510ac378d270e991f042230",
+			"hashVersion": 2,
+			"revisionHash": "7c6338739fc1cee0f7e74d6aa20e641e028e0cec9209014fb5e3f95bd8d89c0e",
+			"generatedTags": [
+				"Personal Essay",
+				"Mental Health",
+				"Bipolar Disorder",
+				"Chronic Pain",
+				"Headache",
+				"Gratitude",
+				"Poverty",
+				"Calcutta",
+				"Relief",
+				"Happiness"
+			],
+			"pinnedTags": [
+				"Personal Essay",
+				"Mental Health",
+				"Bipolar Disorder",
+				"Chronic Pain",
+				"Headache",
+				"Gratitude",
+				"Poverty",
+				"Calcutta",
+				"Relief",
+				"Happiness"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T20:43:06.974907+00:00",
+  "generatedAt": "2026-10-26T09:45:05.042994+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7312,6 +7312,29 @@
         "Manager",
         "Spreadsheet",
         "Reporting"
+      ],
+      "wordCount": 130
+    },
+    "one-good-thing-is-not-a-rebuttal": {
+      "generatedAt": "2026-10-26T09:45:04.503558+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/one-good-thing-is-not-a-rebuttal.svg",
+      "source": "src/lib/posts/one-good-thing-is-not-a-rebuttal.md",
+      "sourceHash": "72eaa5c2a63d419b9fc3c51b09fade7f5413b1d8af2e888dda86f75ffa3ef745",
+      "sourceModified": "2026-10-26T09:44:55.666483+00:00",
+      "topWords": [
+        "Headache",
+        "Never",
+        "Minutes",
+        "Man",
+        "Pain",
+        "Specific",
+        "Furious",
+        "Fan",
+        "Lifted",
+        "Loosened",
+        "Stops",
+        "Hammering"
       ],
       "wordCount": 130
     },

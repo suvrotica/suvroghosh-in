@@ -8064,6 +8064,22 @@
       "sourceHash": "0fe5b91f506ba3535c93032c3ed82faa9bf2a9eb3ce1ad362a551e4bb65d81e9",
       "width": 1672
     },
+    "static/images/art-one-good-thing-is-not-a-rebuttal.jpg": {
+      "format": "JPEG",
+      "height": 1152,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1152,
+      "originalWidth": 1536,
+      "outputBytes": 349751,
+      "outputHash": "e5fde6256cb3f2bc6700f0fb6acaba773b9174a966a4683f0f0b49aa2773d878",
+      "psnrDb": 36.13,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 482691,
+      "sourceHash": "81a3561bc35590828eae21283e67ff65cd51af8d3e1aa189374a6d32ad413f7a",
+      "width": 1536
+    },
     "static/images/art-pedagogy-after-ai.jpg": {
       "format": "JPEG",
       "height": 941,

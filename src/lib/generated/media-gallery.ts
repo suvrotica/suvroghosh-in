@@ -41,6 +41,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-one-good-thing-is-not-a-rebuttal.jpg",
+			"src": "/images/art-one-good-thing-is-not-a-rebuttal.jpg",
+			"bytes": 349751,
+			"width": 1536,
+			"height": 1152
+		},
+		{
 			"name": "art-pedagogy-after-ai.jpg",
 			"src": "/images/art-pedagogy-after-ai.jpg",
 			"bytes": 348635,
