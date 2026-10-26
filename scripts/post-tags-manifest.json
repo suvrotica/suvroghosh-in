@@ -15700,6 +15700,36 @@
 				"Happiness"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/recursive-self-flagellation-in-calcutta.md": {
+			"bodyHash": "932ba10d7e55ea9f8b71a1b9d246fa155aeaa3076d0a0ce9f15b027097611d37",
+			"hashVersion": 2,
+			"revisionHash": "84a0ed859db8e3d68e75bd2a3280a8020a0f62739ebca9b3bc2d99d1643e29e3",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Artificial Intelligence",
+				"Recursive Self Improvement",
+				"Depression",
+				"Satire",
+				"Science",
+				"Mathematics",
+				"Philosophy"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Artificial Intelligence",
+				"Recursive Self Improvement",
+				"Depression",
+				"Satire",
+				"Science",
+				"Mathematics",
+				"Philosophy"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

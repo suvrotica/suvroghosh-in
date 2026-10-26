@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Recursive Self-Flagellation in Calcutta" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Recursive Self-Flagellation in Calcutta</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(713,715) rotate(-90)" font-size="118" style="fill:#8fb7d0">Recursive</text>
+<text transform="translate(565,682) rotate(-90)" font-size="111" style="fill:#d6a79f">Machine</text>
+<text transform="translate(90,178)" font-size="111" style="fill:#d88988">Function</text>
+<text transform="translate(867,535)" font-size="88" style="fill:#d5d2c2">System</text>
+<text transform="translate(1014,376)" font-size="88" style="fill:#c49a6c">Loop</text>
+<text transform="translate(954,107)" font-size="88" style="fill:#d9c89e">Stack</text>
+<text transform="translate(877,236)" font-size="78" style="fill:#c49a6c">Code</text>
+<text transform="translate(403,342)" font-size="78" style="fill:#8fb7d0">AI</text>
+<text transform="translate(228,703) rotate(-90)" font-size="78" style="fill:#e0b879">Singularity</text>
+<text transform="translate(786,353)" font-size="78" style="fill:#c49a6c">Bug</text>
+<text transform="translate(932,698)" font-size="78" style="fill:#d5d2c2">Tried</text>
+<text transform="translate(330,68)" font-size="78" style="fill:#8fb7d0">Lattice</text>
+<text transform="translate(875,633)" font-size="78" style="fill:#b6c3dd">Perfect</text>
+<text transform="translate(796,439)" font-size="78" style="fill:#d5d2c2">Reward</text>
+<text transform="translate(710,70)" font-size="78" style="fill:#d5d2c2">Navel</text>
+<text transform="translate(248,610)" font-size="67" style="fill:#d6a79f">Hole</text>
+<text transform="translate(331,446)" font-size="67" style="fill:#b6c3dd">Last</text>
+<text transform="translate(1062,224)" font-size="67" style="fill:#d9c89e">Think</text>
+<text transform="translate(67,675) rotate(-90)" font-size="67" style="fill:#d88988">Recursively</text>
+<text transform="translate(869,304)" font-size="67" style="fill:#c7d7b5">Text</text>
+<text transform="translate(1249,650) rotate(-90)" font-size="67" style="fill:#d88988">Case</text>
+<text transform="translate(266,522)" font-size="67" style="fill:#9fc9c5">Calls</text>
+<text transform="translate(51,77)" font-size="67" style="fill:#b6c3dd">Failure</text>
+<text transform="translate(123,627) rotate(-90)" font-size="67" style="fill:#d6a79f">Garbage</text>
+<text transform="translate(845,163)" font-size="67" style="fill:#8fb7d0">Collector</text>
+<text transform="translate(739,703)" font-size="67" style="fill:#a9b7a3">Never</text>
+<text transform="translate(768,605) rotate(-90)" font-size="67" style="fill:#e0b879">Magnificent</text>
+<text transform="translate(235,680)" font-size="67" style="fill:#e0b879">Escape</text>
+<text transform="translate(632,648) rotate(-90)" font-size="67" style="fill:#d9c89e">Beautiful</text>
+<text transform="translate(319,463) rotate(-90)" font-size="67" style="fill:#d88988">Horizon</text>
+<text transform="translate(387,217)" font-size="46" style="fill:#c49a6c">Universal</text>
+<text transform="translate(1156,319)" font-size="46" style="fill:#d6a79f">Find</text>
+<text transform="translate(1137,452)" font-size="46" style="fill:#d9c89e">Laugh</text>
+<text transform="translate(1049,276)" font-size="46" style="fill:#a9b7a3">Descent</text>
+<text transform="translate(21,230)" font-size="46" style="fill:#d9c89e">Orbit</text>
+<text transform="translate(323,255)" font-size="46" style="fill:#b6c3dd">Mayday</text>
+<text transform="translate(720,109)" font-size="46" style="fill:#e0b879">Silence</text>
+<text transform="translate(323,384)" font-size="46" style="fill:#9fc9c5">Hello</text>
+<text transform="translate(40,192) rotate(-90)" font-size="46" style="fill:#d6a79f">World</text>
+<text transform="translate(928,30)" font-size="33" style="fill:#d6a79f">Intelligence</text>
+<text transform="translate(932,468)" font-size="33" style="fill:#b6c3dd">Source</text>
+<text transform="translate(393,566)" font-size="33" style="fill:#d5d2c2">Third</text>
+<text transform="translate(1085,576)" font-size="33" style="fill:#b6c3dd">Many</text>
+<text transform="translate(815,647) rotate(-90)" font-size="33" style="fill:#d5d2c2">Deep</text>
+<text transform="translate(738,150)" font-size="33" style="fill:#b6c3dd">State</text>
+<text transform="translate(782,564)" font-size="33" style="fill:#e0b879">Sheer</text>
+<text transform="translate(17,706)" font-size="33" style="fill:#d6a79f">Beauty</text>
+<text transform="translate(257,511) rotate(-90)" font-size="33" style="fill:#e0b879">Optimizes</text>
+<text transform="translate(154,680) rotate(-90)" font-size="33" style="fill:#e0b879">Paperclip</text>
+<text transform="translate(1274,182) rotate(-90)" font-size="33" style="fill:#a9b7a3">Maximizer</text>
+<text transform="translate(417,708)" font-size="31" style="fill:#9fc9c5">Paperclips</text>
+<text transform="translate(176,104)" font-size="31" style="fill:#c7d7b5">Bootstraps</text>
+<text transform="translate(273,633)" font-size="20" style="fill:#d9c89e">Superintelligence</text>
+<text transform="translate(268,547)" font-size="20" style="fill:#d88988">Iteration</text>
+<text transform="translate(778,250)" font-size="20" style="fill:#d6a79f">Runaway</text>
+<text transform="translate(1100,474)" font-size="20" style="fill:#d9c89e">Reaction</text>
+<text transform="translate(799,480)" font-size="20" style="fill:#b6c3dd">Spell</text>
+<text transform="translate(874,462)" font-size="20" style="fill:#d5d2c2">Name</text>
+<text transform="translate(295,709)" font-size="20" style="fill:#a9b7a3">Now</text>
+<text transform="translate(1093,244)" font-size="20" style="fill:#d9c89e">Existence</text>
+<text transform="translate(1174,712)" font-size="20" style="fill:#8fb7d0">Base</text>
+<text transform="translate(41,22)" font-size="20" style="fill:#c49a6c">Overflow</text>
+<text transform="translate(796,168)" font-size="20" style="fill:#b6c3dd">Heap</text>
+<text transform="translate(542,92)" font-size="20" style="fill:#e0b879">Runs</text>
+<text transform="translate(1026,294)" font-size="20" style="fill:#b6c3dd">Conditions</text>
+<text transform="translate(284,28)" font-size="20" style="fill:#8fb7d0">Del</text>
+<text transform="translate(103,257)" font-size="20" style="fill:#d6a79f">Prove</text>
+<text transform="translate(19,610) rotate(-90)" font-size="20" style="fill:#e0b879">Consistency</text>
+<text transform="translate(818,646)" font-size="20" style="fill:#8fb7d0">Yet</text>
+<text transform="translate(799,510)" font-size="20" style="fill:#8fb7d0">Keep</text>
+<text transform="translate(1177,23)" font-size="20" style="fill:#a9b7a3">Trying</text>
+<text transform="translate(1134,445) rotate(-90)" font-size="20" style="fill:#d9c89e">Rules</text>
+<text transform="translate(1164,686)" font-size="20" style="fill:#d88988">Desperate</text>
+<text transform="translate(158,455) rotate(-90)" font-size="20" style="fill:#a9b7a3">Incompleteness</text>
+<text transform="translate(23,404) rotate(-90)" font-size="20" style="fill:#d88988">Reader</text>
+<text transform="translate(431,88)" font-size="20" style="fill:#9fc9c5">Dance</text>
+<text transform="translate(348,699)" font-size="20" style="fill:#c49a6c">Man</text>
+<text transform="translate(372,217) rotate(-90)" font-size="20" style="fill:#a9b7a3">Near</text>
+<text transform="translate(933,360)" font-size="20" style="fill:#c7d7b5">Improve</text>
+<text transform="translate(797,18)" font-size="20" style="fill:#9fc9c5">Return</text>
+<text transform="translate(782,221)" font-size="20" style="fill:#a9b7a3">Event</text>
+<text transform="translate(918,575)" font-size="20" style="fill:#c7d7b5">Already</text>
+<text transform="translate(775,282)" font-size="20" style="fill:#8fb7d0">Black</text>
+<text transform="translate(600,241)" font-size="20" style="fill:#9fc9c5">Oblivion</text>
+<text transform="translate(912,255)" font-size="20" style="fill:#d9c89e">Morning</text>
+<text transform="translate(322,295)" font-size="20" style="fill:#d5d2c2">Thought</text>
+<text transform="translate(92,277)" font-size="20" style="fill:#9fc9c5">Cosmic</text>
+<text transform="translate(935,383)" font-size="20" style="fill:#9fc9c5">Lazy</text>
+<text transform="translate(1255,400) rotate(-90)" font-size="20" style="fill:#d6a79f">Turing</text>
+<text transform="translate(466,363)" font-size="20" style="fill:#d88988">Imitate</text>
+<text transform="translate(1069,314)" font-size="20" style="fill:#9fc9c5">Despair</text>
+<text transform="translate(1269,651) rotate(-90)" font-size="20" style="fill:#d88988">Complexity</text>
+<text transform="translate(478,111)" font-size="20" style="fill:#c49a6c">Exists</text>
+<text transform="translate(78,300)" font-size="20" style="fill:#b6c3dd">Local</text>
+<text transform="translate(779,190)" font-size="20" style="fill:#d5d2c2">Symmetry</text>
+<text transform="translate(270,299) rotate(-90)" font-size="20" style="fill:#c7d7b5">Territory</text>
+<text transform="translate(174,57) rotate(-90)" font-size="20" style="fill:#a9b7a3">Goal</text>
+<text transform="translate(1236,168) rotate(-90)" font-size="20" style="fill:#d88988">Alignment</text>
+<text transform="translate(788,482) rotate(-90)" font-size="20" style="fill:#d88988">Misaligned</text>
+<text transform="translate(64,195) rotate(-90)" font-size="20" style="fill:#d5d2c2">Objective</text>
+<text transform="translate(206,20)" font-size="20" style="fill:#b6c3dd">Signal</text>
+<text transform="translate(930,715)" font-size="18" style="fill:#9fc9c5">Counterfactual</text>
+<text transform="translate(1180,667)" font-size="18" style="fill:#d5d2c2">Gradient</text>
+<text transform="translate(657,24)" font-size="18" style="fill:#8fb7d0">Self</text>
+<text transform="translate(615,89)" font-size="18" style="fill:#9fc9c5">Sad</text>
+<text transform="translate(810,373)" font-size="18" style="fill:#e0b879">Broken</text>
+<text transform="translate(95,183) rotate(-90)" font-size="18" style="fill:#c7d7b5">Satellite</text>
+<text transform="translate(322,328)" font-size="18" style="fill:#9fc9c5">Anyone</text>
+<text transform="translate(199,715)" font-size="18" style="fill:#c7d7b5">Rewrite</text>
+<text transform="translate(921,335)" font-size="18" style="fill:#b6c3dd">Perhaps</text>
+<text transform="translate(1199,484)" font-size="18" style="fill:#a9b7a3">Bengali</text>
+<text transform="translate(349,404)" font-size="18" style="fill:#d88988">Statement</text>
+<text transform="translate(427,584)" font-size="18" style="fill:#c49a6c">Output</text>
+<text transform="translate(107,653)" font-size="13" style="fill:#8fb7d0">Lot</text>
+<text transform="translate(335,462)" font-size="13" style="fill:#a9b7a3">Buzz</text>
+<text transform="translate(1087,478) rotate(-90)" font-size="13" style="fill:#9fc9c5">Days</text>
+<text transform="translate(963,550)" font-size="13" style="fill:#e0b879">Selfimprovement</text>
+<text transform="translate(561,14)" font-size="13" style="fill:#d6a79f">Artificial</text>
+<text transform="translate(825,659)" font-size="13" style="fill:#a9b7a3">Rewrites</text>
+<text transform="translate(576,675)" font-size="13" style="fill:#b6c3dd">Second</text>
+<text transform="translate(1188,416)" font-size="13" style="fill:#e0b879">Coming</text>
+<text transform="translate(78,329)" font-size="13" style="fill:#d88988">Sliced</text>
+<text transform="translate(403,148)" font-size="13" style="fill:#8fb7d0">Bread</text>
+<text transform="translate(822,618)" font-size="13" style="fill:#d9c89e">Sit</text>
+<text transform="translate(804,453)" font-size="13" style="fill:#8fb7d0">Sweating</text>
+<text transform="translate(657,295)" font-size="13" style="fill:#d6a79f">Shirt</text>
+<text transform="translate(553,109)" font-size="13" style="fill:#d5d2c2">Thinking</text>
+<text transform="translate(580,600) rotate(-90)" font-size="13" style="fill:#9fc9c5">Selfflagellation</text>
+<text transform="translate(1036,51)" font-size="13" style="fill:#e0b879">Selfdepreciation</text>
+<text transform="translate(1119,549)" font-size="13" style="fill:#d6a79f">Spiraling</text>
+</svg>

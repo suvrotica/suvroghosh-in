@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T09:45:05.042994+00:00",
+  "generatedAt": "2026-10-26T10:02:48.380300+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8508,6 +8508,29 @@
         "Consciousness",
         "Future",
         "Knows"
+      ],
+      "wordCount": 130
+    },
+    "recursive-self-flagellation-in-calcutta": {
+      "generatedAt": "2026-10-26T10:02:47.675369+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/recursive-self-flagellation-in-calcutta.svg",
+      "source": "src/lib/posts/recursive-self-flagellation-in-calcutta.md",
+      "sourceHash": "7d189d29a8c49fe6db7a7db2bcc78559326fdc96a68d6df4c5834bbe5bec314f",
+      "sourceModified": "2026-10-26T10:02:23.999572+00:00",
+      "topWords": [
+        "Recursive",
+        "Machine",
+        "Function",
+        "System",
+        "Loop",
+        "Stack",
+        "Code",
+        "AI",
+        "Singularity",
+        "Bug",
+        "Tried",
+        "Lattice"
       ],
       "wordCount": 130
     },

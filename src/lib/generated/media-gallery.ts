@@ -69,6 +69,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1536
 		},
 		{
+			"name": "art-recursive-self-flagellation-in-calcutta.jpg",
+			"src": "/images/art-recursive-self-flagellation-in-calcutta.jpg",
+			"bytes": 112632,
+			"width": 1074,
+			"height": 1536
+		},
+		{
 			"name": "art-shubho-glucose.jpg",
 			"src": "/images/art-shubho-glucose.jpg",
 			"bytes": 369083,

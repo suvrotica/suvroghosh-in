@@ -8128,6 +8128,22 @@
       "sourceHash": "ddeef1fcdd99399bb9d286ed84e0700036006061d20057732de066c99703c4db",
       "width": 1074
     },
+    "static/images/art-recursive-self-flagellation-in-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 1536,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1536,
+      "originalWidth": 1074,
+      "outputBytes": 112632,
+      "outputHash": "2ca85f5ed2d6897edfe036c73b73b42e7455ea9e748feb9ed1a07cebddef888b",
+      "psnrDb": 42.96,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 223249,
+      "sourceHash": "436cd88093536d428e3e054294fea868a104ec600417b3a70183f8117c53ebf4",
+      "width": 1074
+    },
     "static/images/art-shubho-glucose.jpg": {
       "format": "JPEG",
       "height": 941,
