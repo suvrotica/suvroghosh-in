@@ -151,6 +151,43 @@
 		</div>
 	</section>
 
+	<section class="mt-10" aria-labelledby="splat-studio-heading">
+		<a
+			href={resolve('/tools/splat-studio')}
+			class="group grid overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-950 text-white no-underline shadow-xl shadow-neutral-950/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-500 md:grid-cols-2"
+		>
+			<div class="overflow-hidden bg-black">
+				<img
+					src="/images/visualizations/splat-studio/social.png"
+					alt="Cyan, violet, pink and gold splats trace the luminous ribbons of Aurora Knot against a dark background"
+					width="1136"
+					height="730"
+					loading="lazy"
+					class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
+				/>
+			</div>
+			<div class="flex flex-col justify-center p-6 sm:p-8 md:p-10">
+				<p class="mb-3 text-xs font-bold tracking-[0.15em] !text-cyan-300 uppercase">
+					Generative art studio
+				</p>
+				<h2 id="splat-studio-heading" class="m-0 text-3xl !text-white sm:text-4xl">Splat Studio</h2>
+				<p class="mt-4 mb-0 text-left text-base leading-relaxed !text-neutral-300">
+					Sculpt a little universe from light and colour. Explore six abstract 3D forms, change the
+					splats and set them in motion, then share your scene or keep it as an image.
+				</p>
+				<p class="mt-5 mb-0 font-mono text-xs !text-neutral-400">
+					6 forms · 6 splat styles · yours to shape
+				</p>
+				<span class="mt-6 inline-flex items-center text-sm font-bold !text-cyan-200">
+					Open studio <span
+						class="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+						aria-hidden="true">→</span
+					>
+				</span>
+			</div>
+		</a>
+	</section>
+
 	<section
 		class="mt-10"
 		aria-labelledby="featured-experiment-heading"

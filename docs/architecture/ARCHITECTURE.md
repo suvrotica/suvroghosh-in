@@ -199,6 +199,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/topics`, `/topics/[slug]`                                                                            | Prerendered index and `auto` headquarters entries with validated registry membership and lazy Markdown bodies.                                                                                                                                                                                                     |
 | `/resources`, `/resources/[kind=resourceKind]/[slug]`                                                  | Prerendered resource index/details; param matcher limits kind to prompts/lists; universal component import follows server metadata validation.                                                                                                                                                                     |
 | `/comics`, `/comics/[slug]`                                                                            | Prerendered PDF comic gallery and finite catalogue-backed detail entries. Unknown comic slugs return 404; the covers and complete PDF editions are public static assets.                                                                                                                                           |
+| `/tools/splat-studio`                                                                                  | Prerendered public procedural art tool with route-owned SEO and the existing immersive studio shell. The renderer, bounded URL settings, seed and PNG export remain browser-local. The visualization gallery links through a static captured-artwork card; the sitemap includes the tool URL.                                                                                         |
 | `/images`, `/images/sketches`                                                                          | Server gallery/sketch loads; generated asset catalogs; the museum has browser enhancement.                                                                                                                                                                                                                         |
 | `/notes/**`                                                                                            | Inherits `prerender = false`; public list/read, owner auth/recovery, protected studio/editor/preview.                                                                                                                                                                                                              |
 | `/notes/studio/analytics`, `/notes/studio/analytics/export`                                            | Configured-owner aggregate dashboard and CSV download; each independently authorizes before bounded report queries and returns private/no-store/noindex responses.                                                                                                                                                 |
@@ -516,6 +517,18 @@ This lane uses committed notebook HTML. It neither invokes notebook preparation 
 3. The routine `npm run build` runs its normal prebuild/build once.
 4. Barnum's emitted route assets are audited after the site build.
 
+Barnum's corpus-audit entry bundles its pure audit and canonical-manifest sources
+in memory with the existing esbuild dependency, then imports that trusted ESM
+bundle. It starts no Vite/SvelteKit development server or watchers and creates no
+temporary bundle files. The 1,000 representative sessions, committed-artifact
+equality check and readability, collision and coverage release gates remain
+unchanged; this isolates authoring-time module loading from site configuration.
+
+The generated essay-anatomy TypeScript catalog is checked byte-for-byte beside
+its JSON and SVG outputs. Its `.gitattributes` rule pins LF line endings, just as
+the generated JSON and SVG artifacts already do, so a fresh Windows checkout
+does not make an otherwise current catalog appear stale.
+
 The feature-artifacts CI workflow selects feature/notebook/shared-build changes, with ordinary posts and their routine generated metadata excluded. CI uses verify-only image/word-cloud settings; notebook authors commit prepared HTML. See [ADR 0002](decisions/0002-separate-post-and-feature-builds.md) for the boundary and trade-offs. Workflow execution and hosted required-status configuration remain unverified.
 
 The `build:site` split avoids recursive npm/Vercel build invocation; history `a56d0791` records the fix. Do not collapse it casually. Generators deliberately write tracked artifacts. A full build is not a read-only audit command.
@@ -568,6 +581,64 @@ flowchart LR
     Canvas --> Renderer["WebGL2 context / shader renderer"]
     Renderer --> Shader["Spherical rays / labelled illustrations"]
     Renderer --> Fallback["Specific failure / retry / poster"]
+```
+
+### Splat Studio: browser-local procedural splat art
+
+`/tools/splat-studio` is a public tool route with readable Svelte markup and
+client-mounted enhancement. The root layout selects its existing minimal studio
+shell, with no site header or footer around the canvas. The route supplies the
+shared SEO component and captured artwork for social previews. It does not create
+an article or introduce another content registry. Its UI lives under
+`components/visualizations/splat-studio`, and its pure model and Three.js renderer
+live under `visualizations/splat-studio`.
+
+The component owns one settings object, transport and renderer instance per
+mount. `model.ts` defines bounded numeric settings, six form presets, six splat
+styles, palette data, deterministic geometry and a versioned URL settings codec.
+Incoming URL state is normalized against explicit bounds and known enum values.
+Copying a scene link exposes that configuration and seed in the URL; it does not
+create a server project or promise the same animation frame or manually orbited
+camera pose. PNG export is generated from the local renderer without interface
+controls.
+
+The renderer uses the installed Three.js dependency for instanced splat drawing,
+camera controls and GPU materials. Its emissive additive blending is order
+independent, with depth attenuation and bloom; it does not sort opaque surfels or
+implement reconstructed radiance-field visibility. Geometry updates are separate
+from shader animation and colour changes. Its instance owns frames,
+resize/visibility observers, camera listeners and GPU resources, and releases
+them on teardown. Reduced motion starts from a still composition; paused controls
+can request a fresh render. Graphics initialization or context failures surface
+through the component fallback rather than removing the readable page. These are
+procedural Gaussian, surfel and artistic marks, not trained scene reconstruction.
+
+The visualization landing page discovers the tool through a dimensioned static
+capture and a link. That card does not import the studio component, renderer or
+Three.js, and the standalone tool is not added to article counts or subject
+filters. The sitemap includes its canonical URL without inventing a modification
+date. The focused local preview builds the production component into an ignored
+cache; its browser suite uses loopback production output with service workers
+blocked. See [the feature document](../visualizations/splat-studio.md) for launch
+commands, controls and verification scope.
+
+No new API, authentication, secret, provider, persistence service or shared state
+strategy is introduced. This follows the existing feature-owned rendering
+pattern, so its route, discovery and lifecycle are documented here without a new
+foundational ADR.
+
+```mermaid
+flowchart LR
+    Discovery["Static gallery card / sitemap"] --> Route["Prerendered tool + SEO"]
+    Route --> UI["Per-mount Svelte controls and transport"]
+    URL["Versioned URL settings + seed"] <--> Bounds["Pure normalization and preset model"]
+    Bounds --> UI
+    UI --> Geometry["Seeded procedural positions and tangents"]
+    Geometry --> Renderer["Instance-owned Three.js splat renderer"]
+    UI --> Renderer
+    Visibility["Motion / resize / visibility lifecycle"] --> Renderer
+    Renderer --> Canvas["3D canvas and local PNG export"]
+    Renderer --> Fallback["Readable graphics failure and retry"]
 ```
 
 ### Living Systems: four browser-local mathematical worlds

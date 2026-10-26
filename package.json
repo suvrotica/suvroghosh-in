@@ -9,6 +9,9 @@
 		}
 	},
 	"scripts": {
+		"splat-studio:test": "vitest run src/lib/visualizations/splat-studio --maxWorkers=2",
+		"splat-studio:preview": "node scripts/preview-splat-studio.mjs",
+		"splat-studio:browser:test": "playwright test --config playwright.splat-studio.config.ts",
 		"living-systems:test": "vitest run src/lib/visualizations/living-systems --maxWorkers=2",
 		"living-systems:preview": "node scripts/preview-living-systems.mjs",
 		"living-systems:browser:test": "playwright test --config playwright.living-systems.config.ts",

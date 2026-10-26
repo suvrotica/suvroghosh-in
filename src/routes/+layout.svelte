@@ -48,7 +48,9 @@
 	);
 	let rawThoughtLayout = $derived(resolveRawThoughtLayout(page.data));
 	let studioShell = $derived(
-		page.url.pathname === '/notes/studio' || page.url.pathname.startsWith('/notes/studio/')
+		page.url.pathname === '/notes/studio' ||
+			page.url.pathname.startsWith('/notes/studio/') ||
+			page.url.pathname === '/tools/splat-studio'
 	);
 	let immersiveGameShell = $derived(
 		page.url.pathname.startsWith('/blog/games/') &&
@@ -60,7 +62,7 @@
 	);
 	let labShell = $derived(
 		page.url.pathname === '/tools/synthetic-data-lab' ||
-		page.url.pathname.startsWith('/demos/customer-enquiries')
+			page.url.pathname.startsWith('/demos/customer-enquiries')
 	);
 
 	function resolvedMotion(): ResolvedMotion {

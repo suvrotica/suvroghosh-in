@@ -130,6 +130,7 @@ export async function GET() {
 		{ url: siteUrl + '/resume', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/projects', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/tools/synthetic-data-lab' },
+		{ url: siteUrl + '/tools/splat-studio' },
 		{ url: siteUrl + '/consulting', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-10-20' },
 		{ url: siteUrl + '/writing', lastMod: blogLastMod },

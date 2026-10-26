@@ -12059,6 +12059,21 @@
       "sourceHash": "5de86ee536e5cca6a242a9094fc059202231dc981cf036b40ba26c99704c22a6",
       "width": 1200
     },
+    "static/images/visualizations/splat-studio/social.png": {
+      "format": "PNG",
+      "height": 730,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 730,
+      "originalWidth": 1136,
+      "outputBytes": 317283,
+      "outputHash": "2977b6ecf5bdca820361e959f81628c6ad7825fb7c339e2f8fa9c15262819b30",
+      "resized": false,
+      "sourceBytes": 389619,
+      "sourceHash": "1a279d682a3b2149eb3cdce8254ba5e54af6335ae6bddee17298407ae3729dcc",
+      "width": 1136
+    },
     "static/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg": {
       "format": "SVG",
       "height": 630,

@@ -5333,6 +5333,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/splat-studio/social.png",
+			"src": "/images/visualizations/splat-studio/social.png",
+			"bytes": 317283,
+			"width": 1136,
+			"height": 730
+		},
+		{
 			"name": "visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
 			"src": "/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
 			"bytes": 3414,
