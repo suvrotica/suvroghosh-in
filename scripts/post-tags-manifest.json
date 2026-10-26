@@ -15791,6 +15791,37 @@
 				"Supernatural Horror"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/living-systems.md": {
+			"bodyHash": "1bf781b07eedde31a1041146e18485a47cc30ad037e42db6ea66801df17e0ca2",
+			"hashVersion": 2,
+			"revisionHash": "bdb510e41423a29a57744ef7ed6d2c918b9bd8ef2491c9b2e2106d38b457f09f",
+			"generatedTags": [
+				"Cellular Automata",
+				"Game of Life",
+				"Langton's Ant",
+				"Diffusion",
+				"Random Walks",
+				"Emergence",
+				"Probability",
+				"Scientific Computing",
+				"Discrete Mathematics",
+				"Mathematical Modelling"
+			],
+			"pinnedTags": [
+				"Cellular Automata",
+				"Game of Life",
+				"Langton's Ant",
+				"Diffusion",
+				"Random Walks",
+				"Emergence",
+				"Probability",
+				"Scientific Computing",
+				"Discrete Mathematics",
+				"Mathematical Modelling"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-26"
 		}
 	},
 	"maxTags": 10

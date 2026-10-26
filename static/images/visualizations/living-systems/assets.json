@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "description": "Actual Living Systems interface; seeded Life random garden after 20 model steps.",
+  "seed": 1847,
+  "preset": "soup",
+  "steps": 20,
+  "width": 1200,
+  "height": 1183,
+  "capturePngSha256": "9e71d536940c1ce89feb6fe32cbb0ad871f3da64e9b200a360976726dfc36273",
+  "pixelSha256": "4a25076d1ea285751788211ada57db055bc82185b89ec25e597cbb28c24de527",
+  "sources": {
+    "scripts/capture-living-systems.mjs": "73aca8e9787538d3746f807b03308036aef0fde15c0173e962a3bcc39416a2aa",
+    "src/lib/components/visualizations/living-systems/LivingRuntime.svelte": "f5b655b82e2baeb873a1ecc43c72fa0d3110a78dd07825b4be4ea6cfc9bf971e",
+    "src/lib/components/visualizations/living-systems/LivingSystems.svelte": "eb25933893fb546af741e5c46b1d306456963a7bb0658414eea45e4cd0d793eb",
+    "src/lib/components/visualizations/living-systems/living-systems.css": "20d0e1fe2667b9d51b4a61410c7bcdfb4a276b2fe3cedbda82393085e316a2a3",
+    "src/lib/visualizations/living-systems/ant.ts": "38a5e6cfb4cdb2eda16d6ab8b9b75c115a5c9227b037e4f42c7a90f0bd46e17d",
+    "src/lib/visualizations/living-systems/diffusion.ts": "5c875e9c2ffb612d6723e42ed5ddb27e25f5c6aa80eb2a006b0d8af83ba6a106",
+    "src/lib/visualizations/living-systems/life.ts": "681396fb0c7589d9dea040bfccb40e2bf078a8a05d886cd5b7cec05aa0b01cd4",
+    "src/lib/visualizations/living-systems/presentation.ts": "0c595a61319dc6e5a451904e68ccbb04ce0eef3dc4cbdda0b680e722df9eccfc",
+    "src/lib/visualizations/living-systems/renderer.ts": "10d44a6c4db524c3d07b500022012c17d46cbf05dc35159882552f3f6c2fd2cb",
+    "src/lib/visualizations/living-systems/walk.ts": "123c8a72a500b445070d126c58ef19ec59394b56afa64a57bf410d6a9fb61d12"
+  }
+}

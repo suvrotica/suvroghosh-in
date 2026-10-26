@@ -13,6 +13,7 @@ const criticalWorkflow = parse(
 	readFileSync(new URL('../.github/workflows/critical-boundaries.yml', import.meta.url), 'utf8')
 );
 const featureChecks = [
+	'living-systems:assets:check',
 	'lens-mirror:samples:check',
 	'lens-mirror:poster:check',
 	'http-tcp:geometry',
@@ -221,6 +222,8 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'scripts/strange-attractor-orchestra-assets.manifest.json',
 		'scripts/render-scale-elevator-assets.mjs',
 		'scripts/render-probabilistic-piano-assets.mjs',
+		'src/lib/posts/living-systems.md',
+		'static/images/visualizations/living-systems/social.png',
 		'src/lib/visualizations/probabilistic-piano/model.ts',
 		'src/lib/visualizations/scale-elevator/core.ts',
 		'src/lib/visualizations/barnum-lab/core/surface-text.ts',

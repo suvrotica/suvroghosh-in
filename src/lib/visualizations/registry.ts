@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'living-systems': {
+		id: 'living-systems',
+		title: 'Living Systems: Small Rules, Unexpected Worlds',
+		description:
+			'Paint a cellular world, follow Langton’s ant, release a drop of dye and discover the statistics behind a wandering crowd.',
+		subjects: ['Mathematics', 'Computer Science', 'Scientific Computing', 'Generative Art'],
+		poster: '/images/visualizations/living-systems/social.png',
+		posterAlt:
+			'A scientific instrument showing a cellular simulation beside transport controls and measured population statistics',
+		href: '/blog/visualizations/living-systems',
+		status: 'published'
+	},
 	'anatomy-of-an-essay': {
 		id: 'anatomy-of-an-essay',
 		title: 'The Anatomy of an Essay',

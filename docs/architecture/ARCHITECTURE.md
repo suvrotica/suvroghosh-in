@@ -570,6 +570,50 @@ flowchart LR
     Renderer --> Fallback["Specific failure / retry / poster"]
 ```
 
+### Living Systems: four browser-local mathematical worlds
+
+Living Systems uses the ordinary Visualizations Markdown article at
+`/blog/visualizations/living-systems` and the generic article route. Its explicit
+lazy shell under `components/visualizations/living-systems` loads a per-mount
+runtime with transport, contextual controls, camera and Canvas 2D rendering.
+The gallery imports a lightweight summary and poster reference, without importing
+the numerical models. The article and captured poster remain available before
+the interactive runtime loads.
+
+Four pure TypeScript models under `visualizations/living-systems` own Conway's
+Game of Life, Langton's ant, stable scalar diffusion and unbiased lattice random
+walks. Life uses simultaneous double-buffered updates with an explicit finite
+or wrapping boundary. The ant uses a sparse logical grid and a visible session
+step limit. Diffusion conserves concentration without sources/manual edits and
+uses a bounded explicit coefficient with impermeable boundaries. Random-walk
+displacement uses unwrapped positions independently of display wrapping. Seeded
+randomness is consumed by model updates rather than rendering; retained
+trajectory/telemetry histories have explicit bounds.
+
+The feature's shared bounded fixed-step clock separates model updates from
+requestAnimationFrame painting. Per-mode state survives switching, and resizing
+or camera changes preserve that state. The runtime owns its observers, motion
+and visibility handling, pointer/keyboard inputs and animation cleanup. These
+shared facilities apply to this feature's four modes, rather than becoming a
+universal engine for unrelated visualizations. There is no endpoint, provider,
+credential, persisted reader profile or route exception. This extends the
+established feature-owned model/UI boundary, so a new foundational ADR is not
+warranted. See [the feature contract](../visualizations/living-systems.md) for
+rules, computational limits and verification seams.
+
+```mermaid
+flowchart LR
+    LivingArticle["Markdown article / lightweight gallery summary"] --> LivingShell["Lazy Living Systems shell / poster"]
+    LivingShell --> LivingUI["Per-mount controls / camera / transport"]
+    LivingUI --> LivingClock["Feature-local bounded fixed-step clock"]
+    LivingClock --> LivingModels["Life / ant / diffusion / random walk models"]
+    LivingModels --> LivingReadouts["Measured readouts / bounded histories"]
+    LivingModels --> LivingCanvas["Canvas 2D stage"]
+    LivingUI --> LivingCanvas
+    LivingVisibility["Owned resize / intersection / motion / visibility lifecycle"] --> LivingCanvas
+    LivingVisibility --> LivingClock
+```
+
 ### Essay anatomy: source-linked literary specimens
 
 The Anatomy of an Essay remains a normal explicitly imported Markdown visualization

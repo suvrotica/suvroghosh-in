@@ -11287,6 +11287,21 @@
       "sourceHash": "67e3d1a4d26ad02871e3c6ff03ef1110be3c43e46e84b76ceb79dcb8a6d76ed0",
       "width": 1600
     },
+    "static/images/visualizations/living-systems/social.png": {
+      "format": "PNG",
+      "height": 1183,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1183,
+      "originalWidth": 1200,
+      "outputBytes": 444301,
+      "outputHash": "e48f8575d683eb36ecfa82a7c39c837632dbc14279272a71ebcbfb2f34f689d3",
+      "resized": false,
+      "sourceBytes": 444301,
+      "sourceHash": "e48f8575d683eb36ecfa82a7c39c837632dbc14279272a71ebcbfb2f34f689d3",
+      "width": 1200
+    },
     "static/images/visualizations/memory-palace/social.png": {
       "format": "PNG",
       "height": 630,

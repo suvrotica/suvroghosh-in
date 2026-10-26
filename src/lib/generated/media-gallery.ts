@@ -4990,6 +4990,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/living-systems/social.png",
+			"src": "/images/visualizations/living-systems/social.png",
+			"bytes": 444301,
+			"width": 1200,
+			"height": 1183
+		},
+		{
 			"name": "visualizations/memory-palace/social.png",
 			"src": "/images/visualizations/memory-palace/social.png",
 			"bytes": 297618,
