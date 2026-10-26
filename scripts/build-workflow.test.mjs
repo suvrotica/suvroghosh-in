@@ -66,7 +66,7 @@ function matchesPaths(file, patterns) {
 	return included;
 }
 
-function browserConfig(environment) {
+function browserConfig(environment, file = 'playwright.http-tcp.config.ts') {
 	const env = { ...process.env };
 	for (const name of ['CI', 'PLAYWRIGHT_CHANNEL']) delete env[name];
 	Object.assign(env, environment);
@@ -75,7 +75,7 @@ function browserConfig(environment) {
 		[
 			'--input-type=module',
 			'-e',
-			`import config from './playwright.http-tcp.config.ts';
+			`import config from './${file}';
 			 console.log(JSON.stringify(config.use));`
 		],
 		{ cwd: new URL('..', import.meta.url), env, encoding: 'utf8', timeout: 10_000 }
@@ -84,30 +84,36 @@ function browserConfig(environment) {
 	return JSON.parse(result.stdout);
 }
 
-test('HTTP/TCP browser selection matches the full Chromium installed by feature CI', () => {
+test('feature browser selection matches the full Chromium installed by feature CI', () => {
 	const steps = workflow.jobs['feature-artifacts'].steps;
 	const install = steps.findIndex((step) => /playwright install/u.test(step.run ?? ''));
 	assert.ok(install >= 0, 'feature CI must install its browser');
 	assert.match(steps[install].run, /--no-shell\b/u);
 	assert.match(steps[install].run, /\bchromium\b/u);
-	for (const script of ['links:browser:test', 'http-tcp:browser:test']) {
+	for (const script of [
+		'links:browser:test',
+		'http-tcp:browser:test',
+		'living-systems:browser:test'
+	]) {
 		assert.ok(
 			steps.findIndex((step) => step.run === `npm run ${script}`) > install,
 			`${script} must run after browser installation`
 		);
 	}
-	for (const environment of [{ CI: '1' }, { CI: '1', PLAYWRIGHT_CHANNEL: '  ' }]) {
-		const use = browserConfig(environment);
-		assert.equal(use.browserName, 'chromium');
-		assert.equal(use.headless, true);
-		assert.equal(use.channel, 'chromium', '--no-shell requires the full Chromium channel');
+	for (const file of ['playwright.http-tcp.config.ts', 'playwright.living-systems.config.ts']) {
+		for (const environment of [{ CI: '1' }, { CI: '1', PLAYWRIGHT_CHANNEL: '  ' }]) {
+			const use = browserConfig(environment, file);
+			assert.equal(use.browserName, 'chromium');
+			assert.equal(use.headless, true);
+			assert.equal(use.channel, 'chromium', '--no-shell requires the full Chromium channel');
+		}
+		assert.equal(browserConfig({}, file).channel, 'chrome', 'local runs retain installed Chrome');
+		assert.equal(
+			browserConfig({ CI: '1', PLAYWRIGHT_CHANNEL: ' msedge ' }, file).channel,
+			'msedge',
+			'explicit channel overrides remain supported and trimmed'
+		);
 	}
-	assert.equal(browserConfig({}).channel, 'chrome', 'local runs retain installed Chrome');
-	assert.equal(
-		browserConfig({ CI: '1', PLAYWRIGHT_CHANNEL: ' msedge ' }).channel,
-		'msedge',
-		'explicit channel overrides remain supported and trimmed'
-	);
 });
 
 test('routine builds retain publishing checks without reaching feature audits or notebook rendering', () => {
