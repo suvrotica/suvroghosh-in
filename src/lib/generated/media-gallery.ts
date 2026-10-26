@@ -83,6 +83,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-signal.jpg",
+			"src": "/images/art-signal.jpg",
+			"bytes": 271004,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-statistically-significant-and-other-lies-numbers-tell.jpg",
 			"src": "/images/art-statistically-significant-and-other-lies-numbers-tell.jpg",
 			"bytes": 286726,

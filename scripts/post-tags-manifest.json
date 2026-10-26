@@ -15761,6 +15761,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-26"
+		},
+		"src/lib/posts/signal.md": {
+			"bodyHash": "8a2a20fd7bd239ddf1e3727f4540bd112cf471a7a3d065e2093125dc8fd43e64",
+			"hashVersion": 2,
+			"revisionHash": "69768b069019de428c55936e057227a0518eac9c866655469bc453e2496230ea",
+			"generatedTags": [
+				"Short Fiction",
+				"Horror",
+				"Body Horror",
+				"Calcutta",
+				"Kolkata Metro",
+				"Sound",
+				"Acoustics",
+				"Psychological Horror",
+				"Science Fiction",
+				"Supernatural Horror"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Horror",
+				"Body Horror",
+				"Calcutta",
+				"Kolkata Metro",
+				"Sound",
+				"Acoustics",
+				"Psychological Horror",
+				"Science Fiction",
+				"Supernatural Horror"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

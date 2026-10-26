@@ -8160,6 +8160,22 @@
       "sourceHash": "10bb1fb644ce9b7e9a2cca65ca359b17afc4d80a0776fd65bc587e21f2db09f7",
       "width": 1672
     },
+    "static/images/art-signal.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 271004,
+      "outputHash": "c563dbc25764df09c0d26ac443e10d59fc20c8dbf07b8efcd54f4c8e5cc9e4af",
+      "psnrDb": 36.02,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 582382,
+      "sourceHash": "2c91008ab2e1d0ce2ba7122297ed3c8518c4669ae7ba2d72048c568e6dc0d632",
+      "width": 1672
+    },
     "static/images/art-statistically-significant-and-other-lies-numbers-tell.jpg": {
       "format": "JPEG",
       "height": 941,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T10:42:40.003296+00:00",
+  "generatedAt": "2026-10-26T15:09:00.080087+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9267,6 +9267,29 @@
         "Person",
         "Sweet",
         "Universe"
+      ],
+      "wordCount": 130
+    },
+    "signal": {
+      "generatedAt": "2026-10-26T15:08:59.442566+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/signal.svg",
+      "source": "src/lib/posts/signal.md",
+      "sourceHash": "224b60231d2510334267f31716ac13a3e8d6ccec01c803e29b796fa1fba9d065",
+      "sourceModified": "2026-10-26T15:08:49.453680+00:00",
+      "topWords": [
+        "Arin",
+        "Man",
+        "Behind",
+        "Tried",
+        "Someone",
+        "Woman",
+        "Eyes",
+        "Kept",
+        "Somebody",
+        "Car",
+        "Even",
+        "Hands"
       ],
       "wordCount": 130
     },
