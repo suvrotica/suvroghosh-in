@@ -11335,6 +11335,21 @@
       "sourceHash": "67e3d1a4d26ad02871e3c6ff03ef1110be3c43e46e84b76ceb79dcb8a6d76ed0",
       "width": 1600
     },
+    "static/images/visualizations/knowledge-gap-atlas/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 156543,
+      "outputHash": "e35d3b6094beddbd7719414202f64501d063a74fefe993781ab92fd47186bad1",
+      "resized": false,
+      "sourceBytes": 157978,
+      "sourceHash": "7bee876c0f2d42c5d15f143bef840f333c4030a9765a0fee137f5e995c54bf6b",
+      "width": 1200
+    },
     "static/images/visualizations/living-systems/social.png": {
       "format": "PNG",
       "height": 1183,

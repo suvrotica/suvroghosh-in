@@ -1,0 +1,92 @@
+{
+	"measuredAt": "2026-10-27T13:59:11.721Z",
+	"node": "v24.11.1",
+	"platform": "win32 10.0.26200 x64",
+	"cpu": "12th Gen Intel(R) Core(TM) i5-12500H",
+	"logicalProcessors": 16,
+	"systemMemoryGiB": 15.7,
+	"settings": {
+		"window": 5,
+		"minCount": 2,
+		"resolution": 1,
+		"excluded": [],
+		"aliases": {},
+		"seed": 1729
+	},
+	"limitations": [
+		"Node/Vite engine microbenchmark, not browser end-to-end performance.",
+		"Repeated vocabulary measures text throughput, not large-vocabulary graph capacity.",
+		"RSS includes the Vite runtime and sampling does not establish exact peak memory.",
+		"Test sizes are fixtures, not application input limits."
+	],
+	"results": [
+		{
+			"shape": "repeated-prose",
+			"requestedWords": 10000,
+			"countedWords": 10000,
+			"bytes": 75682,
+			"extractionMs": 55,
+			"graphMs": 32,
+			"totalMs": 87,
+			"uniqueTerms": 54,
+			"uniquePairs": 157,
+			"analysedConcepts": 53,
+			"analysedEdges": 148,
+			"topics": 5,
+			"findings": 23,
+			"processRssBeforeMiB": 157.1,
+			"peakObservedProcessRssMiB": 164.6
+		},
+		{
+			"shape": "repeated-prose",
+			"requestedWords": 100000,
+			"countedWords": 100000,
+			"bytes": 756863,
+			"extractionMs": 339,
+			"graphMs": 3,
+			"totalMs": 341,
+			"uniqueTerms": 54,
+			"uniquePairs": 157,
+			"analysedConcepts": 53,
+			"analysedEdges": 148,
+			"topics": 5,
+			"findings": 23,
+			"processRssBeforeMiB": 164.6,
+			"peakObservedProcessRssMiB": 172.9
+		},
+		{
+			"shape": "repeated-prose",
+			"requestedWords": 1000000,
+			"countedWords": 1000000,
+			"bytes": 7568632,
+			"extractionMs": 3551,
+			"graphMs": 3,
+			"totalMs": 3554,
+			"uniqueTerms": 54,
+			"uniquePairs": 157,
+			"analysedConcepts": 53,
+			"analysedEdges": 148,
+			"topics": 5,
+			"findings": 23,
+			"processRssBeforeMiB": 171.7,
+			"peakObservedProcessRssMiB": 238.1
+		},
+		{
+			"shape": "varied-vocabulary",
+			"requestedWords": 100000,
+			"countedWords": 100000,
+			"bytes": 1093773,
+			"extractionMs": 4215,
+			"graphMs": 320,
+			"totalMs": 4535,
+			"uniqueTerms": 10000,
+			"uniquePairs": 35000,
+			"analysedConcepts": 10000,
+			"analysedEdges": 35000,
+			"topics": 6,
+			"findings": 6,
+			"processRssBeforeMiB": 238.1,
+			"peakObservedProcessRssMiB": 563.8
+		}
+	]
+}

@@ -5011,6 +5011,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/knowledge-gap-atlas/social.png",
+			"src": "/images/visualizations/knowledge-gap-atlas/social.png",
+			"bytes": 156543,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/living-systems/social.png",
 			"src": "/images/visualizations/living-systems/social.png",
 			"bytes": 444301,

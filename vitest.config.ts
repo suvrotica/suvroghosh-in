@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/knowledge-gap-atlas/**/*.test.ts',
 			'src/lib/visualizations/strange-matter/**/*.test.ts',
 			'src/lib/visualizations/splat-studio/**/*.test.ts',
 			'src/lib/visualizations/living-systems/**/*.test.ts',
@@ -79,6 +80,7 @@ export default defineConfig({
 		coverage: {
 			reporter: ['text', 'html'],
 			include: [
+				'src/lib/visualizations/knowledge-gap-atlas/**/*.test.ts',
 				'src/lib/visualizations/prompt-atlas/**/*.test.ts',
 				'src/lib/server/content/post-collections.test.ts',
 				'src/lib/notes/{geometry,history,model,schema,spatial-index,strokes,export}.ts'

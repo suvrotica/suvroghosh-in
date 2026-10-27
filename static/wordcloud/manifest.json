@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T10:59:18.978263+00:00",
+  "generatedAt": "2026-10-27T14:19:20.245822+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5932,6 +5932,29 @@
         "Room",
         "Mouth",
         "First"
+      ],
+      "wordCount": 130
+    },
+    "knowledge-gap-atlas": {
+      "generatedAt": "2026-10-27T14:19:09.838579+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/knowledge-gap-atlas.svg",
+      "source": "src/lib/posts/knowledge-gap-atlas.md",
+      "sourceHash": "894493c51b4206f5da70c4018afa59ff4e0db132f6d4914a69f27b72bdfc554d",
+      "sourceModified": "2026-10-27T14:15:56.649058+00:00",
+      "topWords": [
+        "Material",
+        "Concepts",
+        "Source",
+        "Atlas",
+        "Read",
+        "Text",
+        "Question",
+        "Notes",
+        "Useful",
+        "Topic",
+        "Browser",
+        "Found"
       ],
       "wordCount": 130
     },

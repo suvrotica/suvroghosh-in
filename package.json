@@ -274,7 +274,10 @@
 		"two-calendars:poster": "node scripts/render-two-calendars.mjs",
 		"comments:test": "vitest run src/lib/server/comments src/routes/api/comments src/routes/api/notes/comments src/routes/api/internal/comment-notifications src/routes/notes/studio/comments --maxWorkers=2",
 		"comments:sql:test": "node --test supabase/tests/post-comments.integration.test.mjs",
-		"comments:browser:test": "playwright test --config=playwright.comments.config.ts"
+		"comments:browser:test": "playwright test --config=playwright.comments.config.ts",
+		"knowledge-gap-atlas:test": "vitest run src/lib/visualizations/knowledge-gap-atlas --maxWorkers=2",
+		"knowledge-gap-atlas:browser:test": "playwright test --config playwright.knowledge-gap-atlas.config.ts",
+		"knowledge-gap-atlas:benchmark": "node scripts/benchmark-knowledge-gap-atlas.mjs"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",
@@ -344,6 +347,8 @@
 		"decimal.js": "^10.6.0",
 		"dexie": "^4.4.4",
 		"fflate": "^0.8.3",
+		"graphology": "^0.26.0",
+		"graphology-communities-louvain": "^2.0.2",
 		"jspdf": "^4.2.1",
 		"ml-matrix": "^6.15.0",
 		"p5": "^2.3.0",

@@ -780,6 +780,67 @@ scales, limits, provenance and opt-in automation. Focused model/geometry tests a
 local production-browser checks cover the feature; this does not claim comprehensive
 linguistic parsing or semantic assessment.
 
+### Knowledge Gap Atlas: local corpus analysis
+
+Knowledge Gap Atlas is an ordinary Markdown visualization at
+`/blog/visualizations/knowledge-gap-atlas`, with `collections: ['apps']` for secondary
+discovery. Its feature-owned engine/storage modules live under
+`src/lib/visualizations/knowledge-gap-atlas`; its Svelte interface and Canvas 2D map live
+under the corresponding component directory. It adds no route exception, analysis endpoint,
+AI provider, model download or server-side user-content store.
+
+The feature uses its own `suvro-knowledge-gap-atlas` IndexedDB database through Dexie.
+Original source text is stored in chunks alongside source metadata; project annotations,
+term/edge aggregates and checkpoints have separate tables. Files use incremental UTF-8
+decoding. The analysis worker consumes stored chunks, carries tokenizer/window state across
+boundaries and commits aggregate updates with its checkpoint. Job identifiers and cancellation
+separate active work from stale responses. Source spans use original UTF-16 offsets.
+
+Where supported, browser Web Locks serialize analysis and source/project mutations with one
+exclusive per-project lock. Conflicting operations return a visible busy error. Project saves
+also validate result/source signatures transactionally and reject deleted-project resurrection.
+Browsers without Web Locks retain the save-time validation but cannot guarantee serialized
+cross-tab source edits. Evidence previews are clipped at 4,000 UTF-16 units with a visible notice;
+original source text and offsets remain intact and the source reader is paged.
+
+The pure engine constructs a sentence-bounded co-occurrence network, applies explicit support
+and exclusion settings, and uses seeded Graphology Louvain communities with disconnected-group
+repair. Representative source spans are bounded samples; counts remain separate. Findings
+describe corpus-relative structural hypotheses, source concentration and normalized
+target/reference coverage, not factual entailment or a user's knowledge. Questions use
+deterministic templates. There is no optional connection to the existing Prompt Atlas API.
+
+Canvas draws a display projection independently from the analytical graph; concept lists,
+comparison and evidence inspection provide HTML alternatives. Project exports and research
+reports are visitor-owned downloads. Browser-local persistence is not encryption or a permanent
+backup. No source text or derived private content belongs in URLs or analytics.
+
+There is no application-level word/token quota. Source ingestion and aggregate persistence are
+chunked, but the final graph/community calculation materialises aggregate records in memory.
+Browser storage, available memory and processing time therefore remain practical constraints.
+This implementation does not claim OPFS, external-memory graph partitioning, an unlimited
+physical resource envelope or an embedded language model.
+
+```mermaid
+flowchart LR
+    Input["Visitor text / local files"] --> Chunks["Incremental decoding + IndexedDB source chunks"]
+    Lock["Per-project Web Lock, where supported"] -. guards source mutations .-> Chunks
+    Lock -. guards analysis .-> Worker
+    Chunks --> Worker["Owned cancellable worker / streaming extractor"]
+    Worker --> Aggregate["IndexedDB term/edge aggregates + atomic checkpoints"]
+    Aggregate --> Graph["In-memory graph / seeded Louvain / explainable findings"]
+    Graph --> UI["Canvas projection + HTML topics / evidence / comparison"]
+    Chunks --> Evidence["Original-offset passage reader"]
+    Evidence --> UI
+    UI --> Plan["Local project annotations / research questions"]
+    Plan --> Export["Explicit project / report / image downloads"]
+```
+
+See [ADR 0019](decisions/0019-knowledge-gap-atlas-local-corpus.md) and the
+[feature contract](../visualizations/knowledge-gap-atlas.md). Focused engine/storage/export
+tests and local browser checks are the validation seams; test and benchmark outcomes must be
+reported separately from the existence of the test code.
+
 ### Mrinmoyee sculpture atelier
 
 Mrinmoyee uses the ordinary Visualizations Markdown article and generic blog route, with an immersive Svelte shell under `components/visualizations/mrinmoyee`. It introduces no route exception, endpoint, provider or shared state manager. Its feature domain under `visualizations/mrinmoyee` owns the versioned design contract, six presets, bounded normalization, construction geometry, browser renderer, optional synthesized sound and device-gallery persistence. This extends the existing feature-owned Three.js pattern; it does not introduce a shared sculpture engine.

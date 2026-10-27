@@ -38,3 +38,4 @@ reasoning in old records when superseding them.
 | [0016](0016-synthetic-data-lab-service.md)          | Accepted; deployed and verified                       | Separate Python scientific engine with request-bound hosted generation, shared Redis control and private expiring Blob snapshots; hosted backend and public-domain HTTP acceptance passed. |
 | [0017](0017-local-enquiry-demo.md) | Accepted for local operation | Transactional SQLite enquiries, simulated acknowledgements, deadlines and a standalone local worker. |
 | [0018](0018-public-enquiry-sandboxes.md) | Accepted | Private expiring visitor snapshots in Supabase, scoped staff grants, revision commits and a protected scheduled fake-message worker. |
+| [0019](0019-knowledge-gap-atlas-local-corpus.md) | Accepted | Stream visitor corpora into local IndexedDB, analyse in a worker without AI APIs, and preserve evidence-linked research questions and portable exports. |

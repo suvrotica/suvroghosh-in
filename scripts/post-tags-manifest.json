@@ -15950,6 +15950,37 @@
 				"Colonialism"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/knowledge-gap-atlas.md": {
+			"bodyHash": "1ccd05b1825f61bbf6b6310801efcbdd3ca125d63bcb0247ed928029c2cbd63b",
+			"hashVersion": 2,
+			"revisionHash": "6e76053be18448d5f932adbad15d9885209a5219d559e7551132c38f63790f14",
+			"generatedTags": [
+				"Knowledge Maps",
+				"Text Analysis",
+				"Research",
+				"Writing",
+				"Network Science",
+				"Data Visualization",
+				"Browser Tools",
+				"Information Design",
+				"Concepts",
+				"Atlas"
+			],
+			"pinnedTags": [
+				"Knowledge Maps",
+				"Text Analysis",
+				"Research",
+				"Writing",
+				"Network Science",
+				"Data Visualization",
+				"Browser Tools",
+				"Information Design",
+				"Concepts",
+				"Atlas"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-27"
 		}
 	},
 	"maxTags": 10

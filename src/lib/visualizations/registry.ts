@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'knowledge-gap-atlas': {
+		id: 'knowledge-gap-atlas',
+		title: 'Knowledge Gap Atlas',
+		description:
+			'Turn essays and research notes into topic islands. Follow the source evidence, compare coverage and collect questions worth investigating, entirely in your browser.',
+		subjects: ['Learning', 'Data Visualization', 'Computer Science'],
+		poster: '/images/visualizations/knowledge-gap-atlas/social.png',
+		posterAlt:
+			'Knowledge Gap Atlas showing eight coloured topic islands, 59 concepts and full-input indexing statistics for a city-heat research example',
+		href: '/blog/visualizations/knowledge-gap-atlas',
+		status: 'published'
+	},
 	'strange-matter': {
 		id: 'strange-matter',
 		title: 'Strange Matter: Make Something Impossible',
