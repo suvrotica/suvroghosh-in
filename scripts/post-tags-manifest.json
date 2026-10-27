@@ -15918,6 +15918,38 @@
 				"Unemployment"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-soft-bengali-underbelly-a-lurid-inspection.md": {
+			"bodyHash": "8a1078b67545795f85efc38e2434cce7cf89b1cfdb9e2d0e97030de711cbb65e",
+			"hashVersion": 2,
+			"revisionHash": "c2c4dee815ebf64e2d5c2cd935ec1386edadb92e703e0e19e8701dc4654820c2",
+			"generatedTags": [
+				"Calcutta",
+				"Bengali",
+				"Culture",
+				"Food",
+				"Obesity",
+				"Diabetes",
+				"Hypochondria",
+				"Nostalgia",
+				"Medicine",
+				"Colonialism",
+				"suvroghosh",
+				"suvrotica"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Bengali",
+				"Culture",
+				"Food",
+				"Obesity",
+				"Diabetes",
+				"Hypochondria",
+				"Nostalgia",
+				"Medicine",
+				"Colonialism"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

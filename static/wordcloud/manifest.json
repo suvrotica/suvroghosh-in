@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T00:18:28.468649+00:00",
+  "generatedAt": "2026-10-27T10:59:18.978263+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -14557,6 +14557,29 @@
         "Came",
         "Howrah",
         "Road"
+      ],
+      "wordCount": 130
+    },
+    "the-soft-bengali-underbelly-a-lurid-inspection": {
+      "generatedAt": "2026-10-27T10:59:16.834850+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-soft-bengali-underbelly-a-lurid-inspection.svg",
+      "source": "src/lib/posts/the-soft-bengali-underbelly-a-lurid-inspection.md",
+      "sourceHash": "696cd4bf0d5e1970f9006fb9665af384c5b7541d12bbdf982c38b1605431a898",
+      "sourceModified": "2026-10-27T10:58:10.494763+00:00",
+      "topWords": [
+        "Yet",
+        "Every",
+        "Beneath",
+        "Bengal",
+        "Bengali",
+        "Dear",
+        "Poetic",
+        "Never",
+        "Nostalgia",
+        "Diabetes",
+        "Isn",
+        "Let"
       ],
       "wordCount": 130
     },

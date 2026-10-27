@@ -10454,6 +10454,22 @@
       "sourceHash": "f97449f5816f0487fb4ef954a6a5a601bffa9a529580320ca93cb41110535465",
       "width": 1024
     },
+    "static/images/the-soft-bengali-underbelly.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 441243,
+      "outputHash": "4412b443407d655f43b55ef359827b516fa93145b480b11bd10188a8747ad915",
+      "psnrDb": 36.93,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 493157,
+      "sourceHash": "9ccee419ef5a018d77b3f2d8633825dc97c725a58bc72a3db427d34603ba4a59",
+      "width": 1536
+    },
     "static/images/the-tenth-limb.jpg": {
       "format": "JPEG",
       "height": 576,

@@ -4605,6 +4605,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "the-soft-bengali-underbelly.jpg",
+			"src": "/images/the-soft-bengali-underbelly.jpg",
+			"bytes": 441243,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "the-tenth-limb.jpg",
 			"src": "/images/the-tenth-limb.jpg",
 			"bytes": 91258,
