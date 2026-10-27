@@ -16011,6 +16011,35 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/post-to-uml.md": {
+			"bodyHash": "c8fe74d716eddb50148a21768c024aaca0a5c6fc6943978c8193f2e9add3486e",
+			"hashVersion": 2,
+			"revisionHash": "7f5e5d5698bf440c072db3ae1c0c63640f6a0a0490ae8c70b88f4271f1a5e18d",
+			"generatedTags": [
+				"UML",
+				"PlantUML",
+				"System Architecture",
+				"Conceptual Modeling",
+				"Software Engineering",
+				"Visualizations",
+				"Interactive Tools",
+				"Technical Writing",
+				"Separating Interpretation Source",
+				"Concrete UML"
+			],
+			"pinnedTags": [
+				"UML",
+				"PlantUML",
+				"System Architecture",
+				"Conceptual Modeling",
+				"Software Engineering",
+				"Visualizations",
+				"Interactive Tools",
+				"Technical Writing"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-27"
 		}
 	},
 	"maxTags": 10

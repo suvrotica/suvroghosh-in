@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T17:50:51.122921+00:00",
+  "generatedAt": "2026-10-27T20:24:29.773777+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8025,6 +8025,29 @@
         "Often",
         "Power",
         "Donor"
+      ],
+      "wordCount": 130
+    },
+    "post-to-uml": {
+      "generatedAt": "2026-10-27T20:24:16.083655+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/post-to-uml.svg",
+      "source": "src/lib/posts/post-to-uml.md",
+      "sourceHash": "1b43340d0cb486168a389bb98b51649e4062f415fdabd3718419bc8d3c2328ad",
+      "sourceModified": "2026-10-27T20:23:37.021516+00:00",
+      "topWords": [
+        "UML",
+        "Diagram",
+        "Interaction",
+        "Source",
+        "Class",
+        "String",
+        "Sharedumlmodel",
+        "Plantumlrenderer",
+        "Prose",
+        "Entities",
+        "State",
+        "Text"
       ],
       "wordCount": 130
     },

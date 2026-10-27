@@ -10868,6 +10868,18 @@
       "sourceHash": "2aeace69822b19ceb04273f06dda630f968da2c5b3a94fe7f3289e4b65cc030d",
       "width": 897
     },
+    "static/images/uml/post-to-uml/post-to-uml-class.svg": {
+      "format": "SVG",
+      "height": 444,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 9041,
+      "outputHash": "189015d4653f4f96f828a84b77d68e329bcec96374b615f817f5f852314b28de",
+      "reason": "vector source retained",
+      "sourceBytes": 9041,
+      "sourceHash": "189015d4653f4f96f828a84b77d68e329bcec96374b615f817f5f852314b28de",
+      "width": 704
+    },
     "static/images/understanding-ontology-data-model-healthcare-ai.jpeg": {
       "format": "JPEG",
       "height": 864,
@@ -11567,6 +11579,21 @@
       "resized": false,
       "sourceBytes": 294459,
       "sourceHash": "08df4abc36364b28d5ffdb5c0960d8354680d33b493e42e8b8d3c4002a4f9ec7",
+      "width": 1200
+    },
+    "static/images/visualizations/post-to-uml/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 65006,
+      "outputHash": "f02c7168b9d8e60caa14e57d99893785871351ba43fb34754105d7a01c66191b",
+      "resized": false,
+      "sourceBytes": 65006,
+      "sourceHash": "f02c7168b9d8e60caa14e57d99893785871351ba43fb34754105d7a01c66191b",
       "width": 1200
     },
     "static/images/visualizations/prior-authorization-machine.png": {

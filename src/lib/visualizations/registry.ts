@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'post-to-uml': {
+		id: 'post-to-uml',
+		title: 'Post to UML: Draw in UML from Any Text or Article',
+		description:
+			'Paste an article or load a blog post, generate editable PlantUML code across all 14 concrete UML 2.5 diagram types, and export rendered figures with captions.',
+		subjects: ['Computer Science', 'Design', 'Data Visualization'],
+		poster: '/images/visualizations/post-to-uml/social.png',
+		posterAlt:
+			'Post to UML studio showing a five-stage pipeline from article prose to editable PlantUML source, deterministic SVG diagrams across 14 UML types, and blog embeds.',
+		href: '/blog/visualizations/post-to-uml',
+		status: 'published'
+	},
 	'knowledge-gap-atlas': {
 		id: 'knowledge-gap-atlas',
 		title: 'Knowledge Gap Atlas',

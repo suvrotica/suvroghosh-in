@@ -5,6 +5,10 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/post-to-uml/**/*.test.ts',
+			'src/lib/server/uml/**/*.test.ts',
+			'src/routes/api/uml/**/*.test.ts',
+			'src/routes/viz/uml/**/*.test.ts',
 			'src/lib/visualizations/knowledge-gap-atlas/**/*.test.ts',
 			'src/lib/visualizations/strange-matter/**/*.test.ts',
 			'src/lib/visualizations/splat-studio/**/*.test.ts',

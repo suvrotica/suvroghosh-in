@@ -1,0 +1,25 @@
+@startuml
+title Post to UML — Five-Stage Pipeline Model
+class "ArticleSource" as ArticleSource <<source>> {
+  +title : String
+  +paragraphs : ParagraphSpan[1..*]
+  +segmentProse()
+}
+class "SharedUmlModel" as SharedUmlModel <<conceptual>> {
+  +domainKind : UmlDomainKind
+  +entities : SharedUmlEntity[1..*]
+  +relationships : SharedUmlRelationship[0..*]
+}
+class "PlantUmlRenderer" as PlantUmlRenderer <<deterministic>> {
+  +validateAndRepair()
+  +renderPlantUmlToSvg()
+}
+class "UmlFigureEmbed" as UmlFigureEmbed <<export>> {
+  +svgPublicPath : String
+  +pumlPublicPath : String
+  +caption : String
+}
+ArticleSource "1" --> "1" SharedUmlModel : extracts shared glossary
+SharedUmlModel "1" --> "1..14" PlantUmlRenderer : synthesizes .puml
+PlantUmlRenderer "1" *-- "1" UmlFigureEmbed : produces verified SVG & caption
+@enduml

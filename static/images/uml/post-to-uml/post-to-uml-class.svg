@@ -1,0 +1,181 @@
+<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 704 444"
+		width="704"
+		height="444"
+		role="img"
+		aria-labelledby="uml-class-586535028-title uml-class-586535028-desc"
+		class="uml-svg-root"
+		data-uml-type="class"
+	>
+		<title id="uml-class-586535028-title">Post to UML — Five-Stage Pipeline Model (Class Diagram)</title>
+		<desc id="uml-class-586535028-desc">Classes or conceptual entities, relevant properties, operations, and relationships.</desc>
+		
+	<defs>
+		<style>
+			.uml-svg-root {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				color: var(--uml-ink, #1c2430);
+			}
+			.uml-bg { fill: var(--uml-canvas, #fcfbf8); }
+			.uml-frame { fill: var(--uml-surface, #ffffff); stroke: var(--uml-border, #334155); stroke-width: 1.5; }
+			.uml-header-band { fill: var(--uml-band, #f1f5f9); stroke: var(--uml-border, #334155); stroke-width: 1.5; }
+			.uml-pkg-tab { fill: var(--uml-tab, #e2e8f0); stroke: var(--uml-border, #334155); stroke-width: 1.5; }
+			.uml-node-3d-top { fill: var(--uml-3d-top, #e2e8f0); stroke: var(--uml-border, #334155); stroke-width: 1.4; }
+			.uml-node-3d-side { fill: var(--uml-3d-side, #cbd5e1); stroke: var(--uml-border, #334155); stroke-width: 1.4; }
+			.uml-accent-box { fill: var(--uml-accent-soft, #eff6ff); stroke: var(--uml-accent, #1d4ed8); stroke-width: 1.6; }
+			.uml-note { fill: var(--uml-note-bg, #fef9c3); stroke: var(--uml-note-border, #ca8a04); stroke-width: 1.2; }
+			.uml-title { font-size: 15px; font-weight: 700; fill: var(--uml-ink, #0f172a); }
+			.uml-subtitle { font-size: 11px; font-weight: 600; fill: var(--uml-muted, #475569); }
+			.uml-stereo { font-size: 10.5px; font-style: italic; fill: var(--uml-stereo, #475569); }
+			.uml-name { font-size: 12.5px; font-weight: 700; fill: var(--uml-ink, #0f172a); }
+			.uml-member { font-size: 11px; font-family: 'JetBrains Mono', 'Fira Code', monospace; fill: var(--uml-ink-soft, #1e293b); }
+			.uml-edge { stroke: var(--uml-edge, #334155); stroke-width: 1.5; fill: none; }
+			.uml-edge-dashed { stroke: var(--uml-edge, #334155); stroke-width: 1.4; stroke-dasharray: 5 4; fill: none; }
+			.uml-edge-label { font-size: 10.5px; fill: var(--uml-ink, #1e293b); font-weight: 500; }
+			.uml-edge-pill { fill: var(--uml-canvas, #fcfbf8); fill-opacity: 0.92; }
+			.uml-waveform { stroke: var(--uml-accent, #1d4ed8); stroke-width: 2.2; fill: none; }
+			.uml-grid-line { stroke: var(--uml-grid, #cbd5e1); stroke-width: 1; stroke-dasharray: 3 3; }
+		</style>
+		<marker id="uml-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 1 1.5 L 9 5 L 1 8.5" fill="none" stroke="#334155" stroke-width="1.6" />
+		</marker>
+		<marker id="uml-solid-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<polygon points="1,1.5 9,5 1,8.5" fill="#334155" />
+		</marker>
+		<marker id="uml-inherit" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+			<polygon points="1,1.5 11,6 1,10.5" fill="#ffffff" stroke="#334155" stroke-width="1.5" />
+		</marker>
+		<marker id="uml-extension" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+			<polygon points="1,1.5 11,6 1,10.5" fill="#0f172a" stroke="#0f172a" stroke-width="1.2" />
+		</marker>
+		<marker id="uml-composition" viewBox="0 0 14 10" refX="1" refY="5" markerWidth="10" markerHeight="8" orient="auto">
+			<polygon points="1,5 7,1.5 13,5 7,8.5" fill="#334155" stroke="#334155" stroke-width="1.2" />
+		</marker>
+		<marker id="uml-aggregation" viewBox="0 0 14 10" refX="1" refY="5" markerWidth="10" markerHeight="8" orient="auto">
+			<polygon points="1,5 7,1.5 13,5 7,8.5" fill="#ffffff" stroke="#334155" stroke-width="1.4" />
+		</marker>
+	</defs>
+		<rect x="0" y="0" width="704" height="444" rx="10" class="uml-bg" />
+		<g class="uml-diagram-banner">
+			<text x="24" y="26" class="uml-title">Post to UML — Five-Stage Pipeline Model</text>
+			<text x="24" y="44" class="uml-subtitle">Structural · Class Diagram</text>
+		</g>
+		
+		<g class="uml-relation" data-from="ArticleSource" data-to="SharedUmlModel">
+			<line
+				x1="304.0"
+				y1="136.0"
+				x2="376.0"
+				y2="143.0"
+				class="uml-edge-dashed"
+				
+				marker-end="url(#uml-arrow)"
+			/>
+			<text x="314.1" y="131.0" class="uml-stereo" text-anchor="middle">1</text>
+			<text x="365.9" y="136.0" class="uml-stereo" text-anchor="middle">1</text>
+			<rect x="259.6" y="118.5" width="160.8" height="16" rx="4" class="uml-edge-pill" />
+					   <text x="340.0" y="130.5" class="uml-edge-label" text-anchor="middle">extracts shared glossary</text>
+		</g>
+	
+		<g class="uml-relation" data-from="SharedUmlModel" data-to="PlantUmlRenderer">
+			<line
+				x1="376.0"
+				y1="143.0"
+				x2="304.0"
+				y2="325.0"
+				class="uml-edge-dashed"
+				
+				marker-end="url(#uml-arrow)"
+			/>
+			<text x="365.9" y="162.5" class="uml-stereo" text-anchor="middle">1</text>
+			<text x="314.1" y="293.5" class="uml-stereo" text-anchor="middle">1..14</text>
+			<rect x="281.3" y="235.0" width="117.4" height="16" rx="4" class="uml-edge-pill" />
+					   <text x="340.0" y="247.0" class="uml-edge-label" text-anchor="middle">synthesizes .puml</text>
+		</g>
+	
+		<g class="uml-relation" data-from="PlantUmlRenderer" data-to="UmlFigureEmbed">
+			<line
+				x1="304.0"
+				y1="325.0"
+				x2="376.0"
+				y2="333.0"
+				class="uml-edge"
+				marker-start="url(#uml-composition)"
+				marker-end="url(#uml-arrow)"
+			/>
+			<text x="314.1" y="320.1" class="uml-stereo" text-anchor="middle">1</text>
+			<text x="365.9" y="325.9" class="uml-stereo" text-anchor="middle">1</text>
+			<rect x="237.9" y="308.0" width="204.2" height="16" rx="4" class="uml-edge-pill" />
+					   <text x="340.0" y="320.0" class="uml-edge-label" text-anchor="middle">produces verified SVG &amp; caption</text>
+		</g>
+	
+			<g class="uml-classifier" data-node-id="ArticleSource">
+				<rect x="44" y="80" width="260" height="112" rx="6" class="uml-frame" />
+				<rect x="44" y="80" width="260" height="42" rx="6" class="uml-header-band" />
+				<text x="174" y="95" class="uml-stereo" text-anchor="middle">«source»</text>
+				<text
+					x="174"
+					y="112"
+					class="uml-name"
+					text-anchor="middle"
+					
+				>ArticleSource</text>
+				<line x1="44" y1="122" x2="304" y2="122" class="uml-edge" />
+				<text x="54" y="138" class="uml-member">+title : String</text><text x="54" y="156" class="uml-member">+paragraphs : ParagraphSpan[1..*]</text>
+				<line x1="44" y1="166" x2="304" y2="166" class="uml-edge" />
+						   <text x="54" y="182" class="uml-member">+segmentProse()</text>
+			</g>
+		
+			<g class="uml-classifier" data-node-id="SharedUmlModel">
+				<rect x="376" y="80" width="260" height="126" rx="6" class="uml-frame" />
+				<rect x="376" y="80" width="260" height="42" rx="6" class="uml-header-band" />
+				<text x="506" y="95" class="uml-stereo" text-anchor="middle">«conceptual»</text>
+				<text
+					x="506"
+					y="112"
+					class="uml-name"
+					text-anchor="middle"
+					
+				>SharedUmlModel</text>
+				<line x1="376" y1="122" x2="636" y2="122" class="uml-edge" />
+				<text x="386" y="138" class="uml-member">+domainKind : UmlDomainKind</text><text x="386" y="156" class="uml-member">+entities : SharedUmlEntity[1..*]</text><text x="386" y="174" class="uml-member">+relationships : SharedUmlRelation</text>
+				<line x1="376" y1="184" x2="636" y2="184" class="uml-edge" />
+						   
+			</g>
+		
+			<g class="uml-classifier" data-node-id="PlantUmlRenderer">
+				<rect x="44" y="270" width="260" height="110" rx="6" class="uml-frame" />
+				<rect x="44" y="270" width="260" height="42" rx="6" class="uml-header-band" />
+				<text x="174" y="285" class="uml-stereo" text-anchor="middle">«deterministic»</text>
+				<text
+					x="174"
+					y="302"
+					class="uml-name"
+					text-anchor="middle"
+					
+				>PlantUmlRenderer</text>
+				<line x1="44" y1="312" x2="304" y2="312" class="uml-edge" />
+				
+				<line x1="44" y1="336" x2="304" y2="336" class="uml-edge" />
+						   <text x="54" y="352" class="uml-member">+validateAndRepair()</text><text x="54" y="370" class="uml-member">+renderPlantUmlToSvg()</text>
+			</g>
+		
+			<g class="uml-classifier" data-node-id="UmlFigureEmbed">
+				<rect x="376" y="270" width="260" height="126" rx="6" class="uml-frame" />
+				<rect x="376" y="270" width="260" height="42" rx="6" class="uml-header-band" />
+				<text x="506" y="285" class="uml-stereo" text-anchor="middle">«export»</text>
+				<text
+					x="506"
+					y="302"
+					class="uml-name"
+					text-anchor="middle"
+					
+				>UmlFigureEmbed</text>
+				<line x1="376" y1="312" x2="636" y2="312" class="uml-edge" />
+				<text x="386" y="328" class="uml-member">+svgPublicPath : String</text><text x="386" y="346" class="uml-member">+pumlPublicPath : String</text><text x="386" y="364" class="uml-member">+caption : String</text>
+				<line x1="376" y1="374" x2="636" y2="374" class="uml-edge" />
+						   
+			</g>
+		
+	</svg>

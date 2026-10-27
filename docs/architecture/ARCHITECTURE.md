@@ -458,6 +458,27 @@ flowchart LR
     Ontology --> Save["Explicit save / SVG / JSON / Markdown / JSON-LD"]
 ```
 
+### Post to UML (`post-to-uml`, `/viz/uml`, `/api/uml`)
+
+Post to UML is published as `/blog/visualizations/post-to-uml` (`src/lib/posts/post-to-uml.md` with `collections: ['apps']`, plus `/viz/uml` redirecting with HTTP 308 to the canonical visualization URL). Its pure-TypeScript domain, PlantUML parser/validator/repairer, and deterministic SVG renderer live under `src/lib/visualizations/post-to-uml/`, its authoring UI lives at `src/lib/components/visualizations/post-to-uml/PostToUml.svelte`, and its reusable published-article figure component lives at `src/lib/components/blog/UmlFigure.svelte` (auto-imported into Markdown posts via `svelte.config.js` `globalImports`).
+
+- **Five-stage separation and local privacy**: Article text is segmented into paragraph spans and a shared internal model (`SharedUmlModel`) so entity names stay consistent across all 14 concrete UML 2.5 diagram types (7 Structural: Class, Object, Package, Component, Composite Structure, Deployment, Profile; 7 Behavioral including 4 Interaction: Use Case, Activity, State Machine, Sequence, Communication, Interaction Overview, Timing). Generated or manually edited PlantUML (`@startuml ... @enduml`) is security-checked (`security.ts` blocks `!include`, `!includeurl`, `!import`, `!pragma`, `%getenv`, `%file_exists`, inline scripts, event handlers, and external network fetches), parsed (`parser.ts`), optionally syntax-repaired up to two bounded passes (`repair.ts`), and deterministically rendered to sanitized SVG (`renderer.ts`) inside a bounded render queue (`queue.ts`). Unpublished article text and diagram code are never sent to a public rendering server.
+- **Server endpoint (`/api/uml`)**: `src/lib/server/uml/` (`config.ts`, `posts.ts`, `gateway.ts`, `service.ts`) and `src/routes/api/uml/+server.ts` provide `GET /api/uml` (returning AI availability and the published post index, or clean frontmatter-stripped Markdown for `?post=<slug>`) and `POST /api/uml` (enforcing exact same-origin `Origin`, `application/json`, a 512 KiB streamed `readBoundedBody` limit with an 8s read deadline, a 60s `withDeadline` cap, and `createLocalAdmission` rate/concurrency limiting). Optional AI mode uses `@ai-sdk/gateway` (`UML_AI_ENABLED`, `UML_AI_MODEL`, `UML_RATE_LIMIT_SALT`, `AI_GATEWAY_API_KEY` / `VERCEL_OIDC_TOKEN`) with explicit user consent and server-side PlantUML validation/rendering; when AI credentials are disabled or absent, `/api/uml` fails closed with explicit configuration steps while local deterministic generation, manual PlantUML editing, and export remain fully usable. `src/hooks.server.ts` applies private `no-store`/`noindex` headers to `/api/uml`.
+- **Reader-facing order and static export**: Both the live Article Preview (rendered via `renderSafeMarkdownPreview`) and exported Markdown/ZIP bundles place the original article prose first, followed by the rendered `<UmlFigure />` diagrams, captions, and optional `.puml` source disclosures.
+
+```mermaid
+flowchart LR
+    Prose["Pasted article text or indexed blog post"] --> Extractor["SharedUmlModel + paragraph spans"]
+    Extractor --> Synth["PlantUML generator (Recommended / Selected / All 14)"]
+    Prose --> Consent["Optional consented POST /api/uml (AI Gateway)"]
+    Consent --> Synth
+    Synth --> Validator["Security filter + AST parser + bounded syntax repair (<=2 passes)"]
+    Edit["Manual Source tab .puml edits"] --> Validator
+    Validator --> Renderer["Deterministic local SVG renderer + Canvas PNG"]
+    Renderer --> Preview["Reader preview: 1. Prose -> 2. UML figures -> 3. Captions"]
+    Renderer --> Export["Export .puml, .svg, .png, mdsvex <UmlFigure /> & .zip"]
+```
+
 ### Homepage fieldbook rendering
 
 The prerendered homepage composes the Calcutta Fieldbook from `LivingHero`, `WorkWorlds`, `RecentSignalGrid`, `FieldbookIndex` and `ClosingInvitation`. The hero links to existing pigment and sculpture experiences through static, dimensioned artwork. Work previews use the selected registry image metadata; the publishing-system preview is an inline editorial SVG illustration, not a separate application or product. `FieldbookIndex` consumes the existing serialized reading paths and featured-series parts in one compact section. Authored article bodies and article layouts remain outside this presentation change.

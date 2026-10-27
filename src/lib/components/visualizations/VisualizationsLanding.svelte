@@ -11,6 +11,7 @@
 
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
+		'post-to-uml': visualizationSummaries['post-to-uml'].subjects,
 		'knowledge-gap-atlas': visualizationSummaries['knowledge-gap-atlas'].subjects,
 		'strange-matter': visualizationSummaries['strange-matter'].subjects,
 		'through-a-different-glass': visualizationSummaries['through-a-different-glass'].subjects,
@@ -144,12 +145,20 @@
 				computer science, healthcare systems, and machine learning with D3, Observable notebooks,
 				p5.js, Canvas, SVG, GLSL, and WebGL.
 			</p>
-			<a
-				href={resolve('/blog/apps')}
-				class="mt-6 inline-flex min-h-11 items-center rounded-full border border-cyan-300/50 px-5 py-2 text-sm font-bold !text-cyan-200 underline-offset-4 hover:underline"
-			>
-				Looking for a useful tool? Browse Apps <span class="ml-2" aria-hidden="true">→</span>
-			</a>
+			<div class="mt-6 flex flex-wrap gap-3">
+				<a
+					href={resolve('/blog/apps')}
+					class="inline-flex min-h-11 items-center rounded-full border border-cyan-300/50 px-5 py-2 text-sm font-bold !text-cyan-200 underline-offset-4 hover:underline"
+				>
+					Looking for a useful tool? Browse Apps <span class="ml-2" aria-hidden="true">→</span>
+				</a>
+				<a
+					href={resolve('/blog/visualizations/post-to-uml')}
+					class="inline-flex min-h-11 items-center rounded-full border border-blue-400/60 bg-blue-500/15 px-5 py-2 text-sm font-bold !text-blue-200 underline-offset-4 hover:underline"
+				>
+					Post to UML: Draw in 14 UML Views <span class="ml-2" aria-hidden="true">→</span>
+				</a>
+			</div>
 		</div>
 	</section>
 

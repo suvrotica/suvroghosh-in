@@ -4787,6 +4787,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1280
 		},
 		{
+			"name": "uml/post-to-uml/post-to-uml-class.svg",
+			"src": "/images/uml/post-to-uml/post-to-uml-class.svg",
+			"bytes": 9041,
+			"width": 704,
+			"height": 444
+		},
+		{
 			"name": "understanding-ontology-data-model-healthcare-ai.jpeg",
 			"src": "/images/understanding-ontology-data-model-healthcare-ai.jpeg",
 			"bytes": 143228,
@@ -5112,6 +5119,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "visualizations/openhie/openhie-social.png",
 			"src": "/images/visualizations/openhie/openhie-social.png",
 			"bytes": 294459,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/post-to-uml/social.png",
+			"src": "/images/visualizations/post-to-uml/social.png",
+			"bytes": 65006,
 			"width": 1200,
 			"height": 630
 		},

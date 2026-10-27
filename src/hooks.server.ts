@@ -38,6 +38,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const isProtectedNotesApi = matchesPath('/api/notes');
 	const isCommentEmailAction = matchesPath('/api/comments/moderate');
 	const isPromptAtlasApi = matchesPath('/api/prompt-atlas');
+	const isUmlApi = matchesPath('/api/uml');
 	const needsNotesSession = isStudio || isSignIn || isResetPassword || isProtectedNotesApi;
 	if (needsNotesSession) {
 		try {
@@ -81,7 +82,14 @@ export const handle: Handle = async ({ event, resolve }) => {
 	response.headers.set('x-content-type-options', 'nosniff');
 	response.headers.set('x-frame-options', 'DENY');
 	response.headers.set('permissions-policy', 'camera=(), microphone=(), geolocation=()');
-	if (isStudio || isNotesAuth || isProtectedNotesApi || isCommentEmailAction || isPromptAtlasApi) {
+	if (
+		isStudio ||
+		isNotesAuth ||
+		isProtectedNotesApi ||
+		isCommentEmailAction ||
+		isPromptAtlasApi ||
+		isUmlApi
+	) {
 		response.headers.set(
 			'cache-control',
 			'private, no-cache, no-store, must-revalidate, max-age=0'
