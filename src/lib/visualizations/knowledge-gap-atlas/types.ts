@@ -1,5 +1,7 @@
 /** All source offsets are UTF-16 code units in the unchanged original source. */
 export type CorpusRole = 'target' | 'reference';
+/** Graph projection/ranking revision; stored source aggregates and lexer checkpoints stay compatible. */
+export const ANALYSIS_REVISION = 2;
 export type EvidenceRef = { sourceId: string; start: number; end: number };
 export type SourceRecord = {
 	id: string;
@@ -86,6 +88,7 @@ export type Finding = {
 };
 export type AnalysisResult = {
 	version: 1;
+	analysisRevision?: number;
 	concepts: Concept[];
 	edges: Association[];
 	topics: Topic[];
@@ -109,6 +112,7 @@ export type ResearchQuestion = {
 export type AtlasProject = {
 	id: string;
 	name: string;
+	exampleId?: string;
 	createdAt: string;
 	updatedAt: string;
 	settings: AnalysisSettings;

@@ -3,7 +3,9 @@
 	import { resolve } from '$app/paths';
 	import AtlasMap from './AtlasMap.svelte';
 	import { EXAMPLES } from '$lib/visualizations/knowledge-gap-atlas/examples';
+	import { selectEvidencePassages } from '$lib/visualizations/knowledge-gap-atlas/evidence';
 	import {
+		ANALYSIS_REVISION,
 		DEFAULT_SETTINGS,
 		type AtlasProject,
 		type AnalysisResult,
@@ -90,6 +92,8 @@
 	let questionText = $state('');
 	let conceptPage = $state(0);
 	let findingFilter = $state('all');
+	let findingPage = $state(0);
+	let showGuide = $state(false);
 	let sourceFilter = $state('');
 	let previous = $state<{ words: number; concepts: number; findings: number } | null>(null);
 	let appElement: HTMLElement;
@@ -127,11 +131,18 @@
 				(!search || n.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
 		)
 	);
+	const activeFindings = $derived(
+		(result?.findings ?? []).filter((f) => !project?.dismissed.includes(f.id))
+	);
 	const findings = $derived(
-		(result?.findings ?? []).filter(
-			(f) =>
-				!project?.dismissed.includes(f.id) && (findingFilter === 'all' || f.kind === findingFilter)
-		)
+		activeFindings.filter((f) => findingFilter === 'all' || f.kind === findingFilter)
+	);
+	const currentFindingPage = $derived(
+		Math.min(findingPage, Math.max(0, Math.ceil(findings.length / 24) - 1))
+	);
+	const practiceCase = $derived(EXAMPLES.find((example) => example.id === project?.exampleId));
+	const olderAnalysis = $derived(
+		result !== null && (result.analysisRevision ?? 1) < ANALYSIS_REVISION
 	);
 	const neighbouring = $derived(
 		selected && result
@@ -161,8 +172,8 @@
 	const inspectorOpen = $derived(Boolean(selected || selectedFinding || edgeLabel));
 	const completedWords = $derived(sources.reduce((n, s) => n + s.words, 0));
 	const firstLead = $derived(
-		result?.findings.find((f) => (referenceWords ? f.kind === 'coverage' : f.kind === 'gap')) ??
-			result?.findings[0]
+		activeFindings.find((f) => (referenceWords ? f.kind === 'coverage' : f.kind === 'gap')) ??
+			activeFindings[0]
 	);
 	const duplicateSources = $derived(
 		sources.filter(
@@ -176,6 +187,9 @@
 	);
 	const totalChars = $derived(sources.reduce((n, s) => n + s.chars, 0));
 	const sourceReady = $derived(sources.length > 0 && sources.every((s) => s.status === 'complete'));
+	const canRebuild = $derived(
+		sourceReady && sources.every((s) => !('textAvailable' in s) || s.textAvailable !== false)
+	);
 	const settingsDiffer = $derived(
 		result !== null && JSON.stringify(result.settings) !== JSON.stringify(settings)
 	);
@@ -214,13 +228,7 @@
 		evidenceLoading = true;
 		evidenceError = '';
 		evidence = [];
-		const bySource: Record<string, EvidenceRef[]> = Object.create(null);
-		for (const ref of refs) (bySource[ref.sourceId] ??= []).push(ref);
-		const diverse: EvidenceRef[] = [];
-		for (let i = 0; diverse.length < Math.min(6, refs.length); i++) {
-			for (const sourceRefs of Object.values(bySource))
-				if (sourceRefs[i] && diverse.length < 6) diverse.push(sourceRefs[i]);
-		}
+		const diverse = selectEvidencePassages(refs);
 		try {
 			const found = await Promise.all(
 				diverse.map(async (ref) => ({ ...(await readEvidence(project!.id, ref, 160)), ref }))
@@ -266,6 +274,8 @@
 				search = '';
 				sourceFilter = '';
 				findingFilter = 'all';
+				findingPage = 0;
+				showGuide = false;
 				conceptPage = 0;
 				history = [];
 				future = [];
@@ -289,6 +299,8 @@
 		search = '';
 		sourceFilter = '';
 		findingFilter = 'all';
+		findingPage = 0;
+		showGuide = false;
 		conceptPage = 0;
 		closeInspector();
 		history = [];
@@ -384,7 +396,7 @@
 			settings: $state.snapshot(settings)
 		});
 	}
-	async function addAndAnalyse(inputs: ImportSource[], freshName?: string) {
+	async function addAndAnalyse(inputs: ImportSource[], freshName?: string, exampleId?: string) {
 		if (busy || !inputs.length) return;
 		clearCancellation();
 		busy = true;
@@ -393,6 +405,11 @@
 			if (freshName || !project)
 				await newProject(freshName || sourceName.trim() || 'My knowledge atlas');
 			if (!alive) return;
+			if (exampleId) {
+				project!.exampleId = exampleId;
+				await saveProject($state.snapshot(project!));
+				showGuide = true;
+			}
 			result = null;
 			project!.result = undefined;
 			aborter = new AbortController();
@@ -713,6 +730,18 @@
 					onclick={() => {
 						if (!busy) projectInput.click();
 					}}>Import a saved atlas</button
+				><button
+					disabled={busy}
+					onclick={() => {
+						if (busy) return;
+						project = null;
+						result = null;
+						sources = [];
+						showProjects = false;
+						showInput = false;
+						showGuide = false;
+						closeInspector();
+					}}>Browse practice cases</button
 				>
 			</div>
 		</div>
@@ -758,7 +787,7 @@
 					><button
 						class="kga-text-button"
 						disabled={!ready || busy}
-						onclick={() => addAndAnalyse(EXAMPLES[0].sources, EXAMPLES[0].title)}
+						onclick={() => addAndAnalyse(EXAMPLES[0].sources, EXAMPLES[0].title, EXAMPLES[0].id)}
 						>Explore an example →</button
 					>
 				</div>
@@ -849,16 +878,18 @@
 		</header>
 		{#if !showInput && !busy}<div class="kga-examples">
 				<div class="kga-examples-label">
-					<span class="kga-eyebrow">TAKE A FIELD TRIP</span><span
-						>Three ways to find your bearings.</span
+					<span class="kga-eyebrow">PUT IT TO WORK</span><span
+						>Choose a task. Follow a question.</span
 					>
+					<small>Original practice material, with a guide for each case.</small>
 				</div>
 				{#each EXAMPLES as example, i (example.id)}<button
 						data-testid={`atlas-example-${example.id}`}
 						disabled={!ready || busy}
-						onclick={() => addAndAnalyse(example.sources, example.title)}
-						><span class="kga-example-no">0{i + 1} <span>↗</span></span><b>{example.title}</b><small
-							>{example.description}</small
+						onclick={() => addAndAnalyse(example.sources, example.title, example.id)}
+						><span class="kga-example-no">0{i + 1} · {example.useCase} <span>↗</span></span><b
+							>{example.title}</b
+						><small>{example.description}</small><span class="kga-case-task">{example.task}</span
 						></button
 					>{/each}
 			</div>{/if}
@@ -885,7 +916,7 @@
 			<div><b>{format(result.words)}</b><span>words indexed</span></div>
 			<div><b>{format(result.concepts.length)}</b><span>concepts connected</span></div>
 			<div><b>{format(result.topics.length)}</b><span>topic communities</span></div>
-			<div><b>{format(findings.length)}</b><span>leads to explore</span></div>
+			<div><b>{format(activeFindings.length)}</b><span>leads to explore</span></div>
 			<div class="kga-coverage-stamp">
 				<span class="kga-live-dot"></span><strong>Full input indexed</strong><small
 					>{format(totalChars)} source characters · {sources.length} sources</small
@@ -893,6 +924,42 @@
 			</div>
 		</div>
 	{/if}
+	{#if result && practiceCase}
+		<div class="kga-practice-guide" data-testid="atlas-practice-guide">
+			<button aria-expanded={showGuide} onclick={() => (showGuide = !showGuide)}>
+				<span
+					><span class="kga-eyebrow">PRACTICE CASE · {practiceCase.useCase}</span><strong
+						>{practiceCase.task}</strong
+					></span
+				>
+				<span>{showGuide ? 'Hide guide −' : 'Show guide +'}</span>
+			</button>
+			{#if showGuide}<div class="kga-guide-body">
+					<ol>
+						{#each practiceCase.guide ?? [] as step (step)}<li>{step}</li>{/each}
+					</ol>
+					<p>
+						This is illustrative writing. Findings are calculated from the source text. Use the same
+						steps with your own material.
+					</p>
+					<div class="kga-button-row">
+						<button onclick={() => (view = 'concepts')}>Explore concepts</button><button
+							onclick={() => (view = 'compare')}>Compare sources</button
+						><button onclick={() => (view = 'research')}>Write a question</button>
+					</div>
+				</div>{/if}
+		</div>
+	{/if}
+	{#if olderAnalysis && !busy}<div class="kga-message" role="status">
+			<span
+				>This saved map uses an earlier analysis. Rebuild it for improved concept labels and more
+				selective research leads. Your sources and saved questions stay intact.
+				{#if !canRebuild}To rebuild, first import a backup that includes the original source text,
+					or add the original sources.{/if}</span
+			><button data-testid="atlas-update-analysis" disabled={!canRebuild} onclick={startAnalysis}
+				>Update this map</button
+			>
+		</div>{/if}
 	{#if showInput && !busy}
 		<div class="kga-input-panel">
 			<div class="kga-input-intro">
@@ -1190,7 +1257,7 @@
 								>Detail<select bind:value={density}
 									><option value={70}>Quiet · 70</option><option value={140}>Balanced · 140</option
 									><option value={300}>Detailed · 300</option><option value={700}>Deep · 700</option
-									><option value={result.concepts.length}>All concepts</option></select
+									><option value={0}>All concepts</option></select
 								></label
 							>
 						</div>
@@ -1282,22 +1349,26 @@
 						<div class="kga-finding-filters">
 							{#each ['all', 'gap', 'bridge', 'fragile', 'coverage', 'concentration', 'peripheral'] as kind (kind)}<button
 									class:active={findingFilter === kind}
-									onclick={() => (findingFilter = kind)}
-									>{kind === 'all' ? 'All discoveries' : findingNames[kind]}</button
+									onclick={() => {
+										findingFilter = kind;
+										findingPage = 0;
+									}}>{kind === 'all' ? 'All discoveries' : findingNames[kind]}</button
 								>{/each}
 						</div>
 						<div class="kga-findings" data-testid="atlas-findings">
-							{#each findings.slice(0, 80) as f, i (f.id)}<button
+							{#each findings.slice(currentFindingPage * 24, (currentFindingPage + 1) * 24) as f, i (f.id)}<button
 									class="kga-finding-card"
 									class:chosen={selectedFinding?.id === f.id}
 									onclick={() => inspectFinding(f)}
-									><span class="kga-finding-number">{String(i + 1).padStart(2, '0')}</span>
+									><span class="kga-finding-number"
+										>{String(currentFindingPage * 24 + i + 1).padStart(2, '0')}</span
+									>
 									<div>
 										<span class="kga-eyebrow">{findingNames[f.kind]}</span>
 										<h4>{f.title}</h4>
 										<p>{f.question}</p>
 										<span class="kga-finding-footer"
-											>{f.evidence.length} representative passages
+											>{selectEvidencePassages(f.evidence).length} distinct reading locations
 											<b>Follow the evidence ↗</b></span
 										>
 									</div></button
@@ -1309,6 +1380,21 @@
 									</p>
 								</div>{/if}
 						</div>
+						{#if findings.length > 24}<div class="kga-pagination" aria-label="Discovery pages">
+								<button
+									disabled={currentFindingPage === 0}
+									onclick={() => (findingPage = currentFindingPage - 1)}
+									>← Previous discoveries</button
+								><span
+									>{currentFindingPage * 24 + 1}–{Math.min(
+										(currentFindingPage + 1) * 24,
+										findings.length
+									)} of {format(findings.length)}</span
+								><button
+									disabled={(currentFindingPage + 1) * 24 >= findings.length}
+									onclick={() => (findingPage = currentFindingPage + 1)}>Next discoveries →</button
+								>
+							</div>{/if}
 						{#if project?.dismissed.length}<button
 								class="kga-text-button"
 								onclick={() => {

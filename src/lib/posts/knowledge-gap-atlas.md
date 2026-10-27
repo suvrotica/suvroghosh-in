@@ -49,6 +49,24 @@ Knowledge Gap Atlas gives your material a different surface. Recurring concepts 
 
 Start with an example, or paste something you are working on. For longer material, add text or Markdown files. Your sources stay in the browser; the atlas does not send them to an AI service.
 
+## Start with a job you need to finish
+
+A useful atlas begins with a question about your material. The built-in practice cases use original illustrative writing, with a task and suggested steps. They show how to use the workspace; they are not real customer interviews, published studies or performance benchmarks.
+
+| Your task | Material to bring | A useful next action |
+| --- | --- | --- |
+| Prepare a project handoff | A handoff draft as your material; meeting and rehearsal notes as references | Ask who can stop the rollout, who covers support, and which check proves the handoff is ready. |
+| Review product requirements | A release brief as your material; interview and support notes as references | Turn an overlooked workflow into an acceptance check or an open research question. |
+| Revise an essay or literature review | Your draft as the target; abstracts, excerpts or reading notes as references | Inspect lighter coverage, then decide which omission needs evidence, a qualification or no change. |
+| Review a policy or report | The proposal and the notes behind it | Trace how the proposed action connects to maintenance, access and responsibility. |
+| Find a creative research thread | Notes from different parts of a project | Follow an idea across sources and identify the permission or evidence needed to use it. |
+
+For a handoff, “rollback” appearing on the map is only a starting point. Read whether the source says the procedure passed a rehearsal, someone proposed a test, or an owner still needs to be confirmed. The atlas does not turn meeting language into a reliable decision register.
+
+For product work, compare the requirements with the supplied feedback. Open a concept's passages before changing the roadmap. Repeated mentions are not a count of affected customers, and a sparse connection is not a priority score. Save a question such as “Can a worker recover an offline draft after a connection drops without creating a duplicate visit?” Then add the test or interview that could answer it.
+
+For a literature review, the reference set matters as much as the graph. A handful of selected abstracts cannot stand in for a complete field. Keep the source boundaries visible and use the map to organise further reading, not to claim that the literature contains a proven research gap.
+
 ## Read the map, then read the evidence
 
 A large node is a signal to inspect, not a certificate of importance. A line says that two concepts occurred near each other in your material. It does not establish that one caused the other, or even that the author agreed with their relationship.

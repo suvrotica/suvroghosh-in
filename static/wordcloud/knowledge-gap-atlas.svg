@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(601,111)" font-size="118" style="fill:#d6a79f">Material</text>
-<text transform="translate(637,213)" font-size="111" style="fill:#e0b879">Concepts</text>
-<text transform="translate(898,669)" font-size="103" style="fill:#a9b7a3">Source</text>
-<text transform="translate(591,541)" font-size="95" style="fill:#d9c89e">Atlas</text>
-<text transform="translate(1271,400) rotate(-90)" font-size="86" style="fill:#d5d2c2">Read</text>
-<text transform="translate(686,307)" font-size="86" style="fill:#8fb7d0">Text</text>
-<text transform="translate(145,291)" font-size="86" style="fill:#9fc9c5">Question</text>
-<text transform="translate(337,670)" font-size="77" style="fill:#c7d7b5">Notes</text>
-<text transform="translate(450,579) rotate(-90)" font-size="77" style="fill:#d88988">Useful</text>
-<text transform="translate(805,411)" font-size="77" style="fill:#d6a79f">Topic</text>
-<text transform="translate(35,115)" font-size="77" style="fill:#a9b7a3">Browser</text>
-<text transform="translate(110,203)" font-size="77" style="fill:#d9c89e">Found</text>
-<text transform="translate(62,602) rotate(-90)" font-size="66" style="fill:#d9c89e">Connections</text>
-<text transform="translate(1061,569)" font-size="66" style="fill:#b6c3dd">Gap</text>
-<text transform="translate(130,560)" font-size="66" style="fill:#d6a79f">Groups</text>
-<text transform="translate(130,379)" font-size="66" style="fill:#c7d7b5">Map</text>
-<text transform="translate(192,491)" font-size="66" style="fill:#b6c3dd">Large</text>
-<text transform="translate(514,380)" font-size="66" style="fill:#d88988">Concept</text>
-<text transform="translate(566,671)" font-size="66" style="fill:#8fb7d0">Coverage</text>
-<text transform="translate(485,598)" font-size="66" style="fill:#d5d2c2">Writing</text>
-<text transform="translate(43,696)" font-size="66" style="fill:#8fb7d0">Network</text>
-<text transform="translate(137,54)" font-size="66" style="fill:#d9c89e">Questions</text>
-<text transform="translate(961,495)" font-size="66" style="fill:#c49a6c">Report</text>
-<text transform="translate(923,304)" font-size="66" style="fill:#c7d7b5">Project</text>
-<text transform="translate(628,314) rotate(-90)" font-size="66" style="fill:#c7d7b5">Draft</text>
-<text transform="translate(480,448)" font-size="65" style="fill:#e0b879">Settings</text>
-<text transform="translate(358,189)" font-size="65" style="fill:#d9c89e">Keep</text>
-<text transform="translate(68,626)" font-size="62" style="fill:#d5d2c2">Changes</text>
-<text transform="translate(357,110)" font-size="62" style="fill:#d88988">Export</text>
-<text transform="translate(983,714)" font-size="51" style="fill:#b6c3dd">October</text>
-<text transform="translate(120,474) rotate(-90)" font-size="51" style="fill:#9fc9c5">Document</text>
-<text transform="translate(480,714)" font-size="51" style="fill:#e0b879">Discusses</text>
-<text transform="translate(870,579)" font-size="51" style="fill:#e0b879">Search</text>
-<text transform="translate(1032,432)" font-size="45" style="fill:#c49a6c">Knowledge</text>
-<text transform="translate(1236,584) rotate(-90)" font-size="45" style="fill:#d9c89e">Gives</text>
-<text transform="translate(130,438)" font-size="45" style="fill:#a9b7a3">Points</text>
-<text transform="translate(979,354)" font-size="41" style="fill:#b6c3dd">Promising</text>
-<text transform="translate(1214,190) rotate(-90)" font-size="41" style="fill:#c7d7b5">Working</text>
-<text transform="translate(807,463)" font-size="41" style="fill:#8fb7d0">Longer</text>
-<text transform="translate(938,541)" font-size="41" style="fill:#d88988">Add</text>
-<text transform="translate(259,406)" font-size="41" style="fill:#e0b879">Files</text>
-<text transform="translate(797,146)" font-size="41" style="fill:#8fb7d0">Evidence</text>
-<text transform="translate(211,324)" font-size="41" style="fill:#a9b7a3">Inspect</text>
-<text transform="translate(378,704)" font-size="41" style="fill:#e0b879">Near</text>
-<text transform="translate(183,153)" font-size="41" style="fill:#d9c89e">Even</text>
-<text transform="translate(808,40)" font-size="41" style="fill:#d6a79f">Author</text>
-<text transform="translate(1001,242)" font-size="30" style="fill:#d88988">Relationship</text>
-<text transform="translate(31,124) rotate(-90)" font-size="30" style="fill:#d5d2c2">Select</text>
-<text transform="translate(471,492)" font-size="30" style="fill:#d88988">Finding</text>
-<text transform="translate(788,615)" font-size="30" style="fill:#a9b7a3">Graph</text>
-<text transform="translate(309,351)" font-size="30" style="fill:#d88988">Show</text>
-<text transform="translate(785,333)" font-size="29" style="fill:#b6c3dd">Distinguish</text>
-<text transform="translate(478,545)" font-size="29" style="fill:#e0b879">List</text>
-<text transform="translate(790,243)" font-size="29" style="fill:#d5d2c2">View</text>
-<text transform="translate(133,587)" font-size="29" style="fill:#a9b7a3">Answers</text>
-<text transform="translate(606,338)" font-size="29" style="fill:#c49a6c">Several</text>
-<text transform="translate(544,239) rotate(-90)" font-size="29" style="fill:#8fb7d0">Barely</text>
-<text transform="translate(1006,606)" font-size="29" style="fill:#e0b879">Connect</text>
-<text transform="translate(847,704)" font-size="29" style="fill:#d88988">Support</text>
-<text transform="translate(229,233)" font-size="29" style="fill:#c7d7b5">Whether</text>
-<text transform="translate(1246,185) rotate(-90)" font-size="29" style="fill:#8fb7d0">Research</text>
-<text transform="translate(90,503)" font-size="29" style="fill:#d5d2c2">Plan</text>
-<text transform="translate(1036,387)" font-size="25" style="fill:#a9b7a3">Investigate</text>
-<text transform="translate(688,24)" font-size="25" style="fill:#9fc9c5">Behind</text>
-<text transform="translate(1081,141)" font-size="25" style="fill:#d9c89e">Target</text>
-<text transform="translate(329,609)" font-size="25" style="fill:#c49a6c">References</text>
-<text transform="translate(1269,167) rotate(-90)" font-size="25" style="fill:#e0b879">Comparison</text>
-<text transform="translate(1262,598) rotate(-90)" font-size="25" style="fill:#c49a6c">Vocabulary</text>
-<text transform="translate(40,142)" font-size="25" style="fill:#b6c3dd">Reference</text>
-<text transform="translate(473,461) rotate(-90)" font-size="25" style="fill:#b6c3dd">Repeatedly</text>
-<text transform="translate(1215,710)" font-size="25" style="fill:#e0b879">Lens</text>
-<text transform="translate(774,576)" font-size="25" style="fill:#9fc9c5">Stored</text>
-<text transform="translate(285,138)" font-size="25" style="fill:#c49a6c">Networks</text>
-<text transform="translate(639,286)" font-size="25" style="fill:#a9b7a3">Work</text>
-<text transform="translate(82,233) rotate(-90)" font-size="18" style="fill:#8fb7d0">Updated</text>
-<text transform="translate(484,315)" font-size="18" style="fill:#d88988">Connects</text>
-<text transform="translate(587,466)" font-size="18" style="fill:#d5d2c2">Sometimes</text>
-<text transform="translate(185,509)" font-size="18" style="fill:#d9c89e">Difficulty</text>
-<text transform="translate(294,435)" font-size="18" style="fill:#d88988">Shortage</text>
-<text transform="translate(764,714)" font-size="18" style="fill:#8fb7d0">Folder</text>
-<text transform="translate(593,618)" font-size="18" style="fill:#b6c3dd">Full</text>
-<text transform="translate(497,53)" font-size="18" style="fill:#8fb7d0">Never</text>
-<text transform="translate(351,217)" font-size="18" style="fill:#c7d7b5">Quite</text>
-<text transform="translate(872,237)" font-size="18" style="fill:#e0b879">Met</text>
-<text transform="translate(855,363)" font-size="18" style="fill:#a9b7a3">Summer</text>
-<text transform="translate(267,715)" font-size="18" style="fill:#c7d7b5">Heat</text>
-<text transform="translate(1011,132)" font-size="18" style="fill:#b6c3dd">Public</text>
-<text transform="translate(475,508)" font-size="18" style="fill:#8fb7d0">Transport</text>
-<text transform="translate(539,36)" font-size="18" style="fill:#8fb7d0">Third</text>
-<text transform="translate(519,398)" font-size="18" style="fill:#d9c89e">Contains</text>
-<text transform="translate(747,481)" font-size="18" style="fill:#e0b879">Observations</text>
-<text transform="translate(139,321) rotate(-90)" font-size="18" style="fill:#9fc9c5">Elderly</text>
-<text transform="translate(1059,449)" font-size="18" style="fill:#a9b7a3">Neighbours</text>
-<text transform="translate(100,55)" font-size="18" style="fill:#d5d2c2">Box</text>
-<text transform="translate(71,715)" font-size="18" style="fill:#c7d7b5">Finds</text>
-<text transform="translate(719,135)" font-size="18" style="fill:#c49a6c">Already</text>
-<text transform="translate(408,144)" font-size="18" style="fill:#d88988">Thought</text>
-<text transform="translate(81,383) rotate(-90)" font-size="18" style="fill:#e0b879">Different</text>
-<text transform="translate(952,429)" font-size="18" style="fill:#d88988">Surface</text>
-<text transform="translate(25,709) rotate(-90)" font-size="18" style="fill:#9fc9c5">Recurring</text>
-<text transform="translate(43,26)" font-size="18" style="fill:#e0b879">Nearby</text>
-<text transform="translate(1018,40)" font-size="18" style="fill:#c49a6c">Mentions</text>
-<text transform="translate(1103,513)" font-size="18" style="fill:#d5d2c2">Related</text>
-<text transform="translate(504,616)" font-size="18" style="fill:#b6c3dd">Islands</text>
-<text transform="translate(907,242)" font-size="18" style="fill:#e0b879">Follow</text>
-<text transform="translate(270,368)" font-size="18" style="fill:#d5d2c2">Connection</text>
-<text transform="translate(1160,97) rotate(-90)" font-size="18" style="fill:#b6c3dd">Straight</text>
-<text transform="translate(690,232)" font-size="18" style="fill:#d9c89e">Produced</text>
-<text transform="translate(1023,20)" font-size="18" style="fill:#d6a79f">Start</text>
-<text transform="translate(1149,602)" font-size="18" style="fill:#d5d2c2">Example</text>
-<text transform="translate(965,258)" font-size="18" style="fill:#c49a6c">Paste</text>
-<text transform="translate(739,398)" font-size="18" style="fill:#a9b7a3">Sources</text>
-<text transform="translate(887,496)" font-size="18" style="fill:#9fc9c5">Stay</text>
-<text transform="translate(324,702)" font-size="18" style="fill:#c49a6c">Send</text>
-<text transform="translate(481,386)" font-size="18" style="fill:#9fc9c5">AI</text>
-<text transform="translate(1086,259)" font-size="18" style="fill:#9fc9c5">Service</text>
-<text transform="translate(129,457)" font-size="18" style="fill:#c7d7b5">Node</text>
-<text transform="translate(451,230)" font-size="18" style="fill:#c7d7b5">Signal</text>
-<text transform="translate(574,298) rotate(-90)" font-size="18" style="fill:#a9b7a3">Certificate</text>
-<text transform="translate(99,220)" font-size="18" style="fill:#d88988">Importance</text>
-<text transform="translate(83,570)" font-size="18" style="fill:#d6a79f">Line</text>
-<text transform="translate(18,504) rotate(-90)" font-size="18" style="fill:#d5d2c2">Occurred</text>
-<text transform="translate(151,715)" font-size="18" style="fill:#b6c3dd">Establish</text>
-<text transform="translate(605,19)" font-size="18" style="fill:#9fc9c5">Caused</text>
-<text transform="translate(123,478)" font-size="18" style="fill:#8fb7d0">Agreed</text>
-<text transform="translate(59,644)" font-size="18" style="fill:#d5d2c2">Distribution</text>
-<text transform="translate(489,128)" font-size="18" style="fill:#c7d7b5">Passages</text>
-<text transform="translate(470,585) rotate(-90)" font-size="18" style="fill:#c49a6c">Sides</text>
-<text transform="translate(655,622)" font-size="18" style="fill:#d6a79f">Reader</text>
-<text transform="translate(638,309)" font-size="18" style="fill:#b6c3dd">Keeps</text>
+<text transform="translate(278,193)" font-size="98" style="fill:#e0b879">Notes</text>
+<text transform="translate(761,643)" font-size="98" style="fill:#a9b7a3">Source</text>
+<text transform="translate(25,530)" font-size="92" style="fill:#d9c89e">Atlas</text>
+<text transform="translate(667,617) rotate(-90)" font-size="92" style="fill:#d5d2c2">Concepts</text>
+<text transform="translate(720,298)" font-size="92" style="fill:#8fb7d0">Question</text>
+<text transform="translate(265,339)" font-size="79" style="fill:#9fc9c5">Read</text>
+<text transform="translate(16,651)" font-size="79" style="fill:#c7d7b5">Useful</text>
+<text transform="translate(1018,582) rotate(-90)" font-size="79" style="fill:#d88988">Draft</text>
+<text transform="translate(93,348)" font-size="72" style="fill:#d6a79f">Text</text>
+<text transform="translate(870,202)" font-size="72" style="fill:#a9b7a3">Use</text>
+<text transform="translate(245,83)" font-size="72" style="fill:#d9c89e">Project</text>
+<text transform="translate(1231,514) rotate(-90)" font-size="72" style="fill:#d9c89e">References</text>
+<text transform="translate(697,504)" font-size="72" style="fill:#b6c3dd">Review</text>
+<text transform="translate(151,445)" font-size="72" style="fill:#d6a79f">Research</text>
+<text transform="translate(16,266)" font-size="72" style="fill:#e0b879">Map</text>
+<text transform="translate(417,500)" font-size="64" style="fill:#9fc9c5">Gap</text>
+<text transform="translate(374,642) rotate(-90)" font-size="64" style="fill:#c49a6c">Topic</text>
+<text transform="translate(477,689)" font-size="64" style="fill:#d5d2c2">Browser</text>
+<text transform="translate(828,700)" font-size="64" style="fill:#d88988">Writing</text>
+<text transform="translate(68,709)" font-size="64" style="fill:#a9b7a3">Handoff</text>
+<text transform="translate(8,148)" font-size="64" style="fill:#c49a6c">Support</text>
+<text transform="translate(149,259)" font-size="64" style="fill:#c7d7b5">Coverage</text>
+<text transform="translate(8,583)" font-size="64" style="fill:#a9b7a3">Evidence</text>
+<text transform="translate(695,369)" font-size="64" style="fill:#e0b879">Report</text>
+<text transform="translate(585,164)" font-size="64" style="fill:#c49a6c">Concept</text>
+<text transform="translate(40,50)" font-size="64" style="fill:#9fc9c5">Keep</text>
+<text transform="translate(1120,570) rotate(-90)" font-size="64" style="fill:#e0b879">Found</text>
+<text transform="translate(1166,664) rotate(-90)" font-size="55" style="fill:#d6a79f">Connections</text>
+<text transform="translate(378,607)" font-size="55" style="fill:#d6a79f">Groups</text>
+<text transform="translate(588,563) rotate(-90)" font-size="55" style="fill:#e0b879">Connection</text>
+<text transform="translate(830,425)" font-size="55" style="fill:#e0b879">Add</text>
+<text transform="translate(684,436)" font-size="55" style="fill:#c49a6c">Show</text>
+<text transform="translate(503,331) rotate(-90)" font-size="55" style="fill:#b6c3dd">Open</text>
+<text transform="translate(102,389)" font-size="49" style="fill:#c7d7b5">Literature</text>
+<text transform="translate(729,543)" font-size="49" style="fill:#9fc9c5">Target</text>
+<text transform="translate(1255,714) rotate(-90)" font-size="49" style="fill:#c7d7b5">Reading</text>
+<text transform="translate(925,337)" font-size="49" style="fill:#8fb7d0">Inspect</text>
+<text transform="translate(1004,153)" font-size="49" style="fill:#e0b879">Behind</text>
+<text transform="translate(63,206)" font-size="49" style="fill:#d6a79f">Whether</text>
+<text transform="translate(99,444) rotate(-90)" font-size="49" style="fill:#9fc9c5">Work</text>
+<text transform="translate(1273,428) rotate(-90)" font-size="49" style="fill:#e0b879">Reference</text>
+<text transform="translate(1040,200)" font-size="49" style="fill:#d9c89e">Graph</text>
+<text transform="translate(431,122)" font-size="49" style="fill:#d6a79f">Large</text>
+<text transform="translate(1065,583) rotate(-90)" font-size="49" style="fill:#d9c89e">Network</text>
+<text transform="translate(45,97)" font-size="37" style="fill:#d88988">Questions</text>
+<text transform="translate(688,216)" font-size="37" style="fill:#a9b7a3">Settings</text>
+<text transform="translate(782,33)" font-size="37" style="fill:#d88988">Changes</text>
+<text transform="translate(337,681)" font-size="37" style="fill:#e0b879">Export</text>
+<text transform="translate(407,562)" font-size="30" style="fill:#8fb7d0">October</text>
+<text transform="translate(574,642)" font-size="30" style="fill:#a9b7a3">Connects</text>
+<text transform="translate(398,370)" font-size="30" style="fill:#b6c3dd">Document</text>
+<text transform="translate(417,28)" font-size="30" style="fill:#c49a6c">Discusses</text>
+<text transform="translate(1034,238)" font-size="30" style="fill:#8fb7d0">Contains</text>
+<text transform="translate(199,474)" font-size="30" style="fill:#e0b879">Search</text>
+<text transform="translate(1205,681) rotate(-90)" font-size="30" style="fill:#d88988">Knowledge</text>
+<text transform="translate(735,697)" font-size="30" style="fill:#9fc9c5">Gives</text>
+<text transform="translate(202,27)" font-size="30" style="fill:#e0b879">Different</text>
+<text transform="translate(46,393) rotate(-90)" font-size="30" style="fill:#d88988">Points</text>
+<text transform="translate(404,715)" font-size="30" style="fill:#a9b7a3">Mentions</text>
+<text transform="translate(1144,30)" font-size="30" style="fill:#9fc9c5">Follow</text>
+<text transform="translate(849,139)" font-size="29" style="fill:#d9c89e">Promising</text>
+<text transform="translate(676,575)" font-size="29" style="fill:#c49a6c">Start</text>
+<text transform="translate(1156,56)" font-size="29" style="fill:#e0b879">Working</text>
+<text transform="translate(851,570)" font-size="29" style="fill:#c49a6c">Longer</text>
+<text transform="translate(515,227)" font-size="29" style="fill:#b6c3dd">Files</text>
+<text transform="translate(383,638)" font-size="29" style="fill:#b6c3dd">Sources</text>
+<text transform="translate(139,287)" font-size="27" style="fill:#c49a6c">Original</text>
+<text transform="translate(488,394)" font-size="27" style="fill:#c49a6c">Task</text>
+<text transform="translate(377,216)" font-size="27" style="fill:#d9c89e">Next</text>
+<text transform="translate(592,715)" font-size="27" style="fill:#a9b7a3">Action</text>
+<text transform="translate(1101,709)" font-size="26" style="fill:#8fb7d0">Meeting</text>
+<text transform="translate(869,229)" font-size="26" style="fill:#8fb7d0">Rehearsal</text>
+<text transform="translate(673,316)" font-size="26" style="fill:#d88988">Ask</text>
+<text transform="translate(1038,365)" font-size="26" style="fill:#d5d2c2">Check</text>
+<text transform="translate(855,450)" font-size="26" style="fill:#d9c89e">Product</text>
+<text transform="translate(636,18)" font-size="18" style="fill:#d88988">Requirements</text>
+<text transform="translate(274,115)" font-size="18" style="fill:#d5d2c2">Interview</text>
+<text transform="translate(377,120)" font-size="18" style="fill:#8fb7d0">Turn</text>
+<text transform="translate(312,291)" font-size="18" style="fill:#c7d7b5">Abstracts</text>
+<text transform="translate(675,601)" font-size="18" style="fill:#b6c3dd">Excerpts</text>
+<text transform="translate(383,518)" font-size="18" style="fill:#b6c3dd">Decide</text>
+<text transform="translate(8,409)" font-size="18" style="fill:#e0b879">Needs</text>
+<text transform="translate(859,316)" font-size="18" style="fill:#c7d7b5">Change</text>
+<text transform="translate(715,182)" font-size="18" style="fill:#b6c3dd">Trace</text>
+<text transform="translate(256,214)" font-size="18" style="fill:#8fb7d0">Proposed</text>
+<text transform="translate(1016,35)" font-size="18" style="fill:#8fb7d0">Access</text>
+<text transform="translate(509,255)" font-size="18" style="fill:#d9c89e">Find</text>
+<text transform="translate(747,455)" font-size="18" style="fill:#e0b879">Parts</text>
+<text transform="translate(612,338) rotate(-90)" font-size="18" style="fill:#9fc9c5">Idea</text>
+<text transform="translate(1184,80)" font-size="18" style="fill:#a9b7a3">Starting</text>
+<text transform="translate(549,66)" font-size="18" style="fill:#d5d2c2">Test</text>
+<text transform="translate(683,37)" font-size="18" style="fill:#c7d7b5">Compare</text>
+<text transform="translate(191,169)" font-size="18" style="fill:#e0b879">Supplied</text>
+<text transform="translate(1271,666) rotate(-90)" font-size="18" style="fill:#b6c3dd">Passages</text>
+<text transform="translate(686,534) rotate(-90)" font-size="18" style="fill:#d88988">Changing</text>
+<text transform="translate(310,537) rotate(-90)" font-size="18" style="fill:#9fc9c5">Count</text>
+<text transform="translate(917,83)" font-size="18" style="fill:#e0b879">Save</text>
+<text transform="translate(776,324)" font-size="18" style="fill:#c49a6c">Matters</text>
+<text transform="translate(347,712)" font-size="18" style="fill:#d88988">Near</text>
+<text transform="translate(489,537)" font-size="18" style="fill:#d88988">Even</text>
+<text transform="translate(71,461)" font-size="18" style="fill:#d9c89e">Author</text>
+<text transform="translate(608,526) rotate(-90)" font-size="18" style="fill:#9fc9c5">Relationship</text>
+<text transform="translate(1253,506) rotate(-90)" font-size="18" style="fill:#d5d2c2">Select</text>
+<text transform="translate(742,664)" font-size="18" style="fill:#8fb7d0">Finding</text>
+<text transform="translate(547,522) rotate(-90)" font-size="18" style="fill:#d9c89e">Distinguish</text>
+<text transform="translate(937,25)" font-size="18" style="fill:#d6a79f">List</text>
+<text transform="translate(912,549)" font-size="18" style="fill:#d5d2c2">View</text>
+<text transform="translate(640,286)" font-size="18" style="fill:#c49a6c">Answers</text>
+<text transform="translate(75,601)" font-size="18" style="fill:#a9b7a3">Several</text>
+<text transform="translate(800,187)" font-size="18" style="fill:#9fc9c5">Barely</text>
+<text transform="translate(736,713)" font-size="18" style="fill:#c49a6c">Connect</text>
+<text transform="translate(717,388)" font-size="18" style="fill:#9fc9c5">Plan</text>
+<text transform="translate(300,355)" font-size="14" style="fill:#9fc9c5">Investigate</text>
+<text transform="translate(360,653)" font-size="14" style="fill:#c7d7b5">Comparison</text>
+<text transform="translate(396,532)" font-size="14" style="fill:#c7d7b5">Vocabulary</text>
+<text transform="translate(944,425) rotate(-90)" font-size="14" style="fill:#a9b7a3">Repeatedly</text>
+<text transform="translate(23,280)" font-size="14" style="fill:#d88988">Lens</text>
+<text transform="translate(672,244)" font-size="14" style="fill:#d6a79f">Stored</text>
+<text transform="translate(530,333) rotate(-90)" font-size="14" style="fill:#d5d2c2">Networks</text>
+<text transform="translate(410,388)" font-size="10" style="fill:#b6c3dd">Updated</text>
+<text transform="translate(1040,13)" font-size="10" style="fill:#9fc9c5">Sometimes</text>
+<text transform="translate(775,240)" font-size="10" style="fill:#8fb7d0">Difficulty</text>
+<text transform="translate(1102,683)" font-size="10" style="fill:#d5d2c2">Shortage</text>
+<text transform="translate(796,397)" font-size="10" style="fill:#c7d7b5">Folder</text>
+<text transform="translate(1118,599) rotate(-90)" font-size="10" style="fill:#c49a6c">Full</text>
+<text transform="translate(723,615)" font-size="10" style="fill:#d6a79f">Never</text>
+<text transform="translate(874,712)" font-size="10" style="fill:#b6c3dd">Quite</text>
+<text transform="translate(70,72)" font-size="10" style="fill:#8fb7d0">Met</text>
+<text transform="translate(922,522)" font-size="10" style="fill:#9fc9c5">Summer</text>
 </svg>

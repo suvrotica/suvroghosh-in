@@ -102,6 +102,7 @@ const question = z.object({
 const projectHeader = z.object({
 	id: z.string(),
 	name: z.string(),
+	exampleId: z.string().optional(),
 	createdAt: z.string(),
 	updatedAt: z.string(),
 	settings,
@@ -111,6 +112,7 @@ const projectHeader = z.object({
 });
 const resultHeader = z.object({
 	version: z.literal(1),
+	analysisRevision: integer.optional(),
 	settings,
 	words: count,
 	totalTerms: count,
@@ -209,6 +211,7 @@ export async function* projectRecords(
 		const { concepts, edges, topics, findings } = result;
 		const header = {
 			version: result.version,
+			analysisRevision: result.analysisRevision,
 			settings: result.settings,
 			words: result.words,
 			totalTerms: result.totalTerms,
@@ -625,7 +628,7 @@ export function buildReport(project: AtlasProject): string {
 		lines.push(
 			'## Reproducibility',
 			'',
-			`Engine: Knowledge Gap Atlas ${result.version}`,
+			`Engine: Knowledge Gap Atlas ${result.version}, analysis revision ${result.analysisRevision ?? 1}`,
 			`Analysed: ${result.analysedAt}`,
 			'',
 			'```json',

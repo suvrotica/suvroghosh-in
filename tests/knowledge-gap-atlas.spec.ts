@@ -1,5 +1,7 @@
 import { expect, test, type Download, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { ANALYSIS_REVISION } from '../src/lib/visualizations/knowledge-gap-atlas/types';
+import { EXAMPLES } from '../src/lib/visualizations/knowledge-gap-atlas/examples';
 import type {
 	AnalysisResult,
 	AtlasProject,
@@ -375,4 +377,175 @@ test('analysis settings undo restores the committed window and rejects a blank v
 	await expect(app(page).getByRole('alert')).toContainText('Choose a whole-number word window');
 	await expect(app(page).getByTestId('atlas-progress')).toHaveCount(0);
 	expect((await latestResult(page))?.settings.window).toBe(5);
+});
+
+for (const scenario of [
+	{
+		id: 'meeting-handoff',
+		question:
+			'Who can authorise rollback, and which queue check must pass before the rollout expands?'
+	},
+	{
+		id: 'product-feedback',
+		question:
+			'Can a worker recover an offline draft without creating a duplicate visit after reconnecting?'
+	}
+]) {
+	test(`${scenario.id} practice guide supports a real comparison and portable research plan`, async ({
+		page
+	}, testInfo) => {
+		const definition = EXAMPLES.find((entry) => entry.id === scenario.id)!;
+		await example(page, scenario.id);
+		const guide = app(page).getByTestId('atlas-practice-guide');
+		await expect(guide).toContainText(definition.useCase!);
+		await expect(guide).toContainText(definition.task!);
+		await expect(guide.locator('li')).toHaveCount(3);
+		await expect(guide).toContainText('illustrative writing');
+		const before = (await latestResult(page))!;
+		expect(before.analysisRevision).toBe(ANALYSIS_REVISION);
+		expect(before.sources.filter((source) => source.role === 'target')).toHaveLength(1);
+		expect(before.sources.filter((source) => source.role === 'reference')).toHaveLength(2);
+		await app(page).getByTestId('atlas-view-compare').click();
+		await expect(app(page).locator('.kga-comparison button').first()).toBeVisible();
+		expect(before.concepts.some((concept) => concept.referenceCount > concept.targetCount)).toBe(
+			true
+		);
+		await app(page).getByTestId('atlas-view-research').click();
+		await app(page)
+			.getByRole('textbox', { name: 'New research question', exact: true })
+			.fill(scenario.question);
+		await app(page)
+			.getByRole('button', { name: /^Add question/ })
+			.click();
+		await expect(
+			app(page).getByRole('textbox', { name: 'Research question 1', exact: true })
+		).toHaveValue(scenario.question);
+		await app(page).getByTestId('atlas-export').click();
+		await app(page)
+			.getByRole('checkbox', { name: /Include original source text/ })
+			.check();
+		await page.evaluate(() =>
+			Object.defineProperty(window, 'showSaveFilePicker', { value: undefined, configurable: true })
+		);
+		const downloaded = page.waitForEvent('download');
+		await app(page)
+			.getByRole('button', { name: /Complete project/ })
+			.click();
+		const download = await downloaded;
+		const portable = (await downloadText(download))
+			.trim()
+			.split('\n')
+			.map((line) => JSON.parse(line));
+		expect(portable.find((entry) => entry.type === 'atlas').project.exampleId).toBe(scenario.id);
+		expect(portable.find((entry) => entry.type === 'result').result.analysisRevision).toBe(
+			ANALYSIS_REVISION
+		);
+		const portablePath = testInfo.outputPath(`${scenario.id}.atlas.ndjson`);
+		await download.saveAs(portablePath);
+		await app(page).getByTestId('atlas-project-import').setInputFiles(portablePath);
+		await expect.poll(async () => (await records<AtlasProject>(page, 'projects')).length).toBe(2);
+		const projects = await records<AtlasProject>(page, 'projects');
+		for (const project of projects) {
+			expect(project.exampleId).toBe(scenario.id);
+			expect(project.result?.analysisRevision).toBe(ANALYSIS_REVISION);
+			expect(project.questions[0]?.text).toBe(scenario.question);
+		}
+		await expect(guide).toContainText(definition.task!);
+		await page.reload();
+		await app(page)
+			.getByRole('button', { name: /^My atlases/ })
+			.click();
+		await app(page)
+			.locator('.kga-project-list button')
+			.filter({ hasText: definition.title })
+			.first()
+			.click();
+		await expect(guide).toContainText(definition.useCase!);
+		await guide.getByRole('button', { name: /Show guide/ }).click();
+		await expect(guide.locator('li')).toHaveCount(3);
+		if (scenario.id === 'meeting-handoff') {
+			await app(page)
+				.getByRole('button', { name: /^My atlases/ })
+				.click();
+			await app(page).getByRole('button', { name: 'Browse practice cases', exact: true }).click();
+			await expect(app(page).getByTestId('atlas-example-product-feedback')).toBeVisible();
+			expect((await records<AtlasProject>(page, 'projects')).length).toBe(2);
+		}
+	});
+}
+
+test('an older analysis offers an explicit update while preserving sources and saved questions', async ({
+	page
+}) => {
+	await example(page, 'meeting-handoff');
+	const question = 'Who confirms late-shift support before launch?';
+	await app(page).getByTestId('atlas-view-research').click();
+	await app(page)
+		.getByRole('textbox', { name: 'New research question', exact: true })
+		.fill(question);
+	await app(page)
+		.getByRole('button', { name: /^Add question/ })
+		.click();
+	await expect
+		.poll(async () => (await records<AtlasProject>(page, 'projects'))[0]?.questions[0]?.text)
+		.toBe(question);
+	const before = (await latestResult(page))!;
+	const sources = await records<SourceRecord>(page, 'sources');
+	// Reproduce a persisted v1 project without the additive analysis revision field.
+	await page.evaluate(
+		() =>
+			new Promise<void>((resolve, reject) => {
+				const opening = indexedDB.open('suvro-knowledge-gap-atlas');
+				opening.onerror = () => reject(opening.error);
+				opening.onsuccess = () => {
+					const database = opening.result;
+					const transaction = database.transaction('projects', 'readwrite');
+					const store = transaction.objectStore('projects');
+					const request = store.getAll();
+					request.onsuccess = () => {
+						for (const project of request.result) {
+							delete project.result.analysisRevision;
+							store.put(project);
+						}
+					};
+					transaction.oncomplete = () => {
+						database.close();
+						resolve();
+					};
+					transaction.onerror = () => {
+						database.close();
+						reject(transaction.error);
+					};
+				};
+			})
+	);
+	await page.reload();
+	await app(page)
+		.getByRole('button', { name: /^My atlases/ })
+		.click();
+	await app(page)
+		.locator('.kga-project-list button')
+		.filter({ hasText: 'The launch is agreed. Is the handoff ready?' })
+		.first()
+		.click();
+	const update = app(page).getByTestId('atlas-update-analysis');
+	await expect(update).toBeVisible();
+	await update.click();
+	await expect
+		.poll(async () => (await latestResult(page))?.analysisRevision)
+		.toBe(ANALYSIS_REVISION);
+	await expect(update).toHaveCount(0);
+	expect((await latestResult(page))?.words).toBe(before.words);
+	expect(
+		(await records<SourceRecord>(page, 'sources')).map((source) => [
+			source.id,
+			source.chars,
+			source.bytes
+		])
+	).toEqual(sources.map((source) => [source.id, source.chars, source.bytes]));
+	expect((await records<AtlasProject>(page, 'projects'))[0]?.questions[0]?.text).toBe(question);
+	await app(page).getByTestId('atlas-view-research').click();
+	await expect(
+		app(page).getByRole('textbox', { name: 'Research question 1', exact: true })
+	).toHaveValue(question);
 });

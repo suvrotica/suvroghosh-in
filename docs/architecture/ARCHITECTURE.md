@@ -805,7 +805,11 @@ original source text and offsets remain intact and the source reader is paged.
 
 The pure engine constructs a sentence-bounded co-occurrence network, applies explicit support
 and exclusion settings, and uses seeded Graphology Louvain communities with disconnected-group
-repair. Representative source spans are bounded samples; counts remain separate. Findings
+repair. Revision-two projection merges English possessive variants while preserving explicit
+alias targets, down-ranks document scaffolding and grammatical fragments, and requires gap
+titles and excerpts to identify the same observed concept pair. Fragility findings require
+substantial separated branches. These are graph-stage rules; the raw extractor and saved
+checkpoints remain compatible. Representative source spans are bounded samples; counts remain separate. Findings
 describe corpus-relative structural hypotheses, source concentration and normalized
 target/reference coverage, not factual entailment or a user's knowledge. Questions use
 deterministic templates. There is no optional connection to the existing Prompt Atlas API.
@@ -814,6 +818,20 @@ Canvas draws a display projection independently from the analytical graph; conce
 comparison and evidence inspection provide HTML alternatives. Project exports and research
 reports are visitor-owned downloads. Browser-local persistence is not encryption or a permanent
 backup. No source text or derived private content belongs in URLs or analytics.
+
+The real-document refinement keeps that boundary while making the projection responsive:
+the default overview selects a disclosed subset of topic islands and balanced representative
+concepts, with search/selection promotion and a full-detail option. Topic selection and the HTML
+concept list still reach the complete analytical graph. Shared label placement and edge
+selection govern both Canvas and SVG exports. Evidence inspection chooses distinct reading
+locations across sources instead of repeating overlapping previews.
+
+Analysis snapshots carry an optional algorithm revision, independent of the portable file
+format version. Older snapshots remain readable and offer an explicit rebuild using preserved
+source aggregates; sources and saved research questions are retained. Practice-case identity is
+optional project metadata carried through exports, while tutorial instructions live in the
+feature-owned example registry. These additions do not introduce a new storage table, server
+boundary or automatic reprocessing of visitor material.
 
 There is no application-level word/token quota. Source ingestion and aggregate persistence are
 chunked, but the final graph/community calculation materialises aggregate records in memory.
@@ -829,9 +847,12 @@ flowchart LR
     Chunks --> Worker["Owned cancellable worker / streaming extractor"]
     Worker --> Aggregate["IndexedDB term/edge aggregates + atomic checkpoints"]
     Aggregate --> Graph["In-memory graph / seeded Louvain / explainable findings"]
-    Graph --> UI["Canvas projection + HTML topics / evidence / comparison"]
+    Graph --> Snapshot["Versioned analysis snapshot / explicit rebuild of older results"]
+    Snapshot --> UI["Responsive Canvas projection + complete HTML exploration"]
     Chunks --> Evidence["Original-offset passage reader"]
-    Evidence --> UI
+    Evidence --> Locations["Distinct representative reading locations"]
+    Locations --> UI
+    Cases["Original practice-case registry / task guides"] --> UI
     UI --> Plan["Local project annotations / research questions"]
     Plan --> Export["Explicit project / report / image downloads"]
 ```
@@ -839,7 +860,11 @@ flowchart LR
 See [ADR 0019](decisions/0019-knowledge-gap-atlas-local-corpus.md) and the
 [feature contract](../visualizations/knowledge-gap-atlas.md). Focused engine/storage/export
 tests and local browser checks are the validation seams; test and benchmark outcomes must be
-reported separately from the existence of the test code.
+reported separately from the existence of the test code. The
+[real-document review](../visualizations/knowledge-gap-atlas-real-world-review.md) records the
+unchanged RFC 9110 corpus, baseline defects and verified correction results separately from
+illustrative practice cases. These refinements extend ADR 0019 without changing its foundational
+local-only processing decision.
 
 ### Mrinmoyee sculpture atelier
 

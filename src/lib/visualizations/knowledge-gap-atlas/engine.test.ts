@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { analyseAggregates, mergeAggregates, StreamingExtractor } from './engine';
+import { analyseAggregates, mergeAggregates, normalizeTerm, StreamingExtractor } from './engine';
 import { EXAMPLES } from './examples';
 import { DEFAULT_SETTINGS } from './types';
 import type { AnalysisSettings, EdgeAggregate, SourceRecord, TermAggregate } from './types';
@@ -51,7 +51,7 @@ function source(
 }
 
 function analyseSources(
-	input: { id: string; text: string; role?: 'target' | 'reference' }[],
+	input: { id: string; name?: string; text: string; role?: 'target' | 'reference' }[],
 	settings: AnalysisSettings = DEFAULT_SETTINGS
 ) {
 	const terms = new Map<string, TermAggregate>();
@@ -59,7 +59,10 @@ function analyseSources(
 	const sources: SourceRecord[] = [];
 	for (const item of input) {
 		const result = aggregate(item.text, 31, settings, item.id);
-		sources.push(source(item.id, item.text, result.words, item.role));
+		sources.push({
+			...source(item.id, item.text, result.words, item.role),
+			name: item.name || item.id
+		});
 		for (const term of result.terms) terms.set(term.id, mergeAggregates(terms.get(term.id), term));
 		for (const edge of result.edges) edges.set(edge.id, mergeAggregates(edges.get(edge.id), edge));
 	}
@@ -269,6 +272,69 @@ describe('evidence-linked graph analysis', () => {
 		expect(finding!.evidence.some((ref) => ref.sourceId === 'reference-last')).toBe(true);
 	});
 
+	it('ranks source-format differences lower only for comparison, preserving substantive compounds', () => {
+		const inputs = [
+			{ id: 'target', text: 'Archives preserve records. Archives preserve records.' },
+			{
+				id: 'reference',
+				name: 'Study A',
+				role: 'reference' as const,
+				text: 'Interview technique guides testimony. Interview technique shapes testimony. Interview records evidence. Interview notes document testimony. Interview notes preserve context. Practice notes document context. Practice notes preserve testimony.'
+			}
+		];
+		const neutral = analyseSources(inputs);
+		const named = analyseSources([
+			inputs[0],
+			{ ...inputs[1], name: 'Interviews and practice notes' }
+		]);
+		const priority = (result: typeof named, id: string) =>
+			result.findings.find((item) => item.id === `coverage:${id}`)!.priority;
+		expect(priority(named, 'interview')).toBeLessThan(priority(neutral, 'interview'));
+		expect(priority(named, 'practice notes')).toBeLessThan(priority(neutral, 'practice notes'));
+		expect(priority(named, 'interview technique')).toBe(priority(neutral, 'interview technique'));
+		expect(named.concepts).toEqual(neutral.concepts);
+		expect(named.edges).toEqual(neutral.edges);
+		expect(named.topics).toEqual(neutral.topics);
+		expect(named.findings.filter((item) => item.kind !== 'coverage')).toEqual(
+			neutral.findings.filter((item) => item.kind !== 'coverage')
+		);
+	});
+
+	it('leads practical comparisons with substantive phrases across all finding kinds', () => {
+		const expected = {
+			'product-feedback': 'coverage:keyboard access',
+			'meeting-handoff': 'coverage:queued submissions'
+		};
+		for (const [id, lead] of Object.entries(expected)) {
+			const example = EXAMPLES.find((item) => item.id === id)!;
+			const result = analyseSources(
+				example.sources.map((item, index) => ({
+					...item,
+					text: item.text ?? '',
+					id: String(index)
+				}))
+			);
+			expect(result.findings[0].id).toBe(lead);
+			if (id === 'product-feedback') {
+				for (const concept of [
+					'interview',
+					'keyboard access',
+					'offline drafts',
+					'shared devices',
+					'pdf export'
+				]) {
+					expect(result.concepts.some((item) => item.id === concept)).toBe(true);
+				}
+				const coverage = result.findings.filter((item) => item.kind === 'coverage');
+				expect(coverage.slice(0, 2).map((item) => item.id)).toEqual([
+					'coverage:keyboard access',
+					'coverage:offline drafts'
+				]);
+				expect(coverage.findIndex((item) => item.id === 'coverage:interview')).toBeGreaterThan(1);
+			}
+		}
+	});
+
 	it('keeps meaningful phrases while suppressing standalone modifier fragments', () => {
 		const result = analyseSources([
 			{
@@ -360,5 +426,191 @@ Language learning involves practice. Conservation requires repair. Policy guides
 		const result = analyseSources([{ id: 'large', text }]);
 		expect(result.concepts).toHaveLength(2200);
 		expect(result.totalTerms).toBe(2200);
+	});
+
+	it('downranks document and address scaffolding while retaining subject phrases and every word', () => {
+		const text = `${Array.from({ length: 90 }, (_, i) => `Section ${i + 1}.`).join(' ')}
+${'https://example.org/info/report.pdf '.repeat(20)}
+${'Network caches store response metadata. Cache validation uses response metadata. Request routing connects network caches. '.repeat(10)}`;
+		const result = analyseSources([{ id: 'messy', text }]);
+		expect(result.words).toBe(aggregate(text).words);
+		const top = result.concepts.slice(0, 10).map((c) => c.id);
+		for (const scaffold of ['section', 'org', 'info', 'pdf']) expect(top).not.toContain(scaffold);
+		expect(result.concepts.some((c) => c.id === 'response metadata')).toBe(true);
+		expect(result.findings.some((f) => f.id === 'bridge:section')).toBe(false);
+	});
+
+	it('combines grammatical possessives without changing original evidence and honours saved exclusions', () => {
+		const text =
+			"The researcher's notebook records rainfall. The researcher notebook records rainfall. The researcher's notebook records rainfall.";
+		const raw = aggregate(text);
+		const record = source('source-1', text, raw.words);
+		const result = analyseAggregates(raw.terms, raw.edges, [record], DEFAULT_SETTINGS);
+		const researcher = result.concepts.find((c) => c.id === 'researcher')!;
+		expect(researcher.count).toBe(3);
+		expect(
+			researcher.evidence.some((ref) => text.slice(ref.start, ref.end) === "researcher's")
+		).toBe(true);
+		expect(result.concepts.some((c) => c.id.endsWith("'s"))).toBe(false);
+		const excluded = analyseAggregates(raw.terms, raw.edges, [record], {
+			...DEFAULT_SETTINGS,
+			excluded: ["researcher's"]
+		});
+		expect(excluded.concepts.some((c) => c.id === 'researcher')).toBe(false);
+		const aliased = analyseSources(
+			[{ id: 'alias', text: 'observatory observatory observatory.' }],
+			{ ...DEFAULT_SETTINGS, aliases: { observatory: "researcher's station" } }
+		);
+		expect(aliased.concepts.some((c) => c.id === "researcher's station")).toBe(true);
+	});
+
+	it('does not invent a substantive topic from a predicate fragment', () => {
+		const text =
+			'Header metadata identifies network responses. A field contains metadata. A field remains present. Automatically retry requests. '.repeat(
+				8
+			);
+		const result = analyseSources([{ id: 'syntax', text }]);
+		for (const bad of ['field contains', 'field present', 'automatically retry'])
+			expect(result.topics.some((t) => t.label === bad)).toBe(false);
+		expect(result.findings.some((f) => f.id === 'bridge:automatically')).toBe(false);
+	});
+
+	it('keeps substantive alphanumeric identifiers but excludes isolated encoded fragments', () => {
+		const result = analyseSources([
+			{
+				id: 'identifiers',
+				text: 'x53. x53. 6f. 6f. The x86 processor executes instructions. The x86 processor executes instructions.'
+			}
+		]);
+		expect(result.concepts.some((c) => c.id === 'x53')).toBe(false);
+		expect(result.concepts.some((c) => c.id === '6f')).toBe(false);
+		expect(result.concepts.some((c) => c.id === 'x86')).toBe(true);
+	});
+
+	it('grounds every suggested gap excerpt in its exact observed witness pair', () => {
+		let tested = 0;
+		for (const example of EXAMPLES) {
+			const inputs = example.sources.map((item, i) => ({
+				id: `s${i}`,
+				text: item.text!,
+				role: item.role
+			}));
+			const result = analyseSources(inputs);
+			for (const gap of result.findings.filter((f) => f.kind === 'gap')) {
+				expect(gap.concepts).toHaveLength(2);
+				for (const ref of gap.evidence) {
+					const original = inputs
+						.find((input) => input.id === ref.sourceId)!
+						.text.slice(ref.start, ref.end);
+					const normalized = normalizeTerm(original)
+						.replace(/([\p{L}\p{N}])'s(?=\s|$)/gu, '$1')
+						.replace(/\s+/g, ' ');
+					for (const id of gap.concepts)
+						expect(normalized, `${gap.title}: ${original}`).toContain(id);
+					tested++;
+				}
+			}
+		}
+		expect(tested).toBeGreaterThan(0);
+	});
+
+	it('does not present repeatedly documented relations as missing because a graph has many communities', () => {
+		const paragraph =
+			'Reef restoration improves coral habitat. Coral habitat supports ocean fisheries. Coastal communities protect ocean fisheries. Forest restoration improves woodland habitat. Woodland habitat supports native wildlife. Coastal communities exchange restoration techniques.';
+		const result = analyseSources([{ id: 'established', text: `${paragraph}\n`.repeat(24) }]);
+		expect(result.findings.filter((f) => f.kind === 'gap')).toEqual([]);
+	});
+
+	it('does not call a large connected topic fragile merely because one tiny fragment hangs from it', () => {
+		const nodes: TermAggregate[] = Array.from({ length: 400 }, (_, i) => ({
+			id: `node${i}`,
+			label: `node${i}`,
+			count: 5,
+			sources: { corpus: 5 },
+			evidence: [],
+			phrase: false
+		}));
+		nodes.push({
+			id: 'tail',
+			label: 'tail',
+			count: 3,
+			sources: { corpus: 3 },
+			evidence: [],
+			phrase: false
+		});
+		const edges: EdgeAggregate[] = Array.from({ length: 400 }, (_, i) => ({
+			id: JSON.stringify([`node${i}`, `node${(i + 1) % 400}`]),
+			source: `node${i}`,
+			target: `node${(i + 1) % 400}`,
+			count: 3,
+			sources: { corpus: 3 },
+			evidence: []
+		}));
+		edges.push({
+			id: '["node0","tail"]',
+			source: 'node0',
+			target: 'tail',
+			count: 3,
+			sources: { corpus: 3 },
+			evidence: []
+		});
+		const result = analyseAggregates(
+			nodes,
+			edges,
+			[source('corpus', 'fixture', 2003)],
+			DEFAULT_SETTINGS
+		);
+		expect(result.findings.some((f) => f.id === 'fragile:node0')).toBe(false);
+	});
+
+	it('projects retained revision-one aggregates exactly like a fresh extraction after the analysis upgrade', () => {
+		// Golden aggregate captured from the pre-upgrade engine, not generated by the new lexer.
+		const text = 'alpha unless beta. alpha unless beta.';
+		const spans = (start: number, end: number) => [
+			{ sourceId: 'source-1', start, end },
+			{ sourceId: 'source-1', start: start + 19, end: end + 19 }
+		];
+		const legacyTerms: TermAggregate[] = (
+			[
+				['alpha', 0, 5],
+				['unless', 6, 12],
+				['alpha unless', 0, 12],
+				['beta', 13, 17],
+				['unless beta', 6, 17]
+			] as const
+		).map(([id, start, end]) => ({
+			id,
+			label: id,
+			count: 2,
+			sources: { 'source-1': 2 },
+			evidence: spans(start, end),
+			phrase: id.includes(' ')
+		}));
+		const legacyEdges: EdgeAggregate[] = (
+			[
+				['alpha', 'unless', 0, 12],
+				['alpha', 'alpha unless', 0, 12],
+				['alpha unless', 'unless', 0, 12],
+				['alpha', 'beta', 0, 17],
+				['beta', 'unless', 6, 17],
+				['unless', 'unless beta', 6, 17],
+				['beta', 'unless beta', 6, 17]
+			] as const
+		).map(([a, b, start, end]) => ({
+			id: JSON.stringify([a, b]),
+			source: a,
+			target: b,
+			count: 2,
+			sources: { 'source-1': 2 },
+			evidence: spans(start, end)
+		}));
+		const fresh = aggregate(text, 5);
+		expect(fresh.terms).toEqual([...legacyTerms].sort((a, b) => a.id.localeCompare(b.id)));
+		expect(fresh.edges).toEqual([...legacyEdges].sort((a, b) => a.id.localeCompare(b.id)));
+		const records = [source('source-1', text, 6)];
+		const restored = analyseAggregates(legacyTerms, legacyEdges, records, DEFAULT_SETTINGS);
+		const rebuilt = analyseAggregates(fresh.terms, fresh.edges, records, DEFAULT_SETTINGS);
+		expect({ ...restored, analysedAt: '' }).toEqual({ ...rebuilt, analysedAt: '' });
+		expect(restored.concepts.some((c) => c.id.includes('unless'))).toBe(false);
 	});
 });

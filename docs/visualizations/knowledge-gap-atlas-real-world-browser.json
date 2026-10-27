@@ -1,0 +1,316 @@
+{
+	"measuredAt": "2026-10-27T15:34:35.229Z",
+	"source": {
+		"url": "https://www.rfc-editor.org/rfc/rfc9110.txt",
+		"sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+		"bytes": 502941,
+		"chars": 502907,
+		"independentWords": 70786,
+		"hasUtf8Bom": true
+	},
+	"environment": {
+		"node": "v24.11.1",
+		"platform": "win32 10.0.26200 x64",
+		"cpu": "12th Gen Intel(R) Core(TM) i5-12500H",
+		"logicalProcessors": 16,
+		"systemMemoryGiB": 15.7,
+		"browser": "156.0.8078.48"
+	},
+	"limitations": [
+		"One public technical specification, not a cross-language quality benchmark.",
+		"Elapsed timings include browser automation and local machine load; they are not performance guarantees.",
+		"Source-bearing request checks inspect selected exact source passages and request metadata; external network requests are blocked."
+	],
+	"checks": {
+		"sourcePreservation": {
+			"exact": true,
+			"sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+			"chunks": 31,
+			"completeWords": 70786
+		},
+		"allConcepts": {
+			"allVisible": true,
+			"concepts": 3432,
+			"topics": 56
+		},
+		"nightMap": "Captured the same complete-corpus overview in night theme for visual review.",
+		"overview": {
+			"description": "Topic map showing 140 of 3432 concepts. Use the Concepts view for keyboard-accessible exploration.",
+			"appFitsViewport": true
+		},
+		"importantSearchAndEvidence": "origin server found through public map search and Concepts, with original passages",
+		"savedResearchQuestion": "Which source passages distinguish an origin server from an intermediary when applying HTTP semantics?",
+		"sourcePaging": {
+			"allPagesExact": true,
+			"pages": 101,
+			"tailVerified": true
+		},
+		"portableExport": {
+			"exactSource": true,
+			"sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+			"parts": 2,
+			"savedQuestion": true
+		},
+		"mobileFitsViewport": true,
+		"practiceGuide": {
+			"case": "product-feedback",
+			"steps": 3,
+			"firstQuestion": "Should the target address keyboard access, as the supplied reference does?"
+		}
+	},
+	"errors": [],
+	"sourceBearingRequests": [],
+	"networkWrites": [],
+	"status": "passed",
+	"importAndAnalysisMs": 5891,
+	"analysis": {
+		"projectId": "92556eb7-0945-4317-8aef-4d03bfd1339d",
+		"revision": 2,
+		"words": 70786,
+		"settings": {
+			"window": 5,
+			"minCount": 2,
+			"resolution": 1,
+			"excluded": [],
+			"aliases": {},
+			"seed": 1729
+		},
+		"concepts": 3432,
+		"edges": 23992,
+		"topics": 56,
+		"rawConcepts": 8633,
+		"rawEdges": 37289,
+		"findingCounts": {
+			"bridge": 37,
+			"gap": 68,
+			"peripheral": 33
+		},
+		"topConcepts": [
+			{
+				"id": "field",
+				"label": "field",
+				"count": 770,
+				"score": 1
+			},
+			{
+				"id": "request",
+				"label": "request",
+				"count": 746,
+				"score": 0.9952429797166378
+			},
+			{
+				"id": "header field",
+				"label": "header field",
+				"count": 364,
+				"score": 0.9940124543579345
+			},
+			{
+				"id": "header",
+				"label": "header",
+				"count": 547,
+				"score": 0.9486418334570176
+			},
+			{
+				"id": "server",
+				"label": "server",
+				"count": 537,
+				"score": 0.9458714378320555
+			},
+			{
+				"id": "http",
+				"label": "http",
+				"count": 492,
+				"score": 0.9327316242291093
+			},
+			{
+				"id": "response",
+				"label": "response",
+				"count": 491,
+				"score": 0.9324261860923794
+			},
+			{
+				"id": "content",
+				"label": "content",
+				"count": 438,
+				"score": 0.9152804811477235
+			},
+			{
+				"id": "status code",
+				"label": "status code",
+				"count": 212,
+				"score": 0.9032684578708544
+			},
+			{
+				"id": "origin server",
+				"label": "origin server",
+				"count": 204,
+				"score": 0.896818689688271
+			},
+			{
+				"id": "representation",
+				"label": "representation",
+				"count": 341,
+				"score": 0.8777202553998479
+			},
+			{
+				"id": "resource",
+				"label": "resource",
+				"count": 321,
+				"score": 0.8686555718388921
+			},
+			{
+				"id": "user",
+				"label": "user",
+				"count": 300,
+				"score": 0.8585104992955197
+			},
+			{
+				"id": "uri",
+				"label": "uri",
+				"count": 295,
+				"score": 0.8559907045212295
+			},
+			{
+				"id": "status",
+				"label": "status",
+				"count": 292,
+				"score": 0.8544583154057132
+			},
+			{
+				"id": "user agent",
+				"label": "user agent",
+				"count": 158,
+				"score": 0.8540070453759179
+			},
+			{
+				"id": "origin",
+				"label": "origin",
+				"count": 272,
+				"score": 0.843822917074878
+			},
+			{
+				"id": "fields",
+				"label": "fields",
+				"count": 249,
+				"score": 0.8305835965205757
+			},
+			{
+				"id": "value",
+				"label": "value",
+				"count": 249,
+				"score": 0.8305835965205757
+			},
+			{
+				"id": "client",
+				"label": "client",
+				"count": 248,
+				"score": 0.829980676953305
+			}
+		],
+		"importantConcepts": [
+			{
+				"id": "header field",
+				"count": 364,
+				"community": 0
+			},
+			{
+				"id": "status code",
+				"count": 212,
+				"community": 2
+			},
+			{
+				"id": "origin server",
+				"count": 204,
+				"community": 2
+			},
+			{
+				"id": "content negotiation",
+				"count": 31,
+				"community": 1
+			}
+		],
+		"topFindings": [
+			{
+				"kind": "bridge",
+				"title": "redirection connects 5 topics",
+				"priority": 49,
+				"factors": {
+					"relevance": 0.5552689121951776,
+					"deficit": 1,
+					"support": 0.8857142857142857
+				}
+			},
+			{
+				"kind": "bridge",
+				"title": "http-date connects 5 topics",
+				"priority": 48,
+				"factors": {
+					"relevance": 0.538692384187308,
+					"deficit": 1,
+					"support": 0.8888888888888888
+				}
+			},
+			{
+				"kind": "bridge",
+				"title": "range-unit connects 4 topics",
+				"priority": 47,
+				"factors": {
+					"relevance": 0.5907757741622843,
+					"deficit": 1,
+					"support": 0.8
+				}
+			},
+			{
+				"kind": "bridge",
+				"title": "delete connects 7 topics",
+				"priority": 43,
+				"factors": {
+					"relevance": 0.4997097923144913,
+					"deficit": 1,
+					"support": 0.8666666666666667
+				}
+			},
+			{
+				"kind": "bridge",
+				"title": "automatic connects 4 topics",
+				"priority": 40,
+				"factors": {
+					"relevance": 0.5182472522079346,
+					"deficit": 1,
+					"support": 0.7777777777777778
+				}
+			},
+			{
+				"kind": "bridge",
+				"title": "identifiers connects 7 topics",
+				"priority": 40,
+				"factors": {
+					"relevance": 0.4639092583607036,
+					"deficit": 1,
+					"support": 0.8620689655172413
+				}
+			},
+			{
+				"kind": "bridge",
+				"title": "body connects 5 topics",
+				"priority": 39,
+				"factors": {
+					"relevance": 0.47007184701530996,
+					"deficit": 1,
+					"support": 0.8333333333333334
+				}
+			},
+			{
+				"kind": "bridge",
+				"title": "codes connects 6 topics",
+				"priority": 37,
+				"factors": {
+					"relevance": 0.40066205117488074,
+					"deficit": 1,
+					"support": 0.9183673469387755
+				}
+			}
+		],
+		"questions": []
+	}
+}
