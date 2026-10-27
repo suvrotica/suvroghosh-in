@@ -8048,6 +8048,22 @@
       "sourceHash": "3f8047ba0be269ce6ef6023263a209d312b7034ff0b357c286cc6933fde3a97d",
       "width": 1200
     },
+    "static/images/art-insomniac-pauper-invisible-man.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 191318,
+      "outputHash": "484199a9a6d5d518fc5bc9489803cc8bee25a2ee002bff3ddf6c33e933649dca",
+      "psnrDb": 36.48,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 597161,
+      "sourceHash": "81d584f6bf9dbcc7fb3f49f1fcc363078a116969c4bb44c4de49b6d50a384f30",
+      "width": 1672
+    },
     "static/images/art-one-bad-afternoon.jpg": {
       "format": "JPEG",
       "height": 941,

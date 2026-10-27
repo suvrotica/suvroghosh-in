@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T20:16:10.711613+00:00",
+  "generatedAt": "2026-10-27T00:18:28.468649+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5610,6 +5610,29 @@
         "Everyone",
         "Enough",
         "Give"
+      ],
+      "wordCount": 130
+    },
+    "insomniac-pauper-invisible-man": {
+      "generatedAt": "2026-10-27T00:18:27.496000+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/insomniac-pauper-invisible-man.svg",
+      "source": "src/lib/posts/insomniac-pauper-invisible-man.md",
+      "sourceHash": "0c6a8bf72568c59fb8cdf9821638cb03d326581e1b497a3adfe590bc0b3be197",
+      "sourceModified": "2026-10-27T00:18:08.236688+00:00",
+      "topWords": [
+        "Perhaps",
+        "Useful",
+        "Money",
+        "Work",
+        "Read",
+        "Keep",
+        "Kind",
+        "Paid",
+        "Explain",
+        "Years",
+        "Fan",
+        "Glass"
       ],
       "wordCount": 130
     },

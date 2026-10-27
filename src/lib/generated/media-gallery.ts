@@ -34,6 +34,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "art-insomniac-pauper-invisible-man.jpg",
+			"src": "/images/art-insomniac-pauper-invisible-man.jpg",
+			"bytes": 191318,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-one-bad-afternoon.jpg",
 			"src": "/images/art-one-bad-afternoon.jpg",
 			"bytes": 455078,
