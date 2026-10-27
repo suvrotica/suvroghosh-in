@@ -27,6 +27,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "art-fraud-fu-and-the-great-algorithmic-toilet-bowl.jpg",
+			"src": "/images/art-fraud-fu-and-the-great-algorithmic-toilet-bowl.jpg",
+			"bytes": 158537,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-hypertension-salt-sugar-and-certainty.jpg",
 			"src": "/images/art-hypertension-salt-sugar-and-certainty.jpg",
 			"bytes": 131538,

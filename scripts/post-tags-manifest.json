@@ -15981,6 +15981,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-27"
+		},
+		"src/lib/posts/fraud-fu-and-the-great-algorithmic-toilet-bowl.md": {
+			"bodyHash": "5f70de6b582238eb077ca2f043e8d4840fb7106d71d777e4afbde5f23f2e8b20",
+			"hashVersion": 2,
+			"revisionHash": "10eb0674ed81e5ae20499de26575b252798014ef7c159b07cc95a8338a548c09",
+			"generatedTags": [
+				"AI",
+				"Cybersecurity",
+				"Fraud",
+				"Machine Learning",
+				"Scams",
+				"Banking",
+				"Crime",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"AI",
+				"Cybersecurity",
+				"Fraud",
+				"Machine Learning",
+				"Scams",
+				"Banking",
+				"Crime",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

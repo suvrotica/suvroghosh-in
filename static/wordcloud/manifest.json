@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T15:13:42.604931+00:00",
+  "generatedAt": "2026-10-27T17:50:51.122921+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4276,6 +4276,29 @@
         "Little",
         "Enters",
         "Ruler"
+      ],
+      "wordCount": 130
+    },
+    "fraud-fu-and-the-great-algorithmic-toilet-bowl": {
+      "generatedAt": "2026-10-27T17:50:49.203215+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/fraud-fu-and-the-great-algorithmic-toilet-bowl.svg",
+      "source": "src/lib/posts/fraud-fu-and-the-great-algorithmic-toilet-bowl.md",
+      "sourceHash": "d5760ebc00dcc39317787307db68b11fa486abce94b7d334339554c356da3b18",
+      "sourceModified": "2026-10-27T17:49:28.910473+00:00",
+      "topWords": [
+        "Somebody",
+        "Money",
+        "Criminal",
+        "AI",
+        "Work",
+        "Machine",
+        "Stop",
+        "Every",
+        "Protection",
+        "Trying",
+        "Help",
+        "Bank"
       ],
       "wordCount": 130
     },

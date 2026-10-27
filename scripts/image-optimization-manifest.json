@@ -8032,6 +8032,22 @@
       "sourceHash": "22bc7fe9cde2aa14c64640cf0474bcb38386b52544a71e6dc7fb435beb9ecf1a",
       "width": 1536
     },
+    "static/images/art-fraud-fu-and-the-great-algorithmic-toilet-bowl.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 158537,
+      "outputHash": "e376b951a4c99ab31f84902277d1ded65294bca93a4e5db23de5b02d0f73e88d",
+      "psnrDb": 36.7,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 201460,
+      "sourceHash": "fc86c6443763e0ed8b786750a7425a576076fb8b446bd52bf1bca836fa90570b",
+      "width": 1024
+    },
     "static/images/art-hypertension-salt-sugar-and-certainty.jpg": {
       "format": "JPEG",
       "height": 630,
