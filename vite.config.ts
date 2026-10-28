@@ -4,6 +4,29 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit()],
+	ssr: {
+		// sanitize-html is CommonJS but its parser is ESM-only. Vercel's Node loader
+		// rejects require(ESM), so bundle this dependency closure with its resolved
+		// versions instead of leaving runtime requires or hoisted bare imports.
+		noExternal: [
+			'sanitize-html',
+			'htmlparser2',
+			'domhandler',
+			'domutils',
+			'domelementtype',
+			'dom-serializer',
+			'entities',
+			'is-plain-object',
+			'escape-string-regexp',
+			'parse-srcset',
+			'postcss',
+			'launder',
+			'dayjs',
+			'nanoid',
+			'picocolors',
+			'source-map-js'
+		]
+	},
 	optimizeDeps: {
 		esbuildOptions: {
 			plugins: [

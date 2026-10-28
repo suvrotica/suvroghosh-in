@@ -90,6 +90,13 @@ sanitization and `svgImageUrl` conversion before passing an image URL to that
 component. This boundary keeps authoring dependencies out of ordinary article
 bundles and protects the existing route-asset budgets.
 
+For server execution, `vite.config.ts` bundles `sanitize-html` and its dependency
+closure through `ssr.noExternal`. The sanitizer's CommonJS entry requires an
+ESM-only parser, which Vercel's Node loader rejected as `ERR_REQUIRE_ESM` even
+though ordinary local Node accepted it. Keeping the resolved dependency closure
+inside the server bundle avoids that loader boundary and preserves nested locked
+versions. Sanitization rules and the browser CSP remain unchanged.
+
 ## Actual renderer and capability matrix
 
 The authoring renderer is the official MIT-licensed **`@plantuml/core@1.2026.9`**
@@ -210,6 +217,7 @@ The following focused checks are available:
 ```text
 npm run uml:test
 npm run uml:renderer:test
+npm run uml:ssr:test
 npm run check
 npm run build:full
 npm run uml:browser:test
@@ -219,6 +227,15 @@ The browser suite targets a loopback production preview with service workers
 blocked; build before running it. `uml:renderer:test` builds its own isolated Vite
 harness with `script-src 'self'` and `connect-src 'none'`, exercises the actual worker,
 and writes proof under `.tmp/uml-renderer/`.
+
+`uml:ssr:test` uses the application's actual SSR configuration to bundle the
+sanitizer, checks that only Node built-ins remain external, and executes the result
+with `--no-experimental-require-module`. It also verifies that scripts, event
+handlers, and remote includes remain rejected. This targets the deployment-loader
+failure found on `/api/uml`. After the packaging correction, the rebuilt server
+passed status, real published-post loading, and local-generation POST checks with
+that same restricted loader (all HTTP 200, with private/no-store status headers).
+Live-site checks remain necessary after deployment.
 
 Final local verification on 28 October:
 

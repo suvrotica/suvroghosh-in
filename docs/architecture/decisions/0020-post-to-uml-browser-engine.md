@@ -42,6 +42,17 @@ or determine compatibility with the official engine. The authoritative browser
 render consumes the exact edited/generated source and recognizes engine error
 images as failures. No automatic provider-backed repair loop is introduced.
 
+Bundle `sanitize-html` and its resolved dependency closure in the server output
+using Vite `ssr.noExternal`. Its CommonJS entry requires ESM-only `htmlparser2`;
+the deployed Vercel Node loader rejects that boundary even though ordinary local
+Node 24 accepts it. Bundling only the entry package is insufficient: it can leave
+incompatible default imports and resolve nested dependencies to different hoisted
+versions. The narrow package list preserves the pinned sanitizer and its locked
+parser/style dependencies without downgrading security behavior or changing CSP.
+The independent `uml:ssr:test` regression builds the actual sanitizer using the
+application SSR configuration, requires its external imports to be Node built-ins,
+and runs it with `--no-experimental-require-module`.
+
 Replace template-driven local inference with explicitly labeled conservative
 heuristics and exact source references. Preserve the original input independently
 of generated output. Local views are conceptual; absent evidence produces a
@@ -142,6 +153,14 @@ boundary. The affected final site build, 744-post discoverability check, and Bar
 route-asset audit all passed: 296,873 raw JavaScript bytes, 107,389 gzip bytes, and
 36 assets. No real AI provider call or hosted owner/quota activation was verified;
 these checks establish local implementation behavior, not production deployment.
+
+The first production release exposed the CommonJS/ESM loader mismatch as HTTP 500
+from `/api/uml`. The stricter Node-loader regression reproduces that failure with
+the external dependency and passes with the bundled closure. The rebuilt server
+also passed status, published-post loading, and local-generation requests with
+`--no-experimental-require-module`: all returned HTTP 200 and the status response
+retained private/no-store headers. Live-site checks are required after deployment;
+the isolated probe alone does not establish deployed success.
 
 The missing repository `security:audit` and `security:smoke` scripts remain the
 documented forensic-audit gap. This ADR does not turn them into implemented checks.

@@ -280,7 +280,8 @@
 		"knowledge-gap-atlas:benchmark": "node scripts/benchmark-knowledge-gap-atlas.mjs",
 		"uml:test": "vitest run src/lib/visualizations/post-to-uml src/lib/server/uml src/routes/api/uml --maxWorkers=2",
 		"uml:browser:test": "playwright test --config playwright.uml.config.ts",
-		"uml:renderer:test": "node scripts/verify-uml-renderer.mjs"
+		"uml:renderer:test": "node scripts/verify-uml-renderer.mjs",
+		"uml:ssr:test": "node scripts/verify-uml-ssr.mjs"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",
