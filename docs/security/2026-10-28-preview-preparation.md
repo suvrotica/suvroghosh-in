@@ -52,6 +52,20 @@ Metadata now escapes HTML metacharacters and both braces before interpolation. C
 regressions check that titles, captions, alt text and assumptions remain literal strings, while
 ordinary exports retain their existing quoted-attribute format.
 
+### Unrelated article bundles imported the UML renderer
+
+The first combined-tree production compilation and discoverability checks passed, but the final
+Barnum route-asset audit failed: 338,459 raw JS bytes and 118,397 gzip bytes exceeded unchanged
+limits of 327,680 and 112,640. The new universal `UmlFigure` import introduced the renderer into
+articles that did not use it. The preprocessor now adds that import only to Markdown containing
+the component tag, preserving automatic authoring support and both existing script-injection paths.
+The source and asset budgets were not relaxed. Rebuilding the site, discoverability audit and
+route-asset audit passed: 264,278 raw JS bytes, 94,779 gzip bytes and 35 assets, with no forbidden
+assets or boundary failures. All 744 published posts passed discoverability checks. The rebuilt
+UML article still contains its figure, title and existing SVG reference; the SVG exists locally.
+The earlier full build's feature/content preparation was unchanged, so only its affected final
+compilation and validation stages were repeated after this import adjustment.
+
 ## Preview boundaries
 
 Read-only Vercel metadata identifies project `suvroghosh-in` and the connected repository
