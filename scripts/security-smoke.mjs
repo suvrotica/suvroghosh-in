@@ -15,8 +15,13 @@ for (const key of Object.keys(env)) {
 env.NODE_ENV = 'test';
 const jobs = [
 	[
-		'Security checker regression fixtures',
-		['--test', 'scripts/security-policy.test.mjs', 'scripts/security-audit.test.mjs']
+		'Security checker and math-renderer regression fixtures',
+		[
+			'--test',
+			'scripts/security-policy.test.mjs',
+			'scripts/security-audit.test.mjs',
+			'scripts/security-katex.test.mjs'
+		]
 	],
 	[
 		'Offline request and provider boundary tests',

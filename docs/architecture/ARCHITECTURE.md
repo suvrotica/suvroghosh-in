@@ -11,6 +11,10 @@ fixtures; it does not establish hosted configuration, multi-session database con
 completed Codex Security plugin scan. See the [remediation record](../security/2026-10-28-hardening.md)
 and [ADR 0020](decisions/0020-durable-chatterbox-admission.md).
 
+The same-day [release-preparation follow-up](../security/2026-10-28-release-readiness.md)
+upgrades KaTeX to the tested 0.18.2 fix and records read-only production evidence and remaining
+dependency/rollout gates. It does not deploy the local security changes.
+
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
 The 22 October privacy/analytics implementation added bounded geographic page-view rollups in
@@ -185,6 +189,7 @@ Installed `node_modules` package versions matched `package-lock.json` when inspe
 | Vitest             | `^4.1.12`      | `4.1.12`           |
 | Playwright test    | `^1.62.0`      | `1.62.0`           |
 | PGlite (test only) | `0.5.11`      | `0.5.11`           |
+| KaTeX              | `0.18.2`       | `0.18.2`           |
 
 The audit host ran Node `24.11.1`, npm `11.12.1`, and Python `3.12.3`. These are observations, not a repository-wide runtime pin. Existing feature CI uses Node 22; the new dependency-free architecture gate uses Node 24. Check individual workflows before assuming the same runtime everywhere.
 
@@ -282,6 +287,13 @@ flowchart LR
 ```
 
 `svelte.config.js` preprocesses Markdown with author-helper imports, image markup enrichment and mdsvex; remark/rehype handle math, heading IDs/links, heading collection, H1 demotion, Bengali language markup and square-bracket styling. Its global imports are limited to the editorial helpers named there. Authors explicitly import substantial interactive experiences.
+
+Markdown's `rehype-katex-svelte` bridge and the browser math renderers resolve the same pinned
+KaTeX 0.18.2. A scoped package override replaces the bridge's affected 0.16 dependency range.
+The security smoke suite checks inherited-trust rejection, bridge compilation and renderer
+assets; the upgrade was additionally compared across 1,947 repository expressions with identical
+MathML and TeX annotations. Layout HTML is version-dependent. Revalidate the override and math
+rendering when either package changes; do not enable trusted HTML to accommodate a migration.
 
 For corrections limited to article `description` and `thumbnailAlt`, `node scripts/refresh-seo-metadata.mjs --base <committed-revision>` is a separate, guarded authoring operation. It resolves an ancestor commit, verifies each prior cache entry against that committed article, and requires unchanged article bodies (apart from platform line endings) and every other frontmatter field, including dates, tags, titles, categories and artwork paths. The complete batch must pass before it updates only the revision hashes in the tag manifest. This preserves editorial modification dates and visible answer layers during metadata maintenance. The ordinary publishing generator retains its existing freshness checks for unrefreshed edits; the utility does not add a build-time bypass or relax content/SEO validation. `seo:test` includes both pure-boundary and temporary-Git CLI regressions for this operation.
 

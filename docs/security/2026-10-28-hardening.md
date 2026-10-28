@@ -1,5 +1,9 @@
 # Security hardening — 28 October 2026
 
+The [release-preparation follow-up](2026-10-28-release-readiness.md) records the subsequent
+KaTeX fix, updated dependency counts and read-only production evidence. Counts below describe
+the initial hardening commit, not the later follow-up.
+
 ## Scope and method
 
 Baseline: `362500d8818eeb0ac6609d2b5c527b3bbd005315`, initially clean. Implementation is on
