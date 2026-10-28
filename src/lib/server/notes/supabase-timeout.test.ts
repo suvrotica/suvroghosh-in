@@ -61,7 +61,9 @@ describe('owner identity lookup deadline', () => {
 		expect(fetcher.mock.calls[0][1].signal.aborted).toBe(false);
 		const controller = new AbortController();
 		controller.abort();
-		await configuredFetch('https://db.example.test/rest/v1/notes', { signal: controller.signal });
-		expect(fetcher.mock.calls[1][1].signal.aborted).toBe(true);
+		await expect(
+			configuredFetch('https://db.example.test/rest/v1/notes', { signal: controller.signal })
+		).rejects.toMatchObject({ name: 'AbortError' });
+		expect(fetcher).toHaveBeenCalledTimes(1);
 	});
 });

@@ -4,6 +4,13 @@ Canonical architecture reference. Last verified: **20 October 2026**, against ap
 
 The mandatory architecture-change policy has one authoritative definition: [CONTRIBUTING.md — Architecture change gate](../../CONTRIBUTING.md#architecture-change-gate). This document describes the implementation; recommendations in the audit are not implemented features.
 
+The 28 October security hardening adds durable fail-closed Chatterbox admission, streamed Notes
+mutation limits, bounded Notes Supabase transports, immutable Actions references and executable
+security checks. This is a scoped review of those boundaries, with local PostgreSQL role/RPC
+fixtures; it does not establish hosted configuration, multi-session database contention or a
+completed Codex Security plugin scan. See the [remediation record](../security/2026-10-28-hardening.md)
+and [ADR 0020](decisions/0020-durable-chatterbox-admission.md).
+
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
 The 22 October privacy/analytics implementation added bounded geographic page-view rollups in
@@ -67,7 +74,10 @@ flowchart LR
     Browser["Reader or owner browser"] --> Static
     Browser --> SSR
     Browser --> Engines["Local Svelte UI, engines, workers, Canvas/WebGL"]
-    SSR --> Providers["Resend / optional Chatterbox service"]
+    SSR --> Providers["Resend"]
+    SSR --> TtsAdmission["Optional TTS: private enable / streamed input / shared admission"]
+    TtsAdmission -->|service-only atomic quota| Supabase
+    TtsAdmission -->|admitted work only| Chatterbox["Chatterbox provider: bounded audio and deadline"]
     SSR --> LabProxy["Private Synthetic Data Lab proxy: origin/body/deadline/admission"]
     LabProxy --> LabService["Separate Python service: owner-scoped simulation and result access"]
     LabService --> Scientific["Seeded NumPy/SciPy engine; CSV and reproducibility bundles"]
@@ -165,15 +175,16 @@ Installed `node_modules` package versions matched `package-lock.json` when inspe
 | Tool               | Declared range | Installed / locked |
 | ------------------ | -------------- | ------------------ |
 | Svelte             | `^5.54.0`      | `5.56.4`           |
-| SvelteKit          | `^2.50.2`      | `2.69.2`           |
+| SvelteKit          | `^2.70.3`      | `2.70.3`           |
 | TypeScript         | `^5.9.3`       | `5.9.3`            |
-| Vite               | `^7.3.1`       | `7.3.6`            |
+| Vite               | `^7.3.7`       | `7.3.7`            |
 | Vercel adapter     | `^6.3.1`       | `6.3.3`            |
 | Svelte Vite plugin | `^6.2.4`       | `6.2.4`            |
 | mdsvex             | `^0.12.7`      | `0.12.7`           |
 | Tailwind CSS       | `^4.2.2`       | `4.2.2`            |
-| Vitest             | `^4.1.10`      | `4.1.10`           |
+| Vitest             | `^4.1.12`      | `4.1.12`           |
 | Playwright test    | `^1.62.0`      | `1.62.0`           |
+| PGlite (test only) | `0.5.11`      | `0.5.11`           |
 
 The audit host ran Node `24.11.1`, npm `11.12.1`, and Python `3.12.3`. These are observations, not a repository-wide runtime pin. Existing feature CI uses Node 22; the new dependency-free architecture gate uses Node 24. Check individual workflows before assuming the same runtime everywhere.
 
@@ -1722,7 +1733,7 @@ When Supabase URL/publishable-key configuration is absent, public repository rea
 
 Public viewers fetch the document separately from metadata, draw culled canvas objects, and retain a semantic transcript/controls around canvas output. Owner editing supports local draft recovery and a queued save path; a stalled unbounded browser request can currently hold the autosave path (`AF-004`). Fractal Atlas now normalizes imported and locally saved laboratory envelopes through its feature-local `specimen-state.ts`: bounded finite divider/path controls, strict boolean/enum values, validated comparison core state, and finite decimal coordinates describing the same numeric point. Its existing core-state parser remains responsible for the fractal recipe (`AF-005`, corrected).
 
-Supabase rows are manually described/asserted in `repository.ts`; clients do not use generated end-to-end database types. Existing tests cover shared geometry/schema/history/export, recovery/referrer helpers and SQL source patterns. Running the migration under real roles and testing concurrent RPC behavior remains open work (`AF-003`).
+Supabase rows are manually described/asserted in `repository.ts`; clients do not use generated end-to-end database types. Existing tests cover shared geometry/schema/history/export, recovery/referrer helpers and SQL source patterns. The Notes PGlite suite now executes the unmodified migration under PostgreSQL roles and tests RPC authorization and state transitions. Hosted Auth/Storage/PostgREST integration and true concurrent-connection RPC behavior remain open work (`AF-003`).
 
 ### Moderated post comments
 
@@ -2244,7 +2255,36 @@ performs a separately authorised deletion. See [the comment boundary](#moderated
 
 Errors currently follow several mechanisms: Kit `error`/`redirect`, form `fail` data, Zod parsing, repository error translation, provider HTTP responses, and a site `+error.svelte`. Universal Markdown import failures are logged and mapped to 404; they do not expose a detailed import error to readers. Notes use bounded runtime Zod validation (ordinary object schemas strip unknown keys); topic/resource authored metadata contracts are stricter. Article metadata uses a lighter validator and build checks. This diversity is real; a single universal error/schema layer does not exist.
 
-New expensive/state-changing endpoints must follow the existing security invariants in [AGENTS.md](../../AGENTS.md): validate input, enforce streamed body limits, same-origin rules where browser-invoked, timeouts and cost-appropriate throttling. TTS and contact now use the shared server-only `http/body.ts` streamed reader/deadline helper and bounded `local-admission.ts` guard. Their 64 KiB input limits apply before parsing, with ten-second read deadlines and exact origin checks. TTS limits audio to 32 MiB within a 120-second provider deadline; contact delivery has a 15-second deadline. Admission is process-local, including a bounded fallback bucket when the adapter cannot resolve an address, and is not a distributed guarantee. Notes mutation readers and non-auth Supabase deadlines outside the bounded analytics repository remain gaps (`AF-001`, in progress); the shared identity lookup is bounded as described above. SvelteKit's built-in form CSRF check is present; it does not replace explicit policy for every JSON endpoint. The named `security:audit` and `security:smoke` commands are currently absent, so they cannot be presented as passing safeguards.
+New expensive/state-changing endpoints must follow the security invariants in [AGENTS.md](../../AGENTS.md): validate input, enforce streamed body limits, same-origin rules where browser-invoked, timeouts and cost-appropriate throttling. TTS and contact use the server-only `http/body.ts` streamed reader/deadline helper and bounded `local-admission.ts` guard. Their 64 KiB input limits apply before parsing, with ten-second read deadlines and exact origin checks. TTS limits audio to 32 MiB within a 120-second provider deadline; contact delivery has a 15-second deadline. Contact admission remains process-local, including a bounded fallback bucket when the adapter cannot resolve an address. Origin checks do not authenticate non-browser callers.
+
+`src/lib/server/tts/quota.ts` adds a separate five-second, redirect-rejecting shared admission
+request before any Chatterbox provider call. It requires `CHATTERBOX_TTS_ENABLED=true`, a
+dedicated salt of at least 32 characters, valid server connection settings and a trusted adapter
+client address. The browser flag is display-only. The service-only `reserve_chatterbox_usage`
+RPC serializes reservations with a transaction advisory lock and a one-second lock-wait cap:
+100 calls/60,000 normalized UTF-16 text units per UTC day, three calls per client per UTC hour,
+and two starts per 150 seconds globally. Failed/aborted/unknown calls retain their reservations.
+Bounded cleanup retains recent keyed identity hashes and counts, never prose or raw addresses.
+These are resource ceilings, not a provider billing guarantee or proof that upstream work stops
+on abort. Missing schema, configuration, identity or a valid quota receipt prevents provider
+access. Provider errors return generic no-store responses; logs carry fixed labels and HTTP
+status only. See ADR 0020 for activation and concurrency-verification limits.
+
+Notes document updates and asset uploads count arriving bytes before JSON or multipart parsing
+(4 MiB document / 3 MiB multipart envelope, ten-second deadline). Existing 2 MiB asset limits,
+image re-encoding, owner authorization and private response headers remain. An explicitly
+conflicting Origin cannot be overridden by Fetch Metadata. Shared Notes session/public/admin
+Supabase clients now bound each fetch and decoded response read to 15 seconds and 32 MiB;
+resource-limit errors use AbortError to stop SDK retry renewal, and late responses are cancelled.
+The identity lookup keeps its five-second outer deadline. This is per-transport containment,
+not a transaction-wide database timeout or hosted Auth/Storage guarantee.
+
+`hooks.server.ts` rejects parsed pathnames beginning with `//` before auth or routing, applying
+the official mitigation for GHSA-pfhg-q3qv-9q6r while retaining SvelteKit 2. Normal public paths
+and crawling are unchanged. SvelteKit's built-in form CSRF check remains; it does not replace
+explicit policy for JSON endpoints. Hosted signup/MFA and distributed sign-in guessing remain
+separate operator/security-policy concerns; the per-IP-plus-email bucket avoids a trivial
+global account-lockout change.
 
 ## 10. Caching and offline behavior
 
@@ -2284,6 +2324,21 @@ flowchart LR
 Delivered publications cannot be recalled from an offline device. This is a documented product constraint, not an authorization guarantee. Do not extend the worker to cache authenticated pages or mutable draft APIs.
 
 ## 11. Tests and architectural verification
+
+`security:audit` checks the actual CSP/deployment header configuration, direct server-only import
+edges in application TS/JS/Svelte, action pinning/checkout credentials and trusted-base workflow
+structure, then runs the complete npm audit including development dependencies. Any finding,
+scanner failure or missing result returns nonzero; the remaining low dependency advisories are
+not suppressed. This is scoped policy enforcement, not a complete static analyzer.
+
+`security:smoke` runs checker fixtures and mocked request/provider regressions under a dedicated
+Vitest configuration with provider credentials removed and default global fetch rejected.
+`security:sql` applies the Notes and new TTS migrations to disposable PGlite 0.5.11 databases and
+executes roles, grants, RPCs, snapshots, revocation and quota cases. Its single queued connection
+does not establish multi-connection race behavior, hosted Auth/Storage or PostgREST behavior.
+The security workflow runs these checks with read-only permissions and no provider secrets;
+smoke/SQL still run if the advisory audit fails. All action references are immutable, with
+Dependabot maintenance. Configuring required status checks remains a hosted administrator task.
 
 Comic catalogue/asset checks and the link-validator fixtures verify finite route membership,
 published original-story references, cover metadata and real PDF downloads. The analytics

@@ -1,8 +1,11 @@
 import { env } from '$env/dynamic/private';
-import { json, type RequestHandler } from '@sveltejs/kit';
+import { json as kitJson, type RequestHandler } from '@sveltejs/kit';
 import { createHash } from 'node:crypto';
 import { BodyReadError, readBoundedBody, withDeadline } from '$lib/server/http/body';
 import { createLocalAdmission } from '$lib/server/http/local-admission';
+import { reserveTtsUsage, ttsQuotaConfig, type TtsQuotaConfig } from '$lib/server/tts/quota';
+
+export const config = { maxDuration: 150 };
 
 type LogicalModel = 'turbo' | 'original' | 'multilingual';
 type AudioFormat = 'wav' | 'mp3' | 'opus';
@@ -55,6 +58,12 @@ const AUDIO_CONTENT_TYPE_BY_FORMAT: Record<AudioFormat, string> = {
 
 const EXPRESSIVE_TAGS = new Set(['laugh', 'sigh', 'pause', 'cough', 'breath']);
 
+function json(data: unknown, init?: ResponseInit) {
+	const headers = new Headers(init?.headers);
+	headers.set('Cache-Control', 'no-store');
+	return kitJson(data, { ...init, headers });
+}
+
 export const POST: RequestHandler = async ({ request, url, getClientAddress }) => {
 	if (request.headers.get('origin') !== url.origin) {
 		return json({ error: 'A same-origin request is required.' }, { status: 403 });
@@ -67,17 +76,22 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress }) =
 	if (!endpoint) {
 		return json(
 			{
-				error:
-					'Chatterbox TTS is not configured. Set CHATTERBOX_TTS_ENDPOINT to a local or self-hosted backend.'
+				error: 'Chatterbox TTS is not available. Use device speech instead.'
 			},
 			{ status: 501 }
 		);
 	}
-	let address = 'unknown';
+	const quotaConfig = ttsQuotaConfig(env);
+	if (!quotaConfig) {
+		return json({ error: 'Chatterbox TTS is temporarily unavailable.' }, { status: 503 });
+	}
+	let address: string;
 	try {
 		address = getClientAddress();
+		if (!address || address.length > 256) throw new Error('Missing address');
 	} catch {
-		// Share a conservative fallback bucket when an adapter has no client address.
+		// No trusted identity means no durable client quota, so do not invoke the provider.
+		return json({ error: 'Chatterbox TTS is temporarily unavailable.' }, { status: 503 });
 	}
 	const admission = admitRequest(createHash('sha256').update(address).digest('hex'));
 	if (!admission.allowed) {
@@ -90,13 +104,18 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress }) =
 		);
 	}
 	try {
-		return await generateAudio(request, endpoint);
+		return await generateAudio(request, endpoint, address, quotaConfig);
 	} finally {
 		admission.release();
 	}
 };
 
-async function generateAudio(request: Request, endpoint: string) {
+async function generateAudio(
+	request: Request,
+	endpoint: string,
+	address: string,
+	quotaConfig: TtsQuotaConfig
+) {
 	const payload = await parseJson(request);
 	if (!payload.ok) {
 		return json({ error: payload.error }, { status: payload.status });
@@ -106,24 +125,47 @@ async function generateAudio(request: Request, endpoint: string) {
 	if (!normalized.ok) {
 		return json({ error: normalized.error }, { status: 400 });
 	}
+	try {
+		const quota = await reserveTtsUsage(
+			quotaConfig,
+			address,
+			normalized.value.text.length,
+			request.signal
+		);
+		if (!quota.allowed) {
+			return json(
+				{ error: 'The audio usage limit has been reached. Try later or use device speech.' },
+				{ status: 429, headers: { 'Retry-After': String(quota.retryAfterSeconds) } }
+			);
+		}
+	} catch {
+		// Never log the RPC body, credential, visitor identity, or user-supplied text.
+		console.warn('chatterbox_quota_unavailable');
+		return json({ error: 'Chatterbox TTS is temporarily unavailable.' }, { status: 503 });
+	}
 
 	const backendRequest = buildBackendRequest(endpoint, normalized.value);
 	try {
-		return await withDeadline(async (signal) => {
+		return await withDeadline(async (deadline) => {
+			const signal = AbortSignal.any([deadline, request.signal]);
+			signal.throwIfAborted();
 			const backendResponse = await fetch(endpoint, {
 				method: 'POST',
+				redirect: 'error',
 				headers: backendHeaders(),
 				body: JSON.stringify(backendRequest),
 				signal
 			});
 
 			if (!backendResponse.ok) {
+				console.warn('chatterbox_provider_failed', {
+					kind: 'http',
+					status: backendResponse.status
+				});
+				void backendResponse.body?.cancel().catch(() => {});
 				return json(
 					{
-						error:
-							'Chatterbox backend could not generate audio. It may not support the requested model or voice.',
-						backendStatus: backendResponse.status,
-						detail: await readBackendError(backendResponse, signal)
+						error: 'Chatterbox backend could not generate audio. Please try again later.'
 					},
 					{ status: 502 }
 				);
@@ -131,11 +173,11 @@ async function generateAudio(request: Request, endpoint: string) {
 
 			const backendContentType = backendResponse.headers.get('content-type') ?? '';
 			if (!isAudioContentType(backendContentType)) {
+				console.warn('chatterbox_provider_failed', { kind: 'content_type' });
+				void backendResponse.body?.cancel().catch(() => {});
 				return json(
 					{
-						error: 'Chatterbox backend did not return audio.',
-						backendStatus: backendResponse.status,
-						detail: await readBackendError(backendResponse, signal)
+						error: 'Chatterbox backend did not return audio.'
 					},
 					{ status: 502 }
 				);
@@ -433,13 +475,4 @@ function contentTypeFor(format: AudioFormat, backendContentType: string) {
 	return isAudioContentType(backendContentType)
 		? backendContentType
 		: AUDIO_CONTENT_TYPE_BY_FORMAT[format];
-}
-
-async function readBackendError(response: Response, signal: AbortSignal) {
-	try {
-		const bytes = await readBoundedBody(response, 8192, BODY_TIMEOUT_MS, signal);
-		return new TextDecoder().decode(bytes).slice(0, 500);
-	} catch {
-		return 'Backend error details exceeded the response limit or could not be read.';
-	}
 }

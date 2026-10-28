@@ -54,7 +54,8 @@ export function assertSameOrigin(event: RequestEvent) {
 	const origin = event.request.headers.get('origin');
 	const fetchSite = event.request.headers.get('sec-fetch-site');
 	const exactOrigin = origin === event.url.origin;
-	const browserConfirmedSameOrigin = fetchSite === 'same-origin';
+	// Fetch Metadata is a fallback for clients without Origin, not an override for a conflicting one.
+	const browserConfirmedSameOrigin = origin === null && fetchSite === 'same-origin';
 	if (!exactOrigin && !browserConfirmedSameOrigin) {
 		throw error(403, { message: 'Cross-site requests are not allowed.' });
 	}

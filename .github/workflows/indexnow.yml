@@ -24,12 +24,13 @@ jobs:
       INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
     steps:
       - name: Check out the deployed revision
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-28
         with:
+          persist-credentials: false
           ref: ${{ github.event.deployment.sha || github.sha }}
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, verified 2026-10-28
         with:
           node-version: 24
 
@@ -37,7 +38,7 @@ jobs:
         run: node --test scripts/indexnow.test.mjs
 
       - name: Restore the previous production sitemap
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4, verified 2026-10-28
         with:
           path: .cache/indexnow/sitemap.xml
           key: indexnow-sitemap-${{ github.event.deployment.sha || github.sha }}
@@ -45,7 +46,7 @@ jobs:
             indexnow-sitemap-
 
       - name: Restore the previous production Notes sitemap
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4, verified 2026-10-28
         with:
           path: .cache/indexnow/notes-sitemap.xml
           key: indexnow-notes-sitemap-${{ github.event.deployment.sha || github.sha }}

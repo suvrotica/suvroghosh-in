@@ -3,13 +3,27 @@ import type { RequestHandler } from './$types';
 import { assertSameOrigin, getNotesClient, requireNotesOwner } from '$lib/server/notes/auth';
 import { getOwnerNote } from '$lib/server/notes/repository';
 import { validatePreparedWebp } from '$lib/server/notes/images';
+import { readNotesBody } from '$lib/server/notes/request-body';
+
+const MAX_REQUEST_BYTES = 3 * 1024 * 1024;
 
 export const POST: RequestHandler = async (event) => {
 	assertSameOrigin(event);
 	const owner = await requireNotesOwner(event);
-	const declaredLength = Number(event.request.headers.get('content-length') ?? '0');
-	if (declaredLength > 3 * 1024 * 1024) {
-		throw error(413, { message: 'The image upload request is too large.' });
+	const contentType = event.request.headers.get('content-type');
+	if (contentType?.split(';')[0].trim().toLowerCase() !== 'multipart/form-data') {
+		throw error(415, { message: 'The image upload must use multipart/form-data.' });
+	}
+	const body = await readNotesBody(
+		event.request,
+		MAX_REQUEST_BYTES,
+		'The image upload request is too large.'
+	);
+	let form: FormData;
+	try {
+		form = await new Response(body, { headers: { 'content-type': contentType } }).formData();
+	} catch {
+		throw error(400, { message: 'The image upload is not a valid multipart form.' });
 	}
 	const client = getNotesClient(event);
 	const note = await getOwnerNote(client, event.params.id);
@@ -29,7 +43,6 @@ export const POST: RequestHandler = async (event) => {
 			message: 'This note has reached its private image quota (250 images or 200 MB).'
 		});
 	}
-	const form = await event.request.formData();
 	const file = form.get('file');
 	const alt = String(form.get('alt') ?? '')
 		.trim()

@@ -4,7 +4,7 @@ import { createNotesAdminClient } from './supabase';
 
 async function hashKey(value: string) {
 	const salt = env.NOTES_RATE_LIMIT_SALT;
-	if (!salt) return null;
+	if (!salt || salt.length < 32) return null;
 	const digest = await crypto.subtle.digest(
 		'SHA-256',
 		new TextEncoder().encode(`${salt}:${value}`)
@@ -24,6 +24,8 @@ export async function consumeOwnerSignInLimit(event: RequestEvent, email: string
 	const client = createNotesAdminClient();
 	const address = clientAddress(event);
 	const ipKey = await hashKey(`signin-ip:${address}`);
+	// This bucket deliberately avoids a remotely triggerable lockout of the owner across all IPs.
+	// It is not distributed-guessing protection; owner MFA and hosted Auth policy remain required.
 	const accountKey = await hashKey(`signin-account:${address}:${email.trim().toLowerCase()}`);
 	if (!client || !ipKey || !accountKey) {
 		return { configured: false, allowed: false, accountKey: null };
