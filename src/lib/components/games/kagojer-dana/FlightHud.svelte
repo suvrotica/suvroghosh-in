@@ -44,15 +44,15 @@
 		<dl>
 			<div>
 				<dt>Altitude</dt>
-				<dd>{Math.round(hud.altitudeMetres)} m</dd>
+				<dd>{Math.round(hud.altitudeMetres)} <span>m</span></dd>
 			</div>
 			<div>
 				<dt>Airspeed</dt>
-				<dd>{hud.airspeedMps.toFixed(1)} m/s</dd>
+				<dd>{hud.airspeedMps.toFixed(1)} <span>m/s</span></dd>
 			</div>
 			<div>
 				<dt>Climb</dt>
-				<dd>{signed(hud.verticalSpeedMps)} m/s</dd>
+				<dd>{signed(hud.verticalSpeedMps)} <span>m/s</span></dd>
 			</div>
 		</dl>
 		<div class="wind-card"><span>Wind</span><strong>{hud.windLabel}</strong></div>
@@ -135,6 +135,7 @@
 		inset: 0;
 		color: #f8eed8;
 		font-family: 'Courier New', monospace;
+		font-variant-numeric: tabular-nums;
 		pointer-events: none;
 	}
 
@@ -143,28 +144,29 @@
 		top: max(14px, env(safe-area-inset-top));
 		left: max(14px, env(safe-area-inset-left));
 		display: grid;
-		gap: 7px;
-		width: min(410px, calc(100% - 170px));
-		text-shadow: 0 2px 6px #000;
+		gap: 0;
+		width: min(330px, calc(100% - 170px));
+		border-left: 2px solid #d8c49b;
+		background: linear-gradient(90deg, rgb(22 23 21 / 0.9), rgb(22 23 21 / 0.74));
+		box-shadow: 0 6px 24px rgb(0 0 0 / 0.12);
+		padding: 10px 12px;
 	}
 
 	.district-card,
 	.wind-card,
 	.hazard-card,
 	.telemetry dl {
-		width: fit-content;
+		width: 100%;
 		max-width: 100%;
-		border-left: 3px solid rgb(236 198 115 / 0.8);
-		background: linear-gradient(90deg, rgb(20 18 15 / 0.76), rgb(20 18 15 / 0));
-		padding: 5px 18px 5px 9px;
+		padding: 6px 0;
 	}
 
 	.district-card span,
 	.wind-card span,
 	.hazard-card span {
 		display: block;
-		color: #d9bd82;
-		font-size: 0.58rem;
+		color: #d9c9a9;
+		font-size: 0.6rem;
 		font-weight: 900;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -173,9 +175,10 @@
 	.district-card strong {
 		display: block;
 		margin-top: 2px;
+		color: #fff4df;
 		font-family: Georgia, serif;
-		font-size: clamp(0.95rem, 1.7vw, 1.3rem);
-		line-height: 1.08;
+		font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+		line-height: 1.15;
 	}
 
 	.wind-card strong,
@@ -185,15 +188,32 @@
 		line-height: 1.3;
 	}
 
+	.wind-card,
+	.hazard-card {
+		display: grid;
+		grid-template-columns: 76px minmax(0, 1fr);
+		align-items: baseline;
+		gap: 8px;
+		border-top: 1px solid rgb(244 225 187 / 0.13);
+	}
+
+	.hazard-card span {
+		letter-spacing: 0.04em;
+	}
+
 	.hazard-card.warning {
-		border-left-color: #ffb24f;
+		border-left: 3px solid #ffcb80;
+		background: rgb(137 82 23 / 0.25);
+		padding-left: 7px;
 		color: #fff2c5;
 	}
 
 	.telemetry dl {
 		display: flex;
-		gap: 14px;
+		justify-content: space-between;
+		gap: 10px;
 		margin: 0;
+		padding-block: 9px 11px;
 		font-size: 0.66rem;
 	}
 
@@ -203,13 +223,24 @@
 	}
 
 	.telemetry dt {
-		color: #d6c4a3;
+		color: #cfc3ab;
+		font-size: 0.59rem;
+		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
 
 	.telemetry dd {
 		margin: 0;
+		color: #fff3d8;
 		font-weight: 900;
+		font-size: 0.93rem;
+		white-space: nowrap;
+	}
+
+	.telemetry dd span {
+		font-size: 0.6rem;
+		font-weight: 400;
+		color: #d4c8b0;
 	}
 
 	.score {
@@ -234,15 +265,28 @@
 		min-width: 44px;
 		min-height: 44px;
 		border: 1px solid rgb(244 225 187 / 0.55);
-		border-radius: 999px;
-		background: rgb(22 20 17 / 0.68);
-		box-shadow: 0 5px 18px rgb(0 0 0 / 0.3);
+		border-radius: 4px;
+		background: rgb(22 23 21 / 0.86);
+		box-shadow: 0 3px 12px rgb(0 0 0 / 0.15);
 		color: #f4e1bb;
 		font: inherit;
 		font-size: 0.64rem;
 		font-weight: 900;
 		padding: 0 12px;
 		backdrop-filter: blur(5px);
+	}
+
+	.utility-buttons button[aria-pressed='true'] {
+		border-color: #f4e1bb;
+		background: #e6d6b7;
+		color: #24241e;
+	}
+
+	@media (hover: hover) {
+		.utility-buttons button:hover {
+			background: #e6d6b7;
+			color: #24241e;
+		}
 	}
 
 	.utility-buttons button:focus-visible {
@@ -259,7 +303,7 @@
 		max-width: min(640px, calc(100% - 32px));
 		transform: translateX(-50%);
 		margin: 0;
-		border-radius: 999px;
+		border-radius: 4px;
 		background: rgb(22 20 17 / 0.78);
 		box-shadow: 0 8px 34px rgb(0 0 0 / 0.32);
 		color: #f8eed8;
@@ -275,7 +319,7 @@
 	}
 
 	.flight-phrase {
-		top: 14px;
+		bottom: 9%;
 		left: 50%;
 		border: 1px solid rgb(244 225 187 / 0.25);
 		background: rgb(22 20 17 / 0.58);
@@ -287,7 +331,8 @@
 	}
 
 	.marginal-note {
-		top: 24%;
+		top: 14px;
+		max-width: min(340px, 26%);
 		border: 1px solid rgb(244 225 187 / 0.35);
 		padding: 8px 14px;
 		font-family: Georgia, serif;
@@ -350,17 +395,32 @@
 		.telemetry {
 			top: 9px;
 			left: 9px;
-			width: min(56%, 350px);
-			gap: 4px;
+			width: min(45%, 280px);
+			gap: 0;
+			padding: 5px 9px;
 		}
 		.telemetry dl {
 			gap: 8px;
 			padding-block: 3px;
 		}
+		.telemetry dd {
+			font-size: 0.78rem;
+		}
+		.district-card {
+			padding-block: 2px 5px;
+		}
 		.wind-card,
 		.hazard-card {
-			max-width: min(100%, 320px);
+			grid-template-columns: 60px minmax(0, 1fr);
 			padding-block: 3px;
+		}
+		.wind-card span,
+		.hazard-card span {
+			font-size: 0.53rem;
+		}
+		.wind-card strong,
+		.hazard-card strong {
+			font-size: 0.62rem;
 		}
 		.utility-buttons {
 			top: 8px;
@@ -380,6 +440,14 @@
 		}
 		.flight-phrase {
 			display: none;
+		}
+		.marginal-note {
+			top: auto;
+			bottom: 94px;
+			left: 10px;
+			max-width: calc(100% - min(46vw, 205px) - 30px);
+			transform: none;
+			font-size: 0.75rem;
 		}
 		.sound-caption {
 			bottom: 52px;

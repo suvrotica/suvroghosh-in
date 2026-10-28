@@ -123,9 +123,15 @@ async function captureFrame(page, { mode, viewport, fileName }) {
 		console.log(`  ${mode}: renderer ready`);
 		// The public HUD remains visible during play, but the catalog/social artwork
 		// should show the renderer itself rather than bake transient controls into it.
-		await page.locator('#game-experience .hud').evaluate((element) => {
-			element.style.visibility = 'hidden';
-		});
+		await page
+			.locator(
+				'#game-experience .hud, [data-privacy-note], [data-privacy-settings], .privacy-status'
+			)
+			.evaluateAll((elements) => {
+				// Capture only the game, without baking site chrome into its poster.
+				// This affects the capture page only; it does not change consent.
+				for (const element of elements) element.style.visibility = 'hidden';
+			});
 		await page.waitForTimeout(2_200);
 		const canvas = page.locator('#game-experience canvas');
 		const png = await canvas.screenshot({ type: 'png', animations: 'disabled' });

@@ -3620,21 +3620,21 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "games/kagojer-dana-portrait.webp",
 			"src": "/images/games/kagojer-dana-portrait.webp",
-			"bytes": 29304,
+			"bytes": 25272,
 			"width": 800,
 			"height": 1200
 		},
 		{
 			"name": "games/kagojer-dana-poster.webp",
 			"src": "/images/games/kagojer-dana-poster.webp",
-			"bytes": 34006,
+			"bytes": 32448,
 			"width": 1200,
 			"height": 800
 		},
 		{
 			"name": "games/kagojer-dana-social.png",
 			"src": "/images/games/kagojer-dana-social.png",
-			"bytes": 518044,
+			"bytes": 477768,
 			"width": 1200,
 			"height": 800
 		},

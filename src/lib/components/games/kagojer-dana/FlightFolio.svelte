@@ -160,6 +160,7 @@
 	}
 
 	.folio-paper {
+		color-scheme: light;
 		width: min(950px, 100%);
 		min-height: 100%;
 		margin: auto;
@@ -194,6 +195,7 @@
 
 	header h2 {
 		margin: 0;
+		color: #332d24;
 		font:
 			italic 800 clamp(1.8rem, 4.5vw, 3.5rem)/0.95 Georgia,
 			serif;
@@ -217,6 +219,7 @@
 
 	.altitude-sheet h3 {
 		margin: 0;
+		color: #332d24;
 		font:
 			800 0.72rem/1.2 'Courier New',
 			monospace;
@@ -306,6 +309,7 @@
 
 	.new-pages h3 {
 		margin: 0 0 10px;
+		color: #332d24;
 		font-family: 'Courier New', monospace;
 		font-size: 0.82rem;
 		letter-spacing: 0.08em;

@@ -4,6 +4,17 @@ import AxeBuilder from '@axe-core/playwright';
 const GAME_PATH = '/blog/games/kagojer-dana-a-paper-plane-through-calcutta';
 const SETTINGS_KEY = 'kagojer-dana.settings';
 
+test.use({ serviceWorkers: 'block' });
+
+test.beforeEach(async ({ page, baseURL }) => {
+	if (baseURL && ['127.0.0.1', 'localhost'].includes(new URL(baseURL).hostname)) {
+		// Vercel serves this platform script in production; Vite preview does not.
+		await page.route('**/_vercel/insights/script.js', (route) =>
+			route.fulfill({ status: 200, contentType: 'application/javascript', body: '' })
+		);
+	}
+});
+
 type RuntimeAudit = {
 	canvasCreations: number;
 	webglContextCalls: number;
@@ -20,7 +31,7 @@ function collectRuntimeProblems(page: Page): string[] {
 		const text = message.text();
 		if (
 			message.type() === 'error' ||
-			(message.type() === 'warning' && /hydration|mismatch/i.test(text))
+			(message.type() === 'warning' && /hydration|mismatch|shader|THREE\.WebGLProgram/i.test(text))
 		) {
 			problems.push(`console ${message.type()}: ${text}`);
 		}
@@ -104,8 +115,14 @@ async function audit(page: Page): Promise<RuntimeAudit> {
 	);
 }
 
-async function openPoster(page: Page) {
-	await page.goto(GAME_PATH, { waitUntil: 'networkidle' });
+async function dismissPrivacyNotice(page: Page) {
+	const dismiss = page.getByRole('button', { name: 'Dismiss privacy notice without choosing' });
+	if (await dismiss.isVisible()) await dismiss.click();
+}
+
+async function openPoster(page: Page, path = GAME_PATH) {
+	await page.goto(path, { waitUntil: 'networkidle' });
+	await dismissPrivacyNotice(page);
 	await expect(game(page)).toHaveAttribute('data-phase', 'poster');
 	await expect(
 		game(page).getByRole('heading', { name: 'Kagojer Dana', exact: true })
@@ -121,6 +138,7 @@ async function openPoster(page: Page) {
 }
 
 async function start(page: Page, sound: boolean) {
+	await dismissPrivacyNotice(page);
 	await game(page)
 		.getByRole('button', { name: sound ? 'Fly with Calcutta sound' : 'Fly silently' })
 		.click();
@@ -132,7 +150,11 @@ test('the server-rendered poster, controls and article remain complete without J
 	browser,
 	baseURL
 }) => {
-	const context = await browser.newContext({ baseURL, javaScriptEnabled: false });
+	const context = await browser.newContext({
+		baseURL,
+		javaScriptEnabled: false,
+		serviceWorkers: 'block'
+	});
 	const page = await context.newPage();
 	try {
 		await page.goto(GAME_PATH, { waitUntil: 'load' });
@@ -257,6 +279,7 @@ test('portrait phones receive the finished poster while landscape receives one c
 }) => {
 	const context = await browser.newContext({
 		baseURL,
+		serviceWorkers: 'block',
 		viewport: { width: 390, height: 844 },
 		isMobile: true,
 		hasTouch: true
@@ -264,6 +287,7 @@ test('portrait phones receive the finished poster while landscape receives one c
 	const page = await context.newPage();
 	try {
 		await page.goto(GAME_PATH, { waitUntil: 'networkidle' });
+		await dismissPrivacyNotice(page);
 		await expect(game(page)).toHaveAttribute('data-phase', 'poster');
 		await expect(
 			game(page).getByRole('heading', { name: 'Kagojer Dana', exact: true })
@@ -378,7 +402,11 @@ test('reduced motion defaults a new visitor to Calm Flight and the poster has no
 	browser,
 	baseURL
 }) => {
-	const context = await browser.newContext({ baseURL, reducedMotion: 'reduce' });
+	const context = await browser.newContext({
+		baseURL,
+		reducedMotion: 'reduce',
+		serviceWorkers: 'block'
+	});
 	const page = await context.newPage();
 	try {
 		await openPoster(page);
@@ -412,4 +440,90 @@ test('navigation closes audio and removes the canvas', async ({ page }) => {
 	await expect(page.locator('#game-experience')).toHaveCount(0);
 	await expect.poll(async () => (await audit(page)).audioContextCloses).toBeGreaterThanOrEqual(1);
 	await expect(page.locator('canvas')).toHaveCount(0);
+});
+
+for (const theme of ['light', 'night']) {
+	test(`the opening title keeps its paper contrast in the ${theme} site theme`, async ({
+		page
+	}, testInfo) => {
+		await page.addInitScript((value) => localStorage.setItem('site-theme', value), theme);
+		await openPoster(page, `${GAME_PATH}?kd_v=1&kd_seed=KD-OLD-ROOFS`);
+		await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+		const title = game(page).getByRole('heading', { name: 'Kagojer Dana', exact: true });
+		await expect(title).toHaveCSS('color', 'rgb(255, 243, 216)');
+		await expect(game(page)).toHaveCSS('background-color', 'rgb(23, 21, 17)');
+		await game(page).screenshot({
+			path: testInfo.outputPath(`landing-${theme}.png`),
+			style: '[data-privacy-settings] { visibility: hidden !important; }'
+		});
+	});
+}
+
+test('short landscape keeps the expanded controls readable and launch reachable', async ({
+	page
+}, testInfo) => {
+	await page.setViewportSize({ width: 844, height: 390 });
+	await openPoster(page);
+	const controls = game(page).getByRole('button', { name: 'Controls', exact: true });
+	await controls.click();
+	await expect(controls).toHaveAttribute('aria-expanded', 'true');
+	const instructions = game(page).locator('.controls-note');
+	await instructions.scrollIntoViewIfNeeded();
+	await expect(instructions).toBeInViewport();
+	await expect(instructions).toContainText('Raising the nose spends speed.');
+	await game(page).screenshot({
+		path: testInfo.outputPath('landscape-controls.png'),
+		style: '[data-privacy-settings] { visibility: hidden !important; }'
+	});
+	await start(page, false);
+	await expect(game(page).getByRole('button', { name: 'Pause', exact: true })).toBeInViewport();
+});
+
+test('high and battery drawing quality can be switched without losing the flight or shader errors', async ({
+	page
+}, testInfo) => {
+	const problems = collectRuntimeProblems(page);
+	await openPoster(page, `${GAME_PATH}?kd_v=1&kd_seed=KD-OLD-ROOFS&kd_debug=1`);
+	await start(page, false);
+	const experience = game(page);
+	for (const [index, quality] of ['high', 'battery', 'high'].entries()) {
+		await experience.getByRole('button', { name: 'Settings', exact: true }).click();
+		await expect(experience).toHaveAttribute('data-phase', 'paused');
+		await expect(experience.getByRole('heading', { name: 'Wind and comfort' })).toHaveCSS(
+			'color',
+			'rgb(255, 243, 216)'
+		);
+		await experience.getByLabel('Drawing quality').selectOption(quality);
+		await experience.getByRole('button', { name: 'Return to the flight' }).click();
+		await expect(experience).toHaveAttribute('data-phase', 'playing');
+		const diagnostics = experience.locator('.debug-panel');
+		await expect(
+			diagnostics
+				.locator('div')
+				.filter({ has: page.getByText('Quality', { exact: true }) })
+				.locator('dd')
+		).toHaveText(quality);
+		await expect
+			.poll(async () =>
+				Number(
+					await diagnostics
+						.locator('div')
+						.filter({ has: page.getByText('Draw calls', { exact: true }) })
+						.locator('dd')
+						.innerText()
+				)
+			)
+			.toBeGreaterThan(0);
+		await expect(experience.locator('canvas')).toHaveCount(1);
+		await experience.screenshot({
+			path: testInfo.outputPath(`flight-${index + 1}-${quality}.png`),
+			style: '[data-privacy-settings] { visibility: hidden !important; }'
+		});
+	}
+	await experience.getByRole('button', { name: 'Pause', exact: true }).click();
+	await expect(experience.getByRole('heading', { name: 'Flight paused' })).toHaveCSS(
+		'color',
+		'rgb(255, 243, 216)'
+	);
+	expect(problems).toEqual([]);
 });

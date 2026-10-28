@@ -155,9 +155,12 @@ export class DistrictChunkVisualFactory implements ChunkVisualFactory {
 		material: THREE.Material,
 		item: Transform
 	): void {
-		const batch = batches.get(key);
+		// A semantic family can contain different materials AND shapes (for example
+		// clay figures and worktables). Keep both identities in the batch key.
+		const batchKey = `${key}/${geometry.uuid}/${material.uuid}`;
+		const batch = batches.get(batchKey);
 		if (batch) batch.transforms.push(item);
-		else batches.set(key, { geometry, material, transforms: [item] });
+		else batches.set(batchKey, { geometry, material, transforms: [item] });
 	}
 
 	private flushBatches(parent: THREE.Group, batches: ReadonlyMap<string, Batch>): void {
@@ -168,7 +171,7 @@ export class DistrictChunkVisualFactory implements ChunkVisualFactory {
 				batch.material,
 				batch.transforms.length
 			);
-			instances.name = name;
+			instances.name = name.split('/')[0];
 			for (let index = 0; index < batch.transforms.length; index += 1) {
 				const item = batch.transforms[index];
 				TEMP_MATRIX.compose(item.position, item.quaternion, item.scale);
@@ -207,10 +210,10 @@ export class DistrictChunkVisualFactory implements ChunkVisualFactory {
 		let material: THREE.Material;
 		if (blueprint.ground === 'hooghly-water') {
 			material = this.physical('hooghly-water', {
-				color: '#61706e',
-				roughness: 0.42,
+				color: '#7c8c87',
+				roughness: 0.68,
 				metalness: 0.04,
-				clearcoat: 0.24,
+				clearcoat: 0.1,
 				clearcoatRoughness: 0.58,
 				transparent: true,
 				opacity: 0.94
@@ -237,11 +240,17 @@ export class DistrictChunkVisualFactory implements ChunkVisualFactory {
 		ground.scale.set(blueprint.halfWidthM * 2.5, blueprint.lengthM, 1);
 		ground.receiveShadow = true;
 		parent.add(ground);
+		if (blueprint.ground !== 'hooghly-water') this.addGroundDrawing(parent, blueprint);
 		if (blueprint.ground === 'hooghly-water') {
 			const strokes = new Map<string, Batch>();
 			const strokeMaterial = this.charcoal('water-graphite-stroke', '#384b4b', {
 				hatchStrength: 0.08,
 				opacity: 0.46,
+				transparent: true
+			});
+			const lightStroke = this.charcoal('water-paper-stroke', '#c6c9b9', {
+				hatchStrength: 0.04,
+				opacity: 0.56,
 				transparent: true
 			});
 			for (let index = 0; index < (this.quality === 'high' ? 36 : 20); index += 1) {
@@ -251,12 +260,61 @@ export class DistrictChunkVisualFactory implements ChunkVisualFactory {
 					strokes,
 					'lateral-water-strokes',
 					this.geometry('box'),
-					strokeMaterial,
-					transform([x, 0.04, z], [5 + (index % 5) * 1.5, 0.025, 0.07])
+					index % 3 === 0 ? lightStroke : strokeMaterial,
+					transform([x, 0.04, z], [5 + (index % 5) * 1.5, 0.025, 0.12 + (index % 3) * 0.06])
 				);
 			}
 			this.flushBatches(parent, strokes);
 		}
+	}
+
+	/** Large quiet marks survive flight scale; no extra collision surfaces. */
+	private addGroundDrawing(parent: THREE.Group, blueprint: DistrictChunkBlueprint): void {
+		const batches = new Map<string, Batch>();
+		const grass = blueprint.ground === 'maidan-grass';
+		const modern = blueprint.ground === 'new-town-road';
+		const pale = this.charcoal(
+			`ground-margin-${grass ? 'grass' : 'stone'}`,
+			grass ? '#849075' : '#a19c8b',
+			{
+				hatchStrength: 0.12
+			}
+		);
+		const margin = blueprint.halfWidthM * (grass ? 0.7 : 0.43);
+		for (const side of [-1, 1]) {
+			this.addBatch(
+				batches,
+				'street-shoulders',
+				this.geometry('box'),
+				pale,
+				transform([side * margin, 0.025, 0], [grass ? 2.8 : 1.4, 0.04, blueprint.lengthM])
+			);
+		}
+		if (this.quality !== 'battery') {
+			const marks = this.charcoal(
+				`ground-detail-${blueprint.ground}`,
+				grass ? '#58634f' : '#55574f',
+				{ hatchStrength: 0.16 }
+			);
+			for (let index = 0; index < 10; index += 1) {
+				const z = (index / 10 - 0.45) * blueprint.lengthM;
+				const x = modern
+					? 0
+					: (((index * 13 + blueprint.globalChunkIndex * 7) % 17) / 17 - 0.5) * margin;
+				this.addBatch(
+					batches,
+					'ground-drawing',
+					this.geometry('box'),
+					modern ? pale : marks,
+					transform(
+						[x, 0.055, z],
+						modern ? [0.12, 0.025, 3] : [1.2 + (index % 3), 0.025, grass ? 0.18 : 0.45],
+						[0, modern ? 0 : index * 0.37, 0]
+					)
+				);
+			}
+		}
+		this.flushBatches(parent, batches);
 	}
 
 	private addBuildings(parent: THREE.Group, blueprint: DistrictChunkBlueprint): void {
@@ -379,7 +437,83 @@ export class DistrictChunkVisualFactory implements ChunkVisualFactory {
 				)
 			);
 		}
+		this.addFacadeCharacter(batches, building);
 		this.addRoofFeature(batches, building);
+	}
+
+	private addFacadeCharacter(batches: Map<string, Batch>, building: BuildingBlueprint): void {
+		const modern = building.style.startsWith('new-town');
+		const side = building.position[0] < 0 ? 1 : -1;
+		const halfDepth = building.size[2] * 0.5;
+		const halfWidth = building.size[0] * 0.5;
+		const roofY = building.size[1] * 0.5;
+		const trim = this.charcoal(
+			modern ? 'modern-stone-ribs' : 'old-lime-trim',
+			modern ? '#bcc1b9' : '#b6ad97',
+			{ hatchStrength: 0.22 }
+		);
+		const dark = this.charcoal('facade-trim', '#3f403c', { hatchStrength: 0.35 });
+		const add = (
+			material: THREE.Material,
+			x: number,
+			y: number,
+			z: number,
+			size: readonly [number, number, number]
+		): void => {
+			this.addBatch(
+				batches,
+				material === trim ? 'lime-and-stone-trim' : 'wandering-cornices',
+				this.geometry('box'),
+				material,
+				transform(yawOffset(building.position, building.rotationY, x, y, z), size, [
+					0,
+					building.rotationY,
+					0
+				])
+			);
+		};
+		// Parapets make the roof a place, rather than the top of a solid block.
+		add(trim, side * (halfDepth - 0.1), roofY + 0.27, 0, [0.22, 0.54, building.size[0]]);
+		for (const end of [-1, 1])
+			add(trim, 0, roofY + 0.27, end * (halfWidth - 0.1), [building.size[2], 0.54, 0.22]);
+		if (this.quality === 'battery') return;
+		if (modern) {
+			// Continuous ribs distinguish offices from the broken domestic facades.
+			for (let index = 0; index < 4; index += 1)
+				add(trim, side * (halfDepth + 0.08), 0, (index / 3 - 0.5) * building.size[0] * 0.86, [
+					0.14,
+					building.size[1],
+					0.12
+				]);
+		} else {
+			for (const end of [-1, 1])
+				add(trim, side * (halfDepth + 0.08), -0.2, end * (halfWidth - 0.25), [
+					0.18,
+					building.size[1] - 0.4,
+					0.3
+				]);
+			// A low damp course is stable geometry, not flickering screen noise.
+			add(dark, side * (halfDepth + 0.05), -roofY + 0.24, 0, [
+				0.12,
+				0.3 + building.dampMark * 0.55,
+				building.size[0] * 0.95
+			]);
+			if (building.style === 'college-arcade' || building.style === 'kumartuli-workshop') {
+				for (const end of [-1, 1])
+					add(
+						dark,
+						side * (halfDepth + 0.65),
+						-roofY + 1.55,
+						end * halfWidth * 0.7,
+						[0.15, 3.1, 0.15]
+					);
+				add(trim, side * (halfDepth + 0.65), -roofY + 3.14, 0, [
+					0.22,
+					0.24,
+					building.size[0] * 0.76
+				]);
+			}
+		}
 	}
 
 	private addRoofFeature(batches: Map<string, Batch>, building: BuildingBlueprint): void {
@@ -854,6 +988,9 @@ export class DistrictChunkVisualFactory implements ChunkVisualFactory {
 	clear(target: THREE.Group): void {
 		const disposed = new Set<THREE.BufferGeometry>();
 		target.traverse((child) => {
+			// Instance matrices belong to the streamed mesh, even when its geometry
+			// and material are factory-shared. Release those GPU buffers on recycle.
+			if (child instanceof THREE.InstancedMesh) child.dispose();
 			if (
 				!(child instanceof THREE.Mesh) ||
 				child.geometry.userData.kdChunkOwned !== true ||
