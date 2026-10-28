@@ -48,6 +48,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-negative-singularity-in-calcutta.jpg",
+			"src": "/images/art-negative-singularity-in-calcutta.jpg",
+			"bytes": 103703,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-one-bad-afternoon.jpg",
 			"src": "/images/art-one-bad-afternoon.jpg",
 			"bytes": 455078,

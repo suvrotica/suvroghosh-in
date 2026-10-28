@@ -8080,6 +8080,22 @@
       "sourceHash": "81d584f6bf9dbcc7fb3f49f1fcc363078a116969c4bb44c4de49b6d50a384f30",
       "width": 1672
     },
+    "static/images/art-negative-singularity-in-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 103703,
+      "outputHash": "81370957c7a15a90a86f9cd9067b52a7d9c5b95685385444e2a82a84d89d53ab",
+      "psnrDb": 36.06,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 181100,
+      "sourceHash": "f9571099c91b2bfe80aa135ae5a1ab7bf1cfa5d8069b355ee73bc0e51676f6cc",
+      "width": 1024
+    },
     "static/images/art-one-bad-afternoon.jpg": {
       "format": "JPEG",
       "height": 941,

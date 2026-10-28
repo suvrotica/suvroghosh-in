@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T20:24:29.773777+00:00",
+  "generatedAt": "2026-10-28T02:09:11.800373+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7151,6 +7151,29 @@
         "Flat",
         "Fluid",
         "Now"
+      ],
+      "wordCount": 130
+    },
+    "negative-singularity-in-calcutta": {
+      "generatedAt": "2026-10-28T02:09:10.220683+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/negative-singularity-in-calcutta.svg",
+      "source": "src/lib/posts/negative-singularity-in-calcutta.md",
+      "sourceHash": "91fe773e6a1576ce45aad5fc97a14e2583b462ee56b9b5ec933f07c18b9fc684",
+      "sourceModified": "2026-10-28T02:08:07.523957+00:00",
+      "topWords": [
+        "Doesn",
+        "Singularity",
+        "Water",
+        "Keep",
+        "Don",
+        "Jobs",
+        "Future",
+        "Enough",
+        "Fucking",
+        "Machines",
+        "Thinking",
+        "Kind"
       ],
       "wordCount": 130
     },
