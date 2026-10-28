@@ -36,6 +36,23 @@ The feature workflow adds Ubuntu and Windows jobs running these fixtures and the
 sample checker. Hosted results are reported in the PR; local success is not evidence that a
 Linux job has passed.
 
+## Browser provisioning: follow-on CI repair
+
+At revision `e6a60f2d`, the Ubuntu and Windows portability jobs both passed all three
+regressions and exact comparisons for all five images. The full feature job also passed
+calibration, the complete build, public-link audit, 64 navigation checks and eight HTTP/TCP
+browser checks. It then failed before executing all nine essay-anatomy cases: the suite
+requested `chromium_headless_shell`, while CI deliberately installs full Chromium with
+`--no-shell`.
+
+The essay configuration now selects the installed `chromium` channel in CI, matching the
+other feature suites. Local Chrome and explicit channel overrides are retained. The existing
+workflow contract now covers this suite and reproduced the old mismatch before the fix;
+all eight workflow tests then passed. Actual local CI-mode runs passed all nine essay,
+13 Living Systems and ten Strange Matter browser cases using separate loopback previews.
+No application behavior, browser assertion or artifact threshold was relaxed. Hosted results
+for the follow-on revision are recorded in the PR.
+
 ## Dependencies: unsupported migrations remain excluded
 
 The starting complete audit reported ten low affected packages from three advisories,
@@ -103,5 +120,6 @@ Architecture impact: yes
 
 Architecture rationale: Reviewed the canonical reference; documented finite label artwork as
 a generated-image input, exact cross-platform verification, and the existing Notes MFA
-enforcement gap. The feature-local generation flow is retained; no new service or hosted
+enforcement gap. Browser provisioning now consistently uses the full Chromium installed by
+feature CI. The feature-local generation flow is retained; no new service or hosted
 security policy is introduced. The incomplete framework migration remains a separate plan.

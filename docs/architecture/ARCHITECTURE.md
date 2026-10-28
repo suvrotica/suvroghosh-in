@@ -198,7 +198,7 @@ Installed `node_modules` package versions matched `package-lock.json` when inspe
 | Tailwind CSS       | `^4.2.2`       | `4.2.2`            |
 | Vitest             | `^4.1.12`      | `4.1.12`           |
 | Playwright test    | `^1.62.0`      | `1.62.0`           |
-| PGlite (test only) | `0.5.11`      | `0.5.11`           |
+| PGlite (test only) | `0.5.11`       | `0.5.11`           |
 | KaTeX              | `0.18.2`       | `0.18.2`           |
 
 The audit host ran Node `24.11.1`, npm `11.12.1`, and Python `3.12.3`. These are observations, not a repository-wide runtime pin. Existing feature CI uses Node 22; the new dependency-free architecture gate uses Node 24. Check individual workflows before assuming the same runtime everywhere.
@@ -2521,6 +2521,11 @@ demand-caching and private-content boundaries; they do not establish search inde
 Use `npm run check`, focused unit/Node/browser suites, and relevant validators for the changed boundary. `npm run lint` runs formatting first and only reaches ESLint if formatting succeeds. For routine publication use `npm run build` once; do not separately run its generators first or broaden the task into unrelated feature audits. Use `npm run build:full` when changing feature/notebook/shared-build inputs. For documentation-only work, check links, evidence, Markdown, gate fixtures and diff integrity without regenerating production content.
 
 CT and shared-header browser regressions use full Chromium's headless mode in CI, rather than the standalone shell that repeatedly crashed while creating later test contexts. Local runs default to installed Chrome; `PLAYWRIGHT_CHANNEL` selects another installed channel. The CI installation downloads the full browser with `--no-shell`.
+
+The feature workflow also installs full Chromium with `--no-shell`. Its HTTP/TCP,
+essay-anatomy, Living Systems and Strange Matter configurations explicitly select the
+`chromium` channel in CI; the build-workflow contract checks their selection and installation
+order. Local Chrome defaults and explicit channel overrides remain available.
 
 Spacetime's `spacetime:test` runs wiring, analytical relations, float32 numerical ray/conservation/convergence checks, independent FLRW limits and state/store/renderer regressions. `spacetime:browser:test` renders all nine modes in native and software WebGL2, checks error diagnostics/retry/context loss, idle scheduling, keyboard scope, current-scene PNG capture and portrait layout. Explicit capture may draw once outside the viewport to export changed settings. These bounded fixtures do not certify exact Kerr images, radiative transfer, every GPU/driver, or all near-critical higher-order images; see [the dated audit](../spacetime-laboratory-audit-2026-10-20.md).
 
