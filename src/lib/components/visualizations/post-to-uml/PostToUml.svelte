@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import UmlFigure from '$lib/components/blog/UmlFigure.svelte';
 	import {
 		getDiagramTypesForFilter,
@@ -13,7 +13,9 @@
 	} from '$lib/visualizations/post-to-uml/examples';
 	import {
 		buildDiagramSectionBlogEmbed,
-		buildExportZipBytes,
+		buildExportZipBytesWithPng,
+		rasterizeSvgToPng,
+		svgImageUrl,
 		buildFullPostWithUmlMarkdown,
 		buildSingleDiagramBlogEmbed,
 		getDiagramAssetPaths
@@ -21,9 +23,23 @@
 	import {
 		generateSingleDiagramRecord,
 		generateUmlDiagramsFromText,
-		slugifyTitle,
-		updateDiagramFromManualEdit
+		slugifyTitle
 	} from '$lib/visualizations/post-to-uml/generator';
+	import {
+		beginSourceEdit,
+		contentRevision,
+		mergeRenderedDiagram,
+		hasCurrentRender,
+		isPublicationReady,
+		LatestOperation,
+		type AuthoringDiagram
+	} from '$lib/visualizations/post-to-uml/authoring';
+	import {
+		PLANTUML_ENGINE_ID,
+		renderDiagramInBrowser,
+		renderDiagramsInBrowser,
+		cancelPlantUmlRendering
+	} from '$lib/visualizations/post-to-uml/plantuml/browser';
 	import { renderSafeMarkdownPreview } from '$lib/visualizations/post-to-uml/markdown-preview';
 	import { highlightPlantUmlSource } from '$lib/visualizations/post-to-uml/plantuml/highlight';
 	import {
@@ -46,6 +62,7 @@
 	let inputText = $state<string>(initialSample.markdown);
 	let generationMode = $state<UmlGenerationMode>('recommended');
 	let familyFilter = $state<UmlFamilyFilter>('all');
+	let manualType = $state<UmlDiagramType>('class');
 	let selectedTypes = $state<UmlDiagramType[]>(['class', 'activity', 'sequence']);
 	let detailLevel = $state<UmlDetailLevel>('simple');
 	let allowAssumptions = $state<boolean>(false);
@@ -55,12 +72,11 @@
 	let aiAvailability = $state<UmlAiAvailability>({
 		available: false,
 		provider: 'Vercel AI Gateway',
-		model: 'nvidia/nemotron-3.5-lightning-free',
-		reason:
-			'Local deterministic text-to-UML engine is active by default. Checking server AI configuration…',
+		model: 'configured model',
+		reason: 'Local heuristic examples are active by default. Checking server AI configuration…',
 		configurationSteps: [
 			'Set UML_AI_ENABLED="true" in .env.',
-			'Set UML_AI_MODEL="nvidia/nemotron-3.5-lightning-free" (or preferred gateway model).',
+			'Set UML_AI_MODEL to your approved gateway model.',
 			'Provide AI_GATEWAY_API_KEY or deploy with Vercel OIDC.',
 			'Set UML_RATE_LIMIT_SALT to at least 32 random characters.'
 		]
@@ -74,12 +90,23 @@
 	let isGenerating = $state<boolean>(false);
 	let statusBanner = $state<string>('');
 	let errorBanner = $state<string>('');
-	let activeAbortController: AbortController | null = null;
+	const generationOperation = new LatestOperation();
+	const loadOperation = new LatestOperation();
+	const editTimers = new Map<string, ReturnType<typeof setTimeout>>();
+	const editControllers = new Map<string, AbortController>();
+	let isExporting = $state(false);
+	let renderPending = $state<Record<string, boolean>>({});
+	const isWorking = $derived(isGenerating || Object.values(renderPending).some(Boolean));
+	let articleSnapshot = $state({
+		text: initialSample.markdown,
+		title: initialSample.title,
+		slug: initialSample.slug
+	});
 
-	// Run initial deterministic generation so the tool opens with live working diagrams
+	// SSR preserves the example article; interpretation and heavy rendering start only after mount.
 	const initialRun = generateUmlDiagramsFromText(
 		{
-			text: initialSample.markdown,
+			text: '',
 			title: initialSample.title,
 			mode: 'recommended',
 			selectedTypes: ['class', 'activity', 'sequence'],
@@ -89,11 +116,11 @@
 			postSlug: initialSample.slug
 		},
 		'local',
-		'Local Deterministic UML Analyzer'
+		'Local heuristic extraction (review required)'
 	);
 
 	let currentResult = $state<UmlGenerationResponse>(initialRun);
-	let diagrams = $state<UmlDiagramRecord[]>(initialRun.diagrams);
+	let diagrams = $state<AuthoringDiagram[]>(initialRun.diagrams.map(pendingDiagram));
 
 	// Per-card UI state
 	let activeCardTab = $state<Record<string, 'preview' | 'source' | 'evidence' | 'legend'>>({});
@@ -114,16 +141,31 @@
 		return { chars, words, paragraphs };
 	});
 
-	const safeArticleHtml = $derived(renderSafeMarkdownPreview(inputText));
-	const renderedDiagrams = $derived(
-		diagrams.filter((d) => d.generationStatus === 'generated' && Boolean(d.svg || d.lastValidSvg))
+	const safeArticleHtml = $derived(renderSafeMarkdownPreview(articleSnapshot.text));
+	const inputChanged = $derived(
+		inputText !== articleSnapshot.text || articleTitle !== articleSnapshot.title
 	);
+	const pendingEdits = $derived(diagrams.some((d) => d.provenance === 'edited'));
+	const unreviewedCount = $derived(diagrams.filter((d) => d.metadataReviewRequired).length);
+	const renderedDiagrams = $derived(diagrams.filter(isPublicationReady));
 	const effectiveSlug = $derived(
-		slugifyTitle(articleSlug || articleTitle || currentResult.title || 'article-uml')
+		slugifyTitle(articleSlug || articleSnapshot.title || currentResult.title || 'article-uml')
 	);
 	const sectionBlogEmbedCode = $derived(buildDiagramSectionBlogEmbed(diagrams, effectiveSlug));
 
-	onMount(async () => {
+	onMount(() => {
+		void runGeneration();
+		void loadConfiguration();
+	});
+
+	onDestroy(() => {
+		generationOperation.cancel();
+		loadOperation.cancel();
+		clearPendingEdits();
+		cancelPlantUmlRendering();
+	});
+
+	async function loadConfiguration() {
 		try {
 			const res = await fetch('/api/uml');
 			if (res.ok) {
@@ -141,7 +183,7 @@
 		} catch {
 			// Offline or static preview: keep local mode active
 		}
-	});
+	}
 
 	function getTab(diagramId: string): 'preview' | 'source' | 'evidence' | 'legend' {
 		return activeCardTab[diagramId] ?? 'preview';
@@ -197,182 +239,371 @@
 		}
 	}
 
+	function pendingDiagram(record: UmlDiagramRecord): AuthoringDiagram {
+		return record.sourceCode
+			? {
+					...record,
+					sourceRevision: contentRevision(record.sourceCode),
+					renderedSourceRevision: undefined,
+					svg: undefined,
+					lastValidSvg: undefined,
+					lastValidSourceCode: undefined,
+					renderStatus: 'not_rendered',
+					validationStatus: 'skipped'
+				}
+			: record;
+	}
+
+	function clearPendingEdits() {
+		for (const timer of editTimers.values()) clearTimeout(timer);
+		editTimers.clear();
+		for (const controller of editControllers.values()) controller.abort();
+		editControllers.clear();
+		renderPending = {};
+	}
+
+	function confirmReplaceEdits() {
+		return (
+			!pendingEdits ||
+			window.confirm(
+				'Regeneration replaces your manually edited diagrams. Download their .puml files first if you want to keep them. Replace edited diagrams?'
+			)
+		);
+	}
+
 	function loadCuratedSample(sample: UmlSampleArticle) {
+		loadOperation.cancel();
+		isLoadingPost = false;
+		cancelGeneration();
 		articleTitle = sample.title;
 		articleSlug = sample.slug;
 		inputText = sample.markdown;
 		selectedBlogSlug = '';
-		postLoadMessage = `Loaded curated sample: "${sample.title}"`;
-		runGeneration();
+		postLoadMessage = `Loaded curated sample: "${sample.title}". Generate to replace the current results.`;
 	}
 
 	async function loadSelectedBlogPost() {
 		if (!selectedBlogSlug) return;
+		const slug = selectedBlogSlug;
+		const previousInput = inputText;
+		const previousTitle = articleTitle;
+		const previousSlug = articleSlug;
+		const operation = loadOperation.start();
 		isLoadingPost = true;
 		postLoadMessage = '';
 		errorBanner = '';
 		try {
-			const res = await fetch(`/api/uml?post=${encodeURIComponent(selectedBlogSlug)}`);
-			if (!res.ok) {
-				const err = (await res.json().catch(() => ({}))) as { error?: string };
-				throw new Error(err.error || `Could not load blog post "${selectedBlogSlug}".`);
-			}
-			const data = (await res.json()) as {
-				post: {
-					slug: string;
-					title: string;
-					markdown: string;
-					date: string;
-					categoryLabel: string;
-				};
-			};
+			const res = await fetch(`/api/uml?post=${encodeURIComponent(slug)}`, {
+				signal: operation.signal
+			});
+			const data = await res.json();
+			if (!res.ok) throw new Error(data.error || `Could not load blog post "${slug}".`);
+			if (
+				!operation.isCurrent() ||
+				selectedBlogSlug !== slug ||
+				inputText !== previousInput ||
+				articleTitle !== previousTitle ||
+				articleSlug !== previousSlug
+			)
+				return;
+			cancelGeneration();
 			articleTitle = data.post.title;
 			articleSlug = data.post.slug;
 			inputText = data.post.markdown;
-			postLoadMessage = `Loaded published post "${data.post.title}" (${data.post.categoryLabel} · ${data.post.date}).`;
-			await runGeneration();
+			postLoadMessage = `Loaded "${data.post.title}". Generate to replace the current results.`;
 		} catch (err) {
-			errorBanner = err instanceof Error ? err.message : 'Failed to load blog post.';
+			if (operation.isCurrent())
+				errorBanner = err instanceof Error ? err.message : 'Failed to load blog post.';
 		} finally {
-			isLoadingPost = false;
+			if (operation.isCurrent()) isLoadingPost = false;
 		}
 	}
 
 	function cancelGeneration() {
-		if (activeAbortController) {
-			activeAbortController.abort();
-			activeAbortController = null;
-		}
+		generationOperation.cancel();
+		clearPendingEdits();
+		cancelPlantUmlRendering();
 		isGenerating = false;
-		statusBanner = 'Generation cancelled.';
+		statusBanner = 'Cancelled pending work. Completed diagrams have been retained.';
 	}
 
 	async function runGeneration() {
 		errorBanner = '';
-		statusBanner = '';
-
 		if (!inputText.trim()) {
-			errorBanner = 'Paste article text or load a blog post before generating UML diagrams.';
+			errorBanner = 'Paste article text or load a post first.';
 			return;
 		}
-
-		if (generationMode === 'selected' && selectedTypes.length === 0) {
-			errorBanner = 'Select at least one UML diagram type or switch to Recommended mode.';
+		if (generationMode === 'selected' && !selectedTypes.length) {
+			errorBanner = 'Select at least one diagram type.';
 			return;
 		}
-
-		if (activeAbortController) {
-			activeAbortController.abort();
+		if (!confirmReplaceEdits()) return;
+		if (analysisEngine === 'ai' && (!aiAvailability.available || !aiConsent)) {
+			errorBanner = !aiAvailability.available
+				? aiAvailability.reason
+				: 'Confirm transmission to the configured AI provider first.';
+			return;
 		}
-		const controller = new AbortController();
-		activeAbortController = controller;
+		clearPendingEdits();
+		cancelPlantUmlRendering();
+		const operation = generationOperation.start();
+		const snapshot = {
+			text: inputText,
+			title: articleTitle,
+			slug: slugifyTitle(articleSlug || articleTitle)
+		};
+		const request = {
+			text: snapshot.text,
+			title: snapshot.title || undefined,
+			mode: generationMode,
+			selectedTypes: [...selectedTypes],
+			detailLevel,
+			allowAssumptions,
+			engine: analysisEngine,
+			postSlug: snapshot.slug
+		};
 		isGenerating = true;
-
 		try {
-			if (analysisEngine === 'ai') {
-				if (!aiAvailability.available) {
-					errorBanner = aiAvailability.reason;
-					isGenerating = false;
-					return;
-				}
-				if (!aiConsent) {
-					errorBanner =
-						'Confirm external AI provider transmission before running AI mode, or use the Local deterministic model.';
-					isGenerating = false;
-					return;
-				}
-
-				statusBanner = `Requesting UML analysis from ${aiAvailability.provider} (${aiAvailability.model})…`;
+			let result: UmlGenerationResponse;
+			if (request.engine === 'ai') {
+				statusBanner = `Requesting analysis from ${aiAvailability.provider}…`;
 				const res = await fetch('/api/uml', {
 					method: 'POST',
 					headers: { 'content-type': 'application/json' },
-					signal: controller.signal,
-					body: JSON.stringify({
-						text: inputText,
-						title: articleTitle || undefined,
-						mode: generationMode,
-						selectedTypes,
-						detailLevel,
-						allowAssumptions,
-						engine: 'ai',
-						postSlug: effectiveSlug,
-						consent: true
-					})
+					signal: operation.signal,
+					body: JSON.stringify({ ...request, consent: true })
 				});
-
-				const payload = (await res.json()) as {
-					result?: UmlGenerationResponse;
-					error?: string;
-				};
-				if (!res.ok || !payload.result) {
-					throw new Error(payload.error || 'AI UML generation failed.');
-				}
-				currentResult = payload.result;
-				diagrams = payload.result.diagrams;
-				statusBanner = `Generated ${payload.result.diagrams.length} UML view(s) via ${payload.result.modelLabel}.`;
+				const payload = await res.json();
+				if (!res.ok || !payload.result) throw new Error(payload.error || 'AI generation failed.');
+				result = payload.result;
 			} else {
-				statusBanner = 'Interpreting article, validating PlantUML source, and rendering SVG…';
-				const localRes = generateUmlDiagramsFromText(
-					{
-						text: inputText,
-						title: articleTitle || undefined,
-						mode: generationMode,
-						selectedTypes,
-						detailLevel,
-						allowAssumptions,
-						engine: 'local',
-						postSlug: effectiveSlug
-					},
+				statusBanner = 'Extracting conservative local heuristics, then rendering with PlantUML…';
+				await new Promise((resolve) => setTimeout(resolve, 0));
+				if (!operation.isCurrent()) return;
+				result = generateUmlDiagramsFromText(
+					request,
 					'local',
-					'Local Deterministic UML Analyzer'
+					'Local heuristic extraction (review required)'
 				);
-				currentResult = localRes;
-				diagrams = localRes.diagrams;
-				const renderedCount = localRes.diagrams.filter((d) => d.renderStatus === 'rendered').length;
-				const skippedCount = localRes.diagrams.filter(
-					(d) => d.generationStatus === 'needs_more_info' || d.generationStatus === 'not_applicable'
-				).length;
-				statusBanner = `Completed: ${renderedCount} rendered diagram(s)${
-					skippedCount > 0
-						? `, ${skippedCount} reported as Needs More Information / Not Applicable`
-						: ''
-				}.`;
 			}
+			if (!operation.isCurrent()) return;
+			if (inputText !== snapshot.text || articleTitle !== snapshot.title) {
+				statusBanner =
+					'Input changed during generation. The older response was discarded; generate again for the new text.';
+				return;
+			}
+			articleSnapshot = snapshot;
+			currentResult = result;
+			diagrams = result.diagrams.map(pendingDiagram);
+			await renderDiagramsInBrowser(diagrams, {
+				signal: operation.signal,
+				onResult: (rendered) => {
+					if (!operation.isCurrent()) return;
+					diagrams = diagrams.map((d) => (d.id === rendered.id ? rendered : d));
+					statusBanner = `${diagrams.filter(hasCurrentRender).length} figures rendered; remaining evaluations are retained.`;
+				}
+			});
+			if (operation.isCurrent())
+				statusBanner = `Completed ${diagrams.length} type evaluations: ${diagrams.filter(hasCurrentRender).length} rendered figures. Review the evidence and captions before publishing.`;
 		} catch (err) {
-			if (err instanceof DOMException && err.name === 'AbortError') {
-				statusBanner = 'Generation cancelled.';
-			} else {
-				errorBanner =
-					err instanceof Error ? err.message : 'Unexpected error during UML generation.';
-			}
+			if (operation.isCurrent())
+				errorBanner = err instanceof Error ? err.message : 'UML generation failed.';
 		} finally {
-			if (activeAbortController === controller) {
-				activeAbortController = null;
-			}
-			isGenerating = false;
+			if (operation.isCurrent()) isGenerating = false;
 		}
 	}
 
 	function handleSourceCodeEdit(diagramId: string, newCode: string) {
-		diagrams = diagrams.map((d) =>
-			d.id === diagramId ? updateDiagramFromManualEdit(d, newCode) : d
+		generationOperation.cancel();
+		isGenerating = false;
+		clearTimeout(editTimers.get(diagramId));
+		editControllers.get(diagramId)?.abort();
+		renderPending = { ...renderPending, [diagramId]: true };
+		diagrams = diagrams.map((d) => (d.id === diagramId ? beginSourceEdit(d, newCode) : d));
+		editTimers.set(
+			diagramId,
+			setTimeout(async () => {
+				editTimers.delete(diagramId);
+				const record = diagrams.find((d) => d.id === diagramId);
+				if (!record || record.sourceCode !== newCode) return;
+				const controller = new AbortController();
+				editControllers.set(diagramId, controller);
+				try {
+					const rendered = await renderDiagramInBrowser(record, controller.signal);
+					if (!controller.signal.aborted)
+						diagrams = diagrams.map((d) =>
+							d.id === diagramId && d.sourceCode === newCode
+								? mergeRenderedDiagram(d, rendered, newCode)
+								: d
+						);
+				} catch (error) {
+					if (!controller.signal.aborted)
+						errorBanner = error instanceof Error ? error.message : 'Rendering failed.';
+				} finally {
+					if (editControllers.get(diagramId) === controller) {
+						editControllers.delete(diagramId);
+						renderPending = { ...renderPending, [diagramId]: false };
+					}
+				}
+			}, 350)
 		);
 	}
 
-	function regenerateSingleDiagram(type: UmlDiagramType) {
-		const refreshed = generateSingleDiagramRecord(type, currentResult.sharedModel, {
-			detailLevel,
-			allowAssumptions,
-			provenance: 'local'
-		});
-		diagrams = diagrams.map((d) => (d.type === type ? refreshed : d));
-		statusBanner = `Regenerated ${getUmlDiagramMeta(type).label} from shared article model.`;
+	async function regenerateSingleDiagram(type: UmlDiagramType) {
+		const previous = diagrams.find((d) => d.type === type);
+		if (
+			previous?.provenance === 'edited' &&
+			!window.confirm(
+				'Replace this manually edited diagram? Download its .puml first to keep a copy.'
+			)
+		)
+			return;
+		const operation = generationOperation.start();
+		clearPendingEdits();
+		isGenerating = true;
+		try {
+			let refreshed: UmlDiagramRecord;
+			if (currentResult.engine === 'ai') {
+				if (!aiConsent || !aiAvailability.available)
+					throw new Error(
+						'AI regeneration requires an authorized provider and transmission consent.'
+					);
+				const res = await fetch('/api/uml', {
+					method: 'POST',
+					headers: { 'content-type': 'application/json' },
+					signal: operation.signal,
+					body: JSON.stringify({
+						text: articleSnapshot.text,
+						title: articleSnapshot.title,
+						mode: 'selected',
+						selectedTypes: [type],
+						detailLevel,
+						allowAssumptions,
+						engine: 'ai',
+						consent: true,
+						postSlug: effectiveSlug
+					})
+				});
+				const payload = await res.json();
+				if (!res.ok || !payload.result?.diagrams?.length)
+					throw new Error(payload.error || 'AI regeneration failed.');
+				refreshed = payload.result.diagrams[0];
+			} else {
+				refreshed = generateSingleDiagramRecord(type, currentResult.sharedModel, {
+					detailLevel,
+					allowAssumptions,
+					provenance: 'local'
+				});
+			}
+			if (!operation.isCurrent()) return;
+			const rendered = await renderDiagramInBrowser(pendingDiagram(refreshed), operation.signal);
+			if (operation.isCurrent()) {
+				diagrams = diagrams.map((d) => (d.type === type ? { ...rendered, id: d.id } : d));
+				statusBanner = `Regenerated ${getUmlDiagramMeta(type).label} from the saved article revision.`;
+			}
+		} catch (error) {
+			if (operation.isCurrent())
+				errorBanner = error instanceof Error ? error.message : 'Regeneration failed.';
+		} finally {
+			if (operation.isCurrent()) isGenerating = false;
+		}
+	}
+
+	async function loadManualExample(type: UmlDiagramType) {
+		const existing = diagrams.find((diagram) => diagram.type === type);
+		if (
+			existing?.sourceCode &&
+			!window.confirm(
+				'Replace the current source for this type with an illustrative notation example?'
+			)
+		)
+			return;
+		const operation = generationOperation.start();
+		clearPendingEdits();
+		isGenerating = true;
+		try {
+			const { PLANTUML_REPRESENTATIVE_FIXTURES } =
+				await import('$lib/visualizations/post-to-uml/plantuml/fixtures');
+			if (!operation.isCurrent()) return;
+			const current = diagrams.find((diagram) => diagram.type === type);
+			if (
+				current?.id !== existing?.id ||
+				current?.sourceCode !== existing?.sourceCode ||
+				current?.caption !== existing?.caption ||
+				current?.altText !== existing?.altText
+			)
+				return;
+			const fixture = PLANTUML_REPRESENTATIVE_FIXTURES[type];
+			const meta = getUmlDiagramMeta(type);
+			const record: AuthoringDiagram = {
+				id: current?.id || `uml-${type}`,
+				type,
+				family: meta.family,
+				subfamily: meta.subfamily,
+				title: fixture.title,
+				explanation:
+					'An illustrative notation example for manual authoring; it is not extracted from the article.',
+				sourceLanguage: 'plantuml',
+				sourceCode: fixture.sourceCode,
+				caption: `Illustrative ${meta.label.toLowerCase()} example. Adapt this source and review its relationship to the article before publishing.`,
+				altText: fixture.title,
+				isConceptual: false,
+				supportingReferences: [],
+				assumptions: ['This notation example is not evidence about the article.'],
+				missingInformation: [],
+				notationLimitations: meta.notationLimitations,
+				generationStatus: 'generated',
+				validationStatus: 'skipped',
+				renderStatus: 'not_rendered',
+				repairAttempts: 0,
+				provenance: 'edited',
+				metadataReviewRequired: true
+			};
+			diagrams = current
+				? diagrams.map((diagram) => (diagram.id === current.id ? record : diagram))
+				: [...diagrams, record];
+			setTab(record.id, 'source');
+			handleSourceCodeEdit(record.id, record.sourceCode);
+		} catch (error) {
+			if (operation.isCurrent())
+				errorBanner =
+					error instanceof Error ? error.message : 'Could not load this notation example.';
+		} finally {
+			if (operation.isCurrent()) isGenerating = false;
+		}
+	}
+
+	function protectMetadataWork() {
+		if (!isGenerating) return;
+		generationOperation.cancel();
+		isGenerating = false;
+		statusBanner = 'Regeneration cancelled to preserve your metadata changes.';
+	}
+
+	function reviewMetadata(diagramId: string) {
+		protectMetadataWork();
+		diagrams = diagrams.map((d) =>
+			d.id === diagramId ? { ...d, metadataReviewRequired: false } : d
+		);
+	}
+
+	function editMetadata(diagramId: string, key: 'caption' | 'altText', value: string) {
+		protectMetadataWork();
+		diagrams = diagrams.map((d) =>
+			d.id === diagramId
+				? { ...d, [key]: value, metadataReviewRequired: true, provenance: 'edited' }
+				: d
+		);
 	}
 
 	async function copyText(key: string, text: string, label: string) {
 		if (!text || typeof navigator === 'undefined' || !navigator.clipboard) return;
-		await navigator.clipboard.writeText(text);
-		flashCopied(key, label);
+		try {
+			await navigator.clipboard.writeText(text);
+			flashCopied(key, label);
+		} catch {
+			errorBanner = 'Clipboard access is unavailable. Use the download action instead.';
+		}
 	}
 
 	function downloadTextFile(
@@ -390,79 +621,61 @@
 		URL.revokeObjectURL(url);
 	}
 
+	function downloadBytes(filename: string, bytes: Uint8Array, mime: string) {
+		const safeBytes = new Uint8Array(bytes);
+		const url = URL.createObjectURL(new Blob([safeBytes], { type: mime }));
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = filename;
+		a.click();
+		setTimeout(() => URL.revokeObjectURL(url), 1000);
+	}
+
 	function downloadDiagramPuml(diagram: UmlDiagramRecord) {
-		const paths = getDiagramAssetPaths(effectiveSlug, diagram.type);
-		const filename =
-			paths.pumlPublicPath.split('/').pop() || `${effectiveSlug}-${diagram.type}.puml`;
-		downloadTextFile(filename, `${diagram.sourceCode.trim()}\n`);
+		const paths = getDiagramAssetPaths(effectiveSlug, diagram.type, diagram.id);
+		downloadTextFile(paths.pumlPublicPath.split('/').pop()!, diagram.sourceCode);
 	}
 
 	function downloadDiagramSvg(diagram: UmlDiagramRecord) {
-		const svgContent = diagram.svg || diagram.lastValidSvg;
-		if (!svgContent) return;
-		const paths = getDiagramAssetPaths(effectiveSlug, diagram.type);
-		const filename = paths.svgPublicPath.split('/').pop() || `${effectiveSlug}-${diagram.type}.svg`;
-		downloadTextFile(filename, svgContent, 'image/svg+xml;charset=utf-8');
+		if (!hasCurrentRender(diagram)) return;
+		const paths = getDiagramAssetPaths(effectiveSlug, diagram.type, diagram.id);
+		downloadTextFile(
+			paths.svgPublicPath.split('/').pop()!,
+			diagram.svg!,
+			'image/svg+xml;charset=utf-8'
+		);
 	}
 
 	async function downloadDiagramPng(diagram: UmlDiagramRecord) {
-		const svgContent = diagram.svg || diagram.lastValidSvg;
-		if (!svgContent || typeof document === 'undefined') return;
-		const paths = getDiagramAssetPaths(effectiveSlug, diagram.type);
-
-		const svgBlob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
-		const url = URL.createObjectURL(svgBlob);
-		const img = new Image();
-		img.decoding = 'async';
-
-		await new Promise<void>((resolve, reject) => {
-			img.onload = () => resolve();
-			img.onerror = () => reject(new Error('Could not rasterize SVG to PNG.'));
-			img.src = url;
-		}).finally(() => {
-			URL.revokeObjectURL(url);
-		});
-
-		const scale = 2;
-		const width = (img.naturalWidth || 760) * scale;
-		const height = (img.naturalHeight || 480) * scale;
-		const canvas = document.createElement('canvas');
-		canvas.width = width;
-		canvas.height = height;
-		const ctx = canvas.getContext('2d');
-		if (!ctx) return;
-
-		ctx.fillStyle = '#fcfbf8';
-		ctx.fillRect(0, 0, width, height);
-		ctx.drawImage(img, 0, 0, width, height);
-
-		canvas.toBlob((pngBlob) => {
-			if (!pngBlob) return;
-			const pngUrl = URL.createObjectURL(pngBlob);
-			const a = document.createElement('a');
-			a.href = pngUrl;
-			a.download = paths.pngFilename;
-			a.click();
-			URL.revokeObjectURL(pngUrl);
-		}, 'image/png');
+		if (!hasCurrentRender(diagram)) return;
+		try {
+			downloadBytes(
+				getDiagramAssetPaths(effectiveSlug, diagram.type, diagram.id).pngFilename,
+				await rasterizeSvgToPng(diagram.svg!),
+				'image/png'
+			);
+		} catch (error) {
+			errorBanner = error instanceof Error ? error.message : 'PNG export failed.';
+		}
 	}
 
-	function downloadFullZipBundle() {
-		const zipBytes = buildExportZipBytes({
-			postSlug: effectiveSlug,
-			title: articleTitle || currentResult.title,
-			originalText: inputText,
-			diagrams
-		});
-		const safeBytes = new Uint8Array(zipBytes.byteLength);
-		safeBytes.set(zipBytes);
-		const blob = new Blob([safeBytes], { type: 'application/zip' });
-		const url = URL.createObjectURL(blob);
-		const a = document.createElement('a');
-		a.href = url;
-		a.download = `${effectiveSlug}-uml-bundle.zip`;
-		a.click();
-		URL.revokeObjectURL(url);
+	async function downloadFullZipBundle() {
+		isExporting = true;
+		try {
+			// Freeze the selected revision while PNGs are generated asynchronously.
+			const snapshot = {
+				postSlug: effectiveSlug,
+				title: articleSnapshot.title || currentResult.title,
+				originalText: articleSnapshot.text,
+				diagrams: structuredClone($state.snapshot(diagrams))
+			};
+			const zipBytes = await buildExportZipBytesWithPng(snapshot);
+			downloadBytes(`${snapshot.postSlug}-uml-bundle.zip`, zipBytes, 'application/zip');
+		} catch (error) {
+			errorBanner = error instanceof Error ? error.message : 'Bundle export failed.';
+		} finally {
+			isExporting = false;
+		}
 	}
 
 	function openFullscreen(diagram: UmlDiagramRecord) {
@@ -667,13 +880,12 @@
 		</div>
 
 		<!-- UML Family Filter Tabs -->
-		<div class="uml-family-tabs" role="tablist" aria-label="UML Diagram Families">
+		<div class="uml-family-tabs" role="group" aria-label="UML Diagram Families">
 			{#each UML_FAMILY_GROUPS as group (group.id)}
 				<div class="uml-family-tab-card" class:active={familyFilter === group.id}>
 					<button
 						type="button"
-						role="tab"
-						aria-selected={familyFilter === group.id}
+						aria-pressed={familyFilter === group.id}
 						class="uml-family-tab-btn"
 						onclick={() => (familyFilter = group.id)}
 					>
@@ -728,7 +940,7 @@
 						checked={analysisEngine === 'local'}
 						onchange={() => (analysisEngine = 'local')}
 					/>
-					Local Deterministic (Offline-safe)
+					Local heuristics (offline text analysis)
 				</label>
 				<label class="uml-radio-pill" class:active={analysisEngine === 'ai'}>
 					<input
@@ -754,7 +966,7 @@
 				<button
 					type="button"
 					class="uml-btn uml-btn-secondary"
-					disabled={!isGenerating}
+					disabled={!isWorking}
 					onclick={cancelGeneration}
 				>
 					Cancel
@@ -808,6 +1020,23 @@
 		{/each}
 	</div>
 
+	{#if inputChanged}
+		<p class="uml-warning-banner" role="status">
+			The input has changed. Results, evidence, preview, and exports still use the last generated
+			article revision. Generate again to use the new text.
+		</p>
+	{/if}
+	{#if unreviewedCount}
+		<p class="uml-warning-banner" role="status">
+			{unreviewedCount} edited figure(s) need caption, alternative text, and evidence review. They remain
+			drafts and are excluded from published embeds.
+		</p>
+	{/if}
+	<p class="uml-info-note">
+		Local text analysis uses conservative heuristics, not an AI provider. Example results are
+		illustrative. Review the source evidence before publishing.
+	</p>
+
 	<!-- Shared Model & Recommendation Summary Banner -->
 	<div class="uml-summary-strip">
 		<div class="uml-summary-main">
@@ -847,7 +1076,11 @@
 					<p class="uml-meta-note">{currentResult.sharedModel.conceptualRationale}</p>
 				</div>
 				<div>
-					<h4>PlantUML Deterministic Renderer Capability Matrix</h4>
+					<h4>PlantUML renderer capability matrix</h4>
+					<p class="uml-meta-note">
+						Renderer: {PLANTUML_ENGINE_ID}. Native and composed notation refer to this engine and
+						the tested source templates; see each type's limitations.
+					</p>
 					<div class="uml-table-scroll">
 						<table class="uml-cap-table">
 							<thead>
@@ -889,8 +1122,25 @@
 		<div class="uml-section-title-row">
 			<h3>3. Diagram Authoring Workspace ({diagrams.length} evaluated)</h3>
 			<span class="uml-subtitle-note">
-				Edit PlantUML in the Source tab to update any diagram immediately without another AI call.
+				Edit PlantUML in the Source tab to render after a short pause, without another AI call.
 			</span>
+		</div>
+
+		<div class="uml-loader-row">
+			<label class="uml-field-grow"
+				><span class="uml-label">Manual source example (not derived from your article)</span>
+				<select class="uml-select" bind:value={manualType}
+					>{#each UML_DIAGRAM_LIST as item (item.type)}<option value={item.type}
+							>{item.label}</option
+						>{/each}</select
+				>
+			</label>
+			<button
+				type="button"
+				class="uml-btn uml-btn-secondary"
+				disabled={isGenerating}
+				onclick={() => loadManualExample(manualType)}>Load notation example</button
+			>
 		</div>
 
 		<div class="uml-cards-stack">
@@ -900,7 +1150,11 @@
 				{@const zoom = getZoom(diagram.id)}
 				{@const highlightedLines = highlightPlantUmlSource(diagram.sourceCode)}
 
-				<article class="uml-card" data-diagram-type={diagram.type}>
+				<article
+					class="uml-card"
+					data-diagram-type={diagram.type}
+					data-renderer-id={diagram.rendererId}
+				>
 					<header class="uml-card-header">
 						<div class="uml-card-title-group">
 							<div class="uml-card-badges">
@@ -915,7 +1169,7 @@
 										? 'AI Provider'
 										: diagram.provenance === 'edited'
 											? 'Edited PlantUML'
-											: 'Local Deterministic'}
+											: 'Local heuristic'}
 								</span>
 							</div>
 							<h4 class="uml-card-title">{diagram.title}</h4>
@@ -936,8 +1190,12 @@
 									Needs more information
 								{:else if diagram.generationStatus === 'not_applicable'}
 									Not applicable
+								{:else if diagram.generationStatus === 'failed'}
+									Generation failed
 								{:else if diagram.renderStatus === 'error'}
 									Syntax / Render error
+								{:else if diagram.renderStatus === 'not_rendered'}
+									Waiting for render
 								{:else if diagram.validationStatus === 'repaired'}
 									Rendered (auto-repaired)
 								{:else}
@@ -948,12 +1206,61 @@
 							<button
 								type="button"
 								class="uml-btn-xs"
+								disabled={isGenerating}
 								onclick={() => regenerateSingleDiagram(diagram.type)}
 							>
 								Regenerate this diagram
 							</button>
 						</div>
 					</header>
+
+					{#if diagram.generationStatus === 'failed' && diagram.statusReason}
+						<p class="uml-error-banner" role="alert">{diagram.statusReason}</p>
+					{/if}
+
+					{#if diagram.metadataReviewRequired}
+						<div class="uml-warning-banner" role="status">
+							<strong>Review metadata after editing the source.</strong>
+							<p>
+								Check the caption, alternative text, assumptions, and source references against the
+								new diagram. Evidence is from the saved article revision; the edit has not been
+								verified against it.
+							</p>
+							<label class="uml-field-grow"
+								><span class="uml-label">Published caption</span><textarea
+									class="uml-textarea"
+									rows="2"
+									value={diagram.caption}
+									oninput={(event) =>
+										editMetadata(diagram.id, 'caption', event.currentTarget.value)}
+								></textarea></label
+							>
+							<label class="uml-field-grow"
+								><span class="uml-label">Alternative text</span><textarea
+									class="uml-textarea"
+									rows="2"
+									value={diagram.altText}
+									oninput={(event) =>
+										editMetadata(diagram.id, 'altText', event.currentTarget.value)}
+								></textarea></label
+							>
+							<button
+								type="button"
+								class="uml-btn-xs"
+								onclick={() => setTab(diagram.id, 'evidence')}
+								>Inspect evidence and assumptions</button
+							>
+							<button
+								type="button"
+								class="uml-btn-xs"
+								disabled={!hasCurrentRender(diagram) ||
+									!diagram.caption.trim() ||
+									!diagram.altText.trim()}
+								onclick={() => reviewMetadata(diagram.id)}
+								>I reviewed this figure's metadata and evidence</button
+							>
+						</div>
+					{/if}
 
 					{#if diagram.generationStatus === 'needs_more_info' || diagram.generationStatus === 'not_applicable'}
 						<div class="uml-missing-box" role="note">
@@ -976,11 +1283,10 @@
 					{:else}
 						<!-- Card Navigation Tabs & Actions -->
 						<div class="uml-card-toolbar">
-							<div class="uml-card-tabs" role="tablist" aria-label="{meta.label} view tabs">
+							<div class="uml-card-tabs" role="group" aria-label="{meta.label} view tabs">
 								<button
 									type="button"
-									role="tab"
-									aria-selected={currentTab === 'preview'}
+									aria-pressed={currentTab === 'preview'}
 									class="uml-tab-btn"
 									class:active={currentTab === 'preview'}
 									onclick={() => setTab(diagram.id, 'preview')}
@@ -989,8 +1295,7 @@
 								</button>
 								<button
 									type="button"
-									role="tab"
-									aria-selected={currentTab === 'source'}
+									aria-pressed={currentTab === 'source'}
 									class="uml-tab-btn"
 									class:active={currentTab === 'source'}
 									onclick={() => setTab(diagram.id, 'source')}
@@ -999,8 +1304,7 @@
 								</button>
 								<button
 									type="button"
-									role="tab"
-									aria-selected={currentTab === 'evidence'}
+									aria-pressed={currentTab === 'evidence'}
 									class="uml-tab-btn"
 									class:active={currentTab === 'evidence'}
 									onclick={() => setTab(diagram.id, 'evidence')}
@@ -1009,8 +1313,7 @@
 								</button>
 								<button
 									type="button"
-									role="tab"
-									aria-selected={currentTab === 'legend'}
+									aria-pressed={currentTab === 'legend'}
 									class="uml-tab-btn"
 									class:active={currentTab === 'legend'}
 									onclick={() => setTab(diagram.id, 'legend')}
@@ -1037,6 +1340,7 @@
 								<button
 									type="button"
 									class="uml-btn-xs"
+									disabled={!hasCurrentRender(diagram)}
 									onclick={() => downloadDiagramSvg(diagram)}
 								>
 									Download SVG
@@ -1044,6 +1348,7 @@
 								<button
 									type="button"
 									class="uml-btn-xs"
+									disabled={!hasCurrentRender(diagram)}
 									onclick={() => downloadDiagramPng(diagram)}
 								>
 									Download PNG
@@ -1051,6 +1356,7 @@
 								<button
 									type="button"
 									class="uml-btn-xs"
+									disabled={!isPublicationReady(diagram)}
 									onclick={() =>
 										copyText(
 											`${diagram.id}-embed`,
@@ -1103,20 +1409,22 @@
 										Fullscreen
 									</button>
 								</div>
-								{#if diagram.renderStatus === 'error' && diagram.lastValidSvg}
-									<span class="uml-stale-badge">Showing last valid version before syntax error</span
-									>
+								{#if !hasCurrentRender(diagram) && diagram.lastValidSvg}
+									<span class="uml-stale-badge">Showing last successful source revision</span>
 								{/if}
 							</div>
 
-							<div class="uml-svg-viewport" class:stale={diagram.renderStatus === 'error'}>
+							<div class="uml-svg-viewport" class:stale={!hasCurrentRender(diagram)}>
 								{#if diagram.svg || diagram.lastValidSvg}
 									<div
 										class="uml-svg-scaler"
 										style="transform: scale({zoom / 100}); transform-origin: top center;"
 									>
-										<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-										{@html diagram.svg || diagram.lastValidSvg}
+										<img
+											src={svgImageUrl(diagram.svg || diagram.lastValidSvg || '')}
+											alt={diagram.altText || diagram.title}
+											class="uml-rendered-image"
+										/>
 									</div>
 								{:else}
 									<p class="uml-empty-render">
@@ -1144,7 +1452,7 @@
 							<div class="uml-editor-grid">
 								<label class="uml-editor-pane">
 									<span class="uml-label">
-										Editable PlantUML Source (updates preview live without AI calls)
+										Editable PlantUML source (renders after a 350 ms pause)
 									</span>
 									<textarea
 										class="uml-code-textarea"
@@ -1186,7 +1494,10 @@
 										{/each}
 									</ul>
 								{:else}
-									<p>Derived from the shared article model.</p>
+									<p>
+										No supporting passage is recorded. Review this example or edited diagram before
+										publishing.
+									</p>
 								{/if}
 
 								{#if diagram.assumptions.length > 0}
@@ -1259,14 +1570,19 @@
 					onclick={() =>
 						downloadTextFile(
 							`${effectiveSlug}-with-uml.md`,
-							buildFullPostWithUmlMarkdown(inputText, diagrams, effectiveSlug),
+							buildFullPostWithUmlMarkdown(articleSnapshot.text, diagrams, effectiveSlug),
 							'text/markdown;charset=utf-8'
 						)}
 				>
 					Download Post + UML (.md)
 				</button>
-				<button type="button" class="uml-btn uml-btn-primary" onclick={downloadFullZipBundle}>
-					Export Asset &amp; Embed Bundle (.zip)
+				<button
+					type="button"
+					class="uml-btn uml-btn-primary"
+					disabled={isExporting || isGenerating}
+					onclick={downloadFullZipBundle}
+				>
+					{isExporting ? 'Preparing PNGs and ZIP…' : 'Export Asset & Embed Bundle (.zip)'}
 				</button>
 			</div>
 		</div>
@@ -1274,8 +1590,8 @@
 		<div class="uml-reader-preview-frame">
 			<!-- 1. Original Article Text First -->
 			<article class="uml-reader-prose">
-				{#if articleTitle}
-					<h2 class="uml-reader-title">{articleTitle}</h2>
+				{#if articleSnapshot.title}
+					<h2 class="uml-reader-title">{articleSnapshot.title}</h2>
 				{/if}
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html safeArticleHtml}
@@ -1295,7 +1611,7 @@
 					{#each renderedDiagrams as d (d.id)}
 						{@const meta = getUmlDiagramMeta(d.type)}
 						<UmlFigure
-							src=""
+							src={svgImageUrl(d.svg || '')}
 							sourceHref=""
 							diagramType={d.type}
 							family={meta.familyBadge}
@@ -1304,8 +1620,8 @@
 							caption={d.caption || d.explanation}
 							conceptual={d.isConceptual}
 							assumptions={d.assumptions.join(' ')}
-							notationNote={d.notationLimitations[0] || ''}
-							sourceCode={d.lastValidSourceCode || d.sourceCode}
+							notationNote={d.notationLimitations.join(' ')}
+							sourceCode={d.sourceCode}
 						/>
 					{/each}
 				{/if}
@@ -1326,6 +1642,7 @@
 
 	<!-- Fullscreen Modal Dialog -->
 	<dialog
+		aria-label="Fullscreen UML diagram"
 		bind:this={fullscreenDialogEl}
 		class="uml-fullscreen-dialog"
 		onclose={() => (fullscreenDiagram = null)}
@@ -1342,8 +1659,14 @@
 					</button>
 				</header>
 				<div class="uml-fullscreen-body">
-					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-					{@html fullscreenDiagram.svg || fullscreenDiagram.lastValidSvg || ''}
+					{#if !hasCurrentRender(fullscreenDiagram)}<p role="status">
+							Last successful source revision
+						</p>{/if}
+					<img
+						src={svgImageUrl(fullscreenDiagram.svg || fullscreenDiagram.lastValidSvg || '')}
+						alt={fullscreenDiagram.altText || fullscreenDiagram.title}
+						class="uml-rendered-image"
+					/>
 				</div>
 				<p class="uml-fullscreen-caption">{fullscreenDiagram.caption}</p>
 			</div>
@@ -1352,6 +1675,15 @@
 </section>
 
 <style>
+	.uml-rendered-image {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: auto;
+	}
+	.uml-code-textarea {
+		tab-size: 2;
+	}
 	.uml-studio {
 		display: flex;
 		flex-direction: column;

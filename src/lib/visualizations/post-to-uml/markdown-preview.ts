@@ -24,9 +24,8 @@ function formatSafeInlineMarkdown(escapedLine: string): string {
 }
 
 export function renderSafeMarkdownPreview(rawMarkdown: string): string {
-	const normalized = (rawMarkdown ?? '')
-		.replace(/\r\n/g, '\n')
-		.replace(/\son[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '');
+	// Escape markup when rendering; never delete words from the source article.
+	const normalized = (rawMarkdown ?? '').replace(/\r\n/g, '\n');
 	if (!normalized.trim()) {
 		return '<p class="uml-preview-empty">No article text entered yet.</p>';
 	}

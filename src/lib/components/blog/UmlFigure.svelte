@@ -1,10 +1,4 @@
 <script lang="ts">
-	import { renderPlantUmlToSvg } from '$lib/visualizations/post-to-uml/plantuml/renderer';
-	import {
-		ALL_UML_DIAGRAM_TYPES,
-		type UmlDiagramType
-	} from '$lib/visualizations/post-to-uml/types';
-
 	interface Props {
 		src?: string;
 		sourceHref?: string;
@@ -36,19 +30,9 @@
 	let imageLoadFailed = $state(false);
 	let copiedSource = $state(false);
 
-	const normalizedType = $derived<UmlDiagramType>(
-		ALL_UML_DIAGRAM_TYPES.includes(diagramType as UmlDiagramType)
-			? (diagramType as UmlDiagramType)
-			: 'class'
-	);
-
-	const fallbackSvg = $derived.by(() => {
-		if ((src && !imageLoadFailed) || !sourceCode.trim()) return '';
-		const res = renderPlantUmlToSvg(sourceCode, normalizedType, {
-			titleOverride: title,
-			isConceptual: conceptual
-		});
-		return res.ok && res.svg ? res.svg : '';
+	$effect(() => {
+		void src;
+		imageLoadFailed = false;
 	});
 
 	async function copyPlantUml() {
@@ -98,11 +82,6 @@
 					imageLoadFailed = true;
 				}}
 			/>
-		{:else if fallbackSvg}
-			<div class="uml-blog-svg-fallback" role="img" aria-label={alt}>
-				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-				{@html fallbackSvg}
-			</div>
 		{:else}
 			<div class="uml-blog-missing" role="note">
 				<p class="uml-missing-title">Diagram asset unavailable ({title})</p>
@@ -228,12 +207,6 @@
 	}
 
 	.uml-blog-img {
-		max-width: 100%;
-		height: auto;
-		display: block;
-	}
-
-	.uml-blog-svg-fallback :global(svg) {
 		max-width: 100%;
 		height: auto;
 		display: block;

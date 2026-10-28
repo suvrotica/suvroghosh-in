@@ -29,14 +29,16 @@ export function selectRecommendedDiagramTypes(model: SharedUmlModel): UmlRecomme
 	const chosen: UmlDiagramType[] = [];
 	const reasons: string[] = [];
 
-	// Always include a primary structural or domain anchor
+	// Recommendations reflect available evidence, never a quota of pictures to fill.
 	if (model.entities.length >= 2) {
 		chosen.push('class');
 		reasons.push(
 			`Class Diagram maps the ${model.entities.length} recurring ${model.isConceptualModel ? 'conceptual entities' : 'domain classifiers'} (${model.entities
 				.slice(0, 3)
 				.map((e) => e.name)
-				.join(', ')}) and their structural relationships.`
+				.join(
+					', '
+				)})${model.relationships.length ? ' and explicitly stated relationships' : '; no relationships were inferred from co-occurrence'}.`
 		);
 	}
 
@@ -49,7 +51,10 @@ export function selectRecommendedDiagramTypes(model: SharedUmlModel): UmlRecomme
 		reasons.push(
 			'Activity Diagram captures the procedural workflow, conditional branches, and causal progression in the prose.'
 		);
-	} else if (model.messages.length >= 2) {
+	} else if (
+		model.messages.length >= 2 &&
+		model.messages.every((message) => message.kind !== 'unspecified')
+	) {
 		chosen.push('sequence');
 		reasons.push(
 			'Sequence Diagram traces the chronological order of interactions between the main participants.'
@@ -67,21 +72,33 @@ export function selectRecommendedDiagramTypes(model: SharedUmlModel): UmlRecomme
 		reasons.push(
 			'Deployment Diagram shows the runtime environments and deployed artifacts explicitly referenced in the article.'
 		);
-	} else if (model.states.length >= 3 && chosen.length < 3) {
+	} else if (model.transitions.length > 0 && chosen.length < 3) {
 		chosen.push('state-machine');
 		reasons.push(
 			'State Machine Diagram highlights the discrete lifecycle statuses and transition triggers.'
 		);
-	} else if (!chosen.includes('sequence') && model.entities.length >= 2 && chosen.length < 3) {
+	} else if (
+		!chosen.includes('sequence') &&
+		model.messages.length > 0 &&
+		model.messages.every((message) => message.kind !== 'unspecified') &&
+		chosen.length < 3
+	) {
 		chosen.push('sequence');
 		reasons.push(
 			'Sequence Diagram complements the structural model by ordering message handoffs across lifelines.'
+		);
+	} else if (model.messages.length > 0 && chosen.length < 3) {
+		chosen.push('communication');
+		reasons.push(
+			'Communication Diagram preserves explicit message directions and order without inventing synchronous or asynchronous delivery.'
 		);
 	}
 
 	return {
 		recommendedTypes: chosen.slice(0, 3),
-		rationale: reasons.join(' ')
+		rationale:
+			reasons.join(' ') ||
+			'The local heuristic found no sufficiently explicit concepts or flow. Add named entities and direct relationships, use manual source, or use the configured AI provider for broader prose interpretation.'
 	};
 }
 
@@ -100,7 +117,6 @@ function buildSupportingRefs(
 			quote: item.quote,
 			elementLabel: item.label
 		});
-		if (refs.length >= 5) break;
 	}
 	return refs;
 }
@@ -129,6 +145,68 @@ function synthesizePlantUmlForType(
 	const conceptualCaptionNote = model.isConceptualModel
 		? ' Modeled as a conceptual UML view of the article’s domain concepts rather than an implemented software codebase.'
 		: '';
+	const missingByType: Partial<Record<UmlDiagramType, string>> = {
+		class:
+			model.entities.length === 0
+				? 'The local heuristic found no explicitly named concepts. Provide named entities or use the AI provider for broader prose interpretation.'
+				: undefined,
+		object:
+			model.instances.length === 0
+				? 'A concrete instance and its classifier or an explicit snapshot are needed; isolated numbers do not establish an instance.'
+				: undefined,
+		package:
+			model.packages.length === 0
+				? 'Provide explicit groupings or article section headings; package dependencies cannot be inferred from paragraph order.'
+				: undefined,
+		component:
+			model.components.length === 0
+				? 'Provide explicitly named components, services, or modules. Interfaces and dependencies will not be invented.'
+				: undefined,
+		'use-case':
+			model.useCases.length === 0
+				? 'Provide named actors and their explicit goals or capabilities, for example: Reader can download a report.'
+				: undefined,
+		activity:
+			model.activities.length < 2
+				? 'Provide at least two explicitly ordered actions. Paragraph order alone does not establish workflow control flow.'
+				: undefined,
+		'state-machine':
+			model.transitions.length === 0
+				? 'Provide explicit transitions between named states; mentions of status words alone do not establish a lifecycle.'
+				: undefined,
+		sequence:
+			model.messages.length === 0
+				? 'Provide sender, recipient, and message content, with explicit ordering for multiple exchanges.'
+				: model.messages.some((message) => message.kind === 'unspecified')
+					? 'The message direction is explicit, but synchronous versus asynchronous delivery is unspecified. Use a Communication view or specify delivery semantics; the local generator will not invent sequence arrowheads.'
+					: undefined,
+		communication:
+			model.messages.length === 0
+				? 'Provide explicit participant exchanges and their message order; co-occurring concepts are not communication links.'
+				: undefined,
+		profile:
+			model.profileStereotypes.length === 0
+				? 'Provide UML stereotypes and the metaclasses they extend. An ordinary domain article does not define a UML profile.'
+				: undefined,
+		'interaction-overview':
+			model.interactionNodes.length === 0
+				? 'Provide named interactions and the control flow connecting them. The local heuristic does not interpret arbitrary paragraphs as interactions.'
+				: undefined
+	};
+	const missing = missingByType[type];
+	if (missing)
+		return {
+			status: 'needs_more_info',
+			statusReason: missing,
+			missingInformation: [missing],
+			assumptions: [],
+			title: `${model.title}: ${meta.label}`,
+			explanation: meta.readerValue,
+			caption: '',
+			altText: '',
+			sourceCode: '',
+			supportingReferences: []
+		};
 
 	switch (type) {
 		case 'class': {
@@ -172,16 +250,21 @@ function synthesizePlantUmlForType(
 				assumptions: [],
 				title: `${model.title}: ${conceptualPrefix}Class Diagram`,
 				explanation: `Maps the core ${model.isConceptualModel ? 'conceptual entities' : 'classifiers'} (${ents.map((e) => e.name).join(', ')}) and how they relate in the article.`,
-				caption: `Figure (${meta.label}): ${ents.map((e) => e.name).join(', ')} and their structural associations.${conceptualCaptionNote}`,
-				altText: `UML Class diagram showing ${ents.map((e) => e.name).join(', ')} connected by domain relationships.`,
+				caption: `Figure (${meta.label}): ${ents.map((e) => e.name).join(', ')}.${rels.length ? ' Arrows show explicit source relationships.' : ' No relationships are inferred between these concepts.'}${conceptualCaptionNote}`,
+				altText: `UML Class diagram showing ${ents.map((e) => e.name).join(', ')}${rels.length ? ' and explicitly stated relationships' : ' as separate concepts'}.`,
 				sourceCode: lines.join('\n'),
-				supportingReferences: buildSupportingRefs(
-					ents.map((e) => ({
+				supportingReferences: buildSupportingRefs([
+					...ents.map((e) => ({
 						paragraphIndex: e.paragraphIndex,
 						quote: e.quote,
 						label: e.name
+					})),
+					...rels.map((r) => ({
+						paragraphIndex: r.paragraphIndex,
+						quote: r.quote,
+						label: `${r.from} ${r.label} ${r.to}`
 					}))
-				)
+				])
 			};
 		}
 
@@ -248,13 +331,20 @@ function synthesizePlantUmlForType(
 				caption: `Figure (${meta.label}): Point-in-time instance snapshot for ${insts.map((i) => i.classifierName).join(', ')}.${conceptualCaptionNote}${assumptionCaption}`,
 				altText: `UML Object diagram showing instances ${insts.map((i) => i.instanceName).join(', ')} and their slot values.`,
 				sourceCode: lines.join('\n'),
-				supportingReferences: buildSupportingRefs(
-					insts.map((i) => ({
+				supportingReferences: buildSupportingRefs([
+					...insts.map((i) => ({
 						paragraphIndex: i.paragraphIndex,
 						quote: i.quote,
 						label: `${i.instanceName} : ${i.classifierName}`
-					}))
-				)
+					})),
+					...model.paragraphs
+						.filter((p) => insts.some((instance) => p.text.includes(`${instance.instanceName}.`)))
+						.map((p) => ({
+							paragraphIndex: p.index,
+							quote: p.text,
+							label: 'Explicit instance slot values'
+						}))
+				])
 			};
 		}
 
@@ -287,8 +377,8 @@ function synthesizePlantUmlForType(
 				assumptions: [],
 				title: `${model.title}: ${conceptualPrefix}Package Diagram`,
 				explanation:
-					'Organizes the article’s concepts into high-level thematic namespaces and highlights cross-domain dependencies.',
-				caption: `Figure (${meta.label}): Namespace grouping across ${pkgs.map((p) => p.name).join(' and ')}.${conceptualCaptionNote}`,
+					'Groups concepts by explicit article section headings; this editorial organization does not establish software package boundaries or dependencies.',
+				caption: `Figure (${meta.label}): Editorial grouping by article sections ${pkgs.map((p) => p.name).join(' and ')}. No software package dependency is inferred.${conceptualCaptionNote}`,
 				altText: `UML Package diagram grouping concepts into ${pkgs.map((p) => p.name).join(', ')}.`,
 				sourceCode: lines.join('\n'),
 				supportingReferences: buildSupportingRefs(
@@ -311,10 +401,14 @@ function synthesizePlantUmlForType(
 				lines.push(`component "${comp.name}" as ${comp.id} <<${comp.stereotype || 'component'}>>`);
 				for (const iface of comp.providedInterfaces.slice(0, 1)) {
 					lines.push(`() "${iface}" as ${iface}`);
-					lines.push(`${comp.id} --() ${iface} : provides`);
+					lines.push(`${comp.id} -- ${iface} : provides`);
 				}
 			}
 			for (const comp of comps) {
+				for (const dependency of comp.dependsOn) {
+					if (comps.some((candidate) => candidate.id === dependency))
+						lines.push(`${comp.id} ..> ${dependency} : depends on`);
+				}
 				for (const req of comp.requiredInterfaces.slice(0, 1)) {
 					lines.push(`${comp.id} ..> ${req} : <<use>>`);
 				}
@@ -327,9 +421,9 @@ function synthesizePlantUmlForType(
 				assumptions: [],
 				title: `${model.title}: ${conceptualPrefix}Component Diagram`,
 				explanation:
-					'Highlights modular functional units and the provided/required interfaces connecting them.',
-				caption: `Figure (${meta.label}): Modular responsibilities and interface contracts across ${comps.map((c) => c.name).join(', ')}.${conceptualCaptionNote}`,
-				altText: `UML Component diagram with provided and required interfaces for ${comps.map((c) => c.name).join(', ')}.`,
+					'Shows explicitly named components and any source-supported dependencies or interfaces.',
+				caption: `Figure (${meta.label}): Explicit components ${comps.map((c) => c.name).join(', ')}. Interfaces are shown only when specified.${conceptualCaptionNote}`,
+				altText: `UML Component diagram showing ${comps.map((c) => c.name).join(', ')}.`,
 				sourceCode: lines.join('\n'),
 				supportingReferences: buildSupportingRefs(
 					comps.map((c) => ({
@@ -385,16 +479,10 @@ function synthesizePlantUmlForType(
 			}
 			lines.push('}');
 			for (const conn of cs.connectors) {
-				const fromOk = conn.from === 'inputPort' || partIds.has(conn.from);
-				const toOk = conn.to === 'outputPort' || partIds.has(conn.to);
+				const fromOk = cs.ports.some((port) => port.id === conn.from) || partIds.has(conn.from);
+				const toOk = cs.ports.some((port) => port.id === conn.to) || partIds.has(conn.to);
 				if (fromOk && toOk) {
 					lines.push(`${conn.from} --> ${conn.to} : <<${conn.kind}>> ${conn.label}`);
-				}
-			}
-			if (parts.length > 0) {
-				const lastPart = parts[parts.length - 1];
-				if (!cs.connectors.some((c) => c.from === lastPart.id && c.to === 'outputPort')) {
-					lines.push(`${lastPart.id} --> outputPort : <<delegation>> emit result`);
 				}
 			}
 			lines.push('@enduml');
@@ -405,7 +493,7 @@ function synthesizePlantUmlForType(
 				assumptions,
 				title: `${cs.classifierName}: Composite Structure Diagram`,
 				explanation: `Decomposes ${cs.classifierName} into its internal role-bound parts (${parts.map((p) => p.roleType).join(', ')}), boundary ports, and internal connectors.`,
-				caption: `Figure (${meta.label}): Internal composite structure of ${cs.classifierName} showing boundary ports and collaborating part roles.${conceptualCaptionNote} (Rendered using composed PlantUML port/part notation.)`,
+				caption: `Figure (${meta.label}): Internal composite structure of ${cs.classifierName} showing boundary ports and collaborating part roles.${conceptualCaptionNote} (Rendered using composed PlantUML port/part notation.)${assumptions.length ? ` Assumptions: ${assumptions.join(' ')}` : ''}`,
 				altText: `UML Composite Structure diagram of ${cs.classifierName} with boundary ports and internal parts ${parts.map((p) => p.roleType).join(', ')}.`,
 				sourceCode: lines.join('\n'),
 				supportingReferences: buildSupportingRefs([
@@ -485,13 +573,26 @@ function synthesizePlantUmlForType(
 				}`,
 				altText: `UML Deployment diagram with 3D execution nodes ${nodes.map((n) => n.name).join(', ')} and deployed artifacts.`,
 				sourceCode: lines.join('\n'),
-				supportingReferences: buildSupportingRefs(
-					nodes.map((n) => ({
+				supportingReferences: buildSupportingRefs([
+					...nodes.map((n) => ({
 						paragraphIndex: n.paragraphIndex,
 						quote: n.quote,
 						label: n.name
-					}))
-				)
+					})),
+					...model.paragraphs
+						.filter((p) =>
+							nodes.some(
+								(node) =>
+									p.text.includes(node.name) &&
+									node.artifacts.some((artifact) => p.text.includes(artifact))
+							)
+						)
+						.map((p) => ({
+							paragraphIndex: p.index,
+							quote: p.text,
+							label: 'Deployment source statement'
+						}))
+				])
 			};
 		}
 
@@ -515,7 +616,7 @@ function synthesizePlantUmlForType(
 			}
 			lines.push('}');
 			for (const st of stereos) {
-				lines.push(`${st.id} -up-|> Meta_${st.metaclass} : <<extension>>`);
+				lines.push(`${st.id} -up->> Meta_${st.metaclass} : <<extension>>`);
 			}
 			if (stereos[0]?.constraint) {
 				lines.push(`note "${stereos[0].constraint.replace(/"/g, "'")}" as ProfileConstraint1`);
@@ -590,8 +691,10 @@ function synthesizePlantUmlForType(
 
 		case 'activity': {
 			const steps = model.activities.slice(0, isDetailed ? 5 : 3);
-			const lines: string[] = ['@startuml', `title ${model.title} — Activity Workflow`, 'start'];
-			let lastLane = '';
+			const lines: string[] = ['@startuml', `title ${model.title} — Activity Workflow`];
+			let lastLane = isDetailed ? steps[0]?.lane || '' : '';
+			if (lastLane) lines.push(`|${lastLane.slice(0, 24)}|`);
+			lines.push('start');
 			for (const step of steps) {
 				if (isDetailed && step.lane && step.lane !== lastLane) {
 					lines.push(`|${step.lane.slice(0, 24)}|`);
@@ -639,23 +742,18 @@ function synthesizePlantUmlForType(
 
 		case 'state-machine': {
 			const states = model.states.slice(0, maxItems);
-			const lines: string[] = [
-				'@startuml',
-				`title ${model.title} — State Machine Lifecycle`,
-				`[*] --> ${states[0]?.id || 'InitialState'}`
-			];
+			const lines: string[] = ['@startuml', `title ${model.title} — State Machine Lifecycle`];
 			for (const st of states) {
-				lines.push(`state "${st.name}" as ${st.id} : entry / ${st.entryAction || 'enter state'}`);
+				lines.push(`state "${st.name}" as ${st.id}`);
+				if (st.entryAction) lines.push(`${st.id} : entry / ${st.entryAction}`);
 			}
 			for (const tr of model.transitions) {
 				if (states.some((s) => s.id === tr.fromState) && states.some((s) => s.id === tr.toState)) {
 					const guardPart = isDetailed && tr.guard ? ` [${tr.guard}]` : '';
 					const effectPart = isDetailed && tr.effect ? ` / ${tr.effect}` : '';
-					lines.push(`${tr.fromState} --> ${tr.toState} : ${tr.trigger}${guardPart}${effectPart}`);
+					const label = `${tr.trigger}${guardPart}${effectPart}`;
+					lines.push(`${tr.fromState} --> ${tr.toState}${label ? ` : ${label}` : ''}`);
 				}
-			}
-			if (states.length > 0) {
-				lines.push(`${states[states.length - 1].id} --> [*]`);
 			}
 			lines.push('@enduml');
 
@@ -666,7 +764,7 @@ function synthesizePlantUmlForType(
 				title: `${model.title}: State Machine Diagram`,
 				explanation:
 					'Models the discrete lifecycle states and the event transitions that move the subject from one state to the next.',
-				caption: `Figure (${meta.label}): Lifecycle state transitions across ${states.map((s) => s.name).join(' → ')}.${conceptualCaptionNote}`,
+				caption: `Figure (${meta.label}): Source-supported transitions between ${states.map((s) => s.name).join(', ')}. Initial/final states, guards, and effects are omitted unless specified.${conceptualCaptionNote}`,
 				altText: `UML State Machine diagram with states ${states.map((s) => s.name).join(', ')}.`,
 				sourceCode: lines.join('\n'),
 				supportingReferences: buildSupportingRefs(
@@ -680,7 +778,12 @@ function synthesizePlantUmlForType(
 		}
 
 		case 'sequence': {
-			const ents = model.entities.slice(0, isDetailed ? 4 : 3);
+			const participantIds = new Set(
+				model.messages.flatMap((message) => [message.from, message.to])
+			);
+			const ents = model.entities
+				.filter((entity) => participantIds.has(entity.id))
+				.slice(0, isDetailed ? 6 : 4);
 			const entIds = new Set(ents.map((e) => e.id));
 			const msgs = model.messages.filter((m) => entIds.has(m.from) && entIds.has(m.to));
 			const lines: string[] = ['@startuml', `title ${model.title} — Interaction Sequence`];
@@ -688,7 +791,7 @@ function synthesizePlantUmlForType(
 				lines.push(`participant "${ent.name}" as ${ent.id}`);
 			}
 			for (const msg of msgs.slice(0, isDetailed ? 6 : 4)) {
-				const arrow = msg.kind === 'return' ? '-->' : '->';
+				const arrow = msg.kind === 'return' ? '-->' : msg.kind === 'async' ? '->>' : '->';
 				lines.push(`${msg.from} ${arrow} ${msg.to} : ${msg.message}`);
 			}
 			lines.push('@enduml');
@@ -699,7 +802,7 @@ function synthesizePlantUmlForType(
 				assumptions: [],
 				title: `${model.title}: Sequence Diagram`,
 				explanation:
-					'Unfolds the time-ordered sequence of messages and replies exchanged across participant lifelines.',
+					'Shows explicit source messages across participant lifelines; no acknowledgement or reply is synthesized.',
 				caption: `Figure (${meta.label}): Chronological message exchange between ${ents.map((e) => e.name).join(', ')}.${conceptualCaptionNote}`,
 				altText: `UML Sequence diagram showing lifelines for ${ents.map((e) => e.name).join(', ')} and ordered messages.`,
 				sourceCode: lines.join('\n'),
@@ -714,7 +817,12 @@ function synthesizePlantUmlForType(
 		}
 
 		case 'communication': {
-			const ents = model.entities.slice(0, isDetailed ? 4 : 3);
+			const participantIds = new Set(
+				model.messages.flatMap((message) => [message.from, message.to])
+			);
+			const ents = model.entities
+				.filter((entity) => participantIds.has(entity.id))
+				.slice(0, isDetailed ? 6 : 4);
 			const entIds = new Set(ents.map((e) => e.id));
 			const msgs = model.messages.filter((m) => entIds.has(m.from) && entIds.has(m.to));
 			const lines: string[] = ['@startuml', `title ${model.title} — Communication Link Network`];
@@ -782,7 +890,7 @@ function synthesizePlantUmlForType(
 				return {
 					status: 'needs_more_info',
 					statusReason:
-						'The article describes event order and relationships but provides no durations, timestamps, clock intervals, or timing constraints along a time axis.',
+						'The local heuristic needs explicit timed state observations for a participant, such as “At 0 seconds, Clock is Idle. At 5 seconds, Clock is Active.” Durations or dates alone do not establish a waveform.',
 					missingInformation: [
 						'Explicit durations (e.g., seconds, minutes, hours, years), deadlines, or timed state changes along a clock axis.',
 						'Enable "Allow illustrative assumptions" if you want an illustrative relative-tick timeline (@0, @10, @20).'
@@ -812,7 +920,9 @@ function synthesizePlantUmlForType(
 				lines.push(`${tr.kind} "${tr.participant}" as ${tr.participant}`);
 			}
 
-			const allTicks = [...new Set(tracks.flatMap((t) => t.events.map((e) => e.tick)))];
+			const allTicks = [...new Set(tracks.flatMap((t) => t.events.map((e) => e.tick)))].sort(
+				(a, b) => Number(a) - Number(b)
+			);
 			for (const tick of allTicks) {
 				lines.push(`@${tick}`);
 				for (const tr of tracks) {
@@ -833,7 +943,7 @@ function synthesizePlantUmlForType(
 			const assumptionCaption =
 				assumptions.length > 0
 					? ' Note: Time ticks (@0..@20) are illustrative ordinal steps, not measured facts.'
-					: '';
+					: ' Time axis values are seconds, converted from the explicit source observations.';
 
 			return {
 				status: 'generated',
@@ -845,13 +955,24 @@ function synthesizePlantUmlForType(
 				caption: `Figure (${meta.label}): State waveform timeline for ${tracks.map((t) => t.participant).join(', ')}.${conceptualCaptionNote}${assumptionCaption}`,
 				altText: `UML Timing diagram plotting state changes along a horizontal time axis for ${tracks.map((t) => t.participant).join(', ')}.`,
 				sourceCode: lines.join('\n'),
-				supportingReferences: buildSupportingRefs(
-					tracks.map((t) => ({
+				supportingReferences: buildSupportingRefs([
+					...tracks.map((t) => ({
 						paragraphIndex: t.paragraphIndex,
 						quote: t.quote,
 						label: t.participant
-					}))
-				)
+					})),
+					...model.paragraphs
+						.filter(
+							(p) =>
+								tracks.some((track) => p.text.includes(track.participant)) &&
+								/\bAt\s+\d/.test(p.text)
+						)
+						.map((p) => ({
+							paragraphIndex: p.index,
+							quote: p.text,
+							label: 'Timed state observation'
+						}))
+				])
 			};
 		}
 	}
@@ -920,7 +1041,10 @@ export function generateSingleDiagramRecord(
 		}
 
 		const candidateSource = options.aiOverride?.sourceCode?.trim() || synth.sourceCode;
-		const repairOutcome = validateAndRepairPlantUml(candidateSource, type);
+		// The legacy parser recognizes only a subset of PlantUML. Never let its
+		// repair heuristics delete valid official-engine syntax from generated code.
+		// The authoring renderer validates the exact source with the official engine.
+		const repairOutcome = validateAndRepairPlantUml(candidateSource, type, 0);
 		const renderResult = renderPlantUmlToSvg(repairOutcome.sourceCode, type, {
 			titleOverride: options.aiOverride?.title || synth.title,
 			isConceptual: model.isConceptualModel
@@ -1019,10 +1143,11 @@ export function resolveRequestedDiagramTypes(
 		return [...ALL_UML_DIAGRAM_TYPES];
 	}
 	if (mode === 'selected') {
-		const validSelected = (selectedTypes ?? []).filter((t): t is UmlDiagramType =>
+		const validSelected = [...new Set(selectedTypes ?? [])].filter((t): t is UmlDiagramType =>
 			ALL_UML_DIAGRAM_TYPES.includes(t)
 		);
-		return validSelected.length > 0 ? validSelected : recommendation.recommendedTypes;
+		if (!validSelected.length) throw new Error('Select at least one concrete UML diagram type.');
+		return validSelected;
 	}
 	return recommendation.recommendedTypes;
 }
@@ -1030,7 +1155,7 @@ export function resolveRequestedDiagramTypes(
 export function generateUmlDiagramsFromText(
 	request: UmlGenerationRequest,
 	provenance: UmlProvenance = 'local',
-	modelLabel = 'Local Deterministic UML Analyzer'
+	modelLabel = 'Local heuristic extraction (not AI)'
 ): UmlGenerationResponse {
 	const sharedModel = extractSharedUmlModel(request.text, {
 		title: request.title,
@@ -1043,12 +1168,17 @@ export function generateUmlDiagramsFromText(
 		recommendation
 	);
 
-	const warnings: string[] = [];
-	if (sharedModel.sectionedAnalysis) {
+	const warnings: string[] = [
+		'Local generation recognizes a limited set of explicit text patterns. It is heuristic extraction, not AI interpretation; review the evidence and use AI or manual source for broader prose.'
+	];
+	if (sharedModel.entities.length >= 40)
 		warnings.push(
-			`Long input (${sharedModel.totalCharacters.toLocaleString()} chars across ${sharedModel.sectionCount} sections): analyzed using section-preserving shared glossary so entity names remain consistent across views.`
+			'The local glossary reached its 40-concept limit. The article is preserved in full; split it explicitly for a broader model.'
 		);
-	}
+	if (sharedModel.entities.length > (request.detailLevel === 'detailed' ? 6 : 3))
+		warnings.push(
+			'Figures show a bounded subset of the shared model for readability. Detailed mode includes more concepts; omitted concepts remain in the shared model.'
+		);
 
 	const diagrams = targetTypes.map((type) =>
 		generateSingleDiagramRecord(type, sharedModel, {
@@ -1089,6 +1219,7 @@ export function updateDiagramFromManualEdit(
 	if (renderResult.ok && renderResult.svg) {
 		return {
 			...record,
+			metadataReviewRequired: true,
 			sourceCode: newSourceCode,
 			validationStatus: 'valid',
 			renderStatus: 'rendered',
@@ -1102,12 +1233,15 @@ export function updateDiagramFromManualEdit(
 
 	return {
 		...record,
+		metadataReviewRequired: true,
 		sourceCode: newSourceCode,
 		validationStatus: 'invalid',
 		renderStatus: 'error',
 		renderError: renderResult.error || 'Syntax error in PlantUML source.',
 		// Preserve lastValidSvg so the UI can show it clearly marked as the last successful version
-		svg: record.lastValidSvg ?? record.svg,
+		svg: undefined,
+		lastValidSvg: record.lastValidSvg ?? record.svg,
+		lastValidSourceCode: record.lastValidSourceCode ?? record.sourceCode,
 		provenance: 'edited'
 	};
 }

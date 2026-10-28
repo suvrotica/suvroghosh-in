@@ -33,7 +33,8 @@ export class BoundedRenderQueue {
 		// Replace existing pending task with the same diagram id so rapid edits coalesce
 		const existingIdx = this.queue.findIndex((item) => item.task.id === task.id);
 		if (existingIdx >= 0) {
-			this.queue.splice(existingIdx, 1);
+			const [superseded] = this.queue.splice(existingIdx, 1);
+			superseded.reject(new Error('Render superseded by a newer source revision.'));
 		}
 
 		if (this.queue.length >= this.maxPending) {

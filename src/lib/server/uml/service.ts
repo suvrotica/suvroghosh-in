@@ -7,6 +7,7 @@ import { ALL_UML_DIAGRAM_TYPES } from '$lib/visualizations/post-to-uml/types';
 import {
 	getUmlAiAvailability,
 	UML_AI_TIMEOUT_MS,
+	UML_AI_MAX_CODE_POINTS,
 	UML_MAX_REQUEST_BYTES,
 	umlPrivateHeaders,
 	type UmlServerConfig
@@ -20,20 +21,22 @@ type RouteEvent = {
 	getClientAddress(): string;
 };
 
-const requestSchema = z.strictObject({
-	text: z
-		.string()
-		.min(1)
-		.refine((val) => Boolean(val.trim()) && Array.from(val).length <= MAX_INPUT_CODE_POINTS),
-	title: z.string().max(180).optional(),
-	mode: z.enum(['recommended', 'selected', 'all14']).default('recommended'),
-	selectedTypes: z.array(z.enum(ALL_UML_DIAGRAM_TYPES)).max(14).optional(),
-	detailLevel: z.enum(['simple', 'detailed']).default('simple'),
-	allowAssumptions: z.boolean().default(false),
-	engine: z.enum(['local', 'ai']).default('local'),
-	postSlug: z.string().max(100).optional(),
-	consent: z.boolean().optional()
-});
+const requestSchema = z
+	.strictObject({
+		text: z
+			.string()
+			.min(1)
+			.refine((val) => Boolean(val.trim()) && Array.from(val).length <= MAX_INPUT_CODE_POINTS),
+		title: z.string().max(180).optional(),
+		mode: z.enum(['recommended', 'selected', 'all14']).default('recommended'),
+		selectedTypes: z.array(z.enum(ALL_UML_DIAGRAM_TYPES)).max(14).optional(),
+		detailLevel: z.enum(['simple', 'detailed']).default('simple'),
+		allowAssumptions: z.boolean().default(false),
+		engine: z.enum(['local', 'ai']).default('local'),
+		postSlug: z.string().max(100).optional(),
+		consent: z.boolean().optional()
+	})
+	.refine((input) => input.mode !== 'selected' || Boolean(input.selectedTypes?.length));
 
 function jsonResponse(body: unknown, status = 200, extraHeaders: Record<string, string> = {}) {
 	return new Response(JSON.stringify(body), {
@@ -47,6 +50,9 @@ function jsonResponse(body: unknown, status = 200, extraHeaders: Record<string, 
 }
 
 function handleFailure(cause: unknown): Response {
+	if (cause instanceof DOMException && cause.name === 'AbortError') {
+		return jsonResponse({ error: 'UML generation was cancelled.', code: 'cancelled' }, 499);
+	}
 	if (cause instanceof UmlServiceFailure) {
 		return jsonResponse({ error: cause.message, code: cause.code }, cause.status);
 	}
@@ -77,9 +83,16 @@ function handleFailure(cause: unknown): Response {
 	);
 }
 
-export function createUmlApiHandlers(
+export function createUmlApiHandlers<TEvent extends RouteEvent = RouteEvent>(
 	getConfig: () => UmlServerConfig,
-	getDependencies: () => UmlAiDependencies
+	getDependencies: () => UmlAiDependencies,
+	authorizeOwner: (event: TEvent) => Promise<string> = async () => {
+		throw new UmlServiceFailure(
+			'sign_in_required',
+			'Sign in as the site owner at /notes/sign-in to use AI generation.',
+			401
+		);
+	}
 ) {
 	const postAdmit = createLocalAdmission({
 		attempts: 10,
@@ -100,7 +113,7 @@ export function createUmlApiHandlers(
 	});
 
 	return {
-		async GET(event: RouteEvent): Promise<Response> {
+		async GET(event: TEvent): Promise<Response> {
 			let clientAddress: string;
 			try {
 				clientAddress = event.getClientAddress();
@@ -134,8 +147,24 @@ export function createUmlApiHandlers(
 				}
 
 				const cfg = getConfig();
+				const availability = getUmlAiAvailability(cfg);
+				if (availability.available) {
+					try {
+						await authorizeOwner(event);
+					} catch (cause) {
+						availability.available = false;
+						availability.reason =
+							cause instanceof UmlServiceFailure
+								? cause.message
+								: 'Owner authorization could not be verified. Sign in at /notes/sign-in or try again.';
+					}
+				}
 				return jsonResponse({
-					ai: getUmlAiAvailability(cfg),
+					ai: availability,
+					limits: {
+						articleCodePoints: MAX_INPUT_CODE_POINTS,
+						aiArticleCodePoints: UML_AI_MAX_CODE_POINTS
+					},
 					posts: listLoadableBlogPosts(60)
 				});
 			} finally {
@@ -143,7 +172,7 @@ export function createUmlApiHandlers(
 			}
 		},
 
-		async POST(event: RouteEvent): Promise<Response> {
+		async POST(event: TEvent): Promise<Response> {
 			if (event.request.headers.get('origin') !== event.url.origin) {
 				return jsonResponse(
 					{ error: 'Cross-origin requests are not allowed.', code: 'forbidden' },
@@ -152,7 +181,7 @@ export function createUmlApiHandlers(
 			}
 
 			const contentType = event.request.headers.get('content-type') ?? '';
-			if (!contentType.toLowerCase().includes('application/json')) {
+			if (contentType.split(';')[0].trim().toLowerCase() !== 'application/json') {
 				return jsonResponse(
 					{ error: 'Expected application/json request body.', code: 'unsupported_media_type' },
 					415
@@ -211,12 +240,13 @@ export function createUmlApiHandlers(
 					}
 
 					const req = parsedInput.data;
+					if (combinedSignal.aborted) throw new DOMException('Generation cancelled.', 'AbortError');
 
 					if (req.engine === 'local') {
 						const localResult = generateUmlDiagramsFromText(
 							req,
 							'local',
-							'Local Deterministic UML Analyzer'
+							'Local heuristic UML analyzer (not AI)'
 						);
 						return jsonResponse({ result: localResult });
 					}
@@ -245,8 +275,33 @@ export function createUmlApiHandlers(
 							400
 						);
 					}
-
-					const aiResult = await getDependencies().generate(req, combinedSignal);
+					if (Array.from(req.text).length > UML_AI_MAX_CODE_POINTS) {
+						return jsonResponse(
+							{
+								error: `AI generation accepts up to ${UML_AI_MAX_CODE_POINTS.toLocaleString('en')} characters. Shorten the input or use local mode; no text has been truncated or sent.`,
+								code: 'ai_input_too_large'
+							},
+							413
+						);
+					}
+					const ownerId = await authorizeOwner(event);
+					if (combinedSignal.aborted) throw new DOMException('Generation cancelled.', 'AbortError');
+					const deps = getDependencies();
+					const quota = await deps.reserve(ownerId, combinedSignal);
+					if (!quota.allowed) {
+						return jsonResponse(
+							{
+								error:
+									'The shared AI request allowance has been reached. Try later or use local mode.',
+								code: 'rate_limited'
+							},
+							429,
+							{ 'retry-after': String(quota.retryAfterSeconds) }
+						);
+					}
+					if (combinedSignal.aborted) throw new DOMException('Generation cancelled.', 'AbortError');
+					const aiResult = await deps.generate(req, combinedSignal);
+					if (combinedSignal.aborted) throw new DOMException('Generation cancelled.', 'AbortError');
 					return jsonResponse({ result: aiResult });
 				}, UML_AI_TIMEOUT_MS);
 			} catch (err) {

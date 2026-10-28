@@ -1,216 +1,234 @@
-import { describe, expect, it } from 'vitest';
-import { getUmlServerConfig } from '$lib/server/uml/config';
+import { describe, expect, it, vi } from 'vitest';
 import { createUmlApiHandlers } from '$lib/server/uml/service';
+import type { UmlServerConfig } from '$lib/server/uml/config';
+import { UmlServiceFailure } from '$lib/server/uml/failure';
+import type { UmlAiDependencies } from '$lib/server/uml/gateway';
 import { generateUmlDiagramsFromText } from '$lib/visualizations/post-to-uml/generator';
 import { load as vizUmlLoad } from '../../viz/uml/+page.server';
 
-describe('/api/uml server endpoint & /viz/uml route', () => {
-	it('returns AI configuration status and indexed blog posts on GET /api/uml', async () => {
-		const handlers = createUmlApiHandlers(
-			() => getUmlServerConfig({ UML_AI_ENABLED: 'false' }),
-			() => ({
-				async generate(req) {
-					return generateUmlDiagramsFromText(req, 'ai', 'Mock AI Model');
-				}
-			})
-		);
-
-		const res = await handlers.GET({
-			request: new Request('https://suvroghosh.in/api/uml'),
-			url: new URL('https://suvroghosh.in/api/uml'),
-			getClientAddress: () => '127.0.0.1'
-		});
-
-		expect(res.status).toBe(200);
-		expect(res.headers.get('cache-control')).toContain('no-store');
-		const data = (await res.json()) as {
-			ai: { available: boolean; configurationSteps: string[] };
-			posts: { slug: string; title: string }[];
-		};
-		expect(data.ai.available).toBe(false);
-		expect(data.ai.configurationSteps.length).toBeGreaterThanOrEqual(3);
-		expect(Array.isArray(data.posts)).toBe(true);
-		expect(data.posts.length).toBeGreaterThan(0);
-	});
-
-	it('loads a published blog post markdown by slug on GET /api/uml?post=<slug>', async () => {
-		const handlers = createUmlApiHandlers(
-			() => getUmlServerConfig({}),
-			() => ({
-				async generate(req) {
-					return generateUmlDiagramsFromText(req, 'ai', 'Mock AI Model');
-				}
-			})
-		);
-
-		const res = await handlers.GET({
-			request: new Request('https://suvroghosh.in/api/uml?post=prompt-atlas'),
-			url: new URL('https://suvroghosh.in/api/uml?post=prompt-atlas'),
-			getClientAddress: () => '127.0.0.1'
-		});
-
-		expect(res.status).toBe(200);
-		const data = (await res.json()) as { post: { slug: string; title: string; markdown: string } };
-		expect(data.post.slug).toBe('prompt-atlas');
-		expect(data.post.markdown.length).toBeGreaterThan(50);
-		expect(data.post.markdown).not.toContain('---');
-	});
-
-	it('rejects cross-origin POST requests with 403', async () => {
-		const handlers = createUmlApiHandlers(
-			() => getUmlServerConfig({}),
-			() => ({
-				async generate(req) {
-					return generateUmlDiagramsFromText(req, 'ai', 'Mock AI Model');
-				}
-			})
-		);
-
-		const res = await handlers.POST({
-			request: new Request('https://suvroghosh.in/api/uml', {
-				method: 'POST',
-				headers: {
-					origin: 'https://evil.example.com',
-					'content-type': 'application/json'
-				},
-				body: JSON.stringify({ text: 'Sample article text' })
-			}),
-			url: new URL('https://suvroghosh.in/api/uml'),
-			getClientAddress: () => '127.0.0.1'
-		});
-
-		expect(res.status).toBe(403);
-	});
-
-	it('generates deterministic local UML diagrams on POST /api/uml with engine="local"', async () => {
-		const handlers = createUmlApiHandlers(
-			() => getUmlServerConfig({}),
-			() => ({
-				async generate(req) {
-					return generateUmlDiagramsFromText(req, 'ai', 'Mock AI Model');
-				}
-			})
-		);
-
-		const res = await handlers.POST({
-			request: new Request('https://suvroghosh.in/api/uml', {
-				method: 'POST',
-				headers: {
-					origin: 'https://suvroghosh.in',
-					'content-type': 'application/json'
-				},
-				body: JSON.stringify({
-					text: 'The ClinicTablet sends an EncounterBundle to the OpenHIMMediator within 5 seconds.',
-					title: 'Clinic Exchange',
-					mode: 'selected',
-					selectedTypes: ['class', 'sequence', 'timing'],
-					detailLevel: 'simple',
-					allowAssumptions: false,
-					engine: 'local'
-				})
-			}),
-			url: new URL('https://suvroghosh.in/api/uml'),
-			getClientAddress: () => '127.0.0.1'
-		});
-
-		expect(res.status).toBe(200);
-		const payload = (await res.json()) as {
-			result: { diagrams: { type: string; renderStatus: string; svg?: string }[] };
-		};
-		expect(payload.result.diagrams).toHaveLength(3);
-		for (const d of payload.result.diagrams) {
-			expect(d.renderStatus).toBe('rendered');
-			expect(d.svg).toContain('<svg');
+// The route consumes the canonical registry; isolate its metadata from unrelated
+// visualization components while still exercising the real bundled raw source loader.
+vi.mock('$lib/server/content/posts', () => ({
+	getPublishedPosts: () => [
+		{
+			slug: 'prompt-atlas',
+			title: 'Prompt Atlas',
+			categoryLabel: 'Visualizations',
+			date: '2026-10-25',
+			description: 'Inspect a prompt.'
 		}
-	});
+	]
+}));
 
-	it('returns 503 with explicit configuration steps when engine="ai" is requested without AI credentials', async () => {
-		const handlers = createUmlApiHandlers(
-			() => getUmlServerConfig({ UML_AI_ENABLED: 'false' }),
-			() => ({
-				async generate(req) {
-					return generateUmlDiagramsFromText(req, 'ai', 'Mock AI Model');
-				}
-			})
-		);
+const enabled: UmlServerConfig = {
+	enabled: true,
+	model: 'test/model',
+	credentialAvailable: true,
+	salt: '0123456789abcdef0123456789abcdef',
+	supabaseUrl: 'https://test.supabase.co',
+	supabaseKey: 'test-service-key',
+	ownerConfigured: true
+};
+const payload = {
+	text: 'The ClinicTablet sends an EncounterBundle to the OpenHIMMediator.',
+	mode: 'selected',
+	selectedTypes: ['class'],
+	detailLevel: 'simple',
+	allowAssumptions: false,
+	engine: 'ai',
+	consent: true
+};
+function event(body: unknown = payload, overrides: RequestInit = {}) {
+	return {
+		request: new Request('https://suvroghosh.in/api/uml', {
+			method: 'POST',
+			headers: { origin: 'https://suvroghosh.in', 'content-type': 'application/json' },
+			body: JSON.stringify(body),
+			...overrides
+		}),
+		url: new URL('https://suvroghosh.in/api/uml'),
+		getClientAddress: () => '127.0.0.1'
+	};
+}
+function setup(
+	options: {
+		config?: Partial<UmlServerConfig>;
+		authorize?: () => Promise<string>;
+		deps?: Partial<UmlAiDependencies>;
+	} = {}
+) {
+	const reserve = vi.fn(async () => ({ allowed: true, retryAfterSeconds: 0 }));
+	const generate = vi.fn<UmlAiDependencies['generate']>(async (req) =>
+		generateUmlDiagramsFromText(req, 'ai', 'Mock provider')
+	);
+	const deps = { reserve, generate, ...options.deps };
+	const handlers = createUmlApiHandlers(
+		() => ({ ...enabled, ...options.config }),
+		() => deps,
+		options.authorize ?? (async () => 'configured-owner')
+	);
+	return { handlers, reserve, generate };
+}
 
-		const res = await handlers.POST({
-			request: new Request('https://suvroghosh.in/api/uml', {
-				method: 'POST',
-				headers: {
-					origin: 'https://suvroghosh.in',
-					'content-type': 'application/json'
-				},
-				body: JSON.stringify({
-					text: 'The ClinicTablet sends an EncounterBundle to the OpenHIMMediator.',
-					mode: 'recommended',
-					detailLevel: 'simple',
-					allowAssumptions: false,
-					engine: 'ai',
-					consent: true
-				})
-			}),
-			url: new URL('https://suvroghosh.in/api/uml'),
-			getClientAddress: () => '127.0.0.1'
+describe('/api/uml containment and owner authorization', () => {
+	it('keeps status and published post loading public with private headers', async () => {
+		const { handlers } = setup({
+			authorize: async () => {
+				throw new UmlServiceFailure('sign_in_required', 'Sign in', 401);
+			}
 		});
-
-		expect(res.status).toBe(503);
-		const body = (await res.json()) as { code: string; configurationSteps: string[] };
-		expect(body.code).toBe('ai_not_configured');
-		expect(body.configurationSteps.length).toBeGreaterThan(0);
+		const status = await handlers.GET(event(undefined, { method: 'GET', body: undefined }));
+		expect(status.status).toBe(200);
+		expect(status.headers.get('cache-control')).toContain('no-store');
+		const data = await status.json();
+		expect(data.ai.available).toBe(false);
+		expect(data.ai.reason).toContain('Sign in');
+		expect(data.posts.length).toBeGreaterThan(0);
+		const postEvent = event(undefined, { method: 'GET', body: undefined });
+		postEvent.url.search = '?post=prompt-atlas';
+		const post = await handlers.GET(postEvent);
+		expect(post.status).toBe(200);
+		expect((await post.json()).post.slug).toBe('prompt-atlas');
 	});
 
-	it('delegates to mocked AI provider when engine="ai" and credentials + consent are present', async () => {
+	it('fails closed without an authorization dependency even when provider config exists', async () => {
+		const { reserve, generate } = setup();
 		const handlers = createUmlApiHandlers(
-			() =>
-				getUmlServerConfig({
-					UML_AI_ENABLED: 'true',
-					AI_GATEWAY_API_KEY: 'test-key-not-real',
-					UML_RATE_LIMIT_SALT: '0123456789abcdef0123456789abcdef'
-				}),
-			() => ({
-				async generate(req) {
-					return generateUmlDiagramsFromText(req, 'ai', 'Mocked AI Gateway');
-				}
-			})
+			() => enabled,
+			() => ({ reserve, generate })
 		);
-
-		const res = await handlers.POST({
-			request: new Request('https://suvroghosh.in/api/uml', {
-				method: 'POST',
-				headers: {
-					origin: 'https://suvroghosh.in',
-					'content-type': 'application/json'
-				},
-				body: JSON.stringify({
-					text: 'The Physician submits a PriorAuthorizationRequest to the PayerReviewBoundary.',
-					mode: 'recommended',
-					detailLevel: 'simple',
-					allowAssumptions: false,
-					engine: 'ai',
-					consent: true
-				})
-			}),
-			url: new URL('https://suvroghosh.in/api/uml'),
-			getClientAddress: () => '127.0.0.1'
-		});
-
-		expect(res.status).toBe(200);
-		const body = (await res.json()) as {
-			result: { modelLabel: string; diagrams: { provenance: string }[] };
-		};
-		expect(body.result.modelLabel).toBe('Mocked AI Gateway');
-		expect(body.result.diagrams[0].provenance).toBe('ai');
+		const response = await handlers.POST(event());
+		expect(response.status).toBe(401);
+		expect(reserve).not.toHaveBeenCalled();
+		expect(generate).not.toHaveBeenCalled();
 	});
 
-	it('redirects /viz/uml to /blog/visualizations/post-to-uml', () => {
+	it('rejects a non-owner before quota or provider use', async () => {
+		const { handlers, reserve, generate } = setup({
+			authorize: async () => {
+				throw new UmlServiceFailure('forbidden', 'Owner only', 403);
+			}
+		});
+		expect((await handlers.POST(event())).status).toBe(403);
+		expect(reserve).not.toHaveBeenCalled();
+		expect(generate).not.toHaveBeenCalled();
+	});
+
+	it.each([
+		[{ origin: 'https://evil.example', 'content-type': 'application/json' }, 403],
+		[{ origin: 'https://suvroghosh.in', 'content-type': 'application/json-malicious' }, 415]
+	])('rejects invalid origin or media type', async (headers, status) => {
+		const { handlers, generate } = setup();
+		expect((await handlers.POST(event(payload, { headers }))).status).toBe(status);
+		expect(generate).not.toHaveBeenCalled();
+	});
+
+	it('enforces streamed body limits without Content-Length', async () => {
+		const { handlers, generate } = setup();
+		const body = new ReadableStream<Uint8Array>({
+			start(controller) {
+				controller.enqueue(new Uint8Array(512 * 1024 + 1));
+				controller.close();
+			}
+		});
+		const response = await handlers.POST(event(payload, { body, duplex: 'half' } as RequestInit));
+		expect(response.status).toBe(413);
+		expect(generate).not.toHaveBeenCalled();
+	});
+
+	it('rejects empty selections and unauthorized payload fields', async () => {
+		const { handlers } = setup();
+		expect((await handlers.POST(event({ ...payload, selectedTypes: [] }))).status).toBe(400);
+		expect((await handlers.POST(event({ ...payload, ownerId: 'configured-owner' }))).status).toBe(
+			400
+		);
+	});
+
+	it('does not silently truncate oversized AI input', async () => {
+		const { handlers, reserve, generate } = setup();
+		const response = await handlers.POST(event({ ...payload, text: 'a'.repeat(40_001) }));
+		expect(response.status).toBe(413);
+		expect((await response.json()).code).toBe('ai_input_too_large');
+		expect(reserve).not.toHaveBeenCalled();
+		expect(generate).not.toHaveBeenCalled();
+	});
+
+	it('requires explicit AI consent', async () => {
+		const { handlers, generate } = setup();
+		expect((await handlers.POST(event({ ...payload, consent: false }))).status).toBe(400);
+		expect(generate).not.toHaveBeenCalled();
+	});
+
+	it('returns configuration instructions when AI is unavailable', async () => {
+		const { handlers, generate } = setup({ config: { enabled: false } });
+		const response = await handlers.POST(event());
+		expect(response.status).toBe(503);
+		expect((await response.json()).configurationSteps.length).toBeGreaterThan(0);
+		expect(generate).not.toHaveBeenCalled();
+	});
+
+	it('reserves shared quota under the authenticated owner before generating', async () => {
+		const { handlers, reserve, generate } = setup();
+		const response = await handlers.POST(event());
+		expect(response.status).toBe(200);
+		expect(reserve).toHaveBeenCalledWith('configured-owner', expect.any(AbortSignal));
+		expect(reserve.mock.invocationCallOrder[0]).toBeLessThan(generate.mock.invocationCallOrder[0]);
+		expect((await response.json()).result.modelLabel).toBe('Mock provider');
+	});
+
+	it('does not call the provider when shared quota is denied or unavailable', async () => {
+		const denied = setup({
+			deps: { reserve: async () => ({ allowed: false, retryAfterSeconds: 60 }) }
+		});
+		const response = await denied.handlers.POST(event());
+		expect(response.status).toBe(429);
+		expect(response.headers.get('retry-after')).toBe('60');
+		expect(denied.generate).not.toHaveBeenCalled();
+		const failed = setup({
+			deps: {
+				reserve: async () => {
+					throw new UmlServiceFailure('quota_unavailable', 'Unavailable');
+				}
+			}
+		});
+		expect((await failed.handlers.POST(event())).status).toBe(503);
+		expect(failed.generate).not.toHaveBeenCalled();
+	});
+
+	it('discards late provider completion after cancellation', async () => {
+		const controller = new AbortController();
+		const { handlers } = setup({
+			deps: {
+				generate: async (req, signal) => {
+					controller.abort();
+					expect(signal.aborted).toBe(true);
+					return generateUmlDiagramsFromText(req, 'ai', 'Late provider');
+				}
+			}
+		});
+		expect((await handlers.POST(event(payload, { signal: controller.signal }))).status).toBe(499);
+	});
+
+	it('leaves local mode available without owner auth or provider configuration', async () => {
+		const { handlers, reserve, generate } = setup({
+			config: { enabled: false },
+			authorize: async () => {
+				throw new Error('Should not authenticate');
+			}
+		});
+		const response = await handlers.POST(event({ ...payload, engine: 'local' }));
+		expect(response.status).toBe(200);
+		expect((await response.json()).result.engine).toBe('local');
+		expect(reserve).not.toHaveBeenCalled();
+		expect(generate).not.toHaveBeenCalled();
+	});
+
+	it('preserves the canonical /viz/uml redirect', () => {
 		expect(() => vizUmlLoad({} as never)).toThrow();
 		try {
 			vizUmlLoad({} as never);
-		} catch (redirectErr) {
-			const r = redirectErr as { status: number; location: string };
-			expect(r.status).toBe(308);
-			expect(r.location).toBe('/blog/visualizations/post-to-uml');
+		} catch (cause) {
+			expect(cause).toMatchObject({ status: 308, location: '/blog/visualizations/post-to-uml' });
 		}
 	});
 });

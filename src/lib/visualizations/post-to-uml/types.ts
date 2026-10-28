@@ -85,6 +85,7 @@ export interface UmlParagraphSpan {
 }
 
 export interface UmlSupportingReference {
+	inputRevision?: string;
 	id: string;
 	paragraphIndex: number;
 	quote: string;
@@ -247,7 +248,7 @@ export interface SharedUmlMessage {
 	from: string;
 	to: string;
 	message: string;
-	kind: 'sync' | 'async' | 'return';
+	kind: 'sync' | 'async' | 'return' | 'unspecified';
 	guard?: string;
 	fragmentLabel?: string;
 	paragraphIndex: number;
@@ -313,6 +314,11 @@ export interface SharedUmlModel {
 }
 
 export interface UmlDiagramRecord {
+	/** Authoring metadata must be reviewed after changing the source. */
+	metadataReviewRequired?: boolean;
+	sourceRevision?: string;
+	renderedSourceRevision?: string;
+	rendererId?: string;
 	id: string;
 	type: UmlDiagramType;
 	family: UmlFamily;
@@ -357,6 +363,7 @@ export interface UmlRecommendationSummary {
 }
 
 export interface UmlGenerationResponse {
+	inputRevision?: string;
 	id: string;
 	title: string;
 	slug: string;

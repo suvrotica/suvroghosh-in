@@ -64,7 +64,7 @@ export const UML_DIAGRAM_CATALOG: Record<UmlDiagramType, UmlDiagramTypeMeta> = {
 			'Represents general classifiers or conceptual domain entities—not point-in-time instances or runtime message order.',
 		rendererSupport: 'native',
 		rendererNotes:
-			'Native PlantUML class notation (`class`, stereotypes, attributes/operations compartments, `--|>`, `*--`, `o--`, `-->`, `..>`).',
+			'PlantUML TeaVM 1.2026.9 / Smetana: class notation (`class`, stereotypes, attributes/operations compartments, `--|>`, `*--`, `o--`, `-->`, `..>`).',
 		notationLimitations: [],
 		legend: [
 			{
@@ -177,7 +177,7 @@ export const UML_DIAGRAM_CATALOG: Record<UmlDiagramType, UmlDiagramTypeMeta> = {
 			'Emphasizes replaceable modular boundaries and provided/required interfaces (`() Interface`), distinct from physical hardware nodes.',
 		rendererSupport: 'native',
 		rendererNotes:
-			'Native PlantUML `component` (`[Component]`) and `interface` (`() "Interface"`) notation with provided lollipop (`--()`) and required socket (`..>`) links.',
+			'Native PlantUML `component` (`[Component]`) and `interface` (`() "Interface"`) notation with provided lollipop interfaces and explicit usage dependencies (`..>`). A dependency is not a required-interface socket.',
 		notationLimitations: [],
 		legend: [
 			{
@@ -290,9 +290,9 @@ export const UML_DIAGRAM_CATALOG: Record<UmlDiagramType, UmlDiagramTypeMeta> = {
 			'A UML Profile diagram is a metamodel extension (`«profile»`, `«metaclass»`, `«stereotype»`, and filled-triangle extension arrows)—never a biographical or user profile.',
 		rendererSupport: 'composed',
 		rendererNotes:
-			'Composed PlantUML `package "Name" <<profile>>` containing `class ... <<metaclass>>`, `class ... <<stereotype>>`, extension arrows (`-up-|>` with `<<extension>>`), and constraint `note` blocks; rendered with UML 2.5 filled-triangle metaclass extension arrows.',
+			'Composed PlantUML `package "Name" <<profile>>` containing `class ... <<metaclass>>`, `class ... <<stereotype>>`, filled-triangle extension arrows (`-up->>` with `<<extension>>`), and constraint `note` blocks; rendered with UML 2.5 filled-triangle metaclass extension arrows.',
 		notationLimitations: [
-			'PlantUML uses stereotyped class declarations (`<<metaclass>>`, `<<stereotype>>`) inside a `<<profile>>` package; our deterministic renderer draws the canonical UML 2.5 filled-triangle extension arrow to each metaclass.'
+			'PlantUML uses stereotyped class declarations (`<<metaclass>>`, `<<stereotype>>`) inside a `<<profile>>` package; the verified `-up->>` relation draws a filled triangular arrow toward the metaclass.'
 		],
 		legend: [
 			{
@@ -521,15 +521,15 @@ export const UML_DIAGRAM_CATALOG: Record<UmlDiagramType, UmlDiagramTypeMeta> = {
 			'Must explicitly identify the named interactions (`ref` / `sd` interaction frames and their participating lifelines) being connected by activity control nodes.',
 		rendererSupport: 'composed',
 		rendererNotes:
-			'Composed PlantUML activity control skeleton (`start`, `if/else`, `fork`, `stop`) whose action nodes are explicit `ref` / `sd` interaction frames (`partition "ref: InteractionName" { :participants -> messages; }`), rendered with UML `ref` pentagon header tabs.',
+			'Composed PlantUML activity control skeleton (`start`, `if/else`, `fork`, `stop`) connecting explicitly named interactions (`partition "ref: InteractionName" { :participants -> messages; }`).',
 		notationLimitations: [
-			'PlantUML composes Interaction Overview diagrams by embedding `ref` / `sd` interaction frames inside activity control-flow nodes; our renderer draws canonical UML pentagon `ref` / `sd` headers on each interaction frame.'
+			'Composed notation: named activity partitions represent interaction uses. Their rectangular headers approximate UML ref/sd frame tabs; embedded actions describe the named interaction, not full nested sequence diagrams.'
 		],
 		legend: [
 			{
 				symbol: '┌ref─┐ InteractionName',
 				label: 'Interaction Use (`ref`) frame',
-				meaning: 'Pentagon-tabbed frame referencing a named multi-participant interaction scenario.'
+				meaning: 'Named interaction use, represented here by a labelled activity partition.'
 			},
 			{
 				symbol: '┌sd──┐ Inline Interaction',

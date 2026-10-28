@@ -1,3 +1,5 @@
+import sanitizeHtml from 'sanitize-html';
+
 export interface PlantUmlSecurityViolation {
 	line: number;
 	rule: string;
@@ -18,6 +20,21 @@ const FORBIDDEN_LINE_PATTERNS: readonly {
 	pattern: RegExp;
 	message: string;
 }[] = [
+	{
+		rule: 'preprocessor-disabled',
+		pattern: /^\s*!/,
+		message: 'Preprocessor directives are disabled. Use standalone diagram source.'
+	},
+	{
+		rule: 'builtin-disabled',
+		pattern: /%[a-z_][a-z_0-9]*\s*\(/i,
+		message: 'Preprocessor functions are disabled in untrusted source.'
+	},
+	{
+		rule: 'resource-disabled',
+		pattern: /<\s*(img|image)\b|\[\[|<\$/i,
+		message: 'Images, hyperlinks, and externally loaded sprites are disabled.'
+	},
 	{
 		rule: 'preprocessor-include',
 		pattern: /^\s*!(include|includeurl|includesub|include_many|include_once|import)\b/i,
@@ -133,11 +150,119 @@ export function escapeXml(value: string): string {
 
 export function sanitizeSvg(svg: string): string {
 	if (!svg || typeof svg !== 'string') return '';
-	return svg
-		.replace(/<\s*(script|iframe|object|embed|foreignObject)\b[\s\S]*?<\s*\/\s*\1\s*>/gi, '')
-		.replace(/<\s*(script|iframe|object|embed|foreignObject)\b[^>]*\/?\s*>/gi, '')
-		.replace(/\son[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '')
-		.replace(/\b(href|xlink:href)\s*=\s*("[^"]*"|'[^']*')/gi, '')
-		.replace(/javascript\s*:/gi, 'blocked:')
-		.replace(/data\s*:\s*text\/html/gi, 'blocked:text/plain');
+	const cleaned = sanitizeHtml(svg, {
+		allowedTags: [
+			'svg',
+			'g',
+			'defs',
+			'marker',
+			'path',
+			'rect',
+			'circle',
+			'ellipse',
+			'polygon',
+			'polyline',
+			'line',
+			'text',
+			'tspan',
+			'title',
+			'desc',
+			'clipPath',
+			'linearGradient',
+			'radialGradient',
+			'stop'
+		],
+		allowedAttributes: {
+			'*': [
+				'id',
+				'class',
+				'xmlns',
+				'viewBox',
+				'width',
+				'height',
+				'x',
+				'y',
+				'x1',
+				'x2',
+				'y1',
+				'y2',
+				'cx',
+				'cy',
+				'r',
+				'rx',
+				'ry',
+				'd',
+				'points',
+				'transform',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'stroke',
+				'stroke-width',
+				'stroke-dasharray',
+				'stroke-opacity',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'font-family',
+				'font-size',
+				'font-weight',
+				'font-style',
+				'text-anchor',
+				'text-decoration',
+				'textLength',
+				'lengthAdjust',
+				'xml:space',
+				'dominant-baseline',
+				'marker-start',
+				'marker-end',
+				'markerWidth',
+				'markerHeight',
+				'markerUnits',
+				'refX',
+				'refY',
+				'orient',
+				'clip-path',
+				'offset',
+				'stop-color',
+				'stop-opacity',
+				'opacity',
+				'role',
+				'aria-label',
+				'aria-labelledby',
+				'data-uml-type',
+				'style'
+			]
+		},
+		parser: { xmlMode: true, lowerCaseTags: false, lowerCaseAttributeNames: false },
+		allowedStyles: {
+			'*': {
+				fill: [/^(?:#[\da-f]{3,8}|[a-z]+|none)$/i],
+				stroke: [/^(?:#[\da-f]{3,8}|[a-z]+|none)$/i],
+				'stroke-width': [/^[\d.]+(?:px)?$/],
+				'stroke-dasharray': [/^[\d., ]+$/],
+				'font-size': [/^[\d.]+(?:px|pt)?$/],
+				'font-weight': [/^(?:normal|bold|[1-9]00)$/],
+				'font-style': [/^(?:normal|italic)$/],
+				'white-space': [/^pre$/]
+			}
+		},
+		transformTags: {
+			'*': (tagName, attribs) => {
+				for (const [name, value] of Object.entries(attribs)) {
+					if (name === 'xmlns' && value === 'http://www.w3.org/2000/svg') continue;
+					if (
+						/(?:url\s*\(|@import|javascript:|data:|https?:|\\)/i.test(value) &&
+						!/^url\(#[\w-]+\)$/.test(value)
+					)
+						delete attribs[name];
+				}
+				return { tagName, attribs };
+			}
+		}
+	});
+	return cleaned.replace(
+		/<svg\b([^>]*)>/,
+		(_match, attributes: string) =>
+			`<svg xmlns="http://www.w3.org/2000/svg"${attributes.replace(/\s+xmlns="[^"]*"/g, '')}>`
+	);
 }

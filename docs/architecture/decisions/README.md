@@ -39,3 +39,4 @@ reasoning in old records when superseding them.
 | [0017](0017-local-enquiry-demo.md) | Accepted for local operation | Transactional SQLite enquiries, simulated acknowledgements, deadlines and a standalone local worker. |
 | [0018](0018-public-enquiry-sandboxes.md) | Accepted | Private expiring visitor snapshots in Supabase, scoped staff grants, revision commits and a protected scheduled fake-message worker. |
 | [0019](0019-knowledge-gap-atlas-local-corpus.md) | Accepted | Stream visitor corpora into local IndexedDB, analyse in a worker without AI APIs, and preserve evidence-linked research questions and portable exports. |
+| [0020](0020-post-to-uml-browser-engine.md) | Accepted; implemented locally; hosted AI unverified | Render UML through the official local PlantUML worker, gate provider generation with owner authorization and shared quota, and export only current reviewed source/assets. |

@@ -150,8 +150,8 @@ package "HealthExchangeProfile" as HealthExchangeProfile <<profile>> {
     +terminologyVersion : String
   }
 }
-AuditableResource -up-|> MetaClass : <<extension>>
-VerifiedMediator -up-|> MetaComponent : <<extension>>
+AuditableResource -up->> MetaClass : <<extension>>
+VerifiedMediator -up->> MetaComponent : <<extension>>
 note "All AuditableResource instances must record an immutable provenance hash." as N1
 @enduml`,
 		expectedDefiningConstructs: [
@@ -183,8 +183,8 @@ DistrictHealthOfficer --> UC3
 		title: 'Encounter Validation and Routing Workflow',
 		sourceCode: `@startuml
 title Encounter Validation and Routing Workflow
-start
 |Clinic Tablet|
+start
 :Capture immunization dose and patient token;
 |Interoperability Layer|
 :Validate mTLS certificate and FHIR schema;

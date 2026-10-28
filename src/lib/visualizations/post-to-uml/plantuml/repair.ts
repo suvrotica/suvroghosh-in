@@ -15,7 +15,7 @@ export const MAX_SYNTAX_REPAIR_ATTEMPTS = 2;
 function applySingleRepairPass(
 	source: string,
 	diagramType: UmlDiagramType,
-	pass: number
+	_pass: number
 ): { source: string; fixes: string[] } {
 	const fixes: string[] = [];
 	let lines = source.split(/\r?\n/);
@@ -137,25 +137,6 @@ function applySingleRepairPass(
 			openFragments += 1;
 		} else if (/^end$/i.test(t) && openFragments > 0) {
 			openFragments -= 1;
-		}
-
-		// On pass 2, if a top-level line is still unrecognized prose commentary outside PlantUML, convert to comment
-		if (pass >= 2 && openBraces === 0) {
-			const singleDoc = parsePlantUml(`@startuml\n${t}\n@enduml`, diagramType);
-			const hasLineErr = singleDoc.errors.some((e) =>
-				e.message.startsWith('Unrecognized or malformed PlantUML statement')
-			);
-			if (
-				hasLineErr &&
-				!t.startsWith('@') &&
-				!t.endsWith('{') &&
-				t !== '}' &&
-				!/^(else|endif|fork|end|note)\b/i.test(t)
-			) {
-				repairedLines.push(`' ${t}`);
-				fixes.push(`Commented out non-PlantUML commentary on line ${i + 1}.`);
-				continue;
-			}
 		}
 
 		repairedLines.push(line);
