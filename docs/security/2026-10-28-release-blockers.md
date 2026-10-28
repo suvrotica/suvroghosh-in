@@ -53,6 +53,40 @@ all eight workflow tests then passed. Actual local CI-mode runs passed all nine 
 No application behavior, browser assertion or artifact threshold was relaxed. Hosted results
 for the follow-on revision are recorded in the PR.
 
+## Stationary graphics: additional browser blocker
+
+The full feature run at `181e13b7` passed calibration, complete artifact/notebook/site
+builds and the navigation (64), HTTP/TCP (8), essay (9) and Living Systems (13) browser
+cases. Strange Matter passed five cases and failed five on the Linux runner. Four
+exhausted their total 60-second budget during later interactions. The fifth exhausted
+the ten-second sustained-image sampling deadline.
+
+Retained screenshots show intact artwork. The Liquid Knot trace records successful
+bright-artwork samples taking about five seconds each; its second sample completed
+after the deadline. The reported counter of one is not evidence of one bright pixel
+or a black frame. Other traces show multi-second delays before ordinary key presses
+and clicks. An unchanged local test forced through Chromium's
+[documented SwiftShader driver](https://github.com/chromium/chromium/blob/main/docs/gpu/swiftshader.md)
+also exhausted 60 seconds; the same test took about 14 seconds on the normal GPU.
+
+The renderer scheduled 35 frames after every redraw, including paused or zero-speed
+edits, resizes and export restoration. Stationary invalidations now settle the exact
+settings and request one frame, then idle. Deferred geometry rebuilding still requests
+its own final frame; moving animation retains its existing easing. A new regression
+counts actual WebGL submissions and first failed against the old renderer because the
+paused scene kept drawing. Existing pixel thresholds, browser timeouts and export
+assertions are retained. All eleven native browser cases passed after the fix. The
+unchanged software-rendered four-world case then passed in 33.8 seconds, followed by
+all ten remaining cases, including the new idle regression, with no skips or failures.
+The software comparison used the same Chromium 151.0.7922.34 and confirmed ANGLE /
+Vulkan SwiftShader Device (Subzero), with sandboxing enabled. Hosted results are
+recorded in the PR; local software rendering does not establish a Linux CI pass.
+
+The actual loopback application's 1600 × 1000 PNG export was recaptured after this
+change. Its 1200 × 750 poster has zero changed decoded pixels versus the committed
+reference, so the existing lossless encoding is retained. Only the renderer source
+hash changes in the provenance manifest; the strict source/pixel check passes.
+
 ## Dependencies: unsupported migrations remain excluded
 
 The starting complete audit reported ten low affected packages from three advisories,
@@ -121,5 +155,6 @@ Architecture impact: yes
 Architecture rationale: Reviewed the canonical reference; documented finite label artwork as
 a generated-image input, exact cross-platform verification, and the existing Notes MFA
 enforcement gap. Browser provisioning now consistently uses the full Chromium installed by
-feature CI. The feature-local generation flow is retained; no new service or hosted
+feature CI; stationary Strange Matter rendering returns to idle after necessary redraws.
+The feature-local generation flow is retained; no new service or hosted
 security policy is introduced. The incomplete framework migration remains a separate plan.

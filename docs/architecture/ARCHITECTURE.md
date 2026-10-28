@@ -849,6 +849,12 @@ animation, and releases its GPU and event resources at teardown. The SSR poster
 and authored guide remain the fallback. See the [feature record](../visualizations/strange-matter.md)
 for component ownership, export limits and verification commands.
 
+Paused and zero-speed redraws settle the requested settings and render one frame per
+invalidation, then idle. A delayed geometry rebuild still requests its own final frame;
+active animation retains its existing easing. This avoids queuing 35 redundant frames
+for stationary artwork on software renderers. Export still flushes pending geometry,
+renders the requested dimensions, and restores the live viewport.
+
 The publication poster comes from the app's ordinary PNG download at the default
 seed and paused animation time zero, resized to 1200 × 750. The authoring capture
 script records the model/geometry/renderer source hashes and decoded pixel hash;
@@ -868,7 +874,7 @@ flowchart LR
     MatterArticle["Markdown / SSR poster / gallery summary"] --> MatterShell["Lazy Svelte app / per-instance history"]
     MatterURL["Bounded seed / settings / camera / clock URL"] <--> MatterModel["Feature-local design model"]
     MatterModel <--> MatterShell
-    MatterShell --> MatterRenderer["Browser-only Three.js worlds / resource lifecycle"]
+    MatterShell --> MatterRenderer["Browser-only Three.js worlds / demand redraw / resource lifecycle"]
     MatterRenderer --> MatterExport["Bounded PNG / capability-detected video download"]
 ```
 
