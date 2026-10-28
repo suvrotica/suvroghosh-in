@@ -15,6 +15,11 @@ The same-day [release-preparation follow-up](../security/2026-10-28-release-read
 upgrades KaTeX to the tested 0.18.2 fix and records read-only production evidence and remaining
 dependency/rollout gates. It does not deploy the local security changes.
 
+The subsequent [preview preparation](../security/2026-10-28-preview-preparation.md) rebases
+those changes onto `5331974c`, preserving the Post to UML feature. It adds isolated UML AI
+enablement, disables UML provider calls on previews, and makes exported metadata inert during
+Svelte compilation. Preview publication is separate from production release authorization.
+
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
 The 22 October privacy/analytics implementation added bounded geographic page-view rollups in
@@ -647,6 +652,14 @@ flowchart LR
 
 Post to UML is published as `/blog/visualizations/post-to-uml` (`src/lib/posts/post-to-uml.md`, `collections: ['apps']`), with `/viz/uml` retaining its HTTP 308 alias. Domain code lives under `src/lib/visualizations/post-to-uml/`, authoring UI in `src/lib/components/visualizations/post-to-uml/PostToUml.svelte`, and saved-figure display in `src/lib/components/blog/UmlFigure.svelte` (auto-imported by mdsvex). The 28 October rendering, authorization, grounding, and revision changes are recorded in [ADR 0020](decisions/0020-post-to-uml-browser-engine.md) and the [feature contract](../visualizations/post-to-uml.md).
 
+The security integration requires a dedicated `UML_AI_ENABLED=true` opt-in; Prompt Atlas's
+flag cannot enable this separate provider path. `VERCEL_ENV=preview` disables UML AI before
+credential discovery while preserving local generation and editing. Main's completed owner
+and shared-quota controls below are retained; request quotas do not verify provider pricing.
+Exported figure metadata escapes HTML metacharacters and Svelte braces so titles, captions,
+alt text and assumptions remain literal strings when an author compiles the Markdown bundle.
+Compiler regression fixtures exercise that boundary.
+
 - **Source and interpretation ownership**: The browser retains an immutable article revision independently of editable source and rendered assets. Paragraphs preserve exact raw source/evidence offsets, including inert fenced code. The local extractor is explicitly a conservative heuristic with a 120,000-code-point input limit and 40-concept glossary; it does not infer missing methods, interfaces, infrastructure, replies, state transitions, or timings. Its limited prose-pattern coverage is separate from renderer capability. Optional AI receives the whole bounded article and numbered paragraphs, not a silently truncated subset. All-14 mode maintains one evaluation per concrete type; current generation produces one figure per type rather than automatic multi-figure decomposition.
 - **Official local rendering**: `plantuml/browser.ts` owns a serial queue (one active job, at most 32 pending) and terminable `engine.worker.ts`. The pinned MIT `@plantuml/core@1.2026.9` TeaVM engine uses bundled Smetana layout, a detached `linkedom` SVG DOM, and OffscreenCanvas text measurement. No JVM, Graphviz service, WASM evaluation, public renderer, or site-CSP weakening is required. Source is bounded to 100,000 UTF-16 units/1,500 lines; each active job has a 20-second termination deadline, `maxSvgSize: 6000`, and a 4,000,000-character SVG-output cap. The legacy custom parser/renderer remains a helper, not a PlantUML compatibility authority; browser figures must pass actual official-engine rendering, including recognition of error SVGs. Unknown valid syntax is not erased by legacy repair.
 - **Renderer isolation and notation limits**: Security checks reject preprocessor/functions, external resources, active markup, and executable URI schemes. Independent worker boundaries deny network APIs and file/library loader callbacks; the detached DOM cannot run scripts or fetch resources. Sanitized SVGs are displayed through image contexts and sanitized again for export. Worker termination bounds time, not heap allocation. Fourteen genuine representative fixtures render, with composed notation for composite structure, profile, communication, and interaction overview. Profile uses verified filled-triangle `-up->>` extensions. Interaction overview uses named activity partitions with rectangular headers, an explicitly disclosed approximation of exact UML interaction-use frames.
@@ -659,12 +672,13 @@ The globally imported `UmlFigure` saved-image component has no renderer/sanitize
 
 The server build explicitly bundles `sanitize-html` and its dependency closure through Vite's `ssr.noExternal`. Its CommonJS entry requires an ESM-only parser; Vercel's Node loader rejects that external `require(ESM)` boundary even when ordinary local Node accepts it. Bundling preserves the locked nested package versions and keeps runtime imports limited to Node built-ins. This is a server packaging rule, not a relaxation of SVG sanitization or browser CSP. `npm run uml:ssr:test` builds the real sanitizer with the application SSR configuration and executes it with Node's `--no-experimental-require-module` restriction.
 
-Final local verification passed 83 unit tests across 10 files, Svelte/TypeScript checks with zero errors/warnings, and eight production-preview browser cases with desktop/mobile and figure visual inspection. The isolated renderer harness passed fourteen fixtures, six unsafe/invalid/oversized inputs, active/queued cancellation and recovery, legitimate error-text labels, SVG image loading, and no external requests under `script-src 'self'; connect-src 'none'`. The full-build run passed feature/notebook/content stages, site compilation, and discoverability before its final Barnum route budget caught the shared saved-figure sanitizer import. After that boundary was fixed, the affected site build, 744-post discoverability check, and Barnum asset audit all passed (296,873 raw JavaScript bytes, 107,389 gzip bytes, 36 assets). These checks do not establish arbitrary PlantUML coverage or production deployment. Real-provider and hosted owner/quota verification were not performed. The absent `security:audit`/`security:smoke` scripts remain a forensic-audit gap, not implemented safeguards.
+Final local verification passed 83 unit tests across 10 files, Svelte/TypeScript checks with zero errors/warnings, and eight production-preview browser cases with desktop/mobile and figure visual inspection. The isolated renderer harness passed fourteen fixtures, six unsafe/invalid/oversized inputs, active/queued cancellation and recovery, legitimate error-text labels, SVG image loading, and no external requests under `script-src 'self'; connect-src 'none'`. The full-build run passed feature/notebook/content stages, site compilation, and discoverability before its final Barnum route budget caught the shared saved-figure sanitizer import. After that boundary was fixed, the affected site build, 744-post discoverability check, and Barnum asset audit all passed (296,873 raw JavaScript bytes, 107,389 gzip bytes, 36 assets). These checks do not establish arbitrary PlantUML coverage or production deployment. Real-provider and hosted owner/quota verification were not performed. The integrated security branch supplies executable `security:audit`/`security:smoke` checks; the historical forensic audit remains a record of earlier gaps.
 
 ```mermaid
 flowchart LR
     Prose["Pasted / published article: immutable source revision"] --> Local["Conservative local heuristics + exact evidence"]
-    Prose --> Owner["Explicit AI consent + configured Notes owner"]
+    Prose --> Activation["Explicit UML opt-in; disabled on previews"]
+    Activation --> Owner["Explicit AI consent + configured Notes owner"]
     Owner --> Limits["Bounded API + shared Supabase quota reservation"]
     Limits --> Gateway["AI Gateway: full bounded article; no retries"]
     Gateway --> Wire["Per-type schema, evidence and source validation"]

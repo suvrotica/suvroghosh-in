@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { strFromU8, unzipSync } from 'fflate';
 import { compile as compileMarkdown } from 'mdsvex';
-import { compile as compileSvelte } from 'svelte/compiler';
+import { compile as compileSvelte, parse } from 'svelte/compiler';
 import { renderedFixture } from './authoring-fixture';
 import {
 	buildExportBundleFiles,
@@ -10,6 +10,58 @@ import {
 	buildSingleDiagramBlogEmbed,
 	getDiagramAssetPaths
 } from './export';
+
+const metadataAttributes = ['title', 'alt', 'caption', 'assumptions', 'notationNote'] as const;
+
+function diagramWithMetadata(value: string) {
+	return {
+		...renderedFixture(),
+		title: value,
+		explanation: value,
+		caption: value,
+		altText: value,
+		assumptions: [value],
+		notationLimitations: [value]
+	};
+}
+
+async function compiledMetadata(markdown: string) {
+	const result = await compileMarkdown(markdown);
+	if (!result) throw new Error('MDsveX did not produce a component.');
+	// Exercise the actual authoring pipeline, then inspect the expression boundary.
+	compileSvelte(result.code, { filename: 'uml-export-fixture.svelte', generate: 'server' });
+	const ast = parse(result.code, { modern: true });
+	expect(ast.instance).toBeUndefined();
+	expect(ast.module).toBeUndefined();
+	const figure = ast.fragment.nodes.find(
+		(node) => node.type === 'Component' && node.name === 'UmlFigure'
+	);
+	if (!figure || figure.type !== 'Component') throw new Error('Missing UML figure.');
+	expect(
+		figure.attributes.some(
+			(attribute) => attribute.type === 'Attribute' && attribute.name === 'sourceCode'
+		)
+	).toBe(false);
+	return Object.fromEntries(
+		metadataAttributes.map((name) => {
+			const attribute = figure.attributes.find(
+				(candidate) => candidate.type === 'Attribute' && candidate.name === name
+			);
+			if (!attribute || attribute.type !== 'Attribute' || !Array.isArray(attribute.value)) {
+				throw new Error(`Missing quoted ${name} attribute.`);
+			}
+			const text = attribute.value
+				.map((part) => {
+					// An ExpressionTag here would execute when an author compiles the export.
+					expect(part.type, name).toBe('Text');
+					if (part.type !== 'Text') throw new Error(`${name} contains an expression.`);
+					return part.data;
+				})
+				.join('');
+			return [name, text];
+		})
+	);
+}
 
 describe('publication exports', () => {
 	it('preserves every character of original text and retains unfinished source as a draft', () => {
@@ -100,5 +152,53 @@ describe('publication exports', () => {
 				diagrams: [diagram, diagram]
 			})
 		).toThrow('IDs must be unique');
+	});
+});
+
+describe('UML Markdown export metadata', () => {
+	it.each([
+		'{globalThis.__umlExportProbe += 1}',
+		'Quotation " and apostrophe \' with \\path\\name &amp; &#123; &#x7b; {7 * 7}',
+		'"><script>globalThis.__umlExportProbe += 1</script><UmlFigure title="',
+		'<!-- comment --> </UmlFigure> <img src=x onerror={7 * 7}> ${literal}'
+	])('keeps adversarial metadata as literal text through MDsveX and Svelte: %s', async (value) => {
+		const embed = buildSingleDiagramBlogEmbed(diagramWithMetadata(value), 'safe-export');
+		const metadata = await compiledMetadata(embed);
+		for (const name of metadataAttributes) expect(metadata[name]).toBe(value);
+	});
+
+	it('preserves normal Unicode and backslashes while retaining single-line attribute formatting', async () => {
+		const value = '  বাংলা \\diagram "A"\r\nnext line  ';
+		const metadata = await compiledMetadata(
+			buildSingleDiagramBlogEmbed(diagramWithMetadata(value), 'safe-export')
+		);
+		for (const name of metadataAttributes) {
+			expect(metadata[name]).toBe('বাংলা \\diagram "A" next line');
+		}
+	});
+
+	it('protects both derived Markdown files and caption/alt fallbacks without rewriting the original', async () => {
+		const value = '{globalThis.__umlExportProbe += 1} "quoted"';
+		const diagram = diagramWithMetadata(value);
+		diagram.caption = '';
+		diagram.altText = '';
+		const originalText = '# Original article\n\nAn unchanged paragraph.';
+		const files = buildExportBundleFiles({
+			postSlug: 'safe-export',
+			title: 'Safe export',
+			originalText,
+			diagrams: [diagram]
+		});
+		expect(files.find((file) => file.path === 'safe-export-original.md')?.content).toBe(
+			originalText
+		);
+		const markdown = files.filter(
+			(file) => file.path.endsWith('.md') && !file.path.endsWith('-original.md')
+		);
+		expect(markdown).toHaveLength(2);
+		for (const file of markdown) {
+			const metadata = await compiledMetadata(file.content);
+			for (const name of metadataAttributes) expect(metadata[name]).toBe(value);
+		}
 	});
 });

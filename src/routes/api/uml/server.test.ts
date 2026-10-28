@@ -1,10 +1,13 @@
 import { describe, expect, it, vi } from 'vitest';
 import { createUmlApiHandlers } from '$lib/server/uml/service';
-import type { UmlServerConfig } from '$lib/server/uml/config';
+import { getUmlServerConfig, type UmlServerConfig } from '$lib/server/uml/config';
 import { UmlServiceFailure } from '$lib/server/uml/failure';
 import type { UmlAiDependencies } from '$lib/server/uml/gateway';
 import { generateUmlDiagramsFromText } from '$lib/visualizations/post-to-uml/generator';
 import { load as vizUmlLoad } from '../../viz/uml/+page.server';
+
+const oidc = vi.hoisted(() => ({ token: vi.fn(() => 'fixture-discovered-token') }));
+vi.mock('@vercel/oidc', () => ({ getVercelOidcTokenSync: oidc.token }));
 
 // The route consumes the canonical registry; isolate its metadata from unrelated
 // visualization components while still exercising the real bundled raw source loader.
@@ -22,6 +25,7 @@ vi.mock('$lib/server/content/posts', () => ({
 
 const enabled: UmlServerConfig = {
 	enabled: true,
+	preview: false,
 	model: 'test/model',
 	credentialAvailable: true,
 	salt: '0123456789abcdef0123456789abcdef',
@@ -71,6 +75,62 @@ function setup(
 }
 
 describe('/api/uml containment and owner authorization', () => {
+	it.each([
+		{ PROMPT_ATLAS_AI_ENABLED: 'true', AI_GATEWAY_API_KEY: 'fixture-key' },
+		{
+			UML_AI_ENABLED: 'false',
+			PROMPT_ATLAS_AI_ENABLED: 'true',
+			VERCEL_OIDC_TOKEN: 'fixture-token'
+		},
+		{ VERCEL_ENV: 'preview', UML_AI_ENABLED: 'true' },
+		{ VERCEL_ENV: 'preview', UML_AI_ENABLED: 'true', AI_GATEWAY_API_KEY: 'fixture-key' },
+		{ VERCEL_ENV: 'preview', UML_AI_ENABLED: 'true', VERCEL_OIDC_TOKEN: 'fixture-token' }
+	])(
+		'keeps local generation available while refusing unauthorized provider activation (%j)',
+		async (env) => {
+			oidc.token.mockClear();
+			// Complete owner/quota settings ensure missing configuration cannot mask an enablement bug.
+			const config = getUmlServerConfig({
+				SUPABASE_URL: enabled.supabaseUrl,
+				SUPABASE_SERVICE_ROLE_KEY: enabled.supabaseKey,
+				SUPABASE_PUBLISHABLE_KEY: 'fixture-publishable-key',
+				NOTES_OWNER_USER_ID: 'configured-owner',
+				UML_RATE_LIMIT_SALT: enabled.salt,
+				...env
+			});
+			expect(config.ownerConfigured).toBe(true);
+			const { reserve, generate } = setup();
+			const dependencies = vi.fn(() => ({ reserve, generate }));
+			const authorize = vi.fn(async () => 'configured-owner');
+			const handlers = createUmlApiHandlers(() => config, dependencies, authorize);
+			const status = await handlers.GET(event(undefined, { method: 'GET', body: undefined }));
+			expect(status.status).toBe(200);
+			expect(status.headers.get('cache-control')).toContain('no-store');
+			const availability = (await status.json()).ai;
+			expect(availability.available).toBe(false);
+			if (config.preview) {
+				expect(availability.reason).toMatch(/preview/i);
+				expect(availability.configurationSteps).toEqual([]);
+			}
+			for (const engine of ['ai', 'local']) {
+				const response = await handlers.POST(event({ ...payload, engine }));
+				expect(response.status).toBe(engine === 'ai' ? 503 : 200);
+				expect(response.headers.get('cache-control')).toContain('no-store');
+				const body = await response.json();
+				if (engine === 'ai') expect(body.code).toBe('ai_not_configured');
+				else {
+					expect(body.result.engine).toBe('local');
+					expect(body.result.diagrams).toHaveLength(1);
+				}
+			}
+			expect(oidc.token).not.toHaveBeenCalled();
+			expect(authorize).not.toHaveBeenCalled();
+			expect(dependencies).not.toHaveBeenCalled();
+			expect(reserve).not.toHaveBeenCalled();
+			expect(generate).not.toHaveBeenCalled();
+		}
+	);
+
 	it('keeps status and published post loading public with private headers', async () => {
 		const { handlers } = setup({
 			authorize: async () => {

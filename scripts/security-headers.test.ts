@@ -37,7 +37,8 @@ describe('security response boundaries', () => {
 		'/notes/auth/callback',
 		'/api/notes/id/document',
 		'/api/comments/moderate',
-		'/api/prompt-atlas'
+		'/api/prompt-atlas',
+		'/api/uml'
 	])('keeps %s private even when its handler supplies a public cache header', async (path) => {
 		const response = await handle({
 			event: request(path),

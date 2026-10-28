@@ -17,6 +17,7 @@ export const umlPrivateHeaders: Record<string, string> = {
 
 export interface UmlServerConfig {
 	enabled: boolean;
+	preview: boolean;
 	model: string;
 	credentialAvailable: boolean;
 	salt: string;
@@ -26,8 +27,12 @@ export interface UmlServerConfig {
 }
 
 export function getUmlServerConfig(env: Record<string, string | undefined>): UmlServerConfig {
-	let credentialAvailable = Boolean(env.AI_GATEWAY_API_KEY || env.VERCEL_OIDC_TOKEN);
-	if (!credentialAvailable) {
+	const preview = env.VERCEL_ENV === 'preview';
+	// Sharing Prompt Atlas's quota does not authorize UML provider calls.
+	// Preview deployments must not consume provider credentials, even with an inherited flag.
+	const enabled = env.UML_AI_ENABLED === 'true' && !preview;
+	let credentialAvailable = enabled && Boolean(env.AI_GATEWAY_API_KEY || env.VERCEL_OIDC_TOKEN);
+	if (enabled && !credentialAvailable) {
 		try {
 			credentialAvailable = Boolean(getVercelOidcTokenSync());
 		} catch {
@@ -35,12 +40,12 @@ export function getUmlServerConfig(env: Record<string, string | undefined>): Uml
 		}
 	}
 
-	const rawEnabled = env.UML_AI_ENABLED;
 	const rawModel = env.UML_AI_MODEL?.trim() || DEFAULT_UML_AI_MODEL;
 	const rawSalt = env.UML_RATE_LIMIT_SALT || env.PROMPT_ATLAS_RATE_LIMIT_SALT || '';
 
 	return {
-		enabled: rawEnabled === 'true',
+		enabled,
+		preview,
 		model: rawModel,
 		credentialAvailable,
 		salt: rawSalt,
@@ -51,8 +56,19 @@ export function getUmlServerConfig(env: Record<string, string | undefined>): Uml
 }
 
 export function getUmlAiAvailability(config: UmlServerConfig): UmlAiAvailability {
+	if (config.preview) {
+		return {
+			available: false,
+			provider: UML_AI_PROVIDER,
+			model: config.model,
+			reason:
+				'AI provider generation is disabled in preview deployments. Local heuristic generation, manual editing, and SVG/PNG rendering remain available.',
+			configurationSteps: []
+		};
+	}
+
 	const configurationSteps = [
-		'Set UML_AI_ENABLED="true" in your .env or deployment environment.',
+		'Set UML_AI_ENABLED="true" explicitly in a local or production environment.',
 		`Optionally set UML_AI_MODEL="${config.model}" (defaults to "${DEFAULT_UML_AI_MODEL}").`,
 		'Provide AI_GATEWAY_API_KEY (or deploy on Vercel with OIDC enabled for @ai-sdk/gateway).',
 		'Set UML_RATE_LIMIT_SALT (or PROMPT_ATLAS_RATE_LIMIT_SALT) to a random string of at least 32 characters.',

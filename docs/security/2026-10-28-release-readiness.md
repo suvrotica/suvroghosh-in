@@ -1,5 +1,9 @@
 # Security release preparation — 28 October 2026
 
+This records the local dependency follow-up. The subsequent
+[preview-preparation record](2026-10-28-preview-preparation.md) covers the authorized rebase,
+additional UML fixes and preview publication scope; the historical release state below is retained.
+
 ## Scope and release state
 
 This follow-up starts from clean local commit `a3800c14` on `codex/security-hardening`.
