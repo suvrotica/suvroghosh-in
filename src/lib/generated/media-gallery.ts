@@ -5524,42 +5524,42 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "visualizations/through-a-different-glass/calibration.png",
 			"src": "/images/visualizations/through-a-different-glass/calibration.png",
-			"bytes": 107868,
+			"bytes": 108020,
 			"width": 1400,
 			"height": 1000
 		},
 		{
 			"name": "visualizations/through-a-different-glass/corridor.png",
 			"src": "/images/visualizations/through-a-different-glass/corridor.png",
-			"bytes": 137422,
+			"bytes": 137414,
 			"width": 1400,
 			"height": 1000
 		},
 		{
 			"name": "visualizations/through-a-different-glass/facade.png",
 			"src": "/images/visualizations/through-a-different-glass/facade.png",
-			"bytes": 29244,
+			"bytes": 28985,
 			"width": 1400,
 			"height": 1000
 		},
 		{
 			"name": "visualizations/through-a-different-glass/portrait.png",
 			"src": "/images/visualizations/through-a-different-glass/portrait.png",
-			"bytes": 97570,
+			"bytes": 97508,
 			"width": 1400,
 			"height": 1000
 		},
 		{
 			"name": "visualizations/through-a-different-glass/poster.png",
 			"src": "/images/visualizations/through-a-different-glass/poster.png",
-			"bytes": 242987,
+			"bytes": 242969,
 			"width": 1400,
 			"height": 1271
 		},
 		{
 			"name": "visualizations/through-a-different-glass/typography.png",
 			"src": "/images/visualizations/through-a-different-glass/typography.png",
-			"bytes": 54697,
+			"bytes": 54768,
 			"width": 1400,
 			"height": 1000
 		},

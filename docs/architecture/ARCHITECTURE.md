@@ -20,6 +20,11 @@ those changes onto `5331974c`, preserving the Post to UML feature. It adds isola
 enablement, disables UML provider calls on previews, and makes exported metadata inert during
 Svelte compilation. Preview publication is separate from production release authorization.
 
+The [release-blocker follow-up](../security/2026-10-28-release-blockers.md) removes system-font
+discovery from procedural Lens and Mirror samples and adds exact Ubuntu/Windows verification.
+It records the unsupported Kit 3 dependency graph and clarifies that current Notes owner and
+session-freshness checks do not enforce MFA; hosted policy remains independently unverified.
+
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
 The 22 October privacy/analytics implementation added bounded geographic page-view rollups in
@@ -198,7 +203,7 @@ Installed `node_modules` package versions matched `package-lock.json` when inspe
 
 The audit host ran Node `24.11.1`, npm `11.12.1`, and Python `3.12.3`. These are observations, not a repository-wide runtime pin. Existing feature CI uses Node 22; the new dependency-free architecture gate uses Node 24. Check individual workflows before assuming the same runtime everywhere.
 
-Important libraries include Supabase SSR/client, Zod, Dexie, Sharp, perfect-freehand and jsPDF for notes; D3, Three.js, p5, Observable runtime, decimal.js and ml-matrix for feature-specific work; Bits UI and local adapters for UI; KaTeX/remark/rehype for Markdown; Resend for contact and owner comment alerts; Vercel analytics/speed insights. Installed packages alone do not imply every dependency is loaded by every page. `tsconfig.json` enables strict TypeScript and `checkJs`; generated Kit configuration supplies route types and aliases.
+Important libraries include Supabase SSR/client, Zod, Dexie, Sharp, perfect-freehand and jsPDF for notes; D3, Three.js, p5, Observable runtime, decimal.js and ml-matrix for feature-specific work; Bits UI and local adapters for UI; KaTeX/remark/rehype for Markdown; Resend for contact and owner comment alerts; Vercel Web Analytics. The unused Speed Insights SDK was removed after its initialization had already been retired; no performance collection is reintroduced. Installed packages alone do not imply every dependency is loaded by every page. `tsconfig.json` enables strict TypeScript and `checkJs`; generated Kit configuration supplies route types and aliases.
 
 Notebook authoring is separate: `pixi.toml` pins Mojo `1.0.0b2` on Linux x64/macOS ARM64, with constrained Jupyter dependencies. Native Windows authoring uses the documented WSL path. The full feature lane can verify committed notebook HTML when a local renderer is unavailable; routine article builds do not invoke the notebook toolchain.
 
@@ -1546,6 +1551,14 @@ control. It is loopback-only and does not add a production route; focused browse
 checks against it do not establish the full site's routing/build status. See the
 [feature record](../visualizations/lens-mirror-lab.md).
 
+The five procedural sample images use finite outlined label artwork from
+`scripts/artwork/lens-mirror-labels.json`. Their normal renderer does not discover or load
+system fonts. An authoring-only helper can rebuild those complete label paths from the
+recorded font sources; that is an explicit artwork change requiring visual review and updated
+sample/poster provenance. The sample checker compares decoded pixels exactly. The feature
+workflow also runs font-isolation regressions and the strict sample check on Ubuntu and Windows,
+so a platform-specific font substitution cannot silently become the reference output.
+
 ```mermaid
 flowchart LR
     Article["Markdown / ordinary blog route"] --> Shell["SSR poster / lazy runtime"]
@@ -1754,6 +1767,14 @@ sequenceDiagram
 `notes` is the mutable private working row. `note_versions` preserves working history; `note_publications` contains immutable editions. Scheduling freezes the scheduling-time state. Editing a draft does not update the edition already visible to readers. Assets remain in a private bucket and are linked to publication manifests.
 
 The server creates three distinct clients: request-cookie SSR client, anonymous publication reader, and privileged service-role client. The privileged client performs gated storage/manifest duties, durable auth-throttle RPCs, the configured-owner email lookup during recovery and the separately described reader-facing comment RPCs. It must never be exposed to browser imports. Database security-definer functions use an empty search path, explicit actor checks and controlled grants. Fresh authentication (12 hours) is required by sensitive Notes publication RPCs. The metadata action now checks freshness before actual status changes and every publish/schedule operation; unchanged draft/private/archived metadata avoids an unnecessary transition RPC. Its repository update checks the server-observed status and undeleted row, returning 409 on an intervening status/deletion change (`AF-002`, corrected). Metadata and subsequent RPCs remain separate operations; this is not complete atomicity or same-status edit concurrency protection.
+
+Current Notes sign-in and authorization do not challenge a second factor or require `aal2`.
+The checked-in private-data/storage policies and privileged owner RPCs also do not require that
+assurance level; session freshness alone is not MFA. Enrolling a Supabase Auth factor or enabling
+Supabase dashboard MFA therefore does not establish Notes MFA enforcement. A future rollout
+needs a challenge/recovery flow and aligned application, database and storage authorization while
+preserving public publication reads. Hosted owner enrollment, signup policy and any separately
+deployed enforcement remain unverified without authenticated production access.
 
 When Supabase URL/publishable-key configuration is absent, public repository reads intentionally return the demo published note; protected authoring fails configuration checks. This is different from an empty, configured database. Hosted data and configuration were not inspected.
 
@@ -2365,6 +2386,11 @@ does not establish multi-connection race behavior, hosted Auth/Storage or PostgR
 The security workflow runs these checks with read-only permissions and no provider secrets;
 smoke/SQL still run if the advisory audit fails. All action references are immutable, with
 Dependabot maintenance. Configuring required status checks remains a hosted administrator task.
+
+The feature-artifacts workflow includes a separate Ubuntu/Windows sample-portability matrix.
+It exercises the finite Lens and Mirror label artwork with isolated font configuration and
+requires exact agreement with all five committed decoded sample images. It does not regenerate
+or accept new reference images in CI; source/artwork changes require a reviewed local update.
 
 Comic catalogue/asset checks and the link-validator fixtures verify finite route membership,
 published original-story references, cover metadata and real PDF downloads. The analytics

@@ -36,6 +36,7 @@ async function provenance() {
 		...(await sourceFiles('src/lib/components/visualizations/lens-mirror-lab')),
 		...(await sourceFiles('src/lib/visualizations/lens-mirror-lab')),
 		'scripts/render-lens-mirror-samples.mjs',
+		'scripts/artwork/lens-mirror-labels.json',
 		'scripts/capture-lens-mirror-poster.mjs',
 		'static/images/visualizations/through-a-different-glass/samples.json'
 	].sort();
