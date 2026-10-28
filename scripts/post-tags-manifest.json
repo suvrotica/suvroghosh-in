@@ -11379,7 +11379,7 @@
 		"src/lib/posts/kagojer-dana-a-paper-plane-through-calcutta.md": {
 			"bodyHash": "8debb9047c200f45fe98d2fd8392fceaf24b56096e95c482037b1c08a84da7c6",
 			"hashVersion": 2,
-			"revisionHash": "2b31c6689cec4d992d96a81104dcd31fe5405929866213f1d751736c420c7e31",
+			"revisionHash": "1bf13a56650b307ea6ad8ca50dca652589d11dbd4dca1affe4c23497716c05ac",
 			"generatedTags": [
 				"Games",
 				"Calcutta",
@@ -11394,7 +11394,7 @@
 			],
 			"pinnedTags": ["Games", "Calcutta", "Kolkata", "Browser Game", "Three.js", "Flight"],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-10"
+			"dateModified": "2026-10-28"
 		},
 		"src/lib/posts/the-negotiable-serf.md": {
 			"bodyHash": "f70d1c7dad89d5d70708fc76fd88c530b6545d05c0ba381508f1932b99929e58",
