@@ -138,6 +138,40 @@ deployed enforcement therefore remain unverified. The Supabase plugin is availab
 uninstalled; no plugin or account setting was changed. No active official Codex Security
 workflow was exposed, so this remains a Codex-assisted review.
 
+## Integration with the completed UML feature
+
+After the security revision `d40fc85a` passed the full functional CI run, external `main`
+advanced to `d060e60f`. The security branch was rebased onto that revision. The integration
+preserves genuine local PlantUML rendering, current-source/metadata export review, owner-only
+AI authorization and the shared Prompt Atlas quota. The independent UML flag and unconditional
+preview AI disablement remain, including before OIDC credential discovery. Full-configuration
+regressions prevent missing credentials from accidentally masking a preview-gate failure.
+Compiler/AST fixtures preserve inert exported metadata, and conditional saved-figure imports
+retain the article bundle boundary. TTS enablement remains false.
+
+The new disposable PostgreSQL test executes the existing shared-quota migration. It verifies
+RPC/table permissions, mixed UML/Prompt Atlas admission into one 50-request daily pool, and
+refusal of a sixth owner-hour reservation without spending the daily pool. It uses serial
+PGlite execution; it does not verify hosted deployment or multi-session contention. These four
+tests join the existing nineteen Notes/TTS SQL tests in `security:sql`.
+
+The incoming UML decision retains ADR 0020; the unmerged TTS decision is renumbered ADR 0021
+with its references updated. Earlier preview-preparation notes describe the earlier UML
+implementation; their process-local-only limitation is superseded by this integrated quota.
+Provider pricing, actual owner MFA enforcement and hosted settings remain separate release gates.
+
+The combined graph installs with strict peer checks. The audit still fails on the same nine
+low affected packages and three advisories, with zero policy violations across 2,010 source
+modules and nine workflows. The 28 package paths added by main retain its exact versions,
+resolved locations and integrity metadata; no unrelated upgrades were introduced. UML unit
+verification passes 103 tests in eleven files, and its real engine passes all fourteen diagram
+fixtures plus unsafe-input rejection, cancellation/recovery and network-isolation assertions.
+Type checking reports zero errors/warnings; architecture/workflow fixtures pass 21 tests.
+
+The full build, browser suites, CI and preview receive fresh verification. Their final results
+are recorded in the PR against its exact revision; passes from `d40fc85a` are retained as
+historical evidence, not attributed to the new head.
+
 ## Verification and handoff
 
 The three new sample fixtures, five exact sample checks, authoring-provenance check and real
@@ -156,5 +190,6 @@ Architecture rationale: Reviewed the canonical reference; documented finite labe
 a generated-image input, exact cross-platform verification, and the existing Notes MFA
 enforcement gap. Browser provisioning now consistently uses the full Chromium installed by
 feature CI; stationary Strange Matter rendering returns to idle after necessary redraws.
-The feature-local generation flow is retained; no new service or hosted
+The incoming UML owner/shared-quota and genuine local-rendering boundaries are retained
+alongside preview containment and executable shared-quota verification. No new service or hosted
 security policy is introduced. The incomplete framework migration remains a separate plan.

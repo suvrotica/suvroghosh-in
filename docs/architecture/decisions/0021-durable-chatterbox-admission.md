@@ -1,4 +1,4 @@
-# 0020 — Durable resource admission for optional public Chatterbox TTS
+# 0021 — Durable resource admission for optional public Chatterbox TTS
 
 - Date: 28 October 2026
 - Status: Accepted for implementation; hosted activation requires separate verification

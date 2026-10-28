@@ -17,7 +17,7 @@
 	"scripts": {
 		"security:audit": "node scripts/security-audit.mjs",
 		"security:smoke": "node scripts/security-smoke.mjs",
-		"security:sql": "node --test supabase/tests/handwritten-notes.integration.test.mjs supabase/tests/chatterbox-usage.integration.test.mjs",
+		"security:sql": "node --test supabase/tests/handwritten-notes.integration.test.mjs supabase/tests/chatterbox-usage.integration.test.mjs supabase/tests/uml-usage.integration.test.mjs",
 		"strange-matter:test": "vitest run src/lib/visualizations/strange-matter --maxWorkers=2",
 		"strange-matter:preview": "node scripts/preview-strange-matter.mjs",
 		"strange-matter:browser:test": "playwright test --config playwright.strange-matter.config.ts",

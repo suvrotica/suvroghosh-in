@@ -52,7 +52,7 @@ and `.audit-private/security-tts-baseline/`. They are not public site content or
 
 Implementation anchors:
 
-- [TTS handler](../../src/routes/api/tts/chatterbox/+server.ts), [quota client](../../src/lib/server/tts/quota.ts), [quota migration](../../supabase/migrations/202610280001_chatterbox_usage.sql), [ADR 0020](../architecture/decisions/0020-durable-chatterbox-admission.md).
+- [TTS handler](../../src/routes/api/tts/chatterbox/+server.ts), [quota client](../../src/lib/server/tts/quota.ts), [quota migration](../../supabase/migrations/202610280001_chatterbox_usage.sql), [ADR 0021](../architecture/decisions/0021-durable-chatterbox-admission.md).
 - [Notes document handler](../../src/routes/api/notes/%5Bid%5D/document/+server.ts), [asset handler](../../src/routes/api/notes/%5Bid%5D/assets/+server.ts), [body reader](../../src/lib/server/notes/request-body.ts), [bounded transport](../../src/lib/server/notes/bounded-fetch.ts), [auth policy](../../src/lib/server/notes/auth.ts).
 - [Hooks](../../src/hooks.server.ts), [audit implementation](../../scripts/security-audit.mjs), [policy checks](../../scripts/security-policy.mjs), [smoke runner](../../scripts/security-smoke.mjs), [security CI](../../.github/workflows/security.yml).
 
@@ -160,4 +160,4 @@ Architecture impact: yes
 Architecture rationale: shared TTS admission adds a database control flow; Notes transport and
 body admission change request contracts; security scripts/CI add enforcement surfaces. The
 canonical architecture was reviewed and affected descriptions, diagram, toolchain inventory,
-AF-001/AF-003 follow-ups and ADR 0020 were updated in the same change.
+AF-001/AF-003 follow-ups and ADR 0021 were updated in the same change.
