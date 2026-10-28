@@ -21,10 +21,22 @@ export class WindMarkVisual {
 
 	constructor() {
 		this.geometry = new THREE.BufferGeometry();
-		this.geometry.setAttribute('position', new THREE.BufferAttribute(this.positions, 3));
+		this.geometry.setAttribute(
+			'position',
+			new THREE.BufferAttribute(this.positions, 3).setUsage(THREE.DynamicDrawUsage)
+		);
+		const colors = new Float32Array(MAX_MARKS * 2 * 3);
+		const tail = new THREE.Color('#9ca79d');
+		const head = new THREE.Color('#304343');
+		for (let index = 0; index < MAX_MARKS; index += 1) {
+			tail.toArray(colors, index * 6);
+			head.toArray(colors, index * 6 + 3);
+		}
+		this.geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 		this.geometry.setDrawRange(0, 20 * 2);
 		this.material = new THREE.LineBasicMaterial({
-			color: '#2f3838',
+			color: '#ffffff',
+			vertexColors: true,
 			transparent: true,
 			opacity: 0.2,
 			depthWrite: false
@@ -50,6 +62,9 @@ export class WindMarkVisual {
 		const magnitude = Math.hypot(sourceX, sourceY, sourceZ);
 		const gust = Math.max(0, Math.min(1, frame.gustStrength ?? 0));
 		this.object.visible = magnitude > 2.5 || gust > 0.14 || this.strong;
+		this.material.opacity = this.strong
+			? 0.5
+			: 0.12 + Math.min(0.16, magnitude * 0.005) + gust * 0.12;
 		const inverse = 1 / Math.max(0.001, magnitude);
 		const directionX = sourceX * inverse;
 		const directionY = sourceY * inverse;
@@ -58,8 +73,12 @@ export class WindMarkVisual {
 		const baseLength = (this.strong ? 1.25 : 0.78) + Math.min(2.2, magnitude * 0.055) + gust * 0.8;
 		for (let index = 0; index < count; index += 1) {
 			const offset = index * 6;
-			const x = frame.position.x + (((index * 37) % 23) - 11) * 0.62;
-			const y = frame.position.y + (((index * 17) % 13) - 6) * 0.43;
+			let lateral = (((index * 37) % 23) - 11) * 0.62;
+			const vertical = (((index * 17) % 13) - 6) * 0.43;
+			// Keep the folded-paper silhouette free of dense marks.
+			if (Math.abs(lateral) < 1.15 && Math.abs(vertical) < 0.8) lateral += lateral < 0 ? -1.5 : 1.5;
+			const x = frame.position.x + lateral;
+			const y = frame.position.y + vertical;
 			const z = frame.position.z + (((index * 29) % 31) - 15) * 0.58;
 			const length = baseLength * (0.58 + ((index * 11) % 17) / 21);
 			this.positions[offset] = x;

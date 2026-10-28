@@ -162,7 +162,7 @@
 		width: min(440px, calc(100% - 36px));
 		overflow: auto;
 		border: 1px solid rgb(240 217 175 / 0.45);
-		border-radius: 18px;
+		border-radius: 5px;
 		background: rgb(25 23 20 / 0.96);
 		box-shadow: 0 24px 80px rgb(0 0 0 / 0.62);
 		color: #f4e5c8;
@@ -189,6 +189,7 @@
 
 	.settings-heading h2 {
 		margin: 0;
+		color: #fff3d8;
 		font-family: Georgia, serif;
 		font-size: 1.55rem;
 	}
@@ -198,7 +199,7 @@
 		min-width: 44px;
 		min-height: 44px;
 		border: 1px solid rgb(240 217 175 / 0.35);
-		border-radius: 999px;
+		border-radius: 4px;
 		background: rgb(255 255 255 / 0.06);
 		color: inherit;
 		font: inherit;
@@ -258,7 +259,7 @@
 	}
 
 	.check-row small {
-		color: #bcad95;
+		color: #d0c2aa;
 		font-weight: 400;
 		line-height: 1.35;
 	}

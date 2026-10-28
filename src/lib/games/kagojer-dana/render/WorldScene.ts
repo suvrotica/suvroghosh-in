@@ -10,6 +10,7 @@ import {
 } from '../world/DistrictGraph';
 import { PaperPlaneCameraRig, type FlightCameraFrame, type Vector3Like } from './CameraRig';
 import { CharcoalPipeline } from './CharcoalPipeline';
+import { createCharcoalMaterial } from './CharcoalMaterial';
 import { DistrictChunkVisualFactory } from './DistrictChunkVisuals';
 import { PaperPlaneVisual } from './PaperPlane';
 import { WindMarkVisual } from './WindMarks';
@@ -73,6 +74,19 @@ export class KagojerDanaWorldScene {
 	private readonly chunkManager: DistrictChunkManager;
 	private readonly cameraRig: PaperPlaneCameraRig;
 	private readonly windMarks: WindMarkVisual;
+	private readonly skyGeometry = new THREE.SphereGeometry(1, 24, 12);
+	private readonly skyMaterial: THREE.ShaderMaterial;
+	private readonly sky: THREE.Mesh;
+	private readonly groundGeometry = new THREE.PlaneGeometry(3_600, 3_600);
+	private readonly groundMaterial = createCharcoalMaterial({
+		color: '#817762',
+		roughness: 1,
+		hatchStrength: 0.08,
+		hatchScale: 0.15,
+		seed: 907
+	});
+	private readonly ground = new THREE.Mesh(this.groundGeometry, this.groundMaterial);
+	private readonly targetGroundColor = new THREE.Color('#817762');
 	private readonly activeColliders: WorldCollisionShape[] = [];
 	private readonly cameraCollisionObjects: THREE.Object3D[] = [];
 	private readonly activeHeroes: ActiveHeroLandmark[] = [];
@@ -140,6 +154,56 @@ export class KagojerDanaWorldScene {
 		this.scene.background = this.backgroundColor;
 		this.fog = new THREE.FogExp2('#a8aaa3', 0.0025);
 		this.scene.fog = this.fog;
+		// A single low-poly dome keeps the horizon warm and the upper sky cool.
+		// Direction-space washes remain still when the camera translates.
+		this.skyMaterial = new THREE.ShaderMaterial({
+			uniforms: {
+				uHorizon: { value: this.backgroundColor },
+				uZenith: { value: new THREE.Color('#788c91') }
+			},
+			vertexShader: `
+				varying vec3 vSkyDirection;
+				void main() {
+					vSkyDirection = position;
+					vec4 clip = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+					gl_Position = clip.xyww;
+				}
+			`,
+			fragmentShader: `
+				uniform vec3 uHorizon;
+				uniform vec3 uZenith;
+				varying vec3 vSkyDirection;
+				void main() {
+					vec3 direction = normalize(vSkyDirection);
+					float elevation = smoothstep(-0.08, 0.85, direction.y);
+					vec3 wash = mix(uHorizon, uZenith, elevation * 0.7);
+					float cloud = sin(direction.x * 7.0 + direction.z * 5.0 + direction.y * 29.0);
+					cloud *= sin(direction.z * 11.0 - direction.x * 3.0 + direction.y * 17.0);
+					wash += cloud * 0.018 * smoothstep(0.03, 0.35, direction.y);
+					float sun = pow(max(0.0, dot(direction, normalize(vec3(-0.6, 0.7, -0.45)))), 18.0);
+					wash = mix(wash, vec3(0.94, 0.87, 0.69), sun * 0.17);
+					gl_FragColor = vec4(wash, 1.0);
+					#include <tonemapping_fragment>
+					#include <colorspace_fragment>
+				}
+			`,
+			side: THREE.BackSide,
+			depthWrite: false,
+			fog: false
+		});
+		this.sky = new THREE.Mesh(this.skyGeometry, this.skyMaterial);
+		this.sky.name = 'graduated-paper-sky';
+		this.sky.scale.setScalar(10_000);
+		this.sky.frustumCulled = false;
+		this.sky.renderOrder = -100;
+		this.scene.add(this.sky);
+		// Extend beneath the streamed strip so district edges meet land rather than
+		// empty sky. This quiet two-triangle wash never enters collision queries.
+		this.ground.name = 'continuous-district-ground';
+		this.ground.rotation.x = -Math.PI / 2;
+		this.ground.position.y = -0.08;
+		this.ground.userData.visualCueOnly = true;
+		this.scene.add(this.ground);
 		this.worldRoot.name = 'streamed-dream-geography';
 		this.scene.add(this.worldRoot);
 
@@ -306,6 +370,8 @@ export class KagojerDanaWorldScene {
 		else this.cameraRig.update(localCameraFrame, dt);
 		this.visualFactory.updateCharcoal(this.elapsedSeconds, this.calmCamera);
 		this.updateDistrictAtmosphere(dt);
+		this.sky.position.copy(this.camera.position);
+		this.ground.position.set(this.camera.position.x, -0.08, this.camera.position.z);
 	}
 
 	private updateDistrictAtmosphere(deltaSeconds: number): void {
@@ -316,6 +382,17 @@ export class KagojerDanaWorldScene {
 			this.currentDistrict = node.district;
 			this.targetBackgroundColor.set(node.palette.paper).lerp(this.neutralSkyColor, 0.26);
 			this.districtInkColor.set(node.palette.ink);
+			const groundColors: Record<DistrictId, string> = {
+				'north-calcutta': '#817762',
+				kumartuli: '#856c54',
+				'college-street': '#67645b',
+				esplanade: '#4b4d4b',
+				'maidan-victoria': '#68705a',
+				'park-street': '#4b4d4b',
+				hooghly: '#7c8c87',
+				'new-town': '#696e6e'
+			};
+			this.targetGroundColor.set(groundColors[node.district]);
 			this.targetFogDensity =
 				node.district === 'hooghly'
 					? 0.00175
@@ -325,8 +402,9 @@ export class KagojerDanaWorldScene {
 		}
 		const alpha = 1 - Math.exp(-Math.max(0, deltaSeconds) / 1.8);
 		this.backgroundColor.lerp(this.targetBackgroundColor, alpha);
+		this.groundMaterial.color.lerp(this.targetGroundColor, alpha);
 		this.fog.density += (this.targetFogDensity - this.fog.density) * alpha;
-		this.fog.color.copy(this.backgroundColor).lerp(this.districtInkColor, 0.13);
+		this.fog.color.copy(this.backgroundColor).lerp(this.districtInkColor, 0.055);
 	}
 
 	render(renderer: THREE.WebGLRenderer): void {
@@ -465,6 +543,10 @@ export class KagojerDanaWorldScene {
 		this.pipeline.dispose();
 		this.paperPlane.dispose();
 		this.windMarks.dispose();
+		this.skyGeometry.dispose();
+		this.skyMaterial.dispose();
+		this.groundGeometry.dispose();
+		this.groundMaterial.dispose();
 		this.activeColliders.length = 0;
 		this.cameraCollisionObjects.length = 0;
 		this.activeHeroes.length = 0;

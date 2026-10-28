@@ -28,12 +28,16 @@ const COMPOSITE_VERTEX = /* glsl */ `
 
 const COMPOSITE_FRAGMENT = /* glsl */ `
 	#include <common>
+	#include <packing>
 	uniform sampler2D tColor;
 	uniform sampler2D tNormal;
 	uniform sampler2D tDepth;
 	uniform vec2 uPixel;
 	uniform float uLineWidth;
 	uniform float uGrain;
+	uniform float uNear;
+	uniform float uFar;
+	uniform float uFogDensity;
 	uniform vec3 uInk;
 	varying vec2 vUv;
 
@@ -52,6 +56,7 @@ const COMPOSITE_FRAGMENT = /* glsl */ `
 	void main() {
 		vec2 stepSize = uPixel * clamp(uLineWidth, 0.7, 2.5);
 		float centreDepth = depthAt(vUv);
+		float centreDistance = -perspectiveDepthToViewZ(centreDepth, uNear, uFar);
 		float depthDifference = 0.0;
 		float normalDifference = 0.0;
 		vec3 centreNormal = normalAt(vUv);
@@ -62,12 +67,22 @@ const COMPOSITE_FRAGMENT = /* glsl */ `
 		offsets[3] = vec2(0.0, -stepSize.y);
 		for (int index = 0; index < 4; index++) {
 			float nearbyDepth = depthAt(vUv + offsets[index]);
-			depthDifference = max(depthDifference, abs(centreDepth - nearbyDepth));
-			normalDifference = max(normalDifference, length(centreNormal - normalAt(vUv + offsets[index])));
+			float nearbyDistance = -perspectiveDepthToViewZ(nearbyDepth, uNear, uFar);
+			// Relative view distance gives nearby obstacles and distant roofs the same
+			// geometric test. Raw depth differences lose sensitivity at the horizon.
+			float separation = abs(centreDistance - nearbyDistance) / max(min(centreDistance, nearbyDistance), 1.0);
+			depthDifference = max(depthDifference, separation);
+			float bothSurfaces = float(centreDepth < 0.999999 && nearbyDepth < 0.999999);
+			normalDifference = max(normalDifference, length(centreNormal - normalAt(vUv + offsets[index])) * bothSurfaces);
 		}
-		float exterior = smoothstep(0.00032, 0.0024, depthDifference);
-		float internal = smoothstep(0.31, 0.84, normalDifference) * 0.56;
-		float contour = clamp(max(exterior, internal), 0.0, 0.9);
+		float exterior = smoothstep(0.012, 0.065, depthDifference);
+		float internal = smoothstep(0.38, 0.95, normalDifference) * 0.34;
+		// Ink recedes with the scene's mist rather than drawing dark distant edges
+		// back over the atmospheric perspective. Sky pixels never receive a halo.
+		float atmosphere = exp(-uFogDensity * uFogDensity * centreDistance * centreDistance);
+		float detailFade = 1.0 - smoothstep(60.0, 280.0, centreDistance);
+		float contour = max(exterior * 0.74, internal * detailFade) * atmosphere;
+		contour *= float(centreDepth < 0.999999);
 		vec3 color = texture2D(tColor, vUv).rgb;
 		color = mix(color, uInk, contour);
 		float grain = (paperNoise(gl_FragCoord.xy * 0.68) - 0.5) * uGrain;
@@ -93,7 +108,7 @@ export class CharcoalPipeline {
 	private quality: WorldQualityTier;
 	private width = 1;
 	private height = 1;
-	private pixelRatio = 1;
+	private devicePixelRatio = 1;
 	private readonly metrics = { drawCalls: 0, triangles: 0 };
 	private disposed = false;
 
@@ -122,6 +137,9 @@ export class CharcoalPipeline {
 				uPixel: { value: new THREE.Vector2(1, 1) },
 				uLineWidth: { value: CONTOUR_WIDTH[quality] },
 				uGrain: { value: quality === 'high' ? 0.022 : 0.014 },
+				uNear: { value: 0.1 },
+				uFar: { value: 2_000 },
+				uFogDensity: { value: 0 },
 				uInk: { value: new THREE.Color('#202323') }
 			},
 			depthTest: false,
@@ -138,16 +156,19 @@ export class CharcoalPipeline {
 		this.quality = quality;
 		this.compositeMaterial.uniforms.uLineWidth.value = CONTOUR_WIDTH[quality];
 		this.compositeMaterial.uniforms.uGrain.value = quality === 'high' ? 0.022 : 0.014;
-		this.resize(this.width, this.height, this.pixelRatio);
+		this.resize(this.width, this.height, this.devicePixelRatio);
 	}
 
 	resize(width: number, height: number, devicePixelRatio = 1): void {
 		if (this.disposed) return;
 		this.width = Math.max(1, Math.round(width));
 		this.height = Math.max(1, Math.round(height));
-		this.pixelRatio = Math.max(0.5, Math.min(DPR_CAP[this.quality], devicePixelRatio));
-		const targetWidth = Math.max(1, Math.round(this.width * this.pixelRatio));
-		const targetHeight = Math.max(1, Math.round(this.height * this.pixelRatio));
+		// Retain the requested DPR: switching back up from battery quality should
+		// restore sharpness immediately, without needing a browser resize event.
+		this.devicePixelRatio = Math.max(0.5, devicePixelRatio);
+		const pixelRatio = Math.min(DPR_CAP[this.quality], this.devicePixelRatio);
+		const targetWidth = Math.max(1, Math.round(this.width * pixelRatio));
+		const targetHeight = Math.max(1, Math.round(this.height * pixelRatio));
 		this.colorTarget.setSize(targetWidth, targetHeight);
 		this.normalTarget.setSize(targetWidth, targetHeight);
 		(this.colorTarget.depthTexture as THREE.DepthTexture).image.width = targetWidth;
@@ -174,6 +195,12 @@ export class CharcoalPipeline {
 
 		let drawCalls = 0;
 		let triangles = 0;
+		if (camera instanceof THREE.PerspectiveCamera) {
+			this.compositeMaterial.uniforms.uNear.value = camera.near;
+			this.compositeMaterial.uniforms.uFar.value = camera.far;
+		}
+		this.compositeMaterial.uniforms.uFogDensity.value =
+			scene.fog instanceof THREE.FogExp2 ? scene.fog.density : 0;
 		const previousTarget = renderer.getRenderTarget();
 		const previousOverride = scene.overrideMaterial;
 		const previousAutoClear = renderer.autoClear;

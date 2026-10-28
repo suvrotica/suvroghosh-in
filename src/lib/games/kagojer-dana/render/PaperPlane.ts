@@ -24,7 +24,6 @@ const PAPER_VERTEX = /* glsl */ `
 const PAPER_FRAGMENT = /* glsl */ `
 	varying vec3 vKdPaperPosition;
 	uniform float uKdHandling;
-	uniform float uKdPaperTime;
 
 	float kdPaperHash(vec2 p) {
 		return fract(sin(dot(floor(p), vec2(127.1, 311.7))) * 43758.5453);
@@ -36,22 +35,32 @@ const PAPER_FRAGMENT = /* glsl */ `
 		float s = sin(angle);
 		delta = mat2(c, -s, s, c) * delta;
 		float envelope = exp(-dot(delta * vec2(8.0, 13.0), delta * vec2(8.0, 13.0)));
-		float ridge = 0.5 + 0.5 * sin(length(delta * vec2(10.0, 16.0)) * 95.0);
+		float phase = length(delta * vec2(10.0, 16.0)) * 95.0;
+		float ridge = 0.5 + 0.5 * sin(phase) * (1.0 - smoothstep(1.0, 3.0, fwidth(phase)));
 		return envelope * ridge;
 	}
 `;
 
 const PAPER_SURFACE = /* glsl */ `
-	float kdRuleCoordinate = abs(fract((vKdPaperPosition.z + 0.53) * 8.6) - 0.5);
-	float kdRule = 1.0 - smoothstep(0.014, 0.026, kdRuleCoordinate);
-	float kdMargin = 1.0 - smoothstep(0.012, 0.025, abs(vKdPaperPosition.x + 0.285));
-	float kdFibres = (kdPaperHash(vKdPaperPosition.xz * vec2(185.0, 37.0)) - 0.5) * 0.032;
+	float kdRulePosition = (vKdPaperPosition.z + 0.53) * 8.6;
+	float kdRuleCoordinate = abs(fract(kdRulePosition) - 0.5);
+	float kdRuleWidth = max(fwidth(kdRulePosition), 0.008);
+	float kdRule = 1.0 - smoothstep(0.02 - kdRuleWidth, 0.02 + kdRuleWidth, kdRuleCoordinate);
+	kdRule = mix(kdRule, 0.04, smoothstep(0.25, 0.7, kdRuleWidth));
+	float kdMarginWidth = max(fwidth(vKdPaperPosition.x), 0.002);
+	float kdMargin = 1.0 - smoothstep(0.009 - kdMarginWidth, 0.009 + kdMarginWidth, abs(vKdPaperPosition.x + 0.285));
+	vec2 kdFibrePosition = vKdPaperPosition.xz * vec2(185.0, 37.0);
+	float kdFibreVisibility = 1.0 - smoothstep(0.4, 1.2, length(fwidth(kdFibrePosition)));
+	float kdFibres = (kdPaperHash(kdFibrePosition) - 0.5) * 0.032 * kdFibreVisibility;
 	float kdPrint = kdFingerprint(vKdPaperPosition.xz, vec2(-0.11, -0.05), 0.31)
 		+ kdFingerprint(vKdPaperPosition.xz, vec2(0.17, -0.29), -0.22);
 	outgoingLight += kdFibres;
-	outgoingLight = mix(outgoingLight, vec3(0.42, 0.57, 0.64), kdRule * 0.12);
+	outgoingLight = mix(outgoingLight, vec3(0.42, 0.57, 0.64), kdRule * 0.17);
 	outgoingLight = mix(outgoingLight, vec3(0.58, 0.31, 0.29), kdMargin * 0.075);
 	outgoingLight *= 1.0 - kdPrint * (0.025 + clamp(uKdHandling, 0.0, 1.0) * 0.055);
+	// A narrow graphite rub beside the spine makes the fold readable at play size.
+	float kdSpine = exp(-abs(vKdPaperPosition.x) * 75.0);
+	outgoingLight *= 1.0 - kdSpine * 0.13;
 `;
 
 function triangleNormal(a: PaperPoint, b: PaperPoint, c: PaperPoint): THREE.Vector3 {
@@ -68,12 +77,12 @@ function makeFoldedGeometry(thickness = 0.008): THREE.BufferGeometry {
 	const rightFold: PaperPoint = { x: 0.12, y: 0.026, z: -0.34 };
 	const rightOuter: PaperPoint = { x: 0.52, y: -0.008, z: -0.43 };
 	const topTriangles: readonly [PaperPoint, PaperPoint, PaperPoint][] = [
-		[nose, leftFold, centreTail],
-		[nose, leftOuter, leftFold],
-		[leftFold, leftOuter, centreTail],
-		[nose, centreTail, rightFold],
-		[nose, rightFold, rightOuter],
-		[rightFold, centreTail, rightOuter]
+		[nose, centreTail, leftFold],
+		[nose, leftFold, leftOuter],
+		[leftFold, centreTail, leftOuter],
+		[nose, rightFold, centreTail],
+		[nose, rightOuter, rightFold],
+		[rightFold, rightOuter, centreTail]
 	];
 	const positions: number[] = [];
 	const normals: number[] = [];
@@ -103,13 +112,13 @@ function makeFoldedGeometry(thickness = 0.008): THREE.BufferGeometry {
 		const end = boundary[(index + 1) % boundary.length];
 		const startBottom = { ...start, y: start.y - thickness };
 		const endBottom = { ...end, y: end.y - thickness };
-		const normal = triangleNormal(start, startBottom, end);
+		const normal = triangleNormal(start, end, startBottom);
 		pushVertex(start, normal);
-		pushVertex(startBottom, normal);
-		pushVertex(end, normal);
 		pushVertex(end, normal);
 		pushVertex(startBottom, normal);
+		pushVertex(end, normal);
 		pushVertex(endBottom, normal);
+		pushVertex(startBottom, normal);
 	}
 
 	const geometry = new THREE.BufferGeometry();
@@ -124,8 +133,10 @@ function makeFoldedGeometry(thickness = 0.008): THREE.BufferGeometry {
 
 function makeCreaseGeometry(): THREE.BufferGeometry {
 	const positions = [
-		0, 0.075, 0.64, 0, 0.078, -0.51, 0, 0.075, 0.64, -0.12, 0.033, -0.34, 0, 0.075, 0.64, 0.12,
-		0.033, -0.34
+		// Creases sit on the actual folded surface; perimeter ink also works in battery mode.
+		0, 0.043, 0.65, 0, 0.071, -0.52, 0, 0.043, 0.65, -0.12, 0.029, -0.34, 0, 0.043, 0.65, 0.12,
+		0.029, -0.34, 0, 0.043, 0.65, -0.52, -0.005, -0.43, -0.52, -0.005, -0.43, 0, 0.071, -0.52, 0,
+		0.071, -0.52, 0.52, -0.005, -0.43, 0.52, -0.005, -0.43, 0, 0.043, 0.65
 	];
 	const geometry = new THREE.BufferGeometry();
 	geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
@@ -146,8 +157,8 @@ export class PaperPlaneVisual {
 	private readonly creaseGeometry: THREE.BufferGeometry;
 	private readonly creaseMaterial: THREE.LineBasicMaterial;
 	private readonly basePositions: Float32Array;
+	private readonly baseCreasePositions: Float32Array;
 	private readonly handlingUniform = { value: 0.28 };
-	private readonly timeUniform = { value: 0 };
 	private lastFlexM = Number.NaN;
 	private disposed = false;
 
@@ -158,7 +169,10 @@ export class PaperPlaneVisual {
 			color: '#eee5cf',
 			roughness: 0.94,
 			metalness: 0,
-			transmission: 0.035,
+			// Matte paper needs no scene-wide transmission framebuffer pass.
+			transmission: 0,
+			emissive: '#d8c9a2',
+			emissiveIntensity: 0.035,
 			thickness: 0.008,
 			ior: 1.46,
 			clearcoat: 0,
@@ -167,7 +181,6 @@ export class PaperPlaneVisual {
 		this.handlingUniform.value = Math.max(0, Math.min(1, options.handledAmount ?? 0.28));
 		this.material.onBeforeCompile = (shader) => {
 			shader.uniforms.uKdHandling = this.handlingUniform;
-			shader.uniforms.uKdPaperTime = this.timeUniform;
 			shader.vertexShader = shader.vertexShader
 				.replace('#include <common>', `#include <common>\n${PAPER_VERTEX}`)
 				.replace(
@@ -178,7 +191,7 @@ export class PaperPlaneVisual {
 				.replace('#include <common>', `#include <common>\n${PAPER_FRAGMENT}`)
 				.replace('#include <opaque_fragment>', `${PAPER_SURFACE}\n#include <opaque_fragment>`);
 		};
-		this.material.customProgramCacheKey = () => 'kagojer-dana-paper-v1';
+		this.material.customProgramCacheKey = () => 'kagojer-dana-paper-v2';
 		this.mesh = new THREE.Mesh(this.geometry, this.material);
 		this.mesh.castShadow = true;
 		this.mesh.receiveShadow = false;
@@ -188,7 +201,7 @@ export class PaperPlaneVisual {
 		this.creaseMaterial = new THREE.LineBasicMaterial({
 			color: '#554e44',
 			transparent: true,
-			opacity: 0.62,
+			opacity: 0.48,
 			depthWrite: false
 		});
 		const creases = new THREE.LineSegments(this.creaseGeometry, this.creaseMaterial);
@@ -199,6 +212,9 @@ export class PaperPlaneVisual {
 		this.object.userData.isPaperPlane = true;
 		const position = this.geometry.getAttribute('position') as THREE.BufferAttribute;
 		this.basePositions = new Float32Array(position.array as ArrayLike<number>);
+		this.baseCreasePositions = new Float32Array(
+			this.creaseGeometry.getAttribute('position').array as ArrayLike<number>
+		);
 	}
 
 	update(frame: PaperPlaneFrame): void {
@@ -206,7 +222,6 @@ export class PaperPlaneVisual {
 		const gust = Math.max(-1, Math.min(1, frame.gustLoad ?? 0));
 		const crease = Math.max(0, Math.min(1, frame.creaseLevel ?? 0));
 		this.handlingUniform.value = Math.max(this.handlingUniform.value, 0.24 + crease * 0.6);
-		this.timeUniform.value = Math.max(0, frame.elapsedSeconds ?? 0);
 		const flexM = gust * 0.025 + crease * 0.004;
 		if (Math.abs(flexM - this.lastFlexM) < 0.0001) return;
 		this.lastFlexM = flexM;
@@ -219,6 +234,19 @@ export class PaperPlaneVisual {
 		}
 		position.needsUpdate = true;
 		this.geometry.computeVertexNormals();
+		const creasePosition = this.creaseGeometry.getAttribute('position') as THREE.BufferAttribute;
+		for (let index = 0; index < creasePosition.count; index += 1) {
+			const offset = index * 3;
+			const outerWeight = Math.pow(
+				Math.min(1, Math.abs(this.baseCreasePositions[offset]) / 0.52),
+				1.8
+			);
+			creasePosition.setY(
+				index,
+				this.baseCreasePositions[offset + 1] - Math.abs(flexM) * outerWeight
+			);
+		}
+		creasePosition.needsUpdate = true;
 	}
 
 	dispose(): void {

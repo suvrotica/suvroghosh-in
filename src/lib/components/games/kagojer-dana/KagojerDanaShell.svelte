@@ -491,7 +491,7 @@
 	{#if (!started || phase === 'error') && !portraitPhone}
 		<div class="poster-layer">
 			<img
-				src="/images/games/kagojer-dana-poster.webp"
+				src="/images/games/kagojer-dana-poster-v2.webp"
 				alt=""
 				width="1200"
 				height="800"
@@ -512,6 +512,8 @@
 						Fly with Calcutta sound
 					</button>
 					<button type="button" onclick={() => startFlight(false)}>Fly silently</button>
+				</div>
+				<div class="opening-options" role="group" aria-label="Prepare your flight">
 					<button
 						type="button"
 						onclick={() => (showControls = !showControls)}
@@ -555,7 +557,7 @@
 
 	{#if portraitPhone}
 		<div class="portrait-fallback">
-			<img src="/images/games/kagojer-dana-portrait.webp" alt="" width="800" height="1200" />
+			<img src="/images/games/kagojer-dana-portrait-v2.webp" alt="" width="800" height="1200" />
 			<div>
 				<p class="eyebrow">{currentSeed}</p>
 				<h2 bind:this={portraitHeading} tabindex="-1">Kagojer Dana</h2>
@@ -668,6 +670,7 @@
 		background: #171511;
 		color: #f7ecd3;
 		font-family: Georgia, serif;
+		color-scheme: dark;
 	}
 
 	.kagojer-shell.fullscreen {
@@ -693,8 +696,9 @@
 	}
 
 	.high-contrast :global(.hazard-card) {
-		border-left-width: 5px;
+		border-left: 5px solid #fff3d8;
 		background: rgb(8 8 7 / 0.9);
+		padding-left: 8px;
 	}
 
 	.poster-layer {
@@ -706,16 +710,17 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		filter: saturate(0.88) contrast(1.08);
+		object-position: 62% center;
+		filter: saturate(0.72) contrast(1.04) brightness(1.12);
 	}
 
 	.poster-wash {
 		background:
 			linear-gradient(
 				90deg,
-				rgb(18 16 13 / 0.9) 0%,
-				rgb(18 16 13 / 0.64) 42%,
-				rgb(18 16 13 / 0.1) 76%
+				rgb(18 16 13 / 0.94) 0%,
+				rgb(18 16 13 / 0.76) 38%,
+				rgb(18 16 13 / 0.12) 74%
 			),
 			linear-gradient(0deg, rgb(18 16 13 / 0.46), transparent 45%);
 	}
@@ -725,8 +730,8 @@
 		inset: 0;
 		background-image: repeating-linear-gradient(
 			8deg,
-			transparent 0 8px,
-			rgb(246 230 196 / 0.035) 9px 10px
+			transparent 0 11px,
+			rgb(246 230 196 / 0.018) 12px 13px
 		);
 		content: '';
 		mix-blend-mode: screen;
@@ -739,13 +744,16 @@
 		top: 50%;
 		left: clamp(22px, 6vw, 92px);
 		width: min(610px, calc(100% - 44px));
+		max-height: calc(100% - 44px);
+		overflow-y: auto;
+		padding: 5px 8px 8px 0;
 		transform: translateY(-50%);
-		text-shadow: 0 3px 18px #000;
+		text-shadow: 0 2px 16px rgb(0 0 0 / 0.5);
 	}
 
 	.eyebrow {
-		margin: 0 0 7px;
-		color: #e2bd73;
+		margin: 0 0 18px;
+		color: #dec38f;
 		font:
 			900 0.7rem/1.2 'Courier New',
 			monospace;
@@ -755,11 +763,13 @@
 
 	.opening-card h1 {
 		margin: 0;
+		color: #fff3d8;
 		max-width: 11ch;
 		font:
-			900 clamp(3.2rem, 8.8vw, 7.4rem)/0.78 Georgia,
+			700 clamp(3.2rem, 8.8vw, 7.4rem)/0.87 Georgia,
 			serif;
-		letter-spacing: -0.065em;
+		letter-spacing: -0.055em;
+		text-wrap: balance;
 	}
 
 	.bengali {
@@ -773,6 +783,7 @@
 
 	.opening-card blockquote {
 		margin: 24px 0 22px;
+		color: #f4e8d0;
 		border-left: 2px solid #d7ad60;
 		padding-left: 14px;
 		font-size: clamp(1.05rem, 2vw, 1.35rem);
@@ -781,6 +792,7 @@
 	}
 
 	.opening-actions,
+	.opening-options,
 	.pause-card > div {
 		display: flex;
 		flex-wrap: wrap;
@@ -788,13 +800,14 @@
 	}
 
 	.opening-actions button,
+	.opening-options button,
 	.free-flight-link,
 	.pause-card button,
 	.portrait-fallback button,
 	.resume-landscape-card button {
 		min-height: 46px;
 		border: 1px solid rgb(240 218 178 / 0.56);
-		border-radius: 999px;
+		border-radius: 5px;
 		background: rgb(20 18 15 / 0.56);
 		box-shadow: 0 8px 28px rgb(0 0 0 / 0.32);
 		color: #f5e6c9;
@@ -803,6 +816,39 @@
 			monospace;
 		padding: 0 17px;
 		backdrop-filter: blur(6px);
+	}
+
+	.opening-options {
+		margin-top: 12px;
+		gap: 4px 10px;
+	}
+
+	.opening-options button {
+		min-height: 44px;
+		border-color: transparent;
+		background: transparent;
+		box-shadow: none;
+		color: #d9ccb4;
+		padding-inline: 8px;
+		font-size: 0.67rem;
+		backdrop-filter: none;
+	}
+
+	.opening-options button[aria-pressed='true'],
+	.opening-options button[aria-expanded='true'] {
+		border-color: rgb(240 218 178 / 0.5);
+		background: rgb(240 218 178 / 0.1);
+		color: #fff3d8;
+	}
+
+	@media (hover: hover) {
+		.opening-actions button:hover,
+		.opening-options button:hover,
+		.pause-card button:hover {
+			border-color: #f7e1b7;
+			background: #f7e1b7;
+			color: #211b13;
+		}
 	}
 
 	.opening-actions button.primary,
@@ -834,7 +880,7 @@
 	}
 
 	.free-flight-link {
-		margin-top: 14px;
+		margin-top: 2px;
 		border: 0;
 		box-shadow: none;
 		background: transparent;
@@ -973,6 +1019,7 @@
 
 	.pause-card h2 {
 		margin: 0;
+		color: #fff3d8;
 		font-size: clamp(2rem, 5vw, 3.8rem);
 	}
 
@@ -1043,19 +1090,25 @@
 			min-height: 0;
 		}
 		.opening-card {
-			top: 53%;
+			top: 50%;
 			left: 22px;
 			width: min(570px, calc(100% - 44px));
 		}
 		.opening-card h1 {
+			max-width: none;
 			font-size: clamp(2.5rem, 10vh, 4.6rem);
+		}
+		.eyebrow {
+			margin-bottom: 10px;
+		}
+		.opening-options {
+			margin-top: 4px;
 		}
 		.bengali,
 		.opening-card blockquote {
 			margin-top: 8px;
 			margin-bottom: 9px;
 		}
-		.controls-note,
 		.seed-line {
 			display: none;
 		}

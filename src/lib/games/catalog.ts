@@ -106,8 +106,8 @@ export const gamesCatalog: readonly GameCatalogEntry[] = [
 		kind: 'Flight game',
 		cardEyebrow: 'A charcoal flight through an impossible city',
 		actionLabel: 'Take flight',
-		cover: '/images/games/kagojer-dana-poster.webp',
-		socialCover: '/images/games/kagojer-dana-social.png',
+		cover: '/images/games/kagojer-dana-poster-v2.webp',
+		socialCover: '/images/games/kagojer-dana-social-v2.png',
 		coverAlt:
 			'A folded notebook-paper plane gliding above a charcoal North Calcutta lane toward the cantilever trusses of Howrah Bridge',
 		inputs: ['Keyboard', 'One touch field', 'Optional gamepad'],

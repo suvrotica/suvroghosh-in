@@ -53,17 +53,22 @@ const FRAGMENT_DECLARATIONS = /* glsl */ `
 
 	float kdInkStroke(float coordinate, float phase) {
 		float wave = abs(fract(coordinate + phase) - 0.5);
-		float width = max(fwidth(coordinate) * 0.75, 0.012);
-		return 1.0 - smoothstep(0.035 - width, 0.035 + width, wave);
+		float footprint = fwidth(coordinate);
+		float width = max(footprint * 0.75, 0.012);
+		float stroke = 1.0 - smoothstep(0.035 - width, 0.035 + width, wave);
+		// Sub-pixel strokes resolve to their area coverage instead of sparkling.
+		return mix(stroke, 0.07, smoothstep(0.25, 0.7, footprint));
 	}
 
 	float kdSurfaceHatch(vec3 worldPosition, vec3 worldNormal, float darkness) {
 		vec3 weight = pow(abs(normalize(worldNormal)), vec3(5.0));
 		weight /= max(weight.x + weight.y + weight.z, 0.0001);
 		float scale = max(0.08, uKdHatchScale);
-		float xy = kdInkStroke((worldPosition.x + worldPosition.y * 0.31) * scale, uKdSeed);
-		float yz = kdInkStroke((worldPosition.y + worldPosition.z * 0.29) * scale, uKdSeed * 1.73);
-		float xz = kdInkStroke((worldPosition.x - worldPosition.z * 0.37) * scale, uKdSeed * 2.17);
+		// Low-frequency variation belongs to the surface, never to screen or time.
+		vec3 tooth = sin(worldPosition.yzx * 0.73 + uKdSeed * 12.0) * 0.045;
+		float xy = kdInkStroke((worldPosition.x + worldPosition.y * 0.31) * scale + tooth.z, uKdSeed);
+		float yz = kdInkStroke((worldPosition.y + worldPosition.z * 0.29) * scale + tooth.x, uKdSeed * 1.73);
+		float xz = kdInkStroke((worldPosition.x - worldPosition.z * 0.37) * scale + tooth.y, uKdSeed * 2.17);
 		float primary = xy * weight.z + yz * weight.x + xz * weight.y;
 		float crossXy = kdInkStroke((worldPosition.x - worldPosition.y * 0.47) * scale * 0.83, uKdSeed * 0.63);
 		float crossYz = kdInkStroke((worldPosition.y - worldPosition.z * 0.43) * scale * 0.83, uKdSeed * 1.31);
@@ -77,7 +82,11 @@ const CHARCOAL_FRAGMENT = /* glsl */ `
 	float kdLuminance = max(dot(outgoingLight, vec3(0.2126, 0.7152, 0.0722)), 0.0001);
 	float kdBands = max(2.0, uKdBands);
 	float kdClampedLight = clamp(kdLuminance, 0.0, 1.25);
-	float kdQuantizedLight = floor(kdClampedLight * kdBands + 0.5) / kdBands;
+	float kdBandPosition = kdClampedLight * kdBands;
+	float kdBandWidth = clamp(fwidth(kdBandPosition), 0.035, 0.22);
+	float kdQuantizedLight = (floor(kdBandPosition) + smoothstep(0.5 - kdBandWidth, 0.5 + kdBandWidth, fract(kdBandPosition))) / kdBands;
+	// Keep enough reflected light to describe folds and shaded architecture.
+	kdQuantizedLight = max(0.025, kdQuantizedLight);
 	float kdRatio = kdQuantizedLight / kdLuminance;
 	outgoingLight *= mix(1.0, kdRatio, clamp(uKdQuantize, 0.0, 1.0));
 	float kdDarkness = 1.0 - clamp(kdQuantizedLight, 0.0, 1.0);
@@ -99,7 +108,7 @@ export function createCharcoalMaterial(
 	const material = new THREE.MeshStandardMaterial({
 		color: options.color,
 		roughness: options.roughness ?? 0.9,
-		metalness: options.metalness ?? 0.015,
+		metalness: options.metalness ?? 0,
 		opacity: options.opacity ?? 1,
 		transparent: options.transparent ?? (options.opacity ?? 1) < 1,
 		side: options.side ?? THREE.FrontSide,
@@ -141,7 +150,7 @@ export function createCharcoalMaterial(
 			.replace('#include <common>', `#include <common>\n${FRAGMENT_DECLARATIONS}`)
 			.replace('#include <opaque_fragment>', `${CHARCOAL_FRAGMENT}\n#include <opaque_fragment>`);
 	};
-	material.customProgramCacheKey = () => 'kagojer-dana-charcoal-v1';
+	material.customProgramCacheKey = () => 'kagojer-dana-charcoal-v2';
 	return material;
 }
 
