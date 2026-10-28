@@ -11,19 +11,19 @@
 			"containsVoices": false
 		},
 		{
-			"path": "/images/games/kagojer-dana-poster.webp",
+			"path": "/images/games/kagojer-dana-poster-v2.webp",
 			"kind": "image",
 			"credit": "Deterministic capture from the completed Kagojer Dana Three.js renderer",
 			"license": "Copyright Suvro Ghosh; used by this website"
 		},
 		{
-			"path": "/images/games/kagojer-dana-social.png",
+			"path": "/images/games/kagojer-dana-social-v2.png",
 			"kind": "image",
 			"credit": "Deterministic social crop from the completed Kagojer Dana Three.js renderer",
 			"license": "Copyright Suvro Ghosh; used by this website"
 		},
 		{
-			"path": "/images/games/kagojer-dana-portrait.webp",
+			"path": "/images/games/kagojer-dana-portrait-v2.webp",
 			"kind": "image",
 			"credit": "Deterministic portrait capture from the completed Kagojer Dana Three.js renderer",
 			"license": "Copyright Suvro Ghosh; used by this website"

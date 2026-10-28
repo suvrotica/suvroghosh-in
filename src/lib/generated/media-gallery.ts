@@ -3618,23 +3618,44 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "games/kagojer-dana-portrait.webp",
-			"src": "/images/games/kagojer-dana-portrait.webp",
+			"name": "games/kagojer-dana-portrait-v2.webp",
+			"src": "/images/games/kagojer-dana-portrait-v2.webp",
 			"bytes": 25272,
 			"width": 800,
 			"height": 1200
 		},
 		{
+			"name": "games/kagojer-dana-portrait.webp",
+			"src": "/images/games/kagojer-dana-portrait.webp",
+			"bytes": 29304,
+			"width": 800,
+			"height": 1200
+		},
+		{
+			"name": "games/kagojer-dana-poster-v2.webp",
+			"src": "/images/games/kagojer-dana-poster-v2.webp",
+			"bytes": 32448,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "games/kagojer-dana-poster.webp",
 			"src": "/images/games/kagojer-dana-poster.webp",
-			"bytes": 32448,
+			"bytes": 34006,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "games/kagojer-dana-social-v2.png",
+			"src": "/images/games/kagojer-dana-social-v2.png",
+			"bytes": 477768,
 			"width": 1200,
 			"height": 800
 		},
 		{
 			"name": "games/kagojer-dana-social.png",
 			"src": "/images/games/kagojer-dana-social.png",
-			"bytes": 477768,
+			"bytes": 518044,
 			"width": 1200,
 			"height": 800
 		},

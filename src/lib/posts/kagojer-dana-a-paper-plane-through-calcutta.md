@@ -8,7 +8,7 @@ tags: ["Games","Calcutta","Kolkata","Browser Game","Three.js","Flight","Sound Ac
 pinnedTags: ["Games", "Calcutta", "Kolkata", "Browser Game", "Three.js", "Flight"]
 published: true
 color: "amber"
-thumbnail: "/images/games/kagojer-dana-social.png"
+thumbnail: "/images/games/kagojer-dana-social-v2.png"
 thumbnailAlt: "A folded notebook-paper plane gliding above a charcoal North Calcutta lane toward the cantilever trusses of Howrah Bridge"
 readingTime: "6–10 min play"
 status: "complete"

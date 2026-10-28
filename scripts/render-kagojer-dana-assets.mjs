@@ -13,6 +13,8 @@ const BASE_URL =
 // This deterministic seed contains all three capture-anchor heroes: Howrah
 // Bridge, Victoria Memorial and Biswa Bangla Gate.
 const SEED = process.env.KAGOJER_DANA_ASSET_SEED ?? 'KD-CAPTURE-2';
+// Public artwork is cached immutably. Bump the output filenames when publishing
+// another visual revision, and preserve older files for already-cached pages.
 const STATIC_OUTPUT = path.join(ROOT, 'static', 'images', 'games');
 const QA_OUTPUT = path.join(ROOT, '.codex-artifacts', 'kagojer-dana');
 const VITE_ENTRY = path.join(ROOT, 'node_modules', 'vite', 'bin', 'vite.js');
@@ -179,17 +181,17 @@ async function render() {
 			sharp(howrah)
 				.resize(1_200, 800, { fit: 'cover', position: 'centre' })
 				.webp({ quality: 90, effort: 6 })
-				.toFile(path.join(STATIC_OUTPUT, 'kagojer-dana-poster.webp')),
+				.toFile(path.join(STATIC_OUTPUT, 'kagojer-dana-poster-v2.webp')),
 			sharp(howrah)
 				.resize(1_200, 800, { fit: 'cover', position: 'centre' })
 				.png({ compressionLevel: 9, palette: true })
-				.toFile(path.join(STATIC_OUTPUT, 'kagojer-dana-social.png'))
+				.toFile(path.join(STATIC_OUTPUT, 'kagojer-dana-social-v2.png'))
 		]);
 
 		await sharp(howrah)
 			.resize(800, 1_200, { fit: 'cover', position: 'centre' })
 			.webp({ quality: 90, effort: 6 })
-			.toFile(path.join(STATIC_OUTPUT, 'kagojer-dana-portrait.webp'));
+			.toFile(path.join(STATIC_OUTPUT, 'kagojer-dana-portrait-v2.webp'));
 
 		for (const definition of [
 			{ mode: 'north', fileName: 'north-lane.png' },

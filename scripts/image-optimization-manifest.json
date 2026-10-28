@@ -9257,7 +9257,7 @@
       "sourceHash": "810d7e8cf853ec2d444ef49cc3a11b7e3f5d1cb5c55ab25e2163f095f90d1d9d",
       "width": 1200
     },
-    "static/images/games/kagojer-dana-portrait.webp": {
+    "static/images/games/kagojer-dana-portrait-v2.webp": {
       "format": "WEBP",
       "height": 1200,
       "optimized": true,
@@ -9273,7 +9273,23 @@
       "sourceHash": "8e7410bd3bc2a03297d89350d2bb7061495aee39bd3bf52f40c874293df8b418",
       "width": 800
     },
-    "static/images/games/kagojer-dana-poster.webp": {
+    "static/images/games/kagojer-dana-portrait.webp": {
+      "format": "WEBP",
+      "height": 1200,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1200,
+      "originalWidth": 800,
+      "outputBytes": 29304,
+      "outputHash": "b938719be3ead28287b76afa7ec8dff05add662f770f7fc9b2afb3ad74fa35b9",
+      "psnrDb": 40.34,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 78874,
+      "sourceHash": "7647c530fc890c8628f7627c34534a4aa599932e61b6805de92b4c2ec720e357",
+      "width": 800
+    },
+    "static/images/games/kagojer-dana-poster-v2.webp": {
       "format": "WEBP",
       "height": 800,
       "optimized": true,
@@ -9289,7 +9305,23 @@
       "sourceHash": "213ecddd3388508a13aa5e366079a1c5e7fd10c13d4feb7c4656a7323dfa1f11",
       "width": 1200
     },
-    "static/images/games/kagojer-dana-social.png": {
+    "static/images/games/kagojer-dana-poster.webp": {
+      "format": "WEBP",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 34006,
+      "outputHash": "3ef52e762904c4c898e9ecd24f1dd6100321017055cfacbc3a9d4d9290785790",
+      "psnrDb": 39.14,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 93784,
+      "sourceHash": "6239c34f51dc3c8584151095dc7e083ffe5806b3a06be457a78c64ffc70e4ba2",
+      "width": 1200
+    },
+    "static/images/games/kagojer-dana-social-v2.png": {
       "format": "PNG",
       "height": 800,
       "lossless": true,
@@ -9302,6 +9334,21 @@
       "resized": false,
       "sourceBytes": 477768,
       "sourceHash": "8b3e14a281de70125c740ba12d59322456b79a1a339d2d133607b8124466d47c",
+      "width": 1200
+    },
+    "static/images/games/kagojer-dana-social.png": {
+      "format": "PNG",
+      "height": 800,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 518044,
+      "outputHash": "d018d944457164a556a2b276dd5d8e416127ff69368e31a641e3f801ab83ac79",
+      "resized": false,
+      "sourceBytes": 518044,
+      "sourceHash": "d018d944457164a556a2b276dd5d8e416127ff69368e31a641e3f801ab83ac79",
       "width": 1200
     },
     "static/images/games/ludo-and-saap-ludo-cover.svg": {

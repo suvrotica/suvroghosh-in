@@ -491,7 +491,7 @@
 	{#if (!started || phase === 'error') && !portraitPhone}
 		<div class="poster-layer">
 			<img
-				src="/images/games/kagojer-dana-poster.webp"
+				src="/images/games/kagojer-dana-poster-v2.webp"
 				alt=""
 				width="1200"
 				height="800"
@@ -557,7 +557,7 @@
 
 	{#if portraitPhone}
 		<div class="portrait-fallback">
-			<img src="/images/games/kagojer-dana-portrait.webp" alt="" width="800" height="1200" />
+			<img src="/images/games/kagojer-dana-portrait-v2.webp" alt="" width="800" height="1200" />
 			<div>
 				<p class="eyebrow">{currentSeed}</p>
 				<h2 bind:this={portraitHeading} tabindex="-1">Kagojer Dana</h2>
