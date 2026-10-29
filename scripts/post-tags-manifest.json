@@ -9401,24 +9401,35 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/vector-databases.md": {
-			"bodyHash": "36bcef18bbe687e51f8157358f6d48c00c6d385b423d6d36e124c1fa0fb8e5b2",
+			"bodyHash": "f2da4f7cbe816b2fa1c7a4f451aa210bd8131d947b0db11074fd00562e7cd7ee",
 			"hashVersion": 2,
-			"revisionHash": "bae490c43fbdc2558f3bcf9f500b04ac1b495a4371503f846fdb57d455b06e14",
+			"revisionHash": "4850e1a8b00e659a6d3ac25999acd515c310cb482156c3fa07b724b2e374dad4",
 			"generatedTags": [
-				"Health Level Seven",
-				"Diabetes Medication",
 				"Vector Databases",
-				"Vector Database",
-				"Data Quality",
-				"Embedding",
-				"Search",
-				"Database",
-				"Retrieval",
-				"Chunk"
+				"Embeddings",
+				"Similarity Search",
+				"Retrieval-Augmented Generation",
+				"Healthcare Data",
+				"Metadata Filtering",
+				"Data Provenance",
+				"Information Retrieval",
+				"Approximate Nearest Neighbours",
+				"Retrieval Evaluation"
 			],
-			"pinnedTags": [],
+			"pinnedTags": [
+				"Vector Databases",
+				"Embeddings",
+				"Similarity Search",
+				"Retrieval-Augmented Generation",
+				"Healthcare Data",
+				"Metadata Filtering",
+				"Data Provenance",
+				"Information Retrieval",
+				"Approximate Nearest Neighbours",
+				"Retrieval Evaluation"
+			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-07"
+			"dateModified": "2026-10-30"
 		},
 		"src/lib/posts/vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.md": {
 			"bodyHash": "039b0836034c104dd40efa7d22937676a7f9b9f986b08301d181741c11477dad",

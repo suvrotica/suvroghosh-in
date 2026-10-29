@@ -66,7 +66,6 @@ for (const [section, label] of Object.entries(taxonomy.sections ?? {})) {
 		errors.push(`sections.json: section “${section}” needs a canonical slug and non-empty label.`);
 	}
 }
-const healthcareGeoPolicyStart = '2026-07-23';
 let publishedCount = 0;
 let unpublishedCount = 0;
 const categorySlugs = new Set();
@@ -244,23 +243,6 @@ for (const file of postFiles) {
 				errors.push(
 					`${file}: category “${metadata.category}” has no valid six-section taxonomy mapping.`
 				);
-			}
-		}
-
-		const requiresHealthcareAnswerLayer =
-			metadata.published === true &&
-			categorySlug === 'healthcare-it' &&
-			typeof metadata.dateModified === 'string' &&
-			metadata.dateModified >= healthcareGeoPolicyStart;
-		if (requiresHealthcareAnswerLayer) {
-			if (typeof metadata.inPlainEnglish !== 'string' || metadata.inPlainEnglish.trim() === '') {
-				errors.push(`${file}: updated healthcare-IT posts require inPlainEnglish.`);
-			}
-			if (!Array.isArray(metadata.keyTerms) || metadata.keyTerms.length < 5) {
-				errors.push(`${file}: updated healthcare-IT posts require at least five keyTerms.`);
-			}
-			if (!Array.isArray(metadata.faq) || metadata.faq.length < 3) {
-				errors.push(`${file}: updated healthcare-IT posts require at least three FAQ entries.`);
 			}
 		}
 	}

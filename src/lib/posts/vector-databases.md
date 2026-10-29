@@ -2,9 +2,10 @@
 title: "Vector Databases"
 description: "A systems examination of healthcare vector databases, retrieval, semantics, filtering, latency, embeddings, and representational loss."
 date: "2026-04-23"
-dateModified: "2026-08-07"
+dateModified: "2026-10-30"
 category: "healthcare it"
-tags: ["Health Level Seven","Diabetes Medication","Vector Databases","Vector Database","Data Quality","Embedding","Search","Database","Retrieval","Chunk"]
+tags: ["Vector Databases", "Embeddings", "Similarity Search", "Retrieval-Augmented Generation", "Healthcare Data", "Metadata Filtering", "Data Provenance", "Information Retrieval", "Approximate Nearest Neighbours", "Retrieval Evaluation"]
+pinnedTags: ["Vector Databases", "Embeddings", "Similarity Search", "Retrieval-Augmented Generation", "Healthcare Data", "Metadata Filtering", "Data Provenance", "Information Retrieval", "Approximate Nearest Neighbours", "Retrieval Evaluation"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/art-vector-databases.jpg"
@@ -128,6 +129,18 @@ Vector databases are useful because human language is slippery and enterprise da
 But the machine is not understanding in the old human sense. It is arranging shadows in a mathematical room. Sometimes the shadows reveal the object better than a keyword ever could. Sometimes they merge two objects that should never be merged. The architect’s job is to know the difference before some poor user has to discover it at 2 a.m.
 
 That, finally, is the sober beauty of vector databases. They are not magic. They are not nonsense either. They are a new retrieval instrument, sharp and useful, but only when held by people who remember that meaning does not live in the index alone. Meaning lives in workflow, context, time, provenance, permission, terminology, and human purpose. The vector only points. The architecture must decide whether it is pointing at the truth, a cousin of the truth, or a well-dressed lie.
+
+## Implementation notes and primary sources
+
+The distinctions above can be checked against specific implementations and research. These references explain retrieval mechanics and evaluation; they do not establish that a particular healthcare application is clinically safe.
+
+- **Exact neighbours and approximate indexes.** [pgvector's indexing documentation](https://github.com/pgvector/pgvector#indexing) describes exact nearest-neighbour search as its default, with approximate indexes trading some recall for speed. Here, recall concerns recovering the nearest vectors under the chosen distance measure; it does not establish that those vectors represent the right evidence. Its [filtering documentation](https://github.com/pgvector/pgvector#filtering) explains why filters applied after an approximate index scan can leave fewer matching results. This is one implementation's behaviour, not a rule for every vector database.
+- **Retrieval and generation are separate mechanisms.** [Lewis and colleagues' original RAG paper (2020)](https://arxiv.org/abs/2005.11401) combines a neural retriever over a Wikipedia index with a sequence-to-sequence generator. It provides a concrete research example of the architecture discussed here, rather than evidence that a retrieved passage or generated clinical answer is necessarily correct.
+- **A lexical baseline is worth testing.** [Thakur and colleagues' BEIR benchmark (2021)](https://arxiv.org/abs/2104.08663) compares retrieval approaches across varied datasets and finds BM25 a robust baseline. Its results support comparing approaches on the intended task instead of assuming that dense retrieval is always better. They do not replace evaluation on the local corpus and its permission boundaries.
+
+For a proposed retrieval system, record the corpus snapshot, embedding model, distance measure, index settings and filters alongside the evaluation questions. Compare retrieved evidence and query latency before judging the fluency of the generated answer. This is a proposed evaluation checklist, not a report of an experiment performed for this article.
+
+The [healthcare AI reading path](/topics/healthcare-ai) connects these retrieval questions to the surrounding discussions of data foundations, evaluation and deployment.
 
 ## Related Posts
 

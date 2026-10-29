@@ -2,6 +2,30 @@
 
 Use these prompts to manually test whether search and answer engines can identify the site, summarize the right pages, and cite the strongest source URLs. Do not use them for automated content generation.
 
+## Bounded Manual Protocol
+
+At a verified pilot release and its 30/60/90-day reviews, choose at most five questions and two
+available answer engines. Reuse that small set and run each once per review; do not retry until the
+site appears. This is a manual review plan, not an automation or a request to schedule one.
+
+Use a mix of identity questions and unbranded subject questions. Record them separately: naming
+Suvro Ghosh in the query tests identity/retrieval, not independent discovery for the subject. Include
+one or two questions answered by unchanged comparison pages, chosen before examining results.
+
+Record the date/time and timezone, engine/model or mode if shown, whether web search was enabled,
+language/region, exact prompt, cited URL and a short saved answer excerpt. For each result, check
+that the link opens the intended canonical page and that the cited passage supports the claim.
+A bare name is a mention, a source link is a citation, and neither establishes a visit or conversion.
+Answers vary across runs and settings; a missing citation in this sample is not proof of exclusion.
+
+| Date / engine / settings | Exact prompt | Mention / citation / neither | Verified canonical URL | Accuracy / evidence note |
+| ------------------------ | ------------ | ---------------------------- | ---------------------- | ------------------------ |
+|                          |              |                              |                        |                          |
+
+Keep account reports and referral measurements separate using
+[GEO_MEASUREMENT.md](GEO_MEASUREMENT.md). Do not add manufactured FAQs or keyword variants to
+chase the sample questions.
+
 ## Suvro Ghosh
 
 - Who is Suvro Ghosh?
@@ -30,6 +54,13 @@ Use these prompts to manually test whether search and answer engines can identif
 - AI in healthcare skepticism.
 - Why healthcare AI needs better data foundations.
 - Clinical AI safety and healthcare data quality.
+
+## Unbranded Explanatory Checks
+
+- Why can converting MUMPS or FileMan data to SQL change the meaning of clinical records?
+- What must a health information exchange govern beyond transporting messages?
+- How can eligibility and denominator choices create confounding in healthcare analytics?
+- Why can a stable latent-space representation still misrepresent healthcare data?
 
 ## Content Quality Checks
 

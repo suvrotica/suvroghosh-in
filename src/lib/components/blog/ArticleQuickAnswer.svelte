@@ -41,16 +41,22 @@
 		</div>
 	{/if}
 	{#if faq.length}
-		<div class="mt-5 space-y-4">
+		<div class="mt-5 space-y-4" data-article-faq>
 			<h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100">
 				Frequently asked questions
 			</h3>
 			{#each faq as item (item.question)}
-				<div>
-					<h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+				<div data-faq-item>
+					<h4
+						class="text-sm font-semibold text-neutral-900 dark:text-neutral-100"
+						data-faq-question
+					>
 						{item.question}
 					</h4>
-					<p class="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+					<p
+						class="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
+						data-faq-answer
+					>
 						{item.answer}
 					</p>
 				</div>

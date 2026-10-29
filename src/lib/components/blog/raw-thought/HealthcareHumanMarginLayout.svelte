@@ -299,12 +299,12 @@
 				<div class="thought-leaf hm-brief-faq" data-side="right">
 					<div class="thought-leaf__content">
 						<p class="hm-kicker">Questions before the machinery</p>
-						<ol class="hm-faq-list">
+						<ol class="hm-faq-list" data-article-faq>
 							{#each data.metadata.faq ?? [] as item, index (item.question)}
-								<li>
+								<li data-faq-item>
 									<span>{String(index + 1).padStart(2, '0')}</span>
-									<strong>{item.question}</strong>
-									<p>{item.answer}</p>
+									<strong data-faq-question>{item.question}</strong>
+									<p data-faq-answer>{item.answer}</p>
 								</li>
 							{/each}
 						</ol>

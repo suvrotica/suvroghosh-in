@@ -1,37 +1,67 @@
 # GEO Measurement — suvroghosh.in
 
-The technical discoverability release at Git commit
-`5398bacd272e6a1558ffe78f4b80ab3599ebad5d` was verified as the active Vercel production deployment
-on 2026-07-22. This document records that baseline and the **manual** work that remains. The separate
-editorial pilot in [GEO_CONTENT_QUEUE.md](GEO_CONTENT_QUEUE.md) is not yet deployed; its actual
-production release will be measurement day zero (`D0`) for the 30/60/90 comparison.
+Guidance reviewed on **30 October 2026**. The July observations below are retained as historical
+evidence, not a fresh production or account audit. The current deployment, console access, account
+settings and analytics baseline have **not** been reverified for this documentation update.
 
-Code changes alone do not produce citations. They only make the site technically eligible for
-crawling, indexing, retrieval, and possible training consideration. The events below are distinct
-and must not be reported as one number:
+The historical technical release was commit `5398bacd272e6a1558ffe78f4b80ab3599ebad5d`, recorded as
+active on 22 July. Do not reuse that date or its traffic numbers as the baseline for the current
+one-page editorial pilot in [GEO_CONTENT_QUEUE.md](GEO_CONTENT_QUEUE.md). Record the pilot's verified
+production release as its own measurement day zero (`D0`); until then, its release baseline is blank.
 
-1. **Technical eligibility** — pages are crawlable, canonical, and carry valid structured data.
+Code changes alone do not produce citations. They can improve technical access and reader usefulness.
+The events below are distinct and must not be reported as one number:
+
+1. **Technical eligibility** — pages are crawlable and indexable, with accurate canonicals and
+   snippet controls; any structured data is factual and matches visible content.
 2. **Indexing** — a search engine has fetched and stored the page.
 3. **Search visibility** — the page receives impressions/clicks in results.
-4. **Generative citation** — an AI answer names or links the site as a source.
+4. **Generative citation** — an AI answer provides a source link to the site; check its accuracy
+   separately. A name without a source link is a mention.
 5. **Referral visits** — a user clicks through from a generative or conventional result.
 6. **Reader engagement** — the visitor actually reads, returns, or subscribes.
 
-Schema markup and crawler access do **not** guarantee any of stages 2–6.
+Schema markup and crawler access do **not** guarantee any of stages 2–6. Structured data is not a
+general prerequisite for AI citations. Search/retrieval permissions and training permissions are
+separate choices.
+
+## Current Google Reporting And Controls
+
+Official guidance rechecked on 30 October 2026:
+
+- In Search Console, inspect **Settings → Search generative AI**, including inherited parent-property
+  settings. Google's [control documentation](https://support.google.com/webmasters/answer/16908024?hl=en)
+  describes inclusion/exclusion for AI Overviews, AI Mode and generative features in Discover. This
+  does not control model training. Record the effective value if account access exists; do not change
+  account settings, DNS, robots policy or training permissions as part of an editorial review.
+- The [Generative AI performance report for Search](https://support.google.com/webmasters/answer/16984139?hl=en)
+  reports **impressions** for AI Overviews and AI Mode, grouped by page, date, country and device.
+  Keep its text-based/multimodal filter consistent between snapshots. It does not supply separate
+  AI clicks or queries; its data overlaps overall Search performance, so do not add the totals.
+- A missing report can reflect insufficient impressions or an exclusion setting. Record
+  `unavailable` and the observed reason; do not replace missing evidence with zero. Save the displayed
+  report alongside an export: Google's export can turn unavailable values into zeros. Report dates
+  use Pacific Time; preserve that timezone alongside local release timestamps.
+- Google stopped showing FAQ rich results on **7 May 2026** and removed their documentation in June;
+  see the [official changelog](https://developers.google.com/search/updates). Useful visible FAQs
+  remain an editorial option, not a Google rich-result objective.
 
 ---
 
-## 1. Console and measurement status on 2026-07-22
+## 1. Historical Console And Measurement Status On 2026-07-22
+
+The following access/deployment assertions and proposed next actions describe that date only.
+Recheck current state before acting; none establishes an outstanding task or present permission.
 
 ### Bing Webmaster Tools
 
 - The correct site-add/verification flow was reached in an authenticated session.
-- An HTML verification meta element is present in the local working changes. It is not evidence of
-  ownership until that exact change is deployed and Bing successfully verifies the live page.
+- An HTML verification meta element was recorded in the then-local working changes. That alone
+  did not establish ownership or successful verification of the live page.
 - Sitemap processing, URL indexing, crawl/canonical errors, the
   [AI Performance report](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview),
-  and existing IndexNow status remain **unverified** until property verification completes.
-- Owner action after the approved deployment: click **Verify**, submit
+  and existing IndexNow status were **unverified** in that observation.
+- Proposed owner action at the time, subject to a fresh status check: click **Verify**, submit
   `https://www.suvroghosh.in/sitemap.xml` once if it is not already present, wait for processing, and
   save the first AI Performance baseline. These are external account actions, not local code work.
 - [IndexNow](https://www.bing.com/indexnow/getstarted) is optional. Add it only if publication-time
@@ -43,18 +73,18 @@ Schema markup and crawler access do **not** guarantee any of stages 2–6.
 - The signed-in Google account did not have access to the `suvroghosh.in` domain property. No
   indexing, sitemap, canonical-selection, Core Web Vitals, query, impression, or click baseline
   could therefore be read.
-- Owner action: grant this account access to the existing property or complete ownership
-  verification deliberately. A DNS change must not be made implicitly. Once access exists, record
-  the tables below and submit the existing sitemap once if it is absent.
+- Proposed owner action at the time, if access is still absent: grant access to the existing property
+  or complete ownership verification deliberately. A DNS change must not be made implicitly. Once
+  access exists, record the tables below and submit the existing sitemap once if it is absent.
 
 ### Vercel and analytics
 
 - The production project was accessible in the authenticated Vercel session, and the active
   production deployment was verified against commit
   `5398bacd272e6a1558ffe78f4b80ab3599ebad5d`.
-- Vercel Analytics and Speed Insights are installed in the site. The available 30-day Analytics
-  view supplied a site-level baseline and a sparse page table; it did not establish search indexing,
-  AI citation, crawler identity, or human intent.
+- The July audit recorded Vercel Analytics and Speed Insights in the site. The then-available 30-day
+  Analytics view supplied a site-level baseline and a sparse page table; it did not establish search
+  indexing, AI citation, crawler identity, or human intent.
 - If longer referrer or request-log retention is unavailable on the current plan, first use periodic
   exports or dated manual snapshots. Do not add a paid analytics service without owner approval.
 
@@ -85,9 +115,18 @@ Do this only if Chinese-language or mainland-China discovery is an actual audien
 
 ## 2. Thirty-, sixty-, and ninety-day schedule
 
-Start this schedule only when the editorial pilot is actually deployed. Record the production URL,
-Git SHA, timestamp, and the four released pilot pages at `D0`. Take comparable snapshots at **D+30,
-D+60, and D+90**; do not backdate the schedule to the technical release.
+Start this manual review plan only when the current editorial pilot is actually deployed. Record
+the production URL, Git SHA, timestamp with timezone, exact changed page(s), and a pre-release
+snapshot at `D0`. Take comparable snapshots at **D+30, D+60, and D+90**; do not backdate the plan to
+the technical release. This document creates no automation, recurring job or account change.
+
+Choose two to four unchanged pages with similar subject, format, age and baseline demand before
+looking at results. Record their canonical URLs and selection rationale. Compare equal 30-day
+windows with identical property, page, country/device and search-type filters; flag seasonality,
+search updates and any later edits to comparison pages. This is a small observational comparison,
+not a controlled experiment proving causation. Report absolute counts and denominators; percentages
+from a handful of visits or citations are unstable. If volume remains too low at day 90, record
+`insufficient evidence` rather than attributing an improvement or failure to the edits.
 
 | Review | Purpose                                                                                                | Minimum decision                                                    |
 | ------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
@@ -105,7 +144,10 @@ D+60, and D+90**; do not backdate the schedule to the technical release.
 | Crawled, not indexed    |     |      |      |      |
 | Excluded (reason)       |     |      |      |      |
 
-### Conventional search performance (Search Console → Performance)
+### Overall Search Performance (Search Console → Performance)
+
+This includes eligible Google AI-feature activity; it is not a clean conventional-search-only
+control. Keep clicks, impressions and CTR separate from the dedicated AI impression report.
 
 | Metric              | D0  | D+30 | D+60 | D+90 |
 | ------------------- | --- | ---- | ---- | ---- |
@@ -115,6 +157,18 @@ D+60, and D+90**; do not backdate the schedule to the technical release.
 | Avg. position       |     |      |      |      |
 | Top 5 query groups  |     |      |      |      |
 | Top 5 landing pages |     |      |      |      |
+
+### Google AI Visibility (Search Console → Generative AI Performance)
+
+| Metric / context                 | D0  | D+30 | D+60 | D+90 |
+| -------------------------------- | --- | ---- | ---- | ---- |
+| Report available / reason absent |     |      |      |      |
+| Effective inclusion setting      |     |      |      |      |
+| Pilot page impressions           |     |      |      |      |
+| Comparison page impressions      |     |      |      |      |
+| Date window / filters / export   |     |      |      |      |
+
+An impression is visibility of a link, not a click, a verified answer attribution or a reader visit.
 
 ### Microsoft AI citations (Bing Webmaster Tools → AI Performance)
 
@@ -134,13 +188,16 @@ D+60, and D+90**; do not backdate the schedule to the technical release.
 | claude.ai                          |           |             |             |             |               |
 | perplexity.ai                      |           |             |             |             |               |
 | copilot.microsoft.com              |           |             |             |             |               |
-| bing.com (Copilot answers)         |           |             |             |             |               |
+| bing.com (source type unresolved)  |           |             |             |             |               |
 | kimi.com                           |           |             |             |             |               |
 | Chinese AI products (if separable) |           |             |             |             |               |
 
+A referrer domain alone may not distinguish an AI answer from ordinary search. Preserve unknown
+attribution, redirects and missing referrers; do not label every `bing.com` visit as Copilot traffic.
+
 ### Reader engagement and professional conversion
 
-The inspected Vercel view did not expose verified contact, consulting, résumé, or subscription
+The July Vercel view did not expose verified contact, consulting, résumé, or subscription
 conversion counts. Record them only after a privacy-conscious event or destination-page method is
 approved; do not infer a conversion from an ordinary page view.
 
@@ -163,30 +220,34 @@ Keep search/retrieval activity separate from possible-training activity.
 | Possible training/open corpus | `GPTBot`, `ClaudeBot`, `KimiBot`, `CCBot`                              |                     |                    |
 | Chinese search indexes        | `Baiduspider`, Sogou spiders, `yisouspider`                            |                     |                    |
 
-### Manual citation checks (do periodically, record verbatim)
+### Manual Citation Checks
 
-Pick 5–10 representative questions that a specific page answers unusually well (for example,
-"How would you explain an HIE from first principles?" or "How did VA healthcare systems move from
-MUMPS to SQL?"). Run the same wording in ChatGPT Search, Claude, Perplexity, and Kimi; optionally
-test DeepSeek, Qwen, and Yuanbao when available in the target market. Record whether the site is
-named/linked, the exact query, the cited URL, and whether the answer accurately represented it.
+Use the bounded protocol in [aeo-prompts.md](aeo-prompts.md): at most five questions across two
+available engines, once each at D0/30/60/90. Retain exact wording and settings, separate branded
+identity tests from unbranded discovery, and verify each cited canonical URL and supporting claim.
 
 | Query | Engine | Cited? (Y/N) | Notes | Date |
 | ----- | ------ | ------------ | ----- | ---- |
 |       |        |              |       |      |
 
-### Technical health (rerun after each deploy)
+### Technical Health (Release Evidence)
 
-| Check                      | Command                            | Result | Date |
-| -------------------------- | ---------------------------------- | ------ | ---- |
-| Content validation         | `npm run validate:content`         |        |      |
-| SEO validation             | `npm run validate:seo`             |        |      |
-| Discoverability validation | `npm run validate:discoverability` |        |      |
-| Build                      | `npm run build`                    |        |      |
+For ordinary article work, run `npm run build` once. Its prebuild includes content and SEO
+validation, and its final step validates rendered discoverability. Do not duplicate those commands
+beforehand or run `build:full` for this editorial pilot. Use focused tests for changed validators or
+templates, inspect expected generated files, and check `git diff --check`. After deployment, verify
+only the pilot URL(s), relevant redirects and sitemap entries; do not crawl the production archive.
+
+| Evidence                                       | Result | Date / SHA |
+| ---------------------------------------------- | ------ | ---------- |
+| Ordinary build and included validation         |        |            |
+| Focused regression checks for changed code     |        |            |
+| Expected generated diff and `git diff --check` |        |            |
+| Deployed pilot canonicals and visible content  |        |            |
 
 ---
 
-## 3. Recorded baseline
+## 3. Historical Baseline (July 2026)
 
 ### Technical discoverability release
 
@@ -195,7 +256,8 @@ named/linked, the exact query, the cited URL, and whether the answer accurately 
 - **Vercel production status:** active production deployment verified in the authenticated project
 - **Published Markdown source count recorded by the prior audit:** 530
 - **Posts with a substantive `dateModified` in that production release:** 0
-- **Editorial pilot deployment date / SHA:** not yet deployed; record at `D0`
+- **Then-proposed four-page pilot:** recorded as not yet deployed in July; current release status
+  was not rechecked. This is separate from the October one-page pilot.
 
 ### Vercel Analytics: 2026-06-22 through 2026-07-22
 
@@ -233,10 +295,11 @@ distinguish genuine readers from bots, proxies, privacy effects, and internal tr
 
 ## 4. What NOT to conclude
 
-- A rise in impressions is **not** proof of generative citation; separate the referrer.
+- Overall search impressions do not establish AI exposure. Dedicated AI impressions indicate link
+  visibility; they still do not count clicks, attributable visits or verified answer accuracy.
 - A single manual citation is anecdote, not trend; track queries over time.
-- Adding JSON-LD does not entitle the site to rich results or AI citations; it only removes a
-  technical barrier. Content quality and genuine authority drive stages 3–6.
+- Adding JSON-LD does not entitle the site to rich results or AI citations. It describes content;
+  factual markup is not a guarantee of indexing, selection, visits or conversion.
 - Allowing a training crawler does not prove that a page entered a dataset or influenced a model.
 - A crawler hit does not prove indexing; indexing does not prove retrieval; a generated mention
   without a source link is not a citation.
@@ -252,10 +315,9 @@ Choose a small cohort of high-value technical pages and improve only what is tru
 3. Link factual claims to strong primary sources and distinguish evidence from the author's
    analysis or experience.
 4. Use `dateModified` only after a substantive review; do not freshness-bump unchanged posts.
-5. Seek independent links and profile corroboration for professional work, projects, and the 2006
-   journal publication.
-6. Keep fiction and satire visibly identified. Add a future `contentMode` only to ambiguous hybrids
-   such as reported explanation, opinion, memoir, or personal-cultural essays.
+5. Keep factual author/profile context and related reading accessible. Do not manufacture links,
+   testimonials or professional authority.
+6. Keep fiction and satire visibly identified, using existing category/context conventions.
 
 Compare that cohort with untouched pages at 30, 60, and 90 days. Do not mass-produce FAQs, summaries,
 or keyword variants merely to create machine-facing text; that would make the archive less

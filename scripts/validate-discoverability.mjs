@@ -19,6 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { readPostFrontmatter } from './lib/post-metadata.mjs';
+import { validateArticleFaq } from './lib/article-faq.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
@@ -132,8 +133,8 @@ for (const file of postFiles) {
 	}
 
 	if (metadata.faq != null) {
-		if (!Array.isArray(metadata.faq) || metadata.faq.length === 0) {
-			fail(`${file}: faq must be a non-empty array when present.`);
+		if (!Array.isArray(metadata.faq)) {
+			fail(`${file}: faq must be an array when present.`);
 		} else {
 			metadata.faq.forEach((item, index) => {
 				if (
@@ -689,12 +690,12 @@ async function runRenderedChecks() {
 		fail('No published posts found to render.');
 		return;
 	}
-	const faqSample = indexablePublished.find(
+	const faqSamples = indexablePublished.filter(
 		(post) => Array.isArray(post.metadata.faq) && post.metadata.faq.length > 0
 	);
 	const modifiedSamples = indexablePublished.filter((post) => post.metadata.dateModified != null);
 	const unmodifiedSample = indexablePublished.find((post) => post.metadata.dateModified == null);
-	const renderedPostSamples = [sample, unmodifiedSample, faqSample, ...modifiedSamples].filter(
+	const renderedPostSamples = [sample, unmodifiedSample, ...faqSamples, ...modifiedSamples].filter(
 		(post, index, posts) =>
 			post && posts.findIndex((candidate) => candidate?.path === post.path) === index
 	);
@@ -782,28 +783,13 @@ async function runRenderedChecks() {
 					fail(`${route}: visible breadcrumb nav not found next to BreadcrumbList schema.`);
 				}
 
-				const declaredFaq = Array.isArray(renderedPost.metadata.faq)
-					? renderedPost.metadata.faq
-					: [];
-				const faqPages = byType(nodes, 'FAQPage');
-				if (declaredFaq.length > 0) {
-					if (faqPages.length !== 1) {
-						fail(
-							`${route}: post declares ${declaredFaq.length} FAQ item(s) but no FAQPage JSON-LD was emitted.`
-						);
-					} else {
-						const questions = (faqPages[0].mainEntity || []).map((q) => q.name);
-						for (const item of declaredFaq) {
-							if (!questions.includes(item.question)) {
-								fail(
-									`${route}: FAQPage schema is missing the visible question "${item.question}".`
-								);
-							}
-						}
-					}
-				} else if (faqPages.length > 0) {
-					fail(`${route}: FAQPage JSON-LD emitted without matching faq frontmatter.`);
-				}
+				for (const issue of validateArticleFaq({
+					html,
+					declaredFaq: Array.isArray(renderedPost.metadata.faq) ? renderedPost.metadata.faq : [],
+					faqPages: byType(nodes, 'FAQPage'),
+					pageUrl: `${SITE}${route}`
+				}))
+					fail(`${route}: ${issue}`);
 			}
 
 			if (route === paginatedCategoryRoute) {

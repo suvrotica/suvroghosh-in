@@ -59,6 +59,20 @@ function sha256(value: string) {
 	return createHash('sha256').update(value, 'utf8').digest('hex');
 }
 
+function editorialCalendarDate(now: Date) {
+	const parts = Object.fromEntries(
+		new Intl.DateTimeFormat('en-US', {
+			timeZone: 'Asia/Kolkata',
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		})
+			.formatToParts(now)
+			.map(({ type, value }) => [type, value])
+	);
+	return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
 /** A metadata projection, never a second article store or an editorial selection. */
 export function createPublicBlogCatalog(
 	posts: readonly CatalogSourcePost[],
@@ -69,6 +83,8 @@ export function createPublicBlogCatalog(
 		throw new Error('Blog catalog source exceeds item limit.');
 	const generatedAt = now.toISOString();
 	const publicationCutoff = generatedAt.slice(0, 10);
+	// Editorial revisions use the site's calendar, independently of UTC publication eligibility.
+	const modificationCutoff = editorialCalendarDate(now);
 	const items: PublicBlogCatalogItem[] = [];
 	const seen = new Set<string>();
 	for (const post of posts) {
@@ -96,7 +112,7 @@ export function createPublicBlogCatalog(
 			post.dateModified !== undefined &&
 			(!isCalendarDate(post.dateModified) ||
 				post.dateModified < post.date ||
-				post.dateModified > publicationCutoff)
+				post.dateModified > modificationCutoff)
 		) {
 			throw new Error('Blog catalog modification date is invalid.');
 		}

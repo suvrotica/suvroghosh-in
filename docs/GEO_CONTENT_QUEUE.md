@@ -5,11 +5,47 @@ media-description, and internal-link improvements. It is not a keyword-volume pl
 data was available, and no volume has been invented. Fiction, satire, and memoir are excluded from
 this factual-citation programme unless a specific factual claim later needs clarification.
 
-Queue created: 2026-07-22. The editorial pilot described below is **not yet deployed**; its
-production deployment date will become the measurement day zero only after the revised pages pass
-local verification and are deliberately released.
+Queue created: 2026-07-22; editorial scope reviewed **30 October 2026**. The July ranking and
+analytics below are historical, qualitative observations. Their old deployment/access assertions
+have not been reverified and are not a current baseline or an instruction to edit the whole queue.
 
-## Scoring method
+## Current Bounded Pilot: Vector Databases
+
+The October pilot contains only [Vector Databases](../src/lib/posts/vector-databases.md). It already
+has a useful plain-English answer and related reading, so adding more summary/FAQ blocks would
+duplicate the existing material. The identified gap is the absence of external sources supporting
+its implementation discussion.
+
+The bounded change adds implementation notes and primary references before the existing related
+reading, preserving the original prose, title, canonical URL and publication date. Its evidence
+basis is the [pgvector documentation](https://github.com/pgvector/pgvector#readme) for exact versus
+approximate search and filtering, [Lewis et al.'s RAG paper](https://arxiv.org/abs/2005.11401) for
+retrieval-augmented generation, and [Thakur et al.'s BEIR paper](https://arxiv.org/abs/2104.08663) for
+retrieval evaluation. These references do not establish clinical validation or deployment readiness.
+The substantive revision sets `dateModified` to `2026-10-30`; the original publication date is
+unchanged. Tags and pinned tags are curated together to keep incidental phrases out of discovery.
+
+Preservation baseline: commit `03e54d69`. After removing only the new section from
+`## Implementation notes and primary sources` up to the existing `## Related Posts`, the original
+Markdown body and the revised body have the same SHA-256:
+`c13b0d4604ce7ff3ff800d28819e02fe81813f92f6de27338ae01b97b4b11f8d`.
+The comparison excludes front matter, applies Unicode NFC, collapses whitespace and trims the
+result. It preserves words, punctuation, links and their order. The title, category, original date,
+existing answer fields and artwork metadata also match the baseline. The canonical remains
+`https://www.suvroghosh.in/blog/healthcare-it/vector-databases`.
+
+[HL7 vs FHIR](../src/lib/posts/hl7-vs-fhir-explained-simply.md) already has a comparison table and
+sources, and [Gradient Descent Landscapes](../src/lib/posts/gradient-descent-landscapes.md) already
+has substantial caveats; neither needs an automatic rewrite for this pilot. Choose unchanged
+comparison pages before examining performance, using the selection rules in
+[GEO_MEASUREMENT.md](GEO_MEASUREMENT.md).
+
+No current production verification or search/analytics baseline is recorded here. Record the
+pilot's deployment URL, SHA, timestamp and fresh available measurements at its own `D0`. Keep
+unavailable data blank with a reason. The 30/60/90-day reviews are manual, and expansion requires
+useful evidence or a demonstrated reader need rather than a ranking guarantee.
+
+## Historical July Scoring Method
 
 Each page receives 1–5 points on eight qualitative dimensions, for a maximum of 40:
 
@@ -29,7 +65,7 @@ Each page receives 1–5 points on eight qualitative dimensions, for a maximum o
 The dimensions intentionally value first-hand knowledge and defensible contribution alongside
 retrieval intent. They do not predict rankings or citations.
 
-## Ranked queue
+## Historical July Ranked Queue
 
 | Rank | Page                                                                                                                  |   P |   I |   E |   D |   C |   G |   L |   V |  Total | Planned wave          |
 | ---: | --------------------------------------------------------------------------------------------------------------------- | --: | --: | --: | --: | --: | --: | --: | --: | -----: | --------------------- |
@@ -53,11 +89,11 @@ retrieval intent. They do not predict rankings or citations.
 |   18 | [Perceptron from Scratch in Mojo](../src/lib/posts/perceptron-from-scratch-in-mojo.md)                                |   3 |   4 |   5 |   4 |   4 |   3 |   4 |   3 | **30** | Interactive-work wave |
 |   19 | [XOR with Multiple Perceptrons in Mojo](../src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md)                    |   3 |   4 |   5 |   4 |   4 |   3 |   4 |   3 | **30** | Interactive-work wave |
 
-## Why the first pilot is ranks 1–4
+## Historical Rationale For July Ranks 1–4
 
 The first four pages cover a useful professional range—legacy clinical data, interoperability,
 causal analytics, and machine-learning representations—while sharing a tractable remediation
-pattern. Each is a canonical, high-conversion page with strong first-hand or architecture-level
+pattern. Each was selected as a canonical, professionally relevant page with first-hand or architecture-level
 potential, but the pre-pilot version had no external evidence links, only a `Related Posts` heading,
 and a lead `<Pi>` image without authored alt text or a caption.
 
@@ -80,7 +116,7 @@ FHIR is deliberately in wave 2 despite its high relevance. It already has twelve
 authored alt text, and three source links, so its marginal evidence gain is lower than the first
 cohort.
 
-For every pilot page, the acceptance criteria are:
+For any separately selected future page, the editorial acceptance criteria are:
 
 1. State the original thesis near the opening without replacing the article with generic prose.
 2. Distinguish primary evidence, professional experience, analysis/inference, and illustrative or
@@ -93,6 +129,8 @@ For every pilot page, the acceptance criteria are:
 6. Preserve redirects, internal links, canonical identity, and the original publication date.
 7. Run local regression checks before release, then compare this cohort with untouched pages at
    30, 60, and 90 days.
+8. Treat `inPlainEnglish`, `keyTerms` and `faq` as optional authoring aids. Add a table, method,
+   limitations or next step only where it serves that article; there is no FAQ, word-count or CTA quota.
 
 ## Observed analytics context—not a demand forecast
 
@@ -127,7 +165,8 @@ a longer comparison window, not as a target market or evidence of qualified traf
 
 ## Expansion rule
 
-Do not expand automatically from the pilot to the remaining fifteen pages. At day 30, review
+Do not expand automatically from the current one-page pilot or treat the historical queue as an
+approved batch. At day 30, review
 indexing, impressions, cited URLs, qualified referrals, engagement, and professional conversions.
 At day 60, compare direction and page-level retrieval with a matched group of untouched pages. At
 day 90, decide whether the treatment earned enough trustworthy discovery or reader value to extend,

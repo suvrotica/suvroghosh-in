@@ -76,6 +76,54 @@ describe('public blog metadata catalog', () => {
 		expect(createPublicBlogCatalog([post()], now).items[0]).not.toHaveProperty('modifiedAt');
 	});
 
+	it.each([
+		['2026-10-29T18:29:59.999Z', '2026-10-29', '2026-10-30'],
+		['2026-10-29T18:30:00.000Z', '2026-10-30', '2026-10-31'],
+		['2026-10-30T00:00:00.000Z', '2026-10-30', '2026-10-31']
+	])(
+		'accepts the current India editorial day and rejects its next day at %s',
+		(instant, currentDay, futureDay) => {
+			const exportTime = new Date(instant);
+			const catalog = createPublicBlogCatalog([post({ dateModified: currentDay })], exportTime);
+			expect(catalog.items[0].modifiedAt).toBe(currentDay);
+			expect(catalog.generatedAt).toBe(instant);
+			expect(() =>
+				createPublicBlogCatalog([post({ dateModified: futureDay })], exportTime)
+			).toThrow('Blog catalog modification date is invalid.');
+		}
+	);
+
+	it('does not advance UTC publication eligibility when the India editorial day advances', () => {
+		const sources = [
+			post({ date: '2026-10-29', dateModified: '2026-10-30' }),
+			post({ slug: 'next-utc-day', date: '2026-10-30', dateModified: '2026-10-30' })
+		];
+		const beforeUtcMidnight = createPublicBlogCatalog(
+			sources,
+			new Date('2026-10-29T18:30:00.000Z')
+		);
+		expect(beforeUtcMidnight.items.map(({ slug }) => slug)).toEqual([sources[0].slug]);
+		expect(beforeUtcMidnight.items[0].modifiedAt).toBe('2026-10-30');
+		const atUtcMidnight = createPublicBlogCatalog(sources, new Date('2026-10-30T00:00:00.000Z'));
+		expect(atUtcMidnight.items.map(({ slug }) => slug)).toEqual(['next-utc-day', sources[0].slug]);
+	});
+
+	it('still rejects a modification before publication across the India/UTC date boundary', () => {
+		const exportTime = new Date('2026-10-29T18:30:00.000Z');
+		expect(() =>
+			createPublicBlogCatalog(
+				[post({ date: '2026-10-29', dateModified: '2026-10-28' })],
+				exportTime
+			)
+		).toThrow('Blog catalog modification date is invalid.');
+		expect(
+			createPublicBlogCatalog(
+				[post({ date: '2026-10-29', dateModified: '2026-10-29' })],
+				exportTime
+			).items[0].modifiedAt
+		).toBe('2026-10-29');
+	});
+
 	it('keeps older evergreen posts beyond RSS limits and sorts without mutating input', () => {
 		const sources = [
 			post(),

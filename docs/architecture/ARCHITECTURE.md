@@ -207,7 +207,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
 | `/api/analytics/pageview`                                                                              | Compatibility intake for older consented clients, with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                           |
 | `/api/prompt-atlas`                                                                                    | GET public availability; explicit same-origin consented POST, free-route verification, atomic shared quota and bounded structured analysis; private/no-store.                                                                                                                                                      |
-| `/api/mindmap-studio` | GET free-AI availability; bounded consented source-analysis POST with trusted excerpt IDs, the existing shared free-route/quota gate and private/no-store/noindex responses. |
+| `/api/mindmap-studio`                                                                                  | GET free-AI availability; bounded consented source-analysis POST with trusted excerpt IDs, the existing shared free-route/quota gate and private/no-store/noindex responses.                                                                                                                                       |
 | `/api/comments`                                                                                        | Published-article approved comments/replies and pending guest submission; server-only service-role RPCs, bounded input/admission and no-store responses.                                                                                                                                                           |
 | `/api/comments/moderate`                                                                               | Standalone private HTML email-action confirmation/composer; expiring single-comment moderation or one-author-reply capability, safe GET/HEAD and bounded same-origin POST; no Notes session, Svelte layout, analytics or external resources.                                                                       |
 | `/api/notes/comments`                                                                                  | Independently configured-owner-authorized queue/count/session/page-export reads and moderation/read/author-reply mutations; authenticated session RPCs, private/no-store/noindex responses.                                                                                                                        |
@@ -285,6 +285,43 @@ flowchart LR
 
 `src/lib/server/content/posts.ts` eagerly imports only Markdown metadata, omits unpublished/redirected posts, validates required fields, maps categories into sections, and derives topic membership, archives, navigation, related posts, curated paths and facets. Publication currently means `published !== false`; missing publication flags are not implicitly private. `src/lib/content/posts.ts` defines the metadata interface and runtime checks, but does not offer the same strict runtime schema as notes or topic headquarters.
 
+### Optional article explanations and FAQ agreement
+
+`inPlainEnglish`, `keyTerms` and `faq` are independently optional editorial metadata.
+`scripts/validate-content.mjs` checks supplied values and FAQ object shapes, but no longer requires
+an answer section or minimum term/FAQ counts because an article is in Healthcare IT or has been
+updated. Empty optional arrays mean no items; a supplied summary must still be non-empty text.
+The existing publication, calendar-date and revision-freshness checks remain in force. Editorial
+additions use the actual modification date; shared component changes do not refresh article dates.
+
+`ArticleQuickAnswer.svelte` and the bespoke Healthcare Human Margin folio identify their existing
+FAQ containers, items, questions and answers with `data-article-faq` / `data-faq-*` attributes.
+These markers add no content and preserve the standard or deferred reading order. The existing
+server loader still derives FAQPage JSON-LD from the same authored metadata. During the routine
+build's rendered discoverability checks, `scripts/lib/article-faq.mjs` parses each sampled article
+with the existing LinkeDOM dependency and compares ordered authored, reader-facing and schema
+question/answer pairs. Every published indexable article with FAQs is included in that check.
+Absent or empty FAQ metadata must not emit FAQPage schema. Duplicates, omissions, extra items,
+answer mismatches and incorrect canonical schema identities fail validation.
+
+The static check excludes script/template/metadata content and explicitly hidden HTML; it does
+not compute external stylesheets. Local browser tests cover representative standard, deferred,
+bespoke and FAQ-free articles at desktop/mobile widths with JavaScript disabled, including actual
+visibility. Accessible native disclosures are permitted by the static contract. Existing honest
+FAQ markup is retained for descriptive consistency, without a Google FAQ rich-result claim.
+The new validation fixtures run in `seo:test`; no runtime endpoint, storage or provider is added.
+
+```mermaid
+flowchart LR
+    Authored["Optional Markdown explanation / FAQ metadata"] --> Shape["Content validation: supplied values, no quotas"]
+    Shape --> Render["Existing SSR article / folio"]
+    Shape --> Schema["Existing canonical JSON-LD graph"]
+    Authored --> Agreement["Rendered FAQ agreement: ordered questions + answers"]
+    Render --> Agreement
+    Schema --> Agreement
+    Render --> Browser["Local browser samples: CSS visibility, no JavaScript"]
+```
+
 ### Public blog catalog
 
 `src/lib/server/content/blog-catalog.ts` projects exact fields from that existing registry into
@@ -292,7 +329,10 @@ flowchart LR
 and a real calendar publication date no later than the UTC export day. Future or invalid publication
 dates are omitted. Eligible items with malformed identifiers, text, tags or modification dates fail
 the build rather than producing a partial misleading catalog. A supplied modification date must
-be real, at least the publication date and no later than the UTC export day; absence stays absent.
+be real, at least the publication date and no later than the export time's editorial calendar day
+in `Asia/Kolkata`; absence stays absent. This matches the existing tag generator's editorial clock,
+so an honest early-morning India revision does not fail while UTC is still on the previous date.
+The UTC publication cutoff, exported source dates and ISO generation timestamp stay unchanged.
 This stricter export rule does not change existing article publication or routing semantics.
 
 | Contract            | Version 1                                                                                                                                                                                                                  |
@@ -316,7 +356,7 @@ the source site continues independently.
 ```mermaid
 flowchart LR
     Posts["Active Markdown metadata"] --> Registry["Existing published-post registry"]
-    Registry --> Projection["Strict due-publication checks + explicit metadata projection"]
+    Registry --> Projection["UTC publication / India revision bounds + explicit projection"]
     Projection --> Catalog["Prerendered blog-catalog.v1.json; bounded JSON"]
     Catalog --> Consumer["External curator; separate selection authority"]
     Consumer --> Link["Canonical source article link"]

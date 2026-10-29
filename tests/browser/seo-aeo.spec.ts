@@ -79,3 +79,77 @@ test('fresh rendered metadata and explanatory sources preserve the article canon
 	const sitemap = await request.get('/sitemap.xml');
 	expect(await sitemap.text()).toContain('<loc>https://www.suvroghosh.in/notes</loc>');
 });
+
+test.describe('reader-facing article FAQs', () => {
+	// The answer text and navigation must survive without hydration or app code.
+	test.use({ javaScriptEnabled: false });
+	const samples = [
+		{ name: 'standard', path: '/blog/healthcare-it/hie-first-principles-openhie', faq: true },
+		{ name: 'deferred', path: '/blog/visualizations/brownian-motion-laboratory', faq: true },
+		{
+			name: 'bespoke',
+			path: '/blog/healthcare-it/why-read-a-healthcare-it-blog-in-the-age-of-ai',
+			faq: true
+		},
+		{
+			name: 'without FAQ',
+			path: '/blog/artificial-intelligence/the-magnificent-plumbing-department-of-artificial-intelligence',
+			faq: false
+		}
+	];
+	for (const width of [1440, 390]) {
+		for (const sample of samples) {
+			test(`${sample.name} at ${width}px preserves visible questions, answers and canonical`, async ({
+				page,
+				context,
+				baseURL
+			}) => {
+				await context.route('**/*', (route) =>
+					new URL(route.request().url()).origin === baseURL ? route.continue() : route.abort()
+				);
+				await page.setViewportSize({ width, height: 1000 });
+				await page.goto(sample.path);
+				await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+					'href',
+					`https://www.suvroghosh.in${sample.path}`
+				);
+				const graphs = (
+					await page.locator('script[type="application/ld+json"]').allTextContents()
+				).map((text) => JSON.parse(text));
+				const faqPages = graphs
+					.flatMap((graph) => graph['@graph'] ?? [graph])
+					.filter((node) => node['@type'] === 'FAQPage');
+				const items = page.locator('article [data-article-faq] [data-faq-item]');
+				if (!sample.faq) {
+					expect(faqPages).toHaveLength(0);
+					await expect(items).toHaveCount(0);
+					return;
+				}
+				expect(faqPages).toHaveLength(1);
+				const questions = faqPages[0].mainEntity as {
+					name: string;
+					acceptedAnswer: { text: string };
+				}[];
+				expect(questions.length).toBeGreaterThan(0);
+				await expect(items).toHaveCount(questions.length);
+				for (const [index, question] of questions.entries()) {
+					const item = items.nth(index);
+					const visibleQuestion = item.locator('[data-faq-question]');
+					const visibleAnswer = item.locator('[data-faq-answer]');
+					await expect(visibleQuestion).toBeVisible();
+					await expect(visibleQuestion).toHaveText(question.name);
+					await expect(visibleAnswer).toBeVisible();
+					await expect(visibleAnswer).toHaveText(question.acceptedAnswer.text);
+					const box = await item.boundingBox();
+					expect(box).not.toBeNull();
+					expect(box!.x).toBeGreaterThanOrEqual(0);
+					expect(box!.x + box!.width).toBeLessThanOrEqual(width + 1);
+				}
+				if (sample.name === 'deferred') {
+					await expect(page.locator('#faq [data-article-faq]')).toHaveCount(1);
+					await expect(page.locator('#answer-summary')).toHaveCount(0);
+				}
+			});
+		}
+	}
+});
