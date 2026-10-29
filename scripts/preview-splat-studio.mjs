@@ -42,7 +42,7 @@ await writeFile(
 	`<!doctype html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><link rel="icon" href="data:,"><title>Splat Studio — Local Preview</title><style>html,body{margin:0;min-width:320px;background:#08090e;color:#f4f2f7}*{box-sizing:border-box}button,input,select{font:inherit}</style></head>
-<body><div id="app"></div><noscript>Splat Studio needs JavaScript and WebGL to render its interactive sculptures.</noscript><script type="module" src="/main.js"></script></body>
+<body><div id="app"></div><noscript>Splat Studio needs JavaScript to render its interactive sculptures.</noscript><script type="module" src="/main.js"></script></body>
 </html>`
 );
 

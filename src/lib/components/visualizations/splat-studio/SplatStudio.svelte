@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import {
 		DEFAULT_SETTINGS,
 		PRESETS,
@@ -12,7 +12,7 @@
 		randomizeSettings,
 		type SplatSettings
 	} from '$lib/visualizations/splat-studio/model';
-	import type { SplatRenderer } from '$lib/visualizations/splat-studio/renderer';
+	import type { SplatRenderer, SplatCallbacks } from '$lib/visualizations/splat-studio/renderer';
 	import './studio.css';
 
 	type NumericKey = {
@@ -85,9 +85,13 @@
 		}
 	];
 	let settings = $state<SplatSettings>({ ...DEFAULT_SETTINGS });
-	let canvas: HTMLCanvasElement;
+	let canvas = $state<HTMLCanvasElement>()!;
 	let studio: HTMLElement;
-	let renderer: SplatRenderer | undefined;
+	let renderer:
+		| Pick<SplatRenderer, 'update' | 'setPlaying' | 'resetCamera' | 'exportPNG' | 'dispose'>
+		| undefined;
+	let canvasVersion = $state(0);
+	let renderMode = $state<'webgl' | 'canvas2d'>('webgl');
 	let mounted = false;
 	let ready = $state(false);
 	let error = $state('');
@@ -133,46 +137,104 @@
 		reduced.addEventListener('change', onMotion);
 		document.addEventListener('fullscreenchange', onFullscreen);
 		window.addEventListener('popstate', onHistory);
-		if (new URLSearchParams(window.location.search).get('webgl') === 'off') {
-			error =
-				'3D rendering is switched off in this link. Remove webgl=off from the URL to start the studio.';
-		} else {
-			void import('$lib/visualizations/splat-studio/renderer')
-				.then(({ SplatRenderer }) => {
-					if (disposed) return;
-					try {
-						renderer = new SplatRenderer(canvas, $state.snapshot(settings), {
-							onStats: (value) => {
-								if (!disposed) stats = value;
-							},
-							onReady: () => {
-								if (!disposed) {
-									ready = true;
-									error = '';
-								}
-							},
-							onError: (message) => {
-								if (!disposed) {
-									error = message;
-									ready = false;
-								}
-							}
-						});
-						renderer.setPlaying(playing);
-					} catch (cause) {
-						error =
-							cause instanceof Error
-								? cause.message
-								: 'Your browser could not start the 3D canvas. Try a browser with WebGL 2 enabled.';
+		let fallingBack = false;
+		let pendingContext: WebGL2RenderingContext | null = null;
+		const releasePendingContext = () => {
+			pendingContext?.getExtension('WEBGL_lose_context')?.loseContext();
+			pendingContext = null;
+		};
+		const callbacks: SplatCallbacks = {
+			onStats: (value) => {
+				if (!disposed) stats = value;
+			},
+			onReady: () => {
+				if (!disposed) {
+					ready = true;
+					error = '';
+				}
+			},
+			onError: () => {
+				void useCanvasRenderer();
+			}
+		};
+		async function useCanvasRenderer() {
+			if (disposed || fallingBack) return;
+			fallingBack = true;
+			ready = false;
+			// A canvas cannot change context types. Replace it after releasing the GPU.
+			// Yield first so callbacks during a renderer constructor can finish assigning it.
+			await tick();
+			if (disposed) return;
+			renderer?.dispose();
+			renderer = undefined;
+			releasePendingContext();
+			renderMode = 'canvas2d';
+			canvasVersion++;
+			await tick();
+			if (disposed) return;
+			try {
+				const { CanvasSplatRenderer } =
+					await import('$lib/visualizations/splat-studio/canvas-renderer');
+				if (disposed) return;
+				renderer = new CanvasSplatRenderer(canvas, $state.snapshot(settings), {
+					...callbacks,
+					onError: () => {
+						if (!disposed) {
+							ready = false;
+							error =
+								'The drawing canvas is unavailable in this browser. Reload the studio to try again.';
+						}
 					}
-				})
-				.catch(() => {
-					if (!disposed) error = 'The studio could not load. Reload the page to try again.';
 				});
+				renderer.setPlaying(playing);
+			} catch {
+				if (!disposed)
+					error = 'The drawing canvas could not start. Reload the studio to try again.';
+			}
 		}
+		async function startRenderer() {
+			if (new URLSearchParams(window.location.search).get('webgl') === 'off') {
+				await useCanvasRenderer();
+				return;
+			}
+			try {
+				// Ask the actual canvas for a context: browser identity alone says nothing
+				// about disabled acceleration, driver restrictions or exhausted GPU resources.
+				const context = (pendingContext = canvas.getContext('webgl2', {
+					alpha: false,
+					antialias: false,
+					powerPreference: 'default',
+					preserveDrawingBuffer: true
+				}));
+				if (
+					!context ||
+					(!context.getExtension('EXT_color_buffer_float') &&
+						!context.getExtension('EXT_color_buffer_half_float'))
+				) {
+					await useCanvasRenderer();
+					return;
+				}
+				const { SplatRenderer } = await import('$lib/visualizations/splat-studio/renderer');
+				if (disposed) {
+					releasePendingContext();
+					return;
+				}
+				if (context.isContextLost()) {
+					await useCanvasRenderer();
+					return;
+				}
+				renderer = new SplatRenderer(canvas, $state.snapshot(settings), callbacks, context);
+				pendingContext = null;
+				renderer.setPlaying(playing);
+			} catch {
+				await useCanvasRenderer();
+			}
+		}
+		void startRenderer();
 		return () => {
 			mounted = false;
 			disposed = true;
+			releasePendingContext();
 			renderer?.dispose();
 			renderer = undefined;
 			reduced.removeEventListener('change', onMotion);
@@ -345,6 +407,7 @@
 	class:ss-immersive={!controlsVisible}
 	class:ss-mobile-open={mobileControls}
 	data-state={error ? 'error' : ready ? 'ready' : 'rendering'}
+	data-renderer={renderMode}
 	data-preset={settings.preset}
 	data-style={settings.style}
 	style={`--ss-accent: ${current.accent}`}
@@ -381,12 +444,14 @@
 			class:ss-bg-plum={settings.background === 'plum'}
 			class:ss-bg-ink={settings.background === 'ink'}
 		>
-			<canvas
-				bind:this={canvas}
-				aria-describedby="ss-keyboard-hint"
-				aria-label="Interactive 3D splat sculpture"
-				tabindex="0"
-			></canvas>
+			{#key canvasVersion}
+				<canvas
+					bind:this={canvas}
+					aria-describedby="ss-keyboard-hint"
+					aria-label="Interactive 3D splat sculpture"
+					tabindex="0"
+				></canvas>
+			{/key}
 			<span id="ss-keyboard-hint" class="ss-sr-only"
 				>Drag or use arrow keys to orbit. Scroll, pinch or use plus and minus to zoom. Home resets
 				the camera.</span
@@ -413,9 +478,7 @@
 					<p>{error || 'Your sculpture is taking shape.'}</p>
 					{#if error}<button class="ss-button" onclick={() => window.location.reload()}
 							>Reload studio</button
-						>{/if}<noscript
-						>Enable JavaScript and WebGL 2 to explore the interactive studio.</noscript
-					>
+						>{/if}<noscript>Enable JavaScript to explore the interactive studio.</noscript>
 				</div>
 			{/if}
 			<div class="ss-view-tools">
@@ -473,10 +536,12 @@
 					onclick={() => (diagnostics = !diagnostics)}
 					aria-expanded={diagnostics}
 					class="ss-diagnostics-toggle"
-					><i></i>{ready ? `${(stats.count / 1000).toFixed(1)}K SPLATS` : 'WEBGL 2'}<span
+					><i></i>{ready ? `${(stats.count / 1000).toFixed(1)}K SPLATS` : 'STARTING'}<span
 						>{diagnostics
 							? `${stats.fps.toFixed(0)} FPS · ${stats.quality.toUpperCase()}`
-							: 'RENDERED LIVE'}</span
+							: renderMode === 'canvas2d'
+								? 'COMPATIBILITY MODE'
+								: 'RENDERED LIVE'}</span
 					></button
 				><span>EVERY POINT, A POSSIBILITY.</span>
 			</div>

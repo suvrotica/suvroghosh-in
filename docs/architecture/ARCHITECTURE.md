@@ -797,7 +797,7 @@ client-mounted enhancement. The root layout selects its existing minimal studio
 shell, with no site header or footer around the canvas. The route supplies the
 shared SEO component and captured artwork for social previews. It does not create
 an article or introduce another content registry. Its UI lives under
-`components/visualizations/splat-studio`, and its pure model and Three.js renderer
+`components/visualizations/splat-studio`, and its pure model, Three.js renderer and Canvas 2D compatibility renderer
 live under `visualizations/splat-studio`.
 
 The component owns one settings object, transport and renderer instance per
@@ -816,8 +816,17 @@ implement reconstructed radiance-field visibility. Geometry updates are separate
 from shader animation and colour changes. Its instance owns frames,
 resize/visibility observers, camera listeners and GPU resources, and releases
 them on teardown. Reduced motion starts from a still composition; paused controls
-can request a fresh render. Graphics initialization or context failures surface
-through the component fallback rather than removing the readable page. These are
+can request a fresh render. The component checks WebGL 2 on its actual canvas using
+browser-default GPU selection and checks HDR framebuffer support. Initialization,
+shader or context failures switch once to a fresh canvas and lazy-loaded `canvas-renderer.ts`. This CPU-projected
+Canvas 2D renderer reuses the seeded 3D geometry and settings, with bounded lower
+particle counts and sprite-based glow instead of GPU bloom. It keeps the six
+forms/styles, colour controls, orbit/zoom, transport, sharing and PNG export
+interactive without WebGL. Each backend owns and releases its listeners,
+observers and animation frames; switching preserves settings and transport but
+resets the manually orbited camera and animation frame. A readable error remains
+only if Canvas 2D also cannot start. `?webgl=off` selects compatibility mode for
+reproducible checks; capability detection never branches on user-agent strings. These are
 procedural Gaussian, surfel and artistic marks, not trained scene reconstruction.
 
 The visualization landing page discovers the tool through a dimensioned static
@@ -845,7 +854,12 @@ flowchart LR
     UI --> Renderer
     Visibility["Motion / resize / visibility lifecycle"] --> Renderer
     Renderer --> Canvas["3D canvas and local PNG export"]
-    Renderer --> Fallback["Readable graphics failure and retry"]
+    Renderer -->|GPU unavailable or lost| Compatibility["Fresh canvas / CPU-projected splats"]
+    Geometry --> Compatibility
+    UI --> Compatibility
+    Visibility --> Compatibility
+    Compatibility --> Canvas
+    Compatibility -->|Canvas unavailable| Fallback["Readable failure and retry"]
 ```
 
 ### Living Systems: four browser-local mathematical worlds

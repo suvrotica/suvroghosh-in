@@ -7,6 +7,15 @@ import { usePausedMediaPreference } from '../helpers/privacy-choice';
 const route = '/tools/splat-studio';
 const studio = (page: Page) => page.locator('#splat-studio');
 const canvas = (page: Page) => page.locator('canvas[aria-label="Interactive 3D splat sculpture"]');
+const presets = [
+	['aurora-knot', 'Aurora Knot'],
+	['chromatic-nebula', 'Chromatic Nebula'],
+	['liquid-bloom', 'Liquid Bloom'],
+	['magnetic-storm', 'Magnetic Storm'],
+	['prism-reef', 'Prism Reef'],
+	['impossible-torus', 'Impossible Torus']
+] as const;
+const styles = ['gaussian', 'anisotropic', 'surfel', 'ink', 'spark', 'hybrid'];
 
 test.beforeEach(async ({ context, page, baseURL }) => {
 	await usePausedMediaPreference(context);
@@ -38,8 +47,14 @@ async function fingerprint(target: Locator) {
 }
 
 async function hasArtwork(target: Locator) {
-	const { channels } = await sharp(await canvasPNG(target)).stats();
-	expect(channels.slice(0, 3).reduce((sum, channel) => sum + channel.stdev, 0)).toBeGreaterThan(12);
+	// Canvas replacement and a ResizeObserver delivery can fall between two frames.
+	// Require actual painted pixels, while allowing the next scheduled redraw to finish.
+	await expect
+		.poll(async () => {
+			const { channels } = await sharp(await canvasPNG(target)).stats();
+			return channels.slice(0, 3).reduce((sum, channel) => sum + channel.stdev, 0);
+		})
+		.toBeGreaterThan(12);
 }
 
 async function bytes(download: Download) {
@@ -48,6 +63,33 @@ async function bytes(download: Download) {
 	const chunks: Buffer[] = [];
 	for await (const chunk of stream) chunks.push(Buffer.from(chunk));
 	return Buffer.concat(chunks);
+}
+
+async function denyClipboard(page: Page) {
+	// Clipboard permissions differ by engine. Exercise the visitor-facing copy field
+	// used when browser permission, an embedded view or OS policy denies clipboard access.
+	await page.addInitScript(() => {
+		Object.defineProperty(navigator, 'clipboard', {
+			configurable: true,
+			value: { writeText: () => Promise.reject(new DOMException('Blocked', 'NotAllowedError')) }
+		});
+	});
+}
+
+async function exportArtwork(page: Page) {
+	const downloadPromise = page.waitForEvent('download');
+	await page.getByRole('button', { name: 'Export PNG', exact: true }).click();
+	const download = await downloadPromise;
+	expect(download.suggestedFilename()).toMatch(/\.png$/u);
+	const png = await bytes(download);
+	const metadata = await sharp(png).metadata();
+	expect(metadata.format).toBe('png');
+	expect(metadata.width).toBeGreaterThan(300);
+	expect(metadata.height).toBeGreaterThan(300);
+	const stats = await sharp(png).stats();
+	expect(
+		stats.channels.slice(0, 3).reduce((sum, channel) => sum + channel.stdev, 0)
+	).toBeGreaterThan(12);
 }
 
 test('six presets and six splat styles produce visible, distinct sculptures without runtime errors', async ({
@@ -68,14 +110,7 @@ test('six presets and six splat styles produce visible, distinct sculptures with
 	await mkdir('artifacts/splat-studio', { recursive: true });
 	await page.screenshot({ path: 'artifacts/splat-studio/desktop.png', fullPage: true });
 	const images = new Set<string>();
-	for (const [id, name] of [
-		['aurora-knot', 'Aurora Knot'],
-		['chromatic-nebula', 'Chromatic Nebula'],
-		['liquid-bloom', 'Liquid Bloom'],
-		['magnetic-storm', 'Magnetic Storm'],
-		['prism-reef', 'Prism Reef'],
-		['impossible-torus', 'Impossible Torus']
-	]) {
+	for (const [id, name] of presets) {
 		const previousId = await studio(page).getAttribute('data-preset');
 		const previousImage = await fingerprint(canvas(page));
 		await page.getByRole('button', { name: new RegExp(name, 'u') }).click();
@@ -86,7 +121,7 @@ test('six presets and six splat styles produce visible, distinct sculptures with
 		images.add(await fingerprint(canvas(page)));
 	}
 	expect(images.size).toBe(6);
-	for (const style of ['gaussian', 'anisotropic', 'surfel', 'ink', 'spark', 'hybrid']) {
+	for (const style of styles) {
 		const previousStyle = await studio(page).getAttribute('data-style');
 		const previousImage = await fingerprint(canvas(page));
 		await page.getByLabel('Splat style', { exact: true }).selectOption(style);
@@ -98,11 +133,10 @@ test('six presets and six splat styles produce visible, distinct sculptures with
 	expect(errors).toEqual([]);
 });
 
-test('keyboard tuning updates the artwork, and a copied URL restores the scene settings', async ({
-	page,
-	context
+test('keyboard tuning and the clipboard-denied share link restore scene settings', async ({
+	page
 }) => {
-	await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+	await denyClipboard(page);
 	await ready(page);
 	const initial = await fingerprint(canvas(page));
 	const size = page.getByLabel('Splat size', { exact: true });
@@ -113,7 +147,9 @@ test('keyboard tuning updates the artwork, and a copied URL restores the scene s
 	await page.getByLabel('Seed', { exact: true }).fill('92743');
 	await page.getByLabel('Seed', { exact: true }).press('Tab');
 	await page.getByRole('button', { name: 'Copy scene link', exact: true }).click();
-	const copied = await page.evaluate(() => navigator.clipboard.readText());
+	const link = page.locator('#ss-share-link');
+	await expect(link).toBeVisible();
+	const copied = await link.inputValue();
 	expect(new URL(copied).pathname).toBe(route);
 	expect(new URL(copied).search.length).toBeGreaterThan(10);
 	await page.goto(copied);
@@ -139,19 +175,7 @@ test('advanced controls are reachable and PNG export contains the artwork', asyn
 		for (const label of controls)
 			await expect(page.getByLabel(label, { exact: true })).toBeVisible();
 	}
-	const downloadPromise = page.waitForEvent('download');
-	await page.getByRole('button', { name: 'Export PNG', exact: true }).click();
-	const download = await downloadPromise;
-	expect(download.suggestedFilename()).toMatch(/\.png$/u);
-	const png = await bytes(download);
-	const metadata = await sharp(png).metadata();
-	expect(metadata.format).toBe('png');
-	expect(metadata.width).toBeGreaterThan(300);
-	expect(metadata.height).toBeGreaterThan(300);
-	const stats = await sharp(png).stats();
-	expect(
-		stats.channels.slice(0, 3).reduce((sum, channel) => sum + channel.stdev, 0)
-	).toBeGreaterThan(12);
+	await exportArtwork(page);
 });
 
 test('transport, camera and immersive controls remain usable', async ({ page }) => {
@@ -207,18 +231,156 @@ test('mobile layout preserves the canvas and controls without horizontal overflo
 	await hasArtwork(canvas(page));
 });
 
-test('WebGL unavailability leaves a readable fallback and working controls', async ({ page }) => {
-	await page.goto(route + '?webgl=off');
-	await expect(studio(page)).toHaveAttribute('data-state', 'error');
-	await expect(page.getByRole('heading', { name: 'Splat Studio', exact: true })).toBeVisible();
-	await expect(
-		studio(page)
-			.getByText(/WebGL|graphics|3D rendering/iu)
-			.first()
-	).toBeVisible();
+test('compatibility rendering supports every form and style, tuning, share links and PNG export', async ({
+	page
+}) => {
+	await denyClipboard(page);
+	await ready(page, '?webgl=off');
+	await expect(studio(page)).toHaveAttribute('data-renderer', 'canvas2d');
+	await expect(page.getByRole('button', { name: 'Play animation', exact: true })).toBeVisible();
+	const images = new Set<string>();
+	for (const [id, name] of presets) {
+		const before = await fingerprint(canvas(page));
+		const previousId = await studio(page).getAttribute('data-preset');
+		await page.getByRole('button', { name: new RegExp(name, 'u') }).click();
+		await expect(studio(page)).toHaveAttribute('data-preset', id);
+		if (previousId !== id) await expect.poll(() => fingerprint(canvas(page))).not.toBe(before);
+		await hasArtwork(canvas(page));
+		images.add(await fingerprint(canvas(page)));
+	}
+	expect(images.size).toBe(6);
+	for (const style of styles) {
+		const before = await fingerprint(canvas(page));
+		const previousStyle = await studio(page).getAttribute('data-style');
+		await page.getByLabel('Splat style', { exact: true }).selectOption(style);
+		if (previousStyle !== style)
+			await expect.poll(() => fingerprint(canvas(page))).not.toBe(before);
+		await hasArtwork(canvas(page));
+	}
+	const before = await fingerprint(canvas(page));
+	await page.getByLabel('Splat size', { exact: true }).focus();
+	await page.getByLabel('Splat size', { exact: true }).press('End');
+	await expect.poll(() => fingerprint(canvas(page))).not.toBe(before);
+	await page.getByLabel('Seed', { exact: true }).fill('92743');
+	await page.getByLabel('Seed', { exact: true }).press('Tab');
+	await exportArtwork(page);
+	await page.getByRole('button', { name: 'Copy scene link', exact: true }).click();
+	await expect(page.locator('#ss-share-link')).toBeVisible();
+	const copied = await page.locator('#ss-share-link').inputValue();
+	await page.goto(copied);
+	await expect(studio(page)).toHaveAttribute('data-state', 'ready');
+	await expect(page.getByLabel('Seed', { exact: true })).toHaveValue('92743');
+	await expect(page.getByLabel('Splat size', { exact: true })).toHaveValue('2.5');
 });
 
-test('a paused sculpture supports mouse orbit and recovers from a lost WebGL context', async ({
+for (const failure of ['unavailable', 'throws'] as const) {
+	test(`a browser whose WebGL context ${failure === 'throws' ? 'throws' : 'is unavailable'} still renders interactive artwork`, async ({
+		page
+	}) => {
+		await page.addInitScript((failure) => {
+			const original = HTMLCanvasElement.prototype.getContext;
+			HTMLCanvasElement.prototype.getContext = function (
+				this: HTMLCanvasElement,
+				contextId: string,
+				...args: unknown[]
+			) {
+				if (['webgl', 'webgl2', 'experimental-webgl'].includes(contextId)) {
+					if (failure === 'throws')
+						throw new DOMException('Graphics disabled', 'NotSupportedError');
+					return null;
+				}
+				return original.apply(this, [contextId, ...args] as Parameters<typeof original>);
+			} as typeof original;
+		}, failure);
+		const errors: string[] = [];
+		page.on('pageerror', (error) => errors.push(error.message));
+		await ready(page);
+		await expect(studio(page)).toHaveAttribute('data-renderer', 'canvas2d');
+		await hasArtwork(canvas(page));
+		const before = await fingerprint(canvas(page));
+		await canvas(page).focus();
+		await canvas(page).press('ArrowRight');
+		await expect.poll(() => fingerprint(canvas(page))).not.toBe(before);
+		await page.getByRole('button', { name: 'Play animation', exact: true }).click();
+		const moving = await fingerprint(canvas(page));
+		await expect.poll(() => fingerprint(canvas(page))).not.toBe(moving);
+		await page.getByRole('button', { name: 'Pause animation', exact: true }).click();
+		await page.evaluate(
+			() =>
+				new Promise<void>((resolve) =>
+					requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
+				)
+		);
+		const paused = await fingerprint(canvas(page));
+		await page.waitForTimeout(300);
+		expect(await fingerprint(canvas(page))).toBe(paused);
+		expect(errors).toEqual([]);
+	});
+}
+
+test('WebGL without renderable HDR attachments falls back to visible artwork', async ({ page }) => {
+	await page.addInitScript(() => {
+		if (typeof WebGL2RenderingContext === 'undefined') return;
+		const original = WebGL2RenderingContext.prototype.getExtension;
+		WebGL2RenderingContext.prototype.getExtension = function (name: string) {
+			if (['EXT_color_buffer_float', 'EXT_color_buffer_half_float'].includes(name)) return null;
+			return original.call(this, name);
+		};
+	});
+	await ready(page);
+	await expect(studio(page)).toHaveAttribute('data-renderer', 'canvas2d');
+	await hasArtwork(canvas(page));
+	await page.getByRole('button', { name: 'Liquid Bloom', exact: true }).click();
+	await expect(studio(page)).toHaveAttribute('data-preset', 'liquid-bloom');
+	await hasArtwork(canvas(page));
+});
+
+test('a failed GPU module download releases its pending context and starts Canvas2D', async ({
+	page
+}) => {
+	await page.addInitScript(() => {
+		const contexts: WebGL2RenderingContext[] = [];
+		Object.defineProperty(window, '__splatTestContexts', { value: contexts });
+		const original = HTMLCanvasElement.prototype.getContext;
+		HTMLCanvasElement.prototype.getContext = function (
+			this: HTMLCanvasElement,
+			contextId: string,
+			...args: unknown[]
+		) {
+			const context = original.apply(this, [contextId, ...args] as Parameters<typeof original>);
+			if (contextId === 'webgl2' && context) contexts.push(context as WebGL2RenderingContext);
+			return context;
+		} as typeof original;
+	});
+	let blocked = 0;
+	await page.route('**/*.js', async (request) => {
+		const response = await request.fetch();
+		const source = await response.text();
+		// Select only this GPU renderer's chunk, including content-hashed production builds.
+		// The Canvas2D module and the studio shell must remain available.
+		if (source.includes('Your browser could not compile the 3D artwork shaders.')) {
+			blocked++;
+			await request.abort('failed');
+		} else await request.fulfill({ response });
+	});
+	await ready(page);
+	test.skip(blocked === 0, 'This browser already chose Canvas2D before requesting the GPU module.');
+	await expect(studio(page)).toHaveAttribute('data-renderer', 'canvas2d');
+	await hasArtwork(canvas(page));
+	await expect
+		.poll(() =>
+			page.evaluate(() => {
+				const contexts = (
+					window as typeof window & { __splatTestContexts: WebGL2RenderingContext[] }
+				).__splatTestContexts;
+				return contexts.length > 0 && contexts.every((context) => context.isContextLost());
+			})
+		)
+		.toBe(true);
+	await exportArtwork(page);
+});
+
+test('a paused sculpture supports mouse orbit and retains its settings after WebGL context loss', async ({
 	page
 }) => {
 	const errors: string[] = [];
@@ -235,6 +397,9 @@ test('a paused sculpture supports mouse orbit and recovers from a lost WebGL con
 	});
 	await page.mouse.up();
 	await expect.poll(() => fingerprint(canvas(page))).not.toBe(original);
+	await page.getByLabel('Seed', { exact: true }).fill('28571');
+	await page.getByLabel('Seed', { exact: true }).press('Tab');
+	await page.getByLabel('Splat style', { exact: true }).selectOption('ink');
 
 	const extension = await canvas(page).evaluateHandle((element) =>
 		(element as HTMLCanvasElement).getContext('webgl2')?.getExtension('WEBGL_lose_context')
@@ -245,11 +410,12 @@ test('a paused sculpture supports mouse orbit and recovers from a lost WebGL con
 	);
 	try {
 		await extension.evaluate((value) => value?.loseContext());
-		await expect(studio(page)).toHaveAttribute('data-state', 'error');
-		await extension.evaluate((value) => value?.restoreContext());
+		await expect(studio(page)).toHaveAttribute('data-renderer', 'canvas2d');
 		await expect(studio(page)).toHaveAttribute('data-state', 'ready', { timeout: 30_000 });
 		await hasArtwork(canvas(page));
 		await expect(page.getByRole('button', { name: 'Play animation', exact: true })).toBeVisible();
+		await expect(page.getByLabel('Seed', { exact: true })).toHaveValue('28571');
+		await expect(page.getByLabel('Splat style', { exact: true })).toHaveValue('ink');
 		expect(errors).toEqual([]);
 	} finally {
 		await extension.dispose();

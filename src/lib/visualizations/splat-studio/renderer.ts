@@ -80,7 +80,8 @@ export class SplatRenderer {
 	constructor(
 		private readonly canvas: HTMLCanvasElement,
 		settings: SplatSettings,
-		private readonly callbacks: SplatCallbacks = {}
+		private readonly callbacks: SplatCallbacks = {},
+		context?: WebGL2RenderingContext
 	) {
 		if (new URLSearchParams(window.location.search).get('webgl') === 'off') {
 			throw new Error('WebGL is disabled in this URL. Remove webgl=off to open the live studio.');
@@ -89,62 +90,68 @@ export class SplatRenderer {
 		this.tier = this.initialTier(settings.quality);
 		this._playing =
 			!this.motionQuery.matches && document.documentElement.dataset.motion !== 'still';
-		this.renderer = new THREE.WebGLRenderer({
-			canvas,
-			antialias: false,
-			alpha: false,
-			powerPreference: 'high-performance',
-			preserveDrawingBuffer: true
-		});
-		this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, QUALITY[this.tier].dpr));
-		this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-		this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-		this.renderer.toneMappingExposure = settings.exposure;
-		this.renderer.debug.onShaderError = () => {
-			throw new Error(
-				'Your browser could not compile the 3D artwork shaders. Try reloading with graphics acceleration enabled.'
-			);
-		};
-		this.camera.position.set(0, 0.25, settings.distance);
-		this.controls = new OrbitControls(this.camera, canvas);
-		this.controls.enableDamping = true;
-		this.controls.dampingFactor = 0.07;
-		this.controls.enablePan = false;
-		this.controls.minDistance = 3.5;
-		this.controls.maxDistance = 14;
-		this.controls.rotateSpeed = 0.55;
-		this.controls.zoomSpeed = 0.7;
-		this.controls.addEventListener('change', this.onControlsChange);
-		this.controls.addEventListener('start', this.onControlsStart);
-		this.controls.addEventListener('end', this.onControlsEnd);
-		this.material = this.createMaterial();
-		this.mesh = new THREE.Mesh(new THREE.InstancedBufferGeometry(), this.material);
-		this.mesh.frustumCulled = false;
-		this.scene.add(this.mesh);
-		this.composer = new EffectComposer(this.renderer);
-		this.composer.addPass(new RenderPass(this.scene, this.camera));
-		this.bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), settings.bloom * 0.55, 0.5, 0.22);
-		this.composer.addPass(this.bloom);
-		this.output = new OutputPass();
-		this.composer.addPass(this.output);
-		this.rebuildGeometry(false);
-		this.updateUniforms();
-		this.resizeObserver = new ResizeObserver(this.resize);
-		this.resizeObserver.observe(canvas);
-		this.intersectionObserver = new IntersectionObserver((entries) => {
-			this.intersecting = entries[0]?.isIntersecting ?? true;
-			if (this.intersecting) this.requestFrame();
-			else this.stopFrame();
-		});
-		this.intersectionObserver.observe(canvas);
-		document.addEventListener('visibilitychange', this.onVisibility);
-		canvas.addEventListener('pointermove', this.onPointerMove);
-		canvas.addEventListener('pointerleave', this.onPointerLeave);
-		canvas.addEventListener('keydown', this.onKeyDown);
-		canvas.addEventListener('webglcontextlost', this.onContextLost);
-		canvas.addEventListener('webglcontextrestored', this.onContextRestored);
-		this.motionQuery.addEventListener('change', this.onMotionChange);
-		this.resize();
+		try {
+			this.renderer = new THREE.WebGLRenderer({
+				context,
+				canvas,
+				antialias: false,
+				alpha: false,
+				powerPreference: 'default',
+				preserveDrawingBuffer: true
+			});
+			this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, QUALITY[this.tier].dpr));
+			this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+			this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+			this.renderer.toneMappingExposure = settings.exposure;
+			this.renderer.debug.onShaderError = () => {
+				throw new Error(
+					'Your browser could not compile the 3D artwork shaders. Try reloading with graphics acceleration enabled.'
+				);
+			};
+			this.camera.position.set(0, 0.25, settings.distance);
+			this.controls = new OrbitControls(this.camera, canvas);
+			this.controls.enableDamping = true;
+			this.controls.dampingFactor = 0.07;
+			this.controls.enablePan = false;
+			this.controls.minDistance = 3.5;
+			this.controls.maxDistance = 14;
+			this.controls.rotateSpeed = 0.55;
+			this.controls.zoomSpeed = 0.7;
+			this.controls.addEventListener('change', this.onControlsChange);
+			this.controls.addEventListener('start', this.onControlsStart);
+			this.controls.addEventListener('end', this.onControlsEnd);
+			this.material = this.createMaterial();
+			this.mesh = new THREE.Mesh(new THREE.InstancedBufferGeometry(), this.material);
+			this.mesh.frustumCulled = false;
+			this.scene.add(this.mesh);
+			this.composer = new EffectComposer(this.renderer);
+			this.composer.addPass(new RenderPass(this.scene, this.camera));
+			this.bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), settings.bloom * 0.55, 0.5, 0.22);
+			this.composer.addPass(this.bloom);
+			this.output = new OutputPass();
+			this.composer.addPass(this.output);
+			this.rebuildGeometry(false);
+			this.updateUniforms();
+			this.resizeObserver = new ResizeObserver(this.resize);
+			this.resizeObserver.observe(canvas);
+			this.intersectionObserver = new IntersectionObserver((entries) => {
+				this.intersecting = entries[0]?.isIntersecting ?? true;
+				if (this.intersecting) this.requestFrame();
+				else this.stopFrame();
+			});
+			this.intersectionObserver.observe(canvas);
+			document.addEventListener('visibilitychange', this.onVisibility);
+			canvas.addEventListener('pointermove', this.onPointerMove);
+			canvas.addEventListener('pointerleave', this.onPointerLeave);
+			canvas.addEventListener('keydown', this.onKeyDown);
+			canvas.addEventListener('webglcontextlost', this.onContextLost);
+			canvas.addEventListener('webglcontextrestored', this.onContextRestored);
+			this.motionQuery.addEventListener('change', this.onMotionChange);
+			this.resize();
+		} catch (error) {
+			this.dispose();
+			throw error;
+		}
 	}
 
 	get playing() {
@@ -530,8 +537,8 @@ export class SplatRenderer {
 		this.disposed = true;
 		this.stopFrame();
 		clearTimeout(this.rebuildTimer);
-		this.resizeObserver.disconnect();
-		this.intersectionObserver.disconnect();
+		this.resizeObserver?.disconnect();
+		this.intersectionObserver?.disconnect();
 		document.removeEventListener('visibilitychange', this.onVisibility);
 		this.canvas.removeEventListener('pointermove', this.onPointerMove);
 		this.canvas.removeEventListener('pointerleave', this.onPointerLeave);
@@ -539,16 +546,17 @@ export class SplatRenderer {
 		this.canvas.removeEventListener('webglcontextlost', this.onContextLost);
 		this.canvas.removeEventListener('webglcontextrestored', this.onContextRestored);
 		this.motionQuery.removeEventListener('change', this.onMotionChange);
-		this.controls.removeEventListener('change', this.onControlsChange);
-		this.controls.removeEventListener('start', this.onControlsStart);
-		this.controls.removeEventListener('end', this.onControlsEnd);
-		this.controls.dispose();
-		this.mesh.geometry.dispose();
-		this.material.dispose();
-		this.bloom.dispose();
-		this.output.dispose();
-		this.composer.dispose();
+		this.controls?.removeEventListener('change', this.onControlsChange);
+		this.controls?.removeEventListener('start', this.onControlsStart);
+		this.controls?.removeEventListener('end', this.onControlsEnd);
+		this.controls?.dispose();
+		this.mesh?.geometry.dispose();
+		this.material?.dispose();
+		this.bloom?.dispose();
+		this.output?.dispose();
+		this.composer?.dispose();
 		this.scene.clear();
-		this.renderer.dispose();
+		this.renderer?.dispose();
+		this.renderer?.forceContextLoss();
 	}
 }

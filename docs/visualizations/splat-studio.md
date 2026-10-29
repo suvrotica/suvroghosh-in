@@ -75,13 +75,20 @@ does not need a server account or save a private project.
   normalization, the URL codec, curated randomization and seeded geometry.
 - `src/lib/visualizations/splat-studio/renderer.ts` owns the Three.js scene,
   shaders, controls, frame scheduling, observers and GPU resource disposal.
+- `src/lib/visualizations/splat-studio/canvas-renderer.ts` owns the bounded CPU
+  projection, cached mark sprites and compatibility-mode input/lifecycle resources.
 - `src/routes/tools/splat-studio/+page.svelte` provides the route and SEO metadata.
 
 Geometry generation runs when shape inputs change. The GPU applies per-frame
 motion and material controls. Quality settings bound the splat count and display
 resolution. Rendering respects reduced motion and pauses when the document or
-canvas is not visible. Rendering failures leave a readable fallback and a way to
-retry initialization.
+canvas is not visible. WebGL initialization, shader or context failures switch to
+an interactive Canvas 2D compatibility renderer on a fresh canvas. This uses the
+same seeded 3D forms with fewer splats and approximate glow, retaining the six
+styles, all settings, orbit/zoom, transport, scene links and PNG export. The
+current settings and pause state survive the switch; animation time and camera
+orbit restart. A readable error is shown only if Canvas 2D is also unavailable.
+`?webgl=off` explicitly selects this mode. No browser settings need to be changed.
 
 No application endpoint, provider, secret, database or cross-feature state store
 is added. The renderer is loaded on the client and destroyed when the component
@@ -106,12 +113,17 @@ Run the focused browser suite against a loopback production preview:
 npx playwright test --config playwright.splat-studio.config.ts
 ```
 
+The default suite runs Chromium, Firefox and WebKit. To also test installed
+Chrome and Edge, set `SPLAT_STUDIO_BROWSERS=chromium,chrome,edge,firefox,webkit`.
 The suite blocks service workers and covers all presets and styles, rendered
-canvas content, keyboard tuning, link restoration, PNG download, transport,
-immersive controls, mobile overflow and the `?webgl=off` fallback. It writes
+canvas content, keyboard tuning, clipboard-denial link restoration, PNG download,
+transport, immersive controls and mobile overflow. Compatibility tests exercise
+`?webgl=off`, failed/thrown WebGL creation, missing HDR buffer support and failed
+GPU module loading. GPU context loss must switch to working Canvas 2D artwork
+with settings and transport preserved. It writes
 desktop and mobile captures to `artifacts/splat-studio/`.
 An additional regression drags the paused canvas with the mouse and exercises
-actual context loss and recovery through `WEBGL_lose_context`, when that optional
+actual context loss and compatibility fallback through `WEBGL_lose_context`, when that optional
 browser testing extension is available.
 
 If the production preview is already running, set `PLAYWRIGHT_REUSE_SERVER=1`.
@@ -140,3 +152,32 @@ layout and zero CSP or runtime errors. Tests reuse the site's remembered-media
 fixture. On loopback previews only, they provide the Vercel-hosted analytics
 script endpoint that Vite does not serve; live-host verification uses the real
 platform endpoint without a stub.
+
+
+## Browser compatibility repair — 30 October 2026
+
+The reported Edge failure was reproduced in the owner's existing browser profile:
+WebGL creation failed and the previous implementation displayed an error. The
+same profile renders animated artwork with the compatibility renderer, and
+preset switching and pause controls were verified without changing browser settings.
+
+The repair uses actual context/HDR capability checks, releases failed or abandoned
+GPU contexts, and replaces the canvas before selecting Canvas 2D. Its 3D CPU
+projection draws at most 3,500 splats and caps animation at 30 fps. Glow and
+morphing differ from the GPU implementation; settings, forms, styles, interaction,
+sharing and artwork export remain available. This targets current JavaScript-enabled
+browsers, not every historical browser or device configuration.
+
+The full `npm run build:full`, all 14 model tests, repository-wide type checking
+and the final focused type check passed (zero errors/warnings). Scoped ESLint
+still reports nine existing UI-rule errors; linting the committed pre-change
+component reproduces the exact same nine. New renderer and test files lint clean.
+Architecture impact: yes. The canonical Splat Studio section and diagram were
+reviewed and updated for the rendering/backend selection boundary. No API,
+provider, security policy or persistence boundary changed; no new foundational
+ADR was needed.
+
+The final complete-site production preview passed all 55 browser checks in 2.4
+minutes: 11 each in installed Edge, installed Chrome, Chromium, Firefox and
+Playwright WebKit. WebKit coverage verifies that engine; it is not a test on a
+physical iPhone or a macOS Safari installation. Service workers were blocked.
