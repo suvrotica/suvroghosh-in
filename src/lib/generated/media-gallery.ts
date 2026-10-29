@@ -160,6 +160,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "art-the-great-indian-it-crematorium.jpg",
+			"src": "/images/art-the-great-indian-it-crematorium.jpg",
+			"bytes": 338183,
+			"width": 1536,
+			"height": 864
+		},
+		{
 			"name": "art-the-machines-insides.jpg",
 			"src": "/images/art-the-machines-insides.jpg",
 			"bytes": 274012,

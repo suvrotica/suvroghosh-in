@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T18:30:42.135539+00:00",
+  "generatedAt": "2026-10-29T23:50:13.247844+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12602,6 +12602,29 @@
         "Fence",
         "National",
         "Middle"
+      ],
+      "wordCount": 130
+    },
+    "the-great-indian-it-crematorium": {
+      "generatedAt": "2026-10-29T23:50:13.058900+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-great-indian-it-crematorium.svg",
+      "source": "src/lib/posts/the-great-indian-it-crematorium.md",
+      "sourceHash": "dcd56d713a95083da27fa8adb9aa40c9047f422ab22f19b347fa46e5b480894b",
+      "sourceModified": "2026-10-29T23:49:32.091893+00:00",
+      "topWords": [
+        "Next",
+        "Somebody",
+        "Need",
+        "Pay",
+        "Perhaps",
+        "Already",
+        "Years",
+        "Useful",
+        "Salary",
+        "Learn",
+        "Now",
+        "Hope"
       ],
       "wordCount": 130
     },

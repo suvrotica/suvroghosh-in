@@ -8336,6 +8336,22 @@
       "sourceHash": "e0c7765e676c5434f0eb12ac5f675098e2a7dc23df6ed242d628c9b1f2157634",
       "width": 1376
     },
+    "static/images/art-the-great-indian-it-crematorium.jpg": {
+      "format": "JPEG",
+      "height": 864,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 864,
+      "originalWidth": 1536,
+      "outputBytes": 338183,
+      "outputHash": "2517c729a7a219b7242b61a619c2e5da7b898736ff5d785bdf65953dfdc3e699",
+      "psnrDb": 37.17,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 419827,
+      "sourceHash": "2639d74744b6b02621cd14db30509e9f627f8261545d7a63fe42cef7384a4953",
+      "width": 1536
+    },
     "static/images/art-the-machines-insides.jpg": {
       "format": "JPEG",
       "height": 940,

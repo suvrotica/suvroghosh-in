@@ -16191,6 +16191,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-30"
+		},
+		"src/lib/posts/the-great-indian-it-crematorium.md": {
+			"bodyHash": "2d273e45838afa430c7f70b9ca49952c0b0a562cf661f88cd5ed8852cdc3bb56",
+			"hashVersion": 2,
+			"revisionHash": "b644d3b3196b2369d85f074d06cdbc8abb6e9b497cef62f3ea1f3c3bc375ce4f",
+			"generatedTags": [
+				"India",
+				"IT Industry",
+				"Artificial Intelligence",
+				"Automation",
+				"Middle Class",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Employment"
+			],
+			"pinnedTags": [
+				"India",
+				"IT Industry",
+				"Artificial Intelligence",
+				"Automation",
+				"Middle Class",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Employment"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
