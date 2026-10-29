@@ -1,5 +1,6 @@
 import { BodyReadError, readBoundedBody, withDeadline } from '$lib/server/http/body';
 import { createLocalAdmission } from '$lib/server/http/local-admission';
+import { analysisDiagnostic } from './diagnostics';
 import {
 	configurationReason,
 	semanticHeaders,
@@ -180,10 +181,14 @@ export function createStudioHandlers(
 					let project;
 					try {
 						project = normalizeAnalysis(generated, prepared);
-					} catch {
-						throw new SemanticFailure(
-							'invalid_analysis',
-							'The model returned an incomplete or invalid source-grounded map. Your current map is unchanged; retry with a narrower source or focus.',
+					} catch (cause) {
+						return response(
+							{
+								error:
+									'The model returned an incomplete or invalid source-grounded map. Your current map is unchanged; retry with a narrower source or focus.',
+								code: 'invalid_analysis',
+								diagnostic: analysisDiagnostic(cause)
+							},
 							502
 						);
 					}

@@ -1,8 +1,13 @@
 import { z } from 'zod';
-import { sourceSchema, validateProject } from '$lib/visualizations/mindmap-studio/model';
+import {
+	projectSchema,
+	sourceSchema,
+	validateProject
+} from '$lib/visualizations/mindmap-studio/model';
 import { segmentSource } from '$lib/visualizations/mindmap-studio/ingestion';
 import type { StudioProject, StudioSource } from '$lib/visualizations/mindmap-studio/types';
 import { SEMANTIC_MODEL } from '$lib/server/prompt-atlas/config';
+import { AnalysisValidationFailure, canonicalDiagnostic, schemaDiagnostic } from './diagnostics';
 
 export const MAX_REQUEST_BYTES = 2 * 1024 * 1024;
 export const MAX_SOURCE_CHARACTERS = 200_000;
@@ -235,15 +240,20 @@ export function prepareAnalysis(input: StudioAnalysisInput): PreparedAnalysis {
 
 /** Provider IDs select trusted original passages; the provider never supplies source text or offsets. */
 export function normalizeAnalysis(value: unknown, prepared: PreparedAnalysis): StudioProject {
-	const wire = wireSchema.parse(value);
+	const parsed = wireSchema.safeParse(value);
+	if (!parsed.success)
+		throw new AnalysisValidationFailure(schemaDiagnostic('wire-schema', parsed.error.issues[0]));
+	const wire = parsed.data;
 	const byId = new Map(prepared.units.map((unit) => [unit.id, unit]));
 	const evidence = (ids: string[]) =>
 		[...new Set(ids)].map((id) => {
 			const unit = byId.get(id);
-			if (!unit) throw new Error('Unknown source unit.');
+			if (!unit) throw new AnalysisValidationFailure({ stage: 'evidence', reason: 'unknown_unit' });
 			const source = prepared.input.sources.find((item) => item.id === unit.sourceId)!;
+			if (!source)
+				throw new AnalysisValidationFailure({ stage: 'evidence', reason: 'missing_source' });
 			if (source.text.slice(unit.start, unit.end) !== unit.text)
-				throw new Error('Source evidence changed.');
+				throw new AnalysisValidationFailure({ stage: 'evidence', reason: 'source_changed' });
 			return {
 				sourceId: unit.sourceId,
 				start: unit.start,
@@ -253,7 +263,7 @@ export function normalizeAnalysis(value: unknown, prepared: PreparedAnalysis): S
 			};
 		});
 	const now = new Date().toISOString();
-	return validateProject({
+	const project = {
 		schemaVersion: 1,
 		id: crypto.randomUUID(),
 		title: wire.title,
@@ -276,5 +286,15 @@ export function normalizeAnalysis(value: unknown, prepared: PreparedAnalysis): S
 		},
 		generation: { mode: 'ai', model: SEMANTIC_MODEL },
 		theme: 'paper'
-	});
+	};
+	const canonical = projectSchema.safeParse(project);
+	if (!canonical.success)
+		throw new AnalysisValidationFailure(
+			schemaDiagnostic('canonical-schema', canonical.error.issues[0])
+		);
+	try {
+		return validateProject(canonical.data);
+	} catch (cause) {
+		throw new AnalysisValidationFailure(canonicalDiagnostic(cause));
+	}
 }

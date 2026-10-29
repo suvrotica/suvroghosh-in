@@ -194,6 +194,38 @@ describe('mind-map free analysis endpoint', () => {
 		expect(body).not.toContain('private provider response');
 		expect(body).not.toContain('Trees');
 		expect(JSON.parse(body).project).toBeUndefined();
+		expect(JSON.parse(body).diagnostic).toMatchObject({ stage: 'wire-schema' });
+	});
+	it('reports a safe topology diagnostic without returning provider labels, values or source IDs', async () => {
+		const handlers = setup();
+		handlers.generate.mockImplementation(async (prepared) => {
+			const value = wire(prepared);
+			value.rootId = 'private-missing-root-id';
+			value.nodes[0].label = 'PRIVATE SOURCE-LINKED LABEL';
+			return value;
+		});
+		const response = await handlers.POST(event());
+		expect(response.status).toBe(502);
+		privateResponse(response);
+		const body = await response.json();
+		expect(body.code).toBe('invalid_analysis');
+		expect(body.project).toBeUndefined();
+		expect(body.diagnostic).toEqual({ stage: 'topology', reason: 'invalid_root', field: 'rootId' });
+		expect(JSON.stringify(body)).not.toMatch(/PRIVATE|private-missing-root-id|Trees offer shade/);
+	});
+	it('distinguishes an unexpected normalizer exception without exposing its message', async () => {
+		const handlers = setup();
+		handlers.generate.mockResolvedValue({
+			get title() {
+				throw new Error('PRIVATE NORMALIZER DETAIL');
+			}
+		});
+		const response = await handlers.POST(event());
+		expect(response.status).toBe(502);
+		const body = await response.json();
+		expect(body.diagnostic).toEqual({ stage: 'unexpected', reason: 'normalizer_exception' });
+		expect(JSON.stringify(body)).not.toContain('PRIVATE');
+		expect(body.project).toBeUndefined();
 	});
 	it('reports disabled/unverified availability truthfully without reserving quota', async () => {
 		const disabled = setup({ enabled: false });

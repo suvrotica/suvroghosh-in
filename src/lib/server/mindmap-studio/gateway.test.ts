@@ -148,7 +148,9 @@ describe('mind-map provider boundary', () => {
 		expect(project.sources).toEqual(prepared.input.sources);
 		const unsupported = structuredClone(fixture);
 		unsupported.nodes[0].status = 'explicit';
-		expect(() => normalizeAnalysis(unsupported, prepared)).toThrow('needs exact source evidence');
+		expect(() => normalizeAnalysis(unsupported, prepared)).toThrow(
+			'Source-grounded map validation failed.'
+		);
 	});
 	it('does not accept a truncated result as a completed map', async () => {
 		vi.mocked(generateText).mockResolvedValue({
