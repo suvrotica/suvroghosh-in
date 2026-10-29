@@ -1,12 +1,11 @@
 import { createGateway } from '@ai-sdk/gateway';
 import { generateText, Output } from 'ai';
-import { z } from 'zod';
 import { BodyReadError, readBoundedBody } from '$lib/server/http/body';
 import { createSemanticDependencies } from '$lib/server/prompt-atlas/gateway';
 import { SEMANTIC_MODEL, type SemanticConfig } from '$lib/server/prompt-atlas/config';
 import { SemanticFailure } from '$lib/server/prompt-atlas/service';
 import type { StudioDependencies } from './service';
-import { wireSchema } from './wire';
+import { WIRE_JSON_SCHEMA } from './wire';
 
 export function createStudioDependencies(
 	config: SemanticConfig,
@@ -57,9 +56,7 @@ export function createStudioDependencies(
 								json_schema: {
 									name: 'SourceGroundedMindMap',
 									strict: true,
-									schema: JSON.parse(
-										JSON.stringify(z.toJSONSchema(wireSchema, { target: 'draft-07' }))
-									)
+									schema: JSON.parse(WIRE_JSON_SCHEMA)
 								}
 							}
 						},

@@ -70,6 +70,25 @@ function output() {
 }
 
 describe('trusted mind-map source wire', () => {
+	it('supplies the complete output contract to the model, including citation and hierarchy fields', () => {
+		const prepared = prepareAnalysis(input);
+		const schema = JSON.parse(prepared.system.split('JSON SCHEMA:\n')[1]);
+		expect(schema.required).toEqual(['title', 'rootId', 'nodes', 'edges', 'analysis']);
+		expect(schema.properties.nodes.items.required).toEqual([
+			'id',
+			'parentId',
+			'label',
+			'description',
+			'category',
+			'status',
+			'unitIds',
+			'notes'
+		]);
+		expect(schema.properties.edges.items.required).toContain('rationale');
+		expect(schema.additionalProperties).toBe(false);
+		expect(prepared.system).toContain('nonempty rationale');
+		expect(prepared.system).toContain('inferred, never explicit');
+	});
 	it('keeps physical PDF page and transcript locators while excluding extraction placeholders', () => {
 		const pdf = {
 			...input.sources[0],

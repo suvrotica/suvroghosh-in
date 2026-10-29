@@ -4,7 +4,7 @@ import { generateText } from 'ai';
 import { createSemanticDependencies } from '$lib/server/prompt-atlas/gateway';
 import { SEMANTIC_MODEL, type SemanticConfig } from '$lib/server/prompt-atlas/config';
 import { createStudioDependencies } from './gateway';
-import { prepareAnalysis } from './wire';
+import { normalizeAnalysis, prepareAnalysis } from './wire';
 
 vi.mock('@ai-sdk/gateway', () => ({
 	createGateway: vi.fn(() => vi.fn((modelId: string) => ({ modelId })))
@@ -74,6 +74,81 @@ describe('mind-map provider boundary', () => {
 		expect(options).not.toHaveProperty('experimental_telemetry');
 		expect(options.providerOptions?.gateway).not.toHaveProperty('tags');
 		expect(options.providerOptions?.gateway).not.toHaveProperty('user');
+		expect(options.providerOptions).toMatchObject({
+			nvidia: {
+				response_format: {
+					json_schema: { schema: JSON.parse(prepared.system.split('JSON SCHEMA:\n')[1]) }
+				}
+			}
+		});
+	});
+	it('accepts a complete provider wire object through canonical source validation without weakening provenance', async () => {
+		const fixture = {
+			title: 'Shade and its evidence',
+			rootId: 'root',
+			nodes: [
+				{
+					id: 'root',
+					parentId: null,
+					label: 'Shade and its evidence',
+					description: 'An organising topic for the supplied observation.',
+					category: 'topic',
+					status: 'inferred',
+					unitIds: [],
+					notes: ''
+				},
+				{
+					id: 'shade',
+					parentId: 'root',
+					label: 'Trees offer shade',
+					description: 'The source explicitly states that trees offer shade.',
+					category: 'claim',
+					status: 'explicit',
+					unitIds: ['s1u1'],
+					notes: ''
+				}
+			],
+			edges: [
+				{
+					id: 'supports',
+					from: 'shade',
+					to: 'root',
+					type: 'supports',
+					status: 'inferred',
+					unitIds: ['s1u1'],
+					rationale: 'The source observation supports the organising topic.'
+				}
+			],
+			analysis: [
+				{
+					id: 'scope',
+					title: 'Scope',
+					body: 'The source supplies one observation; its mechanism is not explained.'
+				}
+			]
+		};
+		vi.mocked(generateText).mockResolvedValue({
+			output: fixture,
+			finishReason: 'stop'
+		} as unknown as Awaited<ReturnType<typeof generateText>>);
+		const result = await createStudioDependencies(config).generate(
+			prepared,
+			new AbortController().signal
+		);
+		const project = normalizeAnalysis(result, prepared);
+		expect(project.nodes[0]).toMatchObject({ status: 'inferred', evidence: [] });
+		expect(project.nodes[1]).toMatchObject({
+			status: 'explicit',
+			evidence: [{ sourceId: 'source', start: 0, end: 18, quote: 'Trees offer shade.' }]
+		});
+		expect(project.edges[0]).toMatchObject({
+			status: 'inferred',
+			rationale: 'The source observation supports the organising topic.'
+		});
+		expect(project.sources).toEqual(prepared.input.sources);
+		const unsupported = structuredClone(fixture);
+		unsupported.nodes[0].status = 'explicit';
+		expect(() => normalizeAnalysis(unsupported, prepared)).toThrow('needs exact source evidence');
 	});
 	it('does not accept a truncated result as a completed map', async () => {
 		vi.mocked(generateText).mockResolvedValue({
