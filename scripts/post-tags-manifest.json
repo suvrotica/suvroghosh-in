@@ -16070,6 +16070,37 @@
 				"Survival"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/mindmap-studio.md": {
+			"bodyHash": "7876ad8552bd35573685e70681beef792bb2dac3990917303b20ccd067872556",
+			"hashVersion": 2,
+			"revisionHash": "84203f18df70767d3e88d9242a36a471105c5264f76a7e65473b7ecc827e5264",
+			"generatedTags": [
+				"Mind Maps",
+				"Knowledge Graphs",
+				"Source Analysis",
+				"Learning",
+				"Research",
+				"Browser Tools",
+				"Data Visualization",
+				"Artificial Intelligence",
+				"Concept Mapping",
+				"Critical Thinking"
+			],
+			"pinnedTags": [
+				"Mind Maps",
+				"Knowledge Graphs",
+				"Source Analysis",
+				"Learning",
+				"Research",
+				"Browser Tools",
+				"Data Visualization",
+				"Artificial Intelligence",
+				"Concept Mapping",
+				"Critical Thinking"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-30"
 		}
 	},
 	"maxTags": 10

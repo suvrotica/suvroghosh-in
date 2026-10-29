@@ -207,6 +207,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
 | `/api/analytics/pageview`                                                                              | Compatibility intake for older consented clients, with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                           |
 | `/api/prompt-atlas`                                                                                    | GET public availability; explicit same-origin consented POST, free-route verification, atomic shared quota and bounded structured analysis; private/no-store.                                                                                                                                                      |
+| `/api/mindmap-studio` | GET free-AI availability; bounded consented source-analysis POST with trusted excerpt IDs, the existing shared free-route/quota gate and private/no-store/noindex responses. |
 | `/api/comments`                                                                                        | Published-article approved comments/replies and pending guest submission; server-only service-role RPCs, bounded input/admission and no-store responses.                                                                                                                                                           |
 | `/api/comments/moderate`                                                                               | Standalone private HTML email-action confirmation/composer; expiring single-comment moderation or one-author-reply capability, safe GET/HEAD and bounded same-origin POST; no Notes session, Svelte layout, analytics or external resources.                                                                       |
 | `/api/notes/comments`                                                                                  | Independently configured-owner-authorized queue/count/session/page-export reads and moderation/read/author-reply mutations; authenticated session RPCs, private/no-store/noindex responses.                                                                                                                        |
@@ -456,6 +457,102 @@ flowchart LR
     Ontology --> Inspector["Evidence, corrections and accessible list"]
     Inspector --> Ontology
     Ontology --> Save["Explicit save / SVG / JSON / Markdown / JSON-LD"]
+```
+
+### Mindmap Studio
+
+Mindmap Studio is an ordinary Markdown visualization at
+`/blog/visualizations/mindmap-studio`, with `collections: ['apps']` as secondary
+discovery. It adds no article-route exception. Feature-local domain code under
+`src/lib/visualizations/mindmap-studio`, UI under
+`src/lib/components/visualizations/mindmap-studio`, server code under
+`src/lib/server/mindmap-studio`, and the separate published `MindmapFigure` component
+implement the boundaries in [ADR 0021](decisions/0021-mindmap-studio-source-model.md).
+
+- **Source model**: A version-one project retains selected source text, stable node
+  IDs, a parent hierarchy, typed cross-links, notes, epistemic status, analysis and
+  coverage. Exact UTF-16 offsets and quotes link nodes/edges to sources. Imports
+  reject duplicate/dangling references, parent cycles, invalid URLs and mismatched
+  evidence. Explicit items require evidence; inferred/speculative links require a
+  rationale. Exact source correspondence does not establish truth or semantic
+  validity. Limits are eight sources/100,000 characters each/200,000 combined,
+  500 nodes, 1,500 edges and 2 MiB editable JSON.
+- **Input and local operation**: In local mode, text, Markdown and transcripts
+  remain in the browser. On-demand PDF.js and its worker extract selected physical pages from
+  files up to 10 MiB, at most 100 pages and 100,000 extracted characters, with a
+  twenty-second document-task deadline. Missing text is identified; OCR and URL or
+  video retrieval are absent. A terminable local worker returns a labelled
+  extractive outline, not inferred arguments, with 24/60/120 passage limits and
+  explicit omission counts. The default 43-node example is an original teaching
+  essay with exact internal anchors and eight illustrative inferred cross-links.
+- **Optional provider boundary**: `/api/mindmap-studio` has GET availability and
+  an explicit same-origin consented POST. It reuses the private Prompt Atlas
+  configuration, pinned free NVIDIA model, live zero-price/structured-output
+  verification and service-only `reserve_prompt_atlas_usage` RPC. It shares the
+  fifty-request UTC daily pool and five-per-client/hour identity with Prompt Atlas.
+  This public free route does not inherit UML's owner-paid route. Its own local
+  admission guard supplements the distributed quota. JSON/UTF-8 schema, streamed
+  2 MiB/eight-second body admission, sixty-second operation deadline, bounded
+  upstream reads and no retries/fallback are enforced; hooks also keep API errors
+  private/no-store/noindex. Browser deadlines are twelve seconds for availability,
+  twelve seconds for local work and sixty-five seconds for AI.
+- **Grounding and coverage**: The same-origin server receives the bounded source
+  set, prepares at most forty-eight trusted units/32,000 UTF-16 excerpt characters,
+  and sends those excerpts with metadata/focus to one provider generation. Selection
+  balances sources and prioritises focus plus distributed context. The model
+  returns source-unit IDs; the server reconstructs exact quotes, offsets and
+  locators. Unknown IDs or invalid project structure fail closed. Coverage measures
+  submitted units and names omissions; it is not exhaustive progressive research
+  or independent fact-checking. Consent names Gateway/NVIDIA transmission and
+  possible provider retention. Application code does not persist source bodies
+  server-side or log source-bearing provider/schema errors.
+- **Rendering and state**: Browser-loaded `mind-elixir@5.15.1` supplies hierarchy
+  editing through an adapter, with app-owned undo and metadata. The native SVG
+  graph uses finite seeded D3 layout and rectangular collision resolution over the
+  same IDs; view changes do not regenerate analysis. Graph drag/camera state is
+  local to its view. Edits enable debounced autosave of the current project to the
+  feature-owned `suvro-mindmap-studio` IndexedDB database; the untouched example is
+  not saved. There is no cloud synchronisation. Source bodies/notes travel in
+  editable JSON; Markdown and escaped Mermaid are derived formats. The image
+  adapter exports mind-map PNG. Portable SVG and its PNG rasterisation use the
+  native graph; raster size is capped at an 8,192-pixel edge and 24 million pixels.
+- **Publication boundary**: Public snapshot JSON removes original source bodies,
+  source URL metadata, exact evidence and private notes, while retaining source-derived labels,
+  descriptions and relationship rationales. `MindmapFigure` separately validates
+  snapshot shape/structure, renders an SSR outline/relationships, and dynamically
+  loads read-only map/graph views only on reader activation. All content is text,
+  not raw HTML. The renderer-only projection carries `readonlySnapshot: true`,
+  so editable validation rejects it; evidence is never fabricated to populate a
+  reader view. Fixed disclosure states that published status labels are the
+  author's classification and original evidence is absent. Explicit article
+  imports keep these runtimes out of unrelated articles.
+
+The [feature contract](../visualizations/mindmap-studio.md) records exact limits,
+embed syntax, package/export responsibilities and verification receipts. The
+30 October implementation checkpoint passed 23 domain/public-format tests,
+27 mocked server tests and four renderer tests. The application Svelte/TypeScript
+check reported zero errors and warnings; the reader component also compiled for SSR
+without warnings. Browser, full-build, deployment and live-provider acceptance need their
+own evidence and are not established by these checks.
+
+```mermaid
+flowchart LR
+    Source["Selected text / captions / browser PDF extraction"] --> Local["Bounded extractive worker"]
+    Source --> Consent["Explicit AI consent"]
+    Consent --> API["Same-origin bounded private-response API"]
+    API --> Gate["Pinned free-route verification + shared atomic quota"]
+    Gate --> Units["48 trusted units / 32,000 excerpt characters"]
+    Units --> Provider["Gateway / NVIDIA; one bounded generation"]
+    Provider --> Grounding["Unit IDs → exact original evidence"]
+    Local --> Model["Validated source model: hierarchy + cross-links"]
+    Grounding --> Model
+    Import["Editable JSON"] --> Model
+    Model --> Editor["Mind Elixir / SVG graph / outline / inspector"]
+    Editor --> Model
+    Model --> Device["Browser IndexedDB autosave"]
+    Model --> Files["Editable JSON / Markdown / Mermaid / images"]
+    Model --> Snapshot["Reviewed source-free public snapshot"]
+    Snapshot --> Reader["MindmapFigure: SSR outline; activate read-only views"]
 ```
 
 ### Post to UML (`post-to-uml`, `/viz/uml`, `/api/uml`)

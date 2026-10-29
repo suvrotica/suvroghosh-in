@@ -1,0 +1,473 @@
+{
+  "format": "mindmap-studio-public",
+  "schemaVersion": 1,
+  "title": "How ideas become knowledge",
+  "rootId": "root",
+  "theme": "paper",
+  "nodes": [
+    {
+      "id": "root",
+      "parentId": null,
+      "label": "How ideas become knowledge",
+      "description": "This original demonstration describes a careful reading practice: begin with a question, preserve the source, organise ideas, examine arguments, explain connections and revise interpretations.",
+      "category": "topic",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "notice",
+      "parentId": "root",
+      "label": "Begin with curiosity",
+      "description": "A useful inquiry starts with a question specific enough to investigate and open enough to change.",
+      "category": "theme",
+      "status": "explicit",
+      "collapsed": false,
+      "color": "#AD6853"
+    },
+    {
+      "id": "notice-1",
+      "parentId": "notice",
+      "label": "Ask a useful question",
+      "description": "A useful question names what is uncertain instead of disguising a preferred answer as a question.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "notice-2",
+      "parentId": "notice",
+      "label": "Name your purpose",
+      "description": "The purpose of an inquiry might be to understand, compare, explain, decide or design.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "notice-3",
+      "parentId": "notice",
+      "label": "Set the boundary",
+      "description": "A boundary names the time, place, people and material that an inquiry will cover.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "notice-4",
+      "parentId": "notice",
+      "label": "Notice surprises",
+      "description": "An observation that does not fit an expectation can become the beginning of a new question.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "notice-5",
+      "parentId": "notice",
+      "label": "Keep an open notebook",
+      "description": "A notebook can preserve initial questions so that later answers do not erase how the inquiry began.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "notice-detail",
+      "parentId": "notice-1",
+      "label": "Make uncertainty visible",
+      "description": "Writing “I do not know yet” keeps an unanswered question distinct from a confident conclusion.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "gather",
+      "parentId": "root",
+      "label": "Gather with care",
+      "description": "Gathering material includes recording where it came from, what it covers and what it leaves out.",
+      "category": "theme",
+      "status": "explicit",
+      "collapsed": false,
+      "color": "#588478"
+    },
+    {
+      "id": "gather-1",
+      "parentId": "gather",
+      "label": "Preserve the source",
+      "description": "Keep a source passage in its original form so that a later interpretation can be checked against it.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "gather-2",
+      "parentId": "gather",
+      "label": "Record the location",
+      "description": "A page, paragraph or timestamp makes a claim easier to find in the original material.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "gather-3",
+      "parentId": "gather",
+      "label": "Distinguish voices",
+      "description": "Separate what a source author says from what a quoted speaker or later reader says.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "gather-4",
+      "parentId": "gather",
+      "label": "Mark missing context",
+      "description": "An excerpt may omit qualifications that appear elsewhere, so its boundary belongs beside its analysis.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "gather-5",
+      "parentId": "gather",
+      "label": "Keep contradictions",
+      "description": "Sources that disagree should retain their separate claims and attribution until the disagreement is examined.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "gather-detail",
+      "parentId": "gather-1",
+      "label": "A quotation is an anchor",
+      "description": "A quotation shows what a source says; it does not by itself establish that the statement is true.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "organise",
+      "parentId": "root",
+      "label": "Give ideas a shape",
+      "description": "A mind map arranges ideas into a readable hierarchy while a knowledge graph records relationships across that hierarchy.",
+      "category": "theme",
+      "status": "explicit",
+      "collapsed": false,
+      "color": "#6C7FA2"
+    },
+    {
+      "id": "organise-1",
+      "parentId": "organise",
+      "label": "Find the central question",
+      "description": "The root of a map should give the reader a clear account of the inquiry being explored.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "organise-2",
+      "parentId": "organise",
+      "label": "Name the main themes",
+      "description": "Major branches should reflect the material rather than a template imposed on every source.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "organise-3",
+      "parentId": "organise",
+      "label": "Define concepts in context",
+      "description": "A definition should explain how a term is being used in this particular material.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "organise-4",
+      "parentId": "organise",
+      "label": "Connect across branches",
+      "description": "A cross-link can show that an idea in one branch supports, challenges or depends on an idea elsewhere.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "organise-5",
+      "parentId": "organise",
+      "label": "Preserve different meanings",
+      "description": "Two passages using the same word can express different concepts and should not be merged merely because their labels match.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "organise-detail",
+      "parentId": "organise-1",
+      "label": "Maps are interpretations",
+      "description": "Grouping an idea under a heading is an editorial choice, even when the idea itself is directly quoted.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "test",
+      "parentId": "root",
+      "label": "Examine the argument",
+      "description": "Examining an argument means separating its claims, evidence, assumptions and possible objections.",
+      "category": "theme",
+      "status": "explicit",
+      "collapsed": false,
+      "color": "#9A7C4B"
+    },
+    {
+      "id": "test-1",
+      "parentId": "test",
+      "label": "Find the claim",
+      "description": "A claim is a statement the source asks its reader to accept.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "test-2",
+      "parentId": "test",
+      "label": "Inspect the support",
+      "description": "Support may include observations, measurements, examples, testimony or reasoning; these play different roles.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "test-3",
+      "parentId": "test",
+      "label": "Surface assumptions",
+      "description": "An assumption connects steps in an argument without always being stated directly.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "test-4",
+      "parentId": "test",
+      "label": "Consider another reading",
+      "description": "An alternative interpretation can expose an ambiguity without proving the original interpretation wrong.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "test-5",
+      "parentId": "test",
+      "label": "Respect causal limits",
+      "description": "An association between two observations does not by itself identify a causal mechanism.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "test-detail",
+      "parentId": "test-1",
+      "label": "Ask what would change your mind",
+      "description": "A claim becomes easier to examine when the reader can name evidence that would count against it.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "share",
+      "parentId": "root",
+      "label": "Make understanding useful",
+      "description": "An explanation becomes useful when another person can follow its structure and inspect its support.",
+      "category": "theme",
+      "status": "explicit",
+      "collapsed": false,
+      "color": "#94718B"
+    },
+    {
+      "id": "share-1",
+      "parentId": "share",
+      "label": "Explain in plain language",
+      "description": "Clear language lets a reader spend attention on the idea instead of decoding unnecessary jargon.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "share-2",
+      "parentId": "share",
+      "label": "Teach the connections",
+      "description": "A teaching outline should show why ideas connect as well as what each idea means.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "share-3",
+      "parentId": "share",
+      "label": "Make a concrete example",
+      "description": "An example can illustrate an idea, while its limits prevent the example from standing in for every case.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "share-4",
+      "parentId": "share",
+      "label": "Turn questions into practice",
+      "description": "A study question can ask a learner to compare, explain or apply an idea rather than only repeat a label.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "share-5",
+      "parentId": "share",
+      "label": "Keep evidence within reach",
+      "description": "A reader should be able to move from a compact map label to its explanation and source passage.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "share-detail",
+      "parentId": "share-1",
+      "label": "Offer more than one view",
+      "description": "A text outline and a visual map can describe the same structure for readers with different needs.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "revise",
+      "parentId": "root",
+      "label": "Leave room to revise",
+      "description": "A knowledge map remains useful when it records uncertainty and can change as new material arrives.",
+      "category": "theme",
+      "status": "explicit",
+      "collapsed": false,
+      "color": "#638A96"
+    },
+    {
+      "id": "revise-1",
+      "parentId": "revise",
+      "label": "Label interpretations",
+      "description": "An inferred connection should identify the passages and reasoning that motivated it.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "revise-2",
+      "parentId": "revise",
+      "label": "Separate possibilities",
+      "description": "A speculative possibility belongs in an exploratory layer, apart from what the source explicitly states.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "revise-3",
+      "parentId": "revise",
+      "label": "Keep open questions",
+      "description": "An unresolved question can identify a productive next step without pretending that the source supplied an answer.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "revise-4",
+      "parentId": "revise",
+      "label": "Review a changed source",
+      "description": "When the source changes, check the interpretations and quotations that depended on its earlier wording.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "revise-5",
+      "parentId": "revise",
+      "label": "Save an editable version",
+      "description": "An editable version preserves the structure needed to revise a map beyond its exported picture.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    },
+    {
+      "id": "revise-detail",
+      "parentId": "revise-1",
+      "label": "Learning is revisable",
+      "description": "A revision should make clear what changed and why, so that a polished map does not hide its uncertainty.",
+      "category": "concept",
+      "status": "explicit",
+      "collapsed": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "connection-0",
+      "from": "gather-1",
+      "to": "test-2",
+      "type": "supports",
+      "status": "inferred",
+      "rationale": "Preserved passages let a reader inspect what is offered as support."
+    },
+    {
+      "id": "connection-1",
+      "from": "gather-2",
+      "to": "share-5",
+      "type": "enables",
+      "status": "inferred",
+      "rationale": "Recorded locations let a reader return from an explanation to its source."
+    },
+    {
+      "id": "connection-2",
+      "from": "organise-4",
+      "to": "share-2",
+      "type": "supports",
+      "status": "inferred",
+      "rationale": "Cross-links make connections available for teaching."
+    },
+    {
+      "id": "connection-3",
+      "from": "test-3",
+      "to": "revise-1",
+      "type": "associated_with",
+      "status": "inferred",
+      "rationale": "Recognising assumptions and labelling interpretation are complementary reading practices."
+    },
+    {
+      "id": "connection-4",
+      "from": "gather-5",
+      "to": "test-4",
+      "type": "supports",
+      "status": "inferred",
+      "rationale": "Preserving disagreement keeps alternative readings available for examination."
+    },
+    {
+      "id": "connection-5",
+      "from": "notice-1",
+      "to": "revise-3",
+      "type": "associated_with",
+      "status": "inferred",
+      "rationale": "An initial question and an unresolved question both make uncertainty visible."
+    },
+    {
+      "id": "connection-6",
+      "from": "revise-5",
+      "to": "revise-4",
+      "type": "enables",
+      "status": "inferred",
+      "rationale": "An editable map gives the reader a way to revise source-dependent interpretations."
+    },
+    {
+      "id": "connection-7",
+      "from": "gather-detail",
+      "to": "test-5",
+      "type": "associated_with",
+      "status": "inferred",
+      "rationale": "Both passages limit what can be concluded from an observation or quotation."
+    }
+  ],
+  "coverage": {
+    "total": 43,
+    "completed": 43
+  },
+  "notice": "Source bodies, exact evidence, private notes and source URLs are omitted. Labels, descriptions and relationship rationales still contain extracted or authored content. Review before sharing."
+}

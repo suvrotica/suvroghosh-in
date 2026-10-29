@@ -38,6 +38,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const isProtectedNotesApi = matchesPath('/api/notes');
 	const isCommentEmailAction = matchesPath('/api/comments/moderate');
 	const isPromptAtlasApi = matchesPath('/api/prompt-atlas');
+	const isMindmapStudioApi = matchesPath('/api/mindmap-studio');
 	const isUmlApi = matchesPath('/api/uml');
 	const needsNotesSession = isStudio || isSignIn || isResetPassword || isProtectedNotesApi;
 	if (needsNotesSession) {
@@ -88,6 +89,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		isProtectedNotesApi ||
 		isCommentEmailAction ||
 		isPromptAtlasApi ||
+		isMindmapStudioApi ||
 		isUmlApi
 	) {
 		response.headers.set(

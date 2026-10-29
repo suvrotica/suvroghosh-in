@@ -281,7 +281,10 @@
 		"uml:test": "vitest run src/lib/visualizations/post-to-uml src/lib/server/uml src/routes/api/uml --maxWorkers=2",
 		"uml:browser:test": "playwright test --config playwright.uml.config.ts",
 		"uml:renderer:test": "node scripts/verify-uml-renderer.mjs",
-		"uml:ssr:test": "node scripts/verify-uml-ssr.mjs"
+		"uml:ssr:test": "node scripts/verify-uml-ssr.mjs",
+		"mindmap-studio:test": "vitest run src/lib/visualizations/mindmap-studio src/lib/server/mindmap-studio --maxWorkers=2",
+		"mindmap-studio:browser:test": "playwright test --config playwright.mindmap-studio.config.ts",
+		"mindmap-studio:poster": "node scripts/render-mindmap-studio.mjs"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",
@@ -341,6 +344,7 @@
 		"@fontsource-variable/source-serif-4": "^5.3.0",
 		"@fontsource/courier-prime": "^5.3.0",
 		"@fontsource/newsreader": "^5.3.0",
+		"@mind-elixir/export-mindmap": "0.1.11",
 		"@observablehq/runtime": "^6.0.0",
 		"@plantuml/core": "1.2026.9",
 		"@supabase/ssr": "^0.12.3",
@@ -357,8 +361,10 @@
 		"graphology-communities-louvain": "^2.0.2",
 		"jspdf": "^4.2.1",
 		"linkedom": "0.18.12",
+		"mind-elixir": "5.15.1",
 		"ml-matrix": "^6.15.0",
 		"p5": "^2.3.0",
+		"pdfjs-dist": "6.4.299",
 		"perfect-freehand": "^1.2.3",
 		"resend": "^6.14.0",
 		"sanitize-html": "2.18.1",

@@ -5074,6 +5074,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/mindmap-studio/social.png",
+			"src": "/images/visualizations/mindmap-studio/social.png",
+			"bytes": 76618,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/mindmap-studio/social.svg",
+			"src": "/images/visualizations/mindmap-studio/social.svg",
+			"bytes": 4337,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/missing-data/missing-data-poster.png",
 			"src": "/images/visualizations/missing-data/missing-data-poster.png",
 			"bytes": 102914,

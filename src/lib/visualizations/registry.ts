@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'mindmap-studio': {
+		id: 'mindmap-studio',
+		title: 'Mindmap Studio: Read Deeply, See the Connections',
+		description:
+			'Turn articles, transcripts and PDF excerpts into editable mind maps and knowledge graphs, with evidence to follow and ideas to refine.',
+		subjects: ['Learning', 'Data Visualization', 'Computer Science'],
+		poster: '/images/visualizations/mindmap-studio/social.png',
+		posterAlt:
+			'Mindmap Studio with a central inquiry branching into six coloured themes and source-linked ideas on warm paper',
+		href: '/blog/visualizations/mindmap-studio',
+		status: 'published'
+	},
 	'post-to-uml': {
 		id: 'post-to-uml',
 		title: 'Post to UML: Draw in UML from Any Text or Article',
