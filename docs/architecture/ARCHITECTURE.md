@@ -501,11 +501,19 @@ implement the boundaries in [ADR 0021](decisions/0021-mindmap-studio-source-mode
   and sends those excerpts with metadata/focus to one provider generation. Selection
   balances sources and prioritises focus plus distributed context. The model
   returns source-unit IDs; the server reconstructs exact quotes, offsets and
-  locators. Unknown IDs or invalid project structure fail closed. Coverage measures
+  locators. One serialised wire schema is supplied to both the model-visible system
+  prompt and the native provider response format; every generated edge requires a
+  rationale. The wire rejects a redundant provider `rootId`; the server derives
+  the canonical root from exactly one null-parent node. Zero/multiple roots and
+  all other topology/evidence invariants still reject. Unknown IDs or invalid
+  project structure fail closed. Coverage measures
   submitted units and names omissions; it is not exhaustive progressive research
   or independent fact-checking. Consent names Gateway/NVIDIA transmission and
   possible provider retention. Application code does not persist source bodies
-  server-side or log source-bearing provider/schema errors.
+  server-side or log source-bearing provider/schema errors. Invalid-analysis
+  diagnostics contain only enumerated stage/reason values and allowlisted
+  structural field paths, never raw messages, unknown keys, IDs, quotations,
+  labels or provider output. This does not relax acceptance validation.
 - **Rendering and state**: Browser-loaded `mind-elixir@5.15.1` supplies hierarchy
   editing through an adapter, with app-owned undo and metadata. The native SVG
   graph uses finite seeded D3 layout and rectangular collision resolution over the
@@ -528,12 +536,29 @@ implement the boundaries in [ADR 0021](decisions/0021-mindmap-studio-source-mode
   imports keep these runtimes out of unrelated articles.
 
 The [feature contract](../visualizations/mindmap-studio.md) records exact limits,
-embed syntax, package/export responsibilities and verification receipts. The
-30 October implementation checkpoint passed 23 domain/public-format tests,
-27 mocked server tests and four renderer tests. The application Svelte/TypeScript
-check reported zero errors and warnings; the reader component also compiled for SSR
-without warnings. Browser, full-build, deployment and live-provider acceptance need their
-own evidence and are not established by these checks.
+embed syntax and verification receipts. Implementation
+`09b7f84ef8ffb532394ee4bbf5902eceda3c92be` is live through READY deployment
+`dpl_5hL3kb9i4PnT88MDypmFg8Htim45`. One normal production UI request returned
+HTTP 200 in 15.3 seconds: nine concepts, nine relationships, six analysis sections
+and eighteen exact citations from two preserved sources, with all nine prepared
+segments submitted. Domain validation, timestamped evidence, both rendered views,
+consent reset, local save/reload and private response headers were verified with
+no browser exceptions.
+
+All 79 focused tests across seven files passed, along with the final repository
+check (zero errors/warnings) and targeted lint/format/whitespace checks. Eleven
+live browser cases passed on the unchanged frontend, including PDF extraction,
+the published figure, real exports and seven responsive widths from 320 to
+1,600 pixels. Three earlier rejected generations preserved the working map;
+source-free diagnostics identified the redundant provider root reference, now
+derived from the unique null-parent node without relaxing validation.
+
+Feature/notebook/content stages, the site build and local Barnum route-asset
+budget passed in stages. Hosted build/discoverability verified 748 published
+posts and representative routes; the canonical article and Apps/catalogue
+discovery passed. These receipts do not claim a single successful local
+`npm run build:full` invocation, arbitrary-document analysis quality or future
+free-provider availability.
 
 ```mermaid
 flowchart LR

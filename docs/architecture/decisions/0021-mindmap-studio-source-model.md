@@ -1,7 +1,7 @@
 # ADR 0021: Mindmap Studio keeps a source-grounded model separate from its views
 
-Date: 29 October 2026. Status: accepted; implemented locally. Browser acceptance,
-deployment and live-provider verification require separate completion evidence.
+Date: 29 October 2026. Status: accepted; deployed and verified 30 October, including
+hosted generation, source fidelity, discovery and eleven live-browser cases.
 
 ## Context
 
@@ -36,6 +36,21 @@ admission boundary. Send at most 48 trusted source units/32,000 UTF-16 character
 to one provider generation; disclose partial coverage. The provider returns unit
 IDs, not authoritative quotes or source offsets. This bounds work without claiming
 exhaustive chapter-by-chapter research.
+
+One serialised wire schema is included in both the model-visible system prompt and
+the provider's native response-format option. Every generated relationship must
+include a rationale; the application independently validates the reconstructed
+project and its exact source evidence before accepting it.
+
+The provider wire format has no separate `rootId`. The server derives the canonical
+root from exactly one node with a null parent, removing a redundant generated
+reference. Zero/multiple roots, cycles, missing references and invalid evidence
+remain rejection conditions; the saved project's canonical `rootId` remains explicit.
+
+Expose rejection diagnostics only as enumerated stage/reason values and optional
+allowlisted structural paths. Do not return raw exception messages, unknown keys,
+source IDs, quotations, labels or provider output. This is an observability
+boundary, not a weaker acceptance rule.
 
 Keep user edits in a feature-owned IndexedDB database and provide portable JSON.
 Do not introduce cloud map storage, URL fetching, automatic video access or a new
@@ -90,11 +105,28 @@ without changing its existing provider or quota policies.
 
 ## Verification
 
-The 30 October implementation checkpoint passed 23 domain/public-format tests,
-27 mocked server tests and four renderer tests. The application Svelte/TypeScript
-check reported zero errors and warnings; the published figure also compiled for
-SSR without warnings. These cover exact evidence, malformed references and hierarchy,
-bounded excerpts, privacy separation and deterministic rendering helpers.
-Browser/production checks and a real provider call were not established by those
-tests. Record subsequent acceptance results in the feature contract rather than
-converting provisional checks into claims of hosted deployment.
+Implementation `09b7f84ef8ffb532394ee4bbf5902eceda3c92be` is deployed through
+READY Vercel deployment `dpl_5hL3kb9i4PnT88MDypmFg8Htim45`. All 79 focused tests
+across seven files passed, as did the final repository check with zero errors and
+warnings and targeted lint/format/whitespace checks.
+
+One normal production UI request returned HTTP 200 in 15.3 seconds, producing
+nine nodes, nine relationships, six analysis sections and eighteen exact citations
+from two preserved sources. All nine prepared segments were submitted. The domain
+validator, timestamped evidence inspection, both rendered views, consent reset,
+local save/reload and private response headers were verified with no browser
+exceptions. Eleven live frontend cases also passed on the unchanged frontend,
+covering mobile/desktop bounds, publication, PDF/captions, editing and real exports.
+
+Three previous rejected generations preserved the old map; source-free diagnostics
+identified the inconsistent redundant provider root reference. The accepted
+implementation derives one root from the parent structure without relaxing
+evidence or topology checks.
+
+Feature/notebook/content stages, the site build and Barnum route-asset budget
+passed in stages; hosted build/discoverability verified 748 published posts and
+representative routes. These results do not claim that one local all-stages
+`build:full` invocation passed. The tested provider flow does not establish
+arbitrary-document analysis quality or future free-service availability.
+The [feature contract](../../visualizations/mindmap-studio.md) retains the precise
+receipt and the input, privacy, coverage and operational limits.

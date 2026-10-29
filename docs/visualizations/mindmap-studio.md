@@ -83,6 +83,12 @@ sizes, so their counts are not comparable quality scores.
 Provider output uses trusted unit IDs. The server reconstructs evidence quotes,
 offsets and locators from submitted original text; the provider cannot invent
 those fields. Unknown unit IDs and invalid project structure fail closed. The
+provider wire format rejects a separate `rootId`; the server derives the canonical
+root from exactly one node whose `parentId` is null. Zero or multiple roots still
+fail, as do cycles, missing references and invalid evidence. The
+same serialised JSON schema is supplied in the model-visible system prompt and
+the provider's native structured-output option, with a nonempty rationale required
+for every generated relationship. The
 prompt requests themes, argument/evidence, assumptions, contradictions, open
 questions, learning ideas and research opportunities where supported. It treats
 source instructions as data and separates proposed extensions. Those semantic
@@ -132,6 +138,13 @@ or log provider/schema exceptions containing them. API and hook error responses
 are private/no-store/noindex. Real deployment availability and provider retention
 remain external conditions, not outcomes established by mocked tests.
 
+Invalid-analysis responses include bounded, source-free diagnostic metadata:
+an enumerated validation stage and reason, plus an optional allowlisted structural
+field path. Unknown field names, raw validation messages, source IDs, node labels,
+quotations and provider output are excluded. Unexpected failures use a fixed
+generic diagnostic. These diagnostics improve rejection diagnosis without relaxing
+schema, evidence or topology validation.
+
 ## Rendering, persistence and exports
 
 `mind-elixir@5.15.1` is a browser-loaded dependency for the hierarchical canvas.
@@ -141,7 +154,9 @@ wrapped labels, branch families and custom curves share paper/night palettes.
 The native SVG graph uses finite seeded D3 layout followed by rectangular
 collision resolution; physics does not continue while a reader inspects it.
 Pan/zoom, selection, filters and graph drag positions are local view state. The
-outline provides a second route to concepts and reparenting.
+outline provides a second route to concepts and reparenting. On narrow screens,
+the initial viewport favours readable labels (at least 55% mind-map scale and
+approximately 65% graph scale); the explicit Fit controls show the entire map.
 
 Edits enable debounced IndexedDB autosave into the feature's
 `suvro-mindmap-studio` database. The initial untouched demonstration is not saved.
@@ -198,28 +213,71 @@ than a global mdsvex import, keeping this runtime out of unrelated article bundl
 
 ## Verification and current limits
 
-At the 30 October implementation checkpoint, the domain/public boundary suite
-passed 23 tests; server wire/service/Gateway tests passed 27 mocked cases. The graph
-renderer passed four deterministic layout/export tests. The application Svelte/
-TypeScript check reported zero errors and zero warnings. `MindmapFigure` also
-compiled for SSR without Svelte compiler warnings. These results do not establish live
-provider success, deployed quota behaviour, arbitrary-document analysis quality,
-or browser export fidelity.
+Verified on 30 October 2026 against implementation commit
+`09b7f84ef8ffb532394ee4bbf5902eceda3c92be`, pushed to `origin main`.
+Vercel deployment `dpl_5hL3kb9i4PnT88MDypmFg8Htim45` is READY and serves the
+[live canonical article](https://www.suvroghosh.in/blog/visualizations/mindmap-studio).
+
+- **Actual hosted AI flow:** one normal consented UI POST returned HTTP 200 in
+  15.3 seconds. Its project contained nine concepts, nine relationships, six
+  analysis sections and eighteen exact citations. Both supplied sources were
+  preserved (1,471 text characters and 499 transcript characters; 1,970 combined),
+  and all nine prepared segments were submitted. The canonical domain validator
+  passed; transcript evidence retained `00:10`, `00:35` and `01:00` locators.
+- **Rendered and persisted result:** the actual map rendered nine nodes and the
+  graph rendered nine nodes/nine edges. A timestamped quotation was opened and
+  checked in context. Consent reset after submission; save/reload restored the
+  nine-node project. The browser reported no exceptions. The API response had
+  private/no-store/noindex headers.
+- **Automated checks:** all 79 focused tests passed across seven files (23
+  domain/public-format, 52 server and four renderer). The final repository
+  `npm run check` on this implementation passed with zero errors and zero
+  warnings. Focused lint/format/whitespace checks passed.
+- **Live frontend acceptance:** all eleven browser cases passed on the production
+  domain in 1.2 minutes with no runtime errors. They cover editing/evidence/undo/
+  persistence, local extraction and JSON round trips, graph filtering/inspection,
+  PNG/SVG export, native rename/collapse, the read-only published figure, unavailable
+  source links, the production PDF worker and physical-page/blank-PDF handling,
+  SRT cue scope, and phone use. The responsive regression checked seven widths
+  from 320 to 1,600 pixels, one page heading and Newsreader styling. These tests
+  ran on `baa4ee39`; subsequent fixes changed server code only. Desktop, night,
+  graph and phone captures were produced, with desktop/night/phone visual review.
+- **Build and discovery:** feature-artifact checks, notebook preparation, the full
+  content/prebuild stages, the site build and local Barnum route-asset budget
+  passed in stages. Hosted discoverability checked 748 published posts and
+  rendered/verified representative routes after the heading/metadata correction.
+  The canonical article returned HTTP 200 with one H1 and correct canonical
+  metadata; Apps and the public catalogue include it. These staged and hosted
+  successes do not assert that one local `npm run build:full` invocation completed
+  every stage successfully.
+
+Three earlier hosted generations were rejected with `invalid_analysis` while
+preserving the previous map. Source-free diagnostics isolated the redundant,
+inconsistent provider `rootId`. The current implementation supplies one schema
+to both the model prompt and native response format, requires relationship
+rationales, and derives the canonical root from exactly one null-parent node.
+Strict evidence and topology validation remained in place through the successful
+production retry.
+
+The actual provider receipt and screenshots are local verification artefacts under
+`.tmp/mindmap-production-proof-09b7f84e/`. This proves the tested end-to-end
+workflow, not universal analysis quality: evidence fidelity does not independently
+validate an interpretation, full coverage here applies to this small fixture, and
+the free provider can become unavailable. Source access, excerpt budgets, quotas,
+no-OCR/no-fetch behaviour and publication privacy limits above remain applicable.
 
 Reproducible focused commands:
 
 ```text
-npx vitest run src/lib/visualizations/mindmap-studio src/lib/server/mindmap-studio --maxWorkers=2
+npm run mindmap-studio:test
 npm run check
-npx playwright test --config playwright.mindmap-studio.config.ts
+npm run mindmap-studio:browser:test
 npm run build:full
 git diff --check
 ```
 
-Browser review, complete build/publication checks and hosted activation need their
-own completion receipts; update this record when those checks finish. The existing
-forensic-audit gaps, including absent security commands where applicable, are not
-implemented safeguards of this feature.
+The existing forensic-audit gaps, including absent security commands where
+applicable, are not implemented safeguards of this feature.
 
 The browser configuration builds and starts a production preview by default. When
 using an existing preview, set `PLAYWRIGHT_REUSE_SERVER=1` and, if necessary,
