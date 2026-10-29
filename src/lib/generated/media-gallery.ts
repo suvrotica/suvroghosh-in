@@ -139,6 +139,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "art-the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.jpg",
+			"src": "/images/art-the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.jpg",
+			"bytes": 281244,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-the-great-black-water-adventure-hindoo-edition.jpg",
 			"src": "/images/art-the-great-black-water-adventure-hindoo-edition.jpg",
 			"bytes": 258149,

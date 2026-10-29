@@ -8288,6 +8288,22 @@
       "sourceHash": "50cdd9e1b621d3f89c77143c8da9dc6f4de4611a596600f19c72174ac03ea3f4",
       "width": 1200
     },
+    "static/images/art-the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 281244,
+      "outputHash": "c590b4af3a2c5b48c4c29721636ce2e181c90b34ceef2a71b03f9eb8e1b80d48",
+      "psnrDb": 36.52,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 998619,
+      "sourceHash": "f99fcc20078dc07a6a92bb0dc50c312c27fe5c8f0e5170770432b4539d2b5b4e",
+      "width": 1376
+    },
     "static/images/art-the-great-black-water-adventure-hindoo-edition.jpg": {
       "format": "JPEG",
       "height": 768,

@@ -16100,6 +16100,36 @@
 				"caste system"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.md": {
+			"bodyHash": "2ac5c496e5b17193a9f343cf7c96200706cea32b9358f8d9a64bcd5571b493ba",
+			"hashVersion": 2,
+			"revisionHash": "d39d3712841b4eb53972871e4884a497fcf5d57be210185742636b9627733f4c",
+			"generatedTags": [
+				"Bengali",
+				"Calcutta",
+				"Culture",
+				"Generations",
+				"Tradition",
+				"History",
+				"Society",
+				"Nostalgia",
+				"Tunnel Vision",
+				"Identity"
+			],
+			"pinnedTags": [
+				"Bengali",
+				"Calcutta",
+				"Culture",
+				"Generations",
+				"Tradition",
+				"History",
+				"Society",
+				"Nostalgia",
+				"Tunnel Vision",
+				"Identity"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

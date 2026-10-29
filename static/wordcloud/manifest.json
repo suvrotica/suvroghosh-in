@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T14:37:55.940530+00:00",
+  "generatedAt": "2026-10-29T15:21:39.938914+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12280,6 +12280,29 @@
         "Now",
         "Supply",
         "Yet"
+      ],
+      "wordCount": 130
+    },
+    "the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness": {
+      "generatedAt": "2026-10-29T15:21:39.676872+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.svg",
+      "source": "src/lib/posts/the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.md",
+      "sourceHash": "93dd9202ad2abfcde7f0ffeebdf95bf108222b48ddf600fed58e2e5ccc75079a",
+      "sourceModified": "2026-10-29T15:20:53.261448+00:00",
+      "topWords": [
+        "Bengali",
+        "Yet",
+        "Generation",
+        "Nostalgia",
+        "Tunnel",
+        "Cultural",
+        "Culture",
+        "Pride",
+        "Ignorance",
+        "Selectively",
+        "Vision",
+        "Blindness"
       ],
       "wordCount": 130
     },
