@@ -16130,6 +16130,36 @@
 				"Identity"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.md": {
+			"bodyHash": "ce28655d77842a51d9bd527f05be2bfd30f286a8686329e781bc4beecc7bb586",
+			"hashVersion": 2,
+			"revisionHash": "8750f67fdac8ad3a59c7575a82f055322b21bee84811fe8d773216fc349e6365",
+			"generatedTags": [
+				"neuroscience",
+				"brain",
+				"EEG",
+				"alpha waves",
+				"beta waves",
+				"gamma waves",
+				"theta waves",
+				"delta waves",
+				"oscillations",
+				"Calcutta"
+			],
+			"pinnedTags": [
+				"neuroscience",
+				"brain",
+				"EEG",
+				"alpha waves",
+				"beta waves",
+				"gamma waves",
+				"theta waves",
+				"delta waves",
+				"oscillations",
+				"Calcutta"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

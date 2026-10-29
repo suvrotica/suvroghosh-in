@@ -20,6 +20,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 940
 		},
 		{
+			"name": "art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg",
+			"src": "/images/art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg",
+			"bytes": 280766,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-durga-durga-durga-five-days-debauchery.jpg",
 			"src": "/images/art-durga-durga-durga-five-days-debauchery.jpg",
 			"bytes": 263519,

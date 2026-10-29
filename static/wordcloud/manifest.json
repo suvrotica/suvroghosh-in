@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T15:21:39.938914+00:00",
+  "generatedAt": "2026-10-29T16:44:56.611005+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1884,6 +1884,29 @@
         "Sometimes",
         "Take",
         "Memory"
+      ],
+      "wordCount": 130
+    },
+    "brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity": {
+      "generatedAt": "2026-10-29T16:44:55.379065+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.svg",
+      "source": "src/lib/posts/brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.md",
+      "sourceHash": "66cf7c7912c8ca97e116721b060d4ddb27ff43acd5e6ee233258103cc10a5a19",
+      "sourceModified": "2026-10-29T16:43:54.882585+00:00",
+      "topWords": [
+        "Waves",
+        "Brain",
+        "Gamma",
+        "Delta",
+        "Beta",
+        "Alpha",
+        "Theta",
+        "Neurons",
+        "Fuck",
+        "Reading",
+        "Even",
+        "Onto"
       ],
       "wordCount": 130
     },

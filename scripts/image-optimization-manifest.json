@@ -8016,6 +8016,22 @@
       "sourceHash": "42d9e7d4181a666017ea26678f46035d95bc8907de2d4e31c05c17ae4b112378",
       "width": 1672
     },
+    "static/images/art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 280766,
+      "outputHash": "10c3a24fbfbc12b81a2ba70713b9dc60a4d8214563ee3fb95693f316bcb9a74d",
+      "psnrDb": 36.08,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 1010461,
+      "sourceHash": "4fcb85309a5ef26d5f409bc9caa64bf267a7a0b5a8deb9bc1b0a6ed73524214b",
+      "width": 1376
+    },
     "static/images/art-durga-durga-durga-five-days-debauchery.jpg": {
       "format": "JPEG",
       "height": 768,
