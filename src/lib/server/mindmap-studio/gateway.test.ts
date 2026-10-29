@@ -85,7 +85,6 @@ describe('mind-map provider boundary', () => {
 	it('accepts a complete provider wire object through canonical source validation without weakening provenance', async () => {
 		const fixture = {
 			title: 'Shade and its evidence',
-			rootId: 'root',
 			nodes: [
 				{
 					id: 'root',

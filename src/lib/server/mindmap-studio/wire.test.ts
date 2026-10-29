@@ -25,7 +25,6 @@ const input: StudioAnalysisInput = {
 function output() {
 	return {
 		title: 'Urban shade',
-		rootId: 'root',
 		nodes: [
 			{
 				id: 'root',
@@ -73,7 +72,8 @@ describe('trusted mind-map source wire', () => {
 	it('supplies the complete output contract to the model, including citation and hierarchy fields', () => {
 		const prepared = prepareAnalysis(input);
 		const schema = JSON.parse(prepared.system.split('JSON SCHEMA:\n')[1]);
-		expect(schema.required).toEqual(['title', 'rootId', 'nodes', 'edges', 'analysis']);
+		expect(schema.required).toEqual(['title', 'nodes', 'edges', 'analysis']);
+		expect(schema.properties).not.toHaveProperty('rootId');
 		expect(schema.properties.nodes.items.required).toEqual([
 			'id',
 			'parentId',
@@ -88,6 +88,26 @@ describe('trusted mind-map source wire', () => {
 		expect(schema.additionalProperties).toBe(false);
 		expect(prepared.system).toContain('nonempty rationale');
 		expect(prepared.system).toContain('inferred, never explicit');
+	});
+	it('derives the canonical root from the unique null parent without a redundant provider pointer', () => {
+		const value = output();
+		value.nodes[0].id = 'central-theme';
+		value.nodes[1].parentId = 'central-theme';
+		value.edges[0].from = 'central-theme';
+		const project = normalizeAnalysis(value, prepareAnalysis(input));
+		expect(project.rootId).toBe('central-theme');
+		expect(project.nodes[0].parentId).toBeNull();
+		expect(() =>
+			normalizeAnalysis({ ...value, rootId: 'conflicting-root' }, prepareAnalysis(input))
+		).toThrow();
+	});
+	it('rejects zero or multiple null-parent roots instead of choosing or repairing a hierarchy', () => {
+		const noRoot = output();
+		noRoot.nodes[0].parentId = 'shade';
+		expect(() => normalizeAnalysis(noRoot, prepareAnalysis(input))).toThrow();
+		const twoRoots = output();
+		twoRoots.nodes[1].parentId = null;
+		expect(() => normalizeAnalysis(twoRoots, prepareAnalysis(input))).toThrow();
 	});
 	it('keeps physical PDF page and transcript locators while excluding extraction placeholders', () => {
 		const pdf = {

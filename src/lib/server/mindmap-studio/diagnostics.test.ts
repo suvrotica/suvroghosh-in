@@ -14,7 +14,6 @@ const prepared = () =>
 function fixture() {
 	return {
 		title: privateText,
-		rootId: 'root',
 		nodes: [
 			{
 				id: 'root',
@@ -112,9 +111,9 @@ describe('source-free normalization diagnostics', () => {
 			reason: 'duplicate_edge'
 		},
 		{
-			name: 'missing root',
+			name: 'missing null-parent root',
 			mutate: (value) => {
-				value.rootId = 'absent';
+				value.nodes[0].parentId = 'absent';
 			},
 			stage: 'topology',
 			reason: 'invalid_root'
@@ -141,7 +140,7 @@ describe('source-free normalization diagnostics', () => {
 				value.nodes[1].parentId = null;
 			},
 			stage: 'topology',
-			reason: 'missing_parent'
+			reason: 'invalid_root'
 		},
 		{
 			name: 'cycle',

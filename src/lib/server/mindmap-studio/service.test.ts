@@ -22,7 +22,6 @@ const payload = {
 function wire(prepared: PreparedAnalysis) {
 	return {
 		title: 'Shade',
-		rootId: 'root',
 		nodes: [
 			{
 				id: 'root',
@@ -200,7 +199,7 @@ describe('mind-map free analysis endpoint', () => {
 		const handlers = setup();
 		handlers.generate.mockImplementation(async (prepared) => {
 			const value = wire(prepared);
-			value.rootId = 'private-missing-root-id';
+			Object.assign(value.nodes[0], { parentId: 'private-missing-root-id' });
 			value.nodes[0].label = 'PRIVATE SOURCE-LINKED LABEL';
 			return value;
 		});
@@ -210,7 +209,7 @@ describe('mind-map free analysis endpoint', () => {
 		const body = await response.json();
 		expect(body.code).toBe('invalid_analysis');
 		expect(body.project).toBeUndefined();
-		expect(body.diagnostic).toEqual({ stage: 'topology', reason: 'invalid_root', field: 'rootId' });
+		expect(body.diagnostic).toEqual({ stage: 'topology', reason: 'invalid_root', field: 'nodes' });
 		expect(JSON.stringify(body)).not.toMatch(/PRIVATE|private-missing-root-id|Trees offer shade/);
 	});
 	it('distinguishes an unexpected normalizer exception without exposing its message', async () => {
