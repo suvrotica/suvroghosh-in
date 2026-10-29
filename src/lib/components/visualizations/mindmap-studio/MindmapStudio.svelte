@@ -529,7 +529,7 @@
 {/snippet}
 
 <section
-	class="mindmap-studio"
+	class="mindmap-studio not-prose"
 	bind:this={studio}
 	data-studio-theme={project.theme}
 	aria-label="Mindmap Studio"
@@ -548,7 +548,7 @@
 			>
 			<div>
 				<span class="eyebrow">A FIELD GUIDE TO YOUR IDEAS</span>
-				<h2>Mindmap <em>Studio.</em></h2>
+				<h1>Mindmap <em>Studio.</em></h1>
 			</div>
 		</div>
 		<div class="masthead-note">Read deeply.<br />See the connections.</div>

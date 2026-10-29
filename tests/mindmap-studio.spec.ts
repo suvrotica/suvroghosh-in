@@ -49,6 +49,32 @@ test.afterEach(async ({ page }) => {
 	expect(errors.get(page)).toEqual([]);
 });
 
+test('article breakout stays within desktop and phone viewports with one styled page title', async ({
+	page
+}) => {
+	await expect(page.locator('h1')).toHaveCount(1);
+	await expect(app(page).getByRole('heading', { level: 1 })).toHaveText('Mindmap Studio.');
+	await expect
+		.poll(() =>
+			app(page)
+				.locator('h1')
+				.evaluate((element) => getComputedStyle(element).fontFamily)
+		)
+		.toContain('Newsreader');
+	for (const width of [1600, 1440, 1280, 1024, 768, 390, 320]) {
+		await page.setViewportSize({ width, height: 1000 });
+		await expect
+			.poll(
+				async () => {
+					const box = await app(page).boundingBox();
+					return Boolean(box && box.x >= -1 && box.x + box.width <= width + 1);
+				},
+				{ message: `The complete Studio must fit inside a ${width}px viewport.` }
+			)
+			.toBe(true);
+	}
+});
+
 test('mind map opens evidence, edits with undo, adds ideas and restores a local save', async ({
 	page
 }, testInfo) => {

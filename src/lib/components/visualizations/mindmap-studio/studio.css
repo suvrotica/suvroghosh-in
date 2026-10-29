@@ -1,3 +1,13 @@
+@media (min-width: 1280px) {
+	.article-shell.immersive-lead:has(.mindmap-studio) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.article-shell.immersive-lead:has(.mindmap-studio) > article {
+		margin-inline: auto;
+		width: 100%;
+	}
+}
+
 .mindmap-studio {
 	--ms-paper: #f7f3e9;
 	--ms-raised: #fffdf7;
@@ -40,6 +50,7 @@
 .mindmap-studio *::after {
 	box-sizing: border-box;
 }
+.mindmap-studio h1,
 .mindmap-studio h2,
 .mindmap-studio h3,
 .mindmap-studio h4,
@@ -47,6 +58,7 @@
 .mindmap-studio ul {
 	margin: 0;
 }
+.mindmap-studio h1,
 .mindmap-studio h2,
 .mindmap-studio h3 {
 	font-family: 'Newsreader Variable', 'Newsreader', Georgia, serif;
@@ -186,7 +198,8 @@
 	stroke: currentColor;
 	stroke-width: 1.7;
 }
-.studio-wordmark h2 {
+.mindmap-studio .studio-masthead .studio-wordmark h1 {
+	font-family: 'Newsreader Variable', 'Newsreader', Georgia, serif;
 	font-size: 35px;
 	margin-top: 7px;
 }
@@ -958,7 +971,7 @@
 		width: 36px;
 		height: 40px;
 	}
-	.studio-wordmark h2 {
+	.mindmap-studio .studio-masthead .studio-wordmark h1 {
 		font-size: 28px;
 	}
 	.studio-wordmark .eyebrow {
