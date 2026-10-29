@@ -1887,6 +1887,29 @@
       ],
       "wordCount": 130
     },
+    "brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity": {
+      "generatedAt": "2026-10-29T16:44:55.379065+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.svg",
+      "source": "src/lib/posts/brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.md",
+      "sourceHash": "66cf7c7912c8ca97e116721b060d4ddb27ff43acd5e6ee233258103cc10a5a19",
+      "sourceModified": "2026-10-29T16:43:54.882585+00:00",
+      "topWords": [
+        "Waves",
+        "Brain",
+        "Gamma",
+        "Delta",
+        "Beta",
+        "Alpha",
+        "Theta",
+        "Neurons",
+        "Fuck",
+        "Reading",
+        "Even",
+        "Onto"
+      ],
+      "wordCount": 130
+    },
     "brittle-brain-blazing-light-calcutta-room": {
       "generatedAt": "2026-08-07T02:15:56.375039+00:00",
       "generatorVersion": "2026-07-13.1",
@@ -12306,6 +12329,29 @@
       ],
       "wordCount": 130
     },
+    "the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness": {
+      "generatedAt": "2026-10-29T15:21:39.676872+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.svg",
+      "source": "src/lib/posts/the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.md",
+      "sourceHash": "93dd9202ad2abfcde7f0ffeebdf95bf108222b48ddf600fed58e2e5ccc75079a",
+      "sourceModified": "2026-10-29T15:20:53.261448+00:00",
+      "topWords": [
+        "Bengali",
+        "Yet",
+        "Generation",
+        "Nostalgia",
+        "Tunnel",
+        "Cultural",
+        "Culture",
+        "Pride",
+        "Ignorance",
+        "Selectively",
+        "Vision",
+        "Blindness"
+      ],
+      "wordCount": 130
+    },
     "the-genteel-hypocrisy-of-civilizational-life": {
       "generatedAt": "2026-09-26T04:06:54.343917+00:00",
       "generatorVersion": "2026-07-13.1",
@@ -12487,6 +12533,29 @@
         "Human",
         "Often",
         "Moral"
+      ],
+      "wordCount": 130
+    },
+    "the-great-black-water-adventure-hindoo-edition": {
+      "generatedAt": "2026-10-29T14:37:55.719050+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-great-black-water-adventure-hindoo-edition.svg",
+      "source": "src/lib/posts/the-great-black-water-adventure-hindoo-edition.md",
+      "sourceHash": "19eb7328b9949dc5c22aafc52be490c8de7da20fb082449fd3c54c7e2a35153d",
+      "sourceModified": "2026-10-29T14:37:45.231869+00:00",
+      "topWords": [
+        "Kala",
+        "Pani",
+        "Water",
+        "Black",
+        "Oceans",
+        "Perhaps",
+        "Hindoo",
+        "British",
+        "Caste",
+        "Fear",
+        "Ancestors",
+        "Now"
       ],
       "wordCount": 130
     },

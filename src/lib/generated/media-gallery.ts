@@ -20,6 +20,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 940
 		},
 		{
+			"name": "art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg",
+			"src": "/images/art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg",
+			"bytes": 280766,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-durga-durga-durga-five-days-debauchery.jpg",
 			"src": "/images/art-durga-durga-durga-five-days-debauchery.jpg",
 			"bytes": 263519,
@@ -137,6 +144,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 166573,
 			"width": 1200,
 			"height": 630
+		},
+		{
+			"name": "art-the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.jpg",
+			"src": "/images/art-the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.jpg",
+			"bytes": 281244,
+			"width": 1376,
+			"height": 768
+		},
+		{
+			"name": "art-the-great-black-water-adventure-hindoo-edition.jpg",
+			"src": "/images/art-the-great-black-water-adventure-hindoo-edition.jpg",
+			"bytes": 258149,
+			"width": 1376,
+			"height": 768
 		},
 		{
 			"name": "art-the-machines-insides.jpg",

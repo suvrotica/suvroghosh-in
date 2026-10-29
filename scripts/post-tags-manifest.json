@@ -16071,6 +16071,96 @@
 			],
 			"generatorVersion": "2026-07-22.1"
 		},
+		"src/lib/posts/the-great-black-water-adventure-hindoo-edition.md": {
+			"bodyHash": "5b83dce3452f7972a85b2e16423966ba6196ff5daf1b9e489a19da02c6e0a427",
+			"hashVersion": 2,
+			"revisionHash": "ad508c732ca0078d2abe801fa5cf3b179af961ce14e2b785589562655140a2b0",
+			"generatedTags": [
+				"Kala Pani",
+				"Hinduism",
+				"taboo",
+				"sea voyage",
+				"British Raj",
+				"superstition",
+				"etymology",
+				"colonial history",
+				"fear",
+				"caste system"
+			],
+			"pinnedTags": [
+				"Kala Pani",
+				"Hinduism",
+				"taboo",
+				"sea voyage",
+				"British Raj",
+				"superstition",
+				"etymology",
+				"colonial history",
+				"fear",
+				"caste system"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-generational-bengali-tunnel-visions-a-symphony-of-selective-blindness.md": {
+			"bodyHash": "2ac5c496e5b17193a9f343cf7c96200706cea32b9358f8d9a64bcd5571b493ba",
+			"hashVersion": 2,
+			"revisionHash": "d39d3712841b4eb53972871e4884a497fcf5d57be210185742636b9627733f4c",
+			"generatedTags": [
+				"Bengali",
+				"Calcutta",
+				"Culture",
+				"Generations",
+				"Tradition",
+				"History",
+				"Society",
+				"Nostalgia",
+				"Tunnel Vision",
+				"Identity"
+			],
+			"pinnedTags": [
+				"Bengali",
+				"Calcutta",
+				"Culture",
+				"Generations",
+				"Tradition",
+				"History",
+				"Society",
+				"Nostalgia",
+				"Tunnel Vision",
+				"Identity"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.md": {
+			"bodyHash": "ce28655d77842a51d9bd527f05be2bfd30f286a8686329e781bc4beecc7bb586",
+			"hashVersion": 2,
+			"revisionHash": "8750f67fdac8ad3a59c7575a82f055322b21bee84811fe8d773216fc349e6365",
+			"generatedTags": [
+				"neuroscience",
+				"brain",
+				"EEG",
+				"alpha waves",
+				"beta waves",
+				"gamma waves",
+				"theta waves",
+				"delta waves",
+				"oscillations",
+				"Calcutta"
+			],
+			"pinnedTags": [
+				"neuroscience",
+				"brain",
+				"EEG",
+				"alpha waves",
+				"beta waves",
+				"gamma waves",
+				"theta waves",
+				"delta waves",
+				"oscillations",
+				"Calcutta"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
 		"src/lib/posts/mindmap-studio.md": {
 			"bodyHash": "7876ad8552bd35573685e70681beef792bb2dac3990917303b20ccd067872556",
 			"hashVersion": 2,
