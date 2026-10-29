@@ -16070,6 +16070,36 @@
 				"Survival"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-great-black-water-adventure-hindoo-edition.md": {
+			"bodyHash": "5b83dce3452f7972a85b2e16423966ba6196ff5daf1b9e489a19da02c6e0a427",
+			"hashVersion": 2,
+			"revisionHash": "ad508c732ca0078d2abe801fa5cf3b179af961ce14e2b785589562655140a2b0",
+			"generatedTags": [
+				"Kala Pani",
+				"Hinduism",
+				"taboo",
+				"sea voyage",
+				"British Raj",
+				"superstition",
+				"etymology",
+				"colonial history",
+				"fear",
+				"caste system"
+			],
+			"pinnedTags": [
+				"Kala Pani",
+				"Hinduism",
+				"taboo",
+				"sea voyage",
+				"British Raj",
+				"superstition",
+				"etymology",
+				"colonial history",
+				"fear",
+				"caste system"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

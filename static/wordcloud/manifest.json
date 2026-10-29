@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T02:09:11.800373+00:00",
+  "generatedAt": "2026-10-29T14:37:55.940530+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12464,6 +12464,29 @@
         "Human",
         "Often",
         "Moral"
+      ],
+      "wordCount": 130
+    },
+    "the-great-black-water-adventure-hindoo-edition": {
+      "generatedAt": "2026-10-29T14:37:55.719050+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-great-black-water-adventure-hindoo-edition.svg",
+      "source": "src/lib/posts/the-great-black-water-adventure-hindoo-edition.md",
+      "sourceHash": "19eb7328b9949dc5c22aafc52be490c8de7da20fb082449fd3c54c7e2a35153d",
+      "sourceModified": "2026-10-29T14:37:45.231869+00:00",
+      "topWords": [
+        "Kala",
+        "Pani",
+        "Water",
+        "Black",
+        "Oceans",
+        "Perhaps",
+        "Hindoo",
+        "British",
+        "Caste",
+        "Fear",
+        "Ancestors",
+        "Now"
       ],
       "wordCount": 130
     },

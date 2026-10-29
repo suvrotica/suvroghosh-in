@@ -8288,6 +8288,22 @@
       "sourceHash": "50cdd9e1b621d3f89c77143c8da9dc6f4de4611a596600f19c72174ac03ea3f4",
       "width": 1200
     },
+    "static/images/art-the-great-black-water-adventure-hindoo-edition.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 258149,
+      "outputHash": "c954a9887b38d88cc585a2f6a346a38298ef22d0fadb1a4b233e25c8027dd816",
+      "psnrDb": 36.08,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 985613,
+      "sourceHash": "e0c7765e676c5434f0eb12ac5f675098e2a7dc23df6ed242d628c9b1f2157634",
+      "width": 1376
+    },
     "static/images/art-the-machines-insides.jpg": {
       "format": "JPEG",
       "height": 940,
