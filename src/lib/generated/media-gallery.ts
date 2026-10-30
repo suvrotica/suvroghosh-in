@@ -5202,7 +5202,7 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "visualizations/patient-x/social.svg",
 			"src": "/images/visualizations/patient-x/social.svg",
-			"bytes": 5453,
+			"bytes": 5451,
 			"width": 1200,
 			"height": 630
 		},
