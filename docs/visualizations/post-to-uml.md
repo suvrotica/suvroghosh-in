@@ -106,6 +106,13 @@ construction, and `OffscreenCanvas` supplies text measurements. This path needs 
 JVM, Graphviz installation, WASM evaluation, public rendering service, or weakened
 site CSP. It requires browser support for module workers and OffscreenCanvas.
 
+A new worker announces readiness after its imports, isolated environment and message handler
+are initialized. Download/startup has a 60-second limit; diagram source is withheld until that
+handshake, after which the unchanged 20-second rendering limit starts. Ready workers are reused.
+Cancellation and either timeout terminate the worker and clear its readiness; late messages
+from a terminated worker cannot revive cancelled work. This separates a slow first download
+from an expensive diagram without extending the time allowed to render untrusted source.
+
 Rendered assets include an explicit light-paper background (`#fcfbf8`) so dark
 labels remain readable both as standalone downloads and inside dark application
 chrome. The artwork is stable light-paper SVG, not a theme-mutable asset.
@@ -193,7 +200,7 @@ proof of rendering success.
 | Provider response   | Streamed 2 MiB cap; 55-second response-read deadline within the operation deadline                                                                   |
 | Provider output     | 16,000 tokens for All 14, 8,000 otherwise; zero SDK retries; 16,000 source characters per figure in the wire schema                                  |
 | Renderer source     | 100,000 UTF-16 code units and 1,500 lines                                                                                                            |
-| Renderer queue      | One active job and at most 32 queued jobs; 20-second active-job timeout with worker termination                                                      |
+| Renderer queue      | One active job and at most 32 queued jobs; 60-second startup bound, then 20-second rendering bound with worker termination                           |
 | SVG output          | Engine configured with `maxSvgSize: 6000`; rejects more than 4,000,000 SVG string characters                                                         |
 | PNG                 | 16-megapixel input-dimension bound, at most 4,096 pixels on the output's longest side; sequential rasterization with a 10-second image-load deadline |
 | ZIP                 | At most 28 figure records and 64 MiB of uncompressed entry data; safe unique paths                                                                   |

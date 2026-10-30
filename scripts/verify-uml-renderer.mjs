@@ -29,8 +29,29 @@ try {
 	page.on('pageerror', (error) => failures.push(error.message));
 	const requests = [];
 	page.on('request', (request) => requests.push(request.url()));
+	// A cold protected-preview asset took longer than the render deadline. Delay
+	// the real worker download to prove startup has a separate bounded lifetime.
+	const workerLoadDelayMs = 25_000;
+	let workerLoadDelayed = false;
+	await page.context().route(
+		'**/engine.worker-*.js',
+		async (route) => {
+			workerLoadDelayed = true;
+			await new Promise((resolve) => setTimeout(resolve, workerLoadDelayMs));
+			await route.continue();
+		},
+		{ times: 1 }
+	);
 	await page.goto('http://127.0.0.1:4322');
 	await page.waitForFunction(() => window.umlHarness);
+	const delayedStartupStarted = Date.now();
+	const delayedStartupSvg = await page.evaluate(() =>
+		window.umlHarness.render(window.umlHarness.fixtures.class.sourceCode)
+	);
+	const delayedStartupMs = Date.now() - delayedStartupStarted;
+	assert.ok(workerLoadDelayed, 'The real worker asset was not intercepted for the startup test.');
+	assert.ok(delayedStartupMs >= workerLoadDelayMs);
+	assert.match(delayedStartupSvg, /xmlns="http:\/\/www.w3.org\/2000\/svg"/);
 	const results = await page.evaluate(async () => {
 		const { fixtures, render } = window.umlHarness;
 		const results = [];
@@ -149,20 +170,26 @@ try {
 				layout: 'Smetana',
 				checks: {
 					types: 14,
+					delayedWorkerStartup: { delayMs: workerLoadDelayMs, elapsedMs: delayedStartupMs },
 					unsafeAndInvalidInputs: 6,
 					cancellation: true,
 					recovery: true,
 					noExternalRequests: true,
 					svgImagesLoad: true
 				},
-				types: results.map(({ svg, source, ...r }) => ({ ...r, bytes: svg.length }))
+				types: results.map(({ svg, type, title, error }) => ({
+					type,
+					title,
+					error,
+					bytes: svg.length
+				}))
 			},
 			null,
 			2
 		)
 	);
 	console.log(
-		'Verified fourteen real PlantUML fixtures, six unsafe/invalid inputs, cancellation, worker recovery, no external requests, and SVG image loading.'
+		'Verified delayed worker startup, fourteen real PlantUML fixtures, six unsafe/invalid inputs, cancellation, worker recovery, no external requests, and SVG image loading.'
 	);
 	console.log(`Visual proof: ${path.join(output, 'all-fourteen.png')}`);
 } finally {

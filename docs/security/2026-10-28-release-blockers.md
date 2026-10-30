@@ -172,6 +172,44 @@ The full build, browser suites, CI and preview receive fresh verification. Their
 are recorded in the PR against its exact revision; passes from `d40fc85a` are retained as
 historical evidence, not attributed to the new head.
 
+## Hosted UML acceptance: server module compatibility
+
+The integrated `fa59a6a6` revision passed local and functional CI checks, but exact-preview
+acceptance exposed HTTP 500 from `/api/uml`. Vercel runtime logs identify `ERR_REQUIRE_ESM`:
+CommonJS `sanitize-html@2.18.1` requires its ESM-only `htmlparser2@12.0.0`. Ordinary local Node
+24 accepts that bridge; the deployed loader did not. The same failure is reproducible locally
+with `--no-experimental-require-module`, including against the generated server chunk.
+
+Keep the patched sanitizer and parser. Vite now selectively bundles the sanitizer, its complete
+parser/DOM dependency family and `is-plain-object`. Bundling the nested family also prevents
+bare external imports from silently resolving older root packages used by LinkeDOM. This does
+not change sanitizer allowlists, dependency versions, the client bundle policy or runtime flags.
+The new `security:smoke` fixture reads the actual Vite configuration, creates an isolated SSR
+bundle of the real policy, and exercises its import and SVG preservation/rejection in a child
+process with CommonJS-to-ES-module loading disabled. The fixture failed before the change.
+
+Earlier preview acceptance remains failed evidence, not a pass retroactively attributed to this
+fix. The corrected server artifact, local browser behavior and a fresh exact-revision deployment
+must be verified; their results belong in the PR and final handoff.
+
+## Hosted UML acceptance: first worker download
+
+The first protected browser case on `fa59a6a6` also failed independently of the API error.
+Its worker asset had cache-MISS response headers but no completed body before the 20-second
+render timer expired. A bounded authenticated measurement later downloaded the same 3,402,281
+bytes in 1.27 seconds with cache HIT and matching SHA-256; the unchanged first browser case
+then passed in 4.8 seconds. That supports a startup-delay diagnosis, not a measured CPU-only
+render failure. The original failed run is preserved.
+
+The old timer began immediately after `new Worker()`, covering fetch, initialization and
+rendering together. The worker now signals readiness only after imports, isolation and its
+message handler are ready. Startup is bounded to 60 seconds; untrusted source is withheld
+until readiness, then the existing 20-second render deadline starts. Queue/input/output limits
+are unchanged. Cancellation and timeout terminate the worker, clear both lifecycle states and
+ignore stale callbacks. Fake-worker regressions exercise delayed startup, bounded failure,
+unchanged rendering deadlines, reuse and cancellation. A real-engine harness delays the first
+worker response by 25 seconds to exercise the protocol separately from warmed-cache success.
+
 ## Verification and handoff
 
 The three new sample fixtures, five exact sample checks, authoring-provenance check and real
@@ -191,5 +229,6 @@ a generated-image input, exact cross-platform verification, and the existing Not
 enforcement gap. Browser provisioning now consistently uses the full Chromium installed by
 feature CI; stationary Strange Matter rendering returns to idle after necessary redraws.
 The incoming UML owner/shared-quota and genuine local-rendering boundaries are retained
-alongside preview containment and executable shared-quota verification. No new service or hosted
+alongside preview containment, executable shared-quota verification and selective server dependency
+bundling for the deployed loader, plus separate bounded worker startup and rendering. No new service or hosted
 security policy is introduced. The incomplete framework migration remains a separate plan.
