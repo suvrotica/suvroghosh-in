@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T22:54:40.251895+00:00",
+  "generatedAt": "2026-10-30T18:05:57.298336+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7706,6 +7706,29 @@
       ],
       "wordCount": 130
     },
+    "patient-x-depression-bipolar": {
+      "generatedAt": "2026-10-30T17:07:15.991414+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/patient-x-depression-bipolar.svg",
+      "source": "src/lib/posts/patient-x-depression-bipolar.md",
+      "sourceHash": "9a54be8af75658bd3774f873874c596b20e3a90447257b2d7ed88048ef1b3ace",
+      "sourceModified": "2026-10-30T17:07:10.040991+00:00",
+      "topWords": [
+        "Different",
+        "Zero",
+        "Sleep",
+        "Scores",
+        "Person",
+        "Answers",
+        "Symptoms",
+        "Assessment",
+        "Days",
+        "Whether",
+        "Questions",
+        "Total"
+      ],
+      "wordCount": 130
+    },
     "pedagogy-after-ai": {
       "generatedAt": "2026-10-24T20:02:48.676154+00:00",
       "generatorVersion": "2026-07-13.1",
@@ -8508,6 +8531,29 @@
         "Somewhere",
         "Little",
         "National"
+      ],
+      "wordCount": 130
+    },
+    "ram-redux-and-the-holy-shitstorm-of-divine-regrets": {
+      "generatedAt": "2026-10-30T18:03:16.416646+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ram-redux-and-the-holy-shitstorm-of-divine-regrets.svg",
+      "source": "src/lib/posts/ram-redux-and-the-holy-shitstorm-of-divine-regrets.md",
+      "sourceHash": "bce19b360530784d80d028dbefdf9ffd88b0c22505620ad66112dce991effd00",
+      "sourceModified": "2026-10-30T18:01:16.318441+00:00",
+      "topWords": [
+        "Ram",
+        "Cosmic",
+        "Whose",
+        "Jiminy",
+        "Divine",
+        "Fucking",
+        "Bow",
+        "Painfully",
+        "Imagine",
+        "Deity",
+        "Rakshasas",
+        "Realizing"
       ],
       "wordCount": 130
     },
@@ -12605,6 +12651,29 @@
       ],
       "wordCount": 130
     },
+    "the-great-indian-it-crematorium": {
+      "generatedAt": "2026-10-29T23:50:13.058900+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-great-indian-it-crematorium.svg",
+      "source": "src/lib/posts/the-great-indian-it-crematorium.md",
+      "sourceHash": "dcd56d713a95083da27fa8adb9aa40c9047f422ab22f19b347fa46e5b480894b",
+      "sourceModified": "2026-10-29T23:49:32.091893+00:00",
+      "topWords": [
+        "Next",
+        "Somebody",
+        "Need",
+        "Pay",
+        "Perhaps",
+        "Already",
+        "Years",
+        "Useful",
+        "Salary",
+        "Learn",
+        "Now",
+        "Hope"
+      ],
+      "wordCount": 130
+    },
     "the-great-meme-reset-and-my-colon": {
       "generatedAt": "2026-08-13T21:17:36.607898+00:00",
       "generatorVersion": "2026-07-13.1",
@@ -16673,6 +16742,29 @@
         "Lane",
         "Someone",
         "Remains"
+      ],
+      "wordCount": 130
+    },
+    "vibe-fucking-coding-mustard-oil-and-other-missing-ingredients": {
+      "generatedAt": "2026-10-30T18:05:57.214287+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.svg",
+      "source": "src/lib/posts/vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.md",
+      "sourceHash": "08e100d4abaa7afd83e3ef1f2b1ff1a7aee8413ce716160f69b70a1a50274fcf",
+      "sourceModified": "2026-10-30T17:52:41.136477+00:00",
+      "topWords": [
+        "Vibe",
+        "Coding",
+        "Mustard",
+        "Fucking",
+        "Existential",
+        "Code",
+        "Bengali",
+        "Oil",
+        "Missing",
+        "Across",
+        "Even",
+        "Latin"
       ],
       "wordCount": 130
     },

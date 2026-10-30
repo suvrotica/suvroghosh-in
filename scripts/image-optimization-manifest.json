@@ -8176,6 +8176,22 @@
       "sourceHash": "923839eb148a43022bf1d2074380e0a9a66ba694815adbe40adf9d95fac7479d",
       "width": 1536
     },
+    "static/images/art-ram-redux-and-the-holy-shitstorm-of-divine-regrets.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 299890,
+      "outputHash": "2dcd689e2e5c03eb2216750fa512617c32c7866afccfaa762da45f05c66de559",
+      "psnrDb": 36.07,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 1028963,
+      "sourceHash": "f0c9e4acc5e91aa90721e3bf805be86f6075a2f130bb360220ed2a1d619ee364",
+      "width": 1376
+    },
     "static/images/art-recursive-depression-concentricities.jpg": {
       "format": "JPEG",
       "height": 1536,
@@ -8336,6 +8352,22 @@
       "sourceHash": "e0c7765e676c5434f0eb12ac5f675098e2a7dc23df6ed242d628c9b1f2157634",
       "width": 1376
     },
+    "static/images/art-the-great-indian-it-crematorium.jpg": {
+      "format": "JPEG",
+      "height": 864,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 864,
+      "originalWidth": 1536,
+      "outputBytes": 338183,
+      "outputHash": "2517c729a7a219b7242b61a619c2e5da7b898736ff5d785bdf65953dfdc3e699",
+      "psnrDb": 37.17,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 419827,
+      "sourceHash": "2639d74744b6b02621cd14db30509e9f627f8261545d7a63fe42cef7384a4953",
+      "width": 1536
+    },
     "static/images/art-the-machines-insides.jpg": {
       "format": "JPEG",
       "height": 940,
@@ -8351,6 +8383,22 @@
       "sourceBytes": 356465,
       "sourceHash": "8206546f897785df8fab16c891f2edfb417f2edad630cd05c427ad86f7954999",
       "width": 1672
+    },
+    "static/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 398315,
+      "outputHash": "b665a8f0f9b76c565bec330264b46854d1da783247157b4e0911e8062009ea2d",
+      "psnrDb": 34.3,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 1257758,
+      "sourceHash": "e1d6a3b0a296a92bb9c121738abb73b87e6ef21a7b000262b3aba18ac5674cad",
+      "width": 1376
     },
     "static/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg": {
       "format": "JPEG",
@@ -11717,6 +11765,33 @@
       "resized": false,
       "sourceBytes": 294459,
       "sourceHash": "08df4abc36364b28d5ffdb5c0960d8354680d33b493e42e8b8d3c4002a4f9ec7",
+      "width": 1200
+    },
+    "static/images/visualizations/patient-x/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 88484,
+      "outputHash": "db28807318b50247706a0eb6cc7ad1c11e96856441b6afbd02eaf0475a4f4875",
+      "resized": false,
+      "sourceBytes": 88484,
+      "sourceHash": "db28807318b50247706a0eb6cc7ad1c11e96856441b6afbd02eaf0475a4f4875",
+      "width": 1200
+    },
+    "static/images/visualizations/patient-x/social.svg": {
+      "format": "SVG",
+      "height": 630,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 5451,
+      "outputHash": "109f6f820b63a4c3a19e88bf11dbb16b6e911dd3f27cef5faa8ade51146340d6",
+      "reason": "vector source retained",
+      "sourceBytes": 5451,
+      "sourceHash": "109f6f820b63a4c3a19e88bf11dbb16b6e911dd3f27cef5faa8ade51146340d6",
       "width": 1200
     },
     "static/images/visualizations/post-to-uml/social.png": {

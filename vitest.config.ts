@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/patient-x/**/*.test.ts',
 			'src/lib/visualizations/mindmap-studio/**/*.test.ts',
 			'src/lib/server/mindmap-studio/**/*.test.ts',
 			'src/routes/api/mindmap-studio/**/*.test.ts',

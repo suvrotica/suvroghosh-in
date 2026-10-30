@@ -90,6 +90,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "art-ram-redux-and-the-holy-shitstorm-of-divine-regrets.jpg",
+			"src": "/images/art-ram-redux-and-the-holy-shitstorm-of-divine-regrets.jpg",
+			"bytes": 299890,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-recursive-depression-concentricities.jpg",
 			"src": "/images/art-recursive-depression-concentricities.jpg",
 			"bytes": 136858,
@@ -160,11 +167,25 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "art-the-great-indian-it-crematorium.jpg",
+			"src": "/images/art-the-great-indian-it-crematorium.jpg",
+			"bytes": 338183,
+			"width": 1536,
+			"height": 864
+		},
+		{
 			"name": "art-the-machines-insides.jpg",
 			"src": "/images/art-the-machines-insides.jpg",
 			"bytes": 274012,
 			"width": 1672,
 			"height": 940
+		},
+		{
+			"name": "art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
+			"src": "/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
+			"bytes": 398315,
+			"width": 1376,
+			"height": 768
 		},
 		{
 			"name": "art-what-exactly-have-i-let-my-local-ai-touch.jpg",
@@ -5182,6 +5203,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "visualizations/openhie/openhie-social.png",
 			"src": "/images/visualizations/openhie/openhie-social.png",
 			"bytes": 294459,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/patient-x/social.png",
+			"src": "/images/visualizations/patient-x/social.png",
+			"bytes": 88484,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/patient-x/social.svg",
+			"src": "/images/visualizations/patient-x/social.svg",
+			"bytes": 5451,
 			"width": 1200,
 			"height": 630
 		},

@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'patient-x-depression-bipolar': {
+		id: 'patient-x-depression-bipolar',
+		title: 'Depression, bipolar disorder, and what the scores leave out',
+		description:
+			'Follow one fictional person through three questionnaires. See what changed, inspect the answers and understand what the scores cannot tell you.',
+		subjects: ['Mental Health', 'Data Visualization'],
+		poster: '/images/visualizations/patient-x/social.png',
+		posterAlt:
+			'Three separate questionnaire score timelines for a fictional person over twelve weeks, with depression, elevated mood and activity, and well-being shown independently.',
+		href: '/blog/visualizations/patient-x-depression-bipolar',
+		status: 'published'
+	},
 	'mindmap-studio': {
 		id: 'mindmap-studio',
 		title: 'Mindmap Studio: Read Deeply, See the Connections',

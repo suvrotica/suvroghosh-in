@@ -322,9 +322,12 @@ test('WebGL without renderable HDR attachments falls back to visible artwork', a
 	await page.addInitScript(() => {
 		if (typeof WebGL2RenderingContext === 'undefined') return;
 		const original = WebGL2RenderingContext.prototype.getExtension;
-		WebGL2RenderingContext.prototype.getExtension = function (name: string) {
+		WebGL2RenderingContext.prototype.getExtension = function (
+			this: WebGL2RenderingContext,
+			name: string
+		) {
 			if (['EXT_color_buffer_float', 'EXT_color_buffer_half_float'].includes(name)) return null;
-			return original.call(this, name);
+			return original.bind(this)(name);
 		};
 	});
 	await ready(page);

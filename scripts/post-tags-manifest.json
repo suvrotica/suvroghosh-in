@@ -16200,8 +16200,128 @@
 				"Concept Mapping",
 				"Critical Thinking"
 			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-great-indian-it-crematorium.md": {
+			"bodyHash": "2d273e45838afa430c7f70b9ca49952c0b0a562cf661f88cd5ed8852cdc3bb56",
+			"hashVersion": 2,
+			"revisionHash": "b644d3b3196b2369d85f074d06cdbc8abb6e9b497cef62f3ea1f3c3bc375ce4f",
+			"generatedTags": [
+				"India",
+				"IT Industry",
+				"Artificial Intelligence",
+				"Automation",
+				"Middle Class",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Employment"
+			],
+			"pinnedTags": [
+				"India",
+				"IT Industry",
+				"Artificial Intelligence",
+				"Automation",
+				"Middle Class",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Employment"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/patient-x-depression-bipolar.md": {
+			"bodyHash": "709edd3f3f8ac3272652043c534d31e9cae56b63db4ac4bcfda384361f4f59d1",
+			"hashVersion": 2,
+			"revisionHash": "41678c029df3352f690fe962b6ac01182e8bb92bc1999efffa1317d6325c52ab",
+			"generatedTags": [
+				"Mental Health",
+				"Depression",
+				"Bipolar Disorder",
+				"PHQ-9",
+				"ASRM",
+				"WHO-5",
+				"Patient Education",
+				"Data Visualisation",
+				"Questionnaires",
+				"Synthetic Data"
+			],
+			"pinnedTags": [
+				"Mental Health",
+				"Depression",
+				"Bipolar Disorder",
+				"PHQ-9",
+				"ASRM",
+				"WHO-5",
+				"Patient Education",
+				"Data Visualisation",
+				"Questionnaires",
+				"Synthetic Data"
+			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-30"
+		},
+		"src/lib/posts/ram-redux-and-the-holy-shitstorm-of-divine-regrets.md": {
+			"bodyHash": "84c0b5db932ec2d142ff9d1c9259ef29513383aea442cc16cb55a1210f9bfabd",
+			"hashVersion": 2,
+			"revisionHash": "7cd5c4c6eda4dc1f0dc4a2068596d6bafc9683522db41d0c6ee8167a7d1ffcb5",
+			"generatedTags": [
+				"Ram",
+				"satire",
+				"Hinduism",
+				"religious extremism",
+				"India",
+				"mythology",
+				"blasphemy",
+				"heresy",
+				"politics",
+				"Calcutta"
+			],
+			"pinnedTags": [
+				"Ram",
+				"satire",
+				"Hinduism",
+				"religious extremism",
+				"India",
+				"mythology",
+				"blasphemy",
+				"heresy",
+				"politics",
+				"Calcutta"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.md": {
+			"bodyHash": "c0c342ff630437c6ae77ad19081f211b8f5934dfa56f10d4ba273dfaae9e8d61",
+			"hashVersion": 2,
+			"revisionHash": "31b719689eb99a5028e5e34f1be168e8b9dfbf6d0ee413e1d316eea85e04a1c7",
+			"generatedTags": [
+				"coding",
+				"Calcutta",
+				"satire",
+				"Bengali",
+				"mustard oil",
+				"vibe",
+				"science",
+				"technology",
+				"programming",
+				"existentialism"
+			],
+			"pinnedTags": [
+				"coding",
+				"Calcutta",
+				"satire",
+				"Bengali",
+				"mustard oil",
+				"vibe",
+				"science",
+				"technology",
+				"programming",
+				"existentialism"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
