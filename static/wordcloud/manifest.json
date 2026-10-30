@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T17:07:16.589665+00:00",
+  "generatedAt": "2026-10-30T18:03:25.965337+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8531,6 +8531,29 @@
         "Somewhere",
         "Little",
         "National"
+      ],
+      "wordCount": 130
+    },
+    "ram-redux-and-the-holy-shitstorm-of-divine-regrets": {
+      "generatedAt": "2026-10-30T18:03:16.416646+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ram-redux-and-the-holy-shitstorm-of-divine-regrets.svg",
+      "source": "src/lib/posts/ram-redux-and-the-holy-shitstorm-of-divine-regrets.md",
+      "sourceHash": "bce19b360530784d80d028dbefdf9ffd88b0c22505620ad66112dce991effd00",
+      "sourceModified": "2026-10-30T18:01:16.318441+00:00",
+      "topWords": [
+        "Ram",
+        "Cosmic",
+        "Whose",
+        "Jiminy",
+        "Divine",
+        "Fucking",
+        "Bow",
+        "Painfully",
+        "Imagine",
+        "Deity",
+        "Rakshasas",
+        "Realizing"
       ],
       "wordCount": 130
     },

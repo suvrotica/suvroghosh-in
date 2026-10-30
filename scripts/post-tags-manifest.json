@@ -16189,8 +16189,7 @@
 				"Concept Mapping",
 				"Critical Thinking"
 			],
-			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-10-30"
+			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-great-indian-it-crematorium.md": {
 			"bodyHash": "2d273e45838afa430c7f70b9ca49952c0b0a562cf661f88cd5ed8852cdc3bb56",
@@ -16252,6 +16251,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-30"
+		},
+		"src/lib/posts/ram-redux-and-the-holy-shitstorm-of-divine-regrets.md": {
+			"bodyHash": "84c0b5db932ec2d142ff9d1c9259ef29513383aea442cc16cb55a1210f9bfabd",
+			"hashVersion": 2,
+			"revisionHash": "7cd5c4c6eda4dc1f0dc4a2068596d6bafc9683522db41d0c6ee8167a7d1ffcb5",
+			"generatedTags": [
+				"Ram",
+				"satire",
+				"Hinduism",
+				"religious extremism",
+				"India",
+				"mythology",
+				"blasphemy",
+				"heresy",
+				"politics",
+				"Calcutta"
+			],
+			"pinnedTags": [
+				"Ram",
+				"satire",
+				"Hinduism",
+				"religious extremism",
+				"India",
+				"mythology",
+				"blasphemy",
+				"heresy",
+				"politics",
+				"Calcutta"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

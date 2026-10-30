@@ -90,6 +90,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "art-ram-redux-and-the-holy-shitstorm-of-divine-regrets.jpg",
+			"src": "/images/art-ram-redux-and-the-holy-shitstorm-of-divine-regrets.jpg",
+			"bytes": 299890,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-recursive-depression-concentricities.jpg",
 			"src": "/images/art-recursive-depression-concentricities.jpg",
 			"bytes": 136858,

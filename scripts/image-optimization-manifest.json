@@ -8176,6 +8176,22 @@
       "sourceHash": "923839eb148a43022bf1d2074380e0a9a66ba694815adbe40adf9d95fac7479d",
       "width": 1536
     },
+    "static/images/art-ram-redux-and-the-holy-shitstorm-of-divine-regrets.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 299890,
+      "outputHash": "2dcd689e2e5c03eb2216750fa512617c32c7866afccfaa762da45f05c66de559",
+      "psnrDb": 36.07,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 1028963,
+      "sourceHash": "f0c9e4acc5e91aa90721e3bf805be86f6075a2f130bb360220ed2a1d619ee364",
+      "width": 1376
+    },
     "static/images/art-recursive-depression-concentricities.jpg": {
       "format": "JPEG",
       "height": 1536,
