@@ -8384,6 +8384,22 @@
       "sourceHash": "8206546f897785df8fab16c891f2edfb417f2edad630cd05c427ad86f7954999",
       "width": 1672
     },
+    "static/images/art-the-next-better-thing.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 397853,
+      "outputHash": "571fcf6c9c63e2f3f106bffa0846ba4455b84120b650b720d6a51a1b96be72b6",
+      "psnrDb": 33.16,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 890478,
+      "sourceHash": "1cf8dae2ab8c7317c52762fd7175578465dce9d8eb6f3e2fc8f035438874ca86",
+      "width": 1672
+    },
     "static/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg": {
       "format": "JPEG",
       "height": 768,

@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Next Better Thing" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Next Better Thing</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(225,344)" font-size="118" style="fill:#e0b879">Model</text>
+<text transform="translate(630,709)" font-size="86" style="fill:#a9b7a3">Better</text>
+<text transform="translate(758,358)" font-size="81" style="fill:#e0b879">Headphones</text>
+<text transform="translate(330,702)" font-size="81" style="fill:#e0b879">Answer</text>
+<text transform="translate(594,103)" font-size="76" style="fill:#c49a6c">Graph</text>
+<text transform="translate(79,87)" font-size="76" style="fill:#b6c3dd">Different</text>
+<text transform="translate(533,244)" font-size="76" style="fill:#c7d7b5">Reward</text>
+<text transform="translate(1009,239)" font-size="71" style="fill:#a9b7a3">Little</text>
+<text transform="translate(481,614)" font-size="71" style="fill:#c7d7b5">Whether</text>
+<text transform="translate(767,442)" font-size="71" style="fill:#d5d2c2">Useful</text>
+<text transform="translate(347,182)" font-size="71" style="fill:#b6c3dd">Work</text>
+<text transform="translate(158,483)" font-size="71" style="fill:#9fc9c5">Problem</text>
+<text transform="translate(84,627) rotate(-90)" font-size="71" style="fill:#d88988">Recording</text>
+<text transform="translate(506,499)" font-size="65" style="fill:#d9c89e">Already</text>
+<text transform="translate(948,76)" font-size="65" style="fill:#d9c89e">Need</text>
+<text transform="translate(960,178)" font-size="65" style="fill:#d9c89e">Pleasure</text>
+<text transform="translate(370,400)" font-size="65" style="fill:#d6a79f">Headphone</text>
+<text transform="translate(137,568)" font-size="65" style="fill:#c7d7b5">Response</text>
+<text transform="translate(794,598)" font-size="65" style="fill:#d5d2c2">Dopamine</text>
+<text transform="translate(773,543)" font-size="65" style="fill:#a9b7a3">Difference</text>
+<text transform="translate(1032,690)" font-size="65" style="fill:#d88988">System</text>
+<text transform="translate(1102,291)" font-size="65" style="fill:#d6a79f">Next</text>
+<text transform="translate(6,226)" font-size="59" style="fill:#d5d2c2">Equipment</text>
+<text transform="translate(1027,433)" font-size="59" style="fill:#e0b879">Object</text>
+<text transform="translate(60,174)" font-size="59" style="fill:#b6c3dd">Use</text>
+<text transform="translate(917,284)" font-size="59" style="fill:#b6c3dd">Hear</text>
+<text transform="translate(202,699)" font-size="59" style="fill:#c7d7b5">Fit</text>
+<text transform="translate(106,419)" font-size="59" style="fill:#d9c89e">Result</text>
+<text transform="translate(584,177)" font-size="59" style="fill:#a9b7a3">Particular</text>
+<text transform="translate(113,633)" font-size="59" style="fill:#c7d7b5">Change</text>
+<text transform="translate(945,496)" font-size="58" style="fill:#a9b7a3">Context</text>
+<text transform="translate(1025,121)" font-size="58" style="fill:#b6c3dd">Test</text>
+<text transform="translate(641,293)" font-size="58" style="fill:#8fb7d0">Models</text>
+<text transform="translate(103,329)" font-size="52" style="fill:#d5d2c2">Dip</text>
+<text transform="translate(372,243)" font-size="52" style="fill:#d6a79f">Three</text>
+<text transform="translate(592,357)" font-size="52" style="fill:#d9c89e">Piece</text>
+<text transform="translate(453,543)" font-size="51" style="fill:#c7d7b5">Diaphragm</text>
+<text transform="translate(1111,60)" font-size="51" style="fill:#b6c3dd">Means</text>
+<text transform="translate(95,125)" font-size="45" style="fill:#b6c3dd">Magnetic</text>
+<text transform="translate(909,629)" font-size="36" style="fill:#e0b879">Specifications</text>
+<text transform="translate(1141,579)" font-size="36" style="fill:#c49a6c">Design</text>
+<text transform="translate(64,680)" font-size="36" style="fill:#d5d2c2">Signal</text>
+<text transform="translate(587,106) rotate(-90)" font-size="36" style="fill:#d88988">Even</text>
+<text transform="translate(608,34)" font-size="36" style="fill:#e0b879">Measurements</text>
+<text transform="translate(1266,521) rotate(-90)" font-size="36" style="fill:#9fc9c5">Comparison</text>
+<text transform="translate(908,120) rotate(-90)" font-size="36" style="fill:#d5d2c2">Small</text>
+<text transform="translate(254,518)" font-size="36" style="fill:#d6a79f">First</text>
+<text transform="translate(379,644)" font-size="36" style="fill:#8fb7d0">Improvement</text>
+<text transform="translate(281,33)" font-size="36" style="fill:#8fb7d0">Question</text>
+<text transform="translate(837,218)" font-size="36" style="fill:#a9b7a3">Although</text>
+<text transform="translate(571,441)" font-size="36" style="fill:#c7d7b5">Purchase</text>
+<text transform="translate(168,167)" font-size="36" style="fill:#d6a79f">Actually</text>
+<text transform="translate(546,177) rotate(-90)" font-size="36" style="fill:#d9c89e">Expected</text>
+<text transform="translate(313,121)" font-size="36" style="fill:#8fb7d0">Sometimes</text>
+<text transform="translate(372,430)" font-size="36" style="fill:#d5d2c2">Prompt</text>
+<text transform="translate(382,609)" font-size="31" style="fill:#d88988">Years</text>
+<text transform="translate(33,577) rotate(-90)" font-size="31" style="fill:#c49a6c">Expensive</text>
+<text transform="translate(797,478)" font-size="31" style="fill:#c49a6c">Longer</text>
+<text transform="translate(1155,386)" font-size="31" style="fill:#e0b879">Now</text>
+<text transform="translate(119,513)" font-size="31" style="fill:#d9c89e">Planar</text>
+<text transform="translate(706,639)" font-size="27" style="fill:#c49a6c">Acquisition</text>
+<text transform="translate(12,127)" font-size="27" style="fill:#9fc9c5">Give</text>
+<text transform="translate(215,249)" font-size="25" style="fill:#d9c89e">Researching</text>
+<text transform="translate(553,278)" font-size="25" style="fill:#d88988">Long</text>
+<text transform="translate(108,593) rotate(-90)" font-size="25" style="fill:#9fc9c5">Beautifully</text>
+<text transform="translate(1214,542) rotate(-90)" font-size="25" style="fill:#e0b879">Search</text>
+<text transform="translate(913,112)" font-size="25" style="fill:#c49a6c">Activity</text>
+<text transform="translate(190,367)" font-size="25" style="fill:#a9b7a3">Electrical</text>
+<text transform="translate(121,267)" font-size="25" style="fill:#a9b7a3">Air</text>
+<text transform="translate(923,23)" font-size="25" style="fill:#d6a79f">Performance</text>
+<text transform="translate(12,643)" font-size="25" style="fill:#e0b879">Head</text>
+<text transform="translate(940,707)" font-size="25" style="fill:#a9b7a3">Merely</text>
+<text transform="translate(16,101)" font-size="25" style="fill:#d6a79f">Part</text>
+<text transform="translate(91,363)" font-size="25" style="fill:#d5d2c2">Tell</text>
+<text transform="translate(724,383)" font-size="25" style="fill:#b6c3dd">Measurement</text>
+<text transform="translate(138,23)" font-size="25" style="fill:#b6c3dd">Measured</text>
+<text transform="translate(4,714)" font-size="25" style="fill:#8fb7d0">Loudness</text>
+<text transform="translate(1166,130)" font-size="25" style="fill:#c49a6c">Mistake</text>
+<text transform="translate(1165,88)" font-size="25" style="fill:#c49a6c">Memory</text>
+<text transform="translate(637,640)" font-size="25" style="fill:#d5d2c2">Pair</text>
+<text transform="translate(24,366) rotate(-90)" font-size="25" style="fill:#d9c89e">Several</text>
+<text transform="translate(1142,22)" font-size="22" style="fill:#d6a79f">Especially</text>
+<text transform="translate(591,125)" font-size="22" style="fill:#9fc9c5">Difficulty</text>
+<text transform="translate(1124,710)" font-size="21" style="fill:#e0b879">Uncertainty</text>
+<text transform="translate(904,296) rotate(-90)" font-size="21" style="fill:#e0b879">Leads</text>
+<text transform="translate(1017,378)" font-size="21" style="fill:#9fc9c5">Amplifier</text>
+<text transform="translate(20,22)" font-size="21" style="fill:#c49a6c">Questions</text>
+<text transform="translate(647,318)" font-size="21" style="fill:#d5d2c2">Learning</text>
+<text transform="translate(958,305)" font-size="21" style="fill:#d5d2c2">Cue</text>
+<text transform="translate(399,504)" font-size="21" style="fill:#d6a79f">Read</text>
+<text transform="translate(750,124)" font-size="21" style="fill:#c49a6c">Prediction</text>
+<text transform="translate(165,588)" font-size="21" style="fill:#c49a6c">Value</text>
+<text transform="translate(1143,598)" font-size="21" style="fill:#e0b879">Window</text>
+<text transform="translate(268,595)" font-size="21" style="fill:#c49a6c">Position</text>
+<text transform="translate(1070,309)" font-size="21" style="fill:#e0b879">Yet</text>
+<text transform="translate(741,562)" font-size="21" style="fill:#8fb7d0">Real</text>
+<text transform="translate(173,290)" font-size="21" style="fill:#e0b879">Task</text>
+<text transform="translate(415,202)" font-size="21" style="fill:#d6a79f">Comparing</text>
+<text transform="translate(637,55)" font-size="21" style="fill:#d88988">Hardware</text>
+<text transform="translate(810,239)" font-size="21" style="fill:#b6c3dd">Actual</text>
+<text transform="translate(164,187)" font-size="21" style="fill:#8fb7d0">Possible</text>
+<text transform="translate(503,95) rotate(-90)" font-size="21" style="fill:#c7d7b5">Larger</text>
+<text transform="translate(296,274)" font-size="21" style="fill:#e0b879">Benchmark</text>
+<text transform="translate(938,662)" font-size="21" style="fill:#8fb7d0">Depends</text>
+<text transform="translate(638,197)" font-size="21" style="fill:#b6c3dd">Understand</text>
+<text transform="translate(571,458)" font-size="18" style="fill:#b6c3dd">Instructions</text>
+<text transform="translate(328,613)" font-size="18" style="fill:#8fb7d0">Tools</text>
+<text transform="translate(472,445)" font-size="15" style="fill:#d9c89e">Kilohertz</text>
+<text transform="translate(10,48)" font-size="15" style="fill:#8fb7d0">Explain</text>
+<text transform="translate(1096,645)" font-size="15" style="fill:#d5d2c2">Music</text>
+<text transform="translate(1219,643)" font-size="15" style="fill:#8fb7d0">Placed</text>
+<text transform="translate(104,652)" font-size="15" style="fill:#d5d2c2">Perhaps</text>
+<text transform="translate(125,709)" font-size="15" style="fill:#c49a6c">Looking</text>
+<text transform="translate(801,49)" font-size="15" style="fill:#e0b879">Deciding</text>
+<text transform="translate(846,308)" font-size="15" style="fill:#c49a6c">REST</text>
+<text transform="translate(876,139)" font-size="15" style="fill:#c7d7b5">Rival</text>
+<text transform="translate(559,303)" font-size="15" style="fill:#c7d7b5">Wearing</text>
+<text transform="translate(935,71) rotate(-90)" font-size="15" style="fill:#d88988">Bass</text>
+<text transform="translate(766,613)" font-size="15" style="fill:#a9b7a3">Instruments</text>
+<text transform="translate(1221,621)" font-size="15" style="fill:#d88988">Given</text>
+<text transform="translate(453,265)" font-size="15" style="fill:#8fb7d0">Allowed</text>
+<text transform="translate(361,519)" font-size="15" style="fill:#d5d2c2">Syndrome</text>
+<text transform="translate(1113,307)" font-size="15" style="fill:#e0b879">Business</text>
+<text transform="translate(4,74)" font-size="15" style="fill:#d88988">Acquired</text>
+<text transform="translate(1231,540) rotate(-90)" font-size="15" style="fill:#d5d2c2">Microphones</text>
+<text transform="translate(1042,275)" font-size="15" style="fill:#d5d2c2">Enough</text>
+<text transform="translate(820,88)" font-size="15" style="fill:#d5d2c2">Longing</text>
+<text transform="translate(365,424) rotate(-90)" font-size="15" style="fill:#8fb7d0">Diagnosis</text>
+<text transform="translate(9,143)" font-size="15" style="fill:#c49a6c">Buy</text>
+<text transform="translate(786,139)" font-size="15" style="fill:#c49a6c">Point</text>
+</svg>

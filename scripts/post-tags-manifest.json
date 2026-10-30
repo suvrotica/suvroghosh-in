@@ -16322,6 +16322,36 @@
 				"existentialism"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-next-better-thing.md": {
+			"bodyHash": "0d6b1a5c1f12ccffde6cd8c5880a55d3f383524fc3281288c558327d20afcbaf",
+			"hashVersion": 2,
+			"revisionHash": "eec1c1c059c179afcd379b741acfcfd3cb55e2cdc2f348058f0e9525b64e1ffb",
+			"generatedTags": [
+				"Audio",
+				"Headphones",
+				"Dopamine",
+				"Psychology",
+				"Technology",
+				"AI",
+				"Consumerism",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Audio",
+				"Headphones",
+				"Dopamine",
+				"Psychology",
+				"Technology",
+				"AI",
+				"Consumerism",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -181,6 +181,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 940
 		},
 		{
+			"name": "art-the-next-better-thing.jpg",
+			"src": "/images/art-the-next-better-thing.jpg",
+			"bytes": 397853,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
 			"src": "/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
 			"bytes": 398315,

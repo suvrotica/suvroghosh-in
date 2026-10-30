@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T18:05:57.298336+00:00",
+  "generatedAt": "2026-10-30T20:10:13.029798+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -13844,6 +13844,29 @@
         "Warm",
         "Face",
         "Groom"
+      ],
+      "wordCount": 130
+    },
+    "the-next-better-thing": {
+      "generatedAt": "2026-10-30T20:10:12.865308+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-next-better-thing.svg",
+      "source": "src/lib/posts/the-next-better-thing.md",
+      "sourceHash": "e4459f9ef7399d32ae0e18d18dde66bf65c1e71fa8a27081e5f01a9f229c681a",
+      "sourceModified": "2026-10-30T20:09:58.995716+00:00",
+      "topWords": [
+        "Model",
+        "Better",
+        "Headphones",
+        "Answer",
+        "Graph",
+        "Different",
+        "Reward",
+        "Little",
+        "Whether",
+        "Useful",
+        "Work",
+        "Problem"
       ],
       "wordCount": 130
     },
