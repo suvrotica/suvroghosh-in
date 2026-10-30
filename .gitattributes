@@ -2,6 +2,8 @@
 # Generated JSON manifests include byte-exact hashes; preserve their committed bytes on Windows.
 *.json text eol=lf
 *.ipynb text eol=lf
+# The generated Patient X CSV uses CRLF; preserve its byte-exact export contract on every checkout.
+static/data/patient-x/example.csv text eol=crlf
 # This generated catalog is checked byte-for-byte alongside its SVG/JSON artifacts.
 src/lib/visualizations/anatomy-of-an-essay/generated/*.ts text eol=lf
 # PDF cross-reference offsets depend on exact bytes, including on Windows checkouts.

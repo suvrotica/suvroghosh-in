@@ -229,6 +229,18 @@ acceptance require fresh verification on this integrated head. Earlier passing c
 and the failed `fa59a6a6` preview remain evidence for their own revisions. No production,
 hosted migration or account-setting action is part of this integration. TTS stays disabled.
 
+## Patient X checkout portability
+
+Feature CI at `63a3925a` stopped before the full build because Patient X's generated
+CSV did not match on Linux. The generator emits 21,104 bytes with 115 CRLF line
+endings; the unchanged main Git blob has 20,989 bytes with LF endings. All data and
+other characters match exactly. Windows' automatic checkout conversion hid the issue.
+
+A targeted `.gitattributes` rule now checks out only this CSV with CRLF on every
+platform. The generator, data and byte-exact assertion remain unchanged. Disposable
+Git checkout verification covers both `core.autocrlf=false` and `true`; fresh CI is
+required for the corrected revision. The original failed run remains recorded evidence.
+
 ## Verification and handoff
 
 The three new sample fixtures, five exact sample checks, authoring-provenance check and real
