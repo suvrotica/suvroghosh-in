@@ -1,0 +1,63 @@
+name: Security checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/security*'
+      - 'svelte.config.js'
+      - 'vercel.json'
+      - 'vitest.security.config.ts'
+      - 'src/**'
+      - '!src/lib/posts/**'
+      - '!src/lib/server/generated/**'
+      - 'supabase/**'
+      - 'services/**'
+  push:
+    branches: [main]
+    paths:
+      - '.github/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/security*'
+      - 'svelte.config.js'
+      - 'vercel.json'
+      - 'vitest.security.config.ts'
+      - 'src/**'
+      - '!src/lib/posts/**'
+      - '!src/lib/server/generated/**'
+      - 'supabase/**'
+      - 'services/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-10-28
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, verified 2026-10-28
+        with:
+          node-version: 24
+          cache: npm
+      # Ordinary pull_request jobs receive no provider credentials or write token.
+      - id: install
+        run: npm ci
+      - run: npm run security:audit
+      - name: Verify mocked request boundaries even when the dependency audit fails
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run security:smoke
+      - name: Verify disposable database roles and quotas
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run security:sql

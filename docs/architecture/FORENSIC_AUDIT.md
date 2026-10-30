@@ -81,8 +81,9 @@ is recorded in the next follow-up and each finding.
 The subsequent authorized urgent-fix change resolves `AF-006` at the owned-resource boundary and
 `AF-002` for stale-session/no-op metadata saves. `AF-001` is **in progress**: public TTS/contact
 streaming limits, input validation, origin checks, process-local admission and deadlines are
-implemented; distributed controls, Notes mutation readers, shared Supabase deadlines and the
-missing named security commands remain open. Process-local limits do not coordinate instances.
+implemented. At that follow-up, distributed controls, Notes mutation readers, shared Supabase
+deadlines and the named security commands remained open. The 28 October update below records
+subsequent fixes; process-local limits alone still do not coordinate instances.
 Provider work is bounded but does not yet stop immediately on every client disconnect.
 
 A focused `test:critical` command and path-selected critical-boundaries workflow exercise the
@@ -122,7 +123,7 @@ verification record distinguishes tests/builds performed for the corrections.
 | Scope          | TTS/contact handlers, notes mutation readers, integration clients and security tests.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Risk           | Medium: preserve supported forms/multipart/JSON, legitimate public traffic, private headers and sanitized-image behavior.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Validation     | Missing/false Content-Length, streamed overflow/cancellation, null/malformed JSON, allowed/disallowed origins, multi-instance throttles, upstream deadline/size cases, and ordinary article/RSS/sitemap/static access. Use mocked providers/staging.                                                                                                                                                                                                                                                                                                                             |
-| Status         | **In progress**: immediate public-path containment implemented; the remaining distributed/Notes/security-check work stays open.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Status         | **In progress**: local containment, shared TTS admission, Notes transports/readers and executable checks implemented; hosted verification and broader distributed controls remain open.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 **Implemented follow-up:** `src/lib/server/http/body.ts` now counts arriving bytes and cancels
 oversized/stalled streams. TTS/contact input is limited to 64 KiB with a ten-second read deadline;
@@ -131,7 +132,17 @@ limits error reads and retains its 120-second provider deadline. Contact uses an
 15-second mail deadline. Both use bounded process-local admission, including conservative
 missing-address fallback. Twenty-eight focused tests cover normal forms/audio and rejection,
 timeout, cancellation, limiter-capacity and installed-SDK signal behavior. Notes readers and
-distributed controls are deliberately not claimed fixed.
+distributed controls were deliberately not claimed fixed by that earlier follow-up.
+
+**28 October security follow-up:** Notes JSON/multipart readers now enforce actual streamed
+byte limits before parsing and shared Notes Supabase fetches bound response bytes and elapsed
+time. TTS now requires service-only atomic Supabase resource admission and explicit private
+enablement, fails closed when unavailable, propagates cancellation and omits upstream error
+bodies from responses. `security:audit`, `security:smoke` and `security:sql` now execute real
+checks; advisory findings still fail the audit. Hosted TTS activation, real concurrent database
+sessions, provider enforcement, contact's distributed-abuse policy and hosted account controls
+remain unverified or outside this patch. AF-001 remains **in progress**. See
+[the remediation record](../security/2026-10-28-hardening.md) for evidence and residual risks.
 
 An isolated transpiled-handler probe with a mocked upstream accepted an **8,388,619-byte** JSON
 request and returned 200 while forwarding only 3,000 characters; JSON `null` threw a TypeError.
@@ -185,7 +196,16 @@ this is not a claim of silent draft loss.
 | Scope          | Database fixture lifecycle, notes API/action tests, focused browser tests, CI.                                                                                                                                                                                                                                                         |
 | Risk           | Low application risk, medium fixture/CI effort; destructive fixtures must never target production.                                                                                                                                                                                                                                     |
 | Validation     | Apply migrations; test allowed/denied roles, conflicting/idempotent revisions, schedule activation races, snapshot immutability, revocation and publication asset manifests.                                                                                                                                                           |
-| Status         | **Open**, previously acknowledged as deferred.                                                                                                                                                                                                                                                                                         |
+| Status         | **In progress**: executable local role/RPC tests added on 28 October; hosted integration, browser acceptance and multi-session contention remain open.                                                                                                                                                                                                                                                                                         |
+
+**28 October security follow-up (AF-003, in progress):**
+`supabase/tests/handwritten-notes.integration.test.mjs` now executes the original migration in
+disposable PostgreSQL WASM with owner, other-user, anonymous and service roles. It covers RLS,
+sensitive direct-write denial, idempotent saves/revision conflicts, freshness, cross-note asset
+manifests, immutable snapshots, revocation, scheduled activation and storage policies. The new
+TTS quota suite executes its grants and resource caps. This narrows the evidence gap; it does
+not verify real concurrent connections, hosted Supabase Auth/Storage, PostgREST transport or
+the complete owner browser journey. Those parts remain open.
 
 ### AF-004 — Browser save operations can outlive their usable UI lifetime
 

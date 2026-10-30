@@ -48,6 +48,26 @@ Their credits and source/pixel manifest live beside the assets in
 licence is required. The corridor intentionally contains ordinary perspective;
 the article distinguishes it from added image distortion.
 
+The finite lettering is committed as 47 complete vector labels in
+`scripts/artwork/lens-mirror-labels.json`. The procedural source applies the
+original labels, positions, colours, sizes and anchors to those paths. Rendering
+does not look up system fonts. The original `Arial, sans-serif` SVG text depended
+on the host's Fontconfig configuration: Windows matched the committed pixels,
+while Linux CI failed the strict calibration-image comparison. The outlined
+artwork removes that implicit input instead of adding a tolerance or skipping
+pixel validation. Outlining changes text anti-aliasing and kerning slightly;
+the non-text geometry and colours are unchanged.
+
+The label file records the source-font names, versions and SHA-256 hashes, the
+outline tool and precision. It contains only the complete authored illustration
+labels, not a font binary or a reusable alphabet. Normal generation and checks
+need only the committed paths. For an intentional lettering edit, a maintainer
+with the licensed source Arial Regular/Bold files can prepare new paths with
+`node scripts/outline-lens-mirror-labels.mjs --font-dir <font-directory>`;
+`--check` verifies reproduction against the recorded artwork. Review the actual
+samples before regenerating them, and recapture the real application poster.
+Do not substitute a different font and silently refresh the expected pixels.
+
 The article thumbnail is `poster.png` in the same directory. The capture script
 uses the actual running default application and includes the masthead,
 comparison, effect selector, controls and “What to notice” explanation. The
@@ -86,6 +106,16 @@ Check their decoded pixels after lossless build optimisation:
 
 ```sh
 node scripts/render-lens-mirror-samples.mjs --check
+```
+
+This check compares exact decoded RGBA pixels, dimensions, procedural SVG hashes
+and label provenance. It never rewrites an artifact. The portability fixtures run
+with ordinary and deliberately empty font discovery, preserve the original
+non-text geometry and authored label placement, and reject a one-pixel edit and
+an altered source manifest:
+
+```sh
+node --test scripts/render-lens-mirror-samples.test.mjs
 ```
 
 Capture publication artwork against an already running loopback preview:

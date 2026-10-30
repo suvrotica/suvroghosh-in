@@ -5,7 +5,6 @@ const state = vi.hoisted(() => ({
 	inject: vi.fn(),
 	pageview: vi.fn(),
 	track: vi.fn(),
-	speed: vi.fn(),
 	consentRead: vi.fn()
 }));
 vi.mock('$app/environment', () => ({
@@ -18,7 +17,6 @@ vi.mock('@vercel/analytics', () => ({
 	pageview: state.pageview,
 	track: state.track
 }));
-vi.mock('@vercel/speed-insights', () => ({ injectSpeedInsights: state.speed }));
 vi.mock('$lib/privacy/consent', () => ({
 	getConsent: state.consentRead,
 	initializeConsent: state.consentRead,
@@ -64,7 +62,6 @@ describe('default public Vercel pageviews', () => {
 		collector = undefined;
 		// This integration owns only Vercel views: no collector, performance or custom events.
 		expect(fetcher).not.toHaveBeenCalled();
-		expect(state.speed).not.toHaveBeenCalled();
 		expect(state.track).not.toHaveBeenCalled();
 		expect(state.consentRead).not.toHaveBeenCalled();
 		expect(localRead).not.toHaveBeenCalled();

@@ -171,6 +171,68 @@ test('all four worlds render distinct geometry and each preset changes the compo
 	expect(views.size).toBe(4);
 });
 
+test('paused edits and zero-speed playback draw once and leave WebGL idle', async ({ page }) => {
+	// Count actual GPU draw submissions without replacing the renderer or exposing an app test API.
+	await page.addInitScript(() => {
+		const prototype = WebGL2RenderingContext.prototype;
+		const count = (context: WebGL2RenderingContext) => {
+			const canvas = context.canvas as HTMLCanvasElement & { strangeMatterDrawCalls?: number };
+			canvas.strangeMatterDrawCalls = (canvas.strangeMatterDrawCalls ?? 0) + 1;
+		};
+		const drawElements = prototype.drawElements;
+		prototype.drawElements = function (...args: Parameters<typeof drawElements>) {
+			count(this);
+			return drawElements.apply(this, args);
+		};
+		const drawArrays = prototype.drawArrays;
+		prototype.drawArrays = function (...args: Parameters<typeof drawArrays>) {
+			count(this);
+			return drawArrays.apply(this, args);
+		};
+	});
+	const app = await ready(page);
+	const sampleDraws = (glow?: number) =>
+		app.locator('canvas').evaluate(async (element, nextGlow) => {
+			const canvas = element as HTMLCanvasElement & { strangeMatterDrawCalls?: number };
+			const samples = [canvas.strangeMatterDrawCalls ?? 0];
+			if (nextGlow !== undefined) {
+				const control = document.querySelector<HTMLInputElement>('#sm-glow')!;
+				control.value = String(nextGlow);
+				control.dispatchEvent(new Event('input', { bubbles: true }));
+			}
+			for (let frame = 0; frame < 8; frame++) {
+				await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+				samples.push(canvas.strangeMatterDrawCalls ?? 0);
+			}
+			return samples;
+		}, glow);
+	const expectOneFrame = (samples: number[]) => {
+		expect(samples[1], 'A stationary edit must draw the updated artwork').toBeGreaterThan(
+			samples[0]
+		);
+		expect(
+			new Set(samples.slice(1)).size,
+			'A stationary edit must stop submitting GPU draws after its first frame'
+		).toBe(1);
+	};
+	// Allow the initial size observer to finish, then require a genuinely idle renderer.
+	const initial = await sampleDraws();
+	expect(initial.at(-1), 'The canvas must have submitted real WebGL draws').toBeGreaterThan(0);
+	expect(new Set(initial.slice(-4)).size, 'Reduced motion must leave the renderer idle').toBe(1);
+	expectOneFrame(await sampleDraws(100));
+	await page.getByRole('slider', { name: 'Speed', exact: true }).press('Home');
+	await page.getByRole('button', { name: 'Play animation', exact: true }).click();
+	expectOneFrame(await sampleDraws(0));
+	await page.getByRole('slider', { name: 'Speed', exact: true }).press('End');
+	const moving = await sampleDraws();
+	expect(moving.at(-1), 'Positive-speed playback must continue rendering').toBeGreaterThan(
+		moving[1]
+	);
+	await page.getByRole('button', { name: 'Pause animation', exact: true }).click();
+	const paused = await sampleDraws();
+	expect(new Set(paused.slice(-4)).size, 'Pausing must release the render loop again').toBe(1);
+});
+
 test('keyboard slider edits change saved settings, palette and the rendered sculpture; Undo restores surprise', async ({
 	page
 }) => {

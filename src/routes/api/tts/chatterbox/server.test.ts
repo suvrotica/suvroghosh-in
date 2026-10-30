@@ -1,13 +1,31 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { RequestHandler } from '@sveltejs/kit';
 
-const { privateEnv } = vi.hoisted(() => ({
-	privateEnv: { CHATTERBOX_TTS_ENDPOINT: 'https://speech.example/tts' }
+const { privateEnv, reserve } = vi.hoisted(() => ({
+	privateEnv: {} as Record<string, string>,
+	reserve: vi.fn()
 }));
 vi.mock('$env/dynamic/private', () => ({ env: privateEnv }));
+vi.mock('$lib/server/tts/quota', async (importOriginal) => ({
+	...(await importOriginal<typeof import('$lib/server/tts/quota')>()),
+	reserveTtsUsage: reserve
+}));
 
-beforeEach(() => vi.resetModules());
+beforeEach(() => {
+	vi.resetModules();
+	for (const key of Object.keys(privateEnv)) delete privateEnv[key];
+	Object.assign(privateEnv, {
+		CHATTERBOX_TTS_ENDPOINT: 'https://speech.example/tts',
+		CHATTERBOX_TTS_ENABLED: 'true',
+		CHATTERBOX_TTS_RATE_LIMIT_SALT: 'a'.repeat(32),
+		SUPABASE_URL: 'https://database.example',
+		SUPABASE_SERVICE_ROLE_KEY: 'test-service-key'
+	});
+	reserve.mockReset().mockResolvedValue({ allowed: true, retryAfterSeconds: 0 });
+	vi.spyOn(console, 'warn').mockImplementation(() => {});
+});
 afterEach(() => {
+	vi.restoreAllMocks();
 	vi.unstubAllGlobals();
 	vi.useRealTimers();
 });
@@ -32,6 +50,80 @@ async function invoke(
 }
 
 describe('Chatterbox admission and provider boundaries', () => {
+	it.each([
+		'CHATTERBOX_TTS_ENABLED',
+		'CHATTERBOX_TTS_RATE_LIMIT_SALT',
+		'SUPABASE_SERVICE_ROLE_KEY'
+	])('fails closed without private configuration %s even when the endpoint is set', async (key) => {
+		delete privateEnv[key];
+		vi.stubGlobal('fetch', vi.fn());
+		const response = await invoke();
+		expect(response.status).toBe(503);
+		expect(response.headers.get('cache-control')).toBe('no-store');
+		expect(fetch).not.toHaveBeenCalled();
+		expect(reserve).not.toHaveBeenCalled();
+	});
+
+	it('does not invoke either backend without a trusted client address', async () => {
+		vi.stubGlobal('fetch', vi.fn());
+		expect((await invoke(undefined, {}, '')).status).toBe(503);
+		expect(fetch).not.toHaveBeenCalled();
+		expect(reserve).not.toHaveBeenCalled();
+	});
+
+	it('reserves normalized text before generation and denies exhausted shared quotas', async () => {
+		reserve.mockResolvedValue({ allowed: false, retryAfterSeconds: 150 });
+		vi.stubGlobal('fetch', vi.fn());
+		const response = await invoke(JSON.stringify({ text: '<p>Hello world.</p>' }));
+		expect(response.status).toBe(429);
+		expect(response.headers.get('retry-after')).toBe('150');
+		expect(reserve).toHaveBeenCalledWith(expect.any(Object), 'client', 12, expect.any(AbortSignal));
+		expect(fetch).not.toHaveBeenCalled();
+	});
+
+	it('fails closed on an unavailable or uncertain quota reservation without retrying', async () => {
+		reserve.mockRejectedValue(new Error('private database diagnostic'));
+		vi.stubGlobal('fetch', vi.fn());
+		const response = await invoke();
+		expect(response.status).toBe(503);
+		expect(await response.text()).not.toContain('private database');
+		expect(reserve).toHaveBeenCalledTimes(1);
+		expect(fetch).not.toHaveBeenCalled();
+		expect(console.warn).toHaveBeenCalledWith('chatterbox_quota_unavailable');
+	});
+
+	it.each([500, 200])(
+		'does not disclose or consume raw provider diagnostics for status %i',
+		async (status) => {
+			const cancel = vi.fn();
+			const provider = vi.fn().mockResolvedValue(
+				new Response(
+					new ReadableStream({
+						start(controller) {
+							controller.enqueue(new TextEncoder().encode('secret=private-backend-token'));
+							controller.close();
+						},
+						cancel
+					}),
+					{ status, headers: { 'content-type': 'text/plain' } }
+				)
+			);
+			vi.stubGlobal('fetch', provider);
+			const response = await invoke();
+			expect(response.status).toBe(502);
+			const body = await response.json();
+			expect(body).not.toHaveProperty('detail');
+			expect(body).not.toHaveProperty('backendStatus');
+			expect(JSON.stringify(body)).not.toContain('private-backend-token');
+			expect(cancel).toHaveBeenCalled();
+			expect(JSON.stringify(vi.mocked(console.warn).mock.calls)).not.toContain(
+				'private-backend-token'
+			);
+			expect(reserve).toHaveBeenCalledTimes(1);
+			expect(provider).toHaveBeenCalledTimes(1);
+		}
+	);
+
 	it.each(['null', '[]', '"text"', '{'])(
 		'rejects invalid JSON shape %s before provider work',
 		async (body) => {
@@ -39,6 +131,7 @@ describe('Chatterbox admission and provider boundaries', () => {
 			vi.stubGlobal('fetch', fetch);
 			expect((await invoke(body)).status).toBe(400);
 			expect(fetch).not.toHaveBeenCalled();
+			expect(reserve).not.toHaveBeenCalled();
 		}
 	);
 
@@ -82,6 +175,7 @@ describe('Chatterbox admission and provider boundaries', () => {
 			voice_mode: 'predefined'
 		});
 		expect(options.signal).toBeInstanceOf(AbortSignal);
+		expect(options.redirect).toBe('error');
 	});
 
 	it('rejects excessive provider audio and cancels the upstream stream', async () => {

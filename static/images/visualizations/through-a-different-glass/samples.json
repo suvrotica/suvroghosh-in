@@ -2,31 +2,32 @@
   "width": 1400,
   "height": 1000,
   "authorship": "Original procedural SVG illustrations created for the Lens and Mirror Lab. No third-party source images.",
+  "labelArtworkSha256": "a3f31ee2c0041059d2e0ec7b37fdc45b66526494806173c76e4b0260708e91ce",
   "samples": {
     "calibration": {
       "file": "calibration.png",
-      "svgHash": "c35ad6274f9621c11cdc768b352cf5e085b5e66c5ede6f744fcd02cb8bfcd06f",
-      "pixelHash": "8f5672797859f79d8b1885543f9a4873b18ea583638ab5c6f9354bb56b0b2ada"
+      "svgHash": "2591e3df3325c9b3b62792cc8b8a45050cf1688523b4be1a0cbe1ad6c2895c7b",
+      "pixelHash": "bbae6ab19420762fc3a50e566cae6da0a2941893d19567d5d34bac236f833246"
     },
     "facade": {
       "file": "facade.png",
-      "svgHash": "b957e76ec1916d2f91d44869b677478d0933c4ad1589a33f8268ee4f8463a5ea",
-      "pixelHash": "9c3083f520e6698d061df6779ed7636d3a4db179ff82b1824b69f12e481d596f"
+      "svgHash": "0094a10336e25f921e8dfdf0ceea91744a681948cd6a551210232ae55e818377",
+      "pixelHash": "9729809fb2ed034abc403a34abe0656162f4ee46f43145a1c485ad816820b808"
     },
     "portrait": {
       "file": "portrait.png",
-      "svgHash": "6ee76457cbbd087ea7c4f0dfcbe1b0ac5f09c74f6040ae654217bc5cac97cc1b",
-      "pixelHash": "e5328b25b29d3532225938e95cbada47e66ff58b80137504cb501c9ea961627f"
+      "svgHash": "1433882ed7767f7d682a5169921b7140ac63e414b510bc1b22826d61b46d2e92",
+      "pixelHash": "f8379abb3e4198a315694bbaa2bbb8413173cc9d1c7e12418d0bc93fc98fa475"
     },
     "corridor": {
       "file": "corridor.png",
-      "svgHash": "8170c3c0d9e55adaacb3e02fa29083157d44f8b71429f507570c73b5b1ed86d6",
-      "pixelHash": "f31a8a001c12c601815b6ea9c0ae97d070650d179354ea8257bd7ca12814cdb2"
+      "svgHash": "e71c7a8f5d997192540e1e6bf37a1bb55a8b842ab45b1857ac6394b6959886be",
+      "pixelHash": "3f17505d863a9f063b1e1e43598ef713e8ac8adf9d4a7671a905d1dcd4125ae8"
     },
     "typography": {
       "file": "typography.png",
-      "svgHash": "67b42584a15926abfe3f9b0a3486bc3ac47440abadaa14f94c49d356e0b3e3eb",
-      "pixelHash": "13043f9ad55614967735ef5385bf6fbfb9d79110f16e791f782162e7444afaf8"
+      "svgHash": "d2cd4c2fd4e7269f4da92772b72cd00f1c56b700ff0bef6920c858a033b4de47",
+      "pixelHash": "288cd0fa84c6216e5ff79d3aa00d2aafc4ea12581c31d66febc4956b9270b5e0"
     }
   }
 }

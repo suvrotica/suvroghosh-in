@@ -14,7 +14,8 @@ export default defineConfig({
 		baseURL: process.env.ESSAY_ANATOMY_BASE_URL || `http://127.0.0.1:${port}`,
 		serviceWorkers: 'block',
 		browserName: 'chromium',
-		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? undefined : 'chrome'),
+		// Feature CI installs full Chromium with --no-shell.
+		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || (process.env.CI ? 'chromium' : 'chrome'),
 		headless: true,
 		viewport: { width: 1440, height: 1000 },
 		deviceScaleFactor: 1,

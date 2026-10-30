@@ -6,9 +6,18 @@
 	"overrides": {
 		"@sveltejs/kit": {
 			"cookie": "^0.7.2"
+		},
+		"@tailwindcss/typography": {
+			"postcss-selector-parser": "6.1.5"
+		},
+		"rehype-katex-svelte": {
+			"katex": "$katex"
 		}
 	},
 	"scripts": {
+		"security:audit": "node scripts/security-audit.mjs",
+		"security:smoke": "node scripts/security-smoke.mjs",
+		"security:sql": "node --test supabase/tests/handwritten-notes.integration.test.mjs supabase/tests/chatterbox-usage.integration.test.mjs supabase/tests/uml-usage.integration.test.mjs",
 		"strange-matter:test": "vitest run src/lib/visualizations/strange-matter --maxWorkers=2",
 		"strange-matter:preview": "node scripts/preview-strange-matter.mjs",
 		"strange-matter:browser:test": "playwright test --config playwright.strange-matter.config.ts",
@@ -291,6 +300,7 @@
 		"patient-x:assets:check": "node --experimental-strip-types scripts/render-patient-x-assets.mjs --check"
 	},
 	"devDependencies": {
+		"@electric-sql/pglite": "0.5.11",
 		"@axe-core/playwright": "^4.12.1",
 		"@eslint/compat": "^2.0.3",
 		"@eslint/js": "^10.0.1",
@@ -298,7 +308,7 @@
 		"@fontsource/ibm-plex-mono": "^5.2.6",
 		"@playwright/test": "^1.62.0",
 		"@sveltejs/adapter-vercel": "^6.3.1",
-		"@sveltejs/kit": "^2.50.2",
+		"@sveltejs/kit": "^2.70.3",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
 		"@tailwindcss/forms": "^0.5.11",
 		"@tailwindcss/typography": "^0.5.19",
@@ -315,7 +325,7 @@
 		"eslint-plugin-svelte": "^3.15.2",
 		"fast-check": "^4.9.0",
 		"globals": "^17.4.0",
-		"katex": "^0.16.44",
+		"katex": "0.18.2",
 		"mdsvex": "^0.12.7",
 		"pagefind": "^1.5.2",
 		"prettier": "^3.8.1",
@@ -334,8 +344,8 @@
 		"tw-animate-css": "^1.4.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.57.0",
-		"vite": "^7.3.1",
-		"vitest": "^4.1.10",
+		"vite": "^7.3.7",
+		"vitest": "^4.1.12",
 		"yaml": "^2.9.0"
 	},
 	"dependencies": {
@@ -355,7 +365,6 @@
 		"@supabase/supabase-js": "^2.110.8",
 		"@vercel/analytics": "^2.0.1",
 		"@vercel/oidc": "3.2.0",
-		"@vercel/speed-insights": "^2.0.0",
 		"ai": "^7.0.153",
 		"d3": "^7.9.0",
 		"decimal.js": "^10.6.0",
@@ -372,8 +381,8 @@
 		"perfect-freehand": "^1.2.3",
 		"resend": "^6.14.0",
 		"sanitize-html": "2.18.1",
-		"sharp": "^0.35.3",
+		"sharp": "^0.35.5",
 		"three": "^0.180.0",
-		"zod": "^4.4.3"
+		"zod": "^4.6.7"
 	}
 }

@@ -89,7 +89,7 @@ Export the unchanged original article, an appended-figure article, standalone
 PlantUML, validated SVG/PNG assets, repository-compatible `<UmlFigure />` snippets,
 and a manifest. Failed/unreviewed source stays under a draft path without stale
 publication images. Saved article display remains independent of AI and authoring
-scripts. The globally imported `UmlFigure` accepts saved/data image URLs, not raw
+scripts. The conditionally imported `UmlFigure` accepts saved/data image URLs, not raw
 preview SVG, and has no renderer or sanitizer runtime imports. Authoring performs
 sanitization and image-URL conversion so ordinary article bundles do not inherit
 those dependencies or exceed their existing route-asset budgets.
@@ -162,8 +162,10 @@ also passed status, published-post loading, and local-generation requests with
 retained private/no-store headers. Live-site checks are required after deployment;
 the isolated probe alone does not establish deployed success.
 
-The missing repository `security:audit` and `security:smoke` scripts remain the
-documented forensic-audit gap. This ADR does not turn them into implemented checks.
+The integrated security branch supplies executable `security:audit` and
+`security:smoke` checks, including an additional strict-loader SVG-policy fixture.
+The historical forensic audit records the earlier gap; fresh results are recorded
+against the integrated revision in the release handoff.
 
 The [canonical architecture](../ARCHITECTURE.md) describes the current source,
 provider, rendering, and publication boundaries. The

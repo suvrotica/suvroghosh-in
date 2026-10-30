@@ -94,6 +94,7 @@ test('feature browser selection matches the full Chromium installed by feature C
 	for (const script of [
 		'links:browser:test',
 		'http-tcp:browser:test',
+		'essay-anatomy:browser:test',
 		'living-systems:browser:test',
 		'strange-matter:browser:test'
 	]) {
@@ -104,6 +105,7 @@ test('feature browser selection matches the full Chromium installed by feature C
 	}
 	for (const file of [
 		'playwright.http-tcp.config.ts',
+		'playwright.essay-anatomy.config.ts',
 		'playwright.living-systems.config.ts',
 		'playwright.strange-matter.config.ts'
 	]) {

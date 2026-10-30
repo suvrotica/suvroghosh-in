@@ -4,6 +4,27 @@ Canonical architecture reference. Last verified: **20 October 2026**, against ap
 
 The mandatory architecture-change policy has one authoritative definition: [CONTRIBUTING.md — Architecture change gate](../../CONTRIBUTING.md#architecture-change-gate). This document describes the implementation; recommendations in the audit are not implemented features.
 
+The 28 October security hardening adds durable fail-closed Chatterbox admission, streamed Notes
+mutation limits, bounded Notes Supabase transports, immutable Actions references and executable
+security checks. This is a scoped review of those boundaries, with local PostgreSQL role/RPC
+fixtures; it does not establish hosted configuration, multi-session database contention or a
+completed Codex Security plugin scan. See the [remediation record](../security/2026-10-28-hardening.md)
+and [ADR 0022](decisions/0022-durable-chatterbox-admission.md).
+
+The same-day [release-preparation follow-up](../security/2026-10-28-release-readiness.md)
+upgrades KaTeX to the tested 0.18.2 fix and records read-only production evidence and remaining
+dependency/rollout gates. It does not deploy the local security changes.
+
+The subsequent [preview preparation](../security/2026-10-28-preview-preparation.md) rebases
+those changes onto `5331974c`, preserving the initial Post to UML feature. The release-blocker integration first rebased onto `d060e60f`, then onto `8d97acc9` on 31 October, retaining the completed owner/quota and local PlantUML contracts below alongside the newer Mindmap Studio, Patient X and Splat Studio changes. It adds isolated UML AI
+enablement, disables UML provider calls on previews, and makes exported metadata inert during
+Svelte compilation. Preview publication is separate from production release authorization.
+
+The [release-blocker follow-up](../security/2026-10-28-release-blockers.md) removes system-font
+discovery from procedural Lens and Mirror samples and adds exact Ubuntu/Windows verification.
+It records the unsupported Kit 3 dependency graph and clarifies that current Notes owner and
+session-freshness checks do not enforce MFA; hosted policy remains independently unverified.
+
 The 21 October SEO/AEO release additionally verifies and updates the affected public Notes response/discovery contract, exact notebook canonical headers, deferred résumé video loading and browser measurement policy below. This is a review of those boundaries, not a new complete forensic audit.
 
 The 22 October privacy/analytics implementation added bounded geographic page-view rollups in
@@ -67,7 +88,10 @@ flowchart LR
     Browser["Reader or owner browser"] --> Static
     Browser --> SSR
     Browser --> Engines["Local Svelte UI, engines, workers, Canvas/WebGL"]
-    SSR --> Providers["Resend / optional Chatterbox service"]
+    SSR --> Providers["Resend"]
+    SSR --> TtsAdmission["Optional TTS: private enable / streamed input / shared admission"]
+    TtsAdmission -->|service-only atomic quota| Supabase
+    TtsAdmission -->|admitted work only| Chatterbox["Chatterbox provider: bounded audio and deadline"]
     SSR --> LabProxy["Private Synthetic Data Lab proxy: origin/body/deadline/admission"]
     LabProxy --> LabService["Separate Python service: owner-scoped simulation and result access"]
     LabService --> Scientific["Seeded NumPy/SciPy engine; CSV and reproducibility bundles"]
@@ -165,19 +189,21 @@ Installed `node_modules` package versions matched `package-lock.json` when inspe
 | Tool               | Declared range | Installed / locked |
 | ------------------ | -------------- | ------------------ |
 | Svelte             | `^5.54.0`      | `5.56.4`           |
-| SvelteKit          | `^2.50.2`      | `2.69.2`           |
+| SvelteKit          | `^2.70.3`      | `2.70.3`           |
 | TypeScript         | `^5.9.3`       | `5.9.3`            |
-| Vite               | `^7.3.1`       | `7.3.6`            |
+| Vite               | `^7.3.7`       | `7.3.7`            |
 | Vercel adapter     | `^6.3.1`       | `6.3.3`            |
 | Svelte Vite plugin | `^6.2.4`       | `6.2.4`            |
 | mdsvex             | `^0.12.7`      | `0.12.7`           |
 | Tailwind CSS       | `^4.2.2`       | `4.2.2`            |
-| Vitest             | `^4.1.10`      | `4.1.10`           |
+| Vitest             | `^4.1.12`      | `4.1.12`           |
 | Playwright test    | `^1.62.0`      | `1.62.0`           |
+| PGlite (test only) | `0.5.11`       | `0.5.11`           |
+| KaTeX              | `0.18.2`       | `0.18.2`           |
 
 The audit host ran Node `24.11.1`, npm `11.12.1`, and Python `3.12.3`. These are observations, not a repository-wide runtime pin. Existing feature CI uses Node 22; the new dependency-free architecture gate uses Node 24. Check individual workflows before assuming the same runtime everywhere.
 
-Important libraries include Supabase SSR/client, Zod, Dexie, Sharp, perfect-freehand and jsPDF for notes; D3, Three.js, p5, Observable runtime, decimal.js and ml-matrix for feature-specific work; Bits UI and local adapters for UI; KaTeX/remark/rehype for Markdown; Resend for contact and owner comment alerts; Vercel analytics/speed insights. Installed packages alone do not imply every dependency is loaded by every page. `tsconfig.json` enables strict TypeScript and `checkJs`; generated Kit configuration supplies route types and aliases.
+Important libraries include Supabase SSR/client, Zod, Dexie, Sharp, perfect-freehand and jsPDF for notes; D3, Three.js, p5, Observable runtime, decimal.js and ml-matrix for feature-specific work; Bits UI and local adapters for UI; KaTeX/remark/rehype for Markdown; Resend for contact and owner comment alerts; Vercel Web Analytics. The unused Speed Insights SDK was removed after its initialization had already been retired; no performance collection is reintroduced. Installed packages alone do not imply every dependency is loaded by every page. `tsconfig.json` enables strict TypeScript and `checkJs`; generated Kit configuration supplies route types and aliases.
 
 Notebook authoring is separate: `pixi.toml` pins Mojo `1.0.0b2` on Linux x64/macOS ARM64, with constrained Jupyter dependencies. Native Windows authoring uses the documented WSL path. The full feature lane can verify committed notebook HTML when a local renderer is unavailable; routine article builds do not invoke the notebook toolchain.
 
@@ -271,6 +297,13 @@ flowchart LR
 ```
 
 `svelte.config.js` preprocesses Markdown with author-helper imports, image markup enrichment and mdsvex; remark/rehype handle math, heading IDs/links, heading collection, H1 demotion, Bengali language markup and square-bracket styling. Its global imports are limited to the editorial helpers named there. Authors explicitly import substantial interactive experiences.
+
+Markdown's `rehype-katex-svelte` bridge and the browser math renderers resolve the same pinned
+KaTeX 0.18.2. A scoped package override replaces the bridge's affected 0.16 dependency range.
+The security smoke suite checks inherited-trust rejection, bridge compilation and renderer
+assets; the upgrade was additionally compared across 1,947 repository expressions with identical
+MathML and TeX annotations. Layout HTML is version-dependent. Revalidate the override and math
+rendering when either package changes; do not enable trusted HTML to accommodate a migration.
 
 For corrections limited to article `description` and `thumbnailAlt`, `node scripts/refresh-seo-metadata.mjs --base <committed-revision>` is a separate, guarded authoring operation. It resolves an ancestor commit, verifies each prior cache entry against that committed article, and requires unchanged article bodies (apart from platform line endings) and every other frontmatter field, including dates, tags, titles, categories and artwork paths. The complete batch must pass before it updates only the revision hashes in the tag manifest. This preserves editorial modification dates and visible answer layers during metadata maintenance. The ordinary publishing generator retains its existing freshness checks for unrefreshed edits; the utility does not add a build-time bypass or relax content/SEO validation. `seo:test` includes both pure-boundary and temporary-Git CLI regressions for this operation.
 
@@ -624,31 +657,43 @@ flowchart LR
 
 Post to UML is published as `/blog/visualizations/post-to-uml` (`src/lib/posts/post-to-uml.md`, `collections: ['apps']`), with `/viz/uml` retaining its HTTP 308 alias. Domain code lives under `src/lib/visualizations/post-to-uml/`, authoring UI in `src/lib/components/visualizations/post-to-uml/PostToUml.svelte`, and saved-figure display in `src/lib/components/blog/UmlFigure.svelte` (auto-imported by mdsvex). The 28 October rendering, authorization, grounding, and revision changes are recorded in [ADR 0020](decisions/0020-post-to-uml-browser-engine.md) and the [feature contract](../visualizations/post-to-uml.md).
 
+The security integration requires a dedicated `UML_AI_ENABLED=true` opt-in; Prompt Atlas's
+flag cannot enable this separate provider path. `VERCEL_ENV=preview` disables UML AI before
+credential discovery while preserving local generation and editing. Main's completed owner
+and shared-quota controls below are retained; request quotas do not verify provider pricing.
+Exported figure metadata escapes HTML metacharacters and Svelte braces so titles, captions,
+alt text and assumptions remain literal strings when an author compiles the Markdown bundle.
+Compiler regression fixtures exercise that boundary.
+
 - **Source and interpretation ownership**: The browser retains an immutable article revision independently of editable source and rendered assets. Paragraphs preserve exact raw source/evidence offsets, including inert fenced code. The local extractor is explicitly a conservative heuristic with a 120,000-code-point input limit and 40-concept glossary; it does not infer missing methods, interfaces, infrastructure, replies, state transitions, or timings. Its limited prose-pattern coverage is separate from renderer capability. Optional AI receives the whole bounded article and numbered paragraphs, not a silently truncated subset. All-14 mode maintains one evaluation per concrete type; current generation produces one figure per type rather than automatic multi-figure decomposition.
-- **Official local rendering**: `plantuml/browser.ts` owns a serial queue (one active job, at most 32 pending) and terminable `engine.worker.ts`. The pinned MIT `@plantuml/core@1.2026.9` TeaVM engine uses bundled Smetana layout, a detached `linkedom` SVG DOM, and OffscreenCanvas text measurement. No JVM, Graphviz service, WASM evaluation, public renderer, or site-CSP weakening is required. Source is bounded to 100,000 UTF-16 units/1,500 lines; each active job has a 20-second termination deadline, `maxSvgSize: 6000`, and a 4,000,000-character SVG-output cap. The legacy custom parser/renderer remains a helper, not a PlantUML compatibility authority; browser figures must pass actual official-engine rendering, including recognition of error SVGs. Unknown valid syntax is not erased by legacy repair.
+- **Official local rendering**: `plantuml/browser.ts` owns a serial queue (one active job, at most 32 pending) and terminable `engine.worker.ts`. The pinned MIT `@plantuml/core@1.2026.9` TeaVM engine uses bundled Smetana layout, a detached `linkedom` SVG DOM, and OffscreenCanvas text measurement. No JVM, Graphviz service, WASM evaluation, public renderer, or site-CSP weakening is required. Source is bounded to 100,000 UTF-16 units/1,500 lines; trusted engine download/initialization has a separate 60-second startup bound, and each active render has a 20-second termination deadline after the worker readiness handshake. Source is sent only after isolation is installed; ready workers are reused. Rendering retains `maxSvgSize: 6000`, and a 4,000,000-character SVG-output cap. The legacy custom parser/renderer remains a helper, not a PlantUML compatibility authority; browser figures must pass actual official-engine rendering, including recognition of error SVGs. Unknown valid syntax is not erased by legacy repair.
 - **Renderer isolation and notation limits**: Security checks reject preprocessor/functions, external resources, active markup, and executable URI schemes. Independent worker boundaries deny network APIs and file/library loader callbacks; the detached DOM cannot run scripts or fetch resources. Sanitized SVGs are displayed through image contexts and sanitized again for export. Worker termination bounds time, not heap allocation. Fourteen genuine representative fixtures render, with composed notation for composite structure, profile, communication, and interaction overview. Profile uses verified filled-triangle `-up->>` extensions. Interaction overview uses named activity partitions with rectangular headers, an explicitly disclosed approximation of exact UML interaction-use frames.
 - **Published-source loading**: `src/lib/server/uml/posts.ts` uses server-only build-time raw Markdown modules filtered through the canonical `getPublishedPosts` registry for both listing and individual loads. It removes only front matter and retains the exact article body as inert source. It does not depend on a deployed `src/` filesystem tree, expose unindexed drafts, or substitute curated examples for unavailable posts.
-- **Owner-funded AI boundary**: `src/lib/server/uml/` and `/api/uml` preserve public status/post-loading and require `requireNotesOwner` plus explicit transmission consent before AI use. Configuration includes `UML_AI_ENABLED`, configurable `UML_AI_MODEL`, a private quota salt, Gateway key/OIDC, and existing Notes/Supabase owner settings. POST enforces exact same-origin, JSON schema, streamed 512 KiB/8-second body admission, a 60-second operation deadline, and process-local burst/concurrency limits. AI input is limited to 40,000 code points; provider response reads are streamed with a 2 MiB cap, output is bounded to 16,000 tokens for All 14 (8,000 otherwise), and SDK retries are disabled. `quota.ts` reuses the existing service-only `reserve_prompt_atlas_usage` RPC: a 50-request UTC daily pool shared with Prompt Atlas plus five UML requests per owner/UTC hour. The salted owner-hour identity is shared across instances; process-local admission is not represented as a global safeguard. Reservations are consumed even if the provider later fails. Request counts are not currency spending caps.
+- **Owner-funded AI boundary**: `src/lib/server/uml/` and `/api/uml` preserve public status/post-loading and require `requireNotesOwner` plus explicit transmission consent before AI use. Configuration includes `UML_AI_ENABLED`, configurable `UML_AI_MODEL`, a private quota salt, Gateway key/OIDC, and existing Notes/Supabase owner settings. POST enforces exact same-origin, JSON schema, streamed 512 KiB/8-second body admission, a 60-second operation deadline, and process-local burst/concurrency limits. AI input is limited to 40,000 code points; provider response reads are streamed with a 2 MiB cap, output is bounded to 16,000 tokens for All 14 (8,000 otherwise), and SDK retries are disabled. `quota.ts` reuses the existing service-only `reserve_prompt_atlas_usage` RPC: a 50-request UTC daily pool shared with Prompt Atlas plus five UML requests per owner/UTC hour. The salted owner-hour identity is shared across instances; process-local admission is not represented as a global safeguard. Reservations are consumed even if the provider later fails. Request counts are not currency spending caps. `security:sql` executes the existing migration in disposable PostgreSQL to verify role/table denials, mixed-feature daily admission and owner-hour refusal; serial local fixtures do not establish hosted state or concurrent contention.
 - **Provider response and state transitions**: `wire.ts` validates the envelope and individual figures, exact evidence quotations, requested-type coverage, explicit assumptions, and source security. A bad/omitted/duplicate figure yields an honest failure without replacing valid siblings or substituting local content. The provider never controls rendering success. Browser revision guards discard late loads/generations/renders; cancellation preserves completed results. Source edits clear the current SVG, retain a labeled last-successful preview, and require metadata/evidence review before publication. Export requires exact current-source equality as well as successful render and completed review; revision hashes are change labels, not security digests.
 - **Static publication contract**: Safe Markdown preview and export keep original article text first, then saved figures/captions. ZIP includes original/derived Markdown, standalone source, validated SVG/PNG, repository-compatible embeds, and a revision/status/evidence manifest. Unreviewed/failed source stays under `drafts/` without stale images. PNG rasterization is sequential and bounded; ZIP paths are validated and total uncompressed data is capped at 64 MiB. `UmlFigure` serves saved assets with alternative text, limitations/assumptions, and optional source links. Reading a published article never triggers AI or authoring rendering. `/api/uml` retains private/no-store/noindex responses.
 
-The globally imported `UmlFigure` saved-image component has no renderer/sanitizer runtime imports and accepts image URLs rather than raw preview SVG. Authoring owns sanitization and `svgImageUrl` conversion before passing a safe image source. This separation keeps renderer and sanitizer dependencies out of ordinary article bundles and protects the established route-asset budgets.
+`svelte.config.js` auto-imports `UmlFigure` only in Markdown containing its component tag. The saved-image component has no renderer/sanitizer runtime imports and accepts image URLs rather than raw preview SVG. Authoring owns sanitization and `svgImageUrl` conversion before passing a safe image source. This separation keeps renderer and sanitizer dependencies out of ordinary article bundles and protects the established route-asset budgets.
 
 The server build explicitly bundles `sanitize-html` and its dependency closure through Vite's `ssr.noExternal`. Its CommonJS entry requires an ESM-only parser; Vercel's Node loader rejects that external `require(ESM)` boundary even when ordinary local Node accepts it. Bundling preserves the locked nested package versions and keeps runtime imports limited to Node built-ins. This is a server packaging rule, not a relaxation of SVG sanitization or browser CSP. `npm run uml:ssr:test` builds the real sanitizer with the application SSR configuration and executes it with Node's `--no-experimental-require-module` restriction.
 
-Final local verification passed 83 unit tests across 10 files, Svelte/TypeScript checks with zero errors/warnings, and eight production-preview browser cases with desktop/mobile and figure visual inspection. The isolated renderer harness passed fourteen fixtures, six unsafe/invalid/oversized inputs, active/queued cancellation and recovery, legitimate error-text labels, SVG image loading, and no external requests under `script-src 'self'; connect-src 'none'`. The full-build run passed feature/notebook/content stages, site compilation, and discoverability before its final Barnum route budget caught the shared saved-figure sanitizer import. After that boundary was fixed, the affected site build, 744-post discoverability check, and Barnum asset audit all passed (296,873 raw JavaScript bytes, 107,389 gzip bytes, 36 assets). These checks do not establish arbitrary PlantUML coverage or production deployment. Real-provider and hosted owner/quota verification were not performed. The absent `security:audit`/`security:smoke` scripts remain a forensic-audit gap, not implemented safeguards.
+The additional `security:smoke` SSR fixture uses the same application configuration and strict loader to verify preserved SVG geometry/text and rejection of active or resource-bearing markup. Dependencies and SVG rules are unchanged.
+
+The UML feature's pre-integration local verification passed 83 unit tests across 10 files, Svelte/TypeScript checks with zero errors/warnings, and eight production-preview browser cases with desktop/mobile and figure visual inspection. The isolated renderer harness passed fourteen fixtures, six unsafe/invalid/oversized inputs, active/queued cancellation and recovery, legitimate error-text labels, SVG image loading, and no external requests under `script-src 'self'; connect-src 'none'`. The full-build run passed feature/notebook/content stages, site compilation, and discoverability before its final Barnum route budget caught the shared saved-figure sanitizer import. After that boundary was fixed, the affected site build, 744-post discoverability check, and Barnum asset audit all passed (296,873 raw JavaScript bytes, 107,389 gzip bytes, 36 assets). These checks do not establish arbitrary PlantUML coverage or production deployment. Real-provider and hosted owner/quota verification were not performed. The integrated security branch supplies executable `security:audit`/`security:smoke` checks; the historical forensic audit remains a record of earlier gaps.
 
 ```mermaid
 flowchart LR
     Prose["Pasted / published article: immutable source revision"] --> Local["Conservative local heuristics + exact evidence"]
-    Prose --> Owner["Explicit AI consent + configured Notes owner"]
+    Prose --> Activation["Explicit UML opt-in; disabled on previews"]
+    Activation --> Owner["Explicit AI consent + configured Notes owner"]
     Owner --> Limits["Bounded API + shared Supabase quota reservation"]
     Limits --> Gateway["AI Gateway: full bounded article; no retries"]
     Gateway --> Wire["Per-type schema, evidence and source validation"]
     Local --> Source["Editable standalone PlantUML + metadata"]
     Wire --> Source
     Source --> Queue["Revision guard + bounded render queue"]
-    Queue --> Worker["Terminable official PlantUML / Smetana worker"]
+    Queue --> Ready["Ready engine; 60-second startup bound"]
+    Ready --> Worker["Official PlantUML / Smetana; 20-second render bound"]
     Worker --> Sanitize["Sanitize SVG; safe image preview"]
     Sanitize --> Review["Current-source equality + metadata review"]
     Review --> Export["Saved SVG/PNG/source + embeds + manifest ZIP"]
@@ -807,6 +852,12 @@ animation, and releases its GPU and event resources at teardown. The SSR poster
 and authored guide remain the fallback. See the [feature record](../visualizations/strange-matter.md)
 for component ownership, export limits and verification commands.
 
+Paused and zero-speed redraws settle the requested settings and render one frame per
+invalidation, then idle. A delayed geometry rebuild still requests its own final frame;
+active animation retains its existing easing. This avoids queuing 35 redundant frames
+for stationary artwork on software renderers. Export still flushes pending geometry,
+renders the requested dimensions, and restores the live viewport.
+
 The publication poster comes from the app's ordinary PNG download at the default
 seed and paused animation time zero, resized to 1200 × 750. The authoring capture
 script records the model/geometry/renderer source hashes and decoded pixel hash;
@@ -826,7 +877,7 @@ flowchart LR
     MatterArticle["Markdown / SSR poster / gallery summary"] --> MatterShell["Lazy Svelte app / per-instance history"]
     MatterURL["Bounded seed / settings / camera / clock URL"] <--> MatterModel["Feature-local design model"]
     MatterModel <--> MatterShell
-    MatterShell --> MatterRenderer["Browser-only Three.js worlds / resource lifecycle"]
+    MatterShell --> MatterRenderer["Browser-only Three.js worlds / demand redraw / resource lifecycle"]
     MatterRenderer --> MatterExport["Bounded PNG / capability-detected video download"]
 ```
 
@@ -1509,6 +1560,14 @@ control. It is loopback-only and does not add a production route; focused browse
 checks against it do not establish the full site's routing/build status. See the
 [feature record](../visualizations/lens-mirror-lab.md).
 
+The five procedural sample images use finite outlined label artwork from
+`scripts/artwork/lens-mirror-labels.json`. Their normal renderer does not discover or load
+system fonts. An authoring-only helper can rebuild those complete label paths from the
+recorded font sources; that is an explicit artwork change requiring visual review and updated
+sample/poster provenance. The sample checker compares decoded pixels exactly. The feature
+workflow also runs font-isolation regressions and the strict sample check on Ubuntu and Windows,
+so a platform-specific font substitution cannot silently become the reference output.
+
 ```mermaid
 flowchart LR
     Article["Markdown / ordinary blog route"] --> Shell["SSR poster / lazy runtime"]
@@ -1718,11 +1777,19 @@ sequenceDiagram
 
 The server creates three distinct clients: request-cookie SSR client, anonymous publication reader, and privileged service-role client. The privileged client performs gated storage/manifest duties, durable auth-throttle RPCs, the configured-owner email lookup during recovery and the separately described reader-facing comment RPCs. It must never be exposed to browser imports. Database security-definer functions use an empty search path, explicit actor checks and controlled grants. Fresh authentication (12 hours) is required by sensitive Notes publication RPCs. The metadata action now checks freshness before actual status changes and every publish/schedule operation; unchanged draft/private/archived metadata avoids an unnecessary transition RPC. Its repository update checks the server-observed status and undeleted row, returning 409 on an intervening status/deletion change (`AF-002`, corrected). Metadata and subsequent RPCs remain separate operations; this is not complete atomicity or same-status edit concurrency protection.
 
+Current Notes sign-in and authorization do not challenge a second factor or require `aal2`.
+The checked-in private-data/storage policies and privileged owner RPCs also do not require that
+assurance level; session freshness alone is not MFA. Enrolling a Supabase Auth factor or enabling
+Supabase dashboard MFA therefore does not establish Notes MFA enforcement. A future rollout
+needs a challenge/recovery flow and aligned application, database and storage authorization while
+preserving public publication reads. Hosted owner enrollment, signup policy and any separately
+deployed enforcement remain unverified without authenticated production access.
+
 When Supabase URL/publishable-key configuration is absent, public repository reads intentionally return the demo published note; protected authoring fails configuration checks. This is different from an empty, configured database. Hosted data and configuration were not inspected.
 
 Public viewers fetch the document separately from metadata, draw culled canvas objects, and retain a semantic transcript/controls around canvas output. Owner editing supports local draft recovery and a queued save path; a stalled unbounded browser request can currently hold the autosave path (`AF-004`). Fractal Atlas now normalizes imported and locally saved laboratory envelopes through its feature-local `specimen-state.ts`: bounded finite divider/path controls, strict boolean/enum values, validated comparison core state, and finite decimal coordinates describing the same numeric point. Its existing core-state parser remains responsible for the fractal recipe (`AF-005`, corrected).
 
-Supabase rows are manually described/asserted in `repository.ts`; clients do not use generated end-to-end database types. Existing tests cover shared geometry/schema/history/export, recovery/referrer helpers and SQL source patterns. Running the migration under real roles and testing concurrent RPC behavior remains open work (`AF-003`).
+Supabase rows are manually described/asserted in `repository.ts`; clients do not use generated end-to-end database types. Existing tests cover shared geometry/schema/history/export, recovery/referrer helpers and SQL source patterns. The Notes PGlite suite now executes the unmodified migration under PostgreSQL roles and tests RPC authorization and state transitions. Hosted Auth/Storage/PostgREST integration and true concurrent-connection RPC behavior remain open work (`AF-003`).
 
 ### Moderated post comments
 
@@ -2244,7 +2311,36 @@ performs a separately authorised deletion. See [the comment boundary](#moderated
 
 Errors currently follow several mechanisms: Kit `error`/`redirect`, form `fail` data, Zod parsing, repository error translation, provider HTTP responses, and a site `+error.svelte`. Universal Markdown import failures are logged and mapped to 404; they do not expose a detailed import error to readers. Notes use bounded runtime Zod validation (ordinary object schemas strip unknown keys); topic/resource authored metadata contracts are stricter. Article metadata uses a lighter validator and build checks. This diversity is real; a single universal error/schema layer does not exist.
 
-New expensive/state-changing endpoints must follow the existing security invariants in [AGENTS.md](../../AGENTS.md): validate input, enforce streamed body limits, same-origin rules where browser-invoked, timeouts and cost-appropriate throttling. TTS and contact now use the shared server-only `http/body.ts` streamed reader/deadline helper and bounded `local-admission.ts` guard. Their 64 KiB input limits apply before parsing, with ten-second read deadlines and exact origin checks. TTS limits audio to 32 MiB within a 120-second provider deadline; contact delivery has a 15-second deadline. Admission is process-local, including a bounded fallback bucket when the adapter cannot resolve an address, and is not a distributed guarantee. Notes mutation readers and non-auth Supabase deadlines outside the bounded analytics repository remain gaps (`AF-001`, in progress); the shared identity lookup is bounded as described above. SvelteKit's built-in form CSRF check is present; it does not replace explicit policy for every JSON endpoint. The named `security:audit` and `security:smoke` commands are currently absent, so they cannot be presented as passing safeguards.
+New expensive/state-changing endpoints must follow the security invariants in [AGENTS.md](../../AGENTS.md): validate input, enforce streamed body limits, same-origin rules where browser-invoked, timeouts and cost-appropriate throttling. TTS and contact use the server-only `http/body.ts` streamed reader/deadline helper and bounded `local-admission.ts` guard. Their 64 KiB input limits apply before parsing, with ten-second read deadlines and exact origin checks. TTS limits audio to 32 MiB within a 120-second provider deadline; contact delivery has a 15-second deadline. Contact admission remains process-local, including a bounded fallback bucket when the adapter cannot resolve an address. Origin checks do not authenticate non-browser callers.
+
+`src/lib/server/tts/quota.ts` adds a separate five-second, redirect-rejecting shared admission
+request before any Chatterbox provider call. It requires `CHATTERBOX_TTS_ENABLED=true`, a
+dedicated salt of at least 32 characters, valid server connection settings and a trusted adapter
+client address. The browser flag is display-only. The service-only `reserve_chatterbox_usage`
+RPC serializes reservations with a transaction advisory lock and a one-second lock-wait cap:
+100 calls/60,000 normalized UTF-16 text units per UTC day, three calls per client per UTC hour,
+and two starts per 150 seconds globally. Failed/aborted/unknown calls retain their reservations.
+Bounded cleanup retains recent keyed identity hashes and counts, never prose or raw addresses.
+These are resource ceilings, not a provider billing guarantee or proof that upstream work stops
+on abort. Missing schema, configuration, identity or a valid quota receipt prevents provider
+access. Provider errors return generic no-store responses; logs carry fixed labels and HTTP
+status only. See ADR 0022 for activation and concurrency-verification limits.
+
+Notes document updates and asset uploads count arriving bytes before JSON or multipart parsing
+(4 MiB document / 3 MiB multipart envelope, ten-second deadline). Existing 2 MiB asset limits,
+image re-encoding, owner authorization and private response headers remain. An explicitly
+conflicting Origin cannot be overridden by Fetch Metadata. Shared Notes session/public/admin
+Supabase clients now bound each fetch and decoded response read to 15 seconds and 32 MiB;
+resource-limit errors use AbortError to stop SDK retry renewal, and late responses are cancelled.
+The identity lookup keeps its five-second outer deadline. This is per-transport containment,
+not a transaction-wide database timeout or hosted Auth/Storage guarantee.
+
+`hooks.server.ts` rejects parsed pathnames beginning with `//` before auth or routing, applying
+the official mitigation for GHSA-pfhg-q3qv-9q6r while retaining SvelteKit 2. Normal public paths
+and crawling are unchanged. SvelteKit's built-in form CSRF check remains; it does not replace
+explicit policy for JSON endpoints. Hosted signup/MFA and distributed sign-in guessing remain
+separate operator/security-policy concerns; the per-IP-plus-email bucket avoids a trivial
+global account-lockout change.
 
 ## 10. Caching and offline behavior
 
@@ -2284,6 +2380,26 @@ flowchart LR
 Delivered publications cannot be recalled from an offline device. This is a documented product constraint, not an authorization guarantee. Do not extend the worker to cache authenticated pages or mutable draft APIs.
 
 ## 11. Tests and architectural verification
+
+`security:audit` checks the actual CSP/deployment header configuration, direct server-only import
+edges in application TS/JS/Svelte, action pinning/checkout credentials and trusted-base workflow
+structure, then runs the complete npm audit including development dependencies. Any finding,
+scanner failure or missing result returns nonzero; the remaining low dependency advisories are
+not suppressed. This is scoped policy enforcement, not a complete static analyzer.
+
+`security:smoke` runs checker fixtures and mocked request/provider regressions under a dedicated
+Vitest configuration with provider credentials removed and default global fetch rejected.
+`security:sql` applies the Notes and new TTS migrations to disposable PGlite 0.5.11 databases and
+executes roles, grants, RPCs, snapshots, revocation and quota cases. Its single queued connection
+does not establish multi-connection race behavior, hosted Auth/Storage or PostgREST behavior.
+The security workflow runs these checks with read-only permissions and no provider secrets;
+smoke/SQL still run if the advisory audit fails. All action references are immutable, with
+Dependabot maintenance. Configuring required status checks remains a hosted administrator task.
+
+The feature-artifacts workflow includes a separate Ubuntu/Windows sample-portability matrix.
+It exercises the finite Lens and Mirror label artwork with isolated font configuration and
+requires exact agreement with all five committed decoded sample images. It does not regenerate
+or accept new reference images in CI; source/artwork changes require a reviewed local update.
 
 Comic catalogue/asset checks and the link-validator fixtures verify finite route membership,
 published original-story references, cover metadata and real PDF downloads. The analytics
@@ -2414,6 +2530,11 @@ demand-caching and private-content boundaries; they do not establish search inde
 Use `npm run check`, focused unit/Node/browser suites, and relevant validators for the changed boundary. `npm run lint` runs formatting first and only reaches ESLint if formatting succeeds. For routine publication use `npm run build` once; do not separately run its generators first or broaden the task into unrelated feature audits. Use `npm run build:full` when changing feature/notebook/shared-build inputs. For documentation-only work, check links, evidence, Markdown, gate fixtures and diff integrity without regenerating production content.
 
 CT and shared-header browser regressions use full Chromium's headless mode in CI, rather than the standalone shell that repeatedly crashed while creating later test contexts. Local runs default to installed Chrome; `PLAYWRIGHT_CHANNEL` selects another installed channel. The CI installation downloads the full browser with `--no-shell`.
+
+The feature workflow also installs full Chromium with `--no-shell`. Its HTTP/TCP,
+essay-anatomy, Living Systems and Strange Matter configurations explicitly select the
+`chromium` channel in CI; the build-workflow contract checks their selection and installation
+order. Local Chrome defaults and explicit channel overrides remain available.
 
 Spacetime's `spacetime:test` runs wiring, analytical relations, float32 numerical ray/conservation/convergence checks, independent FLRW limits and state/store/renderer regressions. `spacetime:browser:test` renders all nine modes in native and software WebGL2, checks error diagnostics/retry/context loss, idle scheduling, keyboard scope, current-scene PNG capture and portrait layout. Explicit capture may draw once outside the viewport to export changed settings. These bounded fixtures do not certify exact Kerr images, radiative transfer, every GPU/driver, or all near-critical higher-order images; see [the dated audit](../spacetime-laboratory-audit-2026-10-20.md).
 

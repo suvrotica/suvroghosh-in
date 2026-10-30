@@ -28,7 +28,7 @@ flowchart LR
     Shell --> App["Per-instance Svelte controls / undo"]
     URL["Bounded seed / settings / view / clock URL"] <--> Model["Feature-local design model"]
     Model <--> App
-    App --> Renderer["Three.js procedural worlds / camera / clock"]
+    App --> Renderer["Three.js procedural worlds / camera / clock / demand redraw"]
     Renderer --> PNG["Clean PNG composition"]
     Renderer --> Video["Capability-detected local canvas recording"]
 ```
@@ -70,6 +70,12 @@ remain readable when JavaScript or WebGL is unavailable. Renderer ownership
 includes resize handling, bounded pixel density, camera input, geometry/material
 cleanup and animation scheduling. Hidden/offscreen work is suspended. Reduced
 motion starts with a still composition; explicit playback is a user action.
+
+When paused or set to zero speed, each invalidation settles the settings and requests
+one frame before returning to idle. A pending geometry rebuild remains responsible
+for its final redraw, so edits and exported/shared compositions retain their fidelity.
+Moving animation keeps its existing easing. Stationary artwork no longer schedules
+a 35-frame settling sequence after every input, resize or export restoration.
 
 Controls use native buttons, ranges and selects with accessible labels and
 visible focus. Keyboard shortcuts are scoped to the app and must preserve normal

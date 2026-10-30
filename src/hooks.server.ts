@@ -12,6 +12,18 @@ export function applyRoutePreloadPolicy(pathname: string, headers: Headers): voi
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const path = event.url.pathname;
+	// SvelteKit 2 enhanced actions can interpret a leading double slash as an
+	// external authority. Reject this ambiguous path before routing or auth.
+	// Official mitigation for GHSA-pfhg-q3qv-9q6r until the Kit 3 migration.
+	if (path.startsWith('//')) {
+		return new Response('Invalid request path.', {
+			status: 400,
+			headers: {
+				'cache-control': 'private, no-store',
+				'x-content-type-options': 'nosniff'
+			}
+		});
+	}
 	event.locals.supabase = null;
 	event.locals.user = null;
 	event.locals.requestId = crypto.randomUUID();

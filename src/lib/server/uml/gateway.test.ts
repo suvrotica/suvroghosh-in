@@ -11,6 +11,7 @@ vi.mock('ai', async (original) => ({
 
 const config: UmlServerConfig = {
 	enabled: true,
+	preview: false,
 	model: 'test/model',
 	credentialAvailable: true,
 	ownerConfigured: true,

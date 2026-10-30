@@ -302,8 +302,7 @@ outgoingLight.b = outgoingLight.b >= 0.0 ? min(outgoingLight.b, 32.0) : 0.0;
 				artwork.add(mesh);
 			}
 		}
-		settling = 35;
-		requestFrame();
+		redraw();
 	}
 
 	function particleTexture() {
@@ -439,7 +438,9 @@ outgoingLight.b = outgoingLight.b >= 0.0 ? min(outgoingLight.b, 32.0) : 0.0;
 	}
 
 	function redraw() {
-		settling = 35;
+		const moving = playing && state.speed > 0;
+		if (!moving) settleUniforms();
+		settling = moving ? 35 : 1;
 		requestFrame();
 	}
 

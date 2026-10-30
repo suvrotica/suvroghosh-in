@@ -3,9 +3,11 @@ import { contentRevision } from '../authoring';
 import { checkPlantUmlSecurity } from './security';
 
 export const PLANTUML_ENGINE_ID = '@plantuml/core 1.2026.9 (TeaVM + Smetana)';
+const WORKER_STARTUP_TIMEOUT_MS = 60_000;
 const RENDER_TIMEOUT_MS = 20_000;
 const MAX_PENDING = 32;
 let worker: Worker | undefined;
+let workerReady = false;
 let serial = 0;
 type Job = {
 	id: number;
@@ -22,6 +24,7 @@ const aborted = () => new DOMException('Rendering cancelled.', 'AbortError');
 function resetWorker() {
 	worker?.terminate();
 	worker = undefined;
+	workerReady = false;
 }
 function finish(error?: Error, svg?: string) {
 	const job = active;
@@ -45,28 +48,70 @@ function pump() {
 	active = job;
 	try {
 		worker ??= new Worker(new URL('./engine.worker.ts', import.meta.url), { type: 'module' });
-		const timeout = setTimeout(() => {
+		const engine = worker;
+		let timeout: ReturnType<typeof setTimeout> | undefined;
+		let sourceSent = false;
+		const fail = (error: Error) => {
+			if (active !== job || worker !== engine) return;
 			resetWorker();
-			finish(new Error('Rendering exceeded 20 seconds. Simplify or split this diagram.'));
-		}, RENDER_TIMEOUT_MS);
-		const cancel = () => {
-			resetWorker();
-			finish(aborted());
+			finish(error);
 		};
+		const startRender = () => {
+			if (active !== job || worker !== engine || sourceSent) return;
+			sourceSent = true;
+			clearTimeout(timeout);
+			timeout = setTimeout(
+				() => fail(new Error('Rendering exceeded 20 seconds. Simplify or split this diagram.')),
+				RENDER_TIMEOUT_MS
+			);
+			try {
+				engine.postMessage({ id: job.id, source: job.source });
+			} catch {
+				fail(new Error('The local PlantUML engine could not receive this diagram. Please retry.'));
+			}
+		};
+		const cancel = () => fail(aborted());
 		job.signal?.addEventListener('abort', cancel, { once: true });
 		job.cleanup = () => {
 			clearTimeout(timeout);
 			job.signal?.removeEventListener('abort', cancel);
 		};
-		worker.onmessage = (event: MessageEvent<{ id: number; svg?: string; error?: string }>) => {
-			if (event.data.id !== active?.id) return;
-			finish(event.data.error ? new Error(event.data.error) : undefined, event.data.svg);
+		engine.onmessage = (
+			event: MessageEvent<{ type: 'ready' } | { id: number; svg?: string; error?: string }>
+		) => {
+			if (active !== job || worker !== engine) return;
+			const message = event.data;
+			if ('type' in message) {
+				if (message.type !== 'ready') return;
+				workerReady = true;
+				startRender();
+				return;
+			}
+			if (!sourceSent || message.id !== job.id) return;
+			finish(message.error ? new Error(message.error) : undefined, message.svg);
 		};
-		worker.onerror = () => {
-			resetWorker();
-			finish(new Error('The local PlantUML engine failed to load or render. Please retry.'));
+		engine.onerror = () => {
+			if (worker !== engine) return;
+			if (active === job) {
+				fail(new Error('The local PlantUML engine failed to load or render. Please retry.'));
+			} else if (!active) {
+				resetWorker();
+			}
 		};
-		worker.postMessage({ id: job.id, source: job.source });
+		if (workerReady) startRender();
+		else {
+			// Downloading and initializing trusted engine code has its own bounded lifetime.
+			// Untrusted source is sent only after the worker installs its isolation boundary.
+			timeout = setTimeout(
+				() =>
+					fail(
+						new Error(
+							'The local PlantUML engine did not start within 60 seconds. Check your connection and retry.'
+						)
+					),
+				WORKER_STARTUP_TIMEOUT_MS
+			);
+		}
 	} catch (error) {
 		resetWorker();
 		finish(error instanceof Error ? error : new Error(String(error)));

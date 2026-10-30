@@ -3,6 +3,7 @@ import { createServerClient } from '@supabase/ssr';
 import { env } from '$env/dynamic/private';
 import type { RequestEvent } from '@sveltejs/kit';
 import { withDeadline } from '$lib/server/http/body';
+import { createBoundedNotesFetch } from './bounded-fetch';
 
 export function notesBackendConfigured() {
 	return Boolean(env.SUPABASE_URL && env.SUPABASE_PUBLISHABLE_KEY);
@@ -16,7 +17,7 @@ export function createNotesServerClient(
 	const key = env.SUPABASE_PUBLISHABLE_KEY;
 	if (!url || !key) return null;
 	return createServerClient(url, key, {
-		...(fetcher ? { global: { fetch: fetcher } } : {}),
+		global: { fetch: createBoundedNotesFetch(fetcher) },
 		cookies: {
 			getAll: () => event.cookies.getAll(),
 			setAll: (cookies, headers) => {
@@ -44,6 +45,7 @@ export function createNotesPublicClient(): SupabaseClient | null {
 	const key = env.SUPABASE_PUBLISHABLE_KEY;
 	if (!url || !key) return null;
 	return createClient(url, key, {
+		global: { fetch: createBoundedNotesFetch() },
 		auth: {
 			autoRefreshToken: false,
 			detectSessionInUrl: false,
@@ -55,6 +57,7 @@ export function createNotesPublicClient(): SupabaseClient | null {
 export function createNotesAdminClient(): SupabaseClient | null {
 	if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) return null;
 	return createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
+		global: { fetch: createBoundedNotesFetch() },
 		auth: {
 			autoRefreshToken: false,
 			detectSessionInUrl: false,

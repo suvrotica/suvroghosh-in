@@ -105,3 +105,6 @@ self.onmessage = async (event: MessageEvent<{ id: number; source: string }>) => 
 		});
 	}
 };
+
+// Start the untrusted-render deadline only after imports, setup and isolation are ready.
+self.postMessage({ type: 'ready' });

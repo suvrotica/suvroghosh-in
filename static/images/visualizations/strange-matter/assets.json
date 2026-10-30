@@ -14,6 +14,6 @@
   "sources": {
     "src/lib/visualizations/strange-matter/model.ts": "eaee2ba8c2efc504caaa210f1d535d458db75547cda83e121d697bb9c66df38e",
     "src/lib/visualizations/strange-matter/geometry.ts": "fdd562f2e626cfb2dcee9481c80bf026a8109d651d183522808fcb71ffdc3fb1",
-    "src/lib/visualizations/strange-matter/renderer.ts": "96ca9bb8099da1631cf6a114a54cf39f0ff6a4e80925c366e83e290189fb3864"
+    "src/lib/visualizations/strange-matter/renderer.ts": "e9a36541152a4011c9b80d1bef2b03f93170c33a070ad33359a84e0484efe6ed"
   }
 }

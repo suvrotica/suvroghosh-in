@@ -16,8 +16,9 @@
   "width": 1400,
   "height": 1271,
   "sources": {
-    "scripts/capture-lens-mirror-poster.mjs": "0645e83905dd5809df944e81554bddc53a8a039dfabeeaa16d8181ff8271e676",
-    "scripts/render-lens-mirror-samples.mjs": "c91db271546ccff06870358c3a8ba20514dbc6a2a53bac0c04cdaf13c50126fc",
+    "scripts/artwork/lens-mirror-labels.json": "bbf2279989a1a77bb1c9acfa6a8f249fd6c78b77d85b558aca53c5f2f64a8f8b",
+    "scripts/capture-lens-mirror-poster.mjs": "dc9b4f1dd1b9034ef1c6f66d24011dbce28733a7e23affd163e49ecfdad22c16",
+    "scripts/render-lens-mirror-samples.mjs": "90288621531de217cf070021422e7470b69610d62d8fd40f6c15e0cec29826e9",
     "src/lib/components/visualizations/lens-mirror-lab/ControlKnob.svelte": "14a8e93bde9238448f55cd9a0ec545d07d6d53b585dba864a93cf8a435bb3cff",
     "src/lib/components/visualizations/lens-mirror-lab/LensMirrorLab.svelte": "6e68f5bf48e7c623ec9bc8d387112f2f7ea451e0f08ea74a0e6801952069d64c",
     "src/lib/components/visualizations/lens-mirror-lab/LensMirrorRuntime.svelte": "6a7b5f52798c6966a9b5b2b74cf50d0581856f3c088ab7f67f7970b65101be30",
@@ -27,15 +28,15 @@
     "src/lib/visualizations/lens-mirror-lab/renderer.ts": "a3885bb5778d274cc942486f37ed75656ff4f4ae8aa7b916535800ed527d3168",
     "src/lib/visualizations/lens-mirror-lab/samples.ts": "d49f63e6ffe6a2fc46205b248ceac2147f2404c2f564fbc0595372c730f9c972",
     "src/lib/visualizations/lens-mirror-lab/state.ts": "4f269bcc42cdfed94f0e0480e8be5235a11629d1ec93783df800327731c74c6f",
-    "static/images/visualizations/through-a-different-glass/samples.json": "b10de02e59509fc9675befc3cc0ea5e37f09de831fd7b17c81ad3b2bd8126728"
+    "static/images/visualizations/through-a-different-glass/samples.json": "ec550d2fc4dc29b77d72c01478305cd4f782bacfb9dfa97cb803e2d74d3a3d0d"
   },
   "samplePixels": {
-    "calibration": "8f5672797859f79d8b1885543f9a4873b18ea583638ab5c6f9354bb56b0b2ada",
-    "facade": "9c3083f520e6698d061df6779ed7636d3a4db179ff82b1824b69f12e481d596f",
-    "portrait": "e5328b25b29d3532225938e95cbada47e66ff58b80137504cb501c9ea961627f",
-    "corridor": "f31a8a001c12c601815b6ea9c0ae97d070650d179354ea8257bd7ca12814cdb2",
-    "typography": "13043f9ad55614967735ef5385bf6fbfb9d79110f16e791f782162e7444afaf8"
+    "calibration": "bbae6ab19420762fc3a50e566cae6da0a2941893d19567d5d34bac236f833246",
+    "facade": "9729809fb2ed034abc403a34abe0656162f4ee46f43145a1c485ad816820b808",
+    "portrait": "f8379abb3e4198a315694bbaa2bbb8413173cc9d1c7e12418d0bc93fc98fa475",
+    "corridor": "3f17505d863a9f063b1e1e43598ef713e8ac8adf9d4a7671a905d1dcd4125ae8",
+    "typography": "288cd0fa84c6216e5ff79d3aa00d2aafc4ea12581c31d66febc4956b9270b5e0"
   },
-  "sourceHash": "c8265f627d96031a477b8e2edd698c7b20053698ee4dd3540bd6300201ae950c",
-  "pixelSha256": "35a1e0e89f7aea0c2a41a26e800c06ba50d107902329b130fb9efe05ed5f2d3f"
+  "sourceHash": "72540bc6120156d1f4ac20cd1cbc59d3b57e74431d767aa1f5f9ef59ed9e34fb",
+  "pixelSha256": "13da699f4b21319ce6b7a6c34916613592a96ae84e81eb90aa2e9eddcca0793a"
 }

@@ -26,7 +26,6 @@ import ThoughtSpread from '$lib/components/blog/raw-thought/ThoughtSpread.svelte
 import ThoughtLeaf from '$lib/components/blog/raw-thought/ThoughtLeaf.svelte';
 import ThoughtArt from '$lib/components/blog/raw-thought/ThoughtArt.svelte';
 import HumanMarginModule from '$lib/components/blog/raw-thought/HumanMarginModule.svelte';
-import UmlFigure from '$lib/components/blog/UmlFigure.svelte';
 `;
 
 const autoImport = {
@@ -42,10 +41,16 @@ const autoImport = {
 			// validate:seo requires thumbnailAlt whenever a post is newly published or updated.
 			leadAlt: thumbnailAlt || title
 		});
+		// Keep the saved UML figure and its styles out of unrelated article imports.
+		const imports =
+			globalImports +
+			(/<UmlFigure\b/.test(enrichedContent)
+				? "\nimport UmlFigure from '$lib/components/blog/UmlFigure.svelte';\n"
+				: '');
 		if (enrichedContent.includes('<script>')) {
-			return { code: enrichedContent.replace('<script>', `<script>\n${globalImports}`) };
+			return { code: enrichedContent.replace('<script>', `<script>\n${imports}`) };
 		}
-		return { code: enrichedContent + `\n<script>\n${globalImports}\n</script>` };
+		return { code: enrichedContent + `\n<script>\n${imports}\n</script>` };
 	}
 };
 
