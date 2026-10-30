@@ -84,7 +84,7 @@ renders a saved image, caption, alt text, notation/assumption notes, and optiona
 source link. Article reading does not invoke AI or the authoring renderer. Pasted
 Markdown is safely previewed as content, never compiled as arbitrary Svelte.
 
-The globally imported saved-figure component has no renderer or sanitizer runtime
+The saved-figure component, imported only by Markdown containing its component tag, has no renderer or sanitizer runtime
 imports and accepts image `src` values rather than raw preview SVG. Authoring owns
 sanitization and `svgImageUrl` conversion before passing an image URL to that
 component. This boundary keeps authoring dependencies out of ordinary article
@@ -271,6 +271,8 @@ implementation session. Provider tests use controlled responses. Browser
 verification covers Chromium, not every browser's OffscreenCanvas/font-layout
 behavior. These are local implementation checks, not a production deployment claim.
 
-The repository's instructed `security:audit` and `security:smoke` scripts are still
-absent, as recorded in the forensic audit. They are not claimed as performed or as
-implemented safeguards. No unrelated security commands were invented to hide that gap.
+The integrated security branch supplies `security:audit` and `security:smoke`.
+The latter adds a strict-loader fixture that preserves legitimate SVG features and
+rejects active/resource-bearing markup using the same application SSR configuration.
+The historical checks above do not substitute for verification of the integrated
+revision; final results belong in the PR and release handoff.

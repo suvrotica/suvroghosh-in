@@ -155,8 +155,8 @@ refusal of a sixth owner-hour reservation without spending the daily pool. It us
 PGlite execution; it does not verify hosted deployment or multi-session contention. These four
 tests join the existing nineteen Notes/TTS SQL tests in `security:sql`.
 
-The incoming UML decision retains ADR 0020; the unmerged TTS decision is renumbered ADR 0021
-with its references updated. Earlier preview-preparation notes describe the earlier UML
+The incoming UML decision retains ADR 0020. The unmerged TTS decision was first numbered
+0021; the later integration below moves it to 0022 because main now owns 0021 for Mindmap Studio. Earlier preview-preparation notes describe the earlier UML
 implementation; their process-local-only limitation is superseded by this integrated quota.
 Provider pricing, actual owner MFA enforcement and hosted settings remain separate release gates.
 
@@ -209,6 +209,25 @@ are unchanged. Cancellation and timeout terminate the worker, clear both lifecyc
 ignore stale callbacks. Fake-worker regressions exercise delayed startup, bounded failure,
 unchanged rendering deadlines, reuse and cancellation. A real-engine harness delays the first
 worker response by 25 seconds to exercise the protocol separately from warmed-cache success.
+
+## Integration with main on 31 October
+
+The verified local UML fixes at `dc7c3e1c` were rebased onto main `8d97acc9`.
+Main independently fixed the sanitizer loader boundary in `48f07de2`; the integrated
+configuration retains its complete sixteen-package SSR closure and `uml:ssr:test`,
+which requires remaining imports to be Node built-ins. The additional security-smoke
+SVG fixture and separate worker startup/rendering deadlines are retained.
+
+The rebase preserves Mindmap Studio, Patient X, the Splat Studio fallback and newer
+article/FAQ changes. Main adds fifteen lockfile package paths; each retains its exact
+version, resolution and integrity metadata, while the security branch's earlier
+upgrades and unused-telemetry removal remain. TTS's unmerged ADR is now 0022; the
+accepted UML and Mindmap decisions keep 0020 and 0021 respectively.
+
+Dependency installation, audit, build, local browser checks, CI and protected-preview
+acceptance require fresh verification on this integrated head. Earlier passing counts
+and the failed `fa59a6a6` preview remain evidence for their own revisions. No production,
+hosted migration or account-setting action is part of this integration. TTS stays disabled.
 
 ## Verification and handoff
 

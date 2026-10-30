@@ -9,14 +9,14 @@ mutation limits, bounded Notes Supabase transports, immutable Actions references
 security checks. This is a scoped review of those boundaries, with local PostgreSQL role/RPC
 fixtures; it does not establish hosted configuration, multi-session database contention or a
 completed Codex Security plugin scan. See the [remediation record](../security/2026-10-28-hardening.md)
-and [ADR 0021](decisions/0021-durable-chatterbox-admission.md).
+and [ADR 0022](decisions/0022-durable-chatterbox-admission.md).
 
 The same-day [release-preparation follow-up](../security/2026-10-28-release-readiness.md)
 upgrades KaTeX to the tested 0.18.2 fix and records read-only production evidence and remaining
 dependency/rollout gates. It does not deploy the local security changes.
 
 The subsequent [preview preparation](../security/2026-10-28-preview-preparation.md) rebases
-those changes onto `5331974c`, preserving the initial Post to UML feature. The later release-blocker integration rebases onto `d060e60f` and retains its completed owner/quota and local PlantUML contracts below. It adds isolated UML AI
+those changes onto `5331974c`, preserving the initial Post to UML feature. The release-blocker integration first rebased onto `d060e60f`, then onto `8d97acc9` on 31 October, retaining the completed owner/quota and local PlantUML contracts below alongside the newer Mindmap Studio, Patient X and Splat Studio changes. It adds isolated UML AI
 enablement, disables UML provider calls on previews, and makes exported metadata inert during
 Svelte compilation. Preview publication is separate from production release authorization.
 
@@ -2324,7 +2324,7 @@ Bounded cleanup retains recent keyed identity hashes and counts, never prose or 
 These are resource ceilings, not a provider billing guarantee or proof that upstream work stops
 on abort. Missing schema, configuration, identity or a valid quota receipt prevents provider
 access. Provider errors return generic no-store responses; logs carry fixed labels and HTTP
-status only. See ADR 0021 for activation and concurrency-verification limits.
+status only. See ADR 0022 for activation and concurrency-verification limits.
 
 Notes document updates and asset uploads count arriving bytes before JSON or multipart parsing
 (4 MiB document / 3 MiB multipart envelope, ten-second deadline). Existing 2 MiB asset limits,
