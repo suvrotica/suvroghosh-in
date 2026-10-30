@@ -12394,6 +12394,21 @@
       "sourceHash": "5de86ee536e5cca6a242a9094fc059202231dc981cf036b40ba26c99704c22a6",
       "width": 1200
     },
+    "static/images/visualizations/soap-film/poster.png": {
+      "format": "PNG",
+      "height": 900,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1200,
+      "outputBytes": 587973,
+      "outputHash": "10cdc0d47cfa9ee7e8de57d3632c190b569a8830745ff6cc25128da7944eea44",
+      "resized": false,
+      "sourceBytes": 991642,
+      "sourceHash": "3ed4bcfd3f95eb5c39c52566c0708c0147d5fcaa8767cf256d88d0a63232d861",
+      "width": 1200
+    },
     "static/images/visualizations/splat-studio/social.png": {
       "format": "PNG",
       "height": 730,

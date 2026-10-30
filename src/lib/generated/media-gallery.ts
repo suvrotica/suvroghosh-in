@@ -5487,6 +5487,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/soap-film/poster.png",
+			"src": "/images/visualizations/soap-film/poster.png",
+			"bytes": 587973,
+			"width": 1200,
+			"height": 900
+		},
+		{
 			"name": "visualizations/splat-studio/social.png",
 			"src": "/images/visualizations/splat-studio/social.png",
 			"bytes": 317283,

@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'why-soap-bubbles-change-colour': {
+		id: 'why-soap-bubbles-change-colour',
+		title: 'Why Soap Bubbles Change Colour',
+		description:
+			'Change a soap bubble’s wall thickness, then look around its flowing surface. Explore the colours made by a thin film of liquid.',
+		subjects: ['Physics', 'Generative Art'],
+		poster: '/images/visualizations/soap-film/poster.png',
+		posterAlt:
+			'A round soap bubble with bright flowing bands of reflected colour against a black background',
+		href: '/blog/visualizations/why-soap-bubbles-change-colour',
+		status: 'published'
+	},
 	'patient-x-depression-bipolar': {
 		id: 'patient-x-depression-bipolar',
 		title: 'Depression, bipolar disorder, and what the scores leave out',

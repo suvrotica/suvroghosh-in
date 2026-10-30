@@ -14,6 +14,16 @@ The runtime dependencies are deliberately narrow. `p5` supports instance-mode We
 
 ## Directory layout
 
+[Soap bubble](visualizations/soap-film.md) uses an ordinary interactive-first
+article at `/blog/visualizations/why-soap-bubbles-change-colour`. Its local
+air–film–air optical calculation supplies a bounded spectral-colour lookup
+texture to a lazy WebGL renderer of a spherical bubble. Per-pixel normals supply
+the local optical angle while camera orbit preserves the round silhouette.
+The flowing thickness field is labelled as
+an authored animation. The gallery retains a static captured poster; use
+`npx vitest run src/lib/visualizations/soap-film --maxWorkers=2` for the numerical
+checks and `npm run build:full` for the feature build lane.
+
 [Strange Matter](visualizations/strange-matter.md) uses the dedicated immersive
 feature pattern for four procedural Three.js art worlds. Its browser-owned design
 state includes a seed, bounded controls, camera and animation position; PNG and

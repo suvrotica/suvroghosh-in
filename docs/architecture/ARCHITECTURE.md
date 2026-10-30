@@ -781,6 +781,42 @@ flowchart LR
     Renderer --> Fallback["Specific failure / retry / poster"]
 ```
 
+### Soap bubble: local optical model and shader
+
+The ordinary Markdown article at
+`/blog/visualizations/why-soap-bubbles-change-colour` uses the existing generic
+article route. Its `components/visualizations/soap-film` entry retains readable
+SSR content and a captured poster while loading the browser renderer lazily.
+The gallery imports only lightweight summary and poster metadata.
+
+The feature domain under `visualizations/soap-film` owns an air–film–air
+reflection calculation and a bounded thickness/angle colour lookup table.
+Spectral integration uses CIE D65 and the CIE 1931 2° observer. The Svelte
+interface owns per-mount thickness, angle, appearance and playback state;
+the browser renderer owns the lookup texture, shader and GPU resources.
+It draws a spherical surface with a circular silhouette at every camera-orbit
+angle. Front-hemisphere normals determine local optical incidence, while camera
+orbit exposes different parts of a surface-anchored thickness field. The optical
+model uses only the nearer wall, without far-wall or refracted-ray tracing.
+Its flowing thickness field is an authored visual pattern, distinct from the
+optical model; the average thickness refers to the whole sphere. Image export
+stays in the browser.
+
+This extends the established feature-owned model/lazy UI pattern, without a
+new route exception, runtime endpoint, credential, durable visitor store or
+shared rendering/state framework. The [feature record](../visualizations/soap-film.md)
+documents the optical assumptions, source data and validation scope. No new
+foundational decision or ADR is introduced.
+
+```mermaid
+flowchart LR
+    FilmArticle["Markdown / SSR poster / gallery summary"] --> FilmUI["Lazy browser UI / per-mount controls"]
+    FilmOptics["Air-film-air spectral reflection"] --> FilmLUT["Bounded colour lookup texture"]
+    FilmUI --> FilmRenderer["Owned WebGL renderer / resource lifecycle"]
+    FilmLUT --> FilmRenderer
+    FilmRenderer --> FilmImage["Local PNG download"]
+```
+
 ### Strange Matter: browser-owned generative sculpture
 
 Strange Matter extends the dedicated visualization feature pattern through the

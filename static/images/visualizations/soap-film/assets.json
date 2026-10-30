@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "articlePath": "/blog/visualizations/why-soap-bubbles-change-colour",
+  "captureMode": "native-png-export",
+  "motion": "reduced",
+  "animationTime": 0,
+  "thicknessNm": 480,
+  "angleDeg": 12,
+  "flowing": true,
+  "width": 1200,
+  "height": 900,
+  "fit": "contain",
+  "exportWidth": 1446,
+  "exportHeight": 1079,
+  "exportPngSha256": "d0c1023d2c0b5d10883d422f459bf391b6c4b47067c69e07f3511f075874521d",
+  "capturePngSha256": "3ed4bcfd3f95eb5c39c52566c0708c0147d5fcaa8767cf256d88d0a63232d861",
+  "pixelSha256": "c1f4d7557eec7b0af8e6edb602720f23eeecbdff2f3f373eb1eae5d6573e34ec",
+  "sources": {
+    "src/lib/visualizations/soap-film/optics.ts": "2388eb3a4bc2ba3dc69f2b7fe5ca9168ad5ea6e997df6702c9f4b9ea103c3b0c",
+    "src/lib/visualizations/soap-film/colour-data.ts": "9ff1ad6bf266e895e5d2154aa9b0fd4100c336c1acba813a3de610d3fc2dcf0a",
+    "src/lib/visualizations/soap-film/renderer.ts": "c8f64c155fc4f06f94bd39792f537a1007c6f0a0507e1cc80953ce31709da9df",
+    "src/lib/visualizations/soap-film/fragment.glsl": "1f2fb6ce08b1f016abd25def2ac4e4564bf1086a3fe2dc1e00163e6f72d2d54a",
+    "src/lib/components/visualizations/soap-film/SoapFilmApp.svelte": "3f5e95ba9bd4d7798bad23656bca20379bb57c2d8ed42cf4cbfeddd2b72385f5",
+    "src/lib/components/visualizations/soap-film/soap-film.css": "3ea5f70f13b067fa05279a4deb2d185e6f91b168675aa0bc6f0e3a957fd0c1ee"
+  }
+}

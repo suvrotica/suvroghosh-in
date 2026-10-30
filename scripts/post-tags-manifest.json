@@ -16382,6 +16382,36 @@
 				"dystopia"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/why-soap-bubbles-change-colour.md": {
+			"bodyHash": "f8dc1c422ad83ad60e9927356e65949d791cac0fe76888e02ec4aba294cc530a",
+			"hashVersion": 2,
+			"revisionHash": "a049ba9508c281e1e5fce9c72b3728abf46b220ac2ad2a5e08e98bcf88aa8109",
+			"generatedTags": [
+				"Physics",
+				"Optics",
+				"Light",
+				"Thin-film Interference",
+				"Colour",
+				"Shaders",
+				"WebGL",
+				"Interactive Learning",
+				"Soap Bubbles",
+				"Iridescence"
+			],
+			"pinnedTags": [
+				"Physics",
+				"Optics",
+				"Light",
+				"Thin-film Interference",
+				"Colour",
+				"Shaders",
+				"WebGL",
+				"Interactive Learning",
+				"Soap Bubbles",
+				"Iridescence"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T22:56:05.053153+00:00",
+  "generatedAt": "2026-10-30T23:04:07.924359+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -17225,6 +17225,29 @@
         "System",
         "Whether",
         "Clinical"
+      ],
+      "wordCount": 130
+    },
+    "why-soap-bubbles-change-colour": {
+      "generatedAt": "2026-10-30T23:04:07.823856+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/why-soap-bubbles-change-colour.svg",
+      "source": "src/lib/posts/why-soap-bubbles-change-colour.md",
+      "sourceHash": "d32852bcf244bda78b5d79062355b18df760bd8c4505949f694d89553c613a70",
+      "sourceModified": "2026-10-30T23:03:24.513582+00:00",
+      "topWords": [
+        "Bubble",
+        "Colour",
+        "Thickness",
+        "Wall",
+        "Light",
+        "Change",
+        "Film",
+        "Reflected",
+        "Different",
+        "Surface",
+        "Angle",
+        "Air"
       ],
       "wordCount": 130
     },
