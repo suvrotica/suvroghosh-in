@@ -8064,6 +8064,22 @@
       "sourceHash": "fc86c6443763e0ed8b786750a7425a576076fb8b446bd52bf1bca836fa90570b",
       "width": 1024
     },
+    "static/images/art-horoscopes-harbingers-of-horseshit.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 373265,
+      "outputHash": "8e0e58eba5a578a96a3d35e6ed30d74179931fecad2f57a0636dd93773f78aa2",
+      "psnrDb": 34.95,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 1183908,
+      "sourceHash": "e981fe36f1adbea10c99099a1a0731d94510039a0c0824243142c7bc69d24da9",
+      "width": 1376
+    },
     "static/images/art-hypertension-salt-sugar-and-certainty.jpg": {
       "format": "JPEG",
       "height": 630,

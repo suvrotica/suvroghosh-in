@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T20:10:13.029798+00:00",
+  "generatedAt": "2026-10-30T22:56:05.053153+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5012,6 +5012,29 @@
         "India",
         "Household",
         "Waste"
+      ],
+      "wordCount": 130
+    },
+    "horoscopes-harbingers-of-horseshit": {
+      "generatedAt": "2026-10-30T22:55:50.105522+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/horoscopes-harbingers-of-horseshit.svg",
+      "source": "src/lib/posts/horoscopes-harbingers-of-horseshit.md",
+      "sourceHash": "439d40f20fd07d2a6d34c5e92e74989a2d45895ef53d64b12f41121e093074db",
+      "sourceModified": "2026-10-30T22:54:47.157825+00:00",
+      "topWords": [
+        "Bengali",
+        "Celestial",
+        "Horoscope",
+        "Planetary",
+        "Cosmic",
+        "Meaningless",
+        "Disappointment",
+        "Actually",
+        "Fucking",
+        "Daily",
+        "Bullshit",
+        "Meaning"
       ],
       "wordCount": 130
     },

@@ -16352,6 +16352,36 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/horoscopes-harbingers-of-horseshit.md": {
+			"bodyHash": "27e6867a049e1b70805b08cb048452a5e496e5b048c9472e72afb016c0810c4a",
+			"hashVersion": 2,
+			"revisionHash": "77a87cf232b76b98811a7fd31df7fced22ffaead87e0c9e8b425d16a4cad56e5",
+			"generatedTags": [
+				"astrology",
+				"horoscope",
+				"Calcutta",
+				"satire",
+				"skepticism",
+				"Bengali",
+				"superstition",
+				"pseudoscience",
+				"culture",
+				"dystopia"
+			],
+			"pinnedTags": [
+				"astrology",
+				"horoscope",
+				"Calcutta",
+				"satire",
+				"skepticism",
+				"Bengali",
+				"superstition",
+				"pseudoscience",
+				"culture",
+				"dystopia"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -41,6 +41,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "art-horoscopes-harbingers-of-horseshit.jpg",
+			"src": "/images/art-horoscopes-harbingers-of-horseshit.jpg",
+			"bytes": 373265,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-hypertension-salt-sugar-and-certainty.jpg",
 			"src": "/images/art-hypertension-salt-sugar-and-certainty.jpg",
 			"bytes": 131538,
