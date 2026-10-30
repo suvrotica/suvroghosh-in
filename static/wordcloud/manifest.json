@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T23:50:13.247844+00:00",
+  "generatedAt": "2026-10-30T17:07:16.589665+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7703,6 +7703,29 @@
         "Fairy",
         "Dental",
         "Merely"
+      ],
+      "wordCount": 130
+    },
+    "patient-x-depression-bipolar": {
+      "generatedAt": "2026-10-30T17:07:15.991414+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/patient-x-depression-bipolar.svg",
+      "source": "src/lib/posts/patient-x-depression-bipolar.md",
+      "sourceHash": "9a54be8af75658bd3774f873874c596b20e3a90447257b2d7ed88048ef1b3ace",
+      "sourceModified": "2026-10-30T17:07:10.040991+00:00",
+      "topWords": [
+        "Different",
+        "Zero",
+        "Sleep",
+        "Scores",
+        "Person",
+        "Answers",
+        "Symptoms",
+        "Assessment",
+        "Days",
+        "Whether",
+        "Questions",
+        "Total"
       ],
       "wordCount": 130
     },

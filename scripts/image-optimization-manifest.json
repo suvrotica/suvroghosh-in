@@ -11735,6 +11735,33 @@
       "sourceHash": "08df4abc36364b28d5ffdb5c0960d8354680d33b493e42e8b8d3c4002a4f9ec7",
       "width": 1200
     },
+    "static/images/visualizations/patient-x/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 88484,
+      "outputHash": "db28807318b50247706a0eb6cc7ad1c11e96856441b6afbd02eaf0475a4f4875",
+      "resized": false,
+      "sourceBytes": 88484,
+      "sourceHash": "db28807318b50247706a0eb6cc7ad1c11e96856441b6afbd02eaf0475a4f4875",
+      "width": 1200
+    },
+    "static/images/visualizations/patient-x/social.svg": {
+      "format": "SVG",
+      "height": 630,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 5451,
+      "outputHash": "109f6f820b63a4c3a19e88bf11dbb16b6e911dd3f27cef5faa8ade51146340d6",
+      "reason": "vector source retained",
+      "sourceBytes": 5451,
+      "sourceHash": "109f6f820b63a4c3a19e88bf11dbb16b6e911dd3f27cef5faa8ade51146340d6",
+      "width": 1200
+    },
     "static/images/visualizations/post-to-uml/social.png": {
       "format": "PNG",
       "height": 630,

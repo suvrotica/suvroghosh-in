@@ -16221,6 +16221,37 @@
 				"Employment"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/patient-x-depression-bipolar.md": {
+			"bodyHash": "709edd3f3f8ac3272652043c534d31e9cae56b63db4ac4bcfda384361f4f59d1",
+			"hashVersion": 2,
+			"revisionHash": "41678c029df3352f690fe962b6ac01182e8bb92bc1999efffa1317d6325c52ab",
+			"generatedTags": [
+				"Mental Health",
+				"Depression",
+				"Bipolar Disorder",
+				"PHQ-9",
+				"ASRM",
+				"WHO-5",
+				"Patient Education",
+				"Data Visualisation",
+				"Questionnaires",
+				"Synthetic Data"
+			],
+			"pinnedTags": [
+				"Mental Health",
+				"Depression",
+				"Bipolar Disorder",
+				"PHQ-9",
+				"ASRM",
+				"WHO-5",
+				"Patient Education",
+				"Data Visualisation",
+				"Questionnaires",
+				"Synthetic Data"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-30"
 		}
 	},
 	"maxTags": 10

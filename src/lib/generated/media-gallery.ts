@@ -5193,6 +5193,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/patient-x/social.png",
+			"src": "/images/visualizations/patient-x/social.png",
+			"bytes": 88484,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/patient-x/social.svg",
+			"src": "/images/visualizations/patient-x/social.svg",
+			"bytes": 5453,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/post-to-uml/social.png",
 			"src": "/images/visualizations/post-to-uml/social.png",
 			"bytes": 65006,

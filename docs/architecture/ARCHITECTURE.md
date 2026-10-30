@@ -207,7 +207,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/privacy`                                                                                             | Explicitly prerendered public storage, measurement and media policy; its settings action reopens the shared browser-local preferences dialog.                                                                                                                                                                      |
 | `/api/analytics/pageview`                                                                              | Compatibility intake for older consented clients, with streamed input limits, trusted production geolocation, eligible-path validation, deadlines and admission controls; no development/preview writes.                                                                                                           |
 | `/api/prompt-atlas`                                                                                    | GET public availability; explicit same-origin consented POST, free-route verification, atomic shared quota and bounded structured analysis; private/no-store.                                                                                                                                                      |
-| `/api/mindmap-studio` | GET free-AI availability; bounded consented source-analysis POST with trusted excerpt IDs, the existing shared free-route/quota gate and private/no-store/noindex responses. |
+| `/api/mindmap-studio`                                                                                  | GET free-AI availability; bounded consented source-analysis POST with trusted excerpt IDs, the existing shared free-route/quota gate and private/no-store/noindex responses.                                                                                                                                       |
 | `/api/comments`                                                                                        | Published-article approved comments/replies and pending guest submission; server-only service-role RPCs, bounded input/admission and no-store responses.                                                                                                                                                           |
 | `/api/comments/moderate`                                                                               | Standalone private HTML email-action confirmation/composer; expiring single-comment moderation or one-author-reply capability, safe GET/HEAD and bounded same-origin POST; no Notes session, Svelte layout, analytics or external resources.                                                                       |
 | `/api/notes/comments`                                                                                  | Independently configured-owner-authorized queue/count/session/page-export reads and moderation/read/author-reply mutations; authenticated session RPCs, private/no-store/noindex responses.                                                                                                                        |
@@ -951,6 +951,42 @@ See [the feature contract](../visualizations/anatomy-of-an-essay.md) for source 
 scales, limits, provenance and opt-in automation. Focused model/geometry tests and
 local production-browser checks cover the feature; this does not claim comprehensive
 linguistic parsing or semantic assessment.
+
+### Patient X: fictional questionnaire walkthrough
+
+Patient X uses the ordinary Markdown visualization route at
+`/blog/visualizations/patient-x-depression-bipolar`, with secondary Apps discovery.
+The existing `immersiveLead` convention places the feature-owned compact heading and
+working charts first, with the generic article metadata/actions below the content;
+there is no route-specific wrapper or shared layout override.
+The pure TypeScript model under `src/lib/visualizations/patient-x` owns the seeded,
+authored six-assessment example, item responses, native-scale totals, recall windows
+and descriptive comparisons. Its Svelte component under the corresponding
+`components/visualizations/patient-x` directory owns only the current example and
+selected assessment. The initial charts, text and data tables render with the article;
+browser interactions replace local example state. There is no endpoint, storage,
+visitor questionnaire, health-data collection or diagnostic inference service.
+
+The PHQ-9, ASRM and WHO-5 remain separate scores. ASRM covers seven days while the
+other measures cover fourteen; the comparison plot joins assessments, not diagnoses
+or simultaneous symptom episodes. Brief item summaries link to the official forms
+without reproducing the full restricted ASRM instrument. The synthetic generator is
+an educational scenario, not a calibrated model of patients or illness prevalence.
+
+```mermaid
+flowchart LR
+    Seed["Fixed initial seed / explicit new example"] --> Model["Authored fictional course + bounded item responses"]
+    Model --> Scores["Separate PHQ-9 / ASRM / WHO-5 scores and recall windows"]
+    Scores --> View["SSR-readable timelines, selected answers, comparison and table"]
+    View --> Selection["Per-mount assessment selection"]
+    Selection --> View
+    Model --> Export["Explicit synthetic-data downloads"]
+```
+
+Focused model tests verify sums, ranges, determinism and date windows. Browser checks
+exercise shared selection, regeneration, answer inspection and mobile/keyboard use
+against a local production preview. This extends the existing feature-owned model/UI
+pattern and introduces no foundational trade-off requiring an ADR.
 
 ### Knowledge Gap Atlas: local corpus analysis
 
