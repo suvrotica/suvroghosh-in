@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T18:03:25.965337+00:00",
+  "generatedAt": "2026-10-30T18:05:57.298336+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -16742,6 +16742,29 @@
         "Lane",
         "Someone",
         "Remains"
+      ],
+      "wordCount": 130
+    },
+    "vibe-fucking-coding-mustard-oil-and-other-missing-ingredients": {
+      "generatedAt": "2026-10-30T18:05:57.214287+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.svg",
+      "source": "src/lib/posts/vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.md",
+      "sourceHash": "08e100d4abaa7afd83e3ef1f2b1ff1a7aee8413ce716160f69b70a1a50274fcf",
+      "sourceModified": "2026-10-30T17:52:41.136477+00:00",
+      "topWords": [
+        "Vibe",
+        "Coding",
+        "Mustard",
+        "Fucking",
+        "Existential",
+        "Code",
+        "Bengali",
+        "Oil",
+        "Missing",
+        "Across",
+        "Even",
+        "Latin"
       ],
       "wordCount": 130
     },

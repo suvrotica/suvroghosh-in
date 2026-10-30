@@ -8384,6 +8384,22 @@
       "sourceHash": "8206546f897785df8fab16c891f2edfb417f2edad630cd05c427ad86f7954999",
       "width": 1672
     },
+    "static/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 398315,
+      "outputHash": "b665a8f0f9b76c565bec330264b46854d1da783247157b4e0911e8062009ea2d",
+      "psnrDb": 34.3,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 1257758,
+      "sourceHash": "e1d6a3b0a296a92bb9c121738abb73b87e6ef21a7b000262b3aba18ac5674cad",
+      "width": 1376
+    },
     "static/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg": {
       "format": "JPEG",
       "height": 941,

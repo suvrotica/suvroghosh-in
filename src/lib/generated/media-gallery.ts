@@ -181,6 +181,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 940
 		},
 		{
+			"name": "art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
+			"src": "/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
+			"bytes": 398315,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-what-exactly-have-i-let-my-local-ai-touch.jpg",
 			"src": "/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg",
 			"bytes": 179183,

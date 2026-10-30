@@ -16281,6 +16281,36 @@
 				"Calcutta"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.md": {
+			"bodyHash": "c0c342ff630437c6ae77ad19081f211b8f5934dfa56f10d4ba273dfaae9e8d61",
+			"hashVersion": 2,
+			"revisionHash": "31b719689eb99a5028e5e34f1be168e8b9dfbf6d0ee413e1d316eea85e04a1c7",
+			"generatedTags": [
+				"coding",
+				"Calcutta",
+				"satire",
+				"Bengali",
+				"mustard oil",
+				"vibe",
+				"science",
+				"technology",
+				"programming",
+				"existentialism"
+			],
+			"pinnedTags": [
+				"coding",
+				"Calcutta",
+				"satire",
+				"Bengali",
+				"mustard oil",
+				"vibe",
+				"science",
+				"technology",
+				"programming",
+				"existentialism"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
