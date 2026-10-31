@@ -41,6 +41,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "art-happiness-the-unhappy-scam-thats-always-healthy-for-business.jpg",
+			"src": "/images/art-happiness-the-unhappy-scam-thats-always-healthy-for-business.jpg",
+			"bytes": 369880,
+			"width": 1376,
+			"height": 768
+		},
+		{
 			"name": "art-horoscopes-harbingers-of-horseshit.jpg",
 			"src": "/images/art-horoscopes-harbingers-of-horseshit.jpg",
 			"bytes": 373265,

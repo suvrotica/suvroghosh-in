@@ -8064,6 +8064,22 @@
       "sourceHash": "fc86c6443763e0ed8b786750a7425a576076fb8b446bd52bf1bca836fa90570b",
       "width": 1024
     },
+    "static/images/art-happiness-the-unhappy-scam-thats-always-healthy-for-business.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1376,
+      "outputBytes": 369880,
+      "outputHash": "f6c8a4fe4fe457e6ffe487b185794bd8c4b65af7084c1778864ec0d0c9e5eb1d",
+      "psnrDb": 34.9,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 1191708,
+      "sourceHash": "c97cf900b87e5defd5414e49cb77c678ba5c7d8990a9c8cd4d907409e3317f81",
+      "width": 1376
+    },
     "static/images/art-horoscopes-harbingers-of-horseshit.jpg": {
       "format": "JPEG",
       "height": 768,

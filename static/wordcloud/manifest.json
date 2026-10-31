@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T23:04:07.924359+00:00",
+  "generatedAt": "2026-10-31T00:55:16.416219+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4552,6 +4552,29 @@
         "Someone",
         "Many",
         "Food"
+      ],
+      "wordCount": 130
+    },
+    "happiness-the-unhappy-scam-thats-always-healthy-for-business": {
+      "generatedAt": "2026-10-31T00:55:13.645167+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/happiness-the-unhappy-scam-thats-always-healthy-for-business.svg",
+      "source": "src/lib/posts/happiness-the-unhappy-scam-thats-always-healthy-for-business.md",
+      "sourceHash": "838544c92cc0dc3ff3cfc8ac370f5b66268f8a451678d402dd7b3e4d9e344b71",
+      "sourceModified": "2026-10-31T00:54:34.712415+00:00",
+      "topWords": [
+        "Happiness",
+        "Unhappy",
+        "Unhappiness",
+        "Everything",
+        "Luck",
+        "Now",
+        "Existential",
+        "Selfhelp",
+        "Never",
+        "Unhealthy",
+        "Consider",
+        "History"
       ],
       "wordCount": 130
     },

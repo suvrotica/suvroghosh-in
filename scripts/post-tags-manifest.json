@@ -16412,6 +16412,36 @@
 				"Iridescence"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/happiness-the-unhappy-scam-thats-always-healthy-for-business.md": {
+			"bodyHash": "0f96346f22509d56148072056abaf52e42cf8c190471c670c95354a151863bc6",
+			"hashVersion": 2,
+			"revisionHash": "df01f709cc4c047054fdc0fa396d0d021e0b61d173bc1f7273e97a016add46e1",
+			"generatedTags": [
+				"happiness",
+				"scam",
+				"psychology",
+				"capitalism",
+				"philosophy",
+				"self-help",
+				"society",
+				"satire",
+				"humor",
+				"mental health"
+			],
+			"pinnedTags": [
+				"happiness",
+				"scam",
+				"psychology",
+				"capitalism",
+				"philosophy",
+				"self-help",
+				"society",
+				"satire",
+				"humor",
+				"mental health"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
