@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T01:07:00.954214+00:00",
+  "generatedAt": "2026-10-31T17:52:12.805910+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10532,6 +10532,29 @@
         "Feel",
         "Far",
         "Looking"
+      ],
+      "wordCount": 130
+    },
+    "tescreal-silicon-valley-catechism": {
+      "generatedAt": "2026-10-31T17:52:12.503867+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/tescreal-silicon-valley-catechism.svg",
+      "source": "src/lib/posts/tescreal-silicon-valley-catechism.md",
+      "sourceHash": "6fb33ad175dc41e00e0de613e6e37c6669d45670b91c9fb9903ba5945b7b5993",
+      "sourceModified": "2026-10-31T17:51:20.416532+00:00",
+      "topWords": [
+        "Future",
+        "Singularity",
+        "Men",
+        "Suffering",
+        "Hypothetical",
+        "Minds",
+        "Human",
+        "Never",
+        "Cosmic",
+        "Species",
+        "Digital",
+        "Decided"
       ],
       "wordCount": 130
     },

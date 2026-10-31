@@ -10418,6 +10418,22 @@
       "sourceHash": "42d0eca0b1f5d512ff47023f73eee98b9c13bff9be27b3255ec7e4595fa1393e",
       "width": 1774
     },
+    "static/images/tescreal-silicon-valley-catechism.webp": {
+      "format": "WEBP",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 483242,
+      "outputHash": "d4480b6ebd2d0cfb9e31f6e8d38800f0e2437133263ffe38ca4b83f7b5b02142",
+      "psnrDb": 37.5,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 539916,
+      "sourceHash": "5fc4b99a99299e35bcb10a5c88a4080016c1adcbe9d7fcb32dc00c93866d4533",
+      "width": 1536
+    },
     "static/images/the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg": {
       "format": "JPEG",
       "height": 1280,

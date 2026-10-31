@@ -16473,6 +16473,34 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-31"
+		},
+		"src/lib/posts/tescreal-silicon-valley-catechism.md": {
+			"bodyHash": "7f8d94894a32c9f7641f14f8a0bc0d4c3d3ba8964e3821432b2cb0267bc84e27",
+			"hashVersion": 2,
+			"revisionHash": "3bf3295ef4c839025f1b0026892de993a69a68f897619bc7246fbfa61188b5ac",
+			"generatedTags": [
+				"Transhumanism",
+				"Effective Altruism",
+				"Longtermism",
+				"Silicon Valley",
+				"Artificial Intelligence",
+				"Philosophy",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Transhumanism",
+				"Effective Altruism",
+				"Longtermism",
+				"Silicon Valley",
+				"Artificial Intelligence",
+				"Philosophy",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

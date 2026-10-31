@@ -4591,6 +4591,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 887
 		},
 		{
+			"name": "tescreal-silicon-valley-catechism.webp",
+			"src": "/images/tescreal-silicon-valley-catechism.webp",
+			"bytes": 483242,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg",
 			"src": "/images/the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg",
 			"bytes": 293843,
