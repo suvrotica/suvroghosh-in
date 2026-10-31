@@ -16442,6 +16442,37 @@
 				"mental health"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/sort-the-tray.md": {
+			"bodyHash": "86b8456c3054225499fab2c15a8abca2b43d348d776839cc3d240d6a9eceef18",
+			"hashVersion": 2,
+			"revisionHash": "35017de9b06d72d3e1820972c52a9c44a1aeb4a45c682e2c2d2bab760c0be0a0",
+			"generatedTags": [
+				"Games",
+				"Sorting",
+				"Relaxing Games",
+				"Browser Games",
+				"Accessible Design",
+				"Interactive",
+				"Casual Games",
+				"Touch Controls",
+				"Keyboard Controls",
+				"Local Storage"
+			],
+			"pinnedTags": [
+				"Games",
+				"Sorting",
+				"Relaxing Games",
+				"Browser Games",
+				"Accessible Design",
+				"Interactive",
+				"Casual Games",
+				"Touch Controls",
+				"Keyboard Controls",
+				"Local Storage"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-31"
 		}
 	},
 	"maxTags": 10

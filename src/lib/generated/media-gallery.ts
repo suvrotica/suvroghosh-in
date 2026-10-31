@@ -3737,6 +3737,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "games/sort-the-tray-cover.svg",
+			"src": "/images/games/sort-the-tray-cover.svg",
+			"bytes": 11705,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "games/sort-the-tray-social.png",
+			"src": "/images/games/sort-the-tray-social.png",
+			"bytes": 97080,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "gradient-descent-landscapes.png",
 			"src": "/images/gradient-descent-landscapes.png",
 			"bytes": 430729,

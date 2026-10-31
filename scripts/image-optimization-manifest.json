@@ -9522,6 +9522,33 @@
       "sourceHash": "868b631dad12c7a9ebab6a5346daa6cc62539ee399a086f10bbc98fe8ff03044",
       "width": 1200
     },
+    "static/images/games/sort-the-tray-cover.svg": {
+      "format": "SVG",
+      "height": 800,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 11705,
+      "outputHash": "2fc5ce027e1040f2a4e612eee6355eabdf20907a9c2a26156a6631591910e96e",
+      "reason": "vector source retained",
+      "sourceBytes": 11705,
+      "sourceHash": "2fc5ce027e1040f2a4e612eee6355eabdf20907a9c2a26156a6631591910e96e",
+      "width": 1200
+    },
+    "static/images/games/sort-the-tray-social.png": {
+      "format": "PNG",
+      "height": 800,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 97080,
+      "outputHash": "926399be875403e0f2806e9426ba6aa4783165508178ced36f66f67bb4715782",
+      "resized": false,
+      "sourceBytes": 97080,
+      "sourceHash": "926399be875403e0f2806e9426ba6aa4783165508178ced36f66f67bb4715782",
+      "width": 1200
+    },
     "static/images/gradient-descent-landscapes.png": {
       "format": "PNG",
       "height": 630,

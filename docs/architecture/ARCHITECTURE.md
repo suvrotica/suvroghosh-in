@@ -194,7 +194,7 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/blog/[category]`, `/blog/archive/[year]`, `/blog/archive/[year]/[month]`, `/blog/topics/[topic]`     | Dynamic archive loads, validated params/filters and pagination.                                                                                                                                                                                                                                                    |
 | `/blog/topics`, `/blog/visualizations`                                                                 | Prerendered indexes. Promoted topics redirect to curated headquarters.                                                                                                                                                                                                                                             |
 | `/blog/[category]/[slug]`                                                                              | `prerender = 'auto'`; generated canonical entries plus server fallback for category/legacy redirects. Server load resolves published metadata; universal load imports the compiled Markdown component.                                                                                                             |
-| `/blog/games/[slug]`                                                                                   | Prerendered entries from `gamesCatalog`; a dedicated page renders one of four catalog experiences. The generic article entry generator excludes games.                                                                                                                                                             |
+| `/blog/games/[slug]`                                                                                   | Prerendered entries from `gamesCatalog`; a dedicated page renders one of five catalog experiences. The generic article entry generator excludes games.                                                                                                                                                             |
 | Three concrete `/blog/visualizations/...` pages                                                        | Bias Archipelago, Barnum Lab and Meaning & Connection Map have route-specific SSR loads and component wrappers. They reuse the generic article page. Barnum has explicit critical-CSS/preload controls; Meaning Map overlays the article after mount. These exceptions are not a second general publishing engine. |
 | `/topics`, `/topics/[slug]`                                                                            | Prerendered index and `auto` headquarters entries with validated registry membership and lazy Markdown bodies.                                                                                                                                                                                                     |
 | `/resources`, `/resources/[kind=resourceKind]/[slug]`                                                  | Prerendered resource index/details; param matcher limits kind to prompts/lists; universal component import follows server metadata validation.                                                                                                                                                                     |
@@ -738,6 +738,23 @@ Search has two roles: server metadata search supports `/blog` filters and no-Jav
 ## 6. Components, state and Svelte 5
 
 Most feature UI lives under `src/lib/components/visualizations/<feature>/` or `components/games/<feature>/`, while its non-UI engine/data lives under the corresponding feature domain. This is a convention, not an enforced import rule: Meaning Map and Barnum Lab co-locate Svelte interfaces under the domain directory, and some large components still contain persistence/controller logic.
+
+### Sort the Tray (31 October 2026)
+
+`/blog/games/sort-the-tray` extends the existing Games catalog and prerendered game dispatcher. Its published Games Markdown supplies discovery metadata; the same route supplies canonical, social and VideoGame metadata. The native Svelte interface under `components/games/sort-the-tray` renders immediately in the existing immersive game shell. It is served by this site, without an iframe or ChatGPT authentication.
+
+The pure model and original SVG object artwork live under `games/sort-the-tray`. The mounted component owns object selection, pointer gestures, keyboard focus, optional Web Audio and motion preferences. Versioned browser localStorage preserves the six-object tray, completed placements and preferences. Saved input is validated before use; unavailable storage leaves play functional. Completion waits for an explicit request for another tray. There are no new server endpoints, credentials, external game services or uploaded game-progress records. Existing site-wide measurement remains unchanged.
+
+```mermaid
+flowchart LR
+    TrayMetadata["Games Markdown + gamesCatalog"] --> TrayRoute["Prerendered game route / SEO"]
+    TrayRoute --> TrayUI["Native Sort the Tray component"]
+    TrayModel["Pure placement and save validation"] <--> TrayUI
+    TrayUI <--> TraySave["Browser-local tray and preferences"]
+    TrayUI --> TraySound["Optional instance-owned Web Audio"]
+```
+
+This follows the established feature-owned game pattern; no new foundational design or ADR is introduced.
 
 The prevailing style is Svelte 5 `$props`, `$state`, `$derived`, `$effect`, callback/event attributes, snippets and `{@render}`. All 406 library Svelte files compiled without warnings/errors in the audit's parse/compiler sweep. A source scan found 397 library modules containing runes, no `export let`, `$:` or `on:` event syntax, and one unreferenced legacy `svelte/store` utility (`utils/reducedMotion.ts`). These observations do not establish runtime correctness or full accessibility.
 

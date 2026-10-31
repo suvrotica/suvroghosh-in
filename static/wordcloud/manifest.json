@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T00:55:16.416219+00:00",
+  "generatedAt": "2026-10-31T01:07:00.954214+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9890,6 +9890,29 @@
         "Cloth"
       ],
       "wordCount": 130
+    },
+    "sort-the-tray": {
+      "generatedAt": "2026-10-31T01:07:00.055314+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/sort-the-tray.svg",
+      "source": "src/lib/posts/sort-the-tray.md",
+      "sourceHash": "3d8dd592a64fe002a85f4de6b265fe61db554b5fe21c900fb53976e10f460b85",
+      "sourceModified": "2026-10-31T01:06:38.234934+00:00",
+      "topWords": [
+        "Object",
+        "Tray",
+        "Goes",
+        "Dish",
+        "Browser",
+        "Objects",
+        "Stays",
+        "Choose",
+        "Play",
+        "Stay",
+        "Progress",
+        "Saved"
+      ],
+      "wordCount": 83
     },
     "spacetime-laboratory-einstein-equations": {
       "generatedAt": "2026-10-20T05:58:17.961676+00:00",

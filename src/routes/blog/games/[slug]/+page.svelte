@@ -5,11 +5,13 @@
 	import KagojerDanaShell from '$lib/components/games/kagojer-dana/KagojerDanaShell.svelte';
 	import CrosswordGame from '$lib/components/games/crossword/CrosswordGame.svelte';
 	import PeriodBoardGames from '$lib/components/games/period-board-games/PeriodBoardGames.svelte';
+	import SortTheTray from '$lib/components/games/sort-the-tray/SortTheTray.svelte';
 	import { healthcareItPack } from '$lib/games/crossword/content/packs/healthcare-it';
 	import type { GameExperience } from '$lib/games/catalog';
 	import type { PageData } from './$types';
 
 	const instructionHeading = {
+		'sort-the-tray': 'How to sort',
 		'period-board-games': 'How to play',
 		'healthcare-it-crossword': 'How to solve',
 		'kagojer-dana': 'How to fly',
@@ -21,7 +23,9 @@
 
 <SEO {...data.seo} />
 
-{#if data.game.experience === 'period-board-games'}
+{#if data.game.experience === 'sort-the-tray'}
+	<SortTheTray />
+{:else if data.game.experience === 'period-board-games'}
 	<PeriodBoardGames game={data.game} />
 {:else if data.game.experience === 'kagojer-dana'}
 	<KagojerDanaShell game={data.game} />
@@ -59,7 +63,19 @@
 				>
 					About the game
 				</p>
-				{#if data.game.experience === 'period-board-games'}
+				{#if data.game.experience === 'sort-the-tray'}
+					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
+						A few things to put in their place.
+					</h2>
+					<p class="mt-5 text-left text-lg leading-relaxed">
+						A coin goes into the Coins dish. A button goes into Buttons. A stone goes into Stones.
+						Six objects are ready when you open the page.
+					</p>
+					<p class="mt-4 text-left leading-relaxed">
+						There is no timer, score or increasing difficulty. A misplaced object stays available,
+						and the finished tray waits until you choose another. Play for a moment or stay a while.
+					</p>
+				{:else if data.game.experience === 'period-board-games'}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						A folding board, turned over without losing the afternoon.
 					</h2>
@@ -120,7 +136,18 @@
 			<aside class="rounded-2xl border border-amber-950/15 bg-white/55 p-5 dark:bg-white/5">
 				<h2 class="m-0 text-lg font-black">{instructionHeading[data.game.experience]}</h2>
 				<ul class="mt-4 space-y-3 text-sm leading-relaxed">
-					{#if data.game.experience === 'period-board-games'}
+					{#if data.game.experience === 'sort-the-tray'}
+						<li><strong>Drag</strong> an object to its labelled dish.</li>
+						<li><strong>Or tap</strong> the object, then the dish.</li>
+						<li>
+							<strong>Keyboard:</strong> Tab to an object and press Enter or Space. Focus moves to the
+							dishes; choose one the same way. Escape clears a selection.
+						</li>
+						<li>
+							<strong>Another tray</strong> appears when everything is sorted. Your progress stays saved
+							if you leave.
+						</li>
+					{:else if data.game.experience === 'period-board-games'}
 						<li><strong>Choose a board face</strong> with the two cardboard tabs.</li>
 						<li><strong>Roll the die yourself</strong> on every human throw.</li>
 						<li>
@@ -161,7 +188,24 @@
 		</div>
 
 		<div class="mt-12 grid gap-5 sm:grid-cols-2">
-			{#if data.game.experience === 'period-board-games'}
+			{#if data.game.experience === 'sort-the-tray'}
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Make yourself comfortable</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Sound starts off. Turn it on for quiet placement sounds, or keep your own music or
+						spoken audio playing. Objects have distinct shapes as well as colours. Options includes
+						reduced motion, and the game also respects your device setting.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Saved in this browser</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Your tray and preferences stay in this browser. No account or download is needed, and
+						game progress is not uploaded. A different browser or device starts its own tray. If
+						storage is unavailable, you can still play.
+					</p>
+				</section>
+			{:else if data.game.experience === 'period-board-games'}
 				<section class="rounded-xl border border-amber-950/15 p-5">
 					<h2 class="m-0 text-xl font-black">The preset</h2>
 					<p class="mt-3 text-left text-sm leading-relaxed">
@@ -313,7 +357,14 @@
 	</div>
 </section>
 
-{#if data.game.experience === 'period-board-games'}
+{#if data.game.experience === 'sort-the-tray'}
+	<noscript
+		><div class="bg-[#f6f3ec] p-6 text-center text-[#343d35]">
+			JavaScript is needed to move and save the objects. The instructions and game description
+			remain available.
+		</div></noscript
+	>
+{:else if data.game.experience === 'period-board-games'}
 	<noscript>
 		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
 			JavaScript is required to roll the die and run the local computer opponents. The game’s rules,

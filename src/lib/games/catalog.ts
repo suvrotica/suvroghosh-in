@@ -2,8 +2,10 @@ export const CALCUTTA_FOOTPATH_SLUG = 'calcutta-footpath-simulator-ekdom-side-di
 export const KAGOJER_DANA_SLUG = 'kagojer-dana-a-paper-plane-through-calcutta';
 export const HEALTHCARE_IT_CROSSWORD_SLUG = 'healthcare-it-crossword-systems-rounds';
 export const LUDO_SAAP_LUDO_SLUG = 'ludo-and-saap-ludo';
+export const SORT_THE_TRAY_SLUG = 'sort-the-tray';
 
 export const GAME_EXPERIENCES = [
+	'sort-the-tray',
 	'period-board-games',
 	'healthcare-it-crossword',
 	'kagojer-dana',
@@ -13,6 +15,7 @@ export const GAME_EXPERIENCES = [
 export type GameExperience = (typeof GAME_EXPERIENCES)[number];
 
 export type GameSlug =
+	| typeof SORT_THE_TRAY_SLUG
 	| typeof LUDO_SAAP_LUDO_SLUG
 	| typeof HEALTHCARE_IT_CROSSWORD_SLUG
 	| typeof KAGOJER_DANA_SLUG
@@ -40,6 +43,28 @@ export type GameCatalogEntry = {
 };
 
 export const gamesCatalog: readonly GameCatalogEntry[] = [
+	{
+		slug: SORT_THE_TRAY_SLUG,
+		experience: 'sort-the-tray',
+		title: 'Sort the Tray',
+		shortTitle: 'Sort the Tray',
+		description:
+			'A quiet sorting game. Move coins, buttons and stones into their dishes, at your own pace.',
+		kind: 'Quiet sorting game',
+		cardEyebrow: 'Six objects, three dishes',
+		actionLabel: 'Start sorting',
+		cover: '/images/games/sort-the-tray-cover.svg',
+		socialCover: '/images/games/sort-the-tray-social.png',
+		coverAlt:
+			'Coins, clay buttons and smooth stones on a wooden tray beneath three labelled dishes',
+		inputs: ['Drag or tap', 'Keyboard', 'Screen reader controls'],
+		duration: 'As long as you like',
+		durationLabel: 'At your own pace',
+		compatibility: ['Desktop', 'Mobile', 'Tablet'],
+		keywords: ['Sorting game', 'Relaxing game', 'Browser game', 'Accessible game'],
+		shell: 'immersive',
+		status: 'New'
+	},
 	{
 		slug: LUDO_SAAP_LUDO_SLUG,
 		experience: 'period-board-games',
