@@ -26,6 +26,10 @@
 .listening-room * {
 	box-sizing: border-box;
 }
+/* The fixed charcoal surface owns its text colour, independently of page-theme ink. */
+.listening-room :where(h1, h2, h3, h4, h5, h6, p) {
+	color: inherit;
+}
 .listening-room :is(h1, h3, p) {
 	margin: 0;
 }

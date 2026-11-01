@@ -164,6 +164,19 @@ async function create(signal?: AbortSignal) {
 }
 
 describe('official YouTube controller lifecycle', () => {
+	it('allows slower iframe startup while still timing out and cleaning up an unready player', async () => {
+		automaticallyReady = false;
+		const { createYouTubeController } = await import('./youtube');
+		const pending = createYouTubeController(new ElementStub() as unknown as HTMLElement, () => {});
+		const rejected = expect(pending).rejects.toThrow('too long to start');
+		await vi.advanceTimersByTimeAsync(15000);
+		expect(player.destroy).not.toHaveBeenCalled();
+		await vi.advanceTimersByTimeAsync(15000);
+		await rejected;
+		expect(player.destroy).toHaveBeenCalledOnce();
+		expect(vi.getTimerCount()).toBe(0);
+	});
+
 	it('ignores a queued ready callback after abort without destroying the provider twice', async () => {
 		automaticallyReady = false;
 		const { createYouTubeController } = await import('./youtube');
@@ -222,6 +235,17 @@ describe('official YouTube controller lifecycle', () => {
 		controller.seek(9000);
 		expect(player.seekTo).toHaveBeenCalledWith(240, true);
 		expect(changes.at(-1)?.playlist).toEqual(['YQHsXMglC9A', 'JGwWNGJdvx8']);
+		controller.destroy();
+	});
+
+	it('uses the documented positional form for an array queue and preserves its starting entry', async () => {
+		const { controller } = await create();
+		const videoIds = ['YQHsXMglC9A', 'JGwWNGJdvx8'];
+		controller.cue({ videoIds, index: 1, startSeconds: 25 }, 'playlist');
+		expect(player.cuePlaylist).toHaveBeenCalledWith(videoIds, 1, 25);
+		playerOptions.events.onStateChange({ target: player, data: 5 });
+		controller.next();
+		expect(player.nextVideo).toHaveBeenCalledOnce();
 		controller.destroy();
 	});
 

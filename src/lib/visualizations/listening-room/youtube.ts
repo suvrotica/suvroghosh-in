@@ -146,11 +146,12 @@ interface PlayerEvents {
 interface IFramePlayer {
 	cueVideoById(source: { videoId: string; startSeconds?: number }): void;
 	cuePlaylist(source: {
-		list: string | string[];
+		list: string;
 		listType?: 'playlist';
 		index?: number;
 		startSeconds?: number;
 	}): void;
+	cuePlaylist(videoIds: string[], index: number, startSeconds: number): void;
 	playVideo(): void;
 	pauseVideo(): void;
 	seekTo(seconds: number, allowSeekAhead: boolean): void;
@@ -196,6 +197,9 @@ interface ApiLoad {
 
 let apiLoad: ApiLoad | undefined;
 const API_DEADLINE = 12000;
+// The iframe has its own network and player startup after the small API script.
+// Give that stage room to finish on a cold connection while keeping it bounded.
+const PLAYER_DEADLINE = 30000;
 
 function abortError(): DOMException {
 	return new DOMException('YouTube player loading was cancelled.', 'AbortError');
@@ -412,9 +416,13 @@ export async function createYouTubeController(
 				run((active) => {
 					active.setShuffle(false);
 					active.setLoop(repeating === 'all');
-					if (isPlaylist) {
+					if (isPlaylist && source.videoIds && !source.playlistId) {
+						// The positional form establishes a real provider queue for arrays.
+						// The live player ignored arrays supplied inside the object form.
+						active.cuePlaylist(source.videoIds, index, startSeconds);
+					} else if (isPlaylist) {
 						active.cuePlaylist({
-							list: source.playlistId ?? source.videoIds!,
+							list: source.playlistId!,
 							listType: 'playlist',
 							index,
 							startSeconds
@@ -465,7 +473,7 @@ export async function createYouTubeController(
 		const deadline = setTimeout(() => {
 			reject(new Error('The YouTube player took too long to start. Please retry.'));
 			destroy();
-		}, API_DEADLINE);
+		}, PLAYER_DEADLINE);
 		signal?.addEventListener('abort', aborted, { once: true });
 		document.addEventListener('visibilitychange', visibilityChanged);
 		try {

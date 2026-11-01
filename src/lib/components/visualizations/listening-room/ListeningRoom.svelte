@@ -106,10 +106,18 @@
 			: knownSong?.artist || 'Playing through YouTube'
 	);
 	const canControl = $derived(
-		mode === 'youtube' ? youtubeMounted && !busy && yt.state !== 'error' : !!fileName
+		mode === 'youtube'
+			? youtubeMounted &&
+					!busy &&
+					['cued', 'playing', 'paused', 'buffering', 'ended'].includes(yt.state)
+			: !!fileName
 	);
 	const canNavigate = $derived(
-		mode === 'youtube' && youtubeMounted && !busy && queueIds.length > 1
+		mode === 'youtube' &&
+			youtubeMounted &&
+			!busy &&
+			!['idle', 'unstarted'].includes(yt.state) &&
+			queueIds.length > 1
 	);
 	const status = $derived(
 		busy
@@ -121,9 +129,11 @@
 						? 'Ready to listen'
 						: 'Local audio'
 					: youtubeMounted
-						? yt.state === 'buffering'
-							? 'Buffering'
-							: 'Ready to listen'
+						? yt.state === 'unstarted' || yt.state === 'idle'
+							? 'Preparing track'
+							: yt.state === 'buffering'
+								? 'Buffering'
+								: 'Ready to listen'
 						: 'Ready when you are'
 	);
 	const watchUrl = $derived(

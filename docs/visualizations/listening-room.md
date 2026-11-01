@@ -126,7 +126,7 @@ regional availability, successful tests or an auditory quality assessment.
 See [ADR 0022](../architecture/decisions/0022-listening-room-source-boundaries.md)
 and the [canonical architecture](../architecture/ARCHITECTURE.md#listening-room-consented-youtube-and-local-audio).
 
-## Verification recorded on 2 November 2026
+## Implementation verification on 2 November 2026, before publication
 
 - 48 focused unit tests passed: 40 URL/controller cases and eight DSP cases.
 - The native Chromium audio regression passed mono decoding/upmix, stereo
@@ -161,3 +161,45 @@ remain unverified in this test environment. No unavailable-song result was
 presented as successful playback, and no extraction or policy bypass was added.
 Loudness matching, LUFS/true-peak measurement and lossless YouTube claims are not
 part of this version. No deployment or social publication was performed.
+
+## Production verification and corrections on 2 November 2026
+
+The first production release, `c610b3a8`, was deployed through the existing
+Vercel project and appeared under `/blog/apps`. The app and Apps listing returned
+HTTP 200 with their intended canonical URLs. The production build and
+discoverability audit passed for 760 published entries. The new deployment's
+initial runtime error-log query returned no matching errors.
+
+Real playback was verified on `https://www.suvroghosh.in` without mocked provider
+responses. All eight starter songs played in fresh Chrome, with advancing native
+video time and readyState 4. The public Ed Sheeran playlist
+`PLjp0AEEJ0-fGKG_3skl0e1FQlJfnx-TJz` loaded 48 entries. Playing, next, previous and
+selection of its third entry were also verified in the in-app browser. Switching
+to the local sample removed the YouTube iframe; the original sample played and
+drove nonzero spectrum readings. This establishes playback for the tested
+browser sessions, not permanent availability in every region or profile.
+
+The live checks found two defects that mocked responses had not exposed:
+
+- Play could become available before the selected source finished cueing. The
+  controls now wait for a playable provider state and show "Preparing track"
+  during that interval. A delayed-cue browser regression covers this transition.
+- The provider ignored the starter array in the object form of `cuePlaylist`.
+  The documented positional form, `cuePlaylist(videoIds, index, startSeconds)`,
+  established all eight entries and advanced from Adele to Ed Sheeran in a live
+  comparison. The controller now uses this form for arrays and retains object
+  syntax for actual playlist IDs.
+
+The iframe's readiness deadline is now 30 seconds, independently of the
+12-second API-script deadline, to allow slower initial player loading while
+keeping cancellation and timeout cleanup. The charcoal surface also explicitly
+owns heading and paragraph colours so the site's light theme cannot supply dark
+text inside it. These are local integration/presentation corrections; the
+documented media, consent and storage boundaries are unchanged.
+
+The existing Edge profile timed out loading embedded players during the initial
+release check, while direct YouTube playback, fresh Chrome and the in-app browser
+worked. That profile-specific cause was not established. Loopback Adele embed
+responses also differed from the public domain's responses. Neither case was
+treated as proof that every preset owner had disabled embedding, and no
+credentials, extraction service or referrer substitution were added to the app.

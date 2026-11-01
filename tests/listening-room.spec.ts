@@ -63,7 +63,8 @@ const youtubeMock = `(() => {
       this.playlist = [source.videoId]; this.index = 0;
       this.time = source.startSeconds || 0; this.playing = false; this.emit(5);
     }
-    cuePlaylist(source) {
+    cuePlaylist(source, index = 0, startSeconds = 0) {
+      if (Array.isArray(source)) source = { list: source, index, startSeconds };
       call('cuePlaylist', source);
       this.playlist = Array.isArray(source.list) ? [...source.list] : ['YQHsXMglC9A', 'JGwWNGJdvx8', '4NRXx6U8ABQ'];
       this.index = Math.min(source.index || 0, this.playlist.length - 1);
@@ -175,6 +176,35 @@ test.beforeEach(async ({ page, baseURL }) => {
 
 test.afterEach(async ({ page }) => {
 	expect(pageErrors.get(page) ?? [], 'No uncaught application errors').toEqual([]);
+});
+
+test('waits for the selected track to be cued before enabling playback', async ({ page }) => {
+	await page.route('https://www.youtube.com/iframe_api', (route) =>
+		route.fulfill({
+			status: 200,
+			contentType: 'application/javascript',
+			body: youtubeMock.replaceAll('this.emit(5);', '')
+		})
+	);
+	await openRoom(page);
+	await player(page).getByRole('button', { name: 'Load starter collection', exact: true }).click();
+	await expect
+		.poll(async () => (await calls(page)).some((call) => call.method === 'cuePlaylist'))
+		.toBe(true);
+	await expect(player(page).getByRole('button', { name: 'Play', exact: true })).toBeDisabled();
+	await expect(
+		player(page).getByRole('button', { name: 'Next track', exact: true })
+	).toBeDisabled();
+	await expect(player(page).locator('.lr-status')).toHaveText('Preparing track');
+	expect((await calls(page)).some((call) => call.method === 'playVideo')).toBe(false);
+	await page.evaluate(() => {
+		const state = (window as TestWindow).__listeningRoomMock;
+		const active = state.players[state.players.length - 1];
+		active.options.events.onStateChange({ target: active, data: 5 });
+	});
+	await expect(player(page).getByRole('button', { name: 'Play', exact: true })).toBeEnabled();
+	await player(page).getByRole('button', { name: 'Play', exact: true }).click();
+	await expect(player(page).locator('.lr-status')).toHaveText('Playing');
 });
 
 test('YouTube stays local before activation and rejects a lookalike URL', async ({ page }) => {
@@ -333,6 +363,23 @@ test('mocked starter collection and provider failure expose useful recovery', as
 	await player(page).getByRole('button', { name: 'Retry', exact: true }).click();
 	await expect(player(page).getByRole('alert')).toHaveCount(0);
 	await expect(player(page).getByRole('button', { name: 'Play', exact: true })).toBeEnabled();
+});
+
+test('an unavailable playlist item can be skipped with Next', async ({ page }) => {
+	await openRoom(page);
+	await player(page).getByRole('button', { name: 'Load starter collection', exact: true }).click();
+	await expect(player(page).getByRole('button', { name: 'Play', exact: true })).toBeEnabled();
+	await page.evaluate(() => {
+		const state = (window as TestWindow).__listeningRoomMock;
+		const active = state.players[state.players.length - 1];
+		active.options.events.onError({ target: active, data: 150 });
+	});
+	await expect(player(page).getByRole('button', { name: 'Play', exact: true })).toBeDisabled();
+	await expect(player(page).getByRole('button', { name: 'Next track', exact: true })).toBeEnabled();
+	await player(page).getByRole('button', { name: 'Next track', exact: true }).click();
+	await expect(player(page).getByRole('alert')).toHaveCount(0);
+	await expect(player(page).locator('.lr-track-name')).toContainText('Shape of You');
+	await expect(player(page).locator('.lr-status')).toHaveText('Playing');
 });
 
 test('media revocation removes an activated player and changing source destroys it', async ({
