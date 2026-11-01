@@ -16540,6 +16540,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-02"
+		},
+		"src/lib/posts/the-year-the-machine-learned-to-defecate.md": {
+			"bodyHash": "3cf631765bfd989d7a0c4dbc73d01a422c726cb14653f69f9632d90669b0b8fb",
+			"hashVersion": 2,
+			"revisionHash": "0b3325f739290e827bd9e6d45a7ae45f2e91ff183a8fe805cfac8fe6a19775f8",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"Insomnia",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Existentialism",
+				"Technology",
+				"Bengali",
+				"Modernity",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"Insomnia",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Existentialism",
+				"Technology",
+				"Bengali",
+				"Modernity",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -17503,6 +17503,29 @@
         "Gini"
       ],
       "wordCount": 130
+    },
+    "the-year-the-machine-learned-to-defecate": {
+      "generatedAt": "2026-11-01T21:33:17.244073+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-year-the-machine-learned-to-defecate.svg",
+      "source": "src/lib/posts/the-year-the-machine-learned-to-defecate.md",
+      "sourceHash": "9c85b9b1fb17be49c307cb43189996ca71efb9f689752371341063370e9e3443",
+      "sourceModified": "2026-11-01T21:32:59.229648+00:00",
+      "topWords": [
+        "Machines",
+        "Sleep",
+        "Future",
+        "Perhaps",
+        "Gas",
+        "Emergence",
+        "Mathbf",
+        "Tomorrow",
+        "Now",
+        "Digital",
+        "Wondering",
+        "Whether"
+      ],
+      "wordCount": 130
     }
   },
   "version": "2026-07-13.1"

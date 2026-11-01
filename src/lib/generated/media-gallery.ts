@@ -4766,6 +4766,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "the-year-the-machine-learned-to-defecate.webp",
+			"src": "/images/the-year-the-machine-learned-to-defecate.webp",
+			"bytes": 288246,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "the-year-we-breathed-her-in.jpg",
 			"src": "/images/the-year-we-breathed-her-in.jpg",
 			"bytes": 168143,

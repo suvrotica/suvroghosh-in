@@ -10816,6 +10816,22 @@
       "sourceHash": "3939c4ccbc3861bdff7e3017f1abd3037af2442ad64de27cb9d3895848c3707b",
       "width": 1672
     },
+    "static/images/the-year-the-machine-learned-to-defecate.webp": {
+      "format": "WEBP",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 288246,
+      "outputHash": "37a2667bbee31e39b7c7ffc8e6594b1f3b7fc9d5434b2eead592f42a9822000f",
+      "psnrDb": 36.24,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 354740,
+      "sourceHash": "135714db6ca04f9e49ef8e782e118f7c3572841e94f6fdfa6c56c65edb3578fd",
+      "width": 1672
+    },
     "static/images/the-year-we-breathed-her-in.jpg": {
       "format": "JPEG",
       "height": 576,
