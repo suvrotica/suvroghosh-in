@@ -303,6 +303,7 @@
 }
 .lr-main {
 	padding: 14px 14px 17px;
+	align-self: start;
 }
 .lr-display {
 	min-height: 300px;
@@ -625,6 +626,12 @@
 	max-height: 396px;
 	overflow-y: auto;
 	scrollbar-width: thin;
+}
+.lr-side:has(#lr-preset) .lr-queue {
+	max-height: 168px;
+}
+.lr-side > .lr-eq-footnote {
+	margin: 20px 22px;
 }
 .lr-queue-item {
 	display: flex;
@@ -1318,4 +1325,50 @@
 	.lr-footer {
 		flex-wrap: wrap;
 	}
+}
+.listening-room .lr-extension-panel {
+	margin: 0 0 1.5rem;
+	padding: 1.25rem;
+	border: 1px solid var(--lr-border, #3e4c43);
+	border-radius: 1rem;
+	background: #202a25;
+}
+.listening-room .lr-extension-status {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.listening-room .lr-extension-status p,
+.listening-room .lr-extension-setup p {
+	margin: 0.4rem 0 0;
+	color: #c0cec5;
+	line-height: 1.6;
+}
+.listening-room .lr-extension-setup {
+	margin-top: 1rem;
+	font-size: 0.9rem;
+}
+.listening-room .lr-extension-setup summary {
+	cursor: pointer;
+}
+.listening-room .lr-extension-setup ol {
+	padding-left: 1.4rem;
+	line-height: 1.7;
+}
+.listening-room .lr-extension-setup li + li {
+	margin-top: 0.6rem;
+}
+.listening-room .lr-extension-setup a {
+	color: #a0ebbc;
+	text-decoration: underline;
+}
+.listening-room .lr-preferences {
+	color: #bdc8c1;
+	font-size: 0.85rem;
+	margin: 1rem 0;
+}
+.listening-room .lr-preferences-warning {
+	color: #f2ca9c;
 }

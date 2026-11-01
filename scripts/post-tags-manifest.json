@@ -16511,9 +16511,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/listening-room.md": {
-			"bodyHash": "0ce31aa2c2503a3577a948cadbd018c9b59034cf8d4917073cf763e5bfc97167",
+			"bodyHash": "0a0ec9cd4ca09e8ca322a33a278bb33974d3dc476d50dd3fb7d3a9b9ee176d91",
 			"hashVersion": 2,
-			"revisionHash": "1082ec97da510b94ad5fc20d76c33dca977c583cc07bc65802b50d227671511f",
+			"revisionHash": "93dd8587b00247f9b8666c4b54b7768c0f03860d808ece18de23b9c87b38ea35",
 			"generatedTags": [
 				"Music",
 				"Audio",
@@ -16538,7 +16538,8 @@
 				"Local Audio",
 				"Music Player"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-02"
 		}
 	},
 	"maxTags": 10

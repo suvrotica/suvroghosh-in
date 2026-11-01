@@ -12,15 +12,22 @@
 	import { SONG_PRESETS } from '$lib/visualizations/listening-room/presets';
 	import { LocalAudioEngine, createDemoWav } from '$lib/visualizations/listening-room/audio';
 	import {
+		PREFERENCES_KEY,
+		normalizePreferences
+	} from '$lib/visualizations/listening-room/preferences';
+	import {
+		connectListeningExtension,
+		type ExtensionStatus
+	} from '$lib/visualizations/listening-room/extension';
+	import {
 		DEFAULT_AUDIO_SETTINGS,
 		EQ_FREQUENCIES,
 		EQ_PRESETS,
-		normalizeAudioSettings,
+		eqResponseDb,
 		type AudioSettings
 	} from '$lib/visualizations/listening-room/dsp';
 	import './listening-room.css';
 
-	const STORAGE_KEY = 'suvroghosh:listening-room:v1';
 	let mode = $state<'youtube' | 'file'>('youtube');
 	let ready = $state(false);
 	let inputUrl = $state(SONG_PRESETS[0].url);
@@ -64,6 +71,9 @@
 	let localDuration = $state(0);
 	let advanced = $state(false);
 	let eqPreset = $state('neutral');
+	let preferencesSaved = $state(true);
+	let extensionStatus = $state<ExtensionStatus>({ installed: false, active: false, error: '' });
+	let extension: ReturnType<typeof connectListeningExtension> | undefined;
 	let snapshot = $state({
 		sampleRate: 0,
 		headroomDb: 0,
@@ -79,6 +89,7 @@
 	let clipping = $state(false);
 
 	const parsed = $derived(parseYouTubeUrl(inputUrl));
+	const soundControls = $derived(mode === 'file' || extensionStatus.active);
 	const playing = $derived(mode === 'youtube' ? yt.state === 'playing' : localPlaying);
 	const displayMuted = $derived(mode === 'youtube' && youtubeMounted ? yt.muted : muted);
 	const displayVolume = $derived(
@@ -213,6 +224,11 @@
 					if (destroyed || generation !== playerGeneration) return;
 					const previousProviderError = yt.error;
 					yt = next;
+					// Initial provider defaults must not overwrite the remembered sound.
+					if (youtube && !busy) {
+						if (settings.volume !== next.volume) settings = { ...settings, volume: next.volume };
+						muted = next.muted;
+					}
 					if (next.error) error = next.error;
 					else if (previousProviderError && error === previousProviderError) error = '';
 				},
@@ -226,8 +242,8 @@
 			controller.volume(settings.volume);
 			controller.mute(muted);
 			controller.cue(source, selectedMode);
-			shuffle = false;
-			repeat = 'off';
+			controller.repeat(repeat);
+			controller.shuffle(shuffle);
 		} catch (cause) {
 			if (!aborter.signal.aborted && generation === playerGeneration) {
 				const message =
@@ -266,6 +282,18 @@
 			return;
 		}
 		try {
+			const stopped = await (extension?.stopAndWait() ?? Promise.resolve(true));
+			if (
+				destroyed ||
+				mode !== 'file' ||
+				generation !== localPlaybackGeneration ||
+				objectUrl !== sourceUrl
+			)
+				return;
+			if (!stopped) {
+				error = 'Turn off the tab equaliser from the browser toolbar before playing a local file.';
+				return;
+			}
 			await localEngine?.resume();
 			if (
 				destroyed ||
@@ -363,18 +391,45 @@
 	$effect(() => {
 		if (!ready) return;
 		localEngine?.setSettings({ ...settings, volume: muted ? 0 : settings.volume });
-		response = localEngine?.getFrequencyResponse() || [];
+		response =
+			mode === 'youtube'
+				? eqResponseDb(settings.bypass ? EQ_FREQUENCIES.map(() => 0) : settings.eq, 48000)
+				: localEngine?.getFrequencyResponse() || [];
+	});
+
+	$effect(() => {
+		if (!ready) return;
 		try {
-			localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, settings }));
+			localStorage.setItem(
+				PREFERENCES_KEY,
+				JSON.stringify({
+					v: 2,
+					settings,
+					mode,
+					muted,
+					advanced,
+					repeat,
+					shuffle
+				})
+			);
+			preferencesSaved = true;
 		} catch {
-			/* Preferences are optional. */
+			preferencesSaved = false;
 		}
+	});
+
+	$effect(() => {
+		if (!ready || !extensionStatus.installed) return;
+		if (mode === 'youtube') extension?.settings(settings);
+		else extension?.stop();
 	});
 
 	onMount(() => {
 		try {
-			const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-			if (stored?.v === 1) settings = normalizeAudioSettings(stored.settings);
+			const stored = normalizePreferences(
+				JSON.parse(localStorage.getItem(PREFERENCES_KEY) || 'null')
+			);
+			({ settings, mode, muted, advanced, repeat, shuffle } = stored);
 			eqPreset =
 				EQ_PRESETS.find((preset) =>
 					preset.gains.every((gain, index) => gain === settings.eq[index])
@@ -382,6 +437,19 @@
 		} catch {
 			/* Use neutral defaults if storage is unavailable. */
 		}
+		extension = connectListeningExtension((next) => {
+			const newlyConnected = !extensionStatus.installed || (!extensionStatus.active && next.active);
+			if (
+				extensionStatus.installed !== next.installed ||
+				extensionStatus.active !== next.active ||
+				extensionStatus.error !== next.error
+			) {
+				extensionStatus = next;
+			}
+			if (newlyConnected && next.installed && mode === 'youtube')
+				extension?.settings(settings, true);
+			if (next.active && mode === 'file') extension?.stop();
+		});
 		localEngine = new LocalAudioEngine(audioElement);
 		const disposeConsent = initializeConsent();
 		const unsubscribe = subscribeConsent((record) => {
@@ -408,6 +476,7 @@
 		ready = true;
 		return () => {
 			destroyed = true;
+			extension?.destroy();
 			localPlaybackGeneration++;
 			releaseYouTube();
 			audioElement.pause();
@@ -557,6 +626,51 @@
 	{#if yt.autoplayBlocked && mode === 'youtube'}<p class="lr-notice" role="status">
 			Press Play in the YouTube player to start listening.
 		</p>{/if}
+	{#if mode === 'youtube'}
+		<div class="lr-extension-panel">
+			<div class="lr-extension-status">
+				<div>
+					<strong>{extensionStatus.active ? 'Tab equaliser is on' : 'Equaliser for YouTube'}</strong
+					>
+					<p role="status">
+						{extensionStatus.error ||
+							(extensionStatus.active
+								? 'The sound controls below now apply to this tab’s audio.'
+								: extensionStatus.installed
+									? 'Click Listening Room in your browser’s extensions toolbar to turn it on for this tab.'
+									: 'Add the Listening Room extension to use these sound controls with YouTube.')}
+					</p>
+				</div>
+				{#if extensionStatus.active}<button class="lr-button" onclick={() => extension?.stop()}
+						>Turn off tab equaliser</button
+					>{/if}
+			</div>
+			<details class="lr-extension-setup">
+				<summary>Set up the Edge extension</summary>
+				<ol>
+					<li>
+						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- Static extension download, not a SvelteKit route. -->
+						<a href="/downloads/listening-room-extension.zip" download
+							>Download Listening Room for Edge</a
+						> and extract the ZIP into a folder you will keep.
+					</li>
+					<li>
+						In Edge, open Extensions → Manage extensions. Turn on Developer mode, choose Load
+						unpacked, and select the extracted folder containing <code>manifest.json</code>.
+					</li>
+					<li>
+						Refresh this page, load a song or playlist, then click Listening Room in Edge’s
+						extensions toolbar. The equaliser controls will appear here.
+					</li>
+				</ol>
+				<p>
+					This is a custom extension, installed manually. It processes this tab’s audio on your
+					device; it does not record or upload it. Closing or reloading the tab ends the connection.
+					Your settings stay saved; click the extension again next time.
+				</p>
+			</details>
+		</div>
+	{/if}
 
 	<div class="lr-workspace">
 		<div class="lr-main">
@@ -696,7 +810,10 @@
 			</div>
 		</div>
 
-		<aside class="lr-side" aria-label={mode === 'youtube' ? 'Listening queue' : 'Sound controls'}>
+		<aside
+			class="lr-side"
+			aria-label={mode === 'youtube' ? 'Listening queue and sound controls' : 'Sound controls'}
+		>
 			{#if mode === 'youtube'}
 				<div class="lr-panel-heading">
 					<div>
@@ -736,12 +853,15 @@
 				<div class="lr-side-note">
 					<Icon name="headphones" size={21} />
 					<p>
-						YouTube handles the sound quality.<br /><button onclick={() => switchMode('file')}
-							>Open a file for equaliser controls <span aria-hidden="true">↗</span></button
-						>
+						{#if extensionStatus.active}Your equaliser applies after YouTube’s playback controls.
+						{:else}YouTube handles the source quality.<br /><button
+								onclick={() => switchMode('file')}
+								>Try the equaliser with an audio file <span aria-hidden="true">↗</span></button
+							>{/if}
 					</p>
 				</div>
-			{:else}
+			{/if}
+			{#if soundControls}
 				<div class="lr-panel-heading">
 					<div>
 						<span class="lr-eyebrow">SMALL ADJUSTMENTS</span>
@@ -760,24 +880,24 @@
 					>
 					<p>Start neutral. Change only what helps.</p>
 				</div>
-				<div class="lr-meter-panel">
-					<div class="lr-meter-title">
-						<span>Output level</span><span class:clipping
-							>{clipping ? 'CLIPPING' : 'SAMPLE PEAK'}</span
-						>
-					</div>
-					{#each [{ label: 'L', rms: snapshot.rmsLeft, peak: snapshot.peakLeft }, { label: 'R', rms: snapshot.rmsRight, peak: snapshot.peakRight }] as meter (meter.label)}<div
-							class="lr-meter-row"
-						>
-							<span>{meter.label}</span>
-							<div class="lr-meter-track">
-								<div
-									style:width={`${Math.min(100, Math.max(0, ((20 * Math.log10(Math.max(0.001, meter.rms)) + 60) / 60) * 100))}%`}
-								></div>
-							</div>
-							<span>{db(meter.peak)}</span>
-						</div>{/each}
-				</div>
+				{#if mode === 'file'}<div class="lr-meter-panel">
+						<div class="lr-meter-title">
+							<span>Output level</span><span class:clipping
+								>{clipping ? 'CLIPPING' : 'SAMPLE PEAK'}</span
+							>
+						</div>
+						{#each [{ label: 'L', rms: snapshot.rmsLeft, peak: snapshot.peakLeft }, { label: 'R', rms: snapshot.rmsRight, peak: snapshot.peakRight }] as meter (meter.label)}<div
+								class="lr-meter-row"
+							>
+								<span>{meter.label}</span>
+								<div class="lr-meter-track">
+									<div
+										style:width={`${Math.min(100, Math.max(0, ((20 * Math.log10(Math.max(0.001, meter.rms)) + 60) / 60) * 100))}%`}
+									></div>
+								</div>
+								<span>{db(meter.peak)}</span>
+							</div>{/each}
+					</div>{/if}
 				<div class="lr-adjust">
 					<label for="lr-balance"
 						>Balance <span
@@ -813,28 +933,30 @@
 						/> Bypass effects</label
 					>
 				</div>
-				<div class="lr-quality">
-					<span class="lr-quality-dot"></span>
-					<div>
-						<strong
-							>{snapshot.sampleRate
-								? `${snapshot.sampleRate / 1000} kHz processing`
-								: 'Ready for local audio'}</strong
-						><small
-							>{snapshot.sampleRate
-								? 'Browser audio engine · source resolution may differ'
-								: 'Your file stays on this device'}</small
-						>
+				{#if mode === 'file'}<div class="lr-quality">
+						<span class="lr-quality-dot"></span>
+						<div>
+							<strong
+								>{snapshot.sampleRate
+									? `${snapshot.sampleRate / 1000} kHz processing`
+									: 'Ready for local audio'}</strong
+							><small
+								>{snapshot.sampleRate
+									? 'Browser audio engine · source resolution may differ'
+									: 'Your file stays on this device'}</small
+							>
+						</div>
 					</div>
-				</div>
-				<div class="lr-headroom">
-					<span>Automatic headroom</span><strong>{snapshot.headroomDb.toFixed(1)} dB</strong>
-				</div>
+					<div class="lr-headroom">
+						<span>Automatic headroom</span><strong>{snapshot.headroomDb.toFixed(1)} dB</strong>
+					</div>{:else}<p class="lr-eq-footnote">
+						Tab audio passes through the extension. Volume and mute stay controlled by the player.
+					</p>{/if}
 			{/if}
 		</aside>
 	</div>
 
-	{#if mode === 'file'}
+	{#if soundControls}
 		<div class="lr-eq-panel">
 			<button
 				class="lr-eq-toggle"
@@ -883,7 +1005,11 @@
 								class="lr-response-curve"
 								stroke-width="2"
 							/></svg
-						><span>EQ response · {settings.bypass ? 'bypassed' : 'bass → treble'}</span>
+						><span
+							>EQ response · {settings.bypass ? 'bypassed' : 'bass → treble'}{mode === 'youtube'
+								? ' · 48 kHz reference'
+								: ''}</span
+						>
 					</div>
 					<div class="lr-fine-controls">
 						<div class="lr-adjust">
@@ -924,6 +1050,11 @@
 				</div>{/if}
 		</div>
 	{/if}
+	<p class="lr-preferences" class:lr-preferences-warning={!preferencesSaved} role="status">
+		{preferencesSaved
+			? 'Settings are saved in this browser.'
+			: 'Settings could not be saved. Keep this tab open to retain your changes.'}
+	</p>
 	<footer class="lr-footer">
 		<span><Icon name="headphones" size={16} /> A little room to listen.</span
 		>{#if mode === 'youtube'}
@@ -940,7 +1071,8 @@
 			<p>
 				YouTube playback uses the official video player. Its audio quality is managed by YouTube;
 				this app cannot turn it into a lossless or high-resolution source. The video stays visible,
-				and equaliser controls apply only to local audio.
+				and the optional Listening Room extension applies EQ to the tab’s output. Without the
+				extension, equaliser controls apply to local audio files.
 			</p>
 			<p>
 				Audio files play on your device through a neutral audio path. EQ changes the frequency

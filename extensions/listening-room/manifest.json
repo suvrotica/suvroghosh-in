@@ -1,0 +1,24 @@
+{
+	"manifest_version": 3,
+	"name": "Listening Room Equaliser",
+	"version": "1.0.0",
+	"description": "Apply Listening Room's sound controls to its YouTube tab audio. Processing stays on your device.",
+	"minimum_chrome_version": "116",
+	"permissions": ["activeTab", "tabCapture", "offscreen", "storage", "scripting"],
+	"background": { "service_worker": "background.js", "type": "module" },
+	"action": { "default_title": "Start Listening Room equaliser for this tab" },
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.suvroghosh.in/blog/visualizations/listening-room*",
+				"https://suvroghosh.in/blog/visualizations/listening-room*"
+			],
+			"js": ["content.js"],
+			"run_at": "document_idle",
+			"all_frames": false
+		}
+	],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'"
+	}
+}

@@ -1,8 +1,9 @@
 ---
 title: "Listening Room — YouTube and Local Audio"
-seoTitle: "Listening Room — YouTube Playlists and a Local Audio Equaliser"
-description: "Play a YouTube song or playlist, or open an audio file for a ten-band equaliser, stereo controls and live sound measurements. Local files stay on your device."
+seoTitle: "Listening Room — YouTube Playlists and an Audio Equaliser"
+description: "Play YouTube songs and playlists. Adjust local files with a ten-band equaliser, or add the optional Edge extension to equalise YouTube tab audio."
 date: "2026-11-02"
+dateModified: "2026-11-02"
 thumbnail: "/images/visualizations/listening-room/social.png"
 thumbnailAlt: "Listening Room's charcoal music player with green controls, a song selector and a starter playlist"
 category: "Visualizations"
@@ -15,11 +16,11 @@ immersiveLead: true
 color: "#207451"
 author: "Suvro Ghosh"
 readingTime: "3 min"
-inPlainEnglish: "Choose a song, paste a YouTube playlist, or open an audio file. YouTube handles its own playback. Local files unlock an equaliser, stereo controls and real sound measurements without uploading your music."
+inPlainEnglish: "Choose a song, paste a YouTube playlist, or open an audio file. Adjust local files with an equaliser and stereo controls. The optional Listening Room extension lets those controls work with YouTube tab audio too. Your sound settings are saved in this browser."
 keyTerms: ["Equaliser", "Stereo", "Audio spectrum", "Sample rate", "Lossy compression"]
 faq:
   - question: "Can Listening Room equalise a YouTube video?"
-    answer: "No. YouTube playback uses its official embedded player, which does not expose the audio for a custom equaliser or spectrum analyser. Those controls work with audio files you open locally."
+    answer: "Yes, with the optional Listening Room browser extension. Install it in Edge, open Listening Room and activate the extension from the toolbar. It processes the tab's output on your device using the app's sound controls. Without the extension, EQ applies only to local audio files."
   - question: "Are my audio files uploaded?"
     answer: "No. Audio files play and are processed in your browser on your device. YouTube playback separately connects to YouTube after permission or explicit activation."
   - question: "Does this turn YouTube into lossless or high-resolution audio?"
@@ -33,6 +34,8 @@ faq:
 </script>
 
 <ListeningRoom />
+
+<p><small>Updated <time datetime="2026-11-02">2 November 2026</time></small></p>
 
 Choose a song, paste a YouTube playlist, or open an audio file. Keep the controls simple, and adjust the sound when the source allows it.
 
@@ -53,6 +56,16 @@ The ten bands let you change different parts of the sound. Balance changes the r
 The spectrum shows where the energy is in the audio currently playing. The level meters show the two output channels. These are measurements of your local playback, so they appear in Audio file mode rather than pretending to read the YouTube stream.
 
 Your file stays on your device. Supported formats depend on your browser. A file that the browser cannot decode will need another player or a compatible copy.
+
+## Use the equaliser with YouTube
+
+The optional **Listening Room extension** connects the same sound controls to this tab's audio. Open **Set up the Edge extension** in the player for the download and installation steps. This is a custom extension you install manually, not an Edge Add-ons store listing.
+
+After installation, refresh the page, load a song, and click Listening Room in Edge's extensions toolbar. When **Tab equaliser is on** appears, try **Gentle bass**, then **Bypass effects** to compare. YouTube's video and playback controls stay visible. The extension does not fix a video that YouTube refuses to play.
+
+Your EQ, volume, mute, source choice, expanded controls, shuffle and repeat are saved in this browser. Closing a tab ends playback and the extension connection. Open Listening Room and click the extension again for the next session; the sound settings return. Local files and listening history are not saved. If the browser blocks storage, the app tells you that settings will last only while the tab remains open.
+
+The extension processes the active Listening Room tab on your device. It does not record audio, upload it, or start capture automatically. Switching to Audio file mode ends tab processing so the file is not equalised twice.
 
 ## What happens to the sound?
 

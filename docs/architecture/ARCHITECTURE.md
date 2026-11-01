@@ -1227,17 +1227,44 @@ discovery. The Svelte component under
 `src/lib/components/visualizations/listening-room` owns the current source mode,
 consent subscription, local file URLs and UI state. Feature modules under
 `src/lib/visualizations/listening-room` own validated YouTube URLs, the curated
-song registry, the demand-loaded IFrame API controller and local Web Audio DSP.
-No server endpoint, upload, credential, database or media proxy is added.
+song registry, the demand-loaded IFrame API controller, validated preferences,
+the optional extension bridge and local Web Audio DSP. The separately installed
+companion under `extensions/listening-room` owns tab capture and its own audio
+graph. No server endpoint, upload, credential, database or media proxy is added.
 
 The two sources have distinct capabilities. YouTube remains inside its official,
 visible iframe and exposes documented playback/playlist operations. It supplies
-no decoded audio to the page's graph, so that mode does not claim custom EQ,
-spectrum, loudness, bitrate or source-resolution measurements. Local files use
+no decoded audio to the page's graph. Without the companion, YouTube mode has
+transport and volume controls but no custom EQ. Even with the companion, it
+does not claim a measured spectrum, loudness, bitrate or source resolution.
+Local files use
 an `HTMLAudioElement` with a browser-owned object URL and one media source node.
 The local graph applies smoothed gain/headroom, ten-band EQ, an explicit
 mid/side stereo matrix, balance and output gain before real signal analysis and
 playback. Browser codec support determines whether a file can play.
+
+The optional Manifest V3 companion processes the output of one Listening Room
+tab after an explicit click on its browser toolbar action. The page cannot start
+capture. A top-frame bridge admits only the exact app path on the two production
+site hosts and exchanges bounded sound settings, status and stop messages; the
+worker independently checks the message sender. The worker obtains an audio-only
+`tabCapture` stream ID for the selected app tab. An extension-owned offscreen
+document consumes that stream and runs Web Audio gain/headroom, ten-band EQ and
+the stereo matrix to the browser destination. The extension's build compiles the
+same pure `dsp.ts` helpers used by local playback. The `prebuild:site` hook
+regenerates the downloadable ZIP from these sources before each site build.
+YouTube's volume and mute are
+already present in captured audio, so the extension keeps its own output gain at
+unity rather than applying those controls again. Capture stops on tab close,
+reload/navigation, an explicit stop, or switching to Audio file mode. Only one
+tab is processed at a time. Local-file playback waits for an active companion
+to acknowledge stopping, avoiding two processing graphs on the same signal.
+Audio is neither recorded nor uploaded. The extension
+does not enable unavailable YouTube embeds or recover discarded audio detail.
+Its permissions are `activeTab`, `tabCapture`, `offscreen`, `storage` and
+`scripting`, with no broad host permission. After checking the selected tab's
+URL, the toolbar action can inject the packaged bridge into its top frame if
+client-side navigation did not trigger the declarative content script.
 
 Existing media permission or explicit one-time activation gates both provider
 script and iframe loading. Initial SSR supplies a local placeholder with no
@@ -1249,8 +1276,14 @@ remain for the document lifetime without authorising a new player.
 Only one Listening Room source plays at a time. Source switches pause the old
 source; destruction cancels owned polling/listeners/animation, destroys the
 player, disconnects audio nodes and releases local audio resources and object
-URLs. Small validated audio preferences may be stored with an in-memory
-fallback; files and listening history are not retained. The processing sample
+URLs. Validated version-two preferences retain sound settings, mute, source
+mode, expanded controls, repeat and shuffle under the existing localStorage key,
+migrating version-one sound settings. Changes to native YouTube volume/mute
+update the saved preferences after initial settings have been applied. A storage
+failure leaves the current controls usable and displays that they cannot be
+saved. The companion keeps only normalized sound settings in extension-local
+storage. Files and listening history are not retained; neither playback nor tab
+capture resumes automatically. The processing sample
 rate describes the AudioContext, not the original file or hardware output.
 There is no automatic loudness matching or LUFS meter in this version because
 a validated full-file measurement implementation is not included.
@@ -1262,16 +1295,23 @@ flowchart LR
     Consent["Existing media choice / one-time activation"] --> API["Demand-loaded official IFrame API"]
     UI --> API
     API --> Frame["Visible YouTube iframe / provider-owned media"]
+    Toolbar["Explicit extension toolbar click"] --> Capture["Current Listening Room tab audio"]
+    Frame --> Capture
+    UI --> Bridge["Exact-site settings / status / stop bridge"]
+    Bridge --> Extension["Extension offscreen EQ + stereo graph"]
+    Capture --> Extension
+    Extension --> Output["Browser audio destination"]
     File["Visitor-selected local file"] --> Local["Object URL / native media element"]
     UI --> Local
     Local --> DSP["Local gain + EQ + stereo + output"]
     DSP --> Meter["Actual spectrum / channel levels"]
-    DSP --> Output["Browser audio destination"]
+    DSP --> Output
 ```
 
 The [feature contract](../visualizations/listening-room.md) and
-[ADR 0022](decisions/0022-listening-room-source-boundaries.md) record the source
-boundary and limitations. DSP fixtures and controller tests are separate from
+[ADR 0022](decisions/0022-listening-room-source-boundaries.md) record the original
+source boundary; [ADR 0023](decisions/0023-listening-room-tab-equaliser.md) adds the
+explicitly activated browser companion. DSP fixtures and controller tests are separate from
 real browser/provider playback checks. Deployment and regional availability
 require their own evidence; matching starter-video titles do not prove embeds
 will play.

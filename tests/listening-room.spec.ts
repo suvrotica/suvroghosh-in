@@ -1,10 +1,12 @@
-import { expect, test, type Page } from '@playwright/test';
-import { createDemoWav } from '../src/lib/visualizations/listening-room/dsp';
+import { expect, test, type BrowserContext, type Page } from '@playwright/test';
+import { createDemoWav, type AudioSettings } from '../src/lib/visualizations/listening-room/dsp';
 
 const articlePath = '/blog/visualizations/listening-room';
+const preferencesKey = 'suvroghosh:listening-room:v1';
 const player = (page: Page) => page.getByTestId('listening-room');
 const externalRequests = new WeakMap<Page, string[]>();
 const pageErrors = new WeakMap<Page, string[]>();
+const trackedPages = new WeakMap<BrowserContext, Page[]>();
 
 interface MockCall {
 	method: string;
@@ -24,6 +26,12 @@ interface MockState {
 type TestWindow = Window & {
 	__listeningRoomMock: MockState;
 	__lrTrackedAudio?: HTMLAudioElement;
+	__lrExtensionMock?: {
+		active: boolean;
+		localPlayEvents: number;
+		messages: Array<{ type: string; settings?: AudioSettings }>;
+		status(active: boolean): void;
+	};
 	__lrDelayedResume?: {
 		waiting: boolean;
 		released: boolean;
@@ -131,9 +139,8 @@ async function openRoom(page: Page) {
 		name: 'Dismiss privacy notice without choosing',
 		exact: true
 	});
-	await expect(dismissNotice).toBeVisible();
-	await dismissNotice.click();
-	await expect(player(page).getByRole('button', { name: 'Load', exact: true })).toBeEnabled();
+	await expect(player(page).getByRole('button', { name: 'YouTube', exact: true })).toBeEnabled();
+	if (await dismissNotice.isVisible()) await dismissNotice.click();
 }
 
 async function loadYouTube(page: Page) {
@@ -142,13 +149,14 @@ async function loadYouTube(page: Page) {
 	await expect(player(page).getByRole('button', { name: 'Play', exact: true })).toBeEnabled();
 }
 
-test.beforeEach(async ({ page, baseURL }) => {
+async function installYouTubeMock(page: Page, baseURL: string) {
 	const requests: string[] = [];
 	const errors: string[] = [];
 	externalRequests.set(page, requests);
 	pageErrors.set(page, errors);
+	trackedPages.set(page.context(), [...(trackedPages.get(page.context()) ?? []), page]);
 	page.on('pageerror', (error) => errors.push(error.message));
-	const origin = new URL(baseURL!).origin;
+	const origin = new URL(baseURL).origin;
 	await page.route('**/*', async (route) => {
 		const url = new URL(route.request().url());
 		if (url.origin === origin || !['http:', 'https:'].includes(url.protocol)) {
@@ -172,11 +180,502 @@ test.beforeEach(async ({ page, baseURL }) => {
 			});
 		} else await route.abort('blockedbyclient');
 	});
+}
+
+test.beforeEach(async ({ page, baseURL }) => {
+	await installYouTubeMock(page, baseURL!);
 });
 
-test.afterEach(async ({ page }) => {
-	expect(pageErrors.get(page) ?? [], 'No uncaught application errors').toEqual([]);
+test.afterEach(async ({ context }) => {
+	for (const page of trackedPages.get(context) ?? []) {
+		expect(
+			pageErrors.get(page) ?? [],
+			'No uncaught application errors, including reopened tabs'
+		).toEqual([]);
+	}
 });
+
+async function reopenRoom(page: Page, baseURL: string) {
+	const context = page.context();
+	await page.close();
+	const reopened = await context.newPage();
+	await installYouTubeMock(reopened, baseURL);
+	await openRoom(reopened);
+	return reopened;
+}
+
+async function setRange(page: Page, name: string | RegExp, value: number) {
+	const slider = player(page).getByRole('slider', { name, exact: typeof name === 'string' });
+	await slider.evaluate((element: HTMLInputElement, next) => {
+		element.value = String(next);
+		element.dispatchEvent(new Event('input', { bubbles: true }));
+	}, value);
+	await expect(slider).toHaveValue(String(value));
+}
+
+async function savedPreferences(page: Page) {
+	return page.evaluate((key) => JSON.parse(localStorage.getItem(key) ?? 'null'), preferencesKey);
+}
+
+async function installExtensionMock(page: Page, acknowledgeStop = true) {
+	await page.addInitScript((acknowledge) => {
+		const state = {
+			active: false,
+			localPlayEvents: 0,
+			messages: [] as Array<{ type: string; settings?: AudioSettings }>,
+			status(active: boolean) {
+				state.active = active;
+				window.postMessage(
+					{ channel: 'listening-room:extension', v: 1, installed: true, active },
+					location.origin
+				);
+			}
+		};
+		(window as TestWindow).__lrExtensionMock = state;
+		document.addEventListener(
+			'play',
+			(event) => {
+				if (event.target instanceof HTMLAudioElement) state.localPlayEvents++;
+			},
+			true
+		);
+		window.addEventListener('message', (event) => {
+			if (
+				event.source !== window ||
+				event.origin !== location.origin ||
+				event.data?.channel !== 'listening-room:page' ||
+				event.data.v !== 1
+			)
+				return;
+			state.messages.push(event.data);
+			if (event.data.type === 'hello') state.status(state.active);
+			if (event.data.type === 'stop' && acknowledge) state.status(false);
+		});
+	}, acknowledgeStop);
+}
+
+test('closing a tab retains named and custom sound preferences without restoring local playback', async ({
+	page,
+	baseURL
+}) => {
+	await openRoom(page);
+	await player(page).getByRole('button', { name: 'Audio file', exact: true }).click();
+	await player(page).getByLabel('Sound preset', { exact: true }).selectOption('bass');
+	await expect
+		.poll(async () => (await savedPreferences(page))?.settings.eq)
+		.toEqual([1, 2, 2, 1, 0, 0, 0, 0, 0, 0]);
+	let current = await reopenRoom(page, baseURL!);
+	await expect(
+		player(current).getByRole('button', { name: 'Audio file', exact: true })
+	).toHaveAttribute('aria-pressed', 'true');
+	await expect(player(current).getByLabel('Sound preset', { exact: true })).toHaveValue('bass');
+	await player(current)
+		.getByRole('button', { name: /Equaliser & fine adjustments/ })
+		.click();
+	await setRange(current, 'Equaliser 31 Hz', 5);
+	await setRange(current, /^Balance /, -0.4);
+	await setRange(current, /^Stereo width /, 0.65);
+	await setRange(current, /^Gain trim /, -7);
+	await setRange(current, 'Volume', 43);
+	await player(current).getByRole('checkbox', { name: 'Mono listening', exact: true }).check();
+	await player(current).getByRole('checkbox', { name: 'Bypass effects', exact: true }).check();
+	await player(current).getByRole('button', { name: 'Mute', exact: true }).click();
+	await player(current).getByRole('button', { name: 'Try the sample', exact: true }).click();
+	await expect(player(current).getByRole('button', { name: 'Pause', exact: true })).toBeVisible();
+	const expectedSettings = {
+		eq: [5, 2, 2, 1, 0, 0, 0, 0, 0, 0],
+		trimDb: -7,
+		width: 0.65,
+		balance: -0.4,
+		mono: true,
+		volume: 43,
+		bypass: true
+	};
+	await expect
+		.poll(() => savedPreferences(current))
+		.toEqual({
+			v: 2,
+			settings: expectedSettings,
+			mode: 'file',
+			muted: true,
+			advanced: true,
+			repeat: 'off',
+			shuffle: false
+		});
+	current = await reopenRoom(current, baseURL!);
+	await expect(
+		player(current).getByRole('button', { name: 'Audio file', exact: true })
+	).toHaveAttribute('aria-pressed', 'true');
+	await expect(
+		player(current).getByRole('button', { name: /Equaliser & fine adjustments/ })
+	).toHaveAttribute('aria-expanded', 'true');
+	await expect(player(current).getByLabel('Sound preset', { exact: true })).toHaveValue('custom');
+	await expect(
+		player(current).getByRole('slider', { name: 'Equaliser 31 Hz', exact: true })
+	).toHaveValue('5');
+	await expect(player(current).getByRole('slider', { name: /^Balance / })).toHaveValue('-0.4');
+	await expect(player(current).getByRole('slider', { name: /^Stereo width / })).toHaveValue('0.65');
+	await expect(player(current).getByRole('slider', { name: /^Gain trim / })).toHaveValue('-7');
+	await expect(player(current).getByRole('slider', { name: 'Volume', exact: true })).toHaveValue(
+		'43'
+	);
+	await expect(
+		player(current).getByRole('button', { name: 'Unmute', exact: true })
+	).toHaveAttribute('aria-pressed', 'true');
+	await expect(
+		player(current).getByRole('checkbox', { name: 'Mono listening', exact: true })
+	).toBeChecked();
+	await expect(
+		player(current).getByRole('checkbox', { name: 'Bypass effects', exact: true })
+	).toBeChecked();
+	await expect(
+		player(current).getByText('Settings are saved in this browser.', { exact: true })
+	).toBeVisible();
+	await expect(player(current).locator('iframe')).toHaveCount(0);
+	expect(await player(current).locator('audio').getAttribute('src')).toBeNull();
+	expect(
+		await player(current)
+			.locator('audio')
+			.evaluate((audio: HTMLAudioElement) => audio.paused)
+	).toBe(true);
+	expect((await savedPreferences(current)).settings).toEqual(expectedSettings);
+	expect(externalRequests.get(current)).toEqual([]);
+});
+
+test('native YouTube volume and mute and playlist preferences survive closing and loading a new player', async ({
+	page,
+	baseURL
+}) => {
+	await openRoom(page);
+	await setRange(page, 'Volume', 43);
+	await player(page).getByRole('button', { name: 'Load starter collection', exact: true }).click();
+	await expect(player(page).getByRole('button', { name: 'Play', exact: true })).toBeEnabled();
+	await player(page).getByRole('button', { name: 'Repeat: off', exact: true }).click();
+	await player(page).getByRole('button', { name: 'Shuffle playlist', exact: true }).click();
+	await page.evaluate(() => {
+		const players = (window as TestWindow).__listeningRoomMock.players;
+		const active = players[players.length - 1];
+		active.volume = 26;
+		active.muted = true;
+	});
+	await expect(player(page).getByRole('slider', { name: 'Volume', exact: true })).toHaveValue('26');
+	await expect
+		.poll(async () => {
+			const saved = await savedPreferences(page);
+			return {
+				volume: saved?.settings.volume,
+				muted: saved?.muted,
+				repeat: saved?.repeat,
+				shuffle: saved?.shuffle
+			};
+		})
+		.toEqual({ volume: 26, muted: true, repeat: 'all', shuffle: true });
+	const reopened = await reopenRoom(page, baseURL!);
+	await expect(
+		player(reopened).getByRole('button', { name: 'YouTube', exact: true })
+	).toHaveAttribute('aria-pressed', 'true');
+	await expect(player(reopened).getByRole('slider', { name: 'Volume', exact: true })).toHaveValue(
+		'26'
+	);
+	await expect(player(reopened).getByRole('button', { name: 'Unmute', exact: true })).toBeVisible();
+	await expect(
+		player(reopened).getByRole('button', { name: 'Repeat: all', exact: true })
+	).toBeVisible();
+	await expect(
+		player(reopened).getByRole('button', { name: 'Shuffle playlist', exact: true })
+	).toHaveAttribute('aria-pressed', 'true');
+	await expect(player(reopened).locator('iframe')).toHaveCount(0);
+	expect(externalRequests.get(reopened)).toEqual([]);
+	await player(reopened)
+		.getByRole('button', { name: 'Load starter collection', exact: true })
+		.click();
+	await expect(player(reopened).getByRole('button', { name: 'Play', exact: true })).toBeEnabled();
+	await expect(player(reopened).getByRole('slider', { name: 'Volume', exact: true })).toHaveValue(
+		'26'
+	);
+	await expect(player(reopened).getByRole('button', { name: 'Unmute', exact: true })).toBeVisible();
+	expect(await calls(reopened)).toEqual(
+		expect.arrayContaining([
+			{ method: 'setVolume', value: 26 },
+			{ method: 'mute' },
+			{ method: 'setLoop', value: true },
+			{ method: 'setShuffle', value: true }
+		])
+	);
+	expect((await calls(reopened)).some((call) => call.method === 'playVideo')).toBe(false);
+	expect((await savedPreferences(reopened)).settings.volume).toBe(26);
+	expect((await savedPreferences(reopened)).muted).toBe(true);
+	// A subsequent poll must still observe the restored provider state, not its
+	// constructor's 35% / unmuted defaults. Then prove native unmute saves too.
+	await reopened.evaluate(() => {
+		const players = (window as TestWindow).__listeningRoomMock.players;
+		players[players.length - 1].muted = false;
+	});
+	await expect(player(reopened).getByRole('button', { name: 'Mute', exact: true })).toBeVisible();
+	await expect.poll(async () => (await savedPreferences(reopened)).muted).toBe(false);
+	expect((await savedPreferences(reopened)).settings.volume).toBe(26);
+});
+
+test('legacy sound preferences migrate without retaining history or resetting adjustments', async ({
+	page
+}) => {
+	const settings = {
+		eq: [0, 0, 0, 0, 0, 0, -1, -2, -3, -3],
+		trimDb: -3,
+		width: 0.8,
+		balance: 0.2,
+		mono: false,
+		volume: 36,
+		bypass: true
+	};
+	await page.addInitScript(({ key, value }) => localStorage.setItem(key, JSON.stringify(value)), {
+		key: preferencesKey,
+		value: {
+			v: 1,
+			settings,
+			inputUrl: 'https://example.com/old-history',
+			fileName: 'private-audio.wav'
+		}
+	});
+	await openRoom(page);
+	await expect
+		.poll(() => savedPreferences(page))
+		.toEqual({
+			v: 2,
+			settings,
+			mode: 'youtube',
+			muted: false,
+			advanced: false,
+			repeat: 'off',
+			shuffle: false
+		});
+	await expect(player(page).getByRole('slider', { name: 'Volume', exact: true })).toHaveValue('36');
+	await player(page).getByRole('button', { name: 'Audio file', exact: true }).click();
+	await expect(player(page).getByLabel('Sound preset', { exact: true })).toHaveValue('soft');
+	await expect(
+		player(page).getByRole('checkbox', { name: 'Bypass effects', exact: true })
+	).toBeChecked();
+	expect(externalRequests.get(page)).toEqual([]);
+});
+
+for (const [label, raw] of [
+	['invalid JSON', '{not valid JSON'],
+	[
+		'invalid preference fields',
+		JSON.stringify({
+			v: 2,
+			settings: { eq: ['loud'], volume: 'loud', balance: null },
+			mode: 'remote',
+			muted: 'yes',
+			advanced: 1,
+			repeat: 'forever',
+			shuffle: 'yes',
+			fileName: 'private.wav'
+		})
+	]
+] as const) {
+	test(`saved ${label} fall back to usable defaults`, async ({ page }) => {
+		await page.addInitScript(({ key, raw }) => localStorage.setItem(key, raw), {
+			key: preferencesKey,
+			raw
+		});
+		await openRoom(page);
+		await expect(player(page).getByRole('slider', { name: 'Volume', exact: true })).toHaveValue(
+			'70'
+		);
+		await expect(player(page).getByRole('button', { name: 'Mute', exact: true })).toBeVisible();
+		await expect
+			.poll(() => savedPreferences(page))
+			.toEqual({
+				v: 2,
+				settings: {
+					eq: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+					trimDb: 0,
+					width: 1,
+					balance: 0,
+					mono: false,
+					volume: 70,
+					bypass: false
+				},
+				mode: 'youtube',
+				muted: false,
+				advanced: false,
+				repeat: 'off',
+				shuffle: false
+			});
+		await expect(player(page).locator('iframe')).toHaveCount(0);
+		expect(externalRequests.get(page)).toEqual([]);
+	});
+}
+
+test('unavailable preference storage keeps sound controls usable and explains that changes will be lost', async ({
+	page
+}) => {
+	await page.addInitScript((key) => {
+		const getItem = Storage.prototype.getItem;
+		const setItem = Storage.prototype.setItem;
+		Storage.prototype.getItem = function (requested) {
+			if (requested === key) throw new DOMException('Storage unavailable', 'SecurityError');
+			return getItem.call(this, requested);
+		};
+		Storage.prototype.setItem = function (requested, value) {
+			if (requested === key) throw new DOMException('Storage unavailable', 'QuotaExceededError');
+			return setItem.call(this, requested, value);
+		};
+	}, preferencesKey);
+	await openRoom(page);
+	await expect(
+		player(page).getByText(
+			'Settings could not be saved. Keep this tab open to retain your changes.',
+			{ exact: true }
+		)
+	).toBeVisible();
+	await player(page).getByRole('button', { name: 'Audio file', exact: true }).click();
+	await player(page).getByLabel('Sound preset', { exact: true }).selectOption('voice');
+	await setRange(page, 'Volume', 38);
+	await player(page).getByRole('button', { name: 'Mute', exact: true }).click();
+	await expect(player(page).getByRole('button', { name: 'Unmute', exact: true })).toBeVisible();
+	await player(page)
+		.getByRole('button', { name: /Equaliser & fine adjustments/ })
+		.click();
+	await expect(
+		player(page).getByRole('slider', { name: 'Equaliser 31 Hz', exact: true })
+	).toHaveValue('-2');
+	await expect(player(page).getByRole('alert')).toHaveCount(0);
+	expect(externalRequests.get(page)).toEqual([]);
+});
+
+test('mock extension status reveals YouTube equaliser controls and passes EQ without applying player volume twice', async ({
+	page
+}) => {
+	// This exercises only the page/extension message contract. No extension is
+	// installed and no tab capture or real streamed-audio processing is claimed.
+	await installExtensionMock(page);
+	await openRoom(page);
+	await expect(
+		player(page).getByText(
+			'Click Listening Room in your browser’s extensions toolbar to turn it on for this tab.',
+			{ exact: true }
+		)
+	).toBeVisible();
+	await expect(player(page).getByLabel('Sound preset', { exact: true })).toHaveCount(0);
+	await page.evaluate(() =>
+		window.postMessage(
+			{ channel: 'listening-room:extension', v: 2, installed: true, active: true },
+			location.origin
+		)
+	);
+	await expect(player(page).getByLabel('Sound preset', { exact: true })).toHaveCount(0);
+	await page.evaluate(() => (window as TestWindow).__lrExtensionMock!.status(true));
+	await expect(player(page).getByText('Tab equaliser is on', { exact: true })).toBeVisible();
+	await player(page).getByLabel('Sound preset', { exact: true }).selectOption('voice');
+	await player(page)
+		.getByRole('button', { name: /Equaliser & fine adjustments/ })
+		.click();
+	await setRange(page, 'Equaliser 31 Hz', 4);
+	await setRange(page, 'Volume', 29);
+	await expect
+		.poll(() =>
+			page.evaluate(() => {
+				const messages = (window as TestWindow).__lrExtensionMock!.messages;
+				return messages.filter((message) => message.type === 'settings').at(-1)?.settings;
+			})
+		)
+		.toEqual({
+			eq: [4, -2, -1, 0, 1, 2, 2, 1, 0, -1],
+			trimDb: 0,
+			width: 1,
+			balance: 0,
+			mono: false,
+			volume: 100,
+			bypass: false
+		});
+	await expect(player(page).getByRole('slider', { name: 'Volume', exact: true })).toHaveValue('29');
+	await expect(player(page).getByRole('img', { name: /Live spectrum/ })).toHaveCount(0);
+	await expect(player(page).locator('iframe')).toHaveCount(0);
+	expect(externalRequests.get(page)).toEqual([]);
+	await player(page).getByRole('button', { name: 'Turn off tab equaliser', exact: true }).click();
+	await expect
+		.poll(() =>
+			page.evaluate(() =>
+				(window as TestWindow).__lrExtensionMock!.messages.some(
+					(message) => message.type === 'stop'
+				)
+			)
+		)
+		.toBe(true);
+	await expect(player(page).getByLabel('Sound preset', { exact: true })).toHaveCount(0);
+	await page.evaluate(() => (window as TestWindow).__lrExtensionMock!.status(true));
+	await expect(player(page).getByLabel('Sound preset', { exact: true })).toBeVisible();
+	await player(page).getByRole('button', { name: 'Audio file', exact: true }).click();
+	await expect
+		.poll(() => page.evaluate(() => (window as TestWindow).__lrExtensionMock!.active))
+		.toBe(false);
+	await expect(player(page).getByLabel('Sound preset', { exact: true })).toHaveValue('custom');
+	await player(page).getByRole('button', { name: 'YouTube', exact: true }).click();
+	await expect(player(page).getByLabel('Sound preset', { exact: true })).toHaveCount(0);
+});
+
+for (const switchBack of [false, true]) {
+	test(`local playback waits for extension stop${switchBack ? ' and is cancelled by a source switch' : ' before playing'}`, async ({
+		page
+	}) => {
+		await installExtensionMock(page, false);
+		await openRoom(page);
+		await page.evaluate(() => (window as TestWindow).__lrExtensionMock!.status(true));
+		await expect(player(page).getByText('Tab equaliser is on', { exact: true })).toBeVisible();
+		await player(page).getByRole('button', { name: 'Audio file', exact: true }).click();
+		const stopRequests = await page.evaluate(
+			() =>
+				(window as TestWindow).__lrExtensionMock!.messages.filter(
+					(message) => message.type === 'stop'
+				).length
+		);
+		await player(page).getByRole('button', { name: 'Try the sample', exact: true }).click();
+		await expect
+			.poll(() =>
+				page.evaluate(
+					() =>
+						(window as TestWindow).__lrExtensionMock!.messages.filter(
+							(message) => message.type === 'stop'
+						).length
+				)
+			)
+			.toBeGreaterThan(stopRequests);
+		const audio = player(page).locator('audio');
+		expect(await audio.evaluate((element: HTMLAudioElement) => element.paused)).toBe(true);
+		expect(
+			await page.evaluate(() => (window as TestWindow).__lrExtensionMock!.localPlayEvents)
+		).toBe(0);
+		if (switchBack)
+			await player(page).getByRole('button', { name: 'YouTube', exact: true }).click();
+		await page.evaluate(async () => {
+			(window as TestWindow).__lrExtensionMock!.status(false);
+			await new Promise<void>((resolve) =>
+				requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
+			);
+		});
+		if (switchBack) {
+			expect(await audio.evaluate((element: HTMLAudioElement) => element.paused)).toBe(true);
+			expect(
+				await page.evaluate(() => (window as TestWindow).__lrExtensionMock!.localPlayEvents)
+			).toBe(0);
+			await expect(
+				player(page).getByRole('button', { name: 'YouTube', exact: true })
+			).toHaveAttribute('aria-pressed', 'true');
+		} else {
+			await expect(player(page).getByRole('button', { name: 'Pause', exact: true })).toBeVisible();
+			await expect
+				.poll(() => audio.evaluate((element: HTMLAudioElement) => element.currentTime))
+				.toBeGreaterThan(0.1);
+			expect(
+				await page.evaluate(() => (window as TestWindow).__lrExtensionMock!.localPlayEvents)
+			).toBe(1);
+		}
+		await expect(player(page).getByRole('alert')).toHaveCount(0);
+		expect(externalRequests.get(page)).toEqual([]);
+	});
+}
 
 test('waits for the selected track to be cued before enabling playback', async ({ page }) => {
 	await page.route('https://www.youtube.com/iframe_api', (route) =>
@@ -346,7 +845,9 @@ test('mocked starter collection and provider failure expose useful recovery', as
 		const active = state.players[state.players.length - 1];
 		active.options.events.onAutoplayBlocked({ target: active });
 	});
-	await expect(player(page).getByRole('status')).toContainText('Press Play in the YouTube player');
+	await expect(player(page).locator('.lr-notice[role="status"]')).toContainText(
+		'Press Play in the YouTube player'
+	);
 	await page.evaluate(() => {
 		const state = (window as TestWindow).__listeningRoomMock;
 		const active = state.players[state.players.length - 1];
