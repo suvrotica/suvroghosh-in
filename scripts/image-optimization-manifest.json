@@ -8032,6 +8032,22 @@
       "sourceHash": "4fcb85309a5ef26d5f409bc9caa64bf267a7a0b5a8deb9bc1b0a6ed73524214b",
       "width": 1376
     },
+    "static/images/art-caller-of-calcutta.webp": {
+      "format": "WEBP",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 126978,
+      "outputHash": "7170c7dacde1f3f701a889e40983922eb0a53f0def3127ffddd9bfe58eef72bb",
+      "psnrDb": 39.0,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 167500,
+      "sourceHash": "1f5087ad63e5d3ca1f5623bad439e68c9939c640c42ec19cb863e33cc54479cd",
+      "width": 1672
+    },
     "static/images/art-durga-durga-durga-five-days-debauchery.jpg": {
       "format": "JPEG",
       "height": 768,

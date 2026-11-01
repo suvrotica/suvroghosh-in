@@ -27,6 +27,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "art-caller-of-calcutta.webp",
+			"src": "/images/art-caller-of-calcutta.webp",
+			"bytes": 126978,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-durga-durga-durga-five-days-debauchery.jpg",
 			"src": "/images/art-durga-durga-durga-five-days-debauchery.jpg",
 			"bytes": 263519,

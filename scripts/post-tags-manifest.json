@@ -16501,6 +16501,14 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/caller-of-calcutta.md": {
+			"bodyHash": "402b302f8815e3c90a8df4279294def98307b8ce811947c6a5d647c10f7992f7",
+			"hashVersion": 2,
+			"revisionHash": "8329928a6c2ff41578f117de3991557cab32465a2f2fac042a86c6a8d2984330",
+			"generatedTags": ["Short Fiction", "Calcutta", "Horror", "Claustrophobic", "Loneliness"],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Horror", "Claustrophobic", "Loneliness"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
