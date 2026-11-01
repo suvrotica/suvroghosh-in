@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T11:43:56.784565+00:00",
+  "generatedAt": "2026-11-01T18:33:56.203432+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -17478,6 +17478,29 @@
         "Street",
         "Call",
         "Gini"
+      ],
+      "wordCount": 130
+    },
+    "listening-room": {
+      "generatedAt": "2026-11-01T18:33:47.277452+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/listening-room.svg",
+      "source": "src/lib/posts/listening-room.md",
+      "sourceHash": "738e9d114a7b9327f6c1a2e3c5b0375ebc7d8857fc214273f215b6f4e3b500fb",
+      "sourceModified": "2026-11-01T18:33:21.555422+00:00",
+      "topWords": [
+        "Audio",
+        "Youtube",
+        "Choose",
+        "File",
+        "Song",
+        "Sound",
+        "Player",
+        "Use",
+        "Changes",
+        "Stream",
+        "Playlist",
+        "Open"
       ],
       "wordCount": 130
     }

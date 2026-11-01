@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Listening Room — YouTube and Local Audio" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Listening Room — YouTube and Local Audio</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(382,96)" font-size="118" style="fill:#a9b7a3">Audio</text>
+<text transform="translate(871,626) rotate(-90)" font-size="110" style="fill:#d9c89e">Youtube</text>
+<text transform="translate(218,489)" font-size="101" style="fill:#d6a79f">Choose</text>
+<text transform="translate(216,204)" font-size="101" style="fill:#d88988">File</text>
+<text transform="translate(748,100)" font-size="82" style="fill:#d5d2c2">Song</text>
+<text transform="translate(73,309)" font-size="82" style="fill:#d9c89e">Sound</text>
+<text transform="translate(337,667)" font-size="82" style="fill:#e0b879">Player</text>
+<text transform="translate(946,680)" font-size="82" style="fill:#a9b7a3">Use</text>
+<text transform="translate(329,370)" font-size="82" style="fill:#d88988">Changes</text>
+<text transform="translate(972,153)" font-size="82" style="fill:#d5d2c2">Stream</text>
+<text transform="translate(86,550)" font-size="71" style="fill:#b6c3dd">Playlist</text>
+<text transform="translate(624,529)" font-size="71" style="fill:#a9b7a3">Open</text>
+<text transform="translate(910,416)" font-size="71" style="fill:#c49a6c">Controls</text>
+<text transform="translate(901,338)" font-size="71" style="fill:#b6c3dd">Neutral</text>
+<text transform="translate(1046,259)" font-size="71" style="fill:#c7d7b5">Level</text>
+<text transform="translate(27,84)" font-size="71" style="fill:#9fc9c5">Browser</text>
+<text transform="translate(346,264)" font-size="71" style="fill:#d9c89e">Processing</text>
+<text transform="translate(66,410) rotate(-90)" font-size="58" style="fill:#d5d2c2">Paste</text>
+<text transform="translate(630,692)" font-size="58" style="fill:#d5d2c2">Adjust</text>
+<text transform="translate(1180,689) rotate(-90)" font-size="58" style="fill:#9fc9c5">Source</text>
+<text transform="translate(919,478)" font-size="58" style="fill:#9fc9c5">Start</text>
+<text transform="translate(1007,60)" font-size="58" style="fill:#d9c89e">Load</text>
+<text transform="translate(123,672)" font-size="58" style="fill:#8fb7d0">Play</text>
+<text transform="translate(44,149)" font-size="58" style="fill:#9fc9c5">Stays</text>
+<text transform="translate(906,250)" font-size="58" style="fill:#d88988">Link</text>
+<text transform="translate(31,618)" font-size="58" style="fill:#c7d7b5">Device</text>
+<text transform="translate(482,169)" font-size="58" style="fill:#b6c3dd">Equaliser</text>
+<text transform="translate(958,561)" font-size="58" style="fill:#d88988">Small</text>
+<text transform="translate(435,602)" font-size="58" style="fill:#e0b879">Adjustment</text>
+<text transform="translate(395,314)" font-size="58" style="fill:#e0b879">Channels</text>
+<text transform="translate(1251,703) rotate(-90)" font-size="58" style="fill:#d88988">Settings</text>
+<text transform="translate(88,367)" font-size="58" style="fill:#d5d2c2">Show</text>
+<text transform="translate(5,215)" font-size="58" style="fill:#d5d2c2">Local</text>
+<text transform="translate(877,604)" font-size="49" style="fill:#c7d7b5">Recording</text>
+<text transform="translate(672,382)" font-size="49" style="fill:#b6c3dd">Opus</text>
+<text transform="translate(984,190)" font-size="44" style="fill:#e0b879">Listening</text>
+<text transform="translate(21,470)" font-size="32" style="fill:#e0b879">Keep</text>
+<text transform="translate(642,436)" font-size="32" style="fill:#d6a79f">Simple</text>
+<text transform="translate(132,35)" font-size="32" style="fill:#9fc9c5">Allows</text>
+<text transform="translate(276,700)" font-size="32" style="fill:#e0b879">Adele</text>
+<text transform="translate(1039,509)" font-size="32" style="fill:#d88988">Hello</text>
+<text transform="translate(434,537)" font-size="32" style="fill:#8fb7d0">Popular</text>
+<text transform="translate(612,504) rotate(-90)" font-size="32" style="fill:#c7d7b5">Songs</text>
+<text transform="translate(1170,39)" font-size="32" style="fill:#8fb7d0">Press</text>
+<text transform="translate(196,394)" font-size="32" style="fill:#d6a79f">Handles</text>
+<text transform="translate(502,218)" font-size="32" style="fill:#d9c89e">Visible</text>
+<text transform="translate(821,642)" font-size="32" style="fill:#e0b879">Remain</text>
+<text transform="translate(911,712)" font-size="32" style="fill:#a9b7a3">Available</text>
+<text transform="translate(331,409)" font-size="32" style="fill:#b6c3dd">Longer</text>
+<text transform="translate(1091,89)" font-size="32" style="fill:#d88988">Listen</text>
+<text transform="translate(900,323) rotate(-90)" font-size="32" style="fill:#e0b879">Starter</text>
+<text transform="translate(92,244)" font-size="32" style="fill:#8fb7d0">Collection</text>
+<text transform="translate(274,595)" font-size="32" style="fill:#d5d2c2">Previous</text>
+<text transform="translate(662,476)" font-size="32" style="fill:#8fb7d0">Next</text>
+<text transform="translate(801,31)" font-size="32" style="fill:#e0b879">Shuffle</text>
+<text transform="translate(909,544) rotate(-90)" font-size="32" style="fill:#c7d7b5">Repeat</text>
+<text transform="translate(351,91) rotate(-90)" font-size="32" style="fill:#d5d2c2">Help</text>
+<text transform="translate(1134,471)" font-size="32" style="fill:#a9b7a3">Move</text>
+<text transform="translate(18,437)" font-size="32" style="fill:#b6c3dd">Includes</text>
+<text transform="translate(11,694)" font-size="32" style="fill:#d9c89e">Lets</text>
+<text transform="translate(647,630)" font-size="32" style="fill:#c49a6c">Decides</text>
+<text transform="translate(815,163)" font-size="32" style="fill:#d9c89e">Whether</text>
+<text transform="translate(702,132)" font-size="32" style="fill:#d88988">Particular</text>
+<text transform="translate(670,197)" font-size="32" style="fill:#d6a79f">Upload</text>
+<text transform="translate(400,714)" font-size="32" style="fill:#d9c89e">Unavailable</text>
+<text transform="translate(98,397)" font-size="32" style="fill:#b6c3dd">Raise</text>
+<text transform="translate(92,708)" font-size="24" style="fill:#d6a79f">Lowfrequency</text>
+<text transform="translate(945,72)" font-size="24" style="fill:#b6c3dd">Band</text>
+<text transform="translate(879,186)" font-size="24" style="fill:#b6c3dd">Amount</text>
+<text transform="translate(1115,706) rotate(-90)" font-size="24" style="fill:#b6c3dd">Bypass</text>
+<text transform="translate(206,502) rotate(-90)" font-size="24" style="fill:#e0b879">Compare</text>
+<text transform="translate(1009,284)" font-size="24" style="fill:#d5d2c2">Little</text>
+<text transform="translate(674,25)" font-size="24" style="fill:#d6a79f">Often</text>
+<text transform="translate(722,312)" font-size="24" style="fill:#d5d2c2">Enough</text>
+<text transform="translate(255,120)" font-size="24" style="fill:#d9c89e">Bass</text>
+<text transform="translate(23,657) rotate(-90)" font-size="24" style="fill:#d9c89e">Automatically</text>
+<text transform="translate(839,677)" font-size="24" style="fill:#c49a6c">Mean</text>
+<text transform="translate(1217,364) rotate(-90)" font-size="24" style="fill:#d9c89e">Better</text>
+<text transform="translate(115,490)" font-size="24" style="fill:#c7d7b5">Ten</text>
+<text transform="translate(1151,62)" font-size="24" style="fill:#8fb7d0">Bands</text>
+<text transform="translate(1129,215)" font-size="24" style="fill:#d9c89e">Let</text>
+<text transform="translate(34,172)" font-size="24" style="fill:#c7d7b5">Change</text>
+<text transform="translate(26,160) rotate(-90)" font-size="24" style="fill:#8fb7d0">Different</text>
+<text transform="translate(447,398)" font-size="24" style="fill:#c49a6c">Parts</text>
+<text transform="translate(689,554)" font-size="24" style="fill:#e0b879">Balance</text>
+<text transform="translate(449,26)" font-size="24" style="fill:#d5d2c2">Relative</text>
+<text transform="translate(758,468)" font-size="24" style="fill:#e0b879">Stereo</text>
+<text transform="translate(244,625)" font-size="24" style="fill:#8fb7d0">Width</text>
+<text transform="translate(21,23)" font-size="24" style="fill:#b6c3dd">Shared</text>
+<text transform="translate(439,421)" font-size="24" style="fill:#d9c89e">Differing</text>
+<text transform="translate(756,715)" font-size="24" style="fill:#c7d7b5">Content</text>
+<text transform="translate(1110,367)" font-size="24" style="fill:#d88988">Mono</text>
+<text transform="translate(59,561) rotate(-90)" font-size="24" style="fill:#c49a6c">Brings</text>
+<text transform="translate(130,106)" font-size="24" style="fill:#d6a79f">Together</text>
+<text transform="translate(264,669)" font-size="24" style="fill:#d88988">Reset</text>
+<text transform="translate(1095,441)" font-size="24" style="fill:#9fc9c5">Returns</text>
+<text transform="translate(437,117)" font-size="24" style="fill:#c7d7b5">Spectrum</text>
+<text transform="translate(916,278)" font-size="24" style="fill:#8fb7d0">Shows</text>
+<text transform="translate(719,341)" font-size="24" style="fill:#a9b7a3">Energy</text>
+<text transform="translate(1268,397) rotate(-90)" font-size="24" style="fill:#d88988">Currently</text>
+<text transform="translate(927,502)" font-size="24" style="fill:#8fb7d0">Playing</text>
+<text transform="translate(392,144)" font-size="24" style="fill:#c7d7b5">Meters</text>
+<text transform="translate(334,293) rotate(-90)" font-size="24" style="fill:#8fb7d0">Output</text>
+<text transform="translate(1201,715) rotate(-90)" font-size="24" style="fill:#d5d2c2">Measurements</text>
+<text transform="translate(316,117)" font-size="22" style="fill:#e0b879">Playback</text>
+<text transform="translate(244,341)" font-size="22" style="fill:#c7d7b5">Appear</text>
+<text transform="translate(556,117)" font-size="22" style="fill:#d5d2c2">Mode</text>
+<text transform="translate(970,160) rotate(-90)" font-size="22" style="fill:#d5d2c2">Rather</text>
+<text transform="translate(985,357)" font-size="20" style="fill:#c7d7b5">Pretending</text>
+<text transform="translate(252,34)" font-size="20" style="fill:#9fc9c5">Read</text>
+<text transform="translate(582,401)" font-size="20" style="fill:#c49a6c">Supported</text>
+<text transform="translate(232,363)" font-size="20" style="fill:#9fc9c5">Formats</text>
+<text transform="translate(893,416) rotate(-90)" font-size="20" style="fill:#d9c89e">Depend</text>
+<text transform="translate(804,219) rotate(-90)" font-size="20" style="fill:#c49a6c">Decode</text>
+<text transform="translate(938,40)" font-size="20" style="fill:#d88988">Need</text>
+<text transform="translate(1270,703) rotate(-90)" font-size="20" style="fill:#d88988">Compatible</text>
+<text transform="translate(574,527)" font-size="20" style="fill:#d5d2c2">Copy</text>
+<text transform="translate(32,649)" font-size="20" style="fill:#8fb7d0">Happens</text>
+<text transform="translate(91,581)" font-size="20" style="fill:#e0b879">Tone</text>
+<text transform="translate(716,400)" font-size="20" style="fill:#d5d2c2">Volume</text>
+<text transform="translate(137,330)" font-size="20" style="fill:#b6c3dd">Neither</text>
+<text transform="translate(1001,621)" font-size="20" style="fill:#9fc9c5">Restore</text>
+<text transform="translate(795,50)" font-size="20" style="fill:#d6a79f">Information</text>
+<text transform="translate(981,438)" font-size="20" style="fill:#c49a6c">Removed</text>
+<text transform="translate(1022,19)" font-size="18" style="fill:#b6c3dd">Compressed</text>
+<text transform="translate(305,428)" font-size="18" style="fill:#a9b7a3">Modern</text>
+<text transform="translate(109,466)" font-size="18" style="fill:#d88988">Codecs</text>
+<text transform="translate(18,370) rotate(-90)" font-size="18" style="fill:#c7d7b5">Efficient</text>
+<text transform="translate(535,553)" font-size="17" style="fill:#9fc9c5">Representing</text>
+<text transform="translate(552,185)" font-size="15" style="fill:#d6a79f">Perceptually</text>
+</svg>

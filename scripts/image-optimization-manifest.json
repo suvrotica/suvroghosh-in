@@ -11644,6 +11644,21 @@
       "sourceHash": "7bee876c0f2d42c5d15f143bef840f333c4030a9765a0fee137f5e995c54bf6b",
       "width": 1200
     },
+    "static/images/visualizations/listening-room/social.png": {
+      "format": "PNG",
+      "height": 651,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 651,
+      "originalWidth": 1240,
+      "outputBytes": 252413,
+      "outputHash": "f05cef1aac1f43b1129950cffdd674d1992ee4455314865e2e3cffff9431f2f8",
+      "resized": false,
+      "sourceBytes": 281970,
+      "sourceHash": "2a3b56fb7c8ab1d5df51553f93ce3430cea933412c1bd33ee5bef03a65358548",
+      "width": 1240
+    },
     "static/images/visualizations/living-systems/social.png": {
       "format": "PNG",
       "height": 1183,

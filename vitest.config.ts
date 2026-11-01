@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/listening-room/**/*.test.ts',
 			'src/lib/visualizations/soap-film/**/*.test.ts',
 			'src/lib/visualizations/patient-x/**/*.test.ts',
 			'src/lib/visualizations/mindmap-studio/**/*.test.ts',

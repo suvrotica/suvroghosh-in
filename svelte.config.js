@@ -178,7 +178,13 @@ const config = {
 			mode: 'auto',
 			directives: {
 				'default-src': ['self'],
-				'script-src': ['self', 'https://va.vercel-scripts.com'],
+				'script-src': [
+					'self',
+					'https://va.vercel-scripts.com',
+					'https://www.youtube.com',
+					'https://s.ytimg.com'
+				],
+				'media-src': ['self', 'blob:'],
 				'style-src': ['self', 'unsafe-inline'],
 				'img-src': ['self', 'data:', 'blob:', 'https:'],
 				'font-src': ['self', 'data:'],

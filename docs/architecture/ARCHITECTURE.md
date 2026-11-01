@@ -1219,6 +1219,63 @@ flowchart LR
     Fallback --> Stage
 ```
 
+### Listening Room: consented YouTube and local audio
+
+Listening Room is one ordinary Markdown visualization at
+`/blog/visualizations/listening-room`, with `collections: ['apps']` for Apps
+discovery. The Svelte component under
+`src/lib/components/visualizations/listening-room` owns the current source mode,
+consent subscription, local file URLs and UI state. Feature modules under
+`src/lib/visualizations/listening-room` own validated YouTube URLs, the curated
+song registry, the demand-loaded IFrame API controller and local Web Audio DSP.
+No server endpoint, upload, credential, database or media proxy is added.
+
+The two sources have distinct capabilities. YouTube remains inside its official,
+visible iframe and exposes documented playback/playlist operations. It supplies
+no decoded audio to the page's graph, so that mode does not claim custom EQ,
+spectrum, loudness, bitrate or source-resolution measurements. Local files use
+an `HTMLAudioElement` with a browser-owned object URL and one media source node.
+The local graph applies smoothed gain/headroom, ten-band EQ, an explicit
+mid/side stereo matrix, balance and output gain before real signal analysis and
+playback. Browser codec support determines whether a file can play.
+
+Existing media permission or explicit one-time activation gates both provider
+script and iframe loading. Initial SSR supplies a local placeholder with no
+provider thumbnail or metadata request. Revocation or expiry stops and removes
+the active player. Exact parent-document script origins are admitted by CSP;
+the provider iframe keeps its own resource boundary. A loaded API library can
+remain for the document lifetime without authorising a new player.
+
+Only one Listening Room source plays at a time. Source switches pause the old
+source; destruction cancels owned polling/listeners/animation, destroys the
+player, disconnects audio nodes and releases local audio resources and object
+URLs. Small validated audio preferences may be stored with an in-memory
+fallback; files and listening history are not retained. The processing sample
+rate describes the AudioContext, not the original file or hardware output.
+There is no automatic loudness matching or LUFS meter in this version because
+a validated full-file measurement implementation is not included.
+
+```mermaid
+flowchart LR
+    Post["One Markdown app / Apps + Viz discovery"] --> UI["Listening Room / one active source"]
+    URL["Validated YouTube URL / curated IDs"] --> UI
+    Consent["Existing media choice / one-time activation"] --> API["Demand-loaded official IFrame API"]
+    UI --> API
+    API --> Frame["Visible YouTube iframe / provider-owned media"]
+    File["Visitor-selected local file"] --> Local["Object URL / native media element"]
+    UI --> Local
+    Local --> DSP["Local gain + EQ + stereo + output"]
+    DSP --> Meter["Actual spectrum / channel levels"]
+    DSP --> Output["Browser audio destination"]
+```
+
+The [feature contract](../visualizations/listening-room.md) and
+[ADR 0022](decisions/0022-listening-room-source-boundaries.md) record the source
+boundary and limitations. DSP fixtures and controller tests are separate from
+real browser/provider playback checks. Deployment and regional availability
+require their own evidence; matching starter-video titles do not prove embeds
+will play.
+
 ### The Piano That Forgives
 
 The original feature was locally verified on **21 October 2026**. Its **22 October 2026** extension adds the full keyboard, navigation and bounded note effects described below; the current verification receipt is recorded in the feature document. The earlier system-wide audit baseline remains as dated above.
