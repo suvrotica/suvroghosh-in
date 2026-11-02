@@ -16621,6 +16621,37 @@
 				"Contamination"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/gdp-grossly-deceptive-product-the-great-indian-fable.md": {
+			"bodyHash": "39a97f81d62bedac7466339e0020f804883f9c49f24fee87cbb0a18cb346e556",
+			"hashVersion": 2,
+			"revisionHash": "60adda387aab452474173fab45d3001a73fb28351ec8a09887fe8f7431cad047",
+			"generatedTags": [
+				"GDP",
+				"economics",
+				"India",
+				"satire",
+				"finance",
+				"politics",
+				"statistics",
+				"misinformation",
+				"etymology",
+				"history"
+			],
+			"pinnedTags": [
+				"GDP",
+				"economics",
+				"India",
+				"satire",
+				"finance",
+				"politics",
+				"statistics",
+				"misinformation",
+				"etymology",
+				"history"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-03"
 		}
 	},
 	"maxTags": 10

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T22:30:07.913594+00:00",
+  "generatedAt": "2026-11-02T23:37:19.065612+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4391,6 +4391,29 @@
         "Future",
         "Even",
         "Chair"
+      ],
+      "wordCount": 130
+    },
+    "gdp-grossly-deceptive-product-the-great-indian-fable": {
+      "generatedAt": "2026-11-02T23:37:08.584355+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/gdp-grossly-deceptive-product-the-great-indian-fable.svg",
+      "source": "src/lib/posts/gdp-grossly-deceptive-product-the-great-indian-fable.md",
+      "sourceHash": "91778d0ec14986169a5bfdeccd9131f5ba0682e97dabc82e1e41d5a493bc0083",
+      "sourceModified": "2026-11-02T23:35:18.050999+00:00",
+      "topWords": [
+        "GDP",
+        "National",
+        "Every",
+        "Economic",
+        "Growth",
+        "India",
+        "Enough",
+        "Never",
+        "Election",
+        "Vanish",
+        "Income",
+        "Whose"
       ],
       "wordCount": 130
     },

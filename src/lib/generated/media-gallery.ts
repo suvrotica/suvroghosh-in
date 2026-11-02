@@ -3765,6 +3765,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "gdp-grossly-deceptive-product.jpg",
+			"src": "/images/gdp-grossly-deceptive-product.jpg",
+			"bytes": 409919,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "gradient-descent-landscapes.png",
 			"src": "/images/gradient-descent-landscapes.png",
 			"bytes": 430729,

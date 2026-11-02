@@ -9581,6 +9581,22 @@
       "sourceHash": "926399be875403e0f2806e9426ba6aa4783165508178ced36f66f67bb4715782",
       "width": 1200
     },
+    "static/images/gdp-grossly-deceptive-product.jpg": {
+      "format": "JPEG",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 409919,
+      "outputHash": "c1a18cca7ad6c3c196180af785c7d8ea6eee3f231eed0f12278d17518647b6ef",
+      "psnrDb": 36.55,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 500645,
+      "sourceHash": "99f1cf1af22fe8fe67adf0e8c9b97f87f4648a6d30621669f2d1bc7a296cc995",
+      "width": 1600
+    },
     "static/images/gradient-descent-landscapes.png": {
       "format": "PNG",
       "height": 630,
