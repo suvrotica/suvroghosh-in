@@ -72,7 +72,10 @@
 	padding: 8px 13px;
 	color: var(--vf-ink);
 }
-.vif button:hover:not(:disabled) {
+.vif
+	button:hover:not(:disabled):where(
+		:not([aria-selected='true'], [aria-pressed='true'], .vif-primary)
+	) {
 	background: var(--vf-soft);
 }
 .vif-heading {
