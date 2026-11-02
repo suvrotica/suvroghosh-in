@@ -1,0 +1,1769 @@
+{
+  "version": 1,
+  "repository": "suvrotica/SuvroTuitionBlog",
+  "branch": "laptop",
+  "commit": "729fa4cc676ee2f26d946f2ef800127e52160b22",
+  "fileCount": 108,
+  "referenceCount": 96,
+  "entries": [
+    {
+      "key": "video:O099W3Gyggc",
+      "kind": "video",
+      "id": "O099W3Gyggc",
+      "url": "https://www.youtube.com/watch?v=O099W3Gyggc",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/O099W3Gyggc?si=RhL4T7xcS7tAyVJl",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:k_Hse48e_7M",
+      "kind": "video",
+      "id": "k_Hse48e_7M",
+      "url": "https://www.youtube.com/watch?v=k_Hse48e_7M",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/k_Hse48e_7M?si=lwhv4yS-yPzOO_fU",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:Bz9bwgomnZQ",
+      "kind": "video",
+      "id": "Bz9bwgomnZQ",
+      "url": "https://www.youtube.com/watch?v=Bz9bwgomnZQ",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/Bz9bwgomnZQ?si=e9jvKzSRfzejBTWO",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:jgznpeJkdi8",
+      "kind": "video",
+      "id": "jgznpeJkdi8",
+      "url": "https://www.youtube.com/watch?v=jgznpeJkdi8",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/jgznpeJkdi8?si=Z9sQuKI4uZBu55xN",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:9U8OMq9mXPE",
+      "kind": "video",
+      "id": "9U8OMq9mXPE",
+      "url": "https://www.youtube.com/watch?v=9U8OMq9mXPE",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/9U8OMq9mXPE?si=RV3ze3EUrqN8MTq_",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:fQFaTjG7XIY",
+      "kind": "video",
+      "id": "fQFaTjG7XIY",
+      "url": "https://www.youtube.com/watch?v=fQFaTjG7XIY",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/fQFaTjG7XIY?si=hZcU1wH7AkyTQFq8",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:bTyHIR8YBLc",
+      "kind": "video",
+      "id": "bTyHIR8YBLc",
+      "url": "https://www.youtube.com/watch?v=bTyHIR8YBLc",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/bTyHIR8YBLc?si=mfNFLE7OQvMMJfuq",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "video:denh3vj8Gpo",
+      "kind": "video",
+      "id": "denh3vj8Gpo",
+      "url": "https://www.youtube.com/watch?v=denh3vj8Gpo",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/denh3vj8Gpo?si=20qJNtsFbV2Xsz0C",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "video:AfMOOSJlV3U",
+      "kind": "video",
+      "id": "AfMOOSJlV3U",
+      "url": "https://www.youtube.com/watch?v=AfMOOSJlV3U",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/AfMOOSJlV3U?si=yHjoeMZmGJAu_q3g",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "video:JtyK9eJnW1A",
+      "kind": "video",
+      "id": "JtyK9eJnW1A",
+      "url": "https://www.youtube.com/watch?v=JtyK9eJnW1A",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/JtyK9eJnW1A?si=VK2FLfIOAH6uacaC",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "video:lIXm-vodPCg",
+      "kind": "video",
+      "id": "lIXm-vodPCg",
+      "url": "https://www.youtube.com/watch?v=lIXm-vodPCg",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/lIXm-vodPCg?si=DIYjjKiJAGbpA6iE",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "video:eV7SupmEgFs",
+      "kind": "video",
+      "id": "eV7SupmEgFs",
+      "url": "https://www.youtube.com/watch?v=eV7SupmEgFs",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/eV7SupmEgFs?si=41_Uyvwq7hK9pLuL",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "video:3t9VYpObotw",
+      "kind": "video",
+      "id": "3t9VYpObotw",
+      "url": "https://www.youtube.com/watch?v=3t9VYpObotw",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/3t9VYpObotw?si=km4CBg_MHH8fSTDC",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "video:TW5WDNh34Es",
+      "kind": "video",
+      "id": "TW5WDNh34Es",
+      "url": "https://www.youtube.com/watch?v=TW5WDNh34Es",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/TW5WDNh34Es?si=1gwm9q_ue1_n25YI",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "video:7MzyhCf0CJ4",
+      "kind": "video",
+      "id": "7MzyhCf0CJ4",
+      "url": "https://www.youtube.com/watch?v=7MzyhCf0CJ4",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/7MzyhCf0CJ4?si=mFB5xP0-FfFPQHE-",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "key": "video:oLdAQgFfdq0",
+      "kind": "video",
+      "id": "oLdAQgFfdq0",
+      "url": "https://www.youtube.com/watch?v=oLdAQgFfdq0",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/oLdAQgFfdq0?si=XAI4mmM58OR8yLrP",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "key": "video:mMIujBhEnPE",
+      "kind": "video",
+      "id": "mMIujBhEnPE",
+      "url": "https://www.youtube.com/watch?v=mMIujBhEnPE",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/mMIujBhEnPE?si=X2EcGHl_KRraTioI",
+          "order": 17
+        }
+      ]
+    },
+    {
+      "key": "video:fRZ_ZsrxLeU",
+      "kind": "video",
+      "id": "fRZ_ZsrxLeU",
+      "url": "https://www.youtube.com/watch?v=fRZ_ZsrxLeU",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/fRZ_ZsrxLeU?si=uXrhApAarhMNLwVa",
+          "order": 18
+        }
+      ]
+    },
+    {
+      "key": "video:fGG1s3JIQ14",
+      "kind": "video",
+      "id": "fGG1s3JIQ14",
+      "url": "https://www.youtube.com/watch?v=fGG1s3JIQ14",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/fGG1s3JIQ14?si=6L-yhP5KDbABa173",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "key": "video:3jzG6ztKdww",
+      "kind": "video",
+      "id": "3jzG6ztKdww",
+      "url": "https://www.youtube.com/watch?v=3jzG6ztKdww",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/3jzG6ztKdww?si=qVwaDB7xUqkwhNld",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "key": "video:ixEcYvCOVtc",
+      "kind": "video",
+      "id": "ixEcYvCOVtc",
+      "url": "https://www.youtube.com/watch?v=ixEcYvCOVtc",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/ixEcYvCOVtc?si=ns8WY4N5fk8hc8UD",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "key": "video:9gIGvOSi_jI",
+      "kind": "video",
+      "id": "9gIGvOSi_jI",
+      "url": "https://www.youtube.com/watch?v=9gIGvOSi_jI",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/9gIGvOSi_jI?si=c7PufpR13_cytYRj",
+          "order": 22
+        }
+      ]
+    },
+    {
+      "key": "video:imy4OYiCj-c",
+      "kind": "video",
+      "id": "imy4OYiCj-c",
+      "url": "https://www.youtube.com/watch?v=imy4OYiCj-c",
+      "categories": [
+        "audiobooks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Audiobook.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Audiobook.md",
+          "originalUrl": "https://youtu.be/imy4OYiCj-c?si=vb6Dd1BqJfxblAIH",
+          "order": 23
+        }
+      ]
+    },
+    {
+      "key": "video:iwsigIyhPWg",
+      "kind": "video",
+      "id": "iwsigIyhPWg",
+      "url": "https://www.youtube.com/watch?v=iwsigIyhPWg",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/iwsigIyhPWg?si=AuN5SK9pvZ02Zi6c",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:cdrmzezrdgQ",
+      "kind": "video",
+      "id": "cdrmzezrdgQ",
+      "url": "https://www.youtube.com/watch?v=cdrmzezrdgQ",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/cdrmzezrdgQ?si=YPVqabAAd5figwz6",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:7UHApGVi9j8",
+      "kind": "video",
+      "id": "7UHApGVi9j8",
+      "url": "https://www.youtube.com/watch?v=7UHApGVi9j8",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/7UHApGVi9j8?si=fRgdVXsw7WE-_5hA",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:iq55JrrCTMM",
+      "kind": "video",
+      "id": "iq55JrrCTMM",
+      "url": "https://www.youtube.com/watch?v=iq55JrrCTMM",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/iq55JrrCTMM?si=pZIx_xRQx32IxDfq",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:isvSLCepmpU",
+      "kind": "video",
+      "id": "isvSLCepmpU",
+      "url": "https://www.youtube.com/watch?v=isvSLCepmpU",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/isvSLCepmpU?si=z6lUxHmQ9D6jqtAF",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:YKp563ransM",
+      "kind": "video",
+      "id": "YKp563ransM",
+      "url": "https://www.youtube.com/watch?v=YKp563ransM",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/YKp563ransM?si=_QYnsvIE3rDAfAdt",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:G_rt5ejPcLE",
+      "kind": "video",
+      "id": "G_rt5ejPcLE",
+      "url": "https://www.youtube.com/watch?v=G_rt5ejPcLE",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/G_rt5ejPcLE?si=3kyBlpnI-9i4wwQx",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "video:KcDuSGmSaTQ",
+      "kind": "video",
+      "id": "KcDuSGmSaTQ",
+      "url": "https://www.youtube.com/watch?v=KcDuSGmSaTQ",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/KcDuSGmSaTQ?si=oiNBQYV2DiYRHzOV",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "video:F-3VByangcY",
+      "kind": "video",
+      "id": "F-3VByangcY",
+      "url": "https://www.youtube.com/watch?v=F-3VByangcY",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/F-3VByangcY?si=uVvMbD9fA7wMGdka",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "video:pAJ32TOXXd0",
+      "kind": "video",
+      "id": "pAJ32TOXXd0",
+      "url": "https://www.youtube.com/watch?v=pAJ32TOXXd0",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/pAJ32TOXXd0?si=1D0H1ZnthLVV9q9T",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "video:3zLM-FfGydw",
+      "kind": "video",
+      "id": "3zLM-FfGydw",
+      "url": "https://www.youtube.com/watch?v=3zLM-FfGydw",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/3zLM-FfGydw?si=_ipCjrDgusZSn9_9",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "video:FJ7HkPOgUxw",
+      "kind": "video",
+      "id": "FJ7HkPOgUxw",
+      "url": "https://www.youtube.com/watch?v=FJ7HkPOgUxw",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/FJ7HkPOgUxw?si=W6wDY-l0f1UajlY-",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "video:Q3I-C9p5keo",
+      "kind": "video",
+      "id": "Q3I-C9p5keo",
+      "url": "https://www.youtube.com/watch?v=Q3I-C9p5keo",
+      "categories": [
+        "films"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/Q3I-C9p5keo?si=I7Fww_7MzWXhwqj4",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "video:HvOXmnTJYRc",
+      "kind": "video",
+      "id": "HvOXmnTJYRc",
+      "url": "https://www.youtube.com/watch?v=HvOXmnTJYRc",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "bengali"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/HvOXmnTJYRc?si=dO0MjoWbbxZ6N3My",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "video:lvmsSGKP9TE",
+      "kind": "video",
+      "id": "lvmsSGKP9TE",
+      "url": "https://www.youtube.com/watch?v=lvmsSGKP9TE",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "bengali"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/lvmsSGKP9TE?si=_c1OiAc2LN_yZiSB",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "key": "video:ERTUdQb5vAU",
+      "kind": "video",
+      "id": "ERTUdQb5vAU",
+      "url": "https://www.youtube.com/watch?v=ERTUdQb5vAU",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "bengali"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/ERTUdQb5vAU?si=f0WkC1sV8Gm5zQAL",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "key": "video:TfuV58q4Qbo",
+      "kind": "video",
+      "id": "TfuV58q4Qbo",
+      "url": "https://www.youtube.com/watch?v=TfuV58q4Qbo",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "bengali"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Bengali.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Bengali.md",
+          "originalUrl": "https://youtu.be/TfuV58q4Qbo?si=7XF4Dj712x36uscw",
+          "order": 17
+        }
+      ]
+    },
+    {
+      "key": "video:jYP3crI0wpc",
+      "kind": "video",
+      "id": "jYP3crI0wpc",
+      "url": "https://www.youtube.com/watch?v=jYP3crI0wpc",
+      "categories": [
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Brain.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Brain.md",
+          "originalUrl": "https://youtu.be/jYP3crI0wpc?si=Wgp4m7wVdp7xG_zh",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:FkHa3W4pQME",
+      "kind": "video",
+      "id": "FkHa3W4pQME",
+      "url": "https://www.youtube.com/watch?v=FkHa3W4pQME",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Burned.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Burned.md",
+          "originalUrl": "https://youtu.be/FkHa3W4pQME?si=sshLTZJ6alOF-DqA",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLr2CZAfX_oc8Q-bi6M8rYlcVyb3DJEsHR",
+      "kind": "playlist",
+      "id": "PLr2CZAfX_oc8Q-bi6M8rYlcVyb3DJEsHR",
+      "url": "https://www.youtube.com/playlist?list=PLr2CZAfX_oc8Q-bi6M8rYlcVyb3DJEsHR",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "english"
+      ],
+      "sources": [
+        {
+          "file": "drafts/English.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/English.md",
+          "originalUrl": "https://youtube.com/playlist?list=PLr2CZAfX_oc8Q-bi6M8rYlcVyb3DJEsHR&si=2M9ocXgKbJuvreY-",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLr2CZAfX_oc90zYavHOIRQmEYiE7Km-1N",
+      "kind": "playlist",
+      "id": "PLr2CZAfX_oc90zYavHOIRQmEYiE7Km-1N",
+      "url": "https://www.youtube.com/playlist?list=PLr2CZAfX_oc90zYavHOIRQmEYiE7Km-1N",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "english"
+      ],
+      "sources": [
+        {
+          "file": "drafts/English.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/English.md",
+          "originalUrl": "https://youtube.com/playlist?list=PLr2CZAfX_oc90zYavHOIRQmEYiE7Km-1N&si=Qf-a72Wh8KSwj5b5",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:B1SdFjna7zQ",
+      "kind": "video",
+      "id": "B1SdFjna7zQ",
+      "url": "https://www.youtube.com/watch?v=B1SdFjna7zQ",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/FuckingDiwali2025.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/FuckingDiwali2025.md",
+          "originalUrl": "https://youtu.be/B1SdFjna7zQ?si=g4fA5S5nOP0gKRgP",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:ag29h-dB0P4",
+      "kind": "video",
+      "id": "ag29h-dB0P4",
+      "url": "https://www.youtube.com/watch?v=ag29h-dB0P4",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/FuckingDiwali2025.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/FuckingDiwali2025.md",
+          "originalUrl": "https://youtu.be/ag29h-dB0P4?si=jy6-Npndyf6JX02c",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:lm4KssWbNz0",
+      "kind": "video",
+      "id": "lm4KssWbNz0",
+      "url": "https://www.youtube.com/watch?v=lm4KssWbNz0",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/FuckingDiwali2025.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/FuckingDiwali2025.md",
+          "originalUrl": "https://youtu.be/lm4KssWbNz0?si=6ddnvaQ9PZkXKKnu",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:I_LhBKZiE0U",
+      "kind": "video",
+      "id": "I_LhBKZiE0U",
+      "url": "https://www.youtube.com/watch?v=I_LhBKZiE0U",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/FuckingDiwali2025.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/FuckingDiwali2025.md",
+          "originalUrl": "https://youtu.be/I_LhBKZiE0U?si=IuqP6wlNDXgGOYu7",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:hV3bQecCYRM",
+      "kind": "video",
+      "id": "hV3bQecCYRM",
+      "url": "https://www.youtube.com/watch?v=hV3bQecCYRM",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/FuckingDiwali2025.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/FuckingDiwali2025.md",
+          "originalUrl": "https://youtu.be/hV3bQecCYRM?si=cvOu7SET5N7WCq4Z",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:lbYjSL4Y-FY",
+      "kind": "video",
+      "id": "lbYjSL4Y-FY",
+      "url": "https://www.youtube.com/watch?v=lbYjSL4Y-FY",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/FuckingDiwali2025.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/FuckingDiwali2025.md",
+          "originalUrl": "https://youtu.be/lbYjSL4Y-FY?si=qFWAa2V8IZzHIxg9",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:XA3XY2RRc5Y",
+      "kind": "video",
+      "id": "XA3XY2RRc5Y",
+      "url": "https://www.youtube.com/watch?v=XA3XY2RRc5Y",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://youtu.be/XA3XY2RRc5Y",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:8kWR1IeNbtg",
+      "kind": "video",
+      "id": "8kWR1IeNbtg",
+      "url": "https://www.youtube.com/watch?v=8kWR1IeNbtg",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://www.youtube.com/embed/8kWR1IeNbtg?si=xc33ee6I-CC3F2DR",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:ks58iZ8sQPw",
+      "kind": "video",
+      "id": "ks58iZ8sQPw",
+      "url": "https://www.youtube.com/watch?v=ks58iZ8sQPw",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://www.youtube.com/embed/ks58iZ8sQPw?si=W-hq7UH1nPRRRXSS",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:0YURuE22VVQ",
+      "kind": "video",
+      "id": "0YURuE22VVQ",
+      "url": "https://www.youtube.com/watch?v=0YURuE22VVQ",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://youtu.be/0YURuE22VVQ?si=Xt08e59PQYCTPKGR",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:PRuzA7K-6Go",
+      "kind": "video",
+      "id": "PRuzA7K-6Go",
+      "url": "https://www.youtube.com/watch?v=PRuzA7K-6Go",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://youtu.be/PRuzA7K-6Go?si=FdrYne_Y_xihb2LY",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:5pVP2TB-4u8",
+      "kind": "video",
+      "id": "5pVP2TB-4u8",
+      "url": "https://www.youtube.com/watch?v=5pVP2TB-4u8",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://youtu.be/5pVP2TB-4u8?si=DBb66sIn_hYCns7p",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:sY-V5cXsJWU",
+      "kind": "video",
+      "id": "sY-V5cXsJWU",
+      "url": "https://www.youtube.com/watch?v=sY-V5cXsJWU",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://youtu.be/sY-V5cXsJWU?si=ExyPtSM_R6JqiaQR",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "video:e44meSqTkH0",
+      "kind": "video",
+      "id": "e44meSqTkH0",
+      "url": "https://www.youtube.com/watch?v=e44meSqTkH0",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://www.youtube.com/embed/e44meSqTkH0?si=NM4d5HmNsWpBnwxo",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "video:uALhcbOIHFc",
+      "kind": "video",
+      "id": "uALhcbOIHFc",
+      "url": "https://www.youtube.com/watch?v=uALhcbOIHFc",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://www.youtube.com/embed/uALhcbOIHFc?si=U-AnEDLA_O1fhwOQ",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "mix:RD6sfHEAeNklM",
+      "kind": "mix",
+      "id": "RD6sfHEAeNklM",
+      "url": "https://www.youtube.com/playlist?list=RD6sfHEAeNklM",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://youtube.com/playlist?list=RD6sfHEAeNklM&playnext=1&si=4RgVR8UCt_BoJYXu",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "video:jggJvt8Yuac",
+      "kind": "video",
+      "id": "jggJvt8Yuac",
+      "url": "https://www.youtube.com/watch?v=jggJvt8Yuac",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "hindi"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Hindi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Hindi.md",
+          "originalUrl": "https://youtu.be/jggJvt8Yuac?si=ElY877KMpudNmrYq",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "video:ji5_MqicxSo",
+      "kind": "video",
+      "id": "ji5_MqicxSo",
+      "url": "https://www.youtube.com/watch?v=ji5_MqicxSo",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/ji5_MqicxSo?si=yMCzipXlRUoNqj45",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:9kM2dDrndQk",
+      "kind": "video",
+      "id": "9kM2dDrndQk",
+      "url": "https://www.youtube.com/watch?v=9kM2dDrndQk",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/9kM2dDrndQk?si=t_Ltsj5PgAOZ5hEk",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:Tuw8hxrFBH8",
+      "kind": "video",
+      "id": "Tuw8hxrFBH8",
+      "url": "https://www.youtube.com/watch?v=Tuw8hxrFBH8",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/Tuw8hxrFBH8?si=gWjaF4_zmdVd0q1r",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:Pqftm3o5RdQ",
+      "kind": "video",
+      "id": "Pqftm3o5RdQ",
+      "url": "https://www.youtube.com/watch?v=Pqftm3o5RdQ",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/Pqftm3o5RdQ?si=Hntsf6tUAK80WGhf",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:uxoCnxlxpIk",
+      "kind": "video",
+      "id": "uxoCnxlxpIk",
+      "url": "https://www.youtube.com/watch?v=uxoCnxlxpIk",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/uxoCnxlxpIk?si=M6iuv48IbgMlaQvc",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:qY5VFQSUhSM",
+      "kind": "video",
+      "id": "qY5VFQSUhSM",
+      "url": "https://www.youtube.com/watch?v=qY5VFQSUhSM",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/qY5VFQSUhSM?si=YNzgI9F62nojyZwl",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:DCbGM4mqEVw",
+      "kind": "video",
+      "id": "DCbGM4mqEVw",
+      "url": "https://www.youtube.com/watch?v=DCbGM4mqEVw",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/DCbGM4mqEVw?si=a6RSMlotkgQpTC1D",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "video:9dLKZZN5tSo",
+      "kind": "video",
+      "id": "9dLKZZN5tSo",
+      "url": "https://www.youtube.com/watch?v=9dLKZZN5tSo",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/9dLKZZN5tSo?si=DPP-p51KZiOnmkC2",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "video:JEFbfwg9dek",
+      "kind": "video",
+      "id": "JEFbfwg9dek",
+      "url": "https://www.youtube.com/watch?v=JEFbfwg9dek",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/JEFbfwg9dek?si=rJLuL4Lt1SAFheWd",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "video:ELC_e2QBQMk",
+      "kind": "video",
+      "id": "ELC_e2QBQMk",
+      "url": "https://www.youtube.com/watch?v=ELC_e2QBQMk",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/ELC_e2QBQMk?si=LwpkEYbma1a_x-5j",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "video:iG9CE55wbtY",
+      "kind": "video",
+      "id": "iG9CE55wbtY",
+      "url": "https://www.youtube.com/watch?v=iG9CE55wbtY",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/iG9CE55wbtY?si=N4keXxOB0fTQUUag",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "video:lCN6FjqDcHg",
+      "kind": "video",
+      "id": "lCN6FjqDcHg",
+      "url": "https://www.youtube.com/watch?v=lCN6FjqDcHg",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/lCN6FjqDcHg?si=RDnXkiH-V5026743",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "video:b-2GV0T5Zpc",
+      "kind": "video",
+      "id": "b-2GV0T5Zpc",
+      "url": "https://www.youtube.com/watch?v=b-2GV0T5Zpc",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Inspirational.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Inspirational.md",
+          "originalUrl": "https://youtu.be/b-2GV0T5Zpc?si=XcZWGyDdswaBYbG1",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "video:QL4_4GAWvPs",
+      "kind": "video",
+      "id": "QL4_4GAWvPs",
+      "url": "https://www.youtube.com/watch?v=QL4_4GAWvPs",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/LAvids.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/LAvids.md",
+          "originalUrl": "https://youtu.be/QL4_4GAWvPs?si=kZ0Sz4xRX1hb9dnm",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:KbyYTjfgZJI",
+      "kind": "video",
+      "id": "KbyYTjfgZJI",
+      "url": "https://www.youtube.com/watch?v=KbyYTjfgZJI",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/LAvids.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/LAvids.md",
+          "originalUrl": "https://youtu.be/KbyYTjfgZJI?si=4lZjk5OJhsUpU_hq",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:6htbyY3rH1w",
+      "kind": "video",
+      "id": "6htbyY3rH1w",
+      "url": "https://www.youtube.com/watch?v=6htbyY3rH1w",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/LAvids.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/LAvids.md",
+          "originalUrl": "https://youtu.be/6htbyY3rH1w?si=wVn3c9cJINAVyVFZ",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:Y4mnlIvVJEs",
+      "kind": "video",
+      "id": "Y4mnlIvVJEs",
+      "url": "https://www.youtube.com/watch?v=Y4mnlIvVJEs",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/LAvids.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/LAvids.md",
+          "originalUrl": "https://youtu.be/Y4mnlIvVJEs?si=5frUhBBc5a8pZOXK",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLffJUy1BnWj13MxDDbXWcbPzna0UESH59",
+      "kind": "playlist",
+      "id": "PLffJUy1BnWj13MxDDbXWcbPzna0UESH59",
+      "url": "https://www.youtube.com/playlist?list=PLffJUy1BnWj13MxDDbXWcbPzna0UESH59",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/LAvids.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/LAvids.md",
+          "originalUrl": "https://youtube.com/playlist?list=PLffJUy1BnWj13MxDDbXWcbPzna0UESH59&si=IjVDGX2GSF3uzIE6",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:zD0YTnlsYH4",
+      "kind": "video",
+      "id": "zD0YTnlsYH4",
+      "url": "https://www.youtube.com/watch?v=zD0YTnlsYH4",
+      "categories": [
+        "documentaries",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MathDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MathDoc.md",
+          "originalUrl": "https://youtu.be/zD0YTnlsYH4?si=56fs_GJ7tNXJdbXW",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:e1B0saB0rbI",
+      "kind": "video",
+      "id": "e1B0saB0rbI",
+      "url": "https://www.youtube.com/watch?v=e1B0saB0rbI",
+      "categories": [
+        "documentaries",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MathDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MathDoc.md",
+          "originalUrl": "https://youtu.be/e1B0saB0rbI?si=KF-8cwTJhICGsr2F",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:mfqKS5trngs",
+      "kind": "video",
+      "id": "mfqKS5trngs",
+      "url": "https://www.youtube.com/watch?v=mfqKS5trngs",
+      "categories": [
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MedDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MedDoc.md",
+          "originalUrl": "https://youtu.be/mfqKS5trngs?si=6y52sOoRt8Qejd1-",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:3OsWLNqoWLA",
+      "kind": "video",
+      "id": "3OsWLNqoWLA",
+      "url": "https://www.youtube.com/watch?v=3OsWLNqoWLA",
+      "categories": [
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MedDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MedDoc.md",
+          "originalUrl": "https://youtu.be/3OsWLNqoWLA?si=FN6QaGQdS37uok_G",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:b-Af6FqaetQ",
+      "kind": "video",
+      "id": "b-Af6FqaetQ",
+      "url": "https://www.youtube.com/watch?v=b-Af6FqaetQ",
+      "categories": [
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MedDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MedDoc.md",
+          "originalUrl": "https://youtu.be/b-Af6FqaetQ?si=Ln-mYxK5lRMDDR_F",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:IR2HZ-3VHBU",
+      "kind": "video",
+      "id": "IR2HZ-3VHBU",
+      "url": "https://www.youtube.com/watch?v=IR2HZ-3VHBU",
+      "categories": [
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MedDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MedDoc.md",
+          "originalUrl": "https://youtu.be/IR2HZ-3VHBU?si=hXglMDkDdNUnLxhm",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:EkyAuG9RSSU",
+      "kind": "video",
+      "id": "EkyAuG9RSSU",
+      "url": "https://www.youtube.com/watch?v=EkyAuG9RSSU",
+      "categories": [
+        "documentaries",
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MedDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MedDoc.md",
+          "originalUrl": "https://youtu.be/EkyAuG9RSSU?si=EXUarPEM-ZmCY0N5",
+          "order": 5
+        },
+        {
+          "file": "drafts/OldPhotos.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/OldPhotos.md",
+          "originalUrl": "https://youtu.be/EkyAuG9RSSU?si=EXUarPEM-ZmCY0N5",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:ukCFmh2UsYA",
+      "kind": "video",
+      "id": "ukCFmh2UsYA",
+      "url": "https://www.youtube.com/watch?v=ukCFmh2UsYA",
+      "categories": [
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MedDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MedDoc.md",
+          "originalUrl": "https://youtu.be/ukCFmh2UsYA?si=P_h9fEfBrZv3RgAA",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:MyH5mCMwO-A",
+      "kind": "video",
+      "id": "MyH5mCMwO-A",
+      "url": "https://www.youtube.com/watch?v=MyH5mCMwO-A",
+      "categories": [
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/MedDoc.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/MedDoc.md",
+          "originalUrl": "https://youtu.be/MyH5mCMwO-A?si=vew1mm4fuIpy8l7N",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "video:UxKRqZ0KMzc",
+      "kind": "video",
+      "id": "UxKRqZ0KMzc",
+      "url": "https://www.youtube.com/watch?v=UxKRqZ0KMzc",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/OldPhotos.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/OldPhotos.md",
+          "originalUrl": "https://youtu.be/UxKRqZ0KMzc?si=WMSSbV6cpGpRZgW0",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:Hv9SQlcLyPM",
+      "kind": "video",
+      "id": "Hv9SQlcLyPM",
+      "url": "https://www.youtube.com/watch?v=Hv9SQlcLyPM",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/PMBA.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/PMBA.md",
+          "originalUrl": "https://youtu.be/Hv9SQlcLyPM?si=-5lomSfXNk1I7cyM",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:A-902adcV54",
+      "kind": "video",
+      "id": "A-902adcV54",
+      "url": "https://www.youtube.com/watch?v=A-902adcV54",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "rabindrasangeet"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Rabi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Rabi.md",
+          "originalUrl": "https://youtu.be/A-902adcV54?si=AQkRUVy3o2Emx7xI",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:yKf20GGDkms",
+      "kind": "video",
+      "id": "yKf20GGDkms",
+      "url": "https://www.youtube.com/watch?v=yKf20GGDkms",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "rabindrasangeet"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Rabi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Rabi.md",
+          "originalUrl": "https://youtu.be/yKf20GGDkms?si=97SQ0aNTONM9UPXa",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbGUWu9GPABJPonVzsfipnW0M4TePKVPy",
+      "kind": "playlist",
+      "id": "PLbGUWu9GPABJPonVzsfipnW0M4TePKVPy",
+      "url": "https://www.youtube.com/playlist?list=PLbGUWu9GPABJPonVzsfipnW0M4TePKVPy",
+      "categories": [
+        "music"
+      ],
+      "musicCategories": [
+        "rabindrasangeet"
+      ],
+      "sources": [
+        {
+          "file": "drafts/Rabi.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Rabi.md",
+          "originalUrl": "https://youtube.com/playlist?list=PLbGUWu9GPABJPonVzsfipnW0M4TePKVPy&si=Bu4Helypg9ahWvv9",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL0KQuRyPJoe6KjlUM6iNYgt8d0DwI-IGR",
+      "kind": "playlist",
+      "id": "PL0KQuRyPJoe6KjlUM6iNYgt8d0DwI-IGR",
+      "url": "https://www.youtube.com/playlist?list=PL0KQuRyPJoe6KjlUM6iNYgt8d0DwI-IGR",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/StatisticsTheName.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/StatisticsTheName.md",
+          "originalUrl": "https://youtube.com/playlist?list=PL0KQuRyPJoe6KjlUM6iNYgt8d0DwI-IGR&si=KIsQ1xWaNPeWaqXT",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:Ra-7PPAJuSw",
+      "kind": "video",
+      "id": "Ra-7PPAJuSw",
+      "url": "https://www.youtube.com/watch?v=Ra-7PPAJuSw",
+      "categories": [
+        "other"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "drafts/Tower.md",
+          "url": "https://github.com/suvrotica/SuvroTuitionBlog/blob/729fa4cc676ee2f26d946f2ef800127e52160b22/drafts/Tower.md",
+          "originalUrl": "https://youtu.be/Ra-7PPAJuSw?si=SkhQPrwg40bi2qOm",
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

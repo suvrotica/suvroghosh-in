@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T00:18:20.836092+00:00",
+  "generatedAt": "2026-11-02T21:41:26.102014+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -16974,6 +16974,29 @@
         "Latin"
       ],
       "wordCount": 130
+    },
+    "videos-i-like": {
+      "generatedAt": "2026-11-02T21:41:25.669428+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/videos-i-like.svg",
+      "source": "src/lib/posts/videos-i-like.md",
+      "sourceHash": "4b41d4b683b11365d3575ab7618c25ac83cf4768758d7448c2d5ee1f921f79ef",
+      "sourceModified": "2026-11-02T21:40:48.893751+00:00",
+      "topWords": [
+        "Youtube",
+        "Videos",
+        "Open",
+        "Check",
+        "Collection",
+        "Playlists",
+        "Saved",
+        "Playlist",
+        "Original",
+        "Posts",
+        "Press",
+        "Play"
+      ],
+      "wordCount": 107
     },
     "vitruvian-man": {
       "generatedAt": "2026-07-12T19:53:19.820375+00:00",

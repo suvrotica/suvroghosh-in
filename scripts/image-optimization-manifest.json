@@ -12750,6 +12750,21 @@
       "sourceHash": "ae2d831fdbe716afe563e70701c84b0913eb1889022f04949fcef95f3954bab9",
       "width": 1200
     },
+    "static/images/visualizations/videos-i-like/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 48151,
+      "outputHash": "9537263fd73bb45cc6698d8b449b74e1ddcf1f7a236a73d887791b451ef4edcf",
+      "resized": false,
+      "sourceBytes": 49797,
+      "sourceHash": "866719c956b876f083bec87d7f039566cda039749f8f8f24c990b026ec989fff",
+      "width": 1200
+    },
     "static/images/wait-until-she-finishes.jpg": {
       "format": "JPEG",
       "height": 576,

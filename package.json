@@ -9,6 +9,11 @@
 		}
 	},
 	"scripts": {
+		"videos-i-like:import": "node --experimental-strip-types scripts/import-videos-i-like.mjs",
+		"videos-i-like:import:test": "node --experimental-strip-types --test scripts/import-videos-i-like.test.mjs",
+		"videos-i-like:test": "vitest run src/lib/visualizations/videos-i-like src/lib/server/videos-i-like src/routes/api/videos-i-like --maxWorkers=2",
+		"videos-i-like:browser:test": "playwright test --config playwright.videos-i-like.config.ts",
+		"videos-i-like:poster": "node scripts/render-videos-i-like-poster.mjs",
 		"listening-room:test": "vitest run src/lib/visualizations/listening-room --maxWorkers=2",
 		"listening-room:audio:test": "node --test src/lib/visualizations/listening-room/audio.browser.mjs",
 		"listening-room:browser:test": "playwright test --config playwright.listening-room.config.ts",

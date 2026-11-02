@@ -44,3 +44,4 @@ src/lib/components/visualizations/between-a-click-and-a-page/anatomy.css
 
 # Deterministic essay analysis catalogs (owned by generator)
 src/lib/visualizations/anatomy-of-an-essay/generated/
+src/lib/visualizations/videos-i-like/catalogue.json

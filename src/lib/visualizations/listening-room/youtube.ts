@@ -27,6 +27,8 @@ export interface YouTubeSnapshot {
 	playlist: string[];
 	playlistIndex: number;
 	error?: string;
+	/** Documented provider code; consumers must not classify human-readable error text. */
+	errorCode?: number;
 	autoplayBlocked?: boolean;
 }
 
@@ -322,7 +324,12 @@ function validateSource(source: YouTubeSource): void {
 export async function createYouTubeController(
 	container: HTMLElement,
 	onChange: (snapshot: YouTubeSnapshot) => void,
-	options: { signal?: AbortSignal; source?: YouTubeSource; mode?: 'video' | 'playlist' } = {}
+	options: {
+		signal?: AbortSignal;
+		source?: YouTubeSource;
+		mode?: 'video' | 'playlist';
+		iframeTitle?: string;
+	} = {}
 ): Promise<YouTubeController> {
 	const { signal } = options;
 	if (options.source) validateSource(options.source);
@@ -411,6 +418,7 @@ export async function createYouTubeController(
 					playlist: isPlaylist ? [...(source.videoIds ?? [])] : [source.videoId!],
 					playlistIndex: isPlaylist ? index : 0,
 					error: undefined,
+					errorCode: undefined,
 					autoplayBlocked: false
 				};
 				run((active) => {
@@ -520,7 +528,9 @@ export async function createYouTubeController(
 						snapshot = {
 							...snapshot,
 							state: STATES[event.data] ?? 'idle',
-							...(event.data === 1 || event.data === 5 ? { error: undefined } : {}),
+							...(event.data === 1 || event.data === 5
+								? { error: undefined, errorCode: undefined }
+								: {}),
 							...(event.data === 1 ? { autoplayBlocked: false } : {})
 						};
 						if (event.data === 1 && document.hidden) event.target.pauseVideo();
@@ -540,7 +550,12 @@ export async function createYouTubeController(
 						// A caller without an initial source may briefly have an empty
 						// player. Do not present its empty-ID error as a rejected user URL.
 						if (event.data === 2 && !hasSource) return;
-						snapshot = { ...snapshot, state: 'error', error: playerError(event.data) };
+						snapshot = {
+							...snapshot,
+							state: 'error',
+							error: playerError(event.data),
+							errorCode: event.data
+						};
 						publish();
 						if (!ready) {
 							reject(new Error(snapshot.error));
@@ -555,7 +570,7 @@ export async function createYouTubeController(
 				}
 			});
 			const iframe = player.getIframe();
-			iframe.title = 'YouTube music player';
+			iframe.title = options.iframeTitle?.trim().slice(0, 200) || 'YouTube music player';
 			iframe.referrerPolicy = 'strict-origin-when-cross-origin';
 			iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
 		} catch (error) {

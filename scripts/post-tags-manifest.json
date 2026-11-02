@@ -16541,6 +16541,37 @@
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-02"
 		},
+		"src/lib/posts/videos-i-like.md": {
+			"bodyHash": "33966b198c90fa3fc51fe3e47d8f77a488f7da9a442c322fd6591d89f6f24a73",
+			"hashVersion": 2,
+			"revisionHash": "d346011724d735fdb25fde9683d637e7b89fd3a85f0ae33f0c3b09b53ee42291",
+			"generatedTags": [
+				"YouTube",
+				"Videos",
+				"Playlists",
+				"Music",
+				"Films",
+				"Audiobooks",
+				"Documentaries",
+				"Mathematics",
+				"Bengali",
+				"Linear Algebra"
+			],
+			"pinnedTags": [
+				"YouTube",
+				"Videos",
+				"Playlists",
+				"Music",
+				"Films",
+				"Audiobooks",
+				"Documentaries",
+				"Mathematics",
+				"Bengali",
+				"Linear Algebra"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-03"
+		},
 		"src/lib/posts/the-year-the-machine-learned-to-defecate.md": {
 			"bodyHash": "3cf631765bfd989d7a0c4dbc73d01a422c726cb14653f69f9632d90669b0b8fb",
 			"hashVersion": 2,

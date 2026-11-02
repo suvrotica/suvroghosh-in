@@ -97,6 +97,9 @@ flowchart LR
     Legacy["Older consented browser clients"] -->|bounded compatible requests| Intake["Existing same-origin analytics collector"]
     Consent -->|remembered media permission| Media["YouTube embeds"]
     Browser -->|explained one-time media load| Media
+    Browser --> VideoCheck["Bounded curated-video availability endpoint"]
+    VideoCheck --> VideoCache["Process-local TTL / coalesced provider checks"]
+    VideoCache --> YouTubeData["YouTube Data API / server-only credential"]
     Intake --> Rollups["Supabase daily dimension counters; no visitor history"]
     Owner["Configured owner session"] --> Reports["Private Notes workspace analytics / CSV"]
     Reports --> Rollups
@@ -1315,6 +1318,77 @@ explicitly activated browser companion. DSP fixtures and controller tests are se
 real browser/provider playback checks. Deployment and regional availability
 require their own evidence; matching starter-video titles do not prove embeds
 will play.
+
+### Videos I Like: curated availability and consented playback
+
+Videos I Like is an ordinary Markdown app at `/blog/visualizations/videos-i-like`.
+Its component under `src/lib/components/visualizations/videos-i-like` owns topic
+tabs, music filters, search, the selected queue and one player lifecycle. The
+versioned manifest under `src/lib/visualizations/videos-i-like` is imported by
+`scripts/import-videos-i-like.mjs` from a resolved source-repository commit. It
+retains canonical identities, multiple source references, original URLs, ordering
+and category memberships; temporary availability never deletes editorial entries.
+The initial 108-file source snapshot has 89 distinct standalone videos, five
+ordinary playlists and one generated Mix, from 96 direct references.
+
+`POST /api/videos-i-like` reads the fixed catalogue or a validated known playlist
+continuation. `src/lib/server/videos-i-like` owns official YouTube Data API
+lookups and screening behind `YOUTUBE_DATA_API_KEY`, streamed request bounds,
+same-origin admission, deadlines and request/provider limits. Browser code does
+not import the credential. Short process-local metadata caches and in-flight
+coalescing reduce repeated calls; they are not a distributed budget across
+serverless instances. The configured Google project's quota remains the external
+budget boundary. Provider metadata is not committed to the editorial manifest
+or persisted as browser history.
+
+The response distinguishes eligible, unavailable and unknown. Returned privacy,
+embedding, upload, age and applicable region facts screen candidates. Missing
+public resources do not distinguish deletion from privacy; unavailable
+credentials, quota, malformed responses and network failures remain unknown.
+Metadata eligibility cannot guarantee viewer-specific playback. Provider facts
+are cached independently of viewer decisions, and server location is not used
+as the visitor's country. Playlists are checked in bounded ordered pages with
+explicit partial counts/continuation. The generated Mix remains an external
+link when it cannot be reliably enumerated.
+
+Opening the app can request first-party metadata before permission without
+causing the visitor's browser to contact YouTube. Browser thumbnails, script and
+iframe requests remain gated by the existing media preference or an explained
+one-time action. Local placeholders render initially. Revocation or expiry
+removes provider media and cancels a starting or active player. The gallery
+reuses Listening Room's official IFrame API adapter, including real origin,
+referrer policy and teardown. Optional numeric error codes and an accessible
+iframe title extend that adapter without changing existing callers.
+
+Only one selected visible video is loaded; the gallery owns its screened queue.
+Content/embed failures can suppress an item for the current visit, while input,
+environment and client-identification failures do not imply deletion. Player
+readiness and autoplay blocking are not proof of successful or failed content
+availability. Session failures do not change shared server results. There is no
+hidden autoplay probe, scraping, media extraction or proxy.
+
+```mermaid
+flowchart LR
+    Drafts["Pinned GitHub drafts / import as data"] --> Catalogue["Versioned editorial catalogue"]
+    Catalogue --> Gallery["Markdown app / tabs + search + queue"]
+    Gallery --> Endpoint["Same-origin bounded POST / curated IDs only"]
+    Catalogue --> Endpoint
+    Endpoint --> Cache["Short process-local cache + in-flight coalescing"]
+    Cache --> Provider["Official Data API / private key + project quota"]
+    Provider --> Screening["Eligible / unavailable / unknown"]
+    Screening --> Gallery
+    Consent["Remembered media choice / one-time action"] --> Images["Provider thumbnails"]
+    Consent --> Player["One visible official iframe"]
+    Gallery --> Images
+    Gallery --> Player
+    Player --> Failure["Session-only playback result"]
+    Failure --> Gallery
+```
+
+See the [feature contract](../visualizations/videos-i-like.md) and
+[ADR 0024](decisions/0024-curated-youtube-availability.md). Deterministic provider
+fixtures and controller tests are separate from live playback, production
+credential configuration and deployment verification.
 
 ### The Piano That Forgives
 

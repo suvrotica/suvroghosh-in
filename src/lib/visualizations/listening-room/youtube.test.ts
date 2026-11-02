@@ -210,6 +210,7 @@ describe('official YouTube controller lifecycle', () => {
 			origin: browser.location.origin
 		});
 		expect(player.iframe.referrerPolicy).toBe('strict-origin-when-cross-origin');
+		expect(player.iframe.title).toBe('YouTube music player');
 		controller.destroy();
 	});
 
@@ -274,11 +275,41 @@ describe('official YouTube controller lifecycle', () => {
 		playerOptions.events.onAutoplayBlocked({ target: player });
 		expect(changes.at(-1)?.autoplayBlocked).toBe(true);
 		playerOptions.events.onError({ target: player, data: 150 });
-		expect(changes.at(-1)).toMatchObject({ state: 'error' });
+		expect(changes.at(-1)).toMatchObject({ state: 'error', errorCode: 150 });
 		expect(changes.at(-1)?.error).toContain('does not allow');
 		playerOptions.events.onStateChange({ target: player, data: 1 });
 		expect(changes.at(-1)).toMatchObject({ state: 'playing', autoplayBlocked: false });
 		expect(changes.at(-1)?.error).toBeUndefined();
+		expect(changes.at(-1)?.errorCode).toBeUndefined();
+		controller.destroy();
+	});
+
+	it('exposes environment errors without losing their identity and clears them on cue', async () => {
+		const { controller, changes } = await create();
+		controller.cue({ videoId: 'YQHsXMglC9A' });
+		for (const code of [2, 5, 100, 101, 153]) {
+			playerOptions.events.onError({ target: player, data: code });
+			expect(changes.at(-1)).toMatchObject({ state: 'error', errorCode: code });
+			controller.cue({ videoId: 'JGwWNGJdvx8' });
+			expect(changes.at(-1)?.errorCode).toBeUndefined();
+			expect(changes.at(-1)?.error).toBeUndefined();
+		}
+		playerOptions.events.onError({ target: player, data: 150 });
+		playerOptions.events.onStateChange({ target: player, data: 5 });
+		expect(changes.at(-1)?.errorCode).toBeUndefined();
+		controller.destroy();
+	});
+
+	it('uses an optional accessible title for another gallery without changing player policy', async () => {
+		const { createYouTubeController } = await import('./youtube');
+		const controller = await createYouTubeController(
+			new ElementStub() as unknown as HTMLElement,
+			() => {},
+			{ source: { videoId: 'YQHsXMglC9A' }, iframeTitle: 'Videos I Like: selected video' }
+		);
+		expect(player.iframe.title).toBe('Videos I Like: selected video');
+		expect(player.iframe.referrerPolicy).toBe('strict-origin-when-cross-origin');
+		expect(playerOptions.playerVars.autoplay).toBe(0);
 		controller.destroy();
 	});
 

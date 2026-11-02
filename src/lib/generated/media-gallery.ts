@@ -5655,6 +5655,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/videos-i-like/social.png",
+			"src": "/images/visualizations/videos-i-like/social.png",
+			"bytes": 48151,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "wait-until-she-finishes.jpg",
 			"src": "/images/wait-until-she-finishes.jpg",
 			"bytes": 95240,

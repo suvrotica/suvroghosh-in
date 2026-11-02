@@ -115,6 +115,11 @@
 		<div>
 			<h2>A pause before YouTube</h2>
 			<p>
+				Videos I Like checks its saved catalogue through this site's server before media permission.
+				These metadata requests do not send your browser identifiers to Google. YouTube thumbnails
+				and playback in your browser still require media permission or an explicit load action.
+			</p>
+			<p>
 				Embedded YouTube videos show a local placeholder before media permission, without a YouTube
 				player or remote thumbnail. “Load this video once” makes a one-time connection. Choosing
 				remembered external-media permission lets other embedded players connect too; some videos
