@@ -8448,6 +8448,22 @@
       "sourceHash": "1cf8dae2ab8c7317c52762fd7175578465dce9d8eb6f3e2fc8f035438874ca86",
       "width": 1672
     },
+    "static/images/art-the-nine-oclock-filter.webp": {
+      "format": "WEBP",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 116306,
+      "outputHash": "4199ed0db80a52805b1e18ed0c9704e623e51fe42e4b97c965b3f9e1aa5c4ba6",
+      "psnrDb": 39.95,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 144120,
+      "sourceHash": "39b43e8d69108a2fc2e2e29515a6b562fcda9ed85ca6f62caff0d9609e52f199",
+      "width": 1536
+    },
     "static/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg": {
       "format": "JPEG",
       "height": 768,

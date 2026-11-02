@@ -209,6 +209,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-the-nine-oclock-filter.webp",
+			"src": "/images/art-the-nine-oclock-filter.webp",
+			"bytes": 116306,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
 			"src": "/images/art-vibe-fucking-coding-mustard-oil-and-other-missing-ingredients.jpg",
 			"bytes": 398315,
