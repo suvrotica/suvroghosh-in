@@ -38,9 +38,17 @@ describe('gallery endpoint boundaries', () => {
 		expect(fetch).not.toHaveBeenCalled();
 	});
 
-	it.each(['null', '[]', '"value"', '{', '{"id":"arbitrary"}'])(
-		'rejects an invalid or arbitrary input %s',
-		async (body) => expect((await invoke(body)).status).toBe(400)
+	it.each([
+		'null',
+		'[]',
+		'"value"',
+		'{',
+		'{"id":"arbitrary"}',
+		'{"batch":-1}',
+		'{"batch":100000}',
+		'{"batch":0,"page":1}'
+	])('rejects an invalid or arbitrary input %s', async (body) =>
+		expect((await invoke(body)).status).toBe(400)
 	);
 
 	it('limits streamed bodies with no trustworthy length header', async () => {
@@ -73,6 +81,15 @@ describe('gallery endpoint boundaries', () => {
 		expect((await response.json()).configuration).toBe('missing-key');
 		expect(response.headers.get('cache-control')).toBe('private, no-store');
 		expect(fetch).not.toHaveBeenCalled();
+	});
+
+	it('accepts a fixed initial batch but stops its scan when a credential is missing', async () => {
+		const response = await invoke('{"batch":0}');
+		expect(response.status).toBe(200);
+		const body = await response.json();
+		expect(body.configuration).toBe('missing-key');
+		expect(body.nextBatch).toBeUndefined();
+		expect(response.headers.get('cache-control')).toBe('private, no-store');
 	});
 
 	it('applies a per-client process-local rate limit even in no-key mode', async () => {

@@ -2,110 +2,128 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(370,179)" font-size="118" style="fill:#d88988">Youtube</text>
-<text transform="translate(900,693)" font-size="94" style="fill:#c49a6c">Videos</text>
-<text transform="translate(33,286)" font-size="94" style="fill:#b6c3dd">Open</text>
-<text transform="translate(744,498)" font-size="84" style="fill:#d88988">Check</text>
-<text transform="translate(230,678)" font-size="72" style="fill:#c49a6c">Collection</text>
-<text transform="translate(55,584)" font-size="72" style="fill:#d9c89e">Playlists</text>
-<text transform="translate(784,279)" font-size="72" style="fill:#c49a6c">Saved</text>
-<text transform="translate(788,370)" font-size="72" style="fill:#d9c89e">Playlist</text>
-<text transform="translate(193,489)" font-size="72" style="fill:#c49a6c">Original</text>
-<text transform="translate(354,47)" font-size="59" style="fill:#9fc9c5">Posts</text>
-<text transform="translate(239,420)" font-size="59" style="fill:#b6c3dd">Press</text>
-<text transform="translate(1088,614)" font-size="59" style="fill:#e0b879">Play</text>
-<text transform="translate(727,437) rotate(-90)" font-size="59" style="fill:#d88988">Choose</text>
-<text transform="translate(1013,515)" font-size="59" style="fill:#b6c3dd">Music</text>
-<text transform="translate(1007,290)" font-size="59" style="fill:#9fc9c5">Maths</text>
-<text transform="translate(332,339)" font-size="59" style="fill:#d88988">Channels</text>
-<text transform="translate(174,209)" font-size="59" style="fill:#d6a79f">Player</text>
-<text transform="translate(1264,498) rotate(-90)" font-size="59" style="fill:#e0b879">Current</text>
-<text transform="translate(574,618)" font-size="59" style="fill:#a9b7a3">Uploads</text>
-<text transform="translate(953,192)" font-size="59" style="fill:#d9c89e">Change</text>
-<text transform="translate(881,78)" font-size="59" style="fill:#b6c3dd">Gallery</text>
-<text transform="translate(510,543)" font-size="59" style="fill:#d6a79f">Checks</text>
-<text transform="translate(67,55)" font-size="59" style="fill:#d6a79f">Requests</text>
-<text transform="translate(308,264)" font-size="59" style="fill:#d9c89e">Follow</text>
-<text transform="translate(564,58)" font-size="59" style="fill:#d6a79f">Browser</text>
-<text transform="translate(1003,461)" font-size="59" style="fill:#d5d2c2">Load</text>
-<text transform="translate(42,395)" font-size="59" style="fill:#c49a6c">Media</text>
-<text transform="translate(1260,198) rotate(-90)" font-size="59" style="fill:#d5d2c2">Links</text>
-<text transform="translate(773,388) rotate(-90)" font-size="43" style="fill:#d5d2c2">Pick</text>
-<text transform="translate(774,701)" font-size="43" style="fill:#9fc9c5">Topic</text>
-<text transform="translate(15,467)" font-size="43" style="fill:#e0b879">Watch</text>
-<text transform="translate(246,167)" font-size="43" style="fill:#d9c89e">Tabs</text>
-<text transform="translate(799,540)" font-size="43" style="fill:#b6c3dd">Separate</text>
-<text transform="translate(20,92)" font-size="43" style="fill:#c49a6c">Films</text>
-<text transform="translate(363,381)" font-size="43" style="fill:#c7d7b5">Audiobooks</text>
-<text transform="translate(58,715)" font-size="42" style="fill:#d6a79f">Documentaries</text>
-<text transform="translate(873,579)" font-size="42" style="fill:#d6a79f">Talks</text>
-<text transform="translate(602,715)" font-size="42" style="fill:#d5d2c2">Filters</text>
-<text transform="translate(659,428) rotate(-90)" font-size="42" style="fill:#c49a6c">Bengali</text>
-<text transform="translate(12,677)" font-size="42" style="fill:#a9b7a3">Hindi</text>
-<text transform="translate(13,150)" font-size="42" style="fill:#8fb7d0">English</text>
-<text transform="translate(873,125)" font-size="39" style="fill:#c7d7b5">Rabindrasangeet</text>
-<text transform="translate(36,424) rotate(-90)" font-size="39" style="fill:#d6a79f">Search</text>
-<text transform="translate(758,221)" font-size="39" style="fill:#9fc9c5">Looks</text>
-<text transform="translate(63,524)" font-size="39" style="fill:#8fb7d0">Available</text>
-<text transform="translate(189,118)" font-size="39" style="fill:#9fc9c5">Titles</text>
-<text transform="translate(540,218)" font-size="39" style="fill:#a9b7a3">Topics</text>
-<text transform="translate(537,479)" font-size="39" style="fill:#e0b879">Example</text>
-<text transform="translate(1198,432) rotate(-90)" font-size="39" style="fill:#d88988">Find</text>
-<text transform="translate(719,652)" font-size="39" style="fill:#b6c3dd">Linear</text>
-<text transform="translate(425,419)" font-size="39" style="fill:#8fb7d0">Algebra</text>
-<text transform="translate(1018,555)" font-size="39" style="fill:#d9c89e">Statistics</text>
-<text transform="translate(757,425)" font-size="39" style="fill:#d88988">Select</text>
-<text transform="translate(1142,231)" font-size="39" style="fill:#c49a6c">Shows</text>
-<text transform="translate(589,94)" font-size="39" style="fill:#d9c89e">Passed</text>
-<text transform="translate(827,609)" font-size="35" style="fill:#9fc9c5">Availability</text>
-<text transform="translate(52,339)" font-size="35" style="fill:#d6a79f">Order</text>
-<text transform="translate(76,632)" font-size="35" style="fill:#b6c3dd">Missing</text>
-<text transform="translate(384,297)" font-size="35" style="fill:#c7d7b5">Private</text>
-<text transform="translate(369,80)" font-size="35" style="fill:#d5d2c2">Disappear</text>
-<text transform="translate(196,315)" font-size="35" style="fill:#9fc9c5">Stop</text>
-<text transform="translate(961,402)" font-size="35" style="fill:#c49a6c">Allowing</text>
-<text transform="translate(1045,32)" font-size="35" style="fill:#9fc9c5">Playback</text>
-<text transform="translate(375,615)" font-size="35" style="fill:#c49a6c">Websites</text>
-<text transform="translate(784,308)" font-size="33" style="fill:#9fc9c5">Information</text>
-<text transform="translate(89,193)" font-size="33" style="fill:#d6a79f">Uses</text>
-<text transform="translate(469,711)" font-size="33" style="fill:#d6a79f">Short</text>
-<text transform="translate(998,236)" font-size="33" style="fill:#c49a6c">Cache</text>
-<text transform="translate(1273,684) rotate(-90)" font-size="33" style="fill:#d5d2c2">Avoid</text>
-<text transform="translate(69,422)" font-size="30" style="fill:#a9b7a3">Repeating</text>
-<text transform="translate(831,22)" font-size="24" style="fill:#d5d2c2">Unnecessarily</text>
-<text transform="translate(951,229) rotate(-90)" font-size="24" style="fill:#e0b879">Refresh</text>
-<text transform="translate(764,101)" font-size="24" style="fill:#a9b7a3">Results</text>
-<text transform="translate(620,565)" font-size="24" style="fill:#9fc9c5">Restrictions</text>
-<text transform="translate(257,365)" font-size="24" style="fill:#d88988">Appear</text>
-<text transform="translate(383,512)" font-size="24" style="fill:#d88988">Happens</text>
-<text transform="translate(1100,314)" font-size="24" style="fill:#a9b7a3">Failed</text>
-<text transform="translate(916,715)" font-size="24" style="fill:#d5d2c2">Connection</text>
-<text transform="translate(611,249)" font-size="24" style="fill:#a9b7a3">Mean</text>
-<text transform="translate(227,78)" font-size="24" style="fill:#c49a6c">Deleted</text>
-<text transform="translate(502,567)" font-size="24" style="fill:#d5d2c2">Large</text>
-<text transform="translate(41,626) rotate(-90)" font-size="24" style="fill:#d9c89e">Checked</text>
-<text transform="translate(451,109)" font-size="24" style="fill:#b6c3dd">Sections</text>
-<text transform="translate(402,211)" font-size="24" style="fill:#b6c3dd">Continues</text>
-<text transform="translate(230,610)" font-size="24" style="fill:#a9b7a3">Generated</text>
-<text transform="translate(271,291)" font-size="24" style="fill:#d5d2c2">Mixes</text>
-<text transform="translate(68,112)" font-size="24" style="fill:#9fc9c5">Contents</text>
-<text transform="translate(1221,378) rotate(-90)" font-size="24" style="fill:#d5d2c2">Fixed</text>
-<text transform="translate(1008,146)" font-size="24" style="fill:#a9b7a3">Reliably</text>
-<text transform="translate(1123,715)" font-size="24" style="fill:#d5d2c2">Enumerable</text>
-<text transform="translate(1197,522)" font-size="24" style="fill:#8fb7d0">Site</text>
-<text transform="translate(1131,54)" font-size="24" style="fill:#9fc9c5">Server</text>
-<text transform="translate(1156,252)" font-size="24" style="fill:#a9b7a3">Content</text>
-<text transform="translate(99,230)" font-size="24" style="fill:#8fb7d0">Thumbnails</text>
-<text transform="translate(818,447)" font-size="24" style="fill:#c7d7b5">Embedded</text>
-<text transform="translate(1163,462) rotate(-90)" font-size="24" style="fill:#b6c3dd">Connect</text>
-<text transform="translate(14,488)" font-size="24" style="fill:#d5d2c2">Permission</text>
-<text transform="translate(663,673)" font-size="22" style="fill:#e0b879">Explicit</text>
-<text transform="translate(406,539)" font-size="22" style="fill:#8fb7d0">Action</text>
-<text transform="translate(165,343)" font-size="22" style="fill:#c49a6c">Preferences</text>
-<text transform="translate(891,203) rotate(-90)" font-size="22" style="fill:#d88988">Lets</text>
-<text transform="translate(787,390)" font-size="22" style="fill:#d5d2c2">Choice</text>
-<text transform="translate(546,265)" font-size="22" style="fill:#a9b7a3">Kept</text>
-<text transform="translate(21,276) rotate(-90)" font-size="22" style="fill:#d5d2c2">Including</text>
-<text transform="translate(1149,572)" font-size="18" style="fill:#d5d2c2">Temporarily</text>
-<text transform="translate(1065,635)" font-size="18" style="fill:#d6a79f">Unavailable</text>
-<text transform="translate(30,205)" font-size="18" style="fill:#d6a79f">Visit</text>
+<text transform="translate(301,462)" font-size="94" style="fill:#d6a79f">Open</text>
+<text transform="translate(438,704)" font-size="94" style="fill:#b6c3dd">Check</text>
+<text transform="translate(760,465)" font-size="84" style="fill:#d88988">Collection</text>
+<text transform="translate(309,622)" font-size="84" style="fill:#c49a6c">Videos</text>
+<text transform="translate(493,255)" font-size="84" style="fill:#a9b7a3">Playlist</text>
+<text transform="translate(608,587)" font-size="72" style="fill:#d6a79f">Saved</text>
+<text transform="translate(860,669)" font-size="72" style="fill:#d9c89e">Original</text>
+<text transform="translate(1017,320)" font-size="72" style="fill:#c49a6c">Checks</text>
+<text transform="translate(727,49)" font-size="59" style="fill:#9fc9c5">Playlists</text>
+<text transform="translate(379,389)" font-size="59" style="fill:#b6c3dd">Notes</text>
+<text transform="translate(904,605)" font-size="59" style="fill:#e0b879">Press</text>
+<text transform="translate(620,428) rotate(-90)" font-size="59" style="fill:#d88988">Play</text>
+<text transform="translate(957,529)" font-size="59" style="fill:#b6c3dd">Choose</text>
+<text transform="translate(224,299)" font-size="59" style="fill:#9fc9c5">Music</text>
+<text transform="translate(100,431)" font-size="59" style="fill:#d88988">Maths</text>
+<text transform="translate(125,248)" font-size="59" style="fill:#d6a79f">Science</text>
+<text transform="translate(90,527) rotate(-90)" font-size="59" style="fill:#e0b879">Available</text>
+<text transform="translate(53,686)" font-size="59" style="fill:#a9b7a3">Channels</text>
+<text transform="translate(978,202)" font-size="59" style="fill:#d9c89e">Player</text>
+<text transform="translate(43,134)" font-size="59" style="fill:#b6c3dd">Current</text>
+<text transform="translate(476,74)" font-size="59" style="fill:#8fb7d0">Uploads</text>
+<text transform="translate(948,137)" font-size="59" style="fill:#d9c89e">Change</text>
+<text transform="translate(670,354)" font-size="59" style="fill:#d9c89e">Private</text>
+<text transform="translate(218,51)" font-size="59" style="fill:#d6a79f">Gallery</text>
+<text transform="translate(586,511)" font-size="59" style="fill:#d5d2c2">Requests</text>
+<text transform="translate(959,368)" font-size="59" style="fill:#c49a6c">Appear</text>
+<text transform="translate(1257,234) rotate(-90)" font-size="59" style="fill:#d5d2c2">Follow</text>
+<text transform="translate(934,315) rotate(-90)" font-size="59" style="fill:#d5d2c2">Checked</text>
+<text transform="translate(73,195)" font-size="59" style="fill:#e0b879">Continue</text>
+<text transform="translate(146,546)" font-size="59" style="fill:#e0b879">Browser</text>
+<text transform="translate(206,348)" font-size="59" style="fill:#d9c89e">Load</text>
+<text transform="translate(57,597)" font-size="59" style="fill:#b6c3dd">Media</text>
+<text transform="translate(37,51)" font-size="59" style="fill:#c49a6c">Links</text>
+<text transform="translate(1067,97)" font-size="43" style="fill:#9fc9c5">Posts</text>
+<text transform="translate(406,342)" font-size="43" style="fill:#a9b7a3">Pick</text>
+<text transform="translate(167,484)" font-size="43" style="fill:#e0b879">Topic</text>
+<text transform="translate(1115,604)" font-size="43" style="fill:#a9b7a3">Watch</text>
+<text transform="translate(742,663)" font-size="43" style="fill:#d9c89e">Tabs</text>
+<text transform="translate(968,250)" font-size="43" style="fill:#d5d2c2">Separate</text>
+<text transform="translate(842,712)" font-size="43" style="fill:#8fb7d0">Films</text>
+<text transform="translate(6,634)" font-size="43" style="fill:#c7d7b5">Audiobooks</text>
+<text transform="translate(38,396) rotate(-90)" font-size="43" style="fill:#9fc9c5">Documentaries</text>
+<text transform="translate(624,389)" font-size="40" style="fill:#9fc9c5">Technology</text>
+<text transform="translate(725,712)" font-size="40" style="fill:#d88988">Food</text>
+<text transform="translate(1072,703)" font-size="40" style="fill:#e0b879">Talks</text>
+<text transform="translate(119,87)" font-size="40" style="fill:#d88988">Filters</text>
+<text transform="translate(391,535)" font-size="40" style="fill:#9fc9c5">Bengali</text>
+<text transform="translate(240,389)" font-size="40" style="fill:#e0b879">Hindi</text>
+<text transform="translate(708,291)" font-size="40" style="fill:#c49a6c">English</text>
+<text transform="translate(954,558)" font-size="33" style="fill:#d5d2c2">Rabindrasangeet</text>
+<text transform="translate(572,452)" font-size="33" style="fill:#8fb7d0">Search</text>
+<text transform="translate(1153,384)" font-size="33" style="fill:#d9c89e">Looks</text>
+<text transform="translate(196,715)" font-size="33" style="fill:#d88988">Titles</text>
+<text transform="translate(1096,48)" font-size="33" style="fill:#c49a6c">Topics</text>
+<text transform="translate(416,288)" font-size="33" style="fill:#d9c89e">Example</text>
+<text transform="translate(482,491)" font-size="33" style="fill:#9fc9c5">Find</text>
+<text transform="translate(95,292)" font-size="33" style="fill:#d6a79f">Linear</text>
+<text transform="translate(646,619)" font-size="33" style="fill:#b6c3dd">Algebra</text>
+<text transform="translate(38,597) rotate(-90)" font-size="33" style="fill:#c7d7b5">Statistics</text>
+<text transform="translate(94,377)" font-size="33" style="fill:#d5d2c2">Courses</text>
+<text transform="translate(891,610) rotate(-90)" font-size="33" style="fill:#9fc9c5">Physics</text>
+<text transform="translate(750,96)" font-size="32" style="fill:#c49a6c">Biology</text>
+<text transform="translate(371,215)" font-size="32" style="fill:#9fc9c5">Select</text>
+<text transform="translate(1177,258)" font-size="32" style="fill:#c49a6c">Shows</text>
+<text transform="translate(943,77)" font-size="32" style="fill:#b6c3dd">Passed</text>
+<text transform="translate(4,709)" font-size="25" style="fill:#d6a79f">Availability</text>
+<text transform="translate(915,394)" font-size="25" style="fill:#d9c89e">Order</text>
+<text transform="translate(96,342)" font-size="25" style="fill:#c49a6c">Missing</text>
+<text transform="translate(626,416)" font-size="25" style="fill:#d5d2c2">Disappear</text>
+<text transform="translate(378,705) rotate(-90)" font-size="25" style="fill:#a9b7a3">Stop</text>
+<text transform="translate(287,79)" font-size="25" style="fill:#d5d2c2">Allowing</text>
+<text transform="translate(958,271) rotate(-90)" font-size="25" style="fill:#e0b879">Playback</text>
+<text transform="translate(505,24)" font-size="25" style="fill:#a9b7a3">Websites</text>
+<text transform="translate(1078,489)" font-size="25" style="fill:#9fc9c5">Information</text>
+<text transform="translate(1202,700)" font-size="25" style="fill:#d88988">Uses</text>
+<text transform="translate(1181,526)" font-size="25" style="fill:#d88988">Short</text>
+<text transform="translate(399,255)" font-size="25" style="fill:#a9b7a3">Cache</text>
+<text transform="translate(528,570)" font-size="25" style="fill:#d5d2c2">Avoid</text>
+<text transform="translate(1149,406)" font-size="24" style="fill:#a9b7a3">Repeating</text>
+<text transform="translate(520,642)" font-size="19" style="fill:#b6c3dd">Unnecessarily</text>
+<text transform="translate(383,501)" font-size="19" style="fill:#d5d2c2">Refresh</text>
+<text transform="translate(140,554) rotate(-90)" font-size="19" style="fill:#d9c89e">Results</text>
+<text transform="translate(525,93)" font-size="19" style="fill:#b6c3dd">Restrictions</text>
+<text transform="translate(979,705)" font-size="19" style="fill:#d6a79f">Happens</text>
+<text transform="translate(152,269)" font-size="19" style="fill:#a9b7a3">Failed</text>
+<text transform="translate(248,154)" font-size="19" style="fill:#b6c3dd">Connection</text>
+<text transform="translate(1021,97)" font-size="19" style="fill:#d9c89e">Mean</text>
+<text transform="translate(557,283)" font-size="19" style="fill:#8fb7d0">Deleted</text>
+<text transform="translate(805,613)" font-size="19" style="fill:#b6c3dd">Small</text>
+<text transform="translate(681,470)" font-size="19" style="fill:#d5d2c2">Batches</text>
+<text transform="translate(269,504)" font-size="19" style="fill:#8fb7d0">Selections</text>
+<text transform="translate(577,198)" font-size="19" style="fill:#9fc9c5">Remaining</text>
+<text transform="translate(113,556) rotate(-90)" font-size="19" style="fill:#a9b7a3">Interrupted</text>
+<text transform="translate(119,311)" font-size="19" style="fill:#8fb7d0">Checking</text>
+<text transform="translate(442,105)" font-size="19" style="fill:#c7d7b5">Resumes</text>
+<text transform="translate(421,684) rotate(-90)" font-size="19" style="fill:#b6c3dd">Large</text>
+<text transform="translate(1080,268)" font-size="19" style="fill:#d5d2c2">Sections</text>
+<text transform="translate(1042,19)" font-size="19" style="fill:#c49a6c">Continues</text>
+<text transform="translate(702,532)" font-size="19" style="fill:#d88988">Generated</text>
+<text transform="translate(742,240) rotate(-90)" font-size="19" style="fill:#9fc9c5">Mixes</text>
+<text transform="translate(974,411)" font-size="19" style="fill:#9fc9c5">Contents</text>
+<text transform="translate(299,116)" font-size="19" style="fill:#c49a6c">Fixed</text>
+<text transform="translate(1170,346)" font-size="19" style="fill:#a9b7a3">Reliably</text>
+<text transform="translate(287,640)" font-size="19" style="fill:#d5d2c2">Enumerable</text>
+<text transform="translate(296,482)" font-size="19" style="fill:#d88988">Site</text>
+<text transform="translate(1206,627)" font-size="19" style="fill:#d6a79f">Server</text>
+<text transform="translate(390,481)" font-size="19" style="fill:#d6a79f">Content</text>
+<text transform="translate(562,530)" font-size="19" style="fill:#d6a79f">Thumbnails</text>
+<text transform="translate(1042,391)" font-size="19" style="fill:#a9b7a3">Embedded</text>
+<text transform="translate(1070,624)" font-size="19" style="fill:#9fc9c5">Connect</text>
+<text transform="translate(1274,551) rotate(-90)" font-size="19" style="fill:#d88988">Permission</text>
+<text transform="translate(629,19)" font-size="19" style="fill:#d5d2c2">Explicit</text>
+<text transform="translate(945,302)" font-size="19" style="fill:#9fc9c5">Action</text>
+<text transform="translate(568,427) rotate(-90)" font-size="19" style="fill:#9fc9c5">Preferences</text>
+<text transform="translate(673,97)" font-size="19" style="fill:#d88988">Lets</text>
+<text transform="translate(235,605)" font-size="19" style="fill:#c49a6c">Choice</text>
+<text transform="translate(1206,202) rotate(-90)" font-size="19" style="fill:#b6c3dd">Savednote</text>
+<text transform="translate(1192,649)" font-size="19" style="fill:#8fb7d0">Labels</text>
+<text transform="translate(911,510)" font-size="19" style="fill:#d88988">Kept</text>
+<text transform="translate(858,64)" font-size="15" style="fill:#c7d7b5">Including</text>
+<text transform="translate(372,407) rotate(-90)" font-size="15" style="fill:#e0b879">Temporarily</text>
+<text transform="translate(390,231)" font-size="15" style="fill:#d6a79f">Unavailable</text>
+<text transform="translate(127,150)" font-size="15" style="fill:#d6a79f">Remain</text>
+<text transform="translate(429,86)" font-size="15" style="fill:#9fc9c5">Visit</text>
 </svg>

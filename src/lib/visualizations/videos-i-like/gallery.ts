@@ -7,6 +7,9 @@ export const TOPICS: { id: 'all' | Topic; label: string }[] = [
 	{ id: 'audiobooks', label: 'Audiobooks' },
 	{ id: 'documentaries', label: 'Documentaries' },
 	{ id: 'maths', label: 'Maths' },
+	{ id: 'science', label: 'Science' },
+	{ id: 'technology', label: 'Technology' },
+	{ id: 'food', label: 'Food' },
 	{ id: 'talks', label: 'Talks' },
 	{ id: 'other', label: 'Other' }
 ];

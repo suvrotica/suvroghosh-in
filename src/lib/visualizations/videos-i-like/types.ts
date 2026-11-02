@@ -4,6 +4,9 @@ export type Topic =
 	| 'audiobooks'
 	| 'documentaries'
 	| 'maths'
+	| 'science'
+	| 'technology'
+	| 'food'
 	| 'talks'
 	| 'other';
 export type MusicTopic = 'bengali' | 'hindi' | 'english' | 'rabindrasangeet';
@@ -11,7 +14,10 @@ export type AvailabilityState = 'eligible' | 'unavailable' | 'unknown';
 
 export interface SourceReference {
 	file: string;
-	url: string;
+	/** Only public source pages have a URL; local notes have a safe label instead. */
+	url?: string;
+	label?: string;
+	collection?: 'obsidian';
 	originalUrl: string;
 	order: number;
 	startSeconds?: number;
@@ -33,6 +39,14 @@ export interface Catalogue {
 	repository: string;
 	branch: string;
 	commit: string;
+	fileCount: number;
+	referenceCount: number;
+	entries: CatalogueEntry[];
+}
+
+export interface SupplementalCatalogue {
+	version: 1;
+	collection: string;
 	fileCount: number;
 	referenceCount: number;
 	entries: CatalogueEntry[];
@@ -71,4 +85,6 @@ export interface GalleryResponse {
 	expiresAt: string | null;
 	configuration: 'ready' | 'missing-key';
 	partial: boolean;
+	/** Next server-defined group of playlist checks; not a provider token. */
+	nextBatch?: number;
 }

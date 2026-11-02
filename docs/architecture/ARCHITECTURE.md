@@ -1324,15 +1324,21 @@ will play.
 Videos I Like is an ordinary Markdown app at `/blog/visualizations/videos-i-like`.
 Its component under `src/lib/components/visualizations/videos-i-like` owns topic
 tabs, music filters, search, the selected queue and one player lifecycle. The
-versioned manifest under `src/lib/visualizations/videos-i-like` is imported by
-`scripts/import-videos-i-like.mjs` from a resolved source-repository commit. It
-retains canonical identities, multiple source references, original URLs, ordering
-and category memberships; temporary availability never deletes editorial entries.
-The initial 108-file source snapshot has 89 distinct standalone videos, five
-ordinary playlists and one generated Mix, from 96 direct references.
+GitHub manifest under `src/lib/visualizations/videos-i-like` is imported by
+`scripts/import-videos-i-like.mjs` from a resolved source-repository commit.
+`scripts/import-obsidian-videos.mjs` explicitly reads a supplied local Markdown
+folder and produces a separate `obsidian.json` supplement. It publishes normalized
+YouTube links, stable source identities and short collection labels; note prose
+and machine-specific paths stay local. Neither import runs in the reader or
+routine build flow. `catalogue.ts` merges entries by canonical identity while
+retaining source references, ordering and category memberships. Refreshing either
+source cannot overwrite the other. Temporary availability never deletes editorial
+entries. The initial 108-file GitHub snapshot has 95 selections from 96 references;
+30 local notes add 270 selections from 279 references. Together they contain 165
+standalone videos, 199 ordinary playlists and one generated Mix.
 
-`POST /api/videos-i-like` reads the fixed catalogue or a validated known playlist
-continuation. `src/lib/server/videos-i-like` owns official YouTube Data API
+`POST /api/videos-i-like` reads fixed catalogue batches or a validated known
+playlist continuation. `src/lib/server/videos-i-like` owns official YouTube Data API
 lookups and screening behind `YOUTUBE_DATA_API_KEY`, streamed request bounds,
 same-origin admission, deadlines and request/provider limits. Browser code does
 not import the credential. Short process-local metadata caches and in-flight
@@ -1347,15 +1353,27 @@ public resources do not distinguish deletion from privacy; unavailable
 credentials, quota, malformed responses and network failures remain unknown.
 Metadata eligibility cannot guarantee viewer-specific playback. Provider facts
 are cached independently of viewer decisions, and server location is not used
-as the visitor's country. Playlists are checked in bounded ordered pages with
-explicit partial counts/continuation. The generated Mix remains an external
-link when it cannot be reliably enumerated.
+as the visitor's country. The enlarged catalogue is checked progressively;
+eligible cards appear as bounded checks complete rather than waiting for every
+course playlist. A playlist is not eligible until at least one checked member
+passes metadata screening.
+Playlist members are checked in bounded ordered pages with explicit partial
+counts/continuation. The generated Mix remains an external link when it cannot
+be reliably enumerated.
+
+The initial request checks standalone videos and the first eight ordinary
+playlists; a returned `nextBatch` advances through fixed groups of at most eight
+playlists. Each batch is independently addressable on a cold server process and
+shares the same service-owned provider limits and cache. Pending batches are
+distinct from actual failures. Per-entry freshness determines each response's
+expiry, and the browser takes the earliest expiry across merged responses.
+Continuing one playlist on a cold process does not initialize unrelated batches.
 
 Opening the app can request first-party metadata before permission without
 causing the visitor's browser to contact YouTube. Browser thumbnails, script and
 iframe requests remain gated by the existing media preference or an explained
-one-time action. Local placeholders render initially. Revocation or expiry
-removes provider media and cancels a starting or active player. The gallery
+one-time action. Local placeholders render initially. Media permission revocation
+or expiry removes provider media and cancels a starting or active player. The gallery
 reuses Listening Room's official IFrame API adapter, including real origin,
 referrer policy and teardown. Optional numeric error codes and an accessible
 iframe title extend that adapter without changing existing callers.
@@ -1369,9 +1387,13 @@ hidden autoplay probe, scraping, media extraction or proxy.
 
 ```mermaid
 flowchart LR
-    Drafts["Pinned GitHub drafts / import as data"] --> Catalogue["Versioned editorial catalogue"]
+    Drafts["Pinned GitHub drafts / import as data"] --> Remote["GitHub manifest"]
+    Notes["Explicit local Markdown folder"] --> Extract["Extract links + topic labels only"]
+    Extract --> Local["Supplemental manifest / private prose stays local"]
+    Remote --> Catalogue["Merged editorial catalogue / deduplicated identities"]
+    Local --> Catalogue
     Catalogue --> Gallery["Markdown app / tabs + search + queue"]
-    Gallery --> Endpoint["Same-origin bounded POST / curated IDs only"]
+    Gallery --> Endpoint["Same-origin bounded POST / fixed catalogue batches"]
     Catalogue --> Endpoint
     Endpoint --> Cache["Short process-local cache + in-flight coalescing"]
     Cache --> Provider["Official Data API / private key + project quota"]

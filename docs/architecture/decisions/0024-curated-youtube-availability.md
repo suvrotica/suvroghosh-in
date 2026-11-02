@@ -40,8 +40,8 @@ generated Mix as an external link when it cannot be reliably enumerated. Use a
 gallery-owned queue with one selected video in the existing visible player.
 
 Let the first-party endpoint run on opening, while retaining media permission
-for all browser requests to provider thumbnails, scripts and frames. Revocation
-or expiry unloads provider media and cancels player startup. Extend the existing
+for all browser requests to provider thumbnails, scripts and frames. Media permission
+revocation or expiry unloads provider media and cancels player startup. Extend the existing
 adapter with a backwards-compatible numeric error field and optional accessible
 title rather than duplicating its lifecycle code.
 
@@ -68,6 +68,38 @@ scraping, media extraction or streaming proxy is introduced.
   explains incomplete checks and offers retry instead of inventing playability.
 - The shared adapter's new fields are optional. Existing Listening Room behavior
   and its local-audio/extension boundaries must remain unchanged.
+
+## 3 November 2026 extension: saved notes and progressive checks
+
+Adding the author's local Obsidian Videos collection increases the catalogue to
+199 ordinary playlists. Eagerly checking 50 members of every playlist in one
+request would exceed the intended request and cache bounds. Increasing all
+timeouts and quotas would make the first visit more expensive and delay otherwise
+available videos.
+
+Keep the local source as a separately generated, checked-in link manifest.
+The local import requires an explicit folder and publishes normalized YouTube
+links and short collection labels, not note prose, absolute vault paths or fake
+public note URLs. Merge the two manifests by canonical identity, preserving
+memberships and provenance. The build does not need access to the local vault,
+and either source can be refreshed without erasing the other.
+
+Check the enlarged catalogue in bounded stages and expose eligible cards as
+results arrive. Catalogue batching is distinct from continuing the members of
+one selected playlist. The initial stage checks standalone videos and eight
+playlists; `nextBatch` addresses successive fixed groups of at most eight.
+A later stage can run on a cold server process without repeating the initial
+stage. All stages share the same service-owned provider budget,
+concurrency and metadata caches; a batch is not a new quota account. Intentionally
+pending work is not classified as a provider failure or deletion. A playlist
+still needs a checked eligible member before it enters the playable gallery.
+Per-entry freshness prevents later responses from extending earlier results;
+the browser preserves the earliest expiry while merging batches.
+
+This extends the existing fixed-catalogue service and state ownership. It adds no
+reader file access, arbitrary URL lookup, new persistence store or credential.
+Verify source isolation and duplicate merging, batch admission and completion,
+shared limits, and the UI distinction between pending checks and actual failures.
 
 ## Verification
 

@@ -1,10 +1,18 @@
 import type { Catalogue } from '$lib/visualizations/videos-i-like/types';
-import { MAX_PLAYLIST_PAGES, type GalleryQuery } from './service';
+import { MAX_PLAYLIST_PAGES, PLAYLIST_BATCH_SIZE, type GalleryQuery } from './service';
 
 export function parseGalleryQuery(value: unknown, catalogue: Catalogue): GalleryQuery | null {
 	if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
 	const input = value as Record<string, unknown>;
 	if (Object.keys(input).length === 0) return {};
+	if (Object.keys(input).length === 1 && typeof input.batch === 'number') {
+		const batchCount = Math.ceil(
+			catalogue.entries.filter((entry) => entry.kind === 'playlist').length / PLAYLIST_BATCH_SIZE
+		);
+		return Number.isInteger(input.batch) && input.batch >= 0 && input.batch < batchCount
+			? { batch: input.batch }
+			: null;
+	}
 	if (
 		Object.keys(input).length !== 2 ||
 		typeof input.playlistKey !== 'string' ||

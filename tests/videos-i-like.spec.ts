@@ -155,12 +155,13 @@ async function api(
 	await page.route('**/api/videos-i-like', handle);
 }
 
-async function openGallery(page: Page) {
+async function openGallery(page: Page, waitForComplete = true) {
 	await page.goto(article);
 	await expect(gallery(page)).toBeVisible();
-	await expect(
-		gallery(page).getByRole('button', { name: 'Refresh videos', exact: true })
-	).toBeEnabled();
+	if (waitForComplete)
+		await expect(
+			gallery(page).getByRole('button', { name: 'Refresh videos', exact: true })
+		).toBeEnabled();
 	const dismiss = page.getByRole('button', {
 		name: 'Dismiss privacy notice without choosing',
 		exact: true
@@ -624,6 +625,121 @@ test('ordinary playlist pagination is not reported as an availability check fail
 	await expect(
 		gallery(page).getByRole('button', { name: 'Play Linear algebra playlist', exact: true })
 	).toBeVisible();
+});
+
+test('progressive checks add new topics without interrupting a selected video', async ({
+	page
+}) => {
+	let release!: () => void;
+	const delayed = new Promise<void>((resolve) => {
+		release = resolve;
+	});
+	const bodies: unknown[] = [];
+	await api(page, async (route) => {
+		const body = route.request().postDataJSON();
+		bodies.push(body);
+		const response = fixtures();
+		response.items = [response.items[0]];
+		if (body.batch === 1) {
+			await delayed;
+			response.items = [videoItem('e44meSqTkH0', 'Physics lesson', ['science'])];
+		} else response.nextBatch = 1;
+		await route.fulfill({ json: response });
+	});
+	await openGallery(page, false);
+	await expect(gallery(page).locator('.vif-card')).toHaveCount(1);
+	await expect(gallery(page).locator('.vif-status')).toContainText('Checking videos');
+	await enableMedia(page);
+	await select(page, 'Bengali evening song');
+	release();
+	await expect(gallery(page).getByRole('button', { name: 'Refresh videos' })).toBeEnabled();
+	await expect(gallery(page).locator('.vif-card')).toHaveCount(2);
+	await expect(
+		panel(page).getByRole('heading', { name: 'Bengali evening song', exact: true })
+	).toBeVisible();
+	await expect(frame(page)).toHaveCount(1);
+	await clickControl(gallery(page).getByRole('tab', { name: 'Science', exact: true }));
+	await expect(
+		gallery(page).getByRole('button', { name: 'Play Physics lesson', exact: true })
+	).toBeVisible();
+	await expect(gallery(page).locator('.vif-card')).toHaveCount(1);
+	expect(bodies).toEqual([{}, { batch: 1 }]);
+});
+
+test('an interrupted catalogue check can resume without losing the checked cards', async ({
+	page
+}) => {
+	let attempts = 0;
+	const bodies: unknown[] = [];
+	await api(page, async (route) => {
+		const body = route.request().postDataJSON();
+		bodies.push(body);
+		const response = fixtures();
+		response.items = [response.items[0]];
+		if (body.batch === 1) {
+			if (++attempts === 1) {
+				await route.fulfill({ status: 429, json: { error: 'Please wait.' } });
+				return;
+			}
+			response.items = [videoItem('e44meSqTkH0', 'Technology lesson', ['technology'])];
+		} else response.nextBatch = 1;
+		await route.fulfill({ json: response });
+	});
+	await openGallery(page);
+	await expect(
+		gallery(page).getByRole('button', { name: 'Continue checking', exact: true })
+	).toBeVisible();
+	await expect(gallery(page).locator('.vif-card')).toHaveCount(1);
+	await clickControl(gallery(page).getByRole('button', { name: 'Continue checking', exact: true }));
+	await expect(gallery(page).locator('.vif-card')).toHaveCount(2);
+	await expect(
+		gallery(page).getByRole('button', { name: 'Continue checking', exact: true })
+	).toHaveCount(0);
+	expect(bodies).toEqual([{}, { batch: 1 }, { batch: 1 }]);
+});
+
+test('new batches never extend the expiry of previously checked cards', async ({ page }) => {
+	await page.clock.install({ time: new Date() });
+	let release!: () => void;
+	const delayed = new Promise<void>((resolve) => {
+		release = resolve;
+	});
+	await api(page, async (route) => {
+		const response = fixtures();
+		response.items = [response.items[0]];
+		if (route.request().postDataJSON().batch === 1) {
+			await delayed;
+			response.expiresAt = new Date(Date.now() + 900_000).toISOString();
+			response.items = [videoItem('e44meSqTkH0', 'Science lesson', ['science'])];
+		} else {
+			response.expiresAt = new Date(Date.now() + 1_000).toISOString();
+			response.nextBatch = 1;
+		}
+		await route.fulfill({ json: response });
+	});
+	await openGallery(page, false);
+	await expect(gallery(page).locator('.vif-card')).toHaveCount(1);
+	await page.clock.fastForward(2_000);
+	release();
+	await expect(gallery(page).getByRole('button', { name: 'Refresh videos' })).toBeEnabled();
+	await expect(gallery(page).locator('.vif-status')).toContainText('expired');
+	await expect(gallery(page).locator('.vif-card')).toHaveCount(0);
+});
+
+test('saved-note fallback links use public YouTube URLs without local paths', async ({ page }) => {
+	await openGallery(page);
+	await clickControl(
+		gallery(page).getByText('Original collections and source links', { exact: true })
+	);
+	await expect(gallery(page).getByText('Saved-note collections', { exact: true })).toBeVisible();
+	const collections = gallery(page).locator('.vif-sources details');
+	await expect(collections).toHaveCount(30);
+	const links = await collections
+		.locator('a')
+		.evaluateAll((nodes) => nodes.map((node) => (node as HTMLAnchorElement).href));
+	expect(links.length).toBeGreaterThanOrEqual(270);
+	expect(links.every((url) => new URL(url).hostname === 'www.youtube.com')).toBe(true);
+	expect(await gallery(page).innerText()).not.toMatch(/C:\\Users|suvros_obsidian|obsidian:\/\//i);
 });
 
 test('390px dark layout keeps readable cards and a player at least 200px in both dimensions', async ({

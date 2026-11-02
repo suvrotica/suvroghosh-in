@@ -16542,9 +16542,9 @@
 			"dateModified": "2026-11-02"
 		},
 		"src/lib/posts/videos-i-like.md": {
-			"bodyHash": "33966b198c90fa3fc51fe3e47d8f77a488f7da9a442c322fd6591d89f6f24a73",
+			"bodyHash": "3163c86ed80f656839f04ff82672cd7365b2699edabb43c1652eab1661b9145b",
 			"hashVersion": 2,
-			"revisionHash": "d346011724d735fdb25fde9683d637e7b89fd3a85f0ae33f0c3b09b53ee42291",
+			"revisionHash": "81ea3f71b03f1a011417828b61bf8bba3ca0c856d5989fdf70b002b4fb82fbcd",
 			"generatedTags": [
 				"YouTube",
 				"Videos",
@@ -16554,8 +16554,8 @@
 				"Audiobooks",
 				"Documentaries",
 				"Mathematics",
-				"Bengali",
-				"Linear Algebra"
+				"Science",
+				"Technology"
 			],
 			"pinnedTags": [
 				"YouTube",
@@ -16566,8 +16566,8 @@
 				"Audiobooks",
 				"Documentaries",
 				"Mathematics",
-				"Bengali",
-				"Linear Algebra"
+				"Science",
+				"Technology"
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-03"

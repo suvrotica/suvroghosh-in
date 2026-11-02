@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { Catalogue, CatalogueEntry } from '$lib/visualizations/videos-i-like/types';
-import { CACHE_TTL_MS, createGalleryService, FAILURE_TTL_MS } from './service';
+import { CACHE_TTL_MS, createGalleryService, FAILURE_TTL_MS, PLAYLIST_BATCH_SIZE } from './service';
 import { parseGalleryQuery, viewerCountry } from './http';
 
 const videoEntry = (id = 'aaaaaaaaaaa'): CatalogueEntry => ({
@@ -46,6 +46,222 @@ const playlist = {
 	contentDetails: { itemCount: 2 }
 };
 afterEach(() => vi.useRealTimers());
+
+function manyPlaylists(count: number): CatalogueEntry[] {
+	return Array.from({ length: count }, (_, index) => ({
+		...playlistEntry,
+		id: `PLcourse${index}`,
+		key: `playlist:PLcourse${index}`,
+		url: `https://www.youtube.com/playlist?list=PLcourse${index}`
+	}));
+}
+function courseProvider(sharedVideo = false) {
+	return vi.fn(async (input: RequestInfo | URL) => {
+		const url = new URL(String(input));
+		if (url.pathname.endsWith('/playlists'))
+			return json(
+				url.searchParams
+					.get('id')!
+					.split(',')
+					.map((id) => ({ ...playlist, id }))
+			);
+		if (url.pathname.endsWith('/playlistItems')) {
+			const index = Number(url.searchParams.get('playlistId')!.replace('PLcourse', ''));
+			return json([
+				{
+					contentDetails: {
+						videoId: sharedVideo ? 'aaaaaaaaaaa' : `v${String(index).padStart(10, '0')}`
+					}
+				}
+			]);
+		}
+		return json(
+			url.searchParams
+				.get('id')!
+				.split(',')
+				.map((id) => video(id))
+		);
+	});
+}
+
+describe('progressive fixed catalogue batches', () => {
+	it('checks eight playlists at a time, shares video lookups, and caches repeated batches', async () => {
+		const fetch = courseProvider(true);
+		const service = createGalleryService({
+			catalogue: catalogue([videoEntry(), ...manyPlaylists(18)]),
+			apiKey: () => 'secret',
+			fetch
+		});
+		const first = await service.load();
+		expect(first.items).toHaveLength(PLAYLIST_BATCH_SIZE + 1);
+		expect(first.nextBatch).toBe(1);
+		expect(first.partial).toBe(false);
+		expect(Date.parse(first.expiresAt!) - Date.parse(first.checkedAt!)).toBeLessThanOrEqual(
+			CACHE_TTL_MS
+		);
+		expect(Date.parse(first.expiresAt!) - Date.parse(first.checkedAt!)).toBeGreaterThan(
+			FAILURE_TTL_MS
+		);
+		const [second, same] = await Promise.all([
+			service.load({ batch: 1 }),
+			service.load({ batch: 1 })
+		]);
+		expect(second.items).toHaveLength(8);
+		expect(second.items[0].id).toBe('PLcourse8');
+		expect(second.nextBatch).toBe(2);
+		expect(same.items).toEqual(second.items);
+		const last = await service.load({ batch: 2 });
+		expect(last.items).toHaveLength(2);
+		expect(last.nextBatch).toBeUndefined();
+		const count = fetch.mock.calls.length;
+		await service.load();
+		await service.load({ batch: 1 });
+		expect(fetch).toHaveBeenCalledTimes(count);
+		expect(
+			fetch.mock.calls.filter(([input]) => new URL(String(input)).pathname.endsWith('/videos'))
+		).toHaveLength(1);
+		expect(
+			fetch.mock.calls.filter(([input]) =>
+				new URL(String(input)).pathname.endsWith('/playlistItems')
+			)
+		).toHaveLength(18);
+	});
+
+	it('serves a later batch on a cold instance without checking the standalone or earlier catalogue', async () => {
+		const fetch = courseProvider();
+		const service = createGalleryService({
+			catalogue: catalogue([videoEntry(), ...manyPlaylists(18)]),
+			apiKey: () => 'secret',
+			fetch
+		});
+		const result = await service.load({ batch: 1 });
+		expect(result.items.map((entry) => entry.id)).toEqual(
+			manyPlaylists(16)
+				.slice(8)
+				.map((entry) => entry.id)
+		);
+		expect(result.items.every((entry) => entry.state === 'eligible')).toBe(true);
+		const metadata = fetch.mock.calls
+			.map(([input]) => new URL(String(input)))
+			.filter((url) => url.pathname.endsWith('/playlists'));
+		expect(metadata).toHaveLength(1);
+		expect(metadata[0].searchParams.get('id')).toBe(
+			result.items.map((entry) => entry.id).join(',')
+		);
+		expect(
+			fetch.mock.calls.some(
+				([input]) => new URL(String(input)).searchParams.get('id') === 'aaaaaaaaaaa'
+			)
+		).toBe(false);
+	});
+
+	it('gives each batch its own freshness and never renews an earlier checked prefix', async () => {
+		let time = 0;
+		const fetch = courseProvider();
+		const service = createGalleryService({
+			catalogue: catalogue(manyPlaylists(16)),
+			apiKey: () => 'secret',
+			fetch,
+			now: () => time
+		});
+		const first = await service.load();
+		time = 5 * 60_000;
+		const second = await service.load({ batch: 1 });
+		expect(Date.parse(first.expiresAt!)).toBe(CACHE_TTL_MS);
+		expect(Date.parse(second.expiresAt!)).toBe(time + CACHE_TTL_MS);
+		expect((await service.load()).expiresAt).toBe(first.expiresAt);
+		const before = fetch.mock.calls.length;
+		time = CACHE_TTL_MS + 1;
+		await service.load({ batch: 1 });
+		expect(fetch).toHaveBeenCalledTimes(before);
+		await service.load();
+		expect(fetch.mock.calls.length).toBeGreaterThan(before);
+	});
+
+	it('starts only the requested playlist on a cold continuation and never follows an expired token', async () => {
+		let time = 0;
+		const fetch = courseProvider();
+		const service = createGalleryService({
+			catalogue: catalogue([videoEntry(), ...manyPlaylists(18)]),
+			apiKey: () => 'secret',
+			fetch,
+			now: () => time
+		});
+		const query = { playlistKey: 'playlist:PLcourse17', page: 1 };
+		const result = await service.load(query);
+		expect(result.items.map((entry) => entry.id)).toEqual(['PLcourse17']);
+		expect(result.nextBatch).toBeUndefined();
+		expect(fetch).toHaveBeenCalledTimes(3);
+		time = CACHE_TTL_MS + 1;
+		await service.load(query);
+		expect(fetch).toHaveBeenCalledTimes(6);
+		expect(
+			fetch.mock.calls.every(([input]) => !new URL(String(input)).searchParams.has('pageToken'))
+		).toBe(true);
+	});
+
+	it('does not continue a staged scan when credentials are missing', async () => {
+		const fetch = vi.fn();
+		const result = await createGalleryService({
+			catalogue: catalogue(manyPlaylists(20)),
+			apiKey: () => undefined,
+			fetch
+		}).load();
+		expect(result.configuration).toBe('missing-key');
+		expect(result.nextBatch).toBeUndefined();
+		expect(fetch).not.toHaveBeenCalled();
+	});
+
+	it('ignores late provider data after a timed-out batch instead of publishing it as playable', async () => {
+		vi.useFakeTimers();
+		let release!: (response: Response) => void;
+		const fetch = vi.fn(
+			() =>
+				new Promise<Response>((resolve) => {
+					release = resolve;
+				})
+		);
+		const service = createGalleryService({
+			catalogue: catalogue(manyPlaylists(16)),
+			apiKey: () => 'secret',
+			fetch
+		});
+		const pending = service.load({ batch: 1 });
+		await vi.advanceTimersByTimeAsync(6100);
+		const result = await pending;
+		expect(result.items.every((entry) => entry.state === 'unknown')).toBe(true);
+		release(
+			json(
+				manyPlaylists(16)
+					.slice(8)
+					.map((entry) => ({ ...playlist, id: entry.id }))
+			)
+		);
+		await vi.advanceTimersByTimeAsync(1);
+		expect((await service.load({ batch: 1 })).items).toEqual(result.items);
+		expect(fetch).toHaveBeenCalledTimes(1);
+	});
+
+	it('shares the provider budget across batches and credential changes', async () => {
+		let key = 0;
+		let time = 0;
+		const fetch = vi.fn(async () => json([]));
+		const service = createGalleryService({
+			catalogue: catalogue(manyPlaylists(16)),
+			apiKey: () => `secret-${key}`,
+			fetch,
+			now: () => time
+		});
+		for (; key < 2002; key++) {
+			const result = await service.load({ batch: key % 2 });
+			expect(result.items[0].state).toBe(key < 2000 ? 'unavailable' : 'unknown');
+		}
+		expect(fetch).toHaveBeenCalledTimes(2000);
+		time = 86_400_001;
+		expect((await service.load({ batch: 0 })).items[0].state).toBe('unavailable');
+		expect(fetch).toHaveBeenCalledTimes(2001);
+	}, 10_000);
+});
 
 describe('Videos I Like availability', () => {
 	it('makes no provider request without a key and preserves the source catalogue', async () => {
@@ -327,6 +543,23 @@ describe('Videos I Like availability', () => {
 });
 
 describe('gallery input and region trust', () => {
+	it('accepts only fixed catalogue batch indices and rejects mixed query shapes', () => {
+		const source = catalogue(manyPlaylists(17));
+		expect(parseGalleryQuery({ batch: 0 }, source)).toEqual({ batch: 0 });
+		expect(parseGalleryQuery({ batch: 2 }, source)).toEqual({ batch: 2 });
+		for (const value of [
+			{ batch: -1 },
+			{ batch: 3 },
+			{ batch: 1.5 },
+			{ batch: '1' },
+			{ batch: NaN },
+			{ batch: 1, page: 1 },
+			{ batch: 1, playlistKey: 'playlist:PLcourse1', page: 1 },
+			{ batch: 0, extra: true }
+		])
+			expect(parseGalleryQuery(value, source)).toBeNull();
+		expect(parseGalleryQuery({ batch: 0 }, catalogue([videoEntry()]))).toBeNull();
+	});
 	it('accepts only known catalogue playlist continuation keys and bounded integer pages', () => {
 		const source = catalogue([videoEntry(), playlistEntry]);
 		expect(parseGalleryQuery({}, source)).toEqual({});

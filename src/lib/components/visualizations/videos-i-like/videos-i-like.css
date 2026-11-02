@@ -520,6 +520,17 @@
 	padding: 0;
 	margin: 15px 0;
 }
+.vif-sources details {
+	margin: 10px 0;
+}
+.vif-sources details ul {
+	display: grid;
+	gap: 8px;
+	padding-left: 16px;
+}
+.vif-sources a {
+	overflow-wrap: anywhere;
+}
 @media (max-width: 760px) {
 	.vif-grid,
 	.vif-skeletons {

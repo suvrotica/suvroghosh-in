@@ -1,0 +1,5251 @@
+{
+  "version": 1,
+  "collection": "Obsidian Videos",
+  "fileCount": 30,
+  "referenceCount": 279,
+  "entries": [
+    {
+      "key": "video:vkUNH9r6UCI",
+      "kind": "video",
+      "id": "vkUNH9r6UCI",
+      "url": "https://www.youtube.com/watch?v=vkUNH9r6UCI",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=vkUNH9r6UCI",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX",
+      "kind": "playlist",
+      "id": "PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX",
+      "url": "https://www.youtube.com/playlist?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:qap2MyBTSZk",
+      "kind": "video",
+      "id": "qap2MyBTSZk",
+      "url": "https://www.youtube.com/watch?v=qap2MyBTSZk",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=qap2MyBTSZk",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+      "kind": "playlist",
+      "id": "PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+      "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu",
+      "kind": "playlist",
+      "id": "PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu",
+      "url": "https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:8hly31xKli0",
+      "kind": "video",
+      "id": "8hly31xKli0",
+      "url": "https://www.youtube.com/watch?v=8hly31xKli0",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=8hly31xKli0",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL6ED884C7AEE68027",
+      "kind": "playlist",
+      "id": "PL6ED884C7AEE68027",
+      "url": "https://www.youtube.com/playlist?list=PL6ED884C7AEE68027",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL6ED884C7AEE68027",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL8B24C31197EC371C",
+      "kind": "playlist",
+      "id": "PL8B24C31197EC371C",
+      "url": "https://www.youtube.com/playlist?list=PL8B24C31197EC371C",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL8B24C31197EC371C",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLwabKnOFhE38C0o6z_bhlF_uOUlblDTjh",
+      "kind": "playlist",
+      "id": "PLwabKnOFhE38C0o6z_bhlF_uOUlblDTjh",
+      "url": "https://www.youtube.com/playlist?list=PLwabKnOFhE38C0o6z_bhlF_uOUlblDTjh",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLwabKnOFhE38C0o6z_bhlF_uOUlblDTjh",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP62QumaaZtCCjkID-NgqrleA",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP62QumaaZtCCjkID-NgqrleA",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62QumaaZtCCjkID-NgqrleA",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62QumaaZtCCjkID-NgqrleA",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLOzRYVm0a65dcrQ9lNthjWtnqp1hYcusH",
+      "kind": "playlist",
+      "id": "PLOzRYVm0a65dcrQ9lNthjWtnqp1hYcusH",
+      "url": "https://www.youtube.com/playlist?list=PLOzRYVm0a65dcrQ9lNthjWtnqp1hYcusH",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLOzRYVm0a65dcrQ9lNthjWtnqp1hYcusH",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL_w_qWAQZtAZ2n35UD2FHgvbXj4pqPQq5",
+      "kind": "playlist",
+      "id": "PL_w_qWAQZtAZ2n35UD2FHgvbXj4pqPQq5",
+      "url": "https://www.youtube.com/playlist?list=PL_w_qWAQZtAZ2n35UD2FHgvbXj4pqPQq5",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL_w_qWAQZtAZ2n35UD2FHgvbXj4pqPQq5",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL9un8tgZngo9-Y5dmi8Fh4dJEMixX6mz7",
+      "kind": "playlist",
+      "id": "PL9un8tgZngo9-Y5dmi8Fh4dJEMixX6mz7",
+      "url": "https://www.youtube.com/playlist?list=PL9un8tgZngo9-Y5dmi8Fh4dJEMixX6mz7",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:algorithms-and-data-structures-videos",
+          "label": "Algorithms",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL9un8tgZngo9-Y5dmi8Fh4dJEMixX6mz7",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "key": "video:xXILL-KEEoc",
+      "kind": "video",
+      "id": "xXILL-KEEoc",
+      "url": "https://www.youtube.com/watch?v=xXILL-KEEoc",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:amartya-sen-interviewed-by-ravish-kumar",
+          "label": "Interviews",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=xXILL-KEEoc",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:2XG7P1qH6Fg",
+      "kind": "video",
+      "id": "2XG7P1qH6Fg",
+      "url": "https://www.youtube.com/watch?v=2XG7P1qH6Fg",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:amartya-sen-interviewed-by-ravish-kumar",
+          "label": "Interviews",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=2XG7P1qH6Fg",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:Ad_fTX8rEKs",
+      "kind": "video",
+      "id": "Ad_fTX8rEKs",
+      "url": "https://www.youtube.com/watch?v=Ad_fTX8rEKs",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:atheism",
+          "label": "Atheism",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=Ad_fTX8rEKs",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:EF55yMtWVi0",
+      "kind": "video",
+      "id": "EF55yMtWVi0",
+      "url": "https://www.youtube.com/watch?v=EF55yMtWVi0",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:foxp2-and-the-genetics-of-human-language",
+          "label": "Language and genetics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=EF55yMtWVi0",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:-FJVCrldAfM",
+      "kind": "video",
+      "id": "-FJVCrldAfM",
+      "url": "https://www.youtube.com/watch?v=-FJVCrldAfM",
+      "categories": [
+        "science",
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:good-science-videos",
+          "label": "Science documentaries",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=-FJVCrldAfM",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:4h5OnKUHidc",
+      "kind": "video",
+      "id": "4h5OnKUHidc",
+      "url": "https://www.youtube.com/watch?v=4h5OnKUHidc",
+      "categories": [
+        "science",
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:good-science-videos",
+          "label": "Science documentaries",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=4h5OnKUHidc",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:DGWolRTYxNU",
+      "kind": "video",
+      "id": "DGWolRTYxNU",
+      "url": "https://www.youtube.com/watch?v=DGWolRTYxNU",
+      "categories": [
+        "science",
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:good-science-videos",
+          "label": "Science documentaries",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=DGWolRTYxNU",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:O8OUH0pPyoI",
+      "kind": "video",
+      "id": "O8OUH0pPyoI",
+      "url": "https://www.youtube.com/watch?v=O8OUH0pPyoI",
+      "categories": [
+        "science",
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:good-science-videos",
+          "label": "Science documentaries",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=O8OUH0pPyoI",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:Gtp51eZkwoI",
+      "kind": "video",
+      "id": "Gtp51eZkwoI",
+      "url": "https://www.youtube.com/watch?v=Gtp51eZkwoI",
+      "categories": [
+        "science",
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:good-science-videos",
+          "label": "Science documentaries",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=Gtp51eZkwoI",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM",
+      "kind": "playlist",
+      "id": "PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-ai",
+          "label": "Artificial intelligence",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:LCEmiRjPEtQ",
+      "kind": "video",
+      "id": "LCEmiRjPEtQ",
+      "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-ai",
+          "label": "Artificial intelligence",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:LeeUzusWz5g",
+      "kind": "video",
+      "id": "LeeUzusWz5g",
+      "url": "https://www.youtube.com/watch?v=LeeUzusWz5g",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-ai",
+          "label": "Artificial intelligence",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=LeeUzusWz5g",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:-VsiBNepmp0",
+      "kind": "video",
+      "id": "-VsiBNepmp0",
+      "url": "https://www.youtube.com/watch?v=-VsiBNepmp0",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-bengali-culture",
+          "label": "Bengali culture",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=-VsiBNepmp0",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:I2Y6Uc5OJf0",
+      "kind": "video",
+      "id": "I2Y6Uc5OJf0",
+      "url": "https://www.youtube.com/watch?v=I2Y6Uc5OJf0",
+      "categories": [
+        "talks"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-bengali-culture",
+          "label": "Bengali culture",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=I2Y6Uc5OJf0",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLF2E17B4CDCCE15F5",
+      "kind": "playlist",
+      "id": "PLF2E17B4CDCCE15F5",
+      "url": "https://www.youtube.com/playlist?list=PLF2E17B4CDCCE15F5",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-biology",
+          "label": "Biology",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLF2E17B4CDCCE15F5",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLgMDNELGJ1CaU6N0PfoGdQilmmo46S-14",
+      "kind": "playlist",
+      "id": "PLgMDNELGJ1CaU6N0PfoGdQilmmo46S-14",
+      "url": "https://www.youtube.com/playlist?list=PLgMDNELGJ1CaU6N0PfoGdQilmmo46S-14",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-biology",
+          "label": "Biology",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLgMDNELGJ1CaU6N0PfoGdQilmmo46S-14",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLoROMvodv4rPgrvmYbBrxZCK_GwXvDVL3",
+      "kind": "playlist",
+      "id": "PLoROMvodv4rPgrvmYbBrxZCK_GwXvDVL3",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rPgrvmYbBrxZCK_GwXvDVL3",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-biology",
+          "label": "Biology",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLoROMvodv4rPgrvmYbBrxZCK_GwXvDVL3",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:mxdVRx4sx9M",
+      "kind": "video",
+      "id": "mxdVRx4sx9M",
+      "url": "https://www.youtube.com/watch?v=mxdVRx4sx9M",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-botany",
+          "label": "Botany",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=mxdVRx4sx9M",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:9tgpy9yQF8s",
+      "kind": "video",
+      "id": "9tgpy9yQF8s",
+      "url": "https://www.youtube.com/watch?v=9tgpy9yQF8s",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-botany",
+          "label": "Botany",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=9tgpy9yQF8s",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb",
+          "order": 2
+        },
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb",
+          "order": 8
+        },
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63LOmB3_O0xbgZVZibxj4rb",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLOzRYVm0a65drwDdfT__QGADRWcPuWW7O",
+      "kind": "playlist",
+      "id": "PLOzRYVm0a65drwDdfT__QGADRWcPuWW7O",
+      "url": "https://www.youtube.com/playlist?list=PLOzRYVm0a65drwDdfT__QGADRWcPuWW7O",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLOzRYVm0a65drwDdfT__QGADRWcPuWW7O",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:fG-ZexdlziU",
+      "kind": "video",
+      "id": "fG-ZexdlziU",
+      "url": "https://www.youtube.com/watch?v=fG-ZexdlziU",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=fG-ZexdlziU",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL3F629F73640F831D",
+      "kind": "playlist",
+      "id": "PL3F629F73640F831D",
+      "url": "https://www.youtube.com/playlist?list=PL3F629F73640F831D",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL3F629F73640F831D",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLB572BA3ED0F700F1",
+      "kind": "playlist",
+      "id": "PLB572BA3ED0F700F1",
+      "url": "https://www.youtube.com/playlist?list=PLB572BA3ED0F700F1",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLB572BA3ED0F700F1",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJRL9Sk6JC01sinnpcGG_RDk",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJRL9Sk6JC01sinnpcGG_RDk",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJRL9Sk6JC01sinnpcGG_RDk",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJRL9Sk6JC01sinnpcGG_RDk",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJTdC-wb4DGVL3o3QKPDE_CU",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJTdC-wb4DGVL3o3QKPDE_CU",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTdC-wb4DGVL3o3QKPDE_CU",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTdC-wb4DGVL3o3QKPDE_CU",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63vvR4xtexZdoPywRYIZI0-",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63vvR4xtexZdoPywRYIZI0-",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63vvR4xtexZdoPywRYIZI0-",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63vvR4xtexZdoPywRYIZI0-",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "video:uXOQZl3J5v4",
+      "kind": "video",
+      "id": "uXOQZl3J5v4",
+      "url": "https://www.youtube.com/watch?v=uXOQZl3J5v4",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=uXOQZl3J5v4",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M8eGML9tjCEgZjci5USazoW",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M8eGML9tjCEgZjci5USazoW",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M8eGML9tjCEgZjci5USazoW",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M8eGML9tjCEgZjci5USazoW",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M93oV6C9iM4VpoiTqlz4vwi",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M93oV6C9iM4VpoiTqlz4vwi",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M93oV6C9iM4VpoiTqlz4vwi",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M93oV6C9iM4VpoiTqlz4vwi",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLC3F0FC4543ADAC48",
+      "kind": "playlist",
+      "id": "PLC3F0FC4543ADAC48",
+      "url": "https://www.youtube.com/playlist?list=PLC3F0FC4543ADAC48",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLC3F0FC4543ADAC48",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "key": "video:HxiWrwJtjoY",
+      "kind": "video",
+      "id": "HxiWrwJtjoY",
+      "url": "https://www.youtube.com/watch?v=HxiWrwJtjoY",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=HxiWrwJtjoY",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "key": "video:8sa7zIWdd-Y",
+      "kind": "video",
+      "id": "8sa7zIWdd-Y",
+      "url": "https://www.youtube.com/watch?v=8sa7zIWdd-Y",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=8sa7zIWdd-Y",
+          "order": 17
+        }
+      ]
+    },
+    {
+      "key": "video:YNi6Lq6xt3g",
+      "kind": "video",
+      "id": "YNi6Lq6xt3g",
+      "url": "https://www.youtube.com/watch?v=YNi6Lq6xt3g",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=YNi6Lq6xt3g",
+          "order": 18
+        }
+      ]
+    },
+    {
+      "key": "video:Ho5sIhU2mSI",
+      "kind": "video",
+      "id": "Ho5sIhU2mSI",
+      "url": "https://www.youtube.com/watch?v=Ho5sIhU2mSI",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=Ho5sIhU2mSI",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "key": "video:6bmPN9peDYo",
+      "kind": "video",
+      "id": "6bmPN9peDYo",
+      "url": "https://www.youtube.com/watch?v=6bmPN9peDYo",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=6bmPN9peDYo",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLp6ek2hDcoNCOQUXzKMJ_3DKC1YwUz6eK",
+      "kind": "playlist",
+      "id": "PLp6ek2hDcoNCOQUXzKMJ_3DKC1YwUz6eK",
+      "url": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNCOQUXzKMJ_3DKC1YwUz6eK",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-chemistry",
+          "label": "Chemistry",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNCOQUXzKMJ_3DKC1YwUz6eK",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMnDQoXFVBEYBOPFwL9aiAlll41DzVCOM",
+      "kind": "playlist",
+      "id": "PLMnDQoXFVBEYBOPFwL9aiAlll41DzVCOM",
+      "url": "https://www.youtube.com/playlist?list=PLMnDQoXFVBEYBOPFwL9aiAlll41DzVCOM",
+      "categories": [
+        "food"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-cooking-food",
+          "label": "Cooking",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMnDQoXFVBEYBOPFwL9aiAlll41DzVCOM",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMnDQoXFVBEZhf9MXJ7tgaEzgo-KLml2u",
+      "kind": "playlist",
+      "id": "PLMnDQoXFVBEZhf9MXJ7tgaEzgo-KLml2u",
+      "url": "https://www.youtube.com/playlist?list=PLMnDQoXFVBEZhf9MXJ7tgaEzgo-KLml2u",
+      "categories": [
+        "food"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-cooking-food",
+          "label": "Cooking",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMnDQoXFVBEZhf9MXJ7tgaEzgo-KLml2u",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMnDQoXFVBEYsByCf2TMvyh4mNHq7-vNn",
+      "kind": "playlist",
+      "id": "PLMnDQoXFVBEYsByCf2TMvyh4mNHq7-vNn",
+      "url": "https://www.youtube.com/playlist?list=PLMnDQoXFVBEYsByCf2TMvyh4mNHq7-vNn",
+      "categories": [
+        "food"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-cooking-food",
+          "label": "Cooking",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMnDQoXFVBEYsByCf2TMvyh4mNHq7-vNn",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJQWowhOG0-K-yI-bwRRmm3C",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJQWowhOG0-K-yI-bwRRmm3C",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQWowhOG0-K-yI-bwRRmm3C",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQWowhOG0-K-yI-bwRRmm3C",
+          "order": 1
+        },
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQWowhOG0-K-yI-bwRRmm3C",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP60B0PQXVQyGNdCyCTDU1Q5j",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP60B0PQXVQyGNdCyCTDU1Q5j",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60B0PQXVQyGNdCyCTDU1Q5j",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60B0PQXVQyGNdCyCTDU1Q5j",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61ATaGTFcSp7bhogloD2wHP",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61ATaGTFcSp7bhogloD2wHP",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61ATaGTFcSp7bhogloD2wHP",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61ATaGTFcSp7bhogloD2wHP",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:ua-CiDNNj30",
+      "kind": "video",
+      "id": "ua-CiDNNj30",
+      "url": "https://www.youtube.com/watch?v=ua-CiDNNj30",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=ua-CiDNNj30",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:r-uOLxNrNk8",
+      "kind": "video",
+      "id": "r-uOLxNrNk8",
+      "url": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:K9teElePNkk",
+      "kind": "video",
+      "id": "K9teElePNkk",
+      "url": "https://www.youtube.com/watch?v=K9teElePNkk",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=K9teElePNkk",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP60hI9ATjSFgLZpbNJ7myAg6",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP60hI9ATjSFgLZpbNJ7myAg6",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60hI9ATjSFgLZpbNJ7myAg6",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60hI9ATjSFgLZpbNJ7myAg6",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61MdtwGTqZA0MreSaDybji8",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61MdtwGTqZA0MreSaDybji8",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61MdtwGTqZA0MreSaDybji8",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61MdtwGTqZA0MreSaDybji8",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0",
+          "order": 9
+        },
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60uVBMaoNERc6knT_MgPKS0",
+          "order": 22
+        }
+      ]
+    },
+    {
+      "key": "video:xxpc-HPKN28",
+      "kind": "video",
+      "id": "xxpc-HPKN28",
+      "url": "https://www.youtube.com/watch?v=xxpc-HPKN28",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=xxpc-HPKN28",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL0o_zxa4K1BVsziIRdfv4Hl4UIqDZhXWV",
+      "kind": "playlist",
+      "id": "PL0o_zxa4K1BVsziIRdfv4Hl4UIqDZhXWV",
+      "url": "https://www.youtube.com/playlist?list=PL0o_zxa4K1BVsziIRdfv4Hl4UIqDZhXWV",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL0o_zxa4K1BVsziIRdfv4Hl4UIqDZhXWV",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "video:1PAy6d16ADQ",
+      "kind": "video",
+      "id": "1PAy6d16ADQ",
+      "url": "https://www.youtube.com/watch?v=1PAy6d16ADQ",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=1PAy6d16ADQ",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLp6ek2hDcoNCSeG01wrtcT9eE6S7YULtR",
+      "kind": "playlist",
+      "id": "PLp6ek2hDcoNCSeG01wrtcT9eE6S7YULtR",
+      "url": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNCSeG01wrtcT9eE6S7YULtR",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNCSeG01wrtcT9eE6S7YULtR",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJTfgt1USjonqSC8wcvx70s-",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJTfgt1USjonqSC8wcvx70s-",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTfgt1USjonqSC8wcvx70s-",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTfgt1USjonqSC8wcvx70s-",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLRl6YIfL5k2WB5Hf4TjEK6oI7iGh1-CLH",
+      "kind": "playlist",
+      "id": "PLRl6YIfL5k2WB5Hf4TjEK6oI7iGh1-CLH",
+      "url": "https://www.youtube.com/playlist?list=PLRl6YIfL5k2WB5Hf4TjEK6oI7iGh1-CLH",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLRl6YIfL5k2WB5Hf4TjEK6oI7iGh1-CLH",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL4d5ZtfQonW0B3qW24yAj1u1SuOvgKfP5",
+      "kind": "playlist",
+      "id": "PL4d5ZtfQonW0B3qW24yAj1u1SuOvgKfP5",
+      "url": "https://www.youtube.com/playlist?list=PL4d5ZtfQonW0B3qW24yAj1u1SuOvgKfP5",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL4d5ZtfQonW0B3qW24yAj1u1SuOvgKfP5",
+          "order": 17
+        }
+      ]
+    },
+    {
+      "key": "video:RBSUwFGa6Fk",
+      "kind": "video",
+      "id": "RBSUwFGa6Fk",
+      "url": "https://www.youtube.com/watch?v=RBSUwFGa6Fk",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=RBSUwFGa6Fk",
+          "order": 18
+        }
+      ]
+    },
+    {
+      "key": "video:6YmYwp6GslM",
+      "kind": "video",
+      "id": "6YmYwp6GslM",
+      "url": "https://www.youtube.com/watch?v=6YmYwp6GslM",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=6YmYwp6GslM",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "key": "video:ERjV-xUI5Sw",
+      "kind": "video",
+      "id": "ERjV-xUI5Sw",
+      "url": "https://www.youtube.com/watch?v=ERjV-xUI5Sw",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=ERjV-xUI5Sw",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M_68YmFFmjAAvTMne3xq9jf",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M_68YmFFmjAAvTMne3xq9jf",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M_68YmFFmjAAvTMne3xq9jf",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M_68YmFFmjAAvTMne3xq9jf",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLFW6lRTa1g82ij-dcyhI_dLSDk_Mb6pR3",
+      "kind": "playlist",
+      "id": "PLFW6lRTa1g82ij-dcyhI_dLSDk_Mb6pR3",
+      "url": "https://www.youtube.com/playlist?list=PLFW6lRTa1g82ij-dcyhI_dLSDk_Mb6pR3",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLFW6lRTa1g82ij-dcyhI_dLSDk_Mb6pR3",
+          "order": 23
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M-Rf2y3MT5aZ1UpTF1UQBK0",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M-Rf2y3MT5aZ1UpTF1UQBK0",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M-Rf2y3MT5aZ1UpTF1UQBK0",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M-Rf2y3MT5aZ1UpTF1UQBK0",
+          "order": 24
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLD63A284B7615313A",
+      "kind": "playlist",
+      "id": "PLD63A284B7615313A",
+      "url": "https://www.youtube.com/playlist?list=PLD63A284B7615313A",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLD63A284B7615313A",
+          "order": 25
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLp6ek2hDcoNCTpDkxSTGmxruyPnS13F4s",
+      "kind": "playlist",
+      "id": "PLp6ek2hDcoNCTpDkxSTGmxruyPnS13F4s",
+      "url": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNCTpDkxSTGmxruyPnS13F4s",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNCTpDkxSTGmxruyPnS13F4s",
+          "order": 26
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M9gCgajvQbc68Hk_JKGBAYT",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M9gCgajvQbc68Hk_JKGBAYT",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M9gCgajvQbc68Hk_JKGBAYT",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M9gCgajvQbc68Hk_JKGBAYT",
+          "order": 27
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLTBqohhFNBE9jRhvdtnuxj9FiOtDOnqoy",
+      "kind": "playlist",
+      "id": "PLTBqohhFNBE9jRhvdtnuxj9FiOtDOnqoy",
+      "url": "https://www.youtube.com/playlist?list=PLTBqohhFNBE9jRhvdtnuxj9FiOtDOnqoy",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLTBqohhFNBE9jRhvdtnuxj9FiOtDOnqoy",
+          "order": 28
+        }
+      ]
+    },
+    {
+      "key": "video:jgbCXBJTpjs",
+      "kind": "video",
+      "id": "jgbCXBJTpjs",
+      "url": "https://www.youtube.com/watch?v=jgbCXBJTpjs",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=jgbCXBJTpjs",
+          "order": 29
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLwdnzlV3ogoXmoCXczKiu6WGW0r05Zw02",
+      "kind": "playlist",
+      "id": "PLwdnzlV3ogoXmoCXczKiu6WGW0r05Zw02",
+      "url": "https://www.youtube.com/playlist?list=PLwdnzlV3ogoXmoCXczKiu6WGW0r05Zw02",
+      "categories": [
+        "technology",
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-data-science",
+          "label": "Data science",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLwdnzlV3ogoXmoCXczKiu6WGW0r05Zw02",
+          "order": 30
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL64BDFBDA2AF24F7E",
+      "kind": "playlist",
+      "id": "PL64BDFBDA2AF24F7E",
+      "url": "https://www.youtube.com/playlist?list=PL64BDFBDA2AF24F7E",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-differential-equation",
+          "label": "Differential equations",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL64BDFBDA2AF24F7E",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:S0k1qsf0ylk",
+      "kind": "video",
+      "id": "S0k1qsf0ylk",
+      "url": "https://www.youtube.com/watch?v=S0k1qsf0ylk",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-differential-equation",
+          "label": "Differential equations",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=S0k1qsf0ylk",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:2Ynl-poMwRg",
+      "kind": "video",
+      "id": "2Ynl-poMwRg",
+      "url": "https://www.youtube.com/watch?v=2Ynl-poMwRg",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-differential-equation",
+          "label": "Differential equations",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=2Ynl-poMwRg",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL74058E54264993C8",
+      "kind": "playlist",
+      "id": "PL74058E54264993C8",
+      "url": "https://www.youtube.com/playlist?list=PL74058E54264993C8",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL74058E54264993C8",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP62UTc77mJoubhDELSC8lfR0",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP62UTc77mJoubhDELSC8lfR0",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62UTc77mJoubhDELSC8lfR0",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62UTc77mJoubhDELSC8lfR0",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63zDO4gelZKdchvCO1B_Hg9",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63zDO4gelZKdchvCO1B_Hg9",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63zDO4gelZKdchvCO1B_Hg9",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63zDO4gelZKdchvCO1B_Hg9",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLtkeUZItwHK4Y5WBNdkc5zKUi3m3WbGHo",
+      "kind": "playlist",
+      "id": "PLtkeUZItwHK4Y5WBNdkc5zKUi3m3WbGHo",
+      "url": "https://www.youtube.com/playlist?list=PLtkeUZItwHK4Y5WBNdkc5zKUi3m3WbGHo",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLtkeUZItwHK4Y5WBNdkc5zKUi3m3WbGHo",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL9F74AFA03AA06A11",
+      "kind": "playlist",
+      "id": "PL9F74AFA03AA06A11",
+      "url": "https://www.youtube.com/playlist?list=PL9F74AFA03AA06A11",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL9F74AFA03AA06A11",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUQpHm_JtukJCeNzl4LC8IRSnqI-2wvdn",
+      "kind": "playlist",
+      "id": "PLUQpHm_JtukJCeNzl4LC8IRSnqI-2wvdn",
+      "url": "https://www.youtube.com/playlist?list=PLUQpHm_JtukJCeNzl4LC8IRSnqI-2wvdn",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUQpHm_JtukJCeNzl4LC8IRSnqI-2wvdn",
+          "order": 7
+        },
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUQpHm_JtukJCeNzl4LC8IRSnqI-2wvdn",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUQpHm_JtukJvSy1VciVGFcn3pO5wToWN",
+      "kind": "playlist",
+      "id": "PLUQpHm_JtukJvSy1VciVGFcn3pO5wToWN",
+      "url": "https://www.youtube.com/playlist?list=PLUQpHm_JtukJvSy1VciVGFcn3pO5wToWN",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUQpHm_JtukJvSy1VciVGFcn3pO5wToWN",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL9B24A6A9D5754E70",
+      "kind": "playlist",
+      "id": "PL9B24A6A9D5754E70",
+      "url": "https://www.youtube.com/playlist?list=PL9B24A6A9D5754E70",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL9B24A6A9D5754E70",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLqoAJGNZaml_JDCLqYLl2RrO3GXk_VCiz",
+      "kind": "playlist",
+      "id": "PLqoAJGNZaml_JDCLqYLl2RrO3GXk_VCiz",
+      "url": "https://www.youtube.com/playlist?list=PLqoAJGNZaml_JDCLqYLl2RrO3GXk_VCiz",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLqoAJGNZaml_JDCLqYLl2RrO3GXk_VCiz",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL1CE5B4FFFA997E5D",
+      "kind": "playlist",
+      "id": "PL1CE5B4FFFA997E5D",
+      "url": "https://www.youtube.com/playlist?list=PL1CE5B4FFFA997E5D",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL1CE5B4FFFA997E5D",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M_OXWtn1RUnuZNSbSSy6Lys",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M_OXWtn1RUnuZNSbSSy6Lys",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M_OXWtn1RUnuZNSbSSy6Lys",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M_OXWtn1RUnuZNSbSSy6Lys",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL1D46B10238154408",
+      "kind": "playlist",
+      "id": "PL1D46B10238154408",
+      "url": "https://www.youtube.com/playlist?list=PL1D46B10238154408",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL1D46B10238154408",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbRMhDVUMngfdEXVcdf_ijj2Eub-UHs_y",
+      "kind": "playlist",
+      "id": "PLbRMhDVUMngfdEXVcdf_ijj2Eub-UHs_y",
+      "url": "https://www.youtube.com/playlist?list=PLbRMhDVUMngfdEXVcdf_ijj2Eub-UHs_y",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbRMhDVUMngfdEXVcdf_ijj2Eub-UHs_y",
+          "order": 15
+        },
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbRMhDVUMngfdEXVcdf_ijj2Eub-UHs_y",
+          "order": 30
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLZ21v6nC1eHEZXCSu64yV2E2bVayFJjem",
+      "kind": "playlist",
+      "id": "PLZ21v6nC1eHEZXCSu64yV2E2bVayFJjem",
+      "url": "https://www.youtube.com/playlist?list=PLZ21v6nC1eHEZXCSu64yV2E2bVayFJjem",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLZ21v6nC1eHEZXCSu64yV2E2bVayFJjem",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLTBqohhFNBE_fZu9cpbluJAq2yECyV8ZL",
+      "kind": "playlist",
+      "id": "PLTBqohhFNBE_fZu9cpbluJAq2yECyV8ZL",
+      "url": "https://www.youtube.com/playlist?list=PLTBqohhFNBE_fZu9cpbluJAq2yECyV8ZL",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLTBqohhFNBE_fZu9cpbluJAq2yECyV8ZL",
+          "order": 17
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuUovxIiiMUvmPGPPkZr07JS",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuUovxIiiMUvmPGPPkZr07JS",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuUovxIiiMUvmPGPPkZr07JS",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuUovxIiiMUvmPGPPkZr07JS",
+          "order": 18
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuUy9Yo72ZPYt75baVpV9pQn",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuUy9Yo72ZPYt75baVpV9pQn",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuUy9Yo72ZPYt75baVpV9pQn",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuUy9Yo72ZPYt75baVpV9pQn",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuXqRLNH8xK9Ze3LIpyfXNkx",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuXqRLNH8xK9Ze3LIpyfXNkx",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuXqRLNH8xK9Ze3LIpyfXNkx",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuXqRLNH8xK9Ze3LIpyfXNkx",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuWJvHKqbC4EIe7FOp2wiwce",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuWJvHKqbC4EIe7FOp2wiwce",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWJvHKqbC4EIe7FOp2wiwce",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWJvHKqbC4EIe7FOp2wiwce",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuVePbDAk5QRJb3fzpkUXhJJ",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuVePbDAk5QRJb3fzpkUXhJJ",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuVePbDAk5QRJb3fzpkUXhJJ",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuVePbDAk5QRJb3fzpkUXhJJ",
+          "order": 22
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuWVCzulmKEBhrYpLPjqiWi8",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuWVCzulmKEBhrYpLPjqiWi8",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWVCzulmKEBhrYpLPjqiWi8",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWVCzulmKEBhrYpLPjqiWi8",
+          "order": 23
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuWKyunt9jihHMb88zQFAvk6",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuWKyunt9jihHMb88zQFAvk6",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWKyunt9jihHMb88zQFAvk6",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWKyunt9jihHMb88zQFAvk6",
+          "order": 24
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuUW-5Q__5Qb4DtrrkdQHVvd",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuUW-5Q__5Qb4DtrrkdQHVvd",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuUW-5Q__5Qb4DtrrkdQHVvd",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuUW-5Q__5Qb4DtrrkdQHVvd",
+          "order": 25
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuVwhKy8nu0HfGwMheuXfehp",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuVwhKy8nu0HfGwMheuXfehp",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuVwhKy8nu0HfGwMheuXfehp",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuVwhKy8nu0HfGwMheuXfehp",
+          "order": 26
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMXAf0aPgIuWgOnRiKcs92YZm8xD72Hrw",
+      "kind": "playlist",
+      "id": "PLMXAf0aPgIuWgOnRiKcs92YZm8xD72Hrw",
+      "url": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWgOnRiKcs92YZm8xD72Hrw",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMXAf0aPgIuWgOnRiKcs92YZm8xD72Hrw",
+          "order": 27
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG",
+      "kind": "playlist",
+      "id": "PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG",
+      "url": "https://www.youtube.com/playlist?list=PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG",
+          "order": 28
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL4E1A7D28A90C9B41",
+      "kind": "playlist",
+      "id": "PL4E1A7D28A90C9B41",
+      "url": "https://www.youtube.com/playlist?list=PL4E1A7D28A90C9B41",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL4E1A7D28A90C9B41",
+          "order": 29
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLK0XFkUruigsHE3dbLkiK-wPl8JkToN1R",
+      "kind": "playlist",
+      "id": "PLK0XFkUruigsHE3dbLkiK-wPl8JkToN1R",
+      "url": "https://www.youtube.com/playlist?list=PLK0XFkUruigsHE3dbLkiK-wPl8JkToN1R",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLK0XFkUruigsHE3dbLkiK-wPl8JkToN1R",
+          "order": 31
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLK0XFkUruigtzdN3mDbM902IQ2j1oVxb2",
+      "kind": "playlist",
+      "id": "PLK0XFkUruigtzdN3mDbM902IQ2j1oVxb2",
+      "url": "https://www.youtube.com/playlist?list=PLK0XFkUruigtzdN3mDbM902IQ2j1oVxb2",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLK0XFkUruigtzdN3mDbM902IQ2j1oVxb2",
+          "order": 32
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL425060D3C78350E1",
+      "kind": "playlist",
+      "id": "PL425060D3C78350E1",
+      "url": "https://www.youtube.com/playlist?list=PL425060D3C78350E1",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL425060D3C78350E1",
+          "order": 33
+        }
+      ]
+    },
+    {
+      "key": "video:Cy6gZPSUeFc",
+      "kind": "video",
+      "id": "Cy6gZPSUeFc",
+      "url": "https://www.youtube.com/watch?v=Cy6gZPSUeFc",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=Cy6gZPSUeFc",
+          "order": 34
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL7987F30C41A9ADCB",
+      "kind": "playlist",
+      "id": "PL7987F30C41A9ADCB",
+      "url": "https://www.youtube.com/playlist?list=PL7987F30C41A9ADCB",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL7987F30C41A9ADCB",
+          "order": 35
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJQB44z6h0XO2644Vbv7OM8_",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJQB44z6h0XO2644Vbv7OM8_",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQB44z6h0XO2644Vbv7OM8_",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQB44z6h0XO2644Vbv7OM8_",
+          "order": 36
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL708EEA8184EA8F53",
+      "kind": "playlist",
+      "id": "PL708EEA8184EA8F53",
+      "url": "https://www.youtube.com/playlist?list=PL708EEA8184EA8F53",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL708EEA8184EA8F53",
+          "order": 37
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJTqQc4Takon3QAhrtOLBV4M",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJTqQc4Takon3QAhrtOLBV4M",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTqQc4Takon3QAhrtOLBV4M",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTqQc4Takon3QAhrtOLBV4M",
+          "order": 38
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL090DAFDD7A36E27B",
+      "kind": "playlist",
+      "id": "PL090DAFDD7A36E27B",
+      "url": "https://www.youtube.com/playlist?list=PL090DAFDD7A36E27B",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL090DAFDD7A36E27B",
+          "order": 39
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLZ6kagz8q0bvxaUKCe2RRvU_h7wtNNxxi",
+      "kind": "playlist",
+      "id": "PLZ6kagz8q0bvxaUKCe2RRvU_h7wtNNxxi",
+      "url": "https://www.youtube.com/playlist?list=PLZ6kagz8q0bvxaUKCe2RRvU_h7wtNNxxi",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLZ6kagz8q0bvxaUKCe2RRvU_h7wtNNxxi",
+          "order": 40
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLwdnzlV3ogoWVgA9fHBV36L_bxWZlpa7X",
+      "kind": "playlist",
+      "id": "PLwdnzlV3ogoWVgA9fHBV36L_bxWZlpa7X",
+      "url": "https://www.youtube.com/playlist?list=PLwdnzlV3ogoWVgA9fHBV36L_bxWZlpa7X",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLwdnzlV3ogoWVgA9fHBV36L_bxWZlpa7X",
+          "order": 41
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLDVC8J0Twuc9DCeiUaM0PRakAqa-lYwmP",
+      "kind": "playlist",
+      "id": "PLDVC8J0Twuc9DCeiUaM0PRakAqa-lYwmP",
+      "url": "https://www.youtube.com/playlist?list=PLDVC8J0Twuc9DCeiUaM0PRakAqa-lYwmP",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLDVC8J0Twuc9DCeiUaM0PRakAqa-lYwmP",
+          "order": 42
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJSNQjPsqYnPFfroE1coxysA",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJSNQjPsqYnPFfroE1coxysA",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJSNQjPsqYnPFfroE1coxysA",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJSNQjPsqYnPFfroE1coxysA",
+          "order": 43
+        }
+      ]
+    },
+    {
+      "key": "video:yQDfVJzEymI",
+      "kind": "video",
+      "id": "yQDfVJzEymI",
+      "url": "https://www.youtube.com/watch?v=yQDfVJzEymI",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=yQDfVJzEymI",
+          "order": 44
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL0925FD10648D664E",
+      "kind": "playlist",
+      "id": "PL0925FD10648D664E",
+      "url": "https://www.youtube.com/playlist?list=PL0925FD10648D664E",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL0925FD10648D664E",
+          "order": 45
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLq-Gm0yRYwTgMpFqoWg2WiQ0huPKFNCdN",
+      "kind": "playlist",
+      "id": "PLq-Gm0yRYwTgMpFqoWg2WiQ0huPKFNCdN",
+      "url": "https://www.youtube.com/playlist?list=PLq-Gm0yRYwTgMpFqoWg2WiQ0huPKFNCdN",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLq-Gm0yRYwTgMpFqoWg2WiQ0huPKFNCdN",
+          "order": 46
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLVCQXDPrSRkSqqVJZsCvYzUX-2ilEm5vT",
+      "kind": "playlist",
+      "id": "PLVCQXDPrSRkSqqVJZsCvYzUX-2ilEm5vT",
+      "url": "https://www.youtube.com/playlist?list=PLVCQXDPrSRkSqqVJZsCvYzUX-2ilEm5vT",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-electronics",
+          "label": "Electronics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLVCQXDPrSRkSqqVJZsCvYzUX-2ilEm5vT",
+          "order": 47
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLwdnzlV3ogoU_xd_1SOtPpMPis4Li8yHe",
+      "kind": "playlist",
+      "id": "PLwdnzlV3ogoU_xd_1SOtPpMPis4Li8yHe",
+      "url": "https://www.youtube.com/playlist?list=PLwdnzlV3ogoU_xd_1SOtPpMPis4Li8yHe",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-energy",
+          "label": "Energy",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLwdnzlV3ogoU_xd_1SOtPpMPis4Li8yHe",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLB41970323E7D1E1A",
+      "kind": "playlist",
+      "id": "PLB41970323E7D1E1A",
+      "url": "https://www.youtube.com/playlist?list=PLB41970323E7D1E1A",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-energy",
+          "label": "Energy",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLB41970323E7D1E1A",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL_qO0UBYKVJ1myNZdh3j27fniqRtHYifm",
+      "kind": "playlist",
+      "id": "PL_qO0UBYKVJ1myNZdh3j27fniqRtHYifm",
+      "url": "https://www.youtube.com/playlist?list=PL_qO0UBYKVJ1myNZdh3j27fniqRtHYifm",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-graph-theory",
+          "label": "Graph theory",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL_qO0UBYKVJ1myNZdh3j27fniqRtHYifm",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL_qO0UBYKVJ2bRPUn4iA1xQgD4O9PbJju",
+      "kind": "playlist",
+      "id": "PL_qO0UBYKVJ2bRPUn4iA1xQgD4O9PbJju",
+      "url": "https://www.youtube.com/playlist?list=PL_qO0UBYKVJ2bRPUn4iA1xQgD4O9PbJju",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-graph-theory",
+          "label": "Graph theory",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL_qO0UBYKVJ2bRPUn4iA1xQgD4O9PbJju",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLGmu4KtWiH6-F2JlLVvCTsMR91I4ix0_z",
+      "kind": "playlist",
+      "id": "PLGmu4KtWiH6-F2JlLVvCTsMR91I4ix0_z",
+      "url": "https://www.youtube.com/playlist?list=PLGmu4KtWiH6-F2JlLVvCTsMR91I4ix0_z",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLGmu4KtWiH6-F2JlLVvCTsMR91I4ix0_z",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLFW6lRTa1g80fZ1giRbqbe_XdXPdkkyqY",
+      "kind": "playlist",
+      "id": "PLFW6lRTa1g80fZ1giRbqbe_XdXPdkkyqY",
+      "url": "https://www.youtube.com/playlist?list=PLFW6lRTa1g80fZ1giRbqbe_XdXPdkkyqY",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLFW6lRTa1g80fZ1giRbqbe_XdXPdkkyqY",
+          "order": 2
+        },
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLFW6lRTa1g80fZ1giRbqbe_XdXPdkkyqY",
+          "order": 28
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M8aLVVwxkJ44abrFFzdioId",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M8aLVVwxkJ44abrFFzdioId",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M8aLVVwxkJ44abrFFzdioId",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M8aLVVwxkJ44abrFFzdioId",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M9i09h6qh5boOfQgDnV5QV1",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M9i09h6qh5boOfQgDnV5QV1",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M9i09h6qh5boOfQgDnV5QV1",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M9i09h6qh5boOfQgDnV5QV1",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M-hUn1ILCzWE2gc592_DgK4",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M-hUn1ILCzWE2gc592_DgK4",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M-hUn1ILCzWE2gc592_DgK4",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M-hUn1ILCzWE2gc592_DgK4",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLmPb6ufFFS_zcG2qX3olxex7AsnknV4Z-",
+      "kind": "playlist",
+      "id": "PLmPb6ufFFS_zcG2qX3olxex7AsnknV4Z-",
+      "url": "https://www.youtube.com/playlist?list=PLmPb6ufFFS_zcG2qX3olxex7AsnknV4Z-",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLmPb6ufFFS_zcG2qX3olxex7AsnknV4Z-",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLLy_2iUCG87ChONRU6EeO6A2rIzM3HUvG",
+      "kind": "playlist",
+      "id": "PLLy_2iUCG87ChONRU6EeO6A2rIzM3HUvG",
+      "url": "https://www.youtube.com/playlist?list=PLLy_2iUCG87ChONRU6EeO6A2rIzM3HUvG",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLLy_2iUCG87ChONRU6EeO6A2rIzM3HUvG",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLgMDNELGJ1CaTrBVbwaHoHYlTbyeV-q5c",
+      "kind": "playlist",
+      "id": "PLgMDNELGJ1CaTrBVbwaHoHYlTbyeV-q5c",
+      "url": "https://www.youtube.com/playlist?list=PLgMDNELGJ1CaTrBVbwaHoHYlTbyeV-q5c",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLgMDNELGJ1CaTrBVbwaHoHYlTbyeV-q5c",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLOzRYVm0a65e-_mfWrLHKHY3Fyl707EfJ",
+      "kind": "playlist",
+      "id": "PLOzRYVm0a65e-_mfWrLHKHY3Fyl707EfJ",
+      "url": "https://www.youtube.com/playlist?list=PLOzRYVm0a65e-_mfWrLHKHY3Fyl707EfJ",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLOzRYVm0a65e-_mfWrLHKHY3Fyl707EfJ",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLD80i8An1OEGZ2tYimemzwC3xqkU0jKUg",
+      "kind": "playlist",
+      "id": "PLD80i8An1OEGZ2tYimemzwC3xqkU0jKUg",
+      "url": "https://www.youtube.com/playlist?list=PLD80i8An1OEGZ2tYimemzwC3xqkU0jKUg",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLD80i8An1OEGZ2tYimemzwC3xqkU0jKUg",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLplOU4zuKReBnmi2A3Yp3KfNLOd2EBOcu",
+      "kind": "playlist",
+      "id": "PLplOU4zuKReBnmi2A3Yp3KfNLOd2EBOcu",
+      "url": "https://www.youtube.com/playlist?list=PLplOU4zuKReBnmi2A3Yp3KfNLOd2EBOcu",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLplOU4zuKReBnmi2A3Yp3KfNLOd2EBOcu",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLztBpqftvzxWT5z53AxSqkSaWDhAeToDG",
+      "kind": "playlist",
+      "id": "PLztBpqftvzxWT5z53AxSqkSaWDhAeToDG",
+      "url": "https://www.youtube.com/playlist?list=PLztBpqftvzxWT5z53AxSqkSaWDhAeToDG",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLztBpqftvzxWT5z53AxSqkSaWDhAeToDG",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLNr8B4XHL5kGwxiRYcUW3dCQGuA09d3xO",
+      "kind": "playlist",
+      "id": "PLNr8B4XHL5kGwxiRYcUW3dCQGuA09d3xO",
+      "url": "https://www.youtube.com/playlist?list=PLNr8B4XHL5kGwxiRYcUW3dCQGuA09d3xO",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLNr8B4XHL5kGwxiRYcUW3dCQGuA09d3xO",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLBlnK6fEyqRhqJPDXcvYlLfXPh37L89g3",
+      "kind": "playlist",
+      "id": "PLBlnK6fEyqRhqJPDXcvYlLfXPh37L89g3",
+      "url": "https://www.youtube.com/playlist?list=PLBlnK6fEyqRhqJPDXcvYlLfXPh37L89g3",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLBlnK6fEyqRhqJPDXcvYlLfXPh37L89g3",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLp6ek2hDcoNDjDTiFlWp-Lx0XshPvX1tR",
+      "kind": "playlist",
+      "id": "PLp6ek2hDcoNDjDTiFlWp-Lx0XshPvX1tR",
+      "url": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNDjDTiFlWp-Lx0XshPvX1tR",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLp6ek2hDcoNDjDTiFlWp-Lx0XshPvX1tR",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJQnzk6Sn9o6RTpu4Evx0LOT",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJQnzk6Sn9o6RTpu4Evx0LOT",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQnzk6Sn9o6RTpu4Evx0LOT",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQnzk6Sn9o6RTpu4Evx0LOT",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL1r259iKOz-kN7Gc4l2XPxGm4v_xqqQKG",
+      "kind": "playlist",
+      "id": "PL1r259iKOz-kN7Gc4l2XPxGm4v_xqqQKG",
+      "url": "https://www.youtube.com/playlist?list=PL1r259iKOz-kN7Gc4l2XPxGm4v_xqqQKG",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL1r259iKOz-kN7Gc4l2XPxGm4v_xqqQKG",
+          "order": 17
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLAFEC355DFEADC30C",
+      "kind": "playlist",
+      "id": "PLAFEC355DFEADC30C",
+      "url": "https://www.youtube.com/playlist?list=PLAFEC355DFEADC30C",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLAFEC355DFEADC30C",
+          "order": 18
+        }
+      ]
+    },
+    {
+      "key": "video:xLpl4nSo3RA",
+      "kind": "video",
+      "id": "xLpl4nSo3RA",
+      "url": "https://www.youtube.com/watch?v=xLpl4nSo3RA",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=xLpl4nSo3RA",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLlXfTHzgMRUKXD88IdzS14F4NxAZudSmv",
+      "kind": "playlist",
+      "id": "PLlXfTHzgMRUKXD88IdzS14F4NxAZudSmv",
+      "url": "https://www.youtube.com/playlist?list=PLlXfTHzgMRUKXD88IdzS14F4NxAZudSmv",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLlXfTHzgMRUKXD88IdzS14F4NxAZudSmv",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLmv-1rHPEEEbG5UaP6VGiG8YqNYh7WeMb",
+      "kind": "playlist",
+      "id": "PLmv-1rHPEEEbG5UaP6VGiG8YqNYh7WeMb",
+      "url": "https://www.youtube.com/playlist?list=PLmv-1rHPEEEbG5UaP6VGiG8YqNYh7WeMb",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLmv-1rHPEEEbG5UaP6VGiG8YqNYh7WeMb",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "key": "video:m3hxPxPgSIY",
+      "kind": "video",
+      "id": "m3hxPxPgSIY",
+      "url": "https://www.youtube.com/watch?v=m3hxPxPgSIY",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=m3hxPxPgSIY",
+          "order": 22
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL49CF3715CB9EF31D",
+      "kind": "playlist",
+      "id": "PL49CF3715CB9EF31D",
+      "url": "https://www.youtube.com/playlist?list=PL49CF3715CB9EF31D",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL49CF3715CB9EF31D",
+          "order": 23
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL_CVl-a6qycJnbTqTDUCDI7lFyQXN-efl",
+      "kind": "playlist",
+      "id": "PL_CVl-a6qycJnbTqTDUCDI7lFyQXN-efl",
+      "url": "https://www.youtube.com/playlist?list=PL_CVl-a6qycJnbTqTDUCDI7lFyQXN-efl",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL_CVl-a6qycJnbTqTDUCDI7lFyQXN-efl",
+          "order": 24
+        }
+      ]
+    },
+    {
+      "key": "video:1OxCx11V5LQ",
+      "kind": "video",
+      "id": "1OxCx11V5LQ",
+      "url": "https://www.youtube.com/watch?v=1OxCx11V5LQ",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=1OxCx11V5LQ",
+          "order": 25
+        }
+      ]
+    },
+    {
+      "key": "video:_AaOFCl2ihc",
+      "kind": "video",
+      "id": "_AaOFCl2ihc",
+      "url": "https://www.youtube.com/watch?v=_AaOFCl2ihc",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=_AaOFCl2ihc",
+          "order": 26
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL8D5taFfp6CxzzzKoBSdNIr1yai_xLHBD",
+      "kind": "playlist",
+      "id": "PL8D5taFfp6CxzzzKoBSdNIr1yai_xLHBD",
+      "url": "https://www.youtube.com/playlist?list=PL8D5taFfp6CxzzzKoBSdNIr1yai_xLHBD",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL8D5taFfp6CxzzzKoBSdNIr1yai_xLHBD",
+          "order": 27
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL8D5taFfp6CyiV9DCvHQQ2qiINh84XF7-",
+      "kind": "playlist",
+      "id": "PL8D5taFfp6CyiV9DCvHQQ2qiINh84XF7-",
+      "url": "https://www.youtube.com/playlist?list=PL8D5taFfp6CyiV9DCvHQQ2qiINh84XF7-",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL8D5taFfp6CyiV9DCvHQQ2qiINh84XF7-",
+          "order": 28
+        }
+      ]
+    },
+    {
+      "key": "video:DuNXn6qA2NE",
+      "kind": "video",
+      "id": "DuNXn6qA2NE",
+      "url": "https://www.youtube.com/watch?v=DuNXn6qA2NE",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=DuNXn6qA2NE",
+          "order": 29
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLoxJTbDttvt7ny0WEJHWw6-0Sjx7EImIQ",
+      "kind": "playlist",
+      "id": "PLoxJTbDttvt7ny0WEJHWw6-0Sjx7EImIQ",
+      "url": "https://www.youtube.com/playlist?list=PLoxJTbDttvt7ny0WEJHWw6-0Sjx7EImIQ",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLoxJTbDttvt7ny0WEJHWw6-0Sjx7EImIQ",
+          "order": 30
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLoxJTbDttvt4p6zPSy_0zURsJV1kDCqw1",
+      "kind": "playlist",
+      "id": "PLoxJTbDttvt4p6zPSy_0zURsJV1kDCqw1",
+      "url": "https://www.youtube.com/playlist?list=PLoxJTbDttvt4p6zPSy_0zURsJV1kDCqw1",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLoxJTbDttvt4p6zPSy_0zURsJV1kDCqw1",
+          "order": 31
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLMod2FLe8bTMCJyUqoqlJEMHAXe06Hx6h",
+      "kind": "playlist",
+      "id": "PLMod2FLe8bTMCJyUqoqlJEMHAXe06Hx6h",
+      "url": "https://www.youtube.com/playlist?list=PLMod2FLe8bTMCJyUqoqlJEMHAXe06Hx6h",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-linear-algebra",
+          "label": "Linear algebra",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLMod2FLe8bTMCJyUqoqlJEMHAXe06Hx6h",
+          "order": 32
+        }
+      ]
+    },
+    {
+      "key": "video:VZbNOrcsWLQ",
+      "kind": "video",
+      "id": "VZbNOrcsWLQ",
+      "url": "https://www.youtube.com/watch?v=VZbNOrcsWLQ",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=VZbNOrcsWLQ",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLW3u28VuDAHJNrf3JCgT0GG_rjFVz0-j9",
+      "kind": "playlist",
+      "id": "PLW3u28VuDAHJNrf3JCgT0GG_rjFVz0-j9",
+      "url": "https://www.youtube.com/playlist?list=PLW3u28VuDAHJNrf3JCgT0GG_rjFVz0-j9",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLW3u28VuDAHJNrf3JCgT0GG_rjFVz0-j9",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLW3u28VuDAHJymExTBCNnaI6TymzRGsUV",
+      "kind": "playlist",
+      "id": "PLW3u28VuDAHJymExTBCNnaI6TymzRGsUV",
+      "url": "https://www.youtube.com/playlist?list=PLW3u28VuDAHJymExTBCNnaI6TymzRGsUV",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLW3u28VuDAHJymExTBCNnaI6TymzRGsUV",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLW3u28VuDAHLWNxKyfoBQSVBp-fhWrDr0",
+      "kind": "playlist",
+      "id": "PLW3u28VuDAHLWNxKyfoBQSVBp-fhWrDr0",
+      "url": "https://www.youtube.com/playlist?list=PLW3u28VuDAHLWNxKyfoBQSVBp-fhWrDr0",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLW3u28VuDAHLWNxKyfoBQSVBp-fhWrDr0",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL4C4C8A7D06566F38",
+      "kind": "playlist",
+      "id": "PL4C4C8A7D06566F38",
+      "url": "https://www.youtube.com/playlist?list=PL4C4C8A7D06566F38",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL4C4C8A7D06566F38",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62EaLLH92E_VCN4izBKK6OE",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL1C22D4DED943EF7B",
+      "kind": "playlist",
+      "id": "PL1C22D4DED943EF7B",
+      "url": "https://www.youtube.com/playlist?list=PL1C22D4DED943EF7B",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL1C22D4DED943EF7B",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLD971E94905A70448",
+      "kind": "playlist",
+      "id": "PLD971E94905A70448",
+      "url": "https://www.youtube.com/playlist?list=PLD971E94905A70448",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLD971E94905A70448",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL221E2BBF13BECF6C",
+      "kind": "playlist",
+      "id": "PL221E2BBF13BECF6C",
+      "url": "https://www.youtube.com/playlist?list=PL221E2BBF13BECF6C",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL221E2BBF13BECF6C",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw",
+      "kind": "playlist",
+      "id": "PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw",
+      "url": "https://www.youtube.com/playlist?list=PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP613ULTyHAqz04niYf722x7S",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP613ULTyHAqz04niYf722x7S",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP613ULTyHAqz04niYf722x7S",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP613ULTyHAqz04niYf722x7S",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLVuwZXwFua-0Ks3rRS4tIkswgUmDLqqRy",
+      "kind": "playlist",
+      "id": "PLVuwZXwFua-0Ks3rRS4tIkswgUmDLqqRy",
+      "url": "https://www.youtube.com/playlist?list=PLVuwZXwFua-0Ks3rRS4tIkswgUmDLqqRy",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLVuwZXwFua-0Ks3rRS4tIkswgUmDLqqRy",
+          "order": 14
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLVuwZXwFua-2nUoECBT-y1egzZN5PA4bL",
+      "kind": "playlist",
+      "id": "PLVuwZXwFua-2nUoECBT-y1egzZN5PA4bL",
+      "url": "https://www.youtube.com/playlist?list=PLVuwZXwFua-2nUoECBT-y1egzZN5PA4bL",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLVuwZXwFua-2nUoECBT-y1egzZN5PA4bL",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLIljB45xT85CvrEUnhS4dkTm9Lci5JTYS",
+      "kind": "playlist",
+      "id": "PLIljB45xT85CvrEUnhS4dkTm9Lci5JTYS",
+      "url": "https://www.youtube.com/playlist?list=PLIljB45xT85CvrEUnhS4dkTm9Lci5JTYS",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLIljB45xT85CvrEUnhS4dkTm9Lci5JTYS",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "key": "video:Vg1e2FEpf9w",
+      "kind": "video",
+      "id": "Vg1e2FEpf9w",
+      "url": "https://www.youtube.com/watch?v=Vg1e2FEpf9w",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=Vg1e2FEpf9w",
+          "order": 17
+        }
+      ]
+    },
+    {
+      "key": "video:i7vOAcUo5iA",
+      "kind": "video",
+      "id": "i7vOAcUo5iA",
+      "url": "https://www.youtube.com/watch?v=i7vOAcUo5iA",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=i7vOAcUo5iA",
+          "order": 18
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLFW6lRTa1g81Ig5maflwvtWCtyLf_MoTw",
+      "kind": "playlist",
+      "id": "PLFW6lRTa1g81Ig5maflwvtWCtyLf_MoTw",
+      "url": "https://www.youtube.com/playlist?list=PLFW6lRTa1g81Ig5maflwvtWCtyLf_MoTw",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLFW6lRTa1g81Ig5maflwvtWCtyLf_MoTw",
+          "order": 19
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJQ2vsW_hmyvVfO4GYWaaPp7",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJQ2vsW_hmyvVfO4GYWaaPp7",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQ2vsW_hmyvVfO4GYWaaPp7",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQ2vsW_hmyvVfO4GYWaaPp7",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLTd6ceoshprfZs1VIzGHDt-MYgVewC5tc",
+      "kind": "playlist",
+      "id": "PLTd6ceoshprfZs1VIzGHDt-MYgVewC5tc",
+      "url": "https://www.youtube.com/playlist?list=PLTd6ceoshprfZs1VIzGHDt-MYgVewC5tc",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLTd6ceoshprfZs1VIzGHDt-MYgVewC5tc",
+          "order": 21
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLLy_2iUCG87BLKl8eISe4fHKdE2_j2B_T",
+      "kind": "playlist",
+      "id": "PLLy_2iUCG87BLKl8eISe4fHKdE2_j2B_T",
+      "url": "https://www.youtube.com/playlist?list=PLLy_2iUCG87BLKl8eISe4fHKdE2_j2B_T",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLLy_2iUCG87BLKl8eISe4fHKdE2_j2B_T",
+          "order": 22
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbRMhDVUMngdcugfQl36Rnf50ki_8grvh",
+      "kind": "playlist",
+      "id": "PLbRMhDVUMngdcugfQl36Rnf50ki_8grvh",
+      "url": "https://www.youtube.com/playlist?list=PLbRMhDVUMngdcugfQl36Rnf50ki_8grvh",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbRMhDVUMngdcugfQl36Rnf50ki_8grvh",
+          "order": 23
+        }
+      ]
+    },
+    {
+      "key": "video:PqKyvTWYjPQ",
+      "kind": "video",
+      "id": "PqKyvTWYjPQ",
+      "url": "https://www.youtube.com/watch?v=PqKyvTWYjPQ",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=PqKyvTWYjPQ",
+          "order": 24
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLkZjai-2Jcxlg-Z1roB0pUwFU-P58tvOx",
+      "kind": "playlist",
+      "id": "PLkZjai-2Jcxlg-Z1roB0pUwFU-P58tvOx",
+      "url": "https://www.youtube.com/playlist?list=PLkZjai-2Jcxlg-Z1roB0pUwFU-P58tvOx",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLkZjai-2Jcxlg-Z1roB0pUwFU-P58tvOx",
+          "order": 25
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJShG25-ezbHPY5qogsATbeD",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJShG25-ezbHPY5qogsATbeD",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJShG25-ezbHPY5qogsATbeD",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJShG25-ezbHPY5qogsATbeD",
+          "order": 26
+        },
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJShG25-ezbHPY5qogsATbeD",
+          "order": 27
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLpGHT1n4-mAvzAtg6Qo8aTld6goSPxo4o",
+      "kind": "playlist",
+      "id": "PLpGHT1n4-mAvzAtg6Qo8aTld6goSPxo4o",
+      "url": "https://www.youtube.com/playlist?list=PLpGHT1n4-mAvzAtg6Qo8aTld6goSPxo4o",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLpGHT1n4-mAvzAtg6Qo8aTld6goSPxo4o",
+          "order": 29
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL0862D1A947252D20",
+      "kind": "playlist",
+      "id": "PL0862D1A947252D20",
+      "url": "https://www.youtube.com/playlist?list=PL0862D1A947252D20",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL0862D1A947252D20",
+          "order": 30
+        },
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL0862D1A947252D20",
+          "order": 41
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M912cneV79Cqsj88E3VBfxt",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M912cneV79Cqsj88E3VBfxt",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M912cneV79Cqsj88E3VBfxt",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M912cneV79Cqsj88E3VBfxt",
+          "order": 31
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLxCzCOWd7aiHnkPiCulMX5SIHMl2ZMmzL",
+      "kind": "playlist",
+      "id": "PLxCzCOWd7aiHnkPiCulMX5SIHMl2ZMmzL",
+      "url": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiHnkPiCulMX5SIHMl2ZMmzL",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiHnkPiCulMX5SIHMl2ZMmzL",
+          "order": 32
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL5E7A40888E84B2EA",
+      "kind": "playlist",
+      "id": "PL5E7A40888E84B2EA",
+      "url": "https://www.youtube.com/playlist?list=PL5E7A40888E84B2EA",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL5E7A40888E84B2EA",
+          "order": 33
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLGqzsq0erqU7w7ZrTZ-pWWk4-AOkiGEGp",
+      "kind": "playlist",
+      "id": "PLGqzsq0erqU7w7ZrTZ-pWWk4-AOkiGEGp",
+      "url": "https://www.youtube.com/playlist?list=PLGqzsq0erqU7w7ZrTZ-pWWk4-AOkiGEGp",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLGqzsq0erqU7w7ZrTZ-pWWk4-AOkiGEGp",
+          "order": 34
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLOROtRhtegr4HyXIIHKHketOm2k3JWSpK",
+      "kind": "playlist",
+      "id": "PLOROtRhtegr4HyXIIHKHketOm2k3JWSpK",
+      "url": "https://www.youtube.com/playlist?list=PLOROtRhtegr4HyXIIHKHketOm2k3JWSpK",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLOROtRhtegr4HyXIIHKHketOm2k3JWSpK",
+          "order": 35
+        }
+      ]
+    },
+    {
+      "key": "video:UWOVipHUZaM",
+      "kind": "video",
+      "id": "UWOVipHUZaM",
+      "url": "https://www.youtube.com/watch?v=UWOVipHUZaM",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=UWOVipHUZaM",
+          "order": 36
+        }
+      ]
+    },
+    {
+      "key": "video:TSOS_msoqGY",
+      "kind": "video",
+      "id": "TSOS_msoqGY",
+      "url": "https://www.youtube.com/watch?v=TSOS_msoqGY",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=TSOS_msoqGY",
+          "order": 37
+        }
+      ]
+    },
+    {
+      "key": "video:htYh-Tq7ZBI",
+      "kind": "video",
+      "id": "htYh-Tq7ZBI",
+      "url": "https://www.youtube.com/watch?v=htYh-Tq7ZBI",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=htYh-Tq7ZBI",
+          "order": 38
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLdciPPorsHuk3Hp7QPPAtTkpW0o1UXQB6",
+      "kind": "playlist",
+      "id": "PLdciPPorsHuk3Hp7QPPAtTkpW0o1UXQB6",
+      "url": "https://www.youtube.com/playlist?list=PLdciPPorsHuk3Hp7QPPAtTkpW0o1UXQB6",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLdciPPorsHuk3Hp7QPPAtTkpW0o1UXQB6",
+          "order": 39
+        }
+      ]
+    },
+    {
+      "key": "video:rcDXQ-5H8mk",
+      "kind": "video",
+      "id": "rcDXQ-5H8mk",
+      "url": "https://www.youtube.com/watch?v=rcDXQ-5H8mk",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=rcDXQ-5H8mk",
+          "order": 40
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLYvOmMwPgVxOYF4wcubXz7AvlcBh4kYeX",
+      "kind": "playlist",
+      "id": "PLYvOmMwPgVxOYF4wcubXz7AvlcBh4kYeX",
+      "url": "https://www.youtube.com/playlist?list=PLYvOmMwPgVxOYF4wcubXz7AvlcBh4kYeX",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLYvOmMwPgVxOYF4wcubXz7AvlcBh4kYeX",
+          "order": 42
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLFD0EB975BA0CC1E0",
+      "kind": "playlist",
+      "id": "PLFD0EB975BA0CC1E0",
+      "url": "https://www.youtube.com/playlist?list=PLFD0EB975BA0CC1E0",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLFD0EB975BA0CC1E0",
+          "order": 43
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLg-OiIIbfPj3Wldtb0QfV0Yse8tL2nLGm",
+      "kind": "playlist",
+      "id": "PLg-OiIIbfPj3Wldtb0QfV0Yse8tL2nLGm",
+      "url": "https://www.youtube.com/playlist?list=PLg-OiIIbfPj3Wldtb0QfV0Yse8tL2nLGm",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLg-OiIIbfPj3Wldtb0QfV0Yse8tL2nLGm",
+          "order": 44
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUQpHm_JtukJFPiGQx761e5FEaJUBTX0q",
+      "kind": "playlist",
+      "id": "PLUQpHm_JtukJFPiGQx761e5FEaJUBTX0q",
+      "url": "https://www.youtube.com/playlist?list=PLUQpHm_JtukJFPiGQx761e5FEaJUBTX0q",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUQpHm_JtukJFPiGQx761e5FEaJUBTX0q",
+          "order": 45
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUQpHm_JtukKPz3JVGXPO8Tkx2SjWrenO",
+      "kind": "playlist",
+      "id": "PLUQpHm_JtukKPz3JVGXPO8Tkx2SjWrenO",
+      "url": "https://www.youtube.com/playlist?list=PLUQpHm_JtukKPz3JVGXPO8Tkx2SjWrenO",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUQpHm_JtukKPz3JVGXPO8Tkx2SjWrenO",
+          "order": 46
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLOzRYVm0a65fh_rqHrLelra4VgaLhE43a",
+      "kind": "playlist",
+      "id": "PLOzRYVm0a65fh_rqHrLelra4VgaLhE43a",
+      "url": "https://www.youtube.com/playlist?list=PLOzRYVm0a65fh_rqHrLelra4VgaLhE43a",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLOzRYVm0a65fh_rqHrLelra4VgaLhE43a",
+          "order": 47
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL5qLGqp-4yb13WW1ngvbeGShJiIoWPfRf",
+      "kind": "playlist",
+      "id": "PL5qLGqp-4yb13WW1ngvbeGShJiIoWPfRf",
+      "url": "https://www.youtube.com/playlist?list=PL5qLGqp-4yb13WW1ngvbeGShJiIoWPfRf",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL5qLGqp-4yb13WW1ngvbeGShJiIoWPfRf",
+          "order": 48
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL4d5ZtfQonW0GETJ5JVu8CTkIrt0w1B77",
+      "kind": "playlist",
+      "id": "PL4d5ZtfQonW0GETJ5JVu8CTkIrt0w1B77",
+      "url": "https://www.youtube.com/playlist?list=PL4d5ZtfQonW0GETJ5JVu8CTkIrt0w1B77",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL4d5ZtfQonW0GETJ5JVu8CTkIrt0w1B77",
+          "order": 49
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLLy_2iUCG87D1CXFxE-SxCFZUiJzQ3IvE",
+      "kind": "playlist",
+      "id": "PLLy_2iUCG87D1CXFxE-SxCFZUiJzQ3IvE",
+      "url": "https://www.youtube.com/playlist?list=PLLy_2iUCG87D1CXFxE-SxCFZUiJzQ3IvE",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLLy_2iUCG87D1CXFxE-SxCFZUiJzQ3IvE",
+          "order": 50
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63ctJIEC1UnZ0btsphnnoHR",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63ctJIEC1UnZ0btsphnnoHR",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63ctJIEC1UnZ0btsphnnoHR",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63ctJIEC1UnZ0btsphnnoHR",
+          "order": 51
+        }
+      ]
+    },
+    {
+      "key": "video:ock9Gk_aqw4",
+      "kind": "video",
+      "id": "ock9Gk_aqw4",
+      "url": "https://www.youtube.com/watch?v=ock9Gk_aqw4",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=ock9Gk_aqw4",
+          "order": 52
+        }
+      ]
+    },
+    {
+      "key": "video:ay8OMOsf6AQ",
+      "kind": "video",
+      "id": "ay8OMOsf6AQ",
+      "url": "https://www.youtube.com/watch?v=ay8OMOsf6AQ",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=ay8OMOsf6AQ",
+          "order": 53
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLqHnHG5X2PXBVZsf_rvAwGnUgZ-mGdqCy",
+      "kind": "playlist",
+      "id": "PLqHnHG5X2PXBVZsf_rvAwGnUgZ-mGdqCy",
+      "url": "https://www.youtube.com/playlist?list=PLqHnHG5X2PXBVZsf_rvAwGnUgZ-mGdqCy",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-mathematics",
+          "label": "Mathematics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLqHnHG5X2PXBVZsf_rvAwGnUgZ-mGdqCy",
+          "order": 54
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLrwsBVspBbiz8JHKvcO-3FVoENVXowlUv",
+      "kind": "playlist",
+      "id": "PLrwsBVspBbiz8JHKvcO-3FVoENVXowlUv",
+      "url": "https://www.youtube.com/playlist?list=PLrwsBVspBbiz8JHKvcO-3FVoENVXowlUv",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-network",
+          "label": "Networks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLrwsBVspBbiz8JHKvcO-3FVoENVXowlUv",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL5XJ1nD6ql-qL8tKE3B2iOIDzQ9-YL1Tp",
+      "kind": "playlist",
+      "id": "PL5XJ1nD6ql-qL8tKE3B2iOIDzQ9-YL1Tp",
+      "url": "https://www.youtube.com/playlist?list=PL5XJ1nD6ql-qL8tKE3B2iOIDzQ9-YL1Tp",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-network",
+          "label": "Networks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL5XJ1nD6ql-qL8tKE3B2iOIDzQ9-YL1Tp",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbRMhDVUMngf-peFloB7kyiA40EptH1up",
+      "kind": "playlist",
+      "id": "PLbRMhDVUMngf-peFloB7kyiA40EptH1up",
+      "url": "https://www.youtube.com/playlist?list=PLbRMhDVUMngf-peFloB7kyiA40EptH1up",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-network",
+          "label": "Networks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbRMhDVUMngf-peFloB7kyiA40EptH1up",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP63ZWyJMdWIVtyweopUN3xt3",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP63ZWyJMdWIVtyweopUN3xt3",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63ZWyJMdWIVtyweopUN3xt3",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-network",
+          "label": "Networks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63ZWyJMdWIVtyweopUN3xt3",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJSssxplPGgKHZLgdzL5-O88",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJSssxplPGgKHZLgdzL5-O88",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJSssxplPGgKHZLgdzL5-O88",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-network",
+          "label": "Networks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJSssxplPGgKHZLgdzL5-O88",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:47NRaBVxgVM",
+      "kind": "video",
+      "id": "47NRaBVxgVM",
+      "url": "https://www.youtube.com/watch?v=47NRaBVxgVM",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-network",
+          "label": "Networks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=47NRaBVxgVM",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:qiQR5rTSshw",
+      "kind": "video",
+      "id": "qiQR5rTSshw",
+      "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-network",
+          "label": "Networks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=qiQR5rTSshw",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLFE3074A4CB751B2B",
+      "kind": "playlist",
+      "id": "PLFE3074A4CB751B2B",
+      "url": "https://www.youtube.com/playlist?list=PLFE3074A4CB751B2B",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLFE3074A4CB751B2B",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLD07B2225BB40E582",
+      "kind": "playlist",
+      "id": "PLD07B2225BB40E582",
+      "url": "https://www.youtube.com/playlist?list=PLD07B2225BB40E582",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLD07B2225BB40E582",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61qDex7XslwNJ-xxxEFzMNV",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61qDex7XslwNJ-xxxEFzMNV",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61qDex7XslwNJ-xxxEFzMNV",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61qDex7XslwNJ-xxxEFzMNV",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP62esZEwffjMAsEMW_YArxYC",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP62esZEwffjMAsEMW_YArxYC",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62esZEwffjMAsEMW_YArxYC",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62esZEwffjMAsEMW_YArxYC",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61R5sPDPKVfcFlu95wSs2Kx",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61R5sPDPKVfcFlu95wSs2Kx",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61R5sPDPKVfcFlu95wSs2Kx",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61R5sPDPKVfcFlu95wSs2Kx",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL8_xPU5epJddRABXqJ5h5G0dk-XGtA5cZ",
+      "kind": "playlist",
+      "id": "PL8_xPU5epJddRABXqJ5h5G0dk-XGtA5cZ",
+      "url": "https://www.youtube.com/playlist?list=PL8_xPU5epJddRABXqJ5h5G0dk-XGtA5cZ",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL8_xPU5epJddRABXqJ5h5G0dk-XGtA5cZ",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJTXGlgqyzpUqozrU55oRX-H",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJTXGlgqyzpUqozrU55oRX-H",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTXGlgqyzpUqozrU55oRX-H",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJTXGlgqyzpUqozrU55oRX-H",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL0F530F3BAF8C6FCC",
+      "kind": "playlist",
+      "id": "PL0F530F3BAF8C6FCC",
+      "url": "https://www.youtube.com/playlist?list=PL0F530F3BAF8C6FCC",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL0F530F3BAF8C6FCC",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL5Tk152XlY6SOYij864_CJmSElHbOcAVj",
+      "kind": "playlist",
+      "id": "PL5Tk152XlY6SOYij864_CJmSElHbOcAVj",
+      "url": "https://www.youtube.com/playlist?list=PL5Tk152XlY6SOYij864_CJmSElHbOcAVj",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL5Tk152XlY6SOYij864_CJmSElHbOcAVj",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP60cspQn3N9dYRPiyVWDd80G",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP60cspQn3N9dYRPiyVWDd80G",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60cspQn3N9dYRPiyVWDd80G",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60cspQn3N9dYRPiyVWDd80G",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLTjLwQcqQzNJciwenRdt_mZcUVf29yMtt",
+      "kind": "playlist",
+      "id": "PLTjLwQcqQzNJciwenRdt_mZcUVf29yMtt",
+      "url": "https://www.youtube.com/playlist?list=PLTjLwQcqQzNJciwenRdt_mZcUVf29yMtt",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLTjLwQcqQzNJciwenRdt_mZcUVf29yMtt",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP62-vPzt_GMdZRflJPjNdspG",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP62-vPzt_GMdZRflJPjNdspG",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62-vPzt_GMdZRflJPjNdspG",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62-vPzt_GMdZRflJPjNdspG",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLkzOLGQfSuu3purFSmS2BiONFJs5AtknB",
+      "kind": "playlist",
+      "id": "PLkzOLGQfSuu3purFSmS2BiONFJs5AtknB",
+      "url": "https://www.youtube.com/playlist?list=PLkzOLGQfSuu3purFSmS2BiONFJs5AtknB",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-physics",
+          "label": "Physics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLkzOLGQfSuu3purFSmS2BiONFJs5AtknB",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJQo8D9D-D6lMqh4FJbPeE_f",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJQo8D9D-D6lMqh4FJbPeE_f",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQo8D9D-D6lMqh4FJbPeE_f",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-probability",
+          "label": "Probability",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQo8D9D-D6lMqh4FJbPeE_f",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLbMVogVj5nJQqGHrpAloTec_lOKsG-foc",
+      "kind": "playlist",
+      "id": "PLbMVogVj5nJQqGHrpAloTec_lOKsG-foc",
+      "url": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQqGHrpAloTec_lOKsG-foc",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-probability",
+          "label": "Probability",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLbMVogVj5nJQqGHrpAloTec_lOKsG-foc",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-python",
+          "label": "Python",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:8DvywoWv6fI",
+      "kind": "video",
+      "id": "8DvywoWv6fI",
+      "url": "https://www.youtube.com/watch?v=8DvywoWv6fI",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-python",
+          "label": "Python",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=8DvywoWv6fI",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:HGOBQPFzWKo",
+      "kind": "video",
+      "id": "HGOBQPFzWKo",
+      "url": "https://www.youtube.com/watch?v=HGOBQPFzWKo",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-python",
+          "label": "Python",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=HGOBQPFzWKo",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:LHBE6Q9XlzI",
+      "kind": "video",
+      "id": "LHBE6Q9XlzI",
+      "url": "https://www.youtube.com/watch?v=LHBE6Q9XlzI",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-python",
+          "label": "Python",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=LHBE6Q9XlzI",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:ZB7BZMhfPgk",
+      "kind": "video",
+      "id": "ZB7BZMhfPgk",
+      "url": "https://www.youtube.com/watch?v=ZB7BZMhfPgk",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-python",
+          "label": "Python",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=ZB7BZMhfPgk",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:aqAtsuJYIHA",
+      "kind": "video",
+      "id": "aqAtsuJYIHA",
+      "url": "https://www.youtube.com/watch?v=aqAtsuJYIHA",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-python",
+          "label": "Python",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=aqAtsuJYIHA",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL65CC0384A1798ADF",
+      "kind": "playlist",
+      "id": "PL65CC0384A1798ADF",
+      "url": "https://www.youtube.com/playlist?list=PL65CC0384A1798ADF",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-robotics",
+          "label": "Robotics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL65CC0384A1798ADF",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:8bKAo6rMBEo",
+      "kind": "video",
+      "id": "8bKAo6rMBEo",
+      "url": "https://www.youtube.com/watch?v=8bKAo6rMBEo",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-robotics",
+          "label": "Robotics",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=8bKAo6rMBEo",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:VdovnYy8WFk",
+      "kind": "video",
+      "id": "VdovnYy8WFk",
+      "url": "https://www.youtube.com/watch?v=VdovnYy8WFk",
+      "categories": [
+        "audiobooks",
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-science-audiobooks",
+          "label": "Science audiobooks",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=VdovnYy8WFk",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLTBqohhFNBE_09L0i-lf3fYXF5woAbrzJ",
+      "kind": "playlist",
+      "id": "PLTBqohhFNBE_09L0i-lf3fYXF5woAbrzJ",
+      "url": "https://www.youtube.com/playlist?list=PLTBqohhFNBE_09L0i-lf3fYXF5woAbrzJ",
+      "categories": [
+        "maths"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-topology",
+          "label": "Topology",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLTBqohhFNBE_09L0i-lf3fYXF5woAbrzJ",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:fHMPGhezj0s",
+      "kind": "video",
+      "id": "fHMPGhezj0s",
+      "url": "https://www.youtube.com/watch?v=fHMPGhezj0s",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-graphics-design",
+          "label": "Graphics and design",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=fHMPGhezj0s",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyqSpQzTE6M8nYuTtsSPcTAzZ9VS5DdiC",
+      "kind": "playlist",
+      "id": "PLyqSpQzTE6M8nYuTtsSPcTAzZ9VS5DdiC",
+      "url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M8nYuTtsSPcTAzZ9VS5DdiC",
+      "categories": [
+        "technology"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-graphics-design",
+          "label": "Graphics and design",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M8nYuTtsSPcTAzZ9VS5DdiC",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "video:hlWT7myeh78",
+      "kind": "video",
+      "id": "hlWT7myeh78",
+      "url": "https://www.youtube.com/watch?v=hlWT7myeh78",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=hlWT7myeh78",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+      "kind": "playlist",
+      "id": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "key": "video:bAD7skT1dig",
+      "kind": "video",
+      "id": "bAD7skT1dig",
+      "url": "https://www.youtube.com/watch?v=bAD7skT1dig",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=bAD7skT1dig",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "key": "video:HviMLiK1hFw",
+      "kind": "video",
+      "id": "HviMLiK1hFw",
+      "url": "https://www.youtube.com/watch?v=HviMLiK1hFw",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=HviMLiK1hFw",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "key": "video:OYHohBQR5E4",
+      "kind": "video",
+      "id": "OYHohBQR5E4",
+      "url": "https://www.youtube.com/watch?v=OYHohBQR5E4",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=OYHohBQR5E4",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "key": "video:5EcQ1IcEMFQ",
+      "kind": "video",
+      "id": "5EcQ1IcEMFQ",
+      "url": "https://www.youtube.com/watch?v=5EcQ1IcEMFQ",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=5EcQ1IcEMFQ",
+          "order": 7
+        }
+      ]
+    },
+    {
+      "key": "playlist:PL1DBCFC32CF6945EE",
+      "kind": "playlist",
+      "id": "PL1DBCFC32CF6945EE",
+      "url": "https://www.youtube.com/playlist?list=PL1DBCFC32CF6945EE",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PL1DBCFC32CF6945EE",
+          "order": 8
+        }
+      ]
+    },
+    {
+      "key": "playlist:PLyGKBDfnk-iDig1-KCvDgdaptsO2jPJVt",
+      "kind": "playlist",
+      "id": "PLyGKBDfnk-iDig1-KCvDgdaptsO2jPJVt",
+      "url": "https://www.youtube.com/playlist?list=PLyGKBDfnk-iDig1-KCvDgdaptsO2jPJVt",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/playlist?list=PLyGKBDfnk-iDig1-KCvDgdaptsO2jPJVt",
+          "order": 9
+        }
+      ]
+    },
+    {
+      "key": "video:bMylqG_aCa0",
+      "kind": "video",
+      "id": "bMylqG_aCa0",
+      "url": "https://www.youtube.com/watch?v=bMylqG_aCa0",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=bMylqG_aCa0",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "key": "video:Tg5beAvAfy4",
+      "kind": "video",
+      "id": "Tg5beAvAfy4",
+      "url": "https://www.youtube.com/watch?v=Tg5beAvAfy4",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=Tg5beAvAfy4",
+          "order": 11
+        }
+      ]
+    },
+    {
+      "key": "video:sscaPRtf9XQ",
+      "kind": "video",
+      "id": "sscaPRtf9XQ",
+      "url": "https://www.youtube.com/watch?v=sscaPRtf9XQ",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=sscaPRtf9XQ",
+          "order": 12
+        }
+      ]
+    },
+    {
+      "key": "video:6dFVA7jfMNI",
+      "kind": "video",
+      "id": "6dFVA7jfMNI",
+      "url": "https://www.youtube.com/watch?v=6dFVA7jfMNI",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:links-to-the-brain",
+          "label": "The brain",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=6dFVA7jfMNI",
+          "order": 13
+        }
+      ]
+    },
+    {
+      "key": "video:gwK237lHhhE",
+      "kind": "video",
+      "id": "gwK237lHhhE",
+      "url": "https://www.youtube.com/watch?v=gwK237lHhhE",
+      "categories": [
+        "science",
+        "documentaries"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:mental-health-videos",
+          "label": "Mental health",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=gwK237lHhhE",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:Zac-jnM_gFI",
+      "kind": "video",
+      "id": "Zac-jnM_gFI",
+      "url": "https://www.youtube.com/watch?v=Zac-jnM_gFI",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:new-eye-treatment",
+          "label": "Eye health",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=Zac-jnM_gFI",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:cms2g1xBe30",
+      "kind": "video",
+      "id": "cms2g1xBe30",
+      "url": "https://www.youtube.com/watch?v=cms2g1xBe30",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:opioid-drug-videos",
+          "label": "Medicines",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=cms2g1xBe30",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "key": "video:fFiiLSYI9Oo",
+      "kind": "video",
+      "id": "fFiiLSYI9Oo",
+      "url": "https://www.youtube.com/watch?v=fFiiLSYI9Oo",
+      "categories": [
+        "science"
+      ],
+      "musicCategories": [],
+      "sources": [
+        {
+          "file": "obsidian:opioid-drug-videos",
+          "label": "Medicines",
+          "collection": "obsidian",
+          "originalUrl": "https://www.youtube.com/watch?v=fFiiLSYI9Oo",
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

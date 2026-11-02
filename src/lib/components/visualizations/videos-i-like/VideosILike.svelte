@@ -31,6 +31,7 @@
 	let query = $state('');
 	let checking = $state(true);
 	let moreBusy = $state(false);
+	let pendingBatch = $state<number | null>(null);
 	let checkError = $state('');
 	let checkedAt = $state<string | null>(null);
 	let expiresAt = $state<string | null>(null);
@@ -85,6 +86,17 @@
 		).values()
 	];
 	const mixes = catalogue.entries.filter((entry) => entry.kind === 'mix');
+	const localCollections = sourceFiles
+		.filter((source) => source.collection === 'obsidian')
+		.map((source) => ({
+			...source,
+			entries: catalogue.entries.filter((entry) =>
+				entry.sources.some((reference) => reference.file === source.file)
+			)
+		}));
+	const titles = $derived(new Map(items.map((item) => [item.key, item.title])));
+	const checkedSelections = $derived(items.filter((item) => item.kind !== 'mix').length);
+	const totalSelections = catalogue.entries.filter((entry) => entry.kind !== 'mix').length;
 
 	function releasePlayer() {
 		generation++;
@@ -107,73 +119,106 @@
 		if (restoreFocus) lastTrigger?.focus();
 	}
 
-	async function checkAvailability(playlist?: GalleryItem) {
+	async function checkAvailability(playlist?: GalleryItem, resume = false) {
 		availabilityRequest?.abort();
 		const request = new AbortController();
 		availabilityRequest = request;
-		const deadline = setTimeout(() => request.abort(), 30_000);
+		let batch = !playlist && resume ? pendingBatch : null;
+		if (!playlist && !resume) pendingBatch = null;
 		if (playlist) moreBusy = true;
 		else checking = true;
 		checkError = '';
 		try {
-			const response = await fetch('/api/videos-i-like', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(
-					playlist ? { playlistKey: playlist.key, page: playlist.nextPage } : {}
-				),
-				signal: request.signal
-			});
-			if (!response.ok) throw new Error('check-failed');
-			const data: GalleryResponse = await response.json();
-			if (!Array.isArray(data.items) || !['ready', 'missing-key'].includes(data.configuration))
-				throw new Error('invalid-response');
-			if (destroyed || availabilityRequest !== request) return;
-			// A continuation may have restarted an expired server snapshot. Refresh the
-			// complete catalogue before extending the lifetime of any older cards.
-			if (playlist && expiresAt && Date.parse(expiresAt) <= Date.now()) {
-				await checkAvailability();
-				return;
-			}
-			if (playlist) {
-				items = items.map((item) => data.items.find((next) => next.key === item.key) ?? item);
-				if (data.expiresAt && (!expiresAt || Date.parse(data.expiresAt) < Date.parse(expiresAt)))
-					expiresAt = data.expiresAt;
-			} else {
-				items = data.items;
-				checkedAt = data.checkedAt;
-				expiresAt = data.expiresAt;
-			}
-			now = Date.now();
-			if (selected) {
-				selected = items.find((item) => item.key === selected?.key) ?? null;
-				const refreshed = selected?.videos[currentPosition];
+			for (;;) {
+				let data: GalleryResponse;
+				const deadline = setTimeout(() => request.abort(), 30_000);
+				try {
+					const response = await fetch('/api/videos-i-like', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(
+							playlist
+								? { playlistKey: playlist.key, page: playlist.nextPage }
+								: batch !== null
+									? { batch }
+									: {}
+						),
+						signal: request.signal
+					});
+					if (!response.ok) throw new Error('check-failed');
+					data = await response.json();
+				} finally {
+					clearTimeout(deadline);
+				}
+				if (!Array.isArray(data.items) || !['ready', 'missing-key'].includes(data.configuration))
+					throw new Error('invalid-response');
 				if (
-					current &&
-					(!refreshed || refreshed.id !== current.id || refreshed.state !== 'eligible')
-				) {
-					releasePlayer();
-					current = refreshed ?? { ...current, state: 'unknown' };
-					playerError =
-						'This selection is no longer available to play here. Refresh the check or choose another video.';
-				} else if (refreshed) current = refreshed;
-			}
-			if (data.configuration === 'missing-key')
-				checkError =
-					'Video checks are not available yet. You can still browse the original collections below.';
-			else if (
-				data.items.some(
-					(item) =>
-						item.kind !== 'mix' &&
-						(item.state === 'unknown' || item.videos.some((video) => video.state === 'unknown'))
+					data.nextBatch !== undefined &&
+					(!Number.isInteger(data.nextBatch) ||
+						data.nextBatch <= (batch ?? 0) ||
+						data.nextBatch > catalogue.entries.length)
 				)
-			)
-				checkError = 'Some videos could not be checked. Try again.';
+					throw new Error('invalid-batch');
+				if (destroyed || availabilityRequest !== request) return;
+				// A continuation may have restarted an expired server snapshot. Refresh the
+				// complete catalogue before extending the lifetime of any older cards.
+				if (playlist && expiresAt && Date.parse(expiresAt) <= Date.now()) {
+					await checkAvailability();
+					return;
+				}
+				if (playlist || batch !== null) {
+					items = [
+						...items.map((item) => data.items.find((next) => next.key === item.key) ?? item),
+						...data.items.filter((item) => !items.some((previous) => previous.key === item.key))
+					];
+					if (data.expiresAt && (!expiresAt || Date.parse(data.expiresAt) < Date.parse(expiresAt)))
+						expiresAt = data.expiresAt;
+					if (data.checkedAt && (!checkedAt || Date.parse(data.checkedAt) < Date.parse(checkedAt)))
+						checkedAt = data.checkedAt;
+				} else {
+					items = data.items;
+					checkedAt = data.checkedAt;
+					expiresAt = data.expiresAt;
+				}
+				now = Date.now();
+				if (selected) {
+					selected = items.find((item) => item.key === selected?.key) ?? null;
+					const refreshed = selected?.videos[currentPosition];
+					if (
+						current &&
+						(!refreshed || refreshed.id !== current.id || refreshed.state !== 'eligible')
+					) {
+						releasePlayer();
+						current = refreshed ?? { ...current, state: 'unknown' };
+						playerError =
+							'This selection is no longer available to play here. Refresh the check or choose another video.';
+					} else if (refreshed) current = refreshed;
+				}
+				if (data.configuration === 'missing-key')
+					checkError =
+						'Video checks are not available yet. You can still browse the original collections below.';
+				else if (
+					items.some(
+						(item) =>
+							item.kind !== 'mix' &&
+							(item.state === 'unknown' || item.videos.some((video) => video.state === 'unknown'))
+					)
+				)
+					checkError = 'Some videos could not be checked. Try again.';
+				else checkError = '';
+				if (playlist) break;
+				pendingBatch = data.configuration === 'ready' ? (data.nextBatch ?? null) : null;
+				if (expiresAt && Date.parse(expiresAt) <= now) {
+					pendingBatch = null;
+					break;
+				}
+				if (pendingBatch === null) break;
+				batch = pendingBatch;
+			}
 		} catch {
 			if (!destroyed && availabilityRequest === request)
 				checkError = 'The videos could not be checked. Please try again.';
 		} finally {
-			clearTimeout(deadline);
 			if (!destroyed && availabilityRequest === request) {
 				checking = false;
 				moreBusy = false;
@@ -340,9 +385,9 @@
 <section class="vif not-prose" aria-label="Videos I Like" data-testid="videos-i-like">
 	<header class="vif-heading">
 		<div>
-			<p class="vif-eyebrow">FROM MY POSTS</p>
+			<p class="vif-eyebrow">FROM MY POSTS AND SAVED NOTES</p>
 			<h1>Videos I Like</h1>
-			<p class="vif-subtitle">Music, films, audiobooks and ideas. Pick a topic and press Play.</p>
+			<p class="vif-subtitle">Music, films, courses and ideas. Pick a topic and press Play.</p>
 			<p class="vif-updated">Updated <time datetime="2026-11-03">3 November 2026</time></p>
 		</div>
 		<span class="vif-mark" aria-hidden="true">▶</span>
@@ -506,7 +551,11 @@
 	{/if}
 
 	<div class="vif-status" role="status" aria-live="polite">
-		{#if checking}<span>Checking videos…</span>
+		{#if checking}<span
+				>Checking videos…{checkedSelections > 0
+					? ` ${checkedSelections} of ${totalSelections} selections checked. You can play the available ones.`
+					: ''}</span
+			>
 		{:else if stale}<span>The last check has expired. Refresh to see available videos.</span>
 		{:else if checkError}<span>{checkError}</span>
 		{:else}<span
@@ -519,6 +568,12 @@
 			>Refresh videos</button
 		>
 	</div>
+	{#if !checking && pendingBatch !== null && !stale}<p class="vif-check-note">
+			More saved selections still need checking.
+			<button type="button" disabled={moreBusy} onclick={() => checkAvailability(undefined, true)}
+				>Continue checking</button
+			>
+		</p>{/if}
 	{#if checkedAt && !checking}<p class="vif-check-note">
 			Checked <time datetime={checkedAt}
 				>{new Date(checkedAt).toLocaleTimeString('en-GB', {
@@ -618,22 +673,37 @@
 	{/if}
 	<details class="vif-sources">
 		<summary>Original collections and source links</summary>
-		<p>These links are preserved from my posts. Their availability has not been guaranteed.</p>
+		<p>Collected from my posts and saved notes. Availability is checked separately.</p>
 		<ul>
-			{#each sourceFiles as source (source.file)}<li>
+			{#each sourceFiles.filter((source) => source.url) as source (source.file)}<li>
 					<a href={source.url} target="_blank" rel="external noopener noreferrer"
 						>{source.file.replace(/^drafts\//, '').replace(/\.md$/, '')}</a
 					>
 				</li>{/each}
 		</ul>
+		{#if localCollections.length}<p>Saved-note collections</p>
+			{#each localCollections as collection (collection.file)}
+				<details>
+					<summary>{collection.label} · {collection.entries.length} selections</summary>
+					<ul>
+						{#each collection.entries as entry (entry.key)}<li>
+								<a href={entry.url} target="_blank" rel="external noopener noreferrer"
+									>{titles.get(entry.key) ||
+										`${entry.kind === 'video' ? 'Video' : 'Playlist'} ${entry.id}`}</a
+								>
+							</li>{/each}
+					</ul>
+				</details>
+			{/each}
+		{/if}
 		{#each mixes as mix (mix.key)}<p>
 				<a href={mix.url} target="_blank" rel="external noopener noreferrer"
 					>Open the Hindi YouTube Mix ↗</a
 				> — generated mixes are available on YouTube.
 			</p>{/each}
 		<p class="vif-check-note">
-			{catalogue.entries.length} saved selections from {sourceFiles.length} posts. Availability is checked
-			separately.
+			{catalogue.entries.length} saved selections from {sourceFiles.length} posts and saved-note collections.
+			Availability is checked separately.
 		</p>
 	</details>
 	<noscript

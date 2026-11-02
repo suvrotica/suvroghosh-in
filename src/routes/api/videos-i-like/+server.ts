@@ -62,7 +62,7 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress }) =
 			return failure(400, 'Send a valid JSON object.');
 		}
 		const query = parseGalleryQuery(input, catalogue);
-		if (!query) return failure(400, 'Choose a known playlist and a valid page.');
+		if (!query) return failure(400, 'Choose a known catalogue batch or playlist page.');
 		return json(await service.load(query, viewerCountry(request.headers, url, env)), { headers });
 	} catch {
 		return failure(503, 'Availability could not be checked. Please try again.');

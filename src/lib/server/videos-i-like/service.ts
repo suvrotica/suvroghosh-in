@@ -10,16 +10,18 @@ import type {
 export const CACHE_TTL_MS = 15 * 60_000;
 export const FAILURE_TTL_MS = 60_000;
 export const MAX_PLAYLIST_PAGES = 20;
+export const PLAYLIST_BATCH_SIZE = 8;
 export const CHECK_TIMEOUT_MS = 18_000;
 const PROVIDER_TIMEOUT_MS = 6_000;
 const PROVIDER_BODY_BYTES = 2 * 1024 * 1024;
 const MAX_PROVIDER_CALLS_PER_DAY = 2_000;
 
 export type GalleryQuery =
-	| { playlistKey?: undefined; page?: undefined }
+	| { playlistKey?: undefined; page?: undefined; batch?: number }
 	| {
 			playlistKey: string;
 			page: number;
+			batch?: undefined;
 	  };
 type RecordValue = Record<string, unknown>;
 type RawVideo = {
@@ -50,7 +52,8 @@ type RawPlaylist = {
 type Snapshot = {
 	videos: Map<string, RawVideo>;
 	playlists: Map<string, RawPlaylist>;
-	expiresAt: number;
+	expires: Map<string, number>;
+	flights: Map<string, Promise<void>>;
 };
 class ProviderFailure extends Error {
 	constructor(public readonly kind: 'unavailable' | 'unknown' = 'unknown') {
@@ -186,25 +189,41 @@ export function createGalleryService(options: {
 	const fetchProvider = options.fetch ?? ((...args: Parameters<typeof fetch>) => fetch(...args));
 	let snapshot: Snapshot | undefined;
 	let expiryTimer: ReturnType<typeof setTimeout> | undefined;
-	let initialFlight: Promise<Snapshot> | undefined;
-	const playlistFlights = new Map<string, Promise<void>>();
+	const playlistEntries = options.catalogue.entries.filter((entry) => entry.kind === 'playlist');
+	const batchCount = Math.ceil(playlistEntries.length / PLAYLIST_BATCH_SIZE);
 	const videoCache = new Map<string, { value: RawVideo; expiresAt: number }>();
 	const videoFlights = new Map<string, Promise<RawVideo>>();
 	let previousKey: string | undefined;
 	let providerCalls: number[] = [];
 	let active = 0;
 	const waiting: Array<() => void> = [];
+	function prune(value: Snapshot) {
+		for (const [key, expiresAt] of value.expires) {
+			if (expiresAt > now()) continue;
+			value.expires.delete(key);
+			if (key.startsWith('video:')) value.videos.delete(key.slice(6));
+			else value.playlists.delete(key.slice(9));
+		}
+		for (const [id, cached] of videoCache) {
+			if (cached.expiresAt <= now()) videoCache.delete(id);
+		}
+	}
 	function cache(value: Snapshot) {
-		snapshot = value;
+		if (snapshot !== value) return;
 		clearTimeout(expiryTimer);
+		prune(value);
+		if (!value.expires.size) {
+			if (!value.flights.size) {
+				snapshot = undefined;
+				videoCache.clear();
+			}
+			return;
+		}
 		expiryTimer = setTimeout(
 			() => {
-				if (snapshot === value) {
-					snapshot = undefined;
-					videoCache.clear();
-				}
+				cache(value);
 			},
-			Math.max(1, value.expiresAt - now())
+			Math.max(1, Math.min(...value.expires.values()) - now())
 		);
 		expiryTimer.unref?.();
 	}
@@ -325,14 +344,16 @@ export function createGalleryService(options: {
 			const checked = await queryVideos([...fresh.keys()], key, signal);
 			for (const [id, resolve] of fresh) {
 				const value = checked.get(id) ?? unknownVideo(id);
-				// The known catalogue bounds the key space; evict older entries at an explicit cap.
-				if (videoCache.size >= 5000 && !videoCache.has(id))
-					videoCache.delete(videoCache.keys().next().value!);
-				videoCache.set(id, {
-					value,
-					expiresAt: now() + (value.state === 'unknown' ? FAILURE_TTL_MS : CACHE_TTL_MS)
-				});
-				videoFlights.delete(id);
+				if (key === previousKey && !signal.aborted) {
+					// The known catalogue bounds the key space; evict older entries at an explicit cap.
+					if (videoCache.size >= 5000 && !videoCache.has(id))
+						videoCache.delete(videoCache.keys().next().value!);
+					videoCache.set(id, {
+						value,
+						expiresAt: now() + (value.state === 'unknown' ? FAILURE_TTL_MS : CACHE_TTL_MS)
+					});
+				}
+				if (videoFlights.get(id) === pending.get(id)) videoFlights.delete(id);
 				resolve(value);
 			}
 		}
@@ -391,117 +412,160 @@ export function createGalleryService(options: {
 		}
 	}
 
-	async function refresh(key: string): Promise<Snapshot> {
-		const state: Snapshot = {
-			videos: new Map(),
-			playlists: new Map(),
-			expiresAt: now() + CACHE_TTL_MS
-		};
-		for (const entry of options.catalogue.entries.filter((entry) => entry.kind === 'video'))
-			state.videos.set(entry.id, unknownVideo(entry.id));
-		const playlistEntries = options.catalogue.entries.filter((entry) => entry.kind === 'playlist');
-		for (const entry of playlistEntries)
-			state.playlists.set(entry.id, {
-				title: 'YouTube playlist',
-				channelTitle: '',
-				videos: [],
-				checkedAt: null,
-				state: 'unknown',
-				pages: 0,
-				partial: true,
-				reason: 'Availability could not be checked.'
-			});
-		try {
-			await withDeadline(async (signal) => {
-				await Promise.all([
-					(async () => {
-						state.videos = await videos(
-							options.catalogue.entries
-								.filter((entry) => entry.kind === 'video')
-								.map((entry) => entry.id),
-							key,
-							signal
-						);
-					})(),
-					...chunks(playlistEntries, 50).map(async (batch) => {
-						try {
-							const result = await provider(
-								'playlists',
-								{
-									id: batch.map((entry) => entry.id).join(','),
-									part: 'snippet,contentDetails,status'
-								},
-								key,
-								signal
-							);
-							const returned = new Map(
-								(result.items as unknown[]).map((item) => {
-									const value = record(item);
-									if (!value || typeof value.id !== 'string') throw new ProviderFailure();
-									return [value.id, value] as const;
-								})
-							);
-							await Promise.all(
-								batch.map(async (entry) => {
-									const playlist = state.playlists.get(entry.id)!;
-									const value = returned.get(entry.id);
-									if (!value || record(value.status)?.privacyStatus === 'private') {
-										Object.assign(playlist, {
-											state: 'unavailable',
-											checkedAt: iso(now()),
-											partial: false,
-											reason: 'This playlist is no longer publicly available.'
-										});
-										return;
-									}
-									const snippet = record(value.snippet);
-									if (
-										!snippet ||
-										typeof snippet.title !== 'string' ||
-										typeof record(value.status)?.privacyStatus !== 'string'
-									)
-										return;
-									playlist.title = text(snippet.title);
-									playlist.channelTitle = text(snippet.channelTitle);
-									const count = record(value.contentDetails)?.itemCount;
-									if (typeof count === 'number' && Number.isSafeInteger(count) && count >= 0)
-										playlist.totalCount = count;
-									playlist.state = 'eligible';
-									await members(entry, playlist, key, signal);
-								})
-							);
-						} catch {
-							/* Provider failure leaves these playlists unknown. */
-						}
-					})
-				]);
-			}, CHECK_TIMEOUT_MS);
-		} catch {
-			/* Deadline leaves unfinished entries unknown, never deleted. */
-		}
-		const partial =
-			[...state.videos.values()].some((video) => video.state === 'unknown') ||
-			[...state.playlists.values()].some((playlist) => playlist.partial);
-		state.expiresAt = now() + (partial ? FAILURE_TTL_MS : CACHE_TTL_MS);
-		// Reusing a successful video lookup must not extend its 15-minute freshness window.
-		for (const value of [
-			...state.videos.values(),
-			...[...state.playlists.values()].flatMap((playlist) => playlist.videos)
-		]) {
-			if (value.checkedAt)
-				state.expiresAt = Math.min(state.expiresAt, Date.parse(value.checkedAt) + CACHE_TTL_MS);
-		}
-		// A timed-out provider that ignores abort must not mutate an already returned snapshot.
+	function videoExpiry(value: RawVideo): number {
+		const ttl = value.state === 'unknown' ? FAILURE_TTL_MS : CACHE_TTL_MS;
+		const cached = videoCache.get(value.id);
+		return Math.min(
+			value.checkedAt ? Date.parse(value.checkedAt) + ttl : now() + ttl,
+			cached?.value === value ? cached.expiresAt : Infinity
+		);
+	}
+
+	function playlistExpiry(value: RawPlaylist, startedAt: number): number {
+		return Math.min(
+			startedAt + CACHE_TTL_MS,
+			value.partial ? now() + FAILURE_TTL_MS : Infinity,
+			...value.videos.map(videoExpiry)
+		);
+	}
+
+	function unknownPlaylist(): RawPlaylist {
 		return {
-			...state,
-			videos: new Map(state.videos),
-			playlists: new Map(
-				[...state.playlists].map(([id, playlist]) => [
-					id,
-					{ ...playlist, videos: [...playlist.videos] }
-				])
-			)
+			title: 'YouTube playlist',
+			channelTitle: '',
+			videos: [],
+			checkedAt: null,
+			state: 'unknown',
+			pages: 0,
+			partial: true,
+			reason: 'Availability could not be checked.'
 		};
+	}
+
+	async function ensureVideos(state: Snapshot, key: string) {
+		const entries = options.catalogue.entries.filter(
+			(entry) => entry.kind === 'video' && !state.expires.has(entry.key)
+		);
+		if (!entries.length) return;
+		const flightKey = 'standalone-videos';
+		if (!state.flights.has(flightKey)) {
+			const operation = withDeadline(
+				(signal) =>
+					videos(
+						entries.map((entry) => entry.id),
+						key,
+						signal
+					),
+				CHECK_TIMEOUT_MS
+			)
+				.catch(() => new Map(entries.map((entry) => [entry.id, unknownVideo(entry.id)])))
+				.then((checked) => {
+					if (snapshot !== state) return;
+					for (const entry of entries) {
+						const value = checked.get(entry.id) ?? unknownVideo(entry.id);
+						state.videos.set(entry.id, value);
+						state.expires.set(entry.key, videoExpiry(value));
+					}
+				})
+				.finally(() => {
+					state.flights.delete(flightKey);
+					cache(state);
+				});
+			state.flights.set(flightKey, operation);
+		}
+		await state.flights.get(flightKey);
+	}
+
+	async function checkPlaylists(entries: CatalogueEntry[], key: string, signal: AbortSignal) {
+		const checked = new Map(entries.map((entry) => [entry.id, unknownPlaylist()]));
+		try {
+			const result = await provider(
+				'playlists',
+				{
+					id: entries.map((entry) => entry.id).join(','),
+					part: 'snippet,contentDetails,status'
+				},
+				key,
+				signal
+			);
+			const returned = new Map(
+				(result.items as unknown[]).map((item) => {
+					const value = record(item);
+					if (!value || typeof value.id !== 'string' || !checked.has(value.id))
+						throw new ProviderFailure();
+					return [value.id, value] as const;
+				})
+			);
+			await Promise.all(
+				entries.map(async (entry) => {
+					const playlist = checked.get(entry.id)!;
+					const value = returned.get(entry.id);
+					if (!value || record(value.status)?.privacyStatus === 'private') {
+						Object.assign(playlist, {
+							state: 'unavailable',
+							checkedAt: iso(now()),
+							partial: false,
+							reason: 'This playlist is no longer publicly available.'
+						});
+						return;
+					}
+					const snippet = record(value.snippet);
+					if (
+						!snippet ||
+						typeof snippet.title !== 'string' ||
+						typeof record(value.status)?.privacyStatus !== 'string'
+					)
+						return;
+					playlist.title = text(snippet.title);
+					playlist.channelTitle = text(snippet.channelTitle);
+					const count = record(value.contentDetails)?.itemCount;
+					if (typeof count === 'number' && Number.isSafeInteger(count) && count >= 0)
+						playlist.totalCount = count;
+					playlist.state = 'eligible';
+					await members(entry, playlist, key, signal);
+				})
+			);
+		} catch {
+			/* Unknown results are retained for failed provider metadata calls. */
+		}
+		return checked;
+	}
+
+	async function ensurePlaylists(state: Snapshot, entries: CatalogueEntry[], key: string) {
+		const pending: Promise<void>[] = [];
+		const fresh = new Map<string, () => void>();
+		for (const entry of entries) {
+			if (state.expires.has(entry.key)) continue;
+			let operation = state.flights.get(entry.key);
+			if (!operation) {
+				operation = new Promise<void>((resolve) => fresh.set(entry.key, resolve));
+				state.flights.set(entry.key, operation);
+			}
+			pending.push(operation);
+		}
+		if (fresh.size) {
+			const requested = entries.filter((entry) => fresh.has(entry.key));
+			const startedAt = now();
+			const checked = await withDeadline(
+				(signal) => checkPlaylists(requested, key, signal),
+				CHECK_TIMEOUT_MS
+			).catch(() => new Map(requested.map((entry) => [entry.id, unknownPlaylist()])));
+			// The working copy is committed only after the bounded check has settled.
+			// A late provider that ignores abort cannot alter the published prefix.
+			if (snapshot === state) {
+				for (const entry of requested) {
+					const value = checked.get(entry.id)!;
+					state.playlists.set(entry.id, { ...value, videos: [...value.videos] });
+					state.expires.set(entry.key, playlistExpiry(value, startedAt));
+				}
+			}
+			for (const [id, resolve] of fresh) {
+				state.flights.delete(id);
+				resolve();
+			}
+			cache(state);
+		}
+		await Promise.all(pending);
 	}
 
 	function item(entry: CatalogueEntry, state: Snapshot | undefined, country?: string): GalleryItem {
@@ -569,13 +633,27 @@ export function createGalleryService(options: {
 				snapshot = undefined;
 				clearTimeout(expiryTimer);
 				videoCache.clear();
+				videoFlights.clear();
 				previousKey = key;
 			}
+			const batch = query.batch ?? 0;
+			if (
+				query.batch !== undefined &&
+				(!Number.isInteger(batch) || batch < 0 || batch >= batchCount)
+			)
+				throw new Error('Choose a known catalogue batch.');
+			const batchEntries = playlistEntries.slice(
+				batch * PLAYLIST_BATCH_SIZE,
+				(batch + 1) * PLAYLIST_BATCH_SIZE
+			);
+			const batchKeys = new Set(batchEntries.map((entry) => entry.key));
 			const entries = query.playlistKey
 				? options.catalogue.entries.filter(
 						(entry) => entry.key === query.playlistKey && entry.kind === 'playlist'
 					)
-				: options.catalogue.entries;
+				: options.catalogue.entries.filter(
+						(entry) => batchKeys.has(entry.key) || (batch === 0 && entry.kind !== 'playlist')
+					);
 			if (!key)
 				return {
 					items: entries.map((entry) => item(entry, undefined, country)),
@@ -584,58 +662,86 @@ export function createGalleryService(options: {
 					configuration: 'missing-key',
 					partial: true
 				};
-			if (!snapshot || snapshot.expiresAt <= now()) {
-				initialFlight ??= refresh(key).finally(() => {
-					initialFlight = undefined;
-				});
-				cache(await initialFlight);
-				// Expired continuation tokens restart with a bounded first page.
-				query = {};
-			}
-			const state = snapshot!;
-			if (query.playlistKey && entries[0]) {
+			const state = (snapshot ??= {
+				videos: new Map(),
+				playlists: new Map(),
+				expires: new Map(),
+				flights: new Map()
+			});
+			prune(state);
+			const continuationWasFresh = Boolean(
+				query.playlistKey && state.expires.has(query.playlistKey)
+			);
+			await Promise.all([
+				!query.playlistKey && batch === 0 ? ensureVideos(state, key) : Promise.resolve(),
+				ensurePlaylists(
+					state,
+					entries.filter((entry) => entry.kind === 'playlist'),
+					key
+				)
+			]);
+			// A cold or expired continuation starts only this playlist's first page.
+			// It never rechecks the unrelated catalogue or chains two18-second operations.
+			if (query.playlistKey && continuationWasFresh && entries[0]) {
 				const entry = entries[0];
 				const playlist = state.playlists.get(entry.id);
+				const previousExpiry = state.expires.get(entry.key) ?? now();
 				if (
 					playlist?.nextToken &&
 					query.page === playlist.pages &&
 					playlist.pages < MAX_PLAYLIST_PAGES &&
 					(playlist.retryAfter ?? 0) <= now()
 				) {
-					const flightKey = `${entry.key}:${query.page}`;
-					if (!playlistFlights.has(flightKey)) {
+					const flightKey = `${entry.key}:page:${query.page}`;
+					if (!state.flights.has(flightKey)) {
 						const working = { ...playlist, videos: [...playlist.videos] };
-						playlistFlights.set(
+						const startedAt = now();
+						const stillCurrent = () =>
+							snapshot === state &&
+							state.playlists.get(entry.id) === playlist &&
+							previousExpiry > now();
+						state.flights.set(
 							flightKey,
 							withDeadline((signal) => members(entry, working, key, signal), CHECK_TIMEOUT_MS)
 								.then(() => {
+									if (!stillCurrent()) return;
 									state.playlists.set(entry.id, { ...working, videos: [...working.videos] });
+									state.expires.set(
+										entry.key,
+										Math.min(previousExpiry, playlistExpiry(working, startedAt))
+									);
 								})
 								.catch(() => {
-									playlist.partial = true;
-									playlist.retryAfter = now() + FAILURE_TTL_MS;
+									if (!stillCurrent()) return;
+									state.playlists.set(entry.id, {
+										...playlist,
+										partial: true,
+										retryAfter: now() + FAILURE_TTL_MS
+									});
+									state.expires.set(entry.key, Math.min(previousExpiry, now() + FAILURE_TTL_MS));
 								})
 								.finally(() => {
-									playlistFlights.delete(flightKey);
+									state.flights.delete(flightKey);
+									cache(state);
 								})
 						);
 					}
-					await playlistFlights.get(flightKey);
-					if (state.playlists.get(entry.id)?.partial) {
-						state.expiresAt = Math.min(state.expiresAt, now() + FAILURE_TTL_MS);
-						cache(state);
-					}
+					await state.flights.get(flightKey);
 				}
 			}
 			const items = entries.map((entry) => item(entry, state, country));
 			const timestamps = items
 				.map((value) => value.checkedAt)
 				.filter((value): value is string => value !== null);
+			const expiries = entries
+				.filter((entry) => entry.kind !== 'mix')
+				.map((entry) => state.expires.get(entry.key) ?? now() + FAILURE_TTL_MS);
 			return {
 				items,
 				checkedAt: timestamps.length ? timestamps.sort()[0] : null,
-				expiresAt: iso(state.expiresAt),
+				expiresAt: expiries.length ? iso(Math.min(...expiries)) : null,
 				configuration: 'ready',
+				...(!query.playlistKey && batch + 1 < batchCount ? { nextBatch: batch + 1 } : {}),
 				partial: items.some(
 					(value) =>
 						value.kind !== 'mix' &&
