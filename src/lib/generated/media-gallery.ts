@@ -3786,6 +3786,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "green-tea-boiled-leaf-water.jpg",
+			"src": "/images/green-tea-boiled-leaf-water.jpg",
+			"bytes": 441321,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "handwritten-notes-social-card.png",
 			"src": "/images/handwritten-notes-social-card.png",
 			"bytes": 609197,

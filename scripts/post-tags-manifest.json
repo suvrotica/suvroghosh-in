@@ -16682,6 +16682,36 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/green-tea-the-gospel-of-boiled-leaf-water.md": {
+			"bodyHash": "08a07418b1463677c2079eb0202e4e4bc5cc4e3f48e691472e4851ecc7c7d5c5",
+			"hashVersion": 2,
+			"revisionHash": "e5b9cab32fc499b8f7c26e576c8b8a7c1509e305f9feaea31edf8779c2008eff",
+			"generatedTags": [
+				"Green Tea",
+				"Antioxidants",
+				"EGCG",
+				"Matcha",
+				"Tea Ceremony",
+				"Catechins",
+				"Polyphenols",
+				"Satire",
+				"Calcutta",
+				"Shennong"
+			],
+			"pinnedTags": [
+				"Green Tea",
+				"Antioxidants",
+				"EGCG",
+				"Matcha",
+				"Tea Ceremony",
+				"Catechins",
+				"Polyphenols",
+				"Satire",
+				"Calcutta",
+				"Shennong"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

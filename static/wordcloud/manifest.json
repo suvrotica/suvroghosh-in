@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T14:24:22.075768+00:00",
+  "generatedAt": "2026-11-03T14:53:14.379005+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4552,6 +4552,29 @@
         "Arrive",
         "Afraid",
         "Removes"
+      ],
+      "wordCount": 130
+    },
+    "green-tea-the-gospel-of-boiled-leaf-water": {
+      "generatedAt": "2026-11-03T14:53:13.596231+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/green-tea-the-gospel-of-boiled-leaf-water.svg",
+      "source": "src/lib/posts/green-tea-the-gospel-of-boiled-leaf-water.md",
+      "sourceHash": "147bd91f71fdbd42b88c1b3c0c4155098ef09683061ac8d6f797e9268116d94c",
+      "sourceModified": "2026-11-03T14:52:05.984206+00:00",
+      "topWords": [
+        "Tea",
+        "Green",
+        "Leaves",
+        "Water",
+        "Noble",
+        "Yet",
+        "Antioxidants",
+        "Vegetal",
+        "Shennong",
+        "Boiling",
+        "Isn",
+        "Earnest"
       ],
       "wordCount": 130
     },

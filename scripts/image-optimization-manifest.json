@@ -9628,6 +9628,22 @@
       "sourceHash": "b042d87480e777d49ed00c19dbd2d5732f7f7b3a9da449be7644c992a45d2dba",
       "width": 1200
     },
+    "static/images/green-tea-boiled-leaf-water.jpg": {
+      "format": "JPEG",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 441321,
+      "outputHash": "217d7001e521e949f63e12f508c262f988a8554c1483759d8aab1fea5fca032b",
+      "psnrDb": 37.03,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 508871,
+      "sourceHash": "c18fdbfe963c7861273f8d9c394ac554a8fedc72568a45bf4f1a5efbd05a1ab6",
+      "width": 1600
+    },
     "static/images/handwritten-notes-social-card.png": {
       "format": "PNG",
       "height": 630,
