@@ -31,6 +31,7 @@
 	let prefersReducedMotion = $state(false);
 	let enterButton = $state<HTMLButtonElement>();
 	let returnFocus = false;
+	let returnFrame: number | null = null;
 
 	onMount(() => {
 		capable = supportsWebGL();
@@ -40,7 +41,10 @@
 			prefersReducedMotion = event.matches;
 		};
 		media.addEventListener('change', updateMotion);
-		return () => media.removeEventListener('change', updateMotion);
+		return () => {
+			media.removeEventListener('change', updateMotion);
+			if (returnFrame !== null) cancelAnimationFrame(returnFrame);
+		};
 	});
 
 	async function enterMuseum() {
@@ -66,7 +70,23 @@
 		RendererComponent = null;
 		if (returnFocus) {
 			returnFocus = false;
-			requestAnimationFrame(() => enterButton?.focus());
+			returnFrame = requestAnimationFrame(() => {
+				returnFrame = null;
+				const selectedCard = document.querySelector<HTMLAnchorElement>(
+					'#sketch-collection li.selected a'
+				);
+				const target = selectedCard ?? document.getElementById('collection-heading');
+				if (!target) {
+					enterButton?.focus();
+					return;
+				}
+				if (!selectedCard) target.setAttribute('tabindex', '-1');
+				target.focus({ preventScroll: true });
+				target.scrollIntoView({
+					behavior: prefersReducedMotion ? 'auto' : 'smooth',
+					block: 'start'
+				});
+			});
 		}
 	}
 
@@ -114,12 +134,11 @@
 				<span class="entrance-bench"></span>
 			</div>
 			<div class="entrance-copy">
-				<p class="entrance-eyebrow">{artworks.length} works · procedurally arranged rooms</p>
-				<h3>Step into the opening gallery</h3>
+				<p class="entrance-eyebrow">{artworks.length} works · rooms and wall views</p>
+				<h3>Explore the 3D gallery</h3>
 				<p>
-					Walk among framed sketches under focused gallery lights. Follow the illuminated room signs
-					above each doorway, or use the guided artwork and room controls. Movement begins only when
-					you choose to enter.
+					See a wall of drawings at a time, choose a room or artwork directly, or walk through the
+					gallery at your own pace.
 				</p>
 				<div class="entrance-actions">
 					<button bind:this={enterButton} type="button" onclick={enterMuseum} disabled={loading}>
@@ -128,8 +147,7 @@
 					<a href="#sketch-collection">Open the collection instead</a>
 				</div>
 				<p class="entrance-note">
-					The museum loads separately. The complete two-dimensional collection remains available
-					below.
+					The museum loads separately. The complete collection is available above.
 				</p>
 			</div>
 		</div>

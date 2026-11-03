@@ -18,6 +18,7 @@
 		MeshBasicMaterial,
 		MeshStandardMaterial,
 		Object3D,
+		OrthographicCamera,
 		PCFSoftShadowMap,
 		PerspectiveCamera,
 		PlaneGeometry,
@@ -47,6 +48,7 @@
 		prepareSketchTexture
 	} from './museum-materials';
 	import { shouldHandleMuseumMovementKey } from './museum-input';
+	import { createMuseumLoadQueue } from './museum-loading';
 	import {
 		DOOR_HEIGHT,
 		DOOR_WIDTH,
@@ -54,10 +56,11 @@
 		activeRoomIdsFor,
 		calculateArtworkFootprint,
 		createMuseumLayout,
-		ensureWalkableViewPosition,
+		focusedArtworkView,
 		isWalkable,
 		isWalkableSegment,
-		roomWayfindingFor
+		roomWayfindingFor,
+		roomOverviewLayout
 	} from './museum-layout';
 	import type {
 		ArtworkPlacement,
@@ -90,6 +93,15 @@
 
 	let shell: HTMLDivElement;
 	let canvas: HTMLCanvasElement;
+	let viewport: HTMLDivElement;
+	let viewMode = $state<'overview' | 'focus' | 'walk'>('overview');
+	let overviewWall = $state<MuseumWall>('north');
+	let overviewKind = $state<'room' | 'wall'>('room');
+	const overviewRoot = new Group();
+	let overviewCamera: OrthographicCamera | null = null;
+	let intersectionObserver: IntersectionObserver | null = null;
+	let inViewport = true;
+	const textureQueue = createMuseumLoadQueue(4);
 	let status = $state('Preparing gallery');
 	let roomName = $state('Opening Gallery');
 	let currentSlug = $state<string | null>(null);
@@ -151,6 +163,19 @@
 	);
 	let previousRoom = $derived(layout.rooms[activeRoomIndex - 1] ?? null);
 	let nextRoom = $derived(layout.rooms[activeRoomIndex + 1] ?? null);
+	let roomArtworks = $derived(
+		(layout.rooms[activeRoomIndex]?.artworkSlugs ?? []).flatMap((slug) => {
+			const artwork = artworkBySlug.get(slug);
+			return artwork ? [artwork] : [];
+		})
+	);
+	let roomWalls = $derived(
+		(['north', 'east', 'south', 'west'] as const).filter((wall) =>
+			layout.placements.some(
+				(placement) => placement.roomId === activeRoomId && placement.wall === wall
+			)
+		)
+	);
 	let focusAnimation: {
 		startedAt: number;
 		duration: number;
@@ -389,6 +414,7 @@
 				new PlaneGeometry(placement.frame.outerWidth + 2.1, placement.frame.outerHeight + 2.2),
 				poolMaterial
 			);
+			pool.name = 'artwork-light-pool';
 			pool.position.z = 0.035;
 			group.add(pool);
 		}
@@ -406,6 +432,7 @@
 		group.add(canvasMesh);
 
 		const fixture = new Mesh(new CylinderGeometry(0.11, 0.16, 0.34, 12), fixtureMaterial);
+		fixture.name = 'artwork-fixture';
 		fixture.position.set(0, placement.frame.outerHeight / 2 + 0.82, 0.38);
 		fixture.rotation.x = Math.PI / 2;
 		fixture.castShadow = true;
@@ -440,44 +467,49 @@
 		if (runtime.texture || runtime.loading) return runtime.loading;
 		const requestId = ++runtime.requestId;
 		let load!: Promise<void>;
-		load = (async () => {
-			try {
-				const texture = prepareSketchTexture(
-					await textureLoader.loadAsync(variantSource(runtime.placement.artwork))
-				);
-				if (
-					destroyed ||
-					requestId !== runtime.requestId ||
-					!activeRoomIds.has(runtime.placement.roomId)
-				) {
-					texture.dispose();
-					return;
+		load = textureQueue.run(
+			async () => {
+				try {
+					const texture = prepareSketchTexture(
+						await textureLoader.loadAsync(variantSource(runtime.placement.artwork))
+					);
+					if (
+						destroyed ||
+						requestId !== runtime.requestId ||
+						!activeRoomIds.has(runtime.placement.roomId)
+					) {
+						texture.dispose();
+						return;
+					}
+					const material = createMountedSketchMaterial(
+						texture,
+						runtime.placement.artwork.canvasMode,
+						quality
+					);
+					runtime.texture = texture;
+					runtime.material = material;
+					runtime.canvasMesh.material = material;
+					runtime.failed = false;
+				} catch (error) {
+					if (destroyed || requestId !== runtime.requestId) return;
+					runtime.failed = true;
+					const placeholder = createPlaceholderArtwork(
+						runtime.placement.artwork.source.width,
+						runtime.placement.artwork.source.height
+					);
+					const material = createMountedSketchMaterial(placeholder, 'original', 'low');
+					runtime.texture = placeholder;
+					runtime.material = material;
+					runtime.canvasMesh.material = material;
+					console.warn(`Sketch Museum could not load ${runtime.placement.artwork.slug}.`, error);
+				} finally {
+					if (runtime.loading === load) runtime.loading = null;
+					startAnimation();
 				}
-				const material = createMountedSketchMaterial(
-					texture,
-					runtime.placement.artwork.canvasMode,
-					quality
-				);
-				runtime.texture = texture;
-				runtime.material = material;
-				runtime.canvasMesh.material = material;
-				runtime.failed = false;
-			} catch (error) {
-				if (destroyed || requestId !== runtime.requestId) return;
-				runtime.failed = true;
-				const placeholder = createPlaceholderArtwork(
-					runtime.placement.artwork.source.width,
-					runtime.placement.artwork.source.height
-				);
-				const material = createMountedSketchMaterial(placeholder, 'original', 'low');
-				runtime.texture = placeholder;
-				runtime.material = material;
-				runtime.canvasMesh.material = material;
-				console.warn(`Sketch Museum could not load ${runtime.placement.artwork.slug}.`, error);
-			} finally {
-				if (runtime.loading === load) runtime.loading = null;
-			}
-		})();
+			},
+			() =>
+				!destroyed && requestId === runtime.requestId && activeRoomIds.has(runtime.placement.roomId)
+		);
 		runtime.loading = load;
 		return load;
 	}
@@ -538,13 +570,16 @@
 		if (!room) return;
 		activeRoomId = room.id;
 		roomName = room.name;
-		const nextActive = new SvelteSet(activeRoomIdsFor(layout, room.id));
+		const nextActive = new SvelteSet(
+			viewMode === 'walk' ? activeRoomIdsFor(layout, room.id) : [room.id]
+		);
 		const changed =
 			nextActive.size !== activeRoomIds.size ||
 			[...nextActive].some((roomKey) => !activeRoomIds.has(roomKey));
 		const geometryMissing = [...nextActive].some((roomKey) => !roomGroups.has(roomKey));
 		if (!changed && !geometryMissing) return;
 
+		restorePhysicalHanging();
 		const activationId = ++roomActivationId;
 		activeRoomIds = nextActive;
 
@@ -555,10 +590,13 @@
 			const nextRoom = layout.rooms.find((candidate) => candidate.id === nextRoomId);
 			if (nextRoom) ensureRoomGeometry(nextRoom);
 		}
+		if (viewMode === 'overview') updateOverviewCamera();
 
-		const nearby = [...runtimes.values()].filter((runtime) =>
-			nextActive.has(runtime.placement.roomId)
-		);
+		const nearby = [...runtimes.values()]
+			.filter((runtime) => nextActive.has(runtime.placement.roomId))
+			.sort(
+				(a, b) => Number(b.placement.roomId === room.id) - Number(a.placement.roomId === room.id)
+			);
 		status = `Loading ${room.name}`;
 		let loaded = 0;
 		await Promise.all(
@@ -617,17 +655,20 @@
 	async function focusArtwork(slug: string, notify: boolean) {
 		const placement = placementBySlug.get(slug);
 		if (!placement || !camera) return;
+		restorePhysicalHanging();
+		viewMode = 'focus';
+		overviewWall = placement.wall;
+		clearMovement();
+		if (document.pointerLockElement === canvas) document.exitPointerLock();
 		const requestId = ++focusRequestId;
 		autoSelectionArmed = false;
 		currentSlug = slug;
 		if (notify) onSelect(slug);
-		const safeViewPosition = ensureWalkableViewPosition(
-			layout,
-			placement.roomId,
-			placement.viewPosition
-		);
-		const endPosition = new Vector3(...safeViewPosition);
-		const target = artworkFocusTarget(placement);
+		const fitted = focusedArtworkView(layout, placement, camera.aspect);
+		camera.fov = fitted.fov;
+		camera.updateProjectionMatrix();
+		const endPosition = new Vector3(...fitted.position);
+		const target = new Vector3(...fitted.target);
 		const angles = viewingAngles(endPosition, target);
 		const currentRoom = roomContaining(camera.position);
 		const canInterpolate =
@@ -655,6 +696,7 @@
 			pitch = angles.pitch;
 			focusAnimation = null;
 			focusFading = false;
+			startAnimation();
 			return;
 		}
 		focusFading = false;
@@ -668,6 +710,7 @@
 			startPitch: pitch,
 			endPitch: angles.pitch
 		};
+		startAnimation();
 	}
 
 	function selectNearest(direction: 1 | -1) {
@@ -682,14 +725,154 @@
 		void focusArtwork(orderedArtworks[nextIndex].slug, true);
 	}
 
+	function restorePhysicalHanging() {
+		overviewRoot.visible = false;
+		for (const roomGroup of roomGroups.values()) roomGroup.visible = true;
+		for (const runtime of runtimes.values()) {
+			const room = layout.rooms.find((item) => item.id === runtime.placement.roomId);
+			const roomGroup = roomGroups.get(runtime.placement.roomId);
+			if (!room || !roomGroup) continue;
+			if (runtime.group.parent !== roomGroup) roomGroup.add(runtime.group);
+			runtime.group.position.set(
+				runtime.placement.position[0] - room.center[0],
+				runtime.placement.position[1],
+				runtime.placement.position[2] - room.center[1]
+			);
+			runtime.group.rotation.y = runtime.placement.rotationY;
+			for (const child of runtime.group.children) {
+				if (child.name === 'artwork-light-pool' || child.name === 'artwork-fixture')
+					child.visible = true;
+			}
+		}
+	}
+
+	function updateOverviewCamera() {
+		if (!overviewCamera || !viewport) return;
+		const room = layout.rooms.find((candidate) => candidate.id === activeRoomId);
+		if (!room) return;
+		restorePhysicalHanging();
+		const available = layout.placements.filter((placement) => placement.roomId === room.id);
+		const aspect = Math.max(0.1, viewport.clientWidth / Math.max(1, viewport.clientHeight));
+		if (viewMode === 'overview' && overviewKind === 'room') {
+			const hanging = roomOverviewLayout(available, aspect);
+			for (const roomGroup of roomGroups.values()) roomGroup.visible = false;
+			overviewRoot.visible = true;
+			for (const item of hanging.positions) {
+				const runtime = runtimes.get(item.slug);
+				if (!runtime) continue;
+				overviewRoot.add(runtime.group);
+				runtime.group.position.set(...item.position);
+				runtime.group.rotation.y = 0;
+				for (const child of runtime.group.children) {
+					if (child.name === 'artwork-light-pool' || child.name === 'artwork-fixture')
+						child.visible = false;
+				}
+			}
+			const fitHeight = Math.max(hanging.height, hanging.width / aspect);
+			overviewCamera.left = (-fitHeight * aspect) / 2;
+			overviewCamera.right = (fitHeight * aspect) / 2;
+			overviewCamera.top = fitHeight / 2;
+			overviewCamera.bottom = -fitHeight / 2;
+			overviewCamera.position.set(0, 0, 12);
+			overviewCamera.lookAt(0, 0, 0);
+			overviewCamera.updateProjectionMatrix();
+			overviewCamera.updateMatrixWorld();
+			startAnimation();
+			return;
+		}
+		if (!available.some((placement) => placement.wall === overviewWall))
+			overviewWall = available[0]?.wall ?? 'north';
+		const wallWorks = available.filter((placement) => placement.wall === overviewWall);
+		const horizontal = overviewWall === 'north' || overviewWall === 'south';
+		const axis = horizontal ? 0 : 2;
+		const minimum = Math.min(...wallWorks.map((p) => p.position[axis] - p.frame.outerWidth / 2));
+		const maximum = Math.max(...wallWorks.map((p) => p.position[axis] + p.frame.outerWidth / 2));
+		const bottom = Math.min(...wallWorks.map((p) => p.position[1] - p.frame.outerHeight / 2 - 0.7));
+		const top = Math.max(...wallWorks.map((p) => p.position[1] + p.frame.outerHeight / 2));
+		const width = wallWorks.length ? maximum - minimum + 0.8 : 10;
+		const height = wallWorks.length ? top - bottom + 0.8 : 5;
+		const fitHeight = Math.max(height, width / aspect);
+		overviewCamera.left = (-fitHeight * aspect) / 2;
+		overviewCamera.right = (fitHeight * aspect) / 2;
+		overviewCamera.top = fitHeight / 2;
+		overviewCamera.bottom = -fitHeight / 2;
+		const middle = wallWorks.length
+			? (minimum + maximum) / 2
+			: horizontal
+				? room.center[0]
+				: room.center[1];
+		const centerY = wallWorks.length ? (bottom + top) / 2 : 2.5;
+		const target = new Vector3(room.center[0], centerY, room.center[1]);
+		if (horizontal) {
+			target.x = middle;
+			target.z += overviewWall === 'north' ? -room.depth / 2 : room.depth / 2;
+			overviewCamera.position.set(middle, centerY, room.center[1]);
+		} else {
+			target.z = middle;
+			target.x += overviewWall === 'west' ? -room.width / 2 : room.width / 2;
+			overviewCamera.position.set(room.center[0], centerY, middle);
+		}
+		overviewCamera.lookAt(target);
+		overviewCamera.updateProjectionMatrix();
+		overviewCamera.updateMatrixWorld();
+		startAnimation();
+	}
+
+	function showRoomOverview() {
+		overviewKind = 'room';
+		beginOverview();
+	}
+
+	function showWall(wall: MuseumWall = overviewWall) {
+		overviewKind = 'wall';
+		overviewWall = wall;
+		beginOverview();
+	}
+
+	function beginOverview() {
+		viewMode = 'overview';
+		cancelGuidedFocus();
+		autoSelectionArmed = false;
+		pressedKeys.clear();
+		touchForward = touchStrafe = 0;
+		if (document.pointerLockElement === canvas) document.exitPointerLock();
+		void activateRoom(activeRoomId);
+		updateOverviewCamera();
+	}
+
 	function navigateToRoom(roomId: string) {
 		const targetRoom = layout.rooms.find((room) => room.id === roomId);
 		if (!targetRoom) return;
-		const enteringFromLaterRoom = targetRoom.index < activeRoomIndex;
-		const targetSlug = enteringFromLaterRoom
-			? targetRoom.artworkSlugs.at(-1)
-			: targetRoom.artworkSlugs[0];
-		if (targetSlug) void focusArtwork(targetSlug, true);
+		overviewKind = 'room';
+		viewMode = 'overview';
+		cancelGuidedFocus();
+		autoSelectionArmed = false;
+		pressedKeys.clear();
+		touchForward = touchStrafe = 0;
+		if (document.pointerLockElement === canvas) document.exitPointerLock();
+		currentSlug = targetRoom.artworkSlugs[0] ?? null;
+		if (currentSlug) onSelect(currentSlug);
+		void activateRoom(roomId);
+		updateOverviewCamera();
+	}
+
+	function toggleWalking() {
+		if (viewMode === 'walk') {
+			showWall();
+			return;
+		}
+		restorePhysicalHanging();
+		viewMode = 'walk';
+		cancelGuidedFocus();
+		const room = layout.rooms[activeRoomIndex];
+		if (camera && room) {
+			camera.fov = 58;
+			camera.updateProjectionMatrix();
+			camera.position.set(room.center[0], EYE_HEIGHT, room.center[1] + room.depth * 0.28);
+			yaw = pitch = 0;
+		}
+		void activateRoom(activeRoomId);
+		startAnimation();
 	}
 
 	function cancelGuidedFocus() {
@@ -699,20 +882,14 @@
 	}
 
 	function resetPosition() {
-		if (!camera) return;
-		cancelGuidedFocus();
 		const openingRoom = layout.rooms[0];
-		if (openingRoom) void activateRoom(openingRoom.id);
-		camera.position.set(...layout.startPosition);
-		yaw = 0;
-		pitch = 0;
-		currentSlug = null;
-		autoSelectionArmed = true;
+		if (openingRoom) navigateToRoom(openingRoom.id);
 	}
 
 	function updateTouchMove(strafe: number, forwardAmount: number) {
 		touchStrafe = strafe;
 		touchForward = forwardAmount;
+		startAnimation();
 		if (Math.abs(strafe) + Math.abs(forwardAmount) > 0.05) cancelGuidedFocus();
 	}
 
@@ -759,6 +936,8 @@
 	}
 
 	function openDetails() {
+		clearMovement();
+		if (document.pointerLockElement === canvas) document.exitPointerLock();
 		if (currentArtwork) onDetails(currentArtwork);
 	}
 
@@ -782,6 +961,7 @@
 	}
 
 	function handleKeyDown(event: KeyboardEvent) {
+		if (viewMode !== 'walk') return;
 		const key = event.key.toLowerCase();
 		if (
 			!shouldHandleMuseumMovementKey(key, {
@@ -791,6 +971,7 @@
 		)
 			return;
 		pressedKeys.add(key);
+		startAnimation();
 		cancelGuidedFocus();
 		event.preventDefault();
 	}
@@ -800,9 +981,11 @@
 	}
 
 	function rotateView(deltaX: number, deltaY: number) {
+		if (viewMode !== 'walk') return;
 		cancelGuidedFocus();
 		yaw -= deltaX * 0.0036;
 		pitch = clamp(pitch - deltaY * 0.0032, -1.25, 1.25);
+		startAnimation();
 	}
 
 	function handlePointerDown(event: PointerEvent) {
@@ -834,14 +1017,23 @@
 			((event.clientX - bounds.left) / bounds.width) * 2 - 1,
 			-((event.clientY - bounds.top) / bounds.height) * 2 + 1
 		);
-		raycaster.setFromCamera(pointer, camera);
+		raycaster.setFromCamera(
+			pointer,
+			viewMode === 'overview' && overviewCamera ? overviewCamera : camera
+		);
 		const visibleArtworkMeshes = [...runtimes.values()]
 			.filter(({ placement }) => {
 				const roomGroup = roomGroups.get(placement.roomId);
-				return activeRoomIds.has(placement.roomId) && roomGroup?.visible === true;
+				return (
+					activeRoomIds.has(placement.roomId) &&
+					(roomGroup?.visible === true || (viewMode === 'overview' && overviewKind === 'room'))
+				);
 			})
 			.map((runtime) => runtime.canvasMesh);
-		const visibleNavigationMeshes = roomNavigationMeshes.get(activeRoomId) ?? [];
+		const visibleNavigationMeshes =
+			overviewKind === 'room' && viewMode === 'overview'
+				? []
+				: (roomNavigationMeshes.get(activeRoomId) ?? []);
 		const intersection = raycaster.intersectObjects(
 			[...visibleArtworkMeshes, ...visibleNavigationMeshes],
 			false
@@ -869,7 +1061,7 @@
 	}
 
 	function updateMovement(deltaSeconds: number) {
-		if (!camera) return;
+		if (!camera || viewMode !== 'walk') return;
 		const keyboardForward =
 			(pressedKeys.has('w') || pressedKeys.has('arrowup') ? 1 : 0) -
 			(pressedKeys.has('s') || pressedKeys.has('arrowdown') ? 1 : 0);
@@ -909,7 +1101,8 @@
 	}
 
 	function updateNearbyArtwork() {
-		if (!camera || focusAnimation || focusFading || !autoSelectionArmed) return;
+		if (!camera || viewMode !== 'walk' || focusAnimation || focusFading || !autoSelectionArmed)
+			return;
 		let nearest: RuntimeArtwork | null = null;
 		let nearestDistance = 4.25;
 		for (const runtime of runtimes.values()) {
@@ -929,12 +1122,18 @@
 	}
 
 	function updateSpotlights() {
-		if (!camera) return;
+		if (viewMode === 'overview' && overviewKind === 'room') {
+			for (const light of activeSpots) light.visible = false;
+			for (const beam of activeSpotBeams) beam.visible = false;
+			return;
+		}
+		const lightingCamera = viewMode === 'overview' ? overviewCamera : camera;
+		if (!lightingCamera) return;
 		const nearby = [...runtimes.values()]
 			.filter((runtime) => activeRoomIds.has(runtime.placement.roomId))
 			.map((runtime) => {
 				runtime.group.getWorldPosition(worldPosition);
-				return { runtime, distance: camera!.position.distanceToSquared(worldPosition) };
+				return { runtime, distance: lightingCamera.position.distanceToSquared(worldPosition) };
 			})
 			.sort((left, right) => left.distance - right.distance)
 			.slice(0, activeSpots.length);
@@ -970,7 +1169,8 @@
 	}
 
 	function animate(now: number) {
-		if (destroyed || !renderer || !scene || !camera || !visible) return;
+		animationFrame = 0;
+		if (destroyed || !renderer || !scene || !camera || !visible || !inViewport) return;
 		const delta = Math.min(0.05, Math.max(0, (now - (lastFrameTime || now)) / 1000));
 		lastFrameTime = now;
 		updateFocus(now);
@@ -981,18 +1181,21 @@
 
 		frameCounter += 1;
 		if (frameCounter % 20 === 0) {
-			const currentRoom = roomContaining(camera.position);
+			const currentRoom = viewMode === 'walk' ? roomContaining(camera.position) : null;
 			if (currentRoom && currentRoom.id !== activeRoomId) void activateRoom(currentRoom.id);
 			updateNearbyArtwork();
-			updateSpotlights();
 		}
+		updateSpotlights();
 
-		renderer.render(scene, camera);
-		animationFrame = requestAnimationFrame(animate);
+		renderer.render(scene, viewMode === 'overview' && overviewCamera ? overviewCamera : camera);
+		const moving =
+			viewMode === 'walk' &&
+			(pressedKeys.size > 0 || Math.abs(touchForward) + Math.abs(touchStrafe) > 0.02);
+		if (focusAnimation || moving) animationFrame = requestAnimationFrame(animate);
 	}
 
 	function startAnimation() {
-		if (destroyed || !visible || animationFrame) return;
+		if (destroyed || !visible || !inViewport || animationFrame) return;
 		lastFrameTime = 0;
 		animationFrame = requestAnimationFrame(animate);
 	}
@@ -1003,8 +1206,14 @@
 		animationFrame = 0;
 	}
 
+	function clearMovement() {
+		pressedKeys.clear();
+		touchStrafe = touchForward = 0;
+	}
+
 	function handleVisibility() {
 		visible = !document.hidden;
+		if (!visible) clearMovement();
 		if (visible) startAnimation();
 		else stopAnimation();
 	}
@@ -1016,17 +1225,30 @@
 	function handleContextLost(event: Event) {
 		event.preventDefault();
 		stopAnimation();
-		status = 'The 3D gallery is unavailable. The collection remains below.';
+		status = 'The 3D gallery is unavailable. Return to the collection to browse every drawing.';
 		onError(status);
 	}
 
 	function sizeRenderer() {
-		if (!renderer || !camera || !shell) return;
-		const width = Math.max(1, shell.clientWidth);
-		const height = Math.max(1, shell.clientHeight);
+		if (!renderer || !camera || !viewport) return;
+		const width = Math.max(1, viewport.clientWidth);
+		const height = Math.max(1, viewport.clientHeight);
 		renderer.setSize(width, height, false);
 		camera.aspect = width / height;
+		if (viewMode === 'focus' && currentSlug) {
+			const placement = placementBySlug.get(currentSlug);
+			if (placement) {
+				const fitted = focusedArtworkView(layout, placement, camera.aspect);
+				focusAnimation = null;
+				camera.position.set(...fitted.position);
+				camera.fov = fitted.fov;
+				const angles = viewingAngles(camera.position, new Vector3(...fitted.target));
+				yaw = angles.yaw;
+				pitch = angles.pitch;
+			}
+		}
 		camera.updateProjectionMatrix();
+		updateOverviewCamera();
 	}
 
 	async function initialise() {
@@ -1060,6 +1282,9 @@
 
 			scene.add(new HemisphereLight('#ffe9c8', '#3b2418', quality === 'low' ? 0.9 : 0.72));
 			scene.add(new AmbientLight('#fff1d8', quality === 'low' ? 0.42 : 0.3));
+			overviewRoot.add(new AmbientLight('#ffffff', 1.25));
+			overviewRoot.visible = false;
+			scene.add(overviewRoot);
 			const directional = new DirectionalLight('#ffe4b8', quality === 'high' ? 0.56 : 0.4);
 			directional.position.set(-4, 6, 3);
 			directional.castShadow = quality === 'high';
@@ -1116,10 +1341,24 @@
 			}
 
 			resizeObserver = new ResizeObserver(sizeRenderer);
-			resizeObserver.observe(shell);
+			resizeObserver.observe(viewport);
+			overviewCamera = new OrthographicCamera(-8, 8, 4, -4, 0.1, 50);
+			if (initialPlacement) viewMode = 'focus';
+			if ('IntersectionObserver' in window) {
+				intersectionObserver = new IntersectionObserver(([entry]) => {
+					inViewport = entry.isIntersecting;
+					if (inViewport) startAnimation();
+					else {
+						clearMovement();
+						stopAnimation();
+					}
+				});
+				intersectionObserver.observe(viewport);
+			}
 			sizeRenderer();
 			window.addEventListener('keydown', handleKeyDown, { passive: false });
 			window.addEventListener('keyup', handleKeyUp);
+			window.addEventListener('blur', clearMovement);
 			document.addEventListener('visibilitychange', handleVisibility);
 			document.addEventListener('pointerlockchange', handlePointerLockChange);
 			document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -1132,9 +1371,11 @@
 			initialised = true;
 			const initialRoom = layout.rooms.find((room) => room.id === activeRoomId) ?? layout.rooms[0];
 			if (initialRoom) await activateRoom(initialRoom.id);
+			updateOverviewCamera();
 			updateSpotlights();
 			if (!destroyed) startAnimation();
 		} catch (error) {
+			if (destroyed) return;
 			const message =
 				error instanceof Error ? error.message : 'The 3D gallery could not be prepared.';
 			console.error('Sketch Museum failed to initialise.', error);
@@ -1148,8 +1389,11 @@
 		roomActivationId += 1;
 		stopAnimation();
 		resizeObserver?.disconnect();
+		intersectionObserver?.disconnect();
+		textureQueue.clear();
 		window.removeEventListener('keydown', handleKeyDown);
 		window.removeEventListener('keyup', handleKeyUp);
+		window.removeEventListener('blur', clearMovement);
 		document.removeEventListener('visibilitychange', handleVisibility);
 		document.removeEventListener('pointerlockchange', handlePointerLockChange);
 		document.removeEventListener('fullscreenchange', handleFullscreenChange);
@@ -1160,6 +1404,7 @@
 		canvas?.removeEventListener('webglcontextlost', handleContextLost);
 		if (document.pointerLockElement === canvas) document.exitPointerLock();
 		if (document.fullscreenElement === shell) void document.exitFullscreen();
+		restorePhysicalHanging();
 		for (const runtime of runtimes.values()) releaseTexture(runtime);
 		if (scene) disposeObjectTree(scene);
 		lightPoolTexture?.dispose();
@@ -1197,21 +1442,34 @@
 </script>
 
 <div bind:this={shell} class="scene-shell" data-quality={quality}>
-	<canvas
-		bind:this={canvas}
-		class:focus-fading={focusFading}
-		aria-label="Interactive three-dimensional Sketch Museum. Use the controls to walk and look around. A complete accessible collection is available after the museum."
-		tabindex="0"
-	></canvas>
+	<div bind:this={viewport} class="scene-viewport" class:walking={viewMode === 'walk'}>
+		<canvas
+			bind:this={canvas}
+			class:focus-fading={focusFading}
+			aria-label="Three-dimensional Sketch Museum. Choose a wall, jump to a room, or select a drawing. Walking is optional. The complete collection is available outside the museum."
+			tabindex="0"
+		></canvas>
 
-	{#if status && !status.endsWith('ready')}
-		<div class="scene-status" role="status" aria-live="polite">
-			<span></span>
-			{status}
-		</div>
-	{/if}
-
+		{#if status && !status.endsWith('ready')}
+			<div class="scene-status" role="status" aria-live="polite">
+				<span></span>
+				{status}
+			</div>
+		{/if}
+	</div>
 	<MuseumControls
+		rooms={layout.rooms}
+		{activeRoomId}
+		{roomArtworks}
+		{roomWalls}
+		{overviewWall}
+		{overviewKind}
+		onRoomOverview={showRoomOverview}
+		{viewMode}
+		onRoom={navigateToRoom}
+		onWall={showWall}
+		onWalking={toggleWalking}
+		onArtwork={(slug) => void focusArtwork(slug, true)}
 		{currentArtwork}
 		{roomName}
 		roomIndex={activeRoomIndex}
@@ -1239,8 +1497,8 @@
 	.scene-shell {
 		position: relative;
 		width: 100%;
-		height: min(78dvh, 52rem);
-		min-height: 34rem;
+		display: flex;
+		flex-direction: column;
 		overflow: hidden;
 		border-radius: 0.65rem;
 		background: #19130f;
@@ -1250,10 +1508,18 @@
 		isolation: isolate;
 	}
 
+	.scene-viewport {
+		position: relative;
+		height: min(58dvh, 40rem);
+		min-height: 19rem;
+		flex: 1 0 auto;
+	}
+
 	.scene-shell:fullscreen {
 		width: 100vw;
 		height: 100dvh;
 		min-height: 0;
+		overflow: auto;
 		border-radius: 0;
 	}
 
@@ -1267,8 +1533,12 @@
 		height: 100%;
 		cursor: grab;
 		opacity: 1;
-		touch-action: none;
+		touch-action: pan-y;
 		transition: opacity 150ms ease;
+	}
+
+	.walking canvas {
+		touch-action: none;
 	}
 
 	canvas.focus-fading {
@@ -1320,8 +1590,6 @@
 
 	@media (max-width: 48rem) {
 		.scene-shell {
-			height: min(76dvh, 43rem);
-			min-height: 35rem;
 			border-radius: 0.4rem;
 		}
 	}

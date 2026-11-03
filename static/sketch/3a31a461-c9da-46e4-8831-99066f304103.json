@@ -7,5 +7,6 @@
   "medium": "Digital sketch",
   "room": null,
   "featured": false,
-  "canvasMode": "original"
+  "canvasMode": "original",
+  "galleryOrder": 61
 }

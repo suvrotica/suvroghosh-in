@@ -50,17 +50,9 @@ export function calculateFrameDimensions(aspectRatio: number): FrameDimensions {
 	if (safeAspect >= 1) {
 		artWidth = maximumArtWidth;
 		artHeight = artWidth / safeAspect;
-		if (artHeight < 1.2) {
-			artHeight = 1.2;
-			artWidth = Math.min(maximumArtWidth, artHeight * safeAspect);
-		}
 	} else {
 		artHeight = maximumArtHeight;
 		artWidth = artHeight * safeAspect;
-		if (artWidth < 1.15) {
-			artWidth = 1.15;
-			artHeight = Math.min(maximumArtHeight, artWidth / safeAspect);
-		}
 	}
 
 	const railWidth = clamp(Math.min(artWidth, artHeight) * 0.115, 0.16, 0.25);
@@ -96,6 +88,82 @@ export function calculateArtworkFootprint(frame: FrameDimensions) {
 	};
 }
 
+/** Compact, uncropped hanging used only for the optional whole-room overview. */
+export function roomOverviewLayout(placements: readonly ArtworkPlacement[], aspect: number) {
+	const safeAspect = Number.isFinite(aspect) && aspect > 0 ? aspect : 1;
+	const footprints = placements.map((placement) => calculateArtworkFootprint(placement.frame));
+	const cellWidth = Math.max(1, ...footprints.map((item) => item.maxX - item.minX)) + 0.45;
+	const cellHeight = Math.max(1, ...footprints.map((item) => item.maxY - item.minY)) + 0.55;
+	const columns = Math.max(
+		1,
+		Math.min(
+			5,
+			placements.length,
+			Math.ceil(Math.sqrt((placements.length * safeAspect * cellHeight) / cellWidth))
+		)
+	);
+	const rows = Math.max(1, Math.ceil(placements.length / columns));
+	return {
+		width: columns * cellWidth,
+		height: rows * cellHeight,
+		positions: placements.map((placement, index) => {
+			const row = Math.floor(index / columns);
+			const column = index % columns;
+			const rowCount = Math.min(columns, placements.length - row * columns);
+			const footprint = footprints[index];
+			return {
+				slug: placement.artwork.slug,
+				position: [
+					(column - (rowCount - 1) / 2) * cellWidth,
+					((rows - 1) / 2 - row) * cellHeight - (footprint.minY + footprint.maxY) / 2,
+					0
+				] as const
+			};
+		})
+	};
+}
+
+/** Fit the whole frame and plaque, including on narrow screens, without crossing a room wall. */
+export function focusedArtworkView(
+	layout: MuseumLayout,
+	placement: ArtworkPlacement,
+	aspect: number,
+	verticalFov = 58
+) {
+	const safeAspect = Number.isFinite(aspect) && aspect > 0 ? aspect : 1;
+	const footprint = calculateArtworkFootprint(placement.frame);
+	const target = [
+		placement.position[0],
+		placement.position[1] + (footprint.minY + footprint.maxY) / 2,
+		placement.position[2]
+	] as const;
+	const extent =
+		Math.max(footprint.maxY - footprint.minY, (footprint.maxX - footprint.minX) / safeAspect) *
+		1.12;
+	const distance = Math.max(1.5, extent / (2 * Math.tan((verticalFov * Math.PI) / 360)));
+	const room = layout.rooms.find((candidate) => candidate.id === placement.roomId);
+	const x = target[0] + Math.sin(placement.rotationY) * distance;
+	const z = target[2] + Math.cos(placement.rotationY) * distance;
+	const position = [
+		room
+			? clamp(x, room.center[0] - room.width / 2 + 0.5, room.center[0] + room.width / 2 - 0.5)
+			: x,
+		target[1],
+		room
+			? clamp(z, room.center[1] - room.depth / 2 + 0.5, room.center[1] + room.depth / 2 - 0.5)
+			: z
+	] as const;
+	const actualDistance = Math.hypot(position[0] - target[0], position[2] - target[2]);
+	return {
+		position,
+		target,
+		fov: Math.max(
+			verticalFov,
+			(2 * Math.atan(extent / (2 * Math.max(0.1, actualDistance))) * 180) / Math.PI
+		)
+	};
+}
+
 function roomCoordinate(index: number): readonly [number, number] {
 	let column = 0;
 	let row = 0;
@@ -116,7 +184,10 @@ function wallBetween(from: readonly [number, number], to: readonly [number, numb
 function groupArtworks(artworks: readonly SketchArtwork[]): SketchArtwork[][] {
 	const ordered = [...artworks].sort(
 		(left, right) =>
-			Number(right.featured) - Number(left.featured) || left.slug.localeCompare(right.slug, 'en')
+			(left.galleryOrder ?? Number.MAX_SAFE_INTEGER) -
+				(right.galleryOrder ?? Number.MAX_SAFE_INTEGER) ||
+			Number(right.featured) - Number(left.featured) ||
+			left.slug.localeCompare(right.slug, 'en')
 	);
 	const manualGroups = new Map<string, SketchArtwork[]>();
 	const automatic: SketchArtwork[] = [];

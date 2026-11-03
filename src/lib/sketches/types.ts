@@ -18,6 +18,8 @@ export interface SketchArtwork {
 	orientation: SketchOrientation;
 	room: string | null;
 	featured: boolean;
+	/** Append-only collection position; preserves room membership as new works arrive. */
+	galleryOrder?: number;
 	needsMetadata: boolean;
 	canvasMode: SketchCanvasMode;
 	source: {

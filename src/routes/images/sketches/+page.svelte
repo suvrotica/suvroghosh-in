@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { replaceState } from '$app/navigation';
+	import { pushState, replaceState } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import {
@@ -31,6 +31,7 @@
 	let detailOpen = $state(false);
 	let initialSelectionApplied = $state(false);
 	let selectedSlug = $derived(selectedArtwork?.slug ?? null);
+	let linkedArtwork = $derived(data.artworks.find((artwork) => artwork.slug === data.selectedSlug));
 
 	let imageGallerySchema = $derived({
 		'@type': 'ImageGallery',
@@ -39,21 +40,23 @@
 		description,
 		url: canonicalUrl,
 		isPartOf: { '@id': canonicalUrl },
-		associatedMedia: data.artworks.map((artwork) => ({
-			'@type': 'ImageObject',
-			'@id': `${canonicalUrl}?art=${encodeURIComponent(artwork.slug)}#image`,
-			name: artwork.title,
-			description: artwork.description || undefined,
-			caption: artwork.description || undefined,
-			contentUrl: absoluteUrl(artwork.variants.detail.src),
-			thumbnailUrl: absoluteUrl(artwork.variants.thumbnail.src),
-			width: artwork.variants.detail.width,
-			height: artwork.variants.detail.height,
-			encodingFormat: 'image/webp',
-			representativeOfPage: artwork.featured,
-			creator: { '@id': `${siteUrl}/#person` },
-			url: `${canonicalUrl}?art=${encodeURIComponent(artwork.slug)}`
-		}))
+		associatedMedia: data.artworks
+			.filter((artwork, index) => index < 48 || artwork.slug === data.selectedSlug)
+			.map((artwork) => ({
+				'@type': 'ImageObject',
+				'@id': `${canonicalUrl}?art=${encodeURIComponent(artwork.slug)}#image`,
+				name: artwork.title,
+				description: artwork.description || undefined,
+				caption: artwork.description || undefined,
+				contentUrl: absoluteUrl(artwork.variants.detail.src),
+				thumbnailUrl: absoluteUrl(artwork.variants.thumbnail.src),
+				width: artwork.variants.detail.width,
+				height: artwork.variants.detail.height,
+				encodingFormat: 'image/webp',
+				representativeOfPage: artwork.featured,
+				creator: { '@id': `${siteUrl}/#person` },
+				url: `${canonicalUrl}?art=${encodeURIComponent(artwork.slug)}`
+			}))
 	});
 
 	$effect(() => {
@@ -78,12 +81,15 @@
 		return () => window.removeEventListener('popstate', syncFromLocation);
 	});
 
-	function replaceArtworkUrl(artwork: SketchArtwork | null) {
+	function replaceArtworkUrl(artwork: SketchArtwork | null, push = false) {
 		if (typeof window === 'undefined') return;
-		const route = artwork
-			? (`/images/sketches?art=${encodeURIComponent(artwork.slug)}#sketch-collection` as const)
-			: ('/images/sketches' as const);
-		replaceState(resolve(route), {});
+		const url = new URL(window.location.href);
+		if (artwork) url.searchParams.set('art', artwork.slug);
+		else url.searchParams.delete('art');
+		url.hash = 'sketch-collection';
+		const route = `${url.pathname}${url.search}${url.hash}`;
+		if (push) pushState(route, {});
+		else replaceState(route, {});
 	}
 
 	function selectInMuseum(slug: string) {
@@ -95,9 +101,10 @@
 	}
 
 	function openDetails(artwork: SketchArtwork) {
+		const opening = !detailOpen;
 		selectedArtwork = artwork;
 		detailOpen = true;
-		replaceArtworkUrl(artwork);
+		replaceArtworkUrl(artwork, opening);
 	}
 
 	function closeDetails() {
@@ -159,16 +166,34 @@
 		<p class="eyebrow">Drawings in rooms</p>
 		<h1>Sketch Museum</h1>
 		<p>
-			An expanding hanging of figures, faces, creatures, objects, landscapes, and abstract forms.
-			Enter the atmospheric gallery or browse every work in the complete collection below.
+			Browse drawings of figures, faces, creatures, objects, landscapes, and abstract forms. Open a
+			drawing for a closer look, or explore the optional 3D gallery.
 		</p>
 	</header>
 
 	<ImageCollectionNav tabs={data.tabs} activeKey="sketches" />
 
-	<a class="museum-skip-link" href="#sketch-collection"
-		>Skip the interactive museum and open the accessible collection</a
-	>
+	<SketchCollection artworks={data.artworks} {selectedSlug} onOpenDetails={openDetails} />
+
+	<noscript>
+		{#if linkedArtwork}
+			<section
+				id="artwork-detail"
+				class="no-script-detail"
+				aria-labelledby="no-script-detail-title"
+			>
+				<h2 id="no-script-detail-title">{linkedArtwork.title}</h2>
+				<img
+					src={linkedArtwork.variants.detail.src}
+					alt={linkedArtwork.alt}
+					width={linkedArtwork.variants.detail.width}
+					height={linkedArtwork.variants.detail.height}
+				/>
+				<p>{linkedArtwork.description}</p>
+				<a href={linkedArtwork.source.src}>Load drawing</a>
+			</section>
+		{/if}
+	</noscript>
 
 	<SketchMuseum
 		artworks={data.artworks}
@@ -176,8 +201,6 @@
 		onSelect={selectInMuseum}
 		onDetails={openDetails}
 	/>
-
-	<SketchCollection artworks={data.artworks} {selectedSlug} onOpenDetails={openDetails} />
 </article>
 
 {#if detailOpen && selectedArtwork}
@@ -253,15 +276,15 @@
 		text-align: left;
 	}
 
-	.museum-skip-link {
-		display: inline-flex;
-		min-height: 2.75rem;
-		align-items: center;
-		margin-top: 0.15rem;
-		color: var(--ink-muted);
-		font-size: 0.78rem;
-		font-weight: 750;
-		text-underline-offset: 0.28rem;
+	.no-script-detail {
+		margin-block: 2rem;
+	}
+	.no-script-detail img {
+		display: block;
+		max-width: 100%;
+		max-height: 75vh;
+		width: auto;
+		height: auto;
 	}
 
 	@media (max-width: 38rem) {

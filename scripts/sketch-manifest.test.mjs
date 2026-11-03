@@ -7,6 +7,7 @@ import { test } from 'node:test';
 import sharp from 'sharp';
 import {
 	discoverSketchSources,
+	assertCleanSketchSource,
 	generateSketchArtifacts,
 	renderSketchManifestModule,
 	validateSketchMetadata
@@ -16,6 +17,18 @@ function hash(value) {
 	return createHash('sha256').update(value).digest('hex');
 }
 
+function cleanPngFixture(bytes) {
+	const parts = [bytes.subarray(0, 8)];
+	for (let offset = 8; offset + 12 <= bytes.length; ) {
+		const length = bytes.readUInt32BE(offset) + 12;
+		const type = bytes.toString('ascii', offset + 4, offset + 8);
+		if (['IHDR', 'PLTE', 'IDAT', 'IEND', 'tRNS'].includes(type))
+			parts.push(bytes.subarray(offset, offset + length));
+		offset += length;
+	}
+	return Buffer.concat(parts);
+}
+
 function relativePaths(root, paths) {
 	return paths.map((path) => relative(root, path).split(sep).join('/'));
 }
@@ -23,7 +36,7 @@ function relativePaths(root, paths) {
 async function temporaryDirectory(t) {
 	const directory = await mkdtemp(join(tmpdir(), 'sketch-manifest-'));
 	t.after(async () => {
-		await rm(directory, { recursive: true, force: true });
+		await rm(directory, { recursive: true, force: true, maxRetries: 8, retryDelay: 100 });
 	});
 	return directory;
 }
@@ -129,7 +142,7 @@ test('artifact generation is deterministic, conservative, and never rewrites the
 	const cachePath = join(root, 'sketch-generation-manifest.json');
 	await mkdir(sketchDirectory, { recursive: true });
 	const sourcePath = join(sketchDirectory, 'quiet-landscape.png');
-	await sharp({
+	const fixturePixels = await sharp({
 		create: {
 			width: 1200,
 			height: 800,
@@ -144,8 +157,12 @@ test('artifact generation is deterministic, conservative, and never rewrites the
 				)
 			}
 		])
-		.png()
-		.toFile(sourcePath);
+		.raw()
+		.toBuffer({ resolveWithObject: true });
+	await writeFile(
+		sourcePath,
+		cleanPngFixture(await sharp(fixturePixels.data, { raw: fixturePixels.info }).png().toBuffer())
+	);
 	await writeFile(
 		join(sketchDirectory, 'quiet-landscape.json'),
 		`${JSON.stringify(
@@ -177,7 +194,7 @@ test('artifact generation is deterministic, conservative, and never rewrites the
 	assert.equal(first.renderedVariants, 4);
 	assert.equal(first.manifest.length, 1);
 	assert.deepEqual(first.manifest[0].source, {
-		src: '/sketch/quiet-landscape.png',
+		src: `/sketch/quiet-landscape.png?v=${hash(sourceBefore).slice(0, 16)}`,
 		width: 1200,
 		height: 800,
 		bytes: sourceBefore.length
@@ -190,8 +207,8 @@ test('artifact generation is deterministic, conservative, and never rewrites the
 			])
 		),
 		{
-			thumbnail: [480, 320],
-			preview: [960, 640],
+			thumbnail: [384, 256],
+			preview: [896, 597],
 			museum: [1200, 800],
 			detail: [1200, 800]
 		}
@@ -218,4 +235,59 @@ test('artifact generation is deterministic, conservative, and never rewrites the
 	assert.equal(verified.cachedSketches, 1);
 	assert.equal(verified.renderedVariants, 0);
 	assert.deepEqual(verified.manifest, first.manifest);
+	for (const [name, variant] of Object.entries(first.manifest[0].variants)) {
+		const bytes = await readFile(
+			join(sketchDirectory, '_generated', 'quiet-landscape', `${name}.webp`)
+		);
+		assert.ok(variant.src.endsWith(`?v=${hash(bytes).slice(0, 16)}`));
+		const metadata = await sharp(bytes).metadata();
+		assert.equal(metadata.exif, undefined);
+		assert.equal(metadata.xmp, undefined);
+		assert.equal(metadata.icc, undefined);
+	}
+});
+
+test('append-only gallery order is preserved and invalid orders are rejected', () => {
+	const context = { sourcePath: '/tmp/tree.png', orientation: 'portrait', sidecarExists: true };
+	assert.equal(
+		validateSketchMetadata({ title: 'Tree', alt: 'A tree.', galleryOrder: 81 }, context)
+			.galleryOrder,
+		81
+	);
+	for (const galleryOrder of [-1, 1.5, '81', Number.MAX_SAFE_INTEGER + 1]) {
+		assert.throws(() => validateSketchMetadata({ galleryOrder }, context), /galleryOrder/);
+	}
+});
+
+test('publication verification rejects embedded metadata and trailing application payloads', async () => {
+	const clean = cleanPngFixture(
+		await sharp({ create: { width: 16, height: 16, channels: 3, background: 'white' } })
+			.png()
+			.toBuffer()
+	);
+	assert.doesNotThrow(() => assertCleanSketchSource(clean, {}, 'clean.png'));
+	assert.throws(
+		() =>
+			assertCleanSketchSource(
+				Buffer.concat([clean, Buffer.from('private payload')]),
+				{},
+				'dirty.png'
+			),
+		/trailing PNG/
+	);
+	assert.throws(
+		() => assertCleanSketchSource(clean, { exif: Buffer.from('private') }, 'dirty.png'),
+		/embedded metadata/
+	);
+});
+
+test('same artwork encoded in different formats is rejected before duplicate publication', async (t) => {
+	const root = await temporaryDirectory(t);
+	const image = sharp({ create: { width: 20, height: 30, channels: 3, background: '#112233' } });
+	await writeFile(join(root, 'first.png'), cleanPngFixture(await image.clone().png().toBuffer()));
+	await image.clone().webp({ lossless: true }).toFile(join(root, 'second.webp'));
+	await assert.rejects(
+		generateSketchArtifacts({ sketchDirectory: root }),
+		/Duplicate sketch pixels/
+	);
 });

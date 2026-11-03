@@ -1,16 +1,17 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises';
 import { basename, dirname, extname, relative, resolve, sep } from 'node:path';
+import { setTimeout as delay } from 'node:timers/promises';
 import sharp from 'sharp';
 
 export const SKETCH_SOURCE_EXTENSIONS = new Set(['.jpeg', '.jpg', '.png', '.svg', '.webp']);
 export const SKETCH_GENERATED_DIRECTORY = '_generated';
-export const SKETCH_GENERATOR_VERSION = '2026-07-24.1';
+export const SKETCH_GENERATOR_VERSION = '2026-11-03.1';
 export const SKETCH_VARIANTS = Object.freeze({
-	thumbnail: { maxDimension: 480, quality: 88 },
-	preview: { maxDimension: 960, quality: 91 },
-	museum: { maxDimension: 1600, quality: 93 },
-	detail: { maxDimension: 1920, quality: 95 }
+	thumbnail: { maxDimension: 384, quality: 86 },
+	preview: { maxDimension: 896, quality: 90 },
+	museum: { maxDimension: 1280, quality: 92 },
+	detail: { maxDimension: 1920, quality: 94 }
 });
 
 const METADATA_FIELDS = new Set([
@@ -23,6 +24,7 @@ const METADATA_FIELDS = new Set([
 	'orientation',
 	'room',
 	'featured',
+	'galleryOrder',
 	'canvasMode'
 ]);
 const ORIENTATIONS = new Set(['portrait', 'landscape', 'square']);
@@ -93,6 +95,10 @@ function publicPath(basePath, relativePath) {
 	return `/${[...baseSegments, ...relativeSegments].map(encodeURIComponent).join('/')}`;
 }
 
+function versionedPublicPath(basePath, relativePath, contentHash) {
+	return `${publicPath(basePath, relativePath)}?v=${contentHash.slice(0, 16)}`;
+}
+
 function sidecarPath(sourcePath) {
 	return resolve(dirname(sourcePath), `${basename(sourcePath, extname(sourcePath))}.json`);
 }
@@ -139,6 +145,54 @@ function hashBytes(value) {
 	return createHash('sha256').update(value).digest('hex');
 }
 
+export function assertCleanSketchSource(contents, metadata, sourcePath) {
+	if (metadata.exif || metadata.iptc || metadata.xmp || metadata.icc || metadata.comments?.length) {
+		throw new Error(
+			`${sourcePath}: embedded metadata remains; use scripts/reconcile-sketches.py to publish a clean copy.`
+		);
+	}
+	if (contents.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+		let offset = 8;
+		const structural = new Set(['IHDR', 'PLTE', 'IDAT', 'IEND', 'tRNS']);
+		while (offset + 12 <= contents.length) {
+			const length = contents.readUInt32BE(offset);
+			const type = contents.toString('ascii', offset + 4, offset + 8);
+			if (!structural.has(type))
+				throw new Error(`${sourcePath}: PNG metadata chunk ${type} remains; publish a clean copy.`);
+			offset += length + 12;
+			if (type === 'IEND') {
+				if (offset !== contents.length)
+					throw new Error(`${sourcePath}: trailing PNG payload remains; publish a clean copy.`);
+				return;
+			}
+		}
+		throw new Error(`${sourcePath}: incomplete PNG structure.`);
+	}
+	if (contents.toString('ascii', 0, 4) === 'RIFF' && contents.toString('ascii', 8, 12) === 'WEBP') {
+		if (contents.readUInt32LE(4) + 8 !== contents.length)
+			throw new Error(`${sourcePath}: trailing WebP payload remains.`);
+		let offset = 12;
+		while (offset + 8 <= contents.length) {
+			const type = contents.toString('ascii', offset, offset + 4);
+			const length = contents.readUInt32LE(offset + 4);
+			if (['EXIF', 'XMP ', 'ICCP'].includes(type))
+				throw new Error(`${sourcePath}: WebP metadata ${type} remains.`);
+			offset += 8 + length + (length % 2);
+		}
+		if (offset !== contents.length) throw new Error(`${sourcePath}: incomplete WebP structure.`);
+	}
+}
+
+async function pixelHash(contents) {
+	const { data, info } = await sharp(contents, { animated: false, failOn: 'error' })
+		.rotate()
+		.toColourspace('srgb')
+		.ensureAlpha()
+		.raw()
+		.toBuffer({ resolveWithObject: true });
+	return createHash('sha256').update(`${info.width}x${info.height}:`).update(data).digest('hex');
+}
+
 async function writeBufferIfChanged(path, contents, { label, verifyOnly }) {
 	try {
 		if ((await readFile(path)).equals(contents)) return false;
@@ -154,7 +208,15 @@ async function writeBufferIfChanged(path, contents, { label, verifyOnly }) {
 	await mkdir(dirname(path), { recursive: true });
 	const temporaryPath = `${path}.${process.pid}.${hashBytes(contents).slice(0, 12)}.tmp`;
 	await writeFile(temporaryPath, contents);
-	await rename(temporaryPath, path);
+	for (let attempt = 0; ; attempt += 1) {
+		try {
+			await rename(temporaryPath, path);
+			break;
+		} catch (error) {
+			if (!['EPERM', 'EBUSY', 'EACCES'].includes(error?.code) || attempt >= 11) throw error;
+			await delay(100 * (attempt + 1));
+		}
+	}
 	return true;
 }
 
@@ -215,6 +277,7 @@ async function cachedEntryIsUsable({
 	if (
 		!isPlainObject(entry) ||
 		entry.sourceHash !== sourceHash ||
+		typeof entry.pixelHash !== 'string' ||
 		entry.sidecarHash !== sidecarHash ||
 		!isPlainObject(entry.item) ||
 		!isPlainObject(entry.variantFiles)
@@ -226,7 +289,7 @@ async function cachedEntryIsUsable({
 		typeof item.slug !== 'string' ||
 		!SLUG_PATTERN.test(item.slug) ||
 		!isPlainObject(item.source) ||
-		item.source.src !== publicPath(publicBasePath, sourceRelativePath) ||
+		item.source.src !== versionedPublicPath(publicBasePath, sourceRelativePath, sourceHash) ||
 		!isPlainObject(item.variants)
 	) {
 		return false;
@@ -241,7 +304,7 @@ async function cachedEntryIsUsable({
 			fileEntry.path !== generatedRelativePath ||
 			typeof fileEntry.hash !== 'string' ||
 			!isPlainObject(asset) ||
-			asset.src !== publicPath(publicBasePath, generatedRelativePath) ||
+			asset.src !== versionedPublicPath(publicBasePath, generatedRelativePath, fileEntry.hash) ||
 			!Number.isInteger(asset.bytes)
 		) {
 			return false;
@@ -382,6 +445,12 @@ export function validateSketchMetadata(
 			`${sourcePath}: metadata field "canvasMode" must be either "ink" or "original".`
 		);
 	}
+	if (
+		value.galleryOrder !== undefined &&
+		(!Number.isSafeInteger(value.galleryOrder) || value.galleryOrder < 0)
+	) {
+		throw new Error(`${sourcePath}: galleryOrder must be a non-negative safe integer.`);
+	}
 
 	return {
 		slug,
@@ -393,6 +462,7 @@ export function validateSketchMetadata(
 		orientation,
 		room,
 		featured: value.featured ?? false,
+		...(value.galleryOrder === undefined ? {} : { galleryOrder: value.galleryOrder }),
 		needsMetadata: !sidecarExists || authoredTitle === undefined || alt.length === 0,
 		canvasMode
 	};
@@ -434,8 +504,8 @@ export async function discoverSketchSources(sketchDirectory) {
 	return discovered;
 }
 
-async function createVariant(sourcePath, outputPath, config, writeOptions) {
-	const { data, info } = await sharp(sourcePath, {
+async function createVariant(sourcePath, sourceContents, outputPath, config, writeOptions) {
+	const { data, info } = await sharp(sourceContents, {
 		animated: false,
 		failOn: 'error'
 	})
@@ -451,8 +521,8 @@ async function createVariant(sourcePath, outputPath, config, writeOptions) {
 			preset: 'drawing',
 			quality: config.quality,
 			alphaQuality: 100,
-			effort: 6,
-			nearLossless: true,
+			effort: 4,
+			nearLossless: false,
 			smartSubsample: false
 		})
 		.toBuffer({ resolveWithObject: true });
@@ -495,11 +565,19 @@ export async function generateSketchArtifacts({
 	};
 	const manifest = [];
 	const seenSlugs = new Map();
+	const seenPixels = new Map();
+	function recordPixels(value, sourcePath) {
+		if (seenPixels.has(value))
+			throw new Error(
+				`Duplicate sketch pixels in ${seenPixels.get(value)} and ${sourcePath}. Reconcile the source collection before generating.`
+			);
+		seenPixels.set(value, sourcePath);
+	}
 	let cachedSketches = 0;
 	let renderedVariants = 0;
 	let changedVariants = 0;
 
-	for (const sourcePath of sourcePaths) {
+	async function generateOne(sourcePath) {
 		const sourceRelativePath = toPosix(relative(absoluteSketchDirectory, sourcePath));
 		const sourceContents = await readFile(sourcePath);
 		const sourceHash = hashBytes(sourceContents);
@@ -515,6 +593,7 @@ export async function generateSketchArtifacts({
 				publicBasePath
 			})
 		) {
+			recordPixels(cachedEntry.pixelHash, sourcePath);
 			const previousSource = seenSlugs.get(cachedEntry.item.slug);
 			if (previousSource) {
 				throw new Error(
@@ -525,7 +604,7 @@ export async function generateSketchArtifacts({
 			manifest.push(cachedEntry.item);
 			nextCache.sources[sourceRelativePath] = cachedEntry;
 			cachedSketches += 1;
-			continue;
+			return;
 		}
 		if (verifyOnly) {
 			throw new Error(
@@ -533,7 +612,10 @@ export async function generateSketchArtifacts({
 			);
 		}
 
-		const metadata = await sharp(sourcePath, { animated: false, failOn: 'error' }).metadata();
+		const metadata = await sharp(sourceContents, { animated: false, failOn: 'error' }).metadata();
+		assertCleanSketchSource(sourceContents, metadata, sourcePath);
+		const sourcePixelHash = await pixelHash(sourceContents);
+		recordPixels(sourcePixelHash, sourcePath);
 		const dimensions = orientedDimensions(metadata, sourcePath);
 		const orientation = orientationFromDimensions(dimensions.width, dimensions.height);
 		const sketchMetadata = validateSketchMetadata(sidecar.value, {
@@ -554,14 +636,14 @@ export async function generateSketchArtifacts({
 		for (const [variantName, config] of Object.entries(SKETCH_VARIANTS)) {
 			const generatedRelativePath = `${SKETCH_GENERATED_DIRECTORY}/${sketchMetadata.slug}/${variantName}.webp`;
 			const outputPath = resolve(absoluteSketchDirectory, generatedRelativePath);
-			const result = await createVariant(sourcePath, outputPath, config, {
+			const result = await createVariant(sourcePath, sourceContents, outputPath, config, {
 				label: `Sketch ${variantName} variant for ${sketchMetadata.slug}`,
 				verifyOnly
 			});
 			if (result.changed) changedVariants += 1;
 			renderedVariants += 1;
 			variants[variantName] = {
-				src: publicPath(publicBasePath, generatedRelativePath),
+				src: versionedPublicPath(publicBasePath, generatedRelativePath, result.hash),
 				...result.asset
 			};
 			variantFiles[variantName] = {
@@ -573,7 +655,7 @@ export async function generateSketchArtifacts({
 		const item = {
 			...sketchMetadata,
 			source: {
-				src: publicPath(publicBasePath, sourceRelativePath),
+				src: versionedPublicPath(publicBasePath, sourceRelativePath, sourceHash),
 				width: dimensions.width,
 				height: dimensions.height,
 				bytes: sourceContents.length
@@ -583,11 +665,41 @@ export async function generateSketchArtifacts({
 		manifest.push(item);
 		nextCache.sources[sourceRelativePath] = {
 			sourceHash,
+			pixelHash: sourcePixelHash,
 			sidecarHash: sidecar.hash,
 			item,
 			variantFiles
 		};
 	}
+	// Bound both decoded image memory and concurrent encoders as the collection grows.
+	let nextSource = 0;
+	const results = await Promise.allSettled(
+		Array.from({ length: Math.min(4, sourcePaths.length) }, async () => {
+			while (nextSource < sourcePaths.length) {
+				const sourcePath = sourcePaths[nextSource++];
+				await generateOne(sourcePath);
+			}
+		})
+	);
+	const failed = results.find((result) => result.status === 'rejected');
+	if (failed) throw failed.reason;
+	const sourceOrder = new Map(
+		sourcePaths.map((sourcePath, index) => [
+			publicPath(publicBasePath, toPosix(relative(absoluteSketchDirectory, sourcePath))),
+			index
+		])
+	);
+	manifest.sort(
+		(left, right) =>
+			sourceOrder.get(left.source.src.split('?')[0]) -
+			sourceOrder.get(right.source.src.split('?')[0])
+	);
+	nextCache.sources = Object.fromEntries(
+		sourcePaths.map((sourcePath) => {
+			const key = toPosix(relative(absoluteSketchDirectory, sourcePath));
+			return [key, nextCache.sources[key]];
+		})
+	);
 
 	const cacheChanged = cachePath
 		? await writeTextIfChanged(cachePath, `${JSON.stringify(nextCache, null, 2)}\n`, {

@@ -1,0 +1,218 @@
+{
+	"version": 1,
+	"method": "Visual comparison of all 43 difference-hash candidates (128 bits, distance <=12) plus changed-pixel bounds. Technical contrast/tint re-exports merged; visible drawing, text and intentional colour variations retained. This method does not prove absence of every possible cropped or rotated duplicate.",
+	"equivalences": [
+		{
+			"duplicatePixelSha256": "00810488419255ebb5a96a4ef788bdef694bb4fecbeb75cecf8578143be8d7c8",
+			"keepPixelSha256": "d8c92591d65e65a042683a0e840f8c04d4a54e5a288ffad3364b85887440985e",
+			"reason": "Same line drawing, faint contrast export; retain clearer neutral copy."
+		},
+		{
+			"duplicatePixelSha256": "fc9ee5a1f6cfd5e69b78ca39ec6e2442bdb6eaca390c9852ca9cbdc3d9d4bd05",
+			"keepPixelSha256": "d8c92591d65e65a042683a0e840f8c04d4a54e5a288ffad3364b85887440985e",
+			"reason": "Same line drawing with a blue cast; retain neutral copy."
+		},
+		{
+			"duplicatePixelSha256": "504108351fd5b45a173011ac003d605f1069b44e98ded1a38b61cdbc9e46641f",
+			"keepPixelSha256": "b421a4add68f0505927a7e304f90c03cc3e436ebb7d82bb55d6ca38b72ee667a",
+			"reason": "Same drawing with washed-out contrast; retain richer original colours."
+		},
+		{
+			"duplicatePixelSha256": "4dae934f3e49375d09469f4f838506ad3af4e2dd52381e74c03c050d62191e86",
+			"keepPixelSha256": "7225745f0bed6226ecd713160c78c8810c32be73bb90295bb475b1cfc8c9c2e0",
+			"reason": "Same line drawing in a faint export; retain clearer version."
+		},
+		{
+			"duplicatePixelSha256": "13f09119ce00e17233c666adc9a3d2e06fcd6e266968e4da5a812abcea5e7645",
+			"keepPixelSha256": "7225745f0bed6226ecd713160c78c8810c32be73bb90295bb475b1cfc8c9c2e0",
+			"reason": "Same drawing with a pale triangular background/scan cast; retain clean background."
+		}
+	],
+	"distinct": [
+		{
+			"leftPixelSha256": "6ac580b82ba607f57dd342b1152055842dfa7fad35307d5d2b0776eb94050c89",
+			"rightPixelSha256": "29d9da45569b0503ee58ad37b88c4444fbfb7f65556426e7d8548995f02bf113",
+			"reason": "Hand and sleeve contours differ in the lower drawing."
+		},
+		{
+			"leftPixelSha256": "9672309a3deacd7ac220d857db6db7330c141bcc31db14d1d67c8e95fecdf1da",
+			"rightPixelSha256": "0fc37e7b108a60fdae6e17845ad8b897a1c29ae6adeb9fbd83fa5970c9edaf9b",
+			"reason": "Finger and hand linework differs."
+		},
+		{
+			"leftPixelSha256": "5e1069c09e657adc50d499beb88622ebd628bb999058d36dd88d45c572fa09b4",
+			"rightPixelSha256": "25aca754033571ed0845b7662fcf8df132f28a581a48431b73a9c486caa192fd",
+			"reason": "A small ear/face patch is deliberately redrawn."
+		},
+		{
+			"leftPixelSha256": "9a6dce17dbd63e41f216f3c4b2b0daf8ae0a02437b530d384c6d0f95838d4319",
+			"rightPixelSha256": "2562606872bb177844ec104074be7cf395e6baad63613e653e39f4d0607df55f",
+			"reason": "Tail and rear outline details differ."
+		},
+		{
+			"leftPixelSha256": "325ab90274b36df119db8f7f14ac2fc713e8a4d07d296a14d3a2b35d8a74d2de",
+			"rightPixelSha256": "52e4e10d546bd350a84d8ac214efe98f6461be2b00e135387db0351cd2f3026c",
+			"reason": "The handwritten paragraph is edited."
+		},
+		{
+			"leftPixelSha256": "ab099a161f3ef8999af487a0c983f70484aeba62f333a17686e470c76f7e1582",
+			"rightPixelSha256": "6bd125eb51e6ebd544474d1465e7a1b73e53ddfed69407a3f5734d1a4ebf71c0",
+			"reason": "The fingertip has a different red mark."
+		},
+		{
+			"leftPixelSha256": "1ab85b8e1a4d164884de323dd1c33c09b7df64d11113f4228edf01a034a4a391",
+			"rightPixelSha256": "84f259a46a6b5cad405fe4ebbd71b00355943c792c54bb33ec55e73bf7542e7b",
+			"reason": "Tie and collar decoration differs."
+		},
+		{
+			"leftPixelSha256": "95eae4717478117a158aaf49c8eda5b31413bf202df2c3d5b39bd77efd97ca93",
+			"rightPixelSha256": "154282440f3c451c0728c2539348fe9c4420c8e27ae6a2a78b88f23e05e2e494",
+			"reason": "The object by the mouth is differently coloured."
+		},
+		{
+			"leftPixelSha256": "896f6f659049bea922dd86bbf0ecf6b9d10f2ec228953764865669fc4baa9024",
+			"rightPixelSha256": "9952fe353166eb49b66352797c00dd5a3fc363959981840a1a9fd82addab7ab7",
+			"reason": "Mouth/teeth colour and line details differ."
+		},
+		{
+			"leftPixelSha256": "d188460015a42a87c4278383c5a01f1fd23c4d2c912739af1d8e99e8d286b7d1",
+			"rightPixelSha256": "520ac8941b7c5b7939d55e1d9df4b5f1c83ad12f0c5f9185692e9eb9576422db",
+			"reason": "Lighter flame height differs."
+		},
+		{
+			"leftPixelSha256": "dde0a97168321eda2865d012ec3bd10b81214d5f05d45ded144b7d757c3154d7",
+			"rightPixelSha256": "bb43b6f173ce759c8b2d3881a48e903456eb3a707db4c4614a603ececee068cd",
+			"reason": "Face detail and caption punctuation differ."
+		},
+		{
+			"leftPixelSha256": "ce81c72a4ad4620b6480360043bf97db98ddf72267487752089ccb8474808338",
+			"rightPixelSha256": "bf5bde51fdc1110ba002d7214025633af42ad80ab12e37852862abaa34aa9a80",
+			"reason": "One drawing includes a large pink tongue."
+		},
+		{
+			"leftPixelSha256": "5f2e093393f8b60820b4eb3782e535a07b5a6c3a94d2aeeb20f2a4cd5f2f4e29",
+			"rightPixelSha256": "f222cd82c4bd5e53ddf1f7891e537c73ab5e271cf2fe76fd4076c7793ec78d2a",
+			"reason": "The seated figure has a different accessory/hand detail."
+		},
+		{
+			"leftPixelSha256": "40fd38b148067e02e4b206ad26f551c3d4a99d8322c59fb4058951774cb0d1a8",
+			"rightPixelSha256": "fe9af2728d280b410a3d3760d6345ce2a2ebe74942967cbd852220cdf61f2edd",
+			"reason": "Right edge of the hand/arm is redrawn."
+		},
+		{
+			"leftPixelSha256": "6b9aba8711bd2b9e91e74bf7197b1008cb7611b613c96f8cbc62ec1baa59b4a4",
+			"rightPixelSha256": "6bd125eb51e6ebd544474d1465e7a1b73e53ddfed69407a3f5734d1a4ebf71c0",
+			"reason": "Fingertip colour differs."
+		},
+		{
+			"leftPixelSha256": "eb2b20d1a4b2eeb761ae298eca2c608fc2a564188051fd6ed13c32506d55cdfb",
+			"rightPixelSha256": "da57af40de454e04f47ba35b53b880cc5ec04f7c4eac583b1eaaca82f5e5144b",
+			"reason": "One version includes smoke and a lit tip."
+		},
+		{
+			"leftPixelSha256": "b03b16edc7fd55d8b13d379d29c4560bd20cfad498b51d6331b4630e1d6c23c3",
+			"rightPixelSha256": "d31f991cc77be7faa99073dba1cd42cc41921e11d8aebc9cf83149c6d784d6c4",
+			"reason": "One version has a multicolour collar decoration."
+		},
+		{
+			"leftPixelSha256": "672f465b62cdc0c97f24a71e20c0ec626213a03f028e422ccefd7db6da0db3de",
+			"rightPixelSha256": "ca695764ec02904c2283b8fe8e494d0d2430e95dbeb2d0d2095a3663bf665ab1",
+			"reason": "Banknote detail at the lower left differs."
+		},
+		{
+			"leftPixelSha256": "ab099a161f3ef8999af487a0c983f70484aeba62f333a17686e470c76f7e1582",
+			"rightPixelSha256": "6b9aba8711bd2b9e91e74bf7197b1008cb7611b613c96f8cbc62ec1baa59b4a4",
+			"reason": "One version includes a red fingertip patch."
+		},
+		{
+			"leftPixelSha256": "e463167527c83dc2328ef548e6d4286e8af895b7e64b671173030f396b0676f2",
+			"rightPixelSha256": "113c2c119c0cfbbbb52d49b2fca8ca0594ae7f6135677da61fdb694111134407",
+			"reason": "Pocket, belt and leg details differ."
+		},
+		{
+			"leftPixelSha256": "d908777942c2f15760bf6a44faad2c99e4ffab9e55a03b1a66ab36cdbddd8877",
+			"rightPixelSha256": "0c3c76132bbf61d19d0bcacaa235b08f9fb7f4f0e4ce75025966fa6c5923ecc8",
+			"reason": "Bengali heading text differs."
+		},
+		{
+			"leftPixelSha256": "d3dee8c4d5eba925ae3e0d457a02a6f5a84128c33b29bfb469686aa069db719c",
+			"rightPixelSha256": "291979feb4176423caf91ff090d7aa1a7c162604388968bc2c3e83bd3cf2a906",
+			"reason": "Bengali heading size and placement differ."
+		},
+		{
+			"leftPixelSha256": "d188460015a42a87c4278383c5a01f1fd23c4d2c912739af1d8e99e8d286b7d1",
+			"rightPixelSha256": "47d9bfda9e7edb3bbc8e31a1949ad90bc9e3becf3147fd083d8fe528fc23b649",
+			"reason": "Eye, facial expression and lighter/smoke details differ."
+		},
+		{
+			"leftPixelSha256": "fad3c0ff9011293bd5e7edc9dad553b8a78ea8c67e1c4e6023fef16f514a045f",
+			"rightPixelSha256": "11bdb01aae1d8f9556b71bc714a90232ec36ec5e2604097a81d98bfdad847a4f",
+			"reason": "The thumb is attached in one drawing and detached in the other."
+		},
+		{
+			"leftPixelSha256": "520ac8941b7c5b7939d55e1d9df4b5f1c83ad12f0c5f9185692e9eb9576422db",
+			"rightPixelSha256": "47d9bfda9e7edb3bbc8e31a1949ad90bc9e3becf3147fd083d8fe528fc23b649",
+			"reason": "Eye, facial expression and lighter/smoke details differ."
+		},
+		{
+			"leftPixelSha256": "226fe6d25e39b9a9346a2b6fc0df0d4ef307cdcb74b0a978e68c3f96e848af84",
+			"rightPixelSha256": "aadcf84c0bc2f23baa370ef43664f9bdeb630bff9215cd4f3ed03e6113e3ee4c",
+			"reason": "Mouth and moustache details differ."
+		},
+		{
+			"leftPixelSha256": "2fc7ab18a5c6fcc171da3ef16f3d9a2fb51e73bf1cb905a8d171029fc3033e6b",
+			"rightPixelSha256": "a5d1f4ba7d693d8f3e9a933290cb119c228f87ee119cdd136c0d5893f3964d33",
+			"reason": "One version includes additional handwritten labels."
+		},
+		{
+			"leftPixelSha256": "8c6411ea2d1a4130074813e91f1991c1a3b8a33e6890a8ba7c87ad950fd5c714",
+			"rightPixelSha256": "6bd125eb51e6ebd544474d1465e7a1b73e53ddfed69407a3f5734d1a4ebf71c0",
+			"reason": "Thumb contour and fingertip mark differ."
+		},
+		{
+			"leftPixelSha256": "8c6411ea2d1a4130074813e91f1991c1a3b8a33e6890a8ba7c87ad950fd5c714",
+			"rightPixelSha256": "ab099a161f3ef8999af487a0c983f70484aeba62f333a17686e470c76f7e1582",
+			"reason": "Thumb contour differs."
+		},
+		{
+			"leftPixelSha256": "ab099a161f3ef8999af487a0c983f70484aeba62f333a17686e470c76f7e1582",
+			"rightPixelSha256": "6342e6ca09fb4f6055c0e0594541f6192ce7eb3fa887fb65f5fadbb06c50c1a7",
+			"reason": "One drawing has a detached thumb with a red connecting mark."
+		},
+		{
+			"leftPixelSha256": "6342e6ca09fb4f6055c0e0594541f6192ce7eb3fa887fb65f5fadbb06c50c1a7",
+			"rightPixelSha256": "6b9aba8711bd2b9e91e74bf7197b1008cb7611b613c96f8cbc62ec1baa59b4a4",
+			"reason": "Detached thumb and red mark differ."
+		},
+		{
+			"leftPixelSha256": "e3cf1e7bd68d2b24cea3006c41442bd630a1e6012a813bee4a1451e6fabcd655",
+			"rightPixelSha256": "20a2ff033fe6b8dd4c7c4fa6ebacd2e3b242febc832b74da4c0f73fc6ba44c89",
+			"reason": "A coloured finished variation and a monochrome drawing are intentionally distinct."
+		},
+		{
+			"leftPixelSha256": "238f66500cb94d165214fe5f55577413c8fe9c231e9671348ebb138583e18d5f",
+			"rightPixelSha256": "f1ed45a33c2ff534c02aec18e491ecf4fbf075ea16f6dd4691dda5af19b320e3",
+			"reason": "Glasses, ear and facial marks differ."
+		},
+		{
+			"leftPixelSha256": "4ff6483a9fd7a3724e1cb2768c2ec523b770f470c6156e5120459d3627aadc8d",
+			"rightPixelSha256": "9605ece438cc320190d6438054618d0ee01f4631d480b0ddb5b03fc0a0faaf3d",
+			"reason": "A deliberate multicolour version differs from the monochrome drawing."
+		},
+		{
+			"leftPixelSha256": "6342e6ca09fb4f6055c0e0594541f6192ce7eb3fa887fb65f5fadbb06c50c1a7",
+			"rightPixelSha256": "6bd125eb51e6ebd544474d1465e7a1b73e53ddfed69407a3f5734d1a4ebf71c0",
+			"reason": "Detached thumb and fingertip mark differ."
+		},
+		{
+			"leftPixelSha256": "8c6411ea2d1a4130074813e91f1991c1a3b8a33e6890a8ba7c87ad950fd5c714",
+			"rightPixelSha256": "6b9aba8711bd2b9e91e74bf7197b1008cb7611b613c96f8cbc62ec1baa59b4a4",
+			"reason": "The red fingertip mark differs."
+		},
+		{
+			"leftPixelSha256": "ab099a161f3ef8999af487a0c983f70484aeba62f333a17686e470c76f7e1582",
+			"rightPixelSha256": "11bdb01aae1d8f9556b71bc714a90232ec36ec5e2604097a81d98bfdad847a4f",
+			"reason": "One drawing has a detached thumb."
+		}
+	]
+}

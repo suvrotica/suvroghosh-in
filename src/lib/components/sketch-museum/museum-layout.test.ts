@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { PerspectiveCamera, Vector3 } from 'three';
 import type { SketchArtwork } from '$lib/sketches/types';
 import {
 	DOOR_HEIGHT,
@@ -13,8 +14,10 @@ import {
 	calculatePlaqueLayout,
 	createMuseumLayout,
 	ensureWalkableViewPosition,
+	focusedArtworkView,
 	isWalkable,
 	isWalkableSegment,
+	roomOverviewLayout,
 	roomWayfindingFor
 } from './museum-layout';
 
@@ -42,6 +45,10 @@ function artwork(slug: string, width: number, height: number, room: string | nul
 }
 
 describe('museum frame dimensions', () => {
+	it.each([0.1, 0.25, 1, 4, 10])('preserves the artwork aspect ratio %s exactly', (aspect) => {
+		const frame = calculateFrameDimensions(aspect);
+		expect(frame.artWidth / frame.artHeight).toBeCloseTo(aspect, 10);
+	});
 	it.each([
 		['portrait', 800, 1200],
 		['landscape', 1400, 800],
@@ -95,6 +102,76 @@ describe('museum room layout', () => {
 		expect(first.rooms[1].connections).toHaveLength(2);
 	});
 
+	it.each([0.45, 0.8, 1.5, 2.4])(
+		'fits all room works without overlapping frames or plaques at aspect %s',
+		(aspect) => {
+			const placements = createMuseumLayout(mixedAspectCollection).placements.slice(0, 10);
+			const overview = roomOverviewLayout(placements, aspect);
+			expect(overview.positions).toHaveLength(10);
+			const boxes = overview.positions.map((item, index) => {
+				const footprint = calculateArtworkFootprint(placements[index].frame);
+				return {
+					left: item.position[0] + footprint.minX,
+					right: item.position[0] + footprint.maxX,
+					bottom: item.position[1] + footprint.minY,
+					top: item.position[1] + footprint.maxY
+				};
+			});
+			for (const [index, box] of boxes.entries()) {
+				expect(box.left).toBeGreaterThan(-overview.width / 2);
+				expect(box.right).toBeLessThan(overview.width / 2);
+				expect(box.bottom).toBeGreaterThan(-overview.height / 2);
+				expect(box.top).toBeLessThan(overview.height / 2);
+				for (const other of boxes.slice(index + 1)) {
+					expect(
+						box.right < other.left ||
+							box.left > other.right ||
+							box.top < other.bottom ||
+							box.bottom > other.top
+					).toBe(true);
+				}
+			}
+		}
+	);
+
+	it.each([0.35, 0.6, 1, 1.8, 3])(
+		'fits focused artwork and plaque in a viewport of aspect %s',
+		(aspect) => {
+			const layout = createMuseumLayout(mixedAspectCollection);
+			for (const placement of layout.placements) {
+				const fit = focusedArtworkView(layout, placement, aspect);
+				const camera = new PerspectiveCamera(fit.fov, aspect, 0.08, 90);
+				camera.position.set(...fit.position);
+				camera.lookAt(...fit.target);
+				camera.updateMatrixWorld();
+				const bounds = calculateArtworkFootprint(placement.frame);
+				for (const x of [bounds.minX, bounds.maxX]) {
+					for (const y of [bounds.minY, bounds.maxY]) {
+						const point = new Vector3(x, y, 0)
+							.applyAxisAngle(new Vector3(0, 1, 0), placement.rotationY)
+							.add(new Vector3(...placement.position))
+							.project(camera);
+						expect(Math.abs(point.x)).toBeLessThan(0.95);
+						expect(Math.abs(point.y)).toBeLessThan(0.95);
+					}
+				}
+			}
+		}
+	);
+
+	it('keeps existing room membership when later imports have earlier alphabetic titles', () => {
+		const ordered = collection.map((item, galleryOrder) => ({ ...item, galleryOrder }));
+		const before = createMuseumLayout(ordered);
+		const added = { ...artwork('a-new-drawing', 1200, 800), galleryOrder: ordered.length };
+		const after = createMuseumLayout([added, ...ordered].reverse());
+		for (const placement of before.placements) {
+			expect(
+				after.placements.find((item) => item.artwork.slug === placement.artwork.slug)?.roomId
+			).toBe(placement.roomId);
+		}
+		expect(after.placements.at(-1)?.artwork.slug).toBe(added.slug);
+	});
+
 	it('scales the complete 81-work collection across nine connected rooms', () => {
 		const expandedCollection = Array.from({ length: 81 }, (_, index) => {
 			const [width, height] = [
@@ -114,6 +191,34 @@ describe('museum room layout', () => {
 		expect(layout.rooms.at(-1)?.connections).toHaveLength(1);
 		expect(layout.rooms.slice(1, -1).every((room) => room.connections.length === 2)).toBe(true);
 	});
+
+	it.each([1000, 5000])(
+		'places %s works exactly once while keeping active-room bounds',
+		(count) => {
+			const expanded = Array.from({ length: count }, (_, galleryOrder) => ({
+				...artwork(`scale-${String(galleryOrder).padStart(5, '0')}`, 900, 1200),
+				galleryOrder
+			}));
+			const layout = createMuseumLayout(expanded);
+			expect(layout.rooms).toHaveLength(count / 10);
+			expect(layout.placements).toHaveLength(count);
+			expect(new Set(layout.placements.map((placement) => placement.artwork.slug)).size).toBe(
+				count
+			);
+			expect(new Set(layout.rooms.map((room) => room.center.join(','))).size).toBe(
+				layout.rooms.length
+			);
+			expect(layout.rooms.every((room) => room.artworkSlugs.length === 10)).toBe(true);
+			for (const index of [0, Math.floor(layout.rooms.length / 2), layout.rooms.length - 1]) {
+				const active = activeRoomIdsFor(layout, layout.rooms[index].id);
+				expect(active.size).toBeLessThanOrEqual(3);
+				const activeWorks = layout.rooms
+					.filter((room) => active.has(room.id))
+					.flatMap((room) => room.artworkSlugs);
+				expect(activeWorks.length).toBeLessThanOrEqual(30);
+			}
+		}
+	);
 
 	it('activates only the current room and its immediate neighbours', () => {
 		const layout = createMuseumLayout(collection);

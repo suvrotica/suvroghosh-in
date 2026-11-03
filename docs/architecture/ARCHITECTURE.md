@@ -742,6 +742,26 @@ Search has two roles: server metadata search supports `/blog` filters and no-Jav
 
 Most feature UI lives under `src/lib/components/visualizations/<feature>/` or `components/games/<feature>/`, while its non-UI engine/data lives under the corresponding feature domain. This is a convention, not an enforced import rule: Meaning Map and Barnum Lab co-locate Svelte interfaces under the domain directory, and some large components still contain persistence/controller logic.
 
+### Sketch Museum collection and optional 3D view
+
+The `/images/sketches` server load uses the generated sketch catalogue. The default
+collection renders a bounded page of artworks with ordinary GET-based search,
+filters and pagination; artwork links retain a stable `?art=` identity. Artwork
+details and the optional Three.js museum enhance that HTML. The interactive museum
+loads only on entry, presents a fitted room overview, wall views and direct room/artwork controls,
+and retains walking as an option. Its renderer limits concurrent texture loads,
+keeps only the active room (and neighbouring rooms when walking), disposes inactive
+resources and pauses when hidden or outside the viewport. The non-WebGL collection
+remains available independently of the museum.
+
+The authoring import operates separately from the site build: it reconciles the
+owner-supplied local originals with the published catalogue and writes sanitized,
+lossless publication masters and generated display variants. The local originals
+are not read by the deployed application. Duplicate decisions and the limits of
+perceptual matching are recorded in the import report; catalogue titles and alt
+text are editorial data, distinct from metadata embedded in image files. Asset
+revisioning must remain aligned with the long-lived immutable `/sketch` cache.
+
 ### Sort the Tray (31 October 2026)
 
 `/blog/games/sort-the-tray` extends the existing Games catalog and prerendered game dispatcher. Its published Games Markdown supplies discovery metadata; the same route supplies canonical, social and VideoGame metadata. The native Svelte interface under `components/games/sort-the-tray` renders immediately in the existing immersive game shell. It is served by this site, without an iframe or ChatGPT authentication.
