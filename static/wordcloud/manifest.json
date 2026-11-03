@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T23:37:19.065612+00:00",
+  "generatedAt": "2026-11-03T14:24:22.075768+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4345,6 +4345,29 @@
         "Trying",
         "Help",
         "Bank"
+      ],
+      "wordCount": 130
+    },
+    "free-energy-or-how-to-violate-physics-without-getting-arrested": {
+      "generatedAt": "2026-11-03T14:24:21.086182+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/free-energy-or-how-to-violate-physics-without-getting-arrested.svg",
+      "source": "src/lib/posts/free-energy-or-how-to-violate-physics-without-getting-arrested.md",
+      "sourceHash": "0eb60b599a28233ed03cb5ad41540dea2c8aa1557de47dd4467c0ed0e773377f",
+      "sourceModified": "2026-11-03T14:23:53.222831+00:00",
+      "topWords": [
+        "Energy",
+        "Free",
+        "Power",
+        "Universe",
+        "Cosmic",
+        "Laughing",
+        "Nothing",
+        "Spinning",
+        "Now",
+        "Exactly",
+        "Perpetual",
+        "Thermodynamics"
       ],
       "wordCount": 130
     },

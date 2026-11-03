@@ -3660,6 +3660,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 220
 		},
 		{
+			"name": "free-energy-perpetual-motion.jpg",
+			"src": "/images/free-energy-perpetual-motion.jpg",
+			"bytes": 432082,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "games/calcutta-footpath-facade-albedo-v2.jpg",
 			"src": "/images/games/calcutta-footpath-facade-albedo-v2.jpg",
 			"bytes": 226811,

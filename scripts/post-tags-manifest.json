@@ -16652,6 +16652,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-03"
+		},
+		"src/lib/posts/free-energy-or-how-to-violate-physics-without-getting-arrested.md": {
+			"bodyHash": "af5063a760a68a4c356239095cee0a06d16ceaf006cf6e81cbf4347cf371f431",
+			"hashVersion": 2,
+			"revisionHash": "7237bece5adee8d9cb9d9055d06edeba33b6cbd56637979ea072908cde9591c3",
+			"generatedTags": [
+				"Energy",
+				"Free Energy",
+				"Thermodynamics",
+				"Entropy",
+				"Perpetual Motion",
+				"Physics",
+				"Quantum Physics",
+				"Nikola Tesla",
+				"History of Science",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Energy",
+				"Free Energy",
+				"Thermodynamics",
+				"Entropy",
+				"Perpetual Motion",
+				"Physics",
+				"Quantum Physics",
+				"Nikola Tesla",
+				"History of Science",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

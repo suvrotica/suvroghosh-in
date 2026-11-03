@@ -9359,6 +9359,22 @@
       "sourceHash": "15db8b70c83141535a8b66b65d6caf1268c7203a3c86a1063c1ab9017dc3cde5",
       "width": 360
     },
+    "static/images/free-energy-perpetual-motion.jpg": {
+      "format": "JPEG",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 432082,
+      "outputHash": "2622390583418ad45b9617141b603b6c296d7a98f2f2c7a2c7ffb8acf4f783d1",
+      "psnrDb": 37.03,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 501373,
+      "sourceHash": "ad129adb3f32444d60e43f687b6111d2f6762e928f69e9001ba828da7c7569ea",
+      "width": 1600
+    },
     "static/images/games/calcutta-footpath-facade-albedo-v2.jpg": {
       "format": "JPEG",
       "height": 1024,
