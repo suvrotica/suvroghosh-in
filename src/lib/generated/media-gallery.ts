@@ -5165,6 +5165,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/calcutta-radio/social.png",
+			"src": "/images/visualizations/calcutta-radio/social.png",
+			"bytes": 438948,
+			"width": 1120,
+			"height": 1090
+		},
+		{
 			"name": "visualizations/chitin-engine/chitin-engine-four-worlds.png",
 			"src": "/images/visualizations/chitin-engine/chitin-engine-four-worlds.png",
 			"bytes": 142999,

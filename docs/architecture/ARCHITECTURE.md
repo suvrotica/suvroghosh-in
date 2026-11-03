@@ -1339,6 +1339,91 @@ real browser/provider playback checks. Deployment and regional availability
 require their own evidence; matching starter-video titles do not prove embeds
 will play.
 
+### Calcutta Radio: curated internet broadcasts
+
+Calcutta Radio is one Markdown app at `/blog/visualizations/calcutta-radio`,
+with `collections: ['apps']` for Apps discovery. The component under
+`src/lib/components/visualizations/calcutta-radio` presents the station list and
+owns one playback session. Feature modules under
+`src/lib/visualizations/calcutta-radio` hold the curated station registry and
+browser audio controller. The feature plays internet streams and does not
+access an FM tuner. The registry has eleven playable entries:
+eight Indian services and three English-language alternatives, with source URLs
+and verification dates. Separate official-site links do not masquerade as
+playable streams. The UI searches the local registry; it does not query a live
+directory or accept arbitrary stream URLs.
+
+Playback begins after an explicit Play, station-selection or next/previous
+action. The browser connects directly to a curated broadcaster stream through
+one owned native audio element. Native HLS
+support is preferred; browsers that need a Media Source adapter load `hls.js`
+on demand. There is no application media proxy, recording, upload, credential,
+account or new server endpoint. Website-only entries lead to the broadcaster's
+own service instead of implying that an unavailable stream plays in the app.
+
+`player.ts` invalidates old source callbacks and pending imports with a revision
+token. Source changes pause and remove the old audio element and destroy its
+HLS adapter before creating the replacement. A connection, actual `waiting`
+event or unbuffered stall has an eighteen-second watchdog. A native `stalled`
+event alone does not interrupt a source already marked playing, unpaused and
+with `readyState >= 3`; that event can describe paused network fetching while
+buffered audio continues. HLS network loading has bounded retries and permits
+one decoder recovery attempt per source. ID3, EMSG and date-range metadata cue
+generation are disabled: the radio does not display those cues, and the
+adapter's unused `data:,WEBVTT` track must not require a broader media policy.
+Failure releases playback resources
+and exposes an explicit retry. Stop, page exit and destruction release media,
+timers and optional Media Session handlers; destruction also removes global
+listeners. The existing `claimPlayback`/`releasePlayback` owner in
+`components/blog/tts/playback.ts` coordinates radio with article narration in
+both directions. This reuses the existing owner rather than adding a global
+audio store, and does not claim coordination with unrelated media players.
+
+The optional fifteen-, thirty- or sixty-minute sleep timer uses an absolute
+deadline, retains that deadline across station changes and rechecks it after a
+visibility/page restoration event. Stop or failure cancels it. The component
+owns its one-second display clock and clears it on destruction. Validated
+`calcutta-radio:v1` localStorage preferences retain only the selected known
+station, known favourites, bounded volume and mute state. Storage failure leaves
+the controls usable with an explanatory message. Neither audio nor a sleep
+timer resumes on reload. The UI uses device volume on iOS; its dials display
+volume settings and the remaining sleep time, not measured audio energy.
+
+The integration adds `airhlspush.pc.cdn.bitgravity.com`, `radio.wavespb.com` and
+the latter's `d3hrxqn1tritdh.cloudfront.net` delivery host to both `media-src` and
+`connect-src`. Direct English-language streams add `kexp.streamguys1.com`,
+`fm939.wnyc.org` and `stream.wqxr.org` only to `media-src`. The existing self/blob
+media and worker policy supports the HLS adapter. No arbitrary HTTPS media or
+connection allowance is added. Catalogue
+evidence and a successful playback check are point-in-time observations, not a
+guarantee of regional access or continuous broadcaster availability. The UI
+reports actual playback state and keeps unavailable-source feedback separate
+from station identity; it does not manufacture programme or signal measurements.
+
+```mermaid
+flowchart LR
+    Post["One Markdown app / Apps + Viz discovery"] --> UI["Calcutta Radio / station and playback controls"]
+    Catalogue["Curated station registry / source evidence"] --> UI
+    UI -->|explicit Play| Controller["One browser audio controller"]
+    Controller --> Native["Native audio / native HLS when available"]
+    Controller --> HLS["Demand-loaded hls.js when needed"]
+    HLS --> Native
+    Stream["Named broadcaster stream origins / narrow CSP"] --> Native
+    Stream --> HLS
+    Preferences["Validated local preferences / no autoplay"] --> UI
+    Controller <--> Ownership["Existing narration playback owner"]
+    UI -->|official listening link| Website["Broadcaster website"]
+```
+
+This extends the established feature-local browser audio pattern with an
+external-stream boundary. It does not introduce a new foundational state or
+backend design, so no additional ADR is required.
+The [stream-verification record](../calcutta-radio-stream-verification.md)
+distinguishes source discovery and browser decoding evidence from regional
+availability and production verification. Controller fixtures cover ownership,
+source replacement, HLS recovery and bounded cleanup; those fixtures alone do
+not establish live provider playback or deployed CSP behaviour.
+
 ### Videos I Like: curated availability and consented playback
 
 Videos I Like is an ordinary Markdown app at `/blog/visualizations/videos-i-like`.

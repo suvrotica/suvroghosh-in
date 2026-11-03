@@ -184,7 +184,16 @@ const config = {
 					'https://www.youtube.com',
 					'https://s.ytimg.com'
 				],
-				'media-src': ['self', 'blob:'],
+				'media-src': [
+					'self',
+					'blob:',
+					'https://airhlspush.pc.cdn.bitgravity.com',
+					'https://radio.wavespb.com',
+					'https://d3hrxqn1tritdh.cloudfront.net',
+					'https://kexp.streamguys1.com',
+					'https://fm939.wnyc.org',
+					'https://stream.wqxr.org'
+				],
 				'style-src': ['self', 'unsafe-inline'],
 				'img-src': ['self', 'data:', 'blob:', 'https:'],
 				'font-src': ['self', 'data:'],
@@ -193,7 +202,10 @@ const config = {
 					'https://*.supabase.co',
 					'wss://*.supabase.co',
 					'https://va.vercel-scripts.com',
-					'https://vitals.vercel-insights.com'
+					'https://vitals.vercel-insights.com',
+					'https://airhlspush.pc.cdn.bitgravity.com',
+					'https://radio.wavespb.com',
+					'https://d3hrxqn1tritdh.cloudfront.net'
 				],
 				'worker-src': ['self', 'blob:'],
 				'frame-src': ['self', 'https://www.youtube.com'],

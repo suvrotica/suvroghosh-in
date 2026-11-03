@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/calcutta-radio/**/*.test.ts',
 			'src/lib/visualizations/videos-i-like/**/*.test.ts',
 			'src/lib/server/videos-i-like/**/*.test.ts',
 			'src/routes/api/videos-i-like/**/*.test.ts',

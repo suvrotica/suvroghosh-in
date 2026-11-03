@@ -11683,6 +11683,21 @@
       "sourceHash": "e96068d50cdfab352986da8393a8ca4b7952623302cebeb91c5e84b242f93334",
       "width": 1200
     },
+    "static/images/visualizations/calcutta-radio/social.png": {
+      "format": "PNG",
+      "height": 1090,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1090,
+      "originalWidth": 1120,
+      "outputBytes": 438948,
+      "outputHash": "1adbcc3ef491045b6452627b4487353b1cf084b5f021a51604f1ed6d2268d63a",
+      "resized": false,
+      "sourceBytes": 499699,
+      "sourceHash": "39014313e558ae48c869f1e249775598e3e54d786384d8290c6f180c3eab6ef6",
+      "width": 1120
+    },
     "static/images/visualizations/chitin-engine/chitin-engine-four-worlds.png": {
       "format": "PNG",
       "height": 900,

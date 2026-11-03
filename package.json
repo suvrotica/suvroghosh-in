@@ -309,7 +309,9 @@
 		"patient-x:test": "vitest run src/lib/visualizations/patient-x --maxWorkers=2",
 		"patient-x:browser:test": "playwright test --config playwright.patient-x.config.ts",
 		"patient-x:assets": "node --experimental-strip-types scripts/render-patient-x-assets.mjs",
-		"patient-x:assets:check": "node --experimental-strip-types scripts/render-patient-x-assets.mjs --check"
+		"patient-x:assets:check": "node --experimental-strip-types scripts/render-patient-x-assets.mjs --check",
+		"calcutta-radio:test": "vitest run src/lib/visualizations/calcutta-radio --maxWorkers=2",
+		"calcutta-radio:verify": "node --experimental-strip-types scripts/verify-calcutta-radio.mjs"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",
@@ -384,6 +386,7 @@
 		"fflate": "^0.8.3",
 		"graphology": "^0.26.0",
 		"graphology-communities-louvain": "^2.0.2",
+		"hls.js": "1.7.4",
 		"jspdf": "^4.2.1",
 		"linkedom": "0.18.12",
 		"mind-elixir": "5.15.1",
