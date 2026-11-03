@@ -16712,6 +16712,36 @@
 				"Shennong"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/raw-frontier-giggle-and-the-great-algorithmic-enema.md": {
+			"bodyHash": "69820eea27fa8f0fcb3aabcd3e4f2d0e7cd65b8ea3de122a7897af3827a17bf8",
+			"hashVersion": 2,
+			"revisionHash": "e9b6d7bb95a8099f107fe019a01cde6715de64d3e0b0552120c132a7fa2e9937",
+			"generatedTags": [
+				"AI",
+				"Machine Learning",
+				"Science Communication",
+				"Skepticism",
+				"Technology",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Algorithms",
+				"Philosophy of Science"
+			],
+			"pinnedTags": [
+				"AI",
+				"Machine Learning",
+				"Science Communication",
+				"Skepticism",
+				"Technology",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Algorithms",
+				"Philosophy of Science"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

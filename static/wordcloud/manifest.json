@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T14:53:14.379005+00:00",
+  "generatedAt": "2026-11-03T16:09:32.795379+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8761,6 +8761,29 @@
         "Even",
         "Wheels",
         "Chariot"
+      ],
+      "wordCount": 130
+    },
+    "raw-frontier-giggle-and-the-great-algorithmic-enema": {
+      "generatedAt": "2026-11-03T16:09:32.358668+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/raw-frontier-giggle-and-the-great-algorithmic-enema.svg",
+      "source": "src/lib/posts/raw-frontier-giggle-and-the-great-algorithmic-enema.md",
+      "sourceHash": "d4c19240614b201c9658d98ec600f6a21f398c975cd9ef5aa9d6121ba2349437",
+      "sourceModified": "2026-11-03T16:05:50.514429+00:00",
+      "topWords": [
+        "Science",
+        "Partial",
+        "Frac",
+        "Models",
+        "Let",
+        "Intelligence",
+        "Machines",
+        "Digital",
+        "Attention",
+        "Enough",
+        "Believe",
+        "Gradient"
       ],
       "wordCount": 130
     },

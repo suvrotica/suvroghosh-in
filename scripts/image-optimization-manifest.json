@@ -10036,6 +10036,22 @@
       "sourceHash": "96947f13329d066a11686037688d1d93cd78946b344b1f6ca84bc83c3285271a",
       "width": 1050
     },
+    "static/images/raw-frontier-giggle-and-the-great-algorithmic-enema.jpg": {
+      "format": "JPEG",
+      "height": 960,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 960,
+      "originalWidth": 1440,
+      "outputBytes": 447788,
+      "outputHash": "108f4e6e3f58138bf501517964521345fbac7f3c741442fb59dbfee96b147963",
+      "psnrDb": 39.15,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 504357,
+      "sourceHash": "9f27e278f71697258a60799e2a97e3a3a44ca58113a24ba7100deb6ecd15297d",
+      "width": 1440
+    },
     "static/images/reaching-the-light-together-overcoming-major-depression.jpg": {
       "format": "JPEG",
       "height": 720,

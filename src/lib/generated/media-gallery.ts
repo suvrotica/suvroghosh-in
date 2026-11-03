@@ -4416,6 +4416,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1498
 		},
 		{
+			"name": "raw-frontier-giggle-and-the-great-algorithmic-enema.jpg",
+			"src": "/images/raw-frontier-giggle-and-the-great-algorithmic-enema.jpg",
+			"bytes": 447788,
+			"width": 1440,
+			"height": 960
+		},
+		{
 			"name": "reaching-the-light-together-overcoming-major-depression.jpg",
 			"src": "/images/reaching-the-light-together-overcoming-major-depression.jpg",
 			"bytes": 61287,
