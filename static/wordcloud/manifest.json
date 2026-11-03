@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T16:09:32.795379+00:00",
+  "generatedAt": "2026-11-03T19:26:55.106300+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4460,6 +4460,29 @@
         "Money",
         "Merely",
         "Never"
+      ],
+      "wordCount": 130
+    },
+    "git-and-github-first-principles": {
+      "generatedAt": "2026-11-03T19:26:54.434853+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/git-and-github-first-principles.svg",
+      "source": "src/lib/posts/git-and-github-first-principles.md",
+      "sourceHash": "f0aae97f6dc5b181b4b2454d4df2f60e7562f9537caa4e9cb1591f8a410a7ac2",
+      "sourceModified": "2026-11-03T19:26:48.334043+00:00",
+      "topWords": [
+        "Git",
+        "Github",
+        "Version",
+        "Changes",
+        "History",
+        "Commit",
+        "Every",
+        "Code",
+        "Human",
+        "System",
+        "Control",
+        "Work"
       ],
       "wordCount": 130
     },

@@ -48,6 +48,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "art-git-and-github-first-principles.webp",
+			"src": "/images/art-git-and-github-first-principles.webp",
+			"bytes": 107340,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-happiness-the-unhappy-scam-thats-always-healthy-for-business.jpg",
 			"src": "/images/art-happiness-the-unhappy-scam-thats-always-healthy-for-business.jpg",
 			"bytes": 369880,

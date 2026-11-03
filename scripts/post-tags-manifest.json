@@ -16742,6 +16742,30 @@
 				"Philosophy of Science"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/git-and-github-first-principles.md": {
+			"bodyHash": "181bdb07ad24635c2f12a9082b74db41f5039c9d845a90a02bdb1b008da30a1f",
+			"hashVersion": 2,
+			"revisionHash": "ac7886ba17b1dbafd9114f689b22e31eb97d23f9445d589736df154a665623a5",
+			"generatedTags": [
+				"Git",
+				"GitHub",
+				"Version Control",
+				"Software Engineering",
+				"Collaboration",
+				"Distributed Systems",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Git",
+				"GitHub",
+				"Version Control",
+				"Software Engineering",
+				"Collaboration",
+				"Distributed Systems",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -8080,6 +8080,22 @@
       "sourceHash": "fc86c6443763e0ed8b786750a7425a576076fb8b446bd52bf1bca836fa90570b",
       "width": 1024
     },
+    "static/images/art-git-and-github-first-principles.webp": {
+      "format": "WEBP",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 107340,
+      "outputHash": "e37ada1804895ed17683264c43b40b8ad2fc29b03987f873555f7eeba96a2fac",
+      "psnrDb": 39.21,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 142798,
+      "sourceHash": "d76f2e2464014a383c87490faa5da2b07db0ee3d1497a1701372db1d6119bf6e",
+      "width": 1672
+    },
     "static/images/art-happiness-the-unhappy-scam-thats-always-healthy-for-business.jpg": {
       "format": "JPEG",
       "height": 768,
