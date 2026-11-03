@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T21:17:38.566511+00:00",
+  "generatedAt": "2026-11-03T21:33:45.855614+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -15040,6 +15040,29 @@
         "Sentence",
         "Becomes",
         "Static"
+      ],
+      "wordCount": 130
+    },
+    "the-silicon-sermon": {
+      "generatedAt": "2026-11-03T21:33:45.621811+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-silicon-sermon.svg",
+      "source": "src/lib/posts/the-silicon-sermon.md",
+      "sourceHash": "ae8193b7b659e019f3fc4515141d57d6e147ebbff578f2381d268e7cad2c25da",
+      "sourceModified": "2026-11-03T21:33:33.292400+00:00",
+      "topWords": [
+        "God",
+        "Math",
+        "Machine",
+        "Let",
+        "Time",
+        "Man",
+        "Expected",
+        "Pascal",
+        "Soul",
+        "Universe",
+        "AI",
+        "Wheel"
       ],
       "wordCount": 130
     },

@@ -10848,6 +10848,22 @@
       "sourceHash": "f97449f5816f0487fb4ef954a6a5a601bffa9a529580320ca93cb41110535465",
       "width": 1024
     },
+    "static/images/the-silicon-sermon.webp": {
+      "format": "WEBP",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 481186,
+      "outputHash": "115d87ce8b2e92d74507829b7a9d52456634da1f2da0a5b69972ca1ddd4df026",
+      "psnrDb": 36.84,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 519380,
+      "sourceHash": "5625c21a9cf48f1f4a87f6a7f17a53a47095f1809a15610d3e837427baf7755d",
+      "width": 1600
+    },
     "static/images/the-soft-bengali-underbelly.jpg": {
       "format": "JPEG",
       "height": 1024,

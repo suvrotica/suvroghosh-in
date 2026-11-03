@@ -4780,6 +4780,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "the-silicon-sermon.webp",
+			"src": "/images/the-silicon-sermon.webp",
+			"bytes": 481186,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "the-soft-bengali-underbelly.jpg",
 			"src": "/images/the-soft-bengali-underbelly.jpg",
 			"bytes": 441243,

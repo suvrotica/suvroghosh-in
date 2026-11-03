@@ -16796,6 +16796,38 @@
 				"Essay"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-silicon-sermon.md": {
+			"bodyHash": "6aa16b2b643acd7ffa9b58532d6e1b47d18014611050ddd34f3a431077b6b574",
+			"hashVersion": 2,
+			"revisionHash": "52e7f79d9d7c4f89e514bdfae4e8961689894f9b1f448cc28ada40e87bdd43e2",
+			"generatedTags": [
+				"artificial intelligence",
+				"eschatology",
+				"religion",
+				"philosophy",
+				"longtermism",
+				"silicon valley",
+				"apocalypse",
+				"theology",
+				"rationality",
+				"suvroghosh",
+				"Calcutta",
+				"Kolkata"
+			],
+			"pinnedTags": [
+				"artificial intelligence",
+				"eschatology",
+				"religion",
+				"philosophy",
+				"longtermism",
+				"silicon valley",
+				"apocalypse",
+				"theology",
+				"rationality",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
