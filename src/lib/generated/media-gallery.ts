@@ -20,6 +20,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 940
 		},
 		{
+			"name": "art-attention-scarcity.webp",
+			"src": "/images/art-attention-scarcity.webp",
+			"bytes": 410394,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg",
 			"src": "/images/art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg",
 			"bytes": 280766,

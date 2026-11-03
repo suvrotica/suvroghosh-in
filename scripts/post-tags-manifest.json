@@ -16766,6 +16766,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/attention-scarcity.md": {
+			"bodyHash": "a8e8e48aa7ad6365a26490debff374f7146098398a01b20b623d54da7ae8c97a",
+			"hashVersion": 2,
+			"revisionHash": "f6791198e7040e15c07de282eeb6281411d178d07bd8651f15fd9515b517796d",
+			"generatedTags": [
+				"Attention",
+				"Information",
+				"Economics",
+				"Media",
+				"Technology",
+				"Psychology",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Essay"
+			],
+			"pinnedTags": [
+				"Attention",
+				"Information",
+				"Economics",
+				"Media",
+				"Technology",
+				"Psychology",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Essay"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

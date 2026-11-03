@@ -8016,6 +8016,22 @@
       "sourceHash": "42d9e7d4181a666017ea26678f46035d95bc8907de2d4e31c05c17ae4b112378",
       "width": 1672
     },
+    "static/images/art-attention-scarcity.webp": {
+      "format": "WEBP",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 410394,
+      "outputHash": "567035bddc45b31c83e462cbf7c126bdf61d7ca40b542c485ca42c367961030b",
+      "psnrDb": 36.39,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 461258,
+      "sourceHash": "49c663d3b0e0929659232f1b594bcb53f4e59a62e8da58e1e88e79695fded470",
+      "width": 1536
+    },
     "static/images/art-brain-waves-or-how-your-mind-is-constantly-shitting-out-electricity.jpg": {
       "format": "JPEG",
       "height": 768,

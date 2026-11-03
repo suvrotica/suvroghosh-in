@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T19:26:55.106300+00:00",
+  "generatedAt": "2026-11-03T21:17:38.566511+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1148,6 +1148,29 @@
         "Upon",
         "Years",
         "Systems"
+      ],
+      "wordCount": 130
+    },
+    "attention-scarcity": {
+      "generatedAt": "2026-11-03T21:17:37.703226+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/attention-scarcity.svg",
+      "source": "src/lib/posts/attention-scarcity.md",
+      "sourceHash": "f7bbf7b3fd6b83de5d7c9c2c24bfe90f68947983948a586d4881fa200ee2850b",
+      "sourceModified": "2026-11-03T21:17:14.375890+00:00",
+      "topWords": [
+        "Attention",
+        "Simon",
+        "Flood",
+        "Hours",
+        "Say",
+        "Everything",
+        "Yet",
+        "Content",
+        "Decided",
+        "Man",
+        "Wealth",
+        "Information"
       ],
       "wordCount": 130
     },
