@@ -2,6 +2,8 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount, tick, untrack } from 'svelte';
+	import SEO from '$lib/components/seo/SEO.svelte';
+	import { siteUrl } from '$lib/components/seo/SEO';
 
 	type Staff = { id: string; name: string; city: string | null; available: boolean };
 	type Enquiry = {
@@ -500,14 +502,18 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Stop losing customer enquiries · Working prototype</title>
-	<meta
-		name="description"
-		content="A working ClinConsult portfolio prototype showing saved enquiries, clear responsibility and recovery from simulated email failure."
-	/>
-	<meta name="robots" content="noindex, nofollow" />
-</svelte:head>
+<SEO
+	title="Stop losing customer enquiries · Working prototype"
+	description="A working ClinConsult portfolio prototype showing saved enquiries, clear responsibility and recovery from simulated email failure."
+	canonicalUrl={`${siteUrl}/demos/customer-enquiries`}
+	ogImageUrl={`${siteUrl}/images/customer-enquiries-demo.jpg`}
+	ogImageAlt="Customer enquiry prototype showing a saved request, named owner and visible follow-up."
+	ogImageWidth={1440}
+	ogImageHeight={900}
+	robots="noindex, nofollow"
+	keywords={[]}
+	schema={null}
+/>
 
 <div class="enquiry-demo">
 	<div class="demo-banner">
