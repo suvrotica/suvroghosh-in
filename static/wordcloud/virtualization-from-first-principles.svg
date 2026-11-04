@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Ghost in the Machine: A Layman&#x27;s Guide to Virtualization, VMs, and Docker" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Ghost in the Machine: A Layman&#x27;s Guide to Virtualization, VMs, and Docker</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(240,567)" font-size="118" style="fill:#d5d2c2">Virtualization</text>
+<text transform="translate(343,443)" font-size="108" style="fill:#c7d7b5">Computer</text>
+<text transform="translate(543,94)" font-size="105" style="fill:#d6a79f">System</text>
+<text transform="translate(117,316)" font-size="105" style="fill:#8fb7d0">Physical</text>
+<text transform="translate(249,651)" font-size="105" style="fill:#9fc9c5">Containers</text>
+<text transform="translate(1156,487) rotate(-90)" font-size="100" style="fill:#d5d2c2">Virtual</text>
+<text transform="translate(404,215)" font-size="100" style="fill:#d5d2c2">Machines</text>
+<text transform="translate(80,656) rotate(-90)" font-size="94" style="fill:#d5d2c2">Operating</text>
+<text transform="translate(18,73)" font-size="91" style="fill:#d6a79f">Machine</text>
+<text transform="translate(1225,496) rotate(-90)" font-size="82" style="fill:#d9c89e">Hypervisor</text>
+<text transform="translate(672,327)" font-size="72" style="fill:#a9b7a3">Computers</text>
+<text transform="translate(151,187)" font-size="72" style="fill:#d9c89e">Cloud</text>
+<text transform="translate(238,701)" font-size="60" style="fill:#9fc9c5">Applications</text>
+<text transform="translate(30,125)" font-size="60" style="fill:#d6a79f">Abstraction</text>
+<text transform="translate(86,491)" font-size="57" style="fill:#d88988">Ten</text>
+<text transform="translate(1051,260) rotate(-90)" font-size="57" style="fill:#d9c89e">Run</text>
+<text transform="translate(951,659)" font-size="57" style="fill:#b6c3dd">Running</text>
+<text transform="translate(976,174) rotate(-90)" font-size="54" style="fill:#b6c3dd">Vms</text>
+<text transform="translate(854,449)" font-size="54" style="fill:#a9b7a3">Docker</text>
+<text transform="translate(857,390)" font-size="54" style="fill:#e0b879">House</text>
+<text transform="translate(735,260)" font-size="54" style="fill:#e0b879">Servers</text>
+<text transform="translate(855,709)" font-size="51" style="fill:#d88988">Different</text>
+<text transform="translate(734,710)" font-size="51" style="fill:#c7d7b5">Use</text>
+<text transform="translate(531,377)" font-size="51" style="fill:#b6c3dd">Time</text>
+<text transform="translate(403,73)" font-size="51" style="fill:#e0b879">Many</text>
+<text transform="translate(112,442)" font-size="51" style="fill:#a9b7a3">Server</text>
+<text transform="translate(13,694)" font-size="51" style="fill:#9fc9c5">Program</text>
+<text transform="translate(108,658)" font-size="51" style="fill:#d5d2c2">Data</text>
+<text transform="translate(998,49)" font-size="51" style="fill:#c7d7b5">Linux</text>
+<text transform="translate(110,230)" font-size="51" style="fill:#e0b879">Container</text>
+<text transform="translate(111,395)" font-size="47" style="fill:#d88988">Landlord</text>
+<text transform="translate(691,143)" font-size="47" style="fill:#d5d2c2">Hardware</text>
+<text transform="translate(1268,319) rotate(-90)" font-size="47" style="fill:#9fc9c5">Share</text>
+<text transform="translate(1100,608)" font-size="47" style="fill:#9fc9c5">Kernel</text>
+<text transform="translate(892,602)" font-size="44" style="fill:#d5d2c2">Systems</text>
+<text transform="translate(101,562)" font-size="41" style="fill:#d88988">Single</text>
+<text transform="translate(605,252)" font-size="41" style="fill:#9fc9c5">Every</text>
+<text transform="translate(456,130)" font-size="41" style="fill:#d5d2c2">Called</text>
+<text transform="translate(934,220)" font-size="41" style="fill:#d88988">Let</text>
+<text transform="translate(118,607)" font-size="41" style="fill:#8fb7d0">First</text>
+<text transform="translate(336,350)" font-size="40" style="fill:#d6a79f">Building</text>
+<text transform="translate(793,493)" font-size="40" style="fill:#d88988">Think</text>
+<text transform="translate(675,363)" font-size="40" style="fill:#9fc9c5">Need</text>
+<text transform="translate(358,481)" font-size="38" style="fill:#d6a79f">Illusion</text>
+<text transform="translate(1131,705)" font-size="38" style="fill:#e0b879">Memory</text>
+<text transform="translate(114,352)" font-size="38" style="fill:#e0b879">World</text>
+<text transform="translate(1007,83)" font-size="38" style="fill:#d9c89e">Built</text>
+<text transform="translate(410,242)" font-size="28" style="fill:#b6c3dd">Computing</text>
+<text transform="translate(776,25)" font-size="28" style="fill:#d88988">Computational</text>
+<text transform="translate(562,471)" font-size="28" style="fill:#c49a6c">Software</text>
+<text transform="translate(900,352)" font-size="28" style="fill:#c49a6c">Kubernetes</text>
+<text transform="translate(84,517)" font-size="28" style="fill:#a9b7a3">Abstract</text>
+<text transform="translate(401,30)" font-size="25" style="fill:#d6a79f">Someone</text>
+<text transform="translate(200,466)" font-size="25" style="fill:#d9c89e">Everything</text>
+<text transform="translate(989,141)" font-size="25" style="fill:#a9b7a3">Fiction</text>
+<text transform="translate(1247,366) rotate(-90)" font-size="25" style="fill:#b6c3dd">Now</text>
+<text transform="translate(1024,378)" font-size="25" style="fill:#d6a79f">Programs</text>
+<text transform="translate(713,589)" font-size="25" style="fill:#b6c3dd">Understand</text>
+<text transform="translate(606,23)" font-size="25" style="fill:#c7d7b5">Resources</text>
+<text transform="translate(1263,171) rotate(-90)" font-size="25" style="fill:#b6c3dd">Complete</text>
+<text transform="translate(1267,519) rotate(-90)" font-size="25" style="fill:#c49a6c">Complexity</text>
+<text transform="translate(412,379)" font-size="25" style="fill:#a9b7a3">Moment</text>
+<text transform="translate(920,473)" font-size="25" style="fill:#d9c89e">Company</text>
+<text transform="translate(209,254)" font-size="25" style="fill:#d88988">Vmware</text>
+<text transform="translate(648,337) rotate(-90)" font-size="25" style="fill:#d5d2c2">Began</text>
+<text transform="translate(103,424) rotate(-90)" font-size="25" style="fill:#c7d7b5">Hypervisors</text>
+<text transform="translate(1077,316) rotate(-90)" font-size="25" style="fill:#d88988">Code</text>
+<text transform="translate(22,237) rotate(-90)" font-size="25" style="fill:#d9c89e">Process</text>
+<text transform="translate(1196,652)" font-size="25" style="fill:#e0b879">Stack</text>
+<text transform="translate(543,492)" font-size="22" style="fill:#d6a79f">Strange</text>
+<text transform="translate(980,107)" font-size="22" style="fill:#d6a79f">Kitchen</text>
+<text transform="translate(968,413)" font-size="22" style="fill:#c49a6c">Families</text>
+<text transform="translate(974,281)" font-size="22" style="fill:#d88988">Live</text>
+<text transform="translate(474,154)" font-size="22" style="fill:#a9b7a3">Believes</text>
+<text transform="translate(322,588)" font-size="22" style="fill:#d88988">Peculiar</text>
+<text transform="translate(882,656)" font-size="22" style="fill:#d9c89e">Works</text>
+<text transform="translate(719,278)" font-size="18" style="fill:#c7d7b5">Perfectly</text>
+<text transform="translate(77,148)" font-size="18" style="fill:#c7d7b5">Entire</text>
+<text transform="translate(669,669)" font-size="18" style="fill:#c7d7b5">Internet</text>
+<text transform="translate(874,112)" font-size="18" style="fill:#8fb7d0">Exists</text>
+<text transform="translate(20,488) rotate(-90)" font-size="18" style="fill:#d88988">Electricity</text>
+<text transform="translate(773,669)" font-size="18" style="fill:#d6a79f">Pretend</text>
+<text transform="translate(933,59)" font-size="18" style="fill:#d88988">Laptop</text>
+<text transform="translate(879,177)" font-size="18" style="fill:#d5d2c2">Asks</text>
+<text transform="translate(713,535)" font-size="18" style="fill:#c7d7b5">Give</text>
+<text transform="translate(382,184) rotate(-90)" font-size="18" style="fill:#d9c89e">Stage</text>
+<text transform="translate(317,254)" font-size="18" style="fill:#d9c89e">Handle</text>
+<text transform="translate(699,466)" font-size="18" style="fill:#d6a79f">Sharing</text>
+<text transform="translate(626,585)" font-size="18" style="fill:#c49a6c">Making</text>
+<text transform="translate(1227,27)" font-size="18" style="fill:#c7d7b5">IBM</text>
+<text transform="translate(1002,619)" font-size="18" style="fill:#c49a6c">Economic</text>
+<text transform="translate(1240,576) rotate(-90)" font-size="18" style="fill:#c7d7b5">Centers</text>
+<text transform="translate(1003,676)" font-size="18" style="fill:#c49a6c">Power</text>
+<text transform="translate(477,585)" font-size="18" style="fill:#a9b7a3">Efficiency</text>
+<text transform="translate(960,242)" font-size="18" style="fill:#9fc9c5">Top</text>
+<text transform="translate(941,41)" font-size="18" style="fill:#8fb7d0">Gets</text>
+<text transform="translate(285,436)" font-size="18" style="fill:#a9b7a3">Sense</text>
+<text transform="translate(1086,249) rotate(-90)" font-size="18" style="fill:#c49a6c">Simple</text>
+<text transform="translate(279,18)" font-size="18" style="fill:#8fb7d0">Foundation</text>
+<text transform="translate(664,153) rotate(-90)" font-size="18" style="fill:#e0b879">Often</text>
+<text transform="translate(392,498)" font-size="18" style="fill:#9fc9c5">Shared</text>
+<text transform="translate(671,691)" font-size="18" style="fill:#c49a6c">Build</text>
+<text transform="translate(704,379)" font-size="18" style="fill:#a9b7a3">Center</text>
+<text transform="translate(4,710)" font-size="14" style="fill:#b6c3dd">Application</text>
+<text transform="translate(72,15)" font-size="14" style="fill:#d6a79f">Configuration</text>
+<text transform="translate(1175,134) rotate(-90)" font-size="14" style="fill:#e0b879">Demand</text>
+<text transform="translate(777,371)" font-size="14" style="fill:#9fc9c5">Layer</text>
+<text transform="translate(308,334) rotate(-90)" font-size="12" style="fill:#8fb7d0">Ghost</text>
+<text transform="translate(1219,665)" font-size="12" style="fill:#d9c89e">Imagine</text>
+<text transform="translate(927,630)" font-size="12" style="fill:#d88988">Yet</text>
+<text transform="translate(881,223)" font-size="12" style="fill:#b6c3dd">Alone</text>
+<text transform="translate(1095,498)" font-size="12" style="fill:#c49a6c">Functions</text>
+<text transform="translate(1133,620)" font-size="12" style="fill:#b6c3dd">Possible</text>
+<text transform="translate(574,329)" font-size="12" style="fill:#c49a6c">Living</text>
+<text transform="translate(160,709)" font-size="12" style="fill:#8fb7d0">Stranger</text>
+<text transform="translate(863,404)" font-size="12" style="fill:#c7d7b5">Needed</text>
+<text transform="translate(812,111)" font-size="12" style="fill:#e0b879">Even</text>
+<text transform="translate(886,206)" font-size="12" style="fill:#8fb7d0">Human</text>
+<text transform="translate(730,550)" font-size="12" style="fill:#d9c89e">Idle</text>
+<text transform="translate(299,412)" font-size="12" style="fill:#9fc9c5">Behave</text>
+<text transform="translate(166,409)" font-size="12" style="fill:#8fb7d0">Scientists</text>
+<text transform="translate(1059,674)" font-size="12" style="fill:#8fb7d0">Term</text>
+<text transform="translate(17,318)" font-size="12" style="fill:#d88988">Thought</text>
+<text transform="translate(728,113)" font-size="12" style="fill:#d9c89e">Modern</text>
+<text transform="translate(143,622)" font-size="12" style="fill:#c7d7b5">Spin</text>
+<text transform="translate(1116,14)" font-size="12" style="fill:#9fc9c5">Actually</text>
+<text transform="translate(365,523) rotate(-90)" font-size="12" style="fill:#c49a6c">Idea</text>
+<text transform="translate(9,266)" font-size="12" style="fill:#8fb7d0">Probably</text>
+<text transform="translate(417,542)" font-size="12" style="fill:#d6a79f">Humming</text>
+<text transform="translate(440,596) rotate(-90)" font-size="12" style="fill:#b6c3dd">Slices</text>
+</svg>

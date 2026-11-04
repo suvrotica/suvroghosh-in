@@ -16890,6 +16890,28 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-04"
+		},
+		"src/lib/posts/virtualization-from-first-principles.md": {
+			"bodyHash": "18ca457666fdc36c12ec3c44950760eec9e05769e44a325655cf240bc1c82dbe",
+			"hashVersion": 2,
+			"revisionHash": "67086b69525cb8739aac6e02711690f35fbb39da756e674247e88166a0c82efc",
+			"generatedTags": [
+				"Virtualization",
+				"Docker",
+				"VMs",
+				"Cloud Computing",
+				"Engineering Blog",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Virtualization",
+				"Docker",
+				"VMs",
+				"Cloud Computing",
+				"Engineering Blog",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

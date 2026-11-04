@@ -8527,6 +8527,22 @@
       "sourceHash": "e1d6a3b0a296a92bb9c121738abb73b87e6ef21a7b000262b3aba18ac5674cad",
       "width": 1376
     },
+    "static/images/art-virtualization-from-first-principles.webp": {
+      "format": "WEBP",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 166556,
+      "outputHash": "8881068943ce648d4052cf28e19d06c6d93bf31d6cd55c12cac64c5c01e78974",
+      "psnrDb": 37.05,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 219310,
+      "sourceHash": "852d038f619aa733444d6fde35624dee1366957443fc07f15957f3db79a8888e",
+      "width": 1672
+    },
     "static/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg": {
       "format": "JPEG",
       "height": 941,

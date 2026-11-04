@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T18:15:53.782704+00:00",
+  "generatedAt": "2026-11-04T20:20:31.305248+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -17204,6 +17204,29 @@
         "Press"
       ],
       "wordCount": 125
+    },
+    "virtualization-from-first-principles": {
+      "generatedAt": "2026-11-04T20:20:31.272748+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/virtualization-from-first-principles.svg",
+      "source": "src/lib/posts/virtualization-from-first-principles.md",
+      "sourceHash": "066db6185bcfc08dd4f9382e1e9cab20faafbdd5de0f0e2cf5d127e71c635898",
+      "sourceModified": "2026-11-04T20:20:00.714464+00:00",
+      "topWords": [
+        "Virtualization",
+        "Computer",
+        "System",
+        "Physical",
+        "Containers",
+        "Virtual",
+        "Machines",
+        "Operating",
+        "Machine",
+        "Hypervisor",
+        "Computers",
+        "Cloud"
+      ],
+      "wordCount": 130
     },
     "vitruvian-man": {
       "generatedAt": "2026-07-12T19:53:19.820375+00:00",

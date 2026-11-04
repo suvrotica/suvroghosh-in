@@ -244,6 +244,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "art-virtualization-from-first-principles.webp",
+			"src": "/images/art-virtualization-from-first-principles.webp",
+			"bytes": 166556,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-what-exactly-have-i-let-my-local-ai-touch.jpg",
 			"src": "/images/art-what-exactly-have-i-let-my-local-ai-touch.jpg",
 			"bytes": 179183,
