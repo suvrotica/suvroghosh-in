@@ -8746,6 +8746,20 @@
       "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
       "width": 1536
     },
+    "static/images/customer-enquiries-demo.jpg": {
+      "format": "JPEG",
+      "height": 900,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1440,
+      "outputBytes": 110896,
+      "outputHash": "3a5e7d192246fbd7b964867845d4c0e60f5cde6b3f2761750e140c2a46fe54b6",
+      "resized": false,
+      "sourceBytes": 110896,
+      "sourceHash": "3a5e7d192246fbd7b964867845d4c0e60f5cde6b3f2761750e140c2a46fe54b6",
+      "width": 1440
+    },
     "static/images/dashami-the-city-that-darkness-ate.jpg": {
       "format": "JPEG",
       "height": 576,
