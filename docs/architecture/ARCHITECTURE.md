@@ -399,6 +399,24 @@ filter by the primary category. Both listings link to
 search and article canonical generation continue to use the single post registry. Navigation
 in the header, command palette, footer and Viz page exposes the Apps collection.
 
+The Apps page also includes a small, explicit external listing for **Handwritten Messenger**,
+linking directly to `https://handwritten-messenger.vercel.app/demo`. Its preview image is a local
+static copy of the public demo image. The page combines this listing with the existing post
+entries for card rendering, the visible count and JSON-LD `ItemList`; internal apps retain their
+canonical blog URLs. The labelled external link opens the independent app in a new tab. Its
+authentication, storage and microphone permission stay with the Messenger origin: the blog adds
+no iframe, proxy, shared session, credential, provider call or CSP exception. The external listing
+does not create a duplicate blog article or enter article RSS/search/sitemap generation.
+
+```mermaid
+flowchart LR
+    Posts["Published posts with Apps membership"] --> Apps["Prerendered Apps collection"]
+    External["Explicit external listing / local preview image"] --> Apps
+    Apps --> BlogApp["Existing canonical blog app route"]
+    Apps -->|labelled external link| Messenger["Handwritten Messenger /demo"]
+    Messenger --> Independent["Independent hosting, identity and message storage"]
+```
+
 Prompt Atlas uses feature-local TypeScript modules under `src/lib/visualizations/prompt-atlas`
 and Svelte UI under `src/lib/components/visualizations/prompt-atlas`. Local mode is the default:
 a deterministic reader runs in a cancellable browser worker with a ten-second deadline. Optional

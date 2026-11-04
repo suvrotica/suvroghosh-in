@@ -8000,6 +8000,21 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/apps/handwritten-messenger.png": {
+      "format": "PNG",
+      "height": 1000,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1000,
+      "originalWidth": 1200,
+      "outputBytes": 383595,
+      "outputHash": "aa6cb09726305ca7b0728e278410e1cbb2fa7361fcb8d94476ae5afcacf72ba7",
+      "resized": false,
+      "sourceBytes": 452426,
+      "sourceHash": "30ad86348d894a2a0650735551e57fe24154c4754f2e56b31fc4ad571a0dd781",
+      "width": 1200
+    },
     "static/images/art-adversarial-noise-in-the-machine.webp": {
       "format": "WEBP",
       "height": 940,

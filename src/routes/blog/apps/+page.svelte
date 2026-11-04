@@ -13,15 +13,52 @@
 	let { data }: { data: PageData } = $props();
 	const title = 'Apps — Useful Browser Tools | Suvro Ghosh';
 	const description =
-		'Practical web applications by Suvro Ghosh. Inspect prompts, count characters and explore their structure with Prompt Atlas, a tool that runs in your browser.';
+		'Small web apps by Suvro Ghosh for writing, listening and exploring ideas. Try Handwritten Messenger, Calcutta Radio, Prompt Atlas and more.';
 	const canonicalUrl = `${siteUrl}/blog/apps`;
+	const messengerUrl = 'https://handwritten-messenger.vercel.app/demo';
+	const apps = $derived([
+		{
+			title: 'Handwritten Messenger',
+			description:
+				'Draw a note, type, or send a voice message. Try it yourself or invite a friend into a 15-minute chat.',
+			href: messengerUrl,
+			canonicalUrl: messengerUrl,
+			thumbnail: '/images/apps/handwritten-messenger.png',
+			thumbnailAlt: 'Handwritten Messenger’s dark demo page, with solo and friend-chat options.',
+			thumbnailHeight: 1000,
+			kind: 'Messaging demo',
+			action: 'Try the demo',
+			external: true
+		},
+		...data.posts.map((post) => ({
+			title: post.title,
+			description: post.description,
+			href: resolve('/blog/[category]/[slug]', {
+				category: post.categorySlug,
+				slug: post.slug
+			}),
+			canonicalUrl: siteUrl + postPath(post),
+			thumbnail: post.thumbnail,
+			thumbnailAlt: post.thumbnailAlt ?? post.title,
+			thumbnailHeight: 630,
+			kind: 'Browser app · Visualization',
+			action: 'Open app',
+			external: false
+		}))
+	]);
 </script>
 
 <SEO
 	{title}
 	{description}
 	{canonicalUrl}
-	keywords={['Browser tools', 'Web applications', 'Prompt Atlas', 'Prompt analyzer', 'Mind maps']}
+	keywords={[
+		'Browser tools',
+		'Web applications',
+		'Handwritten Messenger',
+		'Calcutta Radio',
+		'Prompt Atlas'
+	]}
 	schema={withSiteGraph([
 		collectionPageSchema({
 			name: 'Apps — Useful Browser Tools',
@@ -38,11 +75,11 @@
 			'@context': 'https://schema.org',
 			'@type': 'ItemList',
 			name: 'Useful browser applications',
-			itemListElement: data.posts.map((post, index) => ({
+			itemListElement: apps.map((app, index) => ({
 				'@type': 'ListItem',
 				position: index + 1,
-				name: post.title,
-				url: siteUrl + postPath(post)
+				name: app.title,
+				url: app.canonicalUrl
 			}))
 		}
 	])}
@@ -59,8 +96,7 @@
 			<p class="eyebrow">The useful shelf</p>
 			<h1>Small apps.<br /><em>Room to think.</em></h1>
 			<p class="intro">
-				Tools for the work between an idea and a clear result. Open one, bring your own material,
-				and make something useful.
+				Small apps for writing, listening and exploring ideas. Open one and try it in your browser.
 			</p>
 		</div>
 		<div class="shelf-mark" aria-hidden="true">
@@ -70,58 +106,65 @@
 	<section aria-labelledby="apps-heading">
 		<div class="shelf-heading">
 			<h2 id="apps-heading">Apps</h2>
-			<span>{data.posts.length} {data.posts.length === 1 ? 'tool' : 'tools'} on the shelf</span>
+			<span>{apps.length} {apps.length === 1 ? 'app' : 'apps'} on the shelf</span>
 		</div>
-		{#if data.posts.length === 0}
+		{#if apps.length === 0}
 			<p>
 				The first tool is being prepared. Visit the <a href={resolve('/blog/visualizations')}
 					>Viz collection</a
 				> to explore the interactive experiments.
 			</p>
 		{:else}
+			<!-- Internal hrefs are resolved above; the external destination is a fixed HTTPS URL. -->
+			<!-- eslint-disable svelte/no-navigation-without-resolve -->
 			<div class="app-grid">
-				{#each data.posts as post (post.slug)}
+				{#each apps as app (app.href)}
 					<article class="app-card">
 						<a
 							class="preview-link"
-							href={resolve('/blog/[category]/[slug]', {
-								category: post.categorySlug,
-								slug: post.slug
-							})}
-							aria-label={`Open ${post.title}`}
+							href={app.href}
+							target={app.external ? '_blank' : undefined}
+							rel={app.external ? 'noopener noreferrer' : undefined}
+							aria-label={`Open ${app.title}${app.external ? ' (opens in a new tab)' : ''}`}
 						>
-							{#if post.thumbnail}
+							{#if app.thumbnail}
 								<img
-									src={post.thumbnail}
-									alt={post.thumbnailAlt ?? post.title}
+									src={app.thumbnail}
+									alt={app.thumbnailAlt}
 									width="1200"
-									height="630"
+									height={app.thumbnailHeight}
 									loading="lazy"
 								/>
 							{/if}
 						</a>
 						<div class="card-copy">
-							<p class="tool-type">Browser app · Visualization</p>
+							<p class="tool-type">{app.kind}</p>
 							<h3>
 								<a
-									href={resolve('/blog/[category]/[slug]', {
-										category: post.categorySlug,
-										slug: post.slug
-									})}>{post.title}</a
+									href={app.href}
+									target={app.external ? '_blank' : undefined}
+									rel={app.external ? 'noopener noreferrer' : undefined}
+									aria-label={app.external ? `${app.title} (opens in a new tab)` : undefined}
+									>{app.title}</a
 								>
 							</h3>
-							<p>{post.description}</p>
+							<p>{app.description}</p>
 							<a
 								class="open-app"
-								href={resolve('/blog/[category]/[slug]', {
-									category: post.categorySlug,
-									slug: post.slug
-								})}>Open app <span aria-hidden="true">↗</span></a
+								href={app.href}
+								target={app.external ? '_blank' : undefined}
+								rel={app.external ? 'noopener noreferrer' : undefined}
+								aria-label={app.external ? `${app.action} (opens in a new tab)` : undefined}
+								>{app.action} <span aria-hidden="true">↗</span></a
 							>
+							{#if app.external}
+								<p class="launch-note">No Google sign-in or approval. Opens in a new tab.</p>
+							{/if}
 						</div>
 					</article>
 				{/each}
 			</div>
+			<!-- eslint-enable svelte/no-navigation-without-resolve -->
 		{/if}
 	</section>
 	<aside class="collection-note">
@@ -290,6 +333,10 @@
 		border-radius: 0.4rem;
 		text-decoration: none;
 		font: 650 0.9rem var(--font-sans, sans-serif);
+	}
+	.card-copy > p.launch-note {
+		margin-top: 0.8rem;
+		font-size: 0.8rem;
 	}
 	.collection-note {
 		max-width: 42rem;

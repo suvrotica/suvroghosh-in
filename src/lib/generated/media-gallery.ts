@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "apps/handwritten-messenger.png",
+			"src": "/images/apps/handwritten-messenger.png",
+			"bytes": 383595,
+			"width": 1200,
+			"height": 1000
+		},
+		{
 			"name": "art-adversarial-noise-in-the-machine.webp",
 			"src": "/images/art-adversarial-noise-in-the-machine.webp",
 			"bytes": 165128,
