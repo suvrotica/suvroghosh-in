@@ -3387,6 +3387,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "customer-enquiries-demo.jpg",
+			"src": "/images/customer-enquiries-demo.jpg",
+			"bytes": 110896,
+			"width": 1440,
+			"height": 900
+		},
+		{
 			"name": "dashami-the-city-that-darkness-ate.jpg",
 			"src": "/images/dashami-the-city-that-darkness-ate.jpg",
 			"bytes": 176419,
