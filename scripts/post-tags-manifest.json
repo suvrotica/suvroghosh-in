@@ -16859,6 +16859,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-04"
+		},
+		"src/lib/posts/fractal-trip.md": {
+			"bodyHash": "e7df3c941d46ab785c75d15c2a1b23722c318159f60580667505db634950d744",
+			"hashVersion": 2,
+			"revisionHash": "d665d584b4b1fb005aa3a9da8af50fe34f78fac372ea3f0077775db0947808ec",
+			"generatedTags": [
+				"Fractals",
+				"Mandelbrot Set",
+				"Julia Sets",
+				"Mathematics",
+				"Generative Art",
+				"3D Graphics",
+				"Shaders",
+				"WebGL",
+				"Interactive Mathematics",
+				"Creative Coding"
+			],
+			"pinnedTags": [
+				"Fractals",
+				"Mandelbrot Set",
+				"Julia Sets",
+				"Mathematics",
+				"Generative Art",
+				"3D Graphics",
+				"Shaders",
+				"WebGL",
+				"Interactive Mathematics",
+				"Creative Coding"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-04"
 		}
 	},
 	"maxTags": 10

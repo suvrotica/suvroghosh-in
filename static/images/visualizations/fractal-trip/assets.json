@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "route": "/blog/visualizations/fractal-trip",
+  "captureMode": "native-png-export",
+  "motion": "paused",
+  "sources": {
+    "model.ts": "9670ff16cea05ecdc45492cfa9b5794cdd482f950bd3dc0f491e9cf5d02813a7",
+    "renderer.ts": "1cfa0e35b801bd4507d797bbe122c6122f6aa3af4377496abe140447b1914dfe",
+    "shaders.ts": "efe6e4fc84fbfe42f49c35a889fc2713ed81432f9acf99c3efac2189b5cbf064"
+  },
+  "images": [
+    {
+      "file": "poster.png",
+      "width": 1440,
+      "height": 900,
+      "family": "mandelbrot",
+      "pixelSha256": "c58a2b37b09c075fb15da758329bd5239677b00b6703f0ce029f4cb6d0d8991b"
+    },
+    {
+      "file": "mandelbrot.png",
+      "width": 400,
+      "height": 250,
+      "family": "mandelbrot",
+      "pixelSha256": "d97f708b2b3ef7b9c3d27a107c8829b44b40c951ef6c59c1fe3611751bd0a65c"
+    },
+    {
+      "file": "julia.png",
+      "width": 400,
+      "height": 250,
+      "family": "julia",
+      "pixelSha256": "55e69e4e13a56a2dae5404ad9fe2cf979dccee23d8c67d66d0b5b9b66377e210"
+    },
+    {
+      "file": "burning-ship.png",
+      "width": 400,
+      "height": 250,
+      "family": "burning-ship",
+      "pixelSha256": "7029c9e533b8dea1ed099a8f354b6e7a7f53a865334425bdc3413599025cfb78"
+    },
+    {
+      "file": "tricorn.png",
+      "width": 400,
+      "height": 250,
+      "family": "tricorn",
+      "pixelSha256": "af65a4497eb22513c237134d68cb4b41cc21d52722db189494fde3d9f38e8685"
+    },
+    {
+      "file": "newton.png",
+      "width": 400,
+      "height": 250,
+      "family": "newton",
+      "pixelSha256": "2dd5b909603df6906cf0efe38bdc480aded0889709ceff4bddb4fb49ce6e8c0d"
+    },
+    {
+      "file": "mandelbulb.png",
+      "width": 400,
+      "height": 250,
+      "family": "mandelbulb",
+      "pixelSha256": "2970d8b4851a74713c44a1b6bc480cf7b91223878f41e3ea617f5839ce4a429e"
+    },
+    {
+      "file": "mandelbox.png",
+      "width": 400,
+      "height": 250,
+      "family": "mandelbox",
+      "pixelSha256": "7d0aae4fc253da08c1677ba319811a907a4bcd52425be5ef21310e3493851161"
+    }
+  ]
+}

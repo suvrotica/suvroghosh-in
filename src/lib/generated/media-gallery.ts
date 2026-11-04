@@ -5200,6 +5200,62 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/fractal-trip/burning-ship.png",
+			"src": "/images/visualizations/fractal-trip/burning-ship.png",
+			"bytes": 79768,
+			"width": 400,
+			"height": 250
+		},
+		{
+			"name": "visualizations/fractal-trip/julia.png",
+			"src": "/images/visualizations/fractal-trip/julia.png",
+			"bytes": 92873,
+			"width": 400,
+			"height": 250
+		},
+		{
+			"name": "visualizations/fractal-trip/mandelbox.png",
+			"src": "/images/visualizations/fractal-trip/mandelbox.png",
+			"bytes": 75872,
+			"width": 400,
+			"height": 250
+		},
+		{
+			"name": "visualizations/fractal-trip/mandelbrot.png",
+			"src": "/images/visualizations/fractal-trip/mandelbrot.png",
+			"bytes": 101674,
+			"width": 400,
+			"height": 250
+		},
+		{
+			"name": "visualizations/fractal-trip/mandelbulb.png",
+			"src": "/images/visualizations/fractal-trip/mandelbulb.png",
+			"bytes": 58424,
+			"width": 400,
+			"height": 250
+		},
+		{
+			"name": "visualizations/fractal-trip/newton.png",
+			"src": "/images/visualizations/fractal-trip/newton.png",
+			"bytes": 78975,
+			"width": 400,
+			"height": 250
+		},
+		{
+			"name": "visualizations/fractal-trip/poster.png",
+			"src": "/images/visualizations/fractal-trip/poster.png",
+			"bytes": 1361274,
+			"width": 1440,
+			"height": 900
+		},
+		{
+			"name": "visualizations/fractal-trip/tricorn.png",
+			"src": "/images/visualizations/fractal-trip/tricorn.png",
+			"bytes": 68330,
+			"width": 400,
+			"height": 250
+		},
+		{
 			"name": "visualizations/gastropod-shell-lab/the-living-aperture.png",
 			"src": "/images/visualizations/gastropod-shell-lab/the-living-aperture.png",
 			"bytes": 88538,

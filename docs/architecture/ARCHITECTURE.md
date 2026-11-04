@@ -875,6 +875,49 @@ flowchart LR
     FilmRenderer --> FilmImage["Local PNG download"]
 ```
 
+### Fractal Trip: parameterized browser fractals
+
+Fractal Trip extends the dedicated visualization pattern through the ordinary
+immersive Markdown article at `/blog/visualizations/fractal-trip`. Its
+`components/visualizations/fractal-trip` shell retains a server-rendered poster
+while lazily mounting the browser app. The visualization gallery imports only
+summary and poster metadata; the generic article route supplies discovery and SEO.
+
+The feature-local `visualizations/fractal-trip/model.ts` owns the bounded
+version-one state, family/palette definitions, parameter validation, view helpers
+and share codec. The mounted Svelte interface owns equation and appearance
+controls, pointer gestures, journey playback, history and browser-local
+favourites. A pure `journeys.ts` helper performs a bounded escape/convergence
+probe once when a trip begins, then supplies smooth logarithmic camera paths
+without per-frame orbit searches. Restored state passes through the model boundary before rendering.
+No executable visitor formula strings or shared per-user mutable state are used.
+
+The browser-only raw WebGL2 renderer owns its fullscreen-triangle programs,
+drawing-buffer size, quality budget, capture and GPU resource lifecycle. Plane
+families use finite escape or convergence calculations with optional relief
+shading. Separate three-dimensional Mandelbulb and Mandelbox fields use bounded
+distance-estimator ray marching. The former's relief is a display effect, not a
+claim that a two-dimensional set has become a solid object. The runtime does not
+enable the Fractal Atlas's experimental perturbation path or promise infinite
+zoom. Appearance parameters remain distinct from equation parameters.
+
+PNG export is local and bounded. The poster and explanation remain available
+when graphics cannot start; hidden/offscreen work suspends and teardown releases
+instance-owned resources. No server endpoint, provider, credential or new route
+exception is added. This is a local extension of existing rendering and
+persistence patterns, not a new foundational framework; no ADR is introduced.
+The [feature record](../visualizations/fractal-trip.md) describes ownership,
+mathematical distinctions and the verification boundary.
+
+```mermaid
+flowchart LR
+    TripArticle["Markdown / SSR poster / gallery summary"] --> TripUI["Lazy Svelte app / per-instance controls and history"]
+    TripLinks["Bounded share state / local favourites"] <--> TripModel["Pure family / parameter / view model"]
+    TripModel <--> TripUI
+    TripUI --> TripRenderer["Browser-owned WebGL2 / bounded plane and 3D shaders"]
+    TripRenderer --> TripExport["Local clean PNG"]
+```
+
 ### Strange Matter: browser-owned generative sculpture
 
 Strange Matter extends the dedicated visualization feature pattern through the

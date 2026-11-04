@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.json",
+	"include": [
+		"src/lib/components/visualizations/fractal-trip/**/*.svelte",
+		"src/lib/visualizations/fractal-trip/**/*.ts",
+		"tests/browser/fractal-trip.spec.ts",
+		"playwright.fractal-trip.config.ts"
+	]
+}

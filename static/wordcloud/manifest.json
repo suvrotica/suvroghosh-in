@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T23:39:16.653685+00:00",
+  "generatedAt": "2026-11-04T18:15:53.782704+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4368,6 +4368,29 @@
         "Little",
         "Enters",
         "Ruler"
+      ],
+      "wordCount": 130
+    },
+    "fractal-trip": {
+      "generatedAt": "2026-11-04T18:15:51.608902+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/fractal-trip.svg",
+      "source": "src/lib/posts/fractal-trip.md",
+      "sourceHash": "f12f7fe2942bd3c262515d6337c7317a5305a46e71b66a99823080d25c2839f6",
+      "sourceModified": "2026-11-04T18:15:32.969710+00:00",
+      "topWords": [
+        "Change",
+        "Different",
+        "View",
+        "Calculation",
+        "Equation",
+        "Controls",
+        "Seed",
+        "Rule",
+        "Power",
+        "Move",
+        "Result",
+        "Start"
       ],
       "wordCount": 130
     },

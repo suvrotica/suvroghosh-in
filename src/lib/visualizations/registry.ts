@@ -16,6 +16,17 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'fractal-trip': {
+		id: 'fractal-trip',
+		title: 'Fractal Trip: Change a Number, Follow the Pattern',
+		description:
+			'Change the equations behind colourful fractals. Follow a Mandelbrot zoom, explore a three-dimensional form and save the view you discover.',
+		subjects: ['Mathematics', 'Generative Art', 'Computer Science'],
+		poster: '/images/visualizations/fractal-trip/poster.png',
+		posterAlt: 'Copper, violet and turquoise Mandelbrot filaments in the Fractal Trip explorer',
+		href: '/blog/visualizations/fractal-trip',
+		status: 'published'
+	},
 	'why-soap-bubbles-change-colour': {
 		id: 'why-soap-bubbles-change-colour',
 		title: 'Why Soap Bubbles Change Colour',
