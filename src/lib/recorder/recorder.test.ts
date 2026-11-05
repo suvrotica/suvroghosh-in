@@ -39,12 +39,14 @@ import {
 	recoverInterruptedSession,
 	restoreDeletedRecording,
 	saveSessionJournal,
+	setStorageTestOptions,
 	softDeleteRecording,
 	updateRecordingMetadata,
 	verifyOriginalIntegrity,
 	writeRecordingChunk
 } from './storage';
 import {
+	createWorkedExampleRecording,
 	synthesizeMusicRehearsalSample,
 	synthesizeSpeechBesideRunningFan
 } from './demo-samples';
@@ -412,6 +414,70 @@ describe('Recorder — Incremental Persistence, Original Integrity & Crash Recov
 
 		if (recoveredMeta) {
 			await permanentlyDeleteRecording(recoveredMeta.id);
+		}
+	});
+
+	it('never marks a recording Saved from in-memory fallback when browser storage (OPFS and IndexedDB) fails', async () => {
+		setStorageTestOptions({ forceDisableMemoryFallback: true, resetMemory: true });
+		try {
+			const sample = synthesizeSpeechBesideRunningFan({ durationSec: 2.0, sampleRate: 16000 });
+			const wavExp = await exportRecordingMedia({
+				title: 'Storage Failure Probe',
+				mode: 'speech',
+				format: 'wav',
+				presetId: 'standard-speech',
+				channelData: sample.channelData,
+				sampleRate: sample.sampleRate,
+				waveformPeaks: []
+			});
+			const wavBytes = new Uint8Array(await wavExp.blob.arrayBuffer());
+
+			await expect(
+				commitCompletedRecording({
+					metadata: {
+						id: 'rec_must_fail_storage',
+						title: 'Storage Failure Probe',
+						notes: '',
+						tags: [],
+						favourite: false,
+						mode: 'speech',
+						createdAt: Date.now(),
+						updatedAt: Date.now(),
+						deletedAt: null,
+						durationSec: 2.0,
+						capturedMs: 2000,
+						pausedMs: 0,
+						interruptionCount: 0,
+						interruptionGapMs: 0,
+						sampleRate: sample.sampleRate,
+						channels: 1,
+						originalMimeType: 'audio/wav',
+						originalExtension: 'wav',
+						originalByteLength: wavBytes.byteLength,
+						chunkCount: 1,
+						committedChunkCount: 1,
+						recoveredFromCrash: false,
+						lastRecoverableSec: 2.0,
+						bookmarks: [],
+						waveform: buildWaveformSummary(sample.channelData, sample.sampleRate, 64),
+						analysis: null,
+						recipe: createDefaultEditRecipe(2.0, 'speech')
+					},
+					originalBytes: wavBytes,
+					pcmChannels: sample.channelData
+				})
+			).rejects.toThrow(/Browser storage failed/i);
+
+			const integrity = await verifyOriginalIntegrity('rec_must_fail_storage');
+			expect(integrity.valid).toBe(false);
+
+			//Worked example rescue path marks status as 'error' instead of 'saved'
+			const demoRescue = await createWorkedExampleRecording('speech');
+			expect(demoRescue.metadata.status).toBe('error');
+			const demoIntegrity = await verifyOriginalIntegrity(demoRescue.metadata.id);
+			expect(demoIntegrity.valid).toBe(false);
+		} finally {
+			setStorageTestOptions({ forceDisableMemoryFallback: false, resetMemory: true });
 		}
 	});
 });

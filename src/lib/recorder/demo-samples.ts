@@ -1,7 +1,7 @@
 import { analyzeAudioBuffer } from './dsp';
 import { buildWaveformSummary } from './editor';
 import { encodePcmWav } from './mp4-encoder';
-import { commitCompletedRecording } from './storage';
+import { commitCompletedRecording, computeSha256Hex } from './storage';
 import {
 	createDefaultEditRecipe,
 	type RecordingMetadata,
@@ -205,70 +205,82 @@ export async function createWorkedExampleRecording(
 
 	const recipe = createDefaultEditRecipe(durationSec, mode);
 
-	const metadata = await commitCompletedRecording({
-		metadata: {
-			id,
-			title:
-				mode === 'speech'
-					? 'Voice Note Beside Running Fan (Worked Example)'
-					: mode === 'music'
-						? 'Acoustic Studio Idea (Stereo Demo)'
-						: 'Calcutta Monsoon Courtyard Ambience',
-			notes:
-				mode === 'speech'
-					? 'Recorded beside a running fan with 50 Hz mains hum, a quiet middle remark, and 1.4s leading/trailing fan noise. Click "Improve sound", adjust trim handles, and export MP4.'
-					: 'Sample stereo recording for testing Music & Ambience dynamics preservation.',
-			tags: mode === 'speech' ? ['speech', 'fan-noise', 'worked-example'] : [mode, 'demo'],
-			favourite: true,
-			mode,
-			createdAt: Date.now(),
-			updatedAt: Date.now(),
-			deletedAt: null,
-			durationSec,
-			capturedMs: durationSec * 1000,
-			pausedMs: 0,
-			interruptionCount: 0,
-			interruptionGapMs: 0,
-			sampleRate: sample.sampleRate,
-			channels: (sample.channelData.length === 2 ? 2 : 1) as 1 | 2,
-			originalMimeType: 'audio/wav',
-			originalExtension: 'wav',
-			originalByteLength: wavBytes.byteLength,
-			chunkCount: 1,
-			committedChunkCount: 1,
-			recoveredFromCrash: false,
-			lastRecoverableSec: durationSec,
-			bookmarks: [
-				{
-					id: 'bm-fan-start',
-					timeSec: sample.recommendedTrimStartSec,
-					label: 'Speech begins'
-				},
-				{
-					id: 'bm-quiet-phrase',
-					timeSec: 3.7,
-					label: 'Quiet aside'
-				},
-				{
-					id: 'bm-speech-end',
-					timeSec: sample.recommendedTrimEndSec,
-					label: 'Speech ends'
-				}
-			],
-			waveform,
-			analysis: {
-				before: initialMeasure,
-				after: initialMeasure,
-				summary: 'Original unedited capture beside running fan.',
-				changeNotes: [
-					`Detected ${initialMeasure.noiseFloorDbfs.toFixed(1)} dBFS background noise floor${initialMeasure.humFrequencyHz ? ` and ${initialMeasure.humFrequencyHz} Hz mains hum` : ''}.`
-				]
+	const baseMetadata: Omit<RecordingMetadata, 'status' | 'originalSha256' | 'storageBackend'> = {
+		id,
+		title:
+			mode === 'speech'
+				? 'Voice Note Beside Running Fan (Worked Example)'
+				: mode === 'music'
+					? 'Acoustic Studio Idea (Stereo Demo)'
+					: 'Calcutta Monsoon Courtyard Ambience',
+		notes:
+			mode === 'speech'
+				? 'Recorded beside a running fan with 50 Hz mains hum, a quiet middle remark, and 1.4s leading/trailing fan noise. Click "Improve sound", adjust trim handles, and export MP4.'
+				: 'Sample stereo recording for testing Music & Ambience dynamics preservation.',
+		tags: mode === 'speech' ? ['speech', 'fan-noise', 'worked-example'] : [mode, 'demo'],
+		favourite: true,
+		mode,
+		createdAt: Date.now(),
+		updatedAt: Date.now(),
+		deletedAt: null,
+		durationSec,
+		capturedMs: durationSec * 1000,
+		pausedMs: 0,
+		interruptionCount: 0,
+		interruptionGapMs: 0,
+		sampleRate: sample.sampleRate,
+		channels: (sample.channelData.length === 2 ? 2 : 1) as 1 | 2,
+		originalMimeType: 'audio/wav',
+		originalExtension: 'wav',
+		originalByteLength: wavBytes.byteLength,
+		chunkCount: 1,
+		committedChunkCount: 1,
+		recoveredFromCrash: false,
+		lastRecoverableSec: durationSec,
+		bookmarks: [
+			{
+				id: 'bm-fan-start',
+				timeSec: sample.recommendedTrimStartSec,
+				label: 'Speech begins'
 			},
-			recipe
+			{
+				id: 'bm-quiet-phrase',
+				timeSec: 3.7,
+				label: 'Quiet aside'
+			},
+			{
+				id: 'bm-speech-end',
+				timeSec: sample.recommendedTrimEndSec,
+				label: 'Speech ends'
+			}
+		],
+		waveform,
+		analysis: {
+			before: initialMeasure,
+			after: initialMeasure,
+			summary: 'Original unedited capture beside running fan.',
+			changeNotes: [
+				`Detected ${initialMeasure.noiseFloorDbfs.toFixed(1)} dBFS background noise floor${initialMeasure.humFrequencyHz ? ` and ${initialMeasure.humFrequencyHz} Hz mains hum` : ''}.`
+			]
 		},
-		originalBytes: wavBytes,
-		pcmChannels: sample.channelData
-	});
+		recipe
+	};
+
+	let metadata: RecordingMetadata;
+	try {
+		metadata = await commitCompletedRecording({
+			metadata: baseMetadata,
+			originalBytes: wavBytes,
+			pcmChannels: sample.channelData
+		});
+	} catch {
+		metadata = {
+			...baseMetadata,
+			status: 'error',
+			originalSha256: await computeSha256Hex(wavBytes),
+			storageBackend: 'indexeddb'
+		};
+	}
 
 	return {
 		metadata,

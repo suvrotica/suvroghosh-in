@@ -3,6 +3,7 @@ import { buildWaveformSummary } from './editor';
 import { encodePcmWav } from './mp4-encoder';
 import {
 	commitCompletedRecording,
+	computeSha256Hex,
 	saveSessionJournal,
 	writeRecordingChunk
 } from './storage';
@@ -86,6 +87,21 @@ export function formatCaptureError(err: unknown): {
 			message: 'This browser context does not expose navigator.mediaDevices.getUserMedia.',
 			recoveryHint:
 				'Open Recorder over HTTPS (or localhost) in a modern browser, or import an existing audio file.'
+		};
+	}
+
+	if (
+		name === 'QuotaExceededError' ||
+		/storage|opfs|indexeddb|quota|persist|commit/i.test(rawMsg)
+	) {
+		return {
+			code: 'unknown',
+			title: 'Browser storage failed — Recording is NOT saved',
+			message:
+				rawMsg ||
+				'Browser storage (OPFS and IndexedDB) could not save this recording to disk.',
+			recoveryHint:
+				'Your audio is held only in temporary memory and will disappear if you reload this page. Export MP4 or WAV immediately to save a copy to your device.'
 		};
 	}
 
@@ -705,7 +721,11 @@ export class RecorderCaptureController {
 			status,
 			gapEvents: this.gapEvents
 		};
-		await saveSessionJournal(journal);
+		try {
+			await saveSessionJournal(journal);
+		} catch (err) {
+			this.callbacks.onError(formatCaptureError(err));
+		}
 	}
 
 	private startHeartbeatTimer(): void {
@@ -774,7 +794,7 @@ export class RecorderCaptureController {
 		try {
 			// Flush any final audio samples before stopping tracks
 			this.flushIncrementalChunk();
-			await Promise.all(this.pendingFlushPromises);
+			await Promise.allSettled(this.pendingFlushPromises);
 
 			await this.releaseHardwareResources();
 			this.lockChannel?.postMessage({ type: 'SESSION_RELEASED', tabId: TAB_ID });
@@ -804,54 +824,69 @@ export class RecorderCaptureController {
 			const initialMeasure = analyzeAudioBuffer(fullChannels, this.sampleRate);
 			const finalTitle = (customTitle ?? this.title).trim() || 'New Recording';
 
-			const metadata = await commitCompletedRecording({
-				metadata: {
-					id: this.recordingId,
-					title: finalTitle,
-					notes:
-						this.interruptionCount > 0
-							? `Captured with ${this.interruptionCount} system interruption(s) (${Math.round(this.interruptionGapMs)} ms total gap).`
-							: '',
-					tags: [this.mode],
-					favourite: false,
-					mode: this.mode,
-					createdAt: this.startedAt || Date.now(),
-					updatedAt: Date.now(),
-					deletedAt: null,
-					durationSec,
-					capturedMs: Math.round(durationSec * 1000),
-					pausedMs: this.pausedMs,
-					interruptionCount: this.interruptionCount,
-					interruptionGapMs: this.interruptionGapMs,
-					sampleRate: this.sampleRate,
-					channels: this.requestedChannels,
-					originalMimeType: 'audio/wav',
-					originalExtension: 'wav',
-					originalByteLength: originalWavBytes.byteLength,
-					chunkCount: Math.max(1, this.chunkIndex),
-					committedChunkCount: Math.max(1, this.committedChunkCount),
-					recoveredFromCrash: false,
-					lastRecoverableSec: durationSec,
-					bookmarks: this.bookmarks,
-					waveform,
-					analysis: {
-						before: initialMeasure,
-						after: initialMeasure,
-						summary: 'Original recording committed to device storage.',
-						changeNotes: ['Ready for automatic sound improvement.']
-					},
-					recipe: createDefaultEditRecipe(durationSec, this.mode)
+			const baseMetadata: Omit<RecordingMetadata, 'status' | 'originalSha256' | 'storageBackend'> = {
+				id: this.recordingId,
+				title: finalTitle,
+				notes:
+					this.interruptionCount > 0
+						? `Captured with ${this.interruptionCount} system interruption(s) (${Math.round(this.interruptionGapMs)} ms total gap).`
+						: '',
+				tags: [this.mode],
+				favourite: false,
+				mode: this.mode,
+				createdAt: this.startedAt || Date.now(),
+				updatedAt: Date.now(),
+				deletedAt: null,
+				durationSec,
+				capturedMs: Math.round(durationSec * 1000),
+				pausedMs: this.pausedMs,
+				interruptionCount: this.interruptionCount,
+				interruptionGapMs: this.interruptionGapMs,
+				sampleRate: this.sampleRate,
+				channels: this.requestedChannels,
+				originalMimeType: 'audio/wav',
+				originalExtension: 'wav',
+				originalByteLength: originalWavBytes.byteLength,
+				chunkCount: Math.max(1, this.chunkIndex),
+				committedChunkCount: Math.max(1, this.committedChunkCount),
+				recoveredFromCrash: false,
+				lastRecoverableSec: durationSec,
+				bookmarks: this.bookmarks,
+				waveform,
+				analysis: {
+					before: initialMeasure,
+					after: initialMeasure,
+					summary: 'Original recording committed to device storage.',
+					changeNotes: ['Ready for automatic sound improvement.']
 				},
-				originalBytes: originalWavBytes,
-				pcmChannels: fullChannels,
-				sessionId: this.sessionId
-			});
+				recipe: createDefaultEditRecipe(durationSec, this.mode)
+			};
 
-			// Clear session memory buffers now that data is committed to storage
-			this.sessionChunksCh0 = [];
-			this.sessionChunksCh1 = [];
-			this.setState('saved');
-			return { metadata, channelData: fullChannels };
+			try {
+				const metadata = await commitCompletedRecording({
+					metadata: baseMetadata,
+					originalBytes: originalWavBytes,
+					pcmChannels: fullChannels,
+					sessionId: this.sessionId
+				});
+
+				// Clear session memory buffers now that data is durably committed to storage
+				this.sessionChunksCh0 = [];
+				this.sessionChunksCh1 = [];
+				this.setState('saved');
+				return { metadata, channelData: fullChannels };
+			} catch (storageErr) {
+				// Durable browser storage failed: NEVER mark as saved, keep audio in memory for immediate rescue export
+				const rescueMeta: RecordingMetadata = {
+					...baseMetadata,
+					status: 'error',
+					originalSha256: await computeSha256Hex(originalWavBytes),
+					storageBackend: 'indexeddb'
+				};
+				this.setState('error');
+				this.callbacks.onError(formatCaptureError(storageErr));
+				return { metadata: rescueMeta, channelData: fullChannels };
+			}
 		} catch (err) {
 			this.setState('error');
 			this.callbacks.onError(formatCaptureError(err));
@@ -961,8 +996,21 @@ export async function importExternalAudioFile(file: File, mode: RecordingMode = 
 		(window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
 	const audioCtx = new AudioCtx({ sampleRate: 48000 });
 
+	let decoded: AudioBuffer;
 	try {
-		const decoded = await audioCtx.decodeAudioData(arrayBuffer.slice(0));
+		decoded = await audioCtx.decodeAudioData(arrayBuffer.slice(0));
+	} catch {
+		try {
+			await audioCtx.close();
+		} catch {
+			// Ignore
+		}
+		throw new Error(
+			`Could not decode "${file.name}". Please choose a standard audio format supported by your browser (WAV, MP4/M4A, MP3, AAC, OGG, or FLAC).`
+		);
+	}
+
+	try {
 		const channelsCount = (decoded.numberOfChannels >= 2 ? 2 : 1) as 1 | 2;
 		const channelData: Float32Array[] = [new Float32Array(decoded.getChannelData(0))];
 		if (channelsCount === 2) {
@@ -977,51 +1025,61 @@ export async function importExternalAudioFile(file: File, mode: RecordingMode = 
 		const extMatch = file.name.match(/\.([a-z0-9]+)$/i);
 		const ext = extMatch ? extMatch[1].toLowerCase() : 'wav';
 		const cleanTitle = file.name.replace(/\.[^.]+$/, '') || 'Imported Recording';
+		const rawBytes = new Uint8Array(arrayBuffer);
 
-		const metadata = await commitCompletedRecording({
-			metadata: {
-				id,
-				title: cleanTitle,
-				notes: `Imported from ${file.name} (${(file.size / 1024).toFixed(1)} KB).`,
-				tags: ['imported', mode],
-				favourite: false,
-				mode,
-				createdAt: Date.now(),
-				updatedAt: Date.now(),
-				deletedAt: null,
-				durationSec,
-				capturedMs: Math.round(durationSec * 1000),
-				pausedMs: 0,
-				interruptionCount: 0,
-				interruptionGapMs: 0,
-				sampleRate,
-				channels: channelsCount,
-				originalMimeType: file.type || 'audio/wav',
-				originalExtension: ext,
-				originalByteLength: arrayBuffer.byteLength,
-				chunkCount: 1,
-				committedChunkCount: 1,
-				recoveredFromCrash: false,
-				lastRecoverableSec: durationSec,
-				bookmarks: [],
-				waveform,
-				analysis: {
-					before: measure,
-					after: measure,
-					summary: 'Imported original audio file.',
-					changeNotes: ['Ready for sound improvement and trimming.']
-				},
-				recipe: createDefaultEditRecipe(durationSec, mode)
+		const baseMetadata: Omit<RecordingMetadata, 'status' | 'originalSha256' | 'storageBackend'> = {
+			id,
+			title: cleanTitle,
+			notes: `Imported from ${file.name} (${(file.size / 1024).toFixed(1)} KB).`,
+			tags: ['imported', mode],
+			favourite: false,
+			mode,
+			createdAt: Date.now(),
+			updatedAt: Date.now(),
+			deletedAt: null,
+			durationSec,
+			capturedMs: Math.round(durationSec * 1000),
+			pausedMs: 0,
+			interruptionCount: 0,
+			interruptionGapMs: 0,
+			sampleRate,
+			channels: channelsCount,
+			originalMimeType: file.type || 'audio/wav',
+			originalExtension: ext,
+			originalByteLength: arrayBuffer.byteLength,
+			chunkCount: 1,
+			committedChunkCount: 1,
+			recoveredFromCrash: false,
+			lastRecoverableSec: durationSec,
+			bookmarks: [],
+			waveform,
+			analysis: {
+				before: measure,
+				after: measure,
+				summary: 'Imported original audio file.',
+				changeNotes: ['Ready for sound improvement and trimming.']
 			},
-			originalBytes: new Uint8Array(arrayBuffer),
-			pcmChannels: channelData
-		});
+			recipe: createDefaultEditRecipe(durationSec, mode)
+		};
 
-		return { metadata, channelData };
-	} catch {
-		throw new Error(
-			`Could not decode "${file.name}". Please choose a standard audio format supported by your browser (WAV, MP4/M4A, MP3, AAC, OGG, or FLAC).`
-		);
+		try {
+			const metadata = await commitCompletedRecording({
+				metadata: baseMetadata,
+				originalBytes: rawBytes,
+				pcmChannels: channelData
+			});
+			return { metadata, channelData };
+		} catch {
+			return {
+				metadata: {
+					...baseMetadata,
+					status: 'error',
+					originalSha256: await computeSha256Hex(rawBytes),
+					storageBackend: 'indexeddb'
+				},
+				channelData
+			};
+		}
 	} finally {
 		try {
 			await audioCtx.close();

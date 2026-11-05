@@ -373,9 +373,24 @@
 		const demo = await createWorkedExampleRecording(mode);
 		await refreshLibraryAndStorage();
 		await openRecordingInEditor(demo.metadata, demo.channelData);
-		announce(
-			`Loaded worked example: "${demo.metadata.title}". Click "Improve sound" to reduce fan noise and balance vocal clarity.`
-		);
+		if (demo.metadata.status !== 'saved') {
+			recorderState = 'error';
+			captureError = {
+				code: 'unknown',
+				title: 'Browser storage failed — Recording is NOT saved',
+				message:
+					'Browser storage (OPFS and IndexedDB) could not save this recording to disk.',
+				recoveryHint:
+					'Your audio is held only in temporary memory and will disappear if you reload this page. Export MP4 or WAV immediately to save a copy to your device.'
+			};
+			announce(
+				'Warning: Browser storage failed. Recording is in temporary memory only and will disappear if reloaded.'
+			);
+		} else {
+			announce(
+				`Loaded worked example: "${demo.metadata.title}". Click "Improve sound" to reduce fan noise and balance vocal clarity.`
+			);
+		}
 	}
 
 	async function handleRecoverSession(sessionId: string) {
@@ -417,10 +432,16 @@
 		waveformZoom = 1;
 		waveformScrollRatio = 0;
 
-		// Verify stored original SHA-256 integrity
+		// Verify stored original SHA-256 integrity on durable browser storage
 		const integrity = await verifyOriginalIntegrity(meta.id);
-		originalIntegrityVerified = integrity.valid;
+		originalIntegrityVerified = integrity.valid && meta.status === 'saved';
 		originalIntegrityHash = integrity.actualSha256.slice(0, 16);
+		if (!originalIntegrityVerified) {
+			currentRecording = {
+				...currentRecording,
+				status: 'error'
+			};
+		}
 
 		await rebuildRenderedAudioBuffers(false);
 		activeView = 'edit';
@@ -1570,13 +1591,41 @@
 							</div>
 						</div>
 					{:else}
+						{#if currentRecording.status !== 'saved' || !originalIntegrityVerified}
+							<div
+								class="error-recovery-card"
+								role="alert"
+								data-testid="storage-failure-banner"
+							>
+								<div class="error-header">
+									<span class="error-badge">UNSAVED — MEMORY ONLY</span>
+									<strong>Browser storage failed — Recording is NOT saved</strong>
+								</div>
+								<p>
+									Browser storage (OPFS and IndexedDB) could not persist this recording. Your audio
+									is held only in temporary memory and will disappear if you reload or close this
+									page.
+								</p>
+								<p class="recovery-hint">
+									<strong>Rescue action:</strong> Click <strong>Export MP4</strong> below right now to
+									download the file directly to your device disk.
+								</p>
+							</div>
+						{/if}
+
 						<!-- Recessed Editor OLED Display -->
 						<div class="oled-bezel">
 							<div class="oled-top-bar">
 								<div class="status-cluster">
-									<span class="state-pill state-saved" data-testid="editor-saved-badge">
-										✓ SAVED ({currentRecording.storageBackend.toUpperCase()})
-									</span>
+									{#if currentRecording.status === 'saved' && originalIntegrityVerified}
+										<span class="state-pill state-saved" data-testid="editor-saved-badge">
+											✓ SAVED ({currentRecording.storageBackend.toUpperCase()})
+										</span>
+									{:else}
+										<span class="state-pill state-error" data-testid="editor-saved-badge">
+											⚠ UNSAVED — MEMORY ONLY (EXPORT NOW)
+										</span>
+									{/if}
 									<input
 										type="text"
 										class="title-inline-input"
@@ -1587,13 +1636,20 @@
 								</div>
 
 								<div class="oled-meta-readout">
-									{#if originalIntegrityVerified}
+									{#if currentRecording.status === 'saved' && originalIntegrityVerified}
 										<span
 											class="integrity-pill"
 											data-testid="original-integrity-badge"
 											title="Original SHA-256 prefix: {originalIntegrityHash}"
 										>
 											Original Safe (SHA-256 ✓)
+										</span>
+									{:else}
+										<span
+											class="integrity-pill integrity-pill-error"
+											data-testid="original-integrity-badge"
+										>
+											Storage Failed — Will Disappear on Reload
 										</span>
 									{/if}
 									<span>{currentRecording.sampleRate} Hz</span>

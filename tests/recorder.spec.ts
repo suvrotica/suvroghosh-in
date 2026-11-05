@@ -75,14 +75,6 @@ test.describe('Recorder — by Suvro Ghosh (/tools/recorder)', () => {
 		await expect(analysisBox).toContainText('Noise floor');
 		await expect(analysisBox).toContainText('LUFS');
 
-		// Capture screenshot of the finished Recorder interface for the blog post & social preview
-		await page.setViewportSize({ width: 1200, height: 760 });
-		fs.mkdirSync('static/images/visualizations/recorder', { recursive: true });
-		await page.screenshot({
-			path: 'static/images/visualizations/recorder/social.png',
-			clip: { x: 0, y: 0, width: 1200, height: 760 }
-		});
-
 		// 3. Toggle Hear original / Hear improved
 		await page.getByTestId('hear-original-btn').click();
 		await expect(page.getByTestId('hear-original-btn')).toHaveClass(/is-selected/);
@@ -177,5 +169,48 @@ test.describe('Recorder — by Suvro Ghosh (/tools/recorder)', () => {
 		});
 		expect(articleRes?.ok()).toBe(true);
 		await expect(page.locator('h1')).toContainText('Recorder');
+	});
+
+	test('never claims a recording is Saved when browser storage (OPFS and IndexedDB) fails, and warns that audio is in temporary memory only', async ({
+		page
+	}) => {
+		await page.addInitScript(() => {
+			// Simulate complete browser storage failure (both OPFS and IndexedDB blocked/failing)
+			if (navigator.storage) {
+				navigator.storage.getDirectory = async () => {
+					throw new DOMException('QuotaExceededError: OPFS unavailable', 'QuotaExceededError');
+				};
+			}
+			if (window.indexedDB) {
+				window.indexedDB.open = () => {
+					throw new DOMException('SecurityError: IndexedDB disabled', 'SecurityError');
+				};
+			}
+		});
+
+		await page.goto('/tools/recorder', { waitUntil: 'domcontentloaded' });
+		const dismissPrivacy = page.getByRole('button', {
+			name: /Dismiss privacy notice/i
+		});
+		if (await dismissPrivacy.isVisible()) {
+			await dismissPrivacy.click();
+		}
+
+		await page.getByTestId('load-worked-example-btn').click();
+
+		// Must NOT say SAVED or Original Safe
+		await expect(page.getByTestId('storage-failure-banner')).toBeVisible();
+		await expect(page.getByTestId('editor-saved-badge')).toContainText(
+			'UNSAVED — MEMORY ONLY (EXPORT NOW)'
+		);
+		await expect(page.getByTestId('original-integrity-badge')).toContainText(
+			'Storage Failed — Will Disappear on Reload'
+		);
+
+		// User can still rescue-export a valid MP4 file directly from memory before reloading
+		const downloadPromise = page.waitForEvent('download');
+		await page.getByTestId('export-mp4-btn').click();
+		const download = await downloadPromise;
+		expect(download.suggestedFilename().endsWith('.mp4')).toBe(true);
 	});
 });
