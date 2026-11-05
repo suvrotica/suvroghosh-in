@@ -53,8 +53,9 @@ where $\mathbf{v}$ contains node voltages relative to ground ($0\text{ V}$) and 
     $$
     V_{A,n+1} - V_{B,n+1} - \frac{2L}{\Delta t}\,I_{L,n+1} = -\frac{2L}{\Delta t}\,I_{L,n} - V_{L,n}
     $$
-- **Binary-Exponentiated Trapezoidal Integration with Quadratic Source Interpolation**:
-  - When $\Delta t$ exceeds the circuit's characteristic time scale $\Delta t_{\max}$ (such as $C = 1\text{ pF}$ in the $L = 100\text{ mH}$ RLC oscillator where $f_0 \approx 503.29\text{ kHz}$, or $C = 1\text{ nF}$ in the $1\text{ k}\Omega$ AC low-pass filter where $\tau = 1\text{ }\mu\text{s} \ll \Delta t = 50\text{ }\mu\text{s}$), `stepTransientMna` constructs an augmented $(2K + 3) \times (2K + 3)$ Trapezoidal state transition operator at fine step $h = \Delta t_{\text{chunk}} / 2^p$ ($p \le 28$, up to $268{,}435{,}456$ sub-steps) that couples the $2K$ reactive states with a 3-point Lagrange quadratic polynomial source clock $[1, \tau, \tau^2]^T$ across each chunk and advances the system by repeated squaring in $O(p)$ matrix multiplications.
+- **Binary-Exponentiated Trapezoidal Integration, Quadratic Source Interpolation & Exact Square-Wave Edge Splitting**:
+  - When $\Delta t$ exceeds the circuit's characteristic time scale $\Delta t_{\max}$ ($0.001\,\tau_{\min}$ for oscillatory LC/RLC circuits and $0.05\,\tau_{\min}$ for first-order RC/RL circuits), `stepTransientMna` constructs an augmented $(2K + 3) \times (2K + 3)$ Trapezoidal state transition operator at fine step $h = \Delta t_{\text{chunk}} / 2^p$ ($12 \le p \le 28$, up to $268{,}435{,}456$ sub-steps) that couples the $2K$ reactive states with a 3-point Lagrange quadratic polynomial source clock $[1, \tau, \tau^2]^T$ across each chunk and advances the system by repeated squaring in $O(p)$ matrix multiplications.
+  - When a `square_voltage` source transitions inside $(t_n, t_{n+1})$, `collectSquareWaveKnots` splits the step at the exact rising/falling edge time $t_{\text{edge}}$ and refreshes the post-switching instantaneous state at $t_{\text{edge}}^+$ before integrating $[t_{\text{edge}}, t_{n+1}]$.
 
 ### 4. Wire Segment Current Distribution
 
@@ -70,8 +71,8 @@ Tested in `src/lib/visualizations/circuit-bench/solver.test.ts`:
 | Ohm's Law ($5\text{ V}, 1\text{ k}\Omega \to 2\text{ k}\Omega$) | $I = 5\text{ mA} \to 2.5\text{ mA}$, $P = 25\text{ mW} \to 12.5\text{ mW}$ | $< 10^{-9}\text{ A}$ |
 | Series & Parallel Resistors ($5\text{ V}, 1\text{ k}\Omega$ network with switches `S1`, `S2`) | Parallel (`S1` closed, `S2` closed): $10\text{ mA}$; Single (`S1` open, `S2` closed): $5\text{ mA}$; Series (`S1` open, `S2` open): $2.5\text{ mA}$ | $< 10^{-9}\text{ A}$ |
 | Unloaded & Loaded Voltage Divider ($5\text{ V}, 1\text{ k}\Omega / 1\text{ k}\Omega$ + $1\text{ k}\Omega$ load) | $V_{\text{unloaded}} = 2.50\text{ V}$ (`S1` open), $V_{\text{loaded}} = \frac{5}{3}\text{ V} \approx 1.67\text{ V}$ (`S1` closed) | $< 10^{-6}\text{ V}$ |
-| RC Low-Pass Filter ($1\text{ k}\Omega, 1\text{ }\mu\text{F}$ & $1\text{ nF}$) | $\|H(f)\| = 1 / \sqrt{1 + (2\pi f RC)^2}$ up to $100\text{ kHz}$; at $C_1 = 1\text{ nF}, t = 100\text{ }\mu\text{s}$: $V_C = 0.310817\text{ V}, I = 3.1357\text{ }\mu\text{A}$ | $\ge 40$ steps/cycle, $< 10^{-5}\text{ V}$, $< 10^{-9}\text{ A}$ |
-| Series RLC Step Response ($V_S=5\text{ V}, R=20\text{ }\Omega, L=100\text{ mH}, C=10\text{ }\mu\text{F}$ & $C=1\text{ pF}$) | At $C=10\text{ }\mu\text{F}$: peak $8.646\text{ V}$ at $3.157\text{ ms}$; at $C=1\text{ pF}$: $3.3908\text{ V}$ at $60\text{ }\mu\text{s}$ and $8.9046\text{ V}$ at $120\text{ }\mu\text{s}$ | $< 10^{-4}\text{ V}$ |
+| RC Low-Pass & Square-Wave Filter ($1\text{ k}\Omega$, $1\text{ }\mu\text{F}$ / $100\text{ nF}$ / $1\text{ nF}$) | At $100\text{ Hz}$ sine, $C_1 = 1\text{ nF}, t = 100\text{ }\mu\text{s}$: $V_C = 0.310817\text{ V}, I = 3.1357\text{ }\mu\text{A}$; at $123\text{ Hz}$ square wave, $C_1 = 100\text{ nF}, t = 4.100\text{ ms}$: $V_C = 2.049746\text{ V}$ | $\ge 40$ steps/cycle, $< 10^{-5}\text{ V}$, $< 10^{-9}\text{ A}$ |
+| Series RLC Step Response ($V_S=5\text{ V}, R=20\text{ }\Omega, L=100\text{ mH}, C=10\text{ }\mu\text{F}, 100\text{ nF}, 1\text{ pF}$) | At $C=10\text{ }\mu\text{F}$: peak $8.646\text{ V}$ at $3.157\text{ ms}$; at $C=100\text{ nF}$: $5.3175\text{ V}$ at $9.600\text{ ms}$; at $C=1\text{ pF}$: $3.3908\text{ V}$ at $60\text{ }\mu\text{s}$ and $8.9046\text{ V}$ at $120\text{ }\mu\text{s}$ | $< 10^{-4}\text{ V}$ |
 
 ## Resource & Validation Limits
 

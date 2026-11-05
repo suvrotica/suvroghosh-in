@@ -413,25 +413,38 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		expect(formatMeasurement(0.085, 'V')).toBe('85.00 mV');
 	});
 
-	it('accurately integrates high-frequency RLC oscillation when C1 is set to 1 pF (3.39 V at 60 µs, 8.90 V at 120 µs)', () => {
-		const doc = getExampleCircuit('rlc-response');
-		const c1 = doc.components.find((c) => c.id === 'c1')!;
-		c1.params.capacitance = 1e-12; // 1 pF
+	it('accurately integrates high-frequency RLC oscillation when C1 is set to 1 pF (3.39 V at 60 µs, 8.90 V at 120 µs) and 100 nF (5.318 V at 9.600 ms)', () => {
+		const doc1p = getExampleCircuit('rlc-response');
+		doc1p.components.find((c) => c.id === 'c1')!.params.capacitance = 1e-12; // 1 pF
 
-		const init = evaluateCircuitAtInstant(doc, 0);
-		expect(init.ok).toBe(true);
-		if (!init.ok) return;
+		const init1p = evaluateCircuitAtInstant(doc1p, 0);
+		expect(init1p.ok).toBe(true);
+		if (!init1p.ok) return;
 
-		const batch = runSimulationBatch(doc, init.snapshot, 6, 0);
-		expect(batch.ok).toBe(true);
-		expect(batch.samples.length).toBe(2);
+		const batch1p = runSimulationBatch(doc1p, init1p.snapshot, 6, 0);
+		expect(batch1p.ok).toBe(true);
+		expect(batch1p.samples.length).toBe(2);
 
-		const sample60us = batch.samples[0];
-		const sample120us = batch.samples[1];
+		const sample60us = batch1p.samples[0];
+		const sample120us = batch1p.samples[1];
 		expect(sample60us.timeSec).toBeCloseTo(60e-6, 9);
 		expect(sample120us.timeSec).toBeCloseTo(120e-6, 9);
 		expect(sample60us.ch1).toBeCloseTo(3.390757, 4);
 		expect(sample120us.ch1).toBeCloseTo(8.90459, 4);
+
+		// C1 = 100 nF over 480 steps (9.600 ms): analytical Vc(9.600 ms) = 5.317537 V (zero accumulated phase error)
+		const doc100n = getExampleCircuit('rlc-response');
+		doc100n.components.find((c) => c.id === 'c1')!.params.capacitance = 100e-9; // 100 nF
+
+		const init100n = evaluateCircuitAtInstant(doc100n, 0);
+		expect(init100n.ok).toBe(true);
+		if (!init100n.ok) return;
+
+		const batch100n = runSimulationBatch(doc100n, init100n.snapshot, 480, 0);
+		expect(batch100n.ok).toBe(true);
+		const sample9600us = batch100n.samples.find((s) => Math.abs(s.timeSec - 0.0096) < 1e-9);
+		expect(sample9600us).toBeDefined();
+		expect(sample9600us!.ch1).toBeCloseTo(5.317537, 4);
 	});
 
 	it('accurately integrates AC low-pass filter when C1 is set to 1 nF (0.311 V and 3.14 µA at 100 µs)', () => {
@@ -457,5 +470,32 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		expect(step2.snapshot.components['c1'].voltageDrop).toBeCloseTo(0.310817, 5);
 		expect(step2.snapshot.components['c1'].current).toBeCloseTo(3.1357e-6, 9);
 		expect(step2.snapshot.components['r1'].current).toBeCloseTo(3.1357e-6, 9);
+	});
+
+	it('splits transient steps at exact square-wave switching edges (123 Hz square wave, 1 kΩ, 100 nF gives 2.050 V at 4.100 ms)', () => {
+		const doc = getExampleCircuit('rc-low-pass');
+		const v1 = doc.components.find((c) => c.id === 'v1')!;
+		v1.kind = 'square_voltage';
+		v1.params = { amplitude: 5, frequency: 123, offset: 0, dutyPercent: 50 };
+		const c1 = doc.components.find((c) => c.id === 'c1')!;
+		c1.params.capacitance = 100e-9; // 100 nF (tau = 100 µs)
+
+		const init = evaluateCircuitAtInstant(doc, 0);
+		expect(init.ok).toBe(true);
+		if (!init.ok) return;
+
+		// Step 82 times at dt = 50 µs to reach t = 4.100 ms (just after falling edge at 0.5 / 123 = 4.06504065 ms)
+		let snap = init.snapshot;
+		for (let i = 0; i < 82; i += 1) {
+			const next = stepTransientMna(doc, snap, doc.simulation.dtSec, 'trap');
+			expect(next.ok).toBe(true);
+			if (!next.ok) return;
+			snap = next.snapshot;
+		}
+		expect(snap.timeSec).toBeCloseTo(0.0041, 9);
+		const tEdge = 0.5 / 123;
+		const exactVc = -5 + 10 * Math.exp(-(0.0041 - tEdge) / 100e-6);
+		expect(exactVc).toBeCloseTo(2.049746, 5);
+		expect(snap.components['c1'].voltageDrop).toBeCloseTo(exactVc, 5);
 	});
 });

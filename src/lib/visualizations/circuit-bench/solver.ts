@@ -1036,8 +1036,11 @@ export function computeCircuitTimeScales(doc: Pick<CircuitDocument, 'components'
 		minTauSec = Math.min(minTauSec, minL / maxR);
 	}
 
+	const isOscillatory = inductors.length > 0 && capacitors.length > 0;
 	const freqDtLimit = maxFreqHz > 0 ? 1 / (40 * maxFreqHz) : Infinity;
-	const tauDtLimit = Number.isFinite(minTauSec) ? 0.25 * minTauSec : Infinity;
+	const tauDtLimit = Number.isFinite(minTauSec)
+		? (isOscillatory ? 0.001 : 0.05) * minTauSec
+		: Infinity;
 	const maxSafeDtSec = Math.min(freqDtLimit, tauDtLimit);
 
 	return { minTauSec, maxFreqHz, maxSafeDtSec };
@@ -1177,7 +1180,9 @@ function stepSingleTransientMna(
 		if (kind === 'voltage_source') {
 			if (nodeA > 0) A[row][nodeA - 1] += 1;
 			if (nodeB > 0) A[row][nodeB - 1] -= 1;
-			rhs[row] = evaluateSourceVoltage(component, nextTime);
+			const evalT =
+				component.kind === 'square_voltage' ? prevSnapshot.timeSec + 0.5 * dt : nextTime;
+			rhs[row] = evaluateSourceVoltage(component, evalT);
 		} else if (kind === 'closed_switch') {
 			if (nodeA > 0) A[row][nodeA - 1] += 1;
 			if (nodeB > 0) A[row][nodeB - 1] -= 1;
@@ -1351,7 +1356,7 @@ function stepBinaryExponentiatedMna(
 	const acChunks = maxFreqHz > 0 ? Math.min(32, Math.max(1, Math.ceil(dt * maxFreqHz * 40))) : 1;
 	const chunkDt = dt / acChunks;
 	const ratio = chunkDt / Math.max(1e-18, maxSafeDtSec);
-	const p = Math.min(28, Math.max(4, Math.ceil(Math.log2(Math.max(1, ratio))) + 12));
+	const p = Math.min(28, Math.max(12, Math.ceil(Math.log2(Math.max(1, ratio))) + 12));
 	const h = chunkDt / Math.pow(2, p);
 	const dTau = Math.pow(2, -p);
 
@@ -1525,7 +1530,7 @@ function stepBinaryExponentiatedMna(
 			let c1 = -3 * v0 + 4 * vMid - v1;
 			let c2 = 2 * v0 - 4 * vMid + 2 * v1;
 			if (comp.kind === 'square_voltage') {
-				c0 = v1;
+				c0 = vMid;
 				c1 = 0;
 				c2 = 0;
 			}
@@ -1600,9 +1605,53 @@ function stepBinaryExponentiatedMna(
 }
 
 /**
+ * Collect exact switching transition times of all `square_voltage` sources strictly inside `(tStart, tEnd)`
+ * so transient integration splits steps cleanly at square-wave edges without timing jitter.
+ */
+function collectSquareWaveKnots(doc: CircuitDocument, tStart: number, tEnd: number): number[] {
+	const edges: number[] = [];
+	const eps = 1e-12;
+	for (const comp of doc.components) {
+		if (comp.kind !== 'square_voltage') continue;
+		const freq = comp.params.frequency ?? 10;
+		if (freq <= 0) continue;
+		const duty = Math.min(0.95, Math.max(0.05, (comp.params.dutyPercent ?? 50) / 100));
+		const period = 1 / freq;
+		const kMin = Math.floor(tStart / period);
+		const kMax = Math.ceil(tEnd / period);
+		if (kMax - kMin > 1024) continue;
+		for (let k = kMin; k <= kMax; k += 1) {
+			const tRise = k * period;
+			if (tRise > tStart + eps && tRise < tEnd - eps) {
+				edges.push(tRise);
+			}
+			const tFall = (k + duty) * period;
+			if (tFall > tStart + eps && tFall < tEnd - eps) {
+				edges.push(tFall);
+			}
+		}
+	}
+	if (edges.length === 0) return [tStart, tEnd];
+	edges.sort((a, b) => a - b);
+	const knots = [tStart];
+	for (const e of edges) {
+		if (e - knots[knots.length - 1] > eps) {
+			knots.push(e);
+		}
+	}
+	if (tEnd - knots[knots.length - 1] > eps) {
+		knots.push(tEnd);
+	} else {
+		knots[knots.length - 1] = tEnd;
+	}
+	return knots;
+}
+
+/**
  * Advance the circuit by `dt` from `prevSnapshot` using the 2nd-order implicit Trapezoidal Rule
  * when well-resolved (`dt <= maxSafeDtSec`), or binary-exponentiated Trapezoidal sub-stepping
  * when `dt > maxSafeDtSec` so both stiff RC/RL networks and high-frequency RLC oscillators remain exact.
+ * Automatically splits steps at exact `square_voltage` switching edges.
  */
 export function stepTransientMna(
 	doc: CircuitDocument,
@@ -1615,11 +1664,43 @@ export function stepTransientMna(
 	}
 
 	const { maxSafeDtSec, maxFreqHz } = computeCircuitTimeScales(doc);
-	if (dt <= maxSafeDtSec * 1.0001) {
-		return stepSingleTransientMna(doc, prevSnapshot, dt, 'trap');
+	const tStart = prevSnapshot.timeSec;
+	const tEnd = tStart + dt;
+	const knots = collectSquareWaveKnots(doc, tStart, tEnd);
+	const hasSquare = doc.components.some((c) => c.kind === 'square_voltage');
+
+	let curr = prevSnapshot;
+	for (let q = 0; q < knots.length - 1; q += 1) {
+		const tA = knots[q];
+		const tB = knots[q + 1];
+		const subDt = tB - tA;
+		if (hasSquare) {
+			const tBefore = Math.max(0, tA - 1e-11);
+			const tAfter = tA + Math.min(1e-11, 0.5 * subDt);
+			const switchedAtA =
+				q > 0 ||
+				(tA > 0 &&
+					doc.components.some(
+						(c) =>
+							c.kind === 'square_voltage' &&
+							evaluateSourceVoltage(c, tBefore) !== evaluateSourceVoltage(c, tAfter)
+					));
+			if (switchedAtA) {
+				const postEdge = evaluateCircuitAtInstant(doc, tAfter, curr.reactiveState);
+				if (!postEdge.ok) return postEdge;
+				curr = { ...postEdge.snapshot, timeSec: tA };
+			}
+		}
+
+		const res =
+			subDt <= maxSafeDtSec * 1.0001
+				? stepSingleTransientMna(doc, curr, subDt, 'trap')
+				: stepBinaryExponentiatedMna(doc, curr, subDt, maxSafeDtSec, maxFreqHz);
+		if (!res.ok) return res;
+		curr = res.snapshot;
 	}
 
-	return stepBinaryExponentiatedMna(doc, prevSnapshot, dt, maxSafeDtSec, maxFreqHz);
+	return { ok: true, snapshot: curr };
 }
 
 export function extractScopeChannelValue(
