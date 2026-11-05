@@ -151,7 +151,7 @@
 		return null;
 	});
 
-	// Compute dynamic RC checkpoints so changing R1, C1, V1, or V(0) updates the expected predictions immediately
+	// Compute dynamic RC checkpoints from the actual solved topology at t = 0+ (respecting switch positions, R1, C1, V1, and V(0))
 	const rcCheckpoints = $derived.by(() => {
 		const resistors = doc.components.filter((c) => c.kind === 'resistor');
 		const capacitors = doc.components.filter((c) => c.kind === 'capacitor');
@@ -163,15 +163,19 @@
 			inductors.length === 0 &&
 			dcSources.length === 1
 		) {
-			const vs = dcSources[0].params.voltage ?? 5;
 			const r = Math.max(1e-6, resistors[0].params.resistance ?? 1000);
 			const c = Math.max(1e-12, capacitors[0].params.capacitance ?? 0.001);
-			const v0 = capacitors[0].params.initialVoltage ?? 0;
 			const tau = r * c;
-			const i0 = (vs - v0) / r;
-			const vAt1s = vs + (v0 - vs) * Math.exp(-1 / tau);
+			const eval0 = evaluateCircuitAtInstant(doc, 0);
+			if (!eval0.ok) return null;
+			const capMeas = eval0.snapshot.components[capacitors[0].id];
+			const v0 = capMeas ? capMeas.voltageDrop : (capacitors[0].params.initialVoltage ?? 0);
+			const rawI0 = capMeas ? capMeas.current : 0;
+			const i0 = Math.abs(rawI0) < 1e-11 ? 0 : rawI0;
+			const vTarget = v0 + i0 * r;
+			const vAt1s = vTarget + (v0 - vTarget) * Math.exp(-1 / tau);
 			const iAt1s = i0 * Math.exp(-1 / tau);
-			const vAt5s = vs + (v0 - vs) * Math.exp(-5 / tau);
+			const vAt5s = vTarget + (v0 - vTarget) * Math.exp(-5 / tau);
 			return { tau, v0, i0, vAt1s, iAt1s, vAt5s };
 		}
 		return null;
@@ -1211,7 +1215,7 @@
 		</div>
 
 		{#if rcTimeConstantSec !== null}
-			<div class="cb-checkpoints" aria-label="Expected RC charging checkpoints">
+			<div class="cb-checkpoints" aria-label="Expected RC transient checkpoints">
 				<span class="cb-checkpoint-chip">
 					Time constant τ: <strong>{formatMeasurement(rcTimeConstantSec, 's')}</strong>
 				</span>

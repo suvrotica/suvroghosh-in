@@ -433,4 +433,29 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		expect(sample60us.ch1).toBeCloseTo(3.390757, 4);
 		expect(sample120us.ch1).toBeCloseTo(8.90459, 4);
 	});
+
+	it('accurately integrates AC low-pass filter when C1 is set to 1 nF (0.311 V and 3.14 µA at 100 µs)', () => {
+		const doc = getExampleCircuit('rc-low-pass');
+		const c1 = doc.components.find((c) => c.id === 'c1')!;
+		c1.params.capacitance = 1e-9; // 1 nF (tau = 1 µs << dt = 50 µs)
+
+		const init = evaluateCircuitAtInstant(doc, 0);
+		expect(init.ok).toBe(true);
+		if (!init.ok) return;
+
+		const step1 = stepTransientMna(doc, init.snapshot, doc.simulation.dtSec, 'trap');
+		expect(step1.ok).toBe(true);
+		if (!step1.ok) return;
+
+		const step2 = stepTransientMna(doc, step1.snapshot, doc.simulation.dtSec, 'trap');
+		expect(step2.ok).toBe(true);
+		if (!step2.ok) return;
+
+		expect(step2.snapshot.timeSec).toBeCloseTo(100e-6, 9);
+		// Analytical exact at t = 100 µs for R = 1 kΩ, C = 1 nF, V(t) = 5 sin(2π * 100 * t):
+		// Vc(100 µs) = 0.310817 V, I(100 µs) = 3.1357 µA
+		expect(step2.snapshot.components['c1'].voltageDrop).toBeCloseTo(0.310817, 5);
+		expect(step2.snapshot.components['c1'].current).toBeCloseTo(3.1357e-6, 9);
+		expect(step2.snapshot.components['r1'].current).toBeCloseTo(3.1357e-6, 9);
+	});
 });

@@ -8,7 +8,7 @@
 
 ### 1. Net Condensation & Switch Branches
 
-Before matrix assembly, ideal wires (`CircuitWire`) are merged via union–find with explicit junctions and component terminals into electrical nets. Any net containing a `ground` (`GND`) component is assigned reference potential $0\text{ V}$. Closed switch paths (`switch_spst` when `closed !== false`, and `switch_spdt` along the active throw `common–throwA` or `common–throwB`) are stamped as explicit $0\text{ V}$ MNA branch constraints so their branch currents are solved directly; open switch throws carry a $1\text{ G}\Omega$ ($G_{\text{open}} = 10^{-12}\text{ S}$) bleed conductance to prevent singular floating sub-matrices when switches open.
+Before matrix assembly, ideal wires (`CircuitWire`) are merged via union–find with explicit junctions and component terminals into electrical nets. Any net containing a `ground` (`GND`) component is assigned reference potential $0\text{ V}$. Closed switch paths (`switch_spst` when `closed !== false`, and `switch_spdt` along the active throw `common–throwA` or `common–throwB`) are stamped as explicit $0\text{ V}$ MNA branch constraints so their branch currents are solved directly; open switch throws carry a $100\text{ T}\Omega$ ($G_{\text{open}} = 10^{-14}\text{ S}$) bleed conductance to prevent singular floating sub-matrices when switches open.
 
 ### 2. Modified Nodal Analysis (MNA) Unknowns & Sign Conventions
 
@@ -53,8 +53,8 @@ where $\mathbf{v}$ contains node voltages relative to ground ($0\text{ V}$) and 
     $$
     V_{A,n+1} - V_{B,n+1} - \frac{2L}{\Delta t}\,I_{L,n+1} = -\frac{2L}{\Delta t}\,I_{L,n} - V_{L,n}
     $$
-- **Binary-Exponentiated Trapezoidal Integration for Stiff & High-Frequency Regimes**:
-  - When $\Delta t$ exceeds the circuit's characteristic time scale $\Delta t_{\max}$ (such as $C = 1\text{ pF}$ in the $L = 100\text{ mH}$ RLC oscillator where $f_0 \approx 503.29\text{ kHz}$, or $C = 100\text{ nF}$ in the $1\text{ k}\Omega$ RC circuit), `stepTransientMna` constructs the exact $2K \times 2K$ Trapezoidal state transition operator at fine step $h = \Delta t / 2^p$ ($p \le 24$, up to $16{,}777{,}216$ sub-steps) and advances the reactive state by repeated squaring in $O(p)$ matrix multiplications.
+- **Binary-Exponentiated Trapezoidal Integration with Quadratic Source Interpolation**:
+  - When $\Delta t$ exceeds the circuit's characteristic time scale $\Delta t_{\max}$ (such as $C = 1\text{ pF}$ in the $L = 100\text{ mH}$ RLC oscillator where $f_0 \approx 503.29\text{ kHz}$, or $C = 1\text{ nF}$ in the $1\text{ k}\Omega$ AC low-pass filter where $\tau = 1\text{ }\mu\text{s} \ll \Delta t = 50\text{ }\mu\text{s}$), `stepTransientMna` constructs an augmented $(2K + 3) \times (2K + 3)$ Trapezoidal state transition operator at fine step $h = \Delta t_{\text{chunk}} / 2^p$ ($p \le 28$, up to $268{,}435{,}456$ sub-steps) that couples the $2K$ reactive states with a 3-point Lagrange quadratic polynomial source clock $[1, \tau, \tau^2]^T$ across each chunk and advances the system by repeated squaring in $O(p)$ matrix multiplications.
 
 ### 4. Wire Segment Current Distribution
 
@@ -70,7 +70,7 @@ Tested in `src/lib/visualizations/circuit-bench/solver.test.ts`:
 | Ohm's Law ($5\text{ V}, 1\text{ k}\Omega \to 2\text{ k}\Omega$) | $I = 5\text{ mA} \to 2.5\text{ mA}$, $P = 25\text{ mW} \to 12.5\text{ mW}$ | $< 10^{-9}\text{ A}$ |
 | Series & Parallel Resistors ($5\text{ V}, 1\text{ k}\Omega$ network with switches `S1`, `S2`) | Parallel (`S1` closed, `S2` closed): $10\text{ mA}$; Single (`S1` open, `S2` closed): $5\text{ mA}$; Series (`S1` open, `S2` open): $2.5\text{ mA}$ | $< 10^{-9}\text{ A}$ |
 | Unloaded & Loaded Voltage Divider ($5\text{ V}, 1\text{ k}\Omega / 1\text{ k}\Omega$ + $1\text{ k}\Omega$ load) | $V_{\text{unloaded}} = 2.50\text{ V}$ (`S1` open), $V_{\text{loaded}} = \frac{5}{3}\text{ V} \approx 1.67\text{ V}$ (`S1` closed) | $< 10^{-6}\text{ V}$ |
-| RC Low-Pass Filter ($1\text{ k}\Omega, 1\text{ }\mu\text{F}, f_c \approx 159.15\text{ Hz}$) | $\|H(f)\| = 1 / \sqrt{1 + (2\pi f RC)^2}$ from $100\text{ Hz}$ and $500\text{ Hz}$ up to $100\text{ kHz}$ | $\ge 40$ steps/cycle, $< 5\times 10^{-3}\text{ V}$ |
+| RC Low-Pass Filter ($1\text{ k}\Omega, 1\text{ }\mu\text{F}$ & $1\text{ nF}$) | $\|H(f)\| = 1 / \sqrt{1 + (2\pi f RC)^2}$ up to $100\text{ kHz}$; at $C_1 = 1\text{ nF}, t = 100\text{ }\mu\text{s}$: $V_C = 0.310817\text{ V}, I = 3.1357\text{ }\mu\text{A}$ | $\ge 40$ steps/cycle, $< 10^{-5}\text{ V}$, $< 10^{-9}\text{ A}$ |
 | Series RLC Step Response ($V_S=5\text{ V}, R=20\text{ }\Omega, L=100\text{ mH}, C=10\text{ }\mu\text{F}$ & $C=1\text{ pF}$) | At $C=10\text{ }\mu\text{F}$: peak $8.646\text{ V}$ at $3.157\text{ ms}$; at $C=1\text{ pF}$: $3.3908\text{ V}$ at $60\text{ }\mu\text{s}$ and $8.9046\text{ V}$ at $120\text{ }\mu\text{s}$ | $< 10^{-4}\text{ V}$ |
 
 ## Resource & Validation Limits

@@ -233,15 +233,52 @@ test.describe('Circuit Bench interactive electronic circuit simulator', () => {
 		// F-09: Probe mode toggle is exposed in the inspector for voltage probes
 		await expect(app.getByRole('button', { name: /Probe mode:/ })).toBeVisible();
 
-		// F-05: rc-charge-discharge selects 6 s time span option cleanly
+		// F-05: rc-charge-discharge selects 6 s time span option cleanly, and flipping S1 to Position B updates checkpoints to 0.00 V · 0.00 A
 		await exampleSelect.selectOption('rc-charge-discharge');
 		await expect(app.getByLabel('Oscilloscope visible time span')).toHaveValue('6');
+		await expect(app.locator('.cb-checkpoints')).toContainText('5.00 mA');
+		await app.getByRole('button', { name: 'Inspect S1' }).click();
+		await app.getByRole('button', { name: /Active throw:/ }).click();
+		await expect(app.locator('.cb-checkpoints')).toContainText('t = 0 s: 0.00 V · 0.00 A');
+		await expect(app.locator('.cb-checkpoints')).not.toContainText('5.00 mA');
+		await expect(app.locator('.cb-checkpoints')).not.toContainText('3.16 V');
 
-		// F-09: Sine source in rc-low-pass exposes DC offset and Phase angle controls
+		// F-09: Sine source in rc-low-pass exposes DC offset and Phase angle controls, and C1 = 1 nF at 100 µs exports 0.310817 V and 3.1357 µA
 		await exampleSelect.selectOption('rc-low-pass');
 		await app.getByRole('button', { name: 'Inspect V1' }).click();
 		await expect(app.locator('#cb-input-offset')).toBeVisible();
 		await expect(app.locator('#cb-input-phaseDeg')).toBeVisible();
+		await app.getByRole('button', { name: 'Inspect C1' }).click();
+		const cInput = app.locator('#cb-input-capacitance');
+		await cInput.fill('1n');
+		await cInput.press('Enter');
+		await app.getByLabel('Oscilloscope Channel 2 probe').selectOption('component_current:c1');
+		await app.getByRole('button', { name: 'Run simulation', exact: true }).click();
+		await expect
+			.poll(async () => {
+				const text = await app.locator('.cb-time-readout').textContent();
+				const match = text?.match(/t\s*=\s*([\d.]+)/);
+				return match ? Number(match[1]) : 0;
+			})
+			.toBeGreaterThan(0.001);
+		await app.getByRole('button', { name: 'Pause simulation', exact: true }).click();
+		const [download] = await Promise.all([
+			page.waitForEvent('download'),
+			app.getByRole('button', { name: 'Export recorded oscilloscope samples as CSV' }).click()
+		]);
+		const csvStream = await download.createReadStream();
+		const chunks: Buffer[] = [];
+		for await (const chunk of csvStream) {
+			chunks.push(Buffer.from(chunk));
+		}
+		const csvText = Buffer.concat(chunks).toString('utf8');
+		const row100us = csvText
+			.split('\n')
+			.find((line) => line.startsWith('0.000100,'));
+		expect(row100us).toBeDefined();
+		const [, v100, i100] = row100us!.split(',').map(Number);
+		expect(v100).toBeCloseTo(0.310817, 4);
+		expect(i100).toBeCloseTo(3.1357e-6, 8);
 
 		// F-10: Series RLC circuit does not display a misleading first-order RC time constant
 		await exampleSelect.selectOption('rlc-response');

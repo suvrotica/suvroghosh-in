@@ -1351,8 +1351,9 @@ function stepBinaryExponentiatedMna(
 	const acChunks = maxFreqHz > 0 ? Math.min(32, Math.max(1, Math.ceil(dt * maxFreqHz * 40))) : 1;
 	const chunkDt = dt / acChunks;
 	const ratio = chunkDt / Math.max(1e-18, maxSafeDtSec);
-	const p = Math.min(24, Math.max(4, Math.ceil(Math.log2(Math.max(1, ratio))) + 12));
+	const p = Math.min(28, Math.max(4, Math.ceil(Math.log2(Math.max(1, ratio))) + 12));
 	const h = chunkDt / Math.pow(2, p);
+	const dTau = Math.pow(2, -p);
 
 	const dim = nodeCount + branches.length;
 	const A = Array.from({ length: dim }, () => new Array<number>(dim).fill(0));
@@ -1475,21 +1476,21 @@ function stepBinaryExponentiatedMna(
 		srcColumns.push(extractNextState(solS.x));
 	}
 
-	const mulMatMat = (M1: number[][], M2: number[][]): number[][] =>
+	const augDim = stateDim + 3;
+	const mulAugMat = (M1: number[][], M2: number[][]): number[][] =>
 		M1.map((row) =>
 			M2[0].map((_, j) => {
 				let sum = 0;
-				for (let k = 0; k < stateDim; k += 1) sum += row[k] * M2[k][j];
+				for (let k = 0; k < augDim; k += 1) sum += row[k] * M2[k][j];
 				return sum;
 			})
 		);
-	const mulMatVec = (M: number[][], v: number[]): number[] =>
+	const mulAugVec = (M: number[][], v: number[]): number[] =>
 		M.map((row) => {
 			let sum = 0;
-			for (let k = 0; k < stateDim; k += 1) sum += row[k] * v[k];
+			for (let k = 0; k < augDim; k += 1) sum += row[k] * v[k];
 			return sum;
 		});
-	const addVec = (a: number[], b: number[]): number[] => a.map((v, idx) => v + b[idx]);
 
 	const prevState = prevSnapshot.reactiveState;
 	let s = new Array<number>(stateDim).fill(0);
@@ -1506,29 +1507,69 @@ function stepBinaryExponentiatedMna(
 	}
 
 	for (let chunk = 0; chunk < acChunks; chunk += 1) {
-		const tMid = prevSnapshot.timeSec + (chunk + 0.5) * chunkDt;
-		let g = new Array<number>(stateDim).fill(0);
+		const t0 = prevSnapshot.timeSec + chunk * chunkDt;
+		const tMid = t0 + 0.5 * chunkDt;
+		const t1 = t0 + chunkDt;
+
+		const g0 = new Array<number>(stateDim).fill(0);
+		const g1 = new Array<number>(stateDim).fill(0);
+		const g2 = new Array<number>(stateDim).fill(0);
+
 		for (let idx = 0; idx < sourceBranches.length; idx += 1) {
-			const vSrc = evaluateSourceVoltage(sourceBranches[idx].component, tMid);
+			const comp = sourceBranches[idx].component;
+			const v0 = evaluateSourceVoltage(comp, t0);
+			const vMid = evaluateSourceVoltage(comp, tMid);
+			const v1 = evaluateSourceVoltage(comp, t1);
+			// 3-point Lagrange quadratic interpolant on normalized chunk time tau in [0, 1]
+			let c0 = v0;
+			let c1 = -3 * v0 + 4 * vMid - v1;
+			let c2 = 2 * v0 - 4 * vMid + 2 * v1;
+			if (comp.kind === 'square_voltage') {
+				c0 = v1;
+				c1 = 0;
+				c2 = 0;
+			}
 			const col = srcColumns[idx];
 			for (let i = 0; i < stateDim; i += 1) {
-				g[i] += col[i] * vSrc;
+				g0[i] += col[i] * c0;
+				g1[i] += col[i] * c1;
+				g2[i] += col[i] * c2;
 			}
 		}
 
-		let T = baseT;
+		// Build augmented transition matrix M on [s, 1, tau, tau^2]^T for sub-step tau -> tau + dTau
+		const M = Array.from({ length: augDim }, () => new Array<number>(augDim).fill(0));
+		for (let i = 0; i < stateDim; i += 1) {
+			for (let j = 0; j < stateDim; j += 1) {
+				M[i][j] = baseT[i][j];
+			}
+			M[i][stateDim] = g0[i] + g1[i] * dTau + g2[i] * dTau * dTau;
+			M[i][stateDim + 1] = g1[i] + 2 * g2[i] * dTau;
+			M[i][stateDim + 2] = g2[i];
+		}
+		M[stateDim][stateDim] = 1;
+		M[stateDim + 1][stateDim] = dTau;
+		M[stateDim + 1][stateDim + 1] = 1;
+		M[stateDim + 2][stateDim] = dTau * dTau;
+		M[stateDim + 2][stateDim + 1] = 2 * dTau;
+		M[stateDim + 2][stateDim + 2] = 1;
+
+		let u = [...s, 1, 0, 0];
+		let curM = M;
 		const isLastChunk = chunk === acChunks - 1;
 		for (let bit = 0; bit < p; bit += 1) {
 			if (isLastChunk) {
 				// Accumulate 1 + 2 + ... + 2^(p-1) = 2^p - 1 steps so the final h-step can be solved for full node/wire state
-				s = addVec(mulMatVec(T, s), g);
+				u = mulAugVec(curM, u);
 			}
-			g = addVec(mulMatVec(T, g), g);
-			T = mulMatMat(T, T);
+			if (!isLastChunk || bit < p - 1) {
+				curM = mulAugMat(curM, curM);
+			}
 		}
 		if (!isLastChunk) {
-			s = addVec(mulMatVec(T, s), g);
+			u = mulAugVec(curM, u);
 		}
+		s = u.slice(0, stateDim);
 	}
 
 	const penultimateState: ReactiveState = {
@@ -1576,19 +1617,6 @@ export function stepTransientMna(
 	const { maxSafeDtSec, maxFreqHz } = computeCircuitTimeScales(doc);
 	if (dt <= maxSafeDtSec * 1.0001) {
 		return stepSingleTransientMna(doc, prevSnapshot, dt, 'trap');
-	}
-
-	const hasInductor = doc.components.some((c) => c.kind === 'inductor');
-	if (!hasInductor && dt / maxSafeDtSec > 1e5) {
-		// Pure first-order RC network with dt > 25,000 * tau: physical exponential is < exp(-25000) = 0
-		let curr = prevSnapshot;
-		const subDt = dt / 8;
-		for (let i = 0; i < 8; i += 1) {
-			const res = stepSingleTransientMna(doc, curr, subDt, 'be');
-			if (!res.ok) return res;
-			curr = res.snapshot;
-		}
-		return { ok: true, snapshot: curr };
 	}
 
 	return stepBinaryExponentiatedMna(doc, prevSnapshot, dt, maxSafeDtSec, maxFreqHz);
