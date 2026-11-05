@@ -11,6 +11,7 @@
 
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
+		'circuit-bench': visualizationSummaries['circuit-bench'].subjects,
 		'post-to-uml': visualizationSummaries['post-to-uml'].subjects,
 		'knowledge-gap-atlas': visualizationSummaries['knowledge-gap-atlas'].subjects,
 		'strange-matter': visualizationSummaries['strange-matter'].subjects,

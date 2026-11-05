@@ -16912,6 +16912,37 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/circuit-bench.md": {
+			"bodyHash": "588f112ebb5c0d58c66974dcf7782da92001640263893416a08a1f0e33bc0fd9",
+			"hashVersion": 2,
+			"revisionHash": "b42c3e2ffe695cae5c5d7206f0b498f93ce19d32aa2a36f25149626947548176",
+			"generatedTags": [
+				"Electronics",
+				"Circuit Simulation",
+				"RC Circuits",
+				"Ohm's Law",
+				"Oscilloscope",
+				"Physics",
+				"Electrical Engineering",
+				"Modified Nodal Analysis",
+				"Interactive Tools",
+				"Scientific Computing"
+			],
+			"pinnedTags": [
+				"Electronics",
+				"Circuit Simulation",
+				"RC Circuits",
+				"Ohm's Law",
+				"Oscilloscope",
+				"Physics",
+				"Electrical Engineering",
+				"Modified Nodal Analysis",
+				"Interactive Tools",
+				"Scientific Computing"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-05"
 		}
 	},
 	"maxTags": 10

@@ -317,7 +317,12 @@
 		"fractal-trip:browser:test": "playwright test --config=playwright.fractal-trip.config.ts",
 		"fractal-trip:assets": "node scripts/capture-fractal-trip.mjs",
 		"fractal-trip:assets:check": "node scripts/capture-fractal-trip.mjs --check",
-		"fractal-trip:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.fractal-trip.json"
+		"fractal-trip:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.fractal-trip.json",
+		"circuit-bench:test": "vitest run src/lib/visualizations/circuit-bench --maxWorkers=2",
+		"circuit-bench:preview": "node scripts/preview-circuit-bench.mjs",
+		"circuit-bench:browser:test": "playwright test --config=playwright.circuit-bench.config.ts",
+		"circuit-bench:poster": "node scripts/render-circuit-bench-poster.mjs",
+		"circuit-bench:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.circuit-bench.json"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",

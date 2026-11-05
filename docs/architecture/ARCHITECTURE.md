@@ -1945,6 +1945,48 @@ flowchart LR
     Shell --> Fallback["Default static comparison / readable article"]
 ```
 
+### Circuit Bench: interactive electronic circuit simulator
+
+Circuit Bench uses the ordinary Visualizations Markdown article and generic blog route at
+`/blog/visualizations/circuit-bench`, and is included in the `apps` discovery collection.
+Its server-rendered shell under `components/visualizations/circuit-bench` carries
+`data-tts-exclude` and lazily mounts the interactive workbench. The gallery imports only
+lightweight summary and subject metadata. The feature adds no server endpoint, external
+network call, credential, account or route exception.
+
+The pure TypeScript domain under `visualizations/circuit-bench` owns the component catalog,
+engineering-notation parser/formatter, grid-snapped schematic editing, strict JSON and
+compressed URL-state validation (`CIRCUIT_LIMITS`), eight prepared teaching examples plus a
+blank circuit, and a deterministic Modified Nodal Analysis (MNA) solver with second-order
+implicit trapezoidal transient integration. Reactive elements (`capacitor`, `inductor`)
+initialise directly from their configured $t = 0\text{ s}$ state ($V_C(0), I_L(0)$) without
+solving a final DC operating point first, so transient charging curves begin from their
+intended initial conditions. Value edits preserve stored reactive states and mark the change
+on the oscilloscope trace; topology edits pause the simulation before re-evaluating nets.
+
+Simulation batches execute in a dedicated, cancellable Web Worker (`simulation.worker.ts`)
+with generation IDs, a four-second job timeout and a synchronous fallback for unit tests.
+Simulation time-stepping remains separate from oscilloscope display downsampling. Each mount
+owns its worker, animation frame, visibility pause listener, reduced-motion observer and
+versioned `localStorage` persistence (`suvro-circuit-bench:v1`), and releases all resources
+on teardown. See the [feature record](../visualizations/circuit-bench.md). This extends the
+established pure-model/worker/lazy-UI pattern without altering a foundational architectural
+decision, so no separate ADR is required.
+
+```mermaid
+flowchart LR
+    Article["Markdown article / generic blog route"] --> Shell["data-tts-exclude SSR shell / lazy workbench"]
+    URL["Bounded zlib-compressed URL circuit / local JSON"] --> Validate["Schema, bounds and size validation"]
+    Validate --> Doc["Immutable circuit document + undo/redo stack"]
+    Doc --> Worker["Owned Web Worker / MNA + trapezoidal solver"]
+    Worker --> Snapshot["Node voltages, branch currents, wire KCL & scope samples"]
+    Snapshot --> Schematic["SVG schematic / voltage colour / current markers"]
+    Snapshot --> Inspector["Rotary control / analogue + digital meters"]
+    Snapshot --> Scope["Two-channel oscilloscope / cursor / CSV export"]
+    Lifecycle["Visibility / reduced motion / teardown"] --> Shell
+    Lifecycle --> Worker
+```
+
 ### Synthetic Data Lab
 
 `/tools/synthetic-data-lab` is a wide site-shell Svelte application, with public descriptive SSR

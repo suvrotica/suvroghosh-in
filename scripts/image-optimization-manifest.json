@@ -11758,6 +11758,21 @@
       "sourceHash": "63508d3034620d8737c45ad0ff8f032e3fcd4733c9a08cb179f0f70eab347171",
       "width": 1600
     },
+    "static/images/visualizations/circuit-bench/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 78568,
+      "outputHash": "71b44026fb6187a46736b68b07eb955ed48cc3325a6195a55cfc1071717b44f0",
+      "resized": false,
+      "sourceBytes": 78568,
+      "sourceHash": "71b44026fb6187a46736b68b07eb955ed48cc3325a6195a55cfc1071717b44f0",
+      "width": 1200
+    },
     "static/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg": {
       "format": "SVG",
       "height": 630,

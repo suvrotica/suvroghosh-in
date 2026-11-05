@@ -5200,6 +5200,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/circuit-bench/social.png",
+			"src": "/images/visualizations/circuit-bench/social.png",
+			"bytes": 78568,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg",
 			"src": "/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg",
 			"bytes": 7177,

@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.json",
+	"include": [
+		"src/lib/components/visualizations/circuit-bench/**/*.svelte",
+		"src/lib/visualizations/circuit-bench/**/*.ts",
+		"tests/browser/circuit-bench.spec.ts",
+		"playwright.circuit-bench.config.ts"
+	]
+}

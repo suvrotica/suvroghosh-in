@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'circuit-bench': {
+		id: 'circuit-bench',
+		title: 'Circuit Bench: What Changes When You Change a Component?',
+		description:
+			'Build small electronic circuits, change component values, run a transient simulation and inspect voltage and current on an oscilloscope.',
+		subjects: ['Physics', 'Computer Science', 'Scientific Computing'],
+		poster: '/images/visualizations/circuit-bench/social.png',
+		posterAlt:
+			'Dark graphite Circuit Bench simulator showing a 5 V RC charging schematic, component inspector with rotary dial, and dual-channel oscilloscope traces',
+		href: '/blog/visualizations/circuit-bench',
+		status: 'published'
+	},
 	'fractal-trip': {
 		id: 'fractal-trip',
 		title: 'Fractal Trip: Change a Number, Follow the Pattern',
