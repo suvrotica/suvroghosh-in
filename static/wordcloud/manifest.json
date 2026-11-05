@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T11:03:52.245893+00:00",
+  "generatedAt": "2026-11-05T16:21:05.861660+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9037,6 +9037,29 @@
         "Return",
         "System",
         "Evidence"
+      ],
+      "wordCount": 130
+    },
+    "recorder": {
+      "generatedAt": "2026-11-05T16:21:05.478533+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/recorder.svg",
+      "source": "src/lib/posts/recorder.md",
+      "sourceHash": "0fd7a022ff58acab237d6e3dc736428dd44d52e9b0d895a17f742b44039fe2c1",
+      "sourceModified": "2026-11-05T16:20:46.974109+00:00",
+      "topWords": [
+        "Recorder",
+        "MP4",
+        "Fan",
+        "Audio",
+        "Original",
+        "Speech",
+        "Noise",
+        "Trim",
+        "Hear",
+        "Improve",
+        "Sound",
+        "Everyday"
       ],
       "wordCount": 130
     },

@@ -322,7 +322,9 @@
 		"circuit-bench:preview": "node scripts/preview-circuit-bench.mjs",
 		"circuit-bench:browser:test": "playwright test --config=playwright.circuit-bench.config.ts",
 		"circuit-bench:poster": "node scripts/render-circuit-bench-poster.mjs",
-		"circuit-bench:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.circuit-bench.json"
+		"circuit-bench:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.circuit-bench.json",
+		"recorder:test": "vitest run src/lib/recorder --maxWorkers=2",
+		"recorder:browser:test": "playwright test --config=playwright.recorder.config.ts"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",

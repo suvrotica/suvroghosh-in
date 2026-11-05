@@ -138,6 +138,7 @@ Paths are relative to the repository root. This is a responsibility map rather t
 | `src/lib/components/`                                                                            | Site shell, editorial UI, feature interfaces, notes editor/viewer, UI adapters, visualization components.                                                                                                                 |
 | `src/lib/visualizations/`                                                                        | Feature models, simulation/rendering helpers, data, workers, local tests, generic experiment registry and contracts. Some features also co-locate Svelte interfaces here (Barnum Lab and Meaning Map).                    |
 | `src/lib/games/`                                                                                 | Game catalog, domain models/engines/content, rendering helpers and local tests.                                                                                                                                           |
+| `src/lib/recorder/`                                                                              | Personal audio recorder (`/tools/recorder`) capture state machine, incremental OPFS/IndexedDB storage, non-destructive editor, acoustic DSP + Bark-GRU speech enhancement, and ISO BMFF MP4/M4A/WAV encoding and verification. |
 | `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                                               |
 | `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                                   |
 | `src/lib/comments/`, `src/lib/components/comments/`                                              | Browser-safe comment contracts and reusable plain-text submission, thread and lazy article-comment interfaces. Submitted comments have no browser database.                                                               |
@@ -2959,6 +2960,14 @@ history. Existing payload identities, provider configuration and owner-session b
 only to future version-four notifications. Explicit pending approval, approved-root placement
 and a durable enqueue-time reply identity preserve moderation intent, one-level threads and
 idempotent uncertain retries while old notification payloads remain unchanged.
+
+[ADR 0025](decisions/0025-personal-recorder-local-architecture.md) records the local-first
+architecture for **Recorder — by Suvro Ghosh** (`/tools/recorder`): route-scoped
+`Permissions-Policy: camera=(), microphone=(self), geolocation=()`, incremental `OPFS` and
+`IndexedDB` chunk persistence with SHA-256 original integrity verification, non-destructive
+editing and K-weighted DSP + on-demand 144 KB `Bark-GRU` neural speech enhancement under
+`script-src 'self'`, and genuine ISO BMFF `.mp4` / `.m4a` / Video-MP4 export verified by
+`inspectMediaContainer`.
 
 The [forensic findings](FORENSIC_AUDIT.md#findings) are the remediation inventory. Open debt includes remaining distributed/Notes request controls; notes transaction and integration-test gaps; browser save deadlines; comprehensive accessibility verification of Meaning Map's corrected interaction state; image provenance/cache policy; duplicated path rules; and repeated test orchestration. Fractal's laboratory-envelope validation and Meaning Map's composed interaction state are corrected, with focused unit and browser regressions. The earlier map resource leak and stale-session metadata no-op path are also corrected. Proposed remediation does not change this document's as-built descriptions until implemented and verified.
 

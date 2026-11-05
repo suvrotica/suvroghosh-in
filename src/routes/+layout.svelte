@@ -62,6 +62,7 @@
 	);
 	let labShell = $derived(
 		page.url.pathname === '/tools/synthetic-data-lab' ||
+			page.url.pathname === '/tools/recorder' ||
 			page.url.pathname.startsWith('/demos/customer-enquiries')
 	);
 

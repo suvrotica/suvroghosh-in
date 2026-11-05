@@ -42,6 +42,12 @@
 			]
 		},
 		{
+			"source": "/tools/recorder",
+			"headers": [
+				{ "key": "Permissions-Policy", "value": "camera=(), microphone=(self), geolocation=()" }
+			]
+		},
+		{
 			"source": "/audio/articles/:slug/manifest.json",
 			"headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
 		},

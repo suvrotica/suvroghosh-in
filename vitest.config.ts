@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/recorder/**/*.test.ts',
 			'src/lib/visualizations/circuit-bench/**/*.test.ts',
 			'src/lib/visualizations/fractal-trip/**/*.test.ts',
 			'src/lib/visualizations/calcutta-radio/**/*.test.ts',

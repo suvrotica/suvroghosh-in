@@ -16943,6 +16943,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-05"
+		},
+		"src/lib/posts/recorder.md": {
+			"bodyHash": "6638d721bb3f19eb08df652b361511f672272335fb384d67f79481b54278e2f7",
+			"hashVersion": 2,
+			"revisionHash": "56976d8be3c95013c435131670f8c18b7fd107b0e50d165a5f25df7557a61518",
+			"generatedTags": [
+				"Audio Recording",
+				"Signal Processing",
+				"Browser Tools",
+				"Web Audio",
+				"Noise Reduction",
+				"Speech Enhancement",
+				"MP4 Encoding",
+				"Local-First Software",
+				"Audio Editing",
+				"Acoustics"
+			],
+			"pinnedTags": [
+				"Audio Recording",
+				"Signal Processing",
+				"Browser Tools",
+				"Web Audio",
+				"Noise Reduction",
+				"Speech Enhancement",
+				"MP4 Encoding",
+				"Local-First Software",
+				"Audio Editing",
+				"Acoustics"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -13,7 +13,7 @@
 	let { data }: { data: PageData } = $props();
 	const title = 'Apps — Useful Browser Tools | Suvro Ghosh';
 	const description =
-		'Small web apps by Suvro Ghosh for writing, listening and exploring ideas. Try Handwritten Messenger, Calcutta Radio, Prompt Atlas and more.';
+		'Small web apps by Suvro Ghosh for writing, recording, listening and exploring ideas. Try Recorder, Handwritten Messenger, Calcutta Radio, Prompt Atlas and more.';
 	const canonicalUrl = `${siteUrl}/blog/apps`;
 	const messengerUrl = 'https://handwritten-messenger.vercel.app/demo';
 	const apps = $derived([
@@ -23,6 +23,7 @@
 				'Draw a note, type, or send a voice message. Try it yourself or invite a friend into a 15-minute chat.',
 			href: messengerUrl,
 			canonicalUrl: messengerUrl,
+			companionHref: undefined as string | undefined,
 			thumbnail: '/images/apps/handwritten-messenger.png',
 			thumbnailAlt: 'Handwritten Messenger’s dark demo page, with solo and friend-chat options.',
 			thumbnailHeight: 1000,
@@ -30,21 +31,26 @@
 			action: 'Try the demo',
 			external: true
 		},
-		...data.posts.map((post) => ({
-			title: post.title,
-			description: post.description,
-			href: resolve('/blog/[category]/[slug]', {
+		...data.posts.map((post) => {
+			const articleHref = resolve('/blog/[category]/[slug]', {
 				category: post.categorySlug,
 				slug: post.slug
-			}),
-			canonicalUrl: siteUrl + postPath(post),
-			thumbnail: post.thumbnail,
-			thumbnailAlt: post.thumbnailAlt ?? post.title,
-			thumbnailHeight: 630,
-			kind: 'Browser app · Visualization',
-			action: 'Open app',
-			external: false
-		}))
+			});
+			const isRecorder = post.slug === 'recorder';
+			return {
+				title: post.title,
+				description: post.description,
+				href: isRecorder ? resolve('/tools/recorder') : articleHref,
+				canonicalUrl: isRecorder ? `${siteUrl}/tools/recorder` : siteUrl + postPath(post),
+				companionHref: isRecorder ? articleHref : undefined,
+				thumbnail: post.thumbnail,
+				thumbnailAlt: post.thumbnailAlt ?? post.title,
+				thumbnailHeight: 630,
+				kind: isRecorder ? 'Personal audio studio · Browser app' : 'Browser app · Visualization',
+				action: isRecorder ? 'Open Recorder' : 'Open app',
+				external: false
+			};
+		})
 	]);
 </script>
 
@@ -157,6 +163,11 @@
 								aria-label={app.external ? `${app.action} (opens in a new tab)` : undefined}
 								>{app.action} <span aria-hidden="true">↗</span></a
 							>
+							{#if app.companionHref}
+								<p class="launch-note">
+									Read the <a href={app.companionHref}>companion essay &amp; worked example</a>.
+								</p>
+							{/if}
 							{#if app.external}
 								<p class="launch-note">No Google sign-in or approval. Opens in a new tab.</p>
 							{/if}

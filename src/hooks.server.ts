@@ -40,6 +40,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const isPromptAtlasApi = matchesPath('/api/prompt-atlas');
 	const isMindmapStudioApi = matchesPath('/api/mindmap-studio');
 	const isUmlApi = matchesPath('/api/uml');
+	const isRecorderTool = matchesPath('/tools/recorder');
 	const needsNotesSession = isStudio || isSignIn || isResetPassword || isProtectedNotesApi;
 	if (needsNotesSession) {
 		try {
@@ -82,7 +83,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 	);
 	response.headers.set('x-content-type-options', 'nosniff');
 	response.headers.set('x-frame-options', 'DENY');
-	response.headers.set('permissions-policy', 'camera=(), microphone=(), geolocation=()');
+	response.headers.set(
+		'permissions-policy',
+		isRecorderTool
+			? 'camera=(), microphone=(self), geolocation=()'
+			: 'camera=(), microphone=(), geolocation=()'
+	);
 	if (
 		isStudio ||
 		isNotesAuth ||

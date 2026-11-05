@@ -5501,6 +5501,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "visualizations/recorder/social.png",
+			"src": "/images/visualizations/recorder/social.png",
+			"bytes": 154546,
+			"width": 1200,
+			"height": 760
+		},
+		{
 			"name": "visualizations/scale-elevator/01-ion.jpg",
 			"src": "/images/visualizations/scale-elevator/01-ion.jpg",
 			"bytes": 85673,
