@@ -413,7 +413,7 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		expect(formatMeasurement(0.085, 'V')).toBe('85.00 mV');
 	});
 
-	it('accurately integrates high-frequency RLC oscillation when C1 is set to 1 pF (3.39 V at 60 µs, 8.90 V at 120 µs) and 100 nF (5.318 V at 9.600 ms)', () => {
+	it('accurately integrates high-frequency and low-resistance RLC oscillation (C1 = 1 pF, C1 = 100 nF, and R1 = 1 Ω / 0.1 Ω / 1 mΩ)', () => {
 		const doc1p = getExampleCircuit('rlc-response');
 		doc1p.components.find((c) => c.id === 'c1')!.params.capacitance = 1e-12; // 1 pF
 
@@ -445,6 +445,30 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		const sample9600us = batch100n.samples.find((s) => Math.abs(s.timeSec - 0.0096) < 1e-9);
 		expect(sample9600us).toBeDefined();
 		expect(sample9600us!.ch1).toBeCloseTo(5.317537, 4);
+
+		// Low-resistance high-Q RLC at t = 19.98 ms (999 steps of 20 µs): R = 1 Ω (3.049851 V), R = 0.1 Ω (2.887645 V), R = 1 mΩ (2.884279 V)
+		for (const Rval of [1, 0.1, 0.001]) {
+			const docLowR = getExampleCircuit('rlc-response');
+			docLowR.components.find((c) => c.id === 'r1')!.params.resistance = Rval;
+			const initLowR = evaluateCircuitAtInstant(docLowR, 0);
+			expect(initLowR.ok).toBe(true);
+			if (!initLowR.ok) return;
+			let snap = initLowR.snapshot;
+			for (let i = 0; i < 999; i += 1) {
+				const r = stepTransientMna(docLowR, snap, 20e-6, 'trap');
+				expect(r.ok).toBe(true);
+				if (!r.ok) return;
+				snap = r.snapshot;
+			}
+			const al = Rval / (2 * 0.1);
+			const omd = Math.sqrt(1e6 - al * al);
+			const ex =
+				5 *
+				(1 -
+					Math.exp(-al * 0.01998) *
+						(Math.cos(omd * 0.01998) + (al / omd) * Math.sin(omd * 0.01998)));
+			expect(snap.components['c1'].voltageDrop).toBeCloseTo(ex, 6);
+		}
 	});
 
 	it('accurately integrates AC low-pass filter when C1 is set to 1 nF (0.311 V and 3.14 µA at 100 µs)', () => {

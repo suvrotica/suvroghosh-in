@@ -333,16 +333,25 @@ function solveLinearSystem(
 
 	for (let col = 0; col < n; col += 1) {
 		let maxRow = col;
-		let maxVal = Math.abs(M[col][col]);
-		for (let row = col + 1; row < n; row += 1) {
+		let maxRatio = 0;
+		let maxAbsVal = 0;
+		for (let row = col; row < n; row += 1) {
 			const val = Math.abs(M[row][col]);
-			if (val > maxVal) {
-				maxVal = val;
+			if (val <= 1e-14) continue;
+			let rowMax = val;
+			for (let k = col + 1; k < n; k += 1) {
+				const a = Math.abs(M[row][k]);
+				if (a > rowMax) rowMax = a;
+			}
+			const ratio = val / rowMax;
+			if (ratio > maxRatio + 1e-12 || (Math.abs(ratio - maxRatio) <= 1e-12 && val > maxAbsVal)) {
+				maxRatio = ratio;
+				maxAbsVal = val;
 				maxRow = row;
 			}
 		}
 
-		if (maxVal < 1e-14) {
+		if (maxAbsVal < 1e-14) {
 			return { ok: false, pivotIndex: col };
 		}
 
@@ -1355,8 +1364,9 @@ function stepBinaryExponentiatedMna(
 
 	const acChunks = maxFreqHz > 0 ? Math.min(32, Math.max(1, Math.ceil(dt * maxFreqHz * 40))) : 1;
 	const chunkDt = dt / acChunks;
-	const ratio = chunkDt / Math.max(1e-18, maxSafeDtSec);
-	const p = Math.min(28, Math.max(12, Math.ceil(Math.log2(Math.max(1, ratio))) + 12));
+	const tauRef = Number.isFinite(maxSafeDtSec) ? maxSafeDtSec : chunkDt;
+	const ratio = chunkDt / Math.max(1e-18, tauRef);
+	const p = Math.min(28, Math.max(12, Math.ceil(Math.log2(Math.max(1, ratio))) + 8));
 	const h = chunkDt / Math.pow(2, p);
 	const dTau = Math.pow(2, -p);
 
@@ -1438,36 +1448,38 @@ function stepBinaryExponentiatedMna(
 		return out;
 	};
 
-	const baseT = Array.from({ length: stateDim }, () => new Array<number>(stateDim).fill(0));
+	// Build baseDelta = baseT - I directly to avoid catastrophic cancellation near 1.0 on the diagonal
+	const baseDelta = Array.from({ length: stateDim }, () => new Array<number>(stateDim).fill(0));
 	for (let r = 0; r < K; r += 1) {
 		const rb = reactiveBranches[r];
 		if (rb.kind === 'capacitor') {
 			const c = Math.max(1e-12, rb.component.params.capacitance ?? 0.001);
 			const halfHOverC = h / (2 * c);
 
-			// Basis column 2*r: vPrev = 1
+			// Basis column 2*r: vPrev = 1 -> V_{n+1} - (h/2C)*I_{n+1} = 1 => V_{n+1} - 1 = (h/2C)*I_{n+1}
 			const rhsV = new Array<number>(dim).fill(0);
 			rhsV[rb.row] = 1;
 			const solV = solveLinearSystem(A, rhsV);
 			if (!solV.ok) return stepSingleTransientMna(doc, prevSnapshot, dt, 'be');
 			const colV = extractNextState(solV.x);
 			for (let i = 0; i < stateDim; i += 1) {
-				baseT[i][2 * r] = colV[i];
-				baseT[i][2 * r + 1] = colV[i] * halfHOverC;
+				baseDelta[i][2 * r] = i === 2 * r ? colV[2 * r + 1] * halfHOverC : colV[i];
+				baseDelta[i][2 * r + 1] =
+					i === 2 * r + 1 ? colV[i] * halfHOverC - 1 : colV[i] * halfHOverC;
 			}
 		} else {
 			const l = Math.max(1e-9, rb.component.params.inductance ?? 0.1);
 			const rEq = (2 * l) / h;
 
-			// Basis column 2*r+1: vPrev = 1 (rhs = -1)
+			// Basis column 2*r+1: vPrev = 1 (rhs = -1) -> V_{n+1} - rEq*I_{n+1} = -1 => rEq*I_{n+1} - 1 = V_{n+1}
 			const rhsV = new Array<number>(dim).fill(0);
 			rhsV[rb.row] = -1;
 			const solV = solveLinearSystem(A, rhsV);
 			if (!solV.ok) return stepSingleTransientMna(doc, prevSnapshot, dt, 'be');
 			const colV = extractNextState(solV.x);
 			for (let i = 0; i < stateDim; i += 1) {
-				baseT[i][2 * r] = colV[i] * rEq;
-				baseT[i][2 * r + 1] = colV[i];
+				baseDelta[i][2 * r] = i === 2 * r ? colV[2 * r + 1] : colV[i] * rEq;
+				baseDelta[i][2 * r + 1] = i === 2 * r + 1 ? colV[i] - 1 : colV[i];
 			}
 		}
 	}
@@ -1482,17 +1494,19 @@ function stepBinaryExponentiatedMna(
 	}
 
 	const augDim = stateDim + 3;
-	const mulAugMat = (M1: number[][], M2: number[][]): number[][] =>
-		M1.map((row) =>
-			M2[0].map((_, j) => {
-				let sum = 0;
-				for (let k = 0; k < augDim; k += 1) sum += row[k] * M2[k][j];
+	// Given D = M - I, compute D_sq = M^2 - I = 2*D + D*D without adding 1.0 to the diagonal
+	const squareAugDelta = (D: number[][]): number[][] =>
+		D.map((row, i) =>
+			D[0].map((_, j) => {
+				let sum = 2 * row[j];
+				for (let k = 0; k < augDim; k += 1) sum += row[k] * D[k][j];
 				return sum;
 			})
 		);
-	const mulAugVec = (M: number[][], v: number[]): number[] =>
-		M.map((row) => {
-			let sum = 0;
+	// Given D = M - I, compute M*v = v + D*v
+	const applyAugDelta = (D: number[][], v: number[]): number[] =>
+		D.map((row, i) => {
+			let sum = v[i];
 			for (let k = 0; k < augDim; k += 1) sum += row[k] * v[k];
 			return sum;
 		});
@@ -1542,37 +1556,34 @@ function stepBinaryExponentiatedMna(
 			}
 		}
 
-		// Build augmented transition matrix M on [s, 1, tau, tau^2]^T for sub-step tau -> tau + dTau
-		const M = Array.from({ length: augDim }, () => new Array<number>(augDim).fill(0));
+		// Build augmented perturbation matrix D = M - I on [s, 1, tau, tau^2]^T for sub-step tau -> tau + dTau
+		const D = Array.from({ length: augDim }, () => new Array<number>(augDim).fill(0));
 		for (let i = 0; i < stateDim; i += 1) {
 			for (let j = 0; j < stateDim; j += 1) {
-				M[i][j] = baseT[i][j];
+				D[i][j] = baseDelta[i][j];
 			}
-			M[i][stateDim] = g0[i] + g1[i] * dTau + g2[i] * dTau * dTau;
-			M[i][stateDim + 1] = g1[i] + 2 * g2[i] * dTau;
-			M[i][stateDim + 2] = g2[i];
+			D[i][stateDim] = g0[i] + g1[i] * dTau + g2[i] * dTau * dTau;
+			D[i][stateDim + 1] = g1[i] + 2 * g2[i] * dTau;
+			D[i][stateDim + 2] = g2[i];
 		}
-		M[stateDim][stateDim] = 1;
-		M[stateDim + 1][stateDim] = dTau;
-		M[stateDim + 1][stateDim + 1] = 1;
-		M[stateDim + 2][stateDim] = dTau * dTau;
-		M[stateDim + 2][stateDim + 1] = 2 * dTau;
-		M[stateDim + 2][stateDim + 2] = 1;
+		D[stateDim + 1][stateDim] = dTau;
+		D[stateDim + 2][stateDim] = dTau * dTau;
+		D[stateDim + 2][stateDim + 1] = 2 * dTau;
 
 		let u = [...s, 1, 0, 0];
-		let curM = M;
+		let curD = D;
 		const isLastChunk = chunk === acChunks - 1;
 		for (let bit = 0; bit < p; bit += 1) {
 			if (isLastChunk) {
 				// Accumulate 1 + 2 + ... + 2^(p-1) = 2^p - 1 steps so the final h-step can be solved for full node/wire state
-				u = mulAugVec(curM, u);
+				u = applyAugDelta(curD, u);
 			}
 			if (!isLastChunk || bit < p - 1) {
-				curM = mulAugMat(curM, curM);
+				curD = squareAugDelta(curD);
 			}
 		}
 		if (!isLastChunk) {
-			u = mulAugVec(curM, u);
+			u = applyAugDelta(curD, u);
 		}
 		s = u.slice(0, stateDim);
 	}
@@ -1782,10 +1793,7 @@ export function runSimulationBatch(
 			};
 		}
 		currentSnapshot = res.snapshot;
-		if (
-			currentSnapshot.timeSec - lastRecorded >= sampleInterval - 1e-12 ||
-			step === clampedSteps - 1
-		) {
+		if (currentSnapshot.timeSec - lastRecorded >= sampleInterval - 1e-12) {
 			samples.push(snapshotToScopeSample(doc, currentSnapshot));
 			lastRecorded = currentSnapshot.timeSec;
 		}
