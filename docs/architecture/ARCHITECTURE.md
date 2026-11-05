@@ -884,22 +884,31 @@ while lazily mounting the browser app. The visualization gallery imports only
 summary and poster metadata; the generic article route supplies discovery and SEO.
 
 The feature-local `visualizations/fractal-trip/model.ts` owns the bounded
-version-one state, family/palette definitions, parameter validation, view helpers
-and share codec. The mounted Svelte interface owns equation and appearance
-controls, pointer gestures, journey playback, history and browser-local
-favourites. A pure `journeys.ts` helper performs a bounded escape/convergence
-probe once when a trip begins, then supplies smooth logarithmic camera paths
-without per-frame orbit searches. Restored state passes through the model boundary before rendering.
-No executable visitor formula strings or shared per-user mutable state are used.
+version-one state, family/palette definitions, four curated three-dimensional
+scene presets (`copper-reef`, `folded-cathedral`, `alien-garden`,
+`fractal-canyon`), parameter validation, independent 3D camera pose and
+clearance helpers, and backward-compatible share codec. The mounted Svelte
+interface owns scene and family selection, equation and appearance controls,
+pointer/keyboard/touch spatial navigation, timeline scrubbing, continuous tour
+playback, history and browser-local favourites. A pure `journeys.ts` helper
+supplies closed Catmull-Rom 3D spline paths with approximate arc-length
+parameterization and conservative distance-estimator frustum validation for 3D
+scenes, and performs a bounded escape/convergence probe once when a plane trip
+begins without per-frame searches. Restored state passes through the model
+boundary before rendering. No executable visitor formula strings or shared
+per-user mutable state are used.
 
 The browser-only raw WebGL2 renderer owns its fullscreen-triangle programs,
-drawing-buffer size, quality budget, capture and GPU resource lifecycle. Plane
-families use finite escape or convergence calculations with optional relief
-shading. Separate three-dimensional Mandelbulb and Mandelbox fields use bounded
-distance-estimator ray marching. The former's relief is a display effect, not a
-claim that a two-dimensional set has become a solid object. The runtime does not
-enable the Fractal Atlas's experimental perturbation path or promise infinite
-zoom. Appearance parameters remain distinct from equation parameters.
+drawing-buffer size, quality budget, bounded paused-3D progressive refinement
+accumulation texture, capture and GPU resource lifecycle. Plane families use
+finite escape or convergence calculations with optional relief shading. Separate
+three-dimensional Mandelbulb, fixed 3D Julia and Mandelbox fields use bounded
+distance-estimator ray marching with projected-pixel hit tolerance, sampled
+normal ambient occlusion, budgeted soft shadows and distance haze. Plane relief
+is a display effect, not a claim that a two-dimensional set has become a solid
+object. The runtime does not enable the Fractal Atlas's experimental
+perturbation path or promise infinite zoom. Appearance parameters remain
+distinct from equation parameters.
 
 PNG export is local and bounded. The poster and explanation remain available
 when graphics cannot start; hidden/offscreen work suspends and teardown releases

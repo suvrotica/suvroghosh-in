@@ -149,13 +149,86 @@
 		0 2px 3px #0005;
 	padding-inline: 17px;
 }
+.ft-scene-strip {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px;
+	border-radius: 9px;
+	background: #141919c8;
+	border: 1px solid #ffffff16;
+	overflow-x: auto;
+	max-width: 100%;
+	scrollbar-width: none;
+}
+.ft-scene-strip::-webkit-scrollbar {
+	display: none;
+}
+.ft-scene-chip {
+	min-height: 36px !important;
+	padding: 6px 11px !important;
+	font-size: 11px !important;
+	white-space: nowrap;
+	color: #cfd5cf;
+	border-radius: 6px;
+}
+.ft-scene-step {
+	min-height: 36px !important;
+	width: 32px;
+	padding: 0 !important;
+	font-size: 17px !important;
+	color: #c2c9c2;
+}
 .ft-stage {
 	display: flex;
-	min-height: 350px;
-	height: min(60vw, 620px);
+	min-height: 380px;
+	height: min(64vw, 680px);
 	background: #05090d;
 	border: 5px solid #101313;
 	border-bottom-width: 6px;
+}
+.ft-transition-veil {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	pointer-events: none;
+	background: #04080e;
+	opacity: 0;
+	transition: opacity 280ms ease;
+}
+.ft-transition-veil.active {
+	opacity: 0.72;
+}
+.ft-explore-bar {
+	position: absolute;
+	bottom: 24px;
+	right: 72px;
+	z-index: 4;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px;
+	background: #0d171ac9;
+	border: 1px solid #c2d4db28;
+	border-radius: 8px;
+	backdrop-filter: blur(10px);
+}
+.ft-explore-bar button {
+	min-height: 36px;
+	padding: 5px 10px;
+	font-size: 11px;
+}
+.ft-explore-bar .ft-return-tour {
+	background: #d47c3a28;
+	border-color: #f5975466;
+	color: #ffc596;
+}
+.ft-cinema-idle .ft-screen-top,
+.ft-cinema-idle .ft-scene-label,
+.ft-cinema-idle .ft-explore-bar,
+.ft-cinema-idle .ft-view-tools {
+	opacity: 0.08;
+	transition: opacity 400ms ease;
 }
 .ft-viewport {
 	min-width: 0;
@@ -358,12 +431,48 @@
 	display: block;
 	letter-spacing: -0.02em;
 }
-.ft-transport > div > span {
-	display: block;
+.ft-transport-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	min-width: 210px;
+	flex: 1;
+}
+.ft-transport-headline {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 10px;
+}
+.ft-journey-clock {
+	font-family: ui-monospace, Consolas, monospace;
+	font-size: 11px;
+	color: #ffc196;
+}
+.ft-app .ft-scrub {
+	height: 18px;
+	margin: 2px 0;
+}
+.ft-transport-sub {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
 	font-size: 10px;
 	color: #b8beb7;
-	margin-top: 5px;
-	max-width: 155px;
+}
+.ft-tour-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
+	color: #d6dcd4;
+	white-space: nowrap;
+}
+.ft-tour-toggle input {
+	accent-color: #fb965c;
+	width: 13px;
+	height: 13px;
 }
 .ft-main-dials {
 	display: flex;
@@ -650,6 +759,73 @@
 	display: flex;
 	flex-direction: column;
 	gap: 6px;
+}
+.ft-scene-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+.ft-scene-card {
+	width: 100%;
+	text-align: left;
+	justify-content: space-between !important;
+	align-items: flex-start !important;
+	padding: 10px 12px !important;
+	background: #121a16b8 !important;
+	border-color: #ffffff14 !important;
+}
+.ft-scene-card strong {
+	display: block;
+	font-size: 13px;
+	color: #fff3e3;
+}
+.ft-scene-card small {
+	display: block;
+	font-size: 9px;
+	letter-spacing: 0.06em;
+	color: #ffad79;
+	margin-top: 2px;
+}
+.ft-scene-card p {
+	font-size: 11px;
+	color: #b8c2b7 !important;
+	margin-top: 5px !important;
+	line-height: 1.45;
+}
+.ft-diagnostics {
+	margin-top: 16px;
+	padding: 10px 12px;
+	border-radius: 5px;
+	background: #0d1411;
+	border: 1px solid #ffffff14;
+	font-size: 11px;
+}
+.ft-diagnostics summary {
+	cursor: pointer;
+	font-weight: 600;
+	color: #d9e0d6;
+	letter-spacing: 0.04em;
+}
+.ft-diagnostics dl {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.ft-diagnostics dl > div {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	border-bottom: 1px solid #ffffff0a;
+	padding-bottom: 4px;
+}
+.ft-diagnostics dt {
+	color: #9eab9c;
+}
+.ft-diagnostics dd {
+	font-family: ui-monospace, Consolas, monospace;
+	color: #ffbe8f;
+	text-align: right;
 }
 .ft-shape-list > button {
 	text-align: left;
@@ -954,7 +1130,9 @@
 .ft-clean .ft-panel,
 .ft-clean .ft-scene-label,
 .ft-clean .ft-screen-top,
-.ft-clean .ft-view-tools {
+.ft-clean .ft-view-tools,
+.ft-clean .ft-explore-bar,
+.ft-clean .ft-scene-strip {
 	display: none;
 }
 .ft-clean .ft-stage {
@@ -1000,9 +1178,39 @@
 		border-radius: 12px;
 	}
 	.ft-header {
-		padding: 15px 12px;
-		gap: 8px;
-		min-height: 78px;
+		padding: 12px 10px;
+		gap: 6px;
+		min-height: 68px;
+		flex-wrap: wrap;
+	}
+	.ft-scene-strip {
+		order: 3;
+		width: 100%;
+		justify-content: space-between;
+	}
+	.ft-scene-chip {
+		padding: 4px 7px !important;
+		font-size: 10px !important;
+		min-height: 30px !important;
+	}
+	.ft-scene-step {
+		min-height: 30px !important;
+		width: 26px;
+	}
+	.ft-explore-bar {
+		right: 58px;
+		bottom: 16px;
+	}
+	.ft-explore-bar button {
+		min-height: 30px;
+		padding: 4px 7px;
+		font-size: 10px;
+	}
+	.ft-transport-meta {
+		min-width: 0;
+	}
+	.ft-transport-sub > span {
+		display: none;
 	}
 	.ft-emblem {
 		font-size: 28px;

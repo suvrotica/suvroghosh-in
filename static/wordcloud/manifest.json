@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T20:20:31.305248+00:00",
+  "generatedAt": "2026-11-05T01:07:58.202253+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4372,25 +4372,25 @@
       "wordCount": 130
     },
     "fractal-trip": {
-      "generatedAt": "2026-11-04T18:15:51.608902+00:00",
+      "generatedAt": "2026-11-05T01:07:45.302132+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/fractal-trip.svg",
       "source": "src/lib/posts/fractal-trip.md",
-      "sourceHash": "f12f7fe2942bd3c262515d6337c7317a5305a46e71b66a99823080d25c2839f6",
-      "sourceModified": "2026-11-04T18:15:32.969710+00:00",
+      "sourceHash": "f7656dc8974835f536d298ac17b65136d4a4b4c804111bae24c196a1ae4c1882",
+      "sourceModified": "2026-11-05T00:54:10.193798+00:00",
       "topWords": [
         "Change",
         "Different",
         "View",
-        "Calculation",
         "Equation",
-        "Controls",
+        "Calculation",
+        "Move",
         "Seed",
         "Rule",
-        "Power",
-        "Move",
-        "Result",
-        "Start"
+        "Threedimensional",
+        "Plane",
+        "Controls",
+        "Power"
       ],
       "wordCount": 130
     },

@@ -6,26 +6,43 @@ import {
 	MIN_SPAN,
 	PALETTES,
 	PRESETS,
+	SCENES_3D,
+	cameraBasis,
+	checkCameraClearance,
 	decodeState,
 	defaultForFamily,
 	encodeState,
+	estimateDistance3D,
 	iterate2D,
+	lookCamera3D,
 	minimumSpan,
+	moveCamera3D,
 	normalizeState,
+	orbitCamera3D,
+	orbitPosition,
 	paletteRGB,
 	panView,
 	pointAt,
 	regularRoots,
+	sceneToState,
 	varyState,
 	zoomAt
 } from './model';
 
 describe('Fractal Trip bounded model', () => {
-	it('keeps independent mutable roots for each new view', () => {
+	it('opens immediately on the flagship 3D Copper Reef composition', () => {
+		expect(DEFAULT_STATE.family).toBe('mandelbulb');
+		expect(DEFAULT_STATE.sceneId).toBe('copper-reef');
+		expect(checkCameraClearance(DEFAULT_STATE).clear).toBe(true);
+	});
+
+	it('keeps independent mutable roots and camera positions for each new view', () => {
 		const first = defaultForFamily('newton');
 		first.roots[0].re = -2;
+		first.cameraPos[0] = 9;
 		expect(defaultForFamily('newton').roots[0].re).toBe(1);
 		expect(DEFAULT_STATE.roots[0].re).toBe(1);
+		expect(DEFAULT_STATE.cameraPos[0]).toBeCloseTo(0.68);
 	});
 
 	it('rejects nonnumeric and nonfinite values, while clamping finite input', () => {
@@ -46,6 +63,8 @@ describe('Fractal Trip bounded model', () => {
 			palette: '<script>',
 			pitch: 50,
 			distance: 0,
+			fov: 999,
+			roll: -99,
 			roots: Array.from({ length: 10000 }, () => ({ re: 0, im: 0 }))
 		});
 		expect(state.power).toBe(10);
@@ -59,6 +78,8 @@ describe('Fractal Trip bounded model', () => {
 		expect(state.minRadius).toBe(0.2);
 		expect(state.pitch).toBe(0.95);
 		expect(state.distance).toBe(1.5);
+		expect(state.fov).toBe(78);
+		expect(state.roll).toBe(-0.6);
 		expect(state.roots).toHaveLength(3);
 		expect(state.quality).toBe('auto');
 		expect(PALETTES.some(({ id }) => id === state.palette)).toBe(true);
@@ -79,7 +100,7 @@ describe('Fractal Trip bounded model', () => {
 		expect(regularRoots(1000)).toHaveLength(6);
 	});
 
-	it('round-trips all family settings through a bounded URL-safe state', () => {
+	it('round-trips all family settings and 3D scene states through a bounded URL-safe state', () => {
 		for (const family of FAMILIES) {
 			const state = normalizeState({
 				...defaultForFamily(family.id),
@@ -92,6 +113,34 @@ describe('Fractal Trip bounded model', () => {
 			expect(encoded).toMatch(/^[A-Za-z0-9_-]+$/);
 			expect(decodeState(encoded)).toEqual(state);
 		}
+		for (const scene of SCENES_3D) {
+			const state = sceneToState(scene.id);
+			const encoded = encodeState(state);
+			expect(decodeState(encoded)).toEqual(state);
+		}
+	});
+
+	it('migrates legacy v1 orbit links without cameraPos into matching 3D camera positions', () => {
+		const legacyPayload = btoa(
+			JSON.stringify({
+				version: 1,
+				family: 'mandelbulb',
+				power: 8,
+				yaw: 0.4,
+				pitch: 0.2,
+				distance: 4.1
+			})
+		)
+			.replaceAll('+', '-')
+			.replaceAll('/', '_')
+			.replace(/=+$/, '');
+		const restored = decodeState(legacyPayload);
+		expect(restored).not.toBeNull();
+		const expectedPos = orbitPosition(0.4, 0.2, 4.1);
+		expect(restored!.cameraPos[0]).toBeCloseTo(expectedPos[0], 8);
+		expect(restored!.cameraPos[1]).toBeCloseTo(expectedPos[1], 8);
+		expect(restored!.cameraPos[2]).toBeCloseTo(expectedPos[2], 8);
+		expect(restored!.cameraMode).toBe('orbit');
 	});
 
 	it('rejects malformed, oversized and unsupported links', () => {
@@ -109,9 +158,7 @@ describe('Fractal Trip bounded model', () => {
 		]) {
 			expect(decodeState(encoded)).toBeNull();
 		}
-		expect(normalizeState({ version: 999, family: 'newton' })).toEqual(
-			defaultForFamily('mandelbrot')
-		);
+		expect(normalizeState({ version: 999, family: 'newton' })).toEqual(DEFAULT_STATE);
 	});
 
 	it('does not carry unrecognised fields into runtime state', () => {
@@ -142,6 +189,56 @@ describe('Fractal Trip bounded model', () => {
 			expect(varied).toEqual(varyState(preset.state, () => 0.75));
 			expect(varied).toEqual(normalizeState(varied));
 		}
+	});
+});
+
+describe('Fractal Trip 3D scenes, camera basis and clearance', () => {
+	it('defines four distinct 3D scenes with validated start camera clearance', () => {
+		expect(SCENES_3D.map((s) => s.id)).toEqual([
+			'copper-reef',
+			'folded-cathedral',
+			'alien-garden',
+			'fractal-canyon'
+		]);
+		for (const scene of SCENES_3D) {
+			expect(scene.duration).toBeGreaterThanOrEqual(60);
+			expect(scene.duration).toBeLessThanOrEqual(120);
+			const state = sceneToState(scene.id);
+			const clearance = checkCameraClearance(state, 16 / 9);
+			expect(clearance.clear, `${scene.name} start pose should have safe clearance`).toBe(true);
+			expect(clearance.minDistance).toBeGreaterThanOrEqual(scene.qualityLimits.minClearance);
+		}
+	});
+
+	it('supports independent free-look, free-flight movement and orbit controls', () => {
+		const start = sceneToState('copper-reef');
+		const looked = lookCamera3D(start, 0.25, -0.1);
+		expect(looked.cameraPos).toEqual(start.cameraPos);
+		expect(looked.yaw).not.toBe(start.yaw);
+		expect(looked.pitch).not.toBe(start.pitch);
+
+		const moved = moveCamera3D(start, 0.08, -0.05, 0.04);
+		expect(moved.cameraPos).not.toEqual(start.cameraPos);
+		expect(checkCameraClearance(moved).clear).toBe(true);
+
+		const orbited = orbitCamera3D(start, 0.3, 0.1, 1.05);
+		expect(orbited.cameraMode).toBe('orbit');
+		expect(orbited.cameraPos).not.toEqual(start.cameraPos);
+		const basis = cameraBasis(orbited);
+		expect(Math.hypot(...basis.forward)).toBeCloseTo(1, 6);
+		expect(Math.hypot(...basis.right)).toBeCloseTo(1, 6);
+		expect(Math.hypot(...basis.up)).toBeCloseTo(1, 6);
+	});
+
+	it('distinguishes exterior vs surface points in CPU 3D distance estimation', () => {
+		const bulb = sceneToState('copper-reef');
+		expect(estimateDistance3D(bulb, [0, 0, 0]).escaped).toBe(false);
+		expect(estimateDistance3D(bulb, [0, 0, 2.2]).escaped).toBe(true);
+		expect(estimateDistance3D(bulb, [0, 0, 2.2]).distance).toBeGreaterThan(0.5);
+
+		const box = sceneToState('folded-cathedral');
+		expect(estimateDistance3D(box, [0, 0, 3.2]).escaped).toBe(true);
+		expect(estimateDistance3D(box, [0, 0, 3.2]).distance).toBeGreaterThan(0.8);
 	});
 });
 

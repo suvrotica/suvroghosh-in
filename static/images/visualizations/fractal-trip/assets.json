@@ -1,69 +1,69 @@
 {
-  "version": 1,
-  "route": "/blog/visualizations/fractal-trip",
-  "captureMode": "native-png-export",
-  "motion": "paused",
-  "sources": {
-    "model.ts": "9670ff16cea05ecdc45492cfa9b5794cdd482f950bd3dc0f491e9cf5d02813a7",
-    "renderer.ts": "1cfa0e35b801bd4507d797bbe122c6122f6aa3af4377496abe140447b1914dfe",
-    "shaders.ts": "efe6e4fc84fbfe42f49c35a889fc2713ed81432f9acf99c3efac2189b5cbf064"
-  },
-  "images": [
-    {
-      "file": "poster.png",
-      "width": 1440,
-      "height": 900,
-      "family": "mandelbrot",
-      "pixelSha256": "c58a2b37b09c075fb15da758329bd5239677b00b6703f0ce029f4cb6d0d8991b"
-    },
-    {
-      "file": "mandelbrot.png",
-      "width": 400,
-      "height": 250,
-      "family": "mandelbrot",
-      "pixelSha256": "d97f708b2b3ef7b9c3d27a107c8829b44b40c951ef6c59c1fe3611751bd0a65c"
-    },
-    {
-      "file": "julia.png",
-      "width": 400,
-      "height": 250,
-      "family": "julia",
-      "pixelSha256": "55e69e4e13a56a2dae5404ad9fe2cf979dccee23d8c67d66d0b5b9b66377e210"
-    },
-    {
-      "file": "burning-ship.png",
-      "width": 400,
-      "height": 250,
-      "family": "burning-ship",
-      "pixelSha256": "7029c9e533b8dea1ed099a8f354b6e7a7f53a865334425bdc3413599025cfb78"
-    },
-    {
-      "file": "tricorn.png",
-      "width": 400,
-      "height": 250,
-      "family": "tricorn",
-      "pixelSha256": "af65a4497eb22513c237134d68cb4b41cc21d52722db189494fde3d9f38e8685"
-    },
-    {
-      "file": "newton.png",
-      "width": 400,
-      "height": 250,
-      "family": "newton",
-      "pixelSha256": "2dd5b909603df6906cf0efe38bdc480aded0889709ceff4bddb4fb49ce6e8c0d"
-    },
-    {
-      "file": "mandelbulb.png",
-      "width": 400,
-      "height": 250,
-      "family": "mandelbulb",
-      "pixelSha256": "2970d8b4851a74713c44a1b6bc480cf7b91223878f41e3ea617f5839ce4a429e"
-    },
-    {
-      "file": "mandelbox.png",
-      "width": 400,
-      "height": 250,
-      "family": "mandelbox",
-      "pixelSha256": "7d0aae4fc253da08c1677ba319811a907a4bcd52425be5ef21310e3493851161"
-    }
-  ]
+	"version": 1,
+	"route": "/blog/visualizations/fractal-trip",
+	"captureMode": "native-png-export",
+	"motion": "paused",
+	"sources": {
+		"model.ts": "6fd92da2d9e0e8894aa80c68fe92f6a545fb486ea92c267c5cfeb78476681f0f",
+		"renderer.ts": "0fff7a3453cc666a9f18bf1a3bca385000bad53238a562778a6fdc73460a3ab1",
+		"shaders.ts": "5e8423ab184fbb5a51b2fcf830a66170b5143d2e52ec0ddf34e8d0a55fb4207d"
+	},
+	"images": [
+		{
+			"file": "poster.png",
+			"width": 1440,
+			"height": 900,
+			"family": "mandelbulb",
+			"pixelSha256": "43dd62ecf20fa7e80c9c946b831874f96975150c79d038af56b1e979e2d75973"
+		},
+		{
+			"file": "mandelbulb.png",
+			"width": 400,
+			"height": 250,
+			"family": "mandelbulb",
+			"pixelSha256": "32fc8e8232e313ca4282ec86e20e627e86ebf46ec3ebb9c24ed83f37d2d69858"
+		},
+		{
+			"file": "mandelbox.png",
+			"width": 400,
+			"height": 250,
+			"family": "mandelbox",
+			"pixelSha256": "aa3ed772bd005b7b241c8b727b13469279919834a4b97bf9c8ade935f094e958"
+		},
+		{
+			"file": "mandelbrot.png",
+			"width": 400,
+			"height": 250,
+			"family": "mandelbrot",
+			"pixelSha256": "8a5e7c3b8e3ba1def1b6e69e33555faac3a0cb4f152c1b2fbc6672bbea4609a8"
+		},
+		{
+			"file": "julia.png",
+			"width": 400,
+			"height": 250,
+			"family": "julia",
+			"pixelSha256": "9a5c6751ab0f024ef041165c5eb1613e1b112d709349a71c78c91d561b170b87"
+		},
+		{
+			"file": "burning-ship.png",
+			"width": 400,
+			"height": 250,
+			"family": "burning-ship",
+			"pixelSha256": "f6048a587b9087e8eaca15b8af79c8511de242be9a6e39025efe729a4fe689c3"
+		},
+		{
+			"file": "tricorn.png",
+			"width": 400,
+			"height": 250,
+			"family": "tricorn",
+			"pixelSha256": "7e41f1fc0d3ed36a4cc0b3448e7ff51005827fe67079d7b74e47c10b90c315c5"
+		},
+		{
+			"file": "newton.png",
+			"width": 400,
+			"height": 250,
+			"family": "newton",
+			"pixelSha256": "eed97bb7be8c76d7cfd349a899c4245bc6a85edf5efbc524b7444a6369d2425b"
+		}
+	]
 }

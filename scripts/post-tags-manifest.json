@@ -16861,9 +16861,9 @@
 			"dateModified": "2026-11-04"
 		},
 		"src/lib/posts/fractal-trip.md": {
-			"bodyHash": "e7df3c941d46ab785c75d15c2a1b23722c318159f60580667505db634950d744",
+			"bodyHash": "99edfba5235ff79d55dc7725441807c37ecbf0d68f4a51fcd249d92c09af2a8a",
 			"hashVersion": 2,
-			"revisionHash": "d665d584b4b1fb005aa3a9da8af50fe34f78fac372ea3f0077775db0947808ec",
+			"revisionHash": "710a87b2d2452e2c81bf9ca401e5991b0e642207bbc3d5736a1e4102998948b4",
 			"generatedTags": [
 				"Fractals",
 				"Mandelbrot Set",
@@ -16889,7 +16889,7 @@
 				"Creative Coding"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-11-04"
+			"dateModified": "2026-11-05"
 		},
 		"src/lib/posts/virtualization-from-first-principles.md": {
 			"bodyHash": "18ca457666fdc36c12ec3c44950760eec9e05769e44a325655cf240bc1c82dbe",

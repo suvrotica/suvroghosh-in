@@ -1,35 +1,62 @@
 import {
 	FAMILIES,
 	MAX_SPAN,
+	SCENES_3D,
+	anglesFromDirection,
+	cameraBasis,
+	checkCameraClearance,
+	estimateDistance3D,
 	iterate2D,
 	minimumSpan,
 	normalizeState,
 	pointAt,
-	type FractalState
+	scenePreset,
+	sceneToState,
+	type FractalState,
+	type Scene3DId,
+	type Vec3,
+	type Waypoint3D
 } from './model';
 
 export const JOURNEY_DURATION_SECONDS = 96;
 const SAMPLE_ITERATIONS = 180;
 const SEARCH_SIDE = 7;
+const ARC_TABLE_STEPS = 128;
 
 type JourneyView = Pick<
 	FractalState,
-	'centerRe' | 'centerIm' | 'span' | 'rotation' | 'yaw' | 'pitch' | 'distance'
+	| 'centerRe'
+	| 'centerIm'
+	| 'span'
+	| 'rotation'
+	| 'yaw'
+	| 'pitch'
+	| 'roll'
+	| 'fov'
+	| 'distance'
+	| 'cameraPos'
 >;
+
 export interface JourneyDetail {
 	distinctOutcomes: number;
 	iterationSpread: number;
 	unresolvedFraction: number;
 	interesting: boolean;
 }
+
 export interface JourneyPlan {
 	family: FractalState['family'];
+	sceneId: Scene3DId | null;
 	kind: '2d' | '3d';
 	duration: number;
 	start: JourneyView;
 	focus: JourneyView;
 	overview: JourneyView | null;
 	detail: JourneyDetail | null;
+	waypoints: readonly Waypoint3D[];
+	arcLengths: readonly number[];
+	totalLength: number;
+	minClearance: number;
 	/** A deterministic work receipt, never an unbounded search. */
 	samples: number;
 }
@@ -74,7 +101,10 @@ function view(state: FractalState): JourneyView {
 		rotation: state.rotation,
 		yaw: state.yaw,
 		pitch: state.pitch,
-		distance: state.distance
+		roll: state.roll,
+		fov: state.fov,
+		distance: state.distance,
+		cameraPos: [...state.cameraPos]
 	};
 }
 
@@ -129,7 +159,6 @@ function locateFocus(
 				grid[(y + 1) * SEARCH_SIDE + x + 1]
 			];
 			const detail = describe(corners);
-			// Prefer a real change of escape/basin status, with a small centre tie-break.
 			const score =
 				(detail.distinctOutcomes - 1) * 200 +
 				detail.iterationSpread -
@@ -158,7 +187,6 @@ function locateFocus(
 		if (!testDetail.interesting) continue;
 		selected = test;
 		detail = testDetail;
-		// At most two extra steps. Keep the last independently sampled, varied view.
 		for (let depth = 0; depth < 2; depth++) {
 			test = normalizeState({
 				...test,
@@ -175,6 +203,123 @@ function locateFocus(
 	return { state: selected, detail, samples };
 }
 
+function catmullRomScalar(p0: number, p1: number, p2: number, p3: number, f: number): number {
+	const f2 = f * f;
+	const f3 = f2 * f;
+	return (
+		0.5 *
+		(2 * p1 +
+			(-p0 + p2) * f +
+			(2 * p0 - 5 * p1 + 4 * p2 - p3) * f2 +
+			(-p0 + 3 * p1 - 3 * p2 + p3) * f3)
+	);
+}
+
+/** Evaluate a closed Catmull-Rom spline of 3D camera waypoints at u in [0, 1). */
+export function sampleSpline3D(
+	waypoints: readonly Waypoint3D[],
+	u: number
+): {
+	position: [number, number, number];
+	target: [number, number, number];
+	roll: number;
+	fov: number;
+} {
+	const n = waypoints.length;
+	if (n === 0) {
+		return { position: [0, 0, 3], target: [0, 0, 0], roll: 0, fov: 54 };
+	}
+	if (n === 1) {
+		const wp = waypoints[0];
+		return {
+			position: [wp.position[0], wp.position[1], wp.position[2]],
+			target: [wp.target[0], wp.target[1], wp.target[2]],
+			roll: wp.roll ?? 0,
+			fov: wp.fov ?? 54
+		};
+	}
+	const wrapped = ((u % 1) + 1) % 1;
+	const scaled = wrapped * n;
+	const idx = Math.floor(scaled) % n;
+	const frac = scaled - Math.floor(scaled);
+	const w0 = waypoints[(idx - 1 + n) % n];
+	const w1 = waypoints[idx];
+	const w2 = waypoints[(idx + 1) % n];
+	const w3 = waypoints[(idx + 2) % n];
+
+	const position: [number, number, number] = [
+		catmullRomScalar(w0.position[0], w1.position[0], w2.position[0], w3.position[0], frac),
+		catmullRomScalar(w0.position[1], w1.position[1], w2.position[1], w3.position[1], frac),
+		catmullRomScalar(w0.position[2], w1.position[2], w2.position[2], w3.position[2], frac)
+	];
+	const target: [number, number, number] = [
+		catmullRomScalar(w0.target[0], w1.target[0], w2.target[0], w3.target[0], frac),
+		catmullRomScalar(w0.target[1], w1.target[1], w2.target[1], w3.target[1], frac),
+		catmullRomScalar(w0.target[2], w1.target[2], w2.target[2], w3.target[2], frac)
+	];
+	const roll = catmullRomScalar(w0.roll ?? 0, w1.roll ?? 0, w2.roll ?? 0, w3.roll ?? 0, frac);
+	const fov = catmullRomScalar(w0.fov ?? 54, w1.fov ?? 54, w2.fov ?? 54, w3.fov ?? 54, frac);
+	return { position, target, roll, fov };
+}
+
+function buildArcLengthTable(waypoints: readonly Waypoint3D[]): {
+	arcLengths: number[];
+	totalLength: number;
+} {
+	const arcLengths: number[] = [0];
+	let total = 0;
+	let prev = sampleSpline3D(waypoints, 0).position;
+	for (let i = 1; i <= ARC_TABLE_STEPS; i++) {
+		const curr = sampleSpline3D(waypoints, i / ARC_TABLE_STEPS).position;
+		total += Math.hypot(curr[0] - prev[0], curr[1] - prev[1], curr[2] - prev[2]);
+		arcLengths.push(total);
+		prev = curr;
+	}
+	return { arcLengths, totalLength: Math.max(total, 1e-5) };
+}
+
+function parameterForArcPhase(
+	arcLengths: readonly number[],
+	totalLength: number,
+	phase: number
+): number {
+	const clamped = ((phase % 1) + 1) % 1;
+	if (clamped <= 0 || arcLengths.length < 2) return 0;
+	const targetDist = clamped * totalLength;
+	let low = 0;
+	let high = arcLengths.length - 1;
+	while (low < high - 1) {
+		const mid = (low + high) >> 1;
+		if (arcLengths[mid] <= targetDist) low = mid;
+		else high = mid;
+	}
+	const segmentStart = arcLengths[low];
+	const segmentLength = Math.max(arcLengths[high] - segmentStart, 1e-8);
+	const segmentFrac = (targetDist - segmentStart) / segmentLength;
+	return (low + segmentFrac) / (arcLengths.length - 1);
+}
+
+function ensureSafeWaypoint(state: FractalState, wp: Waypoint3D, minClearance: number): Waypoint3D {
+	let pos: [number, number, number] = [wp.position[0], wp.position[1], wp.position[2]];
+	for (let attempt = 0; attempt < 8; attempt++) {
+		const check = estimateDistance3D(state, pos);
+		if (check.escaped && check.distance >= minClearance) break;
+		const r = Math.hypot(pos[0], pos[1], pos[2]) || 1;
+		const push = Math.max(0.06, minClearance - check.distance + 0.04);
+		pos = [
+			pos[0] + (pos[0] / r) * push,
+			pos[1] + (pos[1] / r) * push,
+			pos[2] + (pos[2] / r) * push
+		];
+	}
+	return {
+		position: pos,
+		target: wp.target,
+		roll: wp.roll ?? 0,
+		fov: wp.fov ?? state.fov
+	};
+}
+
 /**
  * Plan once when playback begins or equation settings change. Search is bounded
  * to at most 398 CPU probes; animation itself performs no orbit search.
@@ -184,24 +329,72 @@ export function createJourney(input: FractalState, aspect: number): JourneyPlan 
 	const ratio = Number.isFinite(aspect) ? Math.max(0.25, Math.min(4, aspect)) : 1;
 	const kind = FAMILIES.find(({ id }) => id === state.family)?.kind ?? '2d';
 	const start = view(state);
+
 	if (kind === '3d') {
-		const safeDistance = state.family === 'mandelbox' ? 4.6 : 3.1;
+		const fallbackSceneId: Scene3DId =
+			state.sceneId && scenePreset(state.sceneId).family === state.family
+				? state.sceneId
+				: state.family === 'mandelbox'
+					? 'folded-cathedral'
+					: state.bulbJulia
+						? 'alien-garden'
+						: 'copper-reef';
+		const preset = scenePreset(fallbackSceneId);
+		const basis = cameraBasis(state);
+		const startWaypoint: Waypoint3D = {
+			position: [...basis.position],
+			target: [
+				basis.position[0] + basis.forward[0],
+				basis.position[1] + basis.forward[1],
+				basis.position[2] + basis.forward[2]
+			],
+			roll: state.roll,
+			fov: state.fov
+		};
+
+		const minClearance = preset.qualityLimits.minClearance;
+		const baseWaypoints = preset.path.map((wp, idx) =>
+			idx === 0 ? startWaypoint : ensureSafeWaypoint(state, wp, minClearance)
+		);
+		const { arcLengths, totalLength } = buildArcLengthTable(baseWaypoints);
+		const midPose = sampleSpline3D(baseWaypoints, 0.5);
+		const midAngles = anglesFromDirection([
+			midPose.target[0] - midPose.position[0],
+			midPose.target[1] - midPose.position[1],
+			midPose.target[2] - midPose.position[2]
+		]);
+
+		let actualMinClearance = Infinity;
+		for (let i = 0; i < 16; i++) {
+			const samplePose = sampleSpline3D(baseWaypoints, i / 16);
+			const d = estimateDistance3D(state, samplePose.position).distance;
+			actualMinClearance = Math.min(actualMinClearance, d);
+		}
+
 		return {
 			family: state.family,
+			sceneId: state.sceneId ?? fallbackSceneId,
 			kind,
-			duration: JOURNEY_DURATION_SECONDS,
+			duration: preset.duration,
 			start,
 			focus: {
 				...start,
-				yaw: start.yaw + 1.3,
-				pitch: Math.max(-0.65, Math.min(0.65, start.pitch + 0.22)),
-				distance: Math.max(safeDistance, start.distance * 0.86)
+				yaw: midAngles.yaw,
+				pitch: midAngles.pitch,
+				roll: midPose.roll,
+				fov: midPose.fov,
+				cameraPos: midPose.position
 			},
 			overview: null,
 			detail: null,
+			waypoints: baseWaypoints,
+			arcLengths,
+			totalLength,
+			minClearance: Number.isFinite(actualMinClearance) ? actualMinClearance : minClearance,
 			samples: 0
 		};
 	}
+
 	let result = locateFocus(state, ratio);
 	let samples = result.samples;
 	let overview: JourneyView | null = null;
@@ -209,7 +402,6 @@ export function createJourney(input: FractalState, aspect: number): JourneyPlan 
 		const whole = wholeView(state);
 		result = locateFocus(whole, ratio);
 		samples += result.samples;
-		// A broad stop allows a blank or extreme user view to travel gently to detail.
 		overview = view(
 			normalizeState({
 				...whole,
@@ -229,12 +421,17 @@ export function createJourney(input: FractalState, aspect: number): JourneyPlan 
 	}
 	return {
 		family: state.family,
+		sceneId: null,
 		kind,
 		duration: JOURNEY_DURATION_SECONDS,
 		start,
 		focus: view(result.state),
 		overview,
 		detail: result.detail,
+		waypoints: [],
+		arcLengths: [],
+		totalLength: 0,
+		minClearance: 0,
 		samples
 	};
 }
@@ -252,7 +449,14 @@ function between(start: JourneyView, end: JourneyView, progress: number): Journe
 		rotation: mix(start.rotation, end.rotation, amount),
 		yaw: mix(start.yaw, end.yaw, amount),
 		pitch: mix(start.pitch, end.pitch, amount),
-		distance: Math.exp(mix(Math.log(start.distance), Math.log(end.distance), amount))
+		roll: mix(start.roll, end.roll, amount),
+		fov: mix(start.fov, end.fov, amount),
+		distance: Math.exp(mix(Math.log(start.distance), Math.log(end.distance), amount)),
+		cameraPos: [
+			mix(start.cameraPos[0], end.cameraPos[0], amount),
+			mix(start.cameraPos[1], end.cameraPos[1], amount),
+			mix(start.cameraPos[2], end.cameraPos[2], amount)
+		]
 	};
 }
 
@@ -265,6 +469,30 @@ export function sampleJourney(
 	if (current.family !== plan.family) return normalizeState(current);
 	const elapsed = Number.isFinite(elapsedSeconds) ? Math.max(0, elapsedSeconds) : 0;
 	const phase = (elapsed % plan.duration) / plan.duration;
+
+	if (plan.kind === '3d' && plan.waypoints.length >= 2) {
+		if (phase === 0) {
+			return normalizeState({ ...current, ...plan.start });
+		}
+		const u = parameterForArcPhase(plan.arcLengths, plan.totalLength, phase);
+		const sampled = sampleSpline3D(plan.waypoints, u);
+		const dir: Vec3 = [
+			sampled.target[0] - sampled.position[0],
+			sampled.target[1] - sampled.position[1],
+			sampled.target[2] - sampled.position[2]
+		];
+		const { yaw, pitch } = anglesFromDirection(dir);
+		return normalizeState({
+			...current,
+			yaw,
+			pitch,
+			roll: sampled.roll,
+			fov: sampled.fov,
+			cameraPos: sampled.position,
+			cameraMode: 'free'
+		});
+	}
+
 	const leg = phase <= 0.5 ? phase * 2 : (1 - phase) * 2;
 	let next: JourneyView;
 	if (leg === 0) next = { ...plan.start };
@@ -275,4 +503,83 @@ export function sampleJourney(
 				: between(plan.overview, plan.focus, (leg - 0.38) / 0.62);
 	} else next = between(plan.start, plan.focus, leg);
 	return normalizeState({ ...current, ...next });
+}
+
+/** Advance to the next or previous curated 3D scene in continuous tour mode. */
+export function nextTourSceneId(currentId: Scene3DId | null, step: 1 | -1 = 1): Scene3DId {
+	const index = SCENES_3D.findIndex((scene) => scene.id === currentId);
+	if (index === -1) return SCENES_3D[0].id;
+	return SCENES_3D[(index + step + SCENES_3D.length) % SCENES_3D.length].id;
+}
+
+/** Validate a 3D scene's entire spline path and near-plane frustum against the CPU distance estimator. */
+export function validateJourney3D(
+	sceneId: Scene3DId,
+	samples = 64,
+	aspect = 16 / 9
+): {
+	valid: boolean;
+	minClearance: number;
+	maxClearance: number;
+	minHitFraction: number;
+	depthSpread: number;
+} {
+	const state = sceneToState(sceneId);
+	const plan = createJourney(state, aspect);
+	let minClearance = Infinity;
+	let maxClearance = 0;
+	let minHitFraction = 1;
+	let maxSpread = 0;
+	let allClear = true;
+
+	for (let i = 0; i < samples; i++) {
+		const t = (i / samples) * plan.duration;
+		const frameState = sampleJourney(plan, t, state);
+		const check = checkCameraClearance(frameState, aspect);
+		minClearance = Math.min(minClearance, check.minDistance);
+		maxClearance = Math.max(maxClearance, check.minDistance);
+		if (!check.clear) allClear = false;
+
+		const basis = cameraBasis(frameState);
+		const hits: number[] = [];
+		for (let gy = -1; gy <= 1; gy++) {
+			for (let gx = -1; gx <= 1; gx++) {
+				const sx = gx * 0.55 * aspect;
+				const sy = gy * 0.55;
+				const dx = basis.forward[0] * basis.fovScale + basis.right[0] * sx + basis.up[0] * sy;
+				const dy = basis.forward[1] * basis.fovScale + basis.right[1] * sx + basis.up[1] * sy;
+				const dz = basis.forward[2] * basis.fovScale + basis.right[2] * sx + basis.up[2] * sy;
+				const dLen = Math.hypot(dx, dy, dz) || 1;
+				const dir: Vec3 = [dx / dLen, dy / dLen, dz / dLen];
+				let travel = 0;
+				for (let s = 0; s < 84; s++) {
+					const pt: Vec3 = [
+						basis.position[0] + dir[0] * travel,
+						basis.position[1] + dir[1] * travel,
+						basis.position[2] + dir[2] * travel
+					];
+					const de = estimateDistance3D(frameState, pt, 14).distance;
+					const eps = Math.max(0.00025, (travel * 1.0) / 720);
+					if (de < eps) {
+						hits.push(travel);
+						break;
+					}
+					travel += Math.max(de * 0.68, eps * 0.35);
+					if (travel > 16) break;
+				}
+			}
+		}
+		minHitFraction = Math.min(minHitFraction, hits.length / 9);
+		if (hits.length >= 2) {
+			maxSpread = Math.max(maxSpread, Math.max(...hits) - Math.min(...hits));
+		}
+	}
+
+	return {
+		valid: allClear && minClearance >= 0.035 && minHitFraction >= 0.5 && maxSpread >= 0.4,
+		minClearance,
+		maxClearance,
+		minHitFraction,
+		depthSpread: maxSpread
+	};
 }

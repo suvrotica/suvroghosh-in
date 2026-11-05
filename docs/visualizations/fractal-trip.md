@@ -11,15 +11,20 @@ it does not import or start the graphics renderer.
 
 - `src/lib/components/visualizations/fractal-trip/FractalTrip.svelte` is the
   server-rendered shell and lazy browser entry.
-- `FractalTripApp.svelte` owns controls, gestures, journey playback,
-  undo/redo, saved favourites, fullscreen and export interactions.
+- `FractalTripApp.svelte` owns controls, gestures, spatial free-flight and
+  orbit exploration, timeline scrubbing, continuous 3D tour playback, undo/redo,
+  saved favourites, fullscreen and export interactions.
 - `src/lib/visualizations/fractal-trip/model.ts` owns the versioned state,
-  parameter bounds, family/palette definitions, starting views, URL codec and
-  numerical reference helpers.
-- `journeys.ts` owns bounded detail probing and smooth camera-path sampling;
-  it plans once when a trip starts rather than searching on every frame.
+  parameter bounds, family/palette definitions, four curated 3D scene presets,
+  3D camera basis and distance-estimator clearance helpers, starting views, URL
+  codec and numerical reference helpers.
+- `journeys.ts` owns closed Catmull-Rom 3D spline paths with approximate
+  arc-length parameterization and full-path frustum clearance validation for 3D
+  scenes, plus bounded detail probing and smooth camera-path sampling for 2D
+  families; it plans once when a trip starts rather than searching on every frame.
 - `renderer.ts` owns the WebGL2 context, shader programs, framebuffer sizing,
-  quality selection, draw scheduling, capture and resource teardown.
+  quality selection, paused-3D progressive refinement accumulation buffer, draw
+  scheduling, capture and resource teardown.
 - `shaders.ts` owns the plane-fractal and three-dimensional fractal shader sources.
 - `src/lib/posts/fractal-trip.md` contains the explanation and component import.
 - `static/images/visualizations/fractal-trip/poster.png` is the publication artwork,
@@ -51,7 +56,18 @@ one mounted experience. Existing site-wide measurement policy remains in place.
 
 ## Mathematical and visual contract
 
-There are seven family choices:
+There are four curated three-dimensional scene presets stored as typed data in
+`SCENES_3D` (`model.ts`), with `Copper Reef` serving as the default composition
+on a fresh visit:
+
+| Scene            | Formula configuration                                                           | Spatial composition and duration                                                   |
+| ---------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Copper Reef      | Power-8 Mandelbulb (`bulbJulia: false`), copper palette                         | Equatorial ridges, floral rosettes and deep cavities; 84-second closed spline loop |
+| Folded Cathedral | Mandelbox (`foldScale: -1.75`, `foldLimit: 0.88`, `minRadius: 0.45`)            | Carved architectural vaults, buttresses and arches; 92-second closed spline loop   |
+| Alien Garden     | Fixed 3D Julia (`power: 7`, `bulbJulia: true`, `seed: [-0.22,0.64,-0.26]`)      | Separated branching coral-like tendrils with parallax; 80-second closed loop       |
+| Fractal Canyon   | High-scale Mandelbox (`foldScale: -2.18`, `foldLimit: 0.96`, `minRadius: 0.26`) | Stratified gorge walls, sheer folds and terraced chasms; 96-second closed loop     |
+
+And there are seven underlying family choices:
 
 | Family       | Equation controls                                                  | Rendering meaning                                                          |
 | ------------ | ------------------------------------------------------------------ | -------------------------------------------------------------------------- |
@@ -101,18 +117,30 @@ the same model boundary. No user-controlled shader source, JavaScript or
 expression evaluation is used.
 
 The mounted UI owns view changes and playback. Manual view gestures pause a
-journey. Plane zoom preserves the point under the pointer; three-dimensional
-controls orbit and approach within bounded camera settings. Plane journeys use a
-bounded CPU probe of escape/convergence variation to choose a useful focal view.
-The planner performs at most 398 probes of 180 iterations, with finite-budget
-variation serving as a visual heuristic, not proof of set membership. When a
-current view is empty or unhelpful, a broad intermediate view leads towards a
-sampled region. Logarithmic zoom and cosine easing travel out and back over a
-96-second speed-adjusted cycle, preserving the starting view without a jump.
-Spatial journeys orbit and vary exterior camera distance; they are not an
-autonomous interior collision-avoidance or tunnel-navigation system. Optional
-Julia-seed motion is a bounded continuous parameter change. Undo and redo restore
-complete state snapshots. Equation reset and view reset have separate meanings.
+journey. Plane zoom preserves the point under the pointer. Three-dimensional
+scenes maintain independent camera position (`cameraPos`), orientation (`yaw`,
+`pitch`, `roll`), field of view (`fov`) and mode (`free` or `orbit`). Legacy v1
+shared links and saved views that omit `cameraPos` migrate automatically from
+their orbit `yaw`, `pitch` and `distance`. Three-dimensional guided journeys
+follow closed Catmull-Rom spline position and look-target paths reparameterized
+by a 128-step cumulative arc-length table so camera speed stays steady without
+sudden acceleration or roll singularities. Every 3D preset path is validated
+against the CPU distance estimator (`checkCameraClearance`, `validateJourney3D`)
+for camera clearance, near-plane footprint clearance and visible frustum depth
+variation. Continuous tour mode advances across the four 3D scenes with a
+controlled crossfade transition; manual free-look or WASD/Q/E/touch spatial
+movement pauses the tour, enforces conservative step clearance, and surfaces a
+`Return to tour` action.
+
+Plane journeys use a bounded CPU probe of escape/convergence variation to choose
+a useful focal view. The planner performs at most 398 probes of 180 iterations,
+with finite-budget variation serving as a visual heuristic, not proof of set
+membership. When a current view is empty or unhelpful, a broad intermediate view
+leads towards a sampled region. Logarithmic zoom and cosine easing travel out
+and back over a 96-second speed-adjusted cycle, preserving the starting view
+without a jump. Optional Julia-seed motion is a bounded continuous parameter
+change kept separate from camera travel. Undo and redo restore complete state
+snapshots. Equation reset and view reset have separate meanings.
 
 Native fullscreen is attempted from a user action, with an expanded view when
 unavailable. On browsers exposing the Popover API, the fallback uses a manual
@@ -136,23 +164,27 @@ The renderer compiles separate plane and spatial programs, loading the spatial
 program only when a three-dimensional family is selected. Quality profiles bound
 both pixel work and calculation depth:
 
-| Profile  | Plane pixels | Spatial pixels | Plane iterations | Ray steps |
-| -------- | -----------: | -------------: | ---------------: | --------: |
-| Saver    |      450,000 |        220,000 |              160 |        64 |
-| Balanced |    1,000,000 |        500,000 |              320 |        88 |
-| High     |    2,000,000 |        900,000 |              512 |       112 |
+| Profile  | Plane pixels | Spatial pixels | Plane iterations | Spatial iterations | Ray steps | AO samples | Shadow steps | Paused 3D samples |
+| -------- | -----------: | -------------: | ---------------: | -----------------: | --------: | ---------: | -----------: | ----------------: |
+| Saver    |      450,000 |        240,000 |              160 |                 13 |        72 |          2 |            0 |                 4 |
+| Balanced |    1,000,000 |        520,000 |              320 |                 15 |        96 |          4 |            8 |                 6 |
+| High     |    2,000,000 |        920,000 |              512 |                 18 |       128 |          5 |           14 |                 8 |
 
 Direct manipulation reduces the plane iteration budget to 80% and the pixel
 budget to 72%, followed by a settled redraw. After 220 milliseconds without an
 update, a plane view can draw once at up to 1.35 times its moving linear
 resolution for cleaner downsampling, bounded to three million pixels and the
-precision-safe coordinate grid. This refinement does not create a continuous
-idle loop. Newton uses at most 96 steps;
-spatial distance estimates use at most 12 fractal iterations. High quality adds
-a bounded shadow calculation. Auto quality reduces pixel work after sustained
-slow frame intervals and applies a cooldown; touch/constrained devices begin
-with Saver. These limits describe the implementation, not certified frame rates
-on arbitrary devices.
+precision-safe coordinate grid. When a three-dimensional scene is paused, the
+renderer checks framebuffer/texture copy capability (`ensureAccumulationBuffer`
+with an `RGB8` accumulation texture verified against `gl.getError()` on the
+first copy) and accumulates up to 4, 6 or 8 Halton(2,3) sub-pixel jittered
+samples before stopping draw scheduling. Any camera, equation, material,
+lighting or viewport change resets the sample counter immediately so moving
+frames never leave trails. Newton uses at most 96 steps. Auto quality reduces
+pixel work after sustained slow frame intervals (>33 ms over 1.2 s) and scales
+back up after sustained fast intervals (<19 ms over 2.4 s) with a 5-second
+cooldown; touch/constrained devices begin with Saver. These limits describe the
+implementation, not certified frame rates on arbitrary devices.
 
 The precision floor accounts for coordinate magnitude and actual framebuffer
 height. Export near that floor samples at a precision-safe resolution before
@@ -181,88 +213,42 @@ The repository's forensic audit records absent `security:audit` and
 `security:smoke` commands. This feature does not introduce a network endpoint,
 and those missing commands must not be reported as safeguards that passed.
 
-## Verification on 4 November 2026
+## Verification on 4–5 November 2026
 
 The final stable production feature preview at `http://127.0.0.1:4349` passed all
-ten cases in `tests/browser/fractal-trip.spec.ts` in 42.5 seconds, using native headless
-Google Chrome 156.0.8078.80 on the Windows development host. Service workers were
-blocked. The suite used a 1440 × 1050 desktop viewport and a 390 × 844 responsive
-viewport; the latter is desktop-browser layout coverage, not a physical-phone
-test.
+eleven cases in `tests/browser/fractal-trip.spec.ts` using native headless
+Google Chrome 156.0.8078.80 on the Windows development host (`ANGLE (Intel,
+Intel(R) Iris(R) Xe Graphics (0x000046A6) Direct3D11 vs_5_0 ps_5_0, D3D11)`).
+Service workers were blocked. The suite used a 1440 × 1050 desktop viewport and
+a 390 × 844 responsive viewport; the latter is desktop-browser layout coverage,
+not a physical-phone or physical Android-tablet test.
 
-Higher-power Mandelbrot/Tricorn view reset retains the equation and returns to a
-detailed whole-set view. Portrait PNG export preserves the displayed aspect
-ratio with its longest edge at 1,600 pixels, checked in an 800 × 1200 expanded
-desktop viewport through the visible Save image action. The fullscreen fallback
-case adds a translated ancestor to reproduce the blog layout's containing-block
-behaviour: the top-layer view still fills the viewport at x=0, y=0, Escape works
-from a focused control, and closing restores the previous body overflow value.
+The suite verifies actual rendered colour variation for all seven families and
+all four curated 3D scenes (`Copper Reef`, `Folded Cathedral`, `Alien Garden`
+and `Fractal Canyon`), timeline scrubbing across 3D spline paths, free-flight
+exploration with `Return to tour`, equation edits changing pixels and shared
+state, undo/redo, distinct equation and view resets, exact custom-state and
+legacy v1 orbit-state restoration, invalid and oversized share input, local
+saved-view persistence/deletion, clean PNG contents and dimensions (including
+portrait PNG export at 1,600 pixels longest edge), forced WebGL context
+loss/restoration, reduced motion, paused progressive-refinement convergence and
+offscreen drawing suspension, native fullscreen, rejected-fullscreen fallback,
+Escape from a focused control, and the readable disabled-WebGL fallback.
 
-The suite verifies actual rendered colour variation for all seven families,
-equation edits changing pixels and shared state, undo/redo, distinct equation and
-view resets, exact custom-state restoration, invalid and oversized share input,
-local saved-view persistence/deletion, clean PNG contents and dimensions, forced
-WebGL context loss/restoration, reduced motion, paused/offscreen drawing
-suspension, native fullscreen, rejected-fullscreen fallback, Escape from a
-focused control, and the readable disabled-WebGL fallback.
+A separate headless Firefox check confirmed visible artwork across all seven
+families and all four curated 3D scenes.
 
-A separate Firefox 153 check confirmed visible artwork in all seven families,
-parameter changes, shared state and fullscreen. The ten-case automated suite
-above was run in Chrome; the Firefox check is additional targeted coverage.
+The model and journey suites passed all 27 unit tests (`model.test.ts` and
+`journeys.test.ts`), including full-path and near-plane frustum clearance
+validation (`validateJourney3D`) for all four 3D scene spline loops. The focused
+Svelte/TypeScript check (`npm run fractal-trip:check`) completed with zero
+errors and zero warnings, and `npm run fractal-trip:assets:check` verified the
+actual-renderer `poster.png` and seven `<family>.png` thumbnails.
 
-A bounded check inside the complete production blog layout returned HTTP 200,
-the correct canonical URL and readable article text. Mandelbrot and Mandelbulb
-rendered without WebGL errors, changing the power updated the displayed equation,
-and the fullscreen fallback filled the exact viewport. Desktop and mobile widths
-matched their viewports without horizontal overflow. There were no feature
-JavaScript or CSP errors; the local preview's unavailable Vercel Insights script
-was the only unrelated console failure. All seven final PNG thumbnails also
-loaded at 400 × 250 without missing-image responses, and their decoded pixel
-hashes passed verification after the repository image optimiser ran.
-
-Playwright WebKit 26.5 on this Windows host lost visible canvas compositing after
-a late drawing-buffer resize. The same behaviour was reproduced with a minimal
-red/blue clear-only canvas: a buffer sized before context creation remained
-visible, while GPU pixel readback and exported images retained colour even when
-the resized canvas was not composited. Preserving the drawing buffer, adding a
-later animation frame and invalidating the layer did not resolve this host-port
-behaviour. The production renderer was not changed for this failed workaround.
-This is a recorded Windows Playwright WebKit limitation, not a passing WebKit
-result or evidence that native Safari behaves identically. Native Safari and
-physical mobile GPUs remain unverified.
-
-The model and journey suites passed all 22 unit tests through the repository's
-standard Vitest configuration. The focused Svelte/TypeScript check using
-`tsconfig.fractal-trip.json` completed with zero errors and zero warnings.
-Scoped ESLint checks passed for the new browser suite and configuration.
-
-Repository-wide checks are distinct: `npm run check` reported 45 errors in the
-existing `src/lib/components/games/sort-the-tray/SortTheTray.svelte` and
-`tests/listening-room.spec.ts`, with no Fractal Trip errors. The global lint
-command did not pass its existing formatting checks. These outcomes must not be
-reported as a green repository-wide validation run. The full-site build and any
-deployment result are recorded separately in the implementation handoff.
-
-The renderer was also measured during active updates in a separate native
-headless-Chrome harness on the same desktop host:
-
-| Viewport and quality            | Family     | Frame interval median / p95 | GPU time median / p95 |
-| ------------------------------- | ---------- | --------------------------: | --------------------: |
-| 1440 × 620, Balanced            | Mandelbrot |              11.1 / 11.2 ms |        4.32 / 5.33 ms |
-| 1440 × 620, Balanced            | Mandelbulb |              11.1 / 11.3 ms |        3.47 / 5.41 ms |
-| 1440 × 620, Balanced            | Mandelbox  |              11.1 / 11.3 ms |       6.99 / 12.79 ms |
-| 390 × 400 touch viewport, Saver | Mandelbrot |              11.1 / 11.3 ms |        2.14 / 3.04 ms |
-| 390 × 400 touch viewport, Saver | Mandelbulb |              11.1 / 11.3 ms |        3.73 / 4.57 ms |
-| 390 × 400 touch viewport, Saver | Mandelbox  |              11.1 / 11.3 ms |        3.54 / 4.44 ms |
-
-Each case measured 216–227 frame intervals after a 600 ms warmup in a 3.1-second
-active update run. GPU times came from `EXT_disjoint_timer_query_webgl2`, excluding
-disjoint results. Desktop three-dimensional views used a 1077 × 463 drawing
-buffer; the other buffers matched the listed viewports. The Mandelbox measurement
-used camera distance 5.2, before its final default framing moved to 7.2. The
-measurements used the copper palette. Frame intervals measure animation-callback
-scheduling cadence, while GPU timings measure draw duration; neither alone proves
-the rate of fully presented frames. The simulated touch viewport still ran on
-the desktop GPU. These are bounded samples
-of renderer work, not sustained mobile frame-rate guarantees or measurements of
-the complete site loading process.
+Active journey playback on the same Windows Intel Iris Xe host measured steady
+~90 Hz animation-callback cadence (`11.1 ms` median, `11.4–11.5 ms` p95 over 180
+active frames after warmup) across `Copper Reef`, `Folded Cathedral`,
+`Alien Garden` and `Fractal Canyon` at `1036 × 501` (Balanced) and `1378 × 667`
+(High), as well as `358 × 500` in the `390 × 844` touch-Saver viewport. Physical
+RTX 3090 desktop and physical Android tablet hardware were not attached to this
+host and remain unverified directly.

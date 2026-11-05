@@ -4,6 +4,7 @@ import sharp from 'sharp';
 import {
 	DEFAULT_STATE,
 	FAMILIES,
+	SCENES_3D,
 	decodeState,
 	defaultForFamily,
 	encodeState,
@@ -168,6 +169,8 @@ test('SSR explanation survives and reduced motion opens paused without continuou
 	expect(html).toContain('A small rule, repeated');
 	await ready(page);
 	await expect(app(page)).toHaveAttribute('data-playing', 'false');
+	await expect(app(page)).toHaveAttribute('data-family', 'mandelbulb');
+	await expect(app(page)).toHaveAttribute('data-scene', 'copper-reef');
 	const image = await artwork(app(page).locator('canvas'));
 	expect(image.variation).toBeGreaterThan(8);
 	await frames(page);
@@ -213,6 +216,52 @@ test('all seven choices render distinct visible fractal content', async ({ page 
 		distinct.add(image.hash);
 	}
 	expect(distinct.size).toBe(FAMILIES.length);
+});
+
+test('all four curated 3D scenes render distinct geometry and support timeline scrubbing and free-flight return', async ({
+	page
+}) => {
+	await ready(page);
+	const sceneHashes = new Set<string>();
+	for (const scene of SCENES_3D) {
+		await app(page)
+			.locator('.ft-scene-strip')
+			.getByRole('button', { name: scene.name, exact: true })
+			.click();
+		await expect(app(page)).toHaveAttribute('data-scene', scene.id);
+		await expect(app(page)).toHaveAttribute('data-family', scene.family);
+		await frames(page, 12);
+		const img = await artwork(app(page).locator('canvas'));
+		expect(img.variation, `${scene.name} should render detailed 3D geometry`).toBeGreaterThan(6);
+		expect(img.brightness, `${scene.name} should not be dark/blank`).toBeGreaterThan(12);
+		sceneHashes.add(img.hash);
+	}
+	expect(sceneHashes.size).toBe(SCENES_3D.length);
+
+	// Select Copper Reef, scrub journey timeline, verify 3D camera pose moves along the spline
+	await app(page)
+		.locator('.ft-scene-strip')
+		.getByRole('button', { name: 'Copper Reef', exact: true })
+		.click();
+	const startState = (await share(page)).state;
+	const scrub = app(page).getByRole('slider', { name: 'Journey progress', exact: true });
+	await scrub.fill('32');
+	await scrub.dispatchEvent('input');
+	await frames(page, 10);
+	const scrubbedState = (await share(page)).state;
+	expect(scrubbedState.cameraPos).not.toEqual(startState.cameraPos);
+
+	// Free-flight keyboard movement takes over from current view and offers Return to tour
+	const canvas = app(page).locator('canvas');
+	await canvas.focus();
+	await canvas.press('w');
+	await expect(app(page).getByRole('button', { name: /Return to tour/ })).toBeVisible();
+	const exploredState = (await share(page)).state;
+	expect(exploredState.cameraPos).not.toEqual(scrubbedState.cameraPos);
+	await app(page)
+		.getByRole('button', { name: /Return to tour/ })
+		.click();
+	await expect(app(page).getByRole('button', { name: /Return to tour/ })).toHaveCount(0);
 });
 
 test('equation edits change pixels and share state; undo, redo and resets keep their separate meanings', async ({
@@ -382,7 +431,7 @@ test('mobile controls stay reachable and fullscreen fallback can be entered and 
 	await expect(power).toBeVisible();
 	await power.focus();
 	await power.press('ArrowRight');
-	await expect(power).toHaveValue('3');
+	await expect(power).toHaveValue('9');
 	await closePanel(page);
 	const beforeExpanded = await page.evaluate(() => {
 		// Reproduce the transformed ancestor used by the full article layout. A

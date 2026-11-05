@@ -23,7 +23,8 @@ export const visualizationSummaries = {
 			'Change the equations behind colourful fractals. Follow a Mandelbrot zoom, explore a three-dimensional form and save the view you discover.',
 		subjects: ['Mathematics', 'Generative Art', 'Computer Science'],
 		poster: '/images/visualizations/fractal-trip/poster.png',
-		posterAlt: 'Copper, violet and turquoise Mandelbrot filaments in the Fractal Trip explorer',
+		posterAlt:
+			'Copper, cream and turquoise three-dimensional Mandelbulb ridges and cavities in the Fractal Trip explorer',
 		href: '/blog/visualizations/fractal-trip',
 		status: 'published'
 	},

@@ -7,25 +7,41 @@
 		FAMILIES,
 		PALETTES,
 		PRESETS,
-		minimumSpan,
+		SCENES_3D,
+		checkCameraClearance,
 		defaultForFamily,
-		normalizeState,
-		encodeState,
 		decodeState,
+		encodeState,
+		lookCamera3D,
+		minimumSpan,
+		moveCamera3D,
+		normalizeState,
+		orbitCamera3D,
+		panView,
+		scenePreset,
+		sceneToState,
 		varyState,
 		zoomAt,
-		panView,
+		type CameraMode,
+		type FamilyId,
 		type FractalState,
-		type FamilyId
+		type Scene3DId
 	} from '$lib/visualizations/fractal-trip/model';
 	import {
+		JOURNEY_DURATION_SECONDS,
 		createJourney,
+		nextTourSceneId,
 		sampleJourney,
 		type JourneyPlan
 	} from '$lib/visualizations/fractal-trip/journeys';
-	import type { createFractalRenderer } from '$lib/visualizations/fractal-trip/renderer';
+	import type {
+		FractalRenderStatus,
+		createFractalRenderer
+	} from '$lib/visualizations/fractal-trip/renderer';
+
 	type Panel = 'shapes' | 'equation' | 'colour' | 'saved' | 'help' | null;
 	type Favourite = { name: string; state: FractalState };
+
 	let design = $state<FractalState>(normalizeState(DEFAULT_STATE));
 	let app: HTMLElement;
 	let canvas: HTMLCanvasElement;
@@ -35,12 +51,20 @@
 	let panel = $state<Panel>(null);
 	let playing = $state(false);
 	let morphing = $state(false);
+	let tourMode = $state(true);
+	let offTour = $state(false);
+	let transitioning = $state(false);
 	let clean = $state(false);
+	let cinemaIdle = $state(false);
 	let expanded = $state(false);
 	let nativeFullscreen = $state(false);
 	let exporting = $state(false);
 	let status = $state('');
-	let stats = $state({ quality: 'Preparing', fps: 0, precision: 'Bounded precision' });
+	let stats = $state<FractalRenderStatus>({
+		quality: 'Preparing',
+		fps: 0,
+		precision: 'Bounded 3D detail'
+	});
 	let undoStack = $state<FractalState[]>([]);
 	let redoStack = $state<FractalState[]>([]);
 	let favourites = $state<Favourite[]>([]);
@@ -51,22 +75,44 @@
 	let disposed = false;
 	let frame = 0;
 	let lastTime = 0;
-	let journey: JourneyPlan | null = null;
-	let journeyElapsed = 0;
+	let journey = $state<JourneyPlan | null>(null);
+	let journeyElapsed = $state(0);
 	let messageTimer: ReturnType<typeof setTimeout>;
 	let wheelTimer: ReturnType<typeof setTimeout>;
+	let idleTimer: ReturnType<typeof setTimeout>;
+	let transitionTimer: ReturnType<typeof setTimeout>;
 	let wheelActive = false;
 	let pointers = new SvelteMap<number, { x: number; y: number }>();
 	const storageKey = 'suvro-fractal-trip-favourites-v1';
+
 	let family = $derived(FAMILIES.find((item) => item.id === design.family) ?? FAMILIES[0]);
 	let is3d = $derived(family.kind === '3d');
-	let currentName = $derived(
-		design.family === 'mandelbrot' && design.power > 2
-			? 'Multibrot'
-			: design.family === 'tricorn' && design.power > 2
-				? 'Multicorn'
-				: family.name
+	let activeScene = $derived(
+		is3d && design.sceneId ? (SCENES_3D.find((item) => item.id === design.sceneId) ?? null) : null
 	);
+	let currentName = $derived(
+		activeScene
+			? activeScene.name
+			: design.family === 'mandelbrot' && design.power > 2
+				? 'Multibrot'
+				: design.family === 'tricorn' && design.power > 2
+					? 'Multicorn'
+					: family.name
+	);
+	let currentSubtitle = $derived(
+		activeScene
+			? activeScene.description
+			: is3d
+				? 'Drag to look or orbit. Use W/S or +/− to move through space.'
+				: 'Choose a shape. Change its equation. Follow the detail.'
+	);
+	let activeDuration = $derived(
+		journey?.duration ?? (activeScene ? activeScene.duration : JOURNEY_DURATION_SECONDS)
+	);
+	let journeyProgress = $derived(
+		activeDuration > 0 ? ((journeyElapsed % activeDuration) + activeDuration) % activeDuration : 0
+	);
+	let clearanceInfo = $derived(is3d ? checkCameraClearance(design) : null);
 	let palette = $derived(PALETTES.find((item) => item.id === design.palette) ?? PALETTES[0]);
 	let formula = $derived.by(() => {
 		if (design.family === 'newton') return `z′ = z − ${design.relaxation.toFixed(2)} P(z) / P′(z)`;
@@ -82,9 +128,40 @@
 					: 'z';
 		return `${base}^${design.power} + ${design.family === 'julia' ? `(${design.seedRe.toFixed(3)} ${design.seedIm < 0 ? '−' : '+'} ${Math.abs(design.seedIm).toFixed(3)}i)` : 'c'}`;
 	});
+
+	function formatSeconds(sec: number): string {
+		const s = Math.max(0, Math.floor(Number.isFinite(sec) ? sec : 0));
+		const m = Math.floor(s / 60);
+		const rem = s % 60;
+		return `${m}:${String(rem).padStart(2, '0')}`;
+	}
+
+	function currentAspect(): number {
+		if (!canvas) return 16 / 9;
+		const rect = canvas.getBoundingClientRect();
+		const w = rect.width || canvas.clientWidth || 960;
+		const h = rect.height || canvas.clientHeight || 600;
+		return w / Math.max(1, h);
+	}
+
+	function wakeControls() {
+		cinemaIdle = false;
+		clearTimeout(idleTimer);
+		if (playing && !panel) {
+			idleTimer = setTimeout(() => {
+				if (disposed || !playing || panel) return;
+				const focusedControl = app?.querySelector(
+					'.ft-header :focus, .ft-instrument :focus, .ft-footer :focus, .ft-panel :focus'
+				);
+				if (!focusedControl) cinemaIdle = true;
+			}, 4500);
+		}
+	}
+
 	function snapshot() {
 		return normalizeState(design);
 	}
+
 	function announce(message: string) {
 		status = message;
 		clearTimeout(messageTimer);
@@ -92,10 +169,12 @@
 			if (!disposed) status = '';
 		}, 5000);
 	}
+
 	function remember() {
 		undoStack = [...undoStack.slice(-29), snapshot()];
 		redoStack = [];
 	}
+
 	function apply(next: FractalState, interactive = false) {
 		const normalized = normalizeState(next);
 		if (!['mandelbulb', 'mandelbox'].includes(normalized.family))
@@ -105,6 +184,7 @@
 		engine?.update(design, interactive);
 		shareLink = '';
 	}
+
 	function setValue(key: keyof FractalState, value: number | string | boolean) {
 		pause();
 		const next = { ...design, [key]: value };
@@ -114,51 +194,121 @@
 			next.centerIm = value === 2 ? initial.centerIm : 0;
 			next.span = value === 2 ? initial.span : 3.5;
 		}
+		if (
+			is3d &&
+			[
+				'power',
+				'seedRe',
+				'seedIm',
+				'seedZ',
+				'bulbJulia',
+				'foldScale',
+				'foldLimit',
+				'minRadius'
+			].includes(key)
+		) {
+			journey = null;
+		}
 		apply(next, true);
 	}
+
 	function startEdit() {
 		pause();
 		remember();
 	}
+
+	function selectScene3D(id: Scene3DId, keepPlaying = false) {
+		const wasPlaying = keepPlaying && playing;
+		if (!wasPlaying) pause();
+		remember();
+		transitioning = true;
+		clearTimeout(transitionTimer);
+		transitionTimer = setTimeout(() => {
+			transitioning = false;
+		}, 360);
+
+		const nextState = { ...sceneToState(id), quality: design.quality, speed: design.speed };
+		journey = createJourney(nextState, currentAspect());
+		journeyElapsed = 0;
+		offTour = false;
+		apply(nextState, wasPlaying);
+		rootIndex = 0;
+		if (wasPlaying) {
+			playing = true;
+			lastTime = 0;
+			startClock();
+		} else {
+			announce(`${scenePreset(id).name} ready. Press Start trip to travel through the scene.`);
+		}
+	}
+
+	function stepScene(direction: 1 | -1) {
+		const nextId = nextTourSceneId(design.sceneId, direction);
+		selectScene3D(nextId, playing);
+	}
+
 	function selectFamily(id: FamilyId) {
 		pause();
 		remember();
-		apply({ ...defaultForFamily(id), palette: design.palette, quality: design.quality });
+		const base = defaultForFamily(id);
+		const next =
+			id === 'mandelbulb' || id === 'mandelbox'
+				? { ...base, quality: design.quality, speed: design.speed }
+				: { ...base, palette: design.palette, quality: design.quality, speed: design.speed };
+		journey = createJourney(next, currentAspect());
+		journeyElapsed = 0;
+		offTour = false;
+		apply(next);
 		rootIndex = 0;
 		panel = null;
 		announce(
 			`${FAMILIES.find((item) => item.id === id)?.name} ready. Open Equation to change its rule.`
 		);
 	}
+
 	function choosePreset(state: FractalState) {
 		pause();
 		remember();
-		apply(state);
+		const next = { ...state, quality: design.quality };
+		journey = createJourney(next, currentAspect());
+		journeyElapsed = 0;
+		offTour = false;
+		apply(next);
 		panel = null;
 		rootIndex = 0;
 	}
+
 	function undo() {
 		const previous = undoStack.at(-1);
 		if (!previous) return;
 		pause();
 		redoStack = [...redoStack.slice(-29), snapshot()];
 		undoStack = undoStack.slice(0, -1);
+		journey = createJourney(previous, currentAspect());
+		journeyElapsed = previous.journeyTime % journey.duration;
+		offTour = false;
 		apply(previous);
 	}
+
 	function redo() {
 		const next = redoStack.at(-1);
 		if (!next) return;
 		pause();
 		undoStack = [...undoStack.slice(-29), snapshot()];
 		redoStack = redoStack.slice(0, -1);
+		journey = createJourney(next, currentAspect());
+		journeyElapsed = next.journeyTime % journey.duration;
+		offTour = false;
 		apply(next);
 	}
+
 	function resetView() {
 		pause();
 		remember();
-		const initial = defaultForFamily(design.family);
+		const initial =
+			is3d && design.sceneId ? sceneToState(design.sceneId) : defaultForFamily(design.family);
 		const broad = !is3d && design.power > 2 && design.family !== 'newton';
-		apply({
+		const next = normalizeState({
 			...design,
 			centerRe: broad ? 0 : initial.centerRe,
 			centerIm: broad ? 0 : initial.centerIm,
@@ -166,15 +316,48 @@
 			rotation: 0,
 			yaw: initial.yaw,
 			pitch: initial.pitch,
+			roll: initial.roll,
+			fov: initial.fov,
 			distance: initial.distance,
+			cameraPos: [...initial.cameraPos],
+			cameraMode: initial.cameraMode,
 			journeyTime: 0
 		});
+		journey = createJourney(next, currentAspect());
+		journeyElapsed = 0;
+		offTour = false;
+		apply(next);
 	}
+
+	function returnToTour() {
+		pause();
+		remember();
+		const baseState =
+			is3d && design.sceneId ? sceneToState(design.sceneId) : defaultForFamily(design.family);
+		const merged = normalizeState({
+			...design,
+			yaw: baseState.yaw,
+			pitch: baseState.pitch,
+			roll: baseState.roll,
+			fov: baseState.fov,
+			distance: baseState.distance,
+			cameraPos: [...baseState.cameraPos],
+			cameraMode: 'free'
+		});
+		const activePlan = createJourney(merged, currentAspect());
+		journey = activePlan;
+		const pose = sampleJourney(activePlan, journeyElapsed, merged);
+		offTour = false;
+		apply(pose);
+		announce('Returned to the guided tour path. Press Start trip to resume.');
+	}
+
 	function resetEquation() {
 		pause();
 		remember();
-		const initial = defaultForFamily(design.family);
-		apply({
+		const initial =
+			is3d && design.sceneId ? sceneToState(design.sceneId) : defaultForFamily(design.family);
+		const next = normalizeState({
 			...design,
 			power: initial.power,
 			seedRe: initial.seedRe,
@@ -187,22 +370,34 @@
 			foldLimit: initial.foldLimit,
 			minRadius: initial.minRadius
 		});
+		journey = createJourney(next, currentAspect());
+		apply(next);
 		rootIndex = 0;
 	}
+
 	function variation() {
 		pause();
 		remember();
-		apply(varyState(snapshot()));
+		const next = varyState(snapshot());
+		journey = createJourney(next, currentAspect());
+		journeyElapsed = 0;
+		offTour = false;
+		apply(next);
 		rootIndex = 0;
 		announce('A new variation. Undo brings the previous one back.');
 	}
+
 	function pause() {
 		playing = false;
 		morphing = false;
+		cinemaIdle = false;
+		clearTimeout(idleTimer);
 		cancelAnimationFrame(frame);
 		frame = 0;
 		lastTime = 0;
+		if (engine && ready) engine.update(design, false);
 	}
+
 	function tick(now: number) {
 		frame = 0;
 		if (disposed || (!playing && !morphing) || !visible || document.hidden) {
@@ -211,10 +406,24 @@
 		}
 		const dt = lastTime ? Math.min((now - lastTime) / 1000, 0.05) : 0;
 		lastTime = now;
-		const time = design.journeyTime + dt * design.speed;
+		const delta = dt * design.speed;
+		const time = design.journeyTime + delta;
 		let next = { ...design, journeyTime: time };
+
 		if (playing && journey) {
-			journeyElapsed += dt * design.speed;
+			const previousElapsed = journeyElapsed;
+			journeyElapsed += delta;
+			if (
+				is3d &&
+				tourMode &&
+				design.sceneId &&
+				previousElapsed < journey.duration &&
+				journeyElapsed >= journey.duration
+			) {
+				const nextId = nextTourSceneId(design.sceneId, 1);
+				selectScene3D(nextId, true);
+				return;
+			}
 			next = sampleJourney(journey, journeyElapsed, next);
 		}
 		if (morphing) {
@@ -224,20 +433,44 @@
 		apply(next, true);
 		frame = requestAnimationFrame(tick);
 	}
+
 	function startClock() {
 		if (!frame && visible && !document.hidden) frame = requestAnimationFrame(tick);
 	}
+
 	function toggleTrip() {
 		if (playing) {
 			pause();
 			return;
 		}
 		remember();
-		journey = createJourney(snapshot(), canvas.clientWidth / canvas.clientHeight);
-		journeyElapsed = 0;
+		if (!journey || journey.family !== design.family || offTour) {
+			journey = createJourney(snapshot(), currentAspect());
+			if (offTour) {
+				journeyElapsed = 0;
+				offTour = false;
+			}
+		}
 		playing = true;
+		wakeControls();
 		startClock();
 	}
+
+	function seekJourney(seconds: number) {
+		const targetSeconds = Math.max(0, Math.min(activeDuration, seconds));
+		if (!journey || journey.family !== design.family) {
+			const baseState = is3d && design.sceneId ? sceneToState(design.sceneId) : snapshot();
+			journey = createJourney(baseState, currentAspect());
+		}
+		journeyElapsed = targetSeconds;
+		offTour = false;
+		const sampled = sampleJourney(journey, journeyElapsed, {
+			...design,
+			journeyTime: targetSeconds
+		});
+		apply(sampled, playing);
+	}
+
 	function toggleMorph() {
 		if (morphing) {
 			pause();
@@ -247,21 +480,46 @@
 		morphing = true;
 		startClock();
 	}
+
+	function setCameraMode(mode: CameraMode) {
+		apply({ ...design, cameraMode: mode });
+	}
+
+	function stepSpatial(forwardDelta: number, rightDelta = 0, upDelta = 0, save = true) {
+		pause();
+		if (save) remember();
+		offTour = true;
+		apply(moveCamera3D(design, forwardDelta, rightDelta, upDelta), true);
+	}
+
 	function zoom(factor: number, x = 0.5, y = 0.5, save = true) {
 		pause();
 		if (save) remember();
-		if (is3d) apply({ ...design, distance: design.distance * factor }, true);
-		else apply(zoomAt(design, x, y, factor, canvas.clientWidth / canvas.clientHeight), true);
+		if (is3d) {
+			offTour = true;
+			if (design.cameraMode === 'orbit') {
+				apply(orbitCamera3D(design, 0, 0, factor), true);
+			} else {
+				const step = factor < 1 ? 0.16 : -0.16;
+				apply(moveCamera3D(design, step, 0, 0), true);
+			}
+		} else {
+			apply(zoomAt(design, x, y, factor, currentAspect()), true);
+		}
 	}
+
 	function pointerDown(event: PointerEvent) {
 		if (event.button !== 0) return;
+		wakeControls();
 		pause();
 		if (pointers.size === 0) remember();
 		canvas.focus({ preventScroll: true });
 		canvas.setPointerCapture(event.pointerId);
 		pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
 	}
+
 	function pointerMove(event: PointerEvent) {
+		wakeControls();
 		const before = pointers.get(event.pointerId);
 		if (!before) return;
 		const rect = canvas.getBoundingClientRect();
@@ -274,16 +532,16 @@
 				const y = ((event.clientY + other.y) / 2 - rect.top) / rect.height;
 				zoom(previousDistance / distance, x, y, false);
 			}
-		} else if (is3d)
-			apply(
-				{
-					...design,
-					yaw: design.yaw - (event.clientX - before.x) * 0.007,
-					pitch: design.pitch + (event.clientY - before.y) * 0.007
-				},
-				true
-			);
-		else
+		} else if (is3d) {
+			offTour = true;
+			const dYaw = -(event.clientX - before.x) * 0.0065;
+			const dPitch = (event.clientY - before.y) * 0.0065;
+			if (design.cameraMode === 'orbit' || event.shiftKey) {
+				apply(orbitCamera3D(design, dYaw, dPitch, 1), true);
+			} else {
+				apply(lookCamera3D(design, dYaw, dPitch), true);
+			}
+		} else {
 			apply(
 				panView(
 					design,
@@ -293,15 +551,19 @@
 				),
 				true
 			);
+		}
 		pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
 	}
+
 	function pointerUp(event: PointerEvent) {
 		pointers.delete(event.pointerId);
-		if (!pointers.size) engine?.update(design);
+		if (!pointers.size) engine?.update(design, false);
 	}
+
 	function wheel(event: WheelEvent) {
 		if (document.activeElement !== canvas && !nativeFullscreen && !expanded) return;
 		event.preventDefault();
+		wakeControls();
 		if (!wheelActive) remember();
 		wheelActive = true;
 		const rect = canvas.getBoundingClientRect();
@@ -314,10 +576,12 @@
 		clearTimeout(wheelTimer);
 		wheelTimer = setTimeout(() => {
 			wheelActive = false;
-			engine?.update(design);
+			engine?.update(design, false);
 		}, 180);
 	}
+
 	function key(event: KeyboardEvent) {
+		wakeControls();
 		if (event.key === 'Escape') {
 			closeExpanded();
 			clean = false;
@@ -326,35 +590,66 @@
 		}
 		if ((event.target as HTMLElement).matches('input, select, textarea, button')) return;
 		if (event.ctrlKey || event.metaKey || event.altKey) return;
+		const lower = event.key.toLowerCase();
 		if (
-			[' ', '+', '=', '-', 'r', 'f', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(
-				event.key
-			)
-		)
+			[
+				' ',
+				'+',
+				'=',
+				'-',
+				'r',
+				'f',
+				'w',
+				'a',
+				's',
+				'd',
+				'q',
+				'e',
+				'ArrowUp',
+				'ArrowDown',
+				'ArrowLeft',
+				'ArrowRight'
+			].includes(event.key) ||
+			['w', 'a', 's', 'd', 'q', 'e', 'r', 'f'].includes(lower)
+		) {
 			event.preventDefault();
+		}
 		if (event.key === ' ') toggleTrip();
 		else if (['+', '='].includes(event.key)) zoom(0.8);
 		else if (event.key === '-') zoom(1.25);
-		else if (event.key === 'r') resetView();
-		else if (event.key === 'f') void fullscreen();
-		else if (event.key.startsWith('Arrow')) {
+		else if (lower === 'r') resetView();
+		else if (lower === 'f') void fullscreen();
+		else if (is3d && ['w', 'a', 's', 'd', 'q', 'e'].includes(lower)) {
+			const fwd = lower === 'w' ? 0.14 : lower === 's' ? -0.14 : 0;
+			const right = lower === 'd' ? 0.12 : lower === 'a' ? -0.12 : 0;
+			const up = lower === 'e' ? 0.1 : lower === 'q' ? -0.1 : 0;
+			stepSpatial(fwd, right, up);
+		} else if (event.key.startsWith('Arrow')) {
 			pause();
 			remember();
 			const dx = event.key === 'ArrowLeft' ? 0.08 : event.key === 'ArrowRight' ? -0.08 : 0;
 			const dy = event.key === 'ArrowUp' ? 0.08 : event.key === 'ArrowDown' ? -0.08 : 0;
-			if (is3d) apply({ ...design, yaw: design.yaw + dx, pitch: design.pitch + dy });
-			else apply(panView(design, dx, dy, canvas.clientWidth / canvas.clientHeight));
+			if (is3d) {
+				offTour = true;
+				if (event.shiftKey) {
+					apply(lookCamera3D(design, dx, dy));
+				} else {
+					apply(moveCamera3D(design, dy * 1.6, -dx * 1.4, 0));
+				}
+			} else {
+				apply(panView(design, dx, dy, currentAspect()));
+			}
 		}
 	}
+
 	function closeExpanded() {
 		if (typeof app?.hidePopover === 'function' && app.matches(':popover-open')) app.hidePopover();
 		app?.removeAttribute('popover');
 		expanded = false;
 	}
+
 	function expandView() {
 		expanded = true;
-		// The article shell has a desktop transform. The top layer keeps this
-		// fallback attached to the viewport rather than that transformed ancestor.
 		if (typeof app.showPopover === 'function') {
 			try {
 				app.setAttribute('popover', 'manual');
@@ -364,6 +659,7 @@
 			}
 		}
 	}
+
 	$effect(() => {
 		if (!expanded) return;
 		const previous = document.body.style.overflow;
@@ -372,6 +668,7 @@
 			document.body.style.overflow = previous;
 		};
 	});
+
 	async function fullscreen() {
 		if (expanded) {
 			closeExpanded();
@@ -386,6 +683,7 @@
 			announce('Expanded view. Use Exit fullscreen to return.');
 		}
 	}
+
 	async function share() {
 		const url = new SvelteURL(location.href);
 		url.searchParams.set('trip', encodeState(snapshot()));
@@ -398,11 +696,12 @@
 			announce('Select and copy your view link below.');
 		}
 	}
+
 	async function saveImage() {
 		if (!engine || exporting) return;
 		exporting = true;
 		try {
-			const ratio = canvas.clientWidth / canvas.clientHeight;
+			const ratio = currentAspect();
 			const blob = await engine.capture(
 				Math.round(ratio >= 1 ? 1600 : 1600 * ratio),
 				Math.round(ratio >= 1 ? 1600 / ratio : 1600)
@@ -421,6 +720,7 @@
 			exporting = false;
 		}
 	}
+
 	function storeFavourites(next: Favourite[]) {
 		try {
 			localStorage.setItem(storageKey, JSON.stringify(next));
@@ -431,6 +731,7 @@
 			return false;
 		}
 	}
+
 	function favourite() {
 		if (
 			storeFavourites([
@@ -440,6 +741,7 @@
 		)
 			announce('Saved on this device. Find it under Saved views.');
 	}
+
 	function changeRoot(part: 're' | 'im', value: number) {
 		const roots = design.roots.map((root, index) =>
 			index === rootIndex ? { ...root, [part]: value } : { ...root }
@@ -447,6 +749,7 @@
 		pause();
 		apply({ ...design, roots }, true);
 	}
+
 	function rootCount(value: number) {
 		startEdit();
 		const roots = Array.from({ length: value }, (_, i) => ({
@@ -456,6 +759,7 @@
 		rootIndex = 0;
 		apply({ ...design, roots });
 	}
+
 	function seedPad(event: PointerEvent) {
 		startEdit();
 		const target = event.currentTarget as HTMLElement;
@@ -478,10 +782,15 @@
 			target.onpointerup = target.onpointercancel = null;
 		};
 	}
+
 	onMount(() => {
 		disposed = false;
 		const restored = decodeState(new URL(location.href).searchParams.get('trip'));
-		if (restored) design = restored;
+		if (restored) {
+			design = restored;
+			journeyElapsed = restored.journeyTime;
+		}
+		journey = createJourney(design, currentAspect());
 		const motion = matchMedia('(prefers-reduced-motion: reduce)');
 		reduced = motion.matches;
 		const motionChange = () => {
@@ -527,6 +836,8 @@
 			});
 		canvas.addEventListener('wheel', wheel, { passive: false });
 		app.addEventListener('keydown', key);
+		app.addEventListener('pointermove', wakeControls);
+		app.addEventListener('focusin', wakeControls);
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				visible = entry.isIntersecting;
@@ -557,11 +868,15 @@
 			cancelAnimationFrame(frame);
 			clearTimeout(messageTimer);
 			clearTimeout(wheelTimer);
+			clearTimeout(idleTimer);
+			clearTimeout(transitionTimer);
 			observer.disconnect();
 			engine?.destroy();
 			motion.removeEventListener('change', motionChange);
 			canvas.removeEventListener('wheel', wheel);
 			app.removeEventListener('keydown', key);
+			app.removeEventListener('pointermove', wakeControls);
+			app.removeEventListener('focusin', wakeControls);
 			document.removeEventListener('visibilitychange', visibility);
 			document.removeEventListener('fullscreenchange', fullscreenChange);
 		};
@@ -572,10 +887,12 @@
 	class="ft-app"
 	class:ft-expanded={expanded}
 	class:ft-clean={clean}
+	class:ft-cinema-idle={cinemaIdle}
 	bind:this={app}
 	id="fractal-trip"
 	data-ready={ready}
 	data-family={design.family}
+	data-scene={design.sceneId ?? ''}
 	data-playing={playing}
 >
 	<header class="ft-header">
@@ -583,8 +900,32 @@
 			<span class="ft-emblem" aria-hidden="true">◎</span>
 			<div>
 				<span class="ft-wordmark">FRACTAL<span>TRIP</span></span>
-				<p>A SMALL RULE. A WORLD OF DETAIL.</p>
+				<p>CINEMATIC 3D &amp; PLANAR FRACTAL EXPLORER</p>
 			</div>
+		</div>
+		<div class="ft-scene-strip" aria-label="Featured 3D scenes">
+			<button
+				class="ft-scene-step"
+				onclick={() => stepScene(-1)}
+				aria-label="Previous scene"
+				title="Previous 3D scene"
+				disabled={!ready}>‹</button
+			>
+			{#each SCENES_3D as scene (scene.id)}
+				<button
+					class="ft-scene-chip"
+					class:active={is3d && design.sceneId === scene.id}
+					onclick={() => selectScene3D(scene.id)}
+					disabled={!ready}>{scene.name}</button
+				>
+			{/each}
+			<button
+				class="ft-scene-step"
+				onclick={() => stepScene(1)}
+				aria-label="Next scene"
+				title="Next 3D scene"
+				disabled={!ready}>›</button
+			>
 		</div>
 		<div class="ft-header-actions">
 			<button
@@ -607,45 +948,90 @@
 			<canvas
 				bind:this={canvas}
 				tabindex="0"
-				aria-label={`${currentName} fractal. Drag to ${is3d ? 'orbit' : 'pan'}, use plus and minus to zoom.`}
+				aria-label={`${currentName} fractal. Drag to ${is3d ? (design.cameraMode === 'orbit' ? 'orbit' : 'look around') : 'pan'}, use plus and minus or W and S to move.`}
 				onpointerdown={pointerDown}
 				onpointermove={pointerMove}
 				onpointerup={pointerUp}
 				onpointercancel={pointerUp}
 			></canvas>
+			<div class="ft-transition-veil" class:active={transitioning} aria-hidden="true"></div>
 			<div class="ft-screen-top">
 				<span
 					><i class:running={playing}></i>{playing
 						? 'JOURNEY IN PROGRESS'
-						: 'READY TO EXPLORE'}</span
-				><span>{is3d ? 'THREE DIMENSIONS' : 'COMPLEX PLANE'}</span>
+						: offTour
+							? 'FREE EXPLORATION'
+							: 'READY TO EXPLORE'}</span
+				><span
+					>{activeScene
+						? activeScene.badge.toUpperCase()
+						: is3d
+							? 'THREE DIMENSIONS'
+							: 'COMPLEX PLANE'}</span
+				>
 			</div>
 			<div class="ft-scene-label">
 				<span class="ft-eyebrow"
-					>{String(FAMILIES.findIndex((item) => item.id === design.family) + 1).padStart(2, '0')} / {is3d
-						? '3D FRACTAL'
-						: design.relief > 0
-							? '2D FRACTAL · RELIEF SHADING'
-							: '2D FRACTAL'}</span
+					>{activeScene
+						? `SCENE 0${SCENES_3D.findIndex((s) => s.id === activeScene.id) + 1} / 04 · ${activeScene.badge.toUpperCase()}`
+						: `${String(FAMILIES.findIndex((item) => item.id === design.family) + 1).padStart(2, '0')} / ${
+								is3d
+									? '3D FRACTAL'
+									: design.relief > 0
+										? '2D FRACTAL · RELIEF SHADING'
+										: '2D FRACTAL'
+							}`}</span
 				>
 				<h2>{currentName}<span>.</span></h2>
-				<p>
-					{is3d
-						? 'Drag to look around. Get closer to the surface.'
-						: 'Choose a shape. Change its equation. Follow the detail.'}
-				</p>
+				<p>{currentSubtitle}</p>
 			</div>
+			{#if is3d}
+				<div class="ft-explore-bar" aria-label="3D exploration mode">
+					<button
+						class:active={design.cameraMode === 'free'}
+						onclick={() => setCameraMode('free')}
+						title="Drag to look around from the current 3D position">Free look</button
+					><button
+						class:active={design.cameraMode === 'orbit'}
+						onclick={() => setCameraMode('orbit')}
+						title="Drag to orbit around the focus point">Orbit</button
+					>
+					{#if offTour}
+						<button class="ft-return-tour" onclick={returnToTour}>↺ Return to tour</button>
+					{/if}
+				</div>
+			{/if}
 			<div class="ft-view-tools">
-				<button onclick={() => zoom(0.72)} aria-label="Zoom in" disabled={!ready}>+</button><button
+				{#if is3d}
+					<button
+						onclick={() => stepSpatial(0, 0, 0.12)}
+						aria-label="Move up"
+						title="Move up (E)"
+						disabled={!ready}>↑</button
+					>
+					<button
+						onclick={() => stepSpatial(0, 0, -0.12)}
+						aria-label="Move down"
+						title="Move down (Q)"
+						disabled={!ready}>↓</button
+					>
+				{/if}
+				<button
+					onclick={() => zoom(0.72)}
+					aria-label="Zoom in"
+					title={is3d ? 'Fly forward (+ / W)' : 'Zoom in (+)'}
+					disabled={!ready}>+</button
+				><button
 					onclick={() => zoom(1.4)}
 					aria-label="Zoom out"
+					title={is3d ? 'Fly backward (− / S)' : 'Zoom out (−)'}
 					disabled={!ready}>−</button
-				><button onclick={resetView} aria-label="Reset view" title="Reset view">↺</button>
+				><button onclick={resetView} aria-label="Reset view" title="Reset view (R)">↺</button>
 			</div>
 			{#if !ready || error}<div class="ft-fallback">
 					<img
 						src="/images/visualizations/fractal-trip/poster.png"
-						alt="A still view of the Fractal Trip Mandelbrot artwork"
+						alt="A still view of the Fractal Trip Copper Reef 3D Mandelbulb artwork"
 						width="1440"
 						height="900"
 					/>
@@ -669,18 +1055,38 @@
 				<div class="ft-panel-title">
 					<span
 						>{panel === 'shapes'
-							? 'CHOOSE YOUR SHAPE'
+							? 'SCENES & SHAPES'
 							: panel === 'equation'
 								? 'CHANGE THE RULE'
 								: panel === 'colour'
-									? 'COLOUR & SURFACE'
+									? 'MATERIAL, LIGHT & RENDER'
 									: panel === 'saved'
 										? 'KEEP A DISCOVERY'
-										: 'A FEW SIMPLE CONTROLS'}</span
+										: 'HOW TO EXPLORE'}</span
 					><button onclick={() => (panel = null)} aria-label="Close panel">×</button>
 				</div>
 				{#if panel === 'shapes'}
-					<p class="ft-panel-intro">Small changes. Entirely different worlds.</p>
+					<p class="ft-panel-subtitle">FEATURED 3D WORLDS</p>
+					<div class="ft-scene-cards">
+						{#each SCENES_3D as scene (scene.id)}
+							<button
+								class="ft-scene-card"
+								class:active={is3d && design.sceneId === scene.id}
+								onclick={() => {
+									selectScene3D(scene.id);
+									panel = null;
+								}}
+							>
+								<div>
+									<strong>{scene.name}</strong>
+									<small>{scene.badge} · {scene.duration}s tour</small>
+									<p>{scene.description}</p>
+								</div>
+								<span aria-hidden="true">↗</span>
+							</button>
+						{/each}
+					</div>
+					<p class="ft-panel-subtitle">ALL SEVEN MATHEMATICAL FAMILIES</p>
 					<div class="ft-shape-list">
 						{#each FAMILIES as item (item.id)}<button
 								class:active={design.family === item.id}
@@ -693,12 +1099,12 @@
 									loading="lazy"
 								/><span
 									><strong>{item.name}</strong><small
-										>{item.kind === '3d' ? '3D surface' : 'Zoom & explore'}</small
+										>{item.kind === '3d' ? '3D distance field' : '2D complex plane'}</small
 									></span
 								><span aria-hidden="true">↗</span></button
 							>{/each}
 					</div>
-					<p class="ft-panel-subtitle">PLACES TO BEGIN</p>
+					<p class="ft-panel-subtitle">FAMILY PRESETS</p>
 					{#each PRESETS.filter((item) => item.family === design.family) as preset (preset.id)}<button
 							class="ft-preset"
 							onclick={() => choosePreset(preset.state)}>{preset.name}<span>↗</span></button
@@ -844,7 +1250,7 @@
 					<button class="ft-wide-button" onclick={resetEquation}>Reset equation</button>
 					<p class="ft-panel-note">
 						{is3d
-							? 'These controls change the 3D construction. The surface uses a finite calculation.'
+							? 'These controls change the 3D distance-estimated geometry. Surface detail is bounded by ray steps and recurrence depth.'
 							: design.family === 'julia'
 								? 'Each pixel starts at a different z. Your seed c stays fixed.'
 								: design.family === 'newton'
@@ -893,8 +1299,63 @@
 						onstart={startEdit}
 						onvalue={(value) => setValue('lightAngle', (value * Math.PI) / 180)}
 					/>
+					{#if is3d}
+						<InstrumentControl
+							label="Field of view"
+							value={Math.round(design.fov)}
+							min={32}
+							max={78}
+							step={1}
+							onstart={startEdit}
+							onvalue={(value) => setValue('fov', value)}
+						/>
+					{/if}
+					<details class="ft-diagnostics">
+						<summary>Technical diagnostics</summary>
+						<dl>
+							<div>
+								<dt>Quality tier</dt>
+								<dd>{stats.quality}</dd>
+							</div>
+							<div>
+								<dt>Internal buffer</dt>
+								<dd>{stats.resolution ?? 'Adaptive'}</dd>
+							</div>
+							<div>
+								<dt>Frame rate</dt>
+								<dd>
+									{stats.fps
+										? `${stats.fps} fps (${stats.frameTimeMs ?? 16.7} ms)`
+										: 'Idle / settled'}
+								</dd>
+							</div>
+							<div>
+								<dt>Refinement</dt>
+								<dd>{stats.refinement ?? stats.precision}</dd>
+							</div>
+							{#if is3d}
+								<div>
+									<dt>Ray / iter budget</dt>
+									<dd>{stats.steps ?? 96} steps · {stats.iterations ?? 15} iters</dd>
+								</div>
+								<div>
+									<dt>Camera position</dt>
+									<dd>
+										[{design.cameraPos[0].toFixed(2)}, {design.cameraPos[1].toFixed(2)}, {design.cameraPos[2].toFixed(
+											2
+										)}]
+									</dd>
+								</div>
+								<div>
+									<dt>Surface clearance</dt>
+									<dd>{clearanceInfo ? clearanceInfo.minDistance.toFixed(4) : '—'}</dd>
+								</div>
+							{/if}
+						</dl>
+					</details>
 					<p class="ft-panel-note">
-						Colours and surface lighting are artistic choices. They do not change the equation.
+						Colours and surface lighting are artistic choices. Paused 3D views progressively
+						accumulate sub-pixel samples and stop drawing once converged.
 					</p>
 				{:else if panel === 'saved'}
 					<button class="ft-wide-button ft-primary" onclick={favourite}
@@ -918,33 +1379,37 @@
 					>
 				{:else}
 					<p class="ft-panel-intro">
-						Choose a shape, then open Equation to change the rule that makes it.
+						Travel through four composed 3D fractal scenes, or pause anywhere to explore on your
+						own.
 					</p>
 					<dl class="ft-help">
-						<dt>Explore</dt>
+						<dt>Take the 3D tour</dt>
 						<dd>
-							Drag to pan a flat fractal or orbit a 3D surface. Pinch to zoom. Click the view to
-							focus it, then scroll to zoom.
+							Press Start trip to fly along a validated 3D spline path through Copper Reef, Folded
+							Cathedral, Alien Garden and Fractal Canyon. Use the progress bar to scrub to any
+							moment.
 						</dd>
-						<dt>Take a trip</dt>
+						<dt>Explore freely</dt>
 						<dd>
-							Start trip moves slowly through the current view. Dragging pauses it. A flat journey
-							reverses at its numeric limit; 3D journeys orbit the surface.
+							Drag on the canvas to look around (or switch to Orbit mode to revolve around a focus).
+							When the viewer is focused, use W, A, S, D (or arrow keys) and Q, E to fly through 3D
+							space. Click Return to tour at any time to rejoin the guided path.
 						</dd>
 						<dt>Use the keyboard</dt>
 						<dd>
-							Focus the view. Space starts or pauses, + and − zoom, arrows move, R resets, F opens
-							fullscreen.
+							Focus the view. Space starts or pauses, W/S or +/− move forward and back, A/D strafe,
+							Q/E move vertically, R resets the view, F opens fullscreen.
 						</dd>
-						<dt>What is the depth?</dt>
+						<dt>Progressive 3D refinement</dt>
 						<dd>
-							Mandelbrot and Julia can have raised-looking shading. Mandelbulb and Mandelbox
-							calculate actual 3D surfaces.
+							When paused on a 3D scene, the renderer accumulates jittered sub-pixel samples to
+							resolve fine ridges, ambient occlusion and soft shadows, then stops drawing once
+							converged.
 						</dd>
 						<dt>Keep something</dt>
 						<dd>
-							Saved views stay on this device. A view link opens the same settings, paused. PNG
-							saves the artwork without controls.
+							Saved views stay on this device. A view link opens the same camera pose and equation,
+							paused. PNG saves a high-detail render without controls.
 						</dd>
 					</dl>
 					<p class="ft-panel-note">
@@ -965,10 +1430,38 @@
 				aria-label={playing ? 'Pause trip' : 'Start trip'}
 				><span>{playing ? 'Ⅱ' : '▶'}</span></button
 			>
-			<div>
-				<strong>{playing ? 'Pause trip' : 'Start trip'}</strong><span
-					>{playing ? 'Enjoy the journey' : 'A little closer. A little stranger.'}</span
-				>
+			<div class="ft-transport-meta">
+				<div class="ft-transport-headline">
+					<strong>{playing ? 'Pause trip' : 'Start trip'}</strong>
+					<span class="ft-journey-clock"
+						>{formatSeconds(journeyProgress)} / {formatSeconds(activeDuration)}</span
+					>
+				</div>
+				<input
+					class="ft-range ft-scrub"
+					type="range"
+					aria-label="Journey progress"
+					min="0"
+					max={activeDuration}
+					step="0.25"
+					value={journeyProgress}
+					disabled={!ready}
+					oninput={(event) => seekJourney(Number(event.currentTarget.value))}
+				/>
+				<div class="ft-transport-sub">
+					<span>{playing ? 'Traveling through the fractal' : 'Scrub timeline or press Start'}</span>
+					{#if is3d}
+						<label class="ft-tour-toggle">
+							<input
+								type="checkbox"
+								aria-label="Continuous tour"
+								checked={tourMode}
+								onchange={(event) => (tourMode = event.currentTarget.checked)}
+							/>
+							Continuous tour
+						</label>
+					{/if}
+				</div>
 			</div>
 		</div>
 		<div class="ft-main-dials">
@@ -1032,7 +1525,8 @@
 					onchange={(event) =>
 						apply({ ...design, quality: event.currentTarget.value as FractalState['quality'] })}
 					><option value="auto">Auto quality</option><option value="saver">Battery saver</option
-					><option value="high">High detail</option></select
+					><option value="balanced">Balanced</option><option value="high">High detail</option
+					></select
 				></label
 			>
 		</div>

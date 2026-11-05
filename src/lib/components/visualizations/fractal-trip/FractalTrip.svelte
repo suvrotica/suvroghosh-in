@@ -29,7 +29,7 @@
 			<h2>FRACTAL TRIP</h2>
 			<img
 				src="/images/visualizations/fractal-trip/poster.png"
-				alt="Copper and turquoise fractal filaments opening into intricate violet spirals"
+				alt="Copper, cream and turquoise three-dimensional Mandelbulb ridges and equatorial cavities in the Copper Reef scene"
 				width="1440"
 				height="900"
 			/>

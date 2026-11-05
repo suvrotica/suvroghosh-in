@@ -1,9 +1,14 @@
-import { minimumSpan, paletteRGB, type FractalState } from './model';
+import { cameraBasis, minimumSpan, paletteRGB, scenePreset, type FractalState } from './model';
 import { FRACTAL_VERTEX, PLANAR_FRAGMENT, SPATIAL_FRAGMENT } from './shaders';
 
 export interface FractalRenderStatus {
 	quality: string;
 	fps: number;
+	frameTimeMs?: number;
+	resolution?: string;
+	steps?: number;
+	iterations?: number;
+	refinement?: string;
 	precision: string;
 	error?: string;
 }
@@ -33,16 +38,92 @@ const FAMILY_IDS: Record<FractalState['family'], number> = {
 };
 
 const PROFILES = {
-	saver: { planarPixels: 450_000, spatialPixels: 220_000, iterations: 160, steps: 64, dpr: 1 },
+	saver: {
+		planarPixels: 450_000,
+		spatialPixels: 240_000,
+		planarIterations: 160,
+		spatialIterations: 13,
+		steps: 72,
+		aoSamples: 2,
+		shadowSteps: 0,
+		refinementSamples: 4,
+		dpr: 1
+	},
 	balanced: {
 		planarPixels: 1_000_000,
-		spatialPixels: 500_000,
-		iterations: 320,
-		steps: 88,
+		spatialPixels: 520_000,
+		planarIterations: 320,
+		spatialIterations: 15,
+		steps: 96,
+		aoSamples: 4,
+		shadowSteps: 8,
+		refinementSamples: 6,
 		dpr: 1.25
 	},
-	high: { planarPixels: 2_000_000, spatialPixels: 900_000, iterations: 512, steps: 112, dpr: 1.5 }
+	high: {
+		planarPixels: 2_000_000,
+		spatialPixels: 920_000,
+		planarIterations: 512,
+		spatialIterations: 18,
+		steps: 128,
+		aoSamples: 5,
+		shadowSteps: 14,
+		refinementSamples: 8,
+		dpr: 1.5
+	}
 } as const;
+
+function halton(index: number, base: number): number {
+	let result = 0;
+	let f = 1 / base;
+	let i = index;
+	while (i > 0) {
+		result += f * (i % base);
+		i = Math.floor(i / base);
+		f /= base;
+	}
+	return result;
+}
+
+const HALTON_JITTER: readonly (readonly [number, number])[] = Array.from({ length: 16 }, (_, i) =>
+	i === 0
+		? ([0, 0] as const)
+		: ([(halton(i, 2) - 0.5) * 0.85, (halton(i, 3) - 0.5) * 0.85] as const)
+);
+
+function stateSignature(s: FractalState): string {
+	return [
+		s.family,
+		s.sceneId ?? '',
+		s.power,
+		s.seedRe.toFixed(6),
+		s.seedIm.toFixed(6),
+		s.seedZ.toFixed(6),
+		s.bulbJulia ? 1 : 0,
+		s.foldScale.toFixed(5),
+		s.foldLimit.toFixed(5),
+		s.minRadius.toFixed(5),
+		s.palette,
+		s.relief.toFixed(4),
+		s.roughness.toFixed(4),
+		s.glow.toFixed(4),
+		s.lightAngle.toFixed(4),
+		s.quality,
+		s.centerRe.toFixed(8),
+		s.centerIm.toFixed(8),
+		s.span.toExponential(6),
+		s.rotation.toFixed(5),
+		s.yaw.toFixed(5),
+		s.pitch.toFixed(5),
+		s.roll.toFixed(5),
+		s.fov.toFixed(3),
+		s.distance.toFixed(5),
+		s.cameraPos[0].toFixed(5),
+		s.cameraPos[1].toFixed(5),
+		s.cameraPos[2].toFixed(5),
+		s.roots.map((r) => `${r.re.toFixed(4)},${r.im.toFixed(4)}`).join(';')
+	].join('|');
+}
 
 function compile(gl: WebGL2RenderingContext, type: number, source: string) {
 	const shader = gl.createShader(type);
@@ -86,7 +167,7 @@ function createProgram(gl: WebGL2RenderingContext, source: string): Program {
 
 /**
  * One demand-rendered canvas. The UI owns animation/navigation and supplies snapshots;
- * this controller owns only GPU resources, drawing budgets, resizing and capture.
+ * this controller owns only GPU resources, drawing budgets, progressive refinement, resizing and capture.
  */
 export function createFractalRenderer(
 	canvas: HTMLCanvasElement,
@@ -109,6 +190,13 @@ export function createFractalRenderer(
 	let planar: Program | null = null;
 	let spatial: Program | null = null;
 	let vertexArray: WebGLVertexArrayObject | null = null;
+	let accumTexture: WebGLTexture | null = null;
+	let accumFramebuffer: WebGLFramebuffer | null = null;
+	let accumWidth = 0;
+	let accumHeight = 0;
+	let accumulationSupported = true;
+	let refinementSample = 0;
+	let lastSignature = '';
 	let state: FractalState | null = null;
 	let visible = true;
 	let destroyed = false;
@@ -124,14 +212,74 @@ export function createFractalRenderer(
 	let averageFrameTime = 16.7;
 	let observedFrames = 0;
 	let badFrameTime = 0;
+	let goodFrameTime = 0;
 	let adaptiveScale = 1;
 	let adaptCooldown = 0;
 	let lastQuality = '';
+	let lastRenderedWidth = 0;
+	let lastRenderedHeight = 0;
 	let errorMessage: string | undefined;
 	const constrained =
 		window.matchMedia('(pointer: coarse)').matches ||
 		(typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency <= 4);
 	let maximumDimension = 4096;
+
+	function cleanupAccumulation() {
+		if (accumFramebuffer) gl.deleteFramebuffer(accumFramebuffer);
+		if (accumTexture) gl.deleteTexture(accumTexture);
+		accumFramebuffer = null;
+		accumTexture = null;
+		accumWidth = 0;
+		accumHeight = 0;
+		refinementSample = 0;
+	}
+
+	function ensureAccumulationBuffer(width: number, height: number): boolean {
+		if (!accumulationSupported) return false;
+		if (accumTexture && accumFramebuffer && accumWidth === width && accumHeight === height) {
+			return true;
+		}
+		cleanupAccumulation();
+		try {
+			const tex = gl.createTexture();
+			const fbo = gl.createFramebuffer();
+			if (!tex || !fbo) {
+				if (tex) gl.deleteTexture(tex);
+				if (fbo) gl.deleteFramebuffer(fbo);
+				accumulationSupported = false;
+				return false;
+			}
+			gl.bindTexture(gl.TEXTURE_2D, tex);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+			gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, width, height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+
+			gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
+			gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
+			const status = gl.checkFramebufferStatus(gl.FRAMEBUFFER);
+			gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+			if (status !== gl.FRAMEBUFFER_COMPLETE) {
+				gl.deleteFramebuffer(fbo);
+				gl.deleteTexture(tex);
+				accumulationSupported = false;
+				return false;
+			}
+			// Re-specify as RGB8 so copyTexSubImage2D is valid from both RGB8 (alpha:false) and RGBA8 backbuffers.
+			gl.bindTexture(gl.TEXTURE_2D, tex);
+			gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB8, width, height, 0, gl.RGB, gl.UNSIGNED_BYTE, null);
+			accumTexture = tex;
+			accumFramebuffer = fbo;
+			accumWidth = width;
+			accumHeight = height;
+			return true;
+		} catch {
+			cleanupAccumulation();
+			accumulationSupported = false;
+			return false;
+		}
+	}
 
 	function initialize() {
 		maximumDimension = Math.min(4096, Number(gl.getParameter(gl.MAX_RENDERBUFFER_SIZE)) || 4096);
@@ -141,6 +289,8 @@ export function createFractalRenderer(
 		gl.disable(gl.DEPTH_TEST);
 		gl.disable(gl.BLEND);
 		planar = createProgram(gl, PLANAR_FRAGMENT);
+		accumulationSupported = true;
+		refinementSample = 0;
 		errorMessage = undefined;
 	}
 
@@ -149,30 +299,46 @@ export function createFractalRenderer(
 	}
 
 	function tier(snapshot: FractalState): Tier {
-		return snapshot.quality === 'high'
-			? 'high'
-			: snapshot.quality === 'saver' || constrained
-				? 'saver'
-				: 'balanced';
+		if (snapshot.quality === 'high') return 'high';
+		if (snapshot.quality === 'saver') return 'saver';
+		if (snapshot.quality === 'balanced') return 'balanced';
+		return constrained ? 'saver' : 'balanced';
 	}
 
 	function report(force = false) {
 		if (!state || destroyed) return;
 		const now = performance.now();
 		const selectedTier = tier(state);
+		const profile = PROFILES[selectedTier];
 		const quality = `${selectedTier === 'balanced' ? 'Balanced' : selectedTier === 'high' ? 'High' : 'Saver'}${adaptiveScale < 0.95 ? ' · adapted' : ''}`;
-		if (!force && now - lastStatusTime < 700 && quality === lastQuality) return;
+		if (!force && now - lastStatusTime < 600 && quality === lastQuality) return;
 		lastQuality = quality;
 		lastStatusTime = now;
 		const ceiling = state.span <= minimumSpan(state, canvas.height) * 1.02;
+		const threeD = isSpatial(state);
+		const maxSamples = accumulationSupported ? profile.refinementSamples : 1;
 		callbacks.onStatus?.({
 			quality,
 			fps:
 				observedFrames > 2 && lastFrameTime && now - lastFrameTime < 250
 					? Math.min(120, Math.round(1000 / averageFrameTime))
 					: 0,
-			precision: isSpatial(state)
-				? 'Bounded 3D detail'
+			frameTimeMs: Math.round(averageFrameTime * 10) / 10,
+			resolution:
+				lastRenderedWidth && lastRenderedHeight
+					? `${lastRenderedWidth}×${lastRenderedHeight}`
+					: undefined,
+			steps: threeD ? profile.steps : undefined,
+			iterations: threeD ? profile.spatialIterations : profile.planarIterations,
+			refinement: threeD
+				? interactive
+					? 'Live motion'
+					: `${Math.min(refinementSample, maxSamples)}/${maxSamples} samples`
+				: 'Single-pass 2D',
+			precision: threeD
+				? refinementSample >= maxSamples && !interactive
+					? 'Refined 3D detail'
+					: 'Bounded 3D detail'
 				: ceiling
 					? 'Zoom limit reached'
 					: 'Bounded GPU precision',
@@ -191,14 +357,12 @@ export function createFractalRenderer(
 		const cssWidth = Math.max(1, bounds.width || canvas.clientWidth || 960);
 		const cssHeight = Math.max(1, bounds.height || canvas.clientHeight || 600);
 		const profile = PROFILES[tier(snapshot)];
-		// A single settled 2D render samples a denser grid; the browser downsamples it.
-		// Continuous animation retains its ordinary budget and one fractal evaluation per pixel.
 		const settleScale = settled && !isSpatial(snapshot) ? 1.35 : 1;
 		const budget = Math.min(
 			3_000_000,
 			(isSpatial(snapshot) ? profile.spatialPixels : profile.planarPixels) *
 				(snapshot.quality === 'auto' ? adaptiveScale : 1) *
-				(interactive ? 0.72 : 1) *
+				(interactive ? 0.78 : 1) *
 				settleScale *
 				settleScale
 		);
@@ -219,11 +383,17 @@ export function createFractalRenderer(
 		};
 	}
 
-	function render(snapshot: FractalState, width: number, height: number, exportFrame = false) {
+	function render(
+		snapshot: FractalState,
+		width: number,
+		height: number,
+		exportFrame = false,
+		sampleIdx = 0
+	) {
 		const threeDimensional = isSpatial(snapshot);
 		if (threeDimensional && !spatial) {
 			spatial = createProgram(gl, SPATIAL_FRAGMENT);
-			lastFrameTime = 0; // compilation is not a representative animation frame
+			lastFrameTime = 0;
 		}
 		const program = threeDimensional ? spatial : planar;
 		if (!program) return;
@@ -231,7 +401,12 @@ export function createFractalRenderer(
 			canvas.width = width;
 			canvas.height = height;
 			lastFrameTime = 0;
+			refinementSample = 0;
 		}
+		lastRenderedWidth = width;
+		lastRenderedHeight = height;
+
+		gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 		gl.viewport(0, 0, width, height);
 		gl.bindVertexArray(vertexArray);
 		gl.useProgram(program.program);
@@ -240,14 +415,21 @@ export function createFractalRenderer(
 		const pair = (name: string, a: number, b: number) =>
 			gl.uniform2f(location(program, name), a, b);
 		const profile = PROFILES[exportFrame ? 'high' : tier(snapshot)];
+		const preset = threeDimensional && snapshot.sceneId ? scenePreset(snapshot.sceneId) : null;
+
 		pair('u_resolution', width, height);
 		integer('u_family', FAMILY_IDS[snapshot.family]);
 		integer('u_power', Math.round(snapshot.power));
 		integer(
 			'u_iterations',
 			threeDimensional
-				? 12
-				: Math.round(profile.iterations * (interactive && !exportFrame ? 0.8 : 1))
+				? preset
+					? Math.max(
+							preset.qualityLimits.minIterations,
+							Math.min(preset.qualityLimits.maxIterations, profile.spatialIterations)
+						)
+					: profile.spatialIterations
+				: Math.round(profile.planarIterations * (interactive && !exportFrame ? 0.8 : 1))
 		);
 		scalar('u_relief', snapshot.relief);
 		scalar('u_roughness', snapshot.roughness);
@@ -258,14 +440,66 @@ export function createFractalRenderer(
 			new Float32Array(paletteRGB(snapshot.palette).flat())
 		);
 		if (threeDimensional) {
+			const basis = cameraBasis(snapshot);
+			const canAccumulate =
+				(!interactive || exportFrame) && ensureAccumulationBuffer(width, height);
+			const jitter = canAccumulate
+				? HALTON_JITTER[sampleIdx % HALTON_JITTER.length]
+				: ([0, 0] as const);
+			const blendFactor = canAccumulate && sampleIdx > 0 ? sampleIdx / (sampleIdx + 1) : 0;
+
 			gl.uniform3f(location(program, 'u_seed3'), snapshot.seedRe, snapshot.seedIm, snapshot.seedZ);
 			integer('u_bulbJulia', snapshot.bulbJulia ? 1 : 0);
 			scalar('u_foldScale', snapshot.foldScale);
 			scalar('u_foldLimit', snapshot.foldLimit);
 			scalar('u_minRadius', snapshot.minRadius);
-			gl.uniform3f(location(program, 'u_camera'), snapshot.yaw, snapshot.pitch, snapshot.distance);
-			integer('u_steps', profile.steps);
-			integer('u_shadows', exportFrame || tier(snapshot) === 'high' ? 1 : 0);
+			gl.uniform3f(
+				location(program, 'u_camPos'),
+				basis.position[0],
+				basis.position[1],
+				basis.position[2]
+			);
+			gl.uniform3f(
+				location(program, 'u_camForward'),
+				basis.forward[0],
+				basis.forward[1],
+				basis.forward[2]
+			);
+			gl.uniform3f(location(program, 'u_camRight'), basis.right[0], basis.right[1], basis.right[2]);
+			gl.uniform3f(location(program, 'u_camUp'), basis.up[0], basis.up[1], basis.up[2]);
+			scalar('u_fovScale', basis.fovScale);
+			pair('u_jitter', jitter[0], jitter[1]);
+			scalar('u_haze', preset ? preset.lighting.haze : 0.02);
+			integer(
+				'u_steps',
+				preset
+					? Math.max(
+							preset.qualityLimits.minSteps,
+							Math.min(preset.qualityLimits.maxSteps, profile.steps)
+						)
+					: profile.steps
+			);
+			integer('u_aoSamples', profile.aoSamples);
+			integer('u_shadowSteps', exportFrame ? 14 : profile.shadowSteps);
+			scalar('u_blendFactor', blendFactor);
+			gl.activeTexture(gl.TEXTURE0);
+			gl.bindTexture(gl.TEXTURE_2D, accumTexture);
+			integer('u_prevFrame', 0);
+
+			gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+			if (canAccumulate && accumTexture) {
+				gl.bindTexture(gl.TEXTURE_2D, accumTexture);
+				if (sampleIdx === 0) {
+					while (gl.getError() !== gl.NO_ERROR) {
+						/* drain any prior error before capability check */
+					}
+				}
+				gl.copyTexSubImage2D(gl.TEXTURE_2D, 0, 0, 0, 0, 0, width, height);
+				if (sampleIdx === 0 && gl.getError() !== gl.NO_ERROR) {
+					accumulationSupported = false;
+				}
+			}
 		} else {
 			pair('u_center', snapshot.centerRe, snapshot.centerIm);
 			scalar('u_span', Math.max(minimumSpan(snapshot, height), snapshot.span));
@@ -279,8 +513,8 @@ export function createFractalRenderer(
 				roots[index * 2 + 1] = root.im;
 			});
 			gl.uniform2fv(location(program, 'u_roots[0]'), roots);
+			gl.drawArrays(gl.TRIANGLES, 0, 3);
 		}
-		gl.drawArrays(gl.TRIANGLES, 0, 3);
 	}
 
 	function draw(time: number) {
@@ -288,27 +522,57 @@ export function createFractalRenderer(
 		if (destroyed || contextLost || capturing || !visible || document.hidden || !state) return;
 		try {
 			const size = dimensions(state);
-			render(state, size.width, size.height);
+			const threeD = isSpatial(state);
+			const profile = PROFILES[tier(state)];
+			const maxSamples =
+				threeD && !interactive && accumulationSupported ? profile.refinementSamples : 1;
+
+			render(state, size.width, size.height, false, refinementSample);
+			if (threeD && !interactive) {
+				refinementSample = Math.min(maxSamples, refinementSample + 1);
+			} else {
+				refinementSample = 1;
+			}
+
 			const interval = time - lastFrameTime;
 			if (lastFrameTime > 0 && interval > 0 && interval < 180) {
 				observedFrames += 1;
 				averageFrameTime = averageFrameTime * 0.88 + interval * 0.12;
 				if (state.quality === 'auto' && time > adaptCooldown) {
-					badFrameTime = averageFrameTime > 34 ? badFrameTime + Math.min(interval, 60) : 0;
-					if (badFrameTime > 1400 && adaptiveScale > 0.42) {
-						adaptiveScale = Math.max(0.42, adaptiveScale * 0.76);
+					if (averageFrameTime > 33) {
+						badFrameTime += Math.min(interval, 60);
+						goodFrameTime = 0;
+						if (badFrameTime > 1200 && adaptiveScale > 0.45) {
+							adaptiveScale = Math.max(0.45, adaptiveScale * 0.78);
+							badFrameTime = 0;
+							adaptCooldown = time + 5000;
+						}
+					} else if (averageFrameTime < 19 && adaptiveScale < 1.0) {
+						goodFrameTime += Math.min(interval, 60);
 						badFrameTime = 0;
-						adaptCooldown = time + 6000;
+						if (goodFrameTime > 2400) {
+							adaptiveScale = Math.min(1.0, adaptiveScale * 1.15);
+							goodFrameTime = 0;
+							adaptCooldown = time + 5000;
+						}
+					} else {
+						badFrameTime = Math.max(0, badFrameTime - interval * 0.5);
+						goodFrameTime = Math.max(0, goodFrameTime - interval * 0.5);
 					}
 				}
 			} else {
 				badFrameTime = 0;
+				goodFrameTime = 0;
 			}
 			lastFrameTime = time;
 			errorMessage = undefined;
 			report();
 			if (idleStatusTimer) clearTimeout(idleStatusTimer);
-			idleStatusTimer = setTimeout(() => report(true), 300);
+			idleStatusTimer = setTimeout(() => report(true), 260);
+
+			if (threeD && !interactive && refinementSample < maxSamples) {
+				schedule();
+			}
 		} catch (error) {
 			errorMessage = error instanceof Error ? error.message : 'The fractal could not be drawn.';
 			report(true);
@@ -330,7 +594,10 @@ export function createFractalRenderer(
 
 	function activity() {
 		if (document.hidden) suspend();
-		else schedule();
+		else {
+			refinementSample = 0;
+			schedule();
+		}
 	}
 
 	function lost(event: Event) {
@@ -340,6 +607,10 @@ export function createFractalRenderer(
 		planar = null;
 		spatial = null;
 		vertexArray = null;
+		accumTexture = null;
+		accumFramebuffer = null;
+		accumWidth = 0;
+		accumHeight = 0;
 		errorMessage = 'Graphics paused. Your settings are kept while the browser restores the canvas.';
 		report(true);
 	}
@@ -367,7 +638,10 @@ export function createFractalRenderer(
 	canvas.addEventListener('webglcontextlost', lost);
 	canvas.addEventListener('webglcontextrestored', restored);
 	document.addEventListener('visibilitychange', activity);
-	const observer = new ResizeObserver(schedule);
+	const observer = new ResizeObserver(() => {
+		refinementSample = 0;
+		schedule();
+	});
 	observer.observe(canvas);
 
 	return {
@@ -376,24 +650,35 @@ export function createFractalRenderer(
 			if (snapshot.family !== state?.family || snapshot.quality !== state?.quality) {
 				adaptiveScale = 1;
 				badFrameTime = 0;
+				goodFrameTime = 0;
 				lastFrameTime = 0;
+			}
+			const nextSignature = stateSignature(snapshot);
+			if (nextSignature !== lastSignature || directManipulation) {
+				refinementSample = 0;
+				lastSignature = nextSignature;
 			}
 			state = snapshot;
 			interactive = directManipulation;
-			settled = false;
+			settled = !directManipulation;
 			if (settleTimer) clearTimeout(settleTimer);
 			if (idleStatusTimer) clearTimeout(idleStatusTimer);
-			settleTimer = setTimeout(() => {
-				interactive = false;
-				settled = true;
-				schedule();
-			}, 220);
+			if (directManipulation) {
+				settleTimer = setTimeout(() => {
+					interactive = false;
+					settled = true;
+					refinementSample = 0;
+					schedule();
+				}, 200);
+			}
 			schedule();
 		},
 		setVisible(nextVisible) {
 			visible = nextVisible;
-			if (visible) schedule();
-			else suspend();
+			if (visible) {
+				refinementSample = 0;
+				schedule();
+			} else suspend();
 		},
 		async capture(requestedWidth, requestedHeight) {
 			if (!state || destroyed || contextLost || capturing) {
@@ -420,14 +705,18 @@ export function createFractalRenderer(
 			capturing = true;
 			suspend();
 			try {
-				// Preserve this viewport near the precision ceiling. A larger PNG must not
-				// silently zoom out or invent finer mathematical samples than the GPU can hold.
 				const magnitude = Math.max(1, Math.abs(state.centerRe), Math.abs(state.centerIm));
 				const safeHeight = isSpatial(state)
 					? height
 					: Math.max(1, Math.min(height, Math.floor(state.span / (4 * 2 ** -23 * magnitude))));
 				const safeWidth = Math.max(1, Math.round((width * safeHeight) / height));
-				render(state, safeWidth, safeHeight, true);
+				if (isSpatial(state)) {
+					for (let s = 0; s < 4; s++) {
+						render(state, safeWidth, safeHeight, true, s);
+					}
+				} else {
+					render(state, safeWidth, safeHeight, true, 0);
+				}
 				let exportCanvas = canvas;
 				if (safeHeight < height) {
 					exportCanvas = document.createElement('canvas');
@@ -446,6 +735,7 @@ export function createFractalRenderer(
 				});
 			} finally {
 				capturing = false;
+				refinementSample = 0;
 				schedule();
 			}
 		},
@@ -460,6 +750,7 @@ export function createFractalRenderer(
 			canvas.removeEventListener('webglcontextrestored', restored);
 			document.removeEventListener('visibilitychange', activity);
 			if (!contextLost) {
+				cleanupAccumulation();
 				if (planar) gl.deleteProgram(planar.program);
 				if (spatial) gl.deleteProgram(spatial.program);
 				if (vertexArray) gl.deleteVertexArray(vertexArray);

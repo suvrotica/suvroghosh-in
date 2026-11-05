@@ -5209,56 +5209,56 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "visualizations/fractal-trip/burning-ship.png",
 			"src": "/images/visualizations/fractal-trip/burning-ship.png",
-			"bytes": 79768,
+			"bytes": 79579,
 			"width": 400,
 			"height": 250
 		},
 		{
 			"name": "visualizations/fractal-trip/julia.png",
 			"src": "/images/visualizations/fractal-trip/julia.png",
-			"bytes": 92873,
+			"bytes": 99653,
 			"width": 400,
 			"height": 250
 		},
 		{
 			"name": "visualizations/fractal-trip/mandelbox.png",
 			"src": "/images/visualizations/fractal-trip/mandelbox.png",
-			"bytes": 75872,
+			"bytes": 214165,
 			"width": 400,
 			"height": 250
 		},
 		{
 			"name": "visualizations/fractal-trip/mandelbrot.png",
 			"src": "/images/visualizations/fractal-trip/mandelbrot.png",
-			"bytes": 101674,
+			"bytes": 102452,
 			"width": 400,
 			"height": 250
 		},
 		{
 			"name": "visualizations/fractal-trip/mandelbulb.png",
 			"src": "/images/visualizations/fractal-trip/mandelbulb.png",
-			"bytes": 58424,
+			"bytes": 240233,
 			"width": 400,
 			"height": 250
 		},
 		{
 			"name": "visualizations/fractal-trip/newton.png",
 			"src": "/images/visualizations/fractal-trip/newton.png",
-			"bytes": 78975,
+			"bytes": 77491,
 			"width": 400,
 			"height": 250
 		},
 		{
 			"name": "visualizations/fractal-trip/poster.png",
 			"src": "/images/visualizations/fractal-trip/poster.png",
-			"bytes": 1361274,
+			"bytes": 2983115,
 			"width": 1440,
 			"height": 900
 		},
 		{
 			"name": "visualizations/fractal-trip/tricorn.png",
 			"src": "/images/visualizations/fractal-trip/tricorn.png",
-			"bytes": 68330,
+			"bytes": 72671,
 			"width": 400,
 			"height": 250
 		},

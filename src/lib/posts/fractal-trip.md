@@ -3,9 +3,9 @@ title: "Fractal Trip: Change a Number, Follow the Pattern"
 seoTitle: "Fractal Trip — Interactive Mandelbrot and 3D Fractals"
 description: "Explore colourful fractals, change the equations behind them, and take a guided journey through Mandelbrot details and three-dimensional forms."
 date: "2026-11-04"
-dateModified: "2026-11-04"
+dateModified: "2026-11-05"
 thumbnail: "/images/visualizations/fractal-trip/poster.png"
-thumbnailAlt: "Copper, violet and turquoise Mandelbrot filaments rendered in the Fractal Trip explorer"
+thumbnailAlt: "Copper, cream and turquoise three-dimensional Mandelbulb ridges and cavities rendered in the Fractal Trip explorer"
 category: "Visualizations"
 tags: ["Fractals", "Mandelbrot Set", "Julia Sets", "Mathematics", "Generative Art", "3D Graphics", "Shaders", "WebGL", "Interactive Mathematics", "Creative Coding"]
 pinnedTags: ["Fractals", "Mandelbrot Set", "Julia Sets", "Mathematics", "Generative Art", "3D Graphics", "Shaders", "WebGL", "Interactive Mathematics", "Creative Coding"]
@@ -36,7 +36,7 @@ faq:
 
 <FractalTrip />
 
-<p><small>Published <time datetime="2026-11-04">4 November 2026</time> · Updated <time datetime="2026-11-04">4 November 2026</time></small></p>
+<p><small>Published <time datetime="2026-11-04">4 November 2026</time> · Updated <time datetime="2026-11-05">5 November 2026</time></small></p>
 
 <TTS />
 
@@ -44,9 +44,9 @@ faq:
 
 Choose **Julia** and move the seed a little. The branches rearrange themselves. Change the colour and the same structure takes on a different appearance. You have changed two different things: the rule that produces the pattern, and the way the result is drawn.
 
-Fractal Trip lets you explore both. Choose a shape, start a slow journey, or pause and steer for yourself. The dark controls are there to keep the bright, complicated part of the screen easy to handle. Knowing what every symbol means is optional. Being able to stop the thing is rather more important.
+Fractal Trip lets you explore both. Choose one of the four three-dimensional scenes or a plane fractal, start a slow journey, scrub along its timeline, or pause and steer for yourself. The dark controls are there to keep the bright, complicated part of the screen easy to handle. Knowing what every symbol means is optional. Being able to stop the thing is rather more important.
 
-Start with **Mandelbrot**, press **Start trip**, and watch the boundary become more elaborate as the view approaches it. Pause when something catches your attention. The picture is calculated from a repeated rule, so changing the view asks the browser to do the calculation again at a different scale.
+A fresh visit opens in **Copper Reef**, a three-dimensional Mandelbulb composition, with **Folded Cathedral**, **Alien Garden** and **Fractal Canyon** alongside it. Press **Start journey** to travel along a validated spatial path across ridges, vaults and branching tendrils, or switch to **Mandelbrot** in **Explore** to watch the complex-plane boundary become more elaborate as the view approaches it. Pause when something catches your attention. The picture is calculated from a repeated rule, so changing the view asks the browser to do the calculation again at a different scale.
 
 ## A small rule, repeated
 
@@ -84,15 +84,15 @@ The plane views can have relief shading. Light and surface controls make the cal
 
 **Mandelbulb** and **Mandelbox** are three-dimensional constructions. The Mandelbulb uses a power-like operation expressed through spherical coordinates. The Mandelbox repeatedly folds, scales and shifts positions. Power, seed and fold parameters alter the forms themselves.
 
-To draw these surfaces, the renderer follows a ray from the camera through each part of the image. A distance estimator guides its progress towards the shape. Estimated surface directions then supply the lighting. You can turn the object and see another side because there is a three-dimensional calculation behind the view.
+To draw these surfaces, the renderer follows a ray from the camera through each part of the image. A distance estimator guides its progress towards the shape, while sampled ambient occlusion, soft shadows and subtle distance haze help separate foreground ridges from deeper recesses. When a three-dimensional scene is paused, the renderer accumulates a bounded set of sub-pixel samples and then stops drawing.
 
 The metallic and pearlescent finishes are artistic choices. They help reveal ridges, recesses and silhouette. They do not turn the equation into a lump of actual copper, however persuasive the highlights become.
 
 ## A useful way to explore
 
-Begin with a preset and change one equation parameter. Pause the journey while doing this. Then try another palette on the same view. Finally, adjust the surface and light. Keeping those steps separate makes it clear which change produced the result you liked.
+Begin with a 3D scene or a plane preset and change one equation parameter. Pause the journey while doing this. Then try another palette on the same view. Finally, adjust the surface and light. Keeping those steps separate makes it clear which change produced the result you liked.
 
-Drag to pan in the plane views, or to orbit a three-dimensional form. Use the zoom controls, wheel or pinch gesture to approach. Manual exploration pauses the trip so you and the camera are not trying to drive at once. Fullscreen gives the detail more room; hiding the controls leaves the artwork almost alone.
+Drag to pan in the plane views, or use **Free look** and **Orbit** in the three-dimensional scenes. While the viewer is focused on desktop, `W`/`S`, `A`/`D` and `Q`/`E` (or the on-screen spatial arrows and zoom buttons on touch devices) move through open space while checking clearance against the distance estimator. Manual exploration pauses the tour and surfaces **Return to tour** so you can rejoin the guided spline path whenever you like. Fullscreen gives the detail more room; hiding the controls leaves the artwork almost alone.
 
 The quality options balance detail against the work your browser can manage. A smaller drawing buffer can make movement smoother. More calculation may refine a boundary, but it cannot recover coordinates the arithmetic can no longer distinguish. These journeys have limits. At very small scales, an honest stopping point is more useful than a confident blur.
 

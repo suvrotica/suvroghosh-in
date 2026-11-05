@@ -106,7 +106,7 @@ if (process.argv.includes('--check')) {
 				family: family.id,
 				pixelSha256: hash(await sharp(bytes).ensureAlpha().raw().toBuffer())
 			});
-			if (family.id === 'mandelbrot') {
+			if (family.id === 'mandelbulb') {
 				const poster = await sharp(captured).resize(1440, 900, { fit: 'cover' }).png().toBuffer();
 				await writeFile(path.join(directory, 'poster.png'), poster);
 				images.unshift({
