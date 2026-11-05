@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T16:21:05.861660+00:00",
+  "generatedAt": "2026-11-05T23:18:10.801777+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1631,6 +1631,29 @@
         "Work",
         "Response",
         "Address"
+      ],
+      "wordCount": 130
+    },
+    "binaural-acoustic-soundboard": {
+      "generatedAt": "2026-11-05T23:18:07.609922+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/binaural-acoustic-soundboard.svg",
+      "source": "src/lib/posts/binaural-acoustic-soundboard.md",
+      "sourceHash": "2d0795bb2672457ec48a7c19fa300a99a81092df74ffab163862d6ed412bc4c0",
+      "sourceModified": "2026-11-05T22:56:58.361036+00:00",
+      "topWords": [
+        "Binaural",
+        "Channel",
+        "Tones",
+        "Mix",
+        "Rain",
+        "Timer",
+        "Fader",
+        "Continuous",
+        "Noise",
+        "Difference",
+        "Saved",
+        "Quiet"
       ],
       "wordCount": 130
     },

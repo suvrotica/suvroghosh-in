@@ -16973,6 +16973,37 @@
 				"Acoustics"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/binaural-acoustic-soundboard.md": {
+			"bodyHash": "89ccecc455fda33b359d4d133751f2d5806f4f7d0a704002d98ea1ff4174db40",
+			"hashVersion": 2,
+			"revisionHash": "fa19a1f95e03e13655a36ed2fa9a45fb7995859b7e1f2a6e3de9582a16129962",
+			"generatedTags": [
+				"Audio",
+				"Soundboard",
+				"Binaural Tones",
+				"Web Audio",
+				"Ambient Sound",
+				"Background Noise",
+				"Browser Tools",
+				"Focus",
+				"Reading",
+				"Sleep Timer"
+			],
+			"pinnedTags": [
+				"Audio",
+				"Soundboard",
+				"Binaural Tones",
+				"Web Audio",
+				"Ambient Sound",
+				"Background Noise",
+				"Browser Tools",
+				"Focus",
+				"Reading",
+				"Sleep Timer"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-06"
 		}
 	},
 	"maxTags": 10

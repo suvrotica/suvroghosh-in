@@ -11713,6 +11713,21 @@
       "sourceHash": "c553d94dd43a91f1d818f3e4d787f02856723531936211cc697008bb1a850e6d",
       "width": 1200
     },
+    "static/images/visualizations/binaural-acoustic-soundboard/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 66618,
+      "outputHash": "634c9790903a061d416f947d5000a87ffa812cf7791bec822b6d29d47603f864",
+      "resized": false,
+      "sourceBytes": 66618,
+      "sourceHash": "634c9790903a061d416f947d5000a87ffa812cf7791bec822b6d29d47603f864",
+      "width": 1200
+    },
     "static/images/visualizations/build-one-build-a-thousand/social.png": {
       "format": "PNG",
       "height": 630,

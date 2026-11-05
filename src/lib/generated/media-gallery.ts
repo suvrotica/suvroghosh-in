@@ -5179,6 +5179,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/binaural-acoustic-soundboard/social.png",
+			"src": "/images/visualizations/binaural-acoustic-soundboard/social.png",
+			"bytes": 66618,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/build-one-build-a-thousand/social.png",
 			"src": "/images/visualizations/build-one-build-a-thousand/social.png",
 			"bytes": 260070,

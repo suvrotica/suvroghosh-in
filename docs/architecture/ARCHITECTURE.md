@@ -1495,6 +1495,63 @@ availability and production verification. Controller fixtures cover ownership,
 source replacement, HLS recovery and bounded cleanup; those fixtures alone do
 not establish live provider playback or deployed CSP behaviour.
 
+### Binaural Acoustic Soundboard: ambient mixer and binaural synthesis
+
+Binaural Acoustic Soundboard is an ordinary Markdown visualization at
+`/blog/visualizations/binaural-acoustic-soundboard`, with `collections: ['apps']`
+for Apps discovery. The Svelte 5 instrument shell under
+`src/lib/components/visualizations/binaural-acoustic-soundboard` presents the
+status display, five channel strips, master volume dial, sleep timer and saved-mix
+controls. Feature modules under `src/lib/visualizations/binaural-acoustic-soundboard`
+own the sound preset model (`sounds.ts`), versioned browser localStorage persistence
+(`storage.ts`) and the single-context Web Audio controller (`engine.ts`). It adds
+no server endpoint, account, upload or external runtime media dependency.
+
+Playback initialises or resumes one owned `AudioContext` only after an explicit
+`Play` action. `Fan` and `Soft noise` (`Brown`/`Pink`) are synthesized procedurally
+in the browser; `Rain` (`/audio/binaural-acoustic-soundboard/rain-window.wav`) and
+`Distant city` (`/audio/binaural-acoustic-soundboard/distant-city.wav`) decode
+first-party seamless micro-loops generated deterministically by
+`scripts/generate-binaural-soundboard-audio.mjs` (`binaural-soundboard:audio:check`).
+Decoded `AudioBuffer` instances are cached per engine while one-use
+`AudioBufferSourceNode` instances are recreated on each start; a loop fetch or
+decode failure marks only the affected channel unavailable while remaining channels
+continue playing. `Binaural tones` routes a `220 Hz` left oscillator and a
+`220 Hz + Δf` right oscillator (`Delta` `2 Hz`, `Theta` `6 Hz`, `Alpha` `10 Hz`,
+`Beta` `20 Hz`, `Gamma` `40 Hz`, or `1–40 Hz` fine adjustment) through inputs `0`
+and `1` of a `ChannelMergerNode(2)` rather than amplitude-modulating a mono tone,
+and describes the acoustic frequency difference without claiming brainwave
+entrainment. Per-channel gain staging keeps the worst-case five-channel sum below
+`0.95` linear peak, and `claimPlayback`/`releasePlayback` in
+`components/blog/tts/playback.ts` coordinates single-active-audio ownership with
+Calcutta Radio and article narration.
+
+The optional 15-, 30- or 60-minute sleep timer tracks a wall-clock deadline across
+channel, preset and saved-mix changes, schedules a dedicated 10-second linear fade
+stage (`timerFadeGain`) downstream of `masterGain` on the Web Audio timeline so
+moving the master dial cannot override the fade, and reconciles expiry on
+visibility or page-restoration events. Versioned `binaural-acoustic-soundboard:v1`
+storage persists only validated custom mixes and master volume/mute settings,
+never active playback or timer state. See the
+[feature contract](../visualizations/binaural-acoustic-soundboard.md) for asset
+hashes, routing and verification commands; this extends the established
+feature-local browser Web Audio pattern without requiring a new ADR.
+
+```mermaid
+flowchart LR
+    Post["One Markdown app / Apps + Viz discovery"] --> UI["Binaural Acoustic Soundboard controls"]
+    Storage["Validated localStorage: saved mixes + master volume"] <--> UI
+    UI -->|explicit Play| Engine["Single owned Web Audio controller"]
+    Procedural["Procedural Brown/Pink noise + Fan"] --> Channels["Five per-channel gain stages"]
+    Loops["Same-origin WAV micro-loops / cached AudioBuffers"] --> Channels
+    Oscillators["220 Hz L + (220 + Δf) Hz R oscillators"] --> Merger["ChannelMergerNode(2) stereo separation"]
+    Merger --> Channels
+    Channels --> Master["Master volume + mute stage"]
+    Master --> Fade["Dedicated 10 s sleep-timer fade stage"]
+    Fade --> Output["Browser audio destination"]
+    Engine <--> Ownership["Existing narration / radio playback owner"]
+```
+
 ### Videos I Like: curated availability and consented playback
 
 Videos I Like is an ordinary Markdown app at `/blog/visualizations/videos-i-like`.

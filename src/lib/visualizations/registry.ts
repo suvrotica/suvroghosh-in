@@ -16,6 +16,18 @@ export type VisualizationId = keyof typeof visualizationLoaders;
 export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
+	'binaural-acoustic-soundboard': {
+		id: 'binaural-acoustic-soundboard',
+		title: 'Binaural Acoustic Soundboard',
+		description:
+			'Mix steady rain, a quiet fan, distant city ambience, soft noise and optional stereo binaural tones. Save a mix you like, or set it to stop after 15, 30 or 60 minutes.',
+		subjects: ['Physics', 'Design', 'Computer Science'],
+		poster: '/images/visualizations/binaural-acoustic-soundboard/social.png',
+		posterAlt:
+			"Binaural Acoustic Soundboard's matte graphite mixer panel with amber status display, five channel faders, master rotary dial and sleep timer controls",
+		href: '/blog/visualizations/binaural-acoustic-soundboard',
+		status: 'published'
+	},
 	'circuit-bench': {
 		id: 'circuit-bench',
 		title: 'Circuit Bench: What Changes When You Change a Component?',
