@@ -35,6 +35,7 @@ import {
 	exportProjectBackupZip,
 	findRecoverableSessions,
 	importProjectBackupZip,
+	listAllRecordings,
 	permanentlyDeleteRecording,
 	recoverInterruptedSession,
 	restoreDeletedRecording,
@@ -478,6 +479,175 @@ describe('Recorder — Incremental Persistence, Original Integrity & Crash Recov
 			expect(demoIntegrity.valid).toBe(false);
 		} finally {
 			setStorageTestOptions({ forceDisableMemoryFallback: false, resetMemory: true });
+		}
+	});
+
+	it('lists saved recordings in Library and recovers interrupted sessions from OPFS when IndexedDB is unavailable', async () => {
+		// Simulate an environment where IndexedDB is unavailable (as in Node or restricted browsers)
+		// while OPFS (navigator.storage.getDirectory) works, and memory fallback is disabled.
+		const opfsFiles = new Map<string, Uint8Array>();
+
+		const mockDirectoryHandle = {
+			async getDirectoryHandle() {
+				return mockDirectoryHandle;
+			},
+			async getFileHandle(name: string, options?: { create?: boolean }) {
+				if (!opfsFiles.has(name) && !options?.create) {
+					throw new Error(`NotFoundError: ${name}`);
+				}
+				if (!opfsFiles.has(name) && options?.create) {
+					opfsFiles.set(name, new Uint8Array(0));
+				}
+				return {
+					async createWritable() {
+						let pending = new Uint8Array(0);
+						return {
+							async write(data: ArrayBuffer | Uint8Array) {
+								pending =
+									data instanceof Uint8Array
+										? new Uint8Array(data)
+										: new Uint8Array(data.slice(0));
+							},
+							async close() {
+								opfsFiles.set(name, pending);
+							}
+						};
+					},
+					async getFile() {
+						const bytes = opfsFiles.get(name);
+						if (!bytes) throw new Error(`NotFoundError: ${name}`);
+						return {
+							size: bytes.byteLength,
+							async arrayBuffer() {
+								return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
+							}
+						};
+					}
+				};
+			},
+			async removeEntry(name: string) {
+				opfsFiles.delete(name);
+			}
+		};
+
+		const origNavigator = globalThis.navigator;
+		Object.defineProperty(globalThis, 'navigator', {
+			configurable: true,
+			value: {
+				...(origNavigator ?? {}),
+				storage: {
+					async getDirectory() {
+						return mockDirectoryHandle;
+					}
+				}
+			}
+		});
+
+		setStorageTestOptions({ forceDisableMemoryFallback: true, resetMemory: true });
+		try {
+			const sample = synthesizeSpeechBesideRunningFan({ durationSec: 2.0, sampleRate: 16000 });
+			const wavExp = await exportRecordingMedia({
+				title: 'OPFS Only Recording',
+				mode: 'speech',
+				format: 'wav',
+				presetId: 'standard-speech',
+				channelData: sample.channelData,
+				sampleRate: sample.sampleRate,
+				waveformPeaks: []
+			});
+			const wavBytes = new Uint8Array(await wavExp.blob.arrayBuffer());
+
+			const saved = await commitCompletedRecording({
+				metadata: {
+					id: 'rec_opfs_only_1',
+					title: 'OPFS Only Recording',
+					notes: 'Saved when IndexedDB is disabled',
+					tags: ['opfs'],
+					favourite: false,
+					mode: 'speech',
+					createdAt: Date.now(),
+					updatedAt: Date.now(),
+					deletedAt: null,
+					durationSec: 2.0,
+					capturedMs: 2000,
+					pausedMs: 0,
+					interruptionCount: 0,
+					interruptionGapMs: 0,
+					sampleRate: sample.sampleRate,
+					channels: 1,
+					originalMimeType: 'audio/wav',
+					originalExtension: 'wav',
+					originalByteLength: wavBytes.byteLength,
+					chunkCount: 1,
+					committedChunkCount: 1,
+					recoveredFromCrash: false,
+					lastRecoverableSec: 2.0,
+					bookmarks: [],
+					waveform: buildWaveformSummary(sample.channelData, sample.sampleRate, 64),
+					analysis: null,
+					recipe: createDefaultEditRecipe(2.0, 'speech')
+				},
+				originalBytes: wavBytes,
+				pcmChannels: sample.channelData
+			});
+
+			expect(saved.status).toBe('saved');
+			expect(saved.storageBackend).toBe('opfs');
+
+			// 1. Must appear in Library listing even though IndexedDB is unavailable and mock DirectoryHandle has no async iterator
+			const library = await listAllRecordings();
+			expect(library.some((r) => r.id === 'rec_opfs_only_1')).toBe(true);
+
+			// 2. Simulate an interrupted session when IndexedDB is unavailable and OPFS is active
+			const sessionId = 'sess_opfs_only_crash_1';
+			const recordingId = 'rec_opfs_only_crash_1';
+			await saveSessionJournal({
+				sessionId,
+				recordingId,
+				tabId: 'other_crashed_tab',
+				title: 'OPFS Interrupted Take',
+				mode: 'speech',
+				startedAt: Date.now() - 12000,
+				lastHeartbeatAt: Date.now() - 9000,
+				capturedDurationMs: 2000,
+				pausedDurationMs: 0,
+				interruptionCount: 1,
+				interruptionGapMs: 100,
+				sampleRate: sample.sampleRate,
+				channels: 1,
+				mimeType: 'audio/wav',
+				chunkCount: 1,
+				committedChunkCount: 1,
+				status: 'interrupted',
+				gapEvents: []
+			});
+
+			await writeRecordingChunk({
+				sessionId,
+				recordingId,
+				index: 0,
+				bytes: wavBytes,
+				mimeType: 'audio/wav',
+				capturedDurationMs: 2000
+			});
+
+			const recoverable = await findRecoverableSessions('active_tab_now');
+			expect(recoverable.some((s) => s.journal.sessionId === sessionId)).toBe(true);
+			expect(recoverable.find((s) => s.journal.sessionId === sessionId)?.contiguousChunks.length).toBe(1);
+
+			const recovered = await recoverInterruptedSession(sessionId);
+			expect(recovered).not.toBeNull();
+			expect(recovered?.id).toBe(recordingId);
+			expect(recovered?.storageBackend).toBe('opfs');
+
+			const libraryAfterRecovery = await listAllRecordings();
+			expect(libraryAfterRecovery.some((r) => r.id === recordingId)).toBe(true);
+		} finally {
+			setStorageTestOptions({ forceDisableMemoryFallback: false, resetMemory: true });
+			Object.defineProperty(globalThis, 'navigator', {
+				configurable: true,
+				value: origNavigator
+			});
 		}
 	});
 });

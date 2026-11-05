@@ -14,6 +14,13 @@ const STORE_SESSIONS = 'sessions';
 const STORE_CHUNKS = 'chunks';
 const STORE_BLOBS = 'blobs';
 const OPFS_DIR_NAME = 'suvro-recorder-audio-v1';
+const OPFS_INDEX_FILE = '_opfs_index_v1.json';
+
+interface OpfsStorageIndex {
+	recordingIds: string[];
+	sessionIds: string[];
+	chunkKeysByRecording: Record<string, string[]>;
+}
 
 // In-memory stores are restricted strictly to headless Node unit test environments
 // where neither `window` nor `indexedDB` exists. In a real browser (`typeof window !== 'undefined'`),
@@ -287,6 +294,89 @@ async function readOpfsJson<T>(key: string): Promise<T | null> {
 }
 
 /**
+ * Enumerates file names in the OPFS directory matching `prefix` and `suffix` when the
+ * browser's `FileSystemDirectoryHandle` exposes async iteration (`keys`, `entries`, `values`, or `Symbol.asyncIterator`).
+ */
+async function listOpfsEntryNames(prefix: string, suffix = '.json'): Promise<string[]> {
+	const opfsDir = await getOpfsRoot();
+	if (!opfsDir) return [];
+	const names: string[] = [];
+	const dirAny = opfsDir as unknown as {
+		keys?: () => AsyncIterable<string>;
+		entries?: () => AsyncIterable<[string, FileSystemHandle]>;
+		values?: () => AsyncIterable<FileSystemHandle>;
+		[Symbol.asyncIterator]?: () => AsyncIterable<[string, FileSystemHandle] | FileSystemHandle>;
+	};
+
+	try {
+		if (typeof dirAny.keys === 'function') {
+			for await (const name of dirAny.keys()) {
+				if (typeof name === 'string' && name.startsWith(prefix) && name.endsWith(suffix)) {
+					names.push(name);
+				}
+			}
+			return names;
+		}
+		if (typeof dirAny.entries === 'function') {
+			for await (const [name] of dirAny.entries()) {
+				if (typeof name === 'string' && name.startsWith(prefix) && name.endsWith(suffix)) {
+					names.push(name);
+				}
+			}
+			return names;
+		}
+		if (typeof dirAny.values === 'function') {
+			for await (const handle of dirAny.values()) {
+				const name = handle?.name;
+				if (typeof name === 'string' && name.startsWith(prefix) && name.endsWith(suffix)) {
+					names.push(name);
+				}
+			}
+			return names;
+		}
+		if (typeof dirAny[Symbol.asyncIterator] === 'function') {
+			for await (const item of dirAny[Symbol.asyncIterator]()) {
+				const name = Array.isArray(item) ? item[0] : item?.name;
+				if (typeof name === 'string' && name.startsWith(prefix) && name.endsWith(suffix)) {
+					names.push(name);
+				}
+			}
+		}
+	} catch {
+		// Ignore directory iteration errors; `_opfs_index_v1.json` provides a direct file-based index
+	}
+	return names;
+}
+
+let opfsIndexChain: Promise<void> = Promise.resolve();
+
+async function readOpfsIndex(): Promise<OpfsStorageIndex> {
+	const existing = await readOpfsJson<OpfsStorageIndex>(OPFS_INDEX_FILE);
+	return {
+		recordingIds: Array.isArray(existing?.recordingIds) ? existing.recordingIds : [],
+		sessionIds: Array.isArray(existing?.sessionIds) ? existing.sessionIds : [],
+		chunkKeysByRecording:
+			existing?.chunkKeysByRecording && typeof existing.chunkKeysByRecording === 'object'
+				? existing.chunkKeysByRecording
+				: {}
+	};
+}
+
+async function updateOpfsIndex(
+	mutator: (index: OpfsStorageIndex) => void
+): Promise<void> {
+	const next = opfsIndexChain.then(async () => {
+		const opfsDir = await getOpfsRoot();
+		if (!opfsDir) return;
+		const index = await readOpfsIndex();
+		mutator(index);
+		await writeOpfsJson(OPFS_INDEX_FILE, index);
+	});
+	opfsIndexChain = next.catch(() => {});
+	await next;
+}
+
+/**
  * Reads a binary file strictly from the specified durable backend (`opfs` or `indexeddb`),
  * never from in-memory maps.
  */
@@ -381,6 +471,13 @@ async function persistMetadataDurably(meta: RecordingMetadata): Promise<void> {
 	}
 
 	const opfsSaved = await writeOpfsJson(`meta_${meta.id}.json`, meta);
+	if (opfsSaved) {
+		await updateOpfsIndex((index) => {
+			if (!index.recordingIds.includes(meta.id)) {
+				index.recordingIds.push(meta.id);
+			}
+		});
+	}
 
 	if (idbSaved || opfsSaved) {
 		return;
@@ -486,6 +583,13 @@ export async function saveSessionJournal(
 		idbOk = false;
 	}
 	const opfsOk = await writeOpfsJson(`session_${journal.sessionId}.json`, journal);
+	if (opfsOk) {
+		await updateOpfsIndex((index) => {
+			if (!index.sessionIds.includes(journal.sessionId)) {
+				index.sessionIds.push(journal.sessionId);
+			}
+		});
+	}
 	if (idbOk || opfsOk) return;
 
 	if (isMemoryFallbackAllowed()) {
@@ -514,6 +618,9 @@ export async function getSessionJournal(
 export async function deleteSessionJournal(sessionId: string): Promise<void> {
 	memSessions.delete(sessionId);
 	await deleteOpfsEntry(`session_${sessionId}.json`);
+	await updateOpfsIndex((index) => {
+		index.sessionIds = index.sessionIds.filter((id) => id !== sessionId);
+	});
 	await idbDelete(STORE_SESSIONS, sessionId);
 }
 
@@ -572,6 +679,14 @@ export async function writeRecordingChunk(options: {
 		...record,
 		bytes: undefined
 	});
+	if (opfsMetaSaved) {
+		await updateOpfsIndex((index) => {
+			const existing = index.chunkKeysByRecording[options.recordingId] ?? [];
+			if (!existing.includes(key)) {
+				index.chunkKeysByRecording[options.recordingId] = [...existing, key];
+			}
+		});
+	}
 
 	if (!chunkMetaSaved && !opfsMetaSaved) {
 		if (isMemoryFallbackAllowed()) {
@@ -592,6 +707,42 @@ export async function listChunksForRecording(
 	for (const c of allIdb) {
 		if (c.recordingId === recordingId) byKey.set(c.key, c);
 	}
+
+	// Discover chunks persisted in OPFS (via index, directory enumeration, and sequential index probe)
+	const opfsDir = await getOpfsRoot();
+	if (opfsDir) {
+		const candidateKeys = new Set<string>();
+		const index = await readOpfsIndex();
+		for (const k of index.chunkKeysByRecording[recordingId] ?? []) {
+			candidateKeys.add(k);
+		}
+		const dirChunkFiles = await listOpfsEntryNames(`chunkmeta_chunk_${recordingId}_`, '.json');
+		for (const fileName of dirChunkFiles) {
+			const key = fileName.slice('chunkmeta_'.length, -'.json'.length);
+			if (key) candidateKeys.add(key);
+		}
+
+		for (const key of candidateKeys) {
+			if (byKey.has(key)) continue;
+			const rec = await readOpfsJson<RecordedChunkRecord>(`chunkmeta_${key}.json`);
+			if (rec && rec.recordingId === recordingId) {
+				byKey.set(rec.key, rec);
+			}
+		}
+
+		// Sequential probe fallback (`chunk_<recordingId>_000000`, `000001`, ...) in case
+		// a test harness or browser provides OPFS file read/write without directory iteration
+		for (let idx = 0; idx < 4096; idx++) {
+			const seqKey = `chunk_${recordingId}_${String(idx).padStart(6, '0')}`;
+			if (byKey.has(seqKey)) continue;
+			const rec = await readOpfsJson<RecordedChunkRecord>(`chunkmeta_${seqKey}.json`);
+			if (!rec) break;
+			if (rec.recordingId === recordingId) {
+				byKey.set(rec.key, rec);
+			}
+		}
+	}
+
 	if (isMemoryFallbackAllowed()) {
 		for (const c of memChunks.values()) {
 			if (c.recordingId === recordingId && !byKey.has(c.key)) {
@@ -785,6 +936,29 @@ export async function listAllRecordings(options?: {
 	const byId = new Map<string, RecordingMetadata>();
 	for (const item of idbItems) byId.set(item.id, item);
 
+	// Also enumerate recordings persisted in OPFS when IndexedDB is unavailable or out of sync
+	const opfsDir = await getOpfsRoot();
+	if (opfsDir) {
+		const candidateIds = new Set<string>();
+		const index = await readOpfsIndex();
+		for (const id of index.recordingIds) {
+			candidateIds.add(id);
+		}
+		const dirMetaFiles = await listOpfsEntryNames('meta_', '.json');
+		for (const fileName of dirMetaFiles) {
+			const id = fileName.slice('meta_'.length, -'.json'.length);
+			if (id) candidateIds.add(id);
+		}
+		for (const id of candidateIds) {
+			const opfsMeta = await readOpfsJson<RecordingMetadata>(`meta_${id}.json`);
+			if (!opfsMeta) continue;
+			const existing = byId.get(opfsMeta.id);
+			if (!existing || opfsMeta.updatedAt >= existing.updatedAt) {
+				byId.set(opfsMeta.id, opfsMeta);
+			}
+		}
+	}
+
 	if (isMemoryFallbackAllowed()) {
 		for (const item of memRecordings.values()) {
 			if (!byId.has(item.id)) byId.set(item.id, item);
@@ -829,13 +1003,18 @@ export async function restoreDeletedRecording(
  * Permanently deletes a recording, its original audio bytes, its PCM snapshot, and any chunks.
  */
 export async function permanentlyDeleteRecording(recordingId: string): Promise<void> {
+	const chunks = await listChunksForRecording(recordingId);
+
 	memRecordings.delete(recordingId);
 	await deleteOpfsEntry(`meta_${recordingId}.json`);
+	await updateOpfsIndex((index) => {
+		index.recordingIds = index.recordingIds.filter((id) => id !== recordingId);
+		delete index.chunkKeysByRecording[recordingId];
+	});
 	await idbDelete(STORE_RECORDINGS, recordingId);
 	await deleteBinaryFile(`orig_${recordingId}.bin`);
 	await deleteBinaryFile(`pcm_${recordingId}.bin`);
 
-	const chunks = await listChunksForRecording(recordingId);
 	for (const chunk of chunks) {
 		memChunks.delete(chunk.key);
 		await deleteOpfsEntry(`chunkmeta_${chunk.key}.json`);
@@ -861,6 +1040,30 @@ export async function findRecoverableSessions(
 	const idbJournals = await idbGetAll<ActiveRecordingSessionJournal>(STORE_SESSIONS);
 	const byId = new Map<string, ActiveRecordingSessionJournal>();
 	for (const j of idbJournals) byId.set(j.sessionId, j);
+
+	// Also enumerate session journals persisted in OPFS when IndexedDB is unavailable
+	const opfsDir = await getOpfsRoot();
+	if (opfsDir) {
+		const candidateSessionIds = new Set<string>();
+		const index = await readOpfsIndex();
+		for (const sid of index.sessionIds) {
+			candidateSessionIds.add(sid);
+		}
+		const dirSessionFiles = await listOpfsEntryNames('session_', '.json');
+		for (const fileName of dirSessionFiles) {
+			const sid = fileName.slice('session_'.length, -'.json'.length);
+			if (sid) candidateSessionIds.add(sid);
+		}
+		for (const sid of candidateSessionIds) {
+			const opfsJournal = await readOpfsJson<ActiveRecordingSessionJournal>(`session_${sid}.json`);
+			if (!opfsJournal) continue;
+			const existing = byId.get(opfsJournal.sessionId);
+			if (!existing || opfsJournal.lastHeartbeatAt >= existing.lastHeartbeatAt) {
+				byId.set(opfsJournal.sessionId, opfsJournal);
+			}
+		}
+	}
+
 	if (isMemoryFallbackAllowed()) {
 		for (const j of memSessions.values()) {
 			if (!byId.has(j.sessionId)) byId.set(j.sessionId, j);

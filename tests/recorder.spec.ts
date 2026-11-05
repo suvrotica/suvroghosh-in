@@ -213,4 +213,40 @@ test.describe('Recorder — by Suvro Ghosh (/tools/recorder)', () => {
 		const download = await downloadPromise;
 		expect(download.suggestedFilename().endsWith('.mp4')).toBe(true);
 	});
+
+	test('persists recordings to OPFS and lists them in Library across reloads when IndexedDB is unavailable', async ({
+		page
+	}) => {
+		await page.addInitScript(() => {
+			// Disable IndexedDB only while leaving OPFS (navigator.storage.getDirectory) functional
+			if (window.indexedDB) {
+				window.indexedDB.open = () => {
+					throw new DOMException('SecurityError: IndexedDB disabled', 'SecurityError');
+				};
+			}
+		});
+
+		await page.goto('/tools/recorder', { waitUntil: 'domcontentloaded' });
+		const dismissPrivacy = page.getByRole('button', {
+			name: /Dismiss privacy notice/i
+		});
+		if (await dismissPrivacy.isVisible()) {
+			await dismissPrivacy.click();
+		}
+
+		await page.getByTestId('load-worked-example-btn').click();
+
+		// Must be durably saved via OPFS and pass SHA-256 original integrity verification
+		await expect(page.getByTestId('editor-saved-badge')).toContainText('SAVED (OPFS)');
+		await expect(page.getByTestId('original-integrity-badge')).toContainText('Original Safe');
+
+		// Switch to Library and confirm the recording appears even without IndexedDB
+		await page.getByRole('button', { name: /03 Library/i }).click();
+		await expect(page.getByTestId('library-list')).toContainText('Voice Note Beside Running Fan');
+
+		// Reload the page and confirm the recording still appears in Library from OPFS
+		await page.reload({ waitUntil: 'domcontentloaded' });
+		await page.getByRole('button', { name: /03 Library/i }).click();
+		await expect(page.getByTestId('library-list')).toContainText('Voice Note Beside Running Fan');
+	});
 });
