@@ -50,7 +50,7 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		expect(formatMeasurement(p1.voltageDrop, 'V')).toBe('1.67 V');
 	});
 
-	it('verifies parallel resistors: two 1 kΩ resistors in parallel across 5 V draw 10 mA total', () => {
+	it('verifies parallel and series resistors: 10 mA in parallel, 5 mA single, and 2.5 mA in series', () => {
 		const doc = getExampleCircuit('series-parallel');
 		const res = evaluateCircuitAtInstant(doc, 0);
 		expect(res.ok).toBe(true);
@@ -63,7 +63,7 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		expect(r2.current).toBeCloseTo(0.005, 9);
 		expect(v1.current).toBeCloseTo(0.01, 9); // 10 mA total
 
-		// Opening S1 disconnects R2 and drops total current to 5 mA
+		// Opening S1 disconnects parallel branch R2 and drops total current to 5 mA
 		const s1 = doc.components.find((c) => c.id === 's1')!;
 		s1.params.closed = false;
 		const openRes = evaluateCircuitAtInstant(doc, 0);
@@ -71,6 +71,18 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		if (!openRes.ok) return;
 		expect(openRes.snapshot.components['v1'].current).toBeCloseTo(0.005, 9);
 		expect(openRes.snapshot.components['r2'].current).toBeCloseTo(0, 9);
+
+		// Opening bypass switch S2 places R1 and R3 in series (2 kΩ total -> 2.5 mA, 2.5 V across each)
+		const s2 = doc.components.find((c) => c.id === 's2')!;
+		s2.params.closed = false;
+		const seriesRes = evaluateCircuitAtInstant(doc, 0);
+		expect(seriesRes.ok).toBe(true);
+		if (!seriesRes.ok) return;
+		expect(seriesRes.snapshot.components['v1'].current).toBeCloseTo(0.0025, 9);
+		expect(seriesRes.snapshot.components['r1'].current).toBeCloseTo(0.0025, 9);
+		expect(seriesRes.snapshot.components['r3'].current).toBeCloseTo(0.0025, 9);
+		expect(seriesRes.snapshot.components['r1'].voltageDrop).toBeCloseTo(2.5, 9);
+		expect(seriesRes.snapshot.components['r3'].voltageDrop).toBeCloseTo(2.5, 9);
 	});
 
 	it('verifies default RC charging example against analytical curve at t = 0, 1 s, and 5 s', () => {
@@ -399,5 +411,26 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 
 		expect(formatMeasurement(0.01234, 'V')).toBe('12.34 mV');
 		expect(formatMeasurement(0.085, 'V')).toBe('85.00 mV');
+	});
+
+	it('accurately integrates high-frequency RLC oscillation when C1 is set to 1 pF (3.39 V at 60 µs, 8.90 V at 120 µs)', () => {
+		const doc = getExampleCircuit('rlc-response');
+		const c1 = doc.components.find((c) => c.id === 'c1')!;
+		c1.params.capacitance = 1e-12; // 1 pF
+
+		const init = evaluateCircuitAtInstant(doc, 0);
+		expect(init.ok).toBe(true);
+		if (!init.ok) return;
+
+		const batch = runSimulationBatch(doc, init.snapshot, 6, 0);
+		expect(batch.ok).toBe(true);
+		expect(batch.samples.length).toBe(2);
+
+		const sample60us = batch.samples[0];
+		const sample120us = batch.samples[1];
+		expect(sample60us.timeSec).toBeCloseTo(60e-6, 9);
+		expect(sample120us.timeSec).toBeCloseTo(120e-6, 9);
+		expect(sample60us.ch1).toBeCloseTo(3.390757, 4);
+		expect(sample120us.ch1).toBeCloseTo(8.90459, 4);
 	});
 });

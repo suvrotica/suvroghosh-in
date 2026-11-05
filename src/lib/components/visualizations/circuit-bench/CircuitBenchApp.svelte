@@ -151,6 +151,32 @@
 		return null;
 	});
 
+	// Compute dynamic RC checkpoints so changing R1, C1, V1, or V(0) updates the expected predictions immediately
+	const rcCheckpoints = $derived.by(() => {
+		const resistors = doc.components.filter((c) => c.kind === 'resistor');
+		const capacitors = doc.components.filter((c) => c.kind === 'capacitor');
+		const inductors = doc.components.filter((c) => c.kind === 'inductor');
+		const dcSources = doc.components.filter((c) => c.kind === 'dc_voltage');
+		if (
+			resistors.length === 1 &&
+			capacitors.length === 1 &&
+			inductors.length === 0 &&
+			dcSources.length === 1
+		) {
+			const vs = dcSources[0].params.voltage ?? 5;
+			const r = Math.max(1e-6, resistors[0].params.resistance ?? 1000);
+			const c = Math.max(1e-12, capacitors[0].params.capacitance ?? 0.001);
+			const v0 = capacitors[0].params.initialVoltage ?? 0;
+			const tau = r * c;
+			const i0 = (vs - v0) / r;
+			const vAt1s = vs + (v0 - vs) * Math.exp(-1 / tau);
+			const iAt1s = i0 * Math.exp(-1 / tau);
+			const vAt5s = vs + (v0 - vs) * Math.exp(-5 / tau);
+			return { tau, v0, i0, vAt1s, iAt1s, vAt5s };
+		}
+		return null;
+	});
+
 	const affectedIdSet = $derived(new Set(diagnostics.flatMap((d) => d.affectedComponentIds)));
 
 	// Count connections at each junction or terminal so explicit junctions with >=2 wires show clearly
@@ -281,12 +307,12 @@
 		pushHistory(doc);
 		doc = nextDoc;
 		const currentTime = snapshot?.timeSec ?? 0;
-		const preservedState = snapshot?.reactiveState;
+		const preservedState = currentTime > 0 ? snapshot?.reactiveState : undefined;
 		const res = evaluateCircuitAtInstant(nextDoc, currentTime, preservedState);
 		if (res.ok) {
 			diagnostics = [];
 			snapshot = res.snapshot;
-			if (samples.length === 0) {
+			if (currentTime === 0 || samples.length === 0) {
 				samples = [snapshotToScopeSample(nextDoc, res.snapshot)];
 			}
 		} else {
@@ -365,10 +391,17 @@
 		undoStack = undoStack.slice(0, -1);
 		redoStack = [...redoStack, cloneCircuitDocument(doc)];
 		doc = prev;
-		const res = evaluateCircuitAtInstant(doc, snapshot?.timeSec ?? 0, snapshot?.reactiveState);
+		const currentTime = snapshot?.timeSec ?? 0;
+		const preservedReactive = currentTime > 0 ? snapshot?.reactiveState : undefined;
+		const res = evaluateCircuitAtInstant(doc, currentTime, preservedReactive);
 		if (res.ok) {
 			diagnostics = [];
 			snapshot = res.snapshot;
+			const newSample = snapshotToScopeSample(doc, res.snapshot);
+			samples =
+				currentTime > 0 && samples.length > 0
+					? [...samples.slice(0, -1), newSample]
+					: [newSample];
 		} else {
 			diagnostics = res.diagnostics;
 			snapshot = null;
@@ -384,10 +417,17 @@
 		redoStack = redoStack.slice(0, -1);
 		undoStack = [...undoStack, cloneCircuitDocument(doc)];
 		doc = next;
-		const res = evaluateCircuitAtInstant(doc, snapshot?.timeSec ?? 0, snapshot?.reactiveState);
+		const currentTime = snapshot?.timeSec ?? 0;
+		const preservedReactive = currentTime > 0 ? snapshot?.reactiveState : undefined;
+		const res = evaluateCircuitAtInstant(doc, currentTime, preservedReactive);
 		if (res.ok) {
 			diagnostics = [];
 			snapshot = res.snapshot;
+			const newSample = snapshotToScopeSample(doc, res.snapshot);
+			samples =
+				currentTime > 0 && samples.length > 0
+					? [...samples.slice(0, -1), newSample]
+					: [newSample];
 		} else {
 			diagnostics = res.diagnostics;
 			snapshot = null;
@@ -1170,22 +1210,20 @@
 			<p class="cb-prompt-note">{doc.explanation}</p>
 		</div>
 
-		{#if doc.id === 'rc-charging' || rcTimeConstantSec !== null}
+		{#if rcTimeConstantSec !== null}
 			<div class="cb-checkpoints" aria-label="Expected RC charging checkpoints">
-				{#if rcTimeConstantSec !== null}
+				<span class="cb-checkpoint-chip">
+					Time constant τ: <strong>{formatMeasurement(rcTimeConstantSec, 's')}</strong>
+				</span>
+				{#if rcCheckpoints}
 					<span class="cb-checkpoint-chip">
-						Time constant τ: <strong>{formatMeasurement(rcTimeConstantSec, 's')}</strong>
-					</span>
-				{/if}
-				{#if doc.id === 'rc-charging'}
-					<span class="cb-checkpoint-chip">
-						t = 0 s: <strong>0 V · 5 mA</strong>
+						t = 0 s: <strong>{formatMeasurement(rcCheckpoints.v0, 'V')} · {formatMeasurement(rcCheckpoints.i0, 'A')}</strong>
 					</span>
 					<span class="cb-checkpoint-chip">
-						t = 1 s: <strong>≈ 3.16 V · 1.84 mA</strong>
+						t = 1 s: <strong>≈ {formatMeasurement(rcCheckpoints.vAt1s, 'V')} · {formatMeasurement(rcCheckpoints.iAt1s, 'A')}</strong>
 					</span>
 					<span class="cb-checkpoint-chip">
-						t = 5 s: <strong>≈ 4.97 V</strong>
+						t = 5 s: <strong>≈ {formatMeasurement(rcCheckpoints.vAt5s, 'V')}</strong>
 					</span>
 				{/if}
 			</div>
@@ -2021,7 +2059,7 @@
 								<th>Component</th>
 								<th>Value</th>
 								<th>Voltage V(A)−V(B)</th>
-								<th>Current (A→B)</th>
+								<th>Current (A→B / out of +)</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
@@ -2372,7 +2410,13 @@
 
 							{#if comp.kind !== 'probe_voltage' && comp.kind !== 'ground'}
 								<div class="cb-meas-row">
-									<span class="cb-meas-label">Current through {comp.label}:</span>
+									<span class="cb-meas-label">
+										Current through {comp.label} ({comp.kind.includes('voltage')
+											? 'out of +'
+											: comp.kind === 'switch_spdt'
+												? `COM → ${comp.params.position === 'B' ? 'B' : 'A'}`
+												: 'A → B'}):
+									</span>
 									<span class="cb-meas-val">
 										{selectedMeasurement
 											? formatMeasurement(selectedMeasurement.current, 'A')
@@ -2381,11 +2425,19 @@
 								</div>
 								<div class="cb-meas-row">
 									<span class="cb-meas-label">
-										{comp.kind.includes('voltage')
-											? selectedMeasurement && selectedMeasurement.power > 0
+										{#if comp.kind === 'capacitor' || comp.kind === 'inductor'}
+											{selectedMeasurement && selectedMeasurement.power < -1e-12
+												? 'Reactive power (releasing):'
+												: selectedMeasurement && selectedMeasurement.power > 1e-12
+													? 'Reactive power (storing):'
+													: 'Instantaneous power:'}
+										{:else if comp.kind.includes('voltage')}
+											{selectedMeasurement && selectedMeasurement.power > 1e-12
 												? 'Power absorbed:'
-												: 'Power supplied:'
-											: 'Power dissipated:'}
+												: 'Power supplied:'}
+										{:else}
+											Power dissipated:
+										{/if}
 									</span>
 									<span class="cb-meas-val">
 										{selectedMeasurement

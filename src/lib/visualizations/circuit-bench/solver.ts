@@ -697,7 +697,7 @@ export function evaluateCircuitAtInstant(
 		} else if (comp.kind === 'switch_spst' && comp.params.closed === false) {
 			// Open switch: high-impedance open circuit bleed (1 TΩ) only so a component behind an open switch
 			// resolves to its connected partner's reference voltage with 0.00 A current.
-			const gOpen = 1e-12;
+			const gOpen = 1e-14;
 			const nA = endpointToNode.get(`terminal:${comp.id}:A`) ?? 0;
 			const nB = endpointToNode.get(`terminal:${comp.id}:B`) ?? 0;
 			if (nA > 0) A[nA - 1][nA - 1] += gOpen;
@@ -708,7 +708,7 @@ export function evaluateCircuitAtInstant(
 			}
 		} else if (comp.kind === 'switch_spdt') {
 			// Inactive throw of SPDT switch also has open-circuit bleed
-			const gOpen = 1e-12;
+			const gOpen = 1e-14;
 			const nCom = endpointToNode.get(`terminal:${comp.id}:common`) ?? 0;
 			const inactiveTerm = comp.params.position === 'B' ? 'throwA' : 'throwB';
 			const nInactive = endpointToNode.get(`terminal:${comp.id}:${inactiveTerm}`) ?? 0;
@@ -1142,7 +1142,7 @@ function stepSingleTransientMna(
 				A[nB - 1][nA - 1] -= g;
 			}
 		} else if (comp.kind === 'switch_spst' && comp.params.closed === false) {
-			const gOpen = 1e-12;
+			const gOpen = 1e-14;
 			const nA = endpointToNode.get(`terminal:${comp.id}:A`) ?? 0;
 			const nB = endpointToNode.get(`terminal:${comp.id}:B`) ?? 0;
 			if (nA > 0) A[nA - 1][nA - 1] += gOpen;
@@ -1152,7 +1152,7 @@ function stepSingleTransientMna(
 				A[nB - 1][nA - 1] -= gOpen;
 			}
 		} else if (comp.kind === 'switch_spdt') {
-			const gOpen = 1e-12;
+			const gOpen = 1e-14;
 			const nCom = endpointToNode.get(`terminal:${comp.id}:common`) ?? 0;
 			const inactiveTerm = comp.params.position === 'B' ? 'throwA' : 'throwB';
 			const nInactive = endpointToNode.get(`terminal:${comp.id}:${inactiveTerm}`) ?? 0;
@@ -1252,9 +1252,316 @@ function stepSingleTransientMna(
 }
 
 /**
+ * Advance a reactive MNA circuit over `dt` using binary exponentiation (repeated squaring)
+ * of the 2nd-order Trapezoidal MNA companion operator at step size `h = chunkDt / 2^p`.
+ * This achieves 2^p (up to 16,777,216) genuine Trapezoidal sub-steps in O(p) tiny matrix
+ * multiplications, preserving phase and amplitude accuracy on high-Q / small-C RLC oscillators
+ * (e.g. C = 1 pF, L = 100 mH) as well as monotonic decay on stiff RC/RL networks.
+ */
+function stepBinaryExponentiatedMna(
+	doc: CircuitDocument,
+	prevSnapshot: SimulationSnapshot,
+	dt: number,
+	maxSafeDtSec: number,
+	maxFreqHz: number
+): { ok: true; snapshot: SimulationSnapshot } | { ok: false; diagnostics: CircuitDiagnostic[] } {
+	const topo = analyzeTopology(doc);
+	if (topo.diagnostics.length > 0) {
+		return { ok: false, diagnostics: topo.diagnostics };
+	}
+
+	const { endpointToNode, nodeCount, activeComponents } = topo;
+	const nextTime = prevSnapshot.timeSec + dt;
+
+	const constraintCheckList: Array<{
+		comp: CircuitComponent;
+		nodeA: number;
+		nodeB: number;
+		voltage: number;
+	}> = [];
+	const branches: BranchEquation[] = [];
+
+	for (const comp of activeComponents) {
+		if (
+			comp.kind === 'dc_voltage' ||
+			comp.kind === 'sine_voltage' ||
+			comp.kind === 'square_voltage'
+		) {
+			const nodeA = endpointToNode.get(`terminal:${comp.id}:pos`) ?? 0;
+			const nodeB = endpointToNode.get(`terminal:${comp.id}:neg`) ?? 0;
+			const v = evaluateSourceVoltage(comp, nextTime);
+			constraintCheckList.push({ comp, nodeA, nodeB, voltage: v });
+			branches.push({ component: comp, nodeA, nodeB, kind: 'voltage_source' });
+		} else if (comp.kind === 'switch_spst' && comp.params.closed !== false) {
+			const nodeA = endpointToNode.get(`terminal:${comp.id}:A`) ?? 0;
+			const nodeB = endpointToNode.get(`terminal:${comp.id}:B`) ?? 0;
+			constraintCheckList.push({ comp, nodeA, nodeB, voltage: 0 });
+			branches.push({ component: comp, nodeA, nodeB, kind: 'closed_switch' });
+		} else if (comp.kind === 'switch_spdt') {
+			const nodeA = endpointToNode.get(`terminal:${comp.id}:common`) ?? 0;
+			const activeTerm = comp.params.position === 'B' ? 'throwB' : 'throwA';
+			const nodeB = endpointToNode.get(`terminal:${comp.id}:${activeTerm}`) ?? 0;
+			constraintCheckList.push({ comp, nodeA, nodeB, voltage: 0 });
+			branches.push({ component: comp, nodeA, nodeB, kind: 'closed_switch' });
+		} else if (comp.kind === 'capacitor') {
+			const nodeA = endpointToNode.get(`terminal:${comp.id}:A`) ?? 0;
+			const nodeB = endpointToNode.get(`terminal:${comp.id}:B`) ?? 0;
+			branches.push({ component: comp, nodeA, nodeB, kind: 'capacitor' });
+		} else if (comp.kind === 'inductor') {
+			const nodeA = endpointToNode.get(`terminal:${comp.id}:A`) ?? 0;
+			const nodeB = endpointToNode.get(`terminal:${comp.id}:B`) ?? 0;
+			branches.push({ component: comp, nodeA, nodeB, kind: 'inductor' });
+		}
+	}
+
+	const loopError = checkVoltageConstraintLoops(constraintCheckList, false);
+	if (loopError) {
+		return { ok: false, diagnostics: [loopError] };
+	}
+
+	const reactiveBranches: Array<{
+		row: number;
+		nodeA: number;
+		nodeB: number;
+		component: CircuitComponent;
+		kind: 'capacitor' | 'inductor';
+	}> = [];
+	const sourceBranches: Array<{ row: number; component: CircuitComponent }> = [];
+
+	for (const [bIdx, br] of branches.entries()) {
+		const row = nodeCount + bIdx;
+		if (br.kind === 'capacitor' || br.kind === 'inductor') {
+			reactiveBranches.push({
+				row,
+				nodeA: br.nodeA,
+				nodeB: br.nodeB,
+				component: br.component,
+				kind: br.kind
+			});
+		} else if (br.kind === 'voltage_source') {
+			sourceBranches.push({ row, component: br.component });
+		}
+	}
+
+	const K = reactiveBranches.length;
+	if (K === 0) {
+		return stepSingleTransientMna(doc, prevSnapshot, dt, 'trap');
+	}
+
+	const acChunks = maxFreqHz > 0 ? Math.min(32, Math.max(1, Math.ceil(dt * maxFreqHz * 40))) : 1;
+	const chunkDt = dt / acChunks;
+	const ratio = chunkDt / Math.max(1e-18, maxSafeDtSec);
+	const p = Math.min(24, Math.max(4, Math.ceil(Math.log2(Math.max(1, ratio))) + 12));
+	const h = chunkDt / Math.pow(2, p);
+
+	const dim = nodeCount + branches.length;
+	const A = Array.from({ length: dim }, () => new Array<number>(dim).fill(0));
+
+	for (const comp of activeComponents) {
+		if (comp.kind === 'resistor') {
+			const r = Math.max(1e-6, comp.params.resistance ?? 1000);
+			const g = 1 / r;
+			const nA = endpointToNode.get(`terminal:${comp.id}:A`) ?? 0;
+			const nB = endpointToNode.get(`terminal:${comp.id}:B`) ?? 0;
+			if (nA > 0) A[nA - 1][nA - 1] += g;
+			if (nB > 0) A[nB - 1][nB - 1] += g;
+			if (nA > 0 && nB > 0) {
+				A[nA - 1][nB - 1] -= g;
+				A[nB - 1][nA - 1] -= g;
+			}
+		} else if (comp.kind === 'switch_spst' && comp.params.closed === false) {
+			const gOpen = 1e-14;
+			const nA = endpointToNode.get(`terminal:${comp.id}:A`) ?? 0;
+			const nB = endpointToNode.get(`terminal:${comp.id}:B`) ?? 0;
+			if (nA > 0) A[nA - 1][nA - 1] += gOpen;
+			if (nB > 0) A[nB - 1][nB - 1] += gOpen;
+			if (nA > 0 && nB > 0) {
+				A[nA - 1][nB - 1] -= gOpen;
+				A[nB - 1][nA - 1] -= gOpen;
+			}
+		} else if (comp.kind === 'switch_spdt') {
+			const gOpen = 1e-14;
+			const nCom = endpointToNode.get(`terminal:${comp.id}:common`) ?? 0;
+			const inactiveTerm = comp.params.position === 'B' ? 'throwA' : 'throwB';
+			const nInactive = endpointToNode.get(`terminal:${comp.id}:${inactiveTerm}`) ?? 0;
+			if (nCom > 0) A[nCom - 1][nCom - 1] += gOpen;
+			if (nInactive > 0) A[nInactive - 1][nInactive - 1] += gOpen;
+			if (nCom > 0 && nInactive > 0) {
+				A[nCom - 1][nInactive - 1] -= gOpen;
+				A[nInactive - 1][nCom - 1] -= gOpen;
+			}
+		}
+	}
+
+	for (const [bIdx, br] of branches.entries()) {
+		const row = nodeCount + bIdx;
+		const { nodeA, nodeB, component, kind } = br;
+		if (nodeA > 0) {
+			A[nodeA - 1][row] += 1;
+			A[row][nodeA - 1] += 1;
+		}
+		if (nodeB > 0) {
+			A[nodeB - 1][row] -= 1;
+			A[row][nodeB - 1] -= 1;
+		}
+		if (kind === 'capacitor') {
+			const c = Math.max(1e-12, component.params.capacitance ?? 0.001);
+			A[row][row] = -(h / (2 * c));
+		} else if (kind === 'inductor') {
+			const l = Math.max(1e-9, component.params.inductance ?? 0.1);
+			A[row][row] = -((2 * l) / h);
+		}
+	}
+
+	const stateDim = 2 * K;
+	const extractNextState = (x: number[]): number[] => {
+		const out = new Array<number>(stateDim).fill(0);
+		const getV = (n: number) => (n > 0 ? (x[n - 1] ?? 0) : 0);
+		for (let r = 0; r < K; r += 1) {
+			const rb = reactiveBranches[r];
+			const vDrop = getV(rb.nodeA) - getV(rb.nodeB);
+			const iBr = x[rb.row] ?? 0;
+			if (rb.kind === 'capacitor') {
+				out[2 * r] = vDrop;
+				out[2 * r + 1] = iBr;
+			} else {
+				out[2 * r] = iBr;
+				out[2 * r + 1] = vDrop;
+			}
+		}
+		return out;
+	};
+
+	const baseT = Array.from({ length: stateDim }, () => new Array<number>(stateDim).fill(0));
+	for (let r = 0; r < K; r += 1) {
+		const rb = reactiveBranches[r];
+		if (rb.kind === 'capacitor') {
+			const c = Math.max(1e-12, rb.component.params.capacitance ?? 0.001);
+			const halfHOverC = h / (2 * c);
+
+			// Basis column 2*r: vPrev = 1
+			const rhsV = new Array<number>(dim).fill(0);
+			rhsV[rb.row] = 1;
+			const solV = solveLinearSystem(A, rhsV);
+			if (!solV.ok) return stepSingleTransientMna(doc, prevSnapshot, dt, 'be');
+			const colV = extractNextState(solV.x);
+			for (let i = 0; i < stateDim; i += 1) {
+				baseT[i][2 * r] = colV[i];
+				baseT[i][2 * r + 1] = colV[i] * halfHOverC;
+			}
+		} else {
+			const l = Math.max(1e-9, rb.component.params.inductance ?? 0.1);
+			const rEq = (2 * l) / h;
+
+			// Basis column 2*r+1: vPrev = 1 (rhs = -1)
+			const rhsV = new Array<number>(dim).fill(0);
+			rhsV[rb.row] = -1;
+			const solV = solveLinearSystem(A, rhsV);
+			if (!solV.ok) return stepSingleTransientMna(doc, prevSnapshot, dt, 'be');
+			const colV = extractNextState(solV.x);
+			for (let i = 0; i < stateDim; i += 1) {
+				baseT[i][2 * r] = colV[i] * rEq;
+				baseT[i][2 * r + 1] = colV[i];
+			}
+		}
+	}
+
+	const srcColumns: number[][] = [];
+	for (const sb of sourceBranches) {
+		const rhsS = new Array<number>(dim).fill(0);
+		rhsS[sb.row] = 1;
+		const solS = solveLinearSystem(A, rhsS);
+		if (!solS.ok) return stepSingleTransientMna(doc, prevSnapshot, dt, 'be');
+		srcColumns.push(extractNextState(solS.x));
+	}
+
+	const mulMatMat = (M1: number[][], M2: number[][]): number[][] =>
+		M1.map((row) =>
+			M2[0].map((_, j) => {
+				let sum = 0;
+				for (let k = 0; k < stateDim; k += 1) sum += row[k] * M2[k][j];
+				return sum;
+			})
+		);
+	const mulMatVec = (M: number[][], v: number[]): number[] =>
+		M.map((row) => {
+			let sum = 0;
+			for (let k = 0; k < stateDim; k += 1) sum += row[k] * v[k];
+			return sum;
+		});
+	const addVec = (a: number[], b: number[]): number[] => a.map((v, idx) => v + b[idx]);
+
+	const prevState = prevSnapshot.reactiveState;
+	let s = new Array<number>(stateDim).fill(0);
+	for (let r = 0; r < K; r += 1) {
+		const rb = reactiveBranches[r];
+		const id = rb.component.id;
+		if (rb.kind === 'capacitor') {
+			s[2 * r] = prevState.capacitorVoltages[id] ?? rb.component.params.initialVoltage ?? 0;
+			s[2 * r + 1] = prevState.capacitorCurrents[id] ?? 0;
+		} else {
+			s[2 * r] = prevState.inductorCurrents[id] ?? rb.component.params.initialCurrent ?? 0;
+			s[2 * r + 1] = prevState.inductorVoltages[id] ?? 0;
+		}
+	}
+
+	for (let chunk = 0; chunk < acChunks; chunk += 1) {
+		const tMid = prevSnapshot.timeSec + (chunk + 0.5) * chunkDt;
+		let g = new Array<number>(stateDim).fill(0);
+		for (let idx = 0; idx < sourceBranches.length; idx += 1) {
+			const vSrc = evaluateSourceVoltage(sourceBranches[idx].component, tMid);
+			const col = srcColumns[idx];
+			for (let i = 0; i < stateDim; i += 1) {
+				g[i] += col[i] * vSrc;
+			}
+		}
+
+		let T = baseT;
+		const isLastChunk = chunk === acChunks - 1;
+		for (let bit = 0; bit < p; bit += 1) {
+			if (isLastChunk) {
+				// Accumulate 1 + 2 + ... + 2^(p-1) = 2^p - 1 steps so the final h-step can be solved for full node/wire state
+				s = addVec(mulMatVec(T, s), g);
+			}
+			g = addVec(mulMatVec(T, g), g);
+			T = mulMatMat(T, T);
+		}
+		if (!isLastChunk) {
+			s = addVec(mulMatVec(T, s), g);
+		}
+	}
+
+	const penultimateState: ReactiveState = {
+		capacitorVoltages: { ...prevState.capacitorVoltages },
+		capacitorCurrents: { ...prevState.capacitorCurrents },
+		inductorCurrents: { ...prevState.inductorCurrents },
+		inductorVoltages: { ...prevState.inductorVoltages }
+	};
+	for (let r = 0; r < K; r += 1) {
+		const rb = reactiveBranches[r];
+		const id = rb.component.id;
+		if (rb.kind === 'capacitor') {
+			penultimateState.capacitorVoltages[id] = s[2 * r];
+			penultimateState.capacitorCurrents[id] = s[2 * r + 1];
+		} else {
+			penultimateState.inductorCurrents[id] = s[2 * r];
+			penultimateState.inductorVoltages[id] = s[2 * r + 1];
+		}
+	}
+
+	const penultimateSnapshot: SimulationSnapshot = {
+		...prevSnapshot,
+		timeSec: nextTime - h,
+		reactiveState: penultimateState
+	};
+
+	return stepSingleTransientMna(doc, penultimateSnapshot, h, 'trap');
+}
+
+/**
  * Advance the circuit by `dt` from `prevSnapshot` using the 2nd-order implicit Trapezoidal Rule
- * when well-resolved (`dt <= maxSafeDtSec`), automatically sub-stepping or switching to L-stable
- * Backward Euler when stiff parameter combinations (`dt >> tau`) would otherwise cause trapezoidal ringing.
+ * when well-resolved (`dt <= maxSafeDtSec`), or binary-exponentiated Trapezoidal sub-stepping
+ * when `dt > maxSafeDtSec` so both stiff RC/RL networks and high-frequency RLC oscillators remain exact.
  */
 export function stepTransientMna(
 	doc: CircuitDocument,
@@ -1266,24 +1573,25 @@ export function stepTransientMna(
 		return stepSingleTransientMna(doc, prevSnapshot, dt, 'be');
 	}
 
-	const { maxSafeDtSec } = computeCircuitTimeScales(doc);
+	const { maxSafeDtSec, maxFreqHz } = computeCircuitTimeScales(doc);
 	if (dt <= maxSafeDtSec * 1.0001) {
 		return stepSingleTransientMna(doc, prevSnapshot, dt, 'trap');
 	}
 
-	const idealSubSteps = Math.ceil(dt / maxSafeDtSec);
-	const subSteps = Math.min(250, Math.max(2, idealSubSteps));
-	const subMethod: 'trap' | 'be' = idealSubSteps > 250 ? 'be' : 'trap';
-	const effectiveSubSteps = subMethod === 'be' ? Math.min(16, subSteps) : subSteps;
-	const subDt = dt / effectiveSubSteps;
-
-	let curr = prevSnapshot;
-	for (let i = 0; i < effectiveSubSteps; i += 1) {
-		const res = stepSingleTransientMna(doc, curr, subDt, subMethod);
-		if (!res.ok) return res;
-		curr = res.snapshot;
+	const hasInductor = doc.components.some((c) => c.kind === 'inductor');
+	if (!hasInductor && dt / maxSafeDtSec > 1e5) {
+		// Pure first-order RC network with dt > 25,000 * tau: physical exponential is < exp(-25000) = 0
+		let curr = prevSnapshot;
+		const subDt = dt / 8;
+		for (let i = 0; i < 8; i += 1) {
+			const res = stepSingleTransientMna(doc, curr, subDt, 'be');
+			if (!res.ok) return res;
+			curr = res.snapshot;
+		}
+		return { ok: true, snapshot: curr };
 	}
-	return { ok: true, snapshot: curr };
+
+	return stepBinaryExponentiatedMna(doc, prevSnapshot, dt, maxSafeDtSec, maxFreqHz);
 }
 
 export function extractScopeChannelValue(

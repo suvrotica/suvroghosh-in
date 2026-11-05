@@ -208,6 +208,40 @@
 		}
 		cursorIndex = bestIdx;
 	}
+
+	/**
+	 * Format oscilloscope time-axis tick labels with sufficient precision for the active span
+	 * so adjacent ticks never round to duplicate strings at short time spans.
+	 */
+	function formatScopeTimeTick(tVal: number, startSec: number, endSec: number): string {
+		const spanSec = Math.max(1e-9, endSec - startSec);
+		const stepSec = spanSec / 5;
+		const maxEdge = Math.max(Math.abs(startSec), Math.abs(endSec));
+
+		let scale = 1;
+		let suffix = 's';
+		if (maxEdge < 1e-3) {
+			scale = 1e6;
+			suffix = 'µs';
+		} else if (maxEdge < 0.1 || (spanSec < 0.1 && maxEdge < 1)) {
+			scale = 1e3;
+			suffix = 'ms';
+		}
+
+		const stepInUnit = stepSec * scale;
+		let decimals = suffix === 's' ? 2 : 1;
+		if (stepInUnit < 1) {
+			const k = Math.ceil(-Math.log10(stepInUnit) - 1e-9);
+			const leading = stepInUnit * Math.pow(10, k);
+			decimals = Math.min(6, Math.max(decimals, k + (leading < 1.999 ? 1 : 0)));
+		} else if (Math.abs(stepInUnit - Math.round(stepInUnit)) > 1e-6) {
+			decimals = Math.max(decimals, 2);
+		}
+
+		const scaled = tVal * scale;
+		const sign = scaled < -1e-12 ? '−' : '';
+		return `${sign}${Math.abs(scaled).toFixed(decimals)} ${suffix}`;
+	}
 </script>
 
 <section class="cb-scope-panel" aria-label="Two-channel oscilloscope">
@@ -350,7 +384,7 @@
 					font-family="IBM Plex Mono, monospace"
 					font-size="10.5"
 				>
-					{formatMeasurement(tVal, 's')}
+					{formatScopeTimeTick(tVal, windowStart, windowEnd)}
 				</text>
 			{/each}
 

@@ -192,13 +192,36 @@ test.describe('Circuit Bench interactive electronic circuit simulator', () => {
 		expect(restartBox!.height).toBeGreaterThanOrEqual(44);
 		expect(restartBox!.width).toBeGreaterThanOrEqual(44);
 
-		// F-08: Editing C1 initialVoltage while paused at t = 0 s updates C1 voltage immediately
+		// F-08: Editing C1 initialVoltage while paused at t = 0 s updates C1 voltage immediately, and Undo restores 0.00 V on both field and meter
 		await app.getByRole('button', { name: 'Component list' }).click();
 		await app.getByRole('button', { name: 'Inspect C1' }).click();
 		const v0Input = app.locator('#cb-input-initialVoltage');
 		await v0Input.fill('2');
 		await v0Input.press('Enter');
 		await expect(app.locator('.cb-meas-grid')).toContainText('2.00 V');
+		await expect(app.locator('.cb-meter-readout-big')).toContainText('2.00 V');
+		// Reactive component power label uses Instantaneous/Reactive power, not Power dissipated
+		await expect(app.locator('.cb-meas-grid')).not.toContainText('Power dissipated');
+
+		// Undo at t = 0 s restores both the initialVoltage setting and the live electrical state on meter and inspector
+		await app.getByRole('button', { name: 'Undo circuit edit' }).click();
+		await expect(app.locator('.cb-meas-grid')).toContainText('0.00 V');
+		await expect(app.locator('.cb-meter-readout-big')).toContainText('0.00 V');
+
+		// Doubling R1 resistance updates the Expected RC charging checkpoints dynamically (τ = 2.00 s, 2.50 mA, 1.97 V at 1 s)
+		await app.getByRole('button', { name: 'Inspect R1' }).click();
+		const rInput = app.locator('#cb-input-resistance');
+		await rInput.fill('2k');
+		await rInput.press('Enter');
+		await expect(app.locator('.cb-checkpoints')).toContainText('2.00 s');
+		await expect(app.locator('.cb-checkpoints')).toContainText('2.50 mA');
+		await expect(app.locator('.cb-checkpoints')).toContainText('1.97 V');
+
+		// Short time-span oscilloscope x-axis ticks never repeat rounded labels
+		await app.getByLabel('Oscilloscope visible time span').selectOption('0.01');
+		const tickLabels = await app.locator('.cb-scope-svg text').allTextContents();
+		const timeTicks = tickLabels.filter((t) => /^\d+\.\d+\s*(ms|s|µs)$/.test(t.trim()));
+		expect(new Set(timeTicks).size).toBe(timeTicks.length);
 
 		// F-03: Opening S1 in loaded-divider leaves P1 measuring 2.50 V unloaded divider midpoint
 		const exampleSelect = app.getByLabel('Select a prepared circuit example');

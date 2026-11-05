@@ -196,11 +196,11 @@ const EXAMPLES_DATA: CircuitDocument[] = [
 		title: 'Series and parallel resistors: How does the path change the total current?',
 		question: 'How does the path change the total current?',
 		instruction:
-			'Two 1 kΩ resistors in parallel across 5 V draw 5 mA each — 10 mA total from V1. Toggle switch S1 or change R2 to compare paths.',
+			'Compare parallel and series paths across 5 V: S1 switches parallel branch R2 (10 mA vs 5 mA), and S2 bypasses or inserts series resistor R3 (5 mA vs 2.5 mA).',
 		explanation:
-			'In parallel, each branch sees the full 5 V supply independently. Two 1 kΩ branches draw 5 mA + 5 mA = 10 mA total, behaving like a single 500 Ω resistor. Opening S1 removes the second path and drops supply current to 5 mA.',
+			'In parallel (S1 closed, S2 closed), two 1 kΩ branches each see 5 V and draw 5 mA + 5 mA = 10 mA (500 Ω equivalent). Opening S1 leaves a single 1 kΩ path (5 mA). Opening bypass switch S2 places R1 and R3 in series (2 kΩ equivalent), halving the branch current to 2.5 mA and splitting 5 V into 2.5 V across each resistor.',
 		suggestedChange:
-			'Open switch S1 to disconnect the R2 branch. Total current from V1 drops from 10.00 mA to 5.00 mA while the current in R1 stays unchanged at 5.00 mA.',
+			'Open switch S1 to drop total current from 10.00 mA (parallel) to 5.00 mA (single 1 kΩ), then open switch S2 to put R1 and R3 in series (2.50 mA).',
 		components: [
 			{
 				id: 'v1',
@@ -215,17 +215,35 @@ const EXAMPLES_DATA: CircuitDocument[] = [
 				id: 'r1',
 				kind: 'resistor',
 				label: 'R1',
-				x: 10,
-				y: 6,
+				x: 9,
+				y: 4,
 				rotation: 90,
 				params: { resistance: 1000 }
+			},
+			{
+				id: 'r3',
+				kind: 'resistor',
+				label: 'R3',
+				x: 9,
+				y: 8,
+				rotation: 90,
+				params: { resistance: 1000 }
+			},
+			{
+				id: 's2',
+				kind: 'switch_spst',
+				label: 'S2',
+				x: 12,
+				y: 8,
+				rotation: 90,
+				params: { closed: true }
 			},
 			{
 				id: 's1',
 				kind: 'switch_spst',
 				label: 'S1',
-				x: 13,
-				y: 3,
+				x: 14,
+				y: 2,
 				rotation: 0,
 				params: { closed: true }
 			},
@@ -242,15 +260,16 @@ const EXAMPLES_DATA: CircuitDocument[] = [
 				id: 'gnd1',
 				kind: 'ground',
 				label: 'GND1',
-				x: 10,
-				y: 10,
+				x: 9,
+				y: 11,
 				rotation: 0,
 				params: {}
 			}
 		],
 		junctions: [
-			{ id: 'j_top', x: 10, y: 3 },
-			{ id: 'j_bot', x: 10, y: 9 }
+			{ id: 'j_top', x: 9, y: 2 },
+			{ id: 'j_ser', x: 9, y: 6 },
+			{ id: 'j_bot', x: 9, y: 10 }
 		],
 		wires: [
 			{
@@ -266,6 +285,36 @@ const EXAMPLES_DATA: CircuitDocument[] = [
 				bend: 'hv'
 			},
 			{
+				id: 'w_r1_ser',
+				from: { type: 'terminal', componentId: 'r1', terminalId: 'B' },
+				to: { type: 'junction', junctionId: 'j_ser' },
+				bend: 'vh'
+			},
+			{
+				id: 'w_ser_r3',
+				from: { type: 'junction', junctionId: 'j_ser' },
+				to: { type: 'terminal', componentId: 'r3', terminalId: 'A' },
+				bend: 'vh'
+			},
+			{
+				id: 'w_r3_bot',
+				from: { type: 'terminal', componentId: 'r3', terminalId: 'B' },
+				to: { type: 'junction', junctionId: 'j_bot' },
+				bend: 'vh'
+			},
+			{
+				id: 'w_ser_s2',
+				from: { type: 'junction', junctionId: 'j_ser' },
+				to: { type: 'terminal', componentId: 's2', terminalId: 'A' },
+				bend: 'hv'
+			},
+			{
+				id: 'w_s2_bot',
+				from: { type: 'terminal', componentId: 's2', terminalId: 'B' },
+				to: { type: 'junction', junctionId: 'j_bot' },
+				bend: 'vh'
+			},
+			{
 				id: 'w_top_s1',
 				from: { type: 'junction', junctionId: 'j_top' },
 				to: { type: 'terminal', componentId: 's1', terminalId: 'A' },
@@ -276,12 +325,6 @@ const EXAMPLES_DATA: CircuitDocument[] = [
 				from: { type: 'terminal', componentId: 's1', terminalId: 'B' },
 				to: { type: 'terminal', componentId: 'r2', terminalId: 'A' },
 				bend: 'hv'
-			},
-			{
-				id: 'w_r1_bot',
-				from: { type: 'terminal', componentId: 'r1', terminalId: 'B' },
-				to: { type: 'junction', junctionId: 'j_bot' },
-				bend: 'vh'
 			},
 			{
 				id: 'w_r2_bot',

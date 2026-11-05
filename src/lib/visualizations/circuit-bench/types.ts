@@ -126,7 +126,12 @@ export interface ComponentMeasurement {
 	terminalVoltages: Record<string, number>;
 	/** Voltage drop V(A) - V(B) or V(pos) - V(neg) in volts */
 	voltageDrop: number;
-	/** Signed conventional current in amperes from first terminal (A/pos/common) to second terminal */
+	/**
+	 * Signed conventional current in amperes:
+	 * - Two-terminal passives & SPST switches (`resistor`, `capacitor`, `inductor`, `switch_spst`): from terminal `A` to terminal `B` (`A → B`).
+	 * - Changeover switches (`switch_spdt`): from `common` to the active throw (`common → throwA` or `common → throwB`).
+	 * - Independent voltage sources (`dc_voltage`, `sine_voltage`, `square_voltage`): conventional current delivered out of the positive `pos` (`+`) terminal into the circuit (`− → +` internally through the source).
+	 */
 	current: number;
 	/** Instantaneous power in watts (positive = dissipated/absorbed, negative = supplied) */
 	power: number;

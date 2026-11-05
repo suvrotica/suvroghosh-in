@@ -16914,9 +16914,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/circuit-bench.md": {
-			"bodyHash": "abc1011c583bc89084a14ca9762d68d7fe03a13e861885922525a81fe7ccbd25",
+			"bodyHash": "9669480960b5127951d5233d8bccf5309db005ae81d82325770225c5add2fa34",
 			"hashVersion": 2,
-			"revisionHash": "f97cbe72f42167f12b3e63c5a2de7c0dce51635fd4c1783f44ab5a74f220fe8f",
+			"revisionHash": "b04c7ac0a50a1b10528ddf3103bf76bfb241104877daf2595d8dea0439234bc9",
 			"generatedTags": [
 				"Electronics",
 				"Circuit Simulation",
