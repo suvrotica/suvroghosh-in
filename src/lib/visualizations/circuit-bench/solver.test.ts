@@ -322,4 +322,82 @@ describe('Circuit Bench MNA & Transient Solver', () => {
 		client.cancelActive();
 		client.dispose();
 	});
+
+	it('prevents trapezoidal ringing when C1 is reduced to 100 nF or 1 pF in RC charging (F-01)', () => {
+		for (const capValue of [100e-9, 1e-12]) {
+			const doc = getExampleCircuit('rc-charging');
+			const c1 = doc.components.find((c) => c.id === 'c1')!;
+			c1.params.capacitance = capValue;
+
+			const init = evaluateCircuitAtInstant(doc, 0);
+			expect(init.ok).toBe(true);
+			if (!init.ok) return;
+
+			let snap = init.snapshot;
+			let prevVc = snap.components['c1'].voltageDrop;
+			for (let i = 0; i < 10; i += 1) {
+				const next = stepTransientMna(doc, snap, doc.simulation.dtSec, 'trap');
+				expect(next.ok).toBe(true);
+				if (!next.ok) return;
+				snap = next.snapshot;
+				const vc = snap.components['c1'].voltageDrop;
+				expect(vc).toBeGreaterThanOrEqual(prevVc - 1e-12);
+				expect(vc).toBeLessThanOrEqual(5.000001);
+				prevVc = vc;
+			}
+			expect(snap.components['c1'].voltageDrop).toBeCloseTo(5.0, 5);
+		}
+	});
+
+	it('adapts simulation dtSec and sampleIntervalSec for 20 kHz and 100 kHz AC sources without aliasing (F-02)', () => {
+		for (const freqHz of [20000, 100000]) {
+			const doc = getExampleCircuit('rc-low-pass');
+			const v1 = doc.components.find((c) => c.id === 'v1')!;
+			v1.params.frequency = freqHz;
+
+			const stepsPerCycle = 1 / (freqHz * doc.simulation.dtSec);
+			const scopeSamplesPerCycle = 1 / (freqHz * doc.simulation.sampleIntervalSec);
+			expect(stepsPerCycle).toBeGreaterThanOrEqual(40);
+			expect(scopeSamplesPerCycle).toBeGreaterThanOrEqual(20);
+
+			const init = evaluateCircuitAtInstant(doc, 0);
+			expect(init.ok).toBe(true);
+			if (!init.ok) return;
+
+			const batch = runSimulationBatch(doc, init.snapshot, 80, 0);
+			expect(batch.ok).toBe(true);
+			const peakInput = Math.max(...batch.samples.map((s) => Math.abs(s.ch2 ?? 0)));
+			expect(peakInput).toBeGreaterThan(4.9);
+		}
+	});
+
+	it('measures 2.50 V unloaded divider midpoint on P1 when load switch S1 is opened (F-03)', () => {
+		const doc = getExampleCircuit('loaded-divider');
+		const s1 = doc.components.find((c) => c.id === 's1')!;
+		s1.params.closed = false;
+
+		const res = evaluateCircuitAtInstant(doc, 0);
+		expect(res.ok).toBe(true);
+		if (!res.ok) return;
+
+		expect(res.snapshot.components['p1'].voltageDrop).toBeCloseTo(2.5, 6);
+		expect(res.snapshot.components['r3'].current).toBeCloseTo(0, 9);
+	});
+
+	it('conserves total instantaneous power across sources and loads and formats millivolt readouts (F-07, F-11)', () => {
+		const doc = getExampleCircuit('ohms-law');
+		const res = evaluateCircuitAtInstant(doc, 0);
+		expect(res.ok).toBe(true);
+		if (!res.ok) return;
+
+		const v1Power = res.snapshot.components['v1'].power;
+		const r1Power = res.snapshot.components['r1'].power;
+		expect(v1Power).toBeCloseTo(-0.025, 12);
+		expect(r1Power).toBeCloseTo(0.025, 12);
+		const totalPower = Object.values(res.snapshot.components).reduce((acc, c) => acc + c.power, 0);
+		expect(Math.abs(totalPower)).toBeLessThan(1e-12);
+
+		expect(formatMeasurement(0.01234, 'V')).toBe('12.34 mV');
+		expect(formatMeasurement(0.085, 'V')).toBe('85.00 mV');
+	});
 });

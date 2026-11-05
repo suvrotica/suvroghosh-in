@@ -302,8 +302,8 @@ export function formatMeasurement(
 
 	if (unit === 'V') {
 		if (abs >= 1000) return `${sign}${(abs * 1e-3).toFixed(2)} kV`;
-		if (abs >= 0.01) return `${sign}${abs.toFixed(2)} V`;
-		if (abs >= 1e-5) return `${sign}${(abs * 1e3).toFixed(2)} mV`;
+		if (abs >= 0.1) return `${sign}${abs.toFixed(2)} V`;
+		if (abs >= 1e-4) return `${sign}${(abs * 1e3).toFixed(2)} mV`;
 		return `${sign}${(abs * 1e6).toFixed(1)} µV`;
 	}
 

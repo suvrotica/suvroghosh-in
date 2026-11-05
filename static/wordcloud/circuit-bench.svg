@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(619,314)" font-size="118" style="fill:#d9c89e">Text</text>
-<text transform="translate(52,200)" font-size="69" style="fill:#d5d2c2">Current</text>
-<text transform="translate(1259,665) rotate(-90)" font-size="66" style="fill:#8fb7d0">Capacitor</text>
-<text transform="translate(848,508)" font-size="62" style="fill:#d88988">Circuit</text>
-<text transform="translate(878,637)" font-size="62" style="fill:#9fc9c5">Omega</text>
-<text transform="translate(227,477)" font-size="62" style="fill:#e0b879">Voltage</text>
-<text transform="translate(344,702) rotate(-90)" font-size="54" style="fill:#d9c89e">Time</text>
-<text transform="translate(720,391)" font-size="46" style="fill:#d88988">Tau</text>
-<text transform="translate(306,336)" font-size="46" style="fill:#a9b7a3">Bench</text>
-<text transform="translate(293,270)" font-size="46" style="fill:#c49a6c">Resistance</text>
-<text transform="translate(445,549)" font-size="46" style="fill:#b6c3dd">Component</text>
-<text transform="translate(655,65)" font-size="46" style="fill:#d88988">Switch</text>
-<text transform="translate(927,110)" font-size="41" style="fill:#d5d2c2">Resistor</text>
-<text transform="translate(600,640)" font-size="41" style="fill:#d9c89e">Initial</text>
-<text transform="translate(964,183)" font-size="41" style="fill:#d9c89e">Change</text>
-<text transform="translate(93,61)" font-size="41" style="fill:#e0b879">Oscilloscope</text>
-<text transform="translate(479,231) rotate(-90)" font-size="35" style="fill:#9fc9c5">Charge</text>
-<text transform="translate(924,41)" font-size="35" style="fill:#d6a79f">Supply</text>
-<text transform="translate(1145,636) rotate(-90)" font-size="35" style="fill:#b6c3dd">Ground</text>
-<text transform="translate(599,367) rotate(-90)" font-size="35" style="fill:#d5d2c2">Across</text>
-<text transform="translate(627,139)" font-size="35" style="fill:#c49a6c">Charging</text>
-<text transform="translate(494,420)" font-size="35" style="fill:#c7d7b5">Schematic</text>
-<text transform="translate(698,200)" font-size="35" style="fill:#e0b879">Explicit</text>
-<text transform="translate(836,73)" font-size="35" style="fill:#9fc9c5">Branch</text>
-<text transform="translate(196,553)" font-size="35" style="fill:#d5d2c2">Parallel</text>
-<text transform="translate(513,512)" font-size="35" style="fill:#b6c3dd">Resistors</text>
-<text transform="translate(455,51)" font-size="29" style="fill:#e0b879">November</text>
-<text transform="translate(1103,679)" font-size="29" style="fill:#9fc9c5">Answer</text>
-<text transform="translate(291,131)" font-size="29" style="fill:#c7d7b5">Question</text>
-<text transform="translate(377,436)" font-size="29" style="fill:#c7d7b5">Live</text>
-<text transform="translate(886,547)" font-size="29" style="fill:#d6a79f">Constant</text>
-<text transform="translate(607,692)" font-size="29" style="fill:#c49a6c">Happens</text>
-<text transform="translate(431,627)" font-size="29" style="fill:#9fc9c5">Double</text>
-<text transform="translate(771,439)" font-size="29" style="fill:#d88988">Changes</text>
-<text transform="translate(393,229) rotate(-90)" font-size="29" style="fill:#b6c3dd">Opens</text>
-<text transform="translate(1137,148)" font-size="29" style="fill:#c7d7b5">Long</text>
-<text transform="translate(25,247)" font-size="29" style="fill:#d88988">Take</text>
-<text transform="translate(17,484)" font-size="29" style="fill:#c7d7b5">Reference</text>
-<text transform="translate(28,303)" font-size="29" style="fill:#c49a6c">Uncharged</text>
-<text transform="translate(985,384) rotate(-90)" font-size="29" style="fill:#c7d7b5">Top</text>
-<text transform="translate(125,672)" font-size="29" style="fill:#e0b879">Terminal</text>
-<text transform="translate(115,375)" font-size="29" style="fill:#9fc9c5">Rotary</text>
-<text transform="translate(650,482)" font-size="29" style="fill:#b6c3dd">Restart</text>
-<text transform="translate(99,100)" font-size="29" style="fill:#9fc9c5">Doubles</text>
-<text transform="translate(404,655)" font-size="29" style="fill:#a9b7a3">Inspector</text>
-<text transform="translate(218,295)" font-size="29" style="fill:#c7d7b5">Every</text>
-<text transform="translate(64,274)" font-size="29" style="fill:#a9b7a3">Control</text>
-<text transform="translate(1063,250)" font-size="29" style="fill:#d9c89e">Click</text>
-<text transform="translate(158,339)" font-size="29" style="fill:#e0b879">Place</text>
-<text transform="translate(997,283)" font-size="29" style="fill:#d88988">Terminals</text>
-<text transform="translate(988,377)" font-size="29" style="fill:#a9b7a3">Wires</text>
-<text transform="translate(678,604)" font-size="29" style="fill:#d6a79f">Value</text>
-<text transform="translate(1245,211) rotate(-90)" font-size="29" style="fill:#c7d7b5">Exact</text>
-<text transform="translate(376,376)" font-size="29" style="fill:#a9b7a3">Values</text>
-<text transform="translate(21,451)" font-size="29" style="fill:#8fb7d0">Currents</text>
-<text transform="translate(830,340)" font-size="29" style="fill:#d5d2c2">Keeping</text>
-<text transform="translate(1134,193)" font-size="29" style="fill:#c7d7b5">Eight</text>
-<text transform="translate(7,702)" font-size="29" style="fill:#c49a6c">Circuits</text>
-<text transform="translate(471,339)" font-size="29" style="fill:#c49a6c">Single</text>
-<text transform="translate(128,636)" font-size="29" style="fill:#d6a79f">Path</text>
-<text transform="translate(724,554)" font-size="29" style="fill:#8fb7d0">Comparing</text>
-<text transform="translate(39,421)" font-size="29" style="fill:#b6c3dd">Divider</text>
-<text transform="translate(992,437)" font-size="29" style="fill:#a9b7a3">Midpoint</text>
-<text transform="translate(508,224)" font-size="29" style="fill:#e0b879">Output</text>
-<text transform="translate(14,27)" font-size="29" style="fill:#c7d7b5">Filter</text>
-<text transform="translate(109,517)" font-size="29" style="fill:#e0b879">Numerical</text>
-<text transform="translate(545,89)" font-size="21" style="fill:#a9b7a3">Updated</text>
-<text transform="translate(905,695)" font-size="21" style="fill:#d5d2c2">Practical</text>
-<text transform="translate(48,592)" font-size="21" style="fill:#d88988">Equation</text>
-<text transform="translate(345,399)" font-size="21" style="fill:#9fc9c5">Tells</text>
-<text transform="translate(179,24)" font-size="21" style="fill:#c49a6c">Instrument</text>
-<text transform="translate(808,410)" font-size="21" style="fill:#d6a79f">Product</text>
-<text transform="translate(1103,58)" font-size="21" style="fill:#d5d2c2">Tangible</text>
-<text transform="translate(1181,92)" font-size="21" style="fill:#d5d2c2">Surge</text>
-<text transform="translate(483,590)" font-size="21" style="fill:#d88988">Empty</text>
-<text transform="translate(292,709) rotate(-90)" font-size="21" style="fill:#a9b7a3">Watch</text>
-<text transform="translate(927,213)" font-size="21" style="fill:#e0b879">Fall</text>
-<text transform="translate(1116,701)" font-size="21" style="fill:#d5d2c2">Plates</text>
-<text transform="translate(964,146)" font-size="21" style="fill:#a9b7a3">Accumulate</text>
-<text transform="translate(822,26)" font-size="21" style="fill:#d9c89e">Slope</text>
-<text transform="translate(528,156)" font-size="21" style="fill:#9fc9c5">Moment</text>
-<text transform="translate(177,405)" font-size="21" style="fill:#c7d7b5">Designed</text>
-<text transform="translate(1099,394)" font-size="21" style="fill:#d6a79f">Paused</text>
-<text transform="translate(680,346)" font-size="21" style="fill:#d6a79f">Initialised</text>
-<text transform="translate(797,713)" font-size="21" style="fill:#d88988">Instant</text>
-<text transform="translate(1068,314)" font-size="21" style="fill:#d5d2c2">Applied</text>
-<text transform="translate(1221,291) rotate(-90)" font-size="21" style="fill:#c7d7b5">Holds</text>
-<text transform="translate(205,588)" font-size="21" style="fill:#9fc9c5">Placing</text>
-<text transform="translate(691,85)" font-size="21" style="fill:#e0b879">Full</text>
-<text transform="translate(164,139)" font-size="21" style="fill:#d6a79f">Drawing</text>
-<text transform="translate(1196,705)" font-size="21" style="fill:#d5d2c2">Qquad</text>
-<text transform="translate(861,587)" font-size="21" style="fill:#e0b879">Frac</text>
-<text transform="translate(298,373)" font-size="21" style="fill:#d9c89e">Times</text>
-<text transform="translate(909,312)" font-size="21" style="fill:#d88988">Reaches</text>
-<text transform="translate(1096,29)" font-size="21" style="fill:#8fb7d0">Approximately</text>
-<text transform="translate(423,77)" font-size="21" style="fill:#e0b879">Falls</text>
-<text transform="translate(407,713) rotate(-90)" font-size="21" style="fill:#c49a6c">Five</text>
-<text transform="translate(510,168) rotate(-90)" font-size="21" style="fill:#9fc9c5">Seconds</text>
-<text transform="translate(932,574)" font-size="21" style="fill:#c7d7b5">Effectively</text>
-<text transform="translate(306,512)" font-size="21" style="fill:#d88988">Charged</text>
-<text transform="translate(1181,292) rotate(-90)" font-size="21" style="fill:#d9c89e">Select</text>
-<text transform="translate(782,458)" font-size="21" style="fill:#b6c3dd">Turn</text>
-<text transform="translate(825,156) rotate(-90)" font-size="21" style="fill:#c7d7b5">Dial</text>
-<text transform="translate(212,256) rotate(-90)" font-size="21" style="fill:#c7d7b5">Type</text>
-<text transform="translate(498,710)" font-size="21" style="fill:#c7d7b5">Press</text>
-<text transform="translate(741,687)" font-size="21" style="fill:#d5d2c2">Halves</text>
-<text transform="translate(828,657)" font-size="21" style="fill:#9fc9c5">Reading</text>
-<text transform="translate(723,517)" font-size="21" style="fill:#d6a79f">Workspace</text>
-<text transform="translate(1029,681)" font-size="21" style="fill:#9fc9c5">Maps</text>
-<text transform="translate(557,441)" font-size="21" style="fill:#d5d2c2">Directly</text>
-<text transform="translate(379,681) rotate(-90)" font-size="21" style="fill:#9fc9c5">Physical</text>
-<text transform="translate(618,351) rotate(-90)" font-size="21" style="fill:#d5d2c2">Quantity</text>
-<text transform="translate(916,237)" font-size="21" style="fill:#c7d7b5">Connection</text>
-<text transform="translate(674,666)" font-size="21" style="fill:#d5d2c2">Predictable</text>
-<text transform="translate(251,88)" font-size="21" style="fill:#c7d7b5">Wiring</text>
-<text transform="translate(254,425)" font-size="21" style="fill:#e0b879">Junctions</text>
-<text transform="translate(360,23)" font-size="21" style="fill:#d6a79f">Library</text>
-<text transform="translate(523,462)" font-size="21" style="fill:#c49a6c">Snapped</text>
-<text transform="translate(1049,342) rotate(-90)" font-size="21" style="fill:#d88988">Grid</text>
-<text transform="translate(21,522)" font-size="21" style="fill:#d88988">Wire</text>
-<text transform="translate(867,149)" font-size="21" style="fill:#c7d7b5">Either</text>
-<text transform="translate(4,644)" font-size="21" style="fill:#b6c3dd">Clicking</text>
-<text transform="translate(636,385)" font-size="21" style="fill:#e0b879">Start</text>
-<text transform="translate(1272,284) rotate(-90)" font-size="21" style="fill:#a9b7a3">End</text>
-<text transform="translate(526,189)" font-size="21" style="fill:#9fc9c5">Sequence</text>
-<text transform="translate(53,552)" font-size="21" style="fill:#9fc9c5">Dragging</text>
-<text transform="translate(469,677)" font-size="21" style="fill:#b6c3dd">Crossing</text>
-<text transform="translate(931,597)" font-size="21" style="fill:#9fc9c5">Remain</text>
-<text transform="translate(1106,364)" font-size="21" style="fill:#d9c89e">Isolated</text>
-<text transform="translate(569,581)" font-size="21" style="fill:#d5d2c2">Unless</text>
+<text transform="translate(884,188)" font-size="68" style="fill:#d5d2c2">Omega</text>
+<text transform="translate(378,679) rotate(-90)" font-size="59" style="fill:#c49a6c">Capacitor</text>
+<text transform="translate(554,537)" font-size="59" style="fill:#e0b879">Current</text>
+<text transform="translate(427,395)" font-size="56" style="fill:#d88988">Circuit</text>
+<text transform="translate(987,84)" font-size="56" style="fill:#a9b7a3">Voltage</text>
+<text transform="translate(171,616)" font-size="49" style="fill:#d9c89e">Time</text>
+<text transform="translate(853,711)" font-size="41" style="fill:#e0b879">Tau</text>
+<text transform="translate(1148,685)" font-size="41" style="fill:#a9b7a3">Bench</text>
+<text transform="translate(214,307)" font-size="41" style="fill:#c49a6c">Resistance</text>
+<text transform="translate(599,475)" font-size="41" style="fill:#b6c3dd">Component</text>
+<text transform="translate(767,64)" font-size="36" style="fill:#d88988">Resistor</text>
+<text transform="translate(289,114)" font-size="36" style="fill:#d5d2c2">Initial</text>
+<text transform="translate(1112,560)" font-size="36" style="fill:#d9c89e">Change</text>
+<text transform="translate(719,182)" font-size="36" style="fill:#d9c89e">Across</text>
+<text transform="translate(223,57)" font-size="36" style="fill:#e0b879">Oscilloscope</text>
+<text transform="translate(1200,243) rotate(-90)" font-size="36" style="fill:#9fc9c5">Switch</text>
+<text transform="translate(1121,40)" font-size="31" style="fill:#d6a79f">Charge</text>
+<text transform="translate(614,688) rotate(-90)" font-size="31" style="fill:#d5d2c2">Supply</text>
+<text transform="translate(265,351)" font-size="31" style="fill:#d6a79f">Ground</text>
+<text transform="translate(90,184)" font-size="31" style="fill:#c49a6c">Charging</text>
+<text transform="translate(909,486)" font-size="31" style="fill:#c7d7b5">Doubles</text>
+<text transform="translate(405,195)" font-size="31" style="fill:#e0b879">Schematic</text>
+<text transform="translate(19,83)" font-size="31" style="fill:#9fc9c5">Explicit</text>
+<text transform="translate(640,643)" font-size="31" style="fill:#d5d2c2">Branch</text>
+<text transform="translate(890,629)" font-size="31" style="fill:#b6c3dd">Parallel</text>
+<text transform="translate(516,54)" font-size="31" style="fill:#e0b879">Resistors</text>
+<text transform="translate(455,711)" font-size="31" style="fill:#9fc9c5">Divider</text>
+<text transform="translate(515,144)" font-size="25" style="fill:#c7d7b5">November</text>
+<text transform="translate(134,428)" font-size="25" style="fill:#c7d7b5">Answer</text>
+<text transform="translate(1000,444)" font-size="25" style="fill:#d6a79f">Question</text>
+<text transform="translate(267,450)" font-size="25" style="fill:#c7d7b5">Live</text>
+<text transform="translate(529,218)" font-size="25" style="fill:#c7d7b5">Constant</text>
+<text transform="translate(1013,253)" font-size="25" style="fill:#b6c3dd">Happens</text>
+<text transform="translate(985,138)" font-size="25" style="fill:#c7d7b5">Double</text>
+<text transform="translate(95,300)" font-size="25" style="fill:#d88988">Changes</text>
+<text transform="translate(953,566)" font-size="25" style="fill:#c7d7b5">Opens</text>
+<text transform="translate(96,256)" font-size="25" style="fill:#c49a6c">Long</text>
+<text transform="translate(1042,392) rotate(-90)" font-size="25" style="fill:#c7d7b5">Take</text>
+<text transform="translate(1026,521)" font-size="25" style="fill:#e0b879">Reference</text>
+<text transform="translate(203,394)" font-size="25" style="fill:#9fc9c5">Uncharged</text>
+<text transform="translate(856,529)" font-size="25" style="fill:#b6c3dd">Top</text>
+<text transform="translate(46,131)" font-size="25" style="fill:#9fc9c5">Terminal</text>
+<text transform="translate(466,422)" font-size="25" style="fill:#b6c3dd">Frac</text>
+<text transform="translate(30,207) rotate(-90)" font-size="25" style="fill:#d6a79f">Rotary</text>
+<text transform="translate(837,391)" font-size="25" style="fill:#d9c89e">Restart</text>
+<text transform="translate(10,385)" font-size="25" style="fill:#e0b879">Inspector</text>
+<text transform="translate(1120,361)" font-size="25" style="fill:#d88988">Every</text>
+<text transform="translate(829,582)" font-size="25" style="fill:#a9b7a3">Control</text>
+<text transform="translate(1137,293)" font-size="25" style="fill:#c7d7b5">Click</text>
+<text transform="translate(133,670) rotate(-90)" font-size="25" style="fill:#c7d7b5">Place</text>
+<text transform="translate(1039,323)" font-size="25" style="fill:#a9b7a3">Terminals</text>
+<text transform="translate(67,690)" font-size="25" style="fill:#8fb7d0">Wires</text>
+<text transform="translate(639,421)" font-size="25" style="fill:#d5d2c2">Value</text>
+<text transform="translate(750,221)" font-size="25" style="fill:#c7d7b5">Exact</text>
+<text transform="translate(474,627)" font-size="25" style="fill:#c49a6c">Values</text>
+<text transform="translate(811,353)" font-size="25" style="fill:#c49a6c">Currents</text>
+<text transform="translate(170,249)" font-size="25" style="fill:#c49a6c">Keeping</text>
+<text transform="translate(68,546)" font-size="25" style="fill:#e0b879">Eight</text>
+<text transform="translate(471,338)" font-size="25" style="fill:#d88988">Circuits</text>
+<text transform="translate(168,465)" font-size="25" style="fill:#b6c3dd">Single</text>
+<text transform="translate(317,261)" font-size="25" style="fill:#d9c89e">Total</text>
+<text transform="translate(60,333)" font-size="25" style="fill:#e0b879">Comparing</text>
+<text transform="translate(206,531)" font-size="25" style="fill:#d9c89e">Midpoint</text>
+<text transform="translate(168,113)" font-size="25" style="fill:#d5d2c2">Output</text>
+<text transform="translate(840,430)" font-size="25" style="fill:#d88988">Filter</text>
+<text transform="translate(440,545)" font-size="25" style="fill:#9fc9c5">Input</text>
+<text transform="translate(899,32)" font-size="25" style="fill:#c49a6c">Rises</text>
+<text transform="translate(469,283)" font-size="25" style="fill:#d6a79f">Damping</text>
+<text transform="translate(75,47)" font-size="25" style="fill:#d5d2c2">Numerical</text>
+<text transform="translate(792,87)" font-size="18" style="fill:#d5d2c2">Updated</text>
+<text transform="translate(310,702)" font-size="18" style="fill:#c49a6c">Practical</text>
+<text transform="translate(1040,699)" font-size="18" style="fill:#d5d2c2">Equation</text>
+<text transform="translate(266,683) rotate(-90)" font-size="18" style="fill:#a9b7a3">Tells</text>
+<text transform="translate(446,236)" font-size="18" style="fill:#e0b879">Instrument</text>
+<text transform="translate(1031,557)" font-size="18" style="fill:#d5d2c2">Product</text>
+<text transform="translate(257,173)" font-size="18" style="fill:#a9b7a3">Tangible</text>
+<text transform="translate(653,19)" font-size="18" style="fill:#d9c89e">Surge</text>
+<text transform="translate(824,125)" font-size="18" style="fill:#9fc9c5">Empty</text>
+<text transform="translate(623,554)" font-size="18" style="fill:#c7d7b5">Watch</text>
+<text transform="translate(1176,446)" font-size="18" style="fill:#d6a79f">Fall</text>
+<text transform="translate(219,707)" font-size="18" style="fill:#d5d2c2">Plates</text>
+<text transform="translate(1122,264)" font-size="18" style="fill:#9fc9c5">Accumulate</text>
+<text transform="translate(1073,669)" font-size="18" style="fill:#d5d2c2">Slope</text>
+<text transform="translate(1275,372) rotate(-90)" font-size="18" style="fill:#c7d7b5">Moment</text>
+<text transform="translate(1164,630)" font-size="18" style="fill:#9fc9c5">Designed</text>
+<text transform="translate(894,81)" font-size="18" style="fill:#e0b879">Paused</text>
+<text transform="translate(603,105)" font-size="18" style="fill:#d6a79f">Initialised</text>
+<text transform="translate(1115,488)" font-size="18" style="fill:#c49a6c">Instant</text>
+<text transform="translate(39,513)" font-size="18" style="fill:#a9b7a3">Applied</text>
+<text transform="translate(699,74)" font-size="18" style="fill:#d6a79f">Holds</text>
+<text transform="translate(684,704)" font-size="18" style="fill:#c49a6c">Placing</text>
+<text transform="translate(743,431)" font-size="18" style="fill:#d88988">Full</text>
+<text transform="translate(478,668)" font-size="18" style="fill:#d5d2c2">Drawing</text>
+<text transform="translate(60,205)" font-size="18" style="fill:#e0b879">Qquad</text>
+<text transform="translate(896,127)" font-size="18" style="fill:#9fc9c5">Times</text>
+<text transform="translate(327,616) rotate(-90)" font-size="18" style="fill:#b6c3dd">Reaches</text>
+<text transform="translate(859,650)" font-size="18" style="fill:#e0b879">Approximately</text>
+<text transform="translate(941,307)" font-size="18" style="fill:#c7d7b5">Falls</text>
+<text transform="translate(403,151)" font-size="18" style="fill:#d6a79f">Five</text>
+<text transform="translate(613,124)" font-size="18" style="fill:#e0b879">Seconds</text>
+<text transform="translate(969,412)" font-size="18" style="fill:#d88988">Effectively</text>
+<text transform="translate(415,513)" font-size="18" style="fill:#9fc9c5">Charged</text>
+<text transform="translate(637,586)" font-size="18" style="fill:#d6a79f">Select</text>
+<text transform="translate(1046,608)" font-size="18" style="fill:#9fc9c5">Turn</text>
+<text transform="translate(437,464)" font-size="18" style="fill:#d5d2c2">Dial</text>
+<text transform="translate(44,282) rotate(-90)" font-size="18" style="fill:#9fc9c5">Type</text>
+<text transform="translate(241,368)" font-size="18" style="fill:#8fb7d0">Press</text>
+<text transform="translate(1124,199) rotate(-90)" font-size="18" style="fill:#c49a6c">Halves</text>
+<text transform="translate(460,483)" font-size="18" style="fill:#c7d7b5">Reading</text>
+<text transform="translate(706,227) rotate(-90)" font-size="18" style="fill:#d9c89e">Workspace</text>
+<text transform="translate(707,368)" font-size="18" style="fill:#a9b7a3">Maps</text>
+<text transform="translate(922,324)" font-size="18" style="fill:#d88988">Directly</text>
+<text transform="translate(478,645)" font-size="18" style="fill:#b6c3dd">Physical</text>
+<text transform="translate(1168,704)" font-size="18" style="fill:#8fb7d0">Quantity</text>
+<text transform="translate(299,212)" font-size="18" style="fill:#c7d7b5">Connection</text>
+<text transform="translate(763,629)" font-size="18" style="fill:#c49a6c">Predictable</text>
+<text transform="translate(98,462) rotate(-90)" font-size="18" style="fill:#b6c3dd">Wiring</text>
+<text transform="translate(1237,483) rotate(-90)" font-size="18" style="fill:#c7d7b5">Junctions</text>
+<text transform="translate(685,561)" font-size="18" style="fill:#c49a6c">Library</text>
+<text transform="translate(754,144)" font-size="18" style="fill:#8fb7d0">Snapped</text>
+<text transform="translate(1050,210)" font-size="18" style="fill:#a9b7a3">Grid</text>
+<text transform="translate(737,444) rotate(-90)" font-size="18" style="fill:#d88988">Wire</text>
+<text transform="translate(279,133)" font-size="18" style="fill:#d9c89e">Either</text>
+<text transform="translate(1168,600)" font-size="18" style="fill:#d9c89e">Clicking</text>
+<text transform="translate(965,670)" font-size="18" style="fill:#d5d2c2">Start</text>
+<text transform="translate(1075,295)" font-size="18" style="fill:#d6a79f">End</text>
+<text transform="translate(763,28)" font-size="18" style="fill:#d9c89e">Sequence</text>
+<text transform="translate(71,103)" font-size="18" style="fill:#d5d2c2">Dragging</text>
+<text transform="translate(93,663) rotate(-90)" font-size="18" style="fill:#a9b7a3">Crossing</text>
 </svg>

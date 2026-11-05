@@ -503,7 +503,7 @@ const EXAMPLES_DATA: CircuitDocument[] = [
 				id: 'p1',
 				kind: 'probe_voltage',
 				label: 'P1',
-				x: 16,
+				x: 7,
 				y: 5,
 				rotation: 0,
 				params: { probeMode: 'node' }
@@ -562,7 +562,7 @@ const EXAMPLES_DATA: CircuitDocument[] = [
 			},
 			{
 				id: 'w_load_p1',
-				from: { type: 'junction', junctionId: 'j_load' },
+				from: { type: 'junction', junctionId: 'j_mid' },
 				to: { type: 'terminal', componentId: 'p1', terminalId: 'pos' },
 				bend: 'hv'
 			},

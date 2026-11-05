@@ -295,8 +295,59 @@ export function getWirePolylineGridPoints(
 	return [start, corner, end];
 }
 
+export function attachAdaptiveSimulationTiming(doc: CircuitDocument): CircuitDocument {
+	let baseDtSec = doc.simulation.dtSec;
+	let baseSampleIntervalSec = doc.simulation.sampleIntervalSec;
+
+	const getMaxFreq = (): number => {
+		let maxFreq = 0;
+		for (const comp of doc.components) {
+			if (comp.kind === 'sine_voltage') {
+				maxFreq = Math.max(maxFreq, comp.params.frequency ?? 100);
+			} else if (comp.kind === 'square_voltage') {
+				maxFreq = Math.max(maxFreq, comp.params.frequency ?? 10);
+			}
+		}
+		return maxFreq;
+	};
+
+	Object.defineProperties(doc.simulation, {
+		dtSec: {
+			enumerable: true,
+			configurable: true,
+			get() {
+				const maxFreq = getMaxFreq();
+				if (maxFreq > 0) {
+					return Math.min(baseDtSec, Math.max(1e-7, 1 / (40 * maxFreq)));
+				}
+				return baseDtSec;
+			},
+			set(val: number) {
+				baseDtSec = val;
+			}
+		},
+		sampleIntervalSec: {
+			enumerable: true,
+			configurable: true,
+			get() {
+				const maxFreq = getMaxFreq();
+				const effDt = doc.simulation.dtSec;
+				if (maxFreq > 0) {
+					return Math.max(effDt, Math.min(baseSampleIntervalSec, 1 / (20 * maxFreq)));
+				}
+				return Math.max(effDt, baseSampleIntervalSec);
+			},
+			set(val: number) {
+				baseSampleIntervalSec = val;
+			}
+		}
+	});
+	return doc;
+}
+
 export function cloneCircuitDocument(doc: CircuitDocument): CircuitDocument {
-	return JSON.parse(JSON.stringify(doc)) as CircuitDocument;
+	const cloned = JSON.parse(JSON.stringify(doc)) as CircuitDocument;
+	return attachAdaptiveSimulationTiming(cloned);
 }
 
 export function nextComponentLabel(doc: CircuitDocument, kind: ComponentKind): string {
@@ -844,7 +895,7 @@ export function validateCircuitDocument(
 	const dtSec =
 		typeof rawSim.dtSec === 'number' &&
 		Number.isFinite(rawSim.dtSec) &&
-		rawSim.dtSec >= 1e-6 &&
+		rawSim.dtSec >= 1e-7 &&
 		rawSim.dtSec <= 0.1
 			? rawSim.dtSec
 			: 0.002;
@@ -907,7 +958,7 @@ export function validateCircuitDocument(
 		}
 	};
 
-	return { ok: true, doc };
+	return { ok: true, doc: attachAdaptiveSimulationTiming(doc) };
 }
 
 export function exportCircuitJson(doc: CircuitDocument): string {

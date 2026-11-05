@@ -170,4 +170,59 @@ test.describe('Circuit Bench interactive electronic circuit simulator', () => {
 
 		await context.close();
 	});
+
+	test('verifies QA audit regressions: case-sensitive SI units, loaded divider switch, 6 s time span, t=0 initial voltage edit, RLC label suppression, and 44px touch targets', async ({
+		page
+	}) => {
+		await page.goto(ROUTE);
+		const app = page.locator('#circuit-bench-app[data-ready="true"]');
+		await expect(app).toBeVisible();
+
+		// F-04: Analogue meter big readout preserves case-sensitive SI unit prefixes (mV vs MV)
+		const readoutTransform = await app
+			.locator('.cb-meter-readout-big')
+			.evaluate((el) => getComputedStyle(el).textTransform);
+		expect(readoutTransform).toBe('none');
+
+		// F-12: Compact toolbar buttons meet >= 44x44 px touch target size
+		const restartBox = await app
+			.getByRole('button', { name: 'Restart', exact: true })
+			.boundingBox();
+		expect(restartBox).not.toBeNull();
+		expect(restartBox!.height).toBeGreaterThanOrEqual(44);
+		expect(restartBox!.width).toBeGreaterThanOrEqual(44);
+
+		// F-08: Editing C1 initialVoltage while paused at t = 0 s updates C1 voltage immediately
+		await app.getByRole('button', { name: 'Component list' }).click();
+		await app.getByRole('button', { name: 'Inspect C1' }).click();
+		const v0Input = app.locator('#cb-input-initialVoltage');
+		await v0Input.fill('2');
+		await v0Input.press('Enter');
+		await expect(app.locator('.cb-meas-grid')).toContainText('2.00 V');
+
+		// F-03: Opening S1 in loaded-divider leaves P1 measuring 2.50 V unloaded divider midpoint
+		const exampleSelect = app.getByLabel('Select a prepared circuit example');
+		await exampleSelect.selectOption('loaded-divider');
+		await app.getByRole('button', { name: 'Inspect S1' }).click();
+		await app.getByRole('button', { name: /Switch state:/ }).click();
+		await app.getByRole('button', { name: 'Inspect P1' }).click();
+		await expect(app.locator('.cb-meas-grid')).toContainText('2.50 V');
+		// F-09: Probe mode toggle is exposed in the inspector for voltage probes
+		await expect(app.getByRole('button', { name: /Probe mode:/ })).toBeVisible();
+
+		// F-05: rc-charge-discharge selects 6 s time span option cleanly
+		await exampleSelect.selectOption('rc-charge-discharge');
+		await expect(app.getByLabel('Oscilloscope visible time span')).toHaveValue('6');
+
+		// F-09: Sine source in rc-low-pass exposes DC offset and Phase angle controls
+		await exampleSelect.selectOption('rc-low-pass');
+		await app.getByRole('button', { name: 'Inspect V1' }).click();
+		await expect(app.locator('#cb-input-offset')).toBeVisible();
+		await expect(app.locator('#cb-input-phaseDeg')).toBeVisible();
+
+		// F-10: Series RLC circuit does not display a misleading first-order RC time constant
+		await exampleSelect.selectOption('rlc-response');
+		await app.getByRole('button', { name: 'Inspect R1' }).click();
+		await expect(app.locator('.cb-meas-grid')).not.toContainText('RC time constant');
+	});
 });

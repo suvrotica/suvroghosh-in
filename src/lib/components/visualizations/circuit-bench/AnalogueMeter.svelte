@@ -24,7 +24,7 @@
 
 <div class="cb-meter-window" role="region" aria-label={`Analogue and digital meter for ${label}`}>
 	<div class="cb-meter-header">
-		<span>{label}</span>
+		<span class="cb-meter-label">{label}</span>
 		<span class="cb-meter-readout-big">{formatted}</span>
 	</div>
 

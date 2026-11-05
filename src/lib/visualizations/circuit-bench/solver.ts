@@ -595,6 +595,7 @@ export function evaluateCircuitAtInstant(
 	timeSec = 0,
 	existingReactive?: Partial<ReactiveState>
 ): { ok: true; snapshot: SimulationSnapshot } | { ok: false; diagnostics: CircuitDiagnostic[] } {
+	syncSimulationTimingToCircuit(doc);
 	const topo = analyzeTopology(doc);
 	if (topo.diagnostics.length > 0) {
 		return { ok: false, diagnostics: topo.diagnostics };
@@ -914,15 +915,17 @@ function buildSnapshotFromSolution(
 			// which is -branchCurrent, so a 5 V supply driving a 1 kΩ resistor reports +5.00 mA!
 			const mnaCurrent = branchCurrentByCompId.get(comp.id) ?? 0;
 			current = -mnaCurrent;
+			// Passive sign convention per types.ts: positive power = dissipated/absorbed, negative power = supplied
+			const rawPower = -vDrop * current;
 			// Since `current` leaves `pos` into the wire net and enters `neg` from the wire net:
 			addInjection(k1, current);
 			addInjection(k2, -current);
 			components[comp.id] = {
 				componentId: comp.id,
 				terminalVoltages: { [t1]: v1, [t2]: v2 },
-				voltageDrop: vDrop,
-				current,
-				power: vDrop * current
+				voltageDrop: Math.abs(vDrop) < 1e-13 ? 0 : vDrop,
+				current: Math.abs(current) < 1e-13 ? 0 : current,
+				power: Math.abs(rawPower) < 1e-15 ? 0 : rawPower
 			};
 			continue;
 		} else if (comp.kind === 'capacitor') {
@@ -990,10 +993,78 @@ function buildSnapshotFromSolution(
 }
 
 /**
- * Advance the circuit by one numerical time step `dt` from `prevSnapshot` using the
- * 2nd-order implicit Trapezoidal Rule (or Backward Euler when `method === 'be'`).
+ * Compute characteristic reactive time constants and maximum AC source frequency in `doc`
+ * so the transient integrator can avoid trapezoidal ringing (dt > 2*tau) and Nyquist aliasing.
  */
-export function stepTransientMna(
+export function computeCircuitTimeScales(doc: Pick<CircuitDocument, 'components'>): {
+	minTauSec: number;
+	maxFreqHz: number;
+	maxSafeDtSec: number;
+} {
+	const resistors = doc.components.filter((c) => c.kind === 'resistor');
+	const capacitors = doc.components.filter((c) => c.kind === 'capacitor');
+	const inductors = doc.components.filter((c) => c.kind === 'inductor');
+
+	let maxFreqHz = 0;
+	for (const comp of doc.components) {
+		if (comp.kind === 'sine_voltage') {
+			maxFreqHz = Math.max(maxFreqHz, comp.params.frequency ?? 100);
+		} else if (comp.kind === 'square_voltage') {
+			maxFreqHz = Math.max(maxFreqHz, comp.params.frequency ?? 10);
+		}
+	}
+
+	let minTauSec = Infinity;
+	if (inductors.length > 0 && capacitors.length > 0) {
+		const minL = Math.min(...inductors.map((l) => Math.max(1e-9, l.params.inductance ?? 0.1)));
+		const minC = Math.min(...capacitors.map((c) => Math.max(1e-12, c.params.capacitance ?? 0.001)));
+		const maxR =
+			resistors.length > 0
+				? Math.max(...resistors.map((r) => Math.max(1e-6, r.params.resistance ?? 1000)))
+				: 0;
+		const alpha = maxR / (2 * minL);
+		const omega0 = 1 / Math.sqrt(minL * minC);
+		const maxEigenMag = alpha + Math.sqrt(alpha * alpha + omega0 * omega0);
+		minTauSec = Math.min(minTauSec, 1 / maxEigenMag);
+	} else if (resistors.length > 0 && capacitors.length > 0) {
+		const minR = Math.min(...resistors.map((r) => Math.max(1e-6, r.params.resistance ?? 1000)));
+		const minC = Math.min(...capacitors.map((c) => Math.max(1e-12, c.params.capacitance ?? 0.001)));
+		minTauSec = Math.min(minTauSec, minR * minC);
+	} else if (resistors.length > 0 && inductors.length > 0) {
+		const maxR = Math.max(...resistors.map((r) => Math.max(1e-6, r.params.resistance ?? 1000)));
+		const minL = Math.min(...inductors.map((l) => Math.max(1e-9, l.params.inductance ?? 0.1)));
+		minTauSec = Math.min(minTauSec, minL / maxR);
+	}
+
+	const freqDtLimit = maxFreqHz > 0 ? 1 / (40 * maxFreqHz) : Infinity;
+	const tauDtLimit = Number.isFinite(minTauSec) ? 0.25 * minTauSec : Infinity;
+	const maxSafeDtSec = Math.min(freqDtLimit, tauDtLimit);
+
+	return { minTauSec, maxFreqHz, maxSafeDtSec };
+}
+
+/**
+ * Synchronise simulation `dtSec` and `sampleIntervalSec` when an AC source frequency
+ * requires finer sampling to prevent Nyquist aliasing.
+ */
+export function syncSimulationTimingToCircuit(doc: CircuitDocument): void {
+	const { maxFreqHz } = computeCircuitTimeScales(doc);
+	if (maxFreqHz > 0) {
+		const maxAllowedDt = Math.max(1e-7, 1 / (40 * maxFreqHz));
+		const maxAllowedSample = Math.max(maxAllowedDt, 1 / (20 * maxFreqHz));
+		if (doc.simulation.dtSec > maxAllowedDt) {
+			doc.simulation.dtSec = maxAllowedDt;
+		}
+		if (doc.simulation.sampleIntervalSec > maxAllowedSample) {
+			doc.simulation.sampleIntervalSec = maxAllowedSample;
+		}
+	}
+}
+
+/**
+ * Execute a single elementary MNA transient step of size `dt` using `'trap'` or `'be'`.
+ */
+function stepSingleTransientMna(
 	doc: CircuitDocument,
 	prevSnapshot: SimulationSnapshot,
 	dt: number,
@@ -1180,6 +1251,41 @@ export function stepTransientMna(
 	);
 }
 
+/**
+ * Advance the circuit by `dt` from `prevSnapshot` using the 2nd-order implicit Trapezoidal Rule
+ * when well-resolved (`dt <= maxSafeDtSec`), automatically sub-stepping or switching to L-stable
+ * Backward Euler when stiff parameter combinations (`dt >> tau`) would otherwise cause trapezoidal ringing.
+ */
+export function stepTransientMna(
+	doc: CircuitDocument,
+	prevSnapshot: SimulationSnapshot,
+	dt: number,
+	method: 'trap' | 'be' = 'trap'
+): { ok: true; snapshot: SimulationSnapshot } | { ok: false; diagnostics: CircuitDiagnostic[] } {
+	if (method === 'be') {
+		return stepSingleTransientMna(doc, prevSnapshot, dt, 'be');
+	}
+
+	const { maxSafeDtSec } = computeCircuitTimeScales(doc);
+	if (dt <= maxSafeDtSec * 1.0001) {
+		return stepSingleTransientMna(doc, prevSnapshot, dt, 'trap');
+	}
+
+	const idealSubSteps = Math.ceil(dt / maxSafeDtSec);
+	const subSteps = Math.min(250, Math.max(2, idealSubSteps));
+	const subMethod: 'trap' | 'be' = idealSubSteps > 250 ? 'be' : 'trap';
+	const effectiveSubSteps = subMethod === 'be' ? Math.min(16, subSteps) : subSteps;
+	const subDt = dt / effectiveSubSteps;
+
+	let curr = prevSnapshot;
+	for (let i = 0; i < effectiveSubSteps; i += 1) {
+		const res = stepSingleTransientMna(doc, curr, subDt, subMethod);
+		if (!res.ok) return res;
+		curr = res.snapshot;
+	}
+	return { ok: true, snapshot: curr };
+}
+
 export function extractScopeChannelValue(
 	doc: CircuitDocument,
 	snapshot: SimulationSnapshot,
@@ -1243,7 +1349,8 @@ export function runSimulationBatch(
 		lastRecorded = currentSnapshot.timeSec;
 	}
 
-	const dt = Math.max(1e-6, Math.min(0.1, doc.simulation.dtSec));
+	syncSimulationTimingToCircuit(doc);
+	const dt = Math.max(1e-7, Math.min(0.1, doc.simulation.dtSec));
 	const sampleInterval = Math.max(dt, doc.simulation.sampleIntervalSec);
 
 	for (let step = 0; step < clampedSteps; step += 1) {

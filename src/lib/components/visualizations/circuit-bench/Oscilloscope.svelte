@@ -266,6 +266,7 @@
 					<option value="1">1 s</option>
 					<option value="2">2 s</option>
 					<option value="5">5 s</option>
+					<option value="6">6 s</option>
 					<option value="10">10 s</option>
 					<option value="20">20 s</option>
 				</select>

@@ -44,7 +44,8 @@
 	} from '$lib/visualizations/circuit-bench/notation';
 	import {
 		evaluateCircuitAtInstant,
-		snapshotToScopeSample
+		snapshotToScopeSample,
+		syncSimulationTimingToCircuit
 	} from '$lib/visualizations/circuit-bench/solver';
 	import { CircuitWorkerClient } from '$lib/visualizations/circuit-bench/worker-client';
 	import {
@@ -137,11 +138,12 @@
 			: null
 	);
 
-	// Compute RC time constant if circuit has one resistor and one capacitor
+	// Compute RC time constant if circuit is a simple first-order RC network (no inductors)
 	const rcTimeConstantSec = $derived.by(() => {
 		const resistors = doc.components.filter((c) => c.kind === 'resistor');
 		const capacitors = doc.components.filter((c) => c.kind === 'capacitor');
-		if (resistors.length === 1 && capacitors.length === 1) {
+		const inductors = doc.components.filter((c) => c.kind === 'inductor');
+		if (resistors.length === 1 && capacitors.length === 1 && inductors.length === 0) {
 			const r = resistors[0].params.resistance ?? 1000;
 			const c = capacitors[0].params.capacitance ?? 0.001;
 			return r * c;
@@ -304,10 +306,26 @@
 		if (!comp) return;
 		pushHistory(doc);
 		const changeDesc = mutator(comp);
+		if (comp.kind === 'probe_voltage' && comp.params.probeMode !== 'differential') {
+			nextDoc.wires = nextDoc.wires.filter(
+				(w) =>
+					!(
+						w.from.type === 'terminal' &&
+						w.from.componentId === comp.id &&
+						w.from.terminalId === 'neg'
+					) &&
+					!(
+						w.to.type === 'terminal' &&
+						w.to.componentId === comp.id &&
+						w.to.terminalId === 'neg'
+					)
+			);
+		}
+		syncSimulationTimingToCircuit(nextDoc);
 		doc = nextDoc;
 
 		const currentTime = snapshot?.timeSec ?? 0;
-		const preservedReactive = snapshot?.reactiveState;
+		const preservedReactive = currentTime > 0 ? snapshot?.reactiveState : undefined;
 		const res = evaluateCircuitAtInstant(nextDoc, currentTime, preservedReactive);
 
 		if (res.ok) {
@@ -2208,6 +2226,28 @@
 										return `${c.label} freq = ${formatEngineeringValue(val, 'Hz')}`;
 									})}
 							/>
+							<RotaryControl
+								label="DC offset"
+								paramKey="offset"
+								value={comp.params.offset ?? 0}
+								bounds={PARAMETER_BOUNDS.offset}
+								onchange={(val) =>
+									applyValueEdit(comp.id, (c) => {
+										c.params.offset = val;
+										return `${c.label} offset = ${formatEngineeringValue(val, 'V')}`;
+									})}
+							/>
+							<RotaryControl
+								label="Phase angle"
+								paramKey="phaseDeg"
+								value={comp.params.phaseDeg ?? 0}
+								bounds={PARAMETER_BOUNDS.phaseDeg}
+								onchange={(val) =>
+									applyValueEdit(comp.id, (c) => {
+										c.params.phaseDeg = val;
+										return `${c.label} phase = ${val}°`;
+									})}
+							/>
 						{:else if comp.kind === 'square_voltage'}
 							<RotaryControl
 								label="Peak amplitude"
@@ -2232,6 +2272,17 @@
 									})}
 							/>
 							<RotaryControl
+								label="DC offset"
+								paramKey="offset"
+								value={comp.params.offset ?? 0}
+								bounds={PARAMETER_BOUNDS.offset}
+								onchange={(val) =>
+									applyValueEdit(comp.id, (c) => {
+										c.params.offset = val;
+										return `${c.label} offset = ${formatEngineeringValue(val, 'V')}`;
+									})}
+							/>
+							<RotaryControl
 								label="Duty cycle"
 								paramKey="dutyPercent"
 								value={comp.params.dutyPercent ?? 50}
@@ -2242,6 +2293,22 @@
 										return `${c.label} duty = ${val}%`;
 									})}
 							/>
+						{:else if comp.kind === 'probe_voltage'}
+							<button
+								type="button"
+								class="cb-btn cb-btn-compact"
+								onclick={() =>
+									applyValueEdit(comp.id, (c) => {
+										const nextMode =
+											c.params.probeMode === 'differential' ? 'node' : 'differential';
+										c.params.probeMode = nextMode;
+										return `${c.label} mode: ${nextMode === 'differential' ? 'Differential V(+) − V(−)' : 'Node V (to 0 V)'}`;
+									})}
+							>
+								Probe mode: {comp.params.probeMode === 'differential'
+									? 'Differential V(+) − V(−)'
+									: 'Node V (to 0 V)'} — Switch mode
+							</button>
 						{:else if comp.kind === 'switch_spst'}
 							<button
 								type="button"
@@ -2314,10 +2381,21 @@
 								</div>
 								<div class="cb-meas-row">
 									<span class="cb-meas-label">
-										{comp.kind.includes('voltage') ? 'Power supplied:' : 'Power dissipated:'}
+										{comp.kind.includes('voltage')
+											? selectedMeasurement && selectedMeasurement.power > 0
+												? 'Power absorbed:'
+												: 'Power supplied:'
+											: 'Power dissipated:'}
 									</span>
 									<span class="cb-meas-val">
-										{selectedMeasurement ? formatMeasurement(selectedMeasurement.power, 'W') : '—'}
+										{selectedMeasurement
+											? formatMeasurement(
+													comp.kind.includes('voltage')
+														? Math.abs(selectedMeasurement.power)
+														: selectedMeasurement.power,
+													'W'
+												)
+											: '—'}
 									</span>
 								</div>
 							{/if}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T02:43:56.369003+00:00",
+  "generatedAt": "2026-11-05T04:30:58.671832+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2647,25 +2647,25 @@
       "wordCount": 130
     },
     "circuit-bench": {
-      "generatedAt": "2026-11-05T02:43:43.279679+00:00",
+      "generatedAt": "2026-11-05T04:30:46.715025+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/circuit-bench.svg",
       "source": "src/lib/posts/circuit-bench.md",
-      "sourceHash": "17dddbce9c3db852d0038677bc69e1cf85dc60761956d3aadad1033ed6ed9e5c",
-      "sourceModified": "2026-11-05T02:14:56.718337+00:00",
+      "sourceHash": "78bfd976d6cc9c127cf03bab5665d17d724be5690b7c1660337f6834a33dab34",
+      "sourceModified": "2026-11-05T04:24:51.736107+00:00",
       "topWords": [
         "Text",
-        "Current",
-        "Capacitor",
-        "Circuit",
         "Omega",
+        "Capacitor",
+        "Current",
+        "Circuit",
         "Voltage",
         "Time",
         "Tau",
         "Bench",
         "Resistance",
         "Component",
-        "Switch"
+        "Resistor"
       ],
       "wordCount": 130
     },

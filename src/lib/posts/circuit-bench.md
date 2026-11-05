@@ -96,13 +96,13 @@ When you change a component value during a run, Circuit Bench preserves the capa
 The **Examples** menu in the top toolbar includes eight prepared circuits and a blank workbench:
 
 1. **How long does a capacitor take to charge?** — $5\text{ V}$, $1\text{ k}\Omega$, and $1{,}000\text{ }\mu\text{F}$ starting uncharged at $0\text{ V}$, demonstrating $\tau = 1\text{ s}$.
-2. **Ohm’s law: What happens to current when resistance doubles?** — A $10\text{ V}$ source across a single resistor showing inverse proportionality between resistance and current.
-3. **Series and parallel resistors: How does the path change the total current?** — Comparing a single $1\text{ k}\Omega$ branch against a parallel path switched in via an SPST switch.
-4. **Voltage divider: How can two resistors produce a smaller voltage?** — Splitting $10\text{ V}$ across two equal $1\text{ k}\Omega$ resistors to obtain a $5\text{ V}$ midpoint.
-5. **Loaded voltage divider: Why does the output change when another resistor is connected?** — Closing a switch to connect a $1\text{ k}\Omega$ load in parallel with the lower leg, pulling the midpoint down to $3.33\text{ V}$.
+2. **Ohm’s law: What happens to current when resistance doubles?** — A $5\text{ V}$ source across a single $1\text{ k}\Omega$ resistor ($5\text{ mA}$), showing inverse proportionality when resistance doubles to $2\text{ k}\Omega$ ($2.5\text{ mA}$).
+3. **Series and parallel resistors: How does the path change the total current?** — Comparing two $1\text{ k}\Omega$ branches in parallel across $5\text{ V}$ ($10\text{ mA}$ total) against opening an SPST switch to leave a single branch ($5\text{ mA}$).
+4. **Voltage divider: How can two resistors produce a smaller voltage?** — Splitting $5\text{ V}$ across two equal $1\text{ k}\Omega$ resistors to obtain a $2.50\text{ V}$ midpoint.
+5. **Loaded voltage divider: Why does the output change when another resistor is connected?** — Connecting a $1\text{ k}\Omega$ load in parallel with the lower $1\text{ k}\Omega$ leg of a $5\text{ V}$ divider pulls the $2.50\text{ V}$ unloaded midpoint down to $1.67\text{ V}$ ($\frac{5}{3}\text{ V}$).
 6. **Capacitor charging and discharging: What determines how quickly the voltage changes?** — Using a changeover (SPDT) switch to flip an RC network between a $5\text{ V}$ supply and ground.
-7. **RC low-pass filter: Why does the output shrink as the input frequency rises?** — Driving a $1\text{ k}\Omega$ / $1\text{ }\mu\text{F}$ filter ($f_c \approx 159\text{ Hz}$) with a sine wave and comparing attenuation at $50\text{ Hz}$ and $500\text{ Hz}$.
-8. **RLC response: How do resistance, inductance, and capacitance affect oscillation and damping?** — Observing underdamped ringing at $R = 40\text{ }\Omega$ versus overdamped settling at $R = 400\text{ }\Omega$ with $L = 100\text{ mH}$ and $C = 10\text{ }\mu\text{F}$.
+7. **RC low-pass filter: Why does the output shrink as the input frequency rises?** — Driving a $1\text{ k}\Omega$ / $1\text{ }\mu\text{F}$ filter ($f_c \approx 159.15\text{ Hz}$) with a $100\text{ Hz}$ sine wave and comparing attenuation when the input rises to $500\text{ Hz}$.
+8. **RLC response: How do resistance, inductance, and capacitance affect oscillation and damping?** — Observing underdamped ringing at $R = 20\text{ }\Omega$ versus critical damping at $R = 200\text{ }\Omega$ and overdamped settling at $R = 400\text{ }\Omega$ with $L = 100\text{ mH}$ and $C = 10\text{ }\mu\text{F}$.
 
 ## How the numerical solver works
 
