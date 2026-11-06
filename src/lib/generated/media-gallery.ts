@@ -5312,6 +5312,41 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/how-spots-and-stripes-form/poster.png",
+			"src": "/images/visualizations/how-spots-and-stripes-form/poster.png",
+			"bytes": 118613,
+			"width": 1200,
+			"height": 750
+		},
+		{
+			"name": "visualizations/how-spots-and-stripes-form/preset-inverse-spots.png",
+			"src": "/images/visualizations/how-spots-and-stripes-form/preset-inverse-spots.png",
+			"bytes": 27384,
+			"width": 384,
+			"height": 384
+		},
+		{
+			"name": "visualizations/how-spots-and-stripes-form/preset-spots.png",
+			"src": "/images/visualizations/how-spots-and-stripes-form/preset-spots.png",
+			"bytes": 26709,
+			"width": 384,
+			"height": 384
+		},
+		{
+			"name": "visualizations/how-spots-and-stripes-form/preset-stripes.png",
+			"src": "/images/visualizations/how-spots-and-stripes-form/preset-stripes.png",
+			"bytes": 27354,
+			"width": 384,
+			"height": 384
+		},
+		{
+			"name": "visualizations/how-spots-and-stripes-form/social.png",
+			"src": "/images/visualizations/how-spots-and-stripes-form/social.png",
+			"bytes": 128506,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/human-ai-icu-prediction-laboratory/human-ai-icu-prediction-laboratory.webp",
 			"src": "/images/visualizations/human-ai-icu-prediction-laboratory/human-ai-icu-prediction-laboratory.webp",
 			"bytes": 102080,

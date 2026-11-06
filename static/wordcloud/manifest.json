@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T03:12:25.613986+00:00",
+  "generatedAt": "2026-11-06T11:51:14.909089+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5403,6 +5403,29 @@
         "Now",
         "Perhaps",
         "Ceiling"
+      ],
+      "wordCount": 130
+    },
+    "how-spots-and-stripes-form": {
+      "generatedAt": "2026-11-06T11:51:14.331272+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/how-spots-and-stripes-form.svg",
+      "source": "src/lib/posts/how-spots-and-stripes-form.md",
+      "sourceHash": "27927838f39b13270af23362973a246d31b0bb48d3a11b06c57743ab7a6ef771",
+      "sourceModified": "2026-11-06T11:50:23.665162+00:00",
+      "topWords": [
+        "Inhibitor",
+        "Activator",
+        "Spots",
+        "Pattern",
+        "Spreading",
+        "Uniform",
+        "Signal",
+        "Stripes",
+        "Model",
+        "Peak",
+        "Across",
+        "Equilibrium"
       ],
       "wordCount": 130
     },

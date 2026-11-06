@@ -17065,6 +17065,37 @@
 				"Festival"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/how-spots-and-stripes-form.md": {
+			"bodyHash": "a023fdd5da1a9f712bc2ece248ec950a40e0b0a51f11d177f93d6881dd924a28",
+			"hashVersion": 2,
+			"revisionHash": "2cec6a1e9fe4af19a37ab1a524a7ac03ecc4f978affdfccaf70c7560bcdfc453",
+			"generatedTags": [
+				"Turing patterns",
+				"reaction-diffusion",
+				"morphogenesis",
+				"mathematical biology",
+				"partial differential equations",
+				"dynamical systems",
+				"interactive simulation",
+				"pattern formation",
+				"activator-inhibitor",
+				"Alan Turing"
+			],
+			"pinnedTags": [
+				"Turing patterns",
+				"reaction-diffusion",
+				"morphogenesis",
+				"mathematical biology",
+				"partial differential equations",
+				"dynamical systems",
+				"interactive simulation",
+				"pattern formation",
+				"activator-inhibitor",
+				"Alan Turing"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-06"
 		}
 	},
 	"maxTags": 10
