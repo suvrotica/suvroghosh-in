@@ -17035,6 +17035,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-06"
+		},
+		"src/lib/posts/diwali-darkness.md": {
+			"bodyHash": "dff1110231dc6557bfb9cc3ab5cf3a954c6d926fde658b9362934036520744ec",
+			"hashVersion": 2,
+			"revisionHash": "782a798e460c24c639b3aa97c103d89ca4fa9b26a8ed4bb20650ad9e746f8146",
+			"generatedTags": [
+				"Diwali",
+				"Depression",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Air Pollution",
+				"Mental Health",
+				"Satire",
+				"India",
+				"Festival"
+			],
+			"pinnedTags": [
+				"Diwali",
+				"Depression",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Air Pollution",
+				"Mental Health",
+				"Satire",
+				"India",
+				"Festival"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

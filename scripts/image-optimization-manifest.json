@@ -8095,6 +8095,22 @@
       "sourceHash": "1f5087ad63e5d3ca1f5623bad439e68c9939c640c42ec19cb863e33cc54479cd",
       "width": 1672
     },
+    "static/images/art-diwali-darkness.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 174265,
+      "outputHash": "77c8a6092b9bb4c593bd73cde0b58fa44c082bf867a93cca70ce4319bd301f6b",
+      "psnrDb": 39.42,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 244764,
+      "sourceHash": "7899f4fc358d43e67ddd0eaf0de90e7d5b9237b6e3bd9318c51ca664228fabe5",
+      "width": 1672
+    },
     "static/images/art-durga-durga-durga-five-days-debauchery.jpg": {
       "format": "JPEG",
       "height": 768,

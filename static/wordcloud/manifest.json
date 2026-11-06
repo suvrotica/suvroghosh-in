@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T00:38:47.269125+00:00",
+  "generatedAt": "2026-11-06T03:12:25.613986+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3356,6 +3356,29 @@
         "Droplet",
         "Currently",
         "Openai"
+      ],
+      "wordCount": 130
+    },
+    "diwali-darkness": {
+      "generatedAt": "2026-11-06T03:12:13.131762+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/diwali-darkness.svg",
+      "source": "src/lib/posts/diwali-darkness.md",
+      "sourceHash": "f1b993fd93bf7a2d7d4326c45f8e559b8ccd59505e3f820f74117af52f8cd764",
+      "sourceModified": "2026-11-06T03:09:48.846570+00:00",
+      "topWords": [
+        "Darkness",
+        "Festival",
+        "Light",
+        "Diwali",
+        "Lamps",
+        "Man",
+        "Crackers",
+        "Air",
+        "Smoke",
+        "Promises",
+        "Take",
+        "Mythology"
       ],
       "wordCount": 130
     },

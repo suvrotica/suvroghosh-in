@@ -55,6 +55,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "art-diwali-darkness.jpg",
+			"src": "/images/art-diwali-darkness.jpg",
+			"bytes": 174265,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "art-durga-durga-durga-five-days-debauchery.jpg",
 			"src": "/images/art-durga-durga-durga-five-days-debauchery.jpg",
 			"bytes": 263519,
