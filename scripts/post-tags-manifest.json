@@ -17004,6 +17004,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-06"
+		},
+		"src/lib/posts/calcutta-breathes-like-a-dying-rickshaw.md": {
+			"bodyHash": "5e2093990013b655d06e16c063029f1865eabed16e85ab0a04f871f45817758d",
+			"hashVersion": 2,
+			"revisionHash": "aa29ec953a3e4544315dc525a0c6f257e58170d4f2c438b7176c85a61875d02c",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Air Pollution",
+				"Diwali",
+				"Politics",
+				"Mental Health",
+				"Science",
+				"Satire",
+				"Environment"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Air Pollution",
+				"Diwali",
+				"Politics",
+				"Mental Health",
+				"Science",
+				"Satire",
+				"Environment"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

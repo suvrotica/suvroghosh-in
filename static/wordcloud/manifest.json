@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T23:18:10.801777+00:00",
+  "generatedAt": "2026-11-06T00:16:51.022068+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2091,6 +2091,29 @@
         "Learning",
         "Patterns",
         "Neural"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-breathes-like-a-dying-rickshaw": {
+      "generatedAt": "2026-11-06T00:16:50.096856+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/calcutta-breathes-like-a-dying-rickshaw.svg",
+      "source": "src/lib/posts/calcutta-breathes-like-a-dying-rickshaw.md",
+      "sourceHash": "2b2b8741e644eb997c17fb1d47854703ee3d80a08d6d3b6bdaa62a9082ea965e",
+      "sourceModified": "2026-11-06T00:16:27.214857+00:00",
+      "topWords": [
+        "Air",
+        "Blue",
+        "Wave",
+        "Clean",
+        "Entirely",
+        "Breathe",
+        "Bengali",
+        "Decided",
+        "Crackers",
+        "Burst",
+        "Smoke",
+        "Temporary"
       ],
       "wordCount": 130
     },

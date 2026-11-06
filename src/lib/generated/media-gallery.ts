@@ -41,6 +41,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "art-calcutta-breathes-like-a-dying-rickshaw.jpg",
+			"src": "/images/art-calcutta-breathes-like-a-dying-rickshaw.jpg",
+			"bytes": 309599,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "art-caller-of-calcutta.webp",
 			"src": "/images/art-caller-of-calcutta.webp",
 			"bytes": 126978,

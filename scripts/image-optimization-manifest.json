@@ -8063,6 +8063,22 @@
       "sourceHash": "4fcb85309a5ef26d5f409bc9caa64bf267a7a0b5a8deb9bc1b0a6ed73524214b",
       "width": 1376
     },
+    "static/images/art-calcutta-breathes-like-a-dying-rickshaw.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 309599,
+      "outputHash": "da9da7970dbe87be18f4eb41c813321ed0daa902d1febcfd95ac8305e5212528",
+      "psnrDb": 39.63,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 339962,
+      "sourceHash": "f68f9bf48d88eb655414ff8113ccf5cbe6747b5246bf64deb5d07a4a620337d3",
+      "width": 1536
+    },
     "static/images/art-caller-of-calcutta.webp": {
       "format": "WEBP",
       "height": 941,
