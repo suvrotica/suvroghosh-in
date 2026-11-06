@@ -17155,6 +17155,37 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-epidemic-mosaic.md": {
+			"bodyHash": "516e0c191de4b5316a458ca233c8eb4579323baf4e7463a1dfbf2a4ee30b320e",
+			"hashVersion": 2,
+			"revisionHash": "15731a9d6511c61bebb9c4bfaee482c51e8a34f93f752e3f938c993e9723105f",
+			"generatedTags": [
+				"epidemiology",
+				"SIR model",
+				"network science",
+				"stochastic processes",
+				"Gillespie algorithm",
+				"mathematical biology",
+				"vaccination strategies",
+				"Voronoi tessellation",
+				"interactive simulation",
+				"James D. Murray"
+			],
+			"pinnedTags": [
+				"epidemiology",
+				"SIR model",
+				"network science",
+				"stochastic processes",
+				"Gillespie algorithm",
+				"mathematical biology",
+				"vaccination strategies",
+				"Voronoi tessellation",
+				"interactive simulation",
+				"James D. Murray"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-07"
 		}
 	},
 	"maxTags": 10

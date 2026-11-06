@@ -2092,6 +2092,29 @@ flowchart LR
     Lifecycle["Pause / viewport / visibility / reduced motion / teardown"] --> Shell
 ```
 
+### The Epidemic Mosaic: stochastic network-epidemic and vaccination workbench
+
+The `the-epidemic-mosaic` visualization uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/the-epidemic-mosaic`. Its server-rendered shell under `components/visualizations/the-epidemic-mosaic` carries `data-tts-exclude`, renders the introductory copy, plain rules and static computed comparison poster (`poster.png`), and lazily imports the interactive Svelte 5 workbench after mount (or retains the static fallback when `?canvas=off` is supplied). The gallery imports lightweight summary and subject metadata only. The feature adds no server endpoint, external network request, persistence store, credential or route exception.
+
+The pure TypeScript domain under `visualizations/the-epidemic-mosaic` owns the seeded 36-region Voronoi city and sparse intra-community contact graph on a fixed `600 × 420` logical viewport (`city.ts`), Sutherland–Hodgman horizontal polygon clipping and binary search so that clipped compartment bands (`S`, `V`, `R`, `I`) match population fractions by geometric area rather than vertical height, deterministic largest-remainder integer vaccine allocation with capacity caps and overflow redistribution across `even`, `most-connections` and `around-the-bridge` strategies (`vaccination.ts`), continuous-time Gillespie direct-method simulation with explicit local-infection, link-infection and recovery channels (`model.ts`), and a cancellable 20-run batch Web Worker (`worker.ts`, `worker-client.ts`) guarded by monotonic generation IDs. Simulation events and outcomes are strictly independent of playback speed, pausing, viewport resizing and region inspection.
+
+Each mount starts paused at day `0.0`, owns its worker client, animation frame, `IntersectionObserver`, document-visibility listener and reduced-motion (`prefers-reduced-motion: reduce`) listener, pauses playback when hidden or offscreen, and disposes all owned resources on unmount. `scripts/render-epidemic-mosaic-assets.mjs` generates and verifies the committed social/article posters, experiment plates and calibration manifest from the real city and simulation engine as part of `features:check`. See [the feature record](../visualizations/the-epidemic-mosaic.md). This extends the established pure-model/worker/lazy-UI pattern without changing a foundational architectural decision, so no separate ADR is required.
+
+```mermaid
+flowchart LR
+    Article["Markdown article / generic blog route"] --> Shell["data-tts-exclude SSR shell / poster / lazy workbench"]
+    Seed["Seeded 36-region Voronoi city + sparse contact networks"] --> Bridge["Experiment 1: Without bridge vs With one bridge"]
+    Seed --> Vaccines["Experiment 2: Equal-budget integer allocation (Even / Hubs / Bridge)"]
+    Bridge --> Gillespie["Pure Gillespie direct-method CTMC simulator"]
+    Vaccines --> Gillespie
+    Gillespie --> Bands["Area-proportional clipped polygon bands + recorded link events"]
+    Gillespie --> Chart["Synchronised infectious time series + region inspector"]
+    Seed --> BatchWorker["Owned cancellable Web Worker (20 stored seeds)"]
+    BatchWorker --> DotPlot["Variation-between-runs dot plot + median summary table"]
+    Lifecycle["Paused start / viewport / visibility / reduced motion / teardown"] --> Shell
+    Lifecycle --> BatchWorker
+```
+
 ### Synthetic Data Lab
 
 `/tools/synthetic-data-lab` is a wide site-shell Svelte application, with public descriptive SSR

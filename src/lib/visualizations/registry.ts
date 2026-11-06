@@ -461,6 +461,18 @@ export const visualizationSummaries = {
 			'Computed chemotaxis comparison showing dense warm ink trails gathered around a chemical source when sensing is on beside uniform wandering trails when sensing is off.',
 		href: '/blog/visualizations/ink-that-follows-a-scent',
 		status: 'published'
+	},
+	'the-epidemic-mosaic': {
+		id: 'the-epidemic-mosaic',
+		title: 'The Epidemic Mosaic',
+		description:
+			'Explore how a single contact bridge between two communities and the placement of a fixed vaccine budget alter stochastic epidemic spread across a 36-region Voronoi city.',
+		subjects: ['Biology', 'Healthcare', 'Mathematics', 'Statistics', 'Scientific Computing'],
+		poster: '/images/visualizations/the-epidemic-mosaic/social.png',
+		posterAlt:
+			'Side-by-side Voronoi mosaic comparing epidemic spread with and without a single bridge connecting two 18-region communities.',
+		href: '/blog/visualizations/the-epidemic-mosaic',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": 1,
+  "sourceHash": "d3634f64e0eb58bb3bb8507a2e8fd1655a912802fa142be6f585e542ccf4b61b",
+  "sources": [
+    "src/lib/visualizations/the-epidemic-mosaic/types.ts",
+    "src/lib/visualizations/the-epidemic-mosaic/random.ts",
+    "src/lib/visualizations/the-epidemic-mosaic/city.ts",
+    "src/lib/visualizations/the-epidemic-mosaic/vaccination.ts",
+    "src/lib/visualizations/the-epidemic-mosaic/model.ts",
+    "scripts/render-epidemic-mosaic-assets.mjs"
+  ],
+  "files": {
+    "social.png": {
+      "width": 1200,
+      "height": 630,
+      "bytes": 55278,
+      "pixelSha256": "1d499ff7ddae71b9e4ae2d853164e9521cf2e7a8c0dc7f830627f4932cd39456"
+    },
+    "poster.png": {
+      "width": 1200,
+      "height": 750,
+      "bytes": 66270,
+      "pixelSha256": "c114d4c86f602a33f0e56c3ebb125907050ba885b284c98d9f950d4774199585"
+    },
+    "experiment-bridge.png": {
+      "width": 600,
+      "height": 420,
+      "bytes": 29800,
+      "pixelSha256": "2d411a4a496526d151321d132afe656f290c1866b029a53e47f34c0d322be2ea"
+    },
+    "experiment-vaccination.png": {
+      "width": 600,
+      "height": 420,
+      "bytes": 34014,
+      "pixelSha256": "61e74ca5d9e26661fd4b23d8aa17b05a4d8559057ea9260c290b9d10923f0392"
+    }
+  }
+}

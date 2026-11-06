@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": 1,
+  "city": {
+    "citySeed": 1854,
+    "logicalWidth": 600,
+    "logicalHeight": 420,
+    "totalRegions": 36,
+    "populationPerRegion": 100,
+    "totalPopulation": 3600,
+    "initialInfectedRegionId": "A05",
+    "initialInfections": 5,
+    "defaultBridge": {
+      "regionAId": "A06",
+      "regionBId": "B03"
+    },
+    "baseEdgeCount": 55,
+    "exampleTouchingDisconnectedPair": [
+      "A05",
+      "A02"
+    ],
+    "exampleDistantConnectedPair": [
+      "A05",
+      "A16"
+    ]
+  },
+  "parameters": {
+    "betaLocal": 0.28,
+    "betaLink": 0.04,
+    "infectiousPeriodDays": 7,
+    "observationDays": 120,
+    "outbreakSeed": 2026
+  },
+  "bridgeExperiment": {
+    "singleRun": {
+      "withoutBridge": {
+        "totalInfectedByEnd": 1611,
+        "peakInfectious": 358,
+        "peakInfectiousDay": 41.29,
+        "communityBReached": false,
+        "communityBInfectedByEnd": 0
+      },
+      "withBridge": {
+        "totalInfectedByEnd": 3315,
+        "peakInfectious": 648,
+        "peakInfectiousDay": 58.26,
+        "communityBReached": true,
+        "communityBInfectedByEnd": 1680
+      }
+    },
+    "batch20": [
+      {
+        "scenarioId": "without-bridge",
+        "scenarioLabel": "Without bridge",
+        "repetitions": 20,
+        "medianInfectedByEnd": 1646.5,
+        "minInfectedByEnd": 5,
+        "maxInfectedByEnd": 1683,
+        "medianPeakInfectious": 431.5,
+        "communityBReachedCount": 0,
+        "earlyExtinctionCount": 19
+      },
+      {
+        "scenarioId": "with-bridge",
+        "scenarioLabel": "With one bridge",
+        "repetitions": 20,
+        "medianInfectedByEnd": 3302,
+        "minInfectedByEnd": 5,
+        "maxInfectedByEnd": 3345,
+        "medianPeakInfectious": 735,
+        "communityBReachedCount": 18,
+        "earlyExtinctionCount": 14
+      }
+    ]
+  },
+  "vaccinationExperiment": {
+    "vaccineBudget": 540,
+    "singleRun": {
+      "even": {
+        "totalInfectedByEnd": 2673,
+        "peakInfectious": 547,
+        "peakInfectiousDay": 54.82,
+        "communityBReached": true,
+        "communityBInfectedByEnd": 1382
+      },
+      "most-connections": {
+        "totalInfectedByEnd": 2647,
+        "peakInfectious": 260,
+        "peakInfectiousDay": 91.46,
+        "communityBReached": true,
+        "communityBInfectedByEnd": 1201
+      },
+      "around-the-bridge": {
+        "totalInfectedByEnd": 1376,
+        "peakInfectious": 283,
+        "peakInfectiousDay": 54.64,
+        "communityBReached": false,
+        "communityBInfectedByEnd": 0
+      }
+    },
+    "batch20": [
+      {
+        "scenarioId": "even",
+        "scenarioLabel": "Spread evenly",
+        "repetitions": 20,
+        "medianInfectedByEnd": 2657,
+        "minInfectedByEnd": 5,
+        "maxInfectedByEnd": 2700,
+        "medianPeakInfectious": 518.5,
+        "communityBReachedCount": 18,
+        "earlyExtinctionCount": 12
+      },
+      {
+        "scenarioId": "most-connections",
+        "scenarioLabel": "Most connections",
+        "repetitions": 20,
+        "medianInfectedByEnd": 2633.5,
+        "minInfectedByEnd": 5,
+        "maxInfectedByEnd": 2691,
+        "medianPeakInfectious": 312.5,
+        "communityBReachedCount": 18,
+        "earlyExtinctionCount": 3
+      },
+      {
+        "scenarioId": "around-the-bridge",
+        "scenarioLabel": "Around the bridge",
+        "repetitions": 20,
+        "medianInfectedByEnd": 1327.5,
+        "minInfectedByEnd": 5,
+        "maxInfectedByEnd": 1376,
+        "medianPeakInfectious": 278.5,
+        "communityBReachedCount": 0,
+        "earlyExtinctionCount": 17
+      }
+    ]
+  }
+}

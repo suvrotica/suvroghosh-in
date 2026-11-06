@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T17:02:18.625329+00:00",
+  "generatedAt": "2026-11-06T22:27:36.385229+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12372,6 +12372,29 @@
         "Person",
         "Enough",
         "Becomes"
+      ],
+      "wordCount": 130
+    },
+    "the-epidemic-mosaic": {
+      "generatedAt": "2026-11-06T22:27:36.023737+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-epidemic-mosaic.svg",
+      "source": "src/lib/posts/the-epidemic-mosaic.md",
+      "sourceHash": "571b4dfb8d2464d49402362f3903b03d47a319f18c7b4220f4e8e819a9ffe6d7",
+      "sourceModified": "2026-11-06T22:27:08.024782+00:00",
+      "topWords": [
+        "Contact",
+        "Region",
+        "Community",
+        "Bridge",
+        "Doses",
+        "Mathrm",
+        "Regions",
+        "Infection",
+        "Link",
+        "Across",
+        "Infectious",
+        "Transmission"
       ],
       "wordCount": 130
     },

@@ -59,7 +59,8 @@
 		'the-matrix-is-random-why-does-it-have-a-shape':
 			visualizationSummaries['the-matrix-is-random'].subjects,
 		'how-spots-and-stripes-form': visualizationSummaries['how-spots-and-stripes-form'].subjects,
-		'ink-that-follows-a-scent': visualizationSummaries['ink-that-follows-a-scent'].subjects
+		'ink-that-follows-a-scent': visualizationSummaries['ink-that-follows-a-scent'].subjects,
+		'the-epidemic-mosaic': visualizationSummaries['the-epidemic-mosaic'].subjects
 	};
 	const subjects = [
 		'All',

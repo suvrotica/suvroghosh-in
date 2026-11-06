@@ -5823,6 +5823,34 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 750
 		},
 		{
+			"name": "visualizations/the-epidemic-mosaic/experiment-bridge.png",
+			"src": "/images/visualizations/the-epidemic-mosaic/experiment-bridge.png",
+			"bytes": 29800,
+			"width": 600,
+			"height": 420
+		},
+		{
+			"name": "visualizations/the-epidemic-mosaic/experiment-vaccination.png",
+			"src": "/images/visualizations/the-epidemic-mosaic/experiment-vaccination.png",
+			"bytes": 34014,
+			"width": 600,
+			"height": 420
+		},
+		{
+			"name": "visualizations/the-epidemic-mosaic/poster.png",
+			"src": "/images/visualizations/the-epidemic-mosaic/poster.png",
+			"bytes": 66270,
+			"width": 1200,
+			"height": 750
+		},
+		{
+			"name": "visualizations/the-epidemic-mosaic/social.png",
+			"src": "/images/visualizations/the-epidemic-mosaic/social.png",
+			"bytes": 55278,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/the-museum-of-almost/social.png",
 			"src": "/images/visualizations/the-museum-of-almost/social.png",
 			"bytes": 161917,

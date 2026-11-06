@@ -1226,3 +1226,107 @@ test('Ink That Follows a Scent is registered as a verified chemotaxis and biased
 	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
 	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
 });
+
+test('The Epidemic Mosaic is registered as a verified stochastic network-epidemic and vaccination workbench', () => {
+	const slug = 'the-epidemic-mosaic';
+	const articlePath = `/blog/visualizations/${slug}`;
+	const socialPath = `/images/visualizations/${slug}/social.png`;
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const instrument = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		slug,
+		'EpidemicMosaicInstrument.svelte'
+	);
+	const app = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		slug,
+		'EpidemicMosaicApp.svelte'
+	);
+	const model = read('src', 'lib', 'visualizations', slug, 'model.ts');
+	const city = read('src', 'lib', 'visualizations', slug, 'city.ts');
+	const vaccination = read('src', 'lib', 'visualizations', slug, 'vaccination.ts');
+	const random = read('src', 'lib', 'visualizations', slug, 'random.ts');
+	const socialFile = path.join(root, 'static', ...socialPath.split('/').filter(Boolean));
+	const posterFile = path.join(root, 'static', 'images', 'visualizations', slug, 'poster.png');
+
+	assert.match(post, /title: "?The Epidemic Mosaic"?/);
+	assert.match(post, /category: "?Visualizations"?/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.ok(
+		post.includes(`thumbnail: ${socialPath}`) || post.includes(`thumbnail: "${socialPath}"`)
+	);
+	assert.match(post, /<EpidemicMosaicInstrument \/>/);
+	assert.match(post, /What changes when two separate communities gain one connection\?/);
+	assert.match(
+		post,
+		/With the same number of vaccine doses, does their placement change the outcome\?/
+	);
+	assert.match(
+		post,
+		/This is a synthetic city for exploring transmission\. It does not predict an outbreak in a real place\./
+	);
+	assert.match(post, /https:\/\/link\.springer\.com\/chapter\/10\.1007\/978-0-387-22437-4_10/);
+
+	assert.match(
+		instrument,
+		/Two communities\. One infection\. Add a connection and see what changes\./
+	);
+	assert.match(
+		instrument,
+		/Each shape contains people\. Lines show contact between regions\. Sharing a border does not\s+create contact\./
+	);
+	assert.match(
+		instrument,
+		/Every region starts with 100 people[\s\S]*Polygon size does not represent population\./
+	);
+	assert.match(
+		instrument,
+		/Edges represent contact opportunities between residents\.\s+People remain assigned to their home regions; this is not a model of physical travel or migration\./
+	);
+	assert.match(
+		app,
+		/The bridge adds contact between these regions\. Existing contacts stay the same\./
+	);
+	assert.match(
+		app,
+		/In the disconnected scenario, Community B must remain uninfected\. In the connected scenario,\s+infection may reach it, but that outcome is not guaranteed\./
+	);
+	assert.match(app, /Vaccination gives immediate, complete protection in this model\./);
+	assert.match(app, /prefers-reduced-motion: reduce/);
+	assert.match(app, /new IntersectionObserver/);
+
+	assert.doesNotMatch(model, /svelte/);
+	assert.doesNotMatch(model, /Math\.random\s*\(/);
+	assert.doesNotMatch(city, /Math\.random\s*\(/);
+	assert.doesNotMatch(vaccination, /Math\.random\s*\(/);
+	assert.doesNotMatch(random, /Math\.random\s*\(/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.ok(registry.includes(`poster: '${socialPath}'`));
+	assert.ok(registry.includes(`href: '${articlePath}'`));
+	assert.match(
+		landing,
+		/'the-epidemic-mosaic':\s*\n?\s*visualizationSummaries\['the-epidemic-mosaic'\]\.subjects/
+	);
+
+	assert.ok(fs.existsSync(socialFile), 'missing the-epidemic-mosaic social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing the-epidemic-mosaic poster.png');
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
+});
