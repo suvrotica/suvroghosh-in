@@ -1086,3 +1086,74 @@ test('the Barnum article has a literal route that cannot fan out across every po
 	);
 	assert.match(genericServerLoad, /slug !== 'the-profile-that-knows-almost-nothing-about-you'/);
 });
+
+
+test('How spots and stripes form is registered as a verified activator-inhibitor Turing workbench', () => {
+	const slug = 'how-spots-and-stripes-form';
+	const articlePath = `/blog/visualizations/${slug}`;
+	const socialPath = `/images/visualizations/${slug}/social.png`;
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const app = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		slug,
+		'SpotsAndStripesApp.svelte'
+	);
+	const engine = read('src', 'lib', 'visualizations', slug, 'engine.ts');
+	const socialFile = path.join(root, 'static', ...socialPath.split('/').filter(Boolean));
+	const posterFile = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		slug,
+		'poster.png'
+	);
+
+	assert.match(post, /title: How spots and stripes form/);
+	assert.match(post, /category: Visualizations/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.ok(post.includes(`thumbnail: ${socialPath}`));
+	assert.match(post, /<SpotsAndStripesInstrument \/>/);
+	assert.match(post, /## Three short suggested experiments/);
+	assert.match(post, /Equations and implementation details/);
+	assert.match(post, /\/blog\/visualizations\/reaction-diffusion-atlas/);
+
+	assert.match(app, /Computed example\. Press Grow from noise to see how it forms\./);
+	assert.match(app, /Grow from noise/);
+	assert.match(app, /Compare equal spreading/);
+	assert.match(app, /Different spreading rates/);
+	assert.match(app, /Equal spreading rates/);
+	assert.match(app, /Changes the balance between high- and low-signal regions\./);
+	assert.match(app, /How quickly the inhibitor spreads compared with the activator\./);
+	assert.match(app, /Changes the display, not the simulation\./);
+	assert.match(app, /The signals spread inside the patch\. They do not cross its edges\./);
+	assert.match(app, /prefers-reduced-motion: reduce/);
+	assert.match(app, /new IntersectionObserver/);
+	assert.match(app, /new ResizeObserver/);
+
+	assert.doesNotMatch(engine, /svelte/);
+	assert.doesNotMatch(engine, /Math\.random\s*\(/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.ok(registry.includes(`poster: '${socialPath}'`));
+	assert.ok(registry.includes(`href: '${articlePath}'`));
+	assert.match(
+		landing,
+		/'how-spots-and-stripes-form':\s*\n?\s*visualizationSummaries\['how-spots-and-stripes-form'\]\.subjects/
+	);
+
+	assert.ok(fs.existsSync(socialFile), 'missing how-spots-and-stripes-form social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing how-spots-and-stripes-form poster.png');
+});

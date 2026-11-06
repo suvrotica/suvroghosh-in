@@ -245,6 +245,8 @@ Runtime disposal resolves Observable invalidation. Notebook cells must use that 
 
 `ArtificialLifeCanvas` starts its browser-only engine in `onMount`, advances it at a fixed 30 Hz model step, and renders through `requestAnimationFrame`. `IntersectionObserver` cancels the frame loop offscreen; `ResizeObserver` maintains a responsive Canvas with device-pixel ratio capped at 1.5. Unmounting cancels RAF and disconnects both observers and the visibility listener. The population, food, history, and transient-event collections are bounded. Append `?canvas=off` to verify the static-poster fallback and `?motion=reduce` to verify the deterministic reduced-motion path.
 
+`SpotsAndStripesInstrument` (`/blog/visualizations/how-spots-and-stripes-form`) follows the same lazy client boundary for its signed activator–inhibitor PDE workbench (`src/lib/visualizations/how-spots-and-stripes-form`). During SSR or when `?canvas=off` is supplied, it renders the verified computed comparison poster and prose summary. After mount, `SpotsAndStripesApp` starts on a computed still (`t = 60.0`) from the verified `Spots` preset and evolves synchronised differential-spreading and equal-spreading (`1×`, `Dv = Du = 0.6`) fields inside a dedicated Web Worker with fixed colour scaling (`[-1.0, +1.0]`), pausing offscreen or under `prefers-reduced-motion: reduce` / `?motion=reduce`, and terminating its worker and observers on unmount. See [docs/visualizations/how-spots-and-stripes-form.md](visualizations/how-spots-and-stripes-form.md).
+
 ## Accessibility and input
 
 - Native buttons, sliders, checkboxes, number inputs, and selects remain in normal tab order.

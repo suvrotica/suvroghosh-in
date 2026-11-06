@@ -2045,6 +2045,29 @@ flowchart LR
     Lifecycle --> Worker
 ```
 
+### How spots and stripes form: signed activator–inhibitor Turing workbench
+
+The `how-spots-and-stripes-form` visualization uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/how-spots-and-stripes-form`. Its server-rendered shell under `components/visualizations/how-spots-and-stripes-form` renders a computed static comparison preview and lazily imports the interactive Svelte 5 workbench after mount (or retains the static fallback when `?canvas=off` is supplied). The gallery imports lightweight summary and subject metadata only. The feature adds no server endpoint, external network request, persistence store, credential or route exception, and remains separate from the Gray–Scott `reaction-diffusion` engine because its mathematical model evolves signed signal fields around a parameter-dependent cubic equilibrium.
+
+The pure TypeScript domain under `visualizations/how-spots-and-stripes-form` owns the analytical Cardano equilibrium solver ($s^3 + 0.2s = k$), discrete Neumann mode dispersion check, Mulberry32 deterministic disturbance generator, flat two-dimensional domain masks (`broad-sheet`, `narrow-strip`, `tapered-patch`) with uniform grid spacing ($h = 0.8$) and no-flux boundary conditions, explicit second-order Heun (RK2) timestepper ($\Delta t = 0.01$), synchronised differential-versus-equal-spreading ($D_v = D_u = 0.6$) pair runner, and fixed-scale (`[-1.0, +1.0]`) RGBA display mapper. View selection (`Activator`, `Inhibitor`, `Pigment`) and the pigment threshold operate strictly on rendered display buffers without mutating solver arrays, model time or run state.
+
+Simulation batches run inside a dedicated Web Worker (`worker.ts`) managed by `SpotStripeWorkerClient` with generation IDs and a synchronous fallback for non-worker test environments. Each mount owns its worker, animation frame, `IntersectionObserver`, `ResizeObserver`, document-visibility listener and reduced-motion (`prefers-reduced-motion: reduce` / `?motion=reduce`) listener, and disposes all owned resources on unmount. `scripts/render-spots-and-stripes-assets.mjs` generates and verifies the committed social/article posters and calibration manifest from the real numerical engine as part of `features:check`. See [the feature record](../visualizations/how-spots-and-stripes-form.md). This extends the established pure-model/worker/lazy-UI pattern without changing a foundational architectural decision, so no separate ADR is required.
+
+```mermaid
+flowchart LR
+    Article["Markdown article / generic blog route"] --> Shell["SSR computed preview / lazy instrument shell"]
+    Params["Preset / pattern balance k / ratio Dv:Du / flat domain / seed"] --> Equilibrium["Cardano equilibrium s³ + 0.2s = k + seeded disturbance"]
+    Equilibrium --> Worker["Owned Web Worker / synchronised Heun RK2 solver"]
+    Worker --> Primary["Differential spreading field (Dv = ratio × 0.6)"]
+    Worker --> Control["Equal spreading control field (1×, Dv = Du = 0.6)"]
+    Primary --> Display["Fixed [-1, +1] field palette / display-only pigment threshold"]
+    Control --> Display
+    Primary --> Chart["Spatial variation σu history + comparison verdict"]
+    Control --> Chart
+    Lifecycle["Viewport / visibility / reduced motion / teardown"] --> Shell
+    Lifecycle --> Worker
+```
+
 ### Synthetic Data Lab
 
 `/tools/synthetic-data-lab` is a wide site-shell Svelte application, with public descriptive SSR

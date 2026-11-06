@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.0.0",
+  "sourceHash": "721030b7ce1ea21cd32784f982e79558616c3046f9001f94a9f69c77b811faec",
+  "sources": [
+    "src/lib/visualizations/how-spots-and-stripes-form/types.ts",
+    "src/lib/visualizations/how-spots-and-stripes-form/presets.ts",
+    "src/lib/visualizations/how-spots-and-stripes-form/engine.ts",
+    "src/lib/visualizations/how-spots-and-stripes-form/display.ts",
+    "scripts/render-spots-and-stripes-assets.mjs"
+  ],
+  "files": {
+    "social.png": {
+      "width": 1200,
+      "height": 630,
+      "bytes": 128506,
+      "pixelSha256": "42fbe296d9ce2b58b28b9cf8d72a549cbb666838b0818cfb1afce4d795889710"
+    },
+    "poster.png": {
+      "width": 1200,
+      "height": 750,
+      "bytes": 118613,
+      "pixelSha256": "558d7b4f097f711001cd90f60194d337afb01fb138203f7cb5589323da3c32d7"
+    },
+    "preset-spots.png": {
+      "width": 384,
+      "height": 384,
+      "bytes": 26709,
+      "pixelSha256": "964d750bbf02898da15d3c40016381703382ce78f9accb981533768b9a105da1"
+    },
+    "preset-stripes.png": {
+      "width": 384,
+      "height": 384,
+      "bytes": 27354,
+      "pixelSha256": "3e2fb88f5109364544639d314a1ba2d3e23e78f03947ece54c641217ec901f69"
+    },
+    "preset-inverse-spots.png": {
+      "width": 384,
+      "height": 384,
+      "bytes": 27384,
+      "pixelSha256": "0dd7a597df63b30b545c26a61d47e18466c738d8dd00eed384f3e81b637e84b9"
+    }
+  }
+}

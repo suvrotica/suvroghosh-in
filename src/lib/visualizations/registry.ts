@@ -437,6 +437,18 @@ export const visualizationSummaries = {
 			'A dense, readable concept map showing 50+ ideas connected by 100+ labelled relationships against a dark background',
 		href: '/blog/visualizations/the-meaning-connection-map',
 		status: 'published'
+	},
+	'how-spots-and-stripes-form': {
+		id: 'how-spots-and-stripes-form',
+		title: 'How spots and stripes form',
+		description:
+			'Grow spots and stripes from tiny random disturbances, then repeat the exact experiment with equal signal spreading rates to see why patterns vanish.',
+		subjects: ['Biology', 'Mathematics', 'Scientific Computing'],
+		poster: '/images/visualizations/how-spots-and-stripes-form/social.png',
+		posterAlt:
+			'Computed reaction-diffusion panels comparing isolated spots, labyrinthine stripes, inverse spots, and a uniform equal-spreading control.',
+		href: '/blog/visualizations/how-spots-and-stripes-form',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

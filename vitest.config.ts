@@ -6,6 +6,7 @@ export default defineConfig({
 	test: {
 		include: [
 			'src/lib/recorder/**/*.test.ts',
+			'src/lib/visualizations/how-spots-and-stripes-form/**/*.test.ts',
 			'src/lib/visualizations/binaural-acoustic-soundboard/**/*.test.ts',
 			'src/lib/visualizations/circuit-bench/**/*.test.ts',
 			'src/lib/visualizations/fractal-trip/**/*.test.ts',

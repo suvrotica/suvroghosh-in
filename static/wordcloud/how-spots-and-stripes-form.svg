@@ -1,0 +1,134 @@
+<svg role="img" aria-label="How spots and stripes form" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>How spots and stripes form</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(594,608)" font-size="118" style="fill:#8fb7d0">Inhibitor</text>
+<text transform="translate(63,332)" font-size="106" style="fill:#a9b7a3">Activator</text>
+<text transform="translate(431,408)" font-size="99" style="fill:#d88988">Spots</text>
+<text transform="translate(652,286)" font-size="99" style="fill:#d5d2c2">Pattern</text>
+<text transform="translate(324,681)" font-size="92" style="fill:#8fb7d0">Spreading</text>
+<text transform="translate(685,494)" font-size="88" style="fill:#d5d2c2">Uniform</text>
+<text transform="translate(1239,457) rotate(-90)" font-size="88" style="fill:#e0b879">Signal</text>
+<text transform="translate(75,108)" font-size="84" style="fill:#c49a6c">Stripes</text>
+<text transform="translate(114,485)" font-size="80" style="fill:#9fc9c5">Model</text>
+<text transform="translate(280,572)" font-size="80" style="fill:#b6c3dd">Peak</text>
+<text transform="translate(1137,483) rotate(-90)" font-size="76" style="fill:#8fb7d0">Across</text>
+<text transform="translate(632,81)" font-size="76" style="fill:#c7d7b5">Equilibrium</text>
+<text transform="translate(721,395)" font-size="71" style="fill:#b6c3dd">Spatial</text>
+<text transform="translate(545,176)" font-size="71" style="fill:#a9b7a3">Partial</text>
+<text transform="translate(120,588)" font-size="66" style="fill:#c49a6c">Flat</text>
+<text transform="translate(91,701) rotate(-90)" font-size="66" style="fill:#d5d2c2">Rate</text>
+<text transform="translate(60,416)" font-size="66" style="fill:#d9c89e">Local</text>
+<text transform="translate(13,216)" font-size="66" style="fill:#b6c3dd">Diffusion</text>
+<text transform="translate(996,662)" font-size="61" style="fill:#e0b879">Signals</text>
+<text transform="translate(991,134)" font-size="61" style="fill:#c7d7b5">Sheet</text>
+<text transform="translate(381,250)" font-size="61" style="fill:#d5d2c2">Faster</text>
+<text transform="translate(863,194)" font-size="61" style="fill:#c7d7b5">Equal</text>
+<text transform="translate(106,693)" font-size="61" style="fill:#d88988">Every</text>
+<text transform="translate(292,164)" font-size="61" style="fill:#b6c3dd">Fields</text>
+<text transform="translate(352,54)" font-size="61" style="fill:#9fc9c5">Balance</text>
+<text transform="translate(407,491)" font-size="61" style="fill:#b6c3dd">Fixed</text>
+<text transform="translate(46,521) rotate(-90)" font-size="55" style="fill:#d6a79f">Spreads</text>
+<text transform="translate(640,333)" font-size="55" style="fill:#e0b879">Random</text>
+<text transform="translate(78,153)" font-size="55" style="fill:#a9b7a3">Exact</text>
+<text transform="translate(905,711)" font-size="55" style="fill:#b6c3dd">Time</text>
+<text transform="translate(151,653)" font-size="55" style="fill:#e0b879">Patch</text>
+<text transform="translate(429,98)" font-size="55" style="fill:#a9b7a3">Approx</text>
+<text transform="translate(913,332)" font-size="55" style="fill:#9fc9c5">Peaks</text>
+<text transform="translate(1057,526)" font-size="52" style="fill:#d5d2c2">Pigment</text>
+<text transform="translate(11,39)" font-size="46" style="fill:#d5d2c2">Continuous</text>
+<text transform="translate(375,624)" font-size="46" style="fill:#b6c3dd">Positive</text>
+<text transform="translate(405,715)" font-size="40" style="fill:#d6a79f">Twodimensional</text>
+<text transform="translate(1270,246) rotate(-90)" font-size="36" style="fill:#a9b7a3">Surface</text>
+<text transform="translate(247,376)" font-size="36" style="fill:#a9b7a3">Tiny</text>
+<text transform="translate(598,208)" font-size="36" style="fill:#9fc9c5">Disturbances</text>
+<text transform="translate(478,581)" font-size="36" style="fill:#e0b879">Grow</text>
+<text transform="translate(912,431)" font-size="36" style="fill:#d5d2c2">Inverse</text>
+<text transform="translate(394,509) rotate(-90)" font-size="36" style="fill:#d6a79f">Three</text>
+<text transform="translate(1142,82)" font-size="36" style="fill:#c7d7b5">Noise</text>
+<text transform="translate(1046,33)" font-size="36" style="fill:#c7d7b5">Inhibition</text>
+<text transform="translate(19,249)" font-size="36" style="fill:#d6a79f">Side</text>
+<text transform="translate(896,641)" font-size="36" style="fill:#d6a79f">Zero</text>
+<text transform="translate(52,528)" font-size="36" style="fill:#c49a6c">Domain</text>
+<text transform="translate(32,662) rotate(-90)" font-size="36" style="fill:#a9b7a3">Narrow</text>
+<text transform="translate(722,114)" font-size="36" style="fill:#d6a79f">Threshold</text>
+<text transform="translate(1169,361) rotate(-90)" font-size="36" style="fill:#b6c3dd">Baseline</text>
+<text transform="translate(1083,707)" font-size="35" style="fill:#c7d7b5">Equations</text>
+<text transform="translate(181,253)" font-size="35" style="fill:#d9c89e">Sits</text>
+<text transform="translate(376,193)" font-size="33" style="fill:#9fc9c5">Negative</text>
+<text transform="translate(1037,167)" font-size="33" style="fill:#d5d2c2">Signed</text>
+<text transform="translate(198,518)" font-size="33" style="fill:#c7d7b5">Grid</text>
+<text transform="translate(107,374)" font-size="33" style="fill:#d6a79f">Units</text>
+<text transform="translate(479,538)" font-size="33" style="fill:#c49a6c">Nabla</text>
+<text transform="translate(939,219)" font-size="28" style="fill:#d88988">Turing</text>
+<text transform="translate(558,438)" font-size="28" style="fill:#e0b879">Whilst</text>
+<text transform="translate(1151,478)" font-size="28" style="fill:#c49a6c">Regions</text>
+<text transform="translate(823,664)" font-size="26" style="fill:#8fb7d0">Controlled</text>
+<text transform="translate(835,139)" font-size="25" style="fill:#d5d2c2">Experiment</text>
+<text transform="translate(1175,139)" font-size="25" style="fill:#8fb7d0">Seed</text>
+<text transform="translate(555,515)" font-size="25" style="fill:#9fc9c5">Initial</text>
+<text transform="translate(786,421)" font-size="25" style="fill:#c49a6c">Isolated</text>
+<text transform="translate(1273,669) rotate(-90)" font-size="25" style="fill:#9fc9c5">Connected</text>
+<text transform="translate(545,120)" font-size="24" style="fill:#c49a6c">Disturbance</text>
+<text transform="translate(597,463)" font-size="24" style="fill:#c7d7b5">Rising</text>
+<text transform="translate(684,28)" font-size="24" style="fill:#d9c89e">Compare</text>
+<text transform="translate(397,433)" font-size="24" style="fill:#d5d2c2">Arrays</text>
+<text transform="translate(102,715)" font-size="22" style="fill:#c49a6c">Differences</text>
+<text transform="translate(361,403) rotate(-90)" font-size="22" style="fill:#d5d2c2">Broad</text>
+<text transform="translate(367,371)" font-size="22" style="fill:#d88988">Strip</text>
+<text transform="translate(1009,358)" font-size="22" style="fill:#b6c3dd">Edges</text>
+<text transform="translate(280,506)" font-size="22" style="fill:#e0b879">Animal</text>
+<text transform="translate(95,605)" font-size="17" style="fill:#9fc9c5">Selfamplification</text>
+<text transform="translate(273,240)" font-size="17" style="fill:#e0b879">Wavelength</text>
+<text transform="translate(4,128)" font-size="17" style="fill:#c49a6c">Scale</text>
+<text transform="translate(125,241)" font-size="17" style="fill:#e0b879">Cells</text>
+<text transform="translate(50,469)" font-size="17" style="fill:#d6a79f">Growth</text>
+<text transform="translate(742,625)" font-size="17" style="fill:#c49a6c">Formation</text>
+<text transform="translate(974,509)" font-size="17" style="fill:#d88988">System</text>
+<text transform="translate(283,710)" font-size="17" style="fill:#c49a6c">Lowsignal</text>
+<text transform="translate(281,403)" font-size="17" style="fill:#d6a79f">State</text>
+<text transform="translate(293,589)" font-size="17" style="fill:#d88988">Reaction</text>
+<text transform="translate(827,512)" font-size="17" style="fill:#d9c89e">Dimensionless</text>
+<text transform="translate(841,714)" font-size="17" style="fill:#d6a79f">Values</text>
+<text transform="translate(701,425)" font-size="17" style="fill:#c7d7b5">Cubic</text>
+<text transform="translate(761,516)" font-size="17" style="fill:#c49a6c">Lambda</text>
+<text transform="translate(457,505)" font-size="14" style="fill:#8fb7d0">Nearly</text>
+<text transform="translate(1179,364)" font-size="14" style="fill:#9fc9c5">Alan</text>
+<text transform="translate(341,265)" font-size="14" style="fill:#b6c3dd">Interacting</text>
+<text transform="translate(23,154)" font-size="14" style="fill:#d88988">Break</text>
+<text transform="translate(613,15)" font-size="14" style="fill:#d6a79f">Symmetry</text>
+<text transform="translate(11,98)" font-size="14" style="fill:#d6a79f">Locally</text>
+<text transform="translate(406,591)" font-size="14" style="fill:#c7d7b5">Second</text>
+<text transform="translate(31,59)" font-size="14" style="fill:#9fc9c5">Much</text>
+<text transform="translate(812,15)" font-size="14" style="fill:#8fb7d0">Neighbouring</text>
+<text transform="translate(665,529)" font-size="14" style="fill:#d5d2c2">Workbench</text>
+<text transform="translate(947,29)" font-size="14" style="fill:#9fc9c5">Single</text>
+<text transform="translate(1118,681)" font-size="14" style="fill:#a9b7a3">Let</text>
+<text transform="translate(570,588)" font-size="14" style="fill:#9fc9c5">Stable</text>
+<text transform="translate(1138,50)" font-size="14" style="fill:#c7d7b5">Identical</text>
+<text transform="translate(19,74)" font-size="14" style="fill:#9fc9c5">Rates</text>
+<text transform="translate(1038,384)" font-size="14" style="fill:#a9b7a3">Away</text>
+<text transform="translate(1057,198)" font-size="14" style="fill:#e0b879">Microscopic</text>
+<text transform="translate(1183,108)" font-size="14" style="fill:#c7d7b5">Seeded</text>
+<text transform="translate(996,584)" font-size="14" style="fill:#9fc9c5">Spot</text>
+<text transform="translate(845,328)" font-size="14" style="fill:#b6c3dd">Changing</text>
+<text transform="translate(759,438)" font-size="14" style="fill:#d6a79f">Versus</text>
+<text transform="translate(469,449)" font-size="14" style="fill:#d88988">Variation</text>
+<text transform="translate(593,483)" font-size="14" style="fill:#a9b7a3">Sigmau</text>
+<text transform="translate(551,553)" font-size="14" style="fill:#b6c3dd">Amplify</text>
+<text transform="translate(46,430)" font-size="14" style="fill:#d88988">Smooth</text>
+<text transform="translate(1239,620) rotate(-90)" font-size="14" style="fill:#c49a6c">Geometry</text>
+<text transform="translate(311,603)" font-size="14" style="fill:#9fc9c5">Open</text>
+<text transform="translate(601,239)" font-size="14" style="fill:#d6a79f">Change</text>
+<text transform="translate(107,639)" font-size="14" style="fill:#c7d7b5">Shape</text>
+<text transform="translate(770,535)" font-size="14" style="fill:#d6a79f">Tapered</text>
+<text transform="translate(572,348)" font-size="14" style="fill:#d9c89e">Switch</text>
+<text transform="translate(196,541)" font-size="14" style="fill:#c7d7b5">View</text>
+<text transform="translate(41,710)" font-size="14" style="fill:#8fb7d0">Display</text>
+<text transform="translate(559,265)" font-size="14" style="fill:#d88988">Markings</text>
+<text transform="translate(1087,357) rotate(-90)" font-size="14" style="fill:#d6a79f">Amplification</text>
+<text transform="translate(1040,702)" font-size="14" style="fill:#c7d7b5">Sharp</text>
+<text transform="translate(349,471) rotate(-90)" font-size="14" style="fill:#b6c3dd">Leopard</text>
+<text transform="translate(314,53)" font-size="14" style="fill:#e0b879">Map</text>
+<text transform="translate(243,145)" font-size="14" style="fill:#9fc9c5">Moving</text>
+<text transform="translate(1207,492)" font-size="14" style="fill:#d6a79f">Point</text>
+</svg>

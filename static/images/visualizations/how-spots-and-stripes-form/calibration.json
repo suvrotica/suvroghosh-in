@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.0.0",
+  "model": {
+    "activatorEquation": "du/dt = 0.6 * laplacian(u) + u - u^3 - 1.2v + k",
+    "inhibitorEquation": "dv/dt = Dv * laplacian(v) + 1.5 * (u - v)",
+    "equilibriumEquation": "u = v = s where s^3 + 0.2s = k",
+    "fieldsNote": "u and v are normalised, signed signal fields. Negative values are valid; they are not nonnegative chemical concentrations."
+  },
+  "equalSpreadingComparison": {
+    "presetId": "spots",
+    "seed": 1952,
+    "observationTime": 60,
+    "differentSpreading": {
+      "inhibitorRatio": 15,
+      "diffusionU": 0.6,
+      "diffusionV": 9,
+      "finalStdU": 0.50045
+    },
+    "equalSpreading": {
+      "inhibitorRatio": 1,
+      "diffusionU": 0.6,
+      "diffusionV": 0.6,
+      "finalStdU": 0
+    },
+    "verdict": "At t = 60.0, faster inhibitor spreading (15×) amplified the disturbance to σu = 0.500, while equal spreading (1×) smoothed the same initial disturbance down to σu = 0.0000."
+  },
+  "presets": [
+    {
+      "id": "spots",
+      "label": "Spots",
+      "description": "Negative pattern balance (k = −0.075) shifts the equilibrium below zero so isolated high-activator peaks form round spots on a low-signal background.",
+      "patternBalance": -0.075,
+      "diffusionU": 0.6,
+      "diffusionV": 9,
+      "inhibitorRatio": 15,
+      "uniformEquilibrium": -0.273126,
+      "seed": 1952,
+      "disturbanceAmplitude": 0.03,
+      "domain": {
+        "shape": "broad-sheet",
+        "nx": 96,
+        "ny": 96,
+        "gridSpacing": 0.8,
+        "physicalWidth": 76.8,
+        "physicalHeight": 76.8,
+        "boundaryCondition": "no-flux (zero normal derivative across domain edges)"
+      },
+      "integrator": "Explicit second-order Heun (RK2) with five-point Laplacian stencil",
+      "timestep": 0.01,
+      "eulerDiffusionStabilityLimit": 0.017778,
+      "observationTime": 60,
+      "steps": 6000,
+      "referenceImage": "/images/visualizations/how-spots-and-stripes-form/preset-spots.png",
+      "fieldSha256": "a334dcaca2bb1924ddadfaff1245cc30e0d0e9b030f7f6d409704815e389cc7f",
+      "measurements": {
+        "meanU": -0.14926,
+        "stdU": 0.50045,
+        "minU": -0.7454,
+        "maxU": 0.7846,
+        "skewU": 0.561,
+        "fractionAboveZero": 0.3576,
+        "positiveComponents": 53,
+        "negativeComponents": 1,
+        "laplacianSumU": 6.328e-15,
+        "growingSpatialModes": 458,
+        "fastestModeGrowthRate": 0.1965,
+        "fastestModeWavelength": 10.13,
+        "halfTimestepRmsDiffU": 9.237e-7,
+        "halfTimestepMaxDiffU": 0.00001684
+      }
+    },
+    {
+      "id": "stripes",
+      "label": "Stripes",
+      "description": "Symmetric pattern balance (k = 0.000) treats positive and negative excursions equally so high- and low-signal regions connect into labyrinthine stripes.",
+      "patternBalance": 0,
+      "diffusionU": 0.6,
+      "diffusionV": 9,
+      "inhibitorRatio": 15,
+      "uniformEquilibrium": 0,
+      "seed": 1952,
+      "disturbanceAmplitude": 0.03,
+      "domain": {
+        "shape": "broad-sheet",
+        "nx": 96,
+        "ny": 96,
+        "gridSpacing": 0.8,
+        "physicalWidth": 76.8,
+        "physicalHeight": 76.8,
+        "boundaryCondition": "no-flux (zero normal derivative across domain edges)"
+      },
+      "integrator": "Explicit second-order Heun (RK2) with five-point Laplacian stencil",
+      "timestep": 0.01,
+      "eulerDiffusionStabilityLimit": 0.017778,
+      "observationTime": 60,
+      "steps": 6000,
+      "referenceImage": "/images/visualizations/how-spots-and-stripes-form/preset-stripes.png",
+      "fieldSha256": "7df2e98ee650695de2a9f7d9764fc6c4dfe4555a8eda14a9c8519bf91e63b859",
+      "measurements": {
+        "meanU": 0.00327,
+        "stdU": 0.52595,
+        "minU": -0.7671,
+        "maxU": 0.7728,
+        "skewU": -0.0231,
+        "fractionAboveZero": 0.5046,
+        "positiveComponents": 9,
+        "negativeComponents": 15,
+        "laplacianSumU": -1.198e-14,
+        "growingSpatialModes": 738,
+        "fastestModeGrowthRate": 0.4363,
+        "fastestModeWavelength": 10.41,
+        "halfTimestepRmsDiffU": 4.855e-7,
+        "halfTimestepMaxDiffU": 0.000004893
+      }
+    },
+    {
+      "id": "inverse-spots",
+      "label": "Inverse spots",
+      "description": "Positive pattern balance (k = +0.075) shifts the equilibrium above zero so isolated low-signal pockets form inside a continuous high-signal coat.",
+      "patternBalance": 0.075,
+      "diffusionU": 0.6,
+      "diffusionV": 9,
+      "inhibitorRatio": 15,
+      "uniformEquilibrium": 0.273126,
+      "seed": 1952,
+      "disturbanceAmplitude": 0.03,
+      "domain": {
+        "shape": "broad-sheet",
+        "nx": 96,
+        "ny": 96,
+        "gridSpacing": 0.8,
+        "physicalWidth": 76.8,
+        "physicalHeight": 76.8,
+        "boundaryCondition": "no-flux (zero normal derivative across domain edges)"
+      },
+      "integrator": "Explicit second-order Heun (RK2) with five-point Laplacian stencil",
+      "timestep": 0.01,
+      "eulerDiffusionStabilityLimit": 0.017778,
+      "observationTime": 60,
+      "steps": 6000,
+      "referenceImage": "/images/visualizations/how-spots-and-stripes-form/preset-inverse-spots.png",
+      "fieldSha256": "535cd0dde2d34605f5bf24c53b913899b0dfa50a6e489a767ea1580a84d2ddfe",
+      "measurements": {
+        "meanU": 0.15032,
+        "stdU": 0.50039,
+        "minU": -0.7852,
+        "maxU": 0.7261,
+        "skewU": -0.5697,
+        "fractionAboveZero": 0.6439,
+        "positiveComponents": 1,
+        "negativeComponents": 56,
+        "laplacianSumU": 1.108e-13,
+        "growingSpatialModes": 458,
+        "fastestModeGrowthRate": 0.1965,
+        "fastestModeWavelength": 10.13,
+        "halfTimestepRmsDiffU": 5.459e-7,
+        "halfTimestepMaxDiffU": 0.000007271
+      }
+    }
+  ]
+}

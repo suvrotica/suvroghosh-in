@@ -58,7 +58,9 @@
 		'fertilization-calcium-clock': visualizationSummaries['fertilization-calcium-clock'].subjects,
 		'static-equilibrium-illusion': visualizationSummaries['static-equilibrium-illusion'].subjects,
 		'the-matrix-is-random-why-does-it-have-a-shape':
-			visualizationSummaries['the-matrix-is-random'].subjects
+			visualizationSummaries['the-matrix-is-random'].subjects,
+		'how-spots-and-stripes-form':
+			visualizationSummaries['how-spots-and-stripes-form'].subjects
 	};
 	const subjects = [
 		'All',
