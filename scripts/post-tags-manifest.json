@@ -17096,6 +17096,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-06"
+		},
+		"src/lib/posts/ink-that-follows-a-scent.md": {
+			"bodyHash": "5740c5a119c0e75fbbf05237e691e276e3fa4c0c95725940c90ba2f62839b34e",
+			"hashVersion": 2,
+			"revisionHash": "8bf3101833c22babd7df8647ed696ba3bd525f4ecc9cbb958a0b9b8fa0ccf20f",
+			"generatedTags": [
+				"chemotaxis",
+				"biased random walk",
+				"mathematical biology",
+				"random walks",
+				"diffusion",
+				"collective behaviour",
+				"stochastic processes",
+				"interactive simulation",
+				"agent-based modelling",
+				"James D. Murray"
+			],
+			"pinnedTags": [
+				"chemotaxis",
+				"biased random walk",
+				"mathematical biology",
+				"random walks",
+				"diffusion",
+				"collective behaviour",
+				"stochastic processes",
+				"interactive simulation",
+				"agent-based modelling",
+				"James D. Murray"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-06"
 		}
 	},
 	"maxTags": 10

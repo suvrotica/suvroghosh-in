@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Ink That Follows a Scent" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Ink That Follows a Scent</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(46,697)" font-size="118" style="fill:#9fc9c5">Chemical</text>
+<text transform="translate(886,618) rotate(-90)" font-size="112" style="fill:#c49a6c">Particles</text>
+<text transform="translate(333,519)" font-size="81" style="fill:#8fb7d0">Particle</text>
+<text transform="translate(214,185)" font-size="72" style="fill:#b6c3dd">Sensing</text>
+<text transform="translate(757,705)" font-size="72" style="fill:#b6c3dd">Movement</text>
+<text transform="translate(889,470)" font-size="72" style="fill:#d88988">Random</text>
+<text transform="translate(44,503)" font-size="62" style="fill:#d9c89e">Towards</text>
+<text transform="translate(432,125)" font-size="62" style="fill:#8fb7d0">Trails</text>
+<text transform="translate(454,570)" font-size="62" style="fill:#9fc9c5">Marks</text>
+<text transform="translate(923,274)" font-size="62" style="fill:#e0b879">Curve</text>
+<text transform="translate(526,313)" font-size="62" style="fill:#b6c3dd">Drawing</text>
+<text transform="translate(217,316)" font-size="51" style="fill:#c7d7b5">Wandering</text>
+<text transform="translate(170,205) rotate(-90)" font-size="51" style="fill:#e0b879">Gather</text>
+<text transform="translate(1071,403)" font-size="51" style="fill:#d5d2c2">Start</text>
+<text transform="translate(46,308)" font-size="51" style="fill:#c7d7b5">Patch</text>
+<text transform="translate(1009,154)" font-size="51" style="fill:#d88988">Small</text>
+<text transform="translate(1112,531)" font-size="51" style="fill:#d5d2c2">Time</text>
+<text transform="translate(224,442)" font-size="51" style="fill:#d88988">Influence</text>
+<text transform="translate(974,223)" font-size="51" style="fill:#b6c3dd">Visible</text>
+<text transform="translate(971,43)" font-size="51" style="fill:#c7d7b5">Begin</text>
+<text transform="translate(291,380)" font-size="51" style="fill:#d88988">Responding</text>
+<text transform="translate(346,254)" font-size="51" style="fill:#d9c89e">Position</text>
+<text transform="translate(100,578)" font-size="51" style="fill:#9fc9c5">Remain</text>
+<text transform="translate(1266,403) rotate(-90)" font-size="51" style="fill:#d9c89e">Difference</text>
+<text transform="translate(194,90)" font-size="51" style="fill:#b6c3dd">Paths</text>
+<text transform="translate(91,373)" font-size="51" style="fill:#8fb7d0">Follow</text>
+<text transform="translate(377,44)" font-size="51" style="fill:#d88988">Respond</text>
+<text transform="translate(927,616)" font-size="51" style="fill:#d88988">Comparison</text>
+<text transform="translate(968,318)" font-size="51" style="fill:#b6c3dd">Compare</text>
+<text transform="translate(788,142) rotate(-90)" font-size="51" style="fill:#d5d2c2">Runs</text>
+<text transform="translate(1137,693)" font-size="51" style="fill:#c7d7b5">Rule</text>
+<text transform="translate(548,207)" font-size="51" style="fill:#a9b7a3">Changes</text>
+<text transform="translate(784,649) rotate(-90)" font-size="51" style="fill:#e0b879">Experiment</text>
+<text transform="translate(4,262)" font-size="51" style="fill:#b6c3dd">Environment</text>
+<text transform="translate(911,98)" font-size="51" style="fill:#d9c89e">Clearing</text>
+<text transform="translate(504,426)" font-size="37" style="fill:#c49a6c">Thousands</text>
+<text transform="translate(928,409) rotate(-90)" font-size="37" style="fill:#a9b7a3">Shape</text>
+<text transform="translate(933,536)" font-size="37" style="fill:#b6c3dd">Single</text>
+<text transform="translate(628,347)" font-size="37" style="fill:#9fc9c5">Moves</text>
+<text transform="translate(9,405)" font-size="37" style="fill:#e0b879">Randomly</text>
+<text transform="translate(40,186)" font-size="37" style="fill:#c49a6c">Adds</text>
+<text transform="translate(109,450)" font-size="37" style="fill:#d5d2c2">Push</text>
+<text transform="translate(175,619)" font-size="37" style="fill:#e0b879">Stronger</text>
+<text transform="translate(402,602)" font-size="37" style="fill:#d88988">Concentration</text>
+<text transform="translate(42,578) rotate(-90)" font-size="37" style="fill:#d6a79f">Move</text>
+<text transform="translate(1129,38)" font-size="37" style="fill:#a9b7a3">Source</text>
+<text transform="translate(99,108) rotate(-90)" font-size="37" style="fill:#d9c89e">Side</text>
+<text transform="translate(287,563)" font-size="37" style="fill:#d6a79f">Canvas</text>
+<text transform="translate(53,144) rotate(-90)" font-size="37" style="fill:#d5d2c2">Moving</text>
+<text transform="translate(899,54)" font-size="37" style="fill:#b6c3dd">Now</text>
+<text transform="translate(354,74)" font-size="37" style="fill:#e0b879">Try</text>
+<text transform="translate(1223,230) rotate(-90)" font-size="37" style="fill:#d6a79f">Painting</text>
+<text transform="translate(638,258)" font-size="37" style="fill:#d9c89e">Hidden</text>
+<text transform="translate(981,361)" font-size="37" style="fill:#8fb7d0">Encounter</text>
+<text transform="translate(588,671)" font-size="37" style="fill:#b6c3dd">Slopes</text>
+<text transform="translate(707,158) rotate(-90)" font-size="37" style="fill:#d9c89e">Becomes</text>
+<text transform="translate(530,163)" font-size="37" style="fill:#c49a6c">Biased</text>
+<text transform="translate(1065,565)" font-size="37" style="fill:#a9b7a3">Painted</text>
+<text transform="translate(800,650)" font-size="37" style="fill:#e0b879">Region</text>
+<text transform="translate(178,34)" font-size="37" style="fill:#d9c89e">Gradually</text>
+<text transform="translate(1263,590) rotate(-90)" font-size="37" style="fill:#b6c3dd">Appears</text>
+<text transform="translate(175,122)" font-size="37" style="fill:#b6c3dd">Accumulation</text>
+<text transform="translate(913,496)" font-size="29" style="fill:#c7d7b5">Necessarily</text>
+<text transform="translate(164,529)" font-size="29" style="fill:#d6a79f">End</text>
+<text transform="translate(610,392)" font-size="29" style="fill:#8fb7d0">Near</text>
+<text transform="translate(119,228)" font-size="29" style="fill:#d5d2c2">Current</text>
+<text transform="translate(966,396)" font-size="29" style="fill:#b6c3dd">Bring</text>
+<text transform="translate(679,559)" font-size="29" style="fill:#d6a79f">Keep</text>
+<text transform="translate(1120,642)" font-size="29" style="fill:#d9c89e">Nearby</text>
+<text transform="translate(640,637)" font-size="29" style="fill:#d6a79f">Giving</text>
+<text transform="translate(659,460)" font-size="29" style="fill:#d88988">Route</text>
+<text transform="translate(946,222) rotate(-90)" font-size="29" style="fill:#c49a6c">Effect</text>
+<text transform="translate(239,212)" font-size="29" style="fill:#d9c89e">Easier</text>
+<text transform="translate(522,70)" font-size="29" style="fill:#9fc9c5">Examine</text>
+<text transform="translate(1120,276)" font-size="29" style="fill:#c7d7b5">Choose</text>
+<text transform="translate(894,572)" font-size="29" style="fill:#b6c3dd">Positions</text>
+<text transform="translate(610,708)" font-size="29" style="fill:#8fb7d0">Matching</text>
+<text transform="translate(519,451)" font-size="29" style="fill:#a9b7a3">Receives</text>
+<text transform="translate(1151,478)" font-size="29" style="fill:#e0b879">Nudge</text>
+<text transform="translate(10,214)" font-size="29" style="fill:#b6c3dd">Every</text>
+<text transform="translate(13,430)" font-size="29" style="fill:#c7d7b5">Step</text>
+<text transform="translate(45,593)" font-size="29" style="fill:#d6a79f">Run</text>
+<text transform="translate(735,158) rotate(-90)" font-size="29" style="fill:#d9c89e">Responds</text>
+<text transform="translate(326,342)" font-size="29" style="fill:#c7d7b5">Switched</text>
+<text transform="translate(27,357) rotate(-90)" font-size="29" style="fill:#d9c89e">Watch</text>
+<text transform="translate(810,533) rotate(-90)" font-size="29" style="fill:#d9c89e">Separate</text>
+<text transform="translate(941,653)" font-size="29" style="fill:#d9c89e">Sharing</text>
+<text transform="translate(52,529)" font-size="29" style="fill:#c49a6c">Nudges</text>
+<text transform="translate(396,627)" font-size="29" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(917,267) rotate(-90)" font-size="29" style="fill:#d5d2c2">Different</text>
+<text transform="translate(1147,427)" font-size="27" style="fill:#d88988">Sequence</text>
+<text transform="translate(969,177)" font-size="27" style="fill:#d5d2c2">Movements</text>
+<text transform="translate(33,703) rotate(-90)" font-size="27" style="fill:#e0b879">Explain</text>
+<text transform="translate(388,467)" font-size="27" style="fill:#b6c3dd">Switch</text>
+<text transform="translate(738,165)" font-size="20" style="fill:#d88988">Exploration</text>
+<text transform="translate(296,585)" font-size="20" style="fill:#9fc9c5">Continue</text>
+<text transform="translate(365,538)" font-size="20" style="fill:#a9b7a3">Earlier</text>
+<text transform="translate(440,274)" font-size="20" style="fill:#c49a6c">Takes</text>
+<text transform="translate(702,381)" font-size="20" style="fill:#b6c3dd">Fade</text>
+<text transform="translate(381,205)" font-size="20" style="fill:#8fb7d0">Turning</text>
+<text transform="translate(541,337)" font-size="20" style="fill:#d6a79f">Happens</text>
+<text transform="translate(275,140)" font-size="20" style="fill:#b6c3dd">Next</text>
+<text transform="translate(224,523)" font-size="20" style="fill:#d5d2c2">Remove</text>
+<text transform="translate(595,31)" font-size="20" style="fill:#d88988">History</text>
+<text transform="translate(34,327)" font-size="20" style="fill:#c7d7b5">Already</text>
+<text transform="translate(401,400)" font-size="20" style="fill:#d6a79f">Happened</text>
+<text transform="translate(817,19)" font-size="20" style="fill:#b6c3dd">Distinction</text>
+<text transform="translate(1130,712)" font-size="20" style="fill:#8fb7d0">Matters</text>
+<text transform="translate(957,422) rotate(-90)" font-size="20" style="fill:#d9c89e">Throughout</text>
+<text transform="translate(744,228)" font-size="20" style="fill:#c49a6c">Record</text>
+<text transform="translate(517,331) rotate(-90)" font-size="20" style="fill:#e0b879">Leaves</text>
+<text transform="translate(57,148)" font-size="20" style="fill:#c49a6c">Intact</text>
+<text transform="translate(1112,244)" font-size="20" style="fill:#c49a6c">Removes</text>
+<text transform="translate(105,715)" font-size="20" style="fill:#d9c89e">Previous</text>
+<text transform="translate(282,715)" font-size="20" style="fill:#8fb7d0">Coordinated</text>
+<text transform="translate(808,137) rotate(-90)" font-size="20" style="fill:#b6c3dd">Appearance</text>
+<text transform="translate(842,416)" font-size="20" style="fill:#d6a79f">Many</text>
+<text transform="translate(206,333)" font-size="15" style="fill:#b6c3dd">Independently</text>
+<text transform="translate(1089,59)" font-size="15" style="fill:#c49a6c">Surroundings</text>
+<text transform="translate(298,396)" font-size="15" style="fill:#d6a79f">Leader</text>
+<text transform="translate(798,297)" font-size="15" style="fill:#d88988">Exchange</text>
+<text transform="translate(1158,579)" font-size="15" style="fill:#d88988">Messages</text>
+<text transform="translate(187,390)" font-size="15" style="fill:#d9c89e">Simplified</text>
+<text transform="translate(897,291)" font-size="15" style="fill:#a9b7a3">Explore</text>
+<text transform="translate(426,74)" font-size="15" style="fill:#d6a79f">Chemotaxis</text>
+<text transform="translate(585,274)" font-size="15" style="fill:#d5d2c2">Influenced</text>
+<text transform="translate(669,122) rotate(-90)" font-size="15" style="fill:#e0b879">Gradient</text>
+<text transform="translate(615,362)" font-size="15" style="fill:#d5d2c2">Landscape</text>
+<text transform="translate(461,713)" font-size="15" style="fill:#d6a79f">Prescribed</text>
+<text transform="translate(970,420)" font-size="15" style="fill:#b6c3dd">Directly</text>
+</svg>

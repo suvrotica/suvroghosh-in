@@ -5354,6 +5354,34 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/ink-that-follows-a-scent/poster.png",
+			"src": "/images/visualizations/ink-that-follows-a-scent/poster.png",
+			"bytes": 305686,
+			"width": 1200,
+			"height": 750
+		},
+		{
+			"name": "visualizations/ink-that-follows-a-scent/preset-curved-line.png",
+			"src": "/images/visualizations/ink-that-follows-a-scent/preset-curved-line.png",
+			"bytes": 141881,
+			"width": 512,
+			"height": 384
+		},
+		{
+			"name": "visualizations/ink-that-follows-a-scent/preset-one-source.png",
+			"src": "/images/visualizations/ink-that-follows-a-scent/preset-one-source.png",
+			"bytes": 145280,
+			"width": 512,
+			"height": 384
+		},
+		{
+			"name": "visualizations/ink-that-follows-a-scent/social.png",
+			"src": "/images/visualizations/ink-that-follows-a-scent/social.png",
+			"bytes": 192241,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/knowledge-gap-atlas/social.png",
 			"src": "/images/visualizations/knowledge-gap-atlas/social.png",
 			"bytes": 156543,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T11:51:14.909089+00:00",
+  "generatedAt": "2026-11-06T14:42:26.846678+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5978,6 +5978,29 @@
         "Indigenous",
         "Year",
         "Indian"
+      ],
+      "wordCount": 130
+    },
+    "ink-that-follows-a-scent": {
+      "generatedAt": "2026-11-06T14:42:15.824803+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ink-that-follows-a-scent.svg",
+      "source": "src/lib/posts/ink-that-follows-a-scent.md",
+      "sourceHash": "c3dc9e2918151d9be40b880c049803fd21259da5eca90095eeab3f57a717b142",
+      "sourceModified": "2026-11-06T14:26:26.043780+00:00",
+      "topWords": [
+        "Chemical",
+        "Particles",
+        "Particle",
+        "Sensing",
+        "Movement",
+        "Random",
+        "Towards",
+        "Trails",
+        "Marks",
+        "Curve",
+        "Drawing",
+        "Wandering"
       ],
       "wordCount": 130
     },

@@ -11,8 +11,7 @@
 
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
-		'binaural-acoustic-soundboard':
-			visualizationSummaries['binaural-acoustic-soundboard'].subjects,
+		'binaural-acoustic-soundboard': visualizationSummaries['binaural-acoustic-soundboard'].subjects,
 		'circuit-bench': visualizationSummaries['circuit-bench'].subjects,
 		'post-to-uml': visualizationSummaries['post-to-uml'].subjects,
 		'knowledge-gap-atlas': visualizationSummaries['knowledge-gap-atlas'].subjects,
@@ -59,8 +58,8 @@
 		'static-equilibrium-illusion': visualizationSummaries['static-equilibrium-illusion'].subjects,
 		'the-matrix-is-random-why-does-it-have-a-shape':
 			visualizationSummaries['the-matrix-is-random'].subjects,
-		'how-spots-and-stripes-form':
-			visualizationSummaries['how-spots-and-stripes-form'].subjects
+		'how-spots-and-stripes-form': visualizationSummaries['how-spots-and-stripes-form'].subjects,
+		'ink-that-follows-a-scent': visualizationSummaries['ink-that-follows-a-scent'].subjects
 	};
 	const subjects = [
 		'All',

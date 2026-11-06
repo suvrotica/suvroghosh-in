@@ -449,6 +449,18 @@ export const visualizationSummaries = {
 			'Computed reaction-diffusion panels comparing isolated spots, labyrinthine stripes, inverse spots, and a uniform equal-spreading control.',
 		href: '/blog/visualizations/how-spots-and-stripes-form',
 		status: 'published'
+	},
+	'ink-that-follows-a-scent': {
+		id: 'ink-that-follows-a-scent',
+		title: 'Ink That Follows a Scent',
+		description:
+			'Paint an invisible chemical landscape and watch thousands of wandering particles reveal it through accumulated trails and a paired sensing comparison.',
+		subjects: ['Biology', 'Mathematics', 'Scientific Computing', 'Generative Art'],
+		poster: '/images/visualizations/ink-that-follows-a-scent/social.png',
+		posterAlt:
+			'Computed chemotaxis comparison showing dense warm ink trails gathered around a chemical source when sensing is on beside uniform wandering trails when sensing is off.',
+		href: '/blog/visualizations/ink-that-follows-a-scent',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

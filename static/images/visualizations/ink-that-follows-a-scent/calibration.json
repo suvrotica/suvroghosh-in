@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.0.0",
+  "model": {
+    "updateRule": "nextPosition = reflectAtBoundary(position + sqrt(2 * D * dt) * randomVector + sensitivity * gradient(C, position) * dt)",
+    "randomKey": "(seed, particleId, simulationStep, component)",
+    "fieldModel": "Prescribed 256x192 chemical concentration grid on fixed [0, 1] scale (painted grid + movable Gaussian source); no chemical diffusion or decay."
+  },
+  "presets": [
+    {
+      "id": "one-source",
+      "label": "One source",
+      "description": "A broad chemical source slightly right of centre with particles distributed across the canvas.",
+      "seed": 2026,
+      "particleCount": 5000,
+      "domain": {
+        "logicalWidth": 256,
+        "logicalHeight": 192,
+        "trailWidth": 512,
+        "trailHeight": 384,
+        "boundaryCondition": "reflecting"
+      },
+      "timestep": 0.016666666666666666,
+      "observationTime": 14,
+      "steps": 840,
+      "settings": {
+        "sensitivity": 1.2,
+        "randomWandering": 1,
+        "trailDuration": 14,
+        "brushSize": 22
+      },
+      "stateSha256": "b525ba699383e55b4fa23a26ecf79ff41dfd0acccbf609d8aba749b24da4b09d",
+      "referenceImage": "/images/visualizations/ink-that-follows-a-scent/preset-one-source.png",
+      "measurements": {
+        "initialAverageChemicalOn": 0.21913,
+        "initialAverageChemicalOff": 0.21913,
+        "finalAverageChemicalOn": 0.42842,
+        "finalAverageChemicalOff": 0.21769,
+        "uphillStepFractionOn": 0.5156,
+        "maxTrailIntensityOn": 1,
+        "maxTrailIntensityOff": 0.7061
+      }
+    },
+    {
+      "id": "curved-line",
+      "label": "Curved line",
+      "description": "An invisible curved chemical trail painted across the canvas. Particles gather towards its slopes.",
+      "seed": 2026,
+      "particleCount": 5000,
+      "domain": {
+        "logicalWidth": 256,
+        "logicalHeight": 192,
+        "trailWidth": 512,
+        "trailHeight": 384,
+        "boundaryCondition": "reflecting"
+      },
+      "timestep": 0.016666666666666666,
+      "observationTime": 14,
+      "steps": 840,
+      "settings": {
+        "sensitivity": 1.2,
+        "randomWandering": 1,
+        "trailDuration": 14,
+        "brushSize": 22
+      },
+      "stateSha256": "7b86cc6ef54e74aa2997022828b9d30da748d17f0900642f9edab69c3336bc83",
+      "referenceImage": "/images/visualizations/ink-that-follows-a-scent/preset-curved-line.png",
+      "measurements": {
+        "initialAverageChemicalOn": 0.31627,
+        "initialAverageChemicalOff": 0.31627,
+        "finalAverageChemicalOn": 0.64447,
+        "finalAverageChemicalOff": 0.30662,
+        "uphillStepFractionOn": 0.5321,
+        "maxTrailIntensityOn": 1,
+        "maxTrailIntensityOff": 0.7061
+      }
+    }
+  ]
+}

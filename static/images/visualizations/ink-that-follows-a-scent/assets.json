@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.0.0",
+  "sourceHash": "d5c01833e9884736632c28f79eae6157401ff8156bb4213cbce9c4684c294d6c",
+  "sources": [
+    "src/lib/visualizations/ink-that-follows-a-scent/types.ts",
+    "src/lib/visualizations/ink-that-follows-a-scent/random.ts",
+    "src/lib/visualizations/ink-that-follows-a-scent/presets.ts",
+    "src/lib/visualizations/ink-that-follows-a-scent/field.ts",
+    "src/lib/visualizations/ink-that-follows-a-scent/engine.ts",
+    "src/lib/visualizations/ink-that-follows-a-scent/display.ts",
+    "scripts/render-ink-follows-scent-assets.mjs"
+  ],
+  "files": {
+    "social.png": {
+      "width": 1200,
+      "height": 630,
+      "bytes": 192241,
+      "pixelSha256": "a9b2fe8e6e7a3cb465cfd1e7ee8aed4019e75b60053d718d3d2d833347c5be79"
+    },
+    "poster.png": {
+      "width": 1200,
+      "height": 750,
+      "bytes": 305686,
+      "pixelSha256": "eda5d4c4d7c54b1c277ebb3a2f2c7dbafa51527705beb303d9f6c2592cc45265"
+    },
+    "preset-one-source.png": {
+      "width": 512,
+      "height": 384,
+      "bytes": 145280,
+      "pixelSha256": "ec2e64e3b8197f6daff236ddc64ca7c206d6cc4efa2f0419e7a2c740981fe934"
+    },
+    "preset-curved-line.png": {
+      "width": 512,
+      "height": 384,
+      "bytes": 141881,
+      "pixelSha256": "41d8a65567516d2a8c5884a25ede03f365a1168f7ac6ff0b152433bab7359c67"
+    }
+  }
+}

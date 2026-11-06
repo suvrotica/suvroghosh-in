@@ -1087,7 +1087,6 @@ test('the Barnum article has a literal route that cannot fan out across every po
 	assert.match(genericServerLoad, /slug !== 'the-profile-that-knows-almost-nothing-about-you'/);
 });
 
-
 test('How spots and stripes form is registered as a verified activator-inhibitor Turing workbench', () => {
 	const slug = 'how-spots-and-stripes-form';
 	const articlePath = `/blog/visualizations/${slug}`;
@@ -1101,24 +1100,10 @@ test('How spots and stripes form is registered as a verified activator-inhibitor
 		'visualizations',
 		'VisualizationsLanding.svelte'
 	);
-	const app = read(
-		'src',
-		'lib',
-		'components',
-		'visualizations',
-		slug,
-		'SpotsAndStripesApp.svelte'
-	);
+	const app = read('src', 'lib', 'components', 'visualizations', slug, 'SpotsAndStripesApp.svelte');
 	const engine = read('src', 'lib', 'visualizations', slug, 'engine.ts');
 	const socialFile = path.join(root, 'static', ...socialPath.split('/').filter(Boolean));
-	const posterFile = path.join(
-		root,
-		'static',
-		'images',
-		'visualizations',
-		slug,
-		'poster.png'
-	);
+	const posterFile = path.join(root, 'static', 'images', 'visualizations', slug, 'poster.png');
 
 	assert.match(post, /title: How spots and stripes form/);
 	assert.match(post, /category: Visualizations/);
@@ -1156,4 +1141,88 @@ test('How spots and stripes form is registered as a verified activator-inhibitor
 
 	assert.ok(fs.existsSync(socialFile), 'missing how-spots-and-stripes-form social.png');
 	assert.ok(fs.existsSync(posterFile), 'missing how-spots-and-stripes-form poster.png');
+});
+
+test('Ink That Follows a Scent is registered as a verified chemotaxis and biased random-walk workbench', () => {
+	const slug = 'ink-that-follows-a-scent';
+	const articlePath = `/blog/visualizations/${slug}`;
+	const socialPath = `/images/visualizations/${slug}/social.png`;
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const instrument = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		slug,
+		'InkFollowsScentInstrument.svelte'
+	);
+	const app = read('src', 'lib', 'components', 'visualizations', slug, 'InkFollowsScentApp.svelte');
+	const engine = read('src', 'lib', 'visualizations', slug, 'engine.ts');
+	const field = read('src', 'lib', 'visualizations', slug, 'field.ts');
+	const random = read('src', 'lib', 'visualizations', slug, 'random.ts');
+	const socialFile = path.join(root, 'static', ...socialPath.split('/').filter(Boolean));
+	const posterFile = path.join(root, 'static', 'images', 'visualizations', slug, 'poster.png');
+
+	assert.match(post, /title: "?Ink That Follows a Scent"?/);
+	assert.match(post, /category: "?Visualizations"?/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.ok(
+		post.includes(`thumbnail: ${socialPath}`) || post.includes(`thumbnail: "${socialPath}"`)
+	);
+	assert.match(post, /<InkFollowsScentInstrument \/>/);
+	assert.match(
+		post,
+		/How can thousands of wandering particles gather around a shape they cannot see\?/
+	);
+	assert.match(post, /Choose Compare from same start\./);
+	assert.match(post, /https:\/\/link\.springer\.com\/chapter\/10\.1007\/978-0-387-22437-4_11/);
+
+	assert.match(instrument, /Paint an invisible chemical trail\. Watch the particles respond\./);
+	assert.match(
+		instrument,
+		/Each particle wanders randomly\. Sensing adds a small push towards stronger chemical\./
+	);
+	assert.match(app, /Same starting points\. Same random nudges\. Sensing on versus off\./);
+	assert.match(app, /Sensing is now off\. Earlier movement is still visible\./);
+	assert.match(app, /Average chemical at particle positions/);
+	assert.match(app, /Higher means particles are currently in stronger chemical\./);
+	assert.match(
+		instrument,
+		/The chemical landscape is drawn directly\.\s+This version does not simulate chemical\s+spreading or decay\./
+	);
+	assert.match(
+		instrument,
+		/https:\/\/link\.springer\.com\/chapter\/10\.1007\/978-0-387-22437-4_11/
+	);
+	assert.match(app, /prefers-reduced-motion: reduce/);
+	assert.match(app, /new IntersectionObserver/);
+	assert.match(app, /new ResizeObserver/);
+
+	assert.doesNotMatch(engine, /svelte/);
+	assert.doesNotMatch(engine, /Math\.random\s*\(/);
+	assert.doesNotMatch(field, /Math\.random\s*\(/);
+	assert.doesNotMatch(random, /Math\.random\s*\(/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.ok(registry.includes(`poster: '${socialPath}'`));
+	assert.ok(registry.includes(`href: '${articlePath}'`));
+	assert.match(
+		landing,
+		/'ink-that-follows-a-scent':\s*\n?\s*visualizationSummaries\['ink-that-follows-a-scent'\]\.subjects/
+	);
+
+	assert.ok(fs.existsSync(socialFile), 'missing ink-that-follows-a-scent social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing ink-that-follows-a-scent poster.png');
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
 });
