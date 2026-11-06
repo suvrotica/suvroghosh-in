@@ -4682,6 +4682,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 887
 		},
 		{
+			"name": "svelte-sveltekit-first-principles.png",
+			"src": "/images/svelte-sveltekit-first-principles.png",
+			"bytes": 420698,
+			"width": 1400,
+			"height": 788
+		},
+		{
 			"name": "tescreal-silicon-valley-catechism.webp",
 			"src": "/images/tescreal-silicon-valley-catechism.webp",
 			"bytes": 483242,

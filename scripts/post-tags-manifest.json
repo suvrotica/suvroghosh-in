@@ -17127,6 +17127,34 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-06"
+		},
+		"src/lib/posts/svelte-and-sveltekit-first-principles.md": {
+			"bodyHash": "0d8e2f7669ee611731ce3b4fbe4e0921bd645f815d191338d00b4df20d47ca8f",
+			"hashVersion": 2,
+			"revisionHash": "466bd033903f49a4bcc80a507134e86180794055710fab5907804aabc41ca611",
+			"generatedTags": [
+				"Svelte",
+				"SvelteKit",
+				"Web Development",
+				"JavaScript Frameworks",
+				"Compiler Design",
+				"Frontend Architecture",
+				"Engineering Blog",
+				"SuvroGhosh",
+				"Virtual DOM",
+				"Svelte Component"
+			],
+			"pinnedTags": [
+				"Svelte",
+				"SvelteKit",
+				"Web Development",
+				"JavaScript Frameworks",
+				"Compiler Design",
+				"Frontend Architecture",
+				"Engineering Blog",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T14:42:26.846678+00:00",
+  "generatedAt": "2026-11-06T17:02:18.625329+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10601,6 +10601,29 @@
         "Silicon",
         "Valley",
         "Ugly"
+      ],
+      "wordCount": 130
+    },
+    "svelte-and-sveltekit-first-principles": {
+      "generatedAt": "2026-11-06T17:02:14.290856+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/svelte-and-sveltekit-first-principles.svg",
+      "source": "src/lib/posts/svelte-and-sveltekit-first-principles.md",
+      "sourceHash": "e7e4c02c7c82268bb4777d1efb8aff5378f50c8645d328e5730479e508bfc7a0",
+      "sourceModified": "2026-11-06T17:01:30.358183+00:00",
+      "topWords": [
+        "Svelte",
+        "Javascript",
+        "Code",
+        "Framework",
+        "Web",
+        "Compiler",
+        "Build",
+        "User",
+        "Runtime",
+        "Application",
+        "Data",
+        "Work"
       ],
       "wordCount": 130
     },

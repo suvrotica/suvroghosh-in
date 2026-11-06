@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Quiet Rebellion of Svelte: How a Compiler Taught the Web to Stop Shipping Its Own Brain" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Quiet Rebellion of Svelte: How a Compiler Taught the Web to Stop Shipping Its Own Brain</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(1244,714) rotate(-90)" font-size="118" style="fill:#9fc9c5">Svelte</text>
+<text transform="translate(256,266)" font-size="81" style="fill:#b6c3dd">Javascript</text>
+<text transform="translate(205,562)" font-size="77" style="fill:#c7d7b5">Code</text>
+<text transform="translate(92,418)" font-size="77" style="fill:#d5d2c2">Framework</text>
+<text transform="translate(749,58)" font-size="63" style="fill:#e0b879">Web</text>
+<text transform="translate(1109,439) rotate(-90)" font-size="61" style="fill:#8fb7d0">Compiler</text>
+<text transform="translate(755,207)" font-size="61" style="fill:#c7d7b5">Build</text>
+<text transform="translate(239,340)" font-size="58" style="fill:#d5d2c2">User</text>
+<text transform="translate(472,631)" font-size="55" style="fill:#d5d2c2">Runtime</text>
+<text transform="translate(520,464)" font-size="52" style="fill:#e0b879">Application</text>
+<text transform="translate(1142,271)" font-size="52" style="fill:#d5d2c2">Data</text>
+<text transform="translate(1055,71)" font-size="49" style="fill:#d6a79f">Work</text>
+<text transform="translate(195,270) rotate(-90)" font-size="49" style="fill:#9fc9c5">Sveltekit</text>
+<text transform="translate(126,608)" font-size="49" style="fill:#b6c3dd">Machinery</text>
+<text transform="translate(939,328)" font-size="49" style="fill:#d88988">Time</text>
+<text transform="translate(517,184)" font-size="46" style="fill:#b6c3dd">Browser</text>
+<text transform="translate(734,512)" font-size="46" style="fill:#d9c89e">Building</text>
+<text transform="translate(256,109)" font-size="46" style="fill:#a9b7a3">Harris</text>
+<text transform="translate(855,609)" font-size="46" style="fill:#e0b879">Small</text>
+<text transform="translate(456,37)" font-size="46" style="fill:#9fc9c5">Every</text>
+<text transform="translate(296,679)" font-size="46" style="fill:#b6c3dd">Page</text>
+<text transform="translate(621,358)" font-size="46" style="fill:#c7d7b5">Load</text>
+<text transform="translate(343,153)" font-size="43" style="fill:#9fc9c5">Though</text>
+<text transform="translate(33,313)" font-size="43" style="fill:#9fc9c5">React</text>
+<text transform="translate(40,591) rotate(-90)" font-size="43" style="fill:#b6c3dd">Complexity</text>
+<text transform="translate(770,392)" font-size="43" style="fill:#d6a79f">Compiled</text>
+<text transform="translate(127,266) rotate(-90)" font-size="43" style="fill:#d9c89e">HTML</text>
+<text transform="translate(206,496)" font-size="43" style="fill:#d6a79f">Server</text>
+<text transform="translate(447,551)" font-size="40" style="fill:#d5d2c2">Language</text>
+<text transform="translate(1037,552) rotate(-90)" font-size="40" style="fill:#c7d7b5">Complex</text>
+<text transform="translate(1031,210) rotate(-90)" font-size="40" style="fill:#e0b879">System</text>
+<text transform="translate(1127,207)" font-size="40" style="fill:#c7d7b5">DOM</text>
+<text transform="translate(458,95)" font-size="40" style="fill:#d88988">Changes</text>
+<text transform="translate(565,404)" font-size="40" style="fill:#d9c89e">Energy</text>
+<text transform="translate(97,638) rotate(-90)" font-size="40" style="fill:#8fb7d0">Rather</text>
+<text transform="translate(997,642)" font-size="36" style="fill:#d6a79f">Tool</text>
+<text transform="translate(404,471)" font-size="36" style="fill:#c7d7b5">Write</text>
+<text transform="translate(934,261)" font-size="36" style="fill:#c7d7b5">Built</text>
+<text transform="translate(1156,138)" font-size="36" style="fill:#8fb7d0">Name</text>
+<text transform="translate(497,690)" font-size="36" style="fill:#d88988">Ecosystem</text>
+<text transform="translate(774,285)" font-size="36" style="fill:#d6a79f">First</text>
+<text transform="translate(41,688)" font-size="36" style="fill:#a9b7a3">Content</text>
+<text transform="translate(320,214)" font-size="36" style="fill:#d5d2c2">Need</text>
+<text transform="translate(680,89)" font-size="36" style="fill:#d6a79f">Component</text>
+<text transform="translate(889,693)" font-size="36" style="fill:#c7d7b5">Development</text>
+<text transform="translate(781,648)" font-size="36" style="fill:#d88988">Reactive</text>
+<text transform="translate(218,42)" font-size="32" style="fill:#9fc9c5">Shipping</text>
+<text transform="translate(593,518)" font-size="32" style="fill:#8fb7d0">Modern</text>
+<text transform="translate(604,43)" font-size="32" style="fill:#c7d7b5">Someone</text>
+<text transform="translate(722,134)" font-size="32" style="fill:#b6c3dd">Developer</text>
+<text transform="translate(653,317)" font-size="32" style="fill:#d88988">Interactive</text>
+<text transform="translate(394,305)" font-size="32" style="fill:#9fc9c5">Virtual</text>
+<text transform="translate(641,555)" font-size="32" style="fill:#c7d7b5">Representation</text>
+<text transform="translate(1062,598)" font-size="32" style="fill:#d6a79f">Update</text>
+<text transform="translate(450,332)" font-size="32" style="fill:#e0b879">Technical</text>
+<text transform="translate(218,458)" font-size="32" style="fill:#d6a79f">Patience</text>
+<text transform="translate(242,276) rotate(-90)" font-size="32" style="fill:#8fb7d0">Instructions</text>
+<text transform="translate(526,362)" font-size="32" style="fill:#b6c3dd">Best</text>
+<text transform="translate(1042,112)" font-size="32" style="fill:#d6a79f">Ship</text>
+<text transform="translate(88,492)" font-size="32" style="fill:#b6c3dd">Device</text>
+<text transform="translate(36,265) rotate(-90)" font-size="32" style="fill:#c49a6c">Automatically</text>
+<text transform="translate(366,345)" font-size="32" style="fill:#d6a79f">Less</text>
+<text transform="translate(744,244)" font-size="32" style="fill:#d9c89e">Routing</text>
+<text transform="translate(370,499)" font-size="32" style="fill:#d88988">Static</text>
+<text transform="translate(877,40)" font-size="32" style="fill:#9fc9c5">Community</text>
+<text transform="translate(541,142)" font-size="32" style="fill:#c49a6c">Functions</text>
+<text transform="translate(864,451)" font-size="32" style="fill:#8fb7d0">Magic</text>
+<text transform="translate(513,659)" font-size="32" style="fill:#c7d7b5">Transformation</text>
+<text transform="translate(102,644)" font-size="32" style="fill:#d88988">Developers</text>
+<text transform="translate(710,615)" font-size="28" style="fill:#e0b879">Software</text>
+<text transform="translate(906,121)" font-size="28" style="fill:#d5d2c2">Feels</text>
+<text transform="translate(107,455)" font-size="28" style="fill:#c49a6c">Almost</text>
+<text transform="translate(709,701)" font-size="28" style="fill:#d9c89e">Technology</text>
+<text transform="translate(982,545) rotate(-90)" font-size="28" style="fill:#c7d7b5">Graphics</text>
+<text transform="translate(1188,45)" font-size="28" style="fill:#c49a6c">Means</text>
+<text transform="translate(46,114)" font-size="28" style="fill:#a9b7a3">Making</text>
+<text transform="translate(1040,555)" font-size="28" style="fill:#d9c89e">Change</text>
+<text transform="translate(65,350)" font-size="28" style="fill:#d5d2c2">Precisely</text>
+<text transform="translate(749,346)" font-size="28" style="fill:#8fb7d0">Delivery</text>
+<text transform="translate(694,581)" font-size="28" style="fill:#8fb7d0">Perhaps</text>
+<text transform="translate(1124,534) rotate(-90)" font-size="28" style="fill:#d6a79f">Model</text>
+<text transform="translate(393,585)" font-size="28" style="fill:#c49a6c">Frameworks</text>
+<text transform="translate(917,317) rotate(-90)" font-size="28" style="fill:#e0b879">Tired</text>
+<text transform="translate(188,714)" font-size="28" style="fill:#d88988">Architecture</text>
+<text transform="translate(539,291)" font-size="28" style="fill:#c7d7b5">Weight</text>
+<text transform="translate(423,208)" font-size="28" style="fill:#d6a79f">Repeatedly</text>
+<text transform="translate(261,182)" font-size="28" style="fill:#d5d2c2">World</text>
+<text transform="translate(110,549)" font-size="28" style="fill:#d5d2c2">Human</text>
+<text transform="translate(489,513)" font-size="28" style="fill:#b6c3dd">Lives</text>
+<text transform="translate(1275,516) rotate(-90)" font-size="28" style="fill:#d88988">Understand</text>
+<text transform="translate(236,370)" font-size="28" style="fill:#d9c89e">Traditional</text>
+<text transform="translate(45,78)" font-size="28" style="fill:#d6a79f">Loads</text>
+<text transform="translate(879,79)" font-size="28" style="fill:#9fc9c5">Renders</text>
+<text transform="translate(906,353)" font-size="28" style="fill:#8fb7d0">Actions</text>
+<text transform="translate(1247,236) rotate(-90)" font-size="28" style="fill:#9fc9c5">Space</text>
+<text transform="translate(68,266) rotate(-90)" font-size="28" style="fill:#a9b7a3">Already</text>
+<text transform="translate(1121,100)" font-size="28" style="fill:#c49a6c">Kilobytes</text>
+<text transform="translate(894,149)" font-size="28" style="fill:#9fc9c5">Merely</text>
+<text transform="translate(393,704)" font-size="28" style="fill:#d9c89e">Markup</text>
+<text transform="translate(963,284)" font-size="28" style="fill:#d6a79f">CSS</text>
+<text transform="translate(52,43)" font-size="28" style="fill:#c49a6c">Style</text>
+<text transform="translate(84,477) rotate(-90)" font-size="28" style="fill:#9fc9c5">Problem</text>
+<text transform="translate(9,713)" font-size="28" style="fill:#d5d2c2">Introduced</text>
+<text transform="translate(1148,496) rotate(-90)" font-size="28" style="fill:#c7d7b5">Declarations</text>
+<text transform="translate(388,55)" font-size="20" style="fill:#9fc9c5">Dependencies</text>
+<text transform="translate(1270,682) rotate(-90)" font-size="20" style="fill:#d9c89e">Programming</text>
+<text transform="translate(757,156)" font-size="20" style="fill:#c7d7b5">Form</text>
+<text transform="translate(1060,23)" font-size="20" style="fill:#d88988">Deployment</text>
+<text transform="translate(298,146)" font-size="20" style="fill:#e0b879">Slow</text>
+<text transform="translate(311,296)" font-size="20" style="fill:#d88988">Syntax</text>
+<text transform="translate(596,484)" font-size="20" style="fill:#d9c89e">Philosophy</text>
+<text transform="translate(115,511)" font-size="20" style="fill:#a9b7a3">Updates</text>
+<text transform="translate(858,420)" font-size="20" style="fill:#d6a79f">Called</text>
+<text transform="translate(176,293)" font-size="20" style="fill:#c7d7b5">Structure</text>
+<text transform="translate(1038,713)" font-size="20" style="fill:#a9b7a3">Feel</text>
+<text transform="translate(920,715)" font-size="20" style="fill:#b6c3dd">State</text>
+<text transform="translate(397,628)" font-size="20" style="fill:#d88988">Effect</text>
+<text transform="translate(213,671)" font-size="20" style="fill:#d5d2c2">Tools</text>
+<text transform="translate(1129,159)" font-size="20" style="fill:#d5d2c2">Operates</text>
+<text transform="translate(388,26)" font-size="20" style="fill:#d6a79f">Edge</text>
+<text transform="translate(734,415)" font-size="20" style="fill:#b6c3dd">Networks</text>
+<text transform="translate(995,372)" font-size="20" style="fill:#8fb7d0">Find</text>
+<text transform="translate(786,667)" font-size="20" style="fill:#c49a6c">Original</text>
+<text transform="translate(1174,72)" font-size="20" style="fill:#d5d2c2">Devices</text>
+<text transform="translate(383,437)" font-size="20" style="fill:#d5d2c2">Sometimes</text>
+<text transform="translate(76,137)" font-size="20" style="fill:#e0b879">Away</text>
+<text transform="translate(145,258) rotate(-90)" font-size="20" style="fill:#e0b879">Experience</text>
+<text transform="translate(605,715)" font-size="20" style="fill:#a9b7a3">Matters</text>
+<text transform="translate(944,225)" font-size="20" style="fill:#8fb7d0">Moral</text>
+<text transform="translate(986,660)" font-size="20" style="fill:#d88988">Benchmarks</text>
+</svg>

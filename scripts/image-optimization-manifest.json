@@ -10623,6 +10623,21 @@
       "sourceHash": "42d0eca0b1f5d512ff47023f73eee98b9c13bff9be27b3255ec7e4595fa1393e",
       "width": 1774
     },
+    "static/images/svelte-sveltekit-first-principles.png": {
+      "format": "PNG",
+      "height": 788,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 788,
+      "originalWidth": 1400,
+      "outputBytes": 420698,
+      "outputHash": "7e5b86469002e7b9a8932b22cd25f446a83a8c4b8fe353efd9c89f6d852036ba",
+      "resized": false,
+      "sourceBytes": 420698,
+      "sourceHash": "7e5b86469002e7b9a8932b22cd25f446a83a8c4b8fe353efd9c89f6d852036ba",
+      "width": 1400
+    },
     "static/images/tescreal-silicon-valley-catechism.webp": {
       "format": "WEBP",
       "height": 1024,
