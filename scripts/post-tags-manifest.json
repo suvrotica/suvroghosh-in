@@ -17006,9 +17006,9 @@
 			"dateModified": "2026-11-06"
 		},
 		"src/lib/posts/calcutta-breathes-like-a-dying-rickshaw.md": {
-			"bodyHash": "5e2093990013b655d06e16c063029f1865eabed16e85ab0a04f871f45817758d",
+			"bodyHash": "a520c10766ffa8d5f9ad0b492f45c28bd04c9a29787e611d4456e0fc5f83654d",
 			"hashVersion": 2,
-			"revisionHash": "aa29ec953a3e4544315dc525a0c6f257e58170d4f2c438b7176c85a61875d02c",
+			"revisionHash": "c7e111c7b87d712d1e15b7c4e42d6c3714f82f22a30f29420315e3b931a6d8b3",
 			"generatedTags": [
 				"Calcutta",
 				"Kolkata",
@@ -17033,7 +17033,8 @@
 				"Satire",
 				"Environment"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-06"
 		}
 	},
 	"maxTags": 10
