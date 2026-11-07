@@ -8839,6 +8839,22 @@
       "sourceHash": "9f8ecdb552612c70a9845e12e9f8ea0a5757daa8276b4248b08709275f65bdc3",
       "width": 1024
     },
+    "static/images/diwali-depression.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 339204,
+      "outputHash": "4669f2e583a3bdd1bd8a5c68f03af8a3d96572c2f68c82c9478b3885fbf39017",
+      "psnrDb": 36.81,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 375980,
+      "sourceHash": "8cde33a2d00f68177c5ba94a5d8cb0f9b8ce9c118367c3d03155f4cd1d5186fa",
+      "width": 1536
+    },
     "static/images/doldrums-of-the-carcass.png": {
       "format": "PNG",
       "height": 1500,

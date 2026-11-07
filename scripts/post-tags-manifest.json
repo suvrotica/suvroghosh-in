@@ -17217,6 +17217,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-07"
+		},
+		"src/lib/posts/diwali-depression.md": {
+			"bodyHash": "d9ac0f0c7515f12425d4eccc5109ba2877d99b9929c3b47993958d6da6d3f27a",
+			"hashVersion": 2,
+			"revisionHash": "d09d5e560b8ecb0ab47523788039898c4b1ebce125000e83f9654577c5edc722",
+			"generatedTags": [
+				"Diwali",
+				"Depression",
+				"Bipolar Disorder",
+				"Acoustics",
+				"Noise Pollution",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Mental Health",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Diwali",
+				"Depression",
+				"Bipolar Disorder",
+				"Acoustics",
+				"Noise Pollution",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Mental Health",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-08"
 		}
 	},
 	"maxTags": 10

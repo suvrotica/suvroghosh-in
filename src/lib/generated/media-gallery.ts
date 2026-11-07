@@ -3429,6 +3429,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "diwali-depression.jpg",
+			"src": "/images/diwali-depression.jpg",
+			"bytes": 339204,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "doldrums-of-the-carcass.png",
 			"src": "/images/doldrums-of-the-carcass.png",
 			"bytes": 2820175,
