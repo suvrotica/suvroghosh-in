@@ -473,6 +473,18 @@ export const visualizationSummaries = {
 			'Side-by-side Voronoi mosaic comparing epidemic spread with and without a single bridge connecting two 18-region communities.',
 		href: '/blog/visualizations/the-epidemic-mosaic',
 		status: 'published'
+	},
+	'the-predator-prey-loom': {
+		id: 'the-predator-prey-loom',
+		title: 'The Predator–Prey Loom',
+		description:
+			'Explore why predator numbers peak after prey numbers and how increasing the food available to prey can turn steady coexistence into larger population swings.',
+		subjects: ['Biology', 'Mathematics', 'Scientific Computing', 'Data Visualization'],
+		poster: '/images/visualizations/the-predator-prey-loom/social.png',
+		posterAlt:
+			'Dark graphite Predator–Prey Loom instrument comparing phase portrait trajectories at K = 1.5, K = 3.0, and K = 4.0 alongside aligned mint-green prey and warm-amber predator time histories.',
+		href: '/blog/visualizations/the-predator-prey-loom',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

@@ -5858,6 +5858,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/the-predator-prey-loom/poster.png",
+			"src": "/images/visualizations/the-predator-prey-loom/poster.png",
+			"bytes": 45387,
+			"width": 1200,
+			"height": 750
+		},
+		{
+			"name": "visualizations/the-predator-prey-loom/social.png",
+			"src": "/images/visualizations/the-predator-prey-loom/social.png",
+			"bytes": 36772,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/the-six-week-shadow/social.png",
 			"src": "/images/visualizations/the-six-week-shadow/social.png",
 			"bytes": 184741,

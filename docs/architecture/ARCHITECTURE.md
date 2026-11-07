@@ -2115,6 +2115,26 @@ flowchart LR
     Lifecycle --> BatchWorker
 ```
 
+### The Predator–Prey Loom: Rosenzweig–MacArthur phase-portrait and enrichment workbench
+
+The `the-predator-prey-loom` visualization uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/the-predator-prey-loom`. Its server-rendered shell under `components/visualizations/the-predator-prey-loom` carries `data-tts-exclude`, renders the introductory copy and static computed comparison figure (`poster.png`), and lazily imports the interactive Svelte 5 instrument after mount (or retains the static fallback when `?canvas=off` is supplied). The gallery imports lightweight summary and subject metadata only. The feature adds no server endpoint, external network request, persistence store, credential or route exception.
+
+The pure TypeScript domain under `visualizations/the-predator-prey-loom` owns the autonomous two-variable Rosenzweig–MacArthur ODE solver with exact piecewise RK4 stepping across intervention knots (`model.ts`), analytical coexistence equilibrium and Hopf bifurcation threshold evaluation ($K_{\text{crit}} = \frac{e + mh}{ah(e - mh)} = 7/3$ at the starting configuration), local-maximum and peak-lag measurement (`findMeasuredPeakLag`), constant-width screen-space phase ribbon and direction-arrow geometry (`geometry.ts`), and the $3 \times 3$ comparison grid across $K \in \{1.5, 3, 4\}$ and $a \in \{0.75, 1, 1.25\}$ that combines Jacobian stability checks with numerical amplitude ratios to distinguish slow settling near a stability boundary ($a = 0.75, K = 3 < K_{\text{crit}} = 28/9$) from persistent limit cycles. Simulation trajectories are strictly independent of playback frame rate and cursor scrubbing, and negative or non-finite densities are never silently clamped.
+
+Each mount starts paused with the computed population history and measured peak lag immediately visible, owns its animation frame, `IntersectionObserver`, document-visibility listener and reduced-motion (`prefers-reduced-motion: reduce`) listener, pauses playback when hidden or offscreen, and disposes all owned resources on unmount. `scripts/render-predator-prey-loom-assets.mjs` generates and verifies the committed social/article posters and calibration manifest from the real ODE engine as part of `features:check`. See [the feature record](../visualizations/the-predator-prey-loom.md). This extends the established pure-model/lazy-UI pattern without changing a foundational architectural decision, so no separate ADR is required.
+
+```mermaid
+flowchart LR
+    Article["Markdown article / generic blog route"] --> Shell["data-tts-exclude SSR shell / poster / lazy workbench"]
+    Presets["Worked settings (K = 1.5, 3.0, 4.0) + interventions"] --> Solver["Piecewise RK4 Rosenzweig-MacArthur ODE solver + analytical Hopf check"]
+    Solver --> Phase["Phase portrait ribbon + direction arrows + equilibrium / jump markers"]
+    Solver --> Strands["Aligned Prey & Predator time-history tracks + measured peak lag"]
+    Solver --> Baseline["Faint Without-this-change comparison trajectory"]
+    GridParams["3 × 3 (K, a) parameter matrix"] --> Solver
+    Solver --> Grid["Analytical + numerical comparison grid (settles / still settling / cycles)"]
+    Lifecycle["Paused start / viewport / visibility / reduced motion / teardown"] --> Shell
+```
+
 ### Synthetic Data Lab
 
 `/tools/synthetic-data-lab` is a wide site-shell Svelte application, with public descriptive SSR

@@ -17186,6 +17186,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-07"
+		},
+		"src/lib/posts/the-predator-prey-loom.md": {
+			"bodyHash": "7668c6e8d7e7abddad0f26be3bd9d94af571cb81fbb17597b2ca3ddcf1c48a04",
+			"hashVersion": 2,
+			"revisionHash": "bf1292eaead44d2ccb451ce4b55dd6453ffc9b6edf2caa1b968bebb521a29231",
+			"generatedTags": [
+				"mathematical biology",
+				"predator-prey dynamics",
+				"phase portrait",
+				"paradox of enrichment",
+				"Rosenzweig-MacArthur model",
+				"limit cycles",
+				"Hopf bifurcation",
+				"dynamical systems",
+				"interactive simulation",
+				"James D. Murray"
+			],
+			"pinnedTags": [
+				"mathematical biology",
+				"predator-prey dynamics",
+				"phase portrait",
+				"paradox of enrichment",
+				"Rosenzweig-MacArthur model",
+				"limit cycles",
+				"Hopf bifurcation",
+				"dynamical systems",
+				"interactive simulation",
+				"James D. Murray"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-07"
 		}
 	},
 	"maxTags": 10

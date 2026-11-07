@@ -1248,14 +1248,7 @@ test('The Epidemic Mosaic is registered as a verified stochastic network-epidemi
 		slug,
 		'EpidemicMosaicInstrument.svelte'
 	);
-	const app = read(
-		'src',
-		'lib',
-		'components',
-		'visualizations',
-		slug,
-		'EpidemicMosaicApp.svelte'
-	);
+	const app = read('src', 'lib', 'components', 'visualizations', slug, 'EpidemicMosaicApp.svelte');
 	const model = read('src', 'lib', 'visualizations', slug, 'model.ts');
 	const city = read('src', 'lib', 'visualizations', slug, 'city.ts');
 	const vaccination = read('src', 'lib', 'visualizations', slug, 'vaccination.ts');
@@ -1327,6 +1320,88 @@ test('The Epidemic Mosaic is registered as a verified stochastic network-epidemi
 
 	assert.ok(fs.existsSync(socialFile), 'missing the-epidemic-mosaic social.png');
 	assert.ok(fs.existsSync(posterFile), 'missing the-epidemic-mosaic poster.png');
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
+});
+
+test('The Predator–Prey Loom is registered as a verified Rosenzweig–MacArthur phase-portrait and enrichment workbench', () => {
+	const slug = 'the-predator-prey-loom';
+	const articlePath = `/blog/visualizations/${slug}`;
+	const socialPath = `/images/visualizations/${slug}/social.png`;
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const instrument = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		slug,
+		'PredatorPreyLoomInstrument.svelte'
+	);
+	const app = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		slug,
+		'PredatorPreyLoomApp.svelte'
+	);
+	const model = read('src', 'lib', 'visualizations', slug, 'model.ts');
+	const geometry = read('src', 'lib', 'visualizations', slug, 'geometry.ts');
+	const socialFile = path.join(root, 'static', ...socialPath.split('/').filter(Boolean));
+	const posterFile = path.join(root, 'static', 'images', 'visualizations', slug, 'poster.png');
+
+	assert.match(post, /title: "?The Predator–Prey Loom"?/);
+	assert.match(post, /category: "?Visualizations"?/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.ok(
+		post.includes(`thumbnail: ${socialPath}`) || post.includes(`thumbnail: "${socialPath}"`)
+	);
+	assert.match(post, /<PredatorPreyLoomInstrument \/>/);
+	assert.match(
+		post,
+		/Each point records the prey population and predator population at the same moment\./
+	);
+	assert.match(post, /https:\/\/link\.springer\.com\/book\/10\.1007\/b98868/);
+	assert.match(post, /https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/5538935\//);
+	assert.match(post, /https:\/\/pmc\.ncbi\.nlm\.nih\.gov\/articles\/PMC7848735\//);
+
+	assert.match(
+		instrument,
+		/More food can support more prey\. That gives predators more to eat, but their population takes\s+time to respond\./
+	);
+	assert.match(
+		app,
+		/Right means more prey\. Up means more predators\. Follow the arrows to see what changes\s+next\./
+	);
+	assert.match(app, /Predators peak later/);
+	assert.match(app, /Which combinations settle down, and which keep cycling\?/);
+	assert.match(app, /prefers-reduced-motion: reduce/);
+	assert.match(app, /new IntersectionObserver/);
+
+	assert.doesNotMatch(model, /svelte/);
+	assert.doesNotMatch(geometry, /svelte/);
+	assert.doesNotMatch(model, /Math\.random\s*\(/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.ok(registry.includes(`poster: '${socialPath}'`));
+	assert.ok(registry.includes(`href: '${articlePath}'`));
+	assert.match(
+		landing,
+		/'the-predator-prey-loom':\s*\n?\s*visualizationSummaries\['the-predator-prey-loom'\]\.subjects/
+	);
+
+	assert.ok(fs.existsSync(socialFile), 'missing the-predator-prey-loom social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing the-predator-prey-loom poster.png');
 	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
 	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
 });

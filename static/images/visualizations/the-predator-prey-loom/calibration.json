@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.0.0",
+  "startingConfiguration": {
+    "r": 1,
+    "K": 3,
+    "a": 1,
+    "h": 1,
+    "e": 0.5,
+    "m": 0.2,
+    "N0": 1,
+    "P0": 0.6
+  },
+  "hopfStabilityBoundary": {
+    "kCriticalExact": "7/3",
+    "kCriticalNumeric": 2.333333,
+    "equilibriumPrey": 0.666667,
+    "equilibriumPredator": 1.190476,
+    "jacobianTraceAtBoundary": 0
+  },
+  "workedSettings": {
+    "k-1.5": {
+      "K": 1.5,
+      "behaviourClass": "settles",
+      "computedHeadline": "These swings are shrinking towards steady populations.",
+      "measuredLag": 14.2,
+      "lateMinPrey": 0.6649,
+      "lateMaxPrey": 0.6689
+    },
+    "k-3.0": {
+      "K": 3,
+      "behaviourClass": "persistent-cycle",
+      "computedHeadline": "The populations are approaching a repeating cycle.",
+      "measuredLag": 7.28,
+      "lateMinPrey": 0.0916,
+      "lateMaxPrey": 2.1166
+    },
+    "k-4.0": {
+      "K": 4,
+      "behaviourClass": "persistent-cycle",
+      "computedHeadline": "The prey population now falls much lower between peaks.",
+      "measuredLag": 6.52,
+      "lateMinPrey": 0.0105,
+      "lateMaxPrey": 3.4363
+    }
+  },
+  "comparisonGrid": [
+    {
+      "a": 0.75,
+      "K": 1.5,
+      "kCritical": 3.1111,
+      "isEquilibriumStable": true,
+      "behaviourClass": "settles",
+      "badgeLabel": "Settles to steady point",
+      "lateMinPrey": 0.8889,
+      "lateMaxPrey": 0.8889
+    },
+    {
+      "a": 0.75,
+      "K": 3,
+      "kCritical": 3.1111,
+      "isEquilibriumStable": true,
+      "behaviourClass": "still-settling",
+      "badgeLabel": "Settles slowly (still settling)",
+      "lateMinPrey": 0.6224,
+      "lateMaxPrey": 1.1874
+    },
+    {
+      "a": 0.75,
+      "K": 4,
+      "kCritical": 3.1111,
+      "isEquilibriumStable": false,
+      "behaviourClass": "persistent-cycle",
+      "badgeLabel": "Keeps cycling (limit cycle)",
+      "lateMinPrey": 0.1221,
+      "lateMaxPrey": 2.8223
+    },
+    {
+      "a": 1,
+      "K": 1.5,
+      "kCritical": 2.3333,
+      "isEquilibriumStable": true,
+      "behaviourClass": "settles",
+      "badgeLabel": "Settles to steady point",
+      "lateMinPrey": 0.6666,
+      "lateMaxPrey": 0.6671
+    },
+    {
+      "a": 1,
+      "K": 3,
+      "kCritical": 2.3333,
+      "isEquilibriumStable": false,
+      "behaviourClass": "persistent-cycle",
+      "badgeLabel": "Keeps cycling (limit cycle)",
+      "lateMinPrey": 0.0916,
+      "lateMaxPrey": 2.1166
+    },
+    {
+      "a": 1,
+      "K": 4,
+      "kCritical": 2.3333,
+      "isEquilibriumStable": false,
+      "behaviourClass": "persistent-cycle",
+      "badgeLabel": "Keeps cycling (limit cycle)",
+      "lateMinPrey": 0.0105,
+      "lateMaxPrey": 3.4364
+    },
+    {
+      "a": 1.25,
+      "K": 1.5,
+      "kCritical": 1.8667,
+      "isEquilibriumStable": true,
+      "behaviourClass": "settles",
+      "badgeLabel": "Settles to steady point",
+      "lateMinPrey": 0.5193,
+      "lateMaxPrey": 0.5415
+    },
+    {
+      "a": 1.25,
+      "K": 3,
+      "kCritical": 1.8667,
+      "isEquilibriumStable": false,
+      "behaviourClass": "persistent-cycle",
+      "badgeLabel": "Keeps cycling (limit cycle)",
+      "lateMinPrey": 0.0146,
+      "lateMaxPrey": 2.5017
+    },
+    {
+      "a": 1.25,
+      "K": 4,
+      "kCritical": 1.8667,
+      "isEquilibriumStable": false,
+      "behaviourClass": "persistent-cycle",
+      "badgeLabel": "Keeps cycling (limit cycle)",
+      "lateMinPrey": 0.0008,
+      "lateMaxPrey": 3.6886
+    }
+  ]
+}

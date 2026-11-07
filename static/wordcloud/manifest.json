@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T22:27:36.385229+00:00",
+  "generatedAt": "2026-11-07T14:40:15.455063+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -14856,6 +14856,29 @@
         "Desk",
         "Weather",
         "Wall"
+      ],
+      "wordCount": 130
+    },
+    "the-predator-prey-loom": {
+      "generatedAt": "2026-11-07T14:40:12.406119+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-predator-prey-loom.svg",
+      "source": "src/lib/posts/the-predator-prey-loom.md",
+      "sourceHash": "71f12aa71dc80717b38b6eeb6d391ba167952c3f68399d1217fc884d011aafb2",
+      "sourceModified": "2026-11-07T14:26:21.091372+00:00",
+      "topWords": [
+        "Prey",
+        "Predator",
+        "Predators",
+        "Time",
+        "Frac",
+        "Population",
+        "Populations",
+        "Food",
+        "Density",
+        "Model",
+        "Units",
+        "Peak"
       ],
       "wordCount": 130
     },

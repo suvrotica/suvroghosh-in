@@ -13197,6 +13197,36 @@
       "sourceHash": "ba2f10b99fa4b7e9ca11ad9fbcb5ecbda6a494927bd22c30fd1fdac2827a7cf5",
       "width": 1200
     },
+    "static/images/visualizations/the-predator-prey-loom/poster.png": {
+      "format": "PNG",
+      "height": 750,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 750,
+      "originalWidth": 1200,
+      "outputBytes": 45387,
+      "outputHash": "ce0845027ebe4956bede80e0d3bae2117bcbd043b549239852449068bde4485c",
+      "resized": false,
+      "sourceBytes": 45387,
+      "sourceHash": "ce0845027ebe4956bede80e0d3bae2117bcbd043b549239852449068bde4485c",
+      "width": 1200
+    },
+    "static/images/visualizations/the-predator-prey-loom/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 36772,
+      "outputHash": "538b616aacc5c1aee9ac8fc5acd662334c05ec43431054eda01cd09074cf8690",
+      "resized": false,
+      "sourceBytes": 36772,
+      "sourceHash": "538b616aacc5c1aee9ac8fc5acd662334c05ec43431054eda01cd09074cf8690",
+      "width": 1200
+    },
     "static/images/visualizations/the-six-week-shadow/social.png": {
       "format": "PNG",
       "height": 630,

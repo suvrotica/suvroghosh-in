@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.0.0",
+  "sourceHash": "e41d7c8de373797c753e079ce5a64c006ebab1106ba70d8c60872259b56e0e7d",
+  "sources": [
+    "src/lib/visualizations/the-predator-prey-loom/types.ts",
+    "src/lib/visualizations/the-predator-prey-loom/presets.ts",
+    "src/lib/visualizations/the-predator-prey-loom/model.ts",
+    "src/lib/visualizations/the-predator-prey-loom/geometry.ts",
+    "scripts/render-predator-prey-loom-assets.mjs"
+  ],
+  "files": {
+    "social.png": {
+      "width": 1200,
+      "height": 630,
+      "bytes": 36772,
+      "pixelSha256": "1f8e7d34b1446572ac8d2b76a83f93a2d84e3d0776347ea75e26064950cb27f0"
+    },
+    "poster.png": {
+      "width": 1200,
+      "height": 750,
+      "bytes": 45387,
+      "pixelSha256": "40b4640263849c1134890d73ff6d20e719ae97535cfb372a808cc17a739dbf21"
+    }
+  }
+}

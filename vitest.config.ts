@@ -6,6 +6,7 @@ export default defineConfig({
 	test: {
 		include: [
 			'src/lib/recorder/**/*.test.ts',
+			'src/lib/visualizations/the-predator-prey-loom/**/*.test.ts',
 			'src/lib/visualizations/the-epidemic-mosaic/**/*.test.ts',
 			'src/lib/visualizations/ink-that-follows-a-scent/**/*.test.ts',
 			'src/lib/visualizations/how-spots-and-stripes-form/**/*.test.ts',
