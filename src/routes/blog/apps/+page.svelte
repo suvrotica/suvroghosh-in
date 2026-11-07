@@ -18,6 +18,21 @@
 	const messengerUrl = 'https://handwritten-messenger.vercel.app/demo';
 	const apps = $derived([
 		{
+			title: 'COMM-LINK — Handheld Audio Conferencing & Push-to-Talk',
+			description:
+				'Create a private two-person or group audio room, invite friends with a link, sign in with Google, and talk naturally or in walkie-talkie push-to-talk mode.',
+			href: resolve('/tools/radio'),
+			canonicalUrl: `${siteUrl}/tools/radio`,
+			companionHref: undefined as string | undefined,
+			thumbnail: '/images/visualizations/radio/social.png',
+			thumbnailAlt:
+				'COMM-LINK handheld radio interface UNIT-07 with amber LCD readout, rotary channel dial, orange power switch, and central push-to-talk button.',
+			thumbnailHeight: 630,
+			kind: 'Audio conferencing · Push-to-talk',
+			action: 'Open COMM-LINK',
+			external: false
+		},
+		{
 			title: 'Handwritten Messenger',
 			description:
 				'Draw a note, type, or send a voice message. Try it yourself or invite a friend into a 15-minute chat.',

@@ -201,6 +201,8 @@ const config = {
 					'self',
 					'https://*.supabase.co',
 					'wss://*.supabase.co',
+					'https://*.livekit.cloud',
+					'wss://*.livekit.cloud',
 					'https://va.vercel-scripts.com',
 					'https://vitals.vercel-insights.com',
 					'https://airhlspush.pc.cdn.bitgravity.com',

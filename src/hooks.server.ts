@@ -1,3 +1,4 @@
+import { building } from '$app/environment';
 import { redirect, type Handle } from '@sveltejs/kit';
 import { slugifyCategory } from '$lib/content/categories';
 import { notesAuthReferrerPolicy } from '$lib/server/notes/referrer-policy';
@@ -41,6 +42,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const isMindmapStudioApi = matchesPath('/api/mindmap-studio');
 	const isUmlApi = matchesPath('/api/uml');
 	const isRecorderTool = matchesPath('/tools/recorder');
+	const isRadioTool = matchesPath('/tools/radio');
+	const isRadioApi = matchesPath('/api/radio');
 	const needsNotesSession = isStudio || isSignIn || isResetPassword || isProtectedNotesApi;
 	if (needsNotesSession) {
 		try {
@@ -75,8 +78,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// present in the URL; clean auth pages never send a referrer cross-origin.
 		isNotesAuth
 			? notesAuthReferrerPolicy(event.url)
-			: isCommentEmailAction
-				? event.url.search
+			: isCommentEmailAction || isRadioTool || isRadioApi
+				? !building && event.url.search
 					? 'no-referrer'
 					: 'same-origin'
 				: 'strict-origin-when-cross-origin'
@@ -85,7 +88,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	response.headers.set('x-frame-options', 'DENY');
 	response.headers.set(
 		'permissions-policy',
-		isRecorderTool
+		isRecorderTool || isRadioTool
 			? 'camera=(), microphone=(self), geolocation=()'
 			: 'camera=(), microphone=(), geolocation=()'
 	);
@@ -96,7 +99,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 		isCommentEmailAction ||
 		isPromptAtlasApi ||
 		isMindmapStudioApi ||
-		isUmlApi
+		isUmlApi ||
+		isRadioTool ||
+		isRadioApi
 	) {
 		response.headers.set(
 			'cache-control',

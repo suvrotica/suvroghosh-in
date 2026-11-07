@@ -10,6 +10,7 @@ export function filterMeasurementEvent<T extends { url: string }>(
 		const pathname = decodeURIComponent(url.pathname);
 		if (
 			/^\/api(?:\/|$)/.test(pathname) ||
+			/^\/tools\/radio(?:\/|$)/.test(pathname) ||
 			/^\/notes\/(?:studio|auth|sign-in|forgot-password|reset-password)(?:\/|$)/.test(pathname)
 		) {
 			return null;

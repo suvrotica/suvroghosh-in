@@ -48,7 +48,12 @@ export function normalizeAnalyticsPath(value: unknown): string | null {
 		const pathname = parsed.pathname;
 		// Encoded separators and traversal must not create an alternate private-route spelling.
 		if (pathname.includes('%') || pathname.includes('//')) return null;
-		if (/^\/(?:api|tags)(?:\/|$)/.test(pathname) || /^\/notes\//.test(pathname)) return null;
+		if (
+			/^\/(?:api|tags)(?:\/|$)/.test(pathname) ||
+			/^\/notes\//.test(pathname) ||
+			/^\/tools\/radio(?:\/|$)/.test(pathname)
+		)
+			return null;
 		return pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
 	} catch {
 		return null;

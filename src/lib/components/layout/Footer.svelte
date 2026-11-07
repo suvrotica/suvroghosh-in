@@ -20,6 +20,7 @@
 				{ href: '/resources', label: 'Field Kit' },
 				{ href: '/blog/visualizations', label: 'Visualizations' },
 				{ href: '/blog/apps', label: 'Apps' },
+				{ href: '/tools/radio', label: 'COMM-LINK radio' },
 				{ href: '/blog/games', label: 'Games' },
 				{ href: '/images', label: 'Images & sketches' }
 			]

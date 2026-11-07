@@ -176,6 +176,33 @@
 	<section>
 		<span class="section-no">06</span>
 		<div>
+			<h2>COMM-LINK audio rooms (/tools/radio)</h2>
+			<p>
+				COMM-LINK is an optional audio-only WebRTC conferencing and push-to-talk tool. When you
+				choose to sign in with Google, it requests only the minimal OpenID Connect scopes (<code
+					>openid</code
+				>, <code>email</code>, and <code>profile</code>) to verify your account identity and display
+				your name to other admitted participants in the same room. It never requests access to your
+				Gmail inbox, contacts, or calendar, and conferencing sign-in is strictly isolated from the
+				blog’s owner administration.
+			</p>
+			<p>
+				Microphone permission is a separate browser permission requested only after an explicit
+				action. Camera access is disabled (<code>video: false</code>, <code>camera=()</code>). Live
+				room audio is routed transiently via encrypted WebRTC/Opus (through LiveKit SFU and TURN
+				relays where configured) and is never recorded or stored by the application server.
+			</p>
+			<p>
+				In accordance with India’s Digital Personal Data Protection Act, 2023 and DPDP Rules, 2025,
+				you can delete your COMM-LINK account data, rooms you created, and active invitations at any
+				time directly inside COMM-LINK’s Settings panel, or submit a data/privacy request via
+				<a href="mailto:contact@suvroghosh.in">contact@suvroghosh.in</a>.
+			</p>
+		</div>
+	</section>
+	<section>
+		<span class="section-no">07</span>
+		<div>
 			<h2>Changing your mind</h2>
 			<p>
 				Turning off external media unloads active YouTube players. Vercel’s default cookieless page

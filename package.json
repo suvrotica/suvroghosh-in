@@ -343,7 +343,9 @@
 		"circuit-bench:poster": "node scripts/render-circuit-bench-poster.mjs",
 		"circuit-bench:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.circuit-bench.json",
 		"recorder:test": "vitest run src/lib/recorder --maxWorkers=2",
-		"recorder:browser:test": "playwright test --config=playwright.recorder.config.ts"
+		"recorder:browser:test": "playwright test --config=playwright.recorder.config.ts",
+		"radio:test": "vitest run src/lib/radio --maxWorkers=2",
+		"radio:browser:test": "playwright test --config=playwright.radio.config.ts"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",
@@ -419,10 +421,14 @@
 		"graphology": "^0.26.0",
 		"graphology-communities-louvain": "^2.0.2",
 		"hls.js": "1.7.4",
+		"jose": "^6.2.15",
 		"jspdf": "^4.2.1",
 		"linkedom": "0.18.12",
+		"livekit-client": "^2.23.0",
+		"livekit-server-sdk": "^2.19.2",
 		"mind-elixir": "5.15.1",
 		"ml-matrix": "^6.15.0",
+		"openid-client": "^6.8.2",
 		"p5": "^2.3.0",
 		"pdfjs-dist": "6.4.299",
 		"perfect-freehand": "^1.2.3",

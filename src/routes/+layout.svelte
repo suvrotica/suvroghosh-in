@@ -50,7 +50,8 @@
 	let studioShell = $derived(
 		page.url.pathname === '/notes/studio' ||
 			page.url.pathname.startsWith('/notes/studio/') ||
-			page.url.pathname === '/tools/splat-studio'
+			page.url.pathname === '/tools/splat-studio' ||
+			page.url.pathname === '/tools/radio'
 	);
 	let immersiveGameShell = $derived(
 		page.url.pathname.startsWith('/blog/games/') &&
@@ -133,7 +134,9 @@
 	{/if}
 </svelte:head>
 
-<PrivacyConsent compactTrigger={Boolean(rawThoughtLayout || immersiveGameShell)} />
+{#if page.url.pathname !== '/tools/radio'}
+	<PrivacyConsent compactTrigger={Boolean(rawThoughtLayout || immersiveGameShell)} />
+{/if}
 
 {#if studioShell}
 	<div class="min-h-dvh">
