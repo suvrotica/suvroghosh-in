@@ -110,6 +110,9 @@
 	let pollTimer: ReturnType<typeof setInterval> | null = null;
 	let pttHeartbeatTimer: ReturnType<typeof setInterval> | null = null;
 	let pttHoldActive = false;
+	let microphoneChangePending = false;
+	let pollingRoomState = false;
+	let failedRoomChecks = 0;
 
 	const dialSlots = $derived(mapRoomsToDialChannels(rooms));
 
@@ -288,7 +291,7 @@
 
 		pollTimer = setInterval(() => {
 			void pollRoomState();
-		}, 2000);
+		}, provider.radioModeAvailable ? 2_000 : 5_000);
 
 		return () => {
 			window.removeEventListener('blur', handleWindowBlur);
@@ -314,19 +317,22 @@
 	});
 
 	async function pollRoomState() {
-		if (!user) return;
+		if (!user || pollingRoomState) return;
+		pollingRoomState = true;
 
 		try {
 			if (isConnected && activeRoomDetail) {
 				const res = await fetch(`/api/radio/rooms/${activeRoomDetail.id}/join`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
+					signal: AbortSignal.timeout(10_000),
 					body: JSON.stringify({
 						action: 'heartbeat',
 						isSpeaking: isSelfSpeaking
 					})
 				});
 				if (res.ok) {
+					failedRoomChecks = 0;
 					const data = await res.json();
 					if (data.rooms) rooms = data.rooms;
 					if (data.room) {
@@ -350,28 +356,51 @@
 								data.room.pttLease.holderUserId !== user.id
 						);
 					}
-				} else if (res.status === 403) {
+				} else if ([401, 403, 404].includes(res.status)) {
 					// Removed by host or room ended
 					const errData = await res.json().catch(() => ({}));
 					await cleanupMediaAndDisconnect();
 					errorBanner = errData.error || 'Disconnected from room by host or room ended.';
+				} else {
+					await handleFailedRoomCheck();
 				}
-			} else if (selectedRoom && selectedRoom.myAdmissionStatus === 'pending_approval') {
-				const res = await fetch(`/api/radio/rooms/${selectedRoom.id}`);
+			} else if (
+				selectedRoom &&
+				(selectedRoom.myAdmissionStatus === 'pending_approval' ||
+					(selectedRoom.hostUserId === user.id && activePanel === 'people'))
+			) {
+				const waitingForAdmission = selectedRoom.myAdmissionStatus === 'pending_approval';
+				const roomId = selectedRoom.id;
+				const res = await fetch(`/api/radio/rooms/${roomId}`);
+				if (selectedRoom?.id !== roomId) return;
 				if (res.ok) {
 					const data = await res.json();
 					if (data.rooms) rooms = data.rooms;
 					if (data.room) {
 						activeRoomDetail = data.room;
-						if (data.room.myAdmissionStatus === 'admitted') {
+						if (waitingForAdmission && data.room.myAdmissionStatus === 'admitted') {
 							statusBanner = 'Host admitted you to the room. Choose Enable Microphone or Join Listening.';
 						}
 					}
+				} else if (waitingForAdmission && (res.status === 403 || res.status === 404)) {
+					rooms = rooms.filter((room) => room.id !== roomId);
+					activeRoomDetail = null;
+					pendingInvitation = null;
+					pendingInviteToken = null;
+					errorBanner = 'This room is no longer available to you.';
 				}
 			}
 		} catch {
-			// Ignore transient poll errors
+			if (isConnected) await handleFailedRoomCheck();
+		} finally {
+			pollingRoomState = false;
 		}
+	}
+
+	async function handleFailedRoomCheck() {
+		if (++failedRoomChecks < 2) return;
+		await cleanupMediaAndDisconnect();
+		errorBanner = 'We lost contact with this room. Your microphone is off. Rejoin to continue.';
 	}
 
 	function stepDial(delta: number) {
@@ -553,10 +582,13 @@
 		stream: MediaStream | null
 	) {
 		if (!user) return;
+		failedRoomChecks = 0;
 		connectionState = 'connecting';
 		joinAsListener = asListener;
 		isMuted = true;
 		isTransmitting = false;
+		let reserved = false;
+		let connected = false;
 
 		try {
 			// 1. Register connection in room store
@@ -577,6 +609,7 @@
 				browserMicCapturedWhenMuted = false;
 				return;
 			}
+			reserved = true;
 
 			if (connectData.rooms) rooms = connectData.rooms;
 			if (connectData.room) {
@@ -585,11 +618,17 @@
 			}
 
 			// 2. Request short-lived audio-only media token
-			const tokenRes = await fetch(`/api/radio/rooms/${roomId}/token`, {
+			const requestToken = () => fetch(`/api/radio/rooms/${roomId}/token`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ joinAsListener: asListener })
 			});
+			let tokenRes = await requestToken();
+			const retrySeconds = Number(tokenRes.headers.get('Retry-After'));
+			if (tokenRes.status === 409 && retrySeconds > 0 && retrySeconds <= 3) {
+				await new Promise((resolve) => setTimeout(resolve, retrySeconds * 1_000));
+				tokenRes = await requestToken();
+			}
 			const tokenData = await tokenRes.json();
 			if (!tokenRes.ok || !tokenData.ok) {
 				connectionState = 'error';
@@ -613,7 +652,17 @@
 				tokenPayload,
 				{
 					onConnectionStateChanged: (state) => {
+						if (
+							state === 'offline' &&
+							(connectionState === 'connected' || connectionState === 'reconnecting')
+						) {
+							statusBanner = 'Audio disconnected. Rejoin the room to listen again.';
+						}
 						connectionState = state;
+						if (state === 'reconnecting' || state === 'offline') {
+							isMuted = true;
+							isTransmitting = false;
+						}
 					},
 					onActiveSpeakersChanged: (speakerIds) => {
 						if (!activeRoomDetail) return;
@@ -643,6 +692,7 @@
 			// Ensure muted by default on entry
 			await mediaSession.setMicrophoneEnabled(false);
 			connectionState = 'connected';
+			connected = true;
 			pendingInvitation = null;
 			pendingInviteToken = null;
 			activePanel = 'none';
@@ -658,6 +708,14 @@
 			stopMediaStreamTracks(stream);
 			activeMicStream = null;
 			browserMicCapturedWhenMuted = false;
+		} finally {
+			if (reserved && !connected) {
+				await fetch(`/api/radio/rooms/${roomId}/join`, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ action: 'leave' })
+				}).catch(() => {});
+			}
 		}
 	}
 
@@ -672,14 +730,13 @@
 		channelBusy = false;
 		liveSpeakerNames = [];
 
-		if (mediaSession) {
-			await mediaSession.disconnect();
-			mediaSession = null;
-		}
 		stopMediaStreamTracks(activeMicStream);
 		activeMicStream = null;
 		browserMicCapturedWhenMuted = false;
 		connectionState = 'offline';
+		const previousSession = mediaSession;
+		mediaSession = null;
+		await previousSession?.disconnect().catch(() => {});
 	}
 
 	async function handleDisconnectRoom() {
@@ -734,27 +791,52 @@
 		}
 		if (activeRoomDetail.mode !== 'conversation') return;
 
+		const session = mediaSession;
+		if (!session || microphoneChangePending) return;
+		microphoneChangePending = true;
 		const nextMuted = !isMuted;
-		const res = await fetch(`/api/radio/rooms/${activeRoomDetail.id}/join`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ action: 'set_mute', muted: nextMuted })
-		});
-		const data = await res.json();
-		if (!res.ok || !data.ok) {
-			errorBanner = data.error || 'Could not toggle microphone state.';
-			return;
-		}
-
-		isMuted = nextMuted;
-		isTransmitting = !nextMuted;
-		await mediaSession?.setMicrophoneEnabled(!nextMuted);
-		if (data.room) activeRoomDetail = data.room;
-		if (data.rooms) rooms = data.rooms;
-
-		if (radioSoundsEnabled) {
-			const { playOptionalRadioCue } = await import('$lib/radio/media-client');
-			playOptionalRadioCue(nextMuted ? 'ptt_end' : 'ptt_start', true);
+		const roomId = activeRoomDetail.id;
+		const requestMute = (muted: boolean) =>
+			fetch(`/api/radio/rooms/${roomId}/join`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ action: 'set_mute', muted })
+			});
+		try {
+			if (nextMuted) {
+				isMuted = true;
+				isTransmitting = false;
+				await session.setMicrophoneEnabled(false);
+			}
+			const res = await requestMute(nextMuted);
+			const data = await res.json();
+			if (mediaSession !== session || activeRoomDetail?.id !== roomId) return;
+			if (!res.ok || !data.ok) {
+				errorBanner = data.error || 'Could not toggle microphone state.';
+				return;
+			}
+			if (!nextMuted) {
+				const enabled = await session.setMicrophoneEnabled(true);
+				if (mediaSession !== session || activeRoomDetail?.id !== roomId) return;
+				if (!enabled || connectionState !== 'connected') {
+					await session.setMicrophoneEnabled(false);
+					await requestMute(true);
+					errorBanner = 'Your microphone could not be enabled. You are still muted.';
+					return;
+				}
+				isMuted = false;
+				isTransmitting = true;
+			}
+			if (data.room) activeRoomDetail = data.room;
+			if (data.rooms) rooms = data.rooms;
+			if (radioSoundsEnabled) {
+				const { playOptionalRadioCue } = await import('$lib/radio/media-client');
+				playOptionalRadioCue(nextMuted ? 'ptt_end' : 'ptt_start', true);
+			}
+		} catch {
+			errorBanner = 'Could not update the microphone. Please try again.';
+		} finally {
+			microphoneChangePending = false;
 		}
 	}
 
@@ -869,6 +951,10 @@
 	}
 
 	async function handleModeButtonPress() {
+		if (!provider.radioModeAvailable) {
+			statusBanner = 'This radio is set to Conversation. Push-to-talk is not available yet.';
+			return;
+		}
 		if (!user) {
 			activePanel = 'join-flow';
 			return;

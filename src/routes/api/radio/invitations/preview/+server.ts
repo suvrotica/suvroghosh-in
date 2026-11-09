@@ -5,6 +5,7 @@ import {
 	radioJson,
 	radioWriteAdmission,
 	readRadioJson,
+	requireRadioUser,
 	requireSameOrigin
 } from '$lib/server/radio/http';
 
@@ -26,16 +27,18 @@ export const POST: RequestHandler = async (event) => {
 			return radioJson({ ok: false, error: 'Invalid invitation token format.' }, 400);
 		}
 
+		// Preserve the syntactically valid invitation through sign-in, without an
+		// anonymous database lookup or disclosure of private room metadata.
+		event.cookies.set('comm_link_pending_invite', parsed.data.inviteToken, {
+			path: '/',
+			httpOnly: true,
+			sameSite: 'lax',
+			secure: event.url.protocol === 'https:',
+			maxAge: 1800
+		});
+		const auth = await requireRadioUser(event);
+		if (auth.errorResponse) return auth.errorResponse;
 		const preview = previewInvitation(parsed.data.inviteToken);
-		if (preview.valid) {
-			event.cookies.set('comm_link_pending_invite', parsed.data.inviteToken, {
-				path: '/',
-				httpOnly: true,
-				sameSite: 'lax',
-				secure: event.url.protocol === 'https:',
-				maxAge: 1800
-			});
-		}
 
 		return radioJson({
 			ok: true,

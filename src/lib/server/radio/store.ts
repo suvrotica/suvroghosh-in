@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { createNotesAdminClient } from '$lib/server/notes/supabase';
+import { radioStateCollection, registerRadioRollback, setRadioFixtureState } from './state-context';
 import {
 	RADIO_LIMITS,
 	type InvitationPreview,
@@ -33,6 +33,9 @@ interface StoredInvitation {
 interface StoredParticipant extends RadioParticipant {
 	email: string;
 	usedInvitationId: string | null;
+	hostMuted?: boolean;
+	mediaTokenNotBeforeMs?: number;
+	mediaTokenIssuedAtMs?: number;
 }
 
 interface StoredRoom {
@@ -59,6 +62,7 @@ interface StoredRoom {
 	hostDisconnectedAtMs: number | null;
 	createdAt: string;
 	updatedAt: string;
+	cleanupRetryAtMs?: number;
 }
 
 export interface StoredAbuseReport {
@@ -71,12 +75,29 @@ export interface StoredAbuseReport {
 	createdAt: string;
 }
 
-const accountsById = new Map<string, RadioUser>();
-const roomsById = new Map<string, StoredRoom>();
-const invitationsByHash = new Map<string, StoredInvitation>();
-const invitationsById = new Map<string, StoredInvitation>();
-const abuseReports: StoredAbuseReport[] = [];
-const revokedAccountIds = new Set<string>();
+export interface RadioStoreState {
+	accountsById: Map<string, RadioUser>;
+	roomsById: Map<string, StoredRoom>;
+	invitationsByHash: Map<string, StoredInvitation>;
+	invitationsById: Map<string, StoredInvitation>;
+	abuseReports: StoredAbuseReport[];
+	/** Deletion cutoff persists across fresh logins; old signed cookies remain revoked. */
+	revokedAccounts: Map<string, number>;
+}
+
+export function createRadioStoreState(): RadioStoreState {
+	return {
+		accountsById: new Map(), roomsById: new Map(), invitationsByHash: new Map(),
+		invitationsById: new Map(), abuseReports: [], revokedAccounts: new Map()
+	};
+}
+
+const accountsById = radioStateCollection('accountsById');
+const roomsById = radioStateCollection('roomsById');
+const invitationsByHash = radioStateCollection('invitationsByHash');
+const invitationsById = radioStateCollection('invitationsById');
+const abuseReports = radioStateCollection('abuseReports');
+const revokedAccounts = radioStateCollection('revokedAccounts');
 
 function sha256Hex(input: string): string {
 	return crypto.createHash('sha256').update(input, 'utf8').digest('hex');
@@ -97,56 +118,20 @@ function slugifyRoomName(name: string): string {
 }
 
 async function syncRoomToSupabase(room: StoredRoom): Promise<void> {
-	const sb = createNotesAdminClient();
-	if (!sb) return;
-	try {
-		await sb.from('comm_link_rooms').upsert(
-			{
-				id: room.id,
-				slug: room.slug,
-				name: room.name,
-				host_user_id: room.hostUserId,
-				host_display_name: room.hostDisplayName,
-				mode: room.mode,
-				access_policy: room.accessPolicy,
-				is_locked: room.isLocked,
-				is_ended: room.isEnded,
-				max_participants: room.maxParticipants,
-				explicit_member_emails: Array.from(room.explicitMemberEmails),
-				created_at: room.createdAt,
-				updated_at: room.updatedAt
-			},
-			{ onConflict: 'id' }
-		);
-	} catch {
-		// Non-blocking persistence sync
-	}
+	// The request commits this room, membership, invitations and leases atomically.
+	// No best-effort side table writes or process-local production authority remain.
+	if (roomsById.get(room.id) !== room) throw new Error('Radio room is outside its transaction.');
 }
 
 export async function upsertRadioAccount(user: RadioUser): Promise<void> {
-	revokedAccountIds.delete(user.id);
+	if (isAccountRevoked(user.id, user.authenticatedAt)) throw new Error('Radio session was revoked.');
 	accountsById.set(user.id, user);
-	const sb = createNotesAdminClient();
-	if (!sb) return;
-	try {
-		await sb.from('comm_link_accounts').upsert(
-			{
-				id: user.id,
-				google_sub: user.googleSub,
-				email: user.email,
-				display_name: user.displayName,
-				avatar_url: user.avatarUrl,
-				updated_at: new Date().toISOString()
-			},
-			{ onConflict: 'id' }
-		);
-	} catch {
-		// Non-blocking persistence sync
-	}
 }
 
-export function isAccountRevoked(userId: string): boolean {
-	return revokedAccountIds.has(userId);
+export function isAccountRevoked(userId: string, authenticatedAt?: string): boolean {
+	const cutoff = revokedAccounts.get(userId);
+	if (cutoff === undefined) return false;
+	return !authenticatedAt || !Number.isFinite(Date.parse(authenticatedAt)) || Date.parse(authenticatedAt) <= cutoff;
 }
 
 function pruneExpiredPttLease(room: StoredRoom, nowMs = Date.now()): void {
@@ -162,7 +147,6 @@ function pruneExpiredPttLease(room: StoredRoom, nowMs = Date.now()): void {
 		holder.admissionStatus !== 'admitted' ||
 		holder.isListenerOnly
 	) {
-		const prevUserId = room.pttLease.holderUserId;
 		if (holder) {
 			holder.isSpeaking = false;
 			holder.isMuted = true;
@@ -173,9 +157,6 @@ function pruneExpiredPttLease(room: StoredRoom, nowMs = Date.now()): void {
 			acquiredAtMs: null,
 			expiresAtMs: null
 		};
-		if (room.mode === 'radio' && prevUserId) {
-			void setRemoteParticipantPublishPermission(room.id, prevUserId, false);
-		}
 	}
 }
 
@@ -209,7 +190,6 @@ function checkHostReconnectWindow(room: StoredRoom, nowMs = Date.now()): void {
 			room.isEnded = true;
 			room.hostDisconnectedAtMs = null;
 			room.updatedAt = new Date(nowMs).toISOString();
-			void closeRemoteRoomOnSfu(room.id);
 		}
 	}
 }
@@ -258,7 +238,7 @@ function toRoomSummary(
 		isEnded: room.isEnded,
 		activeParticipantCount: countConnectedParticipants(room),
 		maxParticipants: room.maxParticipants,
-		activeSpeakerName: resolveActiveSpeakerName(room),
+		activeSpeakerName: me?.admissionStatus === 'admitted' ? resolveActiveSpeakerName(room) : null,
 		myAdmissionStatus: me?.admissionStatus ?? 'none',
 		createdAt: room.createdAt
 	};
@@ -266,6 +246,7 @@ function toRoomSummary(
 
 function toRoomDetail(room: StoredRoom, userId: string): RadioRoomDetail {
 	const summary = toRoomSummary(room, userId);
+	const canViewParticipants = summary.myAdmissionStatus === 'admitted';
 	const admittedList: RadioParticipant[] = [];
 	const pendingList: RadioParticipant[] = [];
 
@@ -283,7 +264,7 @@ function toRoomDetail(room: StoredRoom, userId: string): RadioRoomDetail {
 			joinedAt: p.joinedAt,
 			lastSeenAt: p.lastSeenAt
 		};
-		if (p.admissionStatus === 'admitted' && p.isConnected) {
+		if (canViewParticipants && p.admissionStatus === 'admitted' && p.isConnected) {
 			admittedList.push(pub);
 		} else if (p.admissionStatus === 'pending_approval') {
 			pendingList.push(pub);
@@ -291,12 +272,12 @@ function toRoomDetail(room: StoredRoom, userId: string): RadioRoomDetail {
 	}
 
 	const pttLease: RadioPttLease = {
-		holderUserId: room.pttLease.holderUserId,
-		holderName: room.pttLease.holderName,
-		acquiredAt: room.pttLease.acquiredAtMs
+		holderUserId: canViewParticipants ? room.pttLease.holderUserId : null,
+		holderName: canViewParticipants ? room.pttLease.holderName : null,
+		acquiredAt: canViewParticipants && room.pttLease.acquiredAtMs
 			? new Date(room.pttLease.acquiredAtMs).toISOString()
 			: null,
-		expiresAt: room.pttLease.expiresAtMs
+		expiresAt: canViewParticipants && room.pttLease.expiresAtMs
 			? new Date(room.pttLease.expiresAtMs).toISOString()
 			: null
 	};
@@ -399,6 +380,30 @@ export function getRoomDetailForUser(
 	return toRoomDetail(room, userId);
 }
 
+export function getMediaTokenNotBefore(roomId: string, userId: string): number {
+	return roomsById.get(roomId)?.participants.get(userId)?.mediaTokenNotBeforeMs ?? 0;
+}
+
+export function recordMediaTokenIssuance(roomId: string, userId: string): void {
+	const member = roomsById.get(roomId)?.participants.get(userId);
+	if (!member?.isConnected) throw new Error('Media token has no connected participant.');
+	member.mediaTokenIssuedAtMs = Date.now();
+}
+
+export function hasUnrevokedRadioMediaToken(member: {
+	mediaTokenIssuedAtMs?: number;
+	mediaTokenNotBeforeMs?: number;
+}): boolean {
+	return member.mediaTokenIssuedAtMs !== undefined &&
+		member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0);
+}
+
+function unrevokedMediaParticipantIds(room: StoredRoom): string[] {
+	return Array.from(room.participants.values())
+		.filter(hasUnrevokedRadioMediaToken)
+		.map((member) => member.userId);
+}
+
 function createInvitationForRoom(
 	room: StoredRoom,
 	actorUserId: string,
@@ -454,7 +459,7 @@ export async function createRadioRoom(params: {
 	inviteToken: string;
 }> {
 	const activeRoomsGlobal = Array.from(roomsById.values()).filter((r) => !r.isEnded);
-	if (activeRoomsGlobal.length >= RADIO_LIMITS.MAX_CONCURRENT_ROOMS_GLOBAL) {
+	if (roomsById.size >= RADIO_LIMITS.MAX_CONCURRENT_ROOMS_GLOBAL) {
 		throw new Error(
 			`Active room capacity (${RADIO_LIMITS.MAX_CONCURRENT_ROOMS_GLOBAL} concurrent rooms) reached. End an unused room first.`
 		);
@@ -664,6 +669,7 @@ export async function requestRoomJoin(params: {
 	user: RadioUser;
 	inviteToken?: string | null;
 	joinAsListener?: boolean;
+	requireHostApproval?: boolean;
 }): Promise<{
 	ok: boolean;
 	status: ParticipantAdmissionStatus;
@@ -785,16 +791,16 @@ export async function requestRoomJoin(params: {
 			}
 			nextStatus = 'admitted';
 		} else {
-			// approval_required policy:
-			// An explicit member or bearer of an active, unrevoked host invitation is admitted;
-			// otherwise the user is placed in pending_approval for explicit host admission.
-			if (isExplicitMember || validInvitation) {
+			if (isExplicitMember || (validInvitation && !params.requireHostApproval)) {
 				nextStatus = 'admitted';
-				if (validInvitation) {
-					validInvitation.useCount += 1;
-				}
 			} else {
+				if (params.requireHostApproval && !validInvitation && !existing) {
+					return { ok: false, status: 'none', error: 'A valid invitation is required.', room: null };
+				}
 				nextStatus = 'pending_approval';
+			}
+			if (validInvitation && existing?.usedInvitationId !== validInvitation.id) {
+				validInvitation.useCount += 1;
 			}
 		}
 	}
@@ -807,11 +813,15 @@ export async function requestRoomJoin(params: {
 		role: room.hostUserId === params.user.id ? 'host' : 'participant',
 		admissionStatus: nextStatus,
 		isConnected: existing?.isConnected ?? false,
-		isListenerOnly: params.joinAsListener ?? existing?.isListenerOnly ?? false,
-		// Always join muted by default
-		isMuted: true,
-		isSpeaking: false,
-		unmuteRequestedByHost: false,
+		isListenerOnly: existing?.isConnected
+			? existing.isListenerOnly
+			: params.joinAsListener ?? existing?.isListenerOnly ?? false,
+		isMuted: existing?.isConnected ? existing.isMuted : true,
+		isSpeaking: existing?.isConnected ? existing.isSpeaking : false,
+		unmuteRequestedByHost: existing?.unmuteRequestedByHost ?? false,
+		hostMuted: existing?.hostMuted,
+		mediaTokenNotBeforeMs: existing?.mediaTokenNotBeforeMs,
+		mediaTokenIssuedAtMs: existing?.mediaTokenIssuedAtMs,
 		usedInvitationId: validInvitation?.id ?? existing?.usedInvitationId ?? null,
 		joinedAt: existing?.joinedAt ?? nowIso,
 		lastSeenAt: nowIso
@@ -862,6 +872,10 @@ export async function connectParticipant(params: {
 		};
 	}
 
+	if (hasUnrevokedRadioMediaToken(member)) {
+		member.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, member.userId);
+	}
+
 	const nowIso = new Date().toISOString();
 	member.isConnected = true;
 	member.isListenerOnly = params.joinAsListener;
@@ -892,6 +906,9 @@ export async function leaveRoom(
 
 	const member = room.participants.get(userId);
 	if (member) {
+		if (hasUnrevokedRadioMediaToken(member)) {
+			member.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, userId);
+		}
 		member.isConnected = false;
 		member.isMuted = true;
 		member.isSpeaking = false;
@@ -957,6 +974,14 @@ export async function setParticipantMute(
 		};
 	}
 
+	if (!muted && member.hostMuted) {
+		return {
+			ok: false,
+			error: 'The host muted your microphone. They can ask you to unmute.',
+			room: toRoomDetail(room, userId)
+		};
+	}
+
 	if (room.mode === 'radio' && !muted) {
 		return {
 			ok: false,
@@ -965,6 +990,14 @@ export async function setParticipantMute(
 		};
 	}
 
+	if (room.mode === 'conversation') {
+		if (!muted) {
+			registerRadioRollback(async () => {
+				await removeRemoteParticipantFromSfu(room.id, userId);
+			});
+		}
+		await setRemoteParticipantPublishPermission(room.id, userId, !muted);
+	}
 	member.isMuted = muted;
 	if (muted) {
 		member.isSpeaking = false;
@@ -993,7 +1026,7 @@ export function heartbeatParticipant(
 	checkHostReconnectWindow(room);
 
 	const member = room.participants.get(userId);
-	if (!member || member.admissionStatus !== 'admitted') {
+	if (!member || member.admissionStatus !== 'admitted' || !member.isConnected) {
 		return {
 			ok: false,
 			error: 'You are no longer an admitted participant in this room.',
@@ -1043,13 +1076,13 @@ export async function acquirePttLease(
 	room: RadioRoomDetail | null;
 }> {
 	const room = roomsById.get(roomId);
-	if (!room || room.isEnded) {
+	if (!room || room.isEnded || room.mode !== 'radio') {
 		return {
 			ok: false,
 			busy: false,
 			speakerId: null,
 			speakerName: null,
-			error: 'Room has ended.',
+			error: 'Push-to-Talk is not available in this room.',
 			room: null
 		};
 	}
@@ -1069,13 +1102,13 @@ export async function acquirePttLease(
 		};
 	}
 
-	if (member.isListenerOnly) {
+	if (member.isListenerOnly || member.hostMuted) {
 		return {
 			ok: false,
 			busy: false,
 			speakerId: null,
 			speakerName: null,
-			error: 'Enable microphone permission before using Push-to-Talk.',
+			error: 'Your microphone must be available before using Push-to-Talk.',
 			room: toRoomDetail(room, userId)
 		};
 	}
@@ -1118,8 +1151,6 @@ export async function acquirePttLease(
 		}
 	}
 
-	await setRemoteParticipantPublishPermission(room.id, userId, true);
-
 	return {
 		ok: true,
 		busy: false,
@@ -1137,7 +1168,7 @@ export function heartbeatPttLease(
 	room: RadioRoomDetail | null;
 } {
 	const room = roomsById.get(roomId);
-	if (!room || room.isEnded) return { ok: false, room: null };
+	if (!room || room.isEnded || room.mode !== 'radio') return { ok: false, room: null };
 
 	const nowMs = Date.now();
 	pruneExpiredPttLease(room, nowMs);
@@ -1165,7 +1196,7 @@ export async function releasePttLease(
 	room: RadioRoomDetail | null;
 }> {
 	const room = roomsById.get(roomId);
-	if (!room) return { ok: false, room: null };
+	if (!room || room.isEnded || room.mode !== 'radio') return { ok: false, room: null };
 
 	const member = room.participants.get(userId);
 	if (member) {
@@ -1182,7 +1213,6 @@ export async function releasePttLease(
 			acquiredAtMs: null,
 			expiresAtMs: null
 		};
-		await setRemoteParticipantPublishPermission(room.id, userId, false);
 	}
 
 	return { ok: true, room: toRoomDetail(room, userId) };
@@ -1243,8 +1273,8 @@ export async function performHostAction(params: {
 				return { ok: false, error: 'Missing target participant.', room: null };
 			}
 			const target = room.participants.get(targetUserId);
-			if (!target) {
-				return { ok: false, error: 'Participant not found.', room: null };
+			if (!target || target.admissionStatus === 'admitted') {
+				return { ok: false, error: 'No admission request from that participant.', room: null };
 			}
 			target.admissionStatus = 'admitted';
 			target.isMuted = true;
@@ -1256,10 +1286,11 @@ export async function performHostAction(params: {
 				return { ok: false, error: 'Missing target participant.', room: null };
 			}
 			const target = room.participants.get(targetUserId);
-			if (target && target.userId !== room.hostUserId) {
-				target.admissionStatus = 'denied';
-				target.isConnected = false;
+			if (!target || target.admissionStatus !== 'pending_approval') {
+				return { ok: false, error: 'No pending request from that participant.', room: null };
 			}
+			target.admissionStatus = 'denied';
+			target.isConnected = false;
 			break;
 		}
 		case 'remove_participant': {
@@ -1267,13 +1298,18 @@ export async function performHostAction(params: {
 				return { ok: false, error: 'Invalid participant removal target.', room: null };
 			}
 			const target = room.participants.get(targetUserId);
-			if (target) {
-				target.admissionStatus = 'removed';
-				target.isConnected = false;
-				target.isMuted = true;
-				target.isSpeaking = false;
-				room.explicitMemberEmails.delete(target.email);
+			if (!target) {
+				return { ok: false, error: 'Participant not found.', room: null };
 			}
+			if (hasUnrevokedRadioMediaToken(target)) {
+				target.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, targetUserId);
+			}
+			target.admissionStatus = 'removed';
+			target.isConnected = false;
+			target.isMuted = true;
+			target.isSpeaking = false;
+			target.unmuteRequestedByHost = false;
+			room.explicitMemberEmails.delete(target.email);
 			if (room.pttLease.holderUserId === targetUserId) {
 				room.pttLease = {
 					holderUserId: null,
@@ -1282,18 +1318,24 @@ export async function performHostAction(params: {
 					expiresAtMs: null
 				};
 			}
-			await removeRemoteParticipantFromSfu(room.id, targetUserId);
 			break;
 		}
 		case 'mute_participant': {
-			if (!targetUserId) {
+			if (!targetUserId || targetUserId === room.hostUserId) {
 				return { ok: false, error: 'Missing target participant.', room: null };
 			}
 			const target = room.participants.get(targetUserId);
-			if (target) {
-				target.isMuted = true;
-				target.isSpeaking = false;
+			if (!target || target.admissionStatus !== 'admitted') {
+				return { ok: false, error: 'Participant is not admitted.', room: null };
 			}
+			if (hasUnrevokedRadioMediaToken(target)) {
+				target.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, targetUserId);
+				if (target.mediaTokenNotBeforeMs) target.isConnected = false;
+			}
+			target.hostMuted = true;
+			target.isMuted = true;
+			target.isSpeaking = false;
+			target.unmuteRequestedByHost = false;
 			if (room.pttLease.holderUserId === targetUserId) {
 				room.pttLease = {
 					holderUserId: null,
@@ -1301,7 +1343,6 @@ export async function performHostAction(params: {
 					acquiredAtMs: null,
 					expiresAtMs: null
 				};
-				await setRemoteParticipantPublishPermission(room.id, targetUserId, false);
 			}
 			break;
 		}
@@ -1312,6 +1353,7 @@ export async function performHostAction(params: {
 			}
 			const target = room.participants.get(targetUserId);
 			if (target && target.admissionStatus === 'admitted') {
+				target.hostMuted = false;
 				target.unmuteRequestedByHost = true;
 			}
 			break;
@@ -1335,18 +1377,9 @@ export async function performHostAction(params: {
 					acquiredAtMs: null,
 					expiresAtMs: null
 				};
-				if (room.mode === 'radio') {
-					for (const p of room.participants.values()) {
-						p.isMuted = true;
-						p.isSpeaking = false;
-						void setRemoteParticipantPublishPermission(room.id, p.userId, false);
-					}
-				} else {
-					for (const p of room.participants.values()) {
-						if (p.admissionStatus === 'admitted' && !p.isListenerOnly) {
-							void setRemoteParticipantPublishPermission(room.id, p.userId, true);
-						}
-					}
+				for (const p of room.participants.values()) {
+					p.isMuted = true;
+					p.isSpeaking = false;
 				}
 			}
 			break;
@@ -1408,6 +1441,7 @@ export async function performHostAction(params: {
 			break;
 		}
 		case 'end_room': {
+			await closeRemoteRoomOnSfu(room.id, unrevokedMediaParticipantIds(room));
 			room.isEnded = true;
 			room.pttLease = {
 				holderUserId: null,
@@ -1426,7 +1460,6 @@ export async function performHostAction(params: {
 				}
 			}
 			room.activeInvitationId = null;
-			await closeRemoteRoomOnSfu(room.id);
 			break;
 		}
 	}
@@ -1444,14 +1477,17 @@ export async function deleteUserAccountData(userId: string): Promise<{
 	deletedRooms: number;
 	removedMemberships: number;
 }> {
-	revokedAccountIds.add(userId);
+	const deletedAccount = accountsById.get(userId);
+	revokedAccounts.set(userId, Date.now());
 	accountsById.delete(userId);
 
 	let deletedRooms = 0;
 	let removedMemberships = 0;
 	const nowIso = new Date().toISOString();
+	const mediaCleanup: Promise<unknown>[] = [];
 
 	for (const [roomId, room] of roomsById.entries()) {
+		if (deletedAccount?.email) room.explicitMemberEmails.delete(deletedAccount.email.toLowerCase());
 		if (room.hostUserId === userId) {
 			room.isEnded = true;
 			for (const inv of invitationsById.values()) {
@@ -1461,10 +1497,13 @@ export async function deleteUserAccountData(userId: string): Promise<{
 					invitationsById.delete(inv.id);
 				}
 			}
-			await closeRemoteRoomOnSfu(roomId);
+			mediaCleanup.push(closeRemoteRoomOnSfu(roomId, Array.from(room.participants.values())
+				.filter((member) => member.mediaTokenIssuedAtMs !== undefined && member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0))
+				.map((member) => member.userId)));
 			roomsById.delete(roomId);
 			deletedRooms += 1;
 		} else if (room.participants.has(userId)) {
+			const member = room.participants.get(userId)!;
 			room.participants.delete(userId);
 			if (room.pttLease.holderUserId === userId) {
 				room.pttLease = {
@@ -1474,20 +1513,20 @@ export async function deleteUserAccountData(userId: string): Promise<{
 					expiresAtMs: null
 				};
 			}
-			await removeRemoteParticipantFromSfu(roomId, userId);
+			if (member.mediaTokenIssuedAtMs !== undefined && member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0)) {
+				mediaCleanup.push(removeRemoteParticipantFromSfu(roomId, userId));
+			}
 			removedMemberships += 1;
 		}
 	}
 
-	const sb = createNotesAdminClient();
-	if (sb) {
-		try {
-			await sb.from('comm_link_rooms').delete().eq('host_user_id', userId);
-			await sb.from('comm_link_accounts').delete().eq('id', userId);
-		} catch {
-			// Ignore if tables are not provisioned in local test env
+	for (const invitation of invitationsById.values()) {
+		if (invitation.createdByUserId === userId) {
+			invitationsById.delete(invitation.id);
+			invitationsByHash.delete(invitation.tokenHash);
 		}
 	}
+	await Promise.all(mediaCleanup);
 
 	return { deletedRooms, removedMemberships };
 }
@@ -1510,31 +1549,9 @@ export async function submitAbuseReport(params: {
 	};
 	abuseReports.push(report);
 
-	const sb = createNotesAdminClient();
-	if (sb) {
-		try {
-			await sb.from('comm_link_abuse_reports').insert({
-				id: report.id,
-				reporter_user_id: report.reporterUserId,
-				room_id: report.roomId,
-				target_user_id: report.targetUserId,
-				reason: report.reason,
-				details: report.details,
-				created_at: report.createdAt
-			});
-		} catch {
-			// Ignore
-		}
-	}
-
 	return report;
 }
 
 export function resetRadioStoreForTests(): void {
-	accountsById.clear();
-	roomsById.clear();
-	invitationsByHash.clear();
-	invitationsById.clear();
-	abuseReports.length = 0;
-	revokedAccountIds.clear();
+	setRadioFixtureState(createRadioStoreState());
 }

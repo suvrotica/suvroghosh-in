@@ -1,5 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { HostActionSchema } from '$lib/radio/types';
+import { getRadioServerConfig } from '$lib/server/radio/config';
+import { RadioMediaServiceError } from '$lib/server/radio/livekit';
 import { listAuthorisedRoomsForUser, performHostAction } from '$lib/server/radio/store';
 import {
 	radioJson,
@@ -42,6 +44,14 @@ export const POST: RequestHandler = async (event) => {
 			);
 		}
 
+		if (
+			parsed.data.action === 'set_mode' &&
+			parsed.data.mode === 'radio' &&
+			!getRadioServerConfig(event.url).radioModeAvailable
+		) {
+			return radioJson({ ok: false, error: 'Live rooms use Conversation mode.' }, 400);
+		}
+
 		const res = await performHostAction({
 			roomId,
 			actorUserId: auth.user.id,
@@ -50,6 +60,11 @@ export const POST: RequestHandler = async (event) => {
 
 		const rooms = listAuthorisedRoomsForUser(auth.user.id, auth.user.email);
 		return radioJson({ ...res, rooms }, res.ok ? 200 : 403);
+	} catch (error) {
+		if (error instanceof RadioMediaServiceError) {
+			return radioJson({ ok: false, error: error.message }, 503);
+		}
+		throw error;
 	} finally {
 		lease.release();
 	}

@@ -66,7 +66,13 @@ export const handle: Handle = async ({ event, resolve }) => {
 		}
 	}
 
-	const response = await resolve(event);
+	let response: Response;
+	if (isRadioTool || isRadioApi) {
+		const { withRadioPersistence } = await import('$lib/server/radio/persistence');
+		response = await withRadioPersistence(event, async () => resolve(event));
+	} else {
+		response = await resolve(event);
+	}
 	response.headers.set('x-request-id', event.locals.requestId);
 	for (const [name, value] of Object.entries(event.locals.supabaseResponseHeaders)) {
 		response.headers.set(name, value);

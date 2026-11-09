@@ -1,14 +1,10 @@
 import { expect, test } from '@playwright/test';
-import path from 'node:path';
-
-const ARTIFACT_DIR =
-	'C:/Users/suvro/.gemini/antigravity/brain/611667ab-bba1-4518-bff9-dd67ef315ac7';
 
 test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 	test('renders faithful handheld radio UI, enforces security headers, captures desktop & mobile screenshots, and isolates Notes admin auth', async ({
 		page,
 		request
-	}) => {
+	}, testInfo) => {
 		const startNav = Date.now();
 		const response = await page.goto('/tools/radio', { waitUntil: 'domcontentloaded' });
 		expect(response?.status()).toBe(200);
@@ -43,7 +39,7 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 		}
 
 		await page.screenshot({
-			path: path.join(ARTIFACT_DIR, 'comm-link-desktop.png'),
+			path: testInfo.outputPath('comm-link-desktop.png'),
 			fullPage: false
 		});
 
@@ -55,7 +51,7 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 		expect(hasHorizontalOverflow).toBe(false);
 
 		await page.screenshot({
-			path: path.join(ARTIFACT_DIR, 'comm-link-mobile.png'),
+			path: testInfo.outputPath('comm-link-mobile.png'),
 			fullPage: false
 		});
 
@@ -82,9 +78,15 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 
 	test('supports multi-user room creation, invite links, Conversation mode, Radio PTT leases, dial selection without silent join, and mic cleanup', async ({
 		browser
-	}) => {
-		const hostContext = await browser.newContext({ permissions: ['microphone'] });
-		const guestContext = await browser.newContext({ permissions: ['microphone'] });
+	}, testInfo) => {
+		const hostContext = await browser.newContext({
+			permissions: ['microphone'],
+			serviceWorkers: 'block'
+		});
+		const guestContext = await browser.newContext({
+			permissions: ['microphone'],
+			serviceWorkers: 'block'
+		});
 
 		const hostPage = await hostContext.newPage();
 		const guestPage = await guestContext.newPage();
@@ -111,7 +113,9 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 		await hostPage.getByTestId('enable-mic-and-join-btn').click();
 		await expect(hostPage.getByTestId('amber-line-1')).toHaveText('COMM-LINK [CONNECTED]');
 		const joinElapsedMs = Date.now() - joinStartMs;
-		console.log(`[PERF] Time to connected room audio after auth & permissions: ${joinElapsedMs} ms`);
+		console.log(
+			`[PERF] Time to connected room audio after auth & permissions: ${joinElapsedMs} ms`
+		);
 		expect(joinElapsedMs).toBeLessThan(3000);
 
 		// Verify joined muted by default
@@ -126,12 +130,16 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 
 		// 3. Guest (Maya) opens invitation link, signs in, and joins
 		await guestPage.goto(inviteLink);
-		await expect(guestPage.getByTestId('invitation-preview-box')).toContainText('EVENING CHAT');
+		await expect(guestPage.getByTestId('invitation-preview-box')).toHaveCount(0);
 		await guestPage.getByTestId('local-test-auth-details').click();
 		await guestPage.getByTestId('test-auth-sub').fill('guest_maya');
 		await guestPage.getByTestId('test-auth-email').fill('maya@example.com');
 		await guestPage.getByTestId('test-auth-name').fill('Maya');
 		await guestPage.getByTestId('test-auth-submit').click();
+		await expect(guestPage.getByTestId('signed-in-operator-tag')).toContainText('Maya');
+		// The production OAuth callback returns to a fresh authenticated page too.
+		await guestPage.reload();
+		await expect(guestPage.getByTestId('invitation-preview-box')).toContainText('EVENING CHAT');
 
 		await guestPage.getByTestId('request-join-with-mic-btn').click();
 		await expect(guestPage.getByTestId('amber-line-1')).toHaveText('COMM-LINK [CONNECTED]');
@@ -167,7 +175,7 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 		await expect(guestPage.getByTestId('amber-line-4')).toHaveText('MIC: TRANSMITTING');
 		await expect(guestPage.getByTestId('amber-line-5')).toHaveText("SPEAKING: YOU'RE SPEAKING");
 		await guestPage.screenshot({
-			path: path.join(ARTIFACT_DIR, 'comm-link-connected.png'),
+			path: testInfo.outputPath('comm-link-connected.png'),
 			fullPage: false
 		});
 

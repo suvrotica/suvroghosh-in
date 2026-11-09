@@ -1,5 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { CreateRoomSchema } from '$lib/radio/types';
+import { getRadioServerConfig } from '$lib/server/radio/config';
 import { createRadioRoom, listAuthorisedRoomsForUser } from '$lib/server/radio/store';
 import {
 	radioApiAdmission,
@@ -53,6 +54,14 @@ export const POST: RequestHandler = async (event) => {
 				},
 				400
 			);
+		}
+
+		const config = getRadioServerConfig(event.url);
+		if (!config.callsEnabled && !config.loopbackFallbackAllowed) {
+			return radioJson({ ok: false, error: 'Live calls are currently unavailable.' }, 503);
+		}
+		if (parsed.data.mode === 'radio' && !config.radioModeAvailable) {
+			return radioJson({ ok: false, error: 'Live rooms use Conversation mode.' }, 400);
 		}
 
 		const created = await createRadioRoom({

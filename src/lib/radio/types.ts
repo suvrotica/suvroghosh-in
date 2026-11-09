@@ -10,7 +10,7 @@ export const RADIO_LIMITS = {
 	MAX_ROOM_NAME_LEN: 36,
 	INVITATION_DEFAULT_TTL_HOURS: 24,
 	INVITATION_MAX_TTL_HOURS: 168,
-	ROOM_TOKEN_TTL_SECONDS: 900,
+	ROOM_TOKEN_TTL_SECONDS: 60,
 	PTT_LEASE_TTL_MS: 8_000,
 	PTT_MAX_HOLD_MS: 45_000,
 	HOST_RECONNECT_GRACE_MS: 180_000,
@@ -142,6 +142,8 @@ export interface RadioProviderStatus {
 	livekitConfigured: boolean;
 	supabaseConfigured: boolean;
 	loopbackFallbackAllowed: boolean;
+	callsEnabled: boolean;
+	radioModeAvailable: boolean;
 	maxParticipantsPerRoom: number;
 	maxConcurrentRoomsGlobal: number;
 }

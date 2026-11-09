@@ -74,10 +74,7 @@ export function requireSameOrigin(event: RequestEvent): Response | null {
 		return radioJson({ ok: false, error: 'Cross-site requests are not permitted.' }, 403);
 	}
 	if (!origin) {
-		return radioJson(
-			{ ok: false, error: 'Missing Origin header on state-changing request.' },
-			403
-		);
+		return radioJson({ ok: false, error: 'Missing Origin header on state-changing request.' }, 403);
 	}
 	if (origin !== event.url.origin) {
 		return radioJson({ ok: false, error: 'Origin mismatch.' }, 403);
@@ -88,7 +85,7 @@ export function requireSameOrigin(event: RequestEvent): Response | null {
 export async function resolveRadioUser(event: RequestEvent): Promise<RadioUser | null> {
 	const user = await readRadioSessionUser(event);
 	if (!user) return null;
-	if (isAccountRevoked(user.id)) {
+	if (isAccountRevoked(user.id, user.authenticatedAt)) {
 		clearRadioSessionCookie(event);
 		return null;
 	}

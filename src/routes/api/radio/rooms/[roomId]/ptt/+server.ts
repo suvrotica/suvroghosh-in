@@ -1,5 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { PttActionSchema } from '$lib/radio/types';
+import { getRadioServerConfig } from '$lib/server/radio/config';
 import {
 	acquirePttLease,
 	heartbeatPttLease,
@@ -17,6 +18,10 @@ import {
 export const POST: RequestHandler = async (event) => {
 	const originError = requireSameOrigin(event);
 	if (originError) return originError;
+
+	if (!getRadioServerConfig(event.url).radioModeAvailable) {
+		return radioJson({ ok: false, error: 'Live rooms use Conversation mode.' }, 400);
+	}
 
 	const lease = radioApiAdmission.tryAcquire(event.getClientAddress());
 	if (!lease.ok) {

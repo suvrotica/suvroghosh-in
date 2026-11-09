@@ -154,13 +154,30 @@ async function createLiveKitSession(
 		} else if (state === ConnectionState.Connecting) {
 			callbacks.onConnectionStateChanged('connecting');
 		} else if (state === ConnectionState.Reconnecting) {
-			// Never silently restore an open microphone on reconnection
+			const track = room.localParticipant.getTrackPublication(Track.Source.Microphone)?.track;
+			if (track) track.mediaStreamTrack.enabled = false;
 			void room.localParticipant.setMicrophoneEnabled(false).catch(() => {});
 			callbacks.onConnectionStateChanged('reconnecting');
 		} else if (state === ConnectionState.Disconnected) {
 			callbacks.onConnectionStateChanged('offline');
 		}
 	});
+
+	function awaitMicrophonePermission(): Promise<boolean> {
+		if (room.localParticipant.permissions?.canPublish) return Promise.resolve(true);
+		return new Promise((resolve) => {
+			const finish = (allowed: boolean) => {
+				clearTimeout(timeout);
+				room.off(RoomEvent.ParticipantPermissionsChanged, onPermissionChange);
+				resolve(allowed);
+			};
+			const onPermissionChange = () => {
+				if (room.localParticipant.permissions?.canPublish) finish(true);
+			};
+			const timeout = setTimeout(() => finish(false), 1_500);
+			room.on(RoomEvent.ParticipantPermissionsChanged, onPermissionChange);
+		});
+	}
 
 	room.on(RoomEvent.ActiveSpeakersChanged, (speakers) => {
 		const ids = speakers.map((s) => s.identity).filter(Boolean);
@@ -170,6 +187,13 @@ async function createLiveKitSession(
 	room.on(RoomEvent.AudioPlaybackStatusChanged, () => {
 		callbacks.onAudioPlaybackBlocked(!room.canPlaybackAudio);
 	});
+
+	const subscribeMicrophone = (publication: import('livekit-client').RemoteTrackPublication) => {
+		if (publication.kind === Track.Kind.Audio && publication.source === Track.Source.Microphone) {
+			publication.setSubscribed(true);
+		}
+	};
+	room.on(RoomEvent.TrackPublished, subscribeMicrophone);
 
 	room.on(RoomEvent.TrackSubscribed, (track) => {
 		if (track.kind !== Track.Kind.Audio) return;
@@ -194,8 +218,11 @@ async function createLiveKitSession(
 	try {
 		callbacks.onConnectionStateChanged('connecting');
 		await room.connect(tokenInfo.serverUrl!, tokenInfo.token, {
-			autoSubscribe: true
+			autoSubscribe: false
 		});
+		for (const participant of room.remoteParticipants.values()) {
+			for (const publication of participant.trackPublications.values()) subscribeMicrophone(publication);
+		}
 		// Join muted by default
 		await room.localParticipant.setMicrophoneEnabled(false);
 		callbacks.onConnectionStateChanged('connected');
@@ -203,6 +230,10 @@ async function createLiveKitSession(
 			callbacks.onAudioPlaybackBlocked(true);
 		}
 	} catch (err) {
+		disconnected = true;
+		await room.disconnect().catch(() => {});
+		for (const element of audioElements) element.remove();
+		audioElements.clear();
 		callbacks.onConnectionStateChanged('error');
 		callbacks.onError(
 			err instanceof Error ? err.message : 'Unable to connect to audio room server.'
@@ -222,10 +253,13 @@ async function createLiveKitSession(
 	return {
 		setMicrophoneEnabled: async (enabled: boolean, deviceId?: string) => {
 			if (disconnected) return false;
-			if (!tokenInfo.canPublish && enabled) {
-				return false;
-			}
 			try {
+				if (enabled && !(await awaitMicrophonePermission())) return false;
+				if (disconnected || (enabled && room.state !== ConnectionState.Connected)) return false;
+				if (!enabled) {
+					const track = room.localParticipant.getTrackPublication(Track.Source.Microphone)?.track;
+					if (track) track.mediaStreamTrack.enabled = false;
+				}
 				if (deviceId && deviceId !== 'default') {
 					await room.switchActiveDevice('audioinput', deviceId);
 				}

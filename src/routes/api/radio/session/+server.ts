@@ -14,11 +14,9 @@ export const GET: RequestHandler = async (event) => {
 		const user = await resolveRadioUser(event);
 		const provider = buildRadioProviderStatus(event.url);
 		const inviteParam =
-			event.url.searchParams.get('invite') ||
-			event.cookies.get('comm_link_pending_invite') ||
-			null;
+			event.url.searchParams.get('invite') || event.cookies.get('comm_link_pending_invite') || null;
 
-		const pendingInvitation = inviteParam ? previewInvitation(inviteParam) : null;
+		const pendingInvitation = user && inviteParam ? previewInvitation(inviteParam) : null;
 		const rooms = user ? listAuthorisedRoomsForUser(user.id, user.email) : [];
 
 		return radioJson({

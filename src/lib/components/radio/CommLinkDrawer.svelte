@@ -579,7 +579,9 @@
 				dial selects a room without silently joining or transmitting audio.
 			</p>
 
-			{#if !user}
+			{#if !provider.callsEnabled}
+				<p class="empty-note" role="status">Private calls are not available yet.</p>
+			{:else if !user}
 				<div class="action-row">
 					<a href="/api/radio/auth/google?returnTo=%2Ftools%2Fradio" class="deck-btn google-btn">
 						Sign in with Google to view or create rooms
@@ -662,13 +664,15 @@
 							<span>Initial Mode</span>
 							<select bind:value={newRoomMode} data-testid="create-room-mode-select">
 								<option value="conversation">Conversation (Multi-Speaker)</option>
-								<option value="radio">Radio (Push-to-Talk Lease)</option>
+								{#if provider.radioModeAvailable}
+									<option value="radio">Radio (Push-to-Talk)</option>
+								{/if}
 							</select>
 						</label>
 						<label>
 							<span>Access Policy</span>
 							<select bind:value={newRoomAccessPolicy} data-testid="create-room-policy-select">
-								<option value="approval_required">Invite Link or Host Approval</option>
+								<option value="approval_required">Invite Link + Host Approval</option>
 								<option value="members_only">Restricted Explicit Member List</option>
 							</select>
 						</label>
@@ -864,6 +868,7 @@
 				{#if isHostOfActiveOrSelected}
 					<hr class="deck-divider" />
 					<div class="action-row">
+						{#if provider.radioModeAvailable}
 						<button
 							type="button"
 							class="deck-btn"
@@ -876,6 +881,7 @@
 						>
 							Switch Room to {activeRoomDetail.mode === 'conversation' ? 'Radio (PTT)' : 'Conversation'} Mode
 						</button>
+						{/if}
 						<button
 							type="button"
 							class="deck-btn danger"

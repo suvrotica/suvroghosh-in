@@ -21,8 +21,8 @@ export const load: PageServerLoad = async (event) => {
 	}
 
 	const inviteToken = urlInvite || event.cookies.get('comm_link_pending_invite') || null;
-	const pendingInvitation = inviteToken ? previewInvitation(inviteToken) : null;
 	const user = await resolveRadioUser(event);
+	const pendingInvitation = user && inviteToken ? previewInvitation(inviteToken) : null;
 	const provider = buildRadioProviderStatus(event.url);
 	const rooms = user ? listAuthorisedRoomsForUser(user.id, user.email) : [];
 	const authError = event.url.searchParams.get('authError') || null;

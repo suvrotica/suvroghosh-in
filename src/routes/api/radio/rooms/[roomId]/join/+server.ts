@@ -1,5 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { JoinRoomSchema } from '$lib/radio/types';
+import { getRadioServerConfig } from '$lib/server/radio/config';
+import { RadioMediaServiceError } from '$lib/server/radio/livekit';
 import {
 	acknowledgeUnmuteRequest,
 	connectParticipant,
@@ -51,13 +53,24 @@ export const POST: RequestHandler = async (event) => {
 		}
 
 		const payload = parsed.data;
+		const config = getRadioServerConfig(event.url);
+		if (
+			!config.callsEnabled &&
+			!config.loopbackFallbackAllowed &&
+			(payload.action === 'request_join' ||
+				payload.action === 'connect' ||
+				(payload.action === 'set_mute' && payload.muted === false))
+		) {
+			return radioJson({ ok: false, error: 'Live calls are currently unavailable.' }, 503);
+		}
 
 		if (payload.action === 'request_join') {
 			const res = await requestRoomJoin({
 				roomId,
 				user: auth.user,
 				inviteToken: payload.inviteToken ?? null,
-				joinAsListener: payload.joinAsListener
+				joinAsListener: payload.joinAsListener,
+				requireHostApproval: !config.loopbackFallbackAllowed
 			});
 			if (res.ok && payload.inviteToken) {
 				event.cookies.delete('comm_link_pending_invite', { path: '/' });
@@ -100,6 +113,11 @@ export const POST: RequestHandler = async (event) => {
 		}
 
 		return radioJson({ ok: false, error: 'Unsupported action.' }, 400);
+	} catch (error) {
+		if (error instanceof RadioMediaServiceError) {
+			return radioJson({ ok: false, error: error.message }, 503);
+		}
+		throw error;
 	} finally {
 		lease.release();
 	}

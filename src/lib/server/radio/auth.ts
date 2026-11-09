@@ -67,6 +67,7 @@ async function verifySignedPayload<T>(token: string, secret: string): Promise<T 
 interface SignedSessionRecord {
 	user: RadioUser;
 	exp: number;
+	verifiedMailbox: true;
 }
 
 interface OidcFlowState {
@@ -83,9 +84,11 @@ function cookieSecurity(url: URL): boolean {
 
 export async function setRadioSessionCookie(event: RequestEvent, user: RadioUser): Promise<void> {
 	const cfg = getRadioServerConfig(event.url);
+	if (!cfg.sessionSecret) throw new Error('COMM-LINK sessions are unavailable.');
 	const record: SignedSessionRecord = {
 		user,
-		exp: Math.floor(Date.now() / 1000) + SESSION_MAX_AGE_SECONDS
+		exp: Math.floor(Date.now() / 1000) + SESSION_MAX_AGE_SECONDS,
+		verifiedMailbox: true
 	};
 	const signed = await signPayload(record, cfg.sessionSecret);
 	event.cookies.set(SESSION_COOKIE_NAME, signed, {
@@ -106,9 +109,19 @@ export async function readRadioSessionUser(event: RequestEvent): Promise<RadioUs
 	const raw = event.cookies.get(SESSION_COOKIE_NAME);
 	if (!raw) return null;
 	const cfg = getRadioServerConfig(event.url);
+	if (!cfg.sessionSecret) return null;
 	const record = await verifySignedPayload<SignedSessionRecord>(raw, cfg.sessionSecret);
-	if (!record || typeof record.exp !== 'number') return null;
-	if (record.exp < Math.floor(Date.now() / 1000)) {
+	if (!record || !Number.isSafeInteger(record.exp) || !record.user || record.verifiedMailbox !== true) {
+		return null;
+	}
+	const nowMs = Date.now();
+	const authenticatedAt = Date.parse(record.user.authenticatedAt);
+	if (
+		record.exp < Math.floor(nowMs / 1000) ||
+		!Number.isFinite(authenticatedAt) ||
+		authenticatedAt > nowMs + 60_000 ||
+		authenticatedAt < nowMs - SESSION_MAX_AGE_SECONDS * 1000
+	) {
 		event.cookies.delete(SESSION_COOKIE_NAME, { path: '/' });
 		return null;
 	}
@@ -125,7 +138,7 @@ export async function createGoogleAuthorizationRedirect(
 	returnTo = '/tools/radio'
 ): Promise<string> {
 	const cfg = getRadioServerConfig(event.url);
-	if (!cfg.googleConfigured || !cfg.googleClientId || !cfg.googleRedirectUri) {
+	if (!cfg.googleConfigured || !cfg.googleClientId || !cfg.googleRedirectUri || !cfg.sessionSecret) {
 		throw new Error('Google OAuth is not configured on this server.');
 	}
 
@@ -179,7 +192,8 @@ export async function completeGoogleAuthorizationCallback(
 		!cfg.googleConfigured ||
 		!cfg.googleClientId ||
 		!cfg.googleClientSecret ||
-		!cfg.googleRedirectUri
+		!cfg.googleRedirectUri ||
+		!cfg.sessionSecret
 	) {
 		throw new Error('Google OAuth is not configured on this server.');
 	}
@@ -235,7 +249,8 @@ export async function completeGoogleAuthorizationCallback(
 
 	const { payload } = await jwtVerify(tokenData.id_token, GOOGLE_JWKS, {
 		issuer: ['https://accounts.google.com', 'accounts.google.com'],
-		audience: cfg.googleClientId
+		audience: cfg.googleClientId,
+		requiredClaims: ['exp', 'iat', 'sub']
 	});
 
 	if (!payload.sub || typeof payload.sub !== 'string') {
@@ -248,8 +263,12 @@ export async function completeGoogleAuthorizationCallback(
 
 	const email =
 		typeof payload.email === 'string' ? payload.email.trim().toLowerCase() : '';
-	if (!email) {
-		throw new Error('Google account did not provide an email address.');
+	if (
+		!email ||
+		payload.email_verified !== true ||
+		(!email.endsWith('@gmail.com') && !(typeof payload.hd === 'string' && payload.hd))
+	) {
+		throw new Error('Sign in with a verified Gmail or Google Workspace account.');
 	}
 
 	const rawName =

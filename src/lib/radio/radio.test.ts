@@ -371,6 +371,8 @@ describe('COMM-LINK room authorisation, 12-person capacity, PTT leases, and host
 		});
 		detail = getRoomDetailForUser(created.room.id, host.id, host.email);
 		expect(detail?.participants.find((p) => p.userId === guest.id)?.isMuted).toBe(true);
+		await requestRoomJoin({ roomId: created.room.id, user: guest });
+		expect((await setParticipantMute(created.room.id, guest.id, false)).ok).toBe(false);
 
 		// Host asks guest to unmute -> sets flag but NEVER remotely activates guest's microphone
 		await performHostAction({
@@ -395,6 +397,43 @@ describe('COMM-LINK room authorisation, 12-person capacity, PTT leases, and host
 		});
 		expect(rejoinAttempt.ok).toBe(false);
 		expect(rejoinAttempt.status).toBe('removed');
+	});
+
+	it('keeps invited production guests pending until the host admits them', async () => {
+		const host = makeUser(1, 'Host');
+		const guest = makeUser(2, 'Guest');
+		const outsider = makeUser(3, 'Outsider');
+		const { room, inviteToken } = await createRadioRoom({
+			host,
+			name: 'Private conversation',
+			mode: 'conversation',
+			accessPolicy: 'approval_required'
+		});
+		await connectParticipant({ roomId: room.id, user: host, joinAsListener: false });
+		expect((await requestRoomJoin({
+			roomId: room.id,
+			user: outsider,
+			requireHostApproval: true
+		})).ok).toBe(false);
+		const pending = await requestRoomJoin({
+			roomId: room.id,
+			user: guest,
+			inviteToken,
+			requireHostApproval: true
+		});
+		expect(pending.status).toBe('pending_approval');
+		expect(pending.room?.participants).toEqual([]);
+		expect((await connectParticipant({
+			roomId: room.id, user: guest, joinAsListener: false
+		})).ok).toBe(false);
+		await performHostAction({
+			roomId: room.id,
+			actorUserId: host.id,
+			payload: { action: 'admit_participant', targetUserId: guest.id }
+		});
+		expect((await connectParticipant({
+			roomId: room.id, user: guest, joinAsListener: false
+		})).ok).toBe(true);
 	});
 
 	it('supports account deletion and abuse reporting', async () => {
