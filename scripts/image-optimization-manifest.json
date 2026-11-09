@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/ai-led-disempowerment-of-the-common-man.webp": {
+      "format": "WEBP",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 176700,
+      "outputHash": "ca09bd08786b3b66463886a61986ee8eb95f6a8d35f87f9198d765b45e15ff77",
+      "psnrDb": 38.92,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 211520,
+      "sourceHash": "85241dedd73453509b8584efac6e99c896374865dbbf59d190f1cb9f40302b35",
+      "width": 1672
+    },
     "static/images/apps/handwritten-messenger.png": {
       "format": "PNG",
       "height": 1000,

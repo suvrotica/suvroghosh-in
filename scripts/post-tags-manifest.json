@@ -17248,6 +17248,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-08"
+		},
+		"src/lib/posts/ai-led-disempowerment-of-the-common-man.md": {
+			"bodyHash": "a89cc93569ae2ccda4aae722f2eee89f0e41b3ab1f7f8a6d46832ceda46a70e8",
+			"hashVersion": 2,
+			"revisionHash": "1a7ef88ae761aa053976d2e36db5fe01bbba6e4929686d44810a421e11a8f8df",
+			"generatedTags": [
+				"AI",
+				"Automation",
+				"Labor",
+				"Economy",
+				"Technology",
+				"Inequality",
+				"Future of Work",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"AI",
+				"Automation",
+				"Labor",
+				"Economy",
+				"Technology",
+				"Inequality",
+				"Future of Work",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

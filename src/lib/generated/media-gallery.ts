@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "ai-led-disempowerment-of-the-common-man.webp",
+			"src": "/images/ai-led-disempowerment-of-the-common-man.webp",
+			"bytes": 176700,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "apps/handwritten-messenger.png",
 			"src": "/images/apps/handwritten-messenger.png",
 			"bytes": 383595,

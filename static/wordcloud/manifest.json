@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T22:34:22.550308+00:00",
+  "generatedAt": "2026-11-09T16:03:12.527737+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -458,6 +458,29 @@
         "AI",
         "Fiftyone",
         "Tram"
+      ],
+      "wordCount": 130
+    },
+    "ai-led-disempowerment-of-the-common-man": {
+      "generatedAt": "2026-11-09T16:02:55.496387+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ai-led-disempowerment-of-the-common-man.svg",
+      "source": "src/lib/posts/ai-led-disempowerment-of-the-common-man.md",
+      "sourceHash": "50027b5ac9d07532536edebb96b294b3f32567cb429e344c97f260142aba3fab",
+      "sourceModified": "2026-11-09T16:00:21.991043+00:00",
+      "topWords": [
+        "AI",
+        "Machine",
+        "Man",
+        "Human",
+        "Progress",
+        "Common",
+        "Model",
+        "Algorithm",
+        "Labor",
+        "Now",
+        "Cost",
+        "Time"
       ],
       "wordCount": 130
     },
