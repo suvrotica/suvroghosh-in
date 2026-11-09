@@ -23,8 +23,10 @@ Use LiveKit Cloud because its provider-side token revocation is part of the acce
 The room-specific token initially grants only listening and expires after 60 seconds. Once a
 connected member requests unmute, the server can grant microphone publication only. Removal or
 host mute revokes old provider tokens and disconnects the target. A host-muted member can rejoin
-to listen. LiveKit also enforces the configured participant limit. Failed state commits compensate
-microphone grants; provider revocations are kept fail-closed. Neither token expiry nor client
+to listen. The durable application reservation is the capacity boundary. We also send the cap to
+LiveKit, but a disposable hosted test admitted a third token minted directly with project
+credentials despite a two-seat setting. The app never mints that extra token. Failed state commits
+compensate microphone grants; provider revocations are kept fail-closed. Neither token expiry nor client
 timers terminate an already-connected speaker. Therefore public calls launch in Conversation
 mode. Radio mode needs a verified independent expiry mechanism before public release.
 

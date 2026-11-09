@@ -36,6 +36,9 @@ participant to disconnect and be able to rejoin as a listener. For local checks,
 preview with service workers blocked. The loopback suite does not verify cloud services.
 
 The app limits each room to 2–12 people, each host to three rooms, and the site to 25 rooms. The
+application's shared reservations enforce capacity before issuing tokens. A disposable provider
+test verified two-way audio, explicit revocation and cleanup, but the provider accepted an extra
+directly minted test token; its room-size setting alone is not an admission check. The
 shared state stores account identity, room membership, hashed invitation tokens, deletion cutoffs,
 and submitted abuse reports. It bounds rooms to one day and prunes stale account/report data after
 30 days and old revocation cutoffs after eight days. Cleanup runs on subsequent requests. Do not

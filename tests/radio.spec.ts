@@ -2,8 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 	test('renders faithful handheld radio UI, enforces security headers, captures desktop & mobile screenshots, and isolates Notes admin auth', async ({
-		page,
-		request
+		page
 	}, testInfo) => {
 		const startNav = Date.now();
 		const response = await page.goto('/tools/radio', { waitUntil: 'domcontentloaded' });
@@ -71,7 +70,7 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 		await expect(page.getByTestId('signed-in-operator-tag')).toContainText('Participant One');
 
 		// Attempting to access owner-only Notes studio or API must never succeed with a COMM-LINK session
-		const notesRes = await request.get('/notes/studio', { maxRedirects: 0 });
+		const notesRes = await page.request.get('/notes/studio', { maxRedirects: 0 });
 		expect([302, 303, 307, 308, 401, 403, 503]).toContain(notesRes.status());
 		expect(notesRes.status()).not.toBe(200);
 	});
