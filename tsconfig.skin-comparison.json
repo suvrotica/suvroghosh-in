@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.json",
+	"include": [
+		"src/lib/components/visualizations/a-skin-that-paints-itself/**/*.svelte",
+		"src/lib/visualizations/a-skin-that-paints-itself/**/*.ts",
+		"tests/browser/skin-comparison.spec.ts",
+		"playwright.skin-comparison.config.ts"
+	]
+}

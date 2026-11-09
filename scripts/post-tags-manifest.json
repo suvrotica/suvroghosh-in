@@ -17308,6 +17308,36 @@
 				"Blogging"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/a-skin-that-paints-itself.md": {
+			"bodyHash": "9898103ccd9964f84dc196aa4d97350fe3c237dc792ec005204c27fa2f94ff61",
+			"hashVersion": 2,
+			"revisionHash": "88d457be0197b7bc6d61e89a86c1761880e62107d27ea41cf6c92db5c4207dee",
+			"generatedTags": [
+				"reaction-diffusion",
+				"pattern formation",
+				"mathematical biology",
+				"morphogenesis",
+				"geometry",
+				"Turing patterns",
+				"interactive simulation",
+				"activator-inhibitor systems",
+				"boundary conditions",
+				"numerical modeling"
+			],
+			"pinnedTags": [
+				"reaction-diffusion",
+				"pattern formation",
+				"mathematical biology",
+				"morphogenesis",
+				"geometry",
+				"Turing patterns",
+				"interactive simulation",
+				"activator-inhibitor systems",
+				"boundary conditions",
+				"numerical modeling"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

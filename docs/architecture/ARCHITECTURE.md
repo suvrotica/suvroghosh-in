@@ -2046,6 +2046,31 @@ flowchart LR
     Lifecycle --> Worker
 ```
 
+### A Skin That Paints Itself: formed-versus-fitted patterns
+
+The ordinary Visualizations article at `/blog/visualizations/a-skin-that-paints-itself` renders a labeled computed pair from committed images. Its `data-tts-exclude` shell loads the Svelte instrument near the viewport, retaining the pair for print, `?canvas=off`, and failed interactive startup. The gallery imports metadata only. The feature adds no endpoint, credential, persistence, remote compute or CSP exception.
+
+`visualizations/a-skin-that-paints-itself` owns the fixed-length master lattice, width masks, run configuration, time integration and scalar-field fitting. It imports the existing signed cubic model's equilibrium, seeded disturbance and masked right-hand side without changing that feature's code or integrating the separate Gray–Scott engine. Overlapping target/reference coordinates sample the same physical disturbance. The fitting path reads a completed broad field and bilinearly maps its samples into the same stepped target mask the solver used. Both outputs go through one pure display mapper, independent of the numerical arrays and replay time.
+
+```mermaid
+flowchart LR
+    Config["Seed, chemistry and fixed lattice"] --> Broad["Worker: evolve broad mask to t = 60"]
+    Config --> Target["Worker: evolve selected mask to t = 60"]
+    Width["Committed width and shape"] --> Target
+    Width --> Fit["Sample broad field into target mask"]
+    Broad --> Cache["One immutable worker-owned reference"]
+    Cache --> Fit
+    Target --> Draw["Shared scalar-to-color renderer"]
+    Fit --> Draw
+    Draw --> Live["Live formed/fitted pair and target replay"]
+    Config --> Script["Node asset generator: same model and display"]
+    Script --> Static["Committed posters and article figures"]
+    Static --> Shell["Readable article fallback"]
+    Shell -->|near viewport| Live
+```
+
+Each mount owns its lazy worker, visibility and intersection listeners, input debounce and animation frame. Committed settings replace older work through a generation ID; while a solve runs, captions still describe the previous visible result. The worker yields between batches to suspend or replace a calculation. Its single broad snapshot is never transferred to the browser; the main thread receives separately owned fitted and target buffers plus a bounded set of target frames. Replay changes only the target's displayed time. `scripts/render-a-skin-that-paints-itself.mjs` uses the same model and renderer; `features:check` verifies the six raster outputs and provenance manifest. See [the feature record](../visualizations/a-skin-that-paints-itself.md). These are feature-local ownership and data-flow changes within the established SSR/lazy worker pattern; no foundational ADR is needed.
+
 ### How spots and stripes form: signed activator–inhibitor Turing workbench
 
 The `how-spots-and-stripes-form` visualization uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/how-spots-and-stripes-form`. Its server-rendered shell under `components/visualizations/how-spots-and-stripes-form` renders a computed static comparison preview and lazily imports the interactive Svelte 5 workbench after mount (or retains the static fallback when `?canvas=off` is supplied). The gallery imports lightweight summary and subject metadata only. The feature adds no server endpoint, external network request, persistence store, credential or route exception, and remains separate from the Gray–Scott `reaction-diffusion` engine because its mathematical model evolves signed signal fields around a parameter-dependent cubic equilibrium.

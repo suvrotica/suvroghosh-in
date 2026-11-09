@@ -5046,6 +5046,48 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 864
 		},
 		{
+			"name": "visualizations/a-skin-that-paints-itself/fitted.png",
+			"src": "/images/visualizations/a-skin-that-paints-itself/fitted.png",
+			"bytes": 8610,
+			"width": 384,
+			"height": 200
+		},
+		{
+			"name": "visualizations/a-skin-that-paints-itself/formed.png",
+			"src": "/images/visualizations/a-skin-that-paints-itself/formed.png",
+			"bytes": 6570,
+			"width": 384,
+			"height": 200
+		},
+		{
+			"name": "visualizations/a-skin-that-paints-itself/poster.png",
+			"src": "/images/visualizations/a-skin-that-paints-itself/poster.png",
+			"bytes": 54753,
+			"width": 1200,
+			"height": 500
+		},
+		{
+			"name": "visualizations/a-skin-that-paints-itself/social.png",
+			"src": "/images/visualizations/a-skin-that-paints-itself/social.png",
+			"bytes": 59660,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/a-skin-that-paints-itself/taper.png",
+			"src": "/images/visualizations/a-skin-that-paints-itself/taper.png",
+			"bytes": 75745,
+			"width": 1200,
+			"height": 500
+		},
+		{
+			"name": "visualizations/a-skin-that-paints-itself/worked-example.png",
+			"src": "/images/visualizations/a-skin-that-paints-itself/worked-example.png",
+			"bytes": 79855,
+			"width": 1200,
+			"height": 500
+		},
+		{
 			"name": "visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg",
 			"src": "/images/visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg",
 			"bytes": 45123,

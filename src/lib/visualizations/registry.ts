@@ -450,6 +450,18 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/how-spots-and-stripes-form',
 		status: 'published'
 	},
+	'a-skin-that-paints-itself': {
+		id: 'a-skin-that-paints-itself',
+		title: 'A Skin That Paints Itself',
+		description:
+			'Change the width of a patch and compare the pattern that forms inside it with a finished pattern squeezed to fit the same shape.',
+		subjects: ['Biology', 'Mathematics', 'Scientific Computing'],
+		poster: '/images/visualizations/a-skin-that-paints-itself/social.png',
+		posterAlt:
+			'Two computed ivory and charcoal patterns in matching narrow strips, one formed inside the strip and one fitted from a broad patch.',
+		href: '/blog/visualizations/a-skin-that-paints-itself',
+		status: 'published'
+	},
 	'ink-that-follows-a-scent': {
 		id: 'ink-that-follows-a-scent',
 		title: 'Ink That Follows a Scent',

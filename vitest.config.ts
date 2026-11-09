@@ -11,6 +11,7 @@ export default defineConfig({
 			'src/lib/visualizations/the-epidemic-mosaic/**/*.test.ts',
 			'src/lib/visualizations/ink-that-follows-a-scent/**/*.test.ts',
 			'src/lib/visualizations/how-spots-and-stripes-form/**/*.test.ts',
+			'src/lib/visualizations/a-skin-that-paints-itself/**/*.test.ts',
 			'src/lib/visualizations/binaural-acoustic-soundboard/**/*.test.ts',
 			'src/lib/visualizations/circuit-bench/**/*.test.ts',
 			'src/lib/visualizations/fractal-trip/**/*.test.ts',

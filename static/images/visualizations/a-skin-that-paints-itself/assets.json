@@ -1,0 +1,127 @@
+{
+  "sourceSha256": "a52c2595081e46690474e5648b0f87ff9676badbf215f10bd767a120fb43019a",
+  "integrator": "Heun / explicit RK2, five-point masked Laplacian, Float64",
+  "model": "signed-cubic-activator-inhibitor",
+  "version": "1.0.0",
+  "display": {
+    "mode": "pigment",
+    "source": "u",
+    "threshold": 0,
+    "halfTransition": 0.16,
+    "mapping": "Mask-aware bilinear scalar reconstruction; smoothstep from ivory to charcoal"
+  },
+  "fitting": "x unchanged; y multiplied by reference width / actual stepped column width, relative to the transverse centreline; bilinear cell-centred samples with constant edge extension",
+  "reference": {
+    "config": {
+      "shape": "straight",
+      "widthPercent": 100,
+      "appearance": "stripes",
+      "seed": 1952,
+      "model": "signed-cubic-activator-inhibitor",
+      "version": "1.0.0",
+      "length": 76.8,
+      "referenceWidth": 40,
+      "taperTipWidth": 8,
+      "gridSpacing": 0.8,
+      "timestep": 0.01,
+      "observationTime": 60,
+      "patternBalance": 0,
+      "diffusionU": 0.6,
+      "diffusionV": 9,
+      "disturbance": "bilinear-mulberry32-knots-v1",
+      "disturbanceSpacing": 0.8,
+      "disturbanceAmplitude": 0.03
+    },
+    "fieldSha256": "5a66d8bda3c6d95d1ce9d428c633a80a8d54ce5a6f9528965abe7d6beb899723"
+  },
+  "straight": {
+    "config": {
+      "shape": "straight",
+      "widthPercent": 24,
+      "appearance": "stripes",
+      "seed": 1952,
+      "model": "signed-cubic-activator-inhibitor",
+      "version": "1.0.0",
+      "length": 76.8,
+      "referenceWidth": 40,
+      "taperTipWidth": 8,
+      "gridSpacing": 0.8,
+      "timestep": 0.01,
+      "observationTime": 60,
+      "patternBalance": 0,
+      "diffusionU": 0.6,
+      "diffusionV": 9,
+      "disturbance": "bilinear-mulberry32-knots-v1",
+      "disturbanceSpacing": 0.8,
+      "disturbanceAmplitude": 0.03
+    },
+    "fieldSha256": "e62b2b6002367965d7323fb3814e4dd2acf4e0f654d1d99433a79311121fa03f",
+    "fittedSha256": "382303993cd8406127e65a9c7e3993b5c9c8fee6f70b59823c56fa3c83646eed",
+    "files": [
+      "formed.png",
+      "fitted.png",
+      "poster.png",
+      "social.png",
+      "worked-example.png"
+    ]
+  },
+  "taper": {
+    "config": {
+      "shape": "tapered",
+      "widthPercent": 80,
+      "appearance": "stripes",
+      "seed": 1952,
+      "model": "signed-cubic-activator-inhibitor",
+      "version": "1.0.0",
+      "length": 76.8,
+      "referenceWidth": 40,
+      "taperTipWidth": 8,
+      "gridSpacing": 0.8,
+      "timestep": 0.01,
+      "observationTime": 60,
+      "patternBalance": 0,
+      "diffusionU": 0.6,
+      "diffusionV": 9,
+      "disturbance": "bilinear-mulberry32-knots-v1",
+      "disturbanceSpacing": 0.8,
+      "disturbanceAmplitude": 0.03
+    },
+    "fieldSha256": "7d2988aa79fb14a433804f43e2b2a754377cbc3428bc4fdeb37f74da59b0d0d1",
+    "fittedSha256": "2cce6bc87fca510866f37800794977e75c7b1fb6065cd39180ae82e519b18289",
+    "files": [
+      "taper.png"
+    ]
+  },
+  "files": {
+    "formed.png": {
+      "width": 384,
+      "height": 200,
+      "pixelSha256": "0da388f0309094f9c2e7650b20bb214710399229de18ecccbfcd377a7f326a79"
+    },
+    "fitted.png": {
+      "width": 384,
+      "height": 200,
+      "pixelSha256": "96a196622cc9d29879c627364f77701d3e42a03fe9e3927293968a84bd6589e0"
+    },
+    "poster.png": {
+      "width": 1200,
+      "height": 500,
+      "pixelSha256": "fa5b77b94ec7018c30f0636715e22605181c57b31a6ad5ee1d98839afbb875d4"
+    },
+    "social.png": {
+      "width": 1200,
+      "height": 630,
+      "pixelSha256": "d3d736744e72325c96a83c5745ea32f867dd3bc5e5ca239d79440404064052fb"
+    },
+    "worked-example.png": {
+      "width": 1200,
+      "height": 500,
+      "pixelSha256": "0501a73280fcdfa7b95b8f6c32a3ce4468d984e2aa7702ef3eb3c3aa609af154"
+    },
+    "taper.png": {
+      "width": 1200,
+      "height": 500,
+      "pixelSha256": "885e6f8bf98f1efe231f1a886371c103351558ec000794a4e97ccb74fe303cd7"
+    }
+  }
+}

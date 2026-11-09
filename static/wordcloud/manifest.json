@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T17:49:49.358453+00:00",
+  "generatedAt": "2026-11-09T18:10:32.435934+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -90,6 +90,29 @@
         "Child",
         "Small",
         "Becomes"
+      ],
+      "wordCount": 130
+    },
+    "a-skin-that-paints-itself": {
+      "generatedAt": "2026-11-09T18:10:19.060652+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/a-skin-that-paints-itself.svg",
+      "source": "src/lib/posts/a-skin-that-paints-itself.md",
+      "sourceHash": "7cc72ad62775377bfb9310bcb98a210d73dfb51fe1a1d7b84b8d5fbc0498b403",
+      "sourceModified": "2026-11-09T18:10:06.426867+00:00",
+      "topWords": [
+        "Strip",
+        "Width",
+        "Patch",
+        "Pattern",
+        "Broad",
+        "Model",
+        "Signal",
+        "Signals",
+        "Time",
+        "First",
+        "Fitted",
+        "Point"
       ],
       "wordCount": 130
     },

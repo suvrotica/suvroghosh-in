@@ -59,6 +59,7 @@
 		'the-matrix-is-random-why-does-it-have-a-shape':
 			visualizationSummaries['the-matrix-is-random'].subjects,
 		'how-spots-and-stripes-form': visualizationSummaries['how-spots-and-stripes-form'].subjects,
+		'a-skin-that-paints-itself': visualizationSummaries['a-skin-that-paints-itself'].subjects,
 		'ink-that-follows-a-scent': visualizationSummaries['ink-that-follows-a-scent'].subjects,
 		'the-epidemic-mosaic': visualizationSummaries['the-epidemic-mosaic'].subjects,
 		'the-predator-prey-loom': visualizationSummaries['the-predator-prey-loom'].subjects
