@@ -7,6 +7,7 @@ interface RadioRequestState {
 	mediaEnabled: boolean;
 	aborted: boolean;
 	closedRooms: Set<string>;
+	watchdogReadyUntilMs: number;
 }
 
 const requests = new AsyncLocalStorage<RadioRequestState>();
@@ -38,16 +39,32 @@ export function radioStateCollection<K extends keyof RadioStoreState>(key: K): R
 export async function withRadioState<T>(
 	state: RadioStoreState,
 	action: () => Promise<T>,
-	mediaEnabled = false
+	mediaEnabled = false,
+	watchdogReadyUntilMs = 0
 ): Promise<T> {
 	return requests.run(
-		{ state, rollback: [], mediaEnabled, aborted: false, closedRooms: new Set() },
+		{
+			state,
+			rollback: [],
+			mediaEnabled,
+			aborted: false,
+			closedRooms: new Set(),
+			watchdogReadyUntilMs
+		},
 		action
 	);
 }
 
 export function radioMediaEnabledForRequest(): boolean {
 	return requests.getStore()?.mediaEnabled === true;
+}
+
+/** Hosted publication requires recent SQL scheduler and successful worker acknowledgements. */
+export function radioWatchdogReadyForRequest(): boolean {
+	const request = requests.getStore();
+	if (!request) return false;
+	if (request.aborted) return false;
+	return !request.mediaEnabled || request.watchdogReadyUntilMs > Date.now();
 }
 
 export function markRadioRoomClosed(roomId: string): void {

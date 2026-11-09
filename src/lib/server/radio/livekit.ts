@@ -1,3 +1,4 @@
+import { SignJWT } from 'jose';
 import {
 	AccessToken,
 	RoomConfiguration,
@@ -5,7 +6,7 @@ import {
 	ServerError,
 	TrackSource
 } from 'livekit-server-sdk';
-import { RADIO_LIMITS } from '$lib/radio/types';
+import { RADIO_LIMITS, type RadioMediaTokenResponse, type RadioMode } from '$lib/radio/types';
 import { getRadioServerConfig } from './config';
 import { markRadioRoomClosed, radioMediaEnabledForRequest } from './state-context';
 
@@ -38,11 +39,21 @@ function isMissingRemoteRoomOrParticipant(error: unknown): boolean {
 	return error instanceof ServerError && error.status === 404 && error.code === 'not_found';
 }
 
+function liveKitRoomConfiguration(roomId: string, maxParticipants: number, mode: RadioMode) {
+	return {
+		name: roomId,
+		maxParticipants: maxParticipants + (mode === 'radio' ? 1 : 0),
+		emptyTimeout: RADIO_LIMITS.ROOM_TOKEN_TTL_SECONDS + 30,
+		departureTimeout: ROOM_DEPARTURE_TIMEOUT_SECONDS
+	};
+}
+
 export async function issueLiveKitAudioToken(params: {
 	roomId: string;
 	userId: string;
 	displayName: string;
 	maxParticipants: number;
+	mode?: RadioMode;
 	url: URL;
 }): Promise<{ token: string; serverUrl: string; expiresAt: string }> {
 	const cfg = getRadioServerConfig(params.url);
@@ -53,14 +64,13 @@ export async function issueLiveKitAudioToken(params: {
 	}
 
 	try {
-		const roomConfig = {
-			name: params.roomId,
-			maxParticipants: params.maxParticipants,
-			emptyTimeout: RADIO_LIMITS.ROOM_TOKEN_TTL_SECONDS + 30,
-			departureTimeout: ROOM_DEPARTURE_TIMEOUT_SECONDS
-		};
+		const roomConfig = liveKitRoomConfiguration(
+			params.roomId,
+			params.maxParticipants,
+			params.mode ?? 'conversation'
+		);
 		const room = await svc.createRoom(roomConfig);
-		if (room.name !== params.roomId || room.maxParticipants !== params.maxParticipants) {
+		if (room.name !== params.roomId || room.maxParticipants !== roomConfig.maxParticipants) {
 			throw new RadioMediaServiceError();
 		}
 
@@ -83,6 +93,72 @@ export async function issueLiveKitAudioToken(params: {
 			token,
 			serverUrl: cfg.livekitUrl,
 			expiresAt: new Date(Date.now() + RADIO_LIMITS.ROOM_TOKEN_TTL_SECONDS * 1_000).toISOString()
+		};
+	} catch {
+		throw new RadioMediaServiceError();
+	}
+}
+
+export async function issueLiveKitPttPublisherToken(params: {
+	roomId: string;
+	publisherId: string;
+	userId: string;
+	displayName: string;
+	maxParticipants: number;
+	acquiredAtMs: number;
+	validUntilMs: number;
+}): Promise<RadioMediaTokenResponse> {
+	const cfg = getRadioServerConfig();
+	const notBefore = Math.floor(params.acquiredAtMs / 1_000);
+	const expires = Math.floor(params.validUntilMs / 1_000);
+	if (
+		!radioMediaEnabledForRequest() ||
+		!cfg.livekitConfigured ||
+		!cfg.livekitUrl ||
+		!cfg.livekitApiKey ||
+		!cfg.livekitApiSecret ||
+		expires <= Math.floor(Date.now() / 1_000) ||
+		expires <= notBefore ||
+		(expires - notBefore) * 1_000 > RADIO_LIMITS.PTT_LEASE_TTL_MS
+	) {
+		throw new RadioMediaServiceError();
+	}
+	try {
+		const roomConfig = new RoomConfiguration(
+			liveKitRoomConfiguration(params.roomId, params.maxParticipants, 'radio')
+		).toJson();
+		// Keep nbf fixed on retries. A new timestamp could cross the provider's
+		// revoke cutoff if LiveKit acknowledged removal before a failed DB commit.
+		const token = await new SignJWT({
+			name: params.displayName,
+			metadata: params.userId,
+			roomConfig,
+			video: {
+				roomJoin: true,
+				room: params.roomId,
+				canSubscribe: false,
+				canPublish: true,
+				canPublishSources: ['microphone'],
+				canPublishData: false,
+				canUpdateOwnMetadata: false
+			}
+		})
+			.setProtectedHeader({ alg: 'HS256' })
+			.setIssuer(cfg.livekitApiKey)
+			.setSubject(params.publisherId)
+			.setNotBefore(notBefore)
+			.setExpirationTime(expires)
+			.sign(new TextEncoder().encode(cfg.livekitApiSecret));
+		return {
+			transport: 'livekit',
+			roomId: params.roomId,
+			participantId: params.publisherId,
+			participantName: params.displayName,
+			serverUrl: cfg.livekitUrl,
+			token,
+			expiresAt: new Date(expires * 1_000).toISOString(),
+			canPublish: true,
+			iceServers: []
 		};
 	} catch {
 		throw new RadioMediaServiceError();

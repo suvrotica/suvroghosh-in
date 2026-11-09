@@ -55,8 +55,15 @@ const room = z
 			holderUserId: id.nullable(),
 			holderName: z.string().max(48).nullable(),
 			acquiredAtMs: z.number().finite().nullable(),
-			expiresAtMs: z.number().finite().nullable()
+			expiresAtMs: z.number().finite().nullable(),
+			pressId: id.optional(),
+			publisherId: id.optional()
 		}),
+		recentPttPresses: z
+			.array(z.object({ pressId: id, userId: id, expiresAtMs: z.number().finite() }))
+			.max(192)
+			.optional(),
+		pttPressBlockedUntilMs: z.number().finite().optional(),
 		activeInvitationId: id.nullable(),
 		hostDisconnectedAtMs: z.number().finite().nullable(),
 		createdAt: timestamp,
@@ -154,13 +161,16 @@ export function pruneRadioState(state: RadioStoreState, now = Date.now()): Expir
 			if ((entry.cleanupRetryAtMs ?? 0) > now || expiredRooms.length >= 3) continue;
 			expiredRooms.push({
 				id: roomId,
-				issuedParticipantIds: Array.from(entry.participants.values())
-					.filter(
-						(member) =>
-							member.mediaTokenIssuedAtMs !== undefined &&
-							member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0)
-					)
-					.map((member) => member.userId),
+				issuedParticipantIds: [
+					...Array.from(entry.participants.values())
+						.filter(
+							(member) =>
+								member.mediaTokenIssuedAtMs !== undefined &&
+								member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0)
+						)
+						.map((member) => member.userId),
+					...(entry.pttLease.publisherId ? [entry.pttLease.publisherId] : [])
+				],
 				maxParticipants: entry.maxParticipants
 			});
 		}

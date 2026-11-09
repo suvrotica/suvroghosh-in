@@ -13,6 +13,8 @@ export const RADIO_LIMITS = {
 	ROOM_TOKEN_TTL_SECONDS: 60,
 	PTT_LEASE_TTL_MS: 8_000,
 	PTT_MAX_HOLD_MS: 45_000,
+	PTT_PRESS_HISTORY_TTL_MS: 90_000,
+	PTT_PRESS_HISTORY_LIMIT: 192,
 	HOST_RECONNECT_GRACE_MS: 180_000,
 	MAX_JSON_BODY_BYTES: 16_384,
 	REQUEST_TIMEOUT_MS: 5_000
@@ -73,6 +75,7 @@ export interface RadioPttLease {
 	holderName: string | null;
 	acquiredAt: string | null;
 	expiresAt: string | null;
+	publisherId?: string | null;
 }
 
 export interface RadioRoomSummary {
@@ -221,7 +224,8 @@ export const JoinRoomSchema = z
 
 export const PttActionSchema = z
 	.object({
-		action: z.enum(['acquire', 'heartbeat', 'release'])
+		action: z.enum(['acquire', 'heartbeat', 'release']),
+		pressId: z.string().uuid().toLowerCase().optional()
 	})
 	.strict();
 

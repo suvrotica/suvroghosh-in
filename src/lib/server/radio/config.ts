@@ -1,5 +1,6 @@
 import { env } from '$env/dynamic/private';
 import { RADIO_LIMITS, type RadioProviderStatus } from '$lib/radio/types';
+import { radioWatchdogReadyForRequest } from './state-context';
 
 export interface RadioServerConfig {
 	googleClientId: string | null;
@@ -15,6 +16,8 @@ export interface RadioServerConfig {
 	loopbackFallbackAllowed: boolean;
 	callsEnabled: boolean;
 	radioModeAvailable: boolean;
+	watchdogConfigured: boolean;
+	watchdogReady: boolean;
 }
 
 export function isLoopbackHostname(hostname: string): boolean {
@@ -66,6 +69,12 @@ export function getRadioServerConfig(url?: URL): RadioServerConfig {
 			livekitConfigured &&
 			supabaseConfigured
 		);
+	const watchdogSecret = env.COMM_LINK_WATCHDOG_SECRET?.trim();
+	const watchdogConfigured = Boolean(
+		watchdogSecret && Buffer.byteLength(watchdogSecret, 'utf8') >= 32
+	);
+	const hostedRadioEnabled =
+		callsEnabled && env.COMM_LINK_PTT_ENABLED === 'true' && watchdogConfigured;
 
 	return {
 		googleClientId,
@@ -80,7 +89,9 @@ export function getRadioServerConfig(url?: URL): RadioServerConfig {
 		supabaseConfigured,
 		loopbackFallbackAllowed,
 		callsEnabled,
-		radioModeAvailable: loopbackFallbackAllowed
+		radioModeAvailable: loopbackFallbackAllowed || hostedRadioEnabled,
+		watchdogConfigured,
+		watchdogReady: loopbackFallbackAllowed || (hostedRadioEnabled && radioWatchdogReadyForRequest())
 	};
 }
 

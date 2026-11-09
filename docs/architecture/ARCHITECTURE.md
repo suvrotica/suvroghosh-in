@@ -139,7 +139,7 @@ Paths are relative to the repository root. This is a responsibility map rather t
 | `src/lib/visualizations/`                                                                        | Feature models, simulation/rendering helpers, data, workers, local tests, generic experiment registry and contracts. Some features also co-locate Svelte interfaces here (Barnum Lab and Meaning Map).                         |
 | `src/lib/games/`                                                                                 | Game catalog, domain models/engines/content, rendering helpers and local tests.                                                                                                                                                |
 | `src/lib/recorder/`                                                                              | Personal audio recorder (`/tools/recorder`) capture state machine, incremental OPFS/IndexedDB storage, non-destructive editor, acoustic DSP + Bark-GRU speech enhancement, and ISO BMFF MP4/M4A/WAV encoding and verification. |
-| `src/lib/radio/`, `src/lib/server/radio/`                                                        | COMM-LINK (`/tools/radio`) display/device models, lazy WebRTC/LiveKit client, isolated Google OIDC, fenced Supabase room authority and microphone permissions; Radio mode is local only.                                          |
+| `src/lib/radio/`, `src/lib/server/radio/`                                                        | COMM-LINK (`/tools/radio`) display/device models, lazy WebRTC/LiveKit client, isolated Google OIDC, fenced room authority, and expiring microphone grants for Radio mode.                                                           |
 | `src/lib/notes/`                                                                                 | Shared note model/schema/geometry/history/export; browser editor state and Dexie draft/outbox persistence. Server persistence is elsewhere.                                                                                    |
 | `src/lib/server/notes/`                                                                          | Server Supabase clients, owner authorization, rate limiting, recovery, repository and image sanitation.                                                                                                                        |
 | `src/lib/comments/`, `src/lib/components/comments/`                                              | Browser-safe comment contracts and reusable plain-text submission, thread and lazy article-comment interfaces. Submitted comments have no browser database.                                                                    |
@@ -3122,17 +3122,21 @@ editing and K-weighted DSP + on-demand 144 KB `Bark-GRU` neural speech enhanceme
 OpenID Connect PKCE authentication (`openid`, `email`, `profile`) and route-scoped microphone access.
 [ADR 0027](decisions/0027-comm-link-production-room-authority.md) supersedes its persistence and
 media authority decisions. Production calls require an explicit release flag, dedicated session
-secret, shared Supabase room state and a LiveKit Cloud project. The public release supports
-Conversation mode. Radio mode and test sign-in remain available only on local loopback.
+secret, shared Supabase room state and a LiveKit Cloud project. [ADR 0028](decisions/0028-comm-link-push-to-talk-cutoff.md)
+adds a separately gated Radio mode. Test sign-in stays on local loopback.
 
 For enabled room requests, `withRadioPersistence` loads one bounded Postgres snapshot under a
 fenced lease. The request works on its own copy, then commits only while it still owns the same
 version. A missing database or failed commit denies the request. This keeps invitation approval,
 room limits, removals and account revocation consistent across Vercel instances. The browser
-receives a short-lived room-specific LiveKit token for listening. A separate, explicit unmute
-request can grant microphone publication on the active connection. Hosts can disconnect and
-revoke media access; new media tokens still require committed room membership. LiveKit forwards
-the audio separately from the blog server.
+receives a short-lived room-specific LiveKit token for listening. In Conversation mode a separate,
+explicit unmute request can grant microphone publication on the active connection. In Radio mode
+that connection stays listen-only. One committed speaking lease authorizes a separate temporary,
+microphone-only publisher. The browser stops its input track before sending a release request.
+Supabase Cron wakes a private worker when an occupied Radio room needs a readiness check or a
+publisher lease is due. The worker strictly revokes the publisher in LiveKit before releasing the
+speaking turn. New grants fail closed when the watchdog is stale. LiveKit forwards audio separately
+from the blog server.
 
 ```mermaid
 flowchart LR
@@ -3142,6 +3146,10 @@ flowchart LR
     Radio <-->|"Fenced lease / versioned commit"| State["Supabase / private room state"]
     Radio -->|"Room cap / microphone grant / revocation"| SFU["LiveKit Cloud"]
     Radio -->|"Short-lived listen token"| Browser
+    Radio -->|"Radio: one ephemeral mic publisher per lease"| Browser
+    State -->|"Due expiry or readiness check / pg_cron + pg_net"| Watchdog["Private expiry worker"]
+    Watchdog -->|"Fenced sweep"| State
+    Watchdog -->|"Strict publisher revocation"| SFU
     Browser <-->|"Encrypted audio / WebRTC"| SFU
 ```
 

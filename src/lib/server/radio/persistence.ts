@@ -6,7 +6,7 @@ import { BodyReadError, readBoundedBody } from '$lib/server/http/body';
 import { RADIO_LIMITS, type RadioUser } from '$lib/radio/types';
 import { readRadioSessionUser } from './auth';
 import { getRadioServerConfig } from './config';
-import { createRadioStoreState } from './store';
+import { createRadioStoreState, endRadioTransmissionForMember } from './store';
 import {
 	decodeRadioState,
 	encodeRadioState,
@@ -25,6 +25,7 @@ import { closeRemoteRoomOnSfu, removeRemoteParticipantFromSfu } from './livekit'
 export interface RadioStateLease {
 	version: number;
 	snapshot: unknown;
+	watchdogReadyUntilMs?: number;
 }
 export interface RadioPersistenceBackend {
 	acquire(owner: string): Promise<RadioStateLease | null>;
@@ -51,6 +52,7 @@ export async function runRadioTransaction<T>(
 		waitMs?: number;
 		cleanupRooms?: (rooms: ExpiredRadioRoom[]) => Promise<void>;
 		mediaEnabled?: boolean;
+		maxActionMs?: number;
 	} = {}
 ): Promise<T> {
 	const owner = randomUUID();
@@ -76,7 +78,10 @@ export async function runRadioTransaction<T>(
 				try {
 					const expired = pruneRadioState(state);
 					if (expired.length) await cleanExpired(expired);
-					const actionBudget = Math.min(30_000, 37_000 - (Date.now() - started));
+					const actionBudget = Math.min(
+						options.maxActionMs ?? 30_000,
+						37_000 - (Date.now() - started)
+					);
 					if (actionBudget <= 0) throw new Error('Radio transaction exceeded its deadline.');
 					const result = await Promise.race([
 						action(),
@@ -106,7 +111,8 @@ export async function runRadioTransaction<T>(
 					clearTimeout(timer);
 				}
 			},
-			options.mediaEnabled
+			options.mediaEnabled,
+			lease.watchdogReadyUntilMs
 		);
 	} finally {
 		// A lost release is safe: the database lease expires, and old writers cannot commit.
@@ -144,11 +150,18 @@ export function createPostgresRadioBackend(
 				acquired?: boolean;
 				version?: number;
 				snapshot?: unknown;
+				watchdogReadyUntilMs?: number;
 			};
 			if (result.acquired === false) return null;
 			if (result.acquired !== true || !Number.isSafeInteger(result.version))
 				throw new Error('Invalid radio persistence lease.');
-			return { version: result.version!, snapshot: result.snapshot };
+			return {
+				version: result.version!,
+				snapshot: result.snapshot,
+				watchdogReadyUntilMs: Number.isFinite(result.watchdogReadyUntilMs)
+					? result.watchdogReadyUntilMs
+					: 0
+			};
 		},
 		async commit(owner, version, snapshot) {
 			return (
@@ -212,6 +225,7 @@ export async function expireStaleRoomConnections(roomId: string | undefined): Pr
 	const stale = Array.from(room.participants.values()).filter(
 		(member) => member.isConnected && now - Date.parse(member.lastSeenAt) > 90_000
 	);
+	await Promise.all(stale.map((member) => endRadioTransmissionForMember(roomId, member.userId)));
 	// At most twelve active media identities per target room. Revoke before freeing
 	// a capacity reservation; a provider failure rolls back and keeps the slot held.
 	const cutoffs = await Promise.all(

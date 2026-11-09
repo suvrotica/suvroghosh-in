@@ -23,6 +23,7 @@
 		type LocalMicTester
 	} from '$lib/radio/audio-devices';
 	import type { RadioMediaSession } from '$lib/radio/media-client';
+	import { RADIO_LIMITS } from '$lib/radio/types';
 	import type {
 		InvitationPreview,
 		RadioAccessPolicy,
@@ -46,6 +47,29 @@
 		initialPendingInvitation: InvitationPreview | null;
 		initialPendingInviteToken: string | null;
 		initialAuthError: string | null;
+	}
+
+	interface PttPress {
+		roomId: string;
+		id: string;
+		startedAt: number;
+		expiresBy: number;
+		controller: AbortController;
+		session: RadioMediaSession;
+		stream: MediaStream | null;
+		deadline: ReturnType<typeof setTimeout> | null;
+		heartbeat: ReturnType<typeof setTimeout> | null;
+	}
+
+	interface PttResponse {
+		ok: boolean;
+		busy?: boolean;
+		code?: string;
+		error?: string;
+		speakerName?: string | null;
+		media?: RadioMediaTokenResponse;
+		room?: RadioRoomDetail | null;
+		rooms?: RadioRoomSummary[];
 	}
 
 	let {
@@ -108,8 +132,8 @@
 	let latencyMs = $state<number | null>(null);
 	let liveSpeakerNames = $state<string[]>([]);
 	let pollTimer: ReturnType<typeof setInterval> | null = null;
-	let pttHeartbeatTimer: ReturnType<typeof setInterval> | null = null;
-	let pttHoldActive = false;
+	let activePttPress = $state.raw<PttPress | null>(null);
+	let latestPttPressId: string | null = null;
 	let microphoneChangePending = false;
 	let pollingRoomState = false;
 	let failedRoomChecks = 0;
@@ -239,19 +263,21 @@
 		}
 
 		const handleWindowBlur = () => {
-			if (pttHoldActive || (effectiveMode === 'radio' && isTransmitting && !pttLatchMode)) {
-				void handlePttPressEnd();
-			}
+			void handlePttPressEnd();
 		};
 
 		const handleVisibilityChange = () => {
-			if (document.visibilityState === 'hidden' && isTransmitting && effectiveMode === 'radio') {
+			if (document.visibilityState === 'hidden') {
 				void handlePttPressEnd();
 			}
 		};
 
 		const handleKeyDown = (e: KeyboardEvent) => {
-			if (e.code !== 'Space' || e.repeat) return;
+			if (e.key === 'Escape' && activePttPress) {
+				void handlePttPressEnd();
+				return;
+			}
+			if (e.code !== 'Space' || e.repeat || e.defaultPrevented) return;
 			const target = e.target as HTMLElement | null;
 			const tag = target?.tagName?.toLowerCase();
 			if (tag === 'input' || tag === 'textarea' || tag === 'select' || tag === 'button' || tag === 'a') {
@@ -259,12 +285,8 @@
 			}
 			if (isConnected && effectiveMode === 'radio' && !joinAsListener) {
 				e.preventDefault();
-				if (pttLatchMode) {
-					if (isTransmitting) {
-						void handlePttPressEnd();
-					} else {
-						void handlePttPressStart();
-					}
+				if (pttLatchMode && activePttPress) {
+					void handlePttPressEnd();
 				} else {
 					void handlePttPressStart();
 				}
@@ -272,19 +294,16 @@
 		};
 
 		const handleKeyUp = (e: KeyboardEvent) => {
-			if (e.code !== 'Space') return;
-			const target = e.target as HTMLElement | null;
-			const tag = target?.tagName?.toLowerCase();
-			if (tag === 'input' || tag === 'textarea' || tag === 'select' || tag === 'button' || tag === 'a') {
-				return;
-			}
-			if (isConnected && effectiveMode === 'radio' && !pttLatchMode && isTransmitting) {
+			if (e.code !== 'Space' && e.key !== 'Enter') return;
+			if (!pttLatchMode && activePttPress) {
 				e.preventDefault();
 				void handlePttPressEnd();
 			}
 		};
 
 		window.addEventListener('blur', handleWindowBlur);
+		window.addEventListener('offline', handleWindowBlur);
+		window.addEventListener('pagehide', handleWindowBlur);
 		document.addEventListener('visibilitychange', handleVisibilityChange);
 		window.addEventListener('keydown', handleKeyDown);
 		window.addEventListener('keyup', handleKeyUp);
@@ -295,6 +314,8 @@
 
 		return () => {
 			window.removeEventListener('blur', handleWindowBlur);
+			window.removeEventListener('offline', handleWindowBlur);
+			window.removeEventListener('pagehide', handleWindowBlur);
 			document.removeEventListener('visibilitychange', handleVisibilityChange);
 			window.removeEventListener('keydown', handleKeyDown);
 			window.removeEventListener('keyup', handleKeyUp);
@@ -303,7 +324,7 @@
 
 	onDestroy(() => {
 		if (pollTimer) clearInterval(pollTimer);
-		if (pttHeartbeatTimer) clearInterval(pttHeartbeatTimer);
+		void handlePttPressEnd();
 		if (localMicTester) {
 			localMicTester.stop();
 			localMicTester = null;
@@ -319,10 +340,14 @@
 	async function pollRoomState() {
 		if (!user || pollingRoomState) return;
 		pollingRoomState = true;
+		const observedSession = mediaSession;
+		const observedRoomId = isConnected ? activeRoomDetail?.id : undefined;
+		const isObservedConnection = () => isConnected && mediaSession === observedSession &&
+			activeRoomDetail?.id === observedRoomId;
 
 		try {
-			if (isConnected && activeRoomDetail) {
-				const res = await fetch(`/api/radio/rooms/${activeRoomDetail.id}/join`, {
+			if (observedRoomId) {
+				const res = await fetch(`/api/radio/rooms/${observedRoomId}/join`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					signal: AbortSignal.timeout(10_000),
@@ -331,23 +356,19 @@
 						isSpeaking: isSelfSpeaking
 					})
 				});
+				if (!isObservedConnection()) return;
 				if (res.ok) {
-					failedRoomChecks = 0;
 					const data = await res.json();
+					if (!isObservedConnection()) return;
+					failedRoomChecks = 0;
 					if (data.rooms) rooms = data.rooms;
 					if (data.room) {
+						const previousMode = activeRoomDetail?.mode;
 						activeRoomDetail = data.room;
+						applyMicrophoneModeChange(previousMode, data.room.mode);
 						// If host muted us or mode switched to radio while unmuted, enforce locally
 						if (data.room.myParticipant?.isMuted && !isMuted && data.room.mode === 'conversation') {
 							isMuted = true;
-							await mediaSession?.setMicrophoneEnabled(false);
-						}
-						if (
-							data.room.mode === 'radio' &&
-							isTransmitting &&
-							data.room.pttLease.holderUserId !== user.id
-						) {
-							isTransmitting = false;
 							await mediaSession?.setMicrophoneEnabled(false);
 						}
 						channelBusy = Boolean(
@@ -359,6 +380,7 @@
 				} else if ([401, 403, 404].includes(res.status)) {
 					// Removed by host or room ended
 					const errData = await res.json().catch(() => ({}));
+					if (!isObservedConnection()) return;
 					await cleanupMediaAndDisconnect();
 					errorBanner = errData.error || 'Disconnected from room by host or room ended.';
 				} else {
@@ -371,10 +393,13 @@
 			) {
 				const waitingForAdmission = selectedRoom.myAdmissionStatus === 'pending_approval';
 				const roomId = selectedRoom.id;
+				const isSelectedRoomCheck = () => mediaSession === observedSession &&
+					!isConnected && !isConnecting && selectedRoom?.id === roomId;
 				const res = await fetch(`/api/radio/rooms/${roomId}`);
-				if (selectedRoom?.id !== roomId) return;
+				if (!isSelectedRoomCheck()) return;
 				if (res.ok) {
 					const data = await res.json();
+					if (!isSelectedRoomCheck()) return;
 					if (data.rooms) rooms = data.rooms;
 					if (data.room) {
 						activeRoomDetail = data.room;
@@ -391,13 +416,14 @@
 				}
 			}
 		} catch {
-			if (isConnected) await handleFailedRoomCheck();
+			if (observedRoomId && isObservedConnection()) await handleFailedRoomCheck();
 		} finally {
 			pollingRoomState = false;
 		}
 	}
 
 	async function handleFailedRoomCheck() {
+		void handlePttPressEnd();
 		if (++failedRoomChecks < 2) return;
 		await cleanupMediaAndDisconnect();
 		errorBanner = 'We lost contact with this room. Your microphone is off. Rejoin to continue.';
@@ -433,6 +459,7 @@
 		explicitMemberEmails: string[];
 		invitationExpiryHours: number;
 	}) {
+		void handlePttPressEnd();
 		errorBanner = null;
 		statusBanner = null;
 		const res = await fetch('/api/radio/rooms', {
@@ -447,7 +474,7 @@
 		}
 
 		rooms = data.rooms ?? rooms;
-		activeRoomDetail = data.room;
+		if (!mediaSession) activeRoomDetail = data.room;
 		if (data.inviteToken && data.room?.id) {
 			activeInviteTokenByRoom = {
 				...activeInviteTokenByRoom,
@@ -494,6 +521,7 @@
 		inviteToken: string | null,
 		asListener: boolean
 	) {
+		await prepareRoomJoin(roomId);
 		errorBanner = null;
 		mediaError = null;
 		const res = await fetch(`/api/radio/rooms/${roomId}/join`, {
@@ -530,6 +558,7 @@
 	}
 
 	async function handleConfirmMicPrePromptAndJoin(roomId: string) {
+		await prepareRoomJoin(roomId);
 		errorBanner = null;
 		mediaError = null;
 		micPermissionPrePromptConfirmed = true;
@@ -561,6 +590,7 @@
 	}
 
 	async function handleJoinListeningOnly(roomId: string) {
+		await prepareRoomJoin(roomId);
 		errorBanner = null;
 		mediaError = null;
 		if (localMicTester) {
@@ -581,6 +611,7 @@
 		asListener: boolean,
 		stream: MediaStream | null
 	) {
+		void handlePttPressEnd();
 		if (!user) return;
 		failedRoomChecks = 0;
 		connectionState = 'connecting';
@@ -660,6 +691,7 @@
 						}
 						connectionState = state;
 						if (state === 'reconnecting' || state === 'offline') {
+							void handlePttPressEnd();
 							isMuted = true;
 							isTransmitting = false;
 						}
@@ -690,7 +722,11 @@
 			);
 
 			// Ensure muted by default on entry
-			await mediaSession.setMicrophoneEnabled(false);
+			if (activeRoomDetail?.mode === 'radio') {
+				applyMicrophoneModeChange(undefined, 'radio');
+			} else {
+				await mediaSession.setMicrophoneEnabled(false);
+			}
 			connectionState = 'connected';
 			connected = true;
 			pendingInvitation = null;
@@ -720,11 +756,7 @@
 	}
 
 	async function cleanupMediaAndDisconnect() {
-		if (pttHeartbeatTimer) {
-			clearInterval(pttHeartbeatTimer);
-			pttHeartbeatTimer = null;
-		}
-		pttHoldActive = false;
+		void handlePttPressEnd();
 		isTransmitting = false;
 		isMuted = true;
 		channelBusy = false;
@@ -758,6 +790,11 @@
 		}
 		activeRoomDetail = null;
 		statusBanner = 'Disconnected and released microphone.';
+	}
+
+	async function prepareRoomJoin(roomId: string) {
+		void handlePttPressEnd();
+		if (mediaSession && activeRoomDetail?.id !== roomId) await handleDisconnectRoom();
 	}
 
 	async function handleTogglePower() {
@@ -810,7 +847,7 @@
 			}
 			const res = await requestMute(nextMuted);
 			const data = await res.json();
-			if (mediaSession !== session || activeRoomDetail?.id !== roomId) return;
+			if (mediaSession !== session || activeRoomDetail?.id !== roomId || activeRoomDetail.mode !== 'conversation') return;
 			if (!res.ok || !data.ok) {
 				errorBanner = data.error || 'Could not toggle microphone state.';
 				return;
@@ -818,7 +855,7 @@
 			if (!nextMuted) {
 				const enabled = await session.setMicrophoneEnabled(true);
 				if (mediaSession !== session || activeRoomDetail?.id !== roomId) return;
-				if (!enabled || connectionState !== 'connected') {
+				if (!enabled || connectionState !== 'connected' || activeRoomDetail.mode !== 'conversation') {
 					await session.setMicrophoneEnabled(false);
 					await requestMute(true);
 					errorBanner = 'Your microphone could not be enabled. You are still muted.';
@@ -840,6 +877,83 @@
 		}
 	}
 
+	function applyMicrophoneModeChange(previous: RadioMode | undefined, next: RadioMode) {
+		if (previous === next) return;
+		void handlePttPressEnd();
+		if (next !== 'radio') return;
+		isMuted = true;
+		isTransmitting = false;
+		stopMediaStreamTracks(activeMicStream);
+		activeMicStream = null;
+		browserMicCapturedWhenMuted = false;
+		void mediaSession?.releaseMicrophone();
+	}
+
+	function isCurrentPttPress(press: PttPress): boolean {
+		return activePttPress === press && !press.controller.signal.aborted && isConnected &&
+			mediaSession === press.session && activeRoomDetail?.id === press.roomId &&
+			activeRoomDetail.mode === 'radio' &&
+			performance.now() < press.expiresBy;
+	}
+
+	async function requestPttAction(
+		press: PttPress,
+		action: 'acquire' | 'heartbeat' | 'release'
+	): Promise<PttResponse> {
+		const response = await fetch(`/api/radio/rooms/${press.roomId}/ptt`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			signal: AbortSignal.timeout(action === 'heartbeat' ? 3_000 : 8_000),
+			keepalive: action === 'release',
+			body: JSON.stringify({ action, pressId: press.id })
+		});
+		const result = (await response.json()) as PttResponse;
+		return response.ok ? result : { ...result, ok: false };
+	}
+
+	function interruptPttPress(press: PttPress, message: string) {
+		if (activePttPress !== press) return;
+		void handlePttPressEnd();
+		statusBanner = message;
+	}
+
+	function acknowledgePttLease(press: PttPress, requestedAt: number, data: PttResponse): boolean {
+		if (!isCurrentPttPress(press) || !data.ok || data.room?.pttLease.holderUserId !== user?.id ||
+			!data.room?.pttLease.expiresAt) return false;
+		// Count from send time to stay conservative without relying on synchronized wall clocks.
+		press.expiresBy = Math.min(
+			requestedAt + RADIO_LIMITS.PTT_LEASE_TTL_MS,
+			press.startedAt + RADIO_LIMITS.PTT_MAX_HOLD_MS
+		);
+		const remaining = press.expiresBy - performance.now();
+		if (remaining <= 0) return false;
+		if (press.deadline) clearTimeout(press.deadline);
+		press.deadline = setTimeout(() => {
+			interruptPttPress(press, 'Speaking turn ended. Press again to transmit.');
+		}, remaining);
+		return true;
+	}
+
+	function schedulePttHeartbeat(press: PttPress) {
+		press.heartbeat = setTimeout(async () => {
+			if (!isCurrentPttPress(press)) {
+				interruptPttPress(press, 'Speaking turn ended. Press again to transmit.');
+				return;
+			}
+			const requestedAt = performance.now();
+			try {
+				const data = await requestPttAction(press, 'heartbeat');
+				if (acknowledgePttLease(press, requestedAt, data)) {
+					schedulePttHeartbeat(press);
+					return;
+				}
+			} catch {
+				// A lost acknowledgement ends the press locally.
+			}
+			interruptPttPress(press, 'Microphone stopped after losing contact with the room.');
+		}, 2_000);
+	}
+
 	async function handlePttPressStart() {
 		if (!isConnected || !activeRoomDetail) {
 			activePanel = 'join-flow';
@@ -853,100 +967,148 @@
 			await handlePttToggleConversation();
 			return;
 		}
-		if (isTransmitting) return;
-
-		pttHoldActive = true;
-		const roomId = activeRoomDetail.id;
-		const res = await fetch(`/api/radio/rooms/${roomId}/ptt`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ action: 'acquire' })
-		});
-		const data = await res.json();
-		if (data.rooms) rooms = data.rooms;
-		if (data.room) activeRoomDetail = data.room;
-
-		if (!pttHoldActive && !pttLatchMode) {
-			// User released button while acquire request was in flight
-			if (data.ok) {
-				await fetch(`/api/radio/rooms/${roomId}/ptt`, {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ action: 'release' })
-				});
-			}
-			return;
+		const session = mediaSession;
+		if (activePttPress || !session || document.visibilityState === 'hidden') return;
+		if (localMicTester) {
+			localMicTester.stop();
+			localMicTester = null;
+			localMicTestActive = false;
+			localMicTestLevel = 0;
 		}
+		const press: PttPress = {
+			roomId: activeRoomDetail.id,
+			id: crypto.randomUUID(),
+			startedAt: performance.now(),
+			expiresBy: Infinity,
+			controller: new AbortController(),
+			session,
+			stream: null,
+			deadline: null,
+			heartbeat: null
+		};
+		activePttPress = press;
+		latestPttPressId = press.id;
+		errorBanner = null;
+		mediaError = null;
 
-		if (!data.ok) {
-			if (data.busy) {
-				channelBusy = true;
-				statusBanner = `Channel busy: ${data.speakerName || 'Another participant'} is transmitting.`;
-				if (radioSoundsEnabled) {
-					const { playOptionalRadioCue } = await import('$lib/radio/media-client');
-					playOptionalRadioCue('busy', true);
+		try {
+			let requestedAt: number;
+			let data: PttResponse;
+			for (;;) {
+				requestedAt = performance.now();
+				// Let a pending acquire settle so a release that won the network race can be replayed.
+				data = await requestPttAction(press, 'acquire');
+				if (!isCurrentPttPress(press)) {
+					if (activePttPress === press) {
+						interruptPttPress(press, 'Speaking turn ended. Press again to transmit.');
+					} else if (data.ok) {
+						void requestPttAction(press, 'release').catch(() => {});
+					}
+					return;
 				}
+				if (data.code !== 'PTT_WATCHDOG_WARMING_UP' || performance.now() - press.startedAt > 6_000) break;
+				statusBanner = 'Radio is getting ready. Keep holding to speak.';
+				await new Promise((resolve) => setTimeout(resolve, 600));
+				if (!isCurrentPttPress(press)) return;
+			}
+
+			if (data.rooms) rooms = data.rooms;
+			if (data.room) activeRoomDetail = data.room;
+			if (!data.ok) {
+				activePttPress = null;
+				press.controller.abort();
+				if (data.busy) {
+					channelBusy = true;
+					statusBanner = `Channel busy: ${data.speakerName || 'Another participant'} is transmitting.`;
+					if (radioSoundsEnabled) {
+						const { playOptionalRadioCue } = await import('$lib/radio/media-client');
+						playOptionalRadioCue('busy', true);
+					}
+				} else {
+					errorBanner = data.error || 'Unable to acquire speaking turn.';
+				}
+				return;
+			}
+			if (!acknowledgePttLease(press, requestedAt, data) ||
+				(!data.media && !session.publishLoopbackPttStream)) {
+				interruptPttPress(press, 'The speaking turn could not start. Press again to retry.');
+				return;
+			}
+			schedulePttHeartbeat(press);
+
+			const mic = await requestMicrophonePermissionStream(selectedInputDeviceId || undefined);
+			if (!isCurrentPttPress(press)) {
+				stopMediaStreamTracks(mic.stream);
+				interruptPttPress(press, 'Speaking turn ended. Press again to transmit.');
+				return;
+			}
+			if (!mic.stream) {
+				mediaError = mic.error ?? classifyMediaError(new Error('Microphone unavailable'));
+				void handlePttPressEnd();
+				return;
+			}
+			press.stream = mic.stream;
+			for (const track of mic.stream.getAudioTracks()) {
+				track.enabled = false;
+				track.addEventListener('ended', () => {
+					interruptPttPress(press, 'The microphone disconnected.');
+				}, { once: true });
+			}
+			const signal = press.controller.signal;
+			let published: boolean;
+			if (data.media) {
+				const { publishRadioPttStream } = await import('$lib/radio/media-client');
+				published = await publishRadioPttStream(data.media, mic.stream, signal,
+					() => interruptPttPress(press, 'Microphone stopped after losing the audio connection.'),
+					() => isCurrentPttPress(press));
 			} else {
-				errorBanner = data.error || 'Unable to acquire speaking turn.';
+				published = (await session.publishLoopbackPttStream?.(mic.stream, signal)) ?? false;
 			}
-			return;
-		}
-
-		channelBusy = false;
-		isTransmitting = true;
-		isMuted = false;
-		await mediaSession?.setMicrophoneEnabled(true);
-
-		if (radioSoundsEnabled) {
-			const { playOptionalRadioCue } = await import('$lib/radio/media-client');
-			playOptionalRadioCue('ptt_start', true);
-		}
-
-		if (pttHeartbeatTimer) clearInterval(pttHeartbeatTimer);
-		pttHeartbeatTimer = setInterval(async () => {
-			if (!activeRoomDetail || !isTransmitting) return;
-			const hb = await fetch(`/api/radio/rooms/${activeRoomDetail.id}/ptt`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ action: 'heartbeat' })
-			});
-			if (!hb.ok) {
-				await handlePttPressEnd();
+			if (!published || !isCurrentPttPress(press)) {
+				interruptPttPress(press, 'The microphone could not start. Press again to retry.');
+				return;
 			}
-		}, 2500);
+			channelBusy = false;
+			isTransmitting = true;
+			isMuted = false;
+			statusBanner = null;
+			if (radioSoundsEnabled) {
+				const { playOptionalRadioCue } = await import('$lib/radio/media-client');
+				if (isCurrentPttPress(press)) playOptionalRadioCue('ptt_start', true);
+			}
+		} catch {
+			interruptPttPress(press, 'The speaking turn was interrupted. Press again to retry.');
+		}
 	}
 
 	async function handlePttPressEnd() {
-		pttHoldActive = false;
-		if (pttHeartbeatTimer) {
-			clearInterval(pttHeartbeatTimer);
-			pttHeartbeatTimer = null;
-		}
-
+		const press = activePttPress;
+		if (!press) return;
+		activePttPress = null;
 		const wasTransmitting = isTransmitting;
 		isTransmitting = false;
-		if (activeRoomDetail?.mode === 'radio') {
-			isMuted = true;
-		}
-		await mediaSession?.setMicrophoneEnabled(false);
+		isMuted = true;
+		// Tear down the physical input before any media or network promise settles.
+		stopMediaStreamTracks(press.stream);
+		press.controller.abort();
+		if (press.deadline) clearTimeout(press.deadline);
+		if (press.heartbeat) clearTimeout(press.heartbeat);
+		if (press.session.publishLoopbackPttStream) void press.session.releaseMicrophone();
 
-		if (wasTransmitting && activeRoomDetail) {
-			try {
-				const res = await fetch(`/api/radio/rooms/${activeRoomDetail.id}/ptt`, {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ action: 'release' })
-				});
-				const data = await res.json();
-				if (data.room) activeRoomDetail = data.room;
+		try {
+			const data = await requestPttAction(press, 'release');
+			if (latestPttPressId === press.id && mediaSession === press.session &&
+				activeRoomDetail?.id === press.roomId &&
+				activeRoomDetail.mode === 'radio') {
+				if (data.room?.mode === 'radio') activeRoomDetail = data.room;
 				if (data.rooms) rooms = data.rooms;
-			} catch {
-				// Ignore
 			}
-			if (radioSoundsEnabled) {
-				const { playOptionalRadioCue } = await import('$lib/radio/media-client');
-				playOptionalRadioCue('ptt_end', true);
-			}
+		} catch {
+			// The shared watchdog will revoke the expired publisher if delivery fails.
+		}
+		if (wasTransmitting && radioSoundsEnabled && !activePttPress) {
+			const { playOptionalRadioCue } = await import('$lib/radio/media-client');
+			if (!activePttPress) playOptionalRadioCue('ptt_end', true);
 		}
 	}
 
@@ -976,6 +1138,9 @@
 	async function handleHostAction(payload: Record<string, unknown>) {
 		const targetId = activeRoomDetail?.id ?? selectedRoom?.id;
 		if (!targetId) return;
+		if (activePttPress?.roomId === targetId && (payload.action === 'set_mode' || payload.action === 'end_room')) {
+			void handlePttPressEnd();
+		}
 
 		errorBanner = null;
 		const res = await fetch(`/api/radio/rooms/${targetId}/host`, {
@@ -990,12 +1155,10 @@
 		}
 
 		if (data.rooms) rooms = data.rooms;
-		if (data.room) {
+		if (data.room && (activeRoomDetail?.id === targetId || (!mediaSession && selectedRoom?.id === targetId))) {
+			const previousMode = activeRoomDetail?.mode;
 			activeRoomDetail = data.room;
-			if (data.room.mode === 'radio' && isConnected && !isTransmitting) {
-				isMuted = true;
-				await mediaSession?.setMicrophoneEnabled(false);
-			}
+			applyMicrophoneModeChange(previousMode, data.room.mode);
 		}
 		if (data.inviteToken) {
 			activeInviteTokenByRoom = {
@@ -1011,8 +1174,10 @@
 			statusBanner = 'Revoked all active invitation links for this room.';
 		}
 		if (payload.action === 'end_room') {
-			await cleanupMediaAndDisconnect();
-			activeRoomDetail = null;
+			if (activeRoomDetail?.id === targetId) {
+				await cleanupMediaAndDisconnect();
+				activeRoomDetail = null;
+			}
 			statusBanner = 'Room ended by host.';
 		}
 	}
@@ -1566,23 +1731,28 @@
 								aria-label={pttButtonLabel}
 								aria-pressed={isTransmitting || (!isMuted && isConnected && effectiveMode === 'conversation')}
 								onpointerdown={(e) => {
-									if (effectiveMode === 'radio' && !pttLatchMode && isConnected) {
+									if (e.isPrimary && e.button === 0 && effectiveMode === 'radio' && !pttLatchMode && isConnected) {
 										e.currentTarget.setPointerCapture?.(e.pointerId);
 										void handlePttPressStart();
 									}
 								}}
 								onpointerup={() => {
-									if (effectiveMode === 'radio' && !pttLatchMode && isConnected) {
+									if (!pttLatchMode) {
 										void handlePttPressEnd();
 									}
 								}}
-								onpointercancel={() => {
-									if (effectiveMode === 'radio' && !pttLatchMode && isConnected) {
-										void handlePttPressEnd();
+								onpointercancel={() => { void handlePttPressEnd(); }}
+								onlostpointercapture={() => { if (!pttLatchMode) void handlePttPressEnd(); }}
+								onkeydown={(e) => {
+									if (effectiveMode === 'radio' && !pttLatchMode && isConnected &&
+										(e.code === 'Space' || e.key === 'Enter')) {
+										e.preventDefault();
+										if (!e.repeat) void handlePttPressStart();
 									}
 								}}
-								onlostpointercapture={() => {
-									if (effectiveMode === 'radio' && !pttLatchMode && isTransmitting) {
+								onkeyup={(e) => {
+									if (!pttLatchMode && activePttPress && (e.code === 'Space' || e.key === 'Enter')) {
+										e.preventDefault();
 										void handlePttPressEnd();
 									}
 								}}
@@ -1594,7 +1764,7 @@
 									if (effectiveMode === 'conversation') {
 										void handlePttToggleConversation();
 									} else if (pttLatchMode) {
-										if (isTransmitting) {
+										if (activePttPress) {
 											void handlePttPressEnd();
 										} else {
 											void handlePttPressStart();
@@ -1696,6 +1866,7 @@
 		{mediaError}
 		{audioPlaybackBlocked}
 		{pttLatchMode}
+		pttPressActive={Boolean(activePttPress)}
 		{radioSoundsEnabled}
 		{volume}
 		{inputDevices}
@@ -1728,7 +1899,10 @@
 		onSelectOutputDevice={handleSelectOutputDevice}
 		onToggleLocalMicTest={handleToggleLocalMicTest}
 		onResumeBlockedAudio={handleResumeBlockedAudio}
-		onTogglePttLatch={(enabled) => (pttLatchMode = enabled)}
+		onTogglePttLatch={(enabled) => {
+			void handlePttPressEnd();
+			pttLatchMode = enabled;
+		}}
 		onToggleRadioSounds={(enabled) => (radioSoundsEnabled = enabled)}
 		onSignOut={handleSignOut}
 		onDeleteAccount={handleDeleteAccount}

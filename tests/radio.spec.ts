@@ -86,9 +86,26 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 			permissions: ['microphone'],
 			serviceWorkers: 'block'
 		});
+		await guestContext.addInitScript(() => {
+			const tracks: MediaStreamTrack[] = [];
+			Object.defineProperty(window, 'radioTestMicrophones', { value: tracks });
+			const devices = navigator.mediaDevices;
+			const capture = devices.getUserMedia.bind(devices);
+			devices.getUserMedia = async (constraints) => {
+				const stream = await capture(constraints);
+				tracks.push(...stream.getAudioTracks());
+				return stream;
+			};
+		});
 
 		const hostPage = await hostContext.newPage();
 		const guestPage = await guestContext.newPage();
+		const pttRelease = () => guestPage.waitForResponse((response) =>
+			response.url().endsWith('/ptt') && response.request().postDataJSON()?.action === 'release');
+		const microphoneCounts = () => guestPage.evaluate(() => {
+			const tracks = (window as Window & { radioTestMicrophones?: MediaStreamTrack[] }).radioTestMicrophones ?? [];
+			return { live: tracks.filter((track) => track.readyState === 'live').length, total: tracks.length };
+		});
 
 		// 1. Host signs in and creates room "EVENING CHAT"
 		await hostPage.goto('/tools/radio');
@@ -187,7 +204,63 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 		await expect(hostPage.getByTestId('amber-line-5')).toHaveText('SPEAKING: MAYA');
 
 		// Guest taps PTT again to stop transmitting
+		const latchReleased = pttRelease();
 		await guestPage.getByTestId('ptt-button').click();
+		await expect(guestPage.getByTestId('amber-line-4')).toHaveText('MIC: HOLD PTT');
+		await expect.poll(async () => (await microphoneCounts()).live).toBe(0);
+		await latchReleased;
+
+		// Hold-to-talk releases the actual capture track on pointerup.
+		await guestPage.getByTestId('icon-btn-settings').click();
+		await guestPage.getByTestId('toggle-ptt-latch-checkbox').uncheck();
+		await guestPage.getByTestId('icon-btn-settings').click();
+		await guestPage.getByTestId('ptt-button').hover();
+		await guestPage.mouse.down();
+		await expect(guestPage.getByTestId('amber-line-4')).toHaveText('MIC: TRANSMITTING');
+		expect((await microphoneCounts()).live).toBe(1);
+		const heldPressReleased = pttRelease();
+		await guestPage.mouse.up();
+		await expect.poll(async () => (await microphoneCounts()).live).toBe(0);
+		await heldPressReleased;
+
+		// An accepted acquire that arrives after release cannot open a new microphone track.
+		let resumeAcquire!: () => void;
+		let acceptedAcquire!: () => void;
+		const acquireResponseHeld = new Promise<void>((resolve) => { acceptedAcquire = resolve; });
+		const releaseAcquireResponse = new Promise<void>((resolve) => { resumeAcquire = resolve; });
+		let releaseCount = 0;
+		const countReleaseResponses = (response: import('@playwright/test').Response) => {
+			if (response.url().endsWith('/ptt') && response.request().postDataJSON()?.action === 'release') {
+				releaseCount++;
+			}
+		};
+		guestPage.on('response', countReleaseResponses);
+		await guestPage.route('**/api/radio/rooms/*/ptt', async (route) => {
+			const action = route.request().postDataJSON()?.action;
+			if (action !== 'acquire') return route.continue();
+			const response = await route.fetch();
+			acceptedAcquire();
+			await releaseAcquireResponse;
+			await route.fulfill({ response });
+		});
+		const beforeLateAcquire = await microphoneCounts();
+		await guestPage.mouse.down();
+		await acquireResponseHeld;
+		await guestPage.mouse.up();
+		resumeAcquire();
+		await expect.poll(() => releaseCount).toBe(2);
+		expect(await microphoneCounts()).toEqual(beforeLateAcquire);
+		guestPage.off('response', countReleaseResponses);
+		await guestPage.unroute('**/api/radio/rooms/*/ptt');
+
+		// Loss of connectivity releases the real mic while the button is still held.
+		await guestPage.mouse.down();
+		await expect(guestPage.getByTestId('amber-line-4')).toHaveText('MIC: TRANSMITTING');
+		expect((await microphoneCounts()).live).toBe(1);
+		await guestContext.setOffline(true);
+		await expect.poll(async () => (await microphoneCounts()).live, { timeout: 6_000 }).toBe(0);
+		await guestContext.setOffline(false);
+		await guestPage.mouse.up();
 		await expect(guestPage.getByTestId('amber-line-4')).toHaveText('MIC: HOLD PTT');
 
 		// 7. Powering off disconnects and releases microphone

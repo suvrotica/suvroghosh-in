@@ -66,7 +66,7 @@ export const POST: RequestHandler = async (event) => {
 			config.callsEnabled &&
 			!config.loopbackFallbackAllowed &&
 			config.livekitConfigured &&
-			room.mode === 'conversation'
+			(room.mode === 'conversation' || config.radioModeAvailable)
 		) {
 			const embargoMs = getMediaTokenNotBefore(roomId, auth.user.id) - Date.now();
 			if (embargoMs > 0) {
@@ -81,6 +81,7 @@ export const POST: RequestHandler = async (event) => {
 					userId: auth.user.id,
 					displayName: auth.user.displayName,
 					maxParticipants: room.maxParticipants,
+					mode: room.mode,
 					url: event.url
 				});
 			} catch {

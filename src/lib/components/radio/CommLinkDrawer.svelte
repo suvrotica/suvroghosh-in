@@ -46,6 +46,7 @@
 		mediaError: RadioMediaErrorInfo | null;
 		audioPlaybackBlocked: boolean;
 		pttLatchMode: boolean;
+		pttPressActive: boolean;
 		radioSoundsEnabled: boolean;
 		volume: number;
 		inputDevices: RadioDeviceOption[];
@@ -122,6 +123,7 @@
 		mediaError,
 		audioPlaybackBlocked,
 		pttLatchMode,
+		pttPressActive,
 		radioSoundsEnabled,
 		volume,
 		inputDevices,
@@ -334,9 +336,30 @@
 						<button
 							type="button"
 							class="deck-btn {isTransmitting ? 'active-tx' : ''}"
-							onpointerdown={() => !pttLatchMode && onPttPressStart()}
-							onpointerup={() => !pttLatchMode && onPttPressEnd()}
-							onclick={() => pttLatchMode && (isTransmitting ? onPttPressEnd() : onPttPressStart())}
+							onpointerdown={(event) => {
+								if (!pttLatchMode && event.isPrimary && event.button === 0) {
+									event.currentTarget.setPointerCapture?.(event.pointerId);
+									void onPttPressStart();
+								}
+							}}
+							onpointerup={() => { if (!pttLatchMode) void onPttPressEnd(); }}
+							onpointercancel={() => { void onPttPressEnd(); }}
+							onlostpointercapture={() => { if (!pttLatchMode) void onPttPressEnd(); }}
+							onkeydown={(event) => {
+								if (!pttLatchMode && (event.code === 'Space' || event.key === 'Enter')) {
+									event.preventDefault();
+									if (!event.repeat) void onPttPressStart();
+								}
+							}}
+							onkeyup={(event) => {
+								if (!pttLatchMode && (event.code === 'Space' || event.key === 'Enter')) {
+									event.preventDefault();
+									void onPttPressEnd();
+								}
+							}}
+							onclick={() => {
+								if (pttLatchMode) void (pttPressActive ? onPttPressEnd() : onPttPressStart());
+							}}
 							disabled={joinAsListener}
 							data-testid="hc-ptt-btn"
 						>

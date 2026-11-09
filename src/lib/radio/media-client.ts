@@ -11,6 +11,8 @@ export interface MediaClientCallbacks {
 
 export interface RadioMediaSession {
 	setMicrophoneEnabled: (enabled: boolean, deviceId?: string) => Promise<boolean>;
+	releaseMicrophone: () => Promise<void>;
+	publishLoopbackPttStream?: (stream: MediaStream, signal: AbortSignal) => Promise<boolean>;
 	setOutputDevice: (deviceId: string) => Promise<boolean>;
 	setVolume: (normalizedVolume: number) => void;
 	resumeBlockedAudio: () => Promise<boolean>;
@@ -88,6 +90,73 @@ export async function createRadioMediaSession(
 	return createLoopbackWebRtcSession(tokenInfo, callbacks, options);
 }
 
+export async function publishRadioPttStream(
+	media: RadioMediaTokenResponse,
+	stream: MediaStream,
+	signal: AbortSignal,
+	onConnectionLost: () => void,
+	canTransmit: () => boolean
+): Promise<boolean> {
+	const track = stream.getAudioTracks()[0];
+	if (
+		!track || signal.aborted || !canTransmit() || !media.canPublish ||
+		media.transport !== 'livekit' || !media.serverUrl
+	) return false;
+	const { Room, RoomEvent, Track, ConnectionState } = await import('livekit-client');
+	if (signal.aborted || !canTransmit()) return false;
+	const room = new Room({ reconnectPolicy: { nextRetryDelayInMs: () => null } });
+	let closed = false;
+	const close = () => {
+		if (closed) return;
+		closed = true;
+		signal.removeEventListener('abort', close);
+		stopMediaStreamTracks(stream);
+		void room.disconnect(true).catch(() => {});
+	};
+	signal.addEventListener('abort', close, { once: true });
+	const interrupt = () => {
+		if (closed) return;
+		close();
+		onConnectionLost();
+	};
+	room.on(RoomEvent.ConnectionStateChanged, (state) => {
+		if (
+			state === ConnectionState.Disconnected || state === ConnectionState.Reconnecting ||
+			state === ConnectionState.SignalReconnecting
+		) {
+			interrupt();
+		}
+	});
+	room.on(RoomEvent.ParticipantPermissionsChanged, (_previous, participant) => {
+		if (participant === room.localParticipant && participant.permissions?.canPublish === false) {
+			interrupt();
+		}
+	});
+
+	try {
+		await room.connect(media.serverUrl, media.token, {
+			autoSubscribe: false,
+			maxRetries: 0,
+			websocketTimeout: 5_000,
+			peerConnectionTimeout: 5_000
+		});
+		if (signal.aborted || !canTransmit() || closed || room.state !== ConnectionState.Connected) {
+			close();
+			return false;
+		}
+		track.enabled = true;
+		await room.localParticipant.publishTrack(track, { source: Track.Source.Microphone });
+		if (signal.aborted || !canTransmit() || closed || room.state !== ConnectionState.Connected) {
+			close();
+			return false;
+		}
+		return true;
+	} catch {
+		close();
+		return false;
+	}
+}
+
 async function createLiveKitSession(
 	tokenInfo: RadioMediaTokenResponse,
 	callbacks: MediaClientCallbacks,
@@ -109,6 +178,7 @@ async function createLiveKitSession(
 	let currentSinkId = options.outputDeviceId || '';
 	let statsTimer: ReturnType<typeof setInterval> | null = null;
 	let disconnected = false;
+	let microphoneCleanup: Promise<void> | null = null;
 
 	const room = new Room({
 		adaptiveStream: false,
@@ -153,7 +223,7 @@ async function createLiveKitSession(
 			callbacks.onConnectionStateChanged('connected');
 		} else if (state === ConnectionState.Connecting) {
 			callbacks.onConnectionStateChanged('connecting');
-		} else if (state === ConnectionState.Reconnecting) {
+		} else if (state === ConnectionState.Reconnecting || state === ConnectionState.SignalReconnecting) {
 			const track = room.localParticipant.getTrackPublication(Track.Source.Microphone)?.track;
 			if (track) track.mediaStreamTrack.enabled = false;
 			void room.localParticipant.setMicrophoneEnabled(false).catch(() => {});
@@ -188,15 +258,21 @@ async function createLiveKitSession(
 		callbacks.onAudioPlaybackBlocked(!room.canPlaybackAudio);
 	});
 
-	const subscribeMicrophone = (publication: import('livekit-client').RemoteTrackPublication) => {
-		if (publication.kind === Track.Kind.Audio && publication.source === Track.Source.Microphone) {
+	const isOwnPttPublisher = (participant: import('livekit-client').RemoteParticipant) =>
+		participant.identity.startsWith('ptt_') && participant.metadata === tokenInfo.participantId;
+	const subscribeMicrophone = (
+		publication: import('livekit-client').RemoteTrackPublication,
+		participant: import('livekit-client').RemoteParticipant
+	) => {
+		if (!isOwnPttPublisher(participant) && publication.kind === Track.Kind.Audio &&
+			publication.source === Track.Source.Microphone) {
 			publication.setSubscribed(true);
 		}
 	};
 	room.on(RoomEvent.TrackPublished, subscribeMicrophone);
 
-	room.on(RoomEvent.TrackSubscribed, (track) => {
-		if (track.kind !== Track.Kind.Audio) return;
+	room.on(RoomEvent.TrackSubscribed, (track, _publication, participant) => {
+		if (track.kind !== Track.Kind.Audio || isOwnPttPublisher(participant)) return;
 		const el = track.attach();
 		el.style.display = 'none';
 		document.body.appendChild(el);
@@ -221,7 +297,9 @@ async function createLiveKitSession(
 			autoSubscribe: false
 		});
 		for (const participant of room.remoteParticipants.values()) {
-			for (const publication of participant.trackPublications.values()) subscribeMicrophone(publication);
+			for (const publication of participant.trackPublications.values()) {
+				subscribeMicrophone(publication, participant);
+			}
 		}
 		// Join muted by default
 		await room.localParticipant.setMicrophoneEnabled(false);
@@ -254,6 +332,7 @@ async function createLiveKitSession(
 		setMicrophoneEnabled: async (enabled: boolean, deviceId?: string) => {
 			if (disconnected) return false;
 			try {
+				if (microphoneCleanup) await microphoneCleanup;
 				if (enabled && !(await awaitMicrophonePermission())) return false;
 				if (disconnected || (enabled && room.state !== ConnectionState.Connected)) return false;
 				if (!enabled) {
@@ -271,6 +350,19 @@ async function createLiveKitSession(
 				);
 				return false;
 			}
+		},
+		releaseMicrophone: () => {
+			if (microphoneCleanup) return microphoneCleanup;
+			const tracks = [...room.localParticipant.audioTrackPublications.values()]
+				.flatMap(({ track }) => track ? [track] : []);
+			for (const track of tracks) {
+				track.mediaStreamTrack.enabled = false;
+				track.stop();
+			}
+			microphoneCleanup = Promise.allSettled(
+				tracks.map((track) => room.localParticipant.unpublishTrack(track))
+			).then(() => { microphoneCleanup = null; });
+			return microphoneCleanup;
 		},
 		setOutputDevice: async (deviceId: string) => {
 			currentSinkId = deviceId;
@@ -375,6 +467,7 @@ async function createLoopbackWebRtcSession(
 
 	let localStream: MediaStream | null = options.initialStream;
 	let micEnabled = false;
+	let microphoneGeneration = 0;
 	let currentVolume = Math.max(0, Math.min(1, options.volume));
 	let currentSinkId = options.outputDeviceId || '';
 	let disconnected = false;
@@ -622,52 +715,75 @@ async function createLoopbackWebRtcSession(
 		}
 	}, 2500);
 
+	function releaseLoopbackMicrophone(): Promise<void> {
+		if (disconnected) return Promise.resolve();
+		microphoneGeneration++;
+		micEnabled = false;
+		localSpeaking = false;
+		stopMediaStreamTracks(localStream);
+		localStream = null;
+		if (vadTimer) clearInterval(vadTimer);
+		vadTimer = null;
+		if (audioCtx && audioCtx.state !== 'closed') void audioCtx.close().catch(() => {});
+		audioCtx = null;
+		bc?.postMessage({
+			type: 'speaking',
+			roomId: tokenInfo.roomId,
+			fromPeerId: peerInstanceId,
+			fromUserId: tokenInfo.participantId,
+			speaking: false
+		} satisfies LoopbackSignalMessage);
+		updateSpeakingList();
+		return Promise.resolve();
+	}
+
+	async function attachLoopbackAudio(stream: MediaStream, stillCurrent: () => boolean) {
+		const track = stream.getAudioTracks()[0];
+		if (!track) return;
+		for (const [remotePeerId, pc] of peers) {
+			if (!stillCurrent()) return;
+			const sender = pc.getSenders().find((candidate) => candidate.track?.kind === 'audio');
+			if (sender) {
+				await sender.replaceTrack(track);
+				continue;
+			}
+			pc.addTrack(track, stream);
+			const offer = await pc.createOffer({ offerToReceiveAudio: true });
+			await pc.setLocalDescription(offer);
+			if (!stillCurrent()) return;
+			bc?.postMessage({
+				type: 'offer',
+				roomId: tokenInfo.roomId,
+				fromPeerId: peerInstanceId,
+				fromUserId: tokenInfo.participantId,
+				toPeerId: remotePeerId,
+				sdp: pc.localDescription ?? offer
+			} satisfies LoopbackSignalMessage);
+		}
+	}
+
 	return {
 		setMicrophoneEnabled: async (enabled: boolean, deviceId?: string) => {
 			if (disconnected) return false;
 			if (!tokenInfo.canPublish && enabled) {
 				return false;
 			}
+			const generation = ++microphoneGeneration;
+			const stillCurrent = () => !disconnected && generation === microphoneGeneration;
 			try {
-				if (enabled && (!localStream || localStream.getAudioTracks().length === 0)) {
+				if (enabled && (deviceId || !localStream?.getAudioTracks().some((track) => track.readyState === 'live'))) {
 					const constraints = buildAudioCaptureConstraints(deviceId || options.inputDeviceId);
-					localStream = await navigator.mediaDevices.getUserMedia(constraints);
-					for (const vt of localStream.getVideoTracks()) {
-						vt.stop();
-						localStream.removeTrack(vt);
-					}
-					startLocalVad(localStream);
-					for (const [remotePeerId, pc] of peers.entries()) {
-						for (const track of localStream.getAudioTracks()) {
-							pc.addTrack(track, localStream);
-						}
-						const offer = await pc.createOffer({ offerToReceiveAudio: true });
-						await pc.setLocalDescription(offer);
-						bc?.postMessage({
-							type: 'offer',
-							roomId: tokenInfo.roomId,
-							fromPeerId: peerInstanceId,
-							fromUserId: tokenInfo.participantId,
-							toPeerId: remotePeerId,
-							sdp: pc.localDescription ?? offer
-						} satisfies LoopbackSignalMessage);
-					}
-				} else if (deviceId && localStream) {
-					const constraints = buildAudioCaptureConstraints(deviceId);
 					const nextStream = await navigator.mediaDevices.getUserMedia(constraints);
-					const nextTrack = nextStream.getAudioTracks()[0];
-					if (nextTrack) {
-						nextTrack.enabled = enabled;
-						for (const pc of peers.values()) {
-							const sender = pc.getSenders().find((s) => s.track?.kind === 'audio');
-							if (sender) {
-								await sender.replaceTrack(nextTrack);
-							}
-						}
-						stopMediaStreamTracks(localStream);
-						localStream = nextStream;
-						startLocalVad(localStream);
+					if (!stillCurrent() || !nextStream.getAudioTracks()[0]) {
+						stopMediaStreamTracks(nextStream);
+						return false;
 					}
+					for (const track of nextStream.getTracks()) track.enabled = false;
+					stopMediaStreamTracks(localStream);
+					localStream = nextStream;
+					await attachLoopbackAudio(nextStream, stillCurrent);
+					if (!stillCurrent()) return false;
+					startLocalVad(nextStream);
 				}
 
 				micEnabled = enabled;
@@ -694,6 +810,19 @@ async function createLoopbackWebRtcSession(
 				);
 				return false;
 			}
+		},
+		releaseMicrophone: releaseLoopbackMicrophone,
+		publishLoopbackPttStream: async (stream, signal) => {
+			if (disconnected || signal.aborted || !tokenInfo.canPublish) return false;
+			void releaseLoopbackMicrophone();
+			localStream = stream;
+			const stillCurrent = () => !signal.aborted && !disconnected && localStream === stream;
+			await attachLoopbackAudio(stream, stillCurrent);
+			if (!stillCurrent()) return false;
+			micEnabled = true;
+			for (const track of stream.getAudioTracks()) track.enabled = true;
+			startLocalVad(stream);
+			return true;
 		},
 		setOutputDevice: async (deviceId: string) => {
 			currentSinkId = deviceId;

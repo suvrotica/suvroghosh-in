@@ -1,10 +1,17 @@
 import crypto from 'node:crypto';
-import { radioStateCollection, registerRadioRollback, setRadioFixtureState } from './state-context';
+import {
+	radioMediaEnabledForRequest,
+	radioStateCollection,
+	radioWatchdogReadyForRequest,
+	registerRadioRollback,
+	setRadioFixtureState
+} from './state-context';
 import {
 	RADIO_LIMITS,
 	type InvitationPreview,
 	type ParticipantAdmissionStatus,
 	type RadioAccessPolicy,
+	type RadioMediaTokenResponse,
 	type RadioMode,
 	type RadioParticipant,
 	type RadioPttLease,
@@ -14,6 +21,7 @@ import {
 } from '$lib/radio/types';
 import {
 	closeRemoteRoomOnSfu,
+	issueLiveKitPttPublisherToken,
 	removeRemoteParticipantFromSfu,
 	setRemoteParticipantPublishPermission
 } from './livekit';
@@ -57,7 +65,11 @@ interface StoredRoom {
 		holderName: string | null;
 		acquiredAtMs: number | null;
 		expiresAtMs: number | null;
+		pressId?: string;
+		publisherId?: string;
 	};
+	recentPttPresses?: { pressId: string; userId: string; expiresAtMs: number }[];
+	pttPressBlockedUntilMs?: number;
 	activeInvitationId: string | null;
 	hostDisconnectedAtMs: number | null;
 	createdAt: string;
@@ -131,33 +143,103 @@ export async function upsertRadioAccount(user: RadioUser): Promise<void> {
 export function isAccountRevoked(userId: string, authenticatedAt?: string): boolean {
 	const cutoff = revokedAccounts.get(userId);
 	if (cutoff === undefined) return false;
-	return !authenticatedAt || !Number.isFinite(Date.parse(authenticatedAt)) || Date.parse(authenticatedAt) <= cutoff;
+	return (
+		!authenticatedAt ||
+		!Number.isFinite(Date.parse(authenticatedAt)) ||
+		Date.parse(authenticatedAt) <= cutoff
+	);
 }
 
-function pruneExpiredPttLease(room: StoredRoom, nowMs = Date.now()): void {
-	if (!room.pttLease.holderUserId || !room.pttLease.expiresAtMs) return;
-	const holder = room.participants.get(room.pttLease.holderUserId);
-	const holdDuration = room.pttLease.acquiredAtMs ? nowMs - room.pttLease.acquiredAtMs : 0;
-
-	if (
-		nowMs >= room.pttLease.expiresAtMs ||
-		holdDuration >= RADIO_LIMITS.PTT_MAX_HOLD_MS ||
-		!holder ||
-		!holder.isConnected ||
-		holder.admissionStatus !== 'admitted' ||
-		holder.isListenerOnly
-	) {
-		if (holder) {
-			holder.isSpeaking = false;
-			holder.isMuted = true;
-		}
-		room.pttLease = {
-			holderUserId: null,
-			holderName: null,
-			acquiredAtMs: null,
-			expiresAtMs: null
-		};
+function prunePttPressHistory(room: StoredRoom, nowMs: number): void {
+	if (room.recentPttPresses) {
+		room.recentPttPresses = room.recentPttPresses.filter((press) => press.expiresAtMs > nowMs);
 	}
+	if ((room.pttPressBlockedUntilMs ?? 0) <= nowMs) delete room.pttPressBlockedUntilMs;
+}
+
+function rememberEndedPttPress(
+	room: StoredRoom,
+	userId: string,
+	pressId: string,
+	nowMs: number
+): void {
+	prunePttPressHistory(room, nowMs);
+	const history = (room.recentPttPresses ??= []);
+	if (history.some((press) => press.userId === userId && press.pressId === pressId)) return;
+	const expiresAtMs = nowMs + RADIO_LIMITS.PTT_PRESS_HISTORY_TTL_MS;
+	if (history.length === RADIO_LIMITS.PTT_PRESS_HISTORY_LIMIT) {
+		// Preserve existing cancellation evidence and fail closed until late requests age out.
+		room.pttPressBlockedUntilMs = expiresAtMs;
+		return;
+	}
+	history.push({ userId, pressId, expiresAtMs });
+}
+
+function clearPttLease(room: StoredRoom): void {
+	const { holderUserId, pressId } = room.pttLease;
+	if (holderUserId) {
+		if (pressId) rememberEndedPttPress(room, holderUserId, pressId, Date.now());
+		const member = room.participants.get(holderUserId);
+		if (member) {
+			member.isSpeaking = false;
+			member.isMuted = true;
+		}
+	}
+	room.pttLease = {
+		holderUserId: null,
+		holderName: null,
+		acquiredAtMs: null,
+		expiresAtMs: null
+	};
+}
+
+function pttLeaseNeedsRevocation(room: StoredRoom, nowMs = Date.now()): boolean {
+	const { holderUserId, publisherId, acquiredAtMs, expiresAtMs } = room.pttLease;
+	if (!holderUserId) return Boolean(publisherId);
+	const holder = room.participants.get(holderUserId);
+	return (
+		room.isEnded ||
+		room.mode !== 'radio' ||
+		expiresAtMs === null ||
+		expiresAtMs <= nowMs ||
+		acquiredAtMs === null ||
+		nowMs - acquiredAtMs >= RADIO_LIMITS.PTT_MAX_HOLD_MS ||
+		!holder?.isConnected ||
+		holder.admissionStatus !== 'admitted' ||
+		holder.isListenerOnly ||
+		Boolean(holder.hostMuted)
+	);
+}
+
+function pruneExpiredPttLease(room: StoredRoom): void {
+	// A read can clear loopback state. Hosted publishers must first be revoked by Cloud.
+	if (!room.pttLease.publisherId && pttLeaseNeedsRevocation(room)) clearPttLease(room);
+}
+
+async function revokePttLease(room: StoredRoom): Promise<void> {
+	const { publisherId } = room.pttLease;
+	if (publisherId) {
+		if (!radioMediaEnabledForRequest()) throw new Error('Radio publisher cannot be revoked.');
+		await removeRemoteParticipantFromSfu(room.id, publisherId);
+	}
+	clearPttLease(room);
+}
+
+export async function endRadioTransmissionForMember(roomId: string, userId: string): Promise<void> {
+	const room = roomsById.get(roomId);
+	if (room?.pttLease.holderUserId === userId) await revokePttLease(room);
+}
+
+export async function sweepExpiredRadioTransmissions(): Promise<{
+	revoked: number;
+	failures: number;
+}> {
+	const expired = Array.from(roomsById.values()).filter(
+		(room) => room.pttLease.publisherId && pttLeaseNeedsRevocation(room)
+	);
+	const results = await Promise.allSettled(expired.map((room) => revokePttLease(room)));
+	const revoked = results.filter((result) => result.status === 'fulfilled').length;
+	return { revoked, failures: results.length - revoked };
 }
 
 function checkHostReconnectWindow(room: StoredRoom, nowMs = Date.now()): void {
@@ -207,7 +289,7 @@ function countConnectedParticipants(room: StoredRoom): number {
 function resolveActiveSpeakerName(room: StoredRoom): string | null {
 	pruneExpiredPttLease(room);
 	if (room.mode === 'radio') {
-		return room.pttLease.holderName;
+		return pttLeaseNeedsRevocation(room) ? null : room.pttLease.holderName;
 	}
 	for (const p of room.participants.values()) {
 		if (p.admissionStatus === 'admitted' && p.isConnected && !p.isMuted && p.isSpeaking) {
@@ -271,19 +353,17 @@ function toRoomDetail(room: StoredRoom, userId: string): RadioRoomDetail {
 		}
 	}
 
+	const activePtt = canViewParticipants && !pttLeaseNeedsRevocation(room) ? room.pttLease : null;
 	const pttLease: RadioPttLease = {
-		holderUserId: canViewParticipants ? room.pttLease.holderUserId : null,
-		holderName: canViewParticipants ? room.pttLease.holderName : null,
-		acquiredAt: canViewParticipants && room.pttLease.acquiredAtMs
-			? new Date(room.pttLease.acquiredAtMs).toISOString()
-			: null,
-		expiresAt: canViewParticipants && room.pttLease.expiresAtMs
-			? new Date(room.pttLease.expiresAtMs).toISOString()
-			: null
+		holderUserId: activePtt?.holderUserId ?? null,
+		holderName: activePtt?.holderName ?? null,
+		acquiredAt: activePtt?.acquiredAtMs ? new Date(activePtt.acquiredAtMs).toISOString() : null,
+		expiresAt: activePtt?.expiresAtMs ? new Date(activePtt.expiresAtMs).toISOString() : null,
+		publisherId: activePtt?.publisherId ?? null
 	};
 
 	const activeInv = room.activeInvitationId
-		? invitationsById.get(room.activeInvitationId) ?? null
+		? (invitationsById.get(room.activeInvitationId) ?? null)
 		: null;
 
 	const me = room.participants.get(userId);
@@ -394,14 +474,18 @@ export function hasUnrevokedRadioMediaToken(member: {
 	mediaTokenIssuedAtMs?: number;
 	mediaTokenNotBeforeMs?: number;
 }): boolean {
-	return member.mediaTokenIssuedAtMs !== undefined &&
-		member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0);
+	return (
+		member.mediaTokenIssuedAtMs !== undefined &&
+		member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0)
+	);
 }
 
 function unrevokedMediaParticipantIds(room: StoredRoom): string[] {
-	return Array.from(room.participants.values())
+	const identities = Array.from(room.participants.values())
 		.filter(hasUnrevokedRadioMediaToken)
 		.map((member) => member.userId);
+	if (room.pttLease.publisherId) identities.push(room.pttLease.publisherId);
+	return identities;
 }
 
 function createInvitationForRoom(
@@ -815,7 +899,7 @@ export async function requestRoomJoin(params: {
 		isConnected: existing?.isConnected ?? false,
 		isListenerOnly: existing?.isConnected
 			? existing.isListenerOnly
-			: params.joinAsListener ?? existing?.isListenerOnly ?? false,
+			: (params.joinAsListener ?? existing?.isListenerOnly ?? false),
 		isMuted: existing?.isConnected ? existing.isMuted : true,
 		isSpeaking: existing?.isConnected ? existing.isSpeaking : false,
 		unmuteRequestedByHost: existing?.unmuteRequestedByHost ?? false,
@@ -872,6 +956,7 @@ export async function connectParticipant(params: {
 		};
 	}
 
+	await endRadioTransmissionForMember(room.id, member.userId);
 	if (hasUnrevokedRadioMediaToken(member)) {
 		member.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, member.userId);
 	}
@@ -906,6 +991,7 @@ export async function leaveRoom(
 
 	const member = room.participants.get(userId);
 	if (member) {
+		await endRadioTransmissionForMember(room.id, userId);
 		if (hasUnrevokedRadioMediaToken(member)) {
 			member.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, userId);
 		}
@@ -913,15 +999,6 @@ export async function leaveRoom(
 		member.isMuted = true;
 		member.isSpeaking = false;
 		member.lastSeenAt = new Date().toISOString();
-	}
-
-	if (room.pttLease.holderUserId === userId) {
-		room.pttLease = {
-			holderUserId: null,
-			holderName: null,
-			acquiredAtMs: null,
-			expiresAtMs: null
-		};
 	}
 
 	if (room.hostUserId === userId && !room.isEnded) {
@@ -997,6 +1074,8 @@ export async function setParticipantMute(
 			});
 		}
 		await setRemoteParticipantPublishPermission(room.id, userId, !muted);
+	} else if (muted) {
+		await endRadioTransmissionForMember(room.id, userId);
 	}
 	member.isMuted = muted;
 	if (muted) {
@@ -1038,7 +1117,7 @@ export function heartbeatParticipant(
 	if (room.mode === 'conversation') {
 		member.isSpeaking = !member.isMuted && !member.isListenerOnly && isSpeaking;
 	} else {
-		member.isSpeaking = room.pttLease.holderUserId === userId;
+		member.isSpeaking = room.pttLease.holderUserId === userId && !pttLeaseNeedsRevocation(room);
 	}
 
 	return {
@@ -1060,137 +1139,187 @@ export function acknowledgeUnmuteRequest(
 	return { ok: true, room: toRoomDetail(room, userId) };
 }
 
-/**
- * Coordinates the single-speaker lease in Radio (Push-to-Talk) mode on the server.
- * Handles simultaneous requests deterministically and updates SFU publish permissions.
- */
-export async function acquirePttLease(
-	roomId: string,
-	userId: string
-): Promise<{
+interface PttAcquireResult {
 	ok: boolean;
 	busy: boolean;
 	speakerId: string | null;
 	speakerName: string | null;
 	error?: string;
+	code?: 'PTT_PRESS_ENDED' | 'PTT_WATCHDOG_WARMING_UP';
+	media?: RadioMediaTokenResponse;
 	room: RadioRoomDetail | null;
-}> {
+}
+
+function pttDenied(error: string): PttAcquireResult {
+	return { ok: false, busy: false, speakerId: null, speakerName: null, error, room: null };
+}
+
+/** The caller owns the durable room transaction until the publisher grant is committed. */
+export async function acquirePttLease(
+	roomId: string,
+	userId: string,
+	pressId?: string
+): Promise<PttAcquireResult> {
 	const room = roomsById.get(roomId);
 	if (!room || room.isEnded || room.mode !== 'radio') {
+		return pttDenied('Push-to-Talk is not available in this room.');
+	}
+	const member = room.participants.get(userId);
+	if (!member || member.admissionStatus !== 'admitted' || !member.isConnected) {
+		return pttDenied('You must be connected to the room to transmit.');
+	}
+	if (member.isListenerOnly || member.hostMuted) {
+		return pttDenied('Your microphone must be available before using Push-to-Talk.');
+	}
+
+	const hosted = radioMediaEnabledForRequest();
+	if (hosted && !pressId) return pttDenied('A speaking press ID is required.');
+	if (hosted && !hasUnrevokedRadioMediaToken(member)) {
+		return pttDenied('Connect to the room audio before using Push-to-Talk.');
+	}
+	if (hosted && !radioWatchdogReadyForRequest()) {
 		return {
-			ok: false,
+			...pttDenied('The radio safety check is warming up. Try Push-to-Talk again in a moment.'),
+			code: 'PTT_WATCHDOG_WARMING_UP'
+		};
+	}
+	prunePttPressHistory(room, Date.now());
+	if (
+		pressId &&
+		(room.pttPressBlockedUntilMs ||
+			room.recentPttPresses?.some((press) => press.userId === userId && press.pressId === pressId))
+	) {
+		return {
+			...pttDenied('That speaking press has ended. Press Push-to-Talk again.'),
+			code: 'PTT_PRESS_ENDED'
+		};
+	}
+
+	if (pttLeaseNeedsRevocation(room)) {
+		const samePress =
+			pressId && room.pttLease.pressId === pressId && room.pttLease.holderUserId === userId;
+		await revokePttLease(room);
+		if (samePress || room.pttPressBlockedUntilMs) {
+			return {
+				...pttDenied('That speaking press has ended. Press Push-to-Talk again.'),
+				code: 'PTT_PRESS_ENDED'
+			};
+		}
+	}
+
+	const current = room.pttLease;
+	if (current.holderUserId) {
+		if (current.holderUserId !== userId || current.pressId !== pressId) {
+			return {
+				ok: false,
+				busy: true,
+				speakerId: current.holderUserId,
+				speakerName: current.holderName,
+				error: `Channel busy: ${current.holderName} is speaking.`,
+				room: toRoomDetail(room, userId)
+			};
+		}
+		// Retried acquire may recover its original short token, but never extend the lease.
+		const validUntilMs = Math.min(
+			current.expiresAtMs!,
+			current.acquiredAtMs! + RADIO_LIMITS.PTT_LEASE_TTL_MS
+		);
+		const media =
+			current.publisherId && validUntilMs - Date.now() >= 1_000
+				? await issueLiveKitPttPublisherToken({
+						roomId,
+						publisherId: current.publisherId,
+						userId,
+						displayName: member.displayName,
+						maxParticipants: room.maxParticipants,
+						acquiredAtMs: current.acquiredAtMs!,
+						validUntilMs
+					})
+				: undefined;
+		return {
+			ok: true,
 			busy: false,
-			speakerId: null,
-			speakerName: null,
-			error: 'Push-to-Talk is not available in this room.',
-			room: null
+			speakerId: userId,
+			speakerName: member.displayName,
+			media,
+			room: toRoomDetail(room, userId)
 		};
 	}
 
 	const nowMs = Date.now();
-	pruneExpiredPttLease(room, nowMs);
-
-	const member = room.participants.get(userId);
-	if (!member || member.admissionStatus !== 'admitted' || !member.isConnected) {
-		return {
-			ok: false,
-			busy: false,
-			speakerId: null,
-			speakerName: null,
-			error: 'You must be connected to the room to transmit.',
-			room: null
-		};
-	}
-
-	if (member.isListenerOnly || member.hostMuted) {
-		return {
-			ok: false,
-			busy: false,
-			speakerId: null,
-			speakerName: null,
-			error: 'Your microphone must be available before using Push-to-Talk.',
-			room: toRoomDetail(room, userId)
-		};
-	}
-
-	if (
-		room.pttLease.holderUserId &&
-		room.pttLease.holderUserId !== userId &&
-		room.pttLease.expiresAtMs &&
-		room.pttLease.expiresAtMs > nowMs
-	) {
-		return {
-			ok: false,
-			busy: true,
-			speakerId: room.pttLease.holderUserId,
-			speakerName: room.pttLease.holderName,
-			error: `Channel busy: ${room.pttLease.holderName} is speaking.`,
-			room: toRoomDetail(room, userId)
-		};
-	}
-
-	const acquiredAtMs =
-		room.pttLease.holderUserId === userId && room.pttLease.acquiredAtMs
-			? room.pttLease.acquiredAtMs
-			: nowMs;
-
+	const expiresAtMs = nowMs + RADIO_LIMITS.PTT_LEASE_TTL_MS;
+	const publisherId = hosted ? `ptt_${crypto.randomUUID()}` : undefined;
+	const media = publisherId
+		? await issueLiveKitPttPublisherToken({
+				roomId,
+				publisherId,
+				userId,
+				displayName: member.displayName,
+				maxParticipants: room.maxParticipants,
+				acquiredAtMs: nowMs,
+				validUntilMs: expiresAtMs
+			})
+		: undefined;
 	room.pttLease = {
 		holderUserId: userId,
 		holderName: member.displayName,
-		acquiredAtMs,
-		expiresAtMs: nowMs + RADIO_LIMITS.PTT_LEASE_TTL_MS
+		acquiredAtMs: nowMs,
+		expiresAtMs,
+		pressId,
+		publisherId
 	};
-
 	for (const p of room.participants.values()) {
-		if (p.userId === userId) {
-			p.isMuted = false;
-			p.isSpeaking = true;
-		} else if (room.mode === 'radio') {
-			p.isMuted = true;
-			p.isSpeaking = false;
-		}
+		p.isMuted = p.userId !== userId;
+		p.isSpeaking = p.userId === userId;
 	}
-
 	return {
 		ok: true,
 		busy: false,
 		speakerId: userId,
 		speakerName: member.displayName,
+		media,
 		room: toRoomDetail(room, userId)
 	};
 }
 
-export function heartbeatPttLease(
+export async function heartbeatPttLease(
 	roomId: string,
-	userId: string
-): {
+	userId: string,
+	pressId?: string
+): Promise<{
 	ok: boolean;
 	room: RadioRoomDetail | null;
-} {
+}> {
 	const room = roomsById.get(roomId);
 	if (!room || room.isEnded || room.mode !== 'radio') return { ok: false, room: null };
-
+	const member = room.participants.get(userId);
+	if (member?.admissionStatus !== 'admitted' || !member.isConnected)
+		return { ok: false, room: null };
 	const nowMs = Date.now();
-	pruneExpiredPttLease(room, nowMs);
-
-	if (room.pttLease.holderUserId !== userId) {
+	if (room.pttLease.holderUserId !== userId || room.pttLease.pressId !== pressId) {
 		return { ok: false, room: toRoomDetail(room, userId) };
 	}
-
-	room.pttLease.expiresAtMs = nowMs + RADIO_LIMITS.PTT_LEASE_TTL_MS;
-	const member = room.participants.get(userId);
-	if (member) {
-		member.lastSeenAt = new Date(nowMs).toISOString();
-		member.isSpeaking = true;
-		member.isMuted = false;
+	if (pttLeaseNeedsRevocation(room, nowMs)) {
+		await revokePttLease(room);
+		return { ok: false, room: toRoomDetail(room, userId) };
 	}
-
+	if (room.pttLease.publisherId && !radioWatchdogReadyForRequest()) {
+		return { ok: false, room: toRoomDetail(room, userId) };
+	}
+	room.pttLease.expiresAtMs = Math.min(
+		nowMs + RADIO_LIMITS.PTT_LEASE_TTL_MS,
+		room.pttLease.acquiredAtMs! + RADIO_LIMITS.PTT_MAX_HOLD_MS
+	);
+	member.lastSeenAt = new Date(nowMs).toISOString();
+	member.isSpeaking = true;
+	member.isMuted = false;
 	return { ok: true, room: toRoomDetail(room, userId) };
 }
 
 export async function releasePttLease(
 	roomId: string,
-	userId: string
+	userId: string,
+	pressId?: string
 ): Promise<{
 	ok: boolean;
 	room: RadioRoomDetail | null;
@@ -1199,20 +1328,13 @@ export async function releasePttLease(
 	if (!room || room.isEnded || room.mode !== 'radio') return { ok: false, room: null };
 
 	const member = room.participants.get(userId);
-	if (member) {
-		member.isSpeaking = false;
-		if (room.mode === 'radio') {
-			member.isMuted = true;
-		}
-	}
-
-	if (room.pttLease.holderUserId === userId) {
-		room.pttLease = {
-			holderUserId: null,
-			holderName: null,
-			acquiredAtMs: null,
-			expiresAtMs: null
-		};
+	if (member?.admissionStatus !== 'admitted' || !member.isConnected)
+		return { ok: false, room: null };
+	if (room.pttLease.holderUserId === userId && room.pttLease.pressId === pressId) {
+		await revokePttLease(room);
+	} else if (pressId) {
+		// Release may race ahead of an in-flight acquire. Remember the cancelled press.
+		rememberEndedPttPress(room, userId, pressId, Date.now());
 	}
 
 	return { ok: true, room: toRoomDetail(room, userId) };
@@ -1301,6 +1423,7 @@ export async function performHostAction(params: {
 			if (!target) {
 				return { ok: false, error: 'Participant not found.', room: null };
 			}
+			await endRadioTransmissionForMember(room.id, targetUserId);
 			if (hasUnrevokedRadioMediaToken(target)) {
 				target.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, targetUserId);
 			}
@@ -1310,14 +1433,6 @@ export async function performHostAction(params: {
 			target.isSpeaking = false;
 			target.unmuteRequestedByHost = false;
 			room.explicitMemberEmails.delete(target.email);
-			if (room.pttLease.holderUserId === targetUserId) {
-				room.pttLease = {
-					holderUserId: null,
-					holderName: null,
-					acquiredAtMs: null,
-					expiresAtMs: null
-				};
-			}
 			break;
 		}
 		case 'mute_participant': {
@@ -1328,7 +1443,8 @@ export async function performHostAction(params: {
 			if (!target || target.admissionStatus !== 'admitted') {
 				return { ok: false, error: 'Participant is not admitted.', room: null };
 			}
-			if (hasUnrevokedRadioMediaToken(target)) {
+			await endRadioTransmissionForMember(room.id, targetUserId);
+			if (room.mode === 'conversation' && hasUnrevokedRadioMediaToken(target)) {
 				target.mediaTokenNotBeforeMs = await removeRemoteParticipantFromSfu(room.id, targetUserId);
 				if (target.mediaTokenNotBeforeMs) target.isConnected = false;
 			}
@@ -1336,14 +1452,6 @@ export async function performHostAction(params: {
 			target.isMuted = true;
 			target.isSpeaking = false;
 			target.unmuteRequestedByHost = false;
-			if (room.pttLease.holderUserId === targetUserId) {
-				room.pttLease = {
-					holderUserId: null,
-					holderName: null,
-					acquiredAtMs: null,
-					expiresAtMs: null
-				};
-			}
 			break;
 		}
 		case 'request_unmute': {
@@ -1370,13 +1478,19 @@ export async function performHostAction(params: {
 		}
 		case 'set_mode': {
 			if (params.payload.mode && params.payload.mode !== room.mode) {
+				if (radioMediaEnabledForRequest()) {
+					if (countConnectedParticipants(room) || unrevokedMediaParticipantIds(room).length) {
+						return {
+							ok: false,
+							error: 'End the live room and create a new room in the mode you want.',
+							room: toRoomDetail(room, params.actorUserId)
+						};
+					}
+					// An empty provider room may still retain the other mode's seat limit.
+					await closeRemoteRoomOnSfu(room.id);
+				}
+				clearPttLease(room);
 				room.mode = params.payload.mode;
-				room.pttLease = {
-					holderUserId: null,
-					holderName: null,
-					acquiredAtMs: null,
-					expiresAtMs: null
-				};
 				for (const p of room.participants.values()) {
 					p.isMuted = true;
 					p.isSpeaking = false;
@@ -1443,12 +1557,7 @@ export async function performHostAction(params: {
 		case 'end_room': {
 			await closeRemoteRoomOnSfu(room.id, unrevokedMediaParticipantIds(room));
 			room.isEnded = true;
-			room.pttLease = {
-				holderUserId: null,
-				holderName: null,
-				acquiredAtMs: null,
-				expiresAtMs: null
-			};
+			clearPttLease(room);
 			for (const p of room.participants.values()) {
 				p.isConnected = false;
 				p.isMuted = true;
@@ -1497,25 +1606,20 @@ export async function deleteUserAccountData(userId: string): Promise<{
 					invitationsById.delete(inv.id);
 				}
 			}
-			mediaCleanup.push(closeRemoteRoomOnSfu(roomId, Array.from(room.participants.values())
-				.filter((member) => member.mediaTokenIssuedAtMs !== undefined && member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0))
-				.map((member) => member.userId)));
+			mediaCleanup.push(closeRemoteRoomOnSfu(roomId, unrevokedMediaParticipantIds(room)));
 			roomsById.delete(roomId);
 			deletedRooms += 1;
 		} else if (room.participants.has(userId)) {
 			const member = room.participants.get(userId)!;
-			room.participants.delete(userId);
-			if (room.pttLease.holderUserId === userId) {
-				room.pttLease = {
-					holderUserId: null,
-					holderName: null,
-					acquiredAtMs: null,
-					expiresAtMs: null
-				};
-			}
-			if (member.mediaTokenIssuedAtMs !== undefined && member.mediaTokenIssuedAtMs >= (member.mediaTokenNotBeforeMs ?? 0)) {
-				mediaCleanup.push(removeRemoteParticipantFromSfu(roomId, userId));
-			}
+			mediaCleanup.push(
+				(async () => {
+					await endRadioTransmissionForMember(roomId, userId);
+					if (hasUnrevokedRadioMediaToken(member)) {
+						await removeRemoteParticipantFromSfu(roomId, userId);
+					}
+					room.participants.delete(userId);
+				})()
+			);
 			removedMemberships += 1;
 		}
 	}
