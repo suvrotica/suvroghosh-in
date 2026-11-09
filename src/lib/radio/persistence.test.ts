@@ -74,6 +74,38 @@ function databaseFixture() {
 }
 
 describe('COMM-LINK durable request state', () => {
+	it('skips the extra release after a confirmed commit and releases uncertain leases', async () => {
+		const db = databaseFixture();
+		const confirmed = db.client();
+		const confirmedRelease = vi.spyOn(confirmed, 'release');
+		await expect(runRadioTransaction(confirmed, async () => 'committed')).resolves.toBe('committed');
+		expect(confirmedRelease).not.toHaveBeenCalled();
+
+		const unknownAcquire = db.client();
+		const acquire = unknownAcquire.acquire;
+		const acquireSpy = vi.spyOn(unknownAcquire, 'acquire').mockImplementation(async (owner) => {
+			await acquire(owner);
+			throw new Error('lost acquire acknowledgement');
+		});
+		const acquireRelease = vi.spyOn(unknownAcquire, 'release');
+		await expect(runRadioTransaction(unknownAcquire, async () => undefined)).rejects.toThrow(
+			'lost acquire acknowledgement'
+		);
+		expect(acquireRelease).toHaveBeenCalledExactlyOnceWith(acquireSpy.mock.calls[0][0]);
+
+		const unknownCommit = db.client();
+		const commit = unknownCommit.commit;
+		const commitSpy = vi.spyOn(unknownCommit, 'commit').mockImplementation(async (...args) => {
+			await commit(...args);
+			throw new Error('lost commit acknowledgement');
+		});
+		const commitRelease = vi.spyOn(unknownCommit, 'release');
+		await expect(runRadioTransaction(unknownCommit, async () => undefined)).rejects.toThrow(
+			'lost commit acknowledgement'
+		);
+		expect(commitRelease).toHaveBeenCalledExactlyOnceWith(commitSpy.mock.calls[0][0]);
+	});
+
 	it('keeps a stale capacity reservation until its issued media identity is revoked', async () => {
 		const db = databaseFixture(),
 			host = makeUser(1);

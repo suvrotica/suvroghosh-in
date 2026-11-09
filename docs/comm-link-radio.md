@@ -27,15 +27,17 @@ the Notes owner account.
    settings are ready. Production secrets are deployed with a new Vercel build. The anonymous
    `/api/radio/session` status distinguishes configured providers from the call release flag.
    Those fields are not proof that either provider works.
-5. For hosted push-to-talk, apply `202611090002_comm_link_watchdog.sql` and its signed-dispatch
-   follow-up `202611090003_comm_link_watchdog_signed_dispatch.sql`. Provision a dedicated
+5. For hosted push-to-talk, apply `202611090002_comm_link_watchdog.sql`, the signed-dispatch
+   migration `202611090003_comm_link_watchdog_signed_dispatch.sql`, and
+   `202611090004_comm_link_watchdog_warm_path.sql`. Provision a dedicated
    random secret of at least 32 bytes as Vercel Production `COMM_LINK_WATCHDOG_SECRET` and the
    same value in Supabase Vault as `comm_link_watchdog_token`. Run `supabase/comm-link-watchdog-cron.sql`
    against the reviewed project. The job may be installed before the app deployment if there
    are no Radio rooms or pending publishers. Confirm its `last_tick_at` advances. Set
    `COMM_LINK_PTT_ENABLED=true` for the reviewed deployment. An occupied Radio room must also
-   receive a fresh worker acknowledgement before a press can transmit. The job sends a
-   short-lived signature for one dispatch. The shared key never goes into the HTTP queue.
+   receive a fresh worker acknowledgement before a press can transmit. Routine readiness
+   checks do not take the room write lease. The job sends a short-lived signature for one
+   dispatch. The shared key never goes into the HTTP queue.
 
 For a hosted smoke test, use two separately authenticated Google users. The host creates a room
 with capacity two, copies an invitation, and admits the guest. Confirm that a waiting guest

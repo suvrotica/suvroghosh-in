@@ -903,7 +903,8 @@
 		const response = await fetch(`/api/radio/rooms/${press.roomId}/ptt`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			signal: AbortSignal.timeout(action === 'heartbeat' ? 3_000 : 8_000),
+			// The local lease deadline still stops capture independently of this request.
+			signal: AbortSignal.timeout(action === 'heartbeat' ? 5_000 : 8_000),
 			keepalive: action === 'release',
 			body: JSON.stringify({ action, pressId: press.id })
 		});
@@ -918,8 +919,10 @@
 	}
 
 	function acknowledgePttLease(press: PttPress, requestedAt: number, data: PttResponse): boolean {
-		if (!isCurrentPttPress(press) || !data.ok || data.room?.pttLease.holderUserId !== user?.id ||
-			!data.room?.pttLease.expiresAt) return false;
+		const lease = data?.room?.pttLease;
+		if (!isCurrentPttPress(press) || !user || !data?.ok || data.room?.id !== press.roomId ||
+			lease?.holderUserId !== user.id || typeof lease.expiresAt !== 'string' ||
+			!Number.isFinite(Date.parse(lease.expiresAt))) return false;
 		// Count from send time to stay conservative without relying on synchronized wall clocks.
 		press.expiresBy = Math.min(
 			requestedAt + RADIO_LIMITS.PTT_LEASE_TTL_MS,

@@ -107,10 +107,38 @@ describe('independent radio expiry endpoint', () => {
 	});
 
 	it('ignores duplicate or expired dispatch IDs without touching room state', async () => {
-		const fetch = vi.fn(async () => Response.json(false));
+		const fetch = vi.fn(async () => Response.json({ claimed: false, needsSweep: false }));
 		vi.stubGlobal('fetch', fetch);
 		const response = await POST(event());
 		expect(await response.json()).toEqual({ ok: true, skipped: true });
+		expect(fetch).toHaveBeenCalledOnce();
+		expect(fixtures.sweep).not.toHaveBeenCalled();
+	});
+
+	it('acknowledges a verified warm probe without acquiring or committing the room lease', async () => {
+		const calls: string[] = [];
+		vi.stubGlobal(
+			'fetch',
+			vi.fn(async (url: URL) => {
+				const name = url.pathname.split('/').at(-1)!;
+				calls.push(name);
+				if (name === 'comm_link_watchdog_claim_v2')
+					return Response.json({ claimed: true, needsSweep: false });
+				if (name === 'comm_link_watchdog_finish') return Response.json(true);
+				throw new Error('Warm probes must not acquire room state.');
+			})
+		);
+		const response = await POST(event());
+		expect(response.status).toBe(200);
+		expect(await response.json()).toEqual({ ok: true, revoked: 0, failures: 0 });
+		expect(calls).toEqual(['comm_link_watchdog_claim_v2', 'comm_link_watchdog_finish']);
+		expect(fixtures.sweep).not.toHaveBeenCalled();
+	});
+
+	it('never interprets an invalid claim response as a healthy warm check', async () => {
+		const fetch = vi.fn(async () => Response.json({ claimed: true }));
+		vi.stubGlobal('fetch', fetch);
+		expect((await POST(event())).status).toBe(503);
 		expect(fetch).toHaveBeenCalledOnce();
 		expect(fixtures.sweep).not.toHaveBeenCalled();
 	});
@@ -122,6 +150,8 @@ describe('independent radio expiry endpoint', () => {
 			vi.fn(async (url: URL, request: RequestInit) => {
 				const name = url.pathname.split('/').at(-1)!;
 				calls.push({ name, body: JSON.parse(String(request.body)) });
+				if (name === 'comm_link_watchdog_claim_v2')
+					return Response.json({ claimed: true, needsSweep: true });
 				if (name === 'comm_link_state_acquire')
 					return Response.json({
 						acquired: true,
@@ -149,6 +179,8 @@ describe('independent radio expiry endpoint', () => {
 			vi.fn(async (url: URL, request: RequestInit) => {
 				const name = url.pathname.split('/').at(-1)!;
 				calls.push({ name, body: JSON.parse(String(request.body)) });
+				if (name === 'comm_link_watchdog_claim_v2')
+					return Response.json({ claimed: true, needsSweep: true });
 				if (name === 'comm_link_state_acquire')
 					return Response.json({
 						acquired: true,

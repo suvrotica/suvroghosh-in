@@ -253,6 +253,28 @@ test.describe('COMM-LINK (/tools/radio) end-to-end verification', () => {
 		guestPage.off('response', countReleaseResponses);
 		await guestPage.unroute('**/api/radio/rooms/*/ptt');
 
+		// A healthy heartbeat delayed beyond three seconds can renew the turn. Keyup still stops capture.
+		await guestPage.route('**/api/radio/rooms/*/ptt', async (route) => {
+			if (route.request().postDataJSON()?.action !== 'heartbeat') return route.continue();
+			const response = await route.fetch();
+			await new Promise<void>((resolve) => setTimeout(resolve, 3_400));
+			await route.fulfill({ response });
+		});
+		const keyboardHeartbeat = guestPage.waitForResponse((response) =>
+			response.url().endsWith('/ptt') && response.request().postDataJSON()?.action === 'heartbeat',
+			{ timeout: 8_000 }
+		);
+		await guestPage.getByTestId('ptt-button').focus();
+		await guestPage.keyboard.down('Space');
+		await expect(guestPage.getByTestId('amber-line-4')).toHaveText('MIC: TRANSMITTING');
+		expect(await (await keyboardHeartbeat).json()).toMatchObject({ ok: true });
+		expect((await microphoneCounts()).live).toBe(1);
+		const keyboardReleased = pttRelease();
+		await guestPage.keyboard.up('Space');
+		await expect.poll(async () => (await microphoneCounts()).live).toBe(0);
+		await keyboardReleased;
+		await guestPage.unroute('**/api/radio/rooms/*/ptt');
+
 		// Loss of connectivity releases the real mic while the button is still held.
 		await guestPage.mouse.down();
 		await expect(guestPage.getByTestId('amber-line-4')).toHaveText('MIC: TRANSMITTING');

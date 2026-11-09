@@ -44,7 +44,8 @@ test('watchdog dispatch is independent, idle-free, fenced, and requires fresh ve
 			'202611080001_comm_link_radio.sql',
 			'202611090001_comm_link_durable_state.sql',
 			'202611090002_comm_link_watchdog.sql',
-			'202611090003_comm_link_watchdog_signed_dispatch.sql'
+			'202611090003_comm_link_watchdog_signed_dispatch.sql',
+			'202611090004_comm_link_watchdog_warm_path.sql'
 		]) {
 			await db.exec(await readFile(new URL(`../migrations/${name}`, import.meta.url), 'utf8'));
 		}
@@ -160,6 +161,7 @@ test('watchdog dispatch is independent, idle-free, fenced, and requires fresh ve
 			id: 'room-private',
 			mode: 'radio',
 			isEnded: false,
+			explicitMemberEmails: [],
 			participants: [
 				{
 					userId: 'private-person',
@@ -233,6 +235,7 @@ test('watchdog dispatch is independent, idle-free, fenced, and requires fresh ve
 		room.pttLease = {
 			holderUserId: 'private-person',
 			publisherId: 'private-publisher',
+			acquiredAtMs: Date.now(),
 			expiresAtMs: Date.now() + 1000
 		};
 		await db.query(
@@ -283,10 +286,134 @@ test('watchdog dispatch is independent, idle-free, fenced, and requires fresh ve
 			"UPDATE public.comm_link_watchdog SET last_tick_at=now(),last_ack_at=now()-interval '16 seconds'"
 		);
 		assert.equal(await health(), 0);
+
+		// Occupied rooms refresh at six seconds even with a valid active publisher.
+		// A warm claim must not disturb an unrelated in-flight room-state lease.
+		room.participants[0].lastSeenAt = new Date().toISOString();
+		room.pttLease.acquiredAtMs = Date.now();
+		room.pttLease.expiresAtMs = Date.now() + 8000;
+		await db.query(
+			"UPDATE public.comm_link_state SET snapshot=jsonb_set(snapshot,'{rooms}',$1::jsonb)",
+			[JSON.stringify([room])]
+		);
+		await db.exec(
+			"UPDATE public.comm_link_watchdog SET dispatch_until=null,worker_owner=null,worker_until=null,last_dispatch_at=now()-interval '7 seconds',last_ack_at=now()-interval '5 seconds',consecutive_failures=0"
+		);
+		assert.equal(await tick(), null);
+		await db.exec("UPDATE public.comm_link_watchdog SET last_ack_at=now()-interval '7 seconds'");
+		assert.equal(await tick(), 4);
+		const warmDispatch = (await db.query('SELECT body FROM net.requests WHERE id=4')).rows[0].body
+			.dispatchId;
+		const stateOwner = randomUUID(),
+			warmOwner = randomUUID();
+		const heldLease = await scalar('SELECT public.comm_link_state_acquire($1) AS result', [
+			stateOwner
+		]);
+		assert.equal(heldLease.acquired, true);
+		assert.deepEqual(
+			await scalar('SELECT public.comm_link_watchdog_claim_v2($1,$2) AS result', [
+				warmDispatch,
+				warmOwner
+			]),
+			{ claimed: true, needsSweep: false }
+		);
+		assert.equal(
+			await scalar('SELECT lock_owner::text AS result FROM public.comm_link_state WHERE id=1'),
+			stateOwner
+		);
+		assert.deepEqual(
+			await scalar('SELECT public.comm_link_watchdog_claim_v2($1,$2) AS result', [
+				warmDispatch,
+				randomUUID()
+			]),
+			{ claimed: false, needsSweep: false }
+		);
+
+		// A due publisher committed between the warm check and ACK still dispatches
+		// independently on the next eligible tick, despite the fresh healthy ACK.
+		heldLease.snapshot.rooms[0].pttLease.expiresAtMs = Date.now() - 1;
+		assert.equal(
+			await scalar('SELECT public.comm_link_state_commit($1,$2,$3::jsonb) AS result', [
+				stateOwner,
+				heldLease.version,
+				JSON.stringify(heldLease.snapshot)
+			]),
+			true
+		);
+		assert.equal(
+			await scalar('SELECT public.comm_link_watchdog_finish($1,$2,true) AS result', [
+				warmDispatch,
+				warmOwner
+			]),
+			true
+		);
+		await db.exec(
+			"UPDATE public.comm_link_watchdog SET last_dispatch_at=now()-interval '3 seconds'"
+		);
+		assert.equal(await tick(), 5);
+		const dueDispatch = (await db.query('SELECT body FROM net.requests WHERE id=5')).rows[0].body
+			.dispatchId;
+		assert.deepEqual(
+			await scalar('SELECT public.comm_link_watchdog_claim_v2($1,$2) AS result', [
+				dueDispatch,
+				randomUUID()
+			]),
+			{ claimed: true, needsSweep: true }
+		);
+
+		const needsSweep = (candidate) =>
+			scalar('SELECT public.comm_link_watchdog_needs_sweep($1::jsonb,$2) AS result', [
+				JSON.stringify({ rooms: [candidate] }),
+				Date.now()
+			]);
+		assert.equal(await needsSweep(room), false);
+		for (const mutate of [
+			(candidate) => {
+				candidate.isEnded = true;
+			},
+			(candidate) => {
+				candidate.mode = 'conversation';
+			},
+			(candidate) => {
+				candidate.pttLease.holderUserId = null;
+			},
+			(candidate) => {
+				candidate.pttLease.expiresAtMs = null;
+			},
+			(candidate) => {
+				candidate.pttLease.acquiredAtMs = Date.now() - 45001;
+			},
+			(candidate) => {
+				candidate.participants = [];
+			},
+			(candidate) => {
+				candidate.participants[0].isConnected = false;
+			},
+			(candidate) => {
+				candidate.participants[0].admissionStatus = 'removed';
+			},
+			(candidate) => {
+				candidate.participants[0].isListenerOnly = true;
+			},
+			(candidate) => {
+				candidate.participants[0].hostMuted = true;
+			}
+		]) {
+			const candidate = structuredClone(room);
+			mutate(candidate);
+			assert.equal(await needsSweep(candidate), true);
+		}
 		await db.exec('SET ROLE anon');
 		assert.ok((await db.query('SELECT net.enqueue_fixture() AS id')).rows[0].id > 0);
 		assert.ok((await db.query('SELECT headers FROM net.http_request_queue')).rows.length > 0);
 		await assert.rejects(tick(), /permission denied/i);
+		await assert.rejects(
+			scalar('SELECT public.comm_link_watchdog_claim_v2($1,$2) AS result', [
+				randomUUID(),
+				randomUUID()
+			]),
+			/permission denied/i
+		);
 		await assert.rejects(db.query('SELECT * FROM public.comm_link_watchdog'), /permission denied/i);
 		await db.exec('RESET ROLE');
 	} finally {

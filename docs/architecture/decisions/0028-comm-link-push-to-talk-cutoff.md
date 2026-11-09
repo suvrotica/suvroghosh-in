@@ -21,9 +21,13 @@ Postgres keeps the lease, renewable for eight seconds at a time with a 45-second
 An expiring lease remains in the snapshot until LiveKit confirms strict revocation. A dedicated
 two-second `pg_cron` job uses `pg_net` to call the canonical authenticated Vercel worker only
 when expiry or occupied-room readiness requires it. A database claim bounds duplicate work;
-idle rooms cause no HTTP calls. The worker updates readiness only after a successful fenced
-sweep. Stale readiness blocks new or renewed turns. Provider failure keeps the old lease fenced
-and retryable; we do not promise a remote cutoff time while the provider itself is unavailable.
+idle rooms cause no HTTP calls. In occupied rooms, a readiness probe is due six seconds after the
+last acknowledgement, with a 15-second freshness limit. The claim checks the committed snapshot
+for expiry. When nothing is due, the worker acknowledges without taking the room write lease;
+otherwise readiness requires a successful fenced sweep. Each scheduler tick checks expiry
+independently of readiness, including new work committed after a probe. Stale readiness blocks
+new or renewed turns. Provider failure keeps the old lease fenced and retryable; we do not promise
+a remote cutoff time while the provider itself is unavailable.
 
 This uses the existing Supabase and LiveKit projects. The signing key stays in Supabase Vault
 and Vercel Production secrets. The managed HTTP queue carries only a short-lived HMAC for the

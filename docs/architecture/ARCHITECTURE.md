@@ -3134,9 +3134,11 @@ explicit unmute request can grant microphone publication on the active connectio
 that connection stays listen-only. One committed speaking lease authorizes a separate temporary,
 microphone-only publisher. The browser stops its input track before sending a release request.
 Supabase Cron wakes a private worker when an occupied Radio room needs a readiness check or a
-publisher lease is due. The worker strictly revokes the publisher in LiveKit before releasing the
-speaking turn. New grants fail closed when the watchdog is stale. LiveKit forwards audio separately
-from the blog server.
+publisher lease is due. The worker claims a single dispatch and checks the committed snapshot
+without taking the room write lease. If revocation is due, it takes the fenced write lease and
+strictly revokes the publisher in LiveKit before releasing the speaking turn. New grants and
+renewals fail closed when the watchdog is stale. LiveKit forwards audio separately from the blog
+server.
 
 ```mermaid
 flowchart LR
@@ -3148,7 +3150,8 @@ flowchart LR
     Radio -->|"Short-lived listen token"| Browser
     Radio -->|"Radio: one ephemeral mic publisher per lease"| Browser
     State -->|"Due expiry or readiness check / pg_cron + pg_net"| Watchdog["Private expiry worker"]
-    Watchdog -->|"Fenced sweep"| State
+    Watchdog -->|"One-use claim / read-only expiry check"| State
+    Watchdog -->|"Fenced sweep only for due publishers"| State
     Watchdog -->|"Strict publisher revocation"| SFU
     Browser <-->|"Encrypted audio / WebRTC"| SFU
 ```

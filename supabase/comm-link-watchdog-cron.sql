@@ -1,4 +1,4 @@
--- Run after 202611090003_comm_link_watchdog_signed_dispatch.sql and its production release.
+-- Run after 202611090004_comm_link_watchdog_warm_path.sql and its production release.
 -- Provision a dedicated >=32-byte random secret as Vercel Production
 -- COMM_LINK_WATCHDOG_SECRET and Vault name comm_link_watchdog_token first.
 -- Secret values never belong in this file, URLs, command arguments or logs.
@@ -19,6 +19,7 @@ begin
 	-- Managed queue ACLs are not an application-controlled confidentiality boundary.
 	-- Require the corrected scheduler: it enqueues only a 25-second dispatch proof.
 	if to_regprocedure('extensions.hmac(bytea,bytea,text)') is null
+		or to_regprocedure('public.comm_link_watchdog_claim_v2(uuid,uuid)') is null
 		or obj_description('public.request_comm_link_watchdog()'::regprocedure, 'pg_proc')
 			is distinct from 'comm-link-watchdog:hmac-sha256:v1' then
 		raise exception 'radio_watchdog_signed_dispatch_not_installed';

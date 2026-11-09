@@ -29,6 +29,7 @@ export interface RadioStateLease {
 }
 export interface RadioPersistenceBackend {
 	acquire(owner: string): Promise<RadioStateLease | null>;
+	/** A successful commit atomically releases the owner's lease. */
 	commit(owner: string, version: number, snapshot: RadioSnapshot): Promise<boolean>;
 	release(owner: string): Promise<void>;
 }
@@ -58,6 +59,7 @@ export async function runRadioTransaction<T>(
 	const owner = randomUUID();
 	const started = Date.now();
 	let lease: RadioStateLease | null = null;
+	let commitConfirmed = false;
 	try {
 		do {
 			lease = await backend.acquire(owner);
@@ -103,6 +105,7 @@ export async function runRadioTransaction<T>(
 						throw new Error('Radio transaction exceeded its deadline.');
 					const committed = await backend.commit(owner, lease!.version, encodeRadioState(state));
 					if (!committed) throw new Error('Radio transaction lost its fencing lease.');
+					commitConfirmed = true;
 					return result;
 				} catch (error) {
 					await rollbackRadioEffects();
@@ -115,8 +118,9 @@ export async function runRadioTransaction<T>(
 			lease.watchdogReadyUntilMs
 		);
 	} finally {
-		// A lost release is safe: the database lease expires, and old writers cannot commit.
-		await backend.release(owner).catch(() => undefined);
+		// Release if acquire or commit may have reached the database without an acknowledgement.
+		// The owner fence makes this safe even when the database already committed.
+		if (!commitConfirmed) await backend.release(owner).catch(() => undefined);
 	}
 }
 

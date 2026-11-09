@@ -26,8 +26,14 @@ const admit = createLocalAdmission({
 	maxKeys: 1
 });
 const reply = (body: unknown, status = 200) => Response.json(body, { status, headers });
+const Claim = z.object({ claimed: z.boolean(), needsSweep: z.boolean() }).strict();
 
-async function watchdogRpc(name: 'claim' | 'finish', body: unknown): Promise<boolean> {
+async function watchdogRpc(name: 'claim_v2', body: unknown): Promise<z.infer<typeof Claim>>;
+async function watchdogRpc(name: 'finish', body: unknown): Promise<boolean>;
+async function watchdogRpc(
+	name: 'claim_v2' | 'finish',
+	body: unknown
+): Promise<z.infer<typeof Claim> | boolean> {
 	const base = new URL(env.SUPABASE_URL!);
 	if (base.protocol !== 'https:') throw new Error('Watchdog persistence is unavailable.');
 	const response = await fetch(new URL(`/rest/v1/rpc/comm_link_watchdog_${name}`, base), {
@@ -42,7 +48,8 @@ async function watchdogRpc(name: 'claim' | 'finish', body: unknown): Promise<boo
 		cache: 'no-store'
 	});
 	if (!response.ok) throw new Error('Watchdog persistence is unavailable.');
-	return (await response.json()) === true;
+	const result: unknown = await response.json();
+	return name === 'claim_v2' ? Claim.parse(result) : result === true;
 }
 
 export const POST: RequestHandler = async (event) => {
@@ -107,13 +114,18 @@ export const POST: RequestHandler = async (event) => {
 	let claimed = false;
 	let acknowledged = false;
 	try {
-		claimed = await watchdogRpc('claim', { p_dispatch_id: dispatchId, p_owner: owner });
+		const claim = await watchdogRpc('claim_v2', { p_dispatch_id: dispatchId, p_owner: owner });
+		claimed = claim.claimed;
 		if (!claimed) return reply({ ok: true, skipped: true });
-		const report = await runRadioTransaction(
-			createPostgresRadioBackend(env.SUPABASE_URL!, env.SUPABASE_SERVICE_ROLE_KEY!),
-			() => sweepExpiredRadioTransmissions(),
-			{ mediaEnabled: true, maxActionMs: 8000, waitMs: 1500 }
-		);
+		// A claimed warm probe checks worker reachability without competing with room
+		// heartbeats. New due work still triggers cron regardless of this fresh ACK.
+		const report = claim.needsSweep
+			? await runRadioTransaction(
+					createPostgresRadioBackend(env.SUPABASE_URL!, env.SUPABASE_SERVICE_ROLE_KEY!),
+					() => sweepExpiredRadioTransmissions(),
+					{ mediaEnabled: true, maxActionMs: 8000, waitMs: 1500 }
+				)
+			: { revoked: 0, failures: 0 };
 		// Even a partial sweep commits successful removals. Failed publisher leases
 		// stay in the snapshot and remain due for the next independent retry.
 		acknowledged = await watchdogRpc('finish', {
