@@ -4745,6 +4745,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "the-constipated-muse.webp",
+			"src": "/images/the-constipated-muse.webp",
+			"bytes": 372340,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "the-drowning-prophet.jpg",
 			"src": "/images/the-drowning-prophet.jpg",
 			"bytes": 226515,

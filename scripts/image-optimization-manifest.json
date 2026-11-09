@@ -10765,6 +10765,22 @@
       "sourceHash": "3316b0fe60f1ac1f807394d2cf212928e53c443b140f04656cc23f40565d7401",
       "width": 1280
     },
+    "static/images/the-constipated-muse.webp": {
+      "format": "WEBP",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 372340,
+      "outputHash": "51207d5d91e18b9ba763dd702b343e5c55ded40158fd26a66dbc30d378203719",
+      "psnrDb": 37.53,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 401786,
+      "sourceHash": "85ebd6023e59cfe0d5f163705ae428bf67f3b680b20515051ba81a99ed23b827",
+      "width": 1600
+    },
     "static/images/the-drowning-prophet.jpg": {
       "format": "JPEG",
       "height": 1280,

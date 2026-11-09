@@ -17278,6 +17278,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-constipated-muse.md": {
+			"bodyHash": "0d81b5768f562177f65a2ac6f217618ca8da32a8cfbb992a75f445bdd04d19f9",
+			"hashVersion": 2,
+			"revisionHash": "f92fe1b137d3e5ad32a41ec628fed135e5e19cd742aeaf92b9af5a5c77b58692",
+			"generatedTags": [
+				"Writing",
+				"Creativity",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Philosophy",
+				"Independence",
+				"Thought",
+				"Bengali",
+				"Blogging"
+			],
+			"pinnedTags": [
+				"Writing",
+				"Creativity",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Philosophy",
+				"Independence",
+				"Thought",
+				"Bengali",
+				"Blogging"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

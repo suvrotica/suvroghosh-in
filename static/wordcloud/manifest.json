@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T16:03:12.527737+00:00",
+  "generatedAt": "2026-11-09T17:49:49.358453+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12004,6 +12004,29 @@
         "Becomes",
         "Systems",
         "Never"
+      ],
+      "wordCount": 130
+    },
+    "the-constipated-muse": {
+      "generatedAt": "2026-11-09T17:49:44.199085+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-constipated-muse.svg",
+      "source": "src/lib/posts/the-constipated-muse.md",
+      "sourceHash": "dee4bba222d4b06fdd33fa2988e06388ba84d1da5f701ff40f273e392fcfad40",
+      "sourceModified": "2026-11-09T17:47:31.081748+00:00",
+      "topWords": [
+        "Write",
+        "Writing",
+        "Thoughts",
+        "Page",
+        "Feel",
+        "Mind",
+        "Demands",
+        "Thinking",
+        "Sometimes",
+        "Man",
+        "Skull",
+        "Small"
       ],
       "wordCount": 130
     },
