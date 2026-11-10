@@ -2,6 +2,7 @@
 title: "Benchmarking the Unbenchmarkable"
 description: "On the folly of crystallizing thought, human or machine, into numbers."
 date: "2026-11-10"
+dateModified: "2026-11-10"
 thumbnail: "/images/benchmarking-the-unbenchmarkable.jpg"
 thumbnailAlt: "A rusted ruler measuring fog."
 category: "Raw"
