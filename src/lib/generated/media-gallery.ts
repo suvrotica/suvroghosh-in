@@ -314,6 +314,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "benchmarking-the-unbenchmarkable.jpg",
+			"src": "/images/benchmarking-the-unbenchmarkable.jpg",
+			"bytes": 115432,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "beneath-the-last-tram.jpg",
 			"src": "/images/beneath-the-last-tram.jpg",
 			"bytes": 165060,

@@ -17338,6 +17338,36 @@
 				"numerical modeling"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/benchmarking-the-unbenchmarkable.md": {
+			"bodyHash": "0bf95b3a0259a7fe2428418640e598fbf6ab9bea681d72554944a2488af6e5c6",
+			"hashVersion": 2,
+			"revisionHash": "f609a583a9135d5cc1e545ce301eb6b496e6760954e2b14f03cb3b866760c015",
+			"generatedTags": [
+				"Thinking",
+				"AI",
+				"Benchmarks",
+				"Philosophy",
+				"Cognition",
+				"Writing",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Blog"
+			],
+			"pinnedTags": [
+				"Thinking",
+				"AI",
+				"Benchmarks",
+				"Philosophy",
+				"Cognition",
+				"Writing",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Blog"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

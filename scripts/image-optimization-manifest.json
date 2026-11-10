@@ -8685,6 +8685,22 @@
       "sourceHash": "c7dabe0cb861b69cd074683b7ead7c5977ebe2fcdb0f3ed2707d57ecd1e2dff7",
       "width": 1200
     },
+    "static/images/benchmarking-the-unbenchmarkable.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 115432,
+      "outputHash": "2f4fb1a1bba7d24b44b5456f3d66234d61613e249af8e819064659247cef1981",
+      "psnrDb": 45.65,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 125877,
+      "sourceHash": "2f818bd6a134086c4ddc8ea28cc86e756acf1533610fc570c716246197ab2ded",
+      "width": 1536
+    },
     "static/images/beneath-the-last-tram.jpg": {
       "format": "JPEG",
       "height": 576,

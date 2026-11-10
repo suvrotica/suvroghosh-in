@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T18:10:32.435934+00:00",
+  "generatedAt": "2026-11-10T07:31:49.741296+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1470,6 +1470,29 @@
         "Turing",
         "Wave",
         "Spiral"
+      ],
+      "wordCount": 130
+    },
+    "benchmarking-the-unbenchmarkable": {
+      "generatedAt": "2026-11-10T07:31:34.734310+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/benchmarking-the-unbenchmarkable.svg",
+      "source": "src/lib/posts/benchmarking-the-unbenchmarkable.md",
+      "sourceHash": "d369c307e53ce07b8f05e23e326d0446157e61c570b253fefaab6db4fa9f8ec0",
+      "sourceModified": "2026-11-10T07:30:08.397083+00:00",
+      "topWords": [
+        "Intelligence",
+        "Number",
+        "Every",
+        "Thinking",
+        "Even",
+        "Human",
+        "Thought",
+        "Wall",
+        "Test",
+        "Score",
+        "Machine",
+        "Learned"
       ],
       "wordCount": 130
     },
