@@ -13648,6 +13648,36 @@
       "sourceHash": "866719c956b876f083bec87d7f039566cda039749f8f8f24c990b026ec989fff",
       "width": 1200
     },
+    "static/images/visualizations/why-two-aqi-apps-show-different-numbers/default-comparison.png": {
+      "format": "PNG",
+      "height": 750,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 750,
+      "originalWidth": 1200,
+      "outputBytes": 50939,
+      "outputHash": "c9c20ac352a62ddb233495ee7ce85b5df10689abbbc648f8ed8d9f7d77071bca",
+      "resized": false,
+      "sourceBytes": 50939,
+      "sourceHash": "c9c20ac352a62ddb233495ee7ce85b5df10689abbbc648f8ed8d9f7d77071bca",
+      "width": 1200
+    },
+    "static/images/visualizations/why-two-aqi-apps-show-different-numbers/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 35652,
+      "outputHash": "8fc4be0b42935de10246ad80fdb0f7a196c148c9b0166311c5d656ad0d70bc1b",
+      "resized": false,
+      "sourceBytes": 35652,
+      "sourceHash": "8fc4be0b42935de10246ad80fdb0f7a196c148c9b0166311c5d656ad0d70bc1b",
+      "width": 1200
+    },
     "static/images/wait-until-she-finishes.jpg": {
       "format": "JPEG",
       "height": 576,

@@ -8,6 +8,7 @@ export default defineConfig({
 			'src/lib/visualizations/fingerprint/**/*.test.ts',
 			'src/lib/radio/**/*.test.ts',
 			'src/lib/recorder/**/*.test.ts',
+			'src/lib/visualizations/why-two-aqi-apps-show-different-numbers/**/*.test.ts',
 			'src/lib/visualizations/the-predator-prey-loom/**/*.test.ts',
 			'src/lib/visualizations/the-epidemic-mosaic/**/*.test.ts',
 			'src/lib/visualizations/ink-that-follows-a-scent/**/*.test.ts',

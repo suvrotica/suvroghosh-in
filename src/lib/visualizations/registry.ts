@@ -508,6 +508,18 @@ export const visualizationSummaries = {
 			'Dark graphite Predator–Prey Loom instrument comparing phase portrait trajectories at K = 1.5, K = 3.0, and K = 4.0 alongside aligned mint-green prey and warm-amber predator time histories.',
 		href: '/blog/visualizations/the-predator-prey-loom',
 		status: 'published'
+	},
+	'why-two-aqi-apps-show-different-numbers': {
+		id: 'why-two-aqi-apps-show-different-numbers',
+		title: 'Why two AQI apps show different numbers',
+		description:
+			'Compare Indian CPCB and US EPA PM2.5 bands, 24-hour vs hourly averaging, dominant-pollutant rules, and the 500 endpoint on identical measurements.',
+		subjects: ['Healthcare', 'Statistics', 'Scientific Computing'],
+		poster: '/images/visualizations/why-two-aqi-apps-show-different-numbers/social.png',
+		posterAlt:
+			'Side-by-side comparison of the same 60 micrograms per cubic metre 24-hour PM2.5 concentration producing PM2.5 score 100 (Satisfactory) on India CPCB and 154 (Unhealthy) on Current US EPA.',
+		href: '/blog/visualizations/why-two-aqi-apps-show-different-numbers',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

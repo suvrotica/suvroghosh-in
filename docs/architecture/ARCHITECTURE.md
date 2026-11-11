@@ -2179,6 +2179,24 @@ flowchart LR
     Lifecycle["Paused start / viewport / visibility / reduced motion / teardown"] --> Shell
 ```
 
+### Why two AQI apps show different numbers: Indian CPCB and US EPA scale, averaging, and dominant-pollutant explainer
+
+The `why-two-aqi-apps-show-different-numbers` visualization uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/why-two-aqi-apps-show-different-numbers`. Its Svelte 5 component under `components/visualizations/why-two-aqi-apps-show-different-numbers/AqiExplainer.svelte` carries `data-tts-exclude` and renders all three pure SVG/HTML views, the `500` scale-endpoint note, and the native `<details>` calculation/source disclosure directly during SSR—requiring no WebGL, Canvas, worker, live feed, external network request, server endpoint, persistence store, credential or CSP change. The Visualizations gallery imports lightweight summary and subject metadata only.
+
+The pure TypeScript domain under `visualizations/why-two-aqi-apps-show-different-numbers` (`model.ts`) owns the published India CPCB and current US EPA (2024 PM NAAQS revision / May 2026 Technical Assistance Document) 24-hour PM2.5 breakpoint tables, 1-decimal concentration truncation and piecewise linear interpolation (permitting US values above `500` on the upper Hazardous slope while keeping CPCB's published category endpoint at `500`), the four verified 24-hour PM2.5 presets (`30, 60, 90, 120 µg/m³`, demonstrating ordering reversal at `90` and `120 µg/m³`), the 24-hour hourly concentration averaging series on fixed `0–400 µg/m³` axis bounds, the single-scale `US AQI` maximum-sub-index selector, and the dated source ledger (`checked 2026-11-11`). Missing, `NaN`, infinite or negative inputs throw an explicit `RangeError` and are never coerced to zero. `scripts/render-aqi-scales-assets.mjs` generates and verifies `social.png` (`1200 × 630`), `default-comparison.png` (`1200 × 750`), and `assets.json` raw-pixel SHA-256 provenance from `model.ts` as part of `features:check`. See [the feature record](../visualizations/why-two-aqi-apps-show-different-numbers.md). This extends the established pure-model/SSR-SVG visualization pattern without altering any foundational architectural decision, so no separate ADR is required.
+
+```mermaid
+flowchart LR
+    Article["Markdown article / generic blog route"] --> Explainer["data-tts-exclude SSR Svelte 5 SVG explainer"]
+    Presets["4 verified 24-hr PM2.5 presets (30, 60, 90, 120 µg/m³)"] --> Model["Pure TS CPCB & US EPA breakpoint / averaging model"]
+    Hourly["24-hr concentration arrays (Steady day / Smoke arrives)"] --> Model
+    SubIndices["Illustrative US AQI sub-indices (154, 62, 37)"] --> Model
+    Model --> Panel1["Panel 1: Paired PM2.5 cards + shared 0–130 µg/m³ band strip"]
+    Model --> Panel2["Panel 2: Fixed 0–400 µg/m³ 24-bar chart + mean vs latest hour"]
+    Model --> Panel3["Panel 3: Shared US AQI horizontal bars + max-score rule"]
+    Model --> Assets["render-aqi-scales-assets.mjs: social.png + default-comparison.png"]
+```
+
 ### Synthetic Data Lab
 
 `/tools/synthetic-data-lab` is a wide site-shell Svelte application, with public descriptive SSR

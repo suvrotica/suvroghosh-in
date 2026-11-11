@@ -36,7 +36,8 @@ const featureChecks = [
 	'strange-attractor-orchestra:assets:check',
 	'mrinmoyee:assets:check',
 	'scale-elevator:assets:check',
-	'fingerprint:assets:check'
+	'fingerprint:assets:check',
+	'aqi-scales:assets:check'
 ];
 
 // Resolve reachable npm scripts, including npm's automatic pre/post lifecycle hooks.
@@ -273,7 +274,8 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'static/fonts/example.woff2',
 		'artifacts/bz-v2-search/calibration.json',
 		'artifacts/fingerprints/calibration.json',
-		'src/lib/posts/how-fingerprints-form.md'
+		'src/lib/posts/how-fingerprints-form.md',
+		'src/lib/posts/why-two-aqi-apps-show-different-numbers.md'
 	]) {
 		assert.equal(matchesPaths(file, workflow.on.pull_request.paths), true, file);
 	}

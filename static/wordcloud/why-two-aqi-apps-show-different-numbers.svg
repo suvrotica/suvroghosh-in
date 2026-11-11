@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Why two AQI apps show different numbers" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Why two AQI apps show different numbers</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(471,129)" font-size="118" style="fill:#d9c89e">AQI</text>
+<text transform="translate(230,612) rotate(-90)" font-size="106" style="fill:#c49a6c">Scale</text>
+<text transform="translate(583,554)" font-size="106" style="fill:#8fb7d0">Particle</text>
+<text transform="translate(490,286)" font-size="100" style="fill:#d9c89e">Metre</text>
+<text transform="translate(838,201)" font-size="100" style="fill:#d88988">Score</text>
+<text transform="translate(706,99)" font-size="100" style="fill:#c49a6c">Hours</text>
+<text transform="translate(408,465)" font-size="100" style="fill:#d9c89e">CPCB</text>
+<text transform="translate(770,404)" font-size="93" style="fill:#d5d2c2">India</text>
+<text transform="translate(316,359)" font-size="93" style="fill:#c7d7b5">Air</text>
+<text transform="translate(148,109)" font-size="86" style="fill:#b6c3dd">PM2.5</text>
+<text transform="translate(325,712)" font-size="86" style="fill:#d88988">Concentration</text>
+<text transform="translate(21,281)" font-size="86" style="fill:#a9b7a3">Pollution</text>
+<text transform="translate(565,364)" font-size="86" style="fill:#8fb7d0">EPA</text>
+<text transform="translate(22,193)" font-size="78" style="fill:#d5d2c2">Different</text>
+<text transform="translate(1036,639)" font-size="78" style="fill:#d6a79f">Hour</text>
+<text transform="translate(808,297)" font-size="78" style="fill:#a9b7a3">Average</text>
+<text transform="translate(350,618)" font-size="78" style="fill:#d5d2c2">Micrograms</text>
+<text transform="translate(1098,488)" font-size="78" style="fill:#d5d2c2">Per</text>
+<text transform="translate(313,551)" font-size="78" style="fill:#9fc9c5">Cubic</text>
+<text transform="translate(753,467)" font-size="78" style="fill:#8fb7d0">Number</text>
+<text transform="translate(1035,704)" font-size="78" style="fill:#d5d2c2">Used</text>
+<text transform="translate(78,708) rotate(-90)" font-size="78" style="fill:#d6a79f">Pollutant</text>
+<text transform="translate(1191,408) rotate(-90)" font-size="69" style="fill:#e0b879">Unhealthy</text>
+<text transform="translate(441,199)" font-size="60" style="fill:#d9c89e">Measurement</text>
+<text transform="translate(141,653) rotate(-90)" font-size="60" style="fill:#c7d7b5">Particles</text>
+<text transform="translate(1258,404) rotate(-90)" font-size="60" style="fill:#9fc9c5">Polluted</text>
+<text transform="translate(235,480)" font-size="60" style="fill:#e0b879">Uses</text>
+<text transform="translate(1269,707) rotate(-90)" font-size="52" style="fill:#c49a6c">Numbers</text>
+<text transform="translate(826,626)" font-size="52" style="fill:#c7d7b5">Gives</text>
+<text transform="translate(90,694)" font-size="52" style="fill:#d88988">Current</text>
+<text transform="translate(917,243)" font-size="52" style="fill:#a9b7a3">Scores</text>
+<text transform="translate(154,42)" font-size="50" style="fill:#e0b879">Describe</text>
+<text transform="translate(146,650)" font-size="50" style="fill:#b6c3dd">Bands</text>
+<text transform="translate(413,39)" font-size="46" style="fill:#d9c89e">Understand</text>
+<text transform="translate(241,403)" font-size="46" style="fill:#d6a79f">System</text>
+<text transform="translate(1117,589)" font-size="46" style="fill:#b6c3dd">Band</text>
+<text transform="translate(457,660)" font-size="46" style="fill:#8fb7d0">Need</text>
+<text transform="translate(1008,67)" font-size="46" style="fill:#d9c89e">Less</text>
+<text transform="translate(1109,533)" font-size="46" style="fill:#d88988">Four</text>
+<text transform="translate(1083,488) rotate(-90)" font-size="46" style="fill:#d88988">Indian</text>
+<text transform="translate(674,136)" font-size="45" style="fill:#d6a79f">Report</text>
+<text transform="translate(8,102)" font-size="45" style="fill:#9fc9c5">Smoke</text>
+<text transform="translate(1022,35)" font-size="39" style="fill:#d5d2c2">Calculation</text>
+<text transform="translate(821,36)" font-size="39" style="fill:#d5d2c2">Guide</text>
+<text transform="translate(940,132)" font-size="39" style="fill:#c49a6c">Reports</text>
+<text transform="translate(215,144)" font-size="39" style="fill:#9fc9c5">Overall</text>
+<text transform="translate(455,375)" font-size="32" style="fill:#9fc9c5">Place</text>
+<text transform="translate(792,325)" font-size="32" style="fill:#b6c3dd">Labelled</text>
+<text transform="translate(634,642)" font-size="26" style="fill:#d88988">Satisfactory</text>
+<text transform="translate(493,489)" font-size="26" style="fill:#d88988">Alone</text>
+<text transform="translate(21,55)" font-size="26" style="fill:#d88988">Quality</text>
+<text transform="translate(826,228)" font-size="26" style="fill:#b6c3dd">Index</text>
+<text transform="translate(820,580)" font-size="26" style="fill:#b6c3dd">Pollutants</text>
+<text transform="translate(301,430)" font-size="26" style="fill:#d5d2c2">Gets</text>
+<text transform="translate(339,642)" font-size="26" style="fill:#b6c3dd">Source</text>
+<text transform="translate(590,387)" font-size="26" style="fill:#d9c89e">Confusion</text>
+<text transform="translate(1098,426)" font-size="25" style="fill:#d9c89e">Micrometres</text>
+<text transform="translate(656,435)" font-size="25" style="fill:#9fc9c5">Across</text>
+<text transform="translate(266,604)" font-size="25" style="fill:#9fc9c5">Deep</text>
+<text transform="translate(1022,89)" font-size="25" style="fill:#d9c89e">Includes</text>
+<text transform="translate(880,654)" font-size="24" style="fill:#b6c3dd">Explanation</text>
+<text transform="translate(17,24)" font-size="24" style="fill:#d6a79f">Describes</text>
+<text transform="translate(661,225)" font-size="24" style="fill:#d5d2c2">Distinction</text>
+<text transform="translate(755,403) rotate(-90)" font-size="24" style="fill:#b6c3dd">Material</text>
+<text transform="translate(253,586) rotate(-90)" font-size="24" style="fill:#8fb7d0">Imagine</text>
+<text transform="translate(1215,60)" font-size="24" style="fill:#c7d7b5">Much</text>
+<text transform="translate(649,488)" font-size="24" style="fill:#d9c89e">Reaches</text>
+<text transform="translate(653,461)" font-size="24" style="fill:#9fc9c5">Cleaner</text>
+<text transform="translate(236,324)" font-size="24" style="fill:#b6c3dd">Higher</text>
+<text transform="translate(22,123)" font-size="24" style="fill:#8fb7d0">Examples</text>
+<text transform="translate(978,340)" font-size="24" style="fill:#8fb7d0">Using</text>
+<text transform="translate(455,151)" font-size="24" style="fill:#9fc9c5">Moderate</text>
+<text transform="translate(222,212)" font-size="20" style="fill:#9fc9c5">Moderately</text>
+<text transform="translate(60,211)" font-size="20" style="fill:#8fb7d0">Calculated</text>
+<text transform="translate(369,221)" font-size="20" style="fill:#9fc9c5">Underlying</text>
+<text transform="translate(233,359)" font-size="20" style="fill:#c49a6c">Design</text>
+<text transform="translate(20,442) rotate(-90)" font-size="20" style="fill:#a9b7a3">Airquality</text>
+<text transform="translate(161,509) rotate(-90)" font-size="20" style="fill:#b6c3dd">Explains</text>
+<text transform="translate(612,154)" font-size="20" style="fill:#c49a6c">Breathing</text>
+<text transform="translate(479,335)" font-size="20" style="fill:#a9b7a3">Hourly</text>
+<text transform="translate(96,305)" font-size="20" style="fill:#d6a79f">Longer</text>
+<text transform="translate(728,320) rotate(-90)" font-size="20" style="fill:#d88988">Remain</text>
+<text transform="translate(399,60)" font-size="20" style="fill:#c7d7b5">Airnow</text>
+<text transform="translate(825,343)" font-size="20" style="fill:#d6a79f">Explain</text>
+<text transform="translate(1111,391) rotate(-90)" font-size="20" style="fill:#c49a6c">Nowcast</text>
+<text transform="translate(841,118)" font-size="20" style="fill:#c49a6c">Readings</text>
+<text transform="translate(490,308)" font-size="20" style="fill:#e0b879">Iqair</text>
+<text transform="translate(272,572)" font-size="20" style="fill:#c7d7b5">Tell</text>
+<text transform="translate(997,620) rotate(-90)" font-size="20" style="fill:#c49a6c">Many</text>
+<text transform="translate(158,715)" font-size="20" style="fill:#d9c89e">Table</text>
+<text transform="translate(704,22)" font-size="20" style="fill:#d9c89e">Guidance</text>
+<text transform="translate(231,715)" font-size="20" style="fill:#b6c3dd">Possible</text>
+<text transform="translate(1035,573)" font-size="20" style="fill:#d88988">Beside</text>
+<text transform="translate(392,483)" font-size="17" style="fill:#e0b879">Averaging</text>
+<text transform="translate(391,127)" font-size="12" style="fill:#d6a79f">Apps</text>
+<text transform="translate(373,372)" font-size="12" style="fill:#e0b879">Give</text>
+<text transform="translate(412,98)" font-size="12" style="fill:#c7d7b5">Suppose</text>
+<text transform="translate(696,570)" font-size="12" style="fill:#d9c89e">Monitor</text>
+<text transform="translate(754,658)" font-size="12" style="fill:#d5d2c2">Records</text>
+<text transform="translate(404,78)" font-size="12" style="fill:#e0b879">Full</text>
+<text transform="translate(1085,102)" font-size="12" style="fill:#a9b7a3">Considers</text>
+<text transform="translate(200,423)" font-size="12" style="fill:#d9c89e">Small</text>
+<text transform="translate(524,535)" font-size="12" style="fill:#d6a79f">Example</text>
+<text transform="translate(545,518)" font-size="12" style="fill:#c49a6c">First</text>
+<text transform="translate(508,565)" font-size="12" style="fill:#c49a6c">Amount</text>
+<text transform="translate(1204,143) rotate(-90)" font-size="12" style="fill:#c7d7b5">Figures</text>
+<text transform="translate(1225,104)" font-size="12" style="fill:#8fb7d0">Follow</text>
+<text transform="translate(589,566)" font-size="12" style="fill:#b6c3dd">Central</text>
+<text transform="translate(451,387)" font-size="12" style="fill:#d6a79f">Control</text>
+<text transform="translate(688,413)" font-size="12" style="fill:#9fc9c5">Board</text>
+<text transform="translate(1110,550)" font-size="12" style="fill:#d5d2c2">Environmental</text>
+<text transform="translate(679,658)" font-size="12" style="fill:#8fb7d0">Protection</text>
+<text transform="translate(403,655)" font-size="12" style="fill:#d5d2c2">Agency</text>
+<text transform="translate(448,77)" font-size="12" style="fill:#c7d7b5">Meant</text>
+<text transform="translate(1190,502)" font-size="12" style="fill:#8fb7d0">Easier</text>
+<text transform="translate(842,242)" font-size="12" style="fill:#a9b7a3">Somehow</text>
+<text transform="translate(1026,491) rotate(-90)" font-size="12" style="fill:#8fb7d0">Checking</text>
+<text transform="translate(978,419)" font-size="12" style="fill:#c7d7b5">Whether</text>
+<text transform="translate(745,544)" font-size="12" style="fill:#c7d7b5">Walk</text>
+<text transform="translate(1215,76)" font-size="12" style="fill:#c49a6c">Acquired</text>
+<text transform="translate(262,297)" font-size="12" style="fill:#d9c89e">Homework</text>
+<text transform="translate(55,474)" font-size="12" style="fill:#d88988">Start</text>
+<text transform="translate(941,14)" font-size="12" style="fill:#d88988">Actually</text>
+<text transform="translate(775,373) rotate(-90)" font-size="12" style="fill:#d6a79f">Measured</text>
+<text transform="translate(937,531)" font-size="12" style="fill:#a9b7a3">Means</text>
+<text transform="translate(583,660)" font-size="12" style="fill:#c7d7b5">Airborne</text>
+<text transform="translate(99,366) rotate(-90)" font-size="12" style="fill:#c7d7b5">Include</text>
+<text transform="translate(270,522)" font-size="12" style="fill:#a9b7a3">Tiny</text>
+<text transform="translate(453,564)" font-size="12" style="fill:#b6c3dd">Solid</text>
+<text transform="translate(1008,101)" font-size="12" style="fill:#d88988">Liquid</text>
+</svg>

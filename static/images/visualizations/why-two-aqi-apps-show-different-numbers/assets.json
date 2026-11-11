@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.0.0",
+  "sourcesCheckedDate": "2026-11-11",
+  "sourceHash": "3eb7350e9a0bf5702d4382e9c982faf046362f279e700486f744ae93ffaff165",
+  "sources": [
+    "src/lib/visualizations/why-two-aqi-apps-show-different-numbers/model.ts",
+    "src/lib/visualizations/why-two-aqi-apps-show-different-numbers/index.ts",
+    "scripts/render-aqi-scales-assets.mjs"
+  ],
+  "files": {
+    "social.png": {
+      "width": 1200,
+      "height": 630,
+      "bytes": 35652,
+      "pixelSha256": "84e674c4f0cc6c7019f4c84a01ecccf5896e6c1147c9bf8d5b4887e572f4f50c"
+    },
+    "default-comparison.png": {
+      "width": 1200,
+      "height": 750,
+      "bytes": 50939,
+      "pixelSha256": "697b942875db4deb871c1d4b680ab1404aa32032f15c3fdada6e2a27598ffe46"
+    }
+  }
+}

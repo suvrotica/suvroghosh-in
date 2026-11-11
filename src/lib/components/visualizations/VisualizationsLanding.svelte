@@ -63,7 +63,9 @@
 		'how-fingerprints-form': visualizationSummaries['how-fingerprints-form'].subjects,
 		'ink-that-follows-a-scent': visualizationSummaries['ink-that-follows-a-scent'].subjects,
 		'the-epidemic-mosaic': visualizationSummaries['the-epidemic-mosaic'].subjects,
-		'the-predator-prey-loom': visualizationSummaries['the-predator-prey-loom'].subjects
+		'the-predator-prey-loom': visualizationSummaries['the-predator-prey-loom'].subjects,
+		'why-two-aqi-apps-show-different-numbers':
+			visualizationSummaries['why-two-aqi-apps-show-different-numbers'].subjects
 	};
 	const subjects = [
 		'All',

@@ -1405,3 +1405,72 @@ test('The Predator–Prey Loom is registered as a verified Rosenzweig–MacArthu
 	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
 	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
 });
+
+test('Why two AQI apps show different numbers is registered as an SSR-readable CPCB vs US EPA scale, averaging, and dominant-pollutant explainer', () => {
+	const slug = 'why-two-aqi-apps-show-different-numbers';
+	const articlePath = `/blog/visualizations/${slug}`;
+	const socialPath = `/images/visualizations/${slug}/social.png`;
+	const comparisonPath = `/images/visualizations/${slug}/default-comparison.png`;
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const explainer = read('src', 'lib', 'components', 'visualizations', slug, 'AqiExplainer.svelte');
+	const model = read('src', 'lib', 'visualizations', slug, 'model.ts');
+	const socialFile = path.join(root, 'static', ...socialPath.split('/').filter(Boolean));
+	const comparisonFile = path.join(root, 'static', ...comparisonPath.split('/').filter(Boolean));
+
+	assert.match(post, /title: "?Why two AQI apps show different numbers"?/);
+	assert.match(post, /category: "?Visualizations"?/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.ok(
+		post.includes(`thumbnail: ${socialPath}`) || post.includes(`thumbnail: "${socialPath}"`)
+	);
+	assert.match(post, /<AqiExplainer \/>/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /https:\/\/airquality\.cpcb\.gov\.in\/ccr_docs\/About_AQI\.pdf/);
+	assert.match(
+		post,
+		/https:\/\/aqs\.epa\.gov\/aqsweb\/documents\/codetables\/aqi_breakpoints\.html/
+	);
+	assert.match(
+		post,
+		/https:\/\/document\.airnow\.gov\/technical-assistance-document-for-the-reporting-of-daily-air-quailty\.pdf/
+	);
+
+	const explainerFlat = explainer.replace(/\s+/g, ' ');
+	assert.match(explainerFlat, /How can the same air produce two different AQI numbers\?/);
+	assert.match(model, /Changing the scale changes the score\. It removes no pollution\./);
+	assert.match(model, /A lower number on a different scale does not mean cleaner air\./);
+	assert.match(
+		explainerFlat,
+		/A recent reading describes the smoky hours more closely\. A daily average includes the earlier hours too\./
+	);
+	assert.match(explainerFlat, /The highest pollutant score sets the overall number\./);
+
+	assert.doesNotMatch(model, /svelte/);
+	assert.doesNotMatch(model, /Math\.random\s*\(/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.ok(registry.includes(`poster: '${socialPath}'`));
+	assert.ok(registry.includes(`href: '${articlePath}'`));
+	assert.match(
+		landing,
+		/'why-two-aqi-apps-show-different-numbers':\s*\n?\s*visualizationSummaries\['why-two-aqi-apps-show-different-numbers'\]\.subjects/
+	);
+
+	assert.ok(fs.existsSync(socialFile), 'missing AQI explainer social.png');
+	assert.ok(fs.existsSync(comparisonFile), 'missing AQI explainer default-comparison.png');
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(
+		fs.statSync(comparisonFile).size < 750 * 1024,
+		'default-comparison.png exceeds 750 KiB'
+	);
+});

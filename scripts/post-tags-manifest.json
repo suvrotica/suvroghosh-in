@@ -17399,6 +17399,37 @@
 				"Surface Diffusion"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/why-two-aqi-apps-show-different-numbers.md": {
+			"bodyHash": "a70ebdd968fb6ea507d49f3fcdef61127c7a9fbeb0efc4b4eedf76afffbf3f58",
+			"hashVersion": 2,
+			"revisionHash": "a3962f6198ca1cb7b98a53fee614cb537dde1a9a97f5fa3820691c3c7d27b1ed",
+			"generatedTags": [
+				"Air Quality Index",
+				"PM2.5",
+				"CPCB",
+				"US EPA",
+				"Public Health",
+				"Healthcare",
+				"Statistics",
+				"Data Visualization",
+				"Environmental Health",
+				"India"
+			],
+			"pinnedTags": [
+				"Air Quality Index",
+				"PM2.5",
+				"CPCB",
+				"US EPA",
+				"Public Health",
+				"Healthcare",
+				"Statistics",
+				"Data Visualization",
+				"Environmental Health",
+				"India"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-11"
 		}
 	},
 	"maxTags": 10

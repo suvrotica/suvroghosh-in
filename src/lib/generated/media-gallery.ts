@@ -6068,6 +6068,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/why-two-aqi-apps-show-different-numbers/default-comparison.png",
+			"src": "/images/visualizations/why-two-aqi-apps-show-different-numbers/default-comparison.png",
+			"bytes": 50939,
+			"width": 1200,
+			"height": 750
+		},
+		{
+			"name": "visualizations/why-two-aqi-apps-show-different-numbers/social.png",
+			"src": "/images/visualizations/why-two-aqi-apps-show-different-numbers/social.png",
+			"bytes": 35652,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "wait-until-she-finishes.jpg",
 			"src": "/images/wait-until-she-finishes.jpg",
 			"bytes": 95240,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T01:45:41.116079+00:00",
+  "generatedAt": "2026-11-11T02:39:35.494216+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -18030,6 +18030,29 @@
         "Surface",
         "Angle",
         "Air"
+      ],
+      "wordCount": 130
+    },
+    "why-two-aqi-apps-show-different-numbers": {
+      "generatedAt": "2026-11-11T02:39:35.483183+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/why-two-aqi-apps-show-different-numbers.svg",
+      "source": "src/lib/posts/why-two-aqi-apps-show-different-numbers.md",
+      "sourceHash": "3ee835bd3f10a25c3e6e1110b5f2b1f7c7614bb624eb1a97caa3268ac30f2d69",
+      "sourceModified": "2026-11-11T02:33:49.370362+00:00",
+      "topWords": [
+        "AQI",
+        "Scale",
+        "Particle",
+        "Metre",
+        "Score",
+        "Hours",
+        "CPCB",
+        "India",
+        "Air",
+        "PM2.5",
+        "Concentration",
+        "Pollution"
       ],
       "wordCount": 130
     },
