@@ -63,9 +63,13 @@ test.describe('Why two AQI apps show different numbers — interactive explainer
 			}
 		});
 
-		await page.goto(ARTICLE_PATH);
+		await page.goto(ARTICLE_PATH, { waitUntil: 'networkidle' });
 		const shell = page.locator('[data-aqi-explainer]');
 		await expect(shell).toBeVisible();
+		const desktopBox = await shell.boundingBox();
+		expect(desktopBox).not.toBeNull();
+		expect(desktopBox!.width).toBeGreaterThanOrEqual(960);
+		expect(Math.abs(desktopBox!.x + desktopBox!.width / 2 - 1440 / 2)).toBeLessThanOrEqual(24);
 
 		// Initial preset = 60 µg/m³
 		await expect(shell.getByTestId('preset-pm25-60')).toHaveAttribute('aria-pressed', 'true');
@@ -160,7 +164,7 @@ test.describe('Why two AQI apps show different numbers — interactive explainer
 			route.fulfill({ status: 200, contentType: 'application/javascript', body: '' })
 		);
 		await page.setViewportSize({ width: 375, height: 812 });
-		await page.goto(ARTICLE_PATH);
+		await page.goto(ARTICLE_PATH, { waitUntil: 'networkidle' });
 
 		const shell = page.locator('[data-aqi-explainer]');
 		await expect(shell).toBeVisible();

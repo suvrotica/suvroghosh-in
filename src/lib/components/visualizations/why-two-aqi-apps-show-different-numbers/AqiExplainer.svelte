@@ -91,7 +91,7 @@
 </script>
 
 <section
-	class="aqi-explainer not-prose"
+	class="aqi-explainer article-breakout not-prose"
 	data-aqi-explainer
 	data-tts-exclude
 	aria-labelledby={`${uid}-title`}
@@ -735,9 +735,13 @@
 		border: 1px solid var(--aqi-border);
 		border-top: 3px solid var(--aqi-accent-primary);
 		border-radius: 14px;
-		padding: 1.5rem 1.35rem 1.65rem;
-		margin: 0 auto 2.5rem;
-		max-width: 920px;
+		position: relative;
+		left: calc(50% + var(--article-breakout-offset, 0rem));
+		width: min(1040px, calc(100vw - 2rem));
+		max-width: none;
+		padding: clamp(1rem, 2.5vw, 1.85rem);
+		margin: 0 0 2.5rem;
+		transform: translateX(-50%);
 		font-family:
 			'Roboto Variable',
 			system-ui,

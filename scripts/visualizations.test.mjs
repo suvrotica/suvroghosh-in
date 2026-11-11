@@ -364,7 +364,8 @@ test('wide article visualizations share the viewport-centred breakout contract',
 		['living-pigment', 'LivingPigmentStudio.svelte'],
 		['monte-carlo', 'MonteCarloLab.svelte'],
 		['spacetime-laboratory', 'SpacetimeLaboratory.svelte'],
-		['domain-coloring', 'DomainColoringExplorer.svelte']
+		['domain-coloring', 'DomainColoringExplorer.svelte'],
+		['why-two-aqi-apps-show-different-numbers', 'AqiExplainer.svelte']
 	];
 
 	assert.match(
