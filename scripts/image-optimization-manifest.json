@@ -11115,6 +11115,22 @@
       "sourceHash": "f1dec40dce58d4a4bceb6073ab8262d9187227dad7f6717215932be362060ff2",
       "width": 1448
     },
+    "static/images/the-void-screams-back.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 213273,
+      "outputHash": "300815c66a499dc25b3ddb7f6c0b0311119e394a5292205401d0cc39910991ef",
+      "psnrDb": 69.68,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 213273,
+      "sourceHash": "300815c66a499dc25b3ddb7f6c0b0311119e394a5292205401d0cc39910991ef",
+      "width": 1672
+    },
     "static/images/the-water-turned.jpg": {
       "format": "JPEG",
       "height": 941,

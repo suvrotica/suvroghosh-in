@@ -4899,6 +4899,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1086
 		},
 		{
+			"name": "the-void-screams-back.jpg",
+			"src": "/images/the-void-screams-back.jpg",
+			"bytes": 213273,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "the-water-turned.jpg",
 			"src": "/images/the-water-turned.jpg",
 			"bytes": 255811,

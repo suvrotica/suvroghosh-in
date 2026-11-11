@@ -17459,6 +17459,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-11"
+		},
+		"src/lib/posts/the-void-screams-back.md": {
+			"bodyHash": "def276ae173417d62d4ce7146ee13434ce086d1857e39fba90f0b23d08d1a299",
+			"hashVersion": 2,
+			"revisionHash": "d4150ed1fefb99e5290c9c16b9b477b40a2c7365a1dab01a0ccee05cd04dbb07",
+			"generatedTags": [
+				"Contrarian",
+				"Social Media",
+				"Algorithms",
+				"Writing",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Truth",
+				"Apathy",
+				"Voice"
+			],
+			"pinnedTags": [
+				"Contrarian",
+				"Social Media",
+				"Algorithms",
+				"Writing",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Truth",
+				"Apathy",
+				"Voice"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
