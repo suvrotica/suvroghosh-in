@@ -1,3 +1,4 @@
+export const THE_REPAIR_SHOP_ON_THE_CORNER_SLUG = 'the-repair-shop-on-the-corner';
 export const CALCUTTA_FOOTPATH_SLUG = 'calcutta-footpath-simulator-ekdom-side-diye-jaan';
 export const KAGOJER_DANA_SLUG = 'kagojer-dana-a-paper-plane-through-calcutta';
 export const HEALTHCARE_IT_CROSSWORD_SLUG = 'healthcare-it-crossword-systems-rounds';
@@ -5,6 +6,7 @@ export const LUDO_SAAP_LUDO_SLUG = 'ludo-and-saap-ludo';
 export const SORT_THE_TRAY_SLUG = 'sort-the-tray';
 
 export const GAME_EXPERIENCES = [
+	'repair-shop',
 	'sort-the-tray',
 	'period-board-games',
 	'healthcare-it-crossword',
@@ -15,6 +17,7 @@ export const GAME_EXPERIENCES = [
 export type GameExperience = (typeof GAME_EXPERIENCES)[number];
 
 export type GameSlug =
+	| typeof THE_REPAIR_SHOP_ON_THE_CORNER_SLUG
 	| typeof SORT_THE_TRAY_SLUG
 	| typeof LUDO_SAAP_LUDO_SLUG
 	| typeof HEALTHCARE_IT_CROSSWORD_SLUG
@@ -43,6 +46,34 @@ export type GameCatalogEntry = {
 };
 
 export const gamesCatalog: readonly GameCatalogEntry[] = [
+	{
+		slug: THE_REPAIR_SHOP_ON_THE_CORNER_SLUG,
+		experience: 'repair-shop',
+		title: 'The Repair Shop on the Corner',
+		shortTitle: 'The Repair Shop',
+		description:
+			'A three-dimensional Calcutta repair-shop game: listen to symptoms, mend a radio, clock, and 8mm projector, and screen an evening courtyard film.',
+		kind: '3D neighbourhood repair game',
+		cardEyebrow: 'Three everyday objects, one afternoon lane',
+		actionLabel: 'Open the shutter',
+		cover: '/images/games/the-repair-shop-on-the-corner-cover.webp',
+		socialCover: '/images/games/the-repair-shop-on-the-corner-social.png',
+		coverAlt:
+			'A sunlit Calcutta corner repair shop with a warm workbench lamp, a portable radio, brass clockwork, an 8mm film projector, and a shared courtyard outside',
+		inputs: ['Click or tap', 'Keyboard', 'Accessible bench controls'],
+		duration: '25–40 minutes',
+		durationLabel: 'First chapter (saves per repair)',
+		compatibility: ['Desktop', 'Mobile', 'Tablet'],
+		keywords: [
+			'Calcutta game',
+			'Kolkata game',
+			'Repair game',
+			'3D browser game',
+			'Nonviolent game'
+		],
+		shell: 'immersive',
+		status: 'New'
+	},
 	{
 		slug: SORT_THE_TRAY_SLUG,
 		experience: 'sort-the-tray',

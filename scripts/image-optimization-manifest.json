@@ -9754,6 +9754,37 @@
       "sourceHash": "926399be875403e0f2806e9426ba6aa4783165508178ced36f66f67bb4715782",
       "width": 1200
     },
+    "static/images/games/the-repair-shop-on-the-corner-cover.webp": {
+      "format": "WEBP",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 22590,
+      "outputHash": "45910ebe37562e9dbad62bbf22096c5f6ee3a2cd569893077cfca7a2ad4e526b",
+      "psnrDb": 41.1,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 37286,
+      "sourceHash": "1163025605f228d0fc2bad7b1422a5deb51643240d16c19ce1c81aa0ec54ec2f",
+      "width": 1200
+    },
+    "static/images/games/the-repair-shop-on-the-corner-social.png": {
+      "format": "PNG",
+      "height": 800,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 72835,
+      "outputHash": "242b72b096c027f14bddd109e8bbf18b26ba720cce577296a2750e83cac2b0ed",
+      "resized": false,
+      "sourceBytes": 72835,
+      "sourceHash": "242b72b096c027f14bddd109e8bbf18b26ba720cce577296a2750e83cac2b0ed",
+      "width": 1200
+    },
     "static/images/gdp-grossly-deceptive-product.jpg": {
       "format": "JPEG",
       "height": 900,

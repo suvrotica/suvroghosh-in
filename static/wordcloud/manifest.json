@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T02:39:35.494216+00:00",
+  "generatedAt": "2026-11-11T10:25:10.932811+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -15224,6 +15224,29 @@
         "Black",
         "Mother",
         "Face"
+      ],
+      "wordCount": 130
+    },
+    "the-repair-shop-on-the-corner": {
+      "generatedAt": "2026-11-11T10:25:08.695186+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-repair-shop-on-the-corner.svg",
+      "source": "src/lib/posts/the-repair-shop-on-the-corner.md",
+      "sourceHash": "0ecc114a3146e36870a0b494eb39a8079b3de2b78b24588d1db237c49ae878ae",
+      "sourceModified": "2026-11-11T10:24:34.010821+00:00",
+      "topWords": [
+        "Repair",
+        "Workbench",
+        "Film",
+        "Controls",
+        "Objects",
+        "Audio",
+        "Courtyard",
+        "Every",
+        "Test",
+        "Neighbourhood",
+        "Shop",
+        "Corner"
       ],
       "wordCount": 130
     },

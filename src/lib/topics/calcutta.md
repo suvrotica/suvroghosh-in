@@ -28,6 +28,7 @@ includePaths:
   - '/blog/essay/lumpy-edge-of-bijon-setu'
   - '/blog/personal/america-and-calcutta'
   - '/blog/calcutta/the-zeitgeist-of-calcutta-has-changed'
+  - '/blog/games/the-repair-shop-on-the-corner'
   - '/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan'
   - '/blog/games/kagojer-dana-a-paper-plane-through-calcutta'
   - '/blog/games/ludo-and-saap-ludo'
@@ -61,6 +62,7 @@ readingPaths:
 relatedResources:
   visualizations: []
   games:
+    - '/blog/games/the-repair-shop-on-the-corner'
     - '/blog/games/ludo-and-saap-ludo'
     - '/blog/games/kagojer-dana-a-paper-plane-through-calcutta'
     - '/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan'

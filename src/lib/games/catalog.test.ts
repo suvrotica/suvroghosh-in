@@ -8,6 +8,7 @@ import {
 	KAGOJER_DANA_SLUG,
 	LUDO_SAAP_LUDO_SLUG,
 	SORT_THE_TRAY_SLUG,
+	THE_REPAIR_SHOP_ON_THE_CORNER_SLUG,
 	gameBySlug,
 	gamesCatalog
 } from './catalog';
@@ -66,6 +67,7 @@ describe('games catalog integration', () => {
 
 	it('assigns every catalog game an explicit experience instead of a catch-all renderer', () => {
 		expect(Object.fromEntries(gamesCatalog.map((game) => [game.slug, game.experience]))).toEqual({
+			[THE_REPAIR_SHOP_ON_THE_CORNER_SLUG]: 'repair-shop',
 			[SORT_THE_TRAY_SLUG]: 'sort-the-tray',
 			[LUDO_SAAP_LUDO_SLUG]: 'period-board-games',
 			[HEALTHCARE_IT_CROSSWORD_SLUG]: 'healthcare-it-crossword',

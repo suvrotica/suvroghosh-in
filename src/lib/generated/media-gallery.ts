@@ -3842,6 +3842,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "games/the-repair-shop-on-the-corner-cover.webp",
+			"src": "/images/games/the-repair-shop-on-the-corner-cover.webp",
+			"bytes": 22590,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "games/the-repair-shop-on-the-corner-social.png",
+			"src": "/images/games/the-repair-shop-on-the-corner-social.png",
+			"bytes": 72835,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "gdp-grossly-deceptive-product.jpg",
 			"src": "/images/gdp-grossly-deceptive-product.jpg",
 			"bytes": 409919,

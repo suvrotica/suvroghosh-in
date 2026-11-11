@@ -26,8 +26,8 @@
 			</p>
 		</div>
 		<p class="mt-4 mb-6 max-w-xl text-left text-base leading-relaxed sm:text-lg">
-			A folding board, a crossword, a paper plane, a Calcutta street. Find a little world to spend
-			some time in.
+			A corner repair shop, a folding board, a crossword, a paper plane, a Calcutta street. Find a
+			little world to spend some time in.
 		</p>
 
 		<nav aria-label="Choose a game">
@@ -72,9 +72,9 @@
 			Make yourself at home
 		</h2>
 		<p class="mt-2 mb-0 text-left text-sm leading-relaxed">
-			Saved rounds, scores and settings stay in this browser. Ludo and the crossword let you resume
-			unfinished play. Each game has its own instructions. No account or online leaderboard
-			required.
+			Saved repairs, rounds, scores and settings stay in this browser. The repair shop, Ludo and the
+			crossword let you resume unfinished play. Each game has its own instructions. No account or
+			online leaderboard required.
 		</p>
 	</aside>
 </section>

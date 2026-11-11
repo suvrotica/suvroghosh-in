@@ -6,11 +6,13 @@
 	import CrosswordGame from '$lib/components/games/crossword/CrosswordGame.svelte';
 	import PeriodBoardGames from '$lib/components/games/period-board-games/PeriodBoardGames.svelte';
 	import SortTheTray from '$lib/components/games/sort-the-tray/SortTheTray.svelte';
+	import RepairShopShell from '$lib/components/games/the-repair-shop-on-the-corner/RepairShopShell.svelte';
 	import { healthcareItPack } from '$lib/games/crossword/content/packs/healthcare-it';
 	import type { GameExperience } from '$lib/games/catalog';
 	import type { PageData } from './$types';
 
 	const instructionHeading = {
+		'repair-shop': 'How to repair',
 		'sort-the-tray': 'How to sort',
 		'period-board-games': 'How to play',
 		'healthcare-it-crossword': 'How to solve',
@@ -23,7 +25,9 @@
 
 <SEO {...data.seo} />
 
-{#if data.game.experience === 'sort-the-tray'}
+{#if data.game.experience === 'repair-shop'}
+	<RepairShopShell game={data.game} />
+{:else if data.game.experience === 'sort-the-tray'}
 	<SortTheTray />
 {:else if data.game.experience === 'period-board-games'}
 	<PeriodBoardGames game={data.game} />
@@ -63,7 +67,23 @@
 				>
 					About the game
 				</p>
-				{#if data.game.experience === 'sort-the-tray'}
+				{#if data.game.experience === 'repair-shop'}
+					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
+						Listen to the symptom, find the fault, see it useful again.
+					</h2>
+					<p class="mt-5 text-left text-lg leading-relaxed">
+						Run a small repair shop on fictional Kusumtala Corner in Calcutta. Bapi from the tea
+						stall brings a portable radio whose sound drops out whenever it moves, Mala next door at
+						Sen Brothers has a wind-up clock whose hands stand still, and Ruma is trying to get an
+						8mm film projector ready for the evening courtyard screening.
+					</p>
+					<p class="mt-4 text-left leading-relaxed">
+						Every job follows a calm, hands-on loop: listen to what still works versus what fails,
+						open the casing at your workbench, inspect real components, make a reversible repair,
+						verify it under test, and carry it back down the lane to see it working in the
+						neighbourhood.
+					</p>
+				{:else if data.game.experience === 'sort-the-tray'}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						A few things to put in their place.
 					</h2>
@@ -136,7 +156,25 @@
 			<aside class="rounded-2xl border border-amber-950/15 bg-white/55 p-5 dark:bg-white/5">
 				<h2 class="m-0 text-lg font-black">{instructionHeading[data.game.experience]}</h2>
 				<ul class="mt-4 space-y-3 text-sm leading-relaxed">
-					{#if data.game.experience === 'sort-the-tray'}
+					{#if data.game.experience === 'repair-shop'}
+						<li>
+							<strong>Explore:</strong> Walk with <strong>WASD</strong> or
+							<strong>Arrow keys</strong>, click or tap the lane, or use the labelled
+							<strong>Walk & Visit</strong> buttons.
+						</li>
+						<li>
+							<strong>Interact:</strong> Press <strong>E</strong> / <strong>Enter</strong> nearby, click
+							people and shop fixtures in 3D, or tap the prominent action button.
+						</li>
+						<li>
+							<strong>At the workbench:</strong> Drag or use camera buttons to rotate and zoom. Select
+							parts directly in 3D or through the accessible component list alongside the view.
+						</li>
+						<li>
+							<strong>Pause & hints:</strong> <strong>Escape</strong> steps back from the bench or opens
+							options. Three optional hint levels and per-repair reset carry zero penalty.
+						</li>
+					{:else if data.game.experience === 'sort-the-tray'}
 						<li><strong>Drag</strong> an object to its labelled dish.</li>
 						<li><strong>Or tap</strong> the object, then the dish.</li>
 						<li>
@@ -188,7 +226,40 @@
 		</div>
 
 		<div class="mt-12 grid gap-5 sm:grid-cols-2">
-			{#if data.game.experience === 'sort-the-tray'}
+			{#if data.game.experience === 'repair-shop'}
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Three connected repairs</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Trace an intermittent speaker lead in a battery radio, arrange brass wheels across fixed
+						arbors in a wind-up clock, and replace a perished belt before threading and focusing an
+						8mm projector for the shared courtyard film evening.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Reversible and unhurried</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Removed screws, covers, batteries and gears rest safely in your bench tray and can never
+						be lost or destroyed. Incorrect arrangements explain mechanically why motion or film
+						transport stops so you can try again at your own pace.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Sound, captions and accessibility</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Sound starts only if you ask for it, and every audio symptom has a clear visual cue and
+						live text description. Select-then-place controls, keyboard navigation, high-contrast
+						labels and reduced motion work on desktop and mobile.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Saved in this browser</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Accepted jobs, workbench progress, returned objects, neighbourhood changes and settings
+						stay privately in this browser’s local storage. Stop after a single repair and return
+						later — no account, upload or external service is used.
+					</p>
+				</section>
+			{:else if data.game.experience === 'sort-the-tray'}
 				<section class="rounded-xl border border-amber-950/15 p-5">
 					<h2 class="m-0 text-xl font-black">Make yourself comfortable</h2>
 					<p class="mt-3 text-left text-sm leading-relaxed">
@@ -357,7 +428,14 @@
 	</div>
 </section>
 
-{#if data.game.experience === 'sort-the-tray'}
+{#if data.game.experience === 'repair-shop'}
+	<noscript>
+		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
+			JavaScript is required to run the 3D neighbourhood, workbench repairs and local saves. The
+			game overview, controls and privacy details remain available above.
+		</div>
+	</noscript>
+{:else if data.game.experience === 'sort-the-tray'}
 	<noscript
 		><div class="bg-[#f6f3ec] p-6 text-center text-[#343d35]">
 			JavaScript is needed to move and save the objects. The instructions and game description

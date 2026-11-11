@@ -17430,6 +17430,35 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-11"
+		},
+		"src/lib/posts/the-repair-shop-on-the-corner.md": {
+			"bodyHash": "edbbf089d594d919c09d720693c19cfa5986d7513758a45884e9486848180907",
+			"hashVersion": 2,
+			"revisionHash": "0bfb97b674d3919f9a9224ba2d401d09a4375a09491da141c825a4c4a6f64bc6",
+			"generatedTags": [
+				"Games",
+				"Calcutta",
+				"Kolkata",
+				"Browser Game",
+				"Three.js",
+				"Repair",
+				"Interactive Fiction",
+				"Accessible Games",
+				"Browser-Local Saves",
+				"Asset Credits"
+			],
+			"pinnedTags": [
+				"Games",
+				"Calcutta",
+				"Kolkata",
+				"Browser Game",
+				"Three.js",
+				"Repair",
+				"Interactive Fiction",
+				"Accessible Games"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-11"
 		}
 	},
 	"maxTags": 10
