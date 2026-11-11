@@ -1,0 +1,12 @@
+{
+	"extends": "./tsconfig.json",
+	"include": [
+		".svelte-kit/ambient.d.ts",
+		"src/app.d.ts",
+		"src/lib/visualizations/fingerprint/**/*.svelte",
+		"src/lib/visualizations/fingerprint/**/*.ts",
+		"scripts/validate-fingerprint-model.ts",
+		"tests/browser/fingerprint.spec.ts",
+		"playwright.fingerprint.config.ts"
+	]
+}

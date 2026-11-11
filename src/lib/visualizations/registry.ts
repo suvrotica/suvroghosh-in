@@ -462,6 +462,17 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/a-skin-that-paints-itself',
 		status: 'published'
 	},
+	'how-fingerprints-form': {
+		id: 'how-fingerprints-form',
+		title: 'How fingerprints form',
+		description:
+			'Grow a synthetic fingerprint and see how ridge spacing, the places where ridges begin, and their timing change the result.',
+		subjects: ['Biology', 'Mathematics', 'Scientific Computing'],
+		poster: '/images/visualizations/how-fingerprints-form/social.png',
+		posterAlt: 'A synthetic loop print with dark curving ridges on a warm pale field.',
+		href: '/blog/visualizations/how-fingerprints-form',
+		status: 'published'
+	},
 	'ink-that-follows-a-scent': {
 		id: 'ink-that-follows-a-scent',
 		title: 'Ink That Follows a Scent',

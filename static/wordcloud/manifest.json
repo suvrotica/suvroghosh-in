@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T07:53:27.163840+00:00",
+  "generatedAt": "2026-11-11T01:45:41.116079+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5495,6 +5495,29 @@
         "Now",
         "Perhaps",
         "Ceiling"
+      ],
+      "wordCount": 130
+    },
+    "how-fingerprints-form": {
+      "generatedAt": "2026-11-11T01:45:30.906694+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/how-fingerprints-form.svg",
+      "source": "src/lib/posts/how-fingerprints-form.md",
+      "sourceHash": "01ccae25b969489a3be31540befbfe4f5924eb82451fe381cc7b8b2332c79907",
+      "sourceModified": "2026-11-11T01:44:50.046416+00:00",
+      "topWords": [
+        "Ridges",
+        "Small",
+        "Fingertip",
+        "Loop",
+        "Differences",
+        "Change",
+        "Signal",
+        "Fingerprint",
+        "Starting",
+        "Detail",
+        "Pattern",
+        "Activity"
       ],
       "wordCount": 130
     },

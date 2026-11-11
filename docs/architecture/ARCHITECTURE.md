@@ -2094,6 +2094,24 @@ flowchart LR
     Lifecycle --> Worker
 ```
 
+### How fingerprints form: reaction–diffusion on a curved surface
+
+The ordinary Visualizations Markdown article at `/blog/visualizations/how-fingerprints-form` renders an instrument, a solved Loop example and the companion prose through the generic article route. The gallery imports only discovery metadata. `visualizations/fingerprint` owns the versioned settings, finite-volume model, worker protocol, Svelte lifecycle and Canvas 2D display. There is no new route exception, endpoint, account, upload, external runtime service, persistence store or shared solver.
+
+Each mount owns a browser worker. Settings replace previous work via a run ID; short batches yield for pause, visibility and replacement. A transferred activator snapshot supplies both display views and PNG export. The current settings and the settings attached to a previous or kept result remain separate. The feature releases its worker, observers, timers and pending example request on teardown. With no browser renderer, the same article keeps the labelled static example and the explanation.
+
+```mermaid
+flowchart LR
+    Article["Markdown / generic article route"] --> Instrument["Instance-owned settings and playback"]
+    Fixtures["Solved examples and recorded settings"] --> Instrument
+    Instrument -->|"Settings + run ID; activity"| Worker["Dedicated worker / curved finite-volume model"]
+    Worker -->|"Transferred activator snapshot"| Instrument
+    Instrument --> Display["Canvas 2D print or signal"]
+    Display --> Export["PNG of the selected snapshot"]
+```
+
+The feature artifact lane verifies the checked-in posters, raw default frame and numerical review images against their recorded sources. See the [feature record](../visualizations/how-fingerprints-form.md) for boundary conditions, calibration and limitations. This adds a feature-owned model/worker boundary within an existing pattern; no foundational decision or separate ADR is required.
+
 ### Ink That Follows a Scent: local chemotaxis and biased random-walk workbench
 
 The `ink-that-follows-a-scent` visualization uses the ordinary Visualizations Markdown article and generic blog route at `/blog/visualizations/ink-that-follows-a-scent`. Its server-rendered shell under `components/visualizations/ink-that-follows-a-scent` carries `data-tts-exclude`, renders the introductory sequence, static computed comparison poster and "How it works" mathematical disclosure, and lazily imports the interactive Svelte 5 workbench after mount (or retains the static fallback when `?canvas=off` is supplied). The gallery imports lightweight summary and subject metadata only. The feature adds no server endpoint, external network request, persistence store, credential or route exception.

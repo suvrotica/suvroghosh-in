@@ -5389,6 +5389,55 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/how-fingerprints-form/arch-preview.png",
+			"src": "/images/visualizations/how-fingerprints-form/arch-preview.png",
+			"bytes": 13332,
+			"width": 120,
+			"height": 120
+		},
+		{
+			"name": "visualizations/how-fingerprints-form/arch.png",
+			"src": "/images/visualizations/how-fingerprints-form/arch.png",
+			"bytes": 81620,
+			"width": 600,
+			"height": 592
+		},
+		{
+			"name": "visualizations/how-fingerprints-form/loop-preview.png",
+			"src": "/images/visualizations/how-fingerprints-form/loop-preview.png",
+			"bytes": 13234,
+			"width": 120,
+			"height": 120
+		},
+		{
+			"name": "visualizations/how-fingerprints-form/loop.png",
+			"src": "/images/visualizations/how-fingerprints-form/loop.png",
+			"bytes": 86421,
+			"width": 600,
+			"height": 592
+		},
+		{
+			"name": "visualizations/how-fingerprints-form/social.png",
+			"src": "/images/visualizations/how-fingerprints-form/social.png",
+			"bytes": 220047,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/how-fingerprints-form/whorl-preview.png",
+			"src": "/images/visualizations/how-fingerprints-form/whorl-preview.png",
+			"bytes": 13128,
+			"width": 120,
+			"height": 120
+		},
+		{
+			"name": "visualizations/how-fingerprints-form/whorl.png",
+			"src": "/images/visualizations/how-fingerprints-form/whorl.png",
+			"bytes": 85438,
+			"width": 600,
+			"height": 592
+		},
+		{
 			"name": "visualizations/how-spots-and-stripes-form/poster.png",
 			"src": "/images/visualizations/how-spots-and-stripes-form/poster.png",
 			"bytes": 118613,

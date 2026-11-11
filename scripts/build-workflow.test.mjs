@@ -35,7 +35,8 @@ const featureChecks = [
 	'prior-authorization:assets:check',
 	'strange-attractor-orchestra:assets:check',
 	'mrinmoyee:assets:check',
-	'scale-elevator:assets:check'
+	'scale-elevator:assets:check',
+	'fingerprint:assets:check'
 ];
 
 // Resolve reachable npm scripts, including npm's automatic pre/post lifecycle hooks.
@@ -95,7 +96,8 @@ test('feature browser selection matches the full Chromium installed by feature C
 		'links:browser:test',
 		'http-tcp:browser:test',
 		'living-systems:browser:test',
-		'strange-matter:browser:test'
+		'strange-matter:browser:test',
+		'fingerprint:browser:test'
 	]) {
 		assert.ok(
 			steps.findIndex((step) => step.run === `npm run ${script}`) > install,
@@ -105,7 +107,8 @@ test('feature browser selection matches the full Chromium installed by feature C
 	for (const file of [
 		'playwright.http-tcp.config.ts',
 		'playwright.living-systems.config.ts',
-		'playwright.strange-matter.config.ts'
+		'playwright.strange-matter.config.ts',
+		'playwright.fingerprint.config.ts'
 	]) {
 		for (const environment of [{ CI: '1' }, { CI: '1', PLAYWRIGHT_CHANNEL: '  ' }]) {
 			const use = browserConfig(environment, file);
@@ -268,7 +271,9 @@ test('feature inputs, notebooks and shared application or build changes activate
 		'static/videos/visualizations/scale-elevator/scale-elevator-tour.mp4',
 		'static/images/bias-archipelago-2026-08.png',
 		'static/fonts/example.woff2',
-		'artifacts/bz-v2-search/calibration.json'
+		'artifacts/bz-v2-search/calibration.json',
+		'artifacts/fingerprints/calibration.json',
+		'src/lib/posts/how-fingerprints-form.md'
 	]) {
 		assert.equal(matchesPaths(file, workflow.on.pull_request.paths), true, file);
 	}

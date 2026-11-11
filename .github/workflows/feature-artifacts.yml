@@ -7,6 +7,7 @@ on:
       - '.github/workflows/feature-artifacts.yml'
       - 'tests/browser/navigation-links.spec.ts'
       - 'tests/browser/strange-matter.spec.ts'
+      - 'tests/browser/fingerprint.spec.ts'
       - 'package.json'
       - 'package-lock.json'
       - '*.config.*'
@@ -41,6 +42,7 @@ on:
       - 'src/lib/posts/build-one-build-a-thousand.md'
       - 'src/lib/posts/the-six-week-shadow.md'
       - 'src/lib/posts/a-skin-that-paints-itself.md'
+      - 'src/lib/posts/how-fingerprints-form.md'
       - 'src/lib/posts/the-museum-of-almost.md'
       - 'src/lib/posts/anatomy-of-an-essay.md'
       - 'src/lib/posts/living-systems.md'
@@ -60,12 +62,14 @@ on:
       - 'static/images/belousov-zhabotinsky-laboratory.png'
       - 'static/fonts/**'
       - 'artifacts/bz-v2-search/**'
+      - 'artifacts/fingerprints/**'
   push:
     branches: [main]
     paths:
       - '.github/workflows/feature-artifacts.yml'
       - 'tests/browser/navigation-links.spec.ts'
       - 'tests/browser/strange-matter.spec.ts'
+      - 'tests/browser/fingerprint.spec.ts'
       - 'package.json'
       - 'package-lock.json'
       - '*.config.*'
@@ -98,6 +102,7 @@ on:
       - 'src/lib/posts/build-one-build-a-thousand.md'
       - 'src/lib/posts/the-six-week-shadow.md'
       - 'src/lib/posts/a-skin-that-paints-itself.md'
+      - 'src/lib/posts/how-fingerprints-form.md'
       - 'src/lib/posts/the-museum-of-almost.md'
       - 'src/lib/posts/anatomy-of-an-essay.md'
       - 'src/lib/posts/living-systems.md'
@@ -117,6 +122,7 @@ on:
       - 'static/images/belousov-zhabotinsky-laboratory.png'
       - 'static/fonts/**'
       - 'artifacts/bz-v2-search/**'
+      - 'artifacts/fingerprints/**'
 
 permissions:
   contents: read
@@ -170,6 +176,9 @@ jobs:
       - name: Verify Strange Matter seeded designs and URL state
         run: npm run strange-matter:test
 
+      - name: Verify fingerprint surface solver invariants
+        run: npm run fingerprint:test
+
       - name: Check feature artifacts, notebooks and the complete site
         run: npm run build:full
 
@@ -193,6 +202,9 @@ jobs:
 
       - name: Verify Strange Matter production artwork, sharing and exports
         run: npm run strange-matter:browser:test
+
+      - name: Verify fingerprint controls, replay and export
+        run: npm run fingerprint:browser:test
 
       - name: Retain link-audit evidence
         if: always()

@@ -1,0 +1,994 @@
+{
+	"model": "fingertip-surface-v1",
+	"reference": {
+		"model": "fingertip-surface-v1",
+		"settings": {
+			"preset": "loop",
+			"spacing": 1,
+			"position": 0,
+			"timing": 0,
+			"width": 1,
+			"noise": 0.012,
+			"seed": 7
+		},
+		"kinetics": {
+			"a": 0.001,
+			"K": 0.001,
+			"r": 0.75,
+			"mu": 0.4,
+			"nu": 5.5,
+			"D": 180
+		},
+		"surface": {
+			"kind": "hemicylinder and spherical quadrant",
+			"radius": 240,
+			"length": 600
+		},
+		"diffusion": {
+			"activator": 1,
+			"inhibitor": 180
+		},
+		"initiation": {
+			"profile": "loop",
+			"padAmplitude": 0.1,
+			"nailOnset": 50,
+			"creaseOnset": 50,
+			"boundaryRamp": 100,
+			"nailBoundary": "cap and upper half of cylinder",
+			"noiseLength": 24
+		},
+		"numerical": {
+			"scheme": "finite volume with Douglas alternating direction implicit diffusion",
+			"quality": "standard",
+			"meshScale": 1,
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"timeStep": 0.5,
+			"endTime": 1000
+		}
+	},
+	"linearized": {
+		"equilibrium": {
+			"u": 9.466268447589858,
+			"v": 16.292770603970055
+		},
+		"jacobian": {
+			"fu": 0.33406206595679533,
+			"fv": -0.23235810968292084,
+			"gu": 18.932536895179716,
+			"gv": -5.5
+		},
+		"continuum": {
+			"trace": -5.165937934043205,
+			"determinant": 2.5617871217037393,
+			"unstableEigenvalueRange": [0.057961465646029435, 0.24554504475521033]
+		},
+		"neumannSurfaceModes": [
+			{
+				"eigenvalue": 0.12471071427070429,
+				"meridionalMode": 112,
+				"azimuthalMode": 0
+			},
+			{
+				"eigenvalue": 0.12484541048245937,
+				"meridionalMode": 92,
+				"azimuthalMode": 30
+			},
+			{
+				"eigenvalue": 0.12455945547735178,
+				"meridionalMode": 47,
+				"azimuthalMode": 70
+			}
+		],
+		"stepGainUniform": 0.7403922615141136,
+		"stepGainAxisymmetric": 1.0220120598528009
+	},
+	"baselines": [
+		{
+			"settings": {
+				"preset": "arch",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 59
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 150,
+					"min": 0.48672160506248474,
+					"max": 15.718855857849121,
+					"fractionAbove12": 0.03310214375788146,
+					"creaseRidgeSpacing": 18.28556231060685
+				},
+				{
+					"time": 300,
+					"min": 0.0021204480435699224,
+					"max": 15.821869850158691,
+					"fractionAbove12": 0.11216680436578684,
+					"creaseRidgeSpacing": 18.43915892081618
+				},
+				{
+					"time": 450,
+					"min": 0.002097137738019228,
+					"max": 15.82222843170166,
+					"fractionAbove12": 0.18641018393703526,
+					"creaseRidgeSpacing": 18.43606268546614
+				},
+				{
+					"time": 600,
+					"min": 0.0020769070833921432,
+					"max": 15.823023796081543,
+					"fractionAbove12": 0.2524514067052224,
+					"creaseRidgeSpacing": 18.438505309908926
+				},
+				{
+					"time": 1000,
+					"min": 0.0020395962055772543,
+					"max": 19.03530502319336,
+					"fractionAbove12": 0.27357916249945646,
+					"creaseRidgeSpacing": 18.453944538020256
+				}
+			]
+		},
+		{
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 150,
+					"min": 0.003528052242472768,
+					"max": 17.555944442749023,
+					"fractionAbove12": 0.09379484280558334,
+					"creaseRidgeSpacing": 18.09195050138444
+				},
+				{
+					"time": 300,
+					"min": 0.0021127876825630665,
+					"max": 18.52264404296875,
+					"fractionAbove12": 0.23169869983041266,
+					"creaseRidgeSpacing": 18.381185202146014
+				},
+				{
+					"time": 450,
+					"min": 0.0020899109076708555,
+					"max": 18.774709701538086,
+					"fractionAbove12": 0.27366069487324435,
+					"creaseRidgeSpacing": 18.407519579755704
+				},
+				{
+					"time": 600,
+					"min": 0.0020710788667201996,
+					"max": 18.861982345581055,
+					"fractionAbove12": 0.27423685698134537,
+					"creaseRidgeSpacing": 18.417420234092706
+				},
+				{
+					"time": 1000,
+					"min": 0.002035523531958461,
+					"max": 19.50975799560547,
+					"fractionAbove12": 0.27210614427968866,
+					"creaseRidgeSpacing": 18.440624720744495
+				}
+			]
+		},
+		{
+			"settings": {
+				"preset": "whorl",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 29
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 150,
+					"min": 0.003528052242472768,
+					"max": 15.723187446594238,
+					"fractionAbove12": 0.05775209809975214,
+					"creaseRidgeSpacing": 18.09195050138444
+				},
+				{
+					"time": 300,
+					"min": 0.0021127876825630665,
+					"max": 15.821949005126953,
+					"fractionAbove12": 0.18229551680654,
+					"creaseRidgeSpacing": 18.381185202146014
+				},
+				{
+					"time": 450,
+					"min": 0.002089911140501499,
+					"max": 17.448410034179688,
+					"fractionAbove12": 0.2755141975040223,
+					"creaseRidgeSpacing": 18.407519579755704
+				},
+				{
+					"time": 600,
+					"min": 0.0020710777025669813,
+					"max": 18.516273498535156,
+					"fractionAbove12": 0.27535656824803234,
+					"creaseRidgeSpacing": 18.417420234092706
+				},
+				{
+					"time": 1000,
+					"min": 0.00203606765717268,
+					"max": 18.745716094970703,
+					"fractionAbove12": 0.2713125625081532,
+					"creaseRidgeSpacing": 18.44062432338349
+				}
+			]
+		}
+	],
+	"endpoints": [
+		{
+			"name": "arch mixed min",
+			"settings": {
+				"preset": "arch",
+				"spacing": 0.92,
+				"position": 0,
+				"timing": 0,
+				"width": 0.94,
+				"noise": 0,
+				"seed": 59
+			},
+			"mesh": {
+				"columns": 354,
+				"rows": 477,
+				"capRows": 177,
+				"radius": 225.6,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0023425037506967783,
+					"max": 18.472322463989258,
+					"fractionAbove12": 0.2769546009072712,
+					"creaseRidgeSpacing": 16.96406244236725
+				}
+			]
+		},
+		{
+			"name": "arch mixed max",
+			"settings": {
+				"preset": "arch",
+				"spacing": 1.12,
+				"position": 0,
+				"timing": 24,
+				"width": 1.08,
+				"noise": 0.02,
+				"seed": 59
+			},
+			"mesh": {
+				"columns": 407,
+				"rows": 504,
+				"capRows": 204,
+				"radius": 259.20000000000005,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0016973629826679826,
+					"max": 19.994112014770508,
+					"fractionAbove12": 0.27336589836589836,
+					"creaseRidgeSpacing": 20.7727611043289
+				}
+			]
+		},
+		{
+			"name": "loop mixed min",
+			"settings": {
+				"preset": "loop",
+				"spacing": 0.92,
+				"position": -0.15,
+				"timing": -24,
+				"width": 0.94,
+				"noise": 0,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 354,
+				"rows": 477,
+				"capRows": 177,
+				"radius": 225.6,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.002337823621928692,
+					"max": 19.4016056060791,
+					"fractionAbove12": 0.2759656042355115,
+					"creaseRidgeSpacing": 16.968367056866768
+				}
+			]
+		},
+		{
+			"name": "loop mixed max",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1.12,
+				"position": 0.15,
+				"timing": 24,
+				"width": 1.08,
+				"noise": 0.02,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 407,
+				"rows": 504,
+				"capRows": 204,
+				"radius": 259.20000000000005,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.001692011021077633,
+					"max": 19.76533317565918,
+					"fractionAbove12": 0.2720983970983971,
+					"creaseRidgeSpacing": 20.71128241024286
+				}
+			]
+		},
+		{
+			"name": "whorl mixed min",
+			"settings": {
+				"preset": "whorl",
+				"spacing": 0.92,
+				"position": -0.15,
+				"timing": -24,
+				"width": 0.94,
+				"noise": 0,
+				"seed": 29
+			},
+			"mesh": {
+				"columns": 354,
+				"rows": 477,
+				"capRows": 177,
+				"radius": 225.6,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.002337999176234007,
+					"max": 18.667436599731445,
+					"fractionAbove12": 0.2785772661052482,
+					"creaseRidgeSpacing": 16.967325588759635
+				}
+			]
+		},
+		{
+			"name": "whorl mixed max",
+			"settings": {
+				"preset": "whorl",
+				"spacing": 1.12,
+				"position": 0.15,
+				"timing": 24,
+				"width": 1.08,
+				"noise": 0.02,
+				"seed": 29
+			},
+			"mesh": {
+				"columns": 407,
+				"rows": 504,
+				"capRows": 204,
+				"radius": 259.20000000000005,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0016947665717452765,
+					"max": 19.89147186279297,
+					"fractionAbove12": 0.2721861471861472,
+					"creaseRidgeSpacing": 20.711726760481938
+				}
+			]
+		},
+		{
+			"name": "loop spacing min",
+			"settings": {
+				"preset": "loop",
+				"spacing": 0.92,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.002199550624936819,
+					"max": 19.11689567565918,
+					"fractionAbove12": 0.2760903596121233,
+					"creaseRidgeSpacing": 16.96764148315978
+				}
+			]
+		},
+		{
+			"name": "loop spacing max",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1.12,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0018337543588131666,
+					"max": 19.66596794128418,
+					"fractionAbove12": 0.27274209679523415,
+					"creaseRidgeSpacing": 20.711851532919653
+				}
+			]
+		},
+		{
+			"name": "loop position min",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": -0.15,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0020356830209493637,
+					"max": 19.840147018432617,
+					"fractionAbove12": 0.2718669826499109,
+					"creaseRidgeSpacing": 18.440625878923186
+				}
+			]
+		},
+		{
+			"name": "loop position max",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0.15,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0020364047959446907,
+					"max": 19.493192672729492,
+					"fractionAbove12": 0.27253011262338567,
+					"creaseRidgeSpacing": 18.44062432338349
+				}
+			]
+		},
+		{
+			"name": "loop timing min",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": -24,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.002035523531958461,
+					"max": 19.625450134277344,
+					"fractionAbove12": 0.27214962821237554,
+					"creaseRidgeSpacing": 18.442055019662043
+				}
+			]
+		},
+		{
+			"name": "loop timing max",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 24,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.002035523531958461,
+					"max": 18.997997283935547,
+					"fractionAbove12": 0.27213332173761795,
+					"creaseRidgeSpacing": 18.439181347404755
+				}
+			]
+		},
+		{
+			"name": "loop width min",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 0.94,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 354,
+				"rows": 477,
+				"capRows": 177,
+				"radius": 225.6,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.002162413438782096,
+					"max": 19.694971084594727,
+					"fractionAbove12": 0.27250707695223203,
+					"creaseRidgeSpacing": 18.44062545495697
+				}
+			]
+		},
+		{
+			"name": "loop width max",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1.08,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 407,
+				"rows": 504,
+				"capRows": 204,
+				"radius": 259.20000000000005,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0018811955815181136,
+					"max": 18.98581314086914,
+					"fractionAbove12": 0.27268339768339767,
+					"creaseRidgeSpacing": 18.44062432338349
+				}
+			]
+		},
+		{
+			"name": "loop noise min",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0020355170127004385,
+					"max": 19.519607543945312,
+					"fractionAbove12": 0.2720626603470018,
+					"creaseRidgeSpacing": 18.440624720744495
+				}
+			]
+		},
+		{
+			"name": "loop noise max",
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.02,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 1000,
+					"min": 0.0020355351734906435,
+					"max": 18.8873233795166,
+					"fractionAbove12": 0.27213875722920383,
+					"creaseRidgeSpacing": 18.440624720744495
+				}
+			]
+		}
+	],
+	"convergence": [
+		{
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.25,
+			"samples": [
+				{
+					"time": 150,
+					"min": 0.002880478510633111,
+					"max": 17.79930877685547,
+					"fractionAbove12": 0.10065986867852328,
+					"creaseRidgeSpacing": 18.10863302131945
+				},
+				{
+					"time": 300,
+					"min": 0.0021507388446480036,
+					"max": 18.594621658325195,
+					"fractionAbove12": 0.24052593816584772,
+					"creaseRidgeSpacing": 18.254333002009496
+				},
+				{
+					"time": 450,
+					"min": 0.0021288704592734575,
+					"max": 18.78680992126465,
+					"fractionAbove12": 0.27169304691916335,
+					"creaseRidgeSpacing": 18.279277326593743
+				},
+				{
+					"time": 600,
+					"min": 0.0021103573963046074,
+					"max": 19.42303466796875,
+					"fractionAbove12": 0.2716767404444058,
+					"creaseRidgeSpacing": 18.282797954954844
+				},
+				{
+					"time": 1000,
+					"min": 0.002071932889521122,
+					"max": 19.62424659729004,
+					"fractionAbove12": 0.27157346610427446,
+					"creaseRidgeSpacing": 18.277390993880545
+				}
+			]
+		},
+		{
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 377,
+				"rows": 488,
+				"capRows": 188,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.125,
+			"samples": [
+				{
+					"time": 150,
+					"min": 0.002562744077295065,
+					"max": 17.87250518798828,
+					"fractionAbove12": 0.10925881636735227,
+					"creaseRidgeSpacing": 18.08614036862118
+				},
+				{
+					"time": 300,
+					"min": 0.0021723201498389244,
+					"max": 18.548307418823242,
+					"fractionAbove12": 0.240939035526373,
+					"creaseRidgeSpacing": 18.154148571222613
+				},
+				{
+					"time": 450,
+					"min": 0.002151364693418145,
+					"max": 18.755517959594727,
+					"fractionAbove12": 0.2716223855285472,
+					"creaseRidgeSpacing": 18.16989711466951
+				},
+				{
+					"time": 600,
+					"min": 0.002133492613211274,
+					"max": 18.74814796447754,
+					"fractionAbove12": 0.27159520807061793,
+					"creaseRidgeSpacing": 18.18716610423907
+				}
+			]
+		},
+		{
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 471,
+				"rows": 611,
+				"capRows": 236,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 150,
+					"min": 0.0027093731332570314,
+					"max": 17.460405349731445,
+					"fractionAbove12": 0.09654563713379272,
+					"creaseRidgeSpacing": 18.244002576303778
+				},
+				{
+					"time": 300,
+					"min": 0.0013535144971683621,
+					"max": 18.698909759521484,
+					"fractionAbove12": 0.2361239970672143,
+					"creaseRidgeSpacing": 18.46961797348827
+				},
+				{
+					"time": 450,
+					"min": 0.0013472982682287693,
+					"max": 19.613500595092773,
+					"fractionAbove12": 0.2754559891028247,
+					"creaseRidgeSpacing": 18.54403066780418
+				},
+				{
+					"time": 600,
+					"min": 0.0013403550256043673,
+					"max": 19.615446090698242,
+					"fractionAbove12": 0.2756332071957495,
+					"creaseRidgeSpacing": 18.546608718283537
+				},
+				{
+					"time": 1000,
+					"min": 0.0013243299908936024,
+					"max": 19.988218307495117,
+					"fractionAbove12": 0.2745525243153648,
+					"creaseRidgeSpacing": 18.554289347413047
+				}
+			]
+		},
+		{
+			"settings": {
+				"preset": "loop",
+				"spacing": 1,
+				"position": 0,
+				"timing": 0,
+				"width": 1,
+				"noise": 0.012,
+				"seed": 7
+			},
+			"mesh": {
+				"columns": 565,
+				"rows": 733,
+				"capRows": 283,
+				"radius": 240,
+				"length": 600
+			},
+			"dt": 0.5,
+			"samples": [
+				{
+					"time": 150,
+					"min": 0.0022737241815775633,
+					"max": 17.760194778442383,
+					"fractionAbove12": 0.09754554564222676,
+					"creaseRidgeSpacing": 18.283181719356374
+				},
+				{
+					"time": 300,
+					"min": 0.0009407958714291453,
+					"max": 18.643110275268555,
+					"fractionAbove12": 0.2367890473143464,
+					"creaseRidgeSpacing": 18.527315095322002
+				},
+				{
+					"time": 450,
+					"min": 0.0009391155908815563,
+					"max": 19.69986343383789,
+					"fractionAbove12": 0.2757319296381702,
+					"creaseRidgeSpacing": 18.58456186884952
+				},
+				{
+					"time": 600,
+					"min": 0.0009357744129374623,
+					"max": 19.92546844482422,
+					"fractionAbove12": 0.27576573422352074,
+					"creaseRidgeSpacing": 18.587251034635187
+				}
+			]
+		}
+	],
+	"refinementErrors": {
+		"measure": "Surface-area-weighted activator RMSE, finer field sampled at coarse cell centres",
+		"timeSteps": [0.5, 0.25, 0.125],
+		"meshScales": [1, 1.25, 1.5],
+		"samples": [
+			{
+				"time": 150,
+				"timeStepError": [0.36398499310870397, 0.20822571179303068],
+				"meshError": [0.14473027054268867, 0.08730292536922869]
+			},
+			{
+				"time": 300,
+				"timeStepError": [1.1674195890914132, 0.7089420474936902],
+				"meshError": [0.6221790264232098, 0.32210687330612386]
+			},
+			{
+				"time": 450,
+				"timeStepError": [1.7941896527796826, 1.0131513564643382],
+				"meshError": [1.0012949846244072, 0.4830999520407135]
+			},
+			{
+				"time": 600,
+				"timeStepError": [1.8854009076224665, 1.0678132867413186],
+				"meshError": [1.0515169648706912, 0.5063630654049687]
+			}
+		]
+	},
+	"noDiffusion": {
+		"settings": {
+			"preset": "loop",
+			"spacing": 1,
+			"position": 0,
+			"timing": 0,
+			"width": 1,
+			"noise": 0,
+			"seed": 7
+		},
+		"mesh": {
+			"columns": 377,
+			"rows": 488,
+			"capRows": 188,
+			"radius": 240,
+			"length": 600
+		},
+		"dt": 0.5,
+		"samples": [
+			{
+				"time": 150,
+				"min": 9.466268539428711,
+				"max": 9.466268539428711,
+				"fractionAbove12": 0,
+				"creaseRidgeSpacing": null
+			}
+		]
+	}
+}

@@ -1,0 +1,509 @@
+{
+  "formationTimes": [
+    0,
+    100,
+    200,
+    350,
+    600,
+    1000
+  ],
+  "runs": [
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "arch",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 59
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "arch",
+        "padAmplitude": 0,
+        "nailOnset": 100,
+        "creaseOnset": 0,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap only",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "6c646c2bbaebbd0138f5d859c3ee7be36ad5dac52b34919c8461cb6ad68d6a51"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "arch",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 60
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "arch",
+        "padAmplitude": 0,
+        "nailOnset": 100,
+        "creaseOnset": 0,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap only",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "97254d6d355d0ebd63592e71b2dcb0bb1e38a5dec84ae1a920afe0de6cfa2bbc"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "arch",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 61
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "arch",
+        "padAmplitude": 0,
+        "nailOnset": 100,
+        "creaseOnset": 0,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap only",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "507b2e5ec1bedff58e559ebbb46d4b69f76c04371b7b4efe3b7863b1e038b04a"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "loop",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 7
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "loop",
+        "padAmplitude": 0.1,
+        "nailOnset": 50,
+        "creaseOnset": 50,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap and upper half of cylinder",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "2318c99659b9da475725c2527bf2a68c1543d9a33535530d5a1ead8da47a24b6"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "loop",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 8
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "loop",
+        "padAmplitude": 0.1,
+        "nailOnset": 50,
+        "creaseOnset": 50,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap and upper half of cylinder",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "06fbaa11a4a9546e02e92d0a2eefc46a4548d19b45b8026dc21c9e8c2ae1bfc2"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "loop",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 9
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "loop",
+        "padAmplitude": 0.1,
+        "nailOnset": 50,
+        "creaseOnset": 50,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap and upper half of cylinder",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "8222b01510e7432f5dc7ff75255669d153e14496e605e2898d2b4e8c49a8b888"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "whorl",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 29
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "whorl",
+        "padAmplitude": 0.1,
+        "nailOnset": 50,
+        "creaseOnset": 50,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap and upper half of cylinder",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "00538e316a5934fb47edf83427ec45188407f4a9d24aa97a1cbb195720458702"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "whorl",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 30
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "whorl",
+        "padAmplitude": 0.1,
+        "nailOnset": 50,
+        "creaseOnset": 50,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap and upper half of cylinder",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "9aa0b0b87f1f4e1186a6065e14cf1ffcdabe30ce7b0c50c3c7e42963434f034b"
+    },
+    {
+      "model": "fingertip-surface-v1",
+      "settings": {
+        "preset": "whorl",
+        "spacing": 1,
+        "position": 0,
+        "timing": 0,
+        "width": 1,
+        "noise": 0.012,
+        "seed": 31
+      },
+      "kinetics": {
+        "a": 0.001,
+        "K": 0.001,
+        "r": 0.75,
+        "mu": 0.4,
+        "nu": 5.5,
+        "D": 180
+      },
+      "surface": {
+        "kind": "hemicylinder and spherical quadrant",
+        "radius": 240,
+        "length": 600
+      },
+      "diffusion": {
+        "activator": 1,
+        "inhibitor": 180
+      },
+      "initiation": {
+        "profile": "whorl",
+        "padAmplitude": 0.1,
+        "nailOnset": 50,
+        "creaseOnset": 50,
+        "boundaryRamp": 100,
+        "nailBoundary": "cap and upper half of cylinder",
+        "noiseLength": 24
+      },
+      "numerical": {
+        "scheme": "finite volume with Douglas alternating direction implicit diffusion",
+        "quality": "standard",
+        "meshScale": 1,
+        "mesh": {
+          "columns": 377,
+          "rows": 488,
+          "capRows": 188,
+          "radius": 240,
+          "length": 600
+        },
+        "timeStep": 0.5,
+        "endTime": 1000
+      },
+      "endFrameHash": "34e9f6b878cfce1c1176cbaed24633e5bdd96206ed6694fc252835ada2622ff7"
+    }
+  ],
+  "sources": {
+    "src/lib/visualizations/fingerprint/config.ts": "99d6be17783585d448b0a15bd5e211b581381b46b560476313650fc77a917d76",
+    "src/lib/visualizations/fingerprint/geometry.ts": "0bfa5a9344c539be9e81bc98ca6518b4459e4d12729265b09592557389c60b85",
+    "src/lib/visualizations/fingerprint/protocol.ts": "62153af8559be5da2cb9abccbf068d764da64990f7534c2526df49e3d874af18",
+    "src/lib/visualizations/fingerprint/render.ts": "1527f3082e8cbed45d39c629a1d891b620aa91a4e6af6b101a83c7a95eb3ff0a",
+    "src/lib/visualizations/fingerprint/solver.ts": "f65187d924a2bb34483db0eb83b0ffb76eb2785cfc33770fd26e87649c5a7fbf",
+    "scripts/render-fingerprints.mjs": "02410fdc1eedae38d091068ce33e55890a183a00aa0f834baedc745c940c67eb"
+  },
+  "outputs": {
+    "static/images/visualizations/how-fingerprints-form/arch.png": "32d2c9a955caac0b6520e696fb4f130707edd89fd5d63a517d02d1b86e5f4e0e",
+    "static/images/visualizations/how-fingerprints-form/loop.png": "46180b29b564c21c6108b05b305e55d9d5fbe926c009348817ded0f242463f58",
+    "static/images/visualizations/how-fingerprints-form/whorl.png": "182fabe70a9aeaf58195ea88270d5bc1d1fd1230183202400b73975056896b3c",
+    "static/images/visualizations/how-fingerprints-form/arch-preview.png": "d3ca8123f89d980cdb815db3fc940016aa2614b19ba9f792b9613979223b39a9",
+    "static/images/visualizations/how-fingerprints-form/loop-preview.png": "4f9b6795310305070ed690c0d19281e17f15dbcdd35cd1634ba32b58788867e1",
+    "static/images/visualizations/how-fingerprints-form/whorl-preview.png": "e943561f0946a5a8eb0c412d85d28597472709ea665de9e1312b78091eb36022",
+    "static/images/visualizations/how-fingerprints-form/loop.bin": "2318c99659b9da475725c2527bf2a68c1543d9a33535530d5a1ead8da47a24b6",
+    "static/images/visualizations/how-fingerprints-form/social.png": "8a84e66a1f1746512f14efcbdb32f1f55ce1dfbe5f47cfb46851a5407407d7de",
+    "artifacts/fingerprints/family-variations.png": "902f9eabb2bf777569d217c881ce20861ad8bfcccecedcacdc3bc08de547b5ca",
+    "artifacts/fingerprints/formation.png": "2ba37974bf197df0bd1a9a25cc6cd172f33277280b002ed7f360fa012759a225"
+  }
+}
