@@ -39,7 +39,7 @@ test.describe('Pointillism Studio fullscreen interactive experience', () => {
 			page.getByText('Choose a Texas scene. Change the dots and colors. Watch the picture emerge.')
 		).toBeVisible();
 
-		const pauseBtn = page.getByRole('button', { name: 'Pause' });
+		const pauseBtn = page.getByRole('button', { name: 'Pause', exact: true });
 		const finishBtn = page.getByRole('button', { name: 'Finish now' });
 		await expect(pauseBtn).toBeVisible();
 		await expect(finishBtn).toBeVisible();
@@ -53,9 +53,9 @@ test.describe('Pointillism Studio fullscreen interactive experience', () => {
 		expect(pausedSigB).toBe(pausedSigA);
 
 		await resumeBtn.click();
-		await expect(page.getByRole('button', { name: 'Pause' })).toBeVisible();
+		await expect(page.getByRole('button', { name: 'Pause', exact: true })).toBeVisible();
 		await finishBtn.click();
-		await expect(page.getByRole('button', { name: 'Pause' })).toHaveCount(0);
+		await expect(page.getByRole('button', { name: 'Pause', exact: true })).toHaveCount(0);
 
 		const finishedSigA = await sampleCanvasSignature(page);
 		await page.waitForTimeout(200);
@@ -92,18 +92,18 @@ test.describe('Pointillism Studio fullscreen interactive experience', () => {
 
 		await page.goto('/tools/pointillism-studio');
 		await expect(page.locator('canvas.ps-canvas')).toBeVisible();
-		await expect(page.getByRole('button', { name: 'Pause' })).toHaveCount(0);
+		await expect(page.getByRole('button', { name: 'Pause', exact: true })).toHaveCount(0);
 
 		const initialMeta = await page.locator('.ps-meta-badge').textContent();
 		await page.getByRole('button', { name: 'New painting' }).click();
-		await expect(page.getByRole('button', { name: 'Pause' })).toHaveCount(0);
+		await expect(page.getByRole('button', { name: 'Pause', exact: true })).toHaveCount(0);
 		const nextMeta = await page.locator('.ps-meta-badge').textContent();
 		expect(nextMeta).not.toBe(initialMeta);
 
 		await page.getByRole('button', { name: 'Replay' }).click();
-		await expect(page.getByRole('button', { name: 'Pause' })).toBeVisible();
+		await expect(page.getByRole('button', { name: 'Pause', exact: true })).toBeVisible();
 		await page.getByRole('button', { name: 'Finish now' }).click();
-		await expect(page.getByRole('button', { name: 'Pause' })).toHaveCount(0);
+		await expect(page.getByRole('button', { name: 'Pause', exact: true })).toHaveCount(0);
 
 		await context.close();
 	});

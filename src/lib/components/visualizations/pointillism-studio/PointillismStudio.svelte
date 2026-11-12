@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, setContext, tick, type Component } from 'svelte';
+	import { openPrivacySettings } from '$lib/privacy/consent';
 	import {
 		buildPaintingModel,
 		chooseArtboardForViewport,
@@ -1469,6 +1470,14 @@
 											<a href="/blog/visualizations" class="ps-btn ps-btn-compact">
 												All visualizations
 											</a>
+											<button
+												type="button"
+												class="ps-btn ps-btn-compact"
+												data-privacy-settings
+												onclick={openPrivacySettings}
+											>
+												Privacy &amp; cookies
+											</button>
 										</div>
 									</div>
 								</div>

@@ -71,6 +71,7 @@ await writeFile(
 			extends: '../../../tsconfig.json',
 			include: [
 				'../../../src/lib/components/visualizations/pointillism-studio/**/*.svelte',
+				'../../../src/lib/privacy/**/*.ts',
 				'../../../src/lib/visualizations/pointillism-studio/**/*.ts',
 				'../../../src/routes/tools/pointillism-studio/**/*.svelte',
 				'../../../src/routes/tools/pointillism-studio/**/*.ts',
