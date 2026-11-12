@@ -66,6 +66,7 @@ describe('special-route exclusions', () => {
 		'/notes/a-public-note',
 		'/notes/studio',
 		'/notes/studio/note-id',
+		'/tools/mondrian-studio',
 		'/blog/games',
 		'/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan',
 		'/blog/visualizations/monte-carlo',

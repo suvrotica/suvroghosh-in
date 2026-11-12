@@ -65,7 +65,9 @@
 		'the-epidemic-mosaic': visualizationSummaries['the-epidemic-mosaic'].subjects,
 		'the-predator-prey-loom': visualizationSummaries['the-predator-prey-loom'].subjects,
 		'why-two-aqi-apps-show-different-numbers':
-			visualizationSummaries['why-two-aqi-apps-show-different-numbers'].subjects
+			visualizationSummaries['why-two-aqi-apps-show-different-numbers'].subjects,
+		'piet-mondrian-a-pioneer-of-abstract-art':
+			visualizationSummaries['piet-mondrian-a-pioneer-of-abstract-art'].subjects
 	};
 	const subjects = [
 		'All',
@@ -200,6 +202,46 @@
 					6 forms · 6 splat styles · yours to shape
 				</p>
 				<span class="mt-6 inline-flex items-center text-sm font-bold !text-cyan-200">
+					Open studio <span
+						class="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+						aria-hidden="true">→</span
+					>
+				</span>
+			</div>
+		</a>
+	</section>
+
+	<section class="mt-10" aria-labelledby="mondrian-studio-heading">
+		<a
+			href={resolve('/tools/mondrian-studio')}
+			class="group grid overflow-hidden rounded-2xl border border-neutral-300 bg-[#f3efe3] text-[#171714] no-underline shadow-xl shadow-neutral-950/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#245294] md:grid-cols-2 dark:border-neutral-700"
+		>
+			<div class="overflow-hidden bg-[#dedad0]">
+				<img
+					src="/images/visualizations/mondrian-studio/social.png"
+					alt="Fourteen warm-white, red, yellow, and blue rectangles separated by near-black horizontal and vertical boundaries with directional oil brushwork"
+					width="1200"
+					height="630"
+					loading="lazy"
+					class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
+				/>
+			</div>
+			<div class="flex flex-col justify-center p-6 sm:p-8 md:p-10">
+				<p class="mb-3 text-xs font-bold tracking-[0.15em] !text-[#245294] uppercase">
+					Algorithmic painting studio
+				</p>
+				<h2 id="mondrian-studio-heading" class="m-0 text-3xl !text-[#171714] sm:text-4xl">
+					Mondrian Studio
+				</h2>
+				<p class="mt-4 mb-0 text-left text-base leading-relaxed !text-[#35342e]">
+					Change the spacing, color, and paint. Watch a new rectilinear composition take shape
+					through layered oil brushwork, read the companion essay on Piet Mondrian, and export a
+					clean high-resolution painting.
+				</p>
+				<p class="mt-5 mb-0 font-mono text-xs !text-[#4a4840]">
+					6–30 panels · seeded oil-on-canvas · 4096 px export
+				</p>
+				<span class="mt-6 inline-flex items-center text-sm font-bold !text-[#c83b30]">
 					Open studio <span
 						class="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
 						aria-hidden="true">→</span

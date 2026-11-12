@@ -17520,6 +17520,37 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-12"
+		},
+		"src/lib/posts/piet-mondrian-a-pioneer-of-abstract-art.md": {
+			"bodyHash": "767516fbadf791ae4c7566ae4ae9db877475822b4a7cd3f1a5c671c91ef33ee9",
+			"hashVersion": 2,
+			"revisionHash": "6901670a231aad64355ae1b9878e35736b070259d0049c6ea7426eb30573a26a",
+			"generatedTags": [
+				"Piet Mondrian",
+				"Abstract Art",
+				"De Stijl",
+				"Geometric Abstraction",
+				"Generative Art",
+				"Creative Coding",
+				"Visual Balance",
+				"Composition",
+				"Art History",
+				"Interactive Art"
+			],
+			"pinnedTags": [
+				"Piet Mondrian",
+				"Abstract Art",
+				"De Stijl",
+				"Geometric Abstraction",
+				"Generative Art",
+				"Creative Coding",
+				"Visual Balance",
+				"Composition",
+				"Art History",
+				"Interactive Art"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-12"
 		}
 	},
 	"maxTags": 10

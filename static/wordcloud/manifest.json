@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T11:52:00.290027+00:00",
+  "generatedAt": "2026-11-12T15:50:33.995445+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8439,6 +8439,29 @@
         "Systems",
         "Useful",
         "Networks"
+      ],
+      "wordCount": 130
+    },
+    "piet-mondrian-a-pioneer-of-abstract-art": {
+      "generatedAt": "2026-11-12T15:50:33.400322+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/piet-mondrian-a-pioneer-of-abstract-art.svg",
+      "source": "src/lib/posts/piet-mondrian-a-pioneer-of-abstract-art.md",
+      "sourceHash": "b7320b4504a832385607a9ffaaef20b5ab86381170dd0fce58f5bd4c7df2f050",
+      "sourceModified": "2026-11-12T15:33:20.766320+00:00",
+      "topWords": [
+        "Color",
+        "Panels",
+        "White",
+        "Actual",
+        "Red",
+        "Line",
+        "Blue",
+        "Yellow",
+        "Rectangles",
+        "Seed",
+        "Area",
+        "Vertical"
       ],
       "wordCount": 130
     },

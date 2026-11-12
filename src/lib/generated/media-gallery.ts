@@ -5592,6 +5592,34 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/mondrian-studio/example-balanced.png",
+			"src": "/images/visualizations/mondrian-studio/example-balanced.png",
+			"bytes": 294920,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/mondrian-studio/example-dense.png",
+			"src": "/images/visualizations/mondrian-studio/example-dense.png",
+			"bytes": 319800,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/mondrian-studio/example-spare.png",
+			"src": "/images/visualizations/mondrian-studio/example-spare.png",
+			"bytes": 262287,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/mondrian-studio/social.png",
+			"src": "/images/visualizations/mondrian-studio/social.png",
+			"bytes": 322693,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/mrinmoyee/mrinmoyee-poster.jpg",
 			"src": "/images/visualizations/mrinmoyee/mrinmoyee-poster.jpg",
 			"bytes": 108601,

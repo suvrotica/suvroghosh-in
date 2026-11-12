@@ -1,0 +1,103 @@
+{
+	"generatorVersion": 1,
+	"sourceHash": "9a292d0261351d33fe387e6efc7a9d8e416d3bc42f0ef17ba315cd3134fc8f90",
+	"curatedSeed": 100779,
+	"assets": [
+		{
+			"id": "social",
+			"file": "social.png",
+			"publicPath": "/images/visualizations/mondrian-studio/social.png",
+			"label": "Social preview (Balanced, 1200×630)",
+			"width": 1200,
+			"height": 630,
+			"bytes": 322693,
+			"sha256": "03a2753cda8063ce840153f9f397eac23116b6463d4b930c840768964a9ed6ac",
+			"seed": 100779,
+			"parameters": {
+				"panels": 14,
+				"unevenSpacing": 65,
+				"colorArea": 28,
+				"actualColorAreaPct": 27.7,
+				"lineWidth": 0.7,
+				"paintTexture": 40,
+				"paintingTime": 8,
+				"colorEmphasis": "balanced",
+				"aspectRatio": 1.9048
+			},
+			"description": "Fourteen rectangular panels with near-black boundaries, mostly warm white, with red, yellow, and blue areas covering 28% of the canvas.",
+			"studioUrl": "/tools/mondrian-studio?v=1&s=100779&p=14&u=65&ca=28&lw=0.7&pt=40&t=8&ce=balanced&ar=1.905"
+		},
+		{
+			"id": "spare",
+			"file": "example-spare.png",
+			"publicPath": "/images/visualizations/mondrian-studio/example-spare.png",
+			"label": "Spare preset",
+			"width": 960,
+			"height": 640,
+			"bytes": 262287,
+			"sha256": "90de668173208e4bdd052e8cd315bb099a184b573c410dda0d44f0ecfc515004",
+			"seed": 100779,
+			"parameters": {
+				"panels": 9,
+				"unevenSpacing": 72,
+				"colorArea": 14,
+				"actualColorAreaPct": 14.7,
+				"lineWidth": 0.5,
+				"paintTexture": 36,
+				"paintingTime": 7,
+				"colorEmphasis": "balanced",
+				"aspectRatio": 1.5
+			},
+			"description": "Nine rectangular panels with near-black boundaries, mostly warm white, with red and blue areas covering 15% of the canvas.",
+			"studioUrl": "/tools/mondrian-studio?v=1&s=100779&p=9&u=72&ca=14&lw=0.5&pt=36&t=7&ce=balanced&ar=1.500"
+		},
+		{
+			"id": "balanced",
+			"file": "example-balanced.png",
+			"publicPath": "/images/visualizations/mondrian-studio/example-balanced.png",
+			"label": "Balanced preset",
+			"width": 960,
+			"height": 640,
+			"bytes": 294920,
+			"sha256": "21653543ced2c51e7ff066066e56598faf2d588bcec4ebe009aa4a10216674cc",
+			"seed": 100779,
+			"parameters": {
+				"panels": 14,
+				"unevenSpacing": 65,
+				"colorArea": 28,
+				"actualColorAreaPct": 27.7,
+				"lineWidth": 0.7,
+				"paintTexture": 40,
+				"paintingTime": 8,
+				"colorEmphasis": "balanced",
+				"aspectRatio": 1.5
+			},
+			"description": "Fourteen rectangular panels with near-black boundaries, mostly warm white, with red, yellow, and blue areas covering 28% of the canvas.",
+			"studioUrl": "/tools/mondrian-studio?v=1&s=100779&p=14&u=65&ca=28&lw=0.7&pt=40&t=8&ce=balanced&ar=1.500"
+		},
+		{
+			"id": "dense",
+			"file": "example-dense.png",
+			"publicPath": "/images/visualizations/mondrian-studio/example-dense.png",
+			"label": "Dense preset",
+			"width": 960,
+			"height": 640,
+			"bytes": 319800,
+			"sha256": "9da36eea362c09c8473867035f36e46465b66cd0dbc3ebf59e2fd1162ed4241a",
+			"seed": 100779,
+			"parameters": {
+				"panels": 24,
+				"unevenSpacing": 58,
+				"colorArea": 34,
+				"actualColorAreaPct": 35.1,
+				"lineWidth": 0.6,
+				"paintTexture": 42,
+				"paintingTime": 10,
+				"colorEmphasis": "balanced",
+				"aspectRatio": 1.5
+			},
+			"description": "24 rectangular panels with near-black boundaries, mostly warm white, with red, yellow, and blue areas covering 35% of the canvas.",
+			"studioUrl": "/tools/mondrian-studio?v=1&s=100779&p=24&u=58&ca=34&lw=0.6&pt=42&t=10&ce=balanced&ar=1.500"
+		}
+	]
+}

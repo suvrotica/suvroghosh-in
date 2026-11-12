@@ -520,6 +520,18 @@ export const visualizationSummaries = {
 			'Side-by-side comparison of the same 60 micrograms per cubic metre 24-hour PM2.5 concentration producing PM2.5 score 100 (Satisfactory) on India CPCB and 154 (Unhealthy) on Current US EPA.',
 		href: '/blog/visualizations/why-two-aqi-apps-show-different-numbers',
 		status: 'published'
+	},
+	'piet-mondrian-a-pioneer-of-abstract-art': {
+		id: 'piet-mondrian-a-pioneer-of-abstract-art',
+		title: 'Piet Mondrian: A Pioneer of Abstract Art',
+		description:
+			'Explore how Piet Mondrian shaped geometric abstraction by adjusting proportions, primary color balance, line weight, and oil brushwork in the browser.',
+		subjects: ['Generative Art', 'Design', 'Algorithms', 'Computer Science'],
+		poster: '/images/visualizations/mondrian-studio/social.png',
+		posterAlt:
+			'A procedurally painted composition of fourteen warm-white, red, yellow, and blue rectangles separated by near-black horizontal and vertical boundaries with directional oil brushwork.',
+		href: '/blog/visualizations/piet-mondrian-a-pioneer-of-abstract-art',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

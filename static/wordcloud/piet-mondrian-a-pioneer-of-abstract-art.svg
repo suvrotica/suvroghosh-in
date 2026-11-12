@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Piet Mondrian: A Pioneer of Abstract Art" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Piet Mondrian: A Pioneer of Abstract Art</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(333,312)" font-size="118" style="fill:#c49a6c">Color</text>
+<text transform="translate(470,443)" font-size="110" style="fill:#b6c3dd">Panels</text>
+<text transform="translate(935,668)" font-size="110" style="fill:#d88988">White</text>
+<text transform="translate(353,191)" font-size="82" style="fill:#c7d7b5">Actual</text>
+<text transform="translate(1037,415)" font-size="82" style="fill:#c7d7b5">Red</text>
+<text transform="translate(1058,241)" font-size="82" style="fill:#e0b879">Line</text>
+<text transform="translate(117,258)" font-size="76" style="fill:#d6a79f">Blue</text>
+<text transform="translate(545,519)" font-size="76" style="fill:#d5d2c2">Yellow</text>
+<text transform="translate(19,475)" font-size="70" style="fill:#a9b7a3">Rectangles</text>
+<text transform="translate(678,132)" font-size="70" style="fill:#9fc9c5">Seed</text>
+<text transform="translate(42,618)" font-size="70" style="fill:#d9c89e">Area</text>
+<text transform="translate(393,593)" font-size="70" style="fill:#c7d7b5">Vertical</text>
+<text transform="translate(164,344)" font-size="70" style="fill:#d9c89e">Open</text>
+<text transform="translate(966,334)" font-size="70" style="fill:#c49a6c">Lines</text>
+<text transform="translate(877,69)" font-size="70" style="fill:#d88988">Mondrian</text>
+<text transform="translate(328,687)" font-size="64" style="fill:#d9c89e">Boundary</text>
+<text transform="translate(520,646)" font-size="64" style="fill:#e0b879">Horizontal</text>
+<text transform="translate(738,211)" font-size="64" style="fill:#c7d7b5">Black</text>
+<text transform="translate(696,300)" font-size="64" style="fill:#e0b879">Paint</text>
+<text transform="translate(1013,471)" font-size="64" style="fill:#9fc9c5">Across</text>
+<text transform="translate(154,685)" font-size="57" style="fill:#8fb7d0">Panel</text>
+<text transform="translate(46,352) rotate(-90)" font-size="57" style="fill:#d9c89e">Coverage</text>
+<text transform="translate(445,74)" font-size="57" style="fill:#d5d2c2">Column</text>
+<text transform="translate(934,575)" font-size="57" style="fill:#d5d2c2">Four</text>
+<text transform="translate(969,119)" font-size="57" style="fill:#b6c3dd">Blocks</text>
+<text transform="translate(787,695)" font-size="57" style="fill:#8fb7d0">Keep</text>
+<text transform="translate(109,101)" font-size="57" style="fill:#b6c3dd">Every</text>
+<text transform="translate(88,167)" font-size="57" style="fill:#a9b7a3">Region</text>
+<text transform="translate(680,58)" font-size="57" style="fill:#b6c3dd">Width</text>
+<text transform="translate(64,527)" font-size="57" style="fill:#b6c3dd">Layout</text>
+<text transform="translate(233,398)" font-size="57" style="fill:#d9c89e">Space</text>
+<text transform="translate(109,48)" font-size="57" style="fill:#d5d2c2">Surface</text>
+<text transform="translate(537,371)" font-size="57" style="fill:#c7d7b5">Fixed</text>
+<text transform="translate(433,120)" font-size="49" style="fill:#9fc9c5">Raise</text>
+<text transform="translate(935,161)" font-size="49" style="fill:#c7d7b5">Whole</text>
+<text transform="translate(324,526)" font-size="49" style="fill:#b6c3dd">Primary</text>
+<text transform="translate(67,406)" font-size="49" style="fill:#d88988">Field</text>
+<text transform="translate(912,518)" font-size="49" style="fill:#a9b7a3">Lower</text>
+<text transform="translate(1131,558)" font-size="49" style="fill:#e0b879">Warm</text>
+<text transform="translate(896,571) rotate(-90)" font-size="49" style="fill:#e0b879">Rectangle</text>
+<text transform="translate(223,617)" font-size="49" style="fill:#e0b879">Single</text>
+<text transform="translate(943,714)" font-size="49" style="fill:#d9c89e">Picture</text>
+<text transform="translate(952,477) rotate(-90)" font-size="49" style="fill:#8fb7d0">Upperleft</text>
+<text transform="translate(1274,424) rotate(-90)" font-size="49" style="fill:#e0b879">Planes</text>
+<text transform="translate(977,276)" font-size="41" style="fill:#d5d2c2">Boundaries</text>
+<text transform="translate(337,349)" font-size="41" style="fill:#c7d7b5">Straight</text>
+<text transform="translate(10,704)" font-size="41" style="fill:#d88988">Dutch</text>
+<text transform="translate(307,98)" font-size="41" style="fill:#a9b7a3">Trees</text>
+<text transform="translate(1088,506)" font-size="41" style="fill:#c7d7b5">Keeping</text>
+<text transform="translate(1090,172)" font-size="41" style="fill:#9fc9c5">First</text>
+<text transform="translate(180,562)" font-size="41" style="fill:#8fb7d0">Painting</text>
+<text transform="translate(681,246)" font-size="41" style="fill:#d88988">Primaries</text>
+<text transform="translate(524,229)" font-size="41" style="fill:#d5d2c2">Moving</text>
+<text transform="translate(655,696)" font-size="41" style="fill:#c7d7b5">Stays</text>
+<text transform="translate(106,311) rotate(-90)" font-size="41" style="fill:#d88988">Let</text>
+<text transform="translate(715,335)" font-size="41" style="fill:#8fb7d0">Splits</text>
+<text transform="translate(936,197)" font-size="41" style="fill:#8fb7d0">Pixel</text>
+<text transform="translate(1275,183) rotate(-90)" font-size="41" style="fill:#c49a6c">Texture</text>
+<text transform="translate(208,293)" font-size="41" style="fill:#d9c89e">Clean</text>
+<text transform="translate(195,205)" font-size="41" style="fill:#8fb7d0">Stable</text>
+<text transform="translate(43,655)" font-size="41" style="fill:#d5d2c2">Stay</text>
+<text transform="translate(716,552)" font-size="33" style="fill:#e0b879">Changes</text>
+<text transform="translate(1171,704)" font-size="33" style="fill:#d5d2c2">Start</text>
+<text transform="translate(30,635) rotate(-90)" font-size="33" style="fill:#c7d7b5">Program</text>
+<text transform="translate(733,593)" font-size="33" style="fill:#8fb7d0">Rather</text>
+<text transform="translate(22,46)" font-size="33" style="fill:#a9b7a3">Near</text>
+<text transform="translate(220,715)" font-size="33" style="fill:#b6c3dd">Block</text>
+<text transform="translate(376,715)" font-size="32" style="fill:#d9c89e">Bottomleft</text>
+<text transform="translate(1116,586)" font-size="32" style="fill:#d6a79f">Corner</text>
+<text transform="translate(12,76)" font-size="32" style="fill:#b6c3dd">Small</text>
+<text transform="translate(782,362)" font-size="32" style="fill:#e0b879">Eye</text>
+<text transform="translate(557,34)" font-size="32" style="fill:#d88988">Grid</text>
+<text transform="translate(53,414) rotate(-90)" font-size="32" style="fill:#d5d2c2">Now</text>
+<text transform="translate(1221,428) rotate(-90)" font-size="32" style="fill:#8fb7d0">Leaving</text>
+<text transform="translate(962,224)" font-size="32" style="fill:#e0b879">Yet</text>
+<text transform="translate(386,643)" font-size="32" style="fill:#d5d2c2">Canvas</text>
+<text transform="translate(845,97)" font-size="32" style="fill:#b6c3dd">Strips</text>
+<text transform="translate(672,201) rotate(-90)" font-size="32" style="fill:#c7d7b5">Nearblack</text>
+<text transform="translate(349,428)" font-size="32" style="fill:#a9b7a3">Frame</text>
+<text transform="translate(361,220)" font-size="32" style="fill:#d9c89e">Piet</text>
+<text transform="translate(78,351)" font-size="32" style="fill:#a9b7a3">Bars</text>
+<text transform="translate(456,475)" font-size="32" style="fill:#d88988">Pure</text>
+<text transform="translate(357,26)" font-size="29" style="fill:#9fc9c5">Abstraction</text>
+<text transform="translate(303,127)" font-size="29" style="fill:#d88988">Earlier</text>
+<text transform="translate(757,152)" font-size="21" style="fill:#d9c89e">Recognizable</text>
+<text transform="translate(599,544)" font-size="21" style="fill:#e0b879">Works</text>
+<text transform="translate(82,212) rotate(-90)" font-size="21" style="fill:#c7d7b5">Detail</text>
+<text transform="translate(827,715)" font-size="21" style="fill:#d6a79f">Face</text>
+<text transform="translate(353,54)" font-size="21" style="fill:#d5d2c2">Cubism</text>
+<text transform="translate(746,469)" font-size="21" style="fill:#c49a6c">Built</text>
+<text transform="translate(207,430)" font-size="21" style="fill:#8fb7d0">Movement</text>
+<text transform="translate(959,385)" font-size="21" style="fill:#9fc9c5">Short</text>
+<text transform="translate(955,466)" font-size="21" style="fill:#c7d7b5">Kept</text>
+<text transform="translate(1092,577) rotate(-90)" font-size="21" style="fill:#9fc9c5">Flat</text>
+<text transform="translate(1128,20)" font-size="21" style="fill:#c49a6c">Unequal</text>
+<text transform="translate(119,276)" font-size="21" style="fill:#d88988">Gray</text>
+<text transform="translate(424,620)" font-size="21" style="fill:#d88988">Chosen</text>
+<text transform="translate(1138,139)" font-size="21" style="fill:#9fc9c5">Ornament</text>
+<text transform="translate(871,586)" font-size="21" style="fill:#d6a79f">Work</text>
+<text transform="translate(73,569)" font-size="21" style="fill:#d5d2c2">Changing</text>
+<text transform="translate(1036,602)" font-size="21" style="fill:#c7d7b5">York</text>
+<text transform="translate(754,77)" font-size="21" style="fill:#d6a79f">Drawn</text>
+<text transform="translate(63,431)" font-size="21" style="fill:#c7d7b5">Studio</text>
+<text transform="translate(844,125)" font-size="21" style="fill:#c7d7b5">Within</text>
+<text transform="translate(962,357)" font-size="21" style="fill:#d88988">Later</text>
+<text transform="translate(196,643)" font-size="21" style="fill:#d88988">Edges</text>
+<text transform="translate(595,334)" font-size="21" style="fill:#a9b7a3">Balance</text>
+<text transform="translate(416,494)" font-size="21" style="fill:#d6a79f">Generator</text>
+<text transform="translate(292,153)" font-size="21" style="fill:#d6a79f">Spare</text>
+<text transform="translate(485,140)" font-size="21" style="fill:#d5d2c2">Balanced</text>
+<text transform="translate(404,401)" font-size="21" style="fill:#8fb7d0">Dense</text>
+<text transform="translate(928,23)" font-size="21" style="fill:#9fc9c5">Visible</text>
+<text transform="translate(70,353) rotate(-90)" font-size="21" style="fill:#c49a6c">Warmwhite</text>
+<text transform="translate(1227,116) rotate(-90)" font-size="21" style="fill:#d9c89e">Compare</text>
+<text transform="translate(132,127)" font-size="21" style="fill:#9fc9c5">Runs</text>
+<text transform="translate(968,538)" font-size="21" style="fill:#c49a6c">Material</text>
+<text transform="translate(618,714)" font-size="21" style="fill:#9fc9c5">Never</text>
+<text transform="translate(1084,354)" font-size="21" style="fill:#d9c89e">Begins</text>
+<text transform="translate(1270,610) rotate(-90)" font-size="21" style="fill:#d88988">Setting</text>
+<text transform="translate(1162,191)" font-size="21" style="fill:#b6c3dd">Uneven</text>
+<text transform="translate(135,707)" font-size="19" style="fill:#c49a6c">Spacing</text>
+<text transform="translate(978,417)" font-size="19" style="fill:#b6c3dd">Ratio</text>
+<text transform="translate(697,665)" font-size="18" style="fill:#d9c89e">Physical</text>
+<text transform="translate(680,177)" font-size="18" style="fill:#d6a79f">Full</text>
+<text transform="translate(688,75)" font-size="18" style="fill:#a9b7a3">Order</text>
+<text transform="translate(697,158)" font-size="18" style="fill:#d5d2c2">Linen</text>
+<text transform="translate(585,105)" font-size="18" style="fill:#d88988">Weave</text>
+<text transform="translate(37,547)" font-size="18" style="fill:#c7d7b5">Bristle</text>
+<text transform="translate(404,238)" font-size="17" style="fill:#d88988">Playback</text>
+<text transform="translate(142,65)" font-size="17" style="fill:#a9b7a3">Coat</text>
+</svg>

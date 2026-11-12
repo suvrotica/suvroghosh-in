@@ -113,7 +113,8 @@ export function resolveRouteMotion(
 	// Specialist experiences take precedence over every general blog/notes rule.
 	if (
 		(first === 'notes' && second === 'studio') ||
-		(first === 'tools' && second === 'recorder') ||
+		(first === 'tools' &&
+			(second === 'recorder' || second === 'splat-studio' || second === 'mondrian-studio')) ||
 		(first === 'blog' && second === 'games') ||
 		(first === 'images' && second === 'sketches') ||
 		(first === 'blog' && second === 'visualizations' && segments.length > 2)
