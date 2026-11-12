@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T15:50:33.995445+00:00",
+  "generatedAt": "2026-11-12T16:18:42.438598+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1585,6 +1585,29 @@
         "Everybody",
         "Healthcare",
         "Japanese"
+      ],
+      "wordCount": 130
+    },
+    "bengali-life-through-impressionist-brushstrokes-essay": {
+      "generatedAt": "2026-11-12T16:18:28.783067+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/bengali-life-through-impressionist-brushstrokes-essay.svg",
+      "source": "src/lib/posts/bengali-life-through-impressionist-brushstrokes-essay.md",
+      "sourceHash": "d6926dfaa2e45ab91f34f6951b2e383fefed9246efd9b34a54c104ea39c3f4a9",
+      "sourceModified": "2026-11-12T16:14:07.079210+00:00",
+      "topWords": [
+        "Marks",
+        "Place",
+        "Street",
+        "Light",
+        "Painting",
+        "Stall",
+        "Brush",
+        "Gives",
+        "Color",
+        "Person",
+        "Bag",
+        "Edge"
       ],
       "wordCount": 130
     },

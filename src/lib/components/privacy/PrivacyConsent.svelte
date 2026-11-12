@@ -14,7 +14,10 @@
 	} from '$lib/privacy/consent';
 	import ChoiceReceipt from './ChoiceReceipt.svelte';
 
-	let { compactTrigger = false }: { compactTrigger?: boolean } = $props();
+	let {
+		compactTrigger = false,
+		deferNotice = false
+	}: { compactTrigger?: boolean; deferNotice?: boolean } = $props();
 	let ready = $state(false);
 	let consent: ConsentRecord | null = $state(null);
 	let media = $state(false);
@@ -108,7 +111,7 @@
 	});
 </script>
 
-{#if ready && !suppressed && !consent && !noticeDismissed}
+{#if ready && !suppressed && !deferNotice && !consent && !noticeDismissed}
 	<aside class="privacy-note" aria-labelledby="privacy-note-title" data-privacy-note>
 		<div class="note-topline">
 			<span>FROM THE FIELDBOOK</span>

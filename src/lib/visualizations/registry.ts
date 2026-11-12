@@ -521,6 +521,18 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/why-two-aqi-apps-show-different-numbers',
 		status: 'published'
 	},
+	'bengali-life-through-impressionist-brushstrokes-essay': {
+		id: 'bengali-life-through-impressionist-brushstrokes-essay',
+		title: 'Bengali Life Through Impressionist Brushstrokes',
+		description:
+			'Paint a Calcutta lane or a Bengal landscape, then change the brushwork and light while the scene stays fixed.',
+		subjects: ['Design', 'Generative Art', 'Computer Science'],
+		poster: '/images/visualizations/bengali-impressionism/street-fine.webp',
+		posterAlt:
+			'A pedestrian carrying a shopping bag past a produce stall in a painted Calcutta lane',
+		href: '/blog/visualizations/bengali-life-through-impressionist-brushstrokes-essay',
+		status: 'published'
+	},
 	'piet-mondrian-a-pioneer-of-abstract-art': {
 		id: 'piet-mondrian-a-pioneer-of-abstract-art',
 		title: 'Piet Mondrian: A Pioneer of Abstract Art',

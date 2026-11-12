@@ -66,6 +66,8 @@
 		'the-predator-prey-loom': visualizationSummaries['the-predator-prey-loom'].subjects,
 		'why-two-aqi-apps-show-different-numbers':
 			visualizationSummaries['why-two-aqi-apps-show-different-numbers'].subjects,
+		'bengali-life-through-impressionist-brushstrokes-essay':
+			visualizationSummaries['bengali-life-through-impressionist-brushstrokes-essay'].subjects,
 		'piet-mondrian-a-pioneer-of-abstract-art':
 			visualizationSummaries['piet-mondrian-a-pioneer-of-abstract-art'].subjects
 	};

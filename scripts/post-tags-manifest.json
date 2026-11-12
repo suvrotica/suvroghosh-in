@@ -17551,6 +17551,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-12"
+		},
+		"src/lib/posts/bengali-life-through-impressionist-brushstrokes-essay.md": {
+			"bodyHash": "c8ad97e2d4700857bc34b0af3032f5c938b2dde065669afeeb38cc1f55a2a8ca",
+			"hashVersion": 2,
+			"revisionHash": "10b0f54b9d9511220adb9c145435d5027d05844dd7447a915e14bee98b1a4519",
+			"generatedTags": [
+				"Generative Art",
+				"Impressionism",
+				"Calcutta",
+				"Bengal",
+				"Creative Coding",
+				"Brushwork",
+				"Color and Light",
+				"Canvas",
+				"Procedural Generation",
+				"Bengali Life"
+			],
+			"pinnedTags": [
+				"Generative Art",
+				"Impressionism",
+				"Calcutta",
+				"Bengal",
+				"Creative Coding",
+				"Brushwork",
+				"Color and Light",
+				"Canvas",
+				"Procedural Generation",
+				"Bengali Life"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

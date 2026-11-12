@@ -5291,6 +5291,41 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1200
 		},
 		{
+			"name": "visualizations/bengali-impressionism/courtyard.webp",
+			"src": "/images/visualizations/bengali-impressionism/courtyard.webp",
+			"bytes": 34190,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "visualizations/bengali-impressionism/landing.webp",
+			"src": "/images/visualizations/bengali-impressionism/landing.webp",
+			"bytes": 25962,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "visualizations/bengali-impressionism/pond.webp",
+			"src": "/images/visualizations/bengali-impressionism/pond.webp",
+			"bytes": 30182,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "visualizations/bengali-impressionism/street-broad.webp",
+			"src": "/images/visualizations/bengali-impressionism/street-broad.webp",
+			"bytes": 34026,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "visualizations/bengali-impressionism/street-fine.webp",
+			"src": "/images/visualizations/bengali-impressionism/street-fine.webp",
+			"bytes": 37182,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "visualizations/between-a-click-and-a-page/social.png",
 			"src": "/images/visualizations/between-a-click-and-a-page/social.png",
 			"bytes": 204988,

@@ -22,6 +22,7 @@
 	import { registerServiceWorker } from '$lib/notes/register-service-worker';
 
 	type PageDataShellContext = {
+		immersivePainting?: boolean;
 		game?: {
 			shell?: unknown;
 		};
@@ -47,8 +48,10 @@
 			: undefined
 	);
 	let rawThoughtLayout = $derived(resolveRawThoughtLayout(page.data));
+	let paintingShell = $derived((page.data as PageDataShellContext).immersivePainting === true);
 	let studioShell = $derived(
-		page.url.pathname === '/notes/studio' ||
+		paintingShell ||
+			page.url.pathname === '/notes/studio' ||
 			page.url.pathname.startsWith('/notes/studio/') ||
 			page.url.pathname === '/tools/splat-studio' ||
 			page.url.pathname === '/tools/mondrian-studio' ||
@@ -136,12 +139,19 @@
 </svelte:head>
 
 {#if page.url.pathname !== '/tools/radio'}
-	<PrivacyConsent compactTrigger={Boolean(rawThoughtLayout || immersiveGameShell || studioShell)} />
+	<PrivacyConsent
+		compactTrigger={Boolean(
+			rawThoughtLayout || immersiveGameShell || (studioShell && !paintingShell)
+		)}
+		deferNotice={paintingShell}
+	/>
 {/if}
 
 {#if studioShell}
 	<div class="min-h-dvh">
-		<a href="#main-content" class="skip-link">Skip to canvas and studio controls</a>
+		<a href="#main-content" class="skip-link">
+			{paintingShell ? 'Skip to painting and controls' : 'Skip to canvas and studio controls'}
+		</a>
 		<main id="main-content" tabindex="-1" class="min-h-dvh focus:outline-none">
 			{@render children()}
 		</main>

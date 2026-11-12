@@ -200,7 +200,8 @@ The root server layout supplies shared SEO defaults. The root Svelte layout uses
 | `/blog/topics`, `/blog/visualizations`                                                                 | Prerendered indexes. Promoted topics redirect to curated headquarters.                                                                                                                                                                                                                                             |
 | `/blog/[category]/[slug]`                                                                              | `prerender = 'auto'`; generated canonical entries plus server fallback for category/legacy redirects. Server load resolves published metadata; universal load imports the compiled Markdown component.                                                                                                             |
 | `/blog/games/[slug]`                                                                                   | Prerendered entries from `gamesCatalog`; a dedicated page renders one of six catalog experiences. The generic article entry generator excludes games.                                                                                                                                                              |
-| Three concrete `/blog/visualizations/...` pages                                                        | Bias Archipelago, Barnum Lab and Meaning & Connection Map have route-specific SSR loads and component wrappers. They reuse the generic article page. Barnum has explicit critical-CSS/preload controls; Meaning Map overlays the article after mount. These exceptions are not a second general publishing engine. |
+| Three article wrappers at `/blog/visualizations/...` pages                                                        | Bias Archipelago, Barnum Lab and Meaning & Connection Map have route-specific SSR loads and component wrappers. They reuse the generic article page. Barnum has explicit critical-CSS/preload controls; Meaning Map overlays the article after mount. These exceptions are not a second general publishing engine. |
+| `/blog/visualizations/bengali-life-through-impressionist-brushstrokes` | Prerendered fullscreen painting studio. Its `/article` child redirects to the ordinary published essay. |
 | `/topics`, `/topics/[slug]`                                                                            | Prerendered index and `auto` headquarters entries with validated registry membership and lazy Markdown bodies.                                                                                                                                                                                                     |
 | `/resources`, `/resources/[kind=resourceKind]/[slug]`                                                  | Prerendered resource index/details; param matcher limits kind to prompts/lists; universal component import follows server metadata validation.                                                                                                                                                                     |
 | `/comics`, `/comics/[slug]`                                                                            | Prerendered PDF comic gallery and finite catalogue-backed detail entries. Unknown comic slugs return 404; the covers and complete PDF editions are public static assets.                                                                                                                                           |
@@ -2214,6 +2215,34 @@ flowchart LR
     Model --> Panel2["Panel 2: Fixed 0–400 µg/m³ 24-bar chart + mean vs latest hour"]
     Model --> Panel3["Panel 3: Shared US AQI horizontal bars + max-score rule"]
     Model --> Assets["render-aqi-scales-assets.mjs: social.png + default-comparison.png"]
+```
+
+### Bengali Life Through Impressionist Brushstrokes
+
+The public painting studio is prerendered at
+`/blog/visualizations/bengali-life-through-impressionist-brushstrokes`.
+Its page data selects the shared fullscreen studio shell and defers the privacy notice.
+The studio opens the shared privacy settings from its own button. The companion essay uses
+the ordinary published Markdown route at
+`/blog/visualizations/bengali-life-through-impressionist-brushstrokes-essay`
+and enters the regular blog, RSS, search and sitemap flows. The previous studio child
+`/article` redirects to the essay. The studio has a separate sitemap entry and SEO metadata.
+
+The renderer builds a seeded scene and a stable list of brush candidates. It combines
+geometry and paint settings into an ordered paint model shared by playback, the still
+view, and export. Browser storage retains settings, and URL parameters let the essay
+link back to the current scene. An OffscreenCanvas worker renders export snapshots on
+supported browsers, with a Canvas 2D fallback. See the
+[feature guide](../visualizations/bengali-impressionism.md) for reproduction and checks.
+
+```mermaid
+flowchart LR
+    Seed["Seed and scene"] --> Geometry["Scene geometry and candidate strokes"]
+    Geometry --> Paint["Ordered paint model"]
+    Settings["Paint settings"] --> Paint
+    Paint --> Studio["Browser canvas and playback"]
+    Paint --> Export["PNG export"]
+    Studio <-->|"Versioned state in URL"| Essay["Published Markdown essay"]
 ```
 
 ### Mondrian Studio: fullscreen rectilinear composition and oil-surface generator
