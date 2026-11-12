@@ -17489,6 +17489,36 @@
 				"Voice"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/rainy-day-motivation.md": {
+			"bodyHash": "bb8f5257dcb8f740886812ad766b5691b9fa1dbe5ceb96020b379552f9993177",
+			"hashVersion": 2,
+			"revisionHash": "d9548fcfdb31d20a7c120c6f86bd8fb8b7a3de922467e3df94c26ffe89255d31",
+			"generatedTags": [
+				"Depression",
+				"Motivation",
+				"Science Communication",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Mental Health",
+				"Productivity",
+				"Monsoon",
+				"Creativity"
+			],
+			"pinnedTags": [
+				"Depression",
+				"Motivation",
+				"Science Communication",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Mental Health",
+				"Productivity",
+				"Monsoon",
+				"Creativity"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -10208,6 +10208,22 @@
       "sourceHash": "bf98f7859481492e41bb10a3bb4ca169126c6014ada79054a99187b1d3af82f9",
       "width": 1280
     },
+    "static/images/rainy-day-motivation.jpg": {
+      "format": "JPEG",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 172800,
+      "outputHash": "f010fabe2c10c2b6582b8793b9ba9a0a3407bc104a28419bb50083d74a9886df",
+      "psnrDb": 42.24,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 190884,
+      "sourceHash": "25965fe9f1335355e112e6a9f891721e575ab7e2f8e4cf6c9f504d355b1ba70f",
+      "width": 1600
+    },
     "static/images/rakhi-and-the-currency-of-oblivion.jpeg": {
       "format": "JPEG",
       "height": 1498,

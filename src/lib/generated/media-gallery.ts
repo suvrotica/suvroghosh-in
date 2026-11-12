@@ -4493,6 +4493,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "rainy-day-motivation.jpg",
+			"src": "/images/rainy-day-motivation.jpg",
+			"bytes": 172800,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "rakhi-and-the-currency-of-oblivion.jpeg",
 			"src": "/images/rakhi-and-the-currency-of-oblivion.jpeg",
 			"bytes": 389431,

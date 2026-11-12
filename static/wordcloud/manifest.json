@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T21:39:17.739886+00:00",
+  "generatedAt": "2026-11-12T11:29:31.253465+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8991,6 +8991,29 @@
         "Room",
         "India",
         "Ordinary"
+      ],
+      "wordCount": 130
+    },
+    "rainy-day-motivation": {
+      "generatedAt": "2026-11-12T11:29:23.639775+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/rainy-day-motivation.svg",
+      "source": "src/lib/posts/rainy-day-motivation.md",
+      "sourceHash": "6ba4372e711d1369928ec717811b2612ec356fedb9c8c0b17a646a8c9d4d6196",
+      "sourceModified": "2026-11-12T11:28:19.437444+00:00",
+      "topWords": [
+        "Today",
+        "Perhaps",
+        "Rain",
+        "Nothing",
+        "Science",
+        "Forgotten",
+        "Whether",
+        "Ceiling",
+        "Sitting",
+        "Thinking",
+        "Visualization",
+        "Part"
       ],
       "wordCount": 130
     },
