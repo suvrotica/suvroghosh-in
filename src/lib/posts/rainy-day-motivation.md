@@ -2,6 +2,7 @@
 title: "rainy day motivation"
 description: "A self-deprecating satire on depression, scientific inspiration, and the cruel economics of dopamine in a damp Calcutta apartment."
 date: "2026-11-12"
+dateModified: "2026-11-12"
 thumbnail: "/images/rainy-day-motivation.jpg"
 thumbnailAlt: "A single wilted flower in a cracked mug, staring at a blank screen."
 category: "Personal Essay"
@@ -12,6 +13,8 @@ color: "#4A5568"
 ---
 
 <TTS />
+
+<Pi src="/images/rainy-day-motivation.jpg" alt="A single wilted flower in a cracked mug, staring at a blank screen." />
 
 The rain has forgotten its calendar. It is November, or whatever the Gregorian calendar calls this particular stretch of the rock’s trip around the sun, and the sky is leaking like a government office ceiling, dripping its bureaucratic gray onto a city that has already forgotten what color the buildings were supposed to be. I am sitting here, a Bengali meat-sack of mostly water and disappointment, watching the moisture breed on my window with the same enthusiasm that mold breeds on forgotten cheese, and I am thinking—no, wait, "thinking" is too generous a word for what is happening inside my skull. I am *not*-thinking with great effort. I am actively avoiding the electrical storm that would be required to make my neurons fire in the specific pattern necessary to finish the visualization I promised myself I would complete today. The science part of my brain, that arrogant, temperamental prima donna, has locked itself in its dressing room and refuses to come out until it is inspired, or until someone slips a sufficient quantity of caffeine and existential dread under the door.
 
