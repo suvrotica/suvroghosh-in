@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T16:18:42.438598+00:00",
+  "generatedAt": "2026-11-12T18:39:39.168102+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8577,6 +8577,29 @@
         "Older",
         "History",
         "Era"
+      ],
+      "wordCount": 130
+    },
+    "pointillism-san-antonio-and-texas-in-dots-of-color": {
+      "generatedAt": "2026-11-12T18:39:36.950044+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/pointillism-san-antonio-and-texas-in-dots-of-color.svg",
+      "source": "src/lib/posts/pointillism-san-antonio-and-texas-in-dots-of-color.md",
+      "sourceHash": "4bd15c64544dcbda4803bc97cff25d0925bb5e18e6819592ca46a55f5d8096cd",
+      "sourceModified": "2026-11-12T18:38:08.732119+00:00",
+      "topWords": [
+        "Marks",
+        "Dot",
+        "Spacing",
+        "Color",
+        "Ground",
+        "Water",
+        "Size",
+        "Scene",
+        "Mark",
+        "Painting",
+        "Across",
+        "Separate"
       ],
       "wordCount": 130
     },

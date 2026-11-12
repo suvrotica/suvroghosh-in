@@ -55,6 +55,7 @@
 			page.url.pathname.startsWith('/notes/studio/') ||
 			page.url.pathname === '/tools/splat-studio' ||
 			page.url.pathname === '/tools/mondrian-studio' ||
+			page.url.pathname === '/tools/pointillism-studio' ||
 			page.url.pathname === '/tools/radio'
 	);
 	let immersiveGameShell = $derived(

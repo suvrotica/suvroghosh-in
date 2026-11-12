@@ -69,7 +69,9 @@
 		'bengali-life-through-impressionist-brushstrokes-essay':
 			visualizationSummaries['bengali-life-through-impressionist-brushstrokes-essay'].subjects,
 		'piet-mondrian-a-pioneer-of-abstract-art':
-			visualizationSummaries['piet-mondrian-a-pioneer-of-abstract-art'].subjects
+			visualizationSummaries['piet-mondrian-a-pioneer-of-abstract-art'].subjects,
+		'pointillism-san-antonio-and-texas-in-dots-of-color':
+			visualizationSummaries['pointillism-san-antonio-and-texas-in-dots-of-color'].subjects
 	};
 	const subjects = [
 		'All',
@@ -244,6 +246,46 @@
 					6–30 panels · seeded oil-on-canvas · 4096 px export
 				</p>
 				<span class="mt-6 inline-flex items-center text-sm font-bold !text-[#c83b30]">
+					Open studio <span
+						class="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+						aria-hidden="true">→</span
+					>
+				</span>
+			</div>
+		</a>
+	</section>
+
+	<section class="mt-10" aria-labelledby="pointillism-studio-heading">
+		<a
+			href={resolve('/tools/pointillism-studio')}
+			class="group grid overflow-hidden rounded-2xl border border-neutral-300 bg-[#f4efe4] text-[#191815] no-underline shadow-xl shadow-neutral-950/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#265c73] md:grid-cols-2 dark:border-neutral-700"
+		>
+			<div class="overflow-hidden bg-[#dedad0]">
+				<img
+					src="/images/visualizations/pointillism-studio/social.png"
+					alt="An interpreted San Antonio river path scene painted from thousands of small colored oil dabs showing walkers beside a shaded limestone path, an arched stone bridge, mature bald cypress and live oak trees, and reflected river water"
+					width="1200"
+					height="630"
+					loading="lazy"
+					class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
+				/>
+			</div>
+			<div class="flex flex-col justify-center p-6 sm:p-8 md:p-10">
+				<p class="mb-3 text-xs font-bold tracking-[0.15em] !text-[#265c73] uppercase">
+					Algorithmic painting studio
+				</p>
+				<h2 id="pointillism-studio-heading" class="m-0 text-3xl !text-[#191815] sm:text-4xl">
+					Pointillism Studio
+				</h2>
+				<p class="mt-4 mb-0 text-left text-base leading-relaxed !text-[#38362f]">
+					Choose a Texas scene. Change the dots and colors. Watch everyday San Antonio river paths,
+					neighborhood porches, market plazas, and Hill Country creeks emerge from thousands of oil
+					dabs, inspect the painted ground close up, and save a 4096 px PNG.
+				</p>
+				<p class="mt-5 mb-0 font-mono text-xs !text-[#4a4840]">
+					4 Texas scene families · close-up dab inspection · 4096 px export
+				</p>
+				<span class="mt-6 inline-flex items-center text-sm font-bold !text-[#b85238]">
 					Open studio <span
 						class="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
 						aria-hidden="true">→</span

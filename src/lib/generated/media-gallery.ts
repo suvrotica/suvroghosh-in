@@ -5732,6 +5732,55 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/pointillism-studio/example-hill-country.png",
+			"src": "/images/visualizations/pointillism-studio/example-hill-country.png",
+			"bytes": 331645,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/pointillism-studio/example-neighborhood.png",
+			"src": "/images/visualizations/pointillism-studio/example-neighborhood.png",
+			"bytes": 325657,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/pointillism-studio/example-plaza-market.png",
+			"src": "/images/visualizations/pointillism-studio/example-plaza-market.png",
+			"bytes": 340210,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/pointillism-studio/example-river-closeup.png",
+			"src": "/images/visualizations/pointillism-studio/example-river-closeup.png",
+			"bytes": 251046,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/pointillism-studio/example-river-larger-dots.png",
+			"src": "/images/visualizations/pointillism-studio/example-river-larger-dots.png",
+			"bytes": 276367,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/pointillism-studio/example-river-path.png",
+			"src": "/images/visualizations/pointillism-studio/example-river-path.png",
+			"bytes": 346371,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/pointillism-studio/social.png",
+			"src": "/images/visualizations/pointillism-studio/social.png",
+			"bytes": 397308,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/post-to-uml/social.png",
 			"src": "/images/visualizations/post-to-uml/social.png",
 			"bytes": 65006,

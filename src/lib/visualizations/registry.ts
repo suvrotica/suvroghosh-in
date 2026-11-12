@@ -544,6 +544,18 @@ export const visualizationSummaries = {
 			'A procedurally painted composition of fourteen warm-white, red, yellow, and blue rectangles separated by near-black horizontal and vertical boundaries with directional oil brushwork.',
 		href: '/blog/visualizations/piet-mondrian-a-pioneer-of-abstract-art',
 		status: 'published'
+	},
+	'pointillism-san-antonio-and-texas-in-dots-of-color': {
+		id: 'pointillism-san-antonio-and-texas-in-dots-of-color',
+		title: 'Pointillism: San Antonio and Texas in Dots of Color',
+		description:
+			'Generate everyday San Antonio and Texas Hill Country scenes painted from thousands of individual oil-paint dabs, inspect separate marks up close, and save a clean PNG.',
+		subjects: ['Generative Art', 'Design', 'Algorithms', 'Computer Science'],
+		poster: '/images/visualizations/pointillism-studio/social.png',
+		posterAlt:
+			'An interpreted San Antonio river path scene painted from thousands of small colored oil dabs showing walkers beside a shaded limestone path, an arched stone bridge, mature bald cypress and live oak trees, and reflected river water.',
+		href: '/blog/visualizations/pointillism-san-antonio-and-texas-in-dots-of-color',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

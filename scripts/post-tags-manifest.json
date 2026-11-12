@@ -17581,6 +17581,37 @@
 				"Bengali Life"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/pointillism-san-antonio-and-texas-in-dots-of-color.md": {
+			"bodyHash": "a5bd43038101c9cff56e7b9381ac343ca9add33da7099f9556a892ad90f72938",
+			"hashVersion": 2,
+			"revisionHash": "1ec296b0546d125ec5dad8cc8581f973c5a5e89a095de332a97461dde74cf628",
+			"generatedTags": [
+				"Pointillism",
+				"Neo-Impressionism",
+				"Georges Seurat",
+				"San Antonio",
+				"Texas Hill Country",
+				"Generative Art",
+				"Creative Coding",
+				"Color Perception",
+				"Interactive Art",
+				"Visualizations"
+			],
+			"pinnedTags": [
+				"Pointillism",
+				"Neo-Impressionism",
+				"Georges Seurat",
+				"San Antonio",
+				"Texas Hill Country",
+				"Generative Art",
+				"Creative Coding",
+				"Color Perception",
+				"Interactive Art",
+				"Visualizations"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-12"
 		}
 	},
 	"maxTags": 10
