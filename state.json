@@ -13,10 +13,10 @@
   "quota": {
     "version": 1,
     "day": "2026-11-14",
-    "used": 1,
+    "used": 2,
     "createdAt": 1792574524292,
-    "updatedAt": 1794670130813,
-    "lastRequestAt": 1794670130813,
+    "updatedAt": 1794670195817,
+    "lastRequestAt": 1794670195817,
     "blockedUntil": 0,
     "initialUsage": {
       "day": "2026-10-21",
@@ -38,5 +38,5 @@
     ],
     "status": "verified"
   },
-  "updatedAt": "2026-11-14T15:28:50.818Z"
+  "updatedAt": "2026-11-14T15:29:55.818Z"
 }
