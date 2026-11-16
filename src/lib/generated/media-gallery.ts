@@ -3485,6 +3485,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1239
 		},
 		{
+			"name": "ethical-hacking-is-a-spiders-web.jpg",
+			"src": "/images/ethical-hacking-is-a-spiders-web.jpg",
+			"bytes": 152392,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "fractal-atlas.png",
 			"src": "/images/fractal-atlas.png",
 			"bytes": 87605,

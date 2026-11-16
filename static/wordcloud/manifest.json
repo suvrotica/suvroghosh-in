@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T18:39:39.168102+00:00",
+  "generatedAt": "2026-11-16T22:25:54.040859+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4023,6 +4023,29 @@
         "Much",
         "Subject",
         "Begins"
+      ],
+      "wordCount": 130
+    },
+    "ethical-hacking-is-a-spiders-web": {
+      "generatedAt": "2026-11-16T22:25:38.249847+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ethical-hacking-is-a-spiders-web.svg",
+      "source": "src/lib/posts/ethical-hacking-is-a-spiders-web.md",
+      "sourceHash": "f1378b9e79aad89170a8a0dfbaa565c7b8d3cd23af81e5a83b32513bc5d4f558",
+      "sourceModified": "2026-11-16T22:23:20.935833+00:00",
+      "topWords": [
+        "Digital",
+        "Spider",
+        "Tea",
+        "Hacker",
+        "System",
+        "Cold",
+        "Stay",
+        "Every",
+        "Believe",
+        "Ethical",
+        "Cybersecurity",
+        "Fly"
       ],
       "wordCount": 130
     },

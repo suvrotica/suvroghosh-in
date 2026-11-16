@@ -8957,6 +8957,22 @@
       "sourceHash": "7a9a7e248bf7eaba857296ae1bf1eb089dadf869f580cd3f92c482ce5b420ce1",
       "width": 1269
     },
+    "static/images/ethical-hacking-is-a-spiders-web.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 152392,
+      "outputHash": "a6498e7b5a6caec4c7d6bf9ab13ef651d98b900ea325c16a156ef7903ee19093",
+      "psnrDb": 36.89,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 205773,
+      "sourceHash": "ff87b221e39e34d8ebcafde7ba1a8fe68cfec7617bd56dbc2ec40803f10e5e16",
+      "width": 1280
+    },
     "static/images/fractal-atlas.png": {
       "format": "PNG",
       "height": 900,
