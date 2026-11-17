@@ -10096,6 +10096,22 @@
       "sourceHash": "04edccaab976ca52067a3b2eae87e8726c9b0cdf53ddbb17583e638f76a9ec76",
       "width": 1200
     },
+    "static/images/no-score-for-the-meaningless.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 250520,
+      "outputHash": "6cafc2d7aa8da974001a17490f47c2f693fed9b8b3f5af5ba158b5ab0a8836b2",
+      "psnrDb": 37.64,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 319476,
+      "sourceHash": "39d47af5425f4b5043b94ba3aaf9d4b99731665b05f8ecbf348d0ba76dfa8ca1",
+      "width": 1280
+    },
     "static/images/obsolescence-velocity.jpg": {
       "format": "JPEG",
       "height": 895,

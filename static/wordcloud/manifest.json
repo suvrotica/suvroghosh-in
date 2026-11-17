@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T22:25:54.040859+00:00",
+  "generatedAt": "2026-11-17T01:31:20.184625+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7887,6 +7887,29 @@
         "Believe",
         "Work",
         "Plan"
+      ],
+      "wordCount": 130
+    },
+    "no-score-for-the-meaningless": {
+      "generatedAt": "2026-11-17T01:31:19.603977+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/no-score-for-the-meaningless.svg",
+      "source": "src/lib/posts/no-score-for-the-meaningless.md",
+      "sourceHash": "8018000be99ab2d7557709183ef98764cd1baa479c5aa1090a1c6ae8364638d3",
+      "sourceModified": "2026-11-17T01:30:27.574159+00:00",
+      "topWords": [
+        "Nothing",
+        "Perhaps",
+        "Wake",
+        "Grey",
+        "Energy",
+        "Silence",
+        "Days",
+        "Score",
+        "Keeping",
+        "Anything",
+        "Nightmares",
+        "Depressive"
       ],
       "wordCount": 130
     },

@@ -4444,6 +4444,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "no-score-for-the-meaningless.jpg",
+			"src": "/images/no-score-for-the-meaningless.jpg",
+			"bytes": 250520,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "obsolescence-velocity.jpg",
 			"src": "/images/obsolescence-velocity.jpg",
 			"bytes": 175327,

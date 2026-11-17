@@ -17642,6 +17642,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/no-score-for-the-meaningless.md": {
+			"bodyHash": "1b5d625cc6df56bcd15ecdb390e2cea4acad27cb506372d179bc730cdd06f7e4",
+			"hashVersion": 2,
+			"revisionHash": "28bf223f6f7228a25f6df53f077c17b423093f0b0496b85d9438e9da10a24477",
+			"generatedTags": [
+				"Existence",
+				"Depression",
+				"Meaning",
+				"Solitude",
+				"Absurdity",
+				"Consciousness",
+				"Entropy",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Existence",
+				"Depression",
+				"Meaning",
+				"Solitude",
+				"Absurdity",
+				"Consciousness",
+				"Entropy",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
