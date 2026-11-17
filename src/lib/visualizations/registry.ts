@@ -556,6 +556,18 @@ export const visualizationSummaries = {
 			'An interpreted San Antonio river path scene painted from thousands of small colored oil dabs showing walkers beside a shaded limestone path, an arched stone bridge, mature bald cypress and live oak trees, and reflected river water.',
 		href: '/blog/visualizations/pointillism-san-antonio-and-texas-in-dots-of-color',
 		status: 'published'
+	},
+	'exploded-human-skull': {
+		id: 'exploded-human-skull',
+		title: 'Exploded Human Skull Museum',
+		description:
+			'Interactive 3D Beauchene osteology exhibit of the 22 human cranial and facial bones, associated hyoid, and 28 permanent teeth with directional explosion, sutural relief, and anatomical inspection.',
+		subjects: ['Biology', 'Healthcare', 'Scientific Computing', 'Design'],
+		poster: '/images/visualizations/exploded-human-skull/social.png',
+		posterAlt:
+			'Interactive 3D exploded human skull osteology exhibit showing separate ivory cranial and facial bones suspended against a dark museum background.',
+		href: '/blog/visualizations/exploded-human-skull',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

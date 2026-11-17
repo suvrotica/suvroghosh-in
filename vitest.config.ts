@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/exploded-skull/**/*.test.ts',
 			'src/lib/visualizations/fingerprint/**/*.test.ts',
 			'src/lib/radio/**/*.test.ts',
 			'src/lib/recorder/**/*.test.ts',

@@ -71,7 +71,8 @@
 		'piet-mondrian-a-pioneer-of-abstract-art':
 			visualizationSummaries['piet-mondrian-a-pioneer-of-abstract-art'].subjects,
 		'pointillism-san-antonio-and-texas-in-dots-of-color':
-			visualizationSummaries['pointillism-san-antonio-and-texas-in-dots-of-color'].subjects
+			visualizationSummaries['pointillism-san-antonio-and-texas-in-dots-of-color'].subjects,
+		'exploded-human-skull': visualizationSummaries['exploded-human-skull'].subjects
 	};
 	const subjects = [
 		'All',

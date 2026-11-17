@@ -5382,6 +5382,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/exploded-human-skull/poster.png",
+			"src": "/images/visualizations/exploded-human-skull/poster.png",
+			"bytes": 133209,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "visualizations/exploded-human-skull/social.png",
+			"src": "/images/visualizations/exploded-human-skull/social.png",
+			"bytes": 70586,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg",
 			"src": "/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg",
 			"bytes": 7177,

@@ -6,3 +6,5 @@
 src/lib/visualizations/anatomy-of-an-essay/generated/*.ts text eol=lf
 # PDF cross-reference offsets depend on exact bytes, including on Windows checkouts.
 *.pdf binary
+# Binary glTF skull asset must retain exact bytes across checkouts.
+*.glb binary

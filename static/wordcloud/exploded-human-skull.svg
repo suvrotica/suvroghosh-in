@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Exploded Human Skull Museum" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Exploded Human Skull Museum</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(354,701)" font-size="118" style="fill:#d5d2c2">Bone</text>
+<text transform="translate(230,530)" font-size="118" style="fill:#b6c3dd">Bones</text>
+<text transform="translate(918,396)" font-size="107" style="fill:#a9b7a3">Skull</text>
+<text transform="translate(1010,697) rotate(-90)" font-size="83" style="fill:#d6a79f">Face</text>
+<text transform="translate(628,159)" font-size="83" style="fill:#c49a6c">Vault</text>
+<text transform="translate(918,289)" font-size="83" style="fill:#8fb7d0">Sutural</text>
+<text transform="translate(94,402)" font-size="83" style="fill:#c7d7b5">Every</text>
+<text transform="translate(420,385)" font-size="83" style="fill:#d9c89e">Cleanly</text>
+<text transform="translate(444,630)" font-size="83" style="fill:#d6a79f">Paired</text>
+<text transform="translate(223,322) rotate(-90)" font-size="83" style="fill:#9fc9c5">Form</text>
+<text transform="translate(445,290)" font-size="83" style="fill:#9fc9c5">Inferior</text>
+<text transform="translate(130,67)" font-size="83" style="fill:#9fc9c5">Anatomical</text>
+<text transform="translate(825,467)" font-size="68" style="fill:#c49a6c">Teaching</text>
+<text transform="translate(918,172)" font-size="68" style="fill:#a9b7a3">Adult</text>
+<text transform="translate(817,92)" font-size="68" style="fill:#c49a6c">Cranium</text>
+<text transform="translate(356,156)" font-size="68" style="fill:#b6c3dd">Single</text>
+<text transform="translate(1019,581)" font-size="68" style="fill:#d88988">Shell</text>
+<text transform="translate(658,221)" font-size="68" style="fill:#d9c89e">Plates</text>
+<text transform="translate(73,405) rotate(-90)" font-size="68" style="fill:#8fb7d0">Behind</text>
+<text transform="translate(145,704) rotate(-90)" font-size="68" style="fill:#d9c89e">Cranial</text>
+<text transform="translate(371,452)" font-size="68" style="fill:#d9c89e">Sutures</text>
+<text transform="translate(597,526)" font-size="68" style="fill:#a9b7a3">Beauch</text>
+<text transform="translate(689,697)" font-size="68" style="fill:#c49a6c">Along</text>
+<text transform="translate(151,607)" font-size="68" style="fill:#d6a79f">Center</text>
+<text transform="translate(1018,680)" font-size="54" style="fill:#a9b7a3">Sphenoid</text>
+<text transform="translate(233,237)" font-size="54" style="fill:#d5d2c2">Proper</text>
+<text transform="translate(109,119)" font-size="54" style="fill:#d6a79f">Movable</text>
+<text transform="translate(68,698) rotate(-90)" font-size="54" style="fill:#8fb7d0">Temporal</text>
+<text transform="translate(237,307)" font-size="54" style="fill:#c49a6c">Across</text>
+<text transform="translate(934,223)" font-size="54" style="fill:#b6c3dd">Darkened</text>
+<text transform="translate(1073,629)" font-size="54" style="fill:#b6c3dd">Seams</text>
+<text transform="translate(1018,49)" font-size="54" style="fill:#c49a6c">Surface</text>
+<text transform="translate(1274,596) rotate(-90)" font-size="54" style="fill:#d88988">Mandible</text>
+<text transform="translate(172,669)" font-size="54" style="fill:#d5d2c2">Nasal</text>
+<text transform="translate(935,695) rotate(-90)" font-size="54" style="fill:#b6c3dd">Conchae</text>
+<text transform="translate(153,335) rotate(-90)" font-size="54" style="fill:#c7d7b5">Preset</text>
+<text transform="translate(160,350)" font-size="44" style="fill:#d5d2c2">Associated</text>
+<text transform="translate(756,567)" font-size="44" style="fill:#c49a6c">Hyoid</text>
+<text transform="translate(227,193)" font-size="44" style="fill:#9fc9c5">Permanent</text>
+<text transform="translate(675,36)" font-size="44" style="fill:#9fc9c5">Suture</text>
+<text transform="translate(708,330)" font-size="44" style="fill:#d6a79f">Anterior</text>
+<text transform="translate(1121,105)" font-size="44" style="fill:#c49a6c">Teeth</text>
+<text transform="translate(1019,516)" font-size="34" style="fill:#9fc9c5">Bodyparts3d</text>
+<text transform="translate(669,460)" font-size="34" style="fill:#9fc9c5">Geometry</text>
+<text transform="translate(400,98)" font-size="34" style="fill:#d88988">Assembled</text>
+<text transform="translate(107,299) rotate(-90)" font-size="25" style="fill:#8fb7d0">Interactive</text>
+<text transform="translate(690,81)" font-size="25" style="fill:#9fc9c5">Webgl</text>
+<text transform="translate(507,200)" font-size="25" style="fill:#c7d7b5">Javascript</text>
+<text transform="translate(760,607)" font-size="25" style="fill:#e0b879">Required</text>
+<text transform="translate(312,556)" font-size="25" style="fill:#b6c3dd">Manipulation</text>
+<text transform="translate(577,556)" font-size="25" style="fill:#d6a79f">Exploded</text>
+<text transform="translate(767,388)" font-size="25" style="fill:#8fb7d0">Assembly</text>
+<text transform="translate(793,363)" font-size="25" style="fill:#9fc9c5">Cabinets</text>
+<text transform="translate(476,311)" font-size="22" style="fill:#d5d2c2">Nineteenthcentury</text>
+<text transform="translate(782,638)" font-size="22" style="fill:#e0b879">Medical</text>
+<text transform="translate(1052,715)" font-size="22" style="fill:#d9c89e">Schools</text>
+<text transform="translate(887,23)" font-size="22" style="fill:#e0b879">Anatomists</text>
+<text transform="translate(192,713)" font-size="22" style="fill:#9fc9c5">Faced</text>
+<text transform="translate(73,101) rotate(-90)" font-size="22" style="fill:#d9c89e">Paradox</text>
+<text transform="translate(1147,127)" font-size="22" style="fill:#9fc9c5">Whenever</text>
+<text transform="translate(356,384)" font-size="22" style="fill:#8fb7d0">Held</text>
+<text transform="translate(636,57)" font-size="22" style="fill:#d6a79f">Human</text>
+<text transform="translate(508,409)" font-size="22" style="fill:#d88988">Outside</text>
+<text transform="translate(215,543) rotate(-90)" font-size="22" style="fill:#b6c3dd">Intact</text>
+<text transform="translate(191,430)" font-size="22" style="fill:#c49a6c">Reads</text>
+<text transform="translate(1155,170)" font-size="22" style="fill:#9fc9c5">Sculpted</text>
+<text transform="translate(1091,420)" font-size="22" style="fill:#b6c3dd">Protecting</text>
+<text transform="translate(1019,327)" font-size="22" style="fill:#d6a79f">Brain</text>
+<text transform="translate(167,715) rotate(-90)" font-size="22" style="fill:#d5d2c2">Orbits</text>
+<text transform="translate(381,259)" font-size="22" style="fill:#d5d2c2">Upper</text>
+<text transform="translate(25,649) rotate(-90)" font-size="22" style="fill:#d9c89e">Airway</text>
+<text transform="translate(711,555)" font-size="22" style="fill:#c7d7b5">Yet</text>
+<text transform="translate(866,245)" font-size="22" style="fill:#c7d7b5">Fact</text>
+<text transform="translate(230,152)" font-size="22" style="fill:#c49a6c">Spherical</text>
+<text transform="translate(1194,310)" font-size="22" style="fill:#d6a79f">Arch</text>
+<text transform="translate(530,177)" font-size="22" style="fill:#d5d2c2">Built</text>
+<text transform="translate(1156,707)" font-size="22" style="fill:#c7d7b5">Twentytwo</text>
+<text transform="translate(28,104) rotate(-90)" font-size="22" style="fill:#a9b7a3">Tightly</text>
+<text transform="translate(967,115)" font-size="22" style="fill:#8fb7d0">Dovetailed</text>
+<text transform="translate(786,413)" font-size="22" style="fill:#d88988">Buttresses</text>
+<text transform="translate(672,428)" font-size="22" style="fill:#9fc9c5">Scrolls</text>
+<text transform="translate(818,281)" font-size="22" style="fill:#d5d2c2">Fragile</text>
+<text transform="translate(683,481)" font-size="22" style="fill:#a9b7a3">Laminae</text>
+<text transform="translate(261,695)" font-size="22" style="fill:#9fc9c5">Several</text>
+<text transform="translate(1220,210)" font-size="22" style="fill:#e0b879">Hide</text>
+<text transform="translate(238,261)" font-size="22" style="fill:#d88988">Almost</text>
+<text transform="translate(177,547) rotate(-90)" font-size="22" style="fill:#8fb7d0">Completely</text>
+<text transform="translate(501,571)" font-size="22" style="fill:#a9b7a3">Fuse</text>
+<text transform="translate(10,427)" font-size="22" style="fill:#8fb7d0">Childhood</text>
+<text transform="translate(18,130)" font-size="22" style="fill:#a9b7a3">Claude</text>
+<text transform="translate(1161,453)" font-size="22" style="fill:#8fb7d0">Edme</text>
+<text transform="translate(215,629)" font-size="22" style="fill:#c7d7b5">Solved</text>
+<text transform="translate(455,221)" font-size="22" style="fill:#c7d7b5">Optical</text>
+<text transform="translate(219,551)" font-size="22" style="fill:#d5d2c2">Puzzle</text>
+<text transform="translate(582,331)" font-size="22" style="fill:#d6a79f">Paris</text>
+<text transform="translate(10,150)" font-size="22" style="fill:#b6c3dd">Early</text>
+<text transform="translate(1270,125) rotate(-90)" font-size="22" style="fill:#9fc9c5">Boiling</text>
+<text transform="translate(906,712)" font-size="22" style="fill:#d9c89e">Unossified</text>
+<text transform="translate(896,42)" font-size="22" style="fill:#e0b879">Young</text>
+<text transform="translate(709,57)" font-size="22" style="fill:#e0b879">Lines</text>
+<text transform="translate(548,220)" font-size="22" style="fill:#d6a79f">Plate</text>
+<text transform="translate(639,405)" font-size="22" style="fill:#c7d7b5">Parted</text>
+<text transform="translate(1125,144)" font-size="17" style="fill:#c7d7b5">Suspending</text>
+<text transform="translate(869,109)" font-size="17" style="fill:#d5d2c2">Detached</text>
+<text transform="translate(610,87)" font-size="17" style="fill:#e0b879">Hinged</text>
+<text transform="translate(514,549)" font-size="17" style="fill:#a9b7a3">Brass</text>
+<text transform="translate(1154,347)" font-size="17" style="fill:#c49a6c">Arms</text>
+<text transform="translate(837,179)" font-size="17" style="fill:#d9c89e">Common</text>
+<text transform="translate(621,31)" font-size="17" style="fill:#9fc9c5">Turn</text>
+<text transform="translate(99,111) rotate(-90)" font-size="17" style="fill:#9fc9c5">Thumbscrew</text>
+<text transform="translate(896,651) rotate(-90)" font-size="17" style="fill:#a9b7a3">Physical</text>
+<text transform="translate(1076,306)" font-size="17" style="fill:#c49a6c">Preparation</text>
+<text transform="translate(704,714)" font-size="17" style="fill:#c7d7b5">Orbital</text>
+<text transform="translate(158,84)" font-size="17" style="fill:#9fc9c5">Roofs</text>
+<text transform="translate(921,314)" font-size="17" style="fill:#d5d2c2">Rise</text>
+<text transform="translate(708,105)" font-size="17" style="fill:#c7d7b5">Malar</text>
+<text transform="translate(967,487)" font-size="17" style="fill:#8fb7d0">Cheek</text>
+<text transform="translate(866,528) rotate(-90)" font-size="17" style="fill:#a9b7a3">Arches</text>
+<text transform="translate(440,614) rotate(-90)" font-size="17" style="fill:#d88988">Swing</text>
+<text transform="translate(634,572)" font-size="17" style="fill:#e0b879">Laterally</text>
+<text transform="translate(952,635) rotate(-90)" font-size="17" style="fill:#e0b879">Butterflyshaped</text>
+<text transform="translate(281,437)" font-size="17" style="fill:#c49a6c">Emerges</text>
+<text transform="translate(177,687)" font-size="17" style="fill:#c49a6c">Keystone</text>
+<text transform="translate(583,472)" font-size="17" style="fill:#e0b879">Gothic</text>
+<text transform="translate(1154,477)" font-size="17" style="fill:#d6a79f">Reading</text>
+<text transform="translate(18,544) rotate(-90)" font-size="17" style="fill:#b6c3dd">Separately</text>
+<text transform="translate(1130,67)" font-size="17" style="fill:#e0b879">Traditional</text>
+<text transform="translate(263,711)" font-size="17" style="fill:#e0b879">Osteology</text>
+<text transform="translate(306,84)" font-size="17" style="fill:#9fc9c5">Divides</text>
+<text transform="translate(762,238)" font-size="17" style="fill:#d9c89e">Functional</text>
+</svg>

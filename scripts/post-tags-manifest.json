@@ -17672,6 +17672,35 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/exploded-human-skull.md": {
+			"bodyHash": "f136a8e105bcb69326050beaee96a16d42e1d33614b3a524ee56979039f7cf20",
+			"hashVersion": 2,
+			"revisionHash": "8574efe4438a55fd1d0cc0b01993757d613897cbed8b7c3c0214a1f7fe9b1165",
+			"generatedTags": [
+				"Osteology",
+				"Human Anatomy",
+				"Cranial Bones",
+				"Facial Skeleton",
+				"Beauchene Skull",
+				"Three.js",
+				"3D Visualization",
+				"BodyParts3D",
+				"Scientific Visualization",
+				"Computational Design"
+			],
+			"pinnedTags": [
+				"Osteology",
+				"Human Anatomy",
+				"Cranial Bones",
+				"Facial Skeleton",
+				"Beauchene Skull",
+				"Three.js",
+				"3D Visualization",
+				"BodyParts3D",
+				"Scientific Visualization"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

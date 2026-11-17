@@ -1475,3 +1475,69 @@ test('Why two AQI apps show different numbers is registered as an SSR-readable C
 		'default-comparison.png exceeds 750 KiB'
 	);
 });
+
+test('Exploded Human Skull Museum is a native BodyParts3D osteology exhibit with full registration and assets', () => {
+	const slug = 'exploded-human-skull';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const museum = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'exploded-skull',
+		'ExplodedSkullMuseum.svelte'
+	);
+	const styles = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'exploded-skull',
+		'exploded-skull-museum.css'
+	);
+	const glbFile = path.join(root, 'static', 'data', 'exploded-human-skull', 'human-skull-bp3d.glb');
+	const manifestFile = path.join(root, 'static', 'data', 'exploded-human-skull', 'manifest.json');
+	const attributionFile = path.join(
+		root,
+		'static',
+		'data',
+		'exploded-human-skull',
+		'ATTRIBUTION.md'
+	);
+	const socialFile = path.join(root, 'static', 'images', 'visualizations', slug, 'social.png');
+	const posterFile = path.join(root, 'static', 'images', 'visualizations', slug, 'poster.png');
+
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.match(post, /<ExplodedSkullMuseum \/>/);
+	assert.match(post, /<noscript>/);
+	assert.match(post, /BodyParts3D/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.match(registry, new RegExp(`href: '/blog/visualizations/${slug}'`));
+	assert.match(
+		landing,
+		/'exploded-human-skull': visualizationSummaries\['exploded-human-skull'\]\.subjects/
+	);
+
+	assert.match(museum, /article-breakout not-prose/);
+	assert.doesNotMatch(museum, /document\.documentElement|<svelte:head>|<svelte:window[^>]+onkeydown/);
+	assert.match(styles, /^\.esm-shell\s*\{/m);
+
+	assert.ok(fs.existsSync(glbFile), 'missing human-skull-bp3d.glb');
+	assert.ok(fs.existsSync(manifestFile), 'missing skull manifest.json');
+	assert.ok(fs.existsSync(attributionFile), 'missing ATTRIBUTION.md');
+	assert.ok(fs.existsSync(socialFile), 'missing social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing poster.png');
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
+});
