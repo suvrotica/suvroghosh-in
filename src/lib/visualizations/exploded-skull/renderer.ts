@@ -53,10 +53,12 @@ interface BoneRenderNode {
 	id: BoneId;
 	group: THREE.Group;
 	mesh: THREE.Mesh;
-	material: THREE.MeshStandardMaterial;
+	material: THREE.MeshPhysicalMaterial;
 	ghostMesh: THREE.Mesh | null;
 	sutureUniform: { value: number };
 	sutureTintUniform: { value: THREE.Color };
+	grainStrengthUniform: { value: number };
+	bumpStrengthUniform: { value: number };
 	dentitionMeshes: THREE.Mesh[];
 	currentPos: THREE.Vector3;
 	targetPos: THREE.Vector3;
@@ -108,47 +110,113 @@ const BONE_TONE_BIAS: Partial<Record<BoneId, number>> = {
 	hyoid: -0.015
 };
 
-function createBoneMicroTexture(): THREE.CanvasTexture | null {
-	if (typeof document === 'undefined') return null;
-	const size = 256;
-	const canvas = document.createElement('canvas');
-	canvas.width = size;
-	canvas.height = size;
-	const ctx = canvas.getContext('2d');
-	if (!ctx) return null;
-
-	const img = ctx.createImageData(size, size);
-	const data = img.data;
-	// Deterministic seeded pseudo-noise for subtle cortical Haversian grain
-	let seed = 0x51a7c3d1;
-	const nextRand = () => {
-		seed = (seed * 1664525 + 1013904223) >>> 0;
-		return seed / 4294967296;
-	};
-
-	for (let y = 0; y < size; y += 1) {
-		for (let x = 0; x < size; x += 1) {
-			const idx = (y * size + x) * 4;
-			const grain = nextRand() * 24 - 12;
-			const wave =
-				Math.sin((x / size) * Math.PI * 6 + Math.cos((y / size) * Math.PI * 4) * 1.4) * 7 +
-				Math.sin((y / size) * Math.PI * 10) * 4;
-			const v = Math.max(0, Math.min(255, Math.round(138 + grain + wave)));
-			data[idx] = v;
-			data[idx + 1] = v;
-			data[idx + 2] = v;
-			data[idx + 3] = 255;
-		}
-	}
-	ctx.putImageData(img, 0, 0);
-
-	const tex = new THREE.CanvasTexture(canvas);
-	tex.wrapS = THREE.RepeatWrapping;
-	tex.wrapT = THREE.RepeatWrapping;
-	tex.repeat.set(3, 3);
-	tex.needsUpdate = true;
-	return tex;
+interface PresetSurfaceProfile {
+	grainStrength: number;
+	bumpStrength: number;
+	sheen: number;
+	sheenRoughness: number;
+	specularIntensity: number;
+	clearcoat: number;
+	clearcoatRoughness: number;
 }
+
+const BONE_PRESET_SURFACE: Record<string, PresetSurfaceProfile> = {
+	'museum-ivory': {
+		grainStrength: 1.0,
+		bumpStrength: 1.28,
+		sheen: 0.26,
+		sheenRoughness: 0.74,
+		specularIntensity: 0.56,
+		clearcoat: 0.0,
+		clearcoatRoughness: 0.45
+	},
+	'aged-osteology': {
+		grainStrength: 1.18,
+		bumpStrength: 1.42,
+		sheen: 0.22,
+		sheenRoughness: 0.82,
+		specularIntensity: 0.48,
+		clearcoat: 0.0,
+		clearcoatRoughness: 0.55
+	},
+	'bleached-specimen': {
+		grainStrength: 0.9,
+		bumpStrength: 1.15,
+		sheen: 0.2,
+		sheenRoughness: 0.68,
+		specularIntensity: 0.6,
+		clearcoat: 0.0,
+		clearcoatRoughness: 0.4
+	},
+	'porcelain-cast': {
+		grainStrength: 0.26,
+		bumpStrength: 0.32,
+		sheen: 0.08,
+		sheenRoughness: 0.45,
+		specularIntensity: 0.78,
+		clearcoat: 0.24,
+		clearcoatRoughness: 0.24
+	},
+	'translucent-study': {
+		grainStrength: 0.68,
+		bumpStrength: 0.86,
+		sheen: 0.14,
+		sheenRoughness: 0.64,
+		specularIntensity: 0.58,
+		clearcoat: 0.0,
+		clearcoatRoughness: 0.4
+	}
+};
+
+/**
+ * UV-free 3D quintic value noise with exact analytical object-space partial derivatives.
+ * BodyParts3D GLB geometry carries POSITION, NORMAL, and _SUTURE without UV attributes,
+ * so osteological pores, lamellar striae, and micro-bump normals are evaluated in 3D space.
+ */
+const GLSL_NOISE_3D_GRAD = /* glsl */ `
+float bpHash13(vec3 p3) {
+	p3 = fract((p3 + vec3(13.71, 29.37, 51.19)) * 0.1031);
+	p3 += dot(p3, p3.zyx + 31.32);
+	return fract((p3.x + p3.y) * p3.z);
+}
+
+vec4 bpNoise3dGrad(vec3 p) {
+	vec3 i = floor(p);
+	vec3 f = fract(p);
+	vec3 u = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);
+	vec3 du = 30.0 * f * f * (f * (f - 2.0) + 1.0);
+
+	float a = bpHash13(i);
+	float b = bpHash13(i + vec3(1.0, 0.0, 0.0));
+	float c = bpHash13(i + vec3(0.0, 1.0, 0.0));
+	float d = bpHash13(i + vec3(1.0, 1.0, 0.0));
+	float e = bpHash13(i + vec3(0.0, 0.0, 1.0));
+	float f1 = bpHash13(i + vec3(1.0, 0.0, 1.0));
+	float g = bpHash13(i + vec3(0.0, 1.0, 1.0));
+	float h = bpHash13(i + vec3(1.0, 1.0, 1.0));
+
+	float k0 = a;
+	float k1 = b - a;
+	float k2 = c - a;
+	float k3 = e - a;
+	float k4 = a - b - c + d;
+	float k5 = a - c - e + g;
+	float k6 = a - b - e + f1;
+	float k7 = -a + b + c - d + e - f1 - g + h;
+
+	float val = k0 + k1 * u.x + k2 * u.y + k3 * u.z
+		+ k4 * u.x * u.y + k5 * u.y * u.z + k6 * u.z * u.x
+		+ k7 * u.x * u.y * u.z;
+
+	vec3 grad = du * vec3(
+		k1 + k4 * u.y + k6 * u.z + k7 * u.y * u.z,
+		k2 + k5 * u.z + k4 * u.x + k7 * u.z * u.x,
+		k3 + k6 * u.x + k5 * u.y + k7 * u.x * u.y
+	);
+
+	return vec4(val, grad);
+}
+`;
 
 export async function createSkullRenderer(
 	canvas: HTMLCanvasElement,
@@ -182,7 +250,7 @@ export async function createSkullRenderer(
 	renderer.setSize(width, height, false);
 	renderer.outputColorSpace = THREE.SRGBColorSpace;
 	renderer.toneMapping = THREE.ACESFilmicToneMapping;
-	renderer.toneMappingExposure = 1.06;
+	renderer.toneMappingExposure = 0.94;
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -191,7 +259,7 @@ export async function createSkullRenderer(
 	const envScene = new RoomEnvironment();
 	const envTarget = pmrem.fromScene(envScene, 0.04);
 	scene.environment = envTarget.texture;
-	scene.environmentIntensity = 0.42;
+	scene.environmentIntensity = 0.24;
 
 	const camera = new THREE.PerspectiveCamera(34, width / height, 0.08, 60);
 	const initCam = CAMERA_PRESET_BY_ID[state.cameraPreset] ?? CAMERA_PRESET_BY_ID['three-quarter'];
@@ -219,14 +287,14 @@ export async function createSkullRenderer(
 	controls.autoRotateSpeed = state.rotation.autoRotateSpeed * 2.2;
 	controls.update();
 
-	// Calibrated 3-point museum showcase lighting
-	const hemiLight = new THREE.HemisphereLight('#f8f2e4', '#262b38', 0.46);
+	// Sculptural museum chiaroscuro 3-point rig: warm grazing key, cool fill shadow modeling, crisp rim separation
+	const hemiLight = new THREE.HemisphereLight('#ece1cf', '#181c26', 0.25);
 	scene.add(hemiLight);
 
-	const keyLight = new THREE.DirectionalLight('#fff5e4', 2.05);
-	keyLight.position.set(4.2, 5.4, 4.8);
+	const keyLight = new THREE.DirectionalLight('#fff0d8', 2.15);
+	keyLight.position.set(3.8, 5.2, 4.6);
 	keyLight.castShadow = true;
-	keyLight.shadow.mapSize.set(1024, 1024);
+	keyLight.shadow.mapSize.set(2048, 2048);
 	keyLight.shadow.camera.near = 0.5;
 	keyLight.shadow.camera.far = 16;
 	const shadowExtent = 2.6;
@@ -234,19 +302,20 @@ export async function createSkullRenderer(
 	keyLight.shadow.camera.right = shadowExtent;
 	keyLight.shadow.camera.top = shadowExtent;
 	keyLight.shadow.camera.bottom = -shadowExtent;
-	keyLight.shadow.bias = -0.0005;
+	keyLight.shadow.bias = -0.00035;
+	keyLight.shadow.normalBias = 0.012;
 	scene.add(keyLight);
 
-	const fillLight = new THREE.DirectionalLight('#bfd4f2', 0.82);
-	fillLight.position.set(-4.6, 1.4, 2.2);
+	const fillLight = new THREE.DirectionalLight('#7e9cc8', 0.42);
+	fillLight.position.set(-4.8, 0.9, 2.4);
 	scene.add(fillLight);
 
-	const rimLight = new THREE.DirectionalLight('#f2dec2', 1.15);
-	rimLight.position.set(-1.6, 3.6, -5.2);
+	const rimLight = new THREE.DirectionalLight('#f4cd9d', 1.38);
+	rimLight.position.set(-2.0, 3.2, -5.0);
 	scene.add(rimLight);
 
-	const basalBounceLight = new THREE.DirectionalLight('#d8cab0', 0.48);
-	basalBounceLight.position.set(0.5, -4.5, 1.8);
+	const basalBounceLight = new THREE.DirectionalLight('#b89c78', 0.28);
+	basalBounceLight.position.set(0.4, -4.6, 1.6);
 	scene.add(basalBounceLight);
 
 	// Coordinate grid + subtle museum scale reference below the skull
@@ -279,16 +348,6 @@ export async function createSkullRenderer(
 	armatureFilaments.visible = state.appearance.showArmatureFilaments;
 	skullRootPivot.add(armatureFilaments);
 
-	const bumpTexture = createBoneMicroTexture();
-
-	const enamelMaterial = new THREE.MeshStandardMaterial({
-		color: '#f2ede0',
-		roughness: 0.28,
-		metalness: 0.03,
-		bumpMap: bumpTexture,
-		bumpScale: 0.0025
-	});
-
 	const ghostMaterial = new THREE.MeshStandardMaterial({
 		color: '#a8b3c6',
 		roughness: 0.7,
@@ -309,61 +368,230 @@ export async function createSkullRenderer(
 	let loadedMeshCount = 0;
 	let loadedTriangleCount = 0;
 
-	function applySutureShader(
-		mat: THREE.MeshStandardMaterial,
-		sutureUniform: { value: number },
-		sutureTintUniform: { value: THREE.Color }
-	): void {
-		mat.customProgramCacheKey = () => 'bp3d-skull-suture-v1';
+	function applyEnamelShader(mat: THREE.MeshPhysicalMaterial): void {
+		mat.customProgramCacheKey = () => 'bp3d-enamel-v2';
 		mat.onBeforeCompile = (shader) => {
-			shader.uniforms.uSutureStrength = sutureUniform;
-			shader.uniforms.uSutureTint = sutureTintUniform;
 			shader.vertexShader = shader.vertexShader
 				.replace(
 					'#include <common>',
 					`#include <common>
-attribute float _suture;
-varying float vSuture;`
+varying vec3 vObjPos;
+varying vec3 vObjNormal;
+varying vec3 vViewBasisX;
+varying vec3 vViewBasisY;`
 				)
 				.replace(
-					'#include <color_vertex>',
-					`#include <color_vertex>
-vSuture = _suture;`
+					'#include <begin_vertex>',
+					`#include <begin_vertex>
+vObjPos = position;
+vObjNormal = normal;
+vViewBasisX = normalize(normalMatrix * vec3(1.0, 0.0, 0.0));
+vViewBasisY = normalize(normalMatrix * vec3(0.0, 1.0, 0.0));`
 				);
+
 			shader.fragmentShader = shader.fragmentShader
 				.replace(
 					'#include <common>',
 					`#include <common>
-varying float vSuture;
-uniform float uSutureStrength;
-uniform vec3 uSutureTint;`
+varying vec3 vObjPos;
+varying vec3 vObjNormal;
+varying vec3 vViewBasisX;
+varying vec3 vViewBasisY;
+${GLSL_NOISE_3D_GRAD}`
 				)
 				.replace(
 					'#include <color_fragment>',
 					`#include <color_fragment>
-float sutureMask = clamp(vSuture * uSutureStrength, 0.0, 1.0);
-diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, sutureMask * 0.52);`
+vec3 enamelObjN = length(vObjNormal) > 0.0001 ? normalize(vObjNormal) : vec3(0.0, 1.0, 0.0);
+vec4 nPerikymata = bpNoise3dGrad(vObjPos * vec3(44.0, 12.0, 44.0) + vec3(3.2, 1.8, 5.7));
+vec4 nEnamelTone = bpNoise3dGrad(vObjPos * 14.0 + vec3(6.4, 2.1, 9.3));
+float enamelShade = smoothstep(0.25, 0.8, nEnamelTone.x);
+diffuseColor.rgb *= mix(vec3(0.92, 0.87, 0.77), vec3(1.04, 1.03, 1.0), enamelShade);
+diffuseColor.rgb *= (0.97 + 0.05 * nPerikymata.x);`
+				)
+				.replace(
+					'#include <normal_fragment_maps>',
+					`#include <normal_fragment_maps>
+vec3 enamelGradObj = nPerikymata.yzw * vec3(44.0 * 0.00045, 12.0 * 0.00045, 44.0 * 0.00045);
+vec3 eSurfGradObj = enamelGradObj - enamelObjN * dot(enamelGradObj, enamelObjN);
+vec3 eBX = normalize(vViewBasisX);
+vec3 eBY = normalize(vViewBasisY);
+vec3 eBZ = normalize(cross(eBX, eBY));
+vec3 eSurfGradView = eSurfGradObj.x * eBX + eSurfGradObj.y * eBY + eSurfGradObj.z * eBZ;
+normal = normalize(normal - faceDirection * eSurfGradView * 0.65);`
+				);
+		};
+	}
+
+	function createEnamelMaterial(): THREE.MeshPhysicalMaterial {
+		const mat = new THREE.MeshPhysicalMaterial({
+			color: '#ede7d7',
+			roughness: 0.24,
+			metalness: 0.0,
+			ior: 1.56,
+			specularIntensity: 0.86,
+			clearcoat: 0.34,
+			clearcoatRoughness: 0.14,
+			sheen: 0.06,
+			sheenRoughness: 0.45,
+			sheenColor: new THREE.Color('#fff8ec')
+		});
+		applyEnamelShader(mat);
+		return mat;
+	}
+
+	function applyCorticalBoneShader(
+		mat: THREE.MeshPhysicalMaterial,
+		hasSutureAttr: boolean,
+		sutureUniform: { value: number },
+		sutureTintUniform: { value: THREE.Color },
+		grainStrengthUniform: { value: number },
+		bumpStrengthUniform: { value: number }
+	): void {
+		mat.customProgramCacheKey = () =>
+			hasSutureAttr ? 'bp3d-cortical-bone-suture-v2' : 'bp3d-cortical-bone-plain-v2';
+		mat.onBeforeCompile = (shader) => {
+			shader.uniforms.uSutureStrength = sutureUniform;
+			shader.uniforms.uSutureTint = sutureTintUniform;
+			shader.uniforms.uGrainStrength = grainStrengthUniform;
+			shader.uniforms.uBumpStrength = bumpStrengthUniform;
+
+			shader.vertexShader = shader.vertexShader
+				.replace(
+					'#include <common>',
+					`#include <common>
+varying vec3 vObjPos;
+varying vec3 vObjNormal;
+varying vec3 vViewBasisX;
+varying vec3 vViewBasisY;
+${hasSutureAttr ? 'attribute float _suture;\nvarying float vSuture;' : ''}`
+				)
+				.replace(
+					'#include <begin_vertex>',
+					`#include <begin_vertex>
+vObjPos = position;
+vObjNormal = normal;
+vViewBasisX = normalize(normalMatrix * vec3(1.0, 0.0, 0.0));
+vViewBasisY = normalize(normalMatrix * vec3(0.0, 1.0, 0.0));
+${hasSutureAttr ? 'vSuture = _suture;' : ''}`
+				);
+
+			shader.fragmentShader = shader.fragmentShader
+				.replace(
+					'#include <common>',
+					`#include <common>
+varying vec3 vObjPos;
+varying vec3 vObjNormal;
+varying vec3 vViewBasisX;
+varying vec3 vViewBasisY;
+${hasSutureAttr ? 'varying float vSuture;' : ''}
+uniform float uSutureStrength;
+uniform vec3 uSutureTint;
+uniform float uGrainStrength;
+uniform float uBumpStrength;
+${GLSL_NOISE_3D_GRAD}`
+				)
+				.replace(
+					'#include <color_fragment>',
+					`#include <color_fragment>
+vec3 boneObjP = vObjPos;
+vec3 boneObjN = length(vObjNormal) > 0.0001 ? normalize(vObjNormal) : vec3(0.0, 1.0, 0.0);
+float boneDistFade = clamp(2.8 / max(length(vViewPosition), 0.7), 0.38, 1.0);
+
+vec4 nPatina = bpNoise3dGrad(boneObjP * 4.6 + vec3(1.7, 3.1, 0.9));
+vec4 nLamellar = bpNoise3dGrad(boneObjP * vec3(13.5, 9.5, 19.5) + vec3(7.3, 2.4, 5.1));
+vec4 nGrain = bpNoise3dGrad(boneObjP * 34.0 + vec3(11.1, 6.2, 14.8));
+vec4 nPores = bpNoise3dGrad(boneObjP * 74.0 + vec3(4.5, 17.3, 8.9));
+
+float poreT = clamp((nPores.x - 0.56) / 0.44, 0.0, 1.0);
+float bonePoreMask = poreT * poreT;
+float dPoreDn = 2.0 * poreT / 0.44;
+
+vec3 boneMicroGradObj = nPatina.yzw * (4.6 * 0.0020)
+	+ nLamellar.yzw * vec3(13.5 * 0.0016, 9.5 * 0.0016, 19.5 * 0.0016)
+	+ nGrain.yzw * (34.0 * 0.0011)
+	- (nPores.yzw * dPoreDn) * (74.0 * 0.0011 * boneDistFade);
+
+float patinaMix = clamp((nPatina.x - 0.5) * 1.3 + (nLamellar.x - 0.5) * 0.55, -0.5, 0.5);
+vec3 bonePatinaTint = mix(vec3(0.89, 0.845, 0.76), vec3(1.055, 1.042, 1.016), patinaMix + 0.5);
+diffuseColor.rgb *= mix(vec3(1.0), bonePatinaTint, 0.68 * uGrainStrength);
+
+float pitDarken = (bonePoreMask * 0.14 * boneDistFade
+	+ (1.0 - nGrain.x) * 0.045
+	+ smoothstep(0.32, -0.78, boneObjN.y) * 0.075) * uGrainStrength;
+diffuseColor.rgb *= (1.0 - clamp(pitDarken, 0.0, 0.34));
+
+float boneSutureCrevice = 0.0;
+${
+	hasSutureAttr
+		? `float rawSuture = clamp(vSuture * uSutureStrength, 0.0, 1.0);
+float jaggedSuture = clamp(rawSuture * (0.76 + 0.48 * nLamellar.x), 0.0, 1.0);
+boneSutureCrevice = smoothstep(0.08, 0.86, jaggedSuture);
+diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, boneSutureCrevice * 0.62);`
+		: ''
+}`
+				)
+				.replace(
+					'#include <roughnessmap_fragment>',
+					`#include <roughnessmap_fragment>
+float boneRoughDelta = ((0.5 - nLamellar.x) * 0.11 + (0.5 - nGrain.x) * 0.13 + bonePoreMask * 0.22 * boneDistFade) * uGrainStrength
+	+ boneSutureCrevice * 0.20;
+roughnessFactor = clamp(roughnessFactor + boneRoughDelta, 0.16, 0.98);`
+				)
+				.replace(
+					'#include <normal_fragment_maps>',
+					`#include <normal_fragment_maps>
+vec3 bSurfGradObj = boneMicroGradObj - boneObjN * dot(boneMicroGradObj, boneObjN);
+vec3 bVX = normalize(vViewBasisX);
+vec3 bVY = normalize(vViewBasisY);
+vec3 bVZ = normalize(cross(bVX, bVY));
+vec3 bSurfGradView = bSurfGradObj.x * bVX + bSurfGradObj.y * bVY + bSurfGradObj.z * bVZ;
+normal = normalize(normal - faceDirection * bSurfGradView * uBumpStrength);`
+				)
+				.replace(
+					'#include <aomap_fragment>',
+					`#include <aomap_fragment>
+float boneCreviceAo = clamp(1.0 - (bonePoreMask * 0.26 * boneDistFade + (1.0 - nGrain.x) * 0.07) * uGrainStrength - boneSutureCrevice * 0.34, 0.48, 1.0);
+reflectedLight.indirectDiffuse *= boneCreviceAo;
+reflectedLight.indirectSpecular *= mix(1.0, boneCreviceAo, 0.72);`
 				);
 		};
 	}
 
 	function createBoneMaterial(boneId: BoneId, hasSutureAttr: boolean) {
 		const sutureUniform = { value: state.appearance.showSutures ? 1.0 : 0.0 };
-		const sutureTintUniform = { value: new THREE.Color('#4a3825') };
-		const material = new THREE.MeshStandardMaterial({
+		const sutureTintUniform = { value: new THREE.Color('#3e2b18') };
+		const initialProfile =
+			BONE_PRESET_SURFACE[state.appearance.materialPreset] ?? BONE_PRESET_SURFACE['museum-ivory'];
+		const grainStrengthUniform = { value: initialProfile.grainStrength };
+		const bumpStrengthUniform = { value: initialProfile.bumpStrength };
+
+		const material = new THREE.MeshPhysicalMaterial({
 			color: state.appearance.boneColor,
 			roughness: state.appearance.roughness,
-			metalness: 0.02,
-			bumpMap: bumpTexture,
-			bumpScale: 0.0055
+			metalness: 0.0,
+			ior: 1.54,
+			specularIntensity: initialProfile.specularIntensity,
+			sheen: initialProfile.sheen,
+			sheenRoughness: initialProfile.sheenRoughness,
+			sheenColor: new THREE.Color('#ecd8b8'),
+			clearcoat: initialProfile.clearcoat,
+			clearcoatRoughness: initialProfile.clearcoatRoughness
 		});
-		if (hasSutureAttr) {
-			applySutureShader(material, sutureUniform, sutureTintUniform);
-		}
+		applyCorticalBoneShader(
+			material,
+			hasSutureAttr,
+			sutureUniform,
+			sutureTintUniform,
+			grainStrengthUniform,
+			bumpStrengthUniform
+		);
 		return {
 			material,
 			sutureUniform,
 			sutureTintUniform,
+			grainStrengthUniform,
+			bumpStrengthUniform,
 			warmthOffset: BONE_TONE_BIAS[boneId] ?? 0
 		};
 	}
@@ -401,10 +629,14 @@ diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, sutureMask * 0.52);`
 			if (!boneMesh) continue;
 
 			const hasSuture = Boolean(boneMesh.geometry.getAttribute('_suture'));
-			const { material, sutureUniform, sutureTintUniform, warmthOffset } = createBoneMaterial(
-				bone.id,
-				hasSuture
-			);
+			const {
+				material,
+				sutureUniform,
+				sutureTintUniform,
+				grainStrengthUniform,
+				bumpStrengthUniform,
+				warmthOffset
+			} = createBoneMaterial(bone.id, hasSuture);
 
 			boneMesh.material = material;
 			boneMesh.castShadow = true;
@@ -426,7 +658,7 @@ diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, sutureMask * 0.52);`
 			group.add(gltfNode);
 
 			for (const dMesh of dentitionMeshes) {
-				dMesh.material = enamelMaterial.clone();
+				dMesh.material = createEnamelMaterial();
 				dMesh.castShadow = true;
 				dMesh.receiveShadow = true;
 				dMesh.userData.boneId = bone.id;
@@ -451,6 +683,8 @@ diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, sutureMask * 0.52);`
 				ghostMesh,
 				sutureUniform,
 				sutureTintUniform,
+				grainStrengthUniform,
+				bumpStrengthUniform,
 				dentitionMeshes,
 				currentPos: new THREE.Vector3(),
 				targetPos: new THREE.Vector3(),
@@ -467,12 +701,14 @@ diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, sutureMask * 0.52);`
 	function syncAppearanceAndTargets(snapImmediately = false): void {
 		const baseColor = new THREE.Color(state.appearance.boneColor);
 		const presetMeta = MATERIAL_PRESETS.find((m) => m.id === state.appearance.materialPreset);
-		const metalness = presetMeta?.metalness ?? 0.02;
+		const metalness = presetMeta?.metalness ?? 0.0;
 		const roughness = state.appearance.roughness;
+		const surfaceProfile =
+			BONE_PRESET_SURFACE[state.appearance.materialPreset] ?? BONE_PRESET_SURFACE['museum-ivory'];
 		const bgMeta = BACKGROUND_THEMES.find((b) => b.id === state.appearance.backgroundTheme);
 		const sutureDarkColor = bgMeta?.isLight
 			? new THREE.Color('#3b2c1d')
-			: new THREE.Color('#3e2c1a');
+			: new THREE.Color('#3e2b18');
 
 		gridHelper.visible = state.display.showCoordinateGrid;
 		ghostGroup.visible = state.appearance.showGhostReference && !state.compareAssembled;
@@ -541,8 +777,20 @@ diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, sutureMask * 0.52);`
 			node.material.roughness = roughness;
 			node.material.metalness = metalness;
 			node.material.wireframe = state.appearance.wireframe;
+			const wasClearcoat = node.material.clearcoat > 0;
+			const nowClearcoat = surfaceProfile.clearcoat > 0;
+			node.material.sheen = surfaceProfile.sheen;
+			node.material.sheenRoughness = surfaceProfile.sheenRoughness;
+			node.material.specularIntensity = surfaceProfile.specularIntensity;
+			node.material.clearcoat = surfaceProfile.clearcoat;
+			node.material.clearcoatRoughness = surfaceProfile.clearcoatRoughness;
+			if (wasClearcoat !== nowClearcoat) {
+				node.material.needsUpdate = true;
+			}
 			node.sutureUniform.value = state.appearance.showSutures ? 1.0 : 0.0;
 			node.sutureTintUniform.value.copy(sutureDarkColor);
+			node.grainStrengthUniform.value = surfaceProfile.grainStrength;
+			node.bumpStrengthUniform.value = surfaceProfile.bumpStrength;
 
 			if (isSelected) {
 				node.material.emissive.set('#d8913b');
@@ -1255,9 +1503,7 @@ diffuseColor.rgb = mix(diffuseColor.rgb, uSutureTint, sutureMask * 0.52);`
 			boneNodes.clear();
 			filamentGeometry.dispose();
 			filamentMaterial.dispose();
-			enamelMaterial.dispose();
 			ghostMaterial.dispose();
-			bumpTexture?.dispose();
 			envTarget.dispose();
 			envScene.dispose?.();
 			pmrem.dispose();

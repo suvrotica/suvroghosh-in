@@ -339,45 +339,45 @@ export const MATERIAL_PRESETS: readonly {
 	{
 		id: 'museum-ivory',
 		label: 'Museum Ivory',
-		color: '#dfd3b8',
-		roughness: 0.58,
-		metalness: 0.02,
+		color: '#d1be9a',
+		roughness: 0.62,
+		metalness: 0.0,
 		baseOpacity: 1,
-		description: 'Warm natural mineral ivory calibrated for osteological contrast.'
+		description: 'Natural mineralized ivory with cortical porosity and osteological relief.'
 	},
 	{
 		id: 'aged-osteology',
 		label: 'Aged Specimen',
-		color: '#ccb68e',
-		roughness: 0.68,
-		metalness: 0.02,
+		color: '#b89b6e',
+		roughness: 0.74,
+		metalness: 0.0,
 		baseOpacity: 1,
 		description: 'Historical cabinet patina with matte dry trabecular character.'
 	},
 	{
 		id: 'bleached-specimen',
 		label: 'Laboratory Bleached',
-		color: '#eeeae0',
-		roughness: 0.46,
-		metalness: 0.01,
+		color: '#e5dfd0',
+		roughness: 0.5,
+		metalness: 0.0,
 		baseOpacity: 1,
-		description: 'High-albedo prepared study bone for bright anatomical legibility.'
+		description: 'High-albedo prepared study bone with crisp cortical grain.'
 	},
 	{
 		id: 'porcelain-cast',
 		label: 'Porcelain Cast',
-		color: '#e5e2db',
-		roughness: 0.28,
-		metalness: 0.04,
+		color: '#dcd8cf',
+		roughness: 0.34,
+		metalness: 0.02,
 		baseOpacity: 1,
 		description: 'Smooth glazed anatomical museum replica finish.'
 	},
 	{
 		id: 'translucent-study',
 		label: 'Translucent Study',
-		color: '#dbd3c1',
-		roughness: 0.42,
-		metalness: 0.03,
+		color: '#cfbc99',
+		roughness: 0.48,
+		metalness: 0.02,
 		baseOpacity: 0.42,
 		description:
 			'Semi-translucent bone shell allowing internal cranial structures to shine through.'

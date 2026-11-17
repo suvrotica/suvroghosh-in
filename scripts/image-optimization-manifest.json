@@ -12172,11 +12172,11 @@
       "optimizerVersion": "2026-07-18.1",
       "originalHeight": 800,
       "originalWidth": 1200,
-      "outputBytes": 133209,
-      "outputHash": "51f0bb9ac63f2230e31d5eafc263fde526ab68a398c77f039c64a9b9df083209",
+      "outputBytes": 145386,
+      "outputHash": "2292f70fcf170188949857af0e1995bcb736e707bda625038bba88e2aa82d779",
       "resized": false,
-      "sourceBytes": 133209,
-      "sourceHash": "51f0bb9ac63f2230e31d5eafc263fde526ab68a398c77f039c64a9b9df083209",
+      "sourceBytes": 145386,
+      "sourceHash": "2292f70fcf170188949857af0e1995bcb736e707bda625038bba88e2aa82d779",
       "width": 1200
     },
     "static/images/visualizations/exploded-human-skull/social.png": {
@@ -12187,11 +12187,11 @@
       "optimizerVersion": "2026-07-18.1",
       "originalHeight": 630,
       "originalWidth": 1200,
-      "outputBytes": 70586,
-      "outputHash": "cc8a6d4bfea1d1f8c5b33f58f60a9b2fc4dcc07f16acfa61e3a2efb168848138",
+      "outputBytes": 82334,
+      "outputHash": "77a7257fbad0f886ef4cf0c3c529f274ff7a6429ddf9194a75b1524dffe07f54",
       "resized": false,
-      "sourceBytes": 70586,
-      "sourceHash": "cc8a6d4bfea1d1f8c5b33f58f60a9b2fc4dcc07f16acfa61e3a2efb168848138",
+      "sourceBytes": 82334,
+      "sourceHash": "77a7257fbad0f886ef4cf0c3c529f274ff7a6429ddf9194a75b1524dffe07f54",
       "width": 1200
     },
     "static/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg": {

@@ -5384,14 +5384,14 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "visualizations/exploded-human-skull/poster.png",
 			"src": "/images/visualizations/exploded-human-skull/poster.png",
-			"bytes": 133209,
+			"bytes": 145386,
 			"width": 1200,
 			"height": 800
 		},
 		{
 			"name": "visualizations/exploded-human-skull/social.png",
 			"src": "/images/visualizations/exploded-human-skull/social.png",
-			"bytes": 70586,
+			"bytes": 82334,
 			"width": 1200,
 			"height": 630
 		},
