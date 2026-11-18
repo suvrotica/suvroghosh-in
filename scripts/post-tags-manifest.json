@@ -17789,6 +17789,36 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/cant-sleep.md": {
+			"bodyHash": "373794a2214fe6dac91a16c045d89b454e8cb880147427b7e4c06aa10d928ac8",
+			"hashVersion": 2,
+			"revisionHash": "2ac69e40c99431f2b635e501ce958f70aee3fbf17454f8b155bc5fa14eb7725d",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"Singularity",
+				"Universal Basic Income",
+				"Automation",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire",
+				"Insomnia"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"Singularity",
+				"Universal Basic Income",
+				"Automation",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire",
+				"Insomnia"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -8809,6 +8809,22 @@
       "sourceHash": "82a8e0341f225688f904ad68ba53fb56e937a7c9dab4082ace15da40bac807b1",
       "width": 1500
     },
+    "static/images/cant-sleep.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 193338,
+      "outputHash": "17801b19a7aa9ab72157469771026d5692e071280214da823484a4acf9dc005a",
+      "psnrDb": 37.2,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 245451,
+      "sourceHash": "0b4d695d949eb55f1ab7fa3dd9171d6dfe11308c9993cfa30512eb5f769b915d",
+      "width": 1280
+    },
     "static/images/charcoal-horror-zigzag-presence.jpg": {
       "format": "JPEG",
       "height": 1440,

@@ -370,6 +370,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1049
 		},
 		{
+			"name": "cant-sleep.jpg",
+			"src": "/images/cant-sleep.jpg",
+			"bytes": 193338,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "charcoal-horror-zigzag-presence.jpg",
 			"src": "/images/charcoal-horror-zigzag-presence.jpg",
 			"bytes": 451521,
