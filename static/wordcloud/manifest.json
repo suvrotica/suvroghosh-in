@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T11:25:23.901404+00:00",
+  "generatedAt": "2026-11-18T02:54:15.036194+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6714,6 +6714,29 @@
         "Called",
         "Architecture",
         "Health"
+      ],
+      "wordCount": 130
+    },
+    "layoff-math": {
+      "generatedAt": "2026-11-18T02:54:06.046643+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/layoff-math.svg",
+      "source": "src/lib/posts/layoff-math.md",
+      "sourceHash": "5e9d4718acecf69206ef1db93582c9f5526c89d2218af7767e065f366beeb8aa",
+      "sourceModified": "2026-11-18T02:52:30.130505+00:00",
+      "topWords": [
+        "Need",
+        "Spreadsheet",
+        "AI",
+        "Machine",
+        "Now",
+        "Less",
+        "Learn",
+        "Machines",
+        "World",
+        "Employment",
+        "Fortyfive",
+        "Work"
       ],
       "wordCount": 130
     },

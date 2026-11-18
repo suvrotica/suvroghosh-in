@@ -9911,6 +9911,22 @@
       "sourceHash": "56c722514f650970ff71e52c43de646b7e7b941d5039e1a4256df04f28034e80",
       "width": 1536
     },
+    "static/images/layoff-math.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 144019,
+      "outputHash": "3cb2fd3f7b1d53209d5c9a196d782c3c034cd22685ca219e652b4bbd2a60a240",
+      "psnrDb": 36.11,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 295418,
+      "sourceHash": "b25e2ab6e740ce7f808494ecd6bdf01d4a47ff6987fa8de696680c12ddba72a6",
+      "width": 1280
+    },
     "static/images/lean-ai-and-the-trouble-with-being-certain.jpg": {
       "format": "JPEG",
       "height": 576,

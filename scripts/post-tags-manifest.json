@@ -17701,6 +17701,36 @@
 				"Scientific Visualization"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/layoff-math.md": {
+			"bodyHash": "59ee6e81695831708efd6dfbc8618a7665d5d847ff604299edb77f20733b4955",
+			"hashVersion": 2,
+			"revisionHash": "59cf4c4702f8eb171096836a476e11a8fbe4910b2906ccd604d7171d7a1287a5",
+			"generatedTags": [
+				"AI",
+				"Automation",
+				"Employment",
+				"Economics",
+				"Software",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Productivity",
+				"Labor"
+			],
+			"pinnedTags": [
+				"AI",
+				"Automation",
+				"Employment",
+				"Economics",
+				"Software",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Productivity",
+				"Labor"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

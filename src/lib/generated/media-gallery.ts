@@ -4360,6 +4360,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1052
 		},
 		{
+			"name": "layoff-math.jpg",
+			"src": "/images/layoff-math.jpg",
+			"bytes": 144019,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "lean-ai-and-the-trouble-with-being-certain.jpg",
 			"src": "/images/lean-ai-and-the-trouble-with-being-certain.jpg",
 			"bytes": 103489,
