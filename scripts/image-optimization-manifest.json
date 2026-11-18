@@ -9989,6 +9989,22 @@
       "sourceHash": "20128349da16654910f8bf9667debd00ae98055f83cc514f3bb20374ae68eb16",
       "width": 896
     },
+    "static/images/llm-influencer-yap.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 207056,
+      "outputHash": "2673a088b13a76297a7d2915144c029acfc441b1ec396afa022ece4b9e256610",
+      "psnrDb": 38.56,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 226682,
+      "sourceHash": "b165c8f9e2e3d83967bebf4365bc1b36212e04f36cb62a628b324d8845cad9a7",
+      "width": 1280
+    },
     "static/images/mahalaya.jpg": {
       "format": "JPEG",
       "height": 576,

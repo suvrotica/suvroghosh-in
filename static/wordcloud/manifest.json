@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T07:08:21.498291+00:00",
+  "generatedAt": "2026-11-18T17:43:53.008573+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6875,6 +6875,29 @@
         "Follow",
         "Story",
         "Concentration"
+      ],
+      "wordCount": 130
+    },
+    "llm-influencer-yap": {
+      "generatedAt": "2026-11-18T17:43:50.751270+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/llm-influencer-yap.svg",
+      "source": "src/lib/posts/llm-influencer-yap.md",
+      "sourceHash": "b9c5c54190eee74f159878e747b000e37c24e150d0a6a7f8d247e8dfa0b42355",
+      "sourceModified": "2026-11-18T17:42:04.691344+00:00",
+      "topWords": [
+        "Kind",
+        "Benchmark",
+        "Model",
+        "Pretend",
+        "Yapping",
+        "Bots",
+        "Shallow",
+        "Precipice",
+        "Lab",
+        "Real",
+        "Work",
+        "Beauty"
       ],
       "wordCount": 130
     },

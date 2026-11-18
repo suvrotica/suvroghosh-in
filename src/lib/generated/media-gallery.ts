@@ -4395,6 +4395,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1280
 		},
 		{
+			"name": "llm-influencer-yap.jpg",
+			"src": "/images/llm-influencer-yap.jpg",
+			"bytes": 207056,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "mahalaya.jpg",
 			"src": "/images/mahalaya.jpg",
 			"bytes": 139477,

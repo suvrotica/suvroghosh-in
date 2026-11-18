@@ -17759,6 +17759,36 @@
 				"Interactive Storytelling"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/llm-influencer-yap.md": {
+			"bodyHash": "d201c0740943e9b3fbc787775b7b7d84224832a15705a3647a150cdd13f9a98b",
+			"hashVersion": 2,
+			"revisionHash": "19d23df0f7e8d5ded4d4492b15af8fd7a99e6052f78ec2f079fd4ab5bfc212c9",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"LLM",
+				"Benchmark",
+				"Influencer",
+				"Machine Learning",
+				"Sycophancy",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"LLM",
+				"Benchmark",
+				"Influencer",
+				"Machine Learning",
+				"Sycophancy",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
