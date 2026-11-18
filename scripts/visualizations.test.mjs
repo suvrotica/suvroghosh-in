@@ -1530,12 +1530,71 @@ test('Exploded Human Skull Museum is a native BodyParts3D osteology exhibit with
 	);
 
 	assert.match(museum, /article-breakout not-prose/);
-	assert.doesNotMatch(museum, /document\.documentElement|<svelte:head>|<svelte:window[^>]+onkeydown/);
+	assert.doesNotMatch(
+		museum,
+		/document\.documentElement|<svelte:head>|<svelte:window[^>]+onkeydown/
+	);
 	assert.match(styles, /^\.esm-shell\s*\{/m);
 
 	assert.ok(fs.existsSync(glbFile), 'missing human-skull-bp3d.glb');
 	assert.ok(fs.existsSync(manifestFile), 'missing skull manifest.json');
 	assert.ok(fs.existsSync(attributionFile), 'missing ATTRIBUTION.md');
+	assert.ok(fs.existsSync(socialFile), 'missing social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing poster.png');
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
+});
+
+test('The Little City of Wonders is a native 3D handcrafted miniature city exhibit with full registration and assets', () => {
+	const slug = 'the-little-city-of-wonders';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const component = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'little-city-of-wonders',
+		'LittleCityOfWonders.svelte'
+	);
+	const styles = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'little-city-of-wonders',
+		'little-city-of-wonders.css'
+	);
+	const socialFile = path.join(root, 'static', 'images', 'visualizations', slug, 'social.png');
+	const posterFile = path.join(root, 'static', 'images', 'visualizations', slug, 'poster.png');
+
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.match(post, /<LittleCityOfWonders \/>/);
+	assert.match(post, /<noscript>/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.match(registry, new RegExp(`href: '/blog/visualizations/${slug}'`));
+	assert.match(
+		landing,
+		/'the-little-city-of-wonders': visualizationSummaries\['the-little-city-of-wonders'\]\.subjects/
+	);
+
+	assert.match(component, /article-breakout not-prose/);
+	assert.doesNotMatch(
+		component,
+		/document\.documentElement|<svelte:head>|<svelte:window[^>]+onkeydown/
+	);
+	assert.match(styles, /^\.lcw-shell\s*\{/m);
+
 	assert.ok(fs.existsSync(socialFile), 'missing social.png');
 	assert.ok(fs.existsSync(posterFile), 'missing poster.png');
 	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');

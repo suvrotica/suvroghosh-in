@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T02:54:15.036194+00:00",
+  "generatedAt": "2026-11-18T07:08:21.498291+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -13936,6 +13936,29 @@
         "Systems",
         "Health",
         "Representation"
+      ],
+      "wordCount": 130
+    },
+    "the-little-city-of-wonders": {
+      "generatedAt": "2026-11-18T07:08:20.419034+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-little-city-of-wonders.svg",
+      "source": "src/lib/posts/the-little-city-of-wonders.md",
+      "sourceHash": "f805494ce7f90d1a2bdec67d791c87f370e2797aedbe2e51fd1c32b530467305",
+      "sourceModified": "2026-11-18T07:07:24.481001+00:00",
+      "topWords": [
+        "Canal",
+        "Every",
+        "Architectural",
+        "Roof",
+        "Diorama",
+        "Lantern",
+        "Interactive",
+        "Orbit",
+        "Step",
+        "Stopmotion",
+        "Tabletop",
+        "Eye"
       ],
       "wordCount": 130
     },

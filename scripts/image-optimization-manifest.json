@@ -13842,6 +13842,36 @@
       "sourceHash": "2dd1a2c43c0fe22a0dfe84b00d0f0e2e38bc4909fa1a8c57512fa879b35eb9ae",
       "width": 1200
     },
+    "static/images/visualizations/the-little-city-of-wonders/poster.png": {
+      "format": "PNG",
+      "height": 900,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1440,
+      "outputBytes": 402422,
+      "outputHash": "6f0d7f10a28fca05b564b37eaff477a2667c5466ae99d58b63b9569060aab54c",
+      "resized": false,
+      "sourceBytes": 402422,
+      "sourceHash": "6f0d7f10a28fca05b564b37eaff477a2667c5466ae99d58b63b9569060aab54c",
+      "width": 1440
+    },
+    "static/images/visualizations/the-little-city-of-wonders/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 244153,
+      "outputHash": "64ffe3ed639867b825c3b7bbf47952761867626b37f731dd49cd56eadaa1b73c",
+      "resized": false,
+      "sourceBytes": 244153,
+      "sourceHash": "64ffe3ed639867b825c3b7bbf47952761867626b37f731dd49cd56eadaa1b73c",
+      "width": 1200
+    },
     "static/images/visualizations/the-museum-of-almost/social.png": {
       "format": "PNG",
       "height": 630,

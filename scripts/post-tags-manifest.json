@@ -17731,6 +17731,34 @@
 				"Labor"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-little-city-of-wonders.md": {
+			"bodyHash": "956d5019c6dfca258e2c0e1dc3bba865e06855d68379c416f0e03a0a80e2d3b6",
+			"hashVersion": 2,
+			"revisionHash": "f04c6fd9a50850e9a91e1094c44b27323fee3977464967d6a939ddf902b5bb8d",
+			"generatedTags": [
+				"3D Visualization",
+				"Generative Art",
+				"Three.js",
+				"World Building",
+				"Miniature Diorama",
+				"Stop-Motion Art",
+				"Computational Design",
+				"Interactive Storytelling",
+				"Six Neighborhoods Woven",
+				"Sculpting Imperfection"
+			],
+			"pinnedTags": [
+				"3D Visualization",
+				"Generative Art",
+				"Three.js",
+				"World Building",
+				"Miniature Diorama",
+				"Stop-Motion Art",
+				"Computational Design",
+				"Interactive Storytelling"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

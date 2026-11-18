@@ -568,6 +568,18 @@ export const visualizationSummaries = {
 			'Interactive 3D exploded human skull osteology exhibit showing separate ivory cranial and facial bones suspended against a dark museum background.',
 		href: '/blog/visualizations/exploded-human-skull',
 		status: 'published'
+	},
+	'the-little-city-of-wonders': {
+		id: 'the-little-city-of-wonders',
+		title: 'The Little City of Wonders',
+		description:
+			'Wander a handcrafted 3D stop-motion miniature city of crooked townhouses, cliffside lighthouses, giant teapot homes, lantern crags, colorful corner shops, and floating sky-bridges.',
+		subjects: ['Generative Art', 'Design', 'Computer Science'],
+		poster: '/images/visualizations/the-little-city-of-wonders/social.png',
+		posterAlt:
+			'Aerial twilight view of The Little City of Wonders handcrafted 3D diorama showing weathered townhouses, a coastal lighthouse, giant blue teapot homes, glowing lantern spires, colorful corner shops, and floating sky-bridges.',
+		href: '/blog/visualizations/the-little-city-of-wonders',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

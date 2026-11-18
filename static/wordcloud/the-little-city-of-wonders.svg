@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Little City of Wonders" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Little City of Wonders</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(460,636)" font-size="118" style="fill:#b6c3dd">Canal</text>
+<text transform="translate(957,385)" font-size="105" style="fill:#d88988">Every</text>
+<text transform="translate(108,324)" font-size="105" style="fill:#d6a79f">Architectural</text>
+<text transform="translate(692,203)" font-size="91" style="fill:#b6c3dd">Roof</text>
+<text transform="translate(83,645) rotate(-90)" font-size="91" style="fill:#d5d2c2">Diorama</text>
+<text transform="translate(120,459)" font-size="91" style="fill:#d5d2c2">Lantern</text>
+<text transform="translate(42,83)" font-size="74" style="fill:#c49a6c">Interactive</text>
+<text transform="translate(981,609)" font-size="74" style="fill:#d9c89e">Orbit</text>
+<text transform="translate(109,521)" font-size="74" style="fill:#a9b7a3">Step</text>
+<text transform="translate(133,144)" font-size="74" style="fill:#d9c89e">Stopmotion</text>
+<text transform="translate(888,705) rotate(-90)" font-size="74" style="fill:#d6a79f">Tabletop</text>
+<text transform="translate(297,214)" font-size="74" style="fill:#b6c3dd">Eye</text>
+<text transform="translate(1090,203)" font-size="74" style="fill:#8fb7d0">Clay</text>
+<text transform="translate(870,93)" font-size="74" style="fill:#d9c89e">Plaster</text>
+<text transform="translate(607,418)" font-size="74" style="fill:#c49a6c">Warm</text>
+<text transform="translate(422,533)" font-size="74" style="fill:#9fc9c5">Brick</text>
+<text transform="translate(941,508)" font-size="74" style="fill:#c49a6c">Slight</text>
+<text transform="translate(485,227)" font-size="74" style="fill:#d6a79f">Lean</text>
+<text transform="translate(138,708)" font-size="74" style="fill:#d6a79f">Houses</text>
+<text transform="translate(599,100)" font-size="74" style="fill:#c49a6c">Alley</text>
+<text transform="translate(166,390)" font-size="74" style="fill:#d88988">Mullioned</text>
+<text transform="translate(193,641)" font-size="74" style="fill:#d5d2c2">Window</text>
+<text transform="translate(961,287)" font-size="74" style="fill:#e0b879">Kettle</text>
+<text transform="translate(552,702)" font-size="74" style="fill:#d9c89e">Rather</text>
+<text transform="translate(943,676)" font-size="74" style="fill:#d6a79f">Rooftop</text>
+<text transform="translate(31,205)" font-size="74" style="fill:#d88988">Six</text>
+<text transform="translate(915,140)" font-size="54" style="fill:#9fc9c5">Curiosities</text>
+<text transform="translate(915,433)" font-size="54" style="fill:#d6a79f">Worlds</text>
+<text transform="translate(938,648) rotate(-90)" font-size="54" style="fill:#c7d7b5">Island</text>
+<text transform="translate(562,460)" font-size="50" style="fill:#d88988">Turquoise</text>
+<text transform="translate(1089,43)" font-size="50" style="fill:#d88988">Harbor</text>
+<text transform="translate(679,521)" font-size="50" style="fill:#9fc9c5">Cove</text>
+<text transform="translate(161,571)" font-size="38" style="fill:#d6a79f">Bougainvillea</text>
+<text transform="translate(69,239)" font-size="38" style="fill:#c7d7b5">Terracotta</text>
+<text transform="translate(698,237)" font-size="38" style="fill:#d9c89e">Exterior</text>
+<text transform="translate(1014,710)" font-size="38" style="fill:#d9c89e">Stairs</text>
+<text transform="translate(895,219)" font-size="38" style="fill:#d5d2c2">District</text>
+<text transform="translate(1263,590) rotate(-90)" font-size="38" style="fill:#c7d7b5">Beneath</text>
+<text transform="translate(538,32)" font-size="38" style="fill:#c49a6c">Quarter</text>
+<text transform="translate(1036,320)" font-size="38" style="fill:#b6c3dd">Towers</text>
+<text transform="translate(423,714)" font-size="38" style="fill:#b6c3dd">Steam</text>
+<text transform="translate(189,197)" font-size="38" style="fill:#9fc9c5">Twin</text>
+<text transform="translate(663,355)" font-size="38" style="fill:#d88988">Corner</text>
+<text transform="translate(285,519)" font-size="28" style="fill:#8fb7d0">Webgl</text>
+<text transform="translate(180,26)" font-size="28" style="fill:#e0b879">Javascript</text>
+<text transform="translate(685,256) rotate(-90)" font-size="28" style="fill:#9fc9c5">Required</text>
+<text transform="translate(33,684)" font-size="28" style="fill:#d88988">Stroll</text>
+<text transform="translate(108,648) rotate(-90)" font-size="28" style="fill:#c49a6c">Miniature</text>
+<text transform="translate(742,26)" font-size="28" style="fill:#a9b7a3">Digital</text>
+<text transform="translate(889,29)" font-size="28" style="fill:#e0b879">Cities</text>
+<text transform="translate(1123,440)" font-size="28" style="fill:#d9c89e">Almost</text>
+<text transform="translate(954,169)" font-size="28" style="fill:#d6a79f">Always</text>
+<text transform="translate(634,558)" font-size="28" style="fill:#d5d2c2">Betray</text>
+<text transform="translate(865,712)" font-size="28" style="fill:#c7d7b5">Corners</text>
+<text transform="translate(466,255)" font-size="28" style="fill:#b6c3dd">Algorithm</text>
+<text transform="translate(494,169)" font-size="28" style="fill:#b6c3dd">Extrudes</text>
+<text transform="translate(1224,623) rotate(-90)" font-size="28" style="fill:#a9b7a3">Rectangles</text>
+<text transform="translate(34,135)" font-size="28" style="fill:#d5d2c2">Along</text>
+<text transform="translate(714,261)" font-size="28" style="fill:#a9b7a3">Cartesian</text>
+<text transform="translate(44,712)" font-size="28" style="fill:#c49a6c">Grid</text>
+<text transform="translate(439,27)" font-size="28" style="fill:#d6a79f">Wall</text>
+<text transform="translate(1159,93)" font-size="28" style="fill:#d9c89e">Stands</text>
+<text transform="translate(574,137)" font-size="28" style="fill:#d6a79f">Plumb</text>
+<text transform="translate(420,676)" font-size="28" style="fill:#b6c3dd">Tenth</text>
+<text transform="translate(6,25)" font-size="28" style="fill:#c49a6c">Millimetre</text>
+<text transform="translate(335,484)" font-size="28" style="fill:#d9c89e">Ridge</text>
+<text transform="translate(762,148)" font-size="28" style="fill:#e0b879">Meets</text>
+<text transform="translate(117,428) rotate(-90)" font-size="28" style="fill:#8fb7d0">Razor</text>
+<text transform="translate(1136,412)" font-size="28" style="fill:#d5d2c2">Line</text>
+<text transform="translate(948,343) rotate(-90)" font-size="28" style="fill:#d9c89e">Result</text>
+<text transform="translate(727,486)" font-size="28" style="fill:#d88988">Dense</text>
+<text transform="translate(830,414) rotate(-90)" font-size="28" style="fill:#d88988">Feels</text>
+<text transform="translate(27,366) rotate(-90)" font-size="28" style="fill:#e0b879">Uninhabited</text>
+<text transform="translate(942,536)" font-size="27" style="fill:#b6c3dd">Physical</text>
+<text transform="translate(76,105)" font-size="27" style="fill:#a9b7a3">Set</text>
+<text transform="translate(350,167)" font-size="27" style="fill:#d5d2c2">Contrast</text>
+<text transform="translate(164,257)" font-size="20" style="fill:#d6a79f">Immediately</text>
+<text transform="translate(832,124)" font-size="20" style="fill:#d88988">Reads</text>
+<text transform="translate(22,520) rotate(-90)" font-size="20" style="fill:#e0b879">Thumbpressed</text>
+<text transform="translate(890,180)" font-size="20" style="fill:#c49a6c">Sag</text>
+<text transform="translate(1117,224)" font-size="20" style="fill:#e0b879">Tile</text>
+<text transform="translate(528,414)" font-size="20" style="fill:#b6c3dd">Patch</text>
+<text transform="translate(824,642) rotate(-90)" font-size="20" style="fill:#9fc9c5">Lime</text>
+<text transform="translate(380,235)" font-size="20" style="fill:#d88988">Flaked</text>
+<text transform="translate(118,624)" font-size="20" style="fill:#a9b7a3">Away</text>
+<text transform="translate(1120,538)" font-size="20" style="fill:#c7d7b5">Expose</text>
+<text transform="translate(742,541)" font-size="20" style="fill:#a9b7a3">Handmade</text>
+<text transform="translate(756,54)" font-size="20" style="fill:#e0b879">Inward</text>
+<text transform="translate(995,27)" font-size="20" style="fill:#b6c3dd">Bracing</text>
+<text transform="translate(1182,314)" font-size="20" style="fill:#c49a6c">Cobbled</text>
+<text transform="translate(364,19)" font-size="20" style="fill:#d9c89e">Amber</text>
+<text transform="translate(537,87)" font-size="20" style="fill:#d9c89e">Glow</text>
+<text transform="translate(554,552)" font-size="20" style="fill:#d9c89e">Behind</text>
+<text transform="translate(41,258)" font-size="20" style="fill:#c7d7b5">Tells</text>
+<text transform="translate(405,343)" font-size="20" style="fill:#a9b7a3">Someone</text>
+<text transform="translate(901,453)" font-size="20" style="fill:#d9c89e">Put</text>
+<text transform="translate(1194,241)" font-size="20" style="fill:#b6c3dd">Little</text>
+<text transform="translate(1186,715)" font-size="20" style="fill:#d88988">Wonders</text>
+<text transform="translate(112,601)" font-size="20" style="fill:#d9c89e">Built</text>
+<text transform="translate(19,166) rotate(-90)" font-size="20" style="fill:#b6c3dd">Experiment</text>
+<text transform="translate(563,345)" font-size="20" style="fill:#b6c3dd">Bringing</text>
+<text transform="translate(1185,67)" font-size="20" style="fill:#e0b879">Tactile</text>
+<text transform="translate(158,443) rotate(-90)" font-size="20" style="fill:#d6a79f">Storybook</text>
+<text transform="translate(192,658)" font-size="18" style="fill:#8fb7d0">Craftsmanship</text>
+<text transform="translate(1266,694) rotate(-90)" font-size="18" style="fill:#d5d2c2">Navigable</text>
+<text transform="translate(372,588)" font-size="18" style="fill:#8fb7d0">Realtime</text>
+<text transform="translate(464,476)" font-size="18" style="fill:#e0b879">World</text>
+<text transform="translate(665,372)" font-size="18" style="fill:#d88988">Architecture</text>
+<text transform="translate(836,345)" font-size="18" style="fill:#d6a79f">Follows</text>
+<text transform="translate(965,44)" font-size="14" style="fill:#d9c89e">Imagination</text>
+<text transform="translate(1070,490) rotate(-90)" font-size="14" style="fill:#d6a79f">Zoning</text>
+<text transform="translate(512,685)" font-size="14" style="fill:#d6a79f">Codes</text>
+<text transform="translate(537,472) rotate(-90)" font-size="14" style="fill:#d6a79f">Yet</text>
+<text transform="translate(274,586)" font-size="14" style="fill:#8fb7d0">Staircase</text>
+<text transform="translate(15,544)" font-size="14" style="fill:#d9c89e">Bridge</text>
+<text transform="translate(57,441)" font-size="14" style="fill:#e0b879">Walkway</text>
+<text transform="translate(198,162)" font-size="14" style="fill:#d88988">Connects</text>
+<text transform="translate(348,656)" font-size="14" style="fill:#b6c3dd">Coherent</text>
+<text transform="translate(514,610) rotate(-90)" font-size="14" style="fill:#8fb7d0">Place</text>
+<text transform="translate(897,372)" font-size="14" style="fill:#c49a6c">Actually</text>
+<text transform="translate(6,653)" font-size="14" style="fill:#9fc9c5">Wander</text>
+<text transform="translate(135,536)" font-size="14" style="fill:#d9c89e">Neighborhoods</text>
+<text transform="translate(207,98)" font-size="14" style="fill:#d6a79f">Woven</text>
+<text transform="translate(691,128)" font-size="14" style="fill:#d88988">Lining</text>
+<text transform="translate(888,237)" font-size="14" style="fill:#d6a79f">Isolated</text>
+<text transform="translate(540,60)" font-size="14" style="fill:#c7d7b5">Separate</text>
+<text transform="translate(861,673)" font-size="14" style="fill:#b6c3dd">Pedestals</text>
+<text transform="translate(502,431)" font-size="14" style="fill:#d5d2c2">Gathers</text>
+<text transform="translate(730,650)" font-size="14" style="fill:#b6c3dd">Distinct</text>
+<text transform="translate(1077,544)" font-size="14" style="fill:#a9b7a3">Onto</text>
+</svg>

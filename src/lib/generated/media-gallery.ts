@@ -6152,6 +6152,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/the-little-city-of-wonders/poster.png",
+			"src": "/images/visualizations/the-little-city-of-wonders/poster.png",
+			"bytes": 402422,
+			"width": 1440,
+			"height": 900
+		},
+		{
+			"name": "visualizations/the-little-city-of-wonders/social.png",
+			"src": "/images/visualizations/the-little-city-of-wonders/social.png",
+			"bytes": 244153,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/the-museum-of-almost/social.png",
 			"src": "/images/visualizations/the-museum-of-almost/social.png",
 			"bytes": 161917,
