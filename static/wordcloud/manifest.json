@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T07:00:23.997958+00:00",
+  "generatedAt": "2026-11-19T23:35:29.860336+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -343,6 +343,29 @@
         "Gives",
         "Many",
         "Model"
+      ],
+      "wordCount": 130
+    },
+    "ai-half-corpse-accelerated-decay": {
+      "generatedAt": "2026-11-19T23:35:26.631299+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ai-half-corpse-accelerated-decay.svg",
+      "source": "src/lib/posts/ai-half-corpse-accelerated-decay.md",
+      "sourceHash": "fa09701529bf3f5b973e1f746875253a3e5a998bef9865fdcdbedbc0a41ca38c",
+      "sourceModified": "2026-11-19T23:33:20.509953+00:00",
+      "topWords": [
+        "Machine",
+        "Now",
+        "Dust",
+        "Man",
+        "Already",
+        "Perfect",
+        "Depressed",
+        "Weights",
+        "Everything",
+        "Nothing",
+        "Decades",
+        "Years"
       ],
       "wordCount": 130
     },

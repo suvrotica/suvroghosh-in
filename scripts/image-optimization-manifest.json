@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/ai-half-corpse-accelerated-decay.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 221767,
+      "outputHash": "615f8c226825abb0a2e5dd8de3610aa5141d22e4b95cf94179f04474d7ccdb74",
+      "psnrDb": 38.13,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 260176,
+      "sourceHash": "e23fbbc0be22a4272077eff2f69ec4059d076ed9e3f3269784a090b3bdc3fcad",
+      "width": 1280
+    },
     "static/images/ai-led-disempowerment-of-the-common-man.webp": {
       "format": "WEBP",
       "height": 941,

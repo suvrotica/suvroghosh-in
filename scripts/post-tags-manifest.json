@@ -17878,6 +17878,36 @@
 				"memory"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ai-half-corpse-accelerated-decay.md": {
+			"bodyHash": "6991af1be904e16be67dbfa20343e206d38f7ecc084cc8022eb931445c9ccaba",
+			"hashVersion": 2,
+			"revisionHash": "d765d00635f3dc7895c1eb4a032891ae150275c1d68449752848cbde64cd59c1",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"Entropy",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Obsolescence",
+				"Existential Dread",
+				"Machine Learning",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"Entropy",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Obsolescence",
+				"Existential Dread",
+				"Machine Learning",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

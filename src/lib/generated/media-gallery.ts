@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "ai-half-corpse-accelerated-decay.jpg",
+			"src": "/images/ai-half-corpse-accelerated-decay.jpg",
+			"bytes": 221767,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "ai-led-disempowerment-of-the-common-man.webp",
 			"src": "/images/ai-led-disempowerment-of-the-common-man.webp",
 			"bytes": 176700,
