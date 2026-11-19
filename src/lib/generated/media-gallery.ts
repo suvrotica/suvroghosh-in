@@ -5424,6 +5424,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/four-fundamental-subspaces-3d/poster.png",
+			"src": "/images/visualizations/four-fundamental-subspaces-3d/poster.png",
+			"bytes": 48453,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/four-fundamental-subspaces-3d/social.png",
+			"src": "/images/visualizations/four-fundamental-subspaces-3d/social.png",
+			"bytes": 49916,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/fractal-trip/burning-ship.png",
 			"src": "/images/visualizations/fractal-trip/burning-ship.png",
 			"bytes": 79579,

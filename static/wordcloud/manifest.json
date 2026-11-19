@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T23:43:47.764817+00:00",
+  "generatedAt": "2026-11-19T01:38:49.534683+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4621,6 +4621,29 @@
         "Part",
         "Ask",
         "Systems"
+      ],
+      "wordCount": 130
+    },
+    "four-fundamental-subspaces-3d": {
+      "generatedAt": "2026-11-19T01:38:48.878898+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/four-fundamental-subspaces-3d.svg",
+      "source": "src/lib/posts/four-fundamental-subspaces-3d.md",
+      "sourceHash": "6de216572c82a7b8afcf48efa1882c94181f18988fe75c8d4b9ec5e9117c3785",
+      "sourceModified": "2026-11-19T01:31:53.870573+00:00",
+      "topWords": [
+        "Nullspace",
+        "Mathbb",
+        "Plane",
+        "Text",
+        "Qquad",
+        "Rank",
+        "Matrix",
+        "Line",
+        "Times",
+        "Exact",
+        "Space",
+        "Dim"
       ],
       "wordCount": 130
     },

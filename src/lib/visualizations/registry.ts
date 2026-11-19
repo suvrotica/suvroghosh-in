@@ -580,6 +580,18 @@ export const visualizationSummaries = {
 			'Aerial twilight view of The Little City of Wonders handcrafted 3D diorama showing weathered townhouses, a coastal lighthouse, giant blue teapot homes, glowing lantern spires, colorful corner shops, and floating sky-bridges.',
 		href: '/blog/visualizations/the-little-city-of-wonders',
 		status: 'published'
+	},
+	'four-fundamental-subspaces-3d': {
+		id: 'four-fundamental-subspaces-3d',
+		title: 'The Four Fundamental Subspaces in 3D: An Interactive Geometry Laboratory',
+		description:
+			'Rotate, slice, and morph the column space, nullspace, row space, and left nullspace in 3D across twelve canonical matrices with live SVD and RREF.',
+		subjects: ['Mathematics', 'Scientific Computing', 'Data Visualization'],
+		poster: '/images/visualizations/four-fundamental-subspaces-3d/social.png',
+		posterAlt:
+			'Linked 3D Domain and Codomain viewports showing a teal tilted Row Space plane perpendicular to an amber Nullspace line, bridged to a differently tilted cobalt Column Space plane and rose Left Nullspace line with least-squares projection.',
+		href: '/blog/visualizations/four-fundamental-subspaces-3d',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

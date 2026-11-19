@@ -12254,6 +12254,36 @@
       "sourceHash": "e68678148c7b562c94d6e3e58eb6a3b928bc0de9037bc0244aba84834ad4bda2",
       "width": 1200
     },
+    "static/images/visualizations/four-fundamental-subspaces-3d/poster.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 48453,
+      "outputHash": "7eb652c1787ec6eb713f45b39a32c83a061e629fc045e5c48951b76ad89fd88a",
+      "resized": false,
+      "sourceBytes": 48453,
+      "sourceHash": "7eb652c1787ec6eb713f45b39a32c83a061e629fc045e5c48951b76ad89fd88a",
+      "width": 1200
+    },
+    "static/images/visualizations/four-fundamental-subspaces-3d/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 49916,
+      "outputHash": "78142425bd803c9740f3db9a10e1941fc3803813eacfcee6d4794a6f632f52c1",
+      "resized": false,
+      "sourceBytes": 49916,
+      "sourceHash": "78142425bd803c9740f3db9a10e1941fc3803813eacfcee6d4794a6f632f52c1",
+      "width": 1200
+    },
     "static/images/visualizations/fractal-trip/burning-ship.png": {
       "format": "PNG",
       "height": 250,

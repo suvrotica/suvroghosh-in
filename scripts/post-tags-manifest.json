@@ -17819,6 +17819,35 @@
 				"Insomnia"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/four-fundamental-subspaces-3d.md": {
+			"bodyHash": "affdc1d67ee4af6ad4262ac415d73cb6a4fe92d9d0a5af366d49657cc9e94dc2",
+			"hashVersion": 2,
+			"revisionHash": "31d5188ffc4f86d7a80b0d7caf535ea8da8e5264f68738ac6cb743417b5a3de4",
+			"generatedTags": [
+				"Linear Algebra",
+				"Four Fundamental Subspaces",
+				"Singular Value Decomposition",
+				"Least Squares",
+				"3D Visualization",
+				"Mathematics",
+				"Scientific Computing",
+				"Data Visualization",
+				"Three.js",
+				"Graph Incidence"
+			],
+			"pinnedTags": [
+				"Linear Algebra",
+				"Four Fundamental Subspaces",
+				"Singular Value Decomposition",
+				"Least Squares",
+				"3D Visualization",
+				"Mathematics",
+				"Scientific Computing",
+				"Data Visualization",
+				"Three.js"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

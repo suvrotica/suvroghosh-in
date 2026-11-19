@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Four Fundamental Subspaces in 3D: An Interactive Geometry Laboratory" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Four Fundamental Subspaces in 3D: An Interactive Geometry Laboratory</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(133,386)" font-size="118" style="fill:#d5d2c2">Nullspace</text>
+<text transform="translate(803,101)" font-size="112" style="fill:#c49a6c">Mathbb</text>
+<text transform="translate(107,250)" font-size="103" style="fill:#9fc9c5">Plane</text>
+<text transform="translate(465,694)" font-size="100" style="fill:#d9c89e">Text</text>
+<text transform="translate(707,210)" font-size="93" style="fill:#e0b879">Qquad</text>
+<text transform="translate(812,464)" font-size="89" style="fill:#c49a6c">Rank</text>
+<text transform="translate(471,579)" font-size="85" style="fill:#9fc9c5">Matrix</text>
+<text transform="translate(959,663)" font-size="85" style="fill:#a9b7a3">Line</text>
+<text transform="translate(50,72)" font-size="85" style="fill:#9fc9c5">Times</text>
+<text transform="translate(430,151)" font-size="81" style="fill:#c7d7b5">Exact</text>
+<text transform="translate(204,480)" font-size="77" style="fill:#d6a79f">Space</text>
+<text transform="translate(498,304)" font-size="77" style="fill:#d9c89e">Dim</text>
+<text transform="translate(20,473)" font-size="73" style="fill:#8fb7d0">Four</text>
+<text transform="translate(170,638)" font-size="73" style="fill:#d88988">Linear</text>
+<text transform="translate(933,543)" font-size="73" style="fill:#8fb7d0">Algebra</text>
+<text transform="translate(447,61)" font-size="73" style="fill:#8fb7d0">Singular</text>
+<text transform="translate(1049,158)" font-size="73" style="fill:#d9c89e">Every</text>
+<text transform="translate(964,380)" font-size="69" style="fill:#d5d2c2">Click</text>
+<text transform="translate(1010,290)" font-size="69" style="fill:#e0b879">Vector</text>
+<text transform="translate(35,553)" font-size="64" style="fill:#b6c3dd">Subspaces</text>
+<text transform="translate(781,680)" font-size="64" style="fill:#c49a6c">Row</text>
+<text transform="translate(88,277) rotate(-90)" font-size="64" style="fill:#c7d7b5">Three</text>
+<text transform="translate(553,456)" font-size="64" style="fill:#8fb7d0">Unique</text>
+<text transform="translate(707,286)" font-size="64" style="fill:#d5d2c2">Along</text>
+<text transform="translate(70,699)" font-size="59" style="fill:#d88988">Interactive</text>
+<text transform="translate(899,713)" font-size="57" style="fill:#d6a79f">Fundamental</text>
+<text transform="translate(1029,449)" font-size="57" style="fill:#d6a79f">Watch</text>
+<text transform="translate(172,140)" font-size="57" style="fill:#c49a6c">Least</text>
+<text transform="translate(451,215)" font-size="57" style="fill:#9fc9c5">Squares</text>
+<text transform="translate(1105,596)" font-size="57" style="fill:#c49a6c">Stage</text>
+<text transform="translate(1008,231)" font-size="57" style="fill:#e0b879">Pmatrix</text>
+<text transform="translate(639,611)" font-size="39" style="fill:#e0b879">Operatorname</text>
+<text transform="translate(369,586)" font-size="39" style="fill:#8fb7d0">Tau</text>
+<text transform="translate(470,490)" font-size="35" style="fill:#9fc9c5">Live</text>
+<text transform="translate(289,423)" font-size="35" style="fill:#e0b879">Collapse</text>
+<text transform="translate(38,398)" font-size="35" style="fill:#e0b879">Onto</text>
+<text transform="translate(391,313)" font-size="35" style="fill:#d6a79f">Value</text>
+<text transform="translate(756,136)" font-size="35" style="fill:#d88988">Dimensions</text>
+<text transform="translate(709,496)" font-size="35" style="fill:#c7d7b5">Camera</text>
+<text transform="translate(703,91)" font-size="35" style="fill:#d9c89e">Maps</text>
+<text transform="translate(1266,554) rotate(-90)" font-size="35" style="fill:#c49a6c">Perpendicular</text>
+<text transform="translate(210,181)" font-size="35" style="fill:#b6c3dd">Orthogonal</text>
+<text transform="translate(779,576)" font-size="35" style="fill:#c49a6c">Experiment</text>
+<text transform="translate(330,53)" font-size="35" style="fill:#d5d2c2">Span</text>
+<text transform="translate(1231,492) rotate(-90)" font-size="35" style="fill:#8fb7d0">Solution</text>
+<text transform="translate(804,393)" font-size="35" style="fill:#d6a79f">Fiber</text>
+<text transform="translate(778,336)" font-size="35" style="fill:#c7d7b5">Residual</text>
+<text transform="translate(17,341)" font-size="35" style="fill:#b6c3dd">Sigma</text>
+<text transform="translate(98,280)" font-size="35" style="fill:#d88988">Strang</text>
+<text transform="translate(44,648)" font-size="35" style="fill:#8fb7d0">SVD</text>
+<text transform="translate(944,322)" font-size="35" style="fill:#c49a6c">Numerical</text>
+<text transform="translate(868,245)" font-size="31" style="fill:#d6a79f">Machine</text>
+<text transform="translate(709,524)" font-size="31" style="fill:#d5d2c2">Column</text>
+<text transform="translate(556,484)" font-size="31" style="fill:#8fb7d0">Entire</text>
+<text transform="translate(1167,32)" font-size="31" style="fill:#e0b879">Point</text>
+<text transform="translate(445,607)" font-size="31" style="fill:#b6c3dd">Laboratory</text>
+<text transform="translate(704,708)" font-size="31" style="fill:#d6a79f">Infinitely</text>
+<text transform="translate(488,95)" font-size="31" style="fill:#d6a79f">Many</text>
+<text transform="translate(573,515)" font-size="31" style="fill:#c49a6c">Model</text>
+<text transform="translate(93,142)" font-size="31" style="fill:#a9b7a3">Now</text>
+<text transform="translate(164,645) rotate(-90)" font-size="31" style="fill:#c7d7b5">Rose</text>
+<text transform="translate(830,532)" font-size="31" style="fill:#d5d2c2">Input</text>
+<text transform="translate(1093,478)" font-size="31" style="fill:#c49a6c">Arrow</text>
+<text transform="translate(690,314) rotate(-90)" font-size="31" style="fill:#8fb7d0">Axis</text>
+<text transform="translate(315,283)" font-size="31" style="fill:#d88988">Active</text>
+<text transform="translate(1196,651)" font-size="31" style="fill:#c49a6c">Try</text>
+<text transform="translate(36,584)" font-size="31" style="fill:#d9c89e">Graph</text>
+<text transform="translate(245,585)" font-size="31" style="fill:#e0b879">Sigma3</text>
+<text transform="translate(92,424)" font-size="27" style="fill:#8fb7d0">Orbit</text>
+<text transform="translate(298,506)" font-size="27" style="fill:#a9b7a3">Asymmetric</text>
+<text transform="translate(338,100)" font-size="27" style="fill:#a9b7a3">Rank2</text>
+<text transform="translate(992,583)" font-size="27" style="fill:#a9b7a3">Spaces</text>
+<text transform="translate(209,417)" font-size="27" style="fill:#9fc9c5">Yet</text>
+<text transform="translate(907,283)" font-size="27" style="fill:#d9c89e">Always</text>
+<text transform="translate(990,183)" font-size="27" style="fill:#8fb7d0">Twodimensional</text>
+<text transform="translate(835,489)" font-size="27" style="fill:#c7d7b5">Tilted</text>
+<text transform="translate(227,282)" font-size="27" style="fill:#8fb7d0">Edge</text>
+<text transform="translate(349,134)" font-size="27" style="fill:#d88988">Sight</text>
+<text transform="translate(29,196) rotate(-90)" font-size="27" style="fill:#c49a6c">Invisible</text>
+<text transform="translate(559,176)" font-size="27" style="fill:#e0b879">Distinct</text>
+<text transform="translate(154,506)" font-size="27" style="fill:#d9c89e">Single</text>
+<text transform="translate(25,687) rotate(-90)" font-size="27" style="fill:#d5d2c2">Decomposition</text>
+<text transform="translate(434,449)" font-size="27" style="fill:#8fb7d0">Angles</text>
+<text transform="translate(818,634)" font-size="26" style="fill:#8fb7d0">Algebraic</text>
+<text transform="translate(680,410)" font-size="26" style="fill:#b6c3dd">Cleanly</text>
+<text transform="translate(168,661)" font-size="26" style="fill:#8fb7d0">Visible</text>
+<text transform="translate(801,356)" font-size="22" style="fill:#b6c3dd">Rectangular</text>
+<text transform="translate(998,401)" font-size="21" style="fill:#d6a79f">Overdetermined</text>
+<text transform="translate(1043,149) rotate(-90)" font-size="21" style="fill:#e0b879">Domain</text>
+<text transform="translate(21,309)" font-size="21" style="fill:#d6a79f">Codomain</text>
+<text transform="translate(48,175) rotate(-90)" font-size="21" style="fill:#d9c89e">Geometric</text>
+<text transform="translate(938,264)" font-size="21" style="fill:#9fc9c5">Rooms</text>
+<text transform="translate(523,235)" font-size="20" style="fill:#d5d2c2">Complements</text>
+<text transform="translate(713,673)" font-size="20" style="fill:#9fc9c5">Begin</text>
+<text transform="translate(692,138) rotate(-90)" font-size="20" style="fill:#b6c3dd">End</text>
+<text transform="translate(470,714)" font-size="20" style="fill:#b6c3dd">Directions</text>
+<text transform="translate(899,20)" font-size="20" style="fill:#c49a6c">Snap</text>
+<text transform="translate(1144,315)" font-size="20" style="fill:#d6a79f">Straight</text>
+<text transform="translate(114,94)" font-size="20" style="fill:#c7d7b5">Switch</text>
+<text transform="translate(36,609)" font-size="20" style="fill:#9fc9c5">Dropdown</text>
+<text transform="translate(659,83)" font-size="20" style="fill:#c7d7b5">Tab</text>
+<text transform="translate(496,508)" font-size="20" style="fill:#c7d7b5">Shape</text>
+<text transform="translate(395,660)" font-size="20" style="fill:#a9b7a3">Affine</text>
+<text transform="translate(222,92)" font-size="20" style="fill:#c49a6c">Shifted</text>
+<text transform="translate(385,528)" font-size="20" style="fill:#9fc9c5">Output</text>
+<text transform="translate(94,160)" font-size="20" style="fill:#c49a6c">Target</text>
+<text transform="translate(303,18)" font-size="20" style="fill:#8fb7d0">Leastsquares</text>
+<text transform="translate(37,494)" font-size="20" style="fill:#c49a6c">Unchanged</text>
+<text transform="translate(953,483)" font-size="20" style="fill:#d9c89e">Incidence</text>
+<text transform="translate(416,239)" font-size="20" style="fill:#d9c89e">Gilbert</text>
+<text transform="translate(702,653)" font-size="20" style="fill:#d6a79f">Select</text>
+<text transform="translate(97,115)" font-size="20" style="fill:#b6c3dd">Across</text>
+<text transform="translate(525,629)" font-size="20" style="fill:#a9b7a3">Voltage</text>
+<text transform="translate(1211,59)" font-size="20" style="fill:#a9b7a3">Loop</text>
+<text transform="translate(1211,101)" font-size="20" style="fill:#b6c3dd">Dots</text>
+<text transform="translate(218,307)" font-size="20" style="fill:#c49a6c">Unit</text>
+<text transform="translate(20,270) rotate(-90)" font-size="20" style="fill:#a9b7a3">Sphere</text>
+<text transform="translate(1269,272) rotate(-90)" font-size="20" style="fill:#8fb7d0">Ellipsoid</text>
+<text transform="translate(417,258)" font-size="20" style="fill:#a9b7a3">Press</text>
+<text transform="translate(11,708)" font-size="20" style="fill:#9fc9c5">Tfrac</text>
+<text transform="translate(699,305)" font-size="20" style="fill:#d6a79f">Pancake</text>
+<text transform="translate(830,154)" font-size="20" style="fill:#c49a6c">Dimensional</text>
+<text transform="translate(678,627)" font-size="16" style="fill:#c49a6c">Javascript</text>
+<text transform="translate(895,409)" font-size="16" style="fill:#e0b879">Default</text>
+<text transform="translate(579,99)" font-size="16" style="fill:#c49a6c">Full</text>
+<text transform="translate(514,405)" font-size="16" style="fill:#a9b7a3">Mathematical</text>
+<text transform="translate(17,462) rotate(-90)" font-size="16" style="fill:#8fb7d0">Conceptual</text>
+<text transform="translate(210,17)" font-size="16" style="fill:#d5d2c2">Blind</text>
+<text transform="translate(600,251)" font-size="16" style="fill:#8fb7d0">Ledger</text>
+<text transform="translate(1275,100) rotate(-90)" font-size="16" style="fill:#d6a79f">Flatten</text>
+</svg>

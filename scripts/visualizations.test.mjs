@@ -1600,3 +1600,91 @@ test('The Little City of Wonders is a native 3D handcrafted miniature city exhib
 	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
 	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
 });
+
+test('Four Fundamental Subspaces in 3D is a native, client-gated Three.js linear algebra laboratory with full registration and assets', () => {
+	const slug = 'four-fundamental-subspaces-3d';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const existingProsePost = path.join(root, 'src', 'lib', 'posts', 'four-fundamental-subspaces.md');
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const lab = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'four-fundamental-subspaces',
+		'FourFundamentalSubspacesLab.svelte'
+	);
+	const viewport = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'four-fundamental-subspaces',
+		'DualSubspaceViewport.svelte'
+	);
+	const styles = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'four-fundamental-subspaces',
+		'four-fundamental-subspaces.css'
+	);
+	const mathEngine = read('src', 'lib', 'visualizations', 'four-fundamental-subspaces', 'math.ts');
+	const socialFile = path.join(root, 'static', 'images', 'visualizations', slug, 'social.png');
+	const posterFile = path.join(root, 'static', 'images', 'visualizations', slug, 'poster.png');
+
+	assert.ok(
+		fs.existsSync(existingProsePost),
+		'existing four-fundamental-subspaces.md must stay intact'
+	);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.match(post, /<FourFundamentalSubspacesLab \/>/);
+	assert.match(post, /<noscript>/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /10\.2307\/2324660/);
+	assert.match(post, /\/blog\/mathematics\/four-fundamental-subspaces/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.match(registry, new RegExp(`href: '/blog/visualizations/${slug}'`));
+	assert.match(
+		registry,
+		/subjects: \['Mathematics', 'Scientific Computing', 'Data Visualization'\]/
+	);
+	assert.match(
+		landing,
+		/'four-fundamental-subspaces-3d':\s*\n?\s*visualizationSummaries\['four-fundamental-subspaces-3d'\]\.subjects/
+	);
+
+	assert.match(lab, /article-breakout not-prose/);
+	assert.doesNotMatch(lab, /document\.documentElement|<svelte:head>|<svelte:window[^>]+onkeydown/);
+	assert.match(styles, /^\.ffs-shell\s*\{/m);
+
+	// Strict client-only Three.js boundary & deterministic math engine
+	assert.match(viewport, /supportsWebGL\(\)/);
+	assert.match(viewport, /await import\([\s\S]*four-fundamental-subspaces\/renderer/);
+	assert.doesNotMatch(viewport, /^\s*import\s+.*from ['"]three['"]/m);
+	assert.doesNotMatch(mathEngine, /Math\.random\s*\(/);
+
+	const pngDimensions = (file) => {
+		const header = fs.readFileSync(file).subarray(0, 24);
+		assert.deepEqual(Array.from(header.subarray(0, 8)), [137, 80, 78, 71, 13, 10, 26, 10]);
+		return { width: header.readUInt32BE(16), height: header.readUInt32BE(20) };
+	};
+	assert.ok(fs.existsSync(socialFile), 'missing social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing poster.png');
+	assert.deepEqual(pngDimensions(socialFile), { width: 1200, height: 630 });
+	assert.deepEqual(pngDimensions(posterFile), { width: 1200, height: 630 });
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
+});
