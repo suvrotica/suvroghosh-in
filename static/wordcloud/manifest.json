@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T01:38:49.534683+00:00",
+  "generatedAt": "2026-11-19T07:00:23.997958+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6277,6 +6277,29 @@
         "Years",
         "Fan",
         "Glass"
+      ],
+      "wordCount": 130
+    },
+    "instant-coffee-pleasure": {
+      "generatedAt": "2026-11-19T07:00:22.129018+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/instant-coffee-pleasure.svg",
+      "source": "src/lib/posts/instant-coffee-pleasure.md",
+      "sourceHash": "4dbf812b0014890004097264fe37b294f41c2b24d08d734a11382c66db12ea90",
+      "sourceModified": "2026-11-19T06:59:09.284219+00:00",
+      "topWords": [
+        "Coffee",
+        "Milk",
+        "Instant",
+        "Pleasure",
+        "Drink",
+        "Chemistry",
+        "Give",
+        "Cup",
+        "Brewed",
+        "Morning",
+        "Small",
+        "Time"
       ],
       "wordCount": 130
     },

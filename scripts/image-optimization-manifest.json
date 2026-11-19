@@ -9927,6 +9927,22 @@
       "sourceHash": "56c722514f650970ff71e52c43de646b7e7b941d5039e1a4256df04f28034e80",
       "width": 1536
     },
+    "static/images/instant-coffee-pleasure.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 162560,
+      "outputHash": "ce5d0e3536e32fc9fe6fa52b0fae725683646b789e093a69e305920103d1ce71",
+      "psnrDb": 40.43,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 175787,
+      "sourceHash": "56f8d971de1eacd8c0d3d4db41a2cf9911f1d001cd81b06889f824914d29cc03",
+      "width": 1280
+    },
     "static/images/layoff-math.jpg": {
       "format": "JPEG",
       "height": 714,

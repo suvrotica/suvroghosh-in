@@ -17848,6 +17848,36 @@
 				"Three.js"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/instant-coffee-pleasure.md": {
+			"bodyHash": "338fc9a73ef07f26afa7fdcb5cc577620bf2367164ac4493b3f78b61a91bd71c",
+			"hashVersion": 2,
+			"revisionHash": "5b60b4362bcac08126cf85f34bbc034bc48eb5f60f00f1299266b9c4afec7084",
+			"generatedTags": [
+				"coffee",
+				"chemistry",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"food",
+				"science",
+				"culture",
+				"beverage",
+				"memory"
+			],
+			"pinnedTags": [
+				"coffee",
+				"chemistry",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"food",
+				"science",
+				"culture",
+				"beverage",
+				"memory"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

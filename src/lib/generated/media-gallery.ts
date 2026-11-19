@@ -4367,6 +4367,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1052
 		},
 		{
+			"name": "instant-coffee-pleasure.jpg",
+			"src": "/images/instant-coffee-pleasure.jpg",
+			"bytes": 162560,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "layoff-math.jpg",
 			"src": "/images/layoff-math.jpg",
 			"bytes": 144019,
