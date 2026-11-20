@@ -39,6 +39,7 @@ export default defineConfig({
 			'src/lib/visualizations/splat-studio/**/*.test.ts',
 			'src/lib/visualizations/mondrian-studio/**/*.test.ts',
 			'src/lib/visualizations/pointillism-studio/**/*.test.ts',
+			'src/lib/visualizations/drip-painting-studio/**/*.test.ts',
 			'src/lib/visualizations/living-systems/**/*.test.ts',
 			'src/lib/visualizations/anatomy-of-an-essay/**/*.test.ts',
 			'src/lib/synthetic-data-lab/**/*.test.ts',

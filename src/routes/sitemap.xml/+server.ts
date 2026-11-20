@@ -133,6 +133,7 @@ export async function GET() {
 		{ url: siteUrl + '/tools/splat-studio' },
 		{ url: siteUrl + '/tools/mondrian-studio' },
 		{ url: siteUrl + '/tools/pointillism-studio' },
+		{ url: siteUrl + '/tools/drip-painting-studio' },
 		{ url: siteUrl + '/blog/visualizations/bengali-life-through-impressionist-brushstrokes' },
 		{ url: siteUrl + '/tools/recorder' },
 		{ url: siteUrl + '/consulting', lastMod: '2026-10-20' },

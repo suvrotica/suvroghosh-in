@@ -17938,6 +17938,37 @@
 				"Meteorology"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/abstract-expressionist-drip-painting-corruption-in-india.md": {
+			"bodyHash": "afee2adee3403cf6f6096b935bee7da6187126ee359bf0cb60c9f36e643b3a78",
+			"hashVersion": 2,
+			"revisionHash": "094e57d93a89e87349edbc9d12b1f3b4a61b29dae8d485b0cf6324c953d543de",
+			"generatedTags": [
+				"Abstract Expressionism",
+				"Jackson Pollock",
+				"Generative Art",
+				"Creative Coding",
+				"Drip Painting",
+				"Procedural Surface",
+				"Corruption in India",
+				"Civic Accountability",
+				"Interactive Art",
+				"Visualizations"
+			],
+			"pinnedTags": [
+				"Abstract Expressionism",
+				"Jackson Pollock",
+				"Generative Art",
+				"Creative Coding",
+				"Drip Painting",
+				"Procedural Surface",
+				"Corruption in India",
+				"Civic Accountability",
+				"Interactive Art",
+				"Visualizations"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-20"
 		}
 	},
 	"maxTags": 10

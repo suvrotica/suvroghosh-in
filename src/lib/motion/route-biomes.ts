@@ -117,7 +117,8 @@ export function resolveRouteMotion(
 			(second === 'recorder' ||
 				second === 'splat-studio' ||
 				second === 'mondrian-studio' ||
-				second === 'pointillism-studio')) ||
+				second === 'pointillism-studio' ||
+				second === 'drip-painting-studio')) ||
 		(first === 'blog' && second === 'games') ||
 		(first === 'images' && second === 'sketches') ||
 		(first === 'blog' && second === 'visualizations' && segments.length > 2)

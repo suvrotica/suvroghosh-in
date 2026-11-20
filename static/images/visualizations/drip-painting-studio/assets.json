@@ -1,0 +1,434 @@
+{
+	"generatorVersion": 1,
+	"sourceHash": "0a46d5f570d50bcfc04eb07e14febb015ba98664a9a331dc701ff5ef4939b232",
+	"curatedSeed": 729104,
+	"curatedStudySeeds": {
+		"pending-file": 729104,
+		"public-works-tenders": 528419,
+		"counter-middleman": 642913,
+		"whitewash-record": 781305
+	},
+	"assets": [
+		{
+			"id": "social",
+			"file": "social.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/social.png",
+			"label": "Social preview — Pending File (1200×630)",
+			"width": 1200,
+			"height": 630,
+			"bytes": 406146,
+			"sha256": "03d079b2d41014e0557c4c98d6ee20fb103df56aa99703494d877e6366e35e7a",
+			"seed": 729104,
+			"study": "pending-file",
+			"activePasses": 14,
+			"parameters": {
+				"passes": 18,
+				"paintFlow": 45,
+				"sweepWidth": 68,
+				"paintLayers": 4,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 630,
+				"viewMode": "fill",
+				"inspectZoom": null,
+				"focalPoint": {
+					"x": 0.5973,
+					"y": 0.6066
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 630
+				}
+			},
+			"metrics": {
+				"coveragePct": 23.88,
+				"meanHeight": 0.1932,
+				"maxHeight": 2.6252,
+				"poolCount": 30,
+				"dropletCount": 135,
+				"pigmentSharesPct": {
+					"carbon-black": 37.15,
+					"file-tape-red": 18.4,
+					"ledger-ochre": 25.02,
+					"carbon-indigo": 6.49,
+					"road-tar-umber": 0,
+					"lime-whitewash": 12.93
+				}
+			},
+			"description": "Pending File non-figurative drip study (seed 729104) on unbleached woven cotton-duck canvas: 14 passes across 4 paint layers with moderate paint flow (45%) and balanced sweep (68%), forming 30 matte pools and 135 spatter droplets led by carbon-stamp black, ledger ochre, and file-tape red, with upper lime-whitewash coats veiling lower strata.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=pending-file&s=729104&p=18&pf=45&sw=68&pl=4&pt=50&t=10&aw=1200&ah=630"
+		},
+		{
+			"id": "pending-thin",
+			"file": "example-pending-thin.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/example-pending-thin.png",
+			"label": "Pending File — Thin flow (20% flow, 16 passes, 4 layers)",
+			"width": 960,
+			"height": 640,
+			"bytes": 277121,
+			"sha256": "92ad82dff7fdfb44805c07ca1ebb009ea0575c39d841f22b1ce240ab02b134c3",
+			"seed": 729104,
+			"study": "pending-file",
+			"activePasses": 12,
+			"parameters": {
+				"passes": 16,
+				"paintFlow": 20,
+				"sweepWidth": 68,
+				"paintLayers": 4,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"viewMode": "fill",
+				"inspectZoom": null,
+				"focalPoint": {
+					"x": 0.5728,
+					"y": 0.4929
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"coveragePct": 13.66,
+				"meanHeight": 0.0441,
+				"maxHeight": 1.5468,
+				"poolCount": 4,
+				"dropletCount": 3,
+				"pigmentSharesPct": {
+					"carbon-black": 41.97,
+					"file-tape-red": 14.55,
+					"ledger-ochre": 26.4,
+					"carbon-indigo": 8.02,
+					"road-tar-umber": 0,
+					"lime-whitewash": 9.06
+				}
+			},
+			"description": "Pending File non-figurative drip study (seed 729104) on unbleached woven cotton-duck canvas: 12 passes across 4 paint layers with thin paint flow (20%) and balanced sweep (68%), forming 4 matte pools and 3 spatter droplets led by carbon-stamp black, ledger ochre, and file-tape red.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=pending-file&s=729104&p=16&pf=20&sw=68&pl=4&pt=50&t=10&aw=1200&ah=800"
+		},
+		{
+			"id": "pending-heavy",
+			"file": "example-pending-heavy.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/example-pending-heavy.png",
+			"label": "Pending File — Heavy flow (80% flow on identical paths, 16 passes, 4 layers)",
+			"width": 960,
+			"height": 640,
+			"bytes": 283506,
+			"sha256": "ad83aed0c76a4696ab9c1d61200a1a260be1193d5137e8611d5e3004e85ca789",
+			"seed": 729104,
+			"study": "pending-file",
+			"activePasses": 12,
+			"parameters": {
+				"passes": 16,
+				"paintFlow": 80,
+				"sweepWidth": 68,
+				"paintLayers": 4,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"viewMode": "fill",
+				"inspectZoom": null,
+				"focalPoint": {
+					"x": 0.5725,
+					"y": 0.5404
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"coveragePct": 41.29,
+				"meanHeight": 0.5801,
+				"maxHeight": 4.3953,
+				"poolCount": 27,
+				"dropletCount": 299,
+				"pigmentSharesPct": {
+					"carbon-black": 41.06,
+					"file-tape-red": 13.42,
+					"ledger-ochre": 28.89,
+					"carbon-indigo": 8.72,
+					"road-tar-umber": 0,
+					"lime-whitewash": 7.91
+				}
+			},
+			"description": "Pending File non-figurative drip study (seed 729104) on unbleached woven cotton-duck canvas: 12 passes across 4 paint layers with heavy paint flow (80%) and balanced sweep (68%), forming 27 matte pools and 299 spatter droplets led by carbon-stamp black, ledger ochre, and file-tape red.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=pending-file&s=729104&p=16&pf=80&sw=68&pl=4&pt=50&t=10&aw=1200&ah=800"
+		},
+		{
+			"id": "pending-buried",
+			"file": "example-pending-buried.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/example-pending-buried.png",
+			"label": "Pending File — Buried upper coats (80% flow, 36 passes, 6 layers)",
+			"width": 960,
+			"height": 640,
+			"bytes": 291849,
+			"sha256": "78eef89f6074af48d2accddbc82b2757a5c0e9f5347e0a5b0973e8a4d31525ca",
+			"seed": 729104,
+			"study": "pending-file",
+			"activePasses": 36,
+			"parameters": {
+				"passes": 36,
+				"paintFlow": 80,
+				"sweepWidth": 68,
+				"paintLayers": 6,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"viewMode": "fill",
+				"inspectZoom": null,
+				"focalPoint": {
+					"x": 0.5201,
+					"y": 0.5007
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"coveragePct": 67.05,
+				"meanHeight": 1.4408,
+				"maxHeight": 5.1453,
+				"poolCount": 67,
+				"dropletCount": 895,
+				"pigmentSharesPct": {
+					"carbon-black": 26.06,
+					"file-tape-red": 13.91,
+					"ledger-ochre": 22.18,
+					"carbon-indigo": 2.77,
+					"road-tar-umber": 0,
+					"lime-whitewash": 35.08
+				}
+			},
+			"description": "Pending File non-figurative drip study (seed 729104) on unbleached woven cotton-duck canvas: 36 passes across 6 paint layers with heavy paint flow (80%) and balanced sweep (68%), forming 67 matte pools and 895 spatter droplets led by lime-whitewash, carbon-stamp black, and ledger ochre, with upper lime-whitewash coats veiling lower strata.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=pending-file&s=729104&p=36&pf=80&sw=68&pl=6&pt=50&t=10&aw=1200&ah=800"
+		},
+		{
+			"id": "inspect-surface",
+			"file": "example-inspect-surface.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/example-inspect-surface.png",
+			"label": "Pending File — Inspect surface 3.5× close-up over buried focal knot",
+			"width": 960,
+			"height": 640,
+			"bytes": 183456,
+			"sha256": "460f3c65c30b8d779ee0b4b2cc9177b1f818107b5dadec042a6040d1a532c9d5",
+			"seed": 729104,
+			"study": "pending-file",
+			"activePasses": 36,
+			"parameters": {
+				"passes": 36,
+				"paintFlow": 80,
+				"sweepWidth": 68,
+				"paintLayers": 6,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"viewMode": "inspect",
+				"inspectZoom": 3.5,
+				"focalPoint": {
+					"x": 0.5201,
+					"y": 0.5007
+				},
+				"crop": {
+					"x": 452.69,
+					"y": 286.27,
+					"width": 342.86,
+					"height": 228.57
+				}
+			},
+			"metrics": {
+				"coveragePct": 67.05,
+				"meanHeight": 1.4408,
+				"maxHeight": 5.1453,
+				"poolCount": 67,
+				"dropletCount": 895,
+				"pigmentSharesPct": {
+					"carbon-black": 26.06,
+					"file-tape-red": 13.91,
+					"ledger-ochre": 22.18,
+					"carbon-indigo": 2.77,
+					"road-tar-umber": 0,
+					"lime-whitewash": 35.08
+				},
+				"cropHeightStats": {
+					"minHeight": -0.0715,
+					"meanHeight": 2.4844,
+					"maxHeight": 4.8298
+				}
+			},
+			"description": "Pending File non-figurative drip study (seed 729104) on unbleached woven cotton-duck canvas: 36 passes across 6 paint layers with heavy paint flow (80%) and balanced sweep (68%), forming 67 matte pools and 895 spatter droplets led by lime-whitewash, carbon-stamp black, and ledger ochre, with upper lime-whitewash coats veiling lower strata.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=pending-file&s=729104&p=36&pf=80&sw=68&pl=6&pt=50&t=10&aw=1200&ah=800&vm=inspect&iz=3.50&ix=0.520&iy=0.501"
+		},
+		{
+			"id": "public-works-tenders",
+			"file": "example-public-works-tenders.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/example-public-works-tenders.png",
+			"label": "Public Works & Tenders — sweeping tar-umber, ochre, and lime-whitewash arcs",
+			"width": 960,
+			"height": 640,
+			"bytes": 306855,
+			"sha256": "17f754a7bc6d8f8737df55745d3bc5da9a880e2651a6b458e2cc26e3b72f438b",
+			"seed": 528419,
+			"study": "public-works-tenders",
+			"activePasses": 26,
+			"parameters": {
+				"passes": 26,
+				"paintFlow": 60,
+				"sweepWidth": 68,
+				"paintLayers": 6,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"viewMode": "fill",
+				"inspectZoom": null,
+				"focalPoint": {
+					"x": 0.5378,
+					"y": 0.4996
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"coveragePct": 46.79,
+				"meanHeight": 0.6764,
+				"maxHeight": 4.277,
+				"poolCount": 50,
+				"dropletCount": 489,
+				"pigmentSharesPct": {
+					"carbon-black": 6,
+					"file-tape-red": 0,
+					"ledger-ochre": 32.13,
+					"carbon-indigo": 0,
+					"road-tar-umber": 15.69,
+					"lime-whitewash": 46.18
+				}
+			},
+			"description": "Public Works & Tenders non-figurative drip study (seed 528419) on unbleached woven cotton-duck canvas: 26 passes across 6 paint layers with moderate paint flow (60%) and balanced sweep (68%), forming 50 matte pools and 489 spatter droplets led by lime-whitewash, ledger ochre, and road-tar umber, with upper lime-whitewash coats veiling lower strata.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=public-works-tenders&s=528419&p=26&pf=60&sw=68&pl=6&pt=50&t=10&aw=1200&ah=800"
+		},
+		{
+			"id": "counter-middleman",
+			"file": "example-counter-middleman.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/example-counter-middleman.png",
+			"label": "Counter & Middleman — sharp directional whips and tangential spatter crust",
+			"width": 960,
+			"height": 640,
+			"bytes": 328345,
+			"sha256": "09f1c96d0b68e59015e610d993034ef2d474268553931d74535dbacc9b9e7e5b",
+			"seed": 642913,
+			"study": "counter-middleman",
+			"activePasses": 26,
+			"parameters": {
+				"passes": 26,
+				"paintFlow": 60,
+				"sweepWidth": 68,
+				"paintLayers": 6,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"viewMode": "fill",
+				"inspectZoom": null,
+				"focalPoint": {
+					"x": 0.522,
+					"y": 0.4922
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"coveragePct": 52.61,
+				"meanHeight": 0.505,
+				"maxHeight": 3.5492,
+				"poolCount": 38,
+				"dropletCount": 865,
+				"pigmentSharesPct": {
+					"carbon-black": 30.66,
+					"file-tape-red": 29.29,
+					"ledger-ochre": 9.63,
+					"carbon-indigo": 12.26,
+					"road-tar-umber": 7.01,
+					"lime-whitewash": 11.16
+				}
+			},
+			"description": "Counter & Middleman non-figurative drip study (seed 642913) on unbleached woven cotton-duck canvas: 26 passes across 6 paint layers with moderate paint flow (60%) and balanced sweep (68%), forming 38 matte pools and 865 spatter droplets led by carbon-stamp black, file-tape red, and carbon-copy indigo.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=counter-middleman&s=642913&p=26&pf=60&sw=68&pl=6&pt=50&t=10&aw=1200&ah=800"
+		},
+		{
+			"id": "whitewash-record",
+			"file": "example-whitewash-record.png",
+			"publicPath": "/images/visualizations/drip-painting-studio/example-whitewash-record.png",
+			"label": "Whitewash & Record — carbon-indigo and file-tape red veiled under chalky coats",
+			"width": 960,
+			"height": 640,
+			"bytes": 294638,
+			"sha256": "0d315d08180e6523eff9ca852d2c0f1458fc84126bcf55f7efbc7c72e360d5e6",
+			"seed": 781305,
+			"study": "whitewash-record",
+			"activePasses": 26,
+			"parameters": {
+				"passes": 26,
+				"paintFlow": 60,
+				"sweepWidth": 68,
+				"paintLayers": 6,
+				"paintTexture": 50,
+				"paintingTime": 10,
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"viewMode": "fill",
+				"inspectZoom": null,
+				"focalPoint": {
+					"x": 0.4809,
+					"y": 0.5021
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"coveragePct": 49.97,
+				"meanHeight": 0.6461,
+				"maxHeight": 3.5388,
+				"poolCount": 44,
+				"dropletCount": 542,
+				"pigmentSharesPct": {
+					"carbon-black": 27.6,
+					"file-tape-red": 13.03,
+					"ledger-ochre": 6.78,
+					"carbon-indigo": 15,
+					"road-tar-umber": 5.38,
+					"lime-whitewash": 32.21
+				}
+			},
+			"description": "Whitewash & Record non-figurative drip study (seed 781305) on unbleached woven cotton-duck canvas: 26 passes across 6 paint layers with moderate paint flow (60%) and balanced sweep (68%), forming 44 matte pools and 542 spatter droplets led by lime-whitewash, carbon-stamp black, and carbon-copy indigo, with upper lime-whitewash coats veiling lower strata.",
+			"studioUrl": "/tools/drip-painting-studio?v=1&st=whitewash-record&s=781305&p=26&pf=60&sw=68&pl=6&pt=50&t=10&aw=1200&ah=800"
+		}
+	]
+}

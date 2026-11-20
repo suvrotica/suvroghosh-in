@@ -5424,6 +5424,62 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/drip-painting-studio/example-counter-middleman.png",
+			"src": "/images/visualizations/drip-painting-studio/example-counter-middleman.png",
+			"bytes": 236690,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/drip-painting-studio/example-inspect-surface.png",
+			"src": "/images/visualizations/drip-painting-studio/example-inspect-surface.png",
+			"bytes": 145294,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/drip-painting-studio/example-pending-buried.png",
+			"src": "/images/visualizations/drip-painting-studio/example-pending-buried.png",
+			"bytes": 218440,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/drip-painting-studio/example-pending-heavy.png",
+			"src": "/images/visualizations/drip-painting-studio/example-pending-heavy.png",
+			"bytes": 189494,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/drip-painting-studio/example-pending-thin.png",
+			"src": "/images/visualizations/drip-painting-studio/example-pending-thin.png",
+			"bytes": 203837,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/drip-painting-studio/example-public-works-tenders.png",
+			"src": "/images/visualizations/drip-painting-studio/example-public-works-tenders.png",
+			"bytes": 204857,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/drip-painting-studio/example-whitewash-record.png",
+			"src": "/images/visualizations/drip-painting-studio/example-whitewash-record.png",
+			"bytes": 210836,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/drip-painting-studio/social.png",
+			"src": "/images/visualizations/drip-painting-studio/social.png",
+			"bytes": 263418,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/exploded-human-skull/poster.png",
 			"src": "/images/visualizations/exploded-human-skull/poster.png",
 			"bytes": 145386,

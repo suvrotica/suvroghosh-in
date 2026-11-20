@@ -557,6 +557,19 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/pointillism-san-antonio-and-texas-in-dots-of-color',
 		status: 'published'
 	},
+	'abstract-expressionist-drip-painting-corruption-in-india': {
+		id: 'abstract-expressionist-drip-painting-corruption-in-india',
+		title:
+			'Abstract Expressionist Drip Painting: Corruption in India — Gesture, Chance, and Control',
+		description:
+			'Explore four non-figurative drip-painting studies on unprimed cotton-duck cloth by varying passes, paint flow, sweep width, and paint layers without rerolling paths.',
+		subjects: ['Generative Art', 'Design', 'Algorithms', 'Computer Science'],
+		poster: '/images/visualizations/drip-painting-studio/social.png',
+		posterAlt:
+			'A non-figurative Abstract Expressionist drip painting on warm unbleached cotton-duck cloth showing sweeping ribbons, matte slow-turn pools, and spatter droplets in carbon-stamp black, file-tape red, ledger ochre, and lime-whitewash.',
+		href: '/blog/visualizations/abstract-expressionist-drip-painting-corruption-in-india',
+		status: 'published'
+	},
 	'exploded-human-skull': {
 		id: 'exploded-human-skull',
 		title: 'Exploded Human Skull Museum',
