@@ -3457,6 +3457,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "depression-akvan-cyclone.jpg",
+			"src": "/images/depression-akvan-cyclone.jpg",
+			"bytes": 185616,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "diwali-depression.jpg",
 			"src": "/images/diwali-depression.jpg",
 			"bytes": 339204,

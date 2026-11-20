@@ -17908,6 +17908,36 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/depression-akvan-cyclone.md": {
+			"bodyHash": "ca40903e547bda141fd0b83f01f706b14dafe699bf1616cbe0c74a2a7dbff405",
+			"hashVersion": 2,
+			"revisionHash": "a8e5418331a75e47fe802284a1fe4ea07afdeaa0fb84cc6c43311d790a2bc6f9",
+			"generatedTags": [
+				"Cyclone",
+				"Depression",
+				"Akvan",
+				"Bay of Bengal",
+				"Mental Health",
+				"Attention",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Meteorology"
+			],
+			"pinnedTags": [
+				"Cyclone",
+				"Depression",
+				"Akvan",
+				"Bay of Bengal",
+				"Mental Health",
+				"Attention",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Meteorology"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

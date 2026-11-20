@@ -8903,6 +8903,22 @@
       "sourceHash": "9f8ecdb552612c70a9845e12e9f8ea0a5757daa8276b4248b08709275f65bdc3",
       "width": 1024
     },
+    "static/images/depression-akvan-cyclone.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 185616,
+      "outputHash": "bd5a1d9d11a255316dbd6b9d0e2523568f6f39864c76c2f40cd4a81d70d18973",
+      "psnrDb": 41.84,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 193044,
+      "sourceHash": "662705ad04250d715ea496b94fc3187ffaba6836df3ae52c5460452ba39c5c35",
+      "width": 1280
+    },
     "static/images/diwali-depression.jpg": {
       "format": "JPEG",
       "height": 1024,
