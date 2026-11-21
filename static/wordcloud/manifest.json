@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T05:36:28.695318+00:00",
+  "generatedAt": "2026-11-21T05:44:19.236240+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -15730,6 +15730,29 @@
         "Cup",
         "AI",
         "Language"
+      ],
+      "wordCount": 130
+    },
+    "the-room-that-remembers-every-clap": {
+      "generatedAt": "2026-11-21T05:44:19.082390+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-room-that-remembers-every-clap.svg",
+      "source": "src/lib/posts/the-room-that-remembers-every-clap.md",
+      "sourceHash": "d0c056e11cf0ac9ddaf998152301067722c7c5375bd3f76207aa2ba93eb139f6",
+      "sourceModified": "2026-11-21T05:43:44.047327+00:00",
+      "topWords": [
+        "Room",
+        "Text",
+        "Clap",
+        "Wave",
+        "Acoustic",
+        "Sand",
+        "Press",
+        "Audio",
+        "Pressure",
+        "Air",
+        "Sound",
+        "Stone"
       ],
       "wordCount": 130
     },

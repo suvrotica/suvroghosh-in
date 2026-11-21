@@ -605,6 +605,18 @@ export const visualizationSummaries = {
 			'Linked 3D Domain and Codomain viewports showing a teal tilted Row Space plane perpendicular to an amber Nullspace line, bridged to a differently tilted cobalt Column Space plane and rose Left Nullspace line with least-squares projection.',
 		href: '/blog/visualizations/four-fundamental-subspaces-3d',
 		status: 'published'
+	},
+	'the-room-that-remembers-every-clap': {
+		id: 'the-room-that-remembers-every-clap',
+		title: 'The Room That Remembers Every Clap',
+		description:
+			'Sketch walls, absorbers, and acoustic lenses in a live 2D wave chamber, watch Chladni sand gather at nodes, and hear any sound inside the room you built.',
+		subjects: ['Physics', 'Design', 'Scientific Computing', 'Generative Art'],
+		poster: '/images/visualizations/acoustic-wavefield/social.png',
+		posterAlt:
+			'A dark slate 2D acoustic wavefield chamber showing copper and cyan circular pressure fringes focusing inside an elliptical stone gallery with settled bone-ivory Chladni sand along nodal curves and a Room Impulse Response oscillogram below.',
+		href: '/blog/visualizations/the-room-that-remembers-every-clap',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

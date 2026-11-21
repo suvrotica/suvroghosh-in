@@ -5186,6 +5186,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 500
 		},
 		{
+			"name": "visualizations/acoustic-wavefield/poster.png",
+			"src": "/images/visualizations/acoustic-wavefield/poster.png",
+			"bytes": 125778,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/acoustic-wavefield/social.png",
+			"src": "/images/visualizations/acoustic-wavefield/social.png",
+			"bytes": 122631,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg",
 			"src": "/images/visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg",
 			"bytes": 45123,

@@ -17999,6 +17999,36 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-room-that-remembers-every-clap.md": {
+			"bodyHash": "1e5e7382b437bf53e09792b58aa54a5ecbc574e1ee9fbce3b51518a19a42c337",
+			"hashVersion": 2,
+			"revisionHash": "218c01ca4bce59a9e800fc947de1a9ae9dc06df0e917bb57011d9011287d60ae",
+			"generatedTags": [
+				"Acoustics",
+				"Wave Equation",
+				"FDTD Simulation",
+				"Chladni Figures",
+				"Room Impulse Response",
+				"Reverberation",
+				"Web Audio",
+				"Scientific Computing",
+				"Physics",
+				"Architectural Acoustics"
+			],
+			"pinnedTags": [
+				"Acoustics",
+				"Wave Equation",
+				"FDTD Simulation",
+				"Chladni Figures",
+				"Room Impulse Response",
+				"Reverberation",
+				"Web Audio",
+				"Scientific Computing",
+				"Physics",
+				"Architectural Acoustics"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -77,7 +77,9 @@
 		'exploded-human-skull': visualizationSummaries['exploded-human-skull'].subjects,
 		'the-little-city-of-wonders': visualizationSummaries['the-little-city-of-wonders'].subjects,
 		'four-fundamental-subspaces-3d':
-			visualizationSummaries['four-fundamental-subspaces-3d'].subjects
+			visualizationSummaries['four-fundamental-subspaces-3d'].subjects,
+		'the-room-that-remembers-every-clap':
+			visualizationSummaries['the-room-that-remembers-every-clap'].subjects
 	};
 	const subjects = [
 		'All',

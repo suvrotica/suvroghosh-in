@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/acoustic-wavefield/**/*.test.ts',
 			'src/lib/visualizations/four-fundamental-subspaces/**/*.test.ts',
 			'src/lib/visualizations/little-city-of-wonders/**/*.test.ts',
 			'src/lib/visualizations/exploded-skull/**/*.test.ts',

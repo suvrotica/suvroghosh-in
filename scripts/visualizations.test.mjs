@@ -1688,3 +1688,114 @@ test('Four Fundamental Subspaces in 3D is a native, client-gated Three.js linear
 	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
 	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
 });
+
+test('The Room That Remembers Every Clap is a native, client-gated 2D FDTD acoustic wavefield and Web Audio convolution exhibit', () => {
+	const slug = 'the-room-that-remembers-every-clap';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const chamber = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'acoustic-wavefield',
+		'AcousticWavefieldChamber.svelte'
+	);
+	const viewport = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'acoustic-wavefield',
+		'WavefieldViewport.svelte'
+	);
+	const styles = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'acoustic-wavefield',
+		'acoustic-wavefield.css'
+	);
+	const solver = read('src', 'lib', 'visualizations', 'acoustic-wavefield', 'solver.ts');
+	const metrics = read('src', 'lib', 'visualizations', 'acoustic-wavefield', 'metrics.ts');
+	const audio = read('src', 'lib', 'visualizations', 'acoustic-wavefield', 'audio.ts');
+	const worker = read(
+		'src',
+		'lib',
+		'visualizations',
+		'acoustic-wavefield',
+		'rir-capture.worker.ts'
+	);
+	const socialFile = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		'acoustic-wavefield',
+		'social.png'
+	);
+	const posterFile = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		'acoustic-wavefield',
+		'poster.png'
+	);
+
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.match(post, /<AcousticWavefieldChamber \/>/);
+	assert.match(post, /<noscript>/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /10\.1121\/1\.1909343/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.match(registry, new RegExp(`href: '/blog/visualizations/${slug}'`));
+	assert.match(
+		registry,
+		/subjects: \['Physics', 'Design', 'Scientific Computing', 'Generative Art'\]/
+	);
+	assert.match(
+		landing,
+		/'the-room-that-remembers-every-clap':\s*\n?\s*visualizationSummaries\['the-room-that-remembers-every-clap'\]\.subjects/
+	);
+
+	assert.match(chamber, /article-breakout not-prose/);
+	assert.match(chamber, /data-tts-exclude/);
+	assert.doesNotMatch(
+		chamber,
+		/document\.documentElement\.(?:classList|setAttribute|style|dataset\s*=)|<svelte:head>|<svelte:window[^>]+onkeydown/
+	);
+	assert.match(styles, /^\.awc-shell\s*\{/m);
+
+	// Client-only WebGL & Web Audio boundaries + calibrated convolver + deterministic physics
+	assert.match(viewport, /supportsWebGL\(\)/);
+	assert.match(viewport, /import\('\.\/webgl-renderer'\)/);
+	assert.match(audio, /convolver\.normalize\s*=\s*false/);
+	assert.doesNotMatch(solver, /Math\.random\s*\(/);
+	assert.doesNotMatch(metrics, /Math\.random\s*\(/);
+	assert.match(worker, /runSynchronousRirCapture/);
+
+	const pngDimensions = (file) => {
+		const header = fs.readFileSync(file).subarray(0, 24);
+		assert.deepEqual(Array.from(header.subarray(0, 8)), [137, 80, 78, 71, 13, 10, 26, 10]);
+		return { width: header.readUInt32BE(16), height: header.readUInt32BE(20) };
+	};
+	assert.ok(fs.existsSync(socialFile), 'missing acoustic-wavefield social.png');
+	assert.ok(fs.existsSync(posterFile), 'missing acoustic-wavefield poster.png');
+	assert.deepEqual(pngDimensions(socialFile), { width: 1200, height: 630 });
+	assert.deepEqual(pngDimensions(posterFile), { width: 1200, height: 630 });
+	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
+	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
+});

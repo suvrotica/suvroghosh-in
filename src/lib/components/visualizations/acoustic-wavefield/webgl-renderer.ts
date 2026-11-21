@@ -1,0 +1,780 @@
+import { renderPixelDensity } from '$lib/visualizations/webgl';
+import {
+	GRID_NX,
+	GRID_NY,
+	MAT_WALL,
+	type GridPoint,
+	type SimulationState,
+	type StudioTheme,
+	type ViewMode
+} from '$lib/visualizations/acoustic-wavefield';
+
+export interface WebGLRendererHandle {
+	render: (state: SimulationState, view: ViewMode, theme: StudioTheme) => void;
+	screenToGrid: (clientX: number, clientY: number, view: ViewMode) => GridPoint | null;
+	gridToCanvas: (gx: number, gy: number, view: ViewMode) => { x: number; y: number };
+	resize: () => void;
+	dispose: () => void;
+	isContextLost: () => boolean;
+}
+
+const TERRAIN_VS = `#version 300 es
+precision highp float;
+
+layout(location = 0) in vec2 a_uv;
+
+uniform sampler2D u_fieldTex;
+uniform mat4 u_mvp;
+uniform float u_reliefStrength;
+
+out vec2 v_uv;
+out float v_pressure;
+out float v_rms;
+out float v_mat;
+
+float decodePressure(vec4 texel) {
+	float hi = texel.r * 255.0;
+	float lo = texel.g * 255.0;
+	float raw = (hi * 256.0 + lo) / 65535.0;
+	return (raw - 0.5) * 2.0;
+}
+
+void main() {
+	v_uv = a_uv;
+	vec4 texel = texture(u_fieldTex, a_uv);
+	float p = decodePressure(texel);
+	v_pressure = p;
+	v_rms = texel.b;
+	v_mat = floor(texel.a * 5.0 + 0.5);
+
+	float aspect = ${GRID_NX}.0 / ${GRID_NY}.0;
+	float wx = (a_uv.x - 0.5) * 2.0 * aspect;
+	float wy = (0.5 - a_uv.y) * 2.0;
+
+	float wz = 0.0;
+	if (u_reliefStrength > 0.01) {
+		if (abs(v_mat - 1.0) < 0.25) {
+			wz = 0.14 * u_reliefStrength;
+		} else if (abs(v_mat - 2.0) < 0.25) {
+			wz = -0.025 * u_reliefStrength;
+		} else {
+			wz = tanh(p * 3.8) * 0.26 * u_reliefStrength;
+		}
+	}
+
+	gl_Position = u_mvp * vec4(wx, wy, wz, 1.0);
+}
+`;
+
+const TERRAIN_FS = `#version 300 es
+precision highp float;
+
+uniform sampler2D u_fieldTex;
+uniform float u_reliefStrength;
+uniform float u_themeLight;
+
+in vec2 v_uv;
+in float v_pressure;
+in float v_rms;
+in float v_mat;
+
+out vec4 fragColor;
+
+float decodePressure(vec4 texel) {
+	float hi = texel.r * 255.0;
+	float lo = texel.g * 255.0;
+	float raw = (hi * 256.0 + lo) / 65535.0;
+	return (raw - 0.5) * 2.0;
+}
+
+void main() {
+	vec2 texelSize = vec2(1.0 / ${GRID_NX}.0, 1.0 / ${GRID_NY}.0);
+	float pL = decodePressure(texture(u_fieldTex, v_uv - vec2(texelSize.x, 0.0)));
+	float pR = decodePressure(texture(u_fieldTex, v_uv + vec2(texelSize.x, 0.0)));
+	float pD = decodePressure(texture(u_fieldTex, v_uv - vec2(0.0, texelSize.y)));
+	float pU = decodePressure(texture(u_fieldTex, v_uv + vec2(0.0, texelSize.y)));
+
+	float matId = floor(texture(u_fieldTex, v_uv).a * 5.0 + 0.5);
+	float lightMode = u_themeLight;
+
+	// Base floor palette
+	vec3 floorCol = mix(vec3(0.055, 0.075, 0.110), vec3(0.955, 0.937, 0.895), lightMode);
+	vec3 wallCol = mix(vec3(0.20, 0.24, 0.30), vec3(0.22, 0.26, 0.32), lightMode);
+	vec3 absorberCol = mix(vec3(0.17, 0.13, 0.12), vec3(0.66, 0.56, 0.45), lightMode);
+	vec3 lensCol = mix(vec3(0.07, 0.22, 0.33), vec3(0.75, 0.89, 0.95), lightMode);
+	vec3 diffuserCol = mix(vec3(0.26, 0.23, 0.19), vec3(0.73, 0.68, 0.59), lightMode);
+	vec3 resonatorCol = mix(vec3(0.32, 0.22, 0.10), vec3(0.88, 0.74, 0.54), lightMode);
+
+	vec3 baseCol = floorCol;
+	if (matId > 0.5 && matId < 1.5) {
+		float brick = step(0.5, fract(v_uv.x * 56.0 + floor(v_uv.y * 36.0) * 0.5));
+		baseCol = wallCol * (0.94 + 0.09 * brick);
+	} else if (matId >= 1.5 && matId < 2.5) {
+		float foam = sin(v_uv.x * 440.0) * sin(v_uv.y * 280.0);
+		baseCol = absorberCol * (0.94 + 0.08 * foam);
+	} else if (matId >= 2.5 && matId < 3.5) {
+		baseCol = diffuserCol;
+	} else if (matId >= 3.5 && matId < 4.5) {
+		baseCol = lensCol;
+	} else if (matId >= 4.5) {
+		baseCol = resonatorCol;
+	}
+
+	// Architectural 1m grid lines
+	float gx = abs(fract(v_uv.x * 14.0) - 0.5);
+	float gy = abs(fract(v_uv.y * 9.0) - 0.5);
+	float gridLine = 1.0 - smoothstep(0.0, 0.025, min(gx, gy));
+	if (matId < 0.5 || matId > 3.5) {
+		vec3 gridCol = mix(vec3(0.16, 0.21, 0.29), vec3(0.78, 0.75, 0.68), lightMode);
+		baseCol = mix(baseCol, gridCol, gridLine * 0.32);
+	}
+
+	if (matId > 0.5 && matId < 1.5) {
+		// Wall bevel lighting
+		float mL = texture(u_fieldTex, v_uv - vec2(texelSize.x, 0.0)).a;
+		float mR = texture(u_fieldTex, v_uv + vec2(texelSize.x, 0.0)).a;
+		float mD = texture(u_fieldTex, v_uv - vec2(0.0, texelSize.y)).a;
+		float mU = texture(u_fieldTex, v_uv + vec2(0.0, texelSize.y)).a;
+		vec3 wn = normalize(vec3((mL - mR) * 6.0, (mD - mU) * 6.0, 1.0));
+		float diff = clamp(dot(wn, normalize(vec3(-0.45, 0.6, 0.8))), 0.45, 1.2);
+		fragColor = vec4(baseCol * diff, 1.0);
+		return;
+	}
+
+	// Bipolar wave color mapping (copper-amber positive, mineral-cyan negative)
+	float s = tanh(v_pressure * 4.4);
+	vec3 posCol = mix(vec3(0.96, 0.62, 0.04), vec3(0.85, 0.46, 0.02), lightMode);
+	vec3 negCol = mix(vec3(0.22, 0.74, 0.97), vec3(0.01, 0.52, 0.78), lightMode);
+	vec3 waveCol = s >= 0.0 ? posCol : negCol;
+	float amp = abs(s);
+
+	// Iso-amplitude contour fringes
+	float contour = 1.0 - smoothstep(0.0, 0.14, abs(fract(amp * 6.0) - 0.5));
+	vec3 col = mix(baseCol, waveCol, clamp(amp * 0.94, 0.0, 0.96));
+	col += waveCol * contour * amp * 0.18;
+
+	// Subtle RMS standing-wave glow
+	col += mix(vec3(0.08, 0.06, 0.03), vec3(0.03, 0.03, 0.02), lightMode) * v_rms * 0.55;
+
+	// Relief studio lighting
+	if (u_reliefStrength > 0.01) {
+		vec3 n = normalize(vec3((pL - pR) * 14.0, (pD - pU) * 14.0, 1.0));
+		vec3 lightDir = normalize(vec3(-0.5, 0.65, 0.85));
+		float diff = clamp(dot(n, lightDir), 0.55, 1.25);
+		vec3 halfV = normalize(lightDir + vec3(0.0, -0.35, 0.94));
+		float spec = pow(max(dot(n, halfV), 0.0), 28.0) * 0.34 * amp;
+		col = col * diff + vec3(spec);
+	}
+
+	fragColor = vec4(clamp(col, 0.0, 1.0), 1.0);
+}
+`;
+
+const SAND_VS = `#version 300 es
+precision highp float;
+
+layout(location = 0) in vec2 a_gridPos;
+
+uniform sampler2D u_fieldTex;
+uniform mat4 u_mvp;
+uniform float u_reliefStrength;
+uniform float u_pointSize;
+
+float decodePressure(vec4 texel) {
+	float hi = texel.r * 255.0;
+	float lo = texel.g * 255.0;
+	float raw = (hi * 256.0 + lo) / 65535.0;
+	return (raw - 0.5) * 2.0;
+}
+
+void main() {
+	vec2 uv = vec2(a_gridPos.x / ${GRID_NX - 1}.0, a_gridPos.y / ${GRID_NY - 1}.0);
+	vec4 texel = texture(u_fieldTex, uv);
+	float p = decodePressure(texel);
+	float mat = floor(texel.a * 5.0 + 0.5);
+
+	float aspect = ${GRID_NX}.0 / ${GRID_NY}.0;
+	float wx = (uv.x - 0.5) * 2.0 * aspect;
+	float wy = (0.5 - uv.y) * 2.0;
+	float wz = 0.008;
+	if (u_reliefStrength > 0.01 && abs(mat - 1.0) > 0.25) {
+		wz += tanh(p * 3.8) * 0.26 * u_reliefStrength + 0.012;
+	}
+
+	gl_Position = u_mvp * vec4(wx, wy, wz, 1.0);
+	gl_PointSize = u_pointSize;
+}
+`;
+
+const SAND_FS = `#version 300 es
+precision highp float;
+
+uniform float u_themeLight;
+out vec4 fragColor;
+
+void main() {
+	vec2 d = gl_PointCoord - vec2(0.5);
+	float r2 = dot(d, d);
+	if (r2 > 0.25) discard;
+	float alpha = smoothstep(0.25, 0.05, r2) * 0.92;
+	vec3 sandCol = mix(vec3(0.953, 0.937, 0.890), vec3(0.11, 0.15, 0.22), u_themeLight);
+	fragColor = vec4(sandCol, alpha);
+}
+`;
+
+function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader {
+	const sh = gl.createShader(type);
+	if (!sh) throw new Error('Failed to create shader');
+	gl.shaderSource(sh, source);
+	gl.compileShader(sh);
+	if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+		const info = gl.getShaderInfoLog(sh) || 'Shader compile error';
+		gl.deleteShader(sh);
+		throw new Error(info);
+	}
+	return sh;
+}
+
+function createProgram(gl: WebGL2RenderingContext, vsSrc: string, fsSrc: string): WebGLProgram {
+	const vs = compileShader(gl, gl.VERTEX_SHADER, vsSrc);
+	const fs = compileShader(gl, gl.FRAGMENT_SHADER, fsSrc);
+	const prog = gl.createProgram();
+	if (!prog) throw new Error('Failed to create WebGL program');
+	gl.attachShader(prog, vs);
+	gl.attachShader(prog, fs);
+	gl.linkProgram(prog);
+	gl.deleteShader(vs);
+	gl.deleteShader(fs);
+	if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+		const info = gl.getProgramInfoLog(prog) || 'Program link error';
+		gl.deleteProgram(prog);
+		throw new Error(info);
+	}
+	return prog;
+}
+
+function mulMat4(a: Float32Array, b: Float32Array): Float32Array {
+	const out = new Float32Array(16);
+	for (let col = 0; col < 4; col++) {
+		for (let row = 0; row < 4; row++) {
+			out[col * 4 + row] =
+				a[0 * 4 + row] * b[col * 4 + 0] +
+				a[1 * 4 + row] * b[col * 4 + 1] +
+				a[2 * 4 + row] * b[col * 4 + 2] +
+				a[3 * 4 + row] * b[col * 4 + 3];
+		}
+	}
+	return out;
+}
+
+function perspectiveMat4(fovRad: number, aspect: number, near: number, far: number): Float32Array {
+	const f = 1 / Math.tan(fovRad * 0.5);
+	const nf = 1 / (near - far);
+	const m = new Float32Array(16);
+	m[0] = f / aspect;
+	m[5] = f;
+	m[10] = (far + near) * nf;
+	m[11] = -1;
+	m[14] = 2 * far * near * nf;
+	return m;
+}
+
+function lookAtMat4(
+	eye: [number, number, number],
+	center: [number, number, number],
+	up: [number, number, number]
+): Float32Array {
+	let fx = center[0] - eye[0];
+	let fy = center[1] - eye[1];
+	let fz = center[2] - eye[2];
+	const fl = Math.hypot(fx, fy, fz);
+	fx /= fl;
+	fy /= fl;
+	fz /= fl;
+
+	let sx = fy * up[2] - fz * up[1];
+	let sy = fz * up[0] - fx * up[2];
+	let sz = fx * up[1] - fy * up[0];
+	const sl = Math.hypot(sx, sy, sz);
+	sx /= sl;
+	sy /= sl;
+	sz /= sl;
+
+	const ux = sy * fz - sz * fy;
+	const uy = sz * fx - sx * fz;
+	const uz = sx * fy - sy * fx;
+
+	const m = new Float32Array(16);
+	m[0] = sx;
+	m[4] = sy;
+	m[8] = sz;
+	m[12] = -(sx * eye[0] + sy * eye[1] + sz * eye[2]);
+	m[1] = ux;
+	m[5] = uy;
+	m[9] = uz;
+	m[13] = -(ux * eye[0] + uy * eye[1] + uz * eye[2]);
+	m[2] = -fx;
+	m[6] = -fy;
+	m[10] = -fz;
+	m[14] = fx * eye[0] + fy * eye[1] + fz * eye[2];
+	m[15] = 1;
+	return m;
+}
+
+function orthoFitMat4(canvasAspect: number, gridAspect: number): Float32Array {
+	const m = new Float32Array(16);
+	let halfW = gridAspect;
+	let halfH = 1.0;
+	if (canvasAspect > gridAspect) {
+		halfW = canvasAspect;
+	} else {
+		halfH = gridAspect / canvasAspect;
+	}
+	m[0] = 1 / halfW;
+	m[5] = 1 / halfH;
+	m[10] = -0.5;
+	m[15] = 1;
+	return m;
+}
+
+function invertMat4(m: Float32Array): Float32Array | null {
+	const inv = new Float32Array(16);
+	inv[0] =
+		m[5] * m[10] * m[15] -
+		m[5] * m[11] * m[14] -
+		m[9] * m[6] * m[15] +
+		m[9] * m[7] * m[14] +
+		m[13] * m[6] * m[11] -
+		m[13] * m[7] * m[10];
+	inv[4] =
+		-m[4] * m[10] * m[15] +
+		m[4] * m[11] * m[14] +
+		m[8] * m[6] * m[15] -
+		m[8] * m[7] * m[14] -
+		m[12] * m[6] * m[11] +
+		m[12] * m[7] * m[10];
+	inv[8] =
+		m[4] * m[9] * m[15] -
+		m[4] * m[11] * m[13] -
+		m[8] * m[5] * m[15] +
+		m[8] * m[7] * m[13] +
+		m[12] * m[5] * m[11] -
+		m[12] * m[7] * m[9];
+	inv[12] =
+		-m[4] * m[9] * m[14] +
+		m[4] * m[10] * m[13] +
+		m[8] * m[5] * m[14] -
+		m[8] * m[6] * m[13] -
+		m[12] * m[5] * m[10] +
+		m[12] * m[6] * m[9];
+	inv[1] =
+		-m[1] * m[10] * m[15] +
+		m[1] * m[11] * m[14] +
+		m[9] * m[2] * m[15] -
+		m[9] * m[3] * m[14] -
+		m[13] * m[2] * m[11] +
+		m[13] * m[3] * m[10];
+	inv[5] =
+		m[0] * m[10] * m[15] -
+		m[0] * m[11] * m[14] -
+		m[8] * m[2] * m[15] +
+		m[8] * m[3] * m[14] +
+		m[12] * m[2] * m[11] -
+		m[12] * m[3] * m[10];
+	inv[9] =
+		-m[0] * m[9] * m[15] +
+		m[0] * m[11] * m[13] +
+		m[8] * m[1] * m[15] -
+		m[8] * m[3] * m[13] -
+		m[12] * m[1] * m[11] +
+		m[12] * m[3] * m[9];
+	inv[13] =
+		m[0] * m[9] * m[14] -
+		m[0] * m[10] * m[13] -
+		m[8] * m[1] * m[14] +
+		m[8] * m[2] * m[13] +
+		m[12] * m[1] * m[10] -
+		m[12] * m[2] * m[9];
+	inv[2] =
+		m[1] * m[6] * m[15] -
+		m[1] * m[7] * m[14] -
+		m[5] * m[2] * m[15] +
+		m[5] * m[3] * m[14] +
+		m[13] * m[2] * m[7] -
+		m[13] * m[3] * m[6];
+	inv[6] =
+		-m[0] * m[6] * m[15] +
+		m[0] * m[7] * m[14] +
+		m[4] * m[2] * m[15] -
+		m[4] * m[3] * m[14] -
+		m[12] * m[2] * m[7] +
+		m[12] * m[3] * m[6];
+	inv[10] =
+		m[0] * m[5] * m[15] -
+		m[0] * m[7] * m[13] -
+		m[4] * m[1] * m[15] +
+		m[4] * m[3] * m[13] +
+		m[12] * m[1] * m[7] -
+		m[12] * m[3] * m[5];
+	inv[14] =
+		-m[0] * m[5] * m[14] +
+		m[0] * m[6] * m[13] +
+		m[4] * m[1] * m[14] -
+		m[4] * m[2] * m[13] -
+		m[12] * m[1] * m[6] +
+		m[12] * m[2] * m[5];
+	inv[3] =
+		-m[1] * m[6] * m[11] +
+		m[1] * m[7] * m[10] +
+		m[5] * m[2] * m[11] -
+		m[5] * m[3] * m[10] -
+		m[9] * m[2] * m[7] +
+		m[9] * m[3] * m[6];
+	inv[7] =
+		m[0] * m[6] * m[11] -
+		m[0] * m[7] * m[10] -
+		m[4] * m[2] * m[11] +
+		m[4] * m[3] * m[10] +
+		m[8] * m[2] * m[7] -
+		m[8] * m[3] * m[6];
+	inv[11] =
+		-m[0] * m[5] * m[11] +
+		m[0] * m[7] * m[9] +
+		m[4] * m[1] * m[11] -
+		m[4] * m[3] * m[9] -
+		m[8] * m[1] * m[7] +
+		m[8] * m[3] * m[5];
+	inv[15] =
+		m[0] * m[5] * m[10] -
+		m[0] * m[6] * m[9] -
+		m[4] * m[1] * m[10] +
+		m[4] * m[2] * m[9] +
+		m[8] * m[1] * m[6] -
+		m[8] * m[2] * m[5];
+
+	const det = m[0] * inv[0] + m[1] * inv[4] + m[2] * inv[8] + m[3] * inv[12];
+	if (Math.abs(det) < 1e-10) return null;
+	const invDet = 1 / det;
+	for (let i = 0; i < 16; i++) inv[i] *= invDet;
+	return inv;
+}
+
+export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHandle {
+	const gl = canvas.getContext('webgl2', {
+		alpha: false,
+		antialias: true,
+		powerPreference: 'high-performance'
+	});
+	if (!gl) {
+		throw new Error('WebGL2 context unavailable');
+	}
+
+	let contextLost = false;
+	const onLost = (e: Event) => {
+		e.preventDefault();
+		contextLost = true;
+	};
+	const onRestored = () => {
+		contextLost = false;
+	};
+	canvas.addEventListener('webglcontextlost', onLost);
+	canvas.addEventListener('webglcontextrestored', onRestored);
+
+	const terrainProg = createProgram(gl, TERRAIN_VS, TERRAIN_FS);
+	const sandProg = createProgram(gl, SAND_VS, SAND_FS);
+
+	// Terrain mesh: 224 x 144 UV vertices
+	const uvs = new Float32Array(GRID_NX * GRID_NY * 2);
+	let vPtr = 0;
+	for (let y = 0; y < GRID_NY; y++) {
+		const v = y / (GRID_NY - 1);
+		for (let x = 0; x < GRID_NX; x++) {
+			uvs[vPtr++] = x / (GRID_NX - 1);
+			uvs[vPtr++] = v;
+		}
+	}
+	const indices = new Uint32Array((GRID_NX - 1) * (GRID_NY - 1) * 6);
+	let iPtr = 0;
+	for (let y = 0; y < GRID_NY - 1; y++) {
+		for (let x = 0; x < GRID_NX - 1; x++) {
+			const tl = y * GRID_NX + x;
+			const tr = tl + 1;
+			const bl = tl + GRID_NX;
+			const br = bl + 1;
+			indices[iPtr++] = tl;
+			indices[iPtr++] = bl;
+			indices[iPtr++] = tr;
+			indices[iPtr++] = tr;
+			indices[iPtr++] = bl;
+			indices[iPtr++] = br;
+		}
+	}
+
+	const terrainVao = gl.createVertexArray()!;
+	gl.bindVertexArray(terrainVao);
+	const terrainVbo = gl.createBuffer()!;
+	gl.bindBuffer(gl.ARRAY_BUFFER, terrainVbo);
+	gl.bufferData(gl.ARRAY_BUFFER, uvs, gl.STATIC_DRAW);
+	gl.enableVertexAttribArray(0);
+	gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+
+	const terrainEbo = gl.createBuffer()!;
+	gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, terrainEbo);
+	gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, indices, gl.STATIC_DRAW);
+
+	// Sand VAO (dynamic point buffer)
+	const sandVao = gl.createVertexArray()!;
+	gl.bindVertexArray(sandVao);
+	const sandVbo = gl.createBuffer()!;
+	gl.bindBuffer(gl.ARRAY_BUFFER, sandVbo);
+	gl.bufferData(gl.ARRAY_BUFFER, 2000 * 2 * 4, gl.DYNAMIC_DRAW);
+	gl.enableVertexAttribArray(0);
+	gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+	const sandInterleaved = new Float32Array(2000 * 2);
+
+	// Field texture (RGBA8: R/G = 16-bit signed pressure, B = RMS, A = material/5)
+	const fieldTex = gl.createTexture()!;
+	gl.bindTexture(gl.TEXTURE_2D, fieldTex);
+	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+	const texData = new Uint8Array(GRID_NX * GRID_NY * 4);
+	gl.texImage2D(
+		gl.TEXTURE_2D,
+		0,
+		gl.RGBA8,
+		GRID_NX,
+		GRID_NY,
+		0,
+		gl.RGBA,
+		gl.UNSIGNED_BYTE,
+		texData
+	);
+
+	const uFieldLoc = gl.getUniformLocation(terrainProg, 'u_fieldTex');
+	const uMvpLoc = gl.getUniformLocation(terrainProg, 'u_mvp');
+	const uReliefLoc = gl.getUniformLocation(terrainProg, 'u_reliefStrength');
+	const uThemeLoc = gl.getUniformLocation(terrainProg, 'u_themeLight');
+
+	const uSandFieldLoc = gl.getUniformLocation(sandProg, 'u_fieldTex');
+	const uSandMvpLoc = gl.getUniformLocation(sandProg, 'u_mvp');
+	const uSandReliefLoc = gl.getUniformLocation(sandProg, 'u_reliefStrength');
+	const uSandPointSizeLoc = gl.getUniformLocation(sandProg, 'u_pointSize');
+	const uSandThemeLoc = gl.getUniformLocation(sandProg, 'u_themeLight');
+
+	let widthCss = 1;
+	let heightCss = 1;
+	let dpr = 1;
+	let cachedMvpW = -1;
+	let cachedMvpH = -1;
+	let cachedMvpRelief: Float32Array | null = null;
+	let cachedMvpOrtho: Float32Array | null = null;
+
+	function resize(): void {
+		const rect = canvas.getBoundingClientRect();
+		dpr = renderPixelDensity();
+		widthCss = Math.max(1, rect.width);
+		heightCss = Math.max(1, rect.height);
+		const targetW = Math.max(1, Math.round(widthCss * dpr));
+		const targetH = Math.max(1, Math.round(heightCss * dpr));
+		if (canvas.width !== targetW || canvas.height !== targetH) {
+			canvas.width = targetW;
+			canvas.height = targetH;
+		}
+		gl!.viewport(0, 0, canvas.width, canvas.height);
+	}
+
+	resize();
+
+	function computeMvp(view: ViewMode): Float32Array {
+		if (widthCss !== cachedMvpW || heightCss !== cachedMvpH) {
+			cachedMvpW = widthCss;
+			cachedMvpH = heightCss;
+			cachedMvpRelief = null;
+			cachedMvpOrtho = null;
+		}
+		const gridAspect = GRID_NX / GRID_NY;
+		const canvasAspect = Math.max(0.2, widthCss / heightCss);
+		if (view === 'interferometer') {
+			if (!cachedMvpOrtho) {
+				cachedMvpOrtho = orthoFitMat4(canvasAspect, gridAspect);
+			}
+			return cachedMvpOrtho;
+		}
+		if (!cachedMvpRelief) {
+			// 2.5D acoustic relief perspective camera
+			const fov = 0.62;
+			const proj = perspectiveMat4(fov, canvasAspect, 0.1, 20.0);
+			// Adjust distance slightly on narrow viewports so full chamber width fits comfortably
+			const distScale = canvasAspect < 1.35 ? 1.35 / canvasAspect : 1.0;
+			const viewMat = lookAtMat4(
+				[0, -2.05 * distScale, 2.72 * distScale],
+				[0, -0.02, 0.0],
+				[0, 0, 1]
+			);
+			cachedMvpRelief = mulMat4(proj, viewMat);
+		}
+		return cachedMvpRelief;
+	}
+
+	function screenToGrid(clientX: number, clientY: number, view: ViewMode): GridPoint | null {
+		const rect = canvas.getBoundingClientRect();
+		const ndcX = ((clientX - rect.left) / Math.max(1, rect.width)) * 2 - 1;
+		const ndcY = 1 - ((clientY - rect.top) / Math.max(1, rect.height)) * 2;
+		const mvp = computeMvp(view);
+		const inv = invertMat4(mvp);
+		if (!inv) return null;
+
+		const unproject = (zNdc: number): [number, number, number] => {
+			const x = inv[0] * ndcX + inv[4] * ndcY + inv[8] * zNdc + inv[12];
+			const y = inv[1] * ndcX + inv[5] * ndcY + inv[9] * zNdc + inv[13];
+			const z = inv[2] * ndcX + inv[6] * ndcY + inv[10] * zNdc + inv[14];
+			const w = inv[3] * ndcX + inv[7] * ndcY + inv[11] * zNdc + inv[15];
+			return [x / w, y / w, z / w];
+		};
+
+		const p0 = unproject(-1);
+		const p1 = unproject(1);
+		const dz = p1[2] - p0[2];
+		if (Math.abs(dz) < 1e-6) return null;
+		const t = -p0[2] / dz;
+		const wx = p0[0] + (p1[0] - p0[0]) * t;
+		const wy = p0[1] + (p1[1] - p0[1]) * t;
+
+		const aspect = GRID_NX / GRID_NY;
+		const u = wx / (2 * aspect) + 0.5;
+		const v = 0.5 - wy / 2;
+		return {
+			x: Math.max(2, Math.min(GRID_NX - 3, u * (GRID_NX - 1))),
+			y: Math.max(2, Math.min(GRID_NY - 3, v * (GRID_NY - 1)))
+		};
+	}
+
+	function gridToCanvas(gx: number, gy: number, view: ViewMode): { x: number; y: number } {
+		const mvp = computeMvp(view);
+		const aspect = GRID_NX / GRID_NY;
+		const u = gx / (GRID_NX - 1);
+		const v = gy / (GRID_NY - 1);
+		const wx = (u - 0.5) * 2 * aspect;
+		const wy = (0.5 - v) * 2;
+		const wz = view === 'relief' ? 0.04 : 0;
+
+		const cx = mvp[0] * wx + mvp[4] * wy + mvp[8] * wz + mvp[12];
+		const cy = mvp[1] * wx + mvp[5] * wy + mvp[9] * wz + mvp[13];
+		const cw = mvp[3] * wx + mvp[7] * wy + mvp[11] * wz + mvp[15];
+		const ndcX = cx / cw;
+		const ndcY = cy / cw;
+		return {
+			x: (ndcX * 0.5 + 0.5) * widthCss,
+			y: (0.5 - ndcY * 0.5) * heightCss
+		};
+	}
+
+	function render(state: SimulationState, view: ViewMode, theme: StudioTheme): void {
+		if (contextLost) return;
+
+		const { p, eRms, eRef, material } = state;
+		const invRef = 1 / Math.max(eRef, 1e-6);
+		const totalCells = GRID_NX * GRID_NY;
+		for (let i = 0; i < totalCells; i++) {
+			const o = i * 4;
+			const pv = p[i];
+			const normP = pv < -1 ? -1 : pv > 1 ? 1 : pv;
+			const packed = ((normP * 0.5 + 0.5) * 65535 + 0.5) | 0;
+			texData[o] = (packed >> 8) & 0xff;
+			texData[o + 1] = packed & 0xff;
+			const eVal = eRms[i];
+			const rms = eVal > 0 ? Math.min(1, Math.sqrt(eVal * invRef)) : 0;
+			texData[o + 2] = (rms * 255 + 0.5) | 0;
+			texData[o + 3] = ((material[i] / 5) * 255 + 0.5) | 0;
+		}
+
+		gl!.activeTexture(gl!.TEXTURE0);
+		gl!.bindTexture(gl!.TEXTURE_2D, fieldTex);
+		gl!.texSubImage2D(
+			gl!.TEXTURE_2D,
+			0,
+			0,
+			0,
+			GRID_NX,
+			GRID_NY,
+			gl!.RGBA,
+			gl!.UNSIGNED_BYTE,
+			texData
+		);
+
+		const isLight = theme === 'light';
+		if (isLight) {
+			gl!.clearColor(0.922, 0.898, 0.843, 1.0);
+		} else {
+			gl!.clearColor(0.043, 0.059, 0.082, 1.0);
+		}
+		gl!.clear(gl!.COLOR_BUFFER_BIT | gl!.DEPTH_BUFFER_BIT);
+		gl!.enable(gl!.DEPTH_TEST);
+
+		const mvp = computeMvp(view);
+		const reliefStrength = view === 'relief' ? 1.0 : 0.0;
+		const themeVal = isLight ? 1.0 : 0.0;
+
+		gl!.useProgram(terrainProg);
+		gl!.uniform1i(uFieldLoc, 0);
+		gl!.uniformMatrix4fv(uMvpLoc, false, mvp);
+		gl!.uniform1f(uReliefLoc, reliefStrength);
+		gl!.uniform1f(uThemeLoc, themeVal);
+		gl!.bindVertexArray(terrainVao);
+		gl!.drawElements(gl!.TRIANGLES, indices.length, gl!.UNSIGNED_INT, 0);
+
+		if (state.chladniEnabled && state.chladniX.length > 0) {
+			const count = state.chladniX.length;
+			let sandDrawCount = 0;
+			for (let k = 0; k < count; k++) {
+				const cx = state.chladniX[k];
+				const cy = state.chladniY[k];
+				const ix = cx <= 0 ? 0 : cx >= GRID_NX - 1 ? GRID_NX - 1 : (cx + 0.5) | 0;
+				const iy = cy <= 0 ? 0 : cy >= GRID_NY - 1 ? GRID_NY - 1 : (cy + 0.5) | 0;
+				if (material[iy * GRID_NX + ix] === MAT_WALL) continue;
+				sandInterleaved[sandDrawCount * 2] = cx;
+				sandInterleaved[sandDrawCount * 2 + 1] = cy;
+				sandDrawCount += 1;
+			}
+			if (sandDrawCount > 0) {
+				gl!.enable(gl!.BLEND);
+				gl!.blendFunc(gl!.SRC_ALPHA, gl!.ONE_MINUS_SRC_ALPHA);
+				gl!.useProgram(sandProg);
+				gl!.uniform1i(uSandFieldLoc, 0);
+				gl!.uniformMatrix4fv(uSandMvpLoc, false, mvp);
+				gl!.uniform1f(uSandReliefLoc, reliefStrength);
+				gl!.uniform1f(uSandPointSizeLoc, Math.max(2.1, 2.5 * dpr));
+				gl!.uniform1f(uSandThemeLoc, themeVal);
+				gl!.bindVertexArray(sandVao);
+				gl!.bindBuffer(gl!.ARRAY_BUFFER, sandVbo);
+				gl!.bufferSubData(gl!.ARRAY_BUFFER, 0, sandInterleaved.subarray(0, sandDrawCount * 2));
+				gl!.drawArrays(gl!.POINTS, 0, sandDrawCount);
+				gl!.disable(gl!.BLEND);
+			}
+		}
+	}
+
+	function dispose(): void {
+		canvas.removeEventListener('webglcontextlost', onLost);
+		canvas.removeEventListener('webglcontextrestored', onRestored);
+		gl!.deleteBuffer(terrainVbo);
+		gl!.deleteBuffer(terrainEbo);
+		gl!.deleteBuffer(sandVbo);
+		gl!.deleteVertexArray(terrainVao);
+		gl!.deleteVertexArray(sandVao);
+		gl!.deleteTexture(fieldTex);
+		gl!.deleteProgram(terrainProg);
+		gl!.deleteProgram(sandProg);
+	}
+
+	return {
+		render,
+		screenToGrid,
+		gridToCanvas,
+		resize,
+		dispose,
+		isContextLost: () => contextLost
+	};
+}

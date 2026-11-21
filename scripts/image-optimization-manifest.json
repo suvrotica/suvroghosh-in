@@ -11759,6 +11759,36 @@
       "sourceHash": "5ddc352697abc6c73a342bc75ac31968d2ef3b2d3882427352012bd16fde9dbf",
       "width": 1200
     },
+    "static/images/visualizations/acoustic-wavefield/poster.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 125778,
+      "outputHash": "4b70379b158ae9f725aa4c02cce338d58a1a8a4942269f7dd20210f2896847d6",
+      "resized": false,
+      "sourceBytes": 125778,
+      "sourceHash": "4b70379b158ae9f725aa4c02cce338d58a1a8a4942269f7dd20210f2896847d6",
+      "width": 1200
+    },
+    "static/images/visualizations/acoustic-wavefield/social.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 122631,
+      "outputHash": "740b823ae97859f199e32d4da788dad09e300359dc1eabc86b6c39575f913328",
+      "resized": false,
+      "sourceBytes": 122631,
+      "sourceHash": "740b823ae97859f199e32d4da788dad09e300359dc1eabc86b6c39575f913328",
+      "width": 1200
+    },
     "static/images/visualizations/anatomy-of-an-essay/portraits/perceptron-from-scratch-in-mojo.svg": {
       "format": "SVG",
       "height": 900,

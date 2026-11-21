@@ -1,0 +1,708 @@
+/* Scoped Scientific Instrument Styles for Acoustic Wavefield Chamber */
+
+/* Synchronize .article-shell bounds with the 94rem breakout stage without transform/translate
+   so .article-shell never overflows horizontally and fixed fallback fullscreen binds to viewport. */
+.article-shell.immersive-lead:has(.awc-breakout-root) {
+	--article-breakout-offset: 0rem;
+	position: relative;
+	left: 50%;
+	width: min(94rem, calc(100vw - 1.5rem));
+	max-width: calc(100vw - 1.5rem);
+	margin-left: calc(-0.5 * min(94rem, calc(100vw - 1.5rem)));
+	margin-right: 0;
+	padding-inline: 0;
+	translate: none;
+	transform: none;
+}
+
+.article-shell.immersive-lead:has(.awc-breakout-root) > article {
+	width: 100%;
+	max-width: 48rem;
+	margin-inline: auto;
+	padding-inline: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+@media (min-width: 64rem) {
+	.article-shell.immersive-lead:has(.awc-breakout-root) > article {
+		padding-inline: 0;
+	}
+}
+
+@media (min-width: 80rem) {
+	.article-shell.immersive-lead:has(.awc-breakout-root) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.awc-breakout-root {
+	position: relative;
+	left: calc(50% + var(--article-breakout-offset, 0rem));
+	width: min(94rem, calc(100vw - 1.5rem));
+	max-width: none;
+	min-width: 0;
+	margin-left: calc(-0.5 * min(94rem, calc(100vw - 1.5rem)));
+	margin-block: 1.5rem;
+}
+
+.awc-breakout-root.awc-elevated {
+	z-index: 90;
+}
+
+.awc-shell {
+	--awc-bg: #0c1016;
+	--awc-surface: #131922;
+	--awc-surface-alt: #1a2230;
+	--awc-surface-hover: #232e41;
+	--awc-border: rgba(203, 213, 225, 0.16);
+	--awc-border-strong: rgba(148, 163, 184, 0.34);
+	--awc-ink: #f1f5f9;
+	--awc-ink-muted: #cbd5e1;
+	--awc-ink-soft: #94a3b8;
+	--awc-amber: #f59e0b;
+	--awc-amber-bg: rgba(245, 158, 11, 0.16);
+	--awc-cyan: #38bdf8;
+	--awc-cyan-bg: rgba(56, 189, 248, 0.16);
+	--awc-source: #fb7185;
+	--awc-source-bg: rgba(251, 113, 133, 0.16);
+	--awc-listener: #34d399;
+	--awc-listener-bg: rgba(52, 211, 153, 0.16);
+	--awc-sand: #f3efe3;
+	--awc-focus: #38bdf8;
+
+	position: relative;
+	container-name: awc-shell;
+	container-type: inline-size;
+	color: var(--awc-ink);
+	background: var(--awc-bg);
+	border: 1px solid var(--awc-border);
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: 0 22px 64px rgba(0, 0, 0, 0.42);
+	font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+	line-height: 1.45;
+}
+
+.awc-shell[data-studio-theme='light'] {
+	--awc-bg: #f6f3eb;
+	--awc-surface: #ffffff;
+	--awc-surface-alt: #efeadc;
+	--awc-surface-hover: #e4ddcb;
+	--awc-border: rgba(30, 41, 59, 0.16);
+	--awc-border-strong: rgba(30, 41, 59, 0.34);
+	--awc-ink: #0f172a;
+	--awc-ink-muted: #334155;
+	--awc-ink-soft: #475569;
+	--awc-amber: #b45309;
+	--awc-amber-bg: rgba(180, 83, 9, 0.12);
+	--awc-cyan: #0369a1;
+	--awc-cyan-bg: rgba(3, 105, 161, 0.12);
+	--awc-source: #be123c;
+	--awc-source-bg: rgba(190, 18, 60, 0.12);
+	--awc-listener: #047857;
+	--awc-listener-bg: rgba(4, 120, 87, 0.12);
+	--awc-sand: #1e293b;
+	--awc-focus: #0284c7;
+}
+
+/* Lock background scroll, neutralize any remaining fixed-position containing-block properties,
+   and elevate <main> above the sticky site header while fallback fullscreen is active. */
+html:has(.awc-shell.awc-fullscreen-fallback),
+body:has(.awc-shell.awc-fullscreen-fallback) {
+	overflow: hidden;
+	overscroll-behavior: none;
+}
+
+.site-shell:has(.awc-shell.awc-fullscreen-fallback) > main {
+	z-index: 90;
+}
+
+.article-shell:has(.awc-shell.awc-fullscreen-fallback) {
+	translate: none;
+	transform: none;
+	filter: none;
+	backdrop-filter: none;
+	perspective: none;
+	contain: none;
+	will-change: auto;
+}
+
+.awc-breakout-root:has(.awc-shell:fullscreen),
+.awc-breakout-root:has(.awc-shell.awc-fullscreen-fallback) {
+	left: 0;
+	width: 100%;
+	margin: 0;
+	transform: none;
+	translate: none;
+	filter: none;
+	backdrop-filter: none;
+	perspective: none;
+	contain: none;
+	will-change: auto;
+	z-index: 90;
+}
+
+.awc-shell:fullscreen,
+.awc-shell.awc-fullscreen-fallback {
+	position: fixed;
+	inset: 0;
+	z-index: 90;
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	box-sizing: border-box;
+	border-radius: 0;
+	border: none;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+
+.awc-shell:fullscreen > *,
+.awc-shell.awc-fullscreen-fallback > * {
+	flex-shrink: 0;
+}
+
+.awc-shell:fullscreen .awc-header,
+.awc-shell.awc-fullscreen-fallback .awc-header {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+}
+
+.awc-shell :is(button, input, select, a, [tabindex]):focus-visible {
+	outline: 2px solid var(--awc-focus);
+	outline-offset: 2px;
+}
+
+/* Header plaque */
+.awc-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.85rem 1.1rem;
+	background: var(--awc-surface);
+	border-bottom: 1px solid var(--awc-border);
+	flex-wrap: wrap;
+}
+
+.awc-title-block {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	min-width: 0;
+}
+
+.awc-title-row {
+	display: flex;
+	align-items: baseline;
+	gap: 0.65rem;
+	flex-wrap: wrap;
+}
+
+.awc-title {
+	margin: 0;
+	font-family: var(--font-serif, 'Newsreader', Georgia, serif);
+	font-size: clamp(1.22rem, 1.9vw, 1.62rem);
+	font-weight: 700;
+	letter-spacing: -0.015em;
+	color: var(--awc-ink);
+	line-height: 1.15;
+}
+
+.awc-status-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.2rem 0.62rem;
+	border-radius: 999px;
+	border: 1px solid var(--awc-border-strong);
+	background: var(--awc-surface-alt);
+	font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+	font-size: 0.74rem;
+	font-weight: 600;
+	color: var(--awc-ink);
+	font-variant-numeric: tabular-nums;
+}
+
+.awc-subtitle {
+	margin: 0;
+	font-size: 0.83rem;
+	color: var(--awc-ink-muted);
+}
+
+.awc-header-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.42rem;
+	flex-wrap: wrap;
+}
+
+/* Preset Bar */
+.awc-preset-bar {
+	display: grid;
+	grid-template-columns: minmax(0, 23rem) minmax(0, 1fr);
+	gap: 0.85rem;
+	align-items: center;
+	padding: 0.72rem 1.1rem;
+	background: var(--awc-surface-alt);
+	border-bottom: 1px solid var(--awc-border);
+}
+
+.awc-preset-select-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 0.28rem;
+}
+
+.awc-field-label {
+	font-size: 0.71rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--awc-ink-muted);
+}
+
+.awc-select {
+	width: 100%;
+	min-height: 2.45rem;
+	padding: 0.4rem 0.65rem;
+	border-radius: 8px;
+	border: 1px solid var(--awc-border-strong);
+	background: var(--awc-surface);
+	color: var(--awc-ink);
+	font-size: 0.86rem;
+	font-weight: 600;
+}
+
+.awc-takeaway {
+	margin: 0;
+	font-size: 0.84rem;
+	line-height: 1.45;
+	color: var(--awc-ink-muted);
+}
+
+.awc-takeaway strong {
+	color: var(--awc-ink);
+}
+
+/* Buttons */
+.awc-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	min-height: 2.2rem;
+	padding: 0.36rem 0.74rem;
+	border-radius: 7px;
+	border: 1px solid var(--awc-border-strong);
+	background: var(--awc-surface);
+	color: var(--awc-ink);
+	font-size: 0.79rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition:
+		background-color 120ms ease,
+		border-color 120ms ease;
+}
+
+.awc-btn:hover:not(:disabled) {
+	background: var(--awc-surface-hover);
+}
+
+.awc-btn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.awc-btn[aria-pressed='true'],
+.awc-btn.awc-btn-active {
+	background: var(--awc-cyan-bg);
+	border-color: var(--awc-cyan);
+	color: var(--awc-ink);
+}
+
+.awc-btn-primary {
+	background: var(--awc-amber-bg);
+	border-color: var(--awc-amber);
+	color: var(--awc-ink);
+	font-weight: 700;
+}
+
+.awc-btn-primary:hover:not(:disabled) {
+	background: var(--awc-amber);
+	color: #0c1016;
+}
+
+.awc-shell[data-studio-theme='light'] .awc-btn-primary:hover:not(:disabled) {
+	color: #ffffff;
+}
+
+.awc-btn-xs {
+	min-height: 1.95rem;
+	padding: 0.25rem 0.56rem;
+	font-size: 0.74rem;
+}
+
+/* Main workspace */
+.awc-main-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(19.5rem, 23.5rem);
+	align-items: start;
+	border-bottom: 1px solid var(--awc-border);
+}
+
+.awc-viewport-col {
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	border-right: 1px solid var(--awc-border);
+}
+
+.awc-transport-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	padding: 0.58rem 0.85rem;
+	background: var(--awc-surface);
+	border-bottom: 1px solid var(--awc-border);
+	flex-wrap: wrap;
+}
+
+.awc-btn-group {
+	display: flex;
+	align-items: center;
+	gap: 0.36rem;
+	flex-wrap: wrap;
+}
+
+.awc-canvas-stage {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 14 / 9;
+	min-height: 22rem;
+	background: var(--awc-bg);
+	overflow: hidden;
+}
+
+.awc-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	touch-action: none;
+	cursor: crosshair;
+}
+
+.awc-canvas.awc-cursor-grab {
+	cursor: grab;
+}
+
+.awc-canvas.awc-cursor-grab:active {
+	cursor: grabbing;
+}
+
+.awc-beacon-overlay {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+}
+
+.awc-beacon-tag {
+	position: absolute;
+	transform: translate(-50%, -140%);
+	padding: 0.12rem 0.42rem;
+	border-radius: 5px;
+	font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+	font-size: 0.71rem;
+	font-weight: 700;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.awc-beacon-s {
+	color: #0c1016;
+	background: #fb7185;
+	border-color: rgba(255, 255, 255, 0.4);
+}
+
+.awc-beacon-l {
+	color: #0c1016;
+	background: #34d399;
+	border-color: rgba(255, 255, 255, 0.4);
+}
+
+.awc-stage-legend {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.65rem;
+	padding: 0.45rem 0.85rem;
+	background: var(--awc-surface-alt);
+	border-top: 1px solid var(--awc-border);
+	font-size: 0.75rem;
+	color: var(--awc-ink-muted);
+	flex-wrap: wrap;
+}
+
+.awc-legend-items {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	flex-wrap: wrap;
+}
+
+.awc-swatch {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.32rem;
+}
+
+.awc-dot {
+	width: 0.62rem;
+	height: 0.62rem;
+	border-radius: 999px;
+	display: inline-block;
+}
+
+/* Control Side Panel */
+.awc-dock {
+	display: flex;
+	flex-direction: column;
+	background: var(--awc-surface);
+	min-width: 0;
+}
+
+.awc-dock-body {
+	padding: 0.85rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.88rem;
+}
+
+.awc-panel-section {
+	display: flex;
+	flex-direction: column;
+	gap: 0.52rem;
+	padding-bottom: 0.82rem;
+	border-bottom: 1px solid var(--awc-border);
+}
+
+.awc-panel-section:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.awc-section-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+}
+
+.awc-section-title {
+	margin: 0;
+	font-size: 0.74rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--awc-ink);
+}
+
+.awc-tool-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.36rem;
+}
+
+.awc-audio-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.36rem;
+}
+
+.awc-slider-row {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 0.55rem;
+	font-size: 0.78rem;
+}
+
+.awc-range {
+	width: 100%;
+	accent-color: var(--awc-cyan);
+	cursor: pointer;
+}
+
+.awc-mono {
+	font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+	font-variant-numeric: tabular-nums;
+}
+
+.awc-note-box {
+	padding: 0.5rem 0.65rem;
+	border-radius: 8px;
+	border: 1px solid var(--awc-border);
+	background: var(--awc-surface-alt);
+	font-size: 0.76rem;
+	color: var(--awc-ink-muted);
+}
+
+/* Telemetry Ledger Drawer */
+.awc-telemetry {
+	padding: 1rem 1.1rem;
+	background: var(--awc-bg);
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+}
+
+.awc-telemetry-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.awc-kpi-strip {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	flex-wrap: wrap;
+}
+
+.awc-kpi-pill {
+	padding: 0.32rem 0.64rem;
+	border-radius: 8px;
+	background: var(--awc-surface);
+	border: 1px solid var(--awc-border);
+	font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+	font-size: 0.77rem;
+	color: var(--awc-ink);
+	font-variant-numeric: tabular-nums;
+}
+
+.awc-kpi-pill strong {
+	color: var(--awc-cyan);
+}
+
+.awc-plots-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.78rem;
+}
+
+.awc-plot-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.42rem;
+	padding: 0.72rem;
+	border-radius: 10px;
+	background: var(--awc-surface);
+	border: 1px solid var(--awc-border);
+	min-width: 0;
+}
+
+.awc-plot-title-row {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.4rem;
+	flex-wrap: wrap;
+}
+
+.awc-plot-title {
+	margin: 0;
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: var(--awc-ink);
+}
+
+.awc-plot-meta {
+	font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+	font-size: 0.71rem;
+	color: var(--awc-ink-muted);
+}
+
+.awc-ghost-chip {
+	color: var(--awc-source);
+	font-weight: 600;
+}
+
+.awc-svg-plot {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px;
+	background: var(--awc-surface-alt);
+}
+
+.awc-mode-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.34rem;
+}
+
+.awc-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Responsive container breakpoints */
+@container awc-shell (max-width: 1060px) {
+	.awc-main-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.awc-viewport-col {
+		border-right: none;
+		border-bottom: 1px solid var(--awc-border);
+	}
+	.awc-plots-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@container awc-shell (max-width: 720px) {
+	.awc-preset-bar {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.awc-header,
+	.awc-preset-bar,
+	.awc-telemetry {
+		padding-inline: 0.75rem;
+	}
+}
+
+/* Mobile touch-target compliance (>=44px) */
+@media (max-width: 48rem) {
+	.awc-btn,
+	.awc-btn-xs,
+	.awc-select {
+		min-height: 44px;
+		min-width: 44px;
+	}
+	.awc-range {
+		min-height: 44px;
+	}
+	.awc-canvas-stage {
+		min-height: 14.5rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.awc-btn {
+		transition: none;
+	}
+}
