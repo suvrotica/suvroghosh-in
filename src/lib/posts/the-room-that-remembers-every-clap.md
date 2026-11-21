@@ -3,6 +3,7 @@ title: "The Room That Remembers Every Clap"
 seoTitle: "The Room That Remembers Every Clap — 2D Acoustic Wavefield & Room-Impulse Lab"
 description: "Sketch walls, absorbers, and acoustic lenses in a live 2D wave chamber, watch Chladni sand gather at nodes, and hear any sound inside the room you built."
 date: "2026-11-21"
+dateModified: "2026-11-21"
 category: "Visualizations"
 published: true
 interactiveFirst: true
@@ -102,15 +103,15 @@ $$
 
 To keep wave propagation nearly circular rather than artificially square along the grid axes, the solver discretizes $\nabla^2 p$ with a **9-point isotropic leapfrog stencil** combining axial neighbors (weight $4$) and diagonal neighbors (weight $1$) on a $\Delta x = 0.0625\text{ m}$ lattice at Courant number $S_c = c_0 \Delta t / \Delta x = 0.50$ ($f_{\text{sim}} = 10{,}976\text{ Hz}$). Rigid stone cells enforce zero normal pressure gradient (Neumann reflection), including axial-shoulder blocking so energy never tunnels across one-cell diagonal corners. When the perimeter is switched to **Open Absorbing (PML)**, a $14$-cell cubic sponge ramp and 1st-order Mur rim swallow outgoing wavefronts cleanly.
 
-**Experiment 1 — Whisper across the ellipse.** Keep the default **Elliptical Whispering Gallery** and press **Clap**. Watch the outgoing copper-and-cyan pressure ring reflect off the curved stone perimeter from every direction and arrive simultaneously at **Listener (L)**—creating a sharp secondary focal spike on the **Room Impulse Response $h(t)$** trace. Now switch the brush tool to **Move Beacons (S / L)**, drag **Emitter (S)** a meter away from the focus, and press **Clap** again: the focal spike smears into a broad cluster of staggered arrivals.
+**Experiment 1 — Whisper across the ellipse.** Keep the default **Elliptical Whispering Gallery** and press **Clap**. Drag across the chamber (or click **Low Grazing** / **Side Spin** and adjust **Tilt** and **Spin**) to inspect the sculpted pressure rings from any angle, and switch between the **Coral / Cyan**, **Iridescent**, and **Thermal** palettes. Watch the outgoing pressure ring reflect off the curved stone perimeter from every direction and arrive simultaneously at **Listener (L)**—creating a sharp secondary focal spike on the **Room Impulse Response $h(t)$** trace. Drag **Emitter (S)** a meter away from the focus and press **Clap** again: the focal spike smears into a broad cluster of staggered arrivals.
 
 ## 2. The Sand Remembers Where the Air Holds Still (Chladni Nodes)
 
 When a room is driven by a steady pure tone instead of a single clap, outgoing waves and wall reflections interfere continuously. At resonant frequencies—the room's **eigenmodes**—certain locations oscillate violently (antinodes) while curves between them remain almost motionless (nodal lines).
 
-The chamber maintains an exponentially smoothed root-mean-square pressure field $E(x, y) = p_{\text{rms}}^2$ and drives $2{,}000$ sand grains along $-\nabla E$ with vibration agitation proportional to $\sqrt{E(x, y)}$. Grains sitting on loud antinodes bounce rapidly until they drift into dark nodal valleys where the air stands still.
+The chamber maintains an exponentially smoothed root-mean-square pressure field $E(x, y) = p_{\text{rms}}^2$ and can drive $2{,}000$ optional sand grains along $-\nabla E$ with vibration agitation proportional to $\sqrt{E(x, y)}$. Grains sitting on loud antinodes bounce rapidly until they drift into dark nodal valleys where the air stands still.
 
-**Experiment 2 — Freeze a standing wave in sand.** Select **Bare Stone Bathhouse**, press **Continuous Tone**, and watch the top peaks listed below the **Eigenmode Spectrum** plot. Click any resonant peak chip (for example around $245\text{ Hz}$) to lock the tone directly onto that room mode, wait a few seconds as $E(x, y)$ stabilizes, and watch the bone-ivory **Chladni Sand** trace crisp geometric nodal curves across the bathhouse floor. Press **Scatter Sand** to test how reliably the same standing wave re-carves the pattern.
+**Experiment 2 — Freeze a standing wave in sand.** Select **Bare Stone Bathhouse**, toggle **Chladni Sand** to **On**, press **Continuous Tone**, and watch the top peaks listed below the **Eigenmode Spectrum** plot. Click any resonant peak chip (for example around $245\text{ Hz}$) to lock the tone directly onto that room mode, wait a few seconds as $E(x, y)$ stabilizes, and watch the champagne-gold **Chladni Sand** trace crisp geometric nodal curves across the bathhouse floor. Press **Scatter Sand** to test how reliably the same standing wave re-carves the pattern.
 
 ## 3. Hearing Architecture: Room Impulse Responses and Convolution
 

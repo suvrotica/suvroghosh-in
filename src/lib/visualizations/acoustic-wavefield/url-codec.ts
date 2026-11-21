@@ -6,10 +6,12 @@ import {
 	type PerimeterMode,
 	type PresetId,
 	type StudioTheme,
-	type ViewMode
+	type ViewMode,
+	type WavePalette
 } from './types';
 
 const VALID_PRESETS = new Set<string>(PRESETS.map((p) => p.id));
+const VALID_PALETTES = new Set<string>(['vivid', 'spectrum', 'thermal']);
 
 function clampFinite(val: number, min: number, max: number, fallback: number): number {
 	if (!Number.isFinite(val)) return fallback;
@@ -32,9 +34,10 @@ export function createDefaultUrlState(presetId: PresetId = DEFAULT_PRESET_ID): C
 		ly: preset.defaultListener.y,
 		view: 'relief',
 		perimeter: preset.defaultPerimeter,
-		chladni: true,
+		chladni: false,
 		toneHz: preset.recommendedToneHz,
-		theme: 'dark'
+		theme: 'dark',
+		palette: 'vivid'
 	};
 }
 
@@ -58,6 +61,10 @@ export function decodeStateFromQuery(search: string): ChamberUrlState {
 	const rawTheme = params.get('theme');
 	const theme: StudioTheme = rawTheme === 'light' || rawTheme === 'dark' ? rawTheme : base.theme;
 
+	const rawPal = params.get('pal');
+	const palette: WavePalette =
+		rawPal && VALID_PALETTES.has(rawPal) ? (rawPal as WavePalette) : base.palette;
+
 	const freqRaw = params.get('freq');
 	const freqParsed = freqRaw !== null && freqRaw.trim() !== '' ? Number(freqRaw) : base.toneHz;
 	const toneHz = Math.round(clampFinite(freqParsed, 60, 1000, base.toneHz));
@@ -72,7 +79,8 @@ export function decodeStateFromQuery(search: string): ChamberUrlState {
 		perimeter,
 		chladni,
 		toneHz,
-		theme
+		theme,
+		palette
 	};
 }
 
@@ -91,6 +99,7 @@ export function encodeStateToQuery(state: ChamberUrlState, existingSearch = ''):
 	params.set('chladni', state.chladni ? '1' : '0');
 	params.set('freq', String(Math.round(clampFinite(state.toneHz, 60, 1000, 245))));
 	params.set('theme', state.theme);
+	params.set('pal', VALID_PALETTES.has(state.palette) ? state.palette : 'vivid');
 
 	return params.toString();
 }

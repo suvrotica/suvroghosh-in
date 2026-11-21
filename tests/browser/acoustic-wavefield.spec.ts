@@ -153,11 +153,58 @@ test.describe('Acoustic Wavefield Chamber', () => {
 			timeout: RIR_READY_TIMEOUT
 		});
 
-		// Toggle Chladni Sand & Continuous Tone
-		await chamber.getByTestId('awc-chladni-toggle').click();
+		// Toggle Chladni Sand (starts Off by default for a clean wavefield) & Continuous Tone
 		await expect(chamber.getByTestId('awc-chladni-toggle')).toContainText('Off');
 		await chamber.getByTestId('awc-chladni-toggle').click();
 		await expect(chamber.getByTestId('awc-chladni-toggle')).toContainText('On');
+		await chamber.getByTestId('awc-chladni-toggle').click();
+		await expect(chamber.getByTestId('awc-chladni-toggle')).toContainText('Off');
+
+		// Switch vibrant wave color palettes & verify URL sync
+		await chamber.getByTestId('awc-palette-spectrum').click();
+		await expect(chamber.getByTestId('awc-palette-spectrum')).toHaveAttribute(
+			'aria-pressed',
+			'true'
+		);
+		await chamber.getByTestId('awc-palette-thermal').click();
+		await expect(chamber.getByTestId('awc-palette-thermal')).toHaveAttribute(
+			'aria-pressed',
+			'true'
+		);
+		await chamber.getByTestId('awc-palette-vivid').click();
+		await expect(chamber.getByTestId('awc-palette-vivid')).toHaveAttribute('aria-pressed', 'true');
+
+		// Exercise 3D camera orbit/tilt controls (presets, drag, sliders, and Reset View)
+		const readBeaconCanvasPos = async () =>
+			chamber.getByTestId('awc-beacon-s').evaluate((el) => ({
+				x: Number.parseFloat((el as HTMLElement).style.left),
+				y: Number.parseFloat((el as HTMLElement).style.top)
+			}));
+
+		await chamber.getByTestId('awc-tool-orbit').click();
+		const sBefore = await readBeaconCanvasPos();
+		await chamber.getByTestId('awc-cam-grazing').click();
+		await page.waitForTimeout(120);
+		const sGrazing = await readBeaconCanvasPos();
+		expect(Math.hypot(sGrazing.x - sBefore.x, sGrazing.y - sBefore.y)).toBeGreaterThan(8);
+
+		await chamber.getByTestId('awc-cam-reset').click();
+		await page.waitForTimeout(120);
+		const sReset = await readBeaconCanvasPos();
+		expect(Math.hypot(sReset.x - sBefore.x, sReset.y - sBefore.y)).toBeLessThan(2);
+
+		// Direct canvas drag orbits & tilts the 3D view
+		const orbitBox = (await canvas.boundingBox())!;
+		await page.mouse.move(orbitBox.x + orbitBox.width * 0.5, orbitBox.y + orbitBox.height * 0.5);
+		await page.mouse.down();
+		await page.mouse.move(orbitBox.x + orbitBox.width * 0.68, orbitBox.y + orbitBox.height * 0.34, {
+			steps: 6
+		});
+		await page.mouse.up();
+		await page.waitForTimeout(120);
+		const sOrbited = await readBeaconCanvasPos();
+		expect(Math.hypot(sOrbited.x - sReset.x, sOrbited.y - sReset.y)).toBeGreaterThan(8);
+		await chamber.getByTestId('awc-cam-reset').click();
 
 		await chamber.getByTestId('awc-tone-btn').click();
 		await expect(chamber.getByTestId('awc-tone-btn')).toHaveText('Stop Tone');

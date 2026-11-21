@@ -10,11 +10,12 @@ import {
 	MAT_WALL,
 	type GridPoint,
 	type SimulationState,
-	type StudioTheme
+	type StudioTheme,
+	type WavePalette
 } from '$lib/visualizations/acoustic-wavefield';
 
 export interface Canvas2DRendererHandle {
-	render: (state: SimulationState, theme: StudioTheme, highlightSweep?: boolean) => void;
+	render: (state: SimulationState, theme: StudioTheme, palette: WavePalette) => void;
 	screenToGrid: (clientX: number, clientY: number) => GridPoint | null;
 	gridToCanvas: (gx: number, gy: number) => { x: number; y: number };
 	invalidateMaterial: () => void;
@@ -79,9 +80,9 @@ export function createCanvas2DRenderer(canvas: HTMLCanvasElement): Canvas2DRende
 
 	function rebuildStaticCache(material: Uint8Array, theme: StudioTheme): void {
 		const isLight = theme === 'light';
-		const floorR = isLight ? 243 : 14;
-		const floorG = isLight ? 239 : 19;
-		const floorB = isLight ? 230 : 28;
+		const floorR = isLight ? 246 : 17;
+		const floorG = isLight ? 243 : 26;
+		const floorB = isLight ? 236 : 45;
 
 		for (let y = 0; y < GRID_NY; y++) {
 			const row = y * GRID_NX;
@@ -93,33 +94,33 @@ export function createCanvas2DRenderer(canvas: HTMLCanvasElement): Canvas2DRende
 				let b = floorB;
 
 				if (mat === MAT_WALL) {
-					const hatch = ((x + y) & 3) === 0 ? 10 : 0;
+					const hatch = ((x + y) & 3) === 0 ? 12 : 0;
 					if (isLight) {
-						r = 52 + hatch;
-						g = 61 + hatch;
-						b = 74 + hatch;
+						r = 58 + hatch;
+						g = 70 + hatch;
+						b = 88 + hatch;
 					} else {
-						r = 48 + hatch;
-						g = 57 + hatch;
-						b = 72 + hatch;
+						r = 74 + hatch;
+						g = 90 + hatch;
+						b = 116 + hatch;
 					}
 				} else if (mat === MAT_ABSORBER) {
 					const dot = ((x ^ y) & 1) === 0 ? 1 : -1;
-					r = (isLight ? 168 : 42) + dot * 8;
-					g = (isLight ? 142 : 34) + dot * 6;
-					b = (isLight ? 114 : 32) + dot * 6;
+					r = (isLight ? 178 : 72) + dot * 8;
+					g = (isLight ? 142 : 42) + dot * 6;
+					b = (isLight ? 122 : 66) + dot * 6;
 				} else if (mat === MAT_LENS) {
-					r = isLight ? 196 : 18;
-					g = isLight ? 228 : 54;
-					b = isLight ? 242 : 82;
+					r = isLight ? 184 : 20;
+					g = isLight ? 230 : 76;
+					b = isLight ? 250 : 118;
 				} else if (mat === MAT_DIFFUSER) {
-					r = isLight ? 186 : 64;
-					g = isLight ? 174 : 58;
-					b = isLight ? 150 : 48;
+					r = isLight ? 194 : 96;
+					g = isLight ? 178 : 84;
+					b = isLight ? 148 : 62;
 				} else if (mat === MAT_RESONATOR) {
-					r = isLight ? 226 : 68;
-					g = isLight ? 192 : 48;
-					b = isLight ? 142 : 24;
+					r = isLight ? 230 : 118;
+					g = isLight ? 190 : 76;
+					b = isLight ? 128 : 36;
 				}
 
 				staticR[i] = r;
@@ -185,7 +186,7 @@ export function createCanvas2DRenderer(canvas: HTMLCanvasElement): Canvas2DRende
 		};
 	}
 
-	function render(state: SimulationState, theme: StudioTheme): void {
+	function render(state: SimulationState, theme: StudioTheme, palette: WavePalette): void {
 		if (!ctx || !offCtx || !imgData || !buf32) return;
 
 		if (materialDirty || cachedTheme !== theme) {
@@ -194,17 +195,52 @@ export function createCanvas2DRenderer(canvas: HTMLCanvasElement): Canvas2DRende
 
 		const isLight = theme === 'light';
 		const { p, material, eRms, eRef } = state;
-		const scaleP = 4.2;
+		const scaleP = 7.8;
 		const invERef = 1 / Math.max(eRef, 1e-6);
 		const eThresh = 0.0025 / invERef;
 
-		const posR = isLight ? 217 : 245;
-		const posG = isLight ? 119 : 158;
-		const posB = isLight ? 6 : 11;
-		const negR = isLight ? 2 : 56;
-		const negG = isLight ? 132 : 189;
-		const negB = isLight ? 199 : 248;
-		const glowScale = isLight ? 14 : 18;
+		// High-contrast vivid endpoints matching WebGL2 palettes
+		let posR = isLight ? 242 : 255;
+		let posG = isLight ? 104 : 154;
+		let posB = isLight ? 18 : 34;
+		let posHiR = isLight ? 255 : 255;
+		let posHiG = isLight ? 204 : 244;
+		let posHiB = isLight ? 52 : 184;
+		let negR = isLight ? 6 : 0;
+		let negG = isLight ? 162 : 219;
+		let negB = isLight ? 228 : 255;
+		let negHiR = isLight ? 42 : 194;
+		let negHiG = isLight ? 214 : 250;
+		let negHiB = isLight ? 246 : 255;
+
+		if (palette === 'spectrum') {
+			posR = isLight ? 236 : 252;
+			posG = isLight ? 164 : 214;
+			posB = isLight ? 8 : 26;
+			posHiR = isLight ? 230 : 255;
+			posHiG = isLight ? 32 : 56;
+			posHiB = isLight ? 112 : 138;
+			negR = isLight ? 42 : 76;
+			negG = isLight ? 92 : 118;
+			negB = isLight ? 236 : 255;
+			negHiR = isLight ? 158 : 198;
+			negHiG = isLight ? 42 : 72;
+			negHiB = isLight ? 224 : 255;
+		} else if (palette === 'thermal') {
+			posR = isLight ? 232 : 255;
+			posG = isLight ? 84 : 122;
+			posB = isLight ? 36 : 26;
+			posHiR = isLight ? 255 : 255;
+			posHiG = isLight ? 208 : 247;
+			posHiB = isLight ? 46 : 174;
+			negR = isLight ? 114 : 158;
+			negG = isLight ? 60 : 88;
+			negB = isLight ? 224 : 255;
+			negHiR = isLight ? 36 : 142;
+			negHiG = isLight ? 188 : 235;
+			negHiB = isLight ? 234 : 255;
+		}
+		const glowScale = isLight ? 10 : 18;
 
 		for (let i = 0; i < CELL_COUNT; i++) {
 			if (material[i] === MAT_WALL) {
@@ -224,23 +260,34 @@ export function createCanvas2DRenderer(canvas: HTMLCanvasElement): Canvas2DRende
 			let b = staticB[i];
 
 			const signed = fastTanh(pv * scaleP);
-			if (signed >= 0) {
-				r = r + (posR - r) * signed;
-				g = g + (posG - g) * signed;
-				b = b + (posB - b) * signed;
-			} else {
-				const a = -signed;
-				r = r + (negR - r) * a;
-				g = g + (negG - g) * a;
-				b = b + (negB - b) * a;
+			const absS = signed >= 0 ? signed : -signed;
+			if (absS > 0.01) {
+				const amp = Math.pow(absS, 0.68);
+				const mixAmt = amp > 0.14 ? 0.36 + amp * 0.64 : (amp / 0.14) * 0.45;
+				const hi = amp > 0.5 ? (amp - 0.5) * 2 : 0;
+				let wr: number;
+				let wg: number;
+				let wb: number;
+				if (signed >= 0) {
+					wr = posR + (posHiR - posR) * hi;
+					wg = posG + (posHiG - posG) * hi;
+					wb = posB + (posHiB - posB) * hi;
+				} else {
+					wr = negR + (negHiR - negR) * hi;
+					wg = negG + (negHiG - negG) * hi;
+					wb = negB + (negHiB - negB) * hi;
+				}
+				r = r + (wr - r) * mixAmt;
+				g = g + (wg - g) * mixAmt;
+				b = b + (wb - b) * mixAmt;
 			}
 
 			if (eVal > eThresh) {
 				const rmsNorm = Math.min(1, Math.sqrt(eVal * invERef));
 				const gBoost = rmsNorm * glowScale;
-				r = r + gBoost;
-				g = g + gBoost * 0.9;
-				b = b + gBoost * 0.7;
+				r = r + gBoost * 0.6;
+				g = g + gBoost * 0.85;
+				b = b + gBoost;
 			}
 
 			buf32[i] = packRgb(r + 0.5, g + 0.5, b + 0.5);
@@ -250,7 +297,7 @@ export function createCanvas2DRenderer(canvas: HTMLCanvasElement): Canvas2DRende
 
 		ctx.save();
 		ctx.scale(dpr, dpr);
-		ctx.fillStyle = isLight ? '#ebe5d7' : '#0b0f15';
+		ctx.fillStyle = isLight ? '#f0ebe0' : '#0b111d';
 		ctx.fillRect(0, 0, widthCss, heightCss);
 
 		const fit = computeFitRect();

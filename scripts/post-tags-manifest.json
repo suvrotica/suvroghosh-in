@@ -18001,9 +18001,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-room-that-remembers-every-clap.md": {
-			"bodyHash": "1e5e7382b437bf53e09792b58aa54a5ecbc574e1ee9fbce3b51518a19a42c337",
+			"bodyHash": "e5239560a5403a92fadf337b53b9ba0a9c1f24571cbf5b75802c46afde62c60f",
 			"hashVersion": 2,
-			"revisionHash": "218c01ca4bce59a9e800fc947de1a9ae9dc06df0e917bb57011d9011287d60ae",
+			"revisionHash": "c005116e4e896aac84c0091b10a9c366fd11afadce983232da5768406778d40d",
 			"generatedTags": [
 				"Acoustics",
 				"Wave Equation",
@@ -18028,7 +18028,8 @@
 				"Physics",
 				"Architectural Acoustics"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-21"
 		}
 	},
 	"maxTags": 10

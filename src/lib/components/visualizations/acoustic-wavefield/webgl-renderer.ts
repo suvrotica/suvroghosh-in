@@ -3,16 +3,34 @@ import {
 	GRID_NX,
 	GRID_NY,
 	MAT_WALL,
+	type CameraState,
 	type GridPoint,
 	type SimulationState,
 	type StudioTheme,
-	type ViewMode
+	type ViewMode,
+	type WavePalette
 } from '$lib/visualizations/acoustic-wavefield';
 
 export interface WebGLRendererHandle {
-	render: (state: SimulationState, view: ViewMode, theme: StudioTheme) => void;
-	screenToGrid: (clientX: number, clientY: number, view: ViewMode) => GridPoint | null;
-	gridToCanvas: (gx: number, gy: number, view: ViewMode) => { x: number; y: number };
+	render: (
+		state: SimulationState,
+		view: ViewMode,
+		theme: StudioTheme,
+		palette: WavePalette,
+		camera: CameraState
+	) => void;
+	screenToGrid: (
+		clientX: number,
+		clientY: number,
+		view: ViewMode,
+		camera: CameraState
+	) => GridPoint | null;
+	gridToCanvas: (
+		gx: number,
+		gy: number,
+		view: ViewMode,
+		camera: CameraState
+	) => { x: number; y: number };
 	resize: () => void;
 	dispose: () => void;
 	isContextLost: () => boolean;
@@ -31,6 +49,7 @@ out vec2 v_uv;
 out float v_pressure;
 out float v_rms;
 out float v_mat;
+out vec3 v_worldPos;
 
 float decodePressure(vec4 texel) {
 	float hi = texel.r * 255.0;
@@ -54,14 +73,15 @@ void main() {
 	float wz = 0.0;
 	if (u_reliefStrength > 0.01) {
 		if (abs(v_mat - 1.0) < 0.25) {
-			wz = 0.14 * u_reliefStrength;
+			wz = 0.15 * u_reliefStrength;
 		} else if (abs(v_mat - 2.0) < 0.25) {
 			wz = -0.025 * u_reliefStrength;
 		} else {
-			wz = tanh(p * 3.8) * 0.26 * u_reliefStrength;
+			wz = tanh(p * 5.2) * 0.34 * u_reliefStrength;
 		}
 	}
 
+	v_worldPos = vec3(wx, wy, wz);
 	gl_Position = u_mvp * vec4(wx, wy, wz, 1.0);
 }
 `;
@@ -72,11 +92,14 @@ precision highp float;
 uniform sampler2D u_fieldTex;
 uniform float u_reliefStrength;
 uniform float u_themeLight;
+uniform float u_palette;
+uniform vec3 u_eyePos;
 
 in vec2 v_uv;
 in float v_pressure;
 in float v_rms;
 in float v_mat;
+in vec3 v_worldPos;
 
 out vec4 fragColor;
 
@@ -85,6 +108,49 @@ float decodePressure(vec4 texel) {
 	float lo = texel.g * 255.0;
 	float raw = (hi * 256.0 + lo) / 65535.0;
 	return (raw - 0.5) * 2.0;
+}
+
+vec3 sampleWaveColor(float signedAmp, float amp, float palette, float lightMode) {
+	if (palette < 0.5) {
+		// Vivid Coral-Gold (+p) vs Electric Cyan-Ice (-p)
+		if (signedAmp >= 0.0) {
+			vec3 c0 = mix(vec3(1.00, 0.28, 0.24), vec3(0.92, 0.20, 0.14), lightMode);
+			vec3 c1 = mix(vec3(1.00, 0.66, 0.08), vec3(0.97, 0.50, 0.04), lightMode);
+			vec3 c2 = mix(vec3(1.00, 0.96, 0.72), vec3(1.00, 0.80, 0.20), lightMode);
+			return amp < 0.5 ? mix(c0, c1, amp * 2.0) : mix(c1, c2, (amp - 0.5) * 2.0);
+		} else {
+			vec3 c0 = mix(vec3(0.14, 0.44, 1.00), vec3(0.05, 0.36, 0.88), lightMode);
+			vec3 c1 = mix(vec3(0.00, 0.86, 1.00), vec3(0.00, 0.66, 0.88), lightMode);
+			vec3 c2 = mix(vec3(0.76, 0.98, 1.00), vec3(0.16, 0.84, 0.96), lightMode);
+			return amp < 0.5 ? mix(c0, c1, amp * 2.0) : mix(c1, c2, (amp - 0.5) * 2.0);
+		}
+	}
+	if (palette < 1.5) {
+		// Iridescent full-spectrum wave colors
+		if (signedAmp >= 0.0) {
+			vec3 c0 = mix(vec3(0.16, 0.92, 0.58), vec3(0.04, 0.72, 0.44), lightMode);
+			vec3 c1 = mix(vec3(0.99, 0.84, 0.10), vec3(0.94, 0.64, 0.02), lightMode);
+			vec3 c2 = mix(vec3(1.00, 0.22, 0.54), vec3(0.90, 0.12, 0.44), lightMode);
+			return amp < 0.45 ? mix(c0, c1, amp / 0.45) : mix(c1, c2, (amp - 0.45) / 0.55);
+		} else {
+			vec3 c0 = mix(vec3(0.04, 0.82, 0.96), vec3(0.02, 0.66, 0.84), lightMode);
+			vec3 c1 = mix(vec3(0.32, 0.44, 1.00), vec3(0.20, 0.32, 0.92), lightMode);
+			vec3 c2 = mix(vec3(0.78, 0.28, 1.00), vec3(0.62, 0.16, 0.88), lightMode);
+			return amp < 0.45 ? mix(c0, c1, amp / 0.45) : mix(c1, c2, (amp - 0.45) / 0.55);
+		}
+	}
+	// Thermal Glow (Magenta-Orange-Gold vs Electric Indigo-Violet-Aqua)
+	if (signedAmp >= 0.0) {
+		vec3 c0 = mix(vec3(0.94, 0.18, 0.62), vec3(0.84, 0.12, 0.50), lightMode);
+		vec3 c1 = mix(vec3(1.00, 0.48, 0.10), vec3(0.96, 0.40, 0.04), lightMode);
+		vec3 c2 = mix(vec3(1.00, 0.97, 0.68), vec3(1.00, 0.82, 0.18), lightMode);
+		return amp < 0.5 ? mix(c0, c1, amp * 2.0) : mix(c1, c2, (amp - 0.5) * 2.0);
+	} else {
+		vec3 c0 = mix(vec3(0.34, 0.24, 0.96), vec3(0.24, 0.18, 0.82), lightMode);
+		vec3 c1 = mix(vec3(0.62, 0.34, 1.00), vec3(0.48, 0.24, 0.88), lightMode);
+		vec3 c2 = mix(vec3(0.56, 0.92, 1.00), vec3(0.14, 0.74, 0.92), lightMode);
+		return amp < 0.5 ? mix(c0, c1, amp * 2.0) : mix(c1, c2, (amp - 0.5) * 2.0);
+	}
 }
 
 void main() {
@@ -97,18 +163,18 @@ void main() {
 	float matId = floor(texture(u_fieldTex, v_uv).a * 5.0 + 0.5);
 	float lightMode = u_themeLight;
 
-	// Base floor palette
-	vec3 floorCol = mix(vec3(0.055, 0.075, 0.110), vec3(0.955, 0.937, 0.895), lightMode);
-	vec3 wallCol = mix(vec3(0.20, 0.24, 0.30), vec3(0.22, 0.26, 0.32), lightMode);
-	vec3 absorberCol = mix(vec3(0.17, 0.13, 0.12), vec3(0.66, 0.56, 0.45), lightMode);
-	vec3 lensCol = mix(vec3(0.07, 0.22, 0.33), vec3(0.75, 0.89, 0.95), lightMode);
-	vec3 diffuserCol = mix(vec3(0.26, 0.23, 0.19), vec3(0.73, 0.68, 0.59), lightMode);
-	vec3 resonatorCol = mix(vec3(0.32, 0.22, 0.10), vec3(0.88, 0.74, 0.54), lightMode);
+	// Clean, high-contrast studio floor & distinct architectural materials
+	vec3 floorCol = mix(vec3(0.068, 0.102, 0.175), vec3(0.965, 0.955, 0.925), lightMode);
+	vec3 wallCol = mix(vec3(0.30, 0.36, 0.46), vec3(0.24, 0.29, 0.37), lightMode);
+	vec3 absorberCol = mix(vec3(0.28, 0.16, 0.26), vec3(0.70, 0.56, 0.48), lightMode);
+	vec3 lensCol = mix(vec3(0.08, 0.30, 0.46), vec3(0.72, 0.90, 0.98), lightMode);
+	vec3 diffuserCol = mix(vec3(0.38, 0.33, 0.24), vec3(0.76, 0.70, 0.58), lightMode);
+	vec3 resonatorCol = mix(vec3(0.46, 0.30, 0.14), vec3(0.90, 0.74, 0.50), lightMode);
 
 	vec3 baseCol = floorCol;
 	if (matId > 0.5 && matId < 1.5) {
 		float brick = step(0.5, fract(v_uv.x * 56.0 + floor(v_uv.y * 36.0) * 0.5));
-		baseCol = wallCol * (0.94 + 0.09 * brick);
+		baseCol = wallCol * (0.95 + 0.07 * brick);
 	} else if (matId >= 1.5 && matId < 2.5) {
 		float foam = sin(v_uv.x * 440.0) * sin(v_uv.y * 280.0);
 		baseCol = absorberCol * (0.94 + 0.08 * foam);
@@ -123,47 +189,59 @@ void main() {
 	// Architectural 1m grid lines
 	float gx = abs(fract(v_uv.x * 14.0) - 0.5);
 	float gy = abs(fract(v_uv.y * 9.0) - 0.5);
-	float gridLine = 1.0 - smoothstep(0.0, 0.025, min(gx, gy));
+	float gridLine = 1.0 - smoothstep(0.0, 0.022, min(gx, gy));
 	if (matId < 0.5 || matId > 3.5) {
-		vec3 gridCol = mix(vec3(0.16, 0.21, 0.29), vec3(0.78, 0.75, 0.68), lightMode);
-		baseCol = mix(baseCol, gridCol, gridLine * 0.32);
+		vec3 gridCol = mix(vec3(0.18, 0.26, 0.40), vec3(0.78, 0.76, 0.70), lightMode);
+		baseCol = mix(baseCol, gridCol, gridLine * 0.34);
 	}
 
 	if (matId > 0.5 && matId < 1.5) {
-		// Wall bevel lighting
+		// Crisp bevelled stone wall with luminous inner-chamber edge rim
 		float mL = texture(u_fieldTex, v_uv - vec2(texelSize.x, 0.0)).a;
 		float mR = texture(u_fieldTex, v_uv + vec2(texelSize.x, 0.0)).a;
 		float mD = texture(u_fieldTex, v_uv - vec2(0.0, texelSize.y)).a;
 		float mU = texture(u_fieldTex, v_uv + vec2(0.0, texelSize.y)).a;
-		vec3 wn = normalize(vec3((mL - mR) * 6.0, (mD - mU) * 6.0, 1.0));
-		float diff = clamp(dot(wn, normalize(vec3(-0.45, 0.6, 0.8))), 0.45, 1.2);
-		fragColor = vec4(baseCol * diff, 1.0);
+		float edgeGrad = abs(mL - mR) + abs(mD - mU);
+		vec3 wn = normalize(vec3((mL - mR) * 4.5, (mD - mU) * 4.5, 1.0));
+		float diff = clamp(dot(wn, normalize(vec3(-0.4, 0.55, 0.85))), 0.78, 1.18);
+		vec3 rimCol = mix(vec3(0.56, 0.72, 0.92), vec3(0.45, 0.56, 0.70), lightMode);
+		vec3 wCol = mix(baseCol * diff, rimCol, clamp(edgeGrad * 2.2, 0.0, 0.55));
+		fragColor = vec4(clamp(wCol, 0.0, 1.0), 1.0);
 		return;
 	}
 
-	// Bipolar wave color mapping (copper-amber positive, mineral-cyan negative)
-	float s = tanh(v_pressure * 4.4);
-	vec3 posCol = mix(vec3(0.96, 0.62, 0.04), vec3(0.85, 0.46, 0.02), lightMode);
-	vec3 negCol = mix(vec3(0.22, 0.74, 0.97), vec3(0.01, 0.52, 0.78), lightMode);
-	vec3 waveCol = s >= 0.0 ? posCol : negCol;
-	float amp = abs(s);
+	// Perceptual high-contrast wave transfer curve so propagating ripples stay vivid
+	float raw = tanh(v_pressure * 7.8);
+	float amp = pow(abs(raw), 0.68);
+	vec3 waveCol = sampleWaveColor(raw, amp, u_palette, lightMode);
 
-	// Iso-amplitude contour fringes
-	float contour = 1.0 - smoothstep(0.0, 0.14, abs(fract(amp * 6.0) - 0.5));
-	vec3 col = mix(baseCol, waveCol, clamp(amp * 0.94, 0.0, 0.96));
-	col += waveCol * contour * amp * 0.18;
+	// Clean color blend: quiet air stays deep indigo-slate, waves light up brightly
+	float mixAmt = smoothstep(0.015, 0.14, amp) * clamp(0.36 + amp * 0.64, 0.0, 1.0);
+	vec3 col = mix(baseCol, waveCol, mixAmt);
 
-	// Subtle RMS standing-wave glow
-	col += mix(vec3(0.08, 0.06, 0.03), vec3(0.03, 0.03, 0.02), lightMode) * v_rms * 0.55;
+	// Crisp iso-amplitude topographic wave fringes
+	float contour = 1.0 - smoothstep(0.0, 0.13, abs(fract(amp * 5.0) - 0.5));
+	col += waveCol * contour * amp * 0.22;
 
-	// Relief studio lighting
+	// Subtle luminous standing-wave energy glow
+	col += mix(vec3(0.06, 0.10, 0.16), vec3(0.02, 0.04, 0.06), lightMode) * v_rms * 0.45;
+
+	// Bright sculpted studio lighting with orbit-reactive specular sheen (never muddy!)
 	if (u_reliefStrength > 0.01) {
-		vec3 n = normalize(vec3((pL - pR) * 14.0, (pD - pU) * 14.0, 1.0));
-		vec3 lightDir = normalize(vec3(-0.5, 0.65, 0.85));
-		float diff = clamp(dot(n, lightDir), 0.55, 1.25);
-		vec3 halfV = normalize(lightDir + vec3(0.0, -0.35, 0.94));
-		float spec = pow(max(dot(n, halfV), 0.0), 28.0) * 0.34 * amp;
-		col = col * diff + vec3(spec);
+		vec3 n = normalize(vec3((pL - pR) * 16.0, (pD - pU) * 16.0, 1.0));
+		vec3 lightDir = normalize(vec3(-0.42, 0.58, 0.86));
+		vec3 fillDir = normalize(vec3(0.58, -0.42, 0.66));
+		vec3 viewDir = normalize(u_eyePos - v_worldPos);
+
+		float keyDiff = max(dot(n, lightDir), 0.0);
+		float fillDiff = max(dot(n, fillDir), 0.0);
+		float lit = 0.78 + 0.34 * keyDiff + 0.14 * fillDiff;
+
+		vec3 halfV = normalize(lightDir + viewDir);
+		float spec = pow(max(dot(n, halfV), 0.0), 34.0) * (0.16 + 0.44 * amp);
+		float fresnel = pow(1.0 - max(dot(n, viewDir), 0.0), 3.0) * 0.18 * amp;
+
+		col = col * lit + vec3(spec) + waveCol * fresnel;
 	}
 
 	fragColor = vec4(clamp(col, 0.0, 1.0), 1.0);
@@ -198,7 +276,7 @@ void main() {
 	float wy = (0.5 - uv.y) * 2.0;
 	float wz = 0.008;
 	if (u_reliefStrength > 0.01 && abs(mat - 1.0) > 0.25) {
-		wz += tanh(p * 3.8) * 0.26 * u_reliefStrength + 0.012;
+		wz += tanh(p * 5.2) * 0.34 * u_reliefStrength + 0.016;
 	}
 
 	gl_Position = u_mvp * vec4(wx, wy, wz, 1.0);
@@ -216,8 +294,8 @@ void main() {
 	vec2 d = gl_PointCoord - vec2(0.5);
 	float r2 = dot(d, d);
 	if (r2 > 0.25) discard;
-	float alpha = smoothstep(0.25, 0.05, r2) * 0.92;
-	vec3 sandCol = mix(vec3(0.953, 0.937, 0.890), vec3(0.11, 0.15, 0.22), u_themeLight);
+	float alpha = smoothstep(0.25, 0.06, r2) * 0.78;
+	vec3 sandCol = mix(vec3(1.0, 0.94, 0.76), vec3(0.11, 0.15, 0.22), u_themeLight);
 	fragColor = vec4(sandCol, alpha);
 }
 `;
@@ -556,6 +634,8 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 	const uMvpLoc = gl.getUniformLocation(terrainProg, 'u_mvp');
 	const uReliefLoc = gl.getUniformLocation(terrainProg, 'u_reliefStrength');
 	const uThemeLoc = gl.getUniformLocation(terrainProg, 'u_themeLight');
+	const uPaletteLoc = gl.getUniformLocation(terrainProg, 'u_palette');
+	const uEyePosLoc = gl.getUniformLocation(terrainProg, 'u_eyePos');
 
 	const uSandFieldLoc = gl.getUniformLocation(sandProg, 'u_fieldTex');
 	const uSandMvpLoc = gl.getUniformLocation(sandProg, 'u_mvp');
@@ -568,7 +648,9 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 	let dpr = 1;
 	let cachedMvpW = -1;
 	let cachedMvpH = -1;
+	let cachedCamKey = '';
 	let cachedMvpRelief: Float32Array | null = null;
+	let cachedEyePos: [number, number, number] = [0, -2.05, 2.72];
 	let cachedMvpOrtho: Float32Array | null = null;
 
 	function resize(): void {
@@ -587,7 +669,7 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 
 	resize();
 
-	function computeMvp(view: ViewMode): Float32Array {
+	function computeMvp(view: ViewMode, camera: CameraState): Float32Array {
 		if (widthCss !== cachedMvpW || heightCss !== cachedMvpH) {
 			cachedMvpW = widthCss;
 			cachedMvpH = heightCss;
@@ -600,29 +682,46 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 			if (!cachedMvpOrtho) {
 				cachedMvpOrtho = orthoFitMat4(canvasAspect, gridAspect);
 			}
+			cachedEyePos = [0, 0, 4.0];
 			return cachedMvpOrtho;
 		}
-		if (!cachedMvpRelief) {
-			// 2.5D acoustic relief perspective camera
+		const camKey = `${camera.yawDeg.toFixed(2)}|${camera.pitchDeg.toFixed(2)}|${camera.zoom.toFixed(3)}|${camera.panX.toFixed(3)}|${camera.panY.toFixed(3)}`;
+		if (!cachedMvpRelief || camKey !== cachedCamKey) {
+			cachedCamKey = camKey;
+			// 2.5D interactive orbit / tilt / pan / zoom perspective camera
 			const fov = 0.62;
-			const proj = perspectiveMat4(fov, canvasAspect, 0.1, 20.0);
-			// Adjust distance slightly on narrow viewports so full chamber width fits comfortably
+			const proj = perspectiveMat4(fov, canvasAspect, 0.08, 30.0);
 			const distScale = canvasAspect < 1.35 ? 1.35 / canvasAspect : 1.0;
-			const viewMat = lookAtMat4(
-				[0, -2.05 * distScale, 2.72 * distScale],
-				[0, -0.02, 0.0],
-				[0, 0, 1]
-			);
+			const safePitch = Math.max(16, Math.min(88, camera.pitchDeg));
+			const safeZoom = Math.max(0.65, Math.min(2.3, camera.zoom));
+			const pitchRad = (safePitch * Math.PI) / 180;
+			const yawRad = (camera.yawDeg * Math.PI) / 180;
+			const dist = (3.42 * distScale) / safeZoom;
+			const rHoriz = dist * Math.cos(pitchRad);
+
+			const targetX = Math.max(-1.2, Math.min(1.2, camera.panX));
+			const targetY = Math.max(-0.9, Math.min(0.9, camera.panY));
+			const eyeX = targetX + rHoriz * Math.sin(yawRad);
+			const eyeY = targetY - rHoriz * Math.cos(yawRad);
+			const eyeZ = dist * Math.sin(pitchRad);
+
+			cachedEyePos = [eyeX, eyeY, eyeZ];
+			const viewMat = lookAtMat4(cachedEyePos, [targetX, targetY, 0.0], [0, 0, 1]);
 			cachedMvpRelief = mulMat4(proj, viewMat);
 		}
 		return cachedMvpRelief;
 	}
 
-	function screenToGrid(clientX: number, clientY: number, view: ViewMode): GridPoint | null {
+	function screenToGrid(
+		clientX: number,
+		clientY: number,
+		view: ViewMode,
+		camera: CameraState
+	): GridPoint | null {
 		const rect = canvas.getBoundingClientRect();
 		const ndcX = ((clientX - rect.left) / Math.max(1, rect.width)) * 2 - 1;
 		const ndcY = 1 - ((clientY - rect.top) / Math.max(1, rect.height)) * 2;
-		const mvp = computeMvp(view);
+		const mvp = computeMvp(view, camera);
 		const inv = invertMat4(mvp);
 		if (!inv) return null;
 
@@ -651,14 +750,19 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 		};
 	}
 
-	function gridToCanvas(gx: number, gy: number, view: ViewMode): { x: number; y: number } {
-		const mvp = computeMvp(view);
+	function gridToCanvas(
+		gx: number,
+		gy: number,
+		view: ViewMode,
+		camera: CameraState
+	): { x: number; y: number } {
+		const mvp = computeMvp(view, camera);
 		const aspect = GRID_NX / GRID_NY;
 		const u = gx / (GRID_NX - 1);
 		const v = gy / (GRID_NY - 1);
 		const wx = (u - 0.5) * 2 * aspect;
 		const wy = (0.5 - v) * 2;
-		const wz = view === 'relief' ? 0.04 : 0;
+		const wz = view === 'relief' ? 0.06 : 0;
 
 		const cx = mvp[0] * wx + mvp[4] * wy + mvp[8] * wz + mvp[12];
 		const cy = mvp[1] * wx + mvp[5] * wy + mvp[9] * wz + mvp[13];
@@ -671,7 +775,13 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 		};
 	}
 
-	function render(state: SimulationState, view: ViewMode, theme: StudioTheme): void {
+	function render(
+		state: SimulationState,
+		view: ViewMode,
+		theme: StudioTheme,
+		palette: WavePalette,
+		camera: CameraState
+	): void {
 		if (contextLost) return;
 
 		const { p, eRms, eRef, material } = state;
@@ -706,22 +816,25 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 
 		const isLight = theme === 'light';
 		if (isLight) {
-			gl!.clearColor(0.922, 0.898, 0.843, 1.0);
+			gl!.clearColor(0.94, 0.925, 0.885, 1.0);
 		} else {
-			gl!.clearColor(0.043, 0.059, 0.082, 1.0);
+			gl!.clearColor(0.045, 0.068, 0.115, 1.0);
 		}
 		gl!.clear(gl!.COLOR_BUFFER_BIT | gl!.DEPTH_BUFFER_BIT);
 		gl!.enable(gl!.DEPTH_TEST);
 
-		const mvp = computeMvp(view);
+		const mvp = computeMvp(view, camera);
 		const reliefStrength = view === 'relief' ? 1.0 : 0.0;
 		const themeVal = isLight ? 1.0 : 0.0;
+		const paletteVal = palette === 'spectrum' ? 1.0 : palette === 'thermal' ? 2.0 : 0.0;
 
 		gl!.useProgram(terrainProg);
 		gl!.uniform1i(uFieldLoc, 0);
 		gl!.uniformMatrix4fv(uMvpLoc, false, mvp);
 		gl!.uniform1f(uReliefLoc, reliefStrength);
 		gl!.uniform1f(uThemeLoc, themeVal);
+		gl!.uniform1f(uPaletteLoc, paletteVal);
+		gl!.uniform3f(uEyePosLoc, cachedEyePos[0], cachedEyePos[1], cachedEyePos[2]);
 		gl!.bindVertexArray(terrainVao);
 		gl!.drawElements(gl!.TRIANGLES, indices.length, gl!.UNSIGNED_INT, 0);
 
@@ -745,7 +858,7 @@ export function createWebGLRenderer(canvas: HTMLCanvasElement): WebGLRendererHan
 				gl!.uniform1i(uSandFieldLoc, 0);
 				gl!.uniformMatrix4fv(uSandMvpLoc, false, mvp);
 				gl!.uniform1f(uSandReliefLoc, reliefStrength);
-				gl!.uniform1f(uSandPointSizeLoc, Math.max(2.1, 2.5 * dpr));
+				gl!.uniform1f(uSandPointSizeLoc, Math.max(1.8, 2.1 * dpr));
 				gl!.uniform1f(uSandThemeLoc, themeVal);
 				gl!.bindVertexArray(sandVao);
 				gl!.bindBuffer(gl!.ARRAY_BUFFER, sandVbo);

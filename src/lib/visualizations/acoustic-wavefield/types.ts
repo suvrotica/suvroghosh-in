@@ -34,7 +34,15 @@ export type MaterialId =
 	| typeof MAT_LENS
 	| typeof MAT_RESONATOR;
 
-export type BrushTool = 'move' | 'wall' | 'absorber' | 'diffuser' | 'lens' | 'resonator' | 'air';
+export type BrushTool =
+	| 'orbit'
+	| 'move'
+	| 'wall'
+	| 'absorber'
+	| 'diffuser'
+	| 'lens'
+	| 'resonator'
+	| 'air';
 
 export type PresetId =
 	| 'elliptical-whispering-gallery'
@@ -48,8 +56,25 @@ export type PresetId =
 export type PerimeterMode = 'rigid' | 'open';
 export type ViewMode = 'relief' | 'interferometer';
 export type StudioTheme = 'dark' | 'light';
+export type WavePalette = 'vivid' | 'spectrum' | 'thermal';
 export type ExcitationMode = 'clap' | 'tone' | 'sweep';
 export type DrySoundKind = 'clap' | 'pluck' | 'rimshot' | 'vowel';
+
+export interface CameraState {
+	yawDeg: number;
+	pitchDeg: number;
+	zoom: number;
+	panX: number;
+	panY: number;
+}
+
+export const DEFAULT_CAMERA: CameraState = {
+	yawDeg: 0,
+	pitchDeg: 52,
+	zoom: 1.0,
+	panX: 0,
+	panY: 0
+};
 
 export interface GridPoint {
 	x: number; // fractional grid cell coordinate [0, GRID_NX - 1]
@@ -138,4 +163,5 @@ export interface ChamberUrlState {
 	chladni: boolean;
 	toneHz: number;
 	theme: StudioTheme;
+	palette: WavePalette;
 }

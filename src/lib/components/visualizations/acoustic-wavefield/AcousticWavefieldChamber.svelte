@@ -10,6 +10,7 @@
 		createRoomAudioEngine,
 		createSimulation,
 		decodeStateFromQuery,
+		DEFAULT_CAMERA,
 		DX,
 		encodeStateToQuery,
 		FS_SIM,
@@ -24,6 +25,7 @@
 		triggerExcitation,
 		type AcousticMetrics,
 		type BrushTool,
+		type CameraState,
 		type ChamberUrlState,
 		type DrySoundKind,
 		type PerimeterMode,
@@ -31,7 +33,8 @@
 		type RoomAudioEngine,
 		type SimulationState,
 		type StudioTheme,
-		type ViewMode
+		type ViewMode,
+		type WavePalette
 	} from '$lib/visualizations/acoustic-wavefield';
 	import TelemetryDrawer from './TelemetryDrawer.svelte';
 	import WavefieldViewport from './WavefieldViewport.svelte';
@@ -47,9 +50,11 @@
 	let perimeter = $state<PerimeterMode>(initialUrl.perimeter);
 	let viewMode = $state<ViewMode>(initialUrl.view);
 	let theme = $state<StudioTheme>(initialUrl.theme);
+	let palette = $state<WavePalette>(initialUrl.palette);
+	let camera = $state<CameraState>({ ...DEFAULT_CAMERA });
 	let chladniEnabled = $state<boolean>(initialUrl.chladni);
 	let toneHz = $state<number>(initialUrl.toneHz);
-	let brushTool = $state<BrushTool>('move');
+	let brushTool = $state<BrushTool>('orbit');
 	let brushRadius = $state<number>(2);
 	let speedMultiplier = $state<1 | 2>(1);
 
@@ -94,6 +99,30 @@
 	const activePreset = $derived(getPresetById(presetId));
 	const effectiveFullscreen = $derived(isFullscreen || fullscreenFallback);
 	const wavelengthMeters = $derived((C0 / Math.max(1, toneHz)).toFixed(2));
+	const legendColors = $derived(
+		palette === 'spectrum'
+			? { pos: '#facc15', neg: '#6366f1' }
+			: palette === 'thermal'
+				? { pos: '#fb923c', neg: '#8b5cf6' }
+				: { pos: '#ff7b24', neg: '#00d9ff' }
+	);
+
+	function applyCameraPreset(next: Partial<CameraState>, label: string): void {
+		if (viewMode !== 'relief') {
+			viewMode = 'relief';
+			scheduleUrlSync();
+		}
+		camera = { ...DEFAULT_CAMERA, ...next };
+		renderRevision += 1;
+		announce(`Camera set to ${label}.`);
+	}
+
+	function handleSelectPalette(next: WavePalette, label: string): void {
+		palette = next;
+		renderRevision += 1;
+		scheduleUrlSync();
+		announce(`Wave color palette set to ${label}.`);
+	}
 
 	function announce(text: string): void {
 		announcement = text;
@@ -114,7 +143,8 @@
 				perimeter,
 				chladni: chladniEnabled,
 				toneHz,
-				theme
+				theme,
+				palette
 			};
 			const query = encodeStateToQuery(urlState, window.location.search);
 			const nextUrl = query
@@ -565,6 +595,7 @@
 		perimeter = decoded.perimeter;
 		viewMode = decoded.view;
 		theme = decoded.theme;
+		palette = decoded.palette;
 		chladniEnabled = decoded.chladni;
 		toneHz = decoded.toneHz;
 
@@ -662,6 +693,7 @@
 				</div>
 				<p class="awc-subtitle">
 					2D Acoustic Wavefield, Chladni Nodal Cymatics &amp; Real-Time Room-Impulse Convolution Lab
+					· Updated <time datetime="2026-11-21">21 November 2026</time>
 				</p>
 			</div>
 
@@ -773,9 +805,14 @@
 					{simState}
 					{viewMode}
 					{theme}
+					{palette}
+					{camera}
 					{brushTool}
 					{brushRadius}
 					{renderRevision}
+					onCameraChange={(next) => {
+						camera = next;
+					}}
 					onBeaconMoved={() => {
 						previousRir = null;
 						reciprocityRho = null;
@@ -798,10 +835,10 @@
 				<div class="awc-stage-legend">
 					<div class="awc-legend-items">
 						<span class="awc-swatch">
-							<span class="awc-dot" style="background:#f59e0b;"></span> +p Compression
+							<span class="awc-dot" style={`background:${legendColors.pos};`}></span> +p Compression
 						</span>
 						<span class="awc-swatch">
-							<span class="awc-dot" style="background:#38bdf8;"></span> −p Rarefaction
+							<span class="awc-dot" style={`background:${legendColors.neg};`}></span> −p Rarefaction
 						</span>
 						<span class="awc-swatch">
 							<span class="awc-dot" style="background:#fb7185;"></span> S Emitter
@@ -809,21 +846,34 @@
 						<span class="awc-swatch">
 							<span class="awc-dot" style="background:#34d399;"></span> L Microphone
 						</span>
-						<span class="awc-swatch">
-							<span class="awc-dot" style="background:#f3efe3;border:1px solid #64748b;"></span>
-							Chladni Sand
-						</span>
+						{#if chladniEnabled}
+							<span class="awc-swatch">
+								<span class="awc-dot" style="background:#fff0c2;border:1px solid #64748b;"></span>
+								Chladni Sand
+							</span>
+						{/if}
 					</div>
-					<span>Tip: Focus canvas + press Space to Clap, S/L + Arrows to nudge beacons</span>
+					<span>
+						Drag chamber to tilt &amp; rotate · Right/Shift-drag to pan · Drag S/L beacons · Space
+						to Clap
+					</span>
 				</div>
 			</div>
 
 			<aside class="awc-dock" aria-label="Chamber controls, brushes, and audio deck">
 				<div class="awc-dock-body">
-					<!-- View & Particles -->
+					<!-- View, Color & 3D Camera -->
 					<section class="awc-panel-section">
 						<div class="awc-section-head">
-							<h2 class="awc-section-title">View &amp; Cymatics</h2>
+							<h2 class="awc-section-title">View, Color &amp; 3D Angle</h2>
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-cam-reset"
+								onclick={() => applyCameraPreset(DEFAULT_CAMERA, 'default 3/4 view')}
+							>
+								Reset View
+							</button>
 						</div>
 						<div class="awc-btn-group">
 							<button
@@ -846,9 +896,136 @@
 									scheduleUrlSync();
 								}}
 							>
-								2D Interferometer
+								2D Top-Down
 							</button>
 						</div>
+
+						<div class="awc-btn-group" role="group" aria-label="Wave color palette">
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-palette-vivid"
+								aria-pressed={palette === 'vivid'}
+								onclick={() => handleSelectPalette('vivid', 'Coral / Cyan')}
+							>
+								Coral / Cyan
+							</button>
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-palette-spectrum"
+								aria-pressed={palette === 'spectrum'}
+								onclick={() => handleSelectPalette('spectrum', 'Iridescent')}
+							>
+								Iridescent
+							</button>
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-palette-thermal"
+								aria-pressed={palette === 'thermal'}
+								onclick={() => handleSelectPalette('thermal', 'Thermal')}
+							>
+								Thermal
+							</button>
+						</div>
+
+						<div class="awc-btn-group" role="group" aria-label="3D camera angle presets">
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-cam-threequarter"
+								onclick={() =>
+									applyCameraPreset({ yawDeg: 0, pitchDeg: 52, zoom: 1.0 }, '3/4 view')}
+							>
+								3/4 View
+							</button>
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-cam-grazing"
+								onclick={() =>
+									applyCameraPreset({ yawDeg: -24, pitchDeg: 22, zoom: 1.15 }, 'low grazing angle')}
+							>
+								Low Grazing
+							</button>
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-cam-side"
+								onclick={() =>
+									applyCameraPreset({ yawDeg: 42, pitchDeg: 34, zoom: 1.08 }, 'angled side view')}
+							>
+								Side Spin
+							</button>
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-cam-top"
+								onclick={() =>
+									applyCameraPreset({ yawDeg: 0, pitchDeg: 86, zoom: 1.0 }, 'overhead angle')}
+							>
+								Top
+							</button>
+						</div>
+
+						<div class="awc-slider-row">
+							<label for="awc-tilt-slider">Tilt</label>
+							<input
+								id="awc-tilt-slider"
+								class="awc-range"
+								data-testid="awc-tilt-slider"
+								type="range"
+								min="16"
+								max="88"
+								step="1"
+								value={Math.round(camera.pitchDeg)}
+								oninput={(e) => {
+									if (viewMode !== 'relief') viewMode = 'relief';
+									camera = { ...camera, pitchDeg: Number(e.currentTarget.value) };
+								}}
+							/>
+							<span class="awc-mono">{Math.round(camera.pitchDeg)}°</span>
+						</div>
+
+						<div class="awc-slider-row">
+							<label for="awc-yaw-slider">Spin</label>
+							<input
+								id="awc-yaw-slider"
+								class="awc-range"
+								data-testid="awc-yaw-slider"
+								type="range"
+								min="-180"
+								max="180"
+								step="2"
+								value={Math.round(camera.yawDeg)}
+								oninput={(e) => {
+									if (viewMode !== 'relief') viewMode = 'relief';
+									camera = { ...camera, yawDeg: Number(e.currentTarget.value) };
+								}}
+							/>
+							<span class="awc-mono">{Math.round(camera.yawDeg)}°</span>
+						</div>
+
+						<div class="awc-slider-row">
+							<label for="awc-zoom-slider">Zoom</label>
+							<input
+								id="awc-zoom-slider"
+								class="awc-range"
+								data-testid="awc-zoom-slider"
+								type="range"
+								min="0.7"
+								max="2.2"
+								step="0.05"
+								value={camera.zoom}
+								oninput={(e) => {
+									if (viewMode !== 'relief') viewMode = 'relief';
+									camera = { ...camera, zoom: Number(e.currentTarget.value) };
+								}}
+							/>
+							<span class="awc-mono">{camera.zoom.toFixed(2)}×</span>
+						</div>
+
 						<div class="awc-btn-group">
 							<button
 								type="button"
@@ -916,6 +1093,15 @@
 							</button>
 						</div>
 						<div class="awc-tool-grid">
+							<button
+								type="button"
+								class="awc-btn awc-btn-xs"
+								data-testid="awc-tool-orbit"
+								aria-pressed={brushTool === 'orbit'}
+								onclick={() => (brushTool = 'orbit')}
+							>
+								Orbit / Move S·L
+							</button>
 							<button
 								type="button"
 								class="awc-btn awc-btn-xs"

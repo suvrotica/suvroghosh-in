@@ -3,16 +3,19 @@
 	import { supportsWebGL } from '$lib/visualizations/webgl';
 	import {
 		applyBrushStroke,
+		DEFAULT_CAMERA,
 		findNearestAirCell,
 		GRID_NX,
 		GRID_NY,
 		rebuildMaterialProperties,
 		snapBeaconsToAir,
 		type BrushTool,
+		type CameraState,
 		type GridPoint,
 		type SimulationState,
 		type StudioTheme,
-		type ViewMode
+		type ViewMode,
+		type WavePalette
 	} from '$lib/visualizations/acoustic-wavefield';
 	import { createCanvas2DRenderer, type Canvas2DRendererHandle } from './canvas2d-renderer';
 	import type { WebGLRendererHandle } from './webgl-renderer';
@@ -21,9 +24,12 @@
 		simState: SimulationState;
 		viewMode: ViewMode;
 		theme: StudioTheme;
+		palette: WavePalette;
+		camera: CameraState;
 		brushTool: BrushTool;
 		brushRadius: number;
 		renderRevision: number;
+		onCameraChange: (next: CameraState) => void;
 		onBeaconMoved: () => void;
 		onGeometryChanged: () => void;
 		onKeyboardClap: () => void;
@@ -35,9 +41,12 @@
 		simState,
 		viewMode,
 		theme,
+		palette,
+		camera,
 		brushTool,
 		brushRadius,
 		renderRevision,
+		onCameraChange,
 		onBeaconMoved,
 		onGeometryChanged,
 		onKeyboardClap,
@@ -54,17 +63,48 @@
 	let sourceCss = $state<{ x: number; y: number }>({ x: 100, y: 120 });
 	let listenerCss = $state<{ x: number; y: number }>({ x: 300, y: 120 });
 
-	let activeDrag: 'source' | 'listener' | 'brush' | null = null;
+	let activeDrag: 'source' | 'listener' | 'brush' | 'orbit' | 'pan' | null = null;
 	let activeKeyboardBeacon = $state<'source' | 'listener'>('source');
 	let lastStrokePt: GridPoint | null = null;
+	let dragStartClientX = 0;
+	let dragStartClientY = 0;
+	let dragStartCam: CameraState = { ...DEFAULT_CAMERA };
+	const activePointers: Record<number, { x: number; y: number }> = {};
+	let pinchStartDist = 0;
+	let pinchStartZoom = 1;
 	let resizeObserver: ResizeObserver | null = null;
+
+	function getActivePointerCoords(): Array<{ x: number; y: number }> {
+		return Object.values(activePointers);
+	}
+
+	function wrapYaw(deg: number): number {
+		let w = ((((deg + 180) % 360) + 360) % 360) - 180;
+		if (w === -180 && deg > 0) w = 180;
+		return Math.round(w * 10) / 10;
+	}
+
+	function clampCam(next: CameraState): CameraState {
+		return {
+			yawDeg: wrapYaw(next.yawDeg),
+			pitchDeg: Math.round(Math.max(16, Math.min(88, next.pitchDeg)) * 10) / 10,
+			zoom: Math.round(Math.max(0.65, Math.min(2.3, next.zoom)) * 100) / 100,
+			panX: Math.round(Math.max(-1.2, Math.min(1.2, next.panX)) * 1000) / 1000,
+			panY: Math.round(Math.max(-0.9, Math.min(0.9, next.panY)) * 1000) / 1000
+		};
+	}
 
 	function updateBeaconLabels(): void {
 		let nextSource: { x: number; y: number } | null = null;
 		let nextListener: { x: number; y: number } | null = null;
 		if (webglHandle && !usingCanvas2D) {
-			nextSource = webglHandle.gridToCanvas(simState.source.x, simState.source.y, viewMode);
-			nextListener = webglHandle.gridToCanvas(simState.listener.x, simState.listener.y, viewMode);
+			nextSource = webglHandle.gridToCanvas(simState.source.x, simState.source.y, viewMode, camera);
+			nextListener = webglHandle.gridToCanvas(
+				simState.listener.x,
+				simState.listener.y,
+				viewMode,
+				camera
+			);
 		} else if (canvas2dHandle) {
 			nextSource = canvas2dHandle.gridToCanvas(simState.source.x, simState.source.y);
 			nextListener = canvas2dHandle.gridToCanvas(simState.listener.x, simState.listener.y);
@@ -94,19 +134,19 @@
 				canvas2dHandle = createCanvas2DRenderer(canvasEl);
 				canvas2dHandle.resize();
 				canvas2dHandle.invalidateMaterial();
-				canvas2dHandle.render(simState, theme);
+				canvas2dHandle.render(simState, theme, palette);
 			} else {
-				webglHandle.render(simState, viewMode, theme);
+				webglHandle.render(simState, viewMode, theme, palette, camera);
 			}
 		} else if (canvas2dHandle) {
-			canvas2dHandle.render(simState, theme);
+			canvas2dHandle.render(simState, theme, palette);
 		}
 		updateBeaconLabels();
 	}
 
 	function mapClientToGrid(clientX: number, clientY: number): GridPoint | null {
 		if (webglHandle && !usingCanvas2D) {
-			return webglHandle.screenToGrid(clientX, clientY, viewMode);
+			return webglHandle.screenToGrid(clientX, clientY, viewMode, camera);
 		}
 		if (canvas2dHandle) {
 			return canvas2dHandle.screenToGrid(clientX, clientY);
@@ -117,15 +157,75 @@
 	function handlePointerDown(event: PointerEvent): void {
 		if (!canvasEl) return;
 		canvasEl.setPointerCapture(event.pointerId);
+		activePointers[event.pointerId] = { x: event.clientX, y: event.clientY };
+
+		// Two-finger pinch-to-zoom on touchscreens in 2.5D relief
+		const pointerCoords = getActivePointerCoords();
+		if (pointerCoords.length === 2 && viewMode === 'relief' && !usingCanvas2D) {
+			pinchStartDist = Math.max(
+				10,
+				Math.hypot(pointerCoords[0].x - pointerCoords[1].x, pointerCoords[0].y - pointerCoords[1].y)
+			);
+			pinchStartZoom = camera.zoom;
+			activeDrag = null;
+			return;
+		}
+
+		const canOrbit = viewMode === 'relief' && !usingCanvas2D;
 		const rect = canvasEl.getBoundingClientRect();
 		const px = event.clientX - rect.left;
 		const py = event.clientY - rect.top;
+
+		// Right-click or middle-click or Shift+left in orbit mode pans; right/Alt in brush modes orbits
+		if (canOrbit) {
+			if (
+				event.button === 1 ||
+				(event.button === 2 && brushTool === 'orbit') ||
+				(event.shiftKey && brushTool === 'orbit')
+			) {
+				activeDrag = 'pan';
+				dragStartClientX = event.clientX;
+				dragStartClientY = event.clientY;
+				dragStartCam = { ...camera };
+				return;
+			}
+			if (event.button === 2 || event.altKey) {
+				activeDrag = 'orbit';
+				dragStartClientX = event.clientX;
+				dragStartClientY = event.clientY;
+				dragStartCam = { ...camera };
+				return;
+			}
+		}
+
+		const distS = Math.hypot(px - sourceCss.x, py - sourceCss.y);
+		const distL = Math.hypot(px - listenerCss.x, py - listenerCss.y);
+
+		if (brushTool === 'orbit') {
+			// Grab S or L directly if clicking near a beacon; otherwise orbit/tilt the 3D view
+			if (distS <= distL && distS < 36) {
+				activeDrag = 'source';
+				activeKeyboardBeacon = 'source';
+				return;
+			}
+			if (distL < 36) {
+				activeDrag = 'listener';
+				activeKeyboardBeacon = 'listener';
+				return;
+			}
+			if (canOrbit) {
+				activeDrag = 'orbit';
+				dragStartClientX = event.clientX;
+				dragStartClientY = event.clientY;
+				dragStartCam = { ...camera };
+				return;
+			}
+		}
+
 		const pt = mapClientToGrid(event.clientX, event.clientY);
 		if (!pt) return;
 
-		if (brushTool === 'move') {
-			const distS = Math.hypot(px - sourceCss.x, py - sourceCss.y);
-			const distL = Math.hypot(px - listenerCss.x, py - listenerCss.y);
+		if (brushTool === 'move' || brushTool === 'orbit') {
 			if (distS <= distL && distS < 42) {
 				activeDrag = 'source';
 				activeKeyboardBeacon = 'source';
@@ -166,7 +266,60 @@
 	}
 
 	function handlePointerMove(event: PointerEvent): void {
+		if (event.pointerId in activePointers) {
+			activePointers[event.pointerId] = { x: event.clientX, y: event.clientY };
+		}
+
+		const pointerCoords = getActivePointerCoords();
+		if (
+			pointerCoords.length === 2 &&
+			viewMode === 'relief' &&
+			!usingCanvas2D &&
+			pinchStartDist > 0
+		) {
+			const dist = Math.hypot(
+				pointerCoords[0].x - pointerCoords[1].x,
+				pointerCoords[0].y - pointerCoords[1].y
+			);
+			onCameraChange(clampCam({ ...camera, zoom: pinchStartZoom * (dist / pinchStartDist) }));
+			return;
+		}
+
 		if (!activeDrag) return;
+
+		if (activeDrag === 'orbit') {
+			const dx = event.clientX - dragStartClientX;
+			const dy = event.clientY - dragStartClientY;
+			onCameraChange(
+				clampCam({
+					...dragStartCam,
+					yawDeg: dragStartCam.yawDeg - dx * 0.42,
+					pitchDeg: dragStartCam.pitchDeg + dy * 0.36
+				})
+			);
+			return;
+		}
+
+		if (activeDrag === 'pan' && canvasEl) {
+			const dx = event.clientX - dragStartClientX;
+			const dy = event.clientY - dragStartClientY;
+			const rect = canvasEl.getBoundingClientRect();
+			const yawRad = (dragStartCam.yawDeg * Math.PI) / 180;
+			const panScale = 2.6 / (Math.max(200, Math.min(rect.width, rect.height)) * dragStartCam.zoom);
+			const nextPanX =
+				dragStartCam.panX + (-dx * Math.cos(yawRad) - dy * Math.sin(yawRad)) * panScale;
+			const nextPanY =
+				dragStartCam.panY + (-dx * Math.sin(yawRad) + dy * Math.cos(yawRad)) * panScale;
+			onCameraChange(
+				clampCam({
+					...dragStartCam,
+					panX: nextPanX,
+					panY: nextPanY
+				})
+			);
+			return;
+		}
+
 		const pt = mapClientToGrid(event.clientX, event.clientY);
 		if (!pt) return;
 
@@ -199,6 +352,10 @@
 	}
 
 	function handlePointerUp(event: PointerEvent): void {
+		delete activePointers[event.pointerId];
+		if (getActivePointerCoords().length < 2) {
+			pinchStartDist = 0;
+		}
 		if (canvasEl && canvasEl.hasPointerCapture(event.pointerId)) {
 			canvasEl.releasePointerCapture(event.pointerId);
 		}
@@ -210,6 +367,21 @@
 		} else if (prev === 'brush') {
 			onGeometryChanged();
 		}
+	}
+
+	function handleWheel(event: WheelEvent): void {
+		if (viewMode !== 'relief' || usingCanvas2D) return;
+		// Only intercept wheel zoom on Ctrl/Meta+wheel (or trackpad pinch) so page scroll stays natural
+		if (!event.ctrlKey && !event.metaKey) return;
+		event.preventDefault();
+		const factor = event.deltaY < 0 ? 1.09 : 0.92;
+		onCameraChange(clampCam({ ...camera, zoom: camera.zoom * factor }));
+	}
+
+	function handleDoubleClick(): void {
+		if (brushTool !== 'orbit' || viewMode !== 'relief' || usingCanvas2D) return;
+		onCameraChange({ ...DEFAULT_CAMERA });
+		onAnnouncement?.('Reset 3D camera angle to default 3/4 view.');
 	}
 
 	function handleKeyDown(event: KeyboardEvent): void {
@@ -232,6 +404,46 @@
 			activeKeyboardBeacon = 'listener';
 			onAnnouncement?.('Selected Listener L for arrow-key positioning.');
 			return;
+		}
+
+		// Keyboard 3D camera controls (Q/E rotate, W/X tilt, +/- zoom, 0 reset)
+		if (viewMode === 'relief' && !usingCanvas2D) {
+			if (event.key === 'q' || event.key === 'Q') {
+				event.preventDefault();
+				onCameraChange(clampCam({ ...camera, yawDeg: camera.yawDeg - 12 }));
+				return;
+			}
+			if (event.key === 'e' || event.key === 'E') {
+				event.preventDefault();
+				onCameraChange(clampCam({ ...camera, yawDeg: camera.yawDeg + 12 }));
+				return;
+			}
+			if (event.key === 'w' || event.key === 'W') {
+				event.preventDefault();
+				onCameraChange(clampCam({ ...camera, pitchDeg: camera.pitchDeg - 8 }));
+				return;
+			}
+			if (event.key === 'x' || event.key === 'X') {
+				event.preventDefault();
+				onCameraChange(clampCam({ ...camera, pitchDeg: camera.pitchDeg + 8 }));
+				return;
+			}
+			if (event.key === '+' || event.key === '=') {
+				event.preventDefault();
+				onCameraChange(clampCam({ ...camera, zoom: camera.zoom * 1.12 }));
+				return;
+			}
+			if (event.key === '-' || event.key === '_') {
+				event.preventDefault();
+				onCameraChange(clampCam({ ...camera, zoom: camera.zoom * 0.9 }));
+				return;
+			}
+			if (event.key === '0') {
+				event.preventDefault();
+				onCameraChange({ ...DEFAULT_CAMERA });
+				onAnnouncement?.('Reset 3D camera angle.');
+				return;
+			}
 		}
 
 		const step = event.shiftKey ? 5 : 2;
@@ -286,9 +498,15 @@
 	});
 
 	$effect(() => {
-		// Re-render cleanly when viewMode, theme, or explicit revision changes while paused
+		// Re-render cleanly when viewMode, theme, palette, camera, or explicit revision changes while paused
 		void viewMode;
 		void theme;
+		void palette;
+		void camera.yawDeg;
+		void camera.pitchDeg;
+		void camera.zoom;
+		void camera.panX;
+		void camera.panY;
 		void renderRevision;
 		canvas2dHandle?.invalidateMaterial();
 		drawFrame();
@@ -305,15 +523,18 @@
 	<canvas
 		bind:this={canvasEl}
 		class="awc-canvas"
-		class:awc-cursor-grab={brushTool === 'move'}
+		class:awc-cursor-grab={brushTool === 'move' || brushTool === 'orbit'}
 		data-testid="awc-viewport-canvas"
 		tabindex="0"
-		aria-label="2D Acoustic Wavefield Chamber canvas. Drag Emitter S or Listener L, sketch architectural materials, or press Space to fire a hand clap."
+		aria-label="2D Acoustic Wavefield Chamber canvas. Drag to tilt and rotate the 3D view, drag Emitter S or Listener L, sketch architectural materials, or press Space to fire a hand clap."
 		onkeydown={handleKeyDown}
 		onpointerdown={handlePointerDown}
 		onpointermove={handlePointerMove}
 		onpointerup={handlePointerUp}
 		onpointercancel={handlePointerUp}
+		onwheel={handleWheel}
+		ondblclick={handleDoubleClick}
+		oncontextmenu={(e) => e.preventDefault()}
 	></canvas>
 
 	<div class="awc-beacon-overlay" aria-hidden="true">

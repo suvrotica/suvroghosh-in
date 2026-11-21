@@ -13,9 +13,10 @@ describe('acoustic-wavefield url-codec', () => {
 				ly: 68,
 				view: 'interferometer',
 				perimeter: 'open',
-				chladni: false,
+				chladni: true,
 				toneHz: 245,
-				theme: 'light'
+				theme: 'light',
+				palette: 'spectrum'
 			},
 			'?webgl=off'
 		);
@@ -30,16 +31,17 @@ describe('acoustic-wavefield url-codec', () => {
 			ly: 68,
 			view: 'interferometer',
 			perimeter: 'open',
-			chladni: false,
+			chladni: true,
 			toneHz: 245,
-			theme: 'light'
+			theme: 'light',
+			palette: 'spectrum'
 		});
 	});
 
 	it('sanitizes malformed and out-of-bounds parameters cleanly', () => {
 		const def = createDefaultUrlState();
 		const decoded = decodeStateFromQuery(
-			'?preset=invalid-room&sx=-999&sy=9999&lx=NaN&ly=abc&view=bogus&perim=xyz&freq=50000&theme=neon&chladni=nope'
+			'?preset=invalid-room&sx=-999&sy=9999&lx=NaN&ly=abc&view=bogus&perim=xyz&freq=50000&theme=neon&chladni=nope&pal=invalid'
 		);
 		expect(decoded.presetId).toBe(def.presetId);
 		expect(decoded.sx).toBeGreaterThanOrEqual(2);
@@ -52,6 +54,7 @@ describe('acoustic-wavefield url-codec', () => {
 		expect(decoded.perimeter).toBe(def.perimeter);
 		expect(decoded.toneHz).toBe(1000);
 		expect(decoded.theme).toBe('dark');
-		expect(decoded.chladni).toBe(true);
+		expect(decoded.chladni).toBe(false);
+		expect(decoded.palette).toBe('vivid');
 	});
 });
