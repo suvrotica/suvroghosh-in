@@ -4738,6 +4738,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 675
 		},
 		{
+			"name": "riemann-hypothesis-claude-obituary.jpg",
+			"src": "/images/riemann-hypothesis-claude-obituary.jpg",
+			"bytes": 221520,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "screenagers-growing-up-in-the-digital-age.jpg",
 			"src": "/images/screenagers-growing-up-in-the-digital-age.jpg",
 			"bytes": 58756,

@@ -17969,6 +17969,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-20"
+		},
+		"src/lib/posts/riemann-hypothesis-claude-obituary.md": {
+			"bodyHash": "94a84a59b38c2b04149887ca42519c0c1de243c47e0612caa0e2fc983feb657d",
+			"hashVersion": 2,
+			"revisionHash": "9a8f8705bf249b1d572e336cd63c17cb1a7a9af78643f353d5f8b01fe80082f7",
+			"generatedTags": [
+				"Mathematics",
+				"Riemann Hypothesis",
+				"Artificial Intelligence",
+				"Number Theory",
+				"Computer Science",
+				"Automation",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Mathematics",
+				"Riemann Hypothesis",
+				"Artificial Intelligence",
+				"Number Theory",
+				"Computer Science",
+				"Automation",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

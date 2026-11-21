@@ -10750,6 +10750,22 @@
       "sourceHash": "27604186faabed2f94920116619fdddee8d3fd40835c2dd6b8c91f2cb0e9b80b",
       "width": 1200
     },
+    "static/images/riemann-hypothesis-claude-obituary.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 221520,
+      "outputHash": "be3b086c6c891aeafb9dec63f314444668e55ca36f89a5170f40c0d7e2edae70",
+      "psnrDb": 36.71,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 282265,
+      "sourceHash": "c5344a26f7c45fdb8d74b13964689b5b12d91b62ccf459ce4757caad170026f4",
+      "width": 1280
+    },
     "static/images/screenagers-growing-up-in-the-digital-age.jpg": {
       "format": "JPEG",
       "height": 720,
