@@ -4955,6 +4955,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "the-theatre-of-the-night.jpg",
+			"src": "/images/the-theatre-of-the-night.jpg",
+			"bytes": 179124,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "the-thirsty-city.jpg",
 			"src": "/images/the-thirsty-city.jpg",
 			"bytes": 103615,

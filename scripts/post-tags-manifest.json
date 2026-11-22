@@ -18030,6 +18030,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-21"
+		},
+		"src/lib/posts/the-theatre-of-the-night.md": {
+			"bodyHash": "7ce5b7c07d88f7f428ed1e4b0821e73ee65c58763e3b2f1adc4b047a734166eb",
+			"hashVersion": 2,
+			"revisionHash": "4b12f8cf86b464d55c2ab8047ccb604b760b6e68a85eae1a5e529d6763e9581c",
+			"generatedTags": [
+				"Dreams",
+				"Memory",
+				"Neuroscience",
+				"Sleep",
+				"Emotion",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Bipolar",
+				"Psychology"
+			],
+			"pinnedTags": [
+				"Dreams",
+				"Memory",
+				"Neuroscience",
+				"Sleep",
+				"Emotion",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Bipolar",
+				"Psychology"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

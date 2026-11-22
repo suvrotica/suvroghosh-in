@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Theatre of the Night" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Theatre of the Night</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(146,527) rotate(-90)" font-size="118" style="fill:#c49a6c">Never</text>
+<text transform="translate(949,72)" font-size="90" style="fill:#d88988">Dreams</text>
+<text transform="translate(255,535)" font-size="78" style="fill:#d6a79f">Takes</text>
+<text transform="translate(565,504)" font-size="78" style="fill:#d5d2c2">Wake</text>
+<text transform="translate(999,298)" font-size="78" style="fill:#9fc9c5">Dream</text>
+<text transform="translate(408,369)" font-size="78" style="fill:#b6c3dd">Mind</text>
+<text transform="translate(978,634) rotate(-90)" font-size="78" style="fill:#e0b879">Emotional</text>
+<text transform="translate(366,279)" font-size="78" style="fill:#d5d2c2">Anger</text>
+<text transform="translate(369,65)" font-size="64" style="fill:#d5d2c2">Sleep</text>
+<text transform="translate(1073,414)" font-size="64" style="fill:#a9b7a3">Far</text>
+<text transform="translate(434,612)" font-size="64" style="fill:#d6a79f">Cruel</text>
+<text transform="translate(272,391) rotate(-90)" font-size="64" style="fill:#9fc9c5">Memory</text>
+<text transform="translate(1082,195)" font-size="64" style="fill:#d5d2c2">Cast</text>
+<text transform="translate(496,147)" font-size="64" style="fill:#c7d7b5">Characters</text>
+<text transform="translate(616,270)" font-size="64" style="fill:#a9b7a3">Thought</text>
+<text transform="translate(149,132)" font-size="64" style="fill:#e0b879">Events</text>
+<text transform="translate(284,697)" font-size="64" style="fill:#9fc9c5">Indignation</text>
+<text transform="translate(625,55)" font-size="64" style="fill:#9fc9c5">Insult</text>
+<text transform="translate(979,687)" font-size="64" style="fill:#a9b7a3">Phantom</text>
+<text transform="translate(197,608) rotate(-90)" font-size="64" style="fill:#8fb7d0">Pressure</text>
+<text transform="translate(586,198)" font-size="64" style="fill:#e0b879">Arguments</text>
+<text transform="translate(1053,215) rotate(-90)" font-size="64" style="fill:#a9b7a3">Ago</text>
+<text transform="translate(32,158)" font-size="64" style="fill:#d9c89e">Lie</text>
+<text transform="translate(1035,493)" font-size="64" style="fill:#c49a6c">Longer</text>
+<text transform="translate(988,572)" font-size="64" style="fill:#c7d7b5">Waking</text>
+<text transform="translate(389,437)" font-size="64" style="fill:#a9b7a3">Now</text>
+<text transform="translate(42,57)" font-size="64" style="fill:#d9c89e">Bipolar</text>
+<text transform="translate(358,396) rotate(-90)" font-size="64" style="fill:#9fc9c5">Wound</text>
+<text transform="translate(866,628) rotate(-90)" font-size="64" style="fill:#c49a6c">Remember</text>
+<text transform="translate(62,711)" font-size="64" style="fill:#c7d7b5">Brain</text>
+<text transform="translate(652,424)" font-size="64" style="fill:#8fb7d0">Pain</text>
+<text transform="translate(736,702)" font-size="64" style="fill:#e0b879">Feels</text>
+<text transform="translate(206,627)" font-size="64" style="fill:#d5d2c2">Fight</text>
+<text transform="translate(615,332)" font-size="64" style="fill:#b6c3dd">Feel</text>
+<text transform="translate(298,183)" font-size="64" style="fill:#e0b879">Long</text>
+<text transform="translate(1050,622)" font-size="64" style="fill:#d6a79f">Dog</text>
+<text transform="translate(1060,136)" font-size="64" style="fill:#b6c3dd">Man</text>
+<text transform="translate(61,457) rotate(-90)" font-size="64" style="fill:#e0b879">Already</text>
+<text transform="translate(1041,359)" font-size="64" style="fill:#c49a6c">Across</text>
+<text transform="translate(668,571)" font-size="46" style="fill:#8fb7d0">Teeth</text>
+<text transform="translate(627,648)" font-size="46" style="fill:#8fb7d0">Claws</text>
+<text transform="translate(43,712) rotate(-90)" font-size="46" style="fill:#9fc9c5">Shambling</text>
+<text transform="translate(745,95)" font-size="46" style="fill:#8fb7d0">Horror</text>
+<text transform="translate(911,623) rotate(-90)" font-size="46" style="fill:#c49a6c">Lovecraftian</text>
+<text transform="translate(1077,236)" font-size="46" style="fill:#a9b7a3">Beastie</text>
+<text transform="translate(1017,519) rotate(-90)" font-size="46" style="fill:#d88988">Nipping</text>
+<text transform="translate(53,657)" font-size="46" style="fill:#e0b879">Heels</text>
+<text transform="translate(201,572)" font-size="44" style="fill:#d5d2c2">Corridors</text>
+<text transform="translate(252,471)" font-size="40" style="fill:#a9b7a3">Unconscious</text>
+<text transform="translate(1054,443)" font-size="29" style="fill:#e0b879">Sophisticated</text>
+<text transform="translate(205,261) rotate(-90)" font-size="29" style="fill:#9fc9c5">Traffic</text>
+<text transform="translate(1048,715)" font-size="29" style="fill:#e0b879">Monsters</text>
+<text transform="translate(579,99)" font-size="29" style="fill:#d9c89e">Traffics</text>
+<text transform="translate(472,648)" font-size="29" style="fill:#c7d7b5">Reaches</text>
+<text transform="translate(615,366)" font-size="29" style="fill:#e0b879">Cluttered</text>
+<text transform="translate(886,656)" font-size="29" style="fill:#d9c89e">Attic</text>
+<text transform="translate(672,599)" font-size="29" style="fill:#d6a79f">Fiftyone</text>
+<text transform="translate(1275,602) rotate(-90)" font-size="29" style="fill:#d6a79f">Years</text>
+<text transform="translate(384,140)" font-size="29" style="fill:#9fc9c5">Pulls</text>
+<text transform="translate(517,396)" font-size="29" style="fill:#d6a79f">Buried</text>
+<text transform="translate(367,91)" font-size="29" style="fill:#c49a6c">Dramatis</text>
+<text transform="translate(598,530)" font-size="29" style="fill:#b6c3dd">Personae</text>
+<text transform="translate(226,431)" font-size="29" style="fill:#d6a79f">Hectic</text>
+<text transform="translate(685,455)" font-size="29" style="fill:#d9c89e">Behind</text>
+<text transform="translate(501,556)" font-size="29" style="fill:#c7d7b5">Reinvents</text>
+<text transform="translate(400,223)" font-size="29" style="fill:#9fc9c5">Redramatizes</text>
+<text transform="translate(1189,532)" font-size="29" style="fill:#e0b879">Raw</text>
+<text transform="translate(530,427)" font-size="29" style="fill:#9fc9c5">Footage</text>
+<text transform="translate(934,178)" font-size="29" style="fill:#d5d2c2">Past</text>
+<text transform="translate(935,116) rotate(-90)" font-size="29" style="fill:#d5d2c2">Grainy</text>
+<text transform="translate(1179,145)" font-size="29" style="fill:#b6c3dd">Reels</text>
+<text transform="translate(52,585)" font-size="29" style="fill:#9fc9c5">Edits</text>
+<text transform="translate(193,83)" font-size="29" style="fill:#9fc9c5">Malicious</text>
+<text transform="translate(876,140)" font-size="29" style="fill:#d9c89e">Artistry</text>
+<text transform="translate(231,327) rotate(-90)" font-size="29" style="fill:#c7d7b5">Eisenstein</text>
+<text transform="translate(810,304)" font-size="29" style="fill:#b6c3dd">Weep</text>
+<text transform="translate(234,531) rotate(-90)" font-size="29" style="fill:#8fb7d0">Envy</text>
+<text transform="translate(384,435) rotate(-90)" font-size="29" style="fill:#d9c89e">Result</text>
+<text transform="translate(480,180)" font-size="29" style="fill:#c49a6c">Terror</text>
+<text transform="translate(1167,637)" font-size="29" style="fill:#d88988">Fury</text>
+<text transform="translate(797,661)" font-size="29" style="fill:#c7d7b5">Hot</text>
+<text transform="translate(10,97)" font-size="29" style="fill:#d5d2c2">Helpless</text>
+<text transform="translate(300,402) rotate(-90)" font-size="29" style="fill:#e0b879">Impotent</text>
+<text transform="translate(106,187)" font-size="29" style="fill:#b6c3dd">Rage</text>
+<text transform="translate(508,304)" font-size="29" style="fill:#a9b7a3">Leaves</text>
+<text transform="translate(570,27)" font-size="29" style="fill:#b6c3dd">Jaw</text>
+<text transform="translate(1268,710) rotate(-90)" font-size="29" style="fill:#d9c89e">Aching</text>
+<text transform="translate(927,708)" font-size="24" style="fill:#d5d2c2">Grinding</text>
+<text transform="translate(365,306)" font-size="24" style="fill:#8fb7d0">Chest</text>
+<text transform="translate(1176,409)" font-size="24" style="fill:#a9b7a3">Tight</text>
+<text transform="translate(1144,95)" font-size="24" style="fill:#d6a79f">Finished</text>
+<text transform="translate(433,20)" font-size="21" style="fill:#9fc9c5">Injustices</text>
+<text transform="translate(707,218)" font-size="21" style="fill:#c49a6c">Avenged</text>
+<text transform="translate(930,411) rotate(-90)" font-size="21" style="fill:#c7d7b5">Humiliations</text>
+<text transform="translate(822,221)" font-size="21" style="fill:#9fc9c5">Metabolized</text>
+<text transform="translate(57,540)" font-size="21" style="fill:#c49a6c">Decades</text>
+<text transform="translate(940,91)" font-size="21" style="fill:#d6a79f">Amygdala</text>
+<text transform="translate(1133,315)" font-size="17" style="fill:#d88988">Almondshaped</text>
+<text transform="translate(742,531)" font-size="17" style="fill:#8fb7d0">Autocrat</text>
+<text transform="translate(48,606)" font-size="17" style="fill:#c49a6c">Emotion</text>
+<text transform="translate(377,108)" font-size="17" style="fill:#c7d7b5">Distinguish</text>
+<text transform="translate(1040,510)" font-size="17" style="fill:#c49a6c">Remembered</text>
+<text transform="translate(555,517) rotate(-90)" font-size="17" style="fill:#9fc9c5">Imagined</text>
+<text transform="translate(583,715)" font-size="17" style="fill:#b6c3dd">Processes</text>
+<text transform="translate(84,556)" font-size="17" style="fill:#a9b7a3">Dreamt</text>
+<text transform="translate(762,488)" font-size="17" style="fill:#d5d2c2">Slight</text>
+<text transform="translate(431,393)" font-size="17" style="fill:#9fc9c5">Ferocity</text>
+<text transform="translate(867,19)" font-size="17" style="fill:#e0b879">Real</text>
+<text transform="translate(205,663)" font-size="17" style="fill:#d88988">Flooding</text>
+<text transform="translate(261,715)" font-size="17" style="fill:#d5d2c2">Bloodstream</text>
+<text transform="translate(1003,18)" font-size="17" style="fill:#a9b7a3">Cortisol</text>
+<text transform="translate(1090,18)" font-size="17" style="fill:#e0b879">Adrenaline</text>
+<text transform="translate(426,649)" font-size="17" style="fill:#c7d7b5">Eyes</text>
+<text transform="translate(1190,378)" font-size="17" style="fill:#d88988">Even</text>
+<text transform="translate(625,604)" font-size="17" style="fill:#d5d2c2">Open</text>
+<text transform="translate(937,194)" font-size="17" style="fill:#8fb7d0">Small</text>
+<text transform="translate(311,45)" font-size="17" style="fill:#e0b879">Flat</text>
+<text transform="translate(429,487)" font-size="17" style="fill:#b6c3dd">Boondocks</text>
+<text transform="translate(923,678)" font-size="17" style="fill:#d88988">South</text>
+<text transform="translate(1224,117)" font-size="17" style="fill:#9fc9c5">Heart</text>
+<text transform="translate(623,71)" font-size="17" style="fill:#d9c89e">Clenched</text>
+<text transform="translate(411,636) rotate(-90)" font-size="17" style="fill:#a9b7a3">Fist</text>
+<text transform="translate(293,200)" font-size="17" style="fill:#8fb7d0">Pounding</text>
+<text transform="translate(261,220)" font-size="17" style="fill:#d6a79f">Ribs</text>
+<text transform="translate(14,182)" font-size="17" style="fill:#b6c3dd">Angry</text>
+<text transform="translate(328,652)" font-size="17" style="fill:#d5d2c2">Speak</text>
+<text transform="translate(217,456) rotate(-90)" font-size="17" style="fill:#8fb7d0">Deliberately</text>
+<text transform="translate(990,233)" font-size="17" style="fill:#d9c89e">Excised</text>
+<text transform="translate(460,201)" font-size="17" style="fill:#c49a6c">Tumors</text>
+<text transform="translate(1172,606)" font-size="17" style="fill:#d9c89e">Exist</text>
+</svg>

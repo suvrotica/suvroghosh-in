@@ -11243,6 +11243,22 @@
       "sourceHash": "87220dd89e5820e3af8234e64e379a416638925bd013f644fb9ddba46941d665",
       "width": 1024
     },
+    "static/images/the-theatre-of-the-night.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 179124,
+      "outputHash": "9441a9a44725d7924d8d527ee0a11a12682274a95cd54e982a33031f8f76fac1",
+      "psnrDb": 40.04,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 194242,
+      "sourceHash": "e5586c9517ee9982590eaf9bee2600a52d62d6a313a91f0936e616ca1cca83cb",
+      "width": 1280
+    },
     "static/images/the-thirsty-city.jpg": {
       "format": "JPEG",
       "height": 576,

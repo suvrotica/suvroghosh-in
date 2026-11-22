@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T07:29:19.712420+00:00",
+  "generatedAt": "2026-11-22T02:43:43.657625+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -16328,6 +16328,29 @@
         "Gandhi",
         "Show",
         "Political"
+      ],
+      "wordCount": 130
+    },
+    "the-theatre-of-the-night": {
+      "generatedAt": "2026-11-22T02:43:43.189133+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-theatre-of-the-night.svg",
+      "source": "src/lib/posts/the-theatre-of-the-night.md",
+      "sourceHash": "fd8c56a489acd909320f41fb0a04046917c08258ddfb73336ea09d7c9d27cafa",
+      "sourceModified": "2026-11-22T02:42:30.688084+00:00",
+      "topWords": [
+        "Never",
+        "Dreams",
+        "Takes",
+        "Wake",
+        "Dream",
+        "Mind",
+        "Emotional",
+        "Anger",
+        "Sleep",
+        "Far",
+        "Cruel",
+        "Memory"
       ],
       "wordCount": 130
     },
