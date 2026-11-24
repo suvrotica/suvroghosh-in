@@ -160,6 +160,57 @@ const fm6: Chord = {
 	voicing: [53, 56, 62, 72]
 };
 
+const cDorian: Chord = {
+	id: 'c-dorian',
+	name: 'C Dorian',
+	tones: [
+		{ pc: 0, label: 'C · root', role: 1 },
+		{ pc: 2, label: 'D · ninth', role: 0.6 },
+		{ pc: 3, label: 'E♭ · minor third', role: 1 },
+		{ pc: 5, label: 'F · fourth', role: 0.65 },
+		{ pc: 7, label: 'G · fifth', role: 0.7 },
+		{ pc: 9, label: 'A · natural sixth', role: 0.85 },
+		{ pc: 10, label: 'B♭ · minor seventh', role: 0.9 }
+	],
+	voicing: [48, 55, 63, 69, 70]
+};
+const cMinorPentatonic: Chord = {
+	id: 'c-minor-pentatonic',
+	name: 'C Minor Pentatonic',
+	tones: [
+		{ pc: 0, label: 'C · root', role: 1 },
+		{ pc: 3, label: 'E♭ · minor third', role: 1 },
+		{ pc: 5, label: 'F · fourth', role: 0.65 },
+		{ pc: 7, label: 'G · fifth', role: 0.75 },
+		{ pc: 10, label: 'B♭ · minor seventh', role: 0.9 }
+	],
+	voicing: [48, 55, 60, 63, 70]
+};
+const cHirajoshi: Chord = {
+	id: 'c-hirajoshi',
+	name: 'C Hirajoshi',
+	tones: [
+		{ pc: 0, label: 'C · root', role: 1 },
+		{ pc: 2, label: 'D · second', role: 0.7 },
+		{ pc: 3, label: 'E♭ · minor third', role: 1 },
+		{ pc: 7, label: 'G · fifth', role: 0.75 },
+		{ pc: 8, label: 'A♭ · minor sixth', role: 0.9 }
+	],
+	voicing: [48, 55, 60, 62, 68]
+};
+
+function freezePreset(preset: Preset): Preset {
+	for (const chord of preset.chords) {
+		for (const tone of chord.tones) Object.freeze(tone);
+		Object.freeze(chord.tones);
+		Object.freeze(chord.voicing);
+		Object.freeze(chord);
+	}
+	Object.freeze(preset.chords);
+	Object.freeze(preset.colours);
+	return Object.freeze(preset);
+}
+
 /** Original sparse voicings: root, defining third/6th/7th, and named colour. */
 export const PRESETS: readonly Preset[] = [
 	{
@@ -185,18 +236,38 @@ export const PRESETS: readonly Preset[] = [
 	}
 ];
 // Exported presets cannot become accidental shared per-visitor mutable state.
-for (const preset of PRESETS) {
-	for (const chord of preset.chords) {
-		for (const tone of chord.tones) Object.freeze(tone);
-		Object.freeze(chord.tones);
-		Object.freeze(chord.voicing);
-		Object.freeze(chord);
-	}
-	Object.freeze(preset.chords);
-	Object.freeze(preset.colours);
-	Object.freeze(preset);
-}
+for (const preset of PRESETS) freezePreset(preset);
 Object.freeze(PRESETS);
+
+const EXTENDED_SYNTH_PALETTES: readonly Preset[] = [
+	{
+		id: 'dorian',
+		name: 'C Dorian',
+		subtitle: 'C Dorian · modal seventh & natural sixth',
+		chords: [cDorian],
+		colours: ['#38bdf8', '#ff8a1e', '#a78bfa', '#94a3b8']
+	},
+	{
+		id: 'minor-pentatonic',
+		name: 'C Minor Pentatonic',
+		subtitle: 'C Minor Pentatonic · five-tone blues contour',
+		chords: [cMinorPentatonic],
+		colours: ['#ff8a1e', '#f59e0b', '#38bdf8', '#cbd5e1']
+	},
+	{
+		id: 'hirajoshi',
+		name: 'C Hirajoshi',
+		subtitle: 'C Hirajoshi · Japanese koto scale',
+		chords: [cHirajoshi],
+		colours: ['#f472b6', '#38bdf8', '#fb923c', '#c4b5fd']
+	}
+].map(freezePreset);
+
+/** Extended synth palette superset preserving original PRESETS[0..2] intact. */
+export const SYNTH_PALETTES: readonly Preset[] = Object.freeze([
+	...PRESETS,
+	...EXTENDED_SYNTH_PALETTES
+]);
 
 /** Original demonstration, including outside notes, a leap, repeats and a rest. */
 export const DEMO: readonly PhraseEvent[] = Object.freeze(

@@ -20,11 +20,29 @@ const MAX_BYTES = 750 * 1024;
 const SOURCES = [
 	'src/lib/visualizations/probabilistic-piano/model.ts',
 	'src/lib/visualizations/probabilistic-piano/keyboard.ts',
+	'src/lib/visualizations/probabilistic-piano/voices.ts',
 	'src/lib/visualizations/probabilistic-piano/effects.ts',
 	'src/lib/visualizations/probabilistic-piano/audio.ts',
 	'src/lib/visualizations/probabilistic-piano/painting.ts',
+	'src/lib/visualizations/probabilistic-piano/synth-patch.ts',
+	'src/lib/visualizations/probabilistic-piano/synth-scheduler.ts',
+	'src/lib/visualizations/probabilistic-piano/procedural-ir.ts',
+	'src/lib/visualizations/probabilistic-piano/midi.ts',
+	'src/lib/visualizations/probabilistic-piano/wav-recorder.ts',
+	'src/lib/visualizations/probabilistic-piano/wav-encoder.worker.ts',
 	'src/lib/components/visualizations/probabilistic-piano/ProbabilisticPiano.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/TelemetryBar.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/OledScope.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/ControlDeck.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/ModMatrix.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/ArpSequencerBar.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/FxRack.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/PerformanceBay.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/FullPianoKeybed.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/Knob.svelte',
+	'src/lib/components/visualizations/probabilistic-piano/VerticalFader.svelte',
 	'src/lib/components/visualizations/probabilistic-piano/piano.css',
+	'src/lib/components/visualizations/probabilistic-piano/synth.css',
 	'scripts/render-probabilistic-piano-assets.mjs'
 ];
 const EXPECTED = {
@@ -37,7 +55,7 @@ const STATE = {
 	publicationMotion: 'still',
 	desktopView: 'fit',
 	phoneView: 'playing',
-	captureViewportHeight: 3000,
+	captureViewportHeight: 4200,
 	preset: 'pond',
 	chord: 'C6/9',
 	mode: 'nearest',
@@ -204,8 +222,16 @@ async function captureElement(page, selector, destination) {
 		clip.top < 0 ||
 		clip.left + clip.width > viewport.width ||
 		clip.top + clip.height > viewport.height
-	)
-		throw new Error('Capture target does not fit the fixed viewport.');
+	) {
+		throw new Error(
+			`Capture target ${selector} (${clip.width}x${clip.height} at ${clip.left},${clip.top}) does not fit the fixed viewport (${viewport.width}x${viewport.height}).`
+		);
+	}
+	if (destination) {
+		console.log(
+			`Measured ${path.basename(destination)} (${selector}): ${clip.width}x${clip.height} at ${viewport.width}px`
+		);
+	}
 	const screenshot = await page.screenshot({
 		type: 'png',
 		fullPage: false,
@@ -249,7 +275,7 @@ async function generate(fingerprint) {
 		await captureElement(desktop.page, '[data-piano-root]', path.join(ARTIFACTS, 'desktop.png'));
 		const stage = await captureElement(desktop.page, '[data-piano-stage]');
 		const poster = await sharp(stage)
-			.resize(1440, 760, { fit: 'contain', background: '#14252a' })
+			.resize(1440, 760, { fit: 'contain', background: '#121418' })
 			.png()
 			.toBuffer();
 		await saveJpeg('piano-poster.jpg', poster);
@@ -258,7 +284,7 @@ async function generate(fingerprint) {
 			'<svg width="1200" height="184" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="184" fill="#eae6d9"/><text x="46" y="39" font-family="sans-serif" font-size="12" letter-spacing="4" fill="#496b62">SUVRO GHOSH / THE LISTENING GARDEN</text><text x="42" y="105" font-family="Georgia,serif" font-size="61" fill="#233b3c">The piano that forgives.</text><text x="46" y="148" font-family="Georgia,serif" font-size="24" fill="#496b62">Painting jazz with probability</text><text x="1154" y="147" text-anchor="end" font-family="sans-serif" font-size="11" letter-spacing="2" fill="#496b62">VISUALIZATIONS</text></svg>'
 		);
 		const social = await sharp({
-			create: { width: 1200, height: 630, channels: 3, background: '#14252a' }
+			create: { width: 1200, height: 630, channels: 3, background: '#121418' }
 		})
 			.composite([
 				{ input: heading, top: 0, left: 0 },

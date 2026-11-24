@@ -7,6 +7,7 @@ import {
 	MODEL_VERSION,
 	noteName,
 	PRESETS,
+	SYNTH_PALETTES,
 	type Chord,
 	type DecisionInput,
 	type Mode
@@ -312,5 +313,67 @@ describe('visible validation errors instead of invented harmony', () => {
 			true
 		);
 		expect(decision.candidates.reduce((sum, candidate) => sum + candidate.probability, 0)).toBe(1);
+	});
+});
+
+describe('extended synth palettes', () => {
+	it('preserves PRESETS[0..2] intact and appends deeply frozen modal/scale palettes', () => {
+		expect(PRESETS).toHaveLength(3);
+		expect(SYNTH_PALETTES).toHaveLength(6);
+		expect(SYNTH_PALETTES.slice(0, 3)).toEqual(PRESETS);
+		expect(Object.isFrozen(SYNTH_PALETTES)).toBe(true);
+
+		const extended = SYNTH_PALETTES.slice(3);
+		expect(extended.map((preset) => preset.chords.map((chord) => chord.name))).toEqual([
+			['C Dorian'],
+			['C Minor Pentatonic'],
+			['C Hirajoshi']
+		]);
+
+		const expectedPitchClasses: Record<string, number[]> = {
+			'c-dorian': [0, 2, 3, 5, 7, 9, 10],
+			'c-minor-pentatonic': [0, 3, 5, 7, 10],
+			'c-hirajoshi': [0, 2, 3, 7, 8]
+		};
+
+		for (const preset of extended) {
+			expect(Object.isFrozen(preset)).toBe(true);
+			expect(Object.isFrozen(preset.chords)).toBe(true);
+			expect(Object.isFrozen(preset.colours)).toBe(true);
+			for (const chord of preset.chords) {
+				expect(Object.isFrozen(chord)).toBe(true);
+				expect(Object.isFrozen(chord.tones)).toBe(true);
+				expect(Object.isFrozen(chord.voicing)).toBe(true);
+				expect(chord.tones.every(Object.isFrozen)).toBe(true);
+				expect(chord.tones.map((tone) => tone.pc).sort((a, b) => a - b)).toEqual(
+					expectedPitchClasses[chord.id]
+				);
+				expect(
+					chord.voicing.every((pitch) => expectedPitchClasses[chord.id].includes(pitch % 12))
+				).toBe(true);
+			}
+		}
+	});
+
+	it('evaluates decide() cleanly across all SYNTH_PALETTES chords, MIDI notes, and modes', () => {
+		for (const preset of SYNTH_PALETTES.slice(3)) {
+			for (const chord of preset.chords) {
+				for (let pitch = MIDI_MIN; pitch <= MIDI_MAX; pitch++) {
+					for (const mode of modes) {
+						const decision = decide({
+							...defaults,
+							pitch,
+							chord,
+							mode
+						});
+						expect(decision.output).toBeGreaterThanOrEqual(MIDI_MIN);
+						expect(decision.output).toBeLessThanOrEqual(MIDI_MAX);
+						expect(
+							decision.candidates.reduce((sum, candidate) => sum + candidate.probability, 0)
+						).toBeCloseTo(1, 12);
+					}
+				}
+			}
+		}
 	});
 });

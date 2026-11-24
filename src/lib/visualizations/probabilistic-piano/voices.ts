@@ -5,6 +5,11 @@ export type InputVoice = Readonly<{
 	pitch: number;
 }>;
 
+export type VoiceBindTarget = Readonly<{
+	voiceId: string;
+	pitch: number;
+}>;
+
 /** Browser-independent ownership; correction is deliberately absent from note-off. */
 export class VoiceLedger {
 	private readonly voices = new Map<string, InputVoice>();
@@ -48,6 +53,55 @@ export class VoiceLedger {
 		const removed: InputVoice[] = [];
 		for (const [inputId, voice] of this.voices) {
 			if (!hasVoice(voice.voiceId)) {
+				this.voices.delete(inputId);
+				removed.push(voice);
+			}
+		}
+		return removed;
+	}
+
+	bindChord(baseId: string, notes: readonly VoiceBindTarget[]): InputVoice[] {
+		if (!baseId) throw new Error('An input needs an ID and a MIDI pitch from 0 to 127.');
+		if (notes.length === 0) throw new Error('Choose at least one note to bind a chord.');
+		const pending: InputVoice[] = [];
+		for (let index = 0; index < notes.length; index++) {
+			const item = notes[index];
+			if (!item || !Number.isInteger(item.pitch) || item.pitch < 0 || item.pitch > 127)
+				throw new Error('An input needs an ID and a MIDI pitch from 0 to 127.');
+			const inputId = `${baseId}-${index}`;
+			if (this.voices.has(inputId))
+				throw new Error('Release this input before binding another voice.');
+			pending.push(Object.freeze({ inputId, voiceId: item.voiceId, pitch: item.pitch }));
+		}
+		for (const voice of pending) this.voices.set(voice.inputId, voice);
+		return pending;
+	}
+
+	releaseChord(baseId: string): InputVoice[] {
+		if (!baseId) return [];
+		const prefix = `${baseId}-`;
+		const removed: InputVoice[] = [];
+		for (const [inputId, voice] of this.voices) {
+			if (!inputId.startsWith(prefix)) continue;
+			const suffix = inputId.slice(prefix.length);
+			if (/^\d+$/.test(suffix)) {
+				this.voices.delete(inputId);
+				removed.push(voice);
+			}
+		}
+		return removed;
+	}
+
+	getPrefix(prefix: string): InputVoice[] {
+		if (!prefix) return [];
+		return [...this.voices.values()].filter((voice) => voice.inputId.startsWith(prefix));
+	}
+
+	releasePrefix(prefix: string): InputVoice[] {
+		if (!prefix) return [];
+		const removed: InputVoice[] = [];
+		for (const [inputId, voice] of this.voices) {
+			if (inputId.startsWith(prefix)) {
 				this.voices.delete(inputId);
 				removed.push(voice);
 			}

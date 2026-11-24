@@ -1,7 +1,7 @@
 {
   "version": 1,
   "captureVersion": "probabilistic-piano-browser-capture-v2",
-  "sourceHash": "f654949ba9a156f4b4b68b6c64e4e06dc12906aad51d8fca6af5c4252c70b02f",
+  "sourceHash": "01b878d16942a007e8ee6606766d86d64abbac3f588e9d7189a6777094b7ba23",
   "provenance": "Actual local Svelte instrument, native keys and Canvas2D pond. The social image adds an editorial title band above the same unaltered stage capture. Poster letterboxing preserves the entire stage geometry.",
   "state": {
     "modelVersion": "2",
@@ -9,7 +9,7 @@
     "publicationMotion": "still",
     "desktopView": "fit",
     "phoneView": "playing",
-    "captureViewportHeight": 3000,
+    "captureViewportHeight": 4200,
     "preset": "pond",
     "chord": "C6/9",
     "mode": "nearest",
@@ -25,25 +25,43 @@
   "sources": [
     "src/lib/visualizations/probabilistic-piano/model.ts",
     "src/lib/visualizations/probabilistic-piano/keyboard.ts",
+    "src/lib/visualizations/probabilistic-piano/voices.ts",
     "src/lib/visualizations/probabilistic-piano/effects.ts",
     "src/lib/visualizations/probabilistic-piano/audio.ts",
     "src/lib/visualizations/probabilistic-piano/painting.ts",
+    "src/lib/visualizations/probabilistic-piano/synth-patch.ts",
+    "src/lib/visualizations/probabilistic-piano/synth-scheduler.ts",
+    "src/lib/visualizations/probabilistic-piano/procedural-ir.ts",
+    "src/lib/visualizations/probabilistic-piano/midi.ts",
+    "src/lib/visualizations/probabilistic-piano/wav-recorder.ts",
+    "src/lib/visualizations/probabilistic-piano/wav-encoder.worker.ts",
     "src/lib/components/visualizations/probabilistic-piano/ProbabilisticPiano.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/TelemetryBar.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/OledScope.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/ControlDeck.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/ModMatrix.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/ArpSequencerBar.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/FxRack.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/PerformanceBay.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/FullPianoKeybed.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/Knob.svelte",
+    "src/lib/components/visualizations/probabilistic-piano/VerticalFader.svelte",
     "src/lib/components/visualizations/probabilistic-piano/piano.css",
+    "src/lib/components/visualizations/probabilistic-piano/synth.css",
     "scripts/render-probabilistic-piano-assets.mjs"
   ],
   "files": {
     "piano-poster.jpg": {
       "width": 1440,
       "height": 760,
-      "bytes": 206105,
-      "sha256": "edf0c69f67ffc54f7cbce2e78a94c67651e6cb4e47051e4f4a585792ded95821"
+      "bytes": 196405,
+      "sha256": "8df9ac9012ac278db9f84a2490fc946aba93c949351813f3eee40ed023f1aa0e"
     },
     "piano-social.jpg": {
       "width": 1200,
       "height": 630,
-      "bytes": 141674,
-      "sha256": "c86b18587ad133a6fee2acfb04e4efe0e221f60a5d2e8e1ad4a5d7d2b1ec1272"
+      "bytes": 140098,
+      "sha256": "488b6da225941d19e1836024317d3b8f41f9740e86931501e084047645965e62"
     }
   }
 }
