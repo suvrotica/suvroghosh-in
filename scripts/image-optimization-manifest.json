@@ -10384,6 +10384,22 @@
       "sourceHash": "9f27e278f71697258a60799e2a97e3a3a44ca58113a24ba7100deb6ecd15297d",
       "width": 1440
     },
+    "static/images/raw-mornings-circadian-coup.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 171204,
+      "outputHash": "b3941f280ced560c7b8697830ef09834fb5d46e77d31963921df62ea30a96297",
+      "psnrDb": 40.33,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 185676,
+      "sourceHash": "103d919c11aa279b15f4e4ff013ae158aedd66267aac950f36ec8fbe56889d31",
+      "width": 1280
+    },
     "static/images/reaching-the-light-together-overcoming-major-depression.jpg": {
       "format": "JPEG",
       "height": 720,

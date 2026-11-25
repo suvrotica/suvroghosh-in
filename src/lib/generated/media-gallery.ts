@@ -4570,6 +4570,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 960
 		},
 		{
+			"name": "raw-mornings-circadian-coup.jpg",
+			"src": "/images/raw-mornings-circadian-coup.jpg",
+			"bytes": 171204,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "reaching-the-light-together-overcoming-major-depression.jpg",
 			"src": "/images/reaching-the-light-together-overcoming-major-depression.jpg",
 			"bytes": 61287,

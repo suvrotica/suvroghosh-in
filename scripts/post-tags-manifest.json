@@ -18060,6 +18060,36 @@
 				"Psychology"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/raw-mornings-circadian-coup.md": {
+			"bodyHash": "1e4d53087e08c260241226eff948bea0e8ad89f74947f0157b220f35b43db545",
+			"hashVersion": 2,
+			"revisionHash": "da5c1d89c2aeac0a29c2fa2a4ff7483650cb30cdcfdfef6eab9216a334dbabdc",
+			"generatedTags": [
+				"Circadian",
+				"Neuroscience",
+				"Bipolar",
+				"Depression",
+				"Sleep",
+				"Cortisol",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Mental Health"
+			],
+			"pinnedTags": [
+				"Circadian",
+				"Neuroscience",
+				"Bipolar",
+				"Depression",
+				"Sleep",
+				"Cortisol",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Mental Health"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
