@@ -4773,6 +4773,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "simon-says-glut.jpg",
+			"src": "/images/simon-says-glut.jpg",
+			"bytes": 230025,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "sixty-feet-of-marigolds.jpg",
 			"src": "/images/sixty-feet-of-marigolds.jpg",
 			"bytes": 193674,

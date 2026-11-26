@@ -10830,6 +10830,22 @@
       "sourceHash": "871cebe658716e61b6e399a05b4b1c0996fd4c60a8a58db1bf3eba571b6c5b57",
       "width": 1672
     },
+    "static/images/simon-says-glut.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 230025,
+      "outputHash": "1c90434bb62260184195055e02730ab940e08cdfdcd27051e1541343865669d2",
+      "psnrDb": 36.8,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 285352,
+      "sourceHash": "1a24087955fef5457786bc3302d4c50b2100f08132585736ddb64f02193c95a0",
+      "width": 1280
+    },
     "static/images/sixty-feet-of-marigolds.jpg": {
       "format": "JPEG",
       "height": 576,

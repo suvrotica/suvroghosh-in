@@ -18090,6 +18090,36 @@
 				"Mental Health"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/simon-says-glut.md": {
+			"bodyHash": "e1b7a24cb7a06d95b7f6ffb1bc9e8e245eacf1a1cc040cdab04d10ebf69e1cf4",
+			"hashVersion": 2,
+			"revisionHash": "6fcb270f8050c42574bb7c1b20a38e818f147971c5dbd1ee65ad10deee4cee37",
+			"generatedTags": [
+				"Herbert Simon",
+				"Attention Economy",
+				"Software Glut",
+				"Vibe Coding",
+				"Automation",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire",
+				"Technology"
+			],
+			"pinnedTags": [
+				"Herbert Simon",
+				"Attention Economy",
+				"Software Glut",
+				"Vibe Coding",
+				"Automation",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire",
+				"Technology"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
