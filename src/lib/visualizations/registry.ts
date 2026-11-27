@@ -617,6 +617,18 @@ export const visualizationSummaries = {
 			'A dark slate 2D acoustic wavefield chamber showing copper and cyan circular pressure fringes focusing inside an elliptical stone gallery with settled bone-ivory Chladni sand along nodal curves and a Room Impulse Response oscillogram below.',
 		href: '/blog/visualizations/the-room-that-remembers-every-clap',
 		status: 'published'
+	},
+	'color-field-painting-color-edges-and-space': {
+		id: 'color-field-painting-color-edges-and-space',
+		title: 'Color Field Painting — Color, Edges, and Space',
+		description:
+			'Layer broad fields of pigment over woven cotton-duck canvas, soften boundaries from crisp edges to atmospheric halos, and adjust glaze transparency.',
+		subjects: ['Generative Art', 'Design', 'Algorithms', 'Computer Science'],
+		poster: '/images/visualizations/color-field-studio/social.png',
+		posterAlt:
+			'A non-figurative Color Field painting on warm unbleached cotton-duck canvas showing softly feathered horizontal areas of charcoal umber, Venetian maroon, and pale gold haze layered with translucent glazes.',
+		href: '/blog/visualizations/color-field-painting-color-edges-and-space',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

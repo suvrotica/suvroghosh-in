@@ -5466,6 +5466,48 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/color-field-studio/example-frankenthaler-layers.png",
+			"src": "/images/visualizations/color-field-studio/example-frankenthaler-layers.png",
+			"bytes": 275167,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/color-field-studio/example-scale-compact.png",
+			"src": "/images/visualizations/color-field-studio/example-scale-compact.png",
+			"bytes": 208259,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/color-field-studio/example-scale-expanded.png",
+			"src": "/images/visualizations/color-field-studio/example-scale-expanded.png",
+			"bytes": 296494,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/color-field-studio/example-two-areas-sharp.png",
+			"src": "/images/visualizations/color-field-studio/example-two-areas-sharp.png",
+			"bytes": 198025,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/color-field-studio/example-two-areas-soft-translucent.png",
+			"src": "/images/visualizations/color-field-studio/example-two-areas-soft-translucent.png",
+			"bytes": 301848,
+			"width": 960,
+			"height": 640
+		},
+		{
+			"name": "visualizations/color-field-studio/social.png",
+			"src": "/images/visualizations/color-field-studio/social.png",
+			"bytes": 372679,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/drip-painting-studio/example-counter-middleman.png",
 			"src": "/images/visualizations/drip-painting-studio/example-counter-middleman.png",
 			"bytes": 236690,

@@ -1799,3 +1799,208 @@ test('The Room That Remembers Every Clap is a native, client-gated 2D FDTD acous
 	assert.ok(fs.statSync(socialFile).size < 750 * 1024, 'social.png exceeds 750 KiB');
 	assert.ok(fs.statSync(posterFile).size < 750 * 1024, 'poster.png exceeds 750 KiB');
 });
+
+test('Color Field Studio and its companion essay follow the published studio, asset, and determinism contract', () => {
+	const slug = 'color-field-painting-color-edges-and-space';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const studio = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'color-field-studio',
+		'ColorFieldStudio.svelte'
+	);
+	const launch = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'color-field-studio',
+		'ColorFieldArticleLaunch.svelte'
+	);
+	const pageTs = read('src', 'routes', 'tools', 'color-field-studio', '+page.ts');
+	const layout = read('src', 'routes', '+layout.svelte');
+	const routeBiomes = read('src', 'lib', 'motion', 'route-biomes.ts');
+
+	// 1. Companion essay frontmatter, embeds, opening plates before first ##, editorial rubric, and deep links
+	assert.match(post, /title: "Color Field Painting — Color, Edges, and Space"/);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /mediaReviewed: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /thumbnail: "\/images\/visualizations\/color-field-studio\/social\.png"/);
+	assert.match(post, /thumbnailAlt:\s*"[^"]+"/);
+	assert.match(
+		post,
+		/import ColorFieldArticleLaunch from '\$lib\/components\/visualizations\/color-field-studio\/ColorFieldArticleLaunch\.svelte';/
+	);
+	assert.match(post, /<ColorFieldArticleLaunch \/>/);
+	assert.match(post, /<TTS \/>/);
+
+	const sharpPlate = '/images/visualizations/color-field-studio/example-two-areas-sharp.png';
+	const softPlate =
+		'/images/visualizations/color-field-studio/example-two-areas-soft-translucent.png';
+	const sharpIndex = post.indexOf(sharpPlate);
+	const softIndex = post.indexOf(softPlate);
+	const firstHeadingIndex = post.indexOf('\n## ');
+	assert.ok(sharpIndex > -1, 'essay missing sharp opening plate');
+	assert.ok(softIndex > -1, 'essay missing soft translucent opening plate');
+	assert.ok(firstHeadingIndex > -1, 'essay missing ## section heading');
+	assert.ok(sharpIndex < softIndex, 'sharp opening plate must precede soft translucent plate');
+	assert.ok(
+		softIndex < firstHeadingIndex,
+		'both opening two-area plates must appear before the first ## heading'
+	);
+
+	assert.match(post, /Mark Rothko/i);
+	assert.match(post, /Helen Frankenthaler/i);
+	assert.match(post, /edge mask/i);
+	assert.match(post, /transparent|transparency|glaze/i);
+	assert.match(post, /scale/i);
+	assert.match(post, /adjacen/i);
+
+	const deepLinks = post.match(/\/tools\/color-field-studio\?[^\s)]+/g) ?? [];
+	assert.ok(deepLinks.length >= 2, 'essay must provide >= 2 /tools/color-field-studio? deep links');
+
+	// 2. Registry & VisualizationsLanding integration
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.match(registry, new RegExp(`href: '/blog/visualizations/${slug}'`));
+	assert.match(registry, /poster: '\/images\/visualizations\/color-field-studio\/social\.png'/);
+	assert.match(
+		registry,
+		/subjects: \['Generative Art', 'Design', 'Algorithms', 'Computer Science'\]/
+	);
+	assert.match(
+		landing,
+		/'color-field-painting-color-edges-and-space':\s*\n?\s*visualizationSummaries\['color-field-painting-color-edges-and-space'\]\.subjects/
+	);
+	assert.match(landing, /resolve\('\/tools\/color-field-studio'\)/);
+	assert.match(landing, /src="\/images\/visualizations\/color-field-studio\/social\.png"/);
+
+	// 3. Engine purity & M2 studio boundaries
+	const engineFiles = [
+		'types.ts',
+		'prng.ts',
+		'studies.ts',
+		'fields.ts',
+		'timeline.ts',
+		'surface.ts',
+		'state.ts',
+		'export.ts'
+	];
+	for (const file of engineFiles) {
+		const src = read('src', 'lib', 'visualizations', 'color-field-studio', file);
+		assert.doesNotMatch(src, /from ['"]svelte/, `${file} must not import svelte`);
+		assert.doesNotMatch(src, /Math\.random\s*\(/, `${file} must remain deterministic`);
+	}
+	assert.match(studio, /setContext\('color-field-studio-embedded-article',\s*true\)/);
+	assert.match(studio, /import\.meta\.glob/);
+	assert.doesNotMatch(
+		studio,
+		/document\.documentElement\.(?:classList|setAttribute|style|dataset\s*=)/
+	);
+	assert.match(launch, /getContext<boolean>\('color-field-studio-embedded-article'\)/);
+	assert.match(launch, /resolve\('\/tools\/color-field-studio'\)/);
+	assert.match(pageTs, /immersivePainting:\s*true/);
+	assert.match(pageTs, /prerender\s*=\s*true/);
+	assert.match(layout, /'\/tools\/color-field-studio'/);
+	assert.match(routeBiomes, /color-field-studio/);
+
+	// 4. Static assets & assets.json manifest verification
+	const assetDir = path.join(root, 'static', 'images', 'visualizations', 'color-field-studio');
+	const pngDimensions = (file) => {
+		const header = fs.readFileSync(file).subarray(0, 24);
+		assert.deepEqual(Array.from(header.subarray(0, 8)), [137, 80, 78, 71, 13, 10, 26, 10]);
+		return { width: header.readUInt32BE(16), height: header.readUInt32BE(20) };
+	};
+	const manifestPath = path.join(assetDir, 'assets.json');
+	assert.ok(fs.existsSync(manifestPath), 'missing color-field-studio assets.json');
+	const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+	assert.equal(typeof manifest.sourceHash, 'string');
+	assert.ok(manifest.sourceHash.length > 0, 'assets.json sourceHash must be non-empty');
+	assert.ok(Array.isArray(manifest.assets) && manifest.assets.length === 6);
+
+	const expectedDims = {
+		'social.png': { width: 1200, height: 630 },
+		'example-two-areas-sharp.png': { width: 960, height: 640 },
+		'example-two-areas-soft-translucent.png': { width: 960, height: 640 },
+		'example-frankenthaler-layers.png': { width: 960, height: 640 },
+		'example-scale-compact.png': { width: 960, height: 640 },
+		'example-scale-expanded.png': { width: 960, height: 640 }
+	};
+	for (const entry of manifest.assets) {
+		const filePath = path.join(assetDir, entry.file);
+		assert.ok(fs.existsSync(filePath), `missing asset ${entry.file}`);
+		assert.deepEqual(pngDimensions(filePath), expectedDims[entry.file]);
+		assert.ok(fs.statSync(filePath).size < 750 * 1024, `${entry.file} exceeds 750 KiB`);
+	}
+
+	// 5. Tier 5 Contract Hardening: manifest schema, truecolor PNG IHDR, metric monotonicity, editorial non-emotion rule & UI purity
+	assert.equal(manifest.generatorVersion, 1);
+	assert.ok(typeof manifest.curatedSeed === 'number' && manifest.curatedSeed > 0);
+	assert.deepEqual(Object.keys(manifest.curatedStudySeeds).sort(), [
+		'cobalt-veil',
+		'frankenthaler-wash',
+		'ochre-horizon',
+		'rothko-nocturne',
+		'terra-stillness'
+	]);
+
+	const manifestById = new Map(manifest.assets.map((entry) => [entry.id, entry]));
+	for (const entry of manifest.assets) {
+		const filePath = path.join(assetDir, entry.file);
+		const colorType = fs.readFileSync(filePath)[25];
+		assert.ok(
+			colorType === 2 || colorType === 6,
+			`${entry.file} must be non-indexed truecolor PNG (IHDR colorType 2 or 6, got ${colorType})`
+		);
+		assert.ok(
+			typeof entry.studioUrl === 'string' &&
+				entry.studioUrl.startsWith('/tools/color-field-studio?'),
+			`${entry.file} studioUrl must target /tools/color-field-studio?`
+		);
+	}
+
+	const sharpEntry = manifestById.get('two-areas-sharp');
+	const softEntry = manifestById.get('two-areas-soft-translucent');
+	assert.ok(
+		sharpEntry.metrics.meanBoundaryGradient > softEntry.metrics.meanBoundaryGradient,
+		'sharp opening plate must have higher boundary gradient than soft translucent plate'
+	);
+	assert.ok(
+		softEntry.metrics.canvasWeaveVisibility > sharpEntry.metrics.canvasWeaveVisibility,
+		'soft translucent opening plate must reveal more canvas weave than sharp plate'
+	);
+
+	const compactEntry = manifestById.get('scale-compact');
+	const expandedEntry = manifestById.get('scale-expanded');
+	assert.ok(
+		expandedEntry.metrics.paintedCoveragePct > compactEntry.metrics.paintedCoveragePct,
+		'expanded scale plate must have higher painted coverage than compact scale plate'
+	);
+
+	assert.match(
+		post,
+		/does \*\*not\*\* assign universal emotional meanings|without assigning universal emotions|no fixed emotional/i
+	);
+	assert.match(post, /soak-stain/i);
+	assert.doesNotMatch(
+		studio,
+		/Math\.random\s*\(/,
+		'ColorFieldStudio.svelte must remain deterministic'
+	);
+	const pageSvelte = read('src', 'routes', 'tools', 'color-field-studio', '+page.svelte');
+	assert.doesNotMatch(
+		pageSvelte,
+		/document\.documentElement\.(?:classList|setAttribute|style|dataset\s*=)/
+	);
+});

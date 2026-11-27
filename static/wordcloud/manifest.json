@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T11:45:52.289176+00:00",
+  "generatedAt": "2026-11-27T04:27:29.433855+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3034,6 +3034,29 @@
         "AI",
         "Meaning",
         "Software"
+      ],
+      "wordCount": 130
+    },
+    "color-field-painting-color-edges-and-space": {
+      "generatedAt": "2026-11-27T04:27:28.598066+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/color-field-painting-color-edges-and-space.svg",
+      "source": "src/lib/posts/color-field-painting-color-edges-and-space.md",
+      "sourceHash": "dc92c2a0e4ad53e741b9630823ba892d4b45d302a56214807d2aa0fe0e013dd9",
+      "sourceModified": "2026-11-27T04:26:43.481766+00:00",
+      "topWords": [
+        "Edge",
+        "Color",
+        "Canvas",
+        "Transparency",
+        "Size",
+        "Softness",
+        "Areas",
+        "Rothko",
+        "Area",
+        "Soakstain",
+        "Fixed",
+        "Seed"
       ],
       "wordCount": 130
     },

@@ -1,0 +1,284 @@
+{
+	"generatorVersion": 1,
+	"sourceHash": "fdb5c66697cb354f226949ef41b5734499dcb2b09c25b690891be84aa1a87258",
+	"curatedSeed": 482917,
+	"curatedStudySeeds": {
+		"rothko-nocturne": 482917,
+		"frankenthaler-wash": 619304,
+		"ochre-horizon": 274815,
+		"cobalt-veil": 835192,
+		"terra-stillness": 391648
+	},
+	"assets": [
+		{
+			"id": "social",
+			"file": "social.png",
+			"publicPath": "/images/visualizations/color-field-studio/social.png",
+			"label": "Social preview — Rothko Nocturne (1200×630 center crop)",
+			"width": 1200,
+			"height": 630,
+			"bytes": 372679,
+			"sha256": "a2c0d6adc9c5d96e7a29efac6593ea97f139c9024f3c8767e27e782dd9c6b5cc",
+			"pixelSha256": "9bf196f2ab28f439fd29eed45dc843686fff637c6f0e5ed82e7e027f878afb39",
+			"seed": 482917,
+			"studyId": "rothko-nocturne",
+			"activePasses": 9,
+			"parameters": {
+				"areaCount": 3,
+				"areaSize": 62,
+				"edgeSoftness": 58,
+				"transparency": 52,
+				"canvasTexture": 55,
+				"paintingTime": 10,
+				"artboard": "landscape",
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"focalPoint": {
+					"x": 0.5046,
+					"y": 0.4818
+				},
+				"crop": {
+					"x": 0,
+					"y": 85,
+					"width": 1200,
+					"height": 630
+				}
+			},
+			"metrics": {
+				"paintedCoveragePct": 50.36,
+				"meanBoundaryGradient": 9.96,
+				"edgeGradientSmoothness": 0.6437,
+				"canvasWeaveVisibility": 0.3732,
+				"pigmentVariationScore": 1.7854,
+				"regionSeparation": 113.02
+			},
+			"description": "Rothko Nocturne non-figurative stacked horizontal color-field composition (seed 482917) on unbleached woven cotton-duck canvas (55% texture): 3 color areas at 62% size with softened edges (58% edge softness) and translucent layered glaze passes (52% paint transparency) in charcoal umber, pale gold haze, and venetian maroon.",
+			"studioUrl": "/tools/color-field-studio?v=1&areas=3&size=62&edge=58&trans=52&texture=55&time=10&study=rothko-nocturne&seed=482917&artboard=landscape"
+		},
+		{
+			"id": "two-areas-sharp",
+			"file": "example-two-areas-sharp.png",
+			"publicPath": "/images/visualizations/color-field-studio/example-two-areas-sharp.png",
+			"label": "Two fixed color areas — sharp & near-opaque (0% edge softness, 14% transparency)",
+			"width": 960,
+			"height": 640,
+			"bytes": 198025,
+			"sha256": "e85117a1bfbe8ef8a241ef2220888d0a21ca5dcc3619ce622159f4bea32d09da",
+			"pixelSha256": "0cc088fe7ad7cf6c1e23e60ddd2c7304fb4e27857fa71fc62a504ebc4bf8a95e",
+			"seed": 482917,
+			"studyId": "rothko-nocturne",
+			"activePasses": 6,
+			"parameters": {
+				"areaCount": 2,
+				"areaSize": 60,
+				"edgeSoftness": 0,
+				"transparency": 14,
+				"canvasTexture": 55,
+				"paintingTime": 10,
+				"artboard": "landscape",
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"focalPoint": {
+					"x": 0.5057,
+					"y": 0.479
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"paintedCoveragePct": 37.7,
+				"meanBoundaryGradient": 27.01,
+				"edgeGradientSmoothness": 0.3999,
+				"canvasWeaveVisibility": 0.2719,
+				"pigmentVariationScore": 1.5185,
+				"regionSeparation": 144.45
+			},
+			"description": "Rothko Nocturne non-figurative stacked horizontal color-field composition (seed 482917) on unbleached woven cotton-duck canvas (55% texture): 2 color areas at 60% size with crisp sharp edges (0% edge softness) and dense low-transparency glaze passes (14% paint transparency) in charcoal umber, and pale gold haze.",
+			"studioUrl": "/tools/color-field-studio?v=1&areas=2&size=60&edge=0&trans=14&texture=55&time=10&study=rothko-nocturne&seed=482917&artboard=landscape"
+		},
+		{
+			"id": "two-areas-soft-translucent",
+			"file": "example-two-areas-soft-translucent.png",
+			"publicPath": "/images/visualizations/color-field-studio/example-two-areas-soft-translucent.png",
+			"label": "Two fixed color areas — softened edges & higher transparency (82% edge softness, 68% transparency)",
+			"width": 960,
+			"height": 640,
+			"bytes": 301848,
+			"sha256": "4333e76bd8380d5a58080113d6514e8f0fc4fb1680c7cafc5777df610bdb7f0e",
+			"pixelSha256": "3c63a6f049cc3ef9b6559f4f6e37974e4485a47294fd2e43d42611586ae9b138",
+			"seed": 482917,
+			"studyId": "rothko-nocturne",
+			"activePasses": 6,
+			"parameters": {
+				"areaCount": 2,
+				"areaSize": 60,
+				"edgeSoftness": 82,
+				"transparency": 68,
+				"canvasTexture": 60,
+				"paintingTime": 10,
+				"artboard": "landscape",
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"focalPoint": {
+					"x": 0.5057,
+					"y": 0.479
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"paintedCoveragePct": 49.33,
+				"meanBoundaryGradient": 4.75,
+				"edgeGradientSmoothness": 0.7913,
+				"canvasWeaveVisibility": 0.4385,
+				"pigmentVariationScore": 3.4406,
+				"regionSeparation": 137.24
+			},
+			"description": "Rothko Nocturne non-figurative stacked horizontal color-field composition (seed 482917) on unbleached woven cotton-duck canvas (60% texture): 2 color areas at 60% size with widely diffused edges (82% edge softness) and airy high-transparency glaze passes (68% paint transparency) in charcoal umber, and pale gold haze.",
+			"studioUrl": "/tools/color-field-studio?v=1&areas=2&size=60&edge=82&trans=68&texture=60&time=10&study=rothko-nocturne&seed=482917&artboard=landscape"
+		},
+		{
+			"id": "frankenthaler-layers",
+			"file": "example-frankenthaler-layers.png",
+			"publicPath": "/images/visualizations/color-field-studio/example-frankenthaler-layers.png",
+			"label": "Frankenthaler Wash — 5 overlapping soak-stain layers (deep-stack preset)",
+			"width": 960,
+			"height": 640,
+			"bytes": 275167,
+			"sha256": "22c7fb0dd18ec544beb5611cece7eafc9ee3f50cf3d05fd3cde5c252a0f412d5",
+			"pixelSha256": "8e80898c4288b589677aa086862a10658cfbeda157f802c6cb69b0661652b8ae",
+			"seed": 619304,
+			"studyId": "frankenthaler-wash",
+			"activePasses": 15,
+			"parameters": {
+				"areaCount": 5,
+				"areaSize": 68,
+				"edgeSoftness": 58,
+				"transparency": 42,
+				"canvasTexture": 50,
+				"paintingTime": 10,
+				"artboard": "landscape",
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"focalPoint": {
+					"x": 0.5071,
+					"y": 0.4892
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"paintedCoveragePct": 53.81,
+				"meanBoundaryGradient": 3.71,
+				"edgeGradientSmoothness": 0.8292,
+				"canvasWeaveVisibility": 0.2705,
+				"pigmentVariationScore": 14.9376,
+				"regionSeparation": 64.68
+			},
+			"description": "Frankenthaler Wash non-figurative soak-stain organic color-field composition (seed 619304) on unbleached woven cotton-duck canvas (50% texture): 5 color areas at 68% size with softened edges (58% edge softness) and translucent layered glaze passes (42% paint transparency) in deep cobalt, terracotta rose, warm apricot, and raw sienna gold.",
+			"studioUrl": "/tools/color-field-studio?v=1&areas=5&size=68&edge=58&trans=42&texture=50&time=10&study=frankenthaler-wash&seed=619304&artboard=landscape"
+		},
+		{
+			"id": "scale-compact",
+			"file": "example-scale-compact.png",
+			"publicPath": "/images/visualizations/color-field-studio/example-scale-compact.png",
+			"label": "Scale & adjacency — compact 36% area size (open canvas margins)",
+			"width": 960,
+			"height": 640,
+			"bytes": 208259,
+			"sha256": "28182927e1918cc770d15499daed5b8bb69ebea3a6c90cd61154bbe426eac540",
+			"pixelSha256": "b7deb2b0384ef84a8f6acab183f107e2e373b96cdd2e773a7a7100e114e5d03a",
+			"seed": 482917,
+			"studyId": "rothko-nocturne",
+			"activePasses": 9,
+			"parameters": {
+				"areaCount": 3,
+				"areaSize": 36,
+				"edgeSoftness": 58,
+				"transparency": 52,
+				"canvasTexture": 55,
+				"paintingTime": 10,
+				"artboard": "landscape",
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"focalPoint": {
+					"x": 0.5046,
+					"y": 0.4818
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"paintedCoveragePct": 22.25,
+				"meanBoundaryGradient": 13.21,
+				"edgeGradientSmoothness": 0.5768,
+				"canvasWeaveVisibility": 0.3723,
+				"pigmentVariationScore": 1.6494,
+				"regionSeparation": 98.53
+			},
+			"description": "Rothko Nocturne non-figurative stacked horizontal color-field composition (seed 482917) on unbleached woven cotton-duck canvas (55% texture): 3 color areas at 36% size with softened edges (58% edge softness) and translucent layered glaze passes (52% paint transparency) in charcoal umber, pale gold haze, and venetian maroon.",
+			"studioUrl": "/tools/color-field-studio?v=1&areas=3&size=36&edge=58&trans=52&texture=55&time=10&study=rothko-nocturne&seed=482917&artboard=landscape"
+		},
+		{
+			"id": "scale-expanded",
+			"file": "example-scale-expanded.png",
+			"publicPath": "/images/visualizations/color-field-studio/example-scale-expanded.png",
+			"label": "Scale & adjacency — expanded 84% area size (tight margins, overlapping halos)",
+			"width": 960,
+			"height": 640,
+			"bytes": 296494,
+			"sha256": "34e828399a688dcece854f06e0e9e3513fb704cc262cacddeb7091a3609224a4",
+			"pixelSha256": "e617592c9bbc3176c3b0df79282dca456c739c4ce1b55b6a47cfb077bd563d77",
+			"seed": 482917,
+			"studyId": "rothko-nocturne",
+			"activePasses": 9,
+			"parameters": {
+				"areaCount": 3,
+				"areaSize": 84,
+				"edgeSoftness": 58,
+				"transparency": 52,
+				"canvasTexture": 55,
+				"paintingTime": 10,
+				"artboard": "landscape",
+				"artboardWidth": 1200,
+				"artboardHeight": 800,
+				"focalPoint": {
+					"x": 0.5046,
+					"y": 0.4818
+				},
+				"crop": {
+					"x": 0,
+					"y": 0,
+					"width": 1200,
+					"height": 800
+				}
+			},
+			"metrics": {
+				"paintedCoveragePct": 71.95,
+				"meanBoundaryGradient": 5.85,
+				"edgeGradientSmoothness": 0.7547,
+				"canvasWeaveVisibility": 0.3626,
+				"pigmentVariationScore": 9.2761,
+				"regionSeparation": 127.56
+			},
+			"description": "Rothko Nocturne non-figurative stacked horizontal color-field composition (seed 482917) on unbleached woven cotton-duck canvas (55% texture): 3 color areas at 84% size with softened edges (58% edge softness) and translucent layered glaze passes (52% paint transparency) in charcoal umber, pale gold haze, and venetian maroon.",
+			"studioUrl": "/tools/color-field-studio?v=1&areas=3&size=84&edge=58&trans=52&texture=55&time=10&study=rothko-nocturne&seed=482917&artboard=landscape"
+		}
+	]
+}

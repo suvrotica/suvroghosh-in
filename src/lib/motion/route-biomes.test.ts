@@ -69,6 +69,7 @@ describe('special-route exclusions', () => {
 		'/tools/mondrian-studio',
 		'/tools/pointillism-studio',
 		'/tools/drip-painting-studio',
+		'/tools/color-field-studio',
 		'/blog/games',
 		'/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan',
 		'/blog/visualizations/monte-carlo',

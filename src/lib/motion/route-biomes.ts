@@ -118,7 +118,8 @@ export function resolveRouteMotion(
 				second === 'splat-studio' ||
 				second === 'mondrian-studio' ||
 				second === 'pointillism-studio' ||
-				second === 'drip-painting-studio')) ||
+				second === 'drip-painting-studio' ||
+				second === 'color-field-studio')) ||
 		(first === 'blog' && second === 'games') ||
 		(first === 'images' && second === 'sketches') ||
 		(first === 'blog' && second === 'visualizations' && segments.length > 2)

@@ -79,7 +79,9 @@
 		'four-fundamental-subspaces-3d':
 			visualizationSummaries['four-fundamental-subspaces-3d'].subjects,
 		'the-room-that-remembers-every-clap':
-			visualizationSummaries['the-room-that-remembers-every-clap'].subjects
+			visualizationSummaries['the-room-that-remembers-every-clap'].subjects,
+		'color-field-painting-color-edges-and-space':
+			visualizationSummaries['color-field-painting-color-edges-and-space'].subjects
 	};
 	const subjects = [
 		'All',
@@ -333,6 +335,46 @@
 					4 non-figurative studies · conformal relief · 4096 px export
 				</p>
 				<span class="mt-6 inline-flex items-center text-sm font-bold !text-[#a8342a]">
+					Open studio <span
+						class="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+						aria-hidden="true">→</span
+					>
+				</span>
+			</div>
+		</a>
+	</section>
+
+	<section class="mt-10" aria-labelledby="color-field-studio-heading">
+		<a
+			href={resolve('/tools/color-field-studio')}
+			class="group grid overflow-hidden rounded-2xl border border-neutral-300 bg-[#f3efe3] text-[#1c1b1a] no-underline shadow-xl shadow-neutral-950/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1e526b] md:grid-cols-2 dark:border-neutral-700"
+		>
+			<div class="overflow-hidden bg-[#dedad0]">
+				<img
+					src="/images/visualizations/color-field-studio/social.png"
+					alt="A non-figurative Color Field painting on warm unbleached cotton-duck canvas showing softly feathered horizontal areas of charcoal umber, Venetian maroon, and pale gold haze layered with translucent glazes"
+					width="1200"
+					height="630"
+					loading="lazy"
+					class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
+				/>
+			</div>
+			<div class="flex flex-col justify-center p-6 sm:p-8 md:p-10">
+				<p class="mb-3 text-xs font-bold tracking-[0.15em] !text-[#1e526b] uppercase">
+					Algorithmic painting studio
+				</p>
+				<h2 id="color-field-studio-heading" class="m-0 text-3xl !text-[#1c1b1a] sm:text-4xl">
+					Color Field Studio
+				</h2>
+				<p class="mt-4 mb-0 text-left text-base leading-relaxed !text-[#38362f]">
+					Vary color areas, area size, edge softness, and paint transparency. Watch broad passes and
+					translucent glazes build quiet depth over woven cotton-duck canvas, inspect the surface
+					close up, and export a 4096 px PNG.
+				</p>
+				<p class="mt-5 mb-0 font-mono text-xs !text-[#4a4840]">
+					5 studies · edge &amp; glaze controls · 4096 px export
+				</p>
+				<span class="mt-6 inline-flex items-center text-sm font-bold !text-[#6e2326]">
 					Open studio <span
 						class="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
 						aria-hidden="true">→</span

@@ -57,6 +57,7 @@
 			page.url.pathname === '/tools/mondrian-studio' ||
 			page.url.pathname === '/tools/pointillism-studio' ||
 			page.url.pathname === '/tools/drip-painting-studio' ||
+			page.url.pathname === '/tools/color-field-studio' ||
 			page.url.pathname === '/tools/radio'
 	);
 	let immersiveGameShell = $derived(

@@ -18120,6 +18120,37 @@
 				"Technology"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/color-field-painting-color-edges-and-space.md": {
+			"bodyHash": "992fbbb124180fdc7c6367f189ddc14c6f0be42115b573dc1a5ec9de06c80cb5",
+			"hashVersion": 2,
+			"revisionHash": "258ba3e54376733efdfe0b203bc0d7aab32fe347c333d52e41e600c586e9028a",
+			"generatedTags": [
+				"Color Field Painting",
+				"Mark Rothko",
+				"Helen Frankenthaler",
+				"Abstract Expressionism",
+				"Generative Art",
+				"Creative Coding",
+				"Color Perception",
+				"Glaze Layering",
+				"Interactive Art",
+				"Visualizations"
+			],
+			"pinnedTags": [
+				"Color Field Painting",
+				"Mark Rothko",
+				"Helen Frankenthaler",
+				"Abstract Expressionism",
+				"Generative Art",
+				"Creative Coding",
+				"Color Perception",
+				"Glaze Layering",
+				"Interactive Art",
+				"Visualizations"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-11-27"
 		}
 	},
 	"maxTags": 10
