@@ -18151,6 +18151,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-11-27"
+		},
+		"src/lib/posts/cup-as-mathematical-laboratory.md": {
+			"bodyHash": "ca9e089f83c338bdad2ed09f7105f0c042f9df7f7f79f17fb99102adcf0b7f36",
+			"hashVersion": 2,
+			"revisionHash": "b5bd79cf8df8c56f856d64595f8466904425754861ac51529d6a932a899b6b2b",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Mathematics",
+				"Geometry",
+				"Topology",
+				"Optimization",
+				"Ceramics",
+				"Calculus",
+				"Household Objects"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Mathematics",
+				"Geometry",
+				"Topology",
+				"Optimization",
+				"Ceramics",
+				"Calculus",
+				"Household Objects"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

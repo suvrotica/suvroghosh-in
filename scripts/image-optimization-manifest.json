@@ -8873,6 +8873,22 @@
       "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
       "width": 1536
     },
+    "static/images/cup-as-mathematical-laboratory.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 460,
+      "outputBytes": 46892,
+      "outputHash": "d596e850c4d409ff6af2c72fc2b1a9bbce9e406717ff978cc3502a775b144acc",
+      "psnrDb": 41.37,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 87224,
+      "sourceHash": "3c9556831227b35794d86cc4c56c0998b12ed58deefdd49d14e35f433994b7b7",
+      "width": 460
+    },
     "static/images/customer-enquiries-demo.jpg": {
       "format": "JPEG",
       "height": 900,

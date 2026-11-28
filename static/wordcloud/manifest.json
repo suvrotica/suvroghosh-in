@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T04:27:29.433855+00:00",
+  "generatedAt": "2026-11-28T04:58:46.635426+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3333,6 +3333,29 @@
         "First",
         "Now",
         "Every"
+      ],
+      "wordCount": 130
+    },
+    "cup-as-mathematical-laboratory": {
+      "generatedAt": "2026-11-28T04:58:45.771346+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/cup-as-mathematical-laboratory.svg",
+      "source": "src/lib/posts/cup-as-mathematical-laboratory.md",
+      "sourceHash": "998f983351911291add3eb32fe68d994de9521ef9b3393f031c385130f00325c",
+      "sourceModified": "2026-11-28T04:57:51.011702+00:00",
+      "topWords": [
+        "Cup",
+        "Mathematics",
+        "Every",
+        "Surface",
+        "Handle",
+        "Ceramic",
+        "Flat",
+        "Never",
+        "Tea",
+        "Volume",
+        "Area",
+        "Held"
       ],
       "wordCount": 130
     },

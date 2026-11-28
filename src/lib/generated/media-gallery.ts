@@ -3443,6 +3443,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "cup-as-mathematical-laboratory.jpg",
+			"src": "/images/cup-as-mathematical-laboratory.jpg",
+			"bytes": 46892,
+			"width": 460,
+			"height": 1024
+		},
+		{
 			"name": "customer-enquiries-demo.jpg",
 			"src": "/images/customer-enquiries-demo.jpg",
 			"bytes": 110896,
