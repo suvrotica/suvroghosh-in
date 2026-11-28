@@ -18181,6 +18181,36 @@
 				"Household Objects"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/2027-a-promising-start.md": {
+			"bodyHash": "84536f457144651f22676ba0a0a3a5dec5f79cf876b3947f6d5985f47ae01b86",
+			"hashVersion": 2,
+			"revisionHash": "3fd66944dfb140e62f4798750ce3479896d6d992f08455d1225758e641e1d25f",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"survival",
+				"poverty",
+				"climate",
+				"health",
+				"books",
+				"banking",
+				"2027"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"survival",
+				"poverty",
+				"climate",
+				"health",
+				"books",
+				"banking",
+				"2027"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

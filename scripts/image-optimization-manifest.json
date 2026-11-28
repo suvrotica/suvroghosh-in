@@ -1,5 +1,21 @@
 {
   "files": {
+    "static/images/2027-a-promising-start.jpg": {
+      "format": "JPEG",
+      "height": 714,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 714,
+      "originalWidth": 1280,
+      "outputBytes": 249276,
+      "outputHash": "0504878bd54e5dc408c6182fc04b34fb314dec714c4175c4da07cef3df318625",
+      "psnrDb": 37.1,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 271011,
+      "sourceHash": "a955323106aa520cf22508ff52a875fec7300aed8e30919c0db90bf268600c07",
+      "width": 1280
+    },
     "static/images/Compress_20260428_113403_3563.jpg": {
       "format": "JPEG",
       "height": 1499,

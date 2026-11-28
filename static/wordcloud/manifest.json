@@ -1,6 +1,29 @@
 {
-  "generatedAt": "2026-11-28T04:58:46.635426+00:00",
+  "generatedAt": "2026-11-28T06:06:45.184128+00:00",
   "posts": {
+    "2027-a-promising-start": {
+      "generatedAt": "2026-11-28T06:06:44.209252+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/2027-a-promising-start.svg",
+      "source": "src/lib/posts/2027-a-promising-start.md",
+      "sourceHash": "0de6ca90bc4bb1f9f584a8157b161eb2159b41ef93e360e49ce20c93827041d2",
+      "sourceModified": "2026-11-28T06:04:25.309681+00:00",
+      "topWords": [
+        "Every",
+        "Heat",
+        "Man",
+        "Let",
+        "Promising",
+        "Alive",
+        "Books",
+        "Nothing",
+        "Knows",
+        "Weather",
+        "Full",
+        "Year"
+      ],
+      "wordCount": 130
+    },
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
       "generatorVersion": "2026-07-13.1",

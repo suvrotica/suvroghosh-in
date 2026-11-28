@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "2027-a-promising-start.jpg",
+			"src": "/images/2027-a-promising-start.jpg",
+			"bytes": 249276,
+			"width": 1280,
+			"height": 714
+		},
+		{
 			"name": "ai-half-corpse-accelerated-decay.jpg",
 			"src": "/images/ai-half-corpse-accelerated-decay.jpg",
 			"bytes": 221767,
